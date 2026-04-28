@@ -610,7 +610,7 @@ a:active, button:active { opacity: 0.75; }
 }
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
-html { background: linear-gradient(to bottom, var(--nav-bg) 50%, var(--footer-bg) 50%); }
+html { background-color: var(--footer-bg); }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   font-size: clamp(15px, 4vw, 18px);

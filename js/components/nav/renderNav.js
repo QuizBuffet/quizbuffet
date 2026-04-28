@@ -72,7 +72,7 @@ export async function renderNav(active) {
 
   el.innerHTML = `
     <nav class="nav">
-      <a href="/" class="nav-logo">QuizBuffet</a>
+      <a href="/" class="nav-logo"><img src="/icons/favicon.svg" alt="" class="nav-logo-img">QuizBuffet</a>
       <div class="nav-menu">
         ${links.map(l => `<a href="${l.href}" ${active === l.label ? 'class="active"' : ''}>${l.label}</a>`).join('')}
         <div class="color-swatches">${swatches}</div>

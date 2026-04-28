@@ -24,7 +24,7 @@ export function renderFooter() {
         <div class="footer-grid">
 
           <div class="footer-col">
-            <div class="footer-brand">QuizBuffet</div>
+            <div class="footer-brand"><img src="/icons/favicon.svg" alt="" class="footer-brand-img">QuizBuffet</div>
             <p class="footer-tagline">Built with love for anyone grinding toward a cert.</p>
             <p class="footer-body">
               This is a personal, private study tool — not a commercial platform.

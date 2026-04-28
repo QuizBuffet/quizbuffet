@@ -1,5 +1,7 @@
 /* QuizBuffet — mobile-first, fluid typography via clamp() */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+a, button, [role="button"] { cursor: pointer; }
+a:active, button:active { opacity: 0.65; transition: opacity 0.08s; }
 
 /* ── Colour tokens ─────────────────────────────────────────────────────────── */
 :root {
@@ -608,6 +610,7 @@
 }
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
+html { background: var(--bg); }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   font-size: clamp(15px, 4vw, 18px);
@@ -651,8 +654,9 @@ a:hover { text-decoration: underline; }
 .container { max-width: 700px; margin: 0 auto; padding: 0 16px 48px; }
 
 /* ── Nav ───────────────────────────────────────────────────────────────────── */
-.nav { background: var(--nav-gradient, var(--nav-bg)); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; }
-.nav-logo { color: #fff; font-size: clamp(17px, 5vw, 20px); font-weight: bold; text-decoration: none; }
+.nav { background: var(--nav-gradient, var(--nav-bg)); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 0; }
+.nav-logo { color: #fff; font-size: clamp(17px, 5vw, 20px); font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.nav-logo-img { width: 28px; height: 28px; }
 .nav-menu { display: flex; gap: 8px; align-items: center; }
 .nav-menu a {
   color: var(--nav-text);
@@ -991,7 +995,8 @@ a:hover { text-decoration: underline; }
 .footer .container { max-width: 1100px; padding-bottom: 0; padding-top: 36px; position: relative; z-index: 1; }
 .footer-grid { display: grid; grid-template-columns: 1fr; gap: 36px; margin-bottom: 36px; }
 
-.footer-brand   { font-size: 22px; font-weight: bold; color: #f1f5f9; margin-bottom: 10px; letter-spacing: -0.3px; }
+.footer-brand   { font-size: 22px; font-weight: bold; color: #f1f5f9; margin-bottom: 10px; letter-spacing: -0.3px; display: flex; align-items: center; gap: 8px; }
+.footer-brand-img { width: 30px; height: 30px; }
 .footer-tagline { font-size: 14px; color: var(--footer-text); margin-bottom: 10px; font-style: italic; }
 .footer-body    { font-size: 14px; color: var(--footer-text-sub); line-height: 1.8; }
 
@@ -1012,6 +1017,9 @@ a:hover { text-decoration: underline; }
 .footer-disclaimer { font-size: 12px; color: var(--footer-text-dim); opacity: 0.8; }
 
 /* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 559px) {
+  .nav-menu { width: 100%; justify-content: space-between; }
+}
 @media (min-width: 560px) {
   .container { padding: 0 24px 48px; }
   .domain-item { padding: 11px 0; }

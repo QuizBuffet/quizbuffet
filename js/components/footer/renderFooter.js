@@ -38,6 +38,12 @@ export function renderFooter() {
           </div>
 
           <div class="footer-col">
+            <div class="footer-col-title">Contact</div>
+            <p class="footer-body">Have a question, found a bug, or want to suggest content?</p>
+            <a class="footer-contact-btn" href="mailto:artivicolab@gmail.com?subject=QuizBuffet">Contact Us →</a>
+          </div>
+
+          <div class="footer-col">
             <div class="footer-col-title">Your Privacy &amp; Security</div>
             <ul class="footer-privacy-list">
               <li><strong>100% local storage.</strong> All your progress lives in your browser's localStorage — nothing is ever sent to a server.</li>

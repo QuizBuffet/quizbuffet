@@ -11,9 +11,9 @@ export function renderExplanation(question, onNext) {
       </div>`;
   }).join('');
 
-  const subject = encodeURIComponent(`Question report: ${question.id}`);
+  const subject = encodeURIComponent(`QuizBuffet - Question report: ${question.id}`);
   const body    = encodeURIComponent(`Question ID: ${question.id}\n\nIssue:\n`);
-  const report  = `<a class="report-link" href="mailto:quizbuffetinfo@gmail.com?subject=${subject}&body=${body}">Report this question</a>`;
+  const report  = `<a class="report-link" href="mailto:artivicolab@gmail.com?subject=${subject}&body=${body}">Report this question</a>`;
 
   const el = document.getElementById('explanation');
   el.innerHTML =

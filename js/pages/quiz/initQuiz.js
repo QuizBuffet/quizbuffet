@@ -103,11 +103,11 @@ export async function init() {
   const questions = await loadDomain(certSlug, domainSlug, certMeta);
 
   if (!questions.length) {
-    const subject = encodeURIComponent(`Missing questions: ${certSlug} / ${domainSlug}`);
+    const subject = encodeURIComponent(`QuizBuffet - Missing questions: ${certSlug} / ${domainSlug}`);
     const body    = encodeURIComponent(`Hi,\n\nNo questions loaded for:\nCert: ${certSlug}\nDomain: ${domainSlug}\n`);
     document.getElementById('question').innerHTML =
       `<p style="padding:12px 0">No questions available for this domain yet.</p>
-       <p style="padding:4px 0;font-size:14px"><a href="${backLink}">← Back</a> &nbsp;·&nbsp; <a href="mailto:quizbuffetinfo@gmail.com?subject=${subject}&body=${body}">Report missing content</a></p>`;
+       <p style="padding:4px 0;font-size:14px"><a href="${backLink}">← Back</a> &nbsp;·&nbsp; <a href="mailto:artivicolab@gmail.com?subject=${subject}&body=${body}">Report missing content</a></p>`;
     return;
   }
 

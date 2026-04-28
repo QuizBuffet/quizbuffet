@@ -70,7 +70,7 @@ async function route() {
         <h1 class="not-found-title">Page not found</h1>
         <p class="not-found-body">This page doesn't exist or the link is broken.</p>
         <a href="/" class="not-found-btn">← Back to Home</a>
-        <a href="mailto:quizbuffetinfo@gmail.com?subject=Broken link: ${encodeURIComponent(location.pathname + location.search)}" class="not-found-report">Report broken link</a>
+        <a href="mailto:artivicolab@gmail.com?subject=QuizBuffet%20-%20Broken%20link: ${encodeURIComponent(location.pathname + location.search)}" class="not-found-report">Report broken link</a>
       </div>
     </main>`;
 

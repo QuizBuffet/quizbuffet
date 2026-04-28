@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Static pages -->
+  <url>
+    <loc>https://quizbuffet.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Certification pages -->
+  <url>
+    <loc>https://quizbuffet.com/cert?cert=comptia-cloud-plus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quizbuffet.com/cert?cert=comptia-itf-plus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quizbuffet.com/cert?cert=comptia-cysa-plus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quizbuffet.com/cert?cert=comptia-pentest-plus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quizbuffet.com/cert?cert=comptia-a-plus-core-1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quizbuffet.com/cert?cert=comptia-a-plus-core-2</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quizbuffet.com/cert?cert=comptia-network-plus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quizbuffet.com/cert?cert=comptia-security-plus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://quizbuffet.com/cert?cert=comptia-data-plus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- CompTIA Cloud+ domains -->
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=cloud-architecture</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=deployment</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=operations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=security</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=devops-fundamentals</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=troubleshooting</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- CompTIA ITF+ domains -->
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=it-concepts-and-terminology</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=infrastructure</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=applications-and-software</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=software-development</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=database-fundamentals</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=security</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- CompTIA CySA+ domains -->
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cysa-plus&amp;domain=security-operations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cysa-plus&amp;domain=vulnerability-management</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cysa-plus&amp;domain=incident-response-management</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-cysa-plus&amp;domain=reporting-and-communication</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- CompTIA PenTest+ domains -->
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=engagement-management</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=reconnaissance-and-enumeration</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=vulnerability-discovery-and-analysis</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=attacks-and-exploits</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=post-exploitation-and-lateral-movement</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- CompTIA A+ Core 1 domains -->
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=mobile-devices</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=networking</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=hardware</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=virtualization-and-cloud-computing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=hardware-and-network-troubleshooting</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- CompTIA A+ Core 2 domains -->
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-2&amp;domain=operating-systems</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-2&amp;domain=security</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-2&amp;domain=software-troubleshooting</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-2&amp;domain=operational-procedures</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- CompTIA Network+ domains -->
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=networking-concepts</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=network-implementation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=network-operations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=network-security</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=network-troubleshooting</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- CompTIA Security+ domains -->
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=general-security-concepts</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=threats-vulnerabilities-and-mitigations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=security-architecture</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=security-operations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=security-program-management-and-oversight</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- CompTIA Data+ domains -->
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=data-concepts-and-environments</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=data-acquisition-and-preparation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=data-analysis</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=visualization-and-reporting</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=data-governance</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+</urlset>

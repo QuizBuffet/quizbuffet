@@ -1,0 +1,116 @@
+{
+  "slug": "deployment",
+  "name": "Deployment",
+  "cert": "comptia-cloud-plus",
+  "version": 1,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "text": "Which cloud deployment model is hosted entirely on the public internet, shared among multiple organizations, and managed by the provider?",
+      "answers": [
+        { "id": "a", "text": "Private cloud" },
+        { "id": "b", "text": "Hybrid cloud" },
+        { "id": "c", "text": "Community cloud" },
+        { "id": "d", "text": "Public cloud" }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "A private cloud is operated solely for one organization, either on-premises or hosted.",
+        "b": "A hybrid cloud combines public and private clouds connected by technology that allows data and applications to move between them.",
+        "c": "A community cloud is shared by organizations with common concerns (e.g., government agencies or healthcare providers).",
+        "d": "A public cloud is owned and operated by a third-party provider and delivered over the internet to multiple tenants. This is the correct answer."
+      }
+    },
+    {
+      "id": 2,
+      "difficulty": "medium",
+      "text": "A team needs to release a new version with zero downtime. They run two identical environments — the current version (blue) and the new version (green). Traffic is shifted to green after validation. What strategy is this?",
+      "answers": [
+        { "id": "a", "text": "Canary deployment" },
+        { "id": "b", "text": "Rolling deployment" },
+        { "id": "c", "text": "Blue-green deployment" },
+        { "id": "d", "text": "In-place deployment" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Canary releases shift a small percentage of traffic to the new version gradually — it does not use two full parallel environments.",
+        "b": "Rolling deployments update instances incrementally without maintaining a full parallel environment.",
+        "c": "Blue-green keeps two full environments running simultaneously, enabling instant cutover and fast rollback by switching traffic. This is the correct answer.",
+        "d": "In-place deployment updates the existing environment directly — there is no parallel environment for rollback."
+      }
+    },
+    {
+      "id": 3,
+      "difficulty": "medium",
+      "text": "A company moves its on-premises application to the cloud by redeploying it on a managed database service instead of running the database on a VM. Which migration strategy does this represent?",
+      "answers": [
+        { "id": "a", "text": "Rehost" },
+        { "id": "b", "text": "Replatform" },
+        { "id": "c", "text": "Re-architect" },
+        { "id": "d", "text": "Retire" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Rehosting (lift-and-shift) moves the application as-is to cloud VMs with no modifications.",
+        "b": "Replatforming makes targeted optimizations — like moving to a managed DB service — without redesigning the application architecture. This is the correct answer.",
+        "c": "Re-architecting involves fundamentally redesigning the application (e.g., breaking a monolith into microservices).",
+        "d": "Retire means decommissioning the application entirely."
+      }
+    },
+    {
+      "id": 4,
+      "difficulty": "medium",
+      "text": "Which risk is MOST associated with adopting a single cloud provider's proprietary managed services extensively?",
+      "answers": [
+        { "id": "a", "text": "Increased capital expenditure" },
+        { "id": "b", "text": "Vendor lock-in" },
+        { "id": "c", "text": "Reduced service availability" },
+        { "id": "d", "text": "Compliance violations" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Cloud services are typically operational expenditure, not capital expenditure.",
+        "b": "Heavy use of proprietary services makes it difficult and costly to migrate to another provider — this is vendor lock-in. This is the correct answer.",
+        "c": "Managed services typically improve availability compared to self-managed solutions.",
+        "d": "Compliance depends on configuration, not on using managed services specifically."
+      }
+    },
+    {
+      "id": 5,
+      "difficulty": "hard",
+      "text": "An IaC tool reports that the current state of a cloud resource differs from the desired state defined in code. What is this condition called?",
+      "answers": [
+        { "id": "a", "text": "Configuration sprawl" },
+        { "id": "b", "text": "Infrastructure drift" },
+        { "id": "c", "text": "Resource deprecation" },
+        { "id": "d", "text": "State corruption" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Configuration sprawl refers to unmanaged growth of configurations across environments — not a specific IaC state mismatch.",
+        "b": "Infrastructure drift occurs when the actual deployed state diverges from the IaC-defined desired state, often due to manual changes. Tools like Terraform detect and can remediate drift. This is the correct answer.",
+        "c": "Resource deprecation refers to cloud services or features being retired by the provider.",
+        "d": "State corruption describes a damaged IaC state file, which is different from a drift condition."
+      }
+    },
+    {
+      "id": 6,
+      "difficulty": "hard",
+      "text": "A canary deployment routes 5% of live traffic to the new version. After 30 minutes, error rates spike in the canary group. What is the correct immediate action?",
+      "answers": [
+        { "id": "a", "text": "Increase canary traffic to 50% to gather more data" },
+        { "id": "b", "text": "Roll back by redirecting all traffic back to the stable version" },
+        { "id": "c", "text": "Proceed with full rollout since only 5% of users are affected" },
+        { "id": "d", "text": "Reboot the canary instances to clear transient errors" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Increasing traffic to a known-erroring version would expose more users to the problem.",
+        "b": "The purpose of a canary release is to catch issues before full rollout. Elevated errors are the rollback trigger — redirect all traffic back to the stable version immediately. This is the correct answer.",
+        "c": "Even 5% of users experiencing errors is unacceptable; the canary is designed to prevent broader impact.",
+        "d": "Rebooting does not address the root cause and delays the necessary rollback decision."
+      }
+    }
+  ]
+}

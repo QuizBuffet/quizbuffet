@@ -1,0 +1,116 @@
+{
+  "slug": "operations",
+  "name": "Operations",
+  "cert": "comptia-cloud-plus",
+  "version": 1,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "text": "Which observability component records discrete events over time, such as error messages, API calls, and authentication attempts?",
+      "answers": [
+        { "id": "a", "text": "Metrics" },
+        { "id": "b", "text": "Logs" },
+        { "id": "c", "text": "Traces" },
+        { "id": "d", "text": "Alerts" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Metrics are numerical measurements aggregated over time (e.g., CPU percentage, request rate) — not event records.",
+        "b": "Logs capture timestamped records of discrete events, making them essential for auditing, debugging, and security analysis. This is the correct answer.",
+        "c": "Traces follow a request's path through distributed systems to identify latency bottlenecks — not discrete event records.",
+        "d": "Alerts are notifications triggered when metrics or log patterns cross defined thresholds — they depend on logs and metrics."
+      }
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "text": "A web application is seeing increased load. The team adds more instances to the server pool. Which scaling type is this?",
+      "answers": [
+        { "id": "a", "text": "Vertical scaling" },
+        { "id": "b", "text": "Horizontal scaling" },
+        { "id": "c", "text": "Scheduled scaling" },
+        { "id": "d", "text": "Manual rightsizing" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Vertical scaling increases the size of an existing instance (more CPU/RAM) — not adding more instances.",
+        "b": "Horizontal scaling (scale out) adds more instances to distribute load across a larger pool. This is the correct answer.",
+        "c": "Scheduled scaling is a trigger mechanism, not a type — it can initiate horizontal or vertical scaling.",
+        "d": "Rightsizing adjusts instance size to match actual usage needs — not the same as adding instances under load."
+      }
+    },
+    {
+      "id": 3,
+      "difficulty": "medium",
+      "text": "A full backup runs every Sunday. Incremental backups run Monday through Saturday. A restore is needed on Friday. Which backup sets are required?",
+      "answers": [
+        { "id": "a", "text": "Sunday full backup only" },
+        { "id": "b", "text": "Sunday full backup plus Monday, Tuesday, Wednesday, and Thursday incremental backups" },
+        { "id": "c", "text": "Thursday incremental backup only" },
+        { "id": "d", "text": "Sunday full backup plus the Thursday differential backup" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "The Sunday backup alone would only restore data to that point in time — missing four days of changes.",
+        "b": "Incremental backups capture only changes since the last backup (of any kind). To restore Friday, you need Sunday full + Mon + Tue + Wed + Thu incrementals applied in sequence. This is the correct answer.",
+        "c": "Thursday's incremental only captures Thursday's changes — useless without all preceding backups.",
+        "d": "Differential backups capture changes since the last full backup. This question specifies incrementals, not differentials."
+      }
+    },
+    {
+      "id": 4,
+      "difficulty": "medium",
+      "text": "A cloud workload needs to scale out automatically every weekday at 8 AM when business hours begin. Which scaling approach should be configured?",
+      "answers": [
+        { "id": "a", "text": "Load-triggered scaling" },
+        { "id": "b", "text": "Event-triggered scaling" },
+        { "id": "c", "text": "Scheduled scaling" },
+        { "id": "d", "text": "Manual scaling" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Load-triggered scaling reacts to metrics like CPU or request count — it waits for load to build before scaling, causing lag.",
+        "b": "Event-triggered scaling responds to discrete events (e.g., a message queue depth) — not time-based.",
+        "c": "Scheduled scaling pre-emptively adjusts capacity at defined times, ideal for predictable patterns like business hours. This is the correct answer.",
+        "d": "Manual scaling requires a human action — not automated and not practical for daily recurring patterns."
+      }
+    },
+    {
+      "id": 5,
+      "difficulty": "hard",
+      "text": "During a DR exercise, the team finds that restoring the database from backup takes 6 hours, but the agreed RTO is 2 hours. Which action best resolves this gap?",
+      "answers": [
+        { "id": "a", "text": "Increase backup frequency from daily to hourly" },
+        { "id": "b", "text": "Switch to a warm site with near-real-time replication" },
+        { "id": "c", "text": "Move backups from on-site to off-site storage" },
+        { "id": "d", "text": "Enable differential backups instead of full backups" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Increasing backup frequency reduces data loss (improves RPO) but does not significantly reduce the time to restore from backup (RTO).",
+        "b": "A warm site with near-real-time replication eliminates the restore process — failover switches to the replica, meeting a 2-hour RTO. This is the correct answer.",
+        "c": "Moving backups off-site improves resilience but does not speed up the restore process.",
+        "d": "Differential backups reduce restore time compared to incrementals but would still not meet a 2-hour RTO if the full backup restore alone takes 6 hours."
+      }
+    },
+    {
+      "id": 6,
+      "difficulty": "hard",
+      "text": "A cloud VM has reached end of support for its OS. The vendor no longer releases security patches. What is the PRIMARY risk of continuing to run this VM?",
+      "answers": [
+        { "id": "a", "text": "The VM will be automatically shut down by the cloud provider" },
+        { "id": "b", "text": "Unpatched vulnerabilities will accumulate, increasing the attack surface over time" },
+        { "id": "c", "text": "The VM will lose network connectivity" },
+        { "id": "d", "text": "Storage IOPS will degrade" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Cloud providers do not forcibly shut down VMs running end-of-support operating systems.",
+        "b": "Without vendor patches, newly discovered vulnerabilities remain open indefinitely, making the VM increasingly vulnerable to exploitation. This is the correct answer.",
+        "c": "End of OS support does not affect network connectivity.",
+        "d": "Storage performance is unrelated to OS support status."
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "slug": "network-security",
+  "name": "Network Security",
+  "category": "cybersecurity",
+  "version": 1,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "text": "Which protocol provides encrypted communication over port 443?",
+      "answers": [
+        { "id": "a", "text": "HTTP" },
+        { "id": "b", "text": "HTTPS / TLS" },
+        { "id": "c", "text": "FTP" },
+        { "id": "d", "text": "Telnet" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "HTTP uses port 80 and transmits data in plaintext — no encryption.",
+        "b": "HTTPS uses TLS to encrypt data in transit and runs on port 443. This is the correct answer.",
+        "c": "FTP uses ports 20/21 and is unencrypted by default.",
+        "d": "Telnet uses port 23 and sends all data including credentials in plaintext."
+      }
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "text": "What does a firewall primarily do?",
+      "answers": [
+        { "id": "a", "text": "Encrypts all network traffic" },
+        { "id": "b", "text": "Filters incoming and outgoing traffic based on rules" },
+        { "id": "c", "text": "Assigns IP addresses to devices" },
+        { "id": "d", "text": "Scans files for malware" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Encryption is handled by protocols like TLS/IPSec, not firewalls.",
+        "b": "Firewalls inspect packets and allow or deny them based on configured rules. This is the correct answer.",
+        "c": "IP address assignment is done by a DHCP server.",
+        "d": "Malware scanning is performed by antivirus/endpoint protection software."
+      }
+    },
+    {
+      "id": 3,
+      "difficulty": "easy",
+      "text": "Which port does DNS typically use?",
+      "answers": [
+        { "id": "a", "text": "21" },
+        { "id": "b", "text": "53" },
+        { "id": "c", "text": "80" },
+        { "id": "d", "text": "110" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Port 21 is used by FTP for control connections.",
+        "b": "DNS operates on port 53 for both UDP (queries) and TCP (zone transfers). This is the correct answer.",
+        "c": "Port 80 is used by HTTP.",
+        "d": "Port 110 is used by POP3 for email retrieval."
+      }
+    },
+    {
+      "id": 4,
+      "difficulty": "medium",
+      "text": "What is a DMZ (Demilitarized Zone) in network security?",
+      "answers": [
+        { "id": "a", "text": "A zone with no network access at all" },
+        { "id": "b", "text": "A subnet that exposes external-facing services while isolating the internal network" },
+        { "id": "c", "text": "A VPN endpoint for remote users" },
+        { "id": "d", "text": "A backup network segment for disaster recovery" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "A DMZ is not isolated — it is intentionally accessible from the internet.",
+        "b": "A DMZ sits between the internet and internal network, hosting services like web servers while protecting internal resources. This is the correct answer.",
+        "c": "VPN endpoints are separate infrastructure; a DMZ can contain one but is not defined by it.",
+        "d": "Backup segments are separate; a DMZ serves live internet-facing services."
+      }
+    },
+    {
+      "id": 5,
+      "difficulty": "medium",
+      "text": "What is the purpose of Network Address Translation (NAT)?",
+      "answers": [
+        { "id": "a", "text": "To encrypt network packets" },
+        { "id": "b", "text": "To map private IP addresses to a public IP address" },
+        { "id": "c", "text": "To assign domain names to IP addresses" },
+        { "id": "d", "text": "To monitor network traffic for anomalies" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "NAT does not encrypt traffic; IPSec or TLS handles encryption.",
+        "b": "NAT allows multiple devices on a private network to share one public IP address. This is the correct answer.",
+        "c": "DNS maps domain names to IP addresses, not NAT.",
+        "d": "Intrusion Detection Systems (IDS) monitor traffic for anomalies."
+      }
+    },
+    {
+      "id": 6,
+      "difficulty": "medium",
+      "text": "Which protocol is used to securely manage network devices remotely?",
+      "answers": [
+        { "id": "a", "text": "Telnet" },
+        { "id": "b", "text": "SNMP v1" },
+        { "id": "c", "text": "SSH" },
+        { "id": "d", "text": "HTTP" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Telnet sends data in plaintext, making it insecure for remote management.",
+        "b": "SNMP v1 lacks authentication and encryption — SNMPv3 is the secure version.",
+        "c": "SSH (Secure Shell) provides encrypted remote management over port 22. This is the correct answer.",
+        "d": "HTTP is unencrypted; HTTPS would be used for web-based management interfaces."
+      }
+    },
+    {
+      "id": 7,
+      "difficulty": "hard",
+      "text": "What is the primary difference between a stateful and stateless firewall?",
+      "answers": [
+        { "id": "a", "text": "Stateful firewalls are faster because they do not inspect packet headers" },
+        { "id": "b", "text": "Stateless firewalls track active connections; stateful ones inspect each packet in isolation" },
+        { "id": "c", "text": "Stateful firewalls track the state of active connections; stateless ones inspect each packet independently" },
+        { "id": "d", "text": "Stateless firewalls use deep packet inspection; stateful ones do not" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Stateful firewalls actually do more work — tracking connection tables, not less.",
+        "b": "This reverses the definitions of stateful and stateless.",
+        "c": "Stateful firewalls maintain connection state tables to allow return traffic; stateless firewalls evaluate each packet independently. This is the correct answer.",
+        "d": "Deep packet inspection is a separate capability unrelated to stateful vs. stateless distinction."
+      }
+    },
+    {
+      "id": 8,
+      "difficulty": "hard",
+      "text": "Which VPN protocol is considered the most secure for site-to-site connections?",
+      "answers": [
+        { "id": "a", "text": "PPTP" },
+        { "id": "b", "text": "L2TP without IPSec" },
+        { "id": "c", "text": "IPSec in tunnel mode" },
+        { "id": "d", "text": "SSTP" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "PPTP uses weak MS-CHAPv2 authentication and is considered broken by modern standards.",
+        "b": "L2TP alone provides no encryption; it requires IPSec for security.",
+        "c": "IPSec tunnel mode encapsulates the entire IP packet, providing strong authentication and encryption for site-to-site VPNs. This is the correct answer.",
+        "d": "SSTP is Microsoft-specific and primarily used for remote access, not site-to-site."
+      }
+    }
+  ]
+}

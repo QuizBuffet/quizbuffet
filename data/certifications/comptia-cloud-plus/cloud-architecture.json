@@ -1,0 +1,152 @@
+{
+  "slug": "cloud-architecture",
+  "name": "Cloud Architecture",
+  "cert": "comptia-cloud-plus",
+  "version": 1,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "text": "A company wants to run a web application without managing the underlying servers, OS, or runtime. Which cloud service model best fits this requirement?",
+      "answers": [
+        { "id": "a", "text": "Infrastructure as a Service (IaaS)" },
+        { "id": "b", "text": "Platform as a Service (PaaS)" },
+        { "id": "c", "text": "Software as a Service (SaaS)" },
+        { "id": "d", "text": "Function as a Service (FaaS)" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "IaaS gives you VMs and networking but you still manage the OS, runtime, and middleware.",
+        "b": "PaaS abstracts the underlying infrastructure so developers focus on code and data — the provider handles OS, runtime, and scaling. This is the correct answer.",
+        "c": "SaaS is a fully delivered application (like Gmail) — the customer has no control over the code or runtime.",
+        "d": "FaaS runs individual functions on-demand, not full applications with persistent state."
+      }
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "text": "Under the shared responsibility model in a public cloud IaaS environment, which element is the CUSTOMER responsible for?",
+      "answers": [
+        { "id": "a", "text": "Physical data center security" },
+        { "id": "b", "text": "Hypervisor patching" },
+        { "id": "c", "text": "Guest OS patching and configuration" },
+        { "id": "d", "text": "Network switch firmware" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Physical security of the data center is always the cloud provider's responsibility.",
+        "b": "The hypervisor is managed by the cloud provider in IaaS — you never touch it.",
+        "c": "In IaaS, the customer owns everything from the guest OS up: patching, configuration, and application security. This is the correct answer.",
+        "d": "Physical network hardware is the provider's responsibility."
+      }
+    },
+    {
+      "id": 3,
+      "difficulty": "medium",
+      "text": "A business can tolerate losing up to 4 hours of data in a disaster scenario. Which disaster recovery metric describes this requirement?",
+      "answers": [
+        { "id": "a", "text": "Recovery Time Objective (RTO)" },
+        { "id": "b", "text": "Recovery Point Objective (RPO)" },
+        { "id": "c", "text": "Mean Time to Recovery (MTTR)" },
+        { "id": "d", "text": "Mean Time Between Failures (MTBF)" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "RTO defines the maximum acceptable time to restore service after a disaster — not data loss.",
+        "b": "RPO defines how much data loss is acceptable, measured in time from the last good backup. A 4-hour RPO means backups must run at least every 4 hours. This is the correct answer.",
+        "c": "MTTR is the average time to repair a failed component — not a DR planning metric.",
+        "d": "MTBF measures the average time between failures — a reliability metric, not a DR metric."
+      }
+    },
+    {
+      "id": 4,
+      "difficulty": "medium",
+      "text": "A DR site has all infrastructure pre-configured and data replicated in real time. It can take over within minutes. Which type of DR site is this?",
+      "answers": [
+        { "id": "a", "text": "Cold site" },
+        { "id": "b", "text": "Warm site" },
+        { "id": "c", "text": "Hot site" },
+        { "id": "d", "text": "Cloud bursting site" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "A cold site is empty — it has power and connectivity but requires equipment and configuration before use, taking days to weeks.",
+        "b": "A warm site has hardware and partial configuration but data is not fully current; failover takes hours.",
+        "c": "A hot site mirrors the primary environment with live data replication and can fail over within minutes. This is the correct answer.",
+        "d": "Cloud bursting is an elasticity pattern for handling demand spikes, not a DR site classification."
+      }
+    },
+    {
+      "id": 5,
+      "difficulty": "medium",
+      "text": "Which storage type is best suited for storing large amounts of unstructured data such as images and log files, accessed via HTTP?",
+      "answers": [
+        { "id": "a", "text": "Block storage" },
+        { "id": "b", "text": "File storage" },
+        { "id": "c", "text": "Object storage" },
+        { "id": "d", "text": "Archive storage" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Block storage presents raw volumes to VMs — it is not HTTP-accessible and is not suited for large unstructured data at scale.",
+        "b": "File storage uses a filesystem hierarchy (NFS/SMB) — it works for shared files but does not scale as cheaply as object storage for massive unstructured data.",
+        "c": "Object storage (e.g., S3, Azure Blob) stores data as objects accessible via HTTP/REST, scales to petabytes, and is ideal for images, logs, and backups. This is the correct answer.",
+        "d": "Archive storage is for rarely accessed data with retrieval delays — not for actively accessed images."
+      }
+    },
+    {
+      "id": 6,
+      "difficulty": "medium",
+      "text": "A developer wants to run stateless event handlers that execute only when triggered, with no idle infrastructure costs. Which compute model fits best?",
+      "answers": [
+        { "id": "a", "text": "Virtual Machine (VM)" },
+        { "id": "b", "text": "Container with always-on orchestration" },
+        { "id": "c", "text": "Function as a Service (FaaS)" },
+        { "id": "d", "text": "Dedicated host" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "VMs are always running and incur cost even when idle — not suitable for event-driven, zero-idle-cost workloads.",
+        "b": "Containers on always-on orchestration still consume resources at rest.",
+        "c": "FaaS (serverless functions) runs code only on trigger events and charges per execution — zero cost when idle. This is the correct answer.",
+        "d": "A dedicated host is a physical server reserved for one customer — maximum cost, never idle."
+      }
+    },
+    {
+      "id": 7,
+      "difficulty": "hard",
+      "text": "Which cloud billing model provides the LOWEST cost for a production workload that runs continuously 24/7 with predictable resource needs?",
+      "answers": [
+        { "id": "a", "text": "Pay-as-you-go (on-demand)" },
+        { "id": "b", "text": "Spot instance" },
+        { "id": "c", "text": "Reserved instance" },
+        { "id": "d", "text": "Dedicated host" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "On-demand is the most flexible but most expensive per hour — no discount for commitment.",
+        "b": "Spot instances are cheapest but can be terminated with little notice — unsuitable for continuous production workloads.",
+        "c": "Reserved instances offer up to 72% discount over on-demand in exchange for a 1- or 3-year commitment, making them ideal for steady, predictable workloads. This is the correct answer.",
+        "d": "Dedicated hosts guarantee physical isolation but are the most expensive option."
+      }
+    },
+    {
+      "id": 8,
+      "difficulty": "hard",
+      "text": "A VPC in region A needs low-latency connectivity to a VPC in region B from the same provider. Both VPCs use non-overlapping CIDR blocks. What is the most direct solution?",
+      "answers": [
+        { "id": "a", "text": "VPN gateway between the two VPCs" },
+        { "id": "b", "text": "VPC peering" },
+        { "id": "c", "text": "Transit gateway with full mesh routing" },
+        { "id": "d", "text": "Content delivery network (CDN)" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "A VPN gateway adds encryption overhead and latency — useful for on-premises connectivity, not optimal for same-provider VPC-to-VPC.",
+        "b": "VPC peering creates a direct private network route between two VPCs with no bandwidth bottleneck or extra hops — the simplest and lowest-latency option for two VPCs. This is the correct answer.",
+        "c": "A transit gateway is the right choice when connecting many VPCs, but adds unnecessary complexity for just two.",
+        "d": "A CDN caches and distributes content to edge locations — it does not create private network connectivity between VPCs."
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+/*
+  Background animation contract — any bg-*.css file must follow this pattern:
+    - Target body::before (layer 1) and body::after (layer 2)
+    - Always include: position:fixed; inset:0; pointer-events:none; z-index:-1
+    - Keep opacity values low — this must never compete with content
+  To swap animations, replace this file's <link> in HTML with another bg-*.css
+*/
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Layer 1 — small dots on a 44px grid, fades in and out slowly */
+body::before {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.09) 1px, transparent 1px);
+  background-size: 44px 44px;
+  animation: bg-pulse-a 5s ease-in-out infinite;
+}
+
+/* Layer 2 — offset dots on a 66px grid, pulses out of phase with layer 1 */
+body::after {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 66px 66px;
+  background-position: 22px 22px;
+  animation: bg-pulse-b 7s ease-in-out infinite;
+}
+
+@keyframes bg-pulse-a {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1;   }
+}
+
+@keyframes bg-pulse-b {
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.2; }
+}

@@ -1,0 +1,152 @@
+{
+  "slug": "cryptography",
+  "name": "Cryptography & PKI",
+  "category": "cybersecurity",
+  "version": 1,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "text": "Which hashing algorithm produces a 256-bit output and is considered cryptographically secure?",
+      "answers": [
+        { "id": "a", "text": "MD5" },
+        { "id": "b", "text": "SHA-1" },
+        { "id": "c", "text": "SHA-256" },
+        { "id": "d", "text": "CRC32" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "MD5 produces a 128-bit hash and is considered cryptographically broken due to collision attacks.",
+        "b": "SHA-1 produces a 160-bit hash and is deprecated due to demonstrated collision vulnerabilities.",
+        "c": "SHA-256 is part of the SHA-2 family, produces a 256-bit hash, and is widely trusted. This is the correct answer.",
+        "d": "CRC32 is a checksum for error detection, not a cryptographic hash function."
+      }
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "text": "What is symmetric encryption?",
+      "answers": [
+        { "id": "a", "text": "Encryption that uses two different keys — one to encrypt and one to decrypt" },
+        { "id": "b", "text": "Encryption that uses the same key for both encryption and decryption" },
+        { "id": "c", "text": "A hashing method that cannot be reversed" },
+        { "id": "d", "text": "Encryption that uses a public/private key pair" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Using two different keys describes asymmetric encryption.",
+        "b": "Symmetric encryption uses one shared secret key for both operations. This is the correct answer.",
+        "c": "Hashing is a one-way function; symmetric encryption is reversible with the key.",
+        "d": "Public/private key pairs describe asymmetric (public-key) encryption."
+      }
+    },
+    {
+      "id": 3,
+      "difficulty": "easy",
+      "text": "What does a digital certificate primarily bind together?",
+      "answers": [
+        { "id": "a", "text": "A username and a password hash" },
+        { "id": "b", "text": "A public key and an identity (e.g., domain name or individual)" },
+        { "id": "c", "text": "A private key and a server's IP address" },
+        { "id": "d", "text": "An encryption algorithm and a session key" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Passwords are not part of digital certificates.",
+        "b": "A certificate is an identity-signed binding of a public key to an entity, verified by a Certificate Authority. This is the correct answer.",
+        "c": "Private keys are never included in a certificate — only the public key.",
+        "d": "Session keys are negotiated at runtime, not stored in certificates."
+      }
+    },
+    {
+      "id": 4,
+      "difficulty": "medium",
+      "text": "What is the role of a Certificate Authority (CA)?",
+      "answers": [
+        { "id": "a", "text": "To generate symmetric keys for TLS sessions" },
+        { "id": "b", "text": "To issue and sign digital certificates, vouching for the identity of certificate holders" },
+        { "id": "c", "text": "To store private keys on behalf of users" },
+        { "id": "d", "text": "To encrypt email messages end-to-end" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Session key generation is handled during the TLS handshake, not by the CA.",
+        "b": "A CA is a trusted third party that signs certificates, establishing trust in a public key's ownership. This is the correct answer.",
+        "c": "CAs do not store private keys; that would compromise security.",
+        "d": "Email encryption uses S/MIME or PGP; the CA role is to issue certificates, not encrypt messages."
+      }
+    },
+    {
+      "id": 5,
+      "difficulty": "medium",
+      "text": "What is the difference between hashing and encryption?",
+      "answers": [
+        { "id": "a", "text": "Hashing uses a key; encryption does not" },
+        { "id": "b", "text": "Both are reversible with the right key" },
+        { "id": "c", "text": "Hashing is a one-way function; encryption is reversible with a key" },
+        { "id": "d", "text": "Hashing is slower than encryption" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Standard hashing functions do not use a key; HMAC does, but basic hashing does not.",
+        "b": "Hashing is not reversible — that is the key property that distinguishes it from encryption.",
+        "c": "Hashing produces a fixed-length digest that cannot be reversed; encryption requires a key to decrypt. This is the correct answer.",
+        "d": "Speed depends on algorithm; the directional difference is the defining characteristic."
+      }
+    },
+    {
+      "id": 6,
+      "difficulty": "medium",
+      "text": "What is a rainbow table attack?",
+      "answers": [
+        { "id": "a", "text": "A brute-force attack using random character combinations" },
+        { "id": "b", "text": "An attack that uses precomputed hash-value tables to reverse-lookup passwords from their hashes" },
+        { "id": "c", "text": "An attack that exploits color-coded vulnerability levels in a CVSS report" },
+        { "id": "d", "text": "A side-channel attack targeting CPU cache timing" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Random brute force does not use precomputed tables; rainbow tables trade storage for speed.",
+        "b": "Rainbow tables contain precomputed hash chains allowing fast lookup of plaintext for a given hash. This is the correct answer.",
+        "c": "CVSS scores use severity levels, unrelated to rainbow tables.",
+        "d": "Cache timing attacks are a side-channel technique unrelated to hash cracking."
+      }
+    },
+    {
+      "id": 7,
+      "difficulty": "hard",
+      "text": "What property of a cryptographic hash function ensures two different inputs cannot produce the same hash?",
+      "answers": [
+        { "id": "a", "text": "Pre-image resistance" },
+        { "id": "b", "text": "Diffusion" },
+        { "id": "c", "text": "Collision resistance" },
+        { "id": "d", "text": "Key stretching" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Pre-image resistance means it is hard to find an input that produces a given hash — not about two inputs colliding.",
+        "b": "Diffusion is a cipher property where plaintext changes propagate throughout the ciphertext.",
+        "c": "Collision resistance means it is computationally infeasible to find two different inputs with the same hash. This is the correct answer.",
+        "d": "Key stretching (e.g., PBKDF2, bcrypt) increases the computational cost of hashing for password storage."
+      }
+    },
+    {
+      "id": 8,
+      "difficulty": "hard",
+      "text": "In asymmetric cryptography, what key is used to encrypt data that only the recipient can decrypt?",
+      "answers": [
+        { "id": "a", "text": "The recipient's private key" },
+        { "id": "b", "text": "The sender's private key" },
+        { "id": "c", "text": "The recipient's public key" },
+        { "id": "d", "text": "A session key derived from Diffie-Hellman" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "The private key is kept secret and used for decryption, not encryption by others.",
+        "b": "The sender's private key is used for signing, not for encrypting confidential data to a recipient.",
+        "c": "Anyone can encrypt with the recipient's public key; only the recipient's private key can decrypt it. This is the correct answer.",
+        "d": "Diffie-Hellman establishes a shared session key — that is a different operation than public-key encryption."
+      }
+    }
+  ]
+}

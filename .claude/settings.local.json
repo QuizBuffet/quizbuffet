@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --input-type=module)",
+      "Bash(node --input-type=module --eval 'import\\('\\\\''file://__TRACKED_VAR__'\\\\''\\)')",
+      "Bash(xargs cat *)",
+      "Bash(python3 -m http.server 8765)",
+      "Bash(node -e ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(sort -t/ -k1)",
+      "Bash(read f *)",
+      "Bash(python3 -c 'import json; d=json.load\\(open\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\); print\\(len\\(d.get\\('\\\\''questions'\\\\'',[]\\)\\)\\)')"
+    ]
+  }
+}

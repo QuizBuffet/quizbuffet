@@ -1,0 +1,170 @@
+{
+  "slug": "threats-attacks",
+  "name": "Threats & Attacks",
+  "category": "cybersecurity",
+  "version": 1,
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "text": "What type of attack floods a target with traffic to make it unavailable to legitimate users?",
+      "answers": [
+        { "id": "a", "text": "Phishing" },
+        { "id": "b", "text": "SQL Injection" },
+        { "id": "c", "text": "Denial of Service (DoS)" },
+        { "id": "d", "text": "Man-in-the-Middle" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Phishing deceives users into revealing credentials via fake emails or websites.",
+        "b": "SQL Injection manipulates database queries through unsanitized user input.",
+        "c": "DoS/DDoS attacks overwhelm a target with traffic, exhausting its resources. This is the correct answer.",
+        "d": "MitM intercepts communications between two parties, potentially altering them."
+      }
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "text": "What is phishing?",
+      "answers": [
+        { "id": "a", "text": "A brute-force attack on passwords" },
+        { "id": "b", "text": "A social engineering attack that tricks users into revealing sensitive information" },
+        { "id": "c", "text": "Malware that encrypts files and demands a ransom" },
+        { "id": "d", "text": "An attack that exploits unpatched software vulnerabilities" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Brute-force attacks systematically try password combinations — that is credential stuffing or password spraying.",
+        "b": "Phishing uses deceptive emails or fake sites to steal credentials or install malware. This is the correct answer.",
+        "c": "Encrypting files for ransom describes ransomware.",
+        "d": "Exploiting unpatched vulnerabilities describes an exploit attack or zero-day attack."
+      }
+    },
+    {
+      "id": 3,
+      "difficulty": "easy",
+      "text": "What is ransomware?",
+      "answers": [
+        { "id": "a", "text": "Software that spies on user activity" },
+        { "id": "b", "text": "Malware that encrypts victim data and demands payment for decryption" },
+        { "id": "c", "text": "A virus that deletes system files" },
+        { "id": "d", "text": "A worm that spreads through email attachments" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Software that spies on user activity is called spyware.",
+        "b": "Ransomware encrypts data and extorts the victim for a decryption key. This is the correct answer.",
+        "c": "File-deleting malware is typically a wiper or destructive virus.",
+        "d": "Email-spreading worms are a separate malware category, though ransomware can be delivered via email."
+      }
+    },
+    {
+      "id": 4,
+      "difficulty": "medium",
+      "text": "What distinguishes a zero-day vulnerability from other vulnerabilities?",
+      "answers": [
+        { "id": "a", "text": "It can only be exploited on day zero of software release" },
+        { "id": "b", "text": "It is publicly known but has no patch available yet" },
+        { "id": "c", "text": "It is unknown to the software vendor and has no patch" },
+        { "id": "d", "text": "It requires physical access to exploit" }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Zero-day does not literally mean day zero of release — it refers to vendor awareness.",
+        "b": "A vulnerability that is public but unpatched is an n-day vulnerability, not strictly a zero-day.",
+        "c": "A zero-day is unknown to the vendor, giving them zero days to prepare a fix. This is the correct answer.",
+        "d": "Zero-days can be exploited remotely; physical access is not a requirement."
+      }
+    },
+    {
+      "id": 5,
+      "difficulty": "medium",
+      "text": "What is SQL Injection?",
+      "answers": [
+        { "id": "a", "text": "A method to speed up database queries" },
+        { "id": "b", "text": "Inserting malicious SQL statements into an input field to manipulate a database" },
+        { "id": "c", "text": "A type of virus that infects SQL Server installations" },
+        { "id": "d", "text": "A backup strategy for SQL databases" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Query optimization is a performance concern unrelated to SQL injection.",
+        "b": "SQL injection exploits unsanitized input to execute unauthorized database commands. This is the correct answer.",
+        "c": "SQL injection is an attack technique, not a virus.",
+        "d": "Backup strategies are a separate database administration topic."
+      }
+    },
+    {
+      "id": 6,
+      "difficulty": "medium",
+      "text": "What is a Man-in-the-Middle (MitM) attack?",
+      "answers": [
+        { "id": "a", "text": "An attacker who physically sits between two computers" },
+        { "id": "b", "text": "An attack where the adversary secretly intercepts and possibly alters communications between two parties" },
+        { "id": "c", "text": "A phishing attack targeting executives" },
+        { "id": "d", "text": "An attack that exploits misconfigured middleware software" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "MitM is a logical interception — physical proximity is not required.",
+        "b": "In a MitM attack, the adversary secretly relays and potentially alters messages between two communicating parties. This is the correct answer.",
+        "c": "Phishing targeting executives is called whaling or spear phishing.",
+        "d": "Middleware misconfiguration is a separate application security issue."
+      }
+    },
+    {
+      "id": 7,
+      "difficulty": "hard",
+      "text": "What is the difference between a virus and a worm?",
+      "answers": [
+        { "id": "a", "text": "Viruses encrypt files; worms steal data" },
+        { "id": "b", "text": "Viruses require a host file and user action to spread; worms self-replicate across networks without user interaction" },
+        { "id": "c", "text": "Worms require a host file; viruses spread autonomously" },
+        { "id": "d", "text": "There is no difference — the terms are interchangeable" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "File encryption is a characteristic of ransomware, not the virus/worm distinction.",
+        "b": "Viruses attach to host files and need user execution; worms propagate independently over networks. This is the correct answer.",
+        "c": "This reverses the definitions — viruses need hosts, worms do not.",
+        "d": "Virus and worm describe distinct propagation behaviors and are not interchangeable."
+      }
+    },
+    {
+      "id": 8,
+      "difficulty": "hard",
+      "text": "What is an Advanced Persistent Threat (APT)?",
+      "answers": [
+        { "id": "a", "text": "A single automated attack using multiple exploit kits" },
+        { "id": "b", "text": "A prolonged, targeted cyberattack in which an intruder remains undetected over an extended period" },
+        { "id": "c", "text": "A DDoS attack that lasts longer than 24 hours" },
+        { "id": "d", "text": "Malware that persists after a system reboot" }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "APTs are typically human-operated campaigns, not just automated exploit kits.",
+        "b": "APTs are sophisticated, long-term intrusions — often state-sponsored — aimed at data theft or sabotage. This is the correct answer.",
+        "c": "APT is not defined by DDoS duration; it refers to stealthy, targeted campaigns.",
+        "d": "Persistence mechanisms are a tactic within an APT, but an APT encompasses a full campaign."
+      }
+    },
+    {
+      "id": 9,
+      "difficulty": "hard",
+      "text": "What is cross-site scripting (XSS)?",
+      "answers": [
+        { "id": "a", "text": "An attack that injects malicious scripts into web pages viewed by other users" },
+        { "id": "b", "text": "A method for sharing scripts between different websites" },
+        { "id": "c", "text": "An attack that forges HTTP requests on behalf of a logged-in user" },
+        { "id": "d", "text": "A technique to bypass same-origin policy by modifying DNS" }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "XSS injects client-side scripts into pages, executing in the victim's browser to steal session tokens or perform actions. This is the correct answer.",
+        "b": "Script sharing between sites is a development practice unrelated to XSS.",
+        "c": "Forging authenticated requests describes CSRF (Cross-Site Request Forgery).",
+        "d": "DNS manipulation to bypass same-origin policy describes DNS rebinding, not XSS."
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 import { renderQuestion } from '../../components/question/renderQuestion.js';
 import { renderResults } from './renderResults.js';
 import { handleAnswer } from './handleAnswer.js';
+import { startTimer } from '../../utils/questionTimer.js';
 
 export function loadNextQuestion(queue, index, domainSlug, domainName, backLink, totalCount) {
   if (index >= queue.length) {
@@ -19,6 +20,7 @@ export function loadNextQuestion(queue, index, domainSlug, domainName, backLink,
   document.getElementById('explanation').innerHTML = '';
 
   const q = queue[index];
+  startTimer();
   renderQuestion(q, chosen =>
     handleAnswer(q, chosen, domainSlug, totalCount, () =>
       loadNextQuestion(queue, index + 1, domainSlug, domainName, backLink, totalCount),

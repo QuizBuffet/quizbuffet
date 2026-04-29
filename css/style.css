@@ -751,7 +751,8 @@ a:is(:hover, :active) { text-decoration: underline; }
 .flag-btn { background: none; border: 1px solid var(--border); color: var(--text-muted); font-size: 16px; padding: 2px 8px; cursor: pointer; border-radius: 4px; line-height: 1; flex-shrink: 0; }
 .flag-btn:is(:hover, :active) { border-color: #e8900a; color: #e8900a; }
 .flag-btn.flagged { border-color: #e8900a; color: #e8900a; background: rgba(232,144,10,0.08); }
-.question-text { font-size: clamp(17px, 4.5vw, 22px); font-weight: 600; margin-bottom: 16px; line-height: 1.7; }
+.question-text { font-size: clamp(17px, 4.5vw, 22px); font-weight: 600; margin-bottom: 8px; line-height: 1.7; }
+.question-timer { text-align: right; font-size: 11px; font-family: monospace; color: var(--text-dim); margin-bottom: 12px; min-height: 16px; letter-spacing: 0.5px; }
 
 /* 16px + 48px min-height = proper iOS touch targets with no zoom */
 .answer-btn {

@@ -45,6 +45,7 @@ const SHELLS = {
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <div id="quiz-meta" class="quiz-meta" role="status" aria-live="polite"></div>
       <div id="question" aria-live="polite" aria-atomic="true"></div>
+      <div id="question-timer" class="question-timer" aria-hidden="true"></div>
       <div id="answers" role="group" aria-label="Answer choices"></div>
       <div id="explanation" aria-live="polite"></div>
       <div id="ad-mid" class="ad-slot" style="display:none">Advertisement</div>

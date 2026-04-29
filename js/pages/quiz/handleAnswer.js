@@ -12,11 +12,13 @@ import { incrementErrorCount } from '../../storage/incrementErrorCount.js';
 import { recordCorrect, recordWrong } from '../../storage/streak.js';
 import { showStreakToast } from '../../components/streakToast/showStreakToast.js';
 import { playCorrect, playWrong } from '../../utils/playSound.js';
+import { stopTimer } from '../../utils/questionTimer.js';
 
 // domainSlug = session key (sessionStorage); questionStorageKey = per-question domain key (localStorage)
 // In mixed-domain mode these differ: session key is certSlug--__mix__, save key is the question's actual domain
 export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, questionStorageKey = domainSlug) {
   advanceSessionIndex(domainSlug);
+  stopTimer();
 
   document.querySelectorAll('.answer-btn').forEach(btn => {
     btn.disabled = true;

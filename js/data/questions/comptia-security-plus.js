@@ -5122,6 +5122,2513 @@ export const questions = [
   {"id":321,"domain":"2.0","objective":"2.2","keyword":"Typosquatting","difficulty":"easy","text":"What is typosquatting?","answers":[{"id":"a","text":"Typosquatting is a technique to evade intrusion detection systems using typing patterns"},{"id":"b","text":"Typosquatting registers domain names that are slight misspellings of legitimate websites (e.g., 'gooogle.com' instead of 'google.com') to capture traffic from users who mistype URLs, redirecting them to malicious sites or credential harvesting pages"},{"id":"c","text":"Typosquatting is a keyboard-based side channel attack recovering typed information"},{"id":"d","text":"Typosquatting uses autocorrect to change legitimate URLs to malicious ones"}],"correct":"b","explanations":{"a":"Typosquatting is a domain registration and web-based attack — not a network detection evasion technique.","b":"Typosquatting exploits common URL typing mistakes — the slight variation is close enough that users don't notice the error in their browser bar. This is the correct answer.","c":"Side channel attacks recover information through indirect observation — typosquatting is a URL-based misdirection attack.","d":"Autocorrect does not change URLs in browsers — typosquatting relies on user typing errors."}},
   {"id":322,"domain":"2.0","objective":"2.2","keyword":"Typosquatting","difficulty":"medium","text":"A developer accidentally types 'pip install reqeusts' (misspelling 'requests') and unknowingly installs a malicious package. What form of typosquatting does this represent?","answers":[{"id":"a","text":"This is web typosquatting — the developer visited a wrong website"},{"id":"b","text":"This is package repository typosquatting — attackers register malicious packages with names similar to popular legitimate packages on PyPI, npm, or other registries. Developers who mistype the package name during installation receive malicious code instead of the legitimate library. This supply chain attack exploits developer typing errors and is difficult to detect because the installation appears to succeed"},{"id":"c","text":"Package typosquatting is impossible because registries verify package legitimacy"},{"id":"d","text":"The developer should have used a different package manager"}],"correct":"b","explanations":{"a":"No web URL was involved — this is package registry typosquatting targeting developer tooling.","b":"Package typosquatting is a documented and widespread supply chain attack — malicious packages with typo-similar names have been found in PyPI, npm, and other registries. This is the correct answer.","c":"Package registries generally do not automatically verify package legitimacy — they rely on reporter systems and reactive removal.","d":"The package manager itself is not the issue — typosquatting affects all package repositories."}},
   {"id":323,"domain":"2.0","objective":"2.2","keyword":"Typosquatting","difficulty":"hard","text":"A company registers defensive domains for common misspellings of their brand domain. Analysis shows 47 additional typo variants still exist they do not own. How should they prioritize which additional domains to register?","answers":[{"id":"a","text":"Register all 47 remaining variants — every typo must be controlled"},{"id":"b","text":"Prioritize based on: traffic probability (common keyboard adjacency errors and one-character changes generate the most misdirected traffic); existing registration status (already registered by others requires takedown action rather than defensive registration); TLD risk (same misspelling in high-traffic TLDs like .com, .net, .org represents more risk than obscure TLDs); and impersonation risk (sites that most closely resemble yours and are most likely to be used for phishing). Focus resources on highest-traffic, highest-impersonation-risk variants"},{"id":"c","text":"Typosquatting defensive registration is unnecessary — customers will always notice URL errors"},{"id":"d","text":"Only register additional domains in the .com TLD — other TLDs are irrelevant"}],"correct":"b","explanations":{"a":"Registering all possible variants is cost-prohibitive and low-value for rare typos — risk-based prioritization focuses resources effectively.","b":"Risk-based defensive domain registration focuses resources on variants most likely to generate misdirected traffic and most capable of successful impersonation. This is the correct answer.","c":"Users regularly do not notice URL bar errors — typosquatting succeeds precisely because users don't always verify the URL.","d":"High-traffic TLDs beyond .com are relevant — .net, .org, and country-code TLDs relevant to the company's markets should be considered."}},
-  {"id":324,"domain":"2.0","objective":"2.2","keyword":"Typosquatting","difficulty":"hard","text":"Homograph attacks use visually identical Unicode characters to create domain names that appear identical to legitimate domains but are different at the DNS level (e.g., using Cyrillic 'а' instead of Latin 'a'). How does this extend the typosquatting concept and what makes it particularly dangerous?","answers":[{"id":"a","text":"Homograph attacks are blocked automatically by all modern browsers"},{"id":"b","text":"Homograph attacks extend typosquatting from typing errors to visual deception — the domain using Cyrillic characters is visually indistinguishable from the Latin version to most users. This is particularly dangerous because: users cannot detect the substitution without character-by-character inspection; it bypasses training on 'check the URL bar'; it appears legitimate in email links; and TLS certificates can be obtained for homograph domains, showing the padlock icon. Defenses include Unicode display policies in browsers (showing punycode for suspicious domains) and browser security features targeting this attack"},{"id":"c","text":"Homograph attacks only work in non-Latin alphabets — English websites are immune"},{"id":"d","text":"DNS would reject domains using non-Latin characters"}],"correct":"b","explanations":{"a":"Browser protection against homograph attacks varies — some browsers show Punycode for suspicious domains while others display the Unicode, and protection is not universal.","b":"Homograph attacks defeat the primary user-level defense (check the URL) by making the malicious URL visually identical to the legitimate one — a qualitative advancement over simple typosquatting. This is the correct answer.","c":"Homograph attacks using look-alike Latin characters (1 vs. l vs. I, 0 vs. O) also affect English domains — Cyrillic/Greek similar characters are an additional vector.","d":"ICANN has allowed internationalized domain names (IDNs) — homograph domains are registered through the IDN system and are technically valid DNS entries."}}
-
+  {"id":324,"domain":"2.0","objective":"2.2","keyword":"Typosquatting","difficulty":"hard","text":"Homograph attacks use visually identical Unicode characters to create domain names that appear identical to legitimate domains but are different at the DNS level (e.g., using Cyrillic 'а' instead of Latin 'a'). How does this extend the typosquatting concept and what makes it particularly dangerous?","answers":[{"id":"a","text":"Homograph attacks are blocked automatically by all modern browsers"},{"id":"b","text":"Homograph attacks extend typosquatting from typing errors to visual deception — the domain using Cyrillic characters is visually indistinguishable from the Latin version to most users. This is particularly dangerous because: users cannot detect the substitution without character-by-character inspection; it bypasses training on 'check the URL bar'; it appears legitimate in email links; and TLS certificates can be obtained for homograph domains, showing the padlock icon. Defenses include Unicode display policies in browsers (showing punycode for suspicious domains) and browser security features targeting this attack"},{"id":"c","text":"Homograph attacks only work in non-Latin alphabets — English websites are immune"},{"id":"d","text":"DNS would reject domains using non-Latin characters"}],"correct":"b","explanations":{"a":"Browser protection against homograph attacks varies — some browsers show Punycode for suspicious domains while others display the Unicode, and protection is not universal.","b":"Homograph attacks defeat the primary user-level defense (check the URL) by making the malicious URL visually identical to the legitimate one — a qualitative advancement over simple typosquatting. This is the correct answer.","c":"Homograph attacks using look-alike Latin characters (1 vs. l vs. I, 0 vs. O) also affect English domains — Cyrillic/Greek similar characters are an additional vector.","d":"ICANN has allowed internationalized domain names (IDNs) — homograph domains are registered through the IDN system and are technically valid DNS entries."}},
+  {
+    "id": 325,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Memory injection",
+    "difficulty": "easy",
+    "text": "What is memory injection as an application vulnerability?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A vulnerability where attackers inject malicious code directly into a running process's memory space, causing the process to execute attacker-controlled code without writing malicious files to disk"
+      },
+      {
+        "id": "b",
+        "text": "A vulnerability where applications write too much data to a network buffer"
+      },
+      {
+        "id": "c",
+        "text": "A vulnerability in database queries that allows injecting SQL commands"
+      },
+      {
+        "id": "d",
+        "text": "A vulnerability where attackers inject false data into log files"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Memory injection attacks (process injection, DLL injection, shellcode injection) place malicious code into a legitimate process's memory \u2014 allowing execution under the cover of a trusted process while evading file-based detection. This is the correct answer.",
+      "b": "Overwriting network buffers describes a buffer overflow \u2014 not memory injection.",
+      "c": "SQL command injection is a separate web application vulnerability \u2014 not memory injection.",
+      "d": "Log file manipulation is a different attack \u2014 not memory injection."
+    }
+  },
+  {
+    "id": 326,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Memory injection",
+    "difficulty": "medium",
+    "text": "An attacker uses process hollowing \u2014 replacing the code of a legitimate running process (svchost.exe) with malicious code while keeping the process's legitimate appearance. Why is this memory injection technique particularly effective at evading detection?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Process hollowing is only effective against old antivirus software"
+      },
+      {
+        "id": "b",
+        "text": "Process hollowing evades detection by: running malicious code under a legitimately named and legitimately started process (svchost.exe); bypassing application whitelisting (the process binary is legitimate); avoiding file-based AV scanning (no malicious file written to disk); inheriting the parent process's security context and network permissions; and appearing in process listings as a trusted system process. Detection requires memory scanning and behavioral analysis rather than file-based signatures"
+      },
+      {
+        "id": "c",
+        "text": "Process hollowing only works when the attacker has physical access to the system"
+      },
+      {
+        "id": "d",
+        "text": "Antivirus always detects process hollowing because it modifies system files"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Process hollowing evades modern endpoint security tools that rely on file-based detection \u2014 not just old antivirus.",
+      "b": "Process hollowing weaponizes legitimate processes as malware carriers \u2014 evading both whitelisting and file-based detection by leaving no malicious files on disk. This is the correct answer.",
+      "c": "Process hollowing is performed remotely through exploit code \u2014 physical access is not required.",
+      "d": "Process hollowing specifically avoids modifying system files \u2014 it runs malicious code in memory within a legitimate process."
+    }
+  },
+  {
+    "id": 327,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Memory injection",
+    "difficulty": "hard",
+    "text": "An EDR vendor claims their product detects all memory injection attacks by monitoring API calls commonly used for injection (VirtualAllocEx, WriteProcessMemory, CreateRemoteThread). An attacker uses a technique called 'indirect syscalls' to bypass this monitoring. What does this bypass technique demonstrate about memory injection defenses?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "API monitoring provides complete protection against all memory injection techniques"
+      },
+      {
+        "id": "b",
+        "text": "Indirect syscalls bypass user-mode API monitoring by invoking system calls directly through the kernel interface, avoiding the hooked Windows API functions that EDR products monitor. This demonstrates that memory injection defenses relying solely on API-level monitoring can be bypassed by attackers who invoke the underlying kernel mechanisms directly. Defense requires kernel-level monitoring (ETW, kernel callbacks) in addition to user-mode API hooks to address this bypass"
+      },
+      {
+        "id": "c",
+        "text": "Memory injection can only be detected after the attack has completed"
+      },
+      {
+        "id": "d",
+        "text": "Indirect syscalls are a theoretical technique that cannot be implemented in practice"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "API monitoring is bypassable \u2014 attackers continuously develop techniques to invoke functionality without going through monitored APIs.",
+      "b": "Indirect syscalls demonstrate the arms race between memory injection techniques and defenses \u2014 kernel-level monitoring provides deeper visibility that is harder to bypass. This is the correct answer.",
+      "c": "Modern EDR tools detect memory injection in real time during the attack \u2014 post-completion detection is not the only option.",
+      "d": "Indirect syscalls are a well-documented and actively used technique in malware \u2014 not theoretical."
+    }
+  },
+  {
+    "id": 328,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Memory injection",
+    "difficulty": "hard",
+    "text": "A fileless malware attack uses PowerShell to download and execute shellcode entirely in memory, never writing to disk. What security controls are specifically effective against this memory injection technique and which traditional controls are ineffective?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Traditional antivirus is fully effective against fileless malware \u2014 it scans all code regardless of location"
+      },
+      {
+        "id": "b",
+        "text": "Ineffective traditional controls: file-based antivirus (no file to scan); application whitelisting at the file level (PowerShell is a legitimate, whitelisted application). Effective controls: PowerShell script block logging capturing executed PowerShell content; AMSI (Antimalware Scan Interface) enabling AV to scan in-memory scripts before execution; behavioral EDR detecting shellcode execution patterns in memory; constrained language mode limiting PowerShell capabilities; and network monitoring detecting shellcode C2 communication patterns"
+      },
+      {
+        "id": "c",
+        "text": "Blocking PowerShell entirely eliminates fileless malware risk"
+      },
+      {
+        "id": "d",
+        "text": "Memory-based attacks cannot be detected until they cause visible system damage"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "File-based antivirus cannot scan code that never touches the file system \u2014 fileless malware specifically exploits this gap.",
+      "b": "Fileless malware requires defense controls targeting in-memory behavior and scripting engine activity rather than file system artifacts. This is the correct answer.",
+      "c": "Blocking PowerShell disrupts legitimate administration \u2014 and attackers would use alternative scripting engines (WMI, mshta, etc.).",
+      "d": "Modern EDR tools detect memory-based attacks in real time through behavioral analysis."
+    }
+  },
+  {
+    "id": 329,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Buffer overflow",
+    "difficulty": "easy",
+    "text": "What is a buffer overflow vulnerability and how is it exploited?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A buffer overflow occurs when an application runs out of memory and crashes"
+      },
+      {
+        "id": "b",
+        "text": "A buffer overflow occurs when a program writes more data to a buffer than it can hold \u2014 overwriting adjacent memory regions. Attackers craft input that overflows the buffer and overwrites critical memory locations (like the return address on the stack) with attacker-controlled values, redirecting execution to malicious code"
+      },
+      {
+        "id": "c",
+        "text": "A buffer overflow is a network flooding attack that overwhelms a target's connection capacity"
+      },
+      {
+        "id": "d",
+        "text": "A buffer overflow occurs when too many users simultaneously access a shared memory resource"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Buffer overflow is not merely an out-of-memory crash \u2014 it is a controlled memory corruption attack.",
+      "b": "Buffer overflows exploit insufficient bounds checking \u2014 writing beyond allocated buffer boundaries overwrites adjacent memory, enabling control flow hijacking. This is the correct answer.",
+      "c": "Network flooding is a DoS technique \u2014 buffer overflow is a memory corruption vulnerability.",
+      "d": "Concurrent access issues describe race conditions \u2014 buffer overflow is specifically about bounds checking failure."
+    }
+  },
+  {
+    "id": 330,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Buffer overflow",
+    "difficulty": "medium",
+    "text": "An application is compiled with stack canaries, ASLR, and DEP/NX. A security researcher claims the application is still vulnerable to buffer overflow exploitation. How can buffer overflows still succeed against these mitigations?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Stack canaries, ASLR, and DEP provide complete protection \u2014 buffer overflows cannot succeed against them"
+      },
+      {
+        "id": "b",
+        "text": "These mitigations raise the exploitation bar but do not provide complete protection: heap-based overflows bypass stack canaries (canaries only protect the stack); ASLR can be defeated through information disclosure vulnerabilities leaking memory addresses, or through brute force on 32-bit systems; return-oriented programming (ROP) chains bypass DEP/NX by reusing existing executable code already in memory; and format string vulnerabilities can leak canary values. Layered mitigations significantly increase difficulty but determined attackers with sufficient research can overcome individual protections"
+      },
+      {
+        "id": "c",
+        "text": "The researcher is incorrect \u2014 no exploitation techniques exist against all three mitigations simultaneously"
+      },
+      {
+        "id": "d",
+        "text": "Buffer overflows only affect C programs \u2014 modern languages eliminate this vulnerability entirely"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "No single mitigation provides complete protection \u2014 attackers have developed techniques to bypass each.",
+      "b": "Each mitigation addresses specific exploitation paths while leaving others \u2014 sophisticated attackers chain multiple techniques to bypass layered mitigations. This is the correct answer.",
+      "c": "Real-world exploitation against combined mitigations has been demonstrated in research and in malware.",
+      "d": "Buffer overflows primarily affect memory-unsafe languages like C/C++ \u2014 but legacy C code is pervasive in operating systems, firmware, and embedded systems."
+    }
+  },
+  {
+    "id": 331,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Buffer overflow",
+    "difficulty": "hard",
+    "text": "A return-oriented programming (ROP) attack chains together short sequences of existing code ('gadgets') ending in a RET instruction to execute arbitrary operations without injecting new code. Why does this technique bypass Data Execution Prevention (DEP/NX)?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "ROP attacks inject new executable code \u2014 DEP should block them"
+      },
+      {
+        "id": "b",
+        "text": "DEP/NX marks memory regions as either executable (code) or writable (data) \u2014 but not both. ROP bypasses DEP by reusing existing code already in executable memory regions: the ROP chain consists of addresses pointing to legitimate code snippets ('gadgets') already in executable memory, chaining their side effects to achieve arbitrary computation. No new code is written to executable memory \u2014 so DEP has nothing to block. Defense requires ASLR randomizing gadget locations and control flow integrity (CFI) validating indirect branch targets"
+      },
+      {
+        "id": "c",
+        "text": "DEP/NX only protects the stack \u2014 heap-based ROP attacks bypass it"
+      },
+      {
+        "id": "d",
+        "text": "ROP attacks only work against 32-bit applications \u2014 64-bit systems are immune"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "ROP attacks do not inject new code \u2014 they reuse existing executable code sequences, which is why DEP cannot block them.",
+      "b": "ROP bypasses DEP by definition \u2014 it reuses legitimate executable code rather than injecting new code into executable memory. This is the correct answer.",
+      "c": "DEP/NX protects all memory regions marked non-executable \u2014 ROP bypasses it conceptually, not by targeting only the stack.",
+      "d": "ROP attacks have been demonstrated against both 32-bit and 64-bit applications."
+    }
+  },
+  {
+    "id": 332,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Buffer overflow",
+    "difficulty": "hard",
+    "text": "A modern web browser uses sandboxing to isolate web content from the operating system. An attacker finds a buffer overflow in the browser's JavaScript engine. Why does this not immediately give them OS-level code execution?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Buffer overflows in browsers cannot lead to code execution \u2014 browsers are inherently safe"
+      },
+      {
+        "id": "b",
+        "text": "Browser sandboxing creates a multi-stage exploitation requirement: the JavaScript engine buffer overflow gives code execution within the sandbox (the renderer process) \u2014 but the sandbox restricts system calls, file system access, and OS API access. To achieve OS-level code execution, the attacker must additionally find a sandbox escape vulnerability \u2014 a second exploit targeting the sandbox implementation itself or a privileged broker process. This is why modern browser compromises often require chained exploits, significantly raising the exploitation difficulty"
+      },
+      {
+        "id": "c",
+        "text": "The buffer overflow would be immediately detected and blocked by the JavaScript engine"
+      },
+      {
+        "id": "d",
+        "text": "Sandbox isolation is perfect \u2014 OS-level access is impossible regardless of browser vulnerabilities"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Buffer overflows in JavaScript engines do lead to code execution \u2014 sandboxing contains the initial impact.",
+      "b": "Browser sandboxing converts single-exploit compromises into multi-exploit chains \u2014 each stage requiring separate vulnerability research. This is the correct answer.",
+      "c": "JavaScript engines are commonly targeted precisely because they process untrusted input \u2014 buffer overflows in JIT compilers are a documented attack class.",
+      "d": "Sandbox escapes are regularly demonstrated in browser security competitions \u2014 sandboxing reduces but does not eliminate risk."
+    }
+  },
+  {
+    "id": 333,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Race conditions/TOC-TOU",
+    "difficulty": "easy",
+    "text": "What is a Time-of-Check to Time-of-Use (TOC/TOU) vulnerability?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A vulnerability where an application runs too slowly to process real-time data"
+      },
+      {
+        "id": "b",
+        "text": "A race condition where a program checks the state of a resource (time-of-check) and then uses that resource (time-of-use), but an attacker modifies the resource between the check and the use \u2014 making the check result invalid by the time the resource is actually accessed"
+      },
+      {
+        "id": "c",
+        "text": "A vulnerability where time synchronization failures cause authentication to fail"
+      },
+      {
+        "id": "d",
+        "text": "A vulnerability where applications check user time zones incorrectly, causing authorization errors"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Processing speed is not the vulnerability \u2014 the gap between checking and using a resource is the exploitable window.",
+      "b": "TOC/TOU vulnerabilities exploit the gap between security checking and resource use \u2014 if an attacker can modify the resource between the check and the use, the check's result is meaningless. This is the correct answer.",
+      "c": "Time synchronization issues affect protocols like Kerberos but are not TOC/TOU vulnerabilities.",
+      "d": "Time zone handling errors are application logic bugs \u2014 not TOC/TOU race conditions."
+    }
+  },
+  {
+    "id": 334,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Race conditions/TOC-TOU",
+    "difficulty": "medium",
+    "text": "A file download application first checks if a file is safe (no executable extension, passes AV scan), then moves it to a trusted location for execution. An attacker rapidly replaces the safe file with malware between the safety check and the move operation. This is an example of which vulnerability?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "SQL injection \u2014 the file path is being injected"
+      },
+      {
+        "id": "b",
+        "text": "TOC/TOU (Time-of-Check to Time-of-Use) race condition \u2014 the application checks the file's safety at one point in time (TOC) but uses/moves the file at a later point (TOU). The attacker exploits the window between check and use by substituting a different file, making the safety check result invalid. The application proceeds trusting a check result that no longer accurately describes the file it is now using"
+      },
+      {
+        "id": "c",
+        "text": "Buffer overflow \u2014 the malware file is too large for the buffer"
+      },
+      {
+        "id": "d",
+        "text": "Memory injection \u2014 the malware is injected into the file checker's memory"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "SQL injection targets database query parsing \u2014 not file operations.",
+      "b": "File-based TOC/TOU is a classic race condition \u2014 the security check is bypassed by substituting a different resource after the check completes. This is the correct answer.",
+      "c": "File size is not the vulnerability \u2014 the timing gap between check and use is exploited.",
+      "d": "Memory injection places code in process memory \u2014 the described attack substitutes a file on disk."
+    }
+  },
+  {
+    "id": 335,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Race conditions/TOC-TOU",
+    "difficulty": "hard",
+    "text": "A banking application updates account balances using a read-modify-write sequence: read balance, add deposit, write new balance. Two simultaneous deposits of $500 to an account with $1,000 both read the initial $1,000 balance, both calculate $1,500, and both write $1,500 \u2014 resulting in only one deposit being recorded. What type of race condition is this and how is it prevented?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "This is a buffer overflow \u2014 the deposit amount overflows the balance field"
+      },
+      {
+        "id": "b",
+        "text": "This is a classic TOCTOU/race condition in concurrent transaction processing \u2014 both transactions read the same initial state before either writes. Prevention requires: database transactions with appropriate isolation levels (SERIALIZABLE); row-level locking preventing concurrent access to the same account record; optimistic locking detecting concurrent modifications before commit; or atomic database operations (UPDATE accounts SET balance = balance + 500 WHERE id = X) that perform read-modify-write as a single atomic operation rather than three separate steps"
+      },
+      {
+        "id": "c",
+        "text": "This is an injection attack \u2014 one transaction injects a false balance"
+      },
+      {
+        "id": "d",
+        "text": "This vulnerability only occurs in distributed systems \u2014 single-server applications are immune"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Buffer overflow relates to memory boundary violations \u2014 this is a concurrency race condition.",
+      "b": "The lost update problem is a classic database race condition \u2014 atomic operations and proper transaction isolation are the standard remediation. This is the correct answer.",
+      "c": "No injection occurs \u2014 both transactions are legitimate but their concurrent execution creates inconsistency.",
+      "d": "Race conditions occur in any concurrent system including single-server multi-threaded applications \u2014 not only distributed systems."
+    }
+  },
+  {
+    "id": 336,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Race conditions/TOC-TOU",
+    "difficulty": "hard",
+    "text": "A Linux privilege escalation attack exploits a race condition in a setuid program \u2014 specifically a TOC/TOU vulnerability in how the program checks if a file is safe before reading it. The attacker uses symlink manipulation between the check and the read. Walk through the attack mechanism.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Setuid programs cannot be exploited through race conditions \u2014 they run as root and are therefore secure"
+      },
+      {
+        "id": "b",
+        "text": "Attack mechanism: (1) The setuid program checks if /tmp/target_file is a regular file owned by the user (TOC \u2014 security check); (2) The attacker rapidly replaces /tmp/target_file with a symlink pointing to /etc/shadow or another privileged file (the race window); (3) The setuid program opens and reads the file it checked \u2014 but now reads the symlinked privileged file instead (TOU \u2014 resource use). Because the program runs as root (setuid), it successfully reads /etc/shadow even though the check was supposed to prevent this. The race window between check and use is exploitable with repeated timing attacks"
+      },
+      {
+        "id": "c",
+        "text": "Symlink attacks only work on Windows \u2014 Linux file systems prevent this exploitation"
+      },
+      {
+        "id": "d",
+        "text": "The attack would fail because the setuid program would re-verify file ownership before reading"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Setuid programs are high-value targets for privilege escalation precisely because they run with elevated privileges \u2014 they must be carefully written to avoid race conditions.",
+      "b": "Symlink TOC/TOU against setuid programs is a well-documented Linux privilege escalation technique \u2014 the timing attack races the check-to-use window. This is the correct answer.",
+      "c": "Linux symlink attacks are well-documented on Linux systems \u2014 Linux's file system behavior is precisely what enables this attack.",
+      "d": "Most vulnerable programs do not re-verify \u2014 the point of TOC/TOU is that verification and use are separate operations."
+    }
+  },
+  {
+    "id": 337,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Malicious update",
+    "difficulty": "easy",
+    "text": "What is a malicious update vulnerability and how do attackers exploit it?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A malicious update is when an application updates itself so frequently that it consumes all system resources"
+      },
+      {
+        "id": "b",
+        "text": "A malicious update vulnerability occurs when an application's update mechanism can be exploited to deliver malware \u2014 either by compromising the update server, performing man-in-the-middle attacks on unsigned update downloads, or tricking users into installing fake updates that appear legitimate"
+      },
+      {
+        "id": "c",
+        "text": "A malicious update is when an operating system update removes security features"
+      },
+      {
+        "id": "d",
+        "text": "A malicious update vulnerability occurs when update files are too large for the download buffer"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Resource consumption from updates is an operational issue \u2014 not the security vulnerability described.",
+      "b": "Malicious updates exploit the trusted nature of software update mechanisms \u2014 users and systems trust updates from vendors, making the update channel a high-value attack target. This is the correct answer.",
+      "c": "OS updates removing security features is a vendor issue \u2014 not the attacker exploitation described.",
+      "d": "Buffer size during downloads is not the malicious update vulnerability \u2014 the attack targets the update mechanism's trust model."
+    }
+  },
+  {
+    "id": 338,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Malicious update",
+    "difficulty": "medium",
+    "text": "An attacker intercepts the update channel of an application that downloads updates over HTTP without signature verification. They inject a modified installer containing malware. What specific vulnerability in the update mechanism enabled this attack?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The application downloaded too many updates simultaneously"
+      },
+      {
+        "id": "b",
+        "text": "The lack of cryptographic signature verification on downloaded updates \u2014 without verifying that the update is signed by the legitimate vendor's private key, any party who can intercept or modify the download (man-in-the-middle on HTTP) can substitute malicious content that the application will install as a trusted update. HTTP (unencrypted) makes interception trivial. Secure update mechanisms require: HTTPS download; cryptographic code signing with signature verification before installation; and certificate pinning to prevent MITM with fraudulent certificates"
+      },
+      {
+        "id": "c",
+        "text": "The application had too many update servers configured"
+      },
+      {
+        "id": "d",
+        "text": "The update was too large and required splitting into parts that could be manipulated"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Update frequency is not the vulnerability \u2014 the lack of signature verification is the exploitable gap.",
+      "b": "Unsigned HTTP updates are trivially interceptable and substitutable \u2014 cryptographic signature verification is the essential control for update integrity. This is the correct answer.",
+      "c": "Multiple update servers is a resilience feature \u2014 not the vulnerability.",
+      "d": "File splitting during download is not the vulnerability \u2014 signature verification is the missing control."
+    }
+  },
+  {
+    "id": 339,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Malicious update",
+    "difficulty": "hard",
+    "text": "The SolarWinds and 3CX supply chain attacks both compromised legitimate software update pipelines to deliver malware. Despite both using cryptographically signed updates, the malware was delivered successfully. Why did code signing fail to prevent these attacks?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Code signing is ineffective and should not be used for update security"
+      },
+      {
+        "id": "b",
+        "text": "Both attacks compromised the vendor's build process before code signing occurred \u2014 the malicious code was inserted into the software during the build phase and then signed with the vendor's legitimate private key. Code signing verifies that the vendor signed the software, not that the software is free of malicious code. When attackers control the build environment, they can have legitimate vendor keys sign malicious content. Defense requires: build environment security; reproducible builds enabling binary verification; build integrity monitoring; and behavioral analysis of updates post-installation"
+      },
+      {
+        "id": "c",
+        "text": "Code signing was not used in either attack \u2014 the updates were unsigned"
+      },
+      {
+        "id": "d",
+        "text": "The attacks succeeded because the signature algorithms used were cryptographically broken"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Code signing is valuable but has specific limitations \u2014 it verifies signer identity, not code content.",
+      "b": "Both attacks inserted malicious code upstream of the signing process \u2014 making the signature legitimate but the code malicious. This is the correct answer.",
+      "c": "Both SolarWinds and 3CX involved signed updates \u2014 the signature was the legitimizing factor exploited by attackers.",
+      "d": "The signature algorithms were cryptographically sound \u2014 the compromise was in the build process, not the algorithm."
+    }
+  },
+  {
+    "id": 340,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Malicious update",
+    "difficulty": "hard",
+    "text": "An IoT device manufacturer pushes a mandatory firmware update that cannot be rejected by deployed devices. An attacker who compromises the manufacturer's update server can push malicious firmware to all deployed devices. What architectural vulnerability does this represent and what mitigations exist?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The mandatory update mechanism is secure \u2014 attackers cannot compromise firmware update servers"
+      },
+      {
+        "id": "b",
+        "text": "This represents a single point of failure in the update architecture: all devices unconditionally trust updates from the manufacturer's server, creating a scenario where compromising one server grants access to all deployed devices. Mitigations: hardware-rooted trust where devices verify firmware signatures using keys burned into hardware (TPM/secure element) at manufacture time \u2014 even a compromised server cannot sign updates with the hardware-trusted key; staged rollout limiting blast radius; operator approval for updates on sensitive deployments; and out-of-band key management ensuring update signing keys are not accessible on the internet-facing update server"
+      },
+      {
+        "id": "c",
+        "text": "Mandatory updates cannot be exploited \u2014 the update mechanism is protected by TLS"
+      },
+      {
+        "id": "d",
+        "text": "This only affects consumer IoT devices \u2014 industrial IoT has separate protections"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Update server compromises are a documented and real threat \u2014 this architectural vulnerability has been exploited.",
+      "b": "Hardware-rooted firmware verification breaks the server-compromise-equals-device-compromise chain \u2014 the signing key in hardware cannot be obtained by compromising the software update server. This is the correct answer.",
+      "c": "TLS protects the transport \u2014 but if the server itself is compromised, the attacker controls what is served over TLS.",
+      "d": "Industrial IoT faces the same architectural vulnerability \u2014 the specific risk may be higher due to critical infrastructure implications."
+    }
+  },
+  {
+    "id": 341,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "OS-based",
+    "difficulty": "easy",
+    "text": "What are OS-based vulnerabilities and what makes them particularly serious?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "OS-based vulnerabilities are configuration errors made by system administrators"
+      },
+      {
+        "id": "b",
+        "text": "OS-based vulnerabilities are security flaws in the operating system's kernel, drivers, or core services \u2014 they are particularly serious because the OS is the foundation of all software on a system. Exploiting an OS vulnerability often grants kernel-level privileges (the highest level of system access), making it extremely difficult to detect or contain the exploitation and enabling attackers to subvert all higher-level security controls"
+      },
+      {
+        "id": "c",
+        "text": "OS-based vulnerabilities only affect the applications running on the OS \u2014 not the OS itself"
+      },
+      {
+        "id": "d",
+        "text": "OS-based vulnerabilities are theoretical \u2014 operating systems are too well-tested to have exploitable flaws"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Administrator configuration errors are misconfigurations \u2014 OS-based vulnerabilities are flaws in the OS code itself.",
+      "b": "OS vulnerabilities are foundational \u2014 kernel-level exploitation undermines all security controls that depend on OS integrity. This is the correct answer.",
+      "c": "OS vulnerabilities affect the OS itself \u2014 which then impacts all software running on it.",
+      "d": "OS vulnerabilities are regularly discovered and patched \u2014 CVEs affecting Windows, Linux, and macOS kernels are published regularly."
+    }
+  },
+  {
+    "id": 342,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "OS-based",
+    "difficulty": "medium",
+    "text": "A vulnerability in the Windows Print Spooler service (PrintNightmare) allowed local privilege escalation and remote code execution. Why do OS service vulnerabilities receive higher severity ratings than application-level vulnerabilities?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "OS service vulnerabilities are rated the same as application vulnerabilities \u2014 severity depends only on CVSS score"
+      },
+      {
+        "id": "b",
+        "text": "OS service vulnerabilities receive higher severity for several reasons: they typically run with elevated (SYSTEM/root) privileges \u2014 exploitation immediately grants high-privilege access; they run persistently on all systems (not just systems where a specific application is installed); they are pre-authentication in many cases (remote code execution without credentials); and exploit code affects all unpatched systems running that OS version \u2014 the scale of impact is vastly larger than an application vulnerability"
+      },
+      {
+        "id": "c",
+        "text": "PrintNightmare was rated low severity \u2014 print services are not security-critical"
+      },
+      {
+        "id": "d",
+        "text": "OS service vulnerabilities are only dangerous on unmanaged systems \u2014 enterprise environments are protected"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "CVSS does consider impact scope \u2014 OS-level vulnerabilities typically score higher because of their privilege level and scale of affected systems.",
+      "b": "OS service vulnerabilities combine elevated privilege, universal presence, and often remote exploitability \u2014 factors that combine for maximum impact. This is the correct answer.",
+      "c": "PrintNightmare was rated critical \u2014 it allowed SYSTEM-level access and affected all Windows systems with Print Spooler enabled.",
+      "d": "Enterprise environments running unpatched Windows were equally vulnerable \u2014 patch status, not management status, determines exposure."
+    }
+  },
+  {
+    "id": 343,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "OS-based",
+    "difficulty": "hard",
+    "text": "A container-based application runs in a Linux container on a shared host. A Linux kernel vulnerability allows container escape. What does this demonstrate about the security model of containerization?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Linux containers provide complete isolation equivalent to virtual machines \u2014 kernel vulnerabilities cannot affect containers"
+      },
+      {
+        "id": "b",
+        "text": "Linux containers share the host kernel \u2014 all containers on a host use the same underlying OS kernel. A kernel vulnerability exploitable within a container can potentially affect the host kernel, breaking the container's isolation model. This demonstrates that: container security is bounded by kernel security; kernel vulnerabilities create a shared risk across all containers on a host; and in multi-tenant environments (cloud), kernel vulnerabilities create cross-tenant risks. Defense requires: keeping host kernels patched; using kernel security modules (SELinux, AppArmor, seccomp) limiting container syscall access; and gVisor/Kata containers adding virtualization-based isolation"
+      },
+      {
+        "id": "c",
+        "text": "Container escape is only possible if the container runs as root"
+      },
+      {
+        "id": "d",
+        "text": "This vulnerability type does not exist \u2014 containers cannot interact with the host kernel"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Containers share the host kernel \u2014 this is fundamentally different from hypervisor-based virtualization which provides true kernel isolation.",
+      "b": "Shared kernel architecture makes container security dependent on kernel security \u2014 a critical distinction from virtual machines. This is the correct answer.",
+      "c": "Container escape vulnerabilities have been demonstrated from non-root processes \u2014 though running as root reduces the attacker's initial escalation requirement.",
+      "d": "Container-to-host kernel interactions are exactly the attack surface for container escape vulnerabilities."
+    }
+  },
+  {
+    "id": 344,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "OS-based",
+    "difficulty": "hard",
+    "text": "A bootkit infection modifies the OS boot process \u2014 specifically the Master Boot Record (MBR) or UEFI firmware \u2014 to load malicious code before the operating system starts. Why does this OS-based vulnerability make conventional security tools ineffective?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Bootkits are detected by standard antivirus during the boot process"
+      },
+      {
+        "id": "b",
+        "text": "Bootkits execute before the OS and all security software \u2014 giving the malware complete control over the boot environment. This creates several problems: security tools that start with the OS are running in an already-compromised environment where the malware controls what they can observe; the malware can hide its presence from OS-level file system and process inspection; achieving removal requires booting from external trusted media; and if UEFI firmware is compromised, even reinstalling the OS does not remove the infection. Defense requires: Secure Boot (verifying boot loader signatures); UEFI firmware integrity monitoring; and TPM-based attestation detecting boot sequence changes"
+      },
+      {
+        "id": "c",
+        "text": "Bootkits are easily removed by running antivirus in safe mode"
+      },
+      {
+        "id": "d",
+        "text": "Bootkits only affect systems without full-disk encryption"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Standard antivirus tools run within the OS \u2014 below the OS, bootkits have already compromised the foundation the AV depends on.",
+      "b": "Pre-OS execution gives bootkits an inherent advantage \u2014 security tools cannot trust their own environment when the environment itself is compromised before they start. This is the correct answer.",
+      "c": "Safe mode still loads the OS from compromised storage \u2014 it does not bypass boot-level compromise.",
+      "d": "Full-disk encryption protects data confidentiality \u2014 it does not prevent bootkits from modifying the boot process."
+    }
+  },
+  {
+    "id": 345,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "SQLi",
+    "difficulty": "easy",
+    "text": "What is SQL injection (SQLi) and what does a successful attack enable?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "SQL injection is a type of DoS attack that floods database servers with queries"
+      },
+      {
+        "id": "b",
+        "text": "SQL injection occurs when user-supplied input is incorporated into database queries without proper sanitization \u2014 allowing attackers to inject SQL commands that the database executes. Successful SQLi enables: unauthorized data access (dumping entire databases); data modification or deletion; authentication bypass (logging in without valid credentials); and in some configurations, operating system command execution via the database engine"
+      },
+      {
+        "id": "c",
+        "text": "SQL injection is a physical attack on database server hardware"
+      },
+      {
+        "id": "d",
+        "text": "SQL injection allows attackers to modify HTML content displayed to users"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "SQL injection manipulates query logic \u2014 not volumetric flooding of database servers.",
+      "b": "SQL injection inserts attacker-controlled commands into database queries \u2014 the database executes them with the application's database privileges. This is the correct answer.",
+      "c": "SQL injection is a software vulnerability \u2014 not a physical attack.",
+      "d": "Modifying HTML content displayed to other users is cross-site scripting (XSS) \u2014 not SQL injection."
+    }
+  },
+  {
+    "id": 346,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "SQLi",
+    "difficulty": "medium",
+    "text": "A login form uses the query: SELECT * FROM users WHERE username='[input]' AND password='[input]'. An attacker enters the username: admin'-- and any password. How does this SQL injection bypass authentication?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The apostrophe causes the database to crash, granting default admin access"
+      },
+      {
+        "id": "b",
+        "text": "The input 'admin'--' closes the username string with the apostrophe, then the double-dash (--) comments out the rest of the SQL query \u2014 specifically the AND password='[input]' condition. The executed query becomes: SELECT * FROM users WHERE username='admin' \u2014 which returns the admin user record without checking the password. Authentication is bypassed because the password check was commented out of the query"
+      },
+      {
+        "id": "c",
+        "text": "The attack only works if the attacker knows the admin user exists"
+      },
+      {
+        "id": "d",
+        "text": "The double dash causes the application server to reset, granting access"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The database does not crash \u2014 the SQL comment terminates the query clause.",
+      "b": "SQL comment injection (--) removes the password check from the query \u2014 demonstrating how SQL injection bypasses authentication logic. This is the correct answer.",
+      "c": "Many SQL injection variants work without knowing valid usernames \u2014 the admin username is a common guess but ' OR '1'='1 works without knowing any username.",
+      "d": "The double-dash is a SQL comment delimiter \u2014 it affects query parsing, not the application server."
+    }
+  },
+  {
+    "id": 347,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "SQLi",
+    "difficulty": "hard",
+    "text": "A web application uses a Web Application Firewall (WAF) to block SQL injection attempts. A penetration tester uses 'blind SQL injection' techniques \u2014 specifically time-based blind injection \u2014 to extract data without receiving any error messages or data in the response. How does blind SQLi evade detection and what does it demonstrate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Blind SQL injection is impossible to execute \u2014 SQL injection requires visible database error messages"
+      },
+      {
+        "id": "b",
+        "text": "Time-based blind SQLi sends queries that cause the database to pause (SLEEP() or WAITFOR DELAY) when a condition is true \u2014 the attacker infers data by measuring response time rather than reading error messages or data. For example: IF (substring(password,1,1)='a') WAITFOR DELAY '0:0:5'. This evades WAFs tuned to detect classical SQLi patterns (UNION SELECT, error-based) by using timing side channels instead of data exfiltration in responses. This demonstrates: WAF evasion is possible through obfuscation and alternative techniques; defense cannot rely solely on WAF; and proper parameterized queries are the only reliable prevention"
+      },
+      {
+        "id": "c",
+        "text": "Blind SQLi can only extract one character of data per day \u2014 it is impractical"
+      },
+      {
+        "id": "d",
+        "text": "WAFs detect all forms of SQL injection including time-based attacks"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Blind SQLi specifically does not require error messages \u2014 it infers information from application behavior differences.",
+      "b": "Time-based blind SQLi uses database timing as an out-of-band channel for data extraction \u2014 completely bypassing response-content-based WAF detection. This is the correct answer.",
+      "c": "Automated blind SQLi tools can extract database contents at practical rates \u2014 thousands of characters per hour.",
+      "d": "WAFs can be tuned to detect time-based SQLi patterns but this requires specific configuration and is often incomplete \u2014 parameterized queries are the reliable prevention."
+    }
+  },
+  {
+    "id": 348,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "SQLi",
+    "difficulty": "hard",
+    "text": "A developer uses parameterized queries (prepared statements) for all user input in their application but one developer uses string concatenation for a reporting feature: 'SELECT * FROM orders WHERE status='' + userInput + ''. The application is compromised through this single non-parameterized query. What does this demonstrate about SQL injection remediation?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Parameterized queries are not effective \u2014 SQL injection cannot be prevented"
+      },
+      {
+        "id": "b",
+        "text": "SQL injection remediation must be consistently applied \u2014 a single non-parameterized query in an application that is otherwise protected creates a vulnerability. This demonstrates: defense-in-depth is required (parameterized queries, WAF, least-privilege database accounts, output encoding); code review and SAST tools must identify all SQL query construction patterns; developer training must address all team members; and testing must verify every query-executing code path. One exception to secure coding practices can negate the security of all other parameterized queries in the application"
+      },
+      {
+        "id": "c",
+        "text": "The reporting feature should have been excluded from security requirements"
+      },
+      {
+        "id": "d",
+        "text": "String concatenation is acceptable for read-only queries \u2014 injection only affects write operations"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Parameterized queries are highly effective \u2014 the vulnerability exists because one query did not use them.",
+      "b": "SQLi remediation requires 100% coverage \u2014 a single exception creates an exploitable vulnerability regardless of all other secure queries. This is the correct answer.",
+      "c": "All queries handling user input require parameterization \u2014 no functionality is excluded from this security requirement.",
+      "d": "Read-only queries are fully exploitable \u2014 information disclosure through SELECT is a critical impact regardless of write capability."
+    }
+  },
+  {
+    "id": 349,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "XSS",
+    "difficulty": "easy",
+    "text": "What is cross-site scripting (XSS) and what does a successful attack enable an attacker to do?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "XSS is a type of SQL injection targeting XML databases"
+      },
+      {
+        "id": "b",
+        "text": "XSS occurs when an application includes unvalidated user-supplied data in web pages sent to other users \u2014 allowing attackers to inject client-side scripts (JavaScript) that execute in victims' browsers in the context of the vulnerable website. Successful XSS enables: stealing session cookies for account hijacking; keylogging user input on the page; redirecting users to malicious sites; and defacing web pages"
+      },
+      {
+        "id": "c",
+        "text": "XSS is a network-based attack that intercepts traffic between the browser and web server"
+      },
+      {
+        "id": "d",
+        "text": "XSS is a server-side vulnerability that allows attackers to read server files"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "XSS injects JavaScript into web pages \u2014 it is not related to XML databases or SQL injection.",
+      "b": "XSS executes malicious scripts in victims' browsers with the trust of the vulnerable website \u2014 session theft, keylogging, and credential harvesting are primary impacts. This is the correct answer.",
+      "c": "Network traffic interception describes man-in-the-middle attacks \u2014 XSS operates at the application layer through injected client-side code.",
+      "d": "XSS is a client-side vulnerability affecting browsers \u2014 it does not directly read server files (though CSRF or other client-side attacks may chain to cause server-side effects)."
+    }
+  },
+  {
+    "id": 350,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "XSS",
+    "difficulty": "medium",
+    "text": "What is the difference between stored XSS and reflected XSS, and which is generally considered more dangerous?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Stored and reflected XSS are identical \u2014 the only difference is attack name"
+      },
+      {
+        "id": "b",
+        "text": "Reflected XSS: malicious script is embedded in a URL and reflected by the server to the requesting user \u2014 requires tricking each victim into clicking a crafted link. Stored XSS: malicious script is permanently stored on the server (in a database, comment field, profile, etc.) and served to all users who view the affected page \u2014 no link clicking required. Stored XSS is generally more dangerous because: it automatically affects all visitors to the page; it persists until explicitly removed; it requires no per-victim social engineering; and it can compromise large numbers of users from a single injection"
+      },
+      {
+        "id": "c",
+        "text": "Reflected XSS is more dangerous \u2014 it can affect the server directly"
+      },
+      {
+        "id": "d",
+        "text": "Stored XSS is less serious because it only affects the user who stored the content"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Reflected and stored XSS differ in persistence and delivery mechanism \u2014 this distinction significantly affects impact.",
+      "b": "The persistence distinction is critical \u2014 stored XSS automatically affects all users who view the page, while reflected XSS requires individual victim delivery. This is the correct answer.",
+      "c": "Reflected XSS primarily affects the victim's browser \u2014 stored XSS has broader reach through automatic delivery to all page visitors.",
+      "d": "Stored XSS affects all users who view the page \u2014 not only the user who stored the content."
+    }
+  },
+  {
+    "id": 351,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "XSS",
+    "difficulty": "hard",
+    "text": "A Content Security Policy (CSP) header is implemented on a web application to mitigate XSS. A security researcher discovers that the CSP includes 'unsafe-inline' in the script-src directive. Why does 'unsafe-inline' undermine CSP's XSS protection?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "'unsafe-inline' makes CSP more secure \u2014 it allows legitimate inline scripts to run"
+      },
+      {
+        "id": "b",
+        "text": "CSP's primary XSS protection mechanism is restricting which scripts can execute \u2014 specifically blocking inline scripts (JavaScript written directly in HTML, like <script>alert(1)</script>) that characterize most XSS attacks. The 'unsafe-inline' directive explicitly re-enables inline script execution, defeating the primary protection CSP was designed to provide. An XSS attack injecting inline scripts will now execute despite the CSP being present. Effective CSP for XSS protection requires using nonces or hashes to allow specific legitimate inline scripts rather than the blanket 'unsafe-inline' permission"
+      },
+      {
+        "id": "c",
+        "text": "'unsafe-inline' only affects CSS \u2014 JavaScript XSS is still blocked by CSP"
+      },
+      {
+        "id": "d",
+        "text": "CSP does not affect XSS \u2014 it only controls image loading"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "'unsafe-inline' weakens CSP's XSS protection \u2014 it re-enables the inline script execution that CSP is designed to block.",
+      "b": "'unsafe-inline' defeats the core XSS mitigation that CSP provides \u2014 it must be avoided in favor of nonces or hashes for any legitimate inline scripts. This is the correct answer.",
+      "c": "'unsafe-inline' in script-src specifically controls JavaScript execution \u2014 it directly affects XSS protection.",
+      "d": "CSP's script-src directive is specifically designed for XSS mitigation \u2014 it is one of the most important CSP directives for security."
+    }
+  },
+  {
+    "id": 352,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "XSS",
+    "difficulty": "hard",
+    "text": "A DOM-based XSS vulnerability exists where JavaScript reads from document.location.hash and writes it to the page via innerHTML without sanitization. How does this differ from server-side XSS vulnerabilities and what makes it particularly challenging to detect?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "DOM-based XSS is not a real vulnerability \u2014 client-side JavaScript manipulation cannot be exploited"
+      },
+      {
+        "id": "b",
+        "text": "DOM-based XSS differs fundamentally: the malicious payload never reaches the server \u2014 it is processed entirely in the browser by JavaScript reading attacker-controlled input (URL fragment, referrer) and writing to the DOM unsafely. This makes it: invisible to server-side security tools (WAFs, input validation, server logs \u2014 the attack payload only appears in the client-side URL fragment); harder to detect with DAST tools that don't fully execute JavaScript; and resistant to server-side output encoding since the server never sees the payload. Detection requires JavaScript static analysis (SAST) and JavaScript-aware DAST that traces data flow from sources (location.hash) to sinks (innerHTML)"
+      },
+      {
+        "id": "c",
+        "text": "DOM-based XSS can only be exploited on local files \u2014 not web applications"
+      },
+      {
+        "id": "d",
+        "text": "innerHTML usage always sanitizes content \u2014 this cannot lead to XSS"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "DOM-based XSS is a well-documented and exploitable vulnerability class \u2014 it has been used in real attacks.",
+      "b": "The server-side invisibility of DOM-based XSS makes it bypass many traditional web security controls \u2014 detection requires client-side analysis. This is the correct answer.",
+      "c": "DOM-based XSS affects web applications served over HTTP/HTTPS \u2014 not limited to local files.",
+      "d": "innerHTML does not sanitize content \u2014 it parses and renders HTML including script tags, making it a classic XSS sink."
+    }
+  },
+  {
+    "id": 353,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Firmware",
+    "difficulty": "easy",
+    "text": "Why do firmware vulnerabilities represent a particularly persistent security risk?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Firmware vulnerabilities are less serious than application vulnerabilities \u2014 firmware runs in isolated hardware"
+      },
+      {
+        "id": "b",
+        "text": "Firmware vulnerabilities are particularly persistent because: firmware runs below the operating system and can survive OS reinstallation; firmware updates are often difficult to apply (requiring specialized tools or vendor support); many devices never receive firmware updates (especially consumer IoT and embedded systems); firmware often cannot be monitored by standard security tools; and firmware compromise can provide persistent access that survives normal remediation attempts"
+      },
+      {
+        "id": "c",
+        "text": "Firmware is never updated \u2014 it is burned into hardware at manufacture and cannot be changed"
+      },
+      {
+        "id": "d",
+        "text": "Firmware vulnerabilities only affect the specific hardware model they target \u2014 they cannot be exploited remotely"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Firmware vulnerabilities are often more serious than application vulnerabilities \u2014 their persistence and position below the OS makes them harder to detect and remediate.",
+      "b": "Firmware persistence across OS reinstallation and the difficulty of monitoring and updating it make firmware vulnerabilities a significant and often underaddressed security risk. This is the correct answer.",
+      "c": "Most modern firmware is updateable \u2014 but many devices never receive updates due to vendor support limitations.",
+      "d": "Firmware vulnerabilities can be remotely exploited through the device's network interfaces \u2014 remote exploitation is a common attack vector."
+    }
+  },
+  {
+    "id": 354,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Firmware",
+    "difficulty": "medium",
+    "text": "A security researcher discovers that a network router's firmware accepts firmware updates over HTTP without signature verification. An attacker on the same network uses ARP spoofing to intercept the firmware update process and substitutes malicious firmware. What does persistent firmware compromise enable?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Firmware compromise only provides the same access as a standard user account"
+      },
+      {
+        "id": "b",
+        "text": "Persistent firmware compromise of a router provides: complete control over all network traffic passing through the device (enabling MITM attacks on all connected users); persistence that survives factory resets (if the firmware replacement is deep enough); ability to disable logging and monitoring; covert backdoors survicing OS-level investigations; and a persistent network surveillance position. The combination of network centrality (all traffic passes through) and below-OS persistence makes router firmware compromise extremely high-value for attackers"
+      },
+      {
+        "id": "c",
+        "text": "Firmware compromise only affects the router \u2014 connected devices cannot be impacted"
+      },
+      {
+        "id": "d",
+        "text": "The malicious firmware would be immediately detected by the router's integrity checking"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Router firmware compromise is far more impactful than user-level access \u2014 the router controls all network traffic.",
+      "b": "Router firmware compromise provides a privileged, persistent network surveillance position that is difficult to detect or remediate. This is the correct answer.",
+      "c": "Router firmware compromise directly impacts all connected devices through traffic manipulation.",
+      "d": "Many routers lack firmware integrity verification \u2014 this is precisely the vulnerability described."
+    }
+  },
+  {
+    "id": 355,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Firmware",
+    "difficulty": "hard",
+    "text": "UEFI firmware rootkits (like LoJax) persist on a system's SPI flash chip, surviving OS reinstallation, hard drive replacement, and most traditional remediation techniques. What makes UEFI rootkit remediation particularly challenging?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "UEFI rootkits are easily removed with standard antivirus tools"
+      },
+      {
+        "id": "b",
+        "text": "UEFI rootkit remediation is challenging because: the malicious firmware is stored on the SPI flash chip on the motherboard \u2014 physically separate from the hard drive, surviving complete drive replacement; reinstalling the OS leaves UEFI firmware untouched; most endpoint security tools operate within the OS and cannot access or modify the UEFI firmware; reflashing requires physical access or specific vendor tools and carries risk of bricking the device; and detection requires external firmware analysis or comparison with known-good firmware hashes. In some cases, motherboard replacement may be the only reliable remediation"
+      },
+      {
+        "id": "c",
+        "text": "UEFI rootkits can be removed by booting from a USB drive and running cleanup tools"
+      },
+      {
+        "id": "d",
+        "text": "Enabling Secure Boot retroactively removes existing UEFI rootkits"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Standard antivirus tools operate within the OS and cannot access or clean UEFI firmware.",
+      "b": "UEFI rootkit persistence on the SPI flash chip places malicious code below the level of all standard remediation techniques \u2014 remediation requires specialized tools or hardware replacement. This is the correct answer.",
+      "c": "Booting from USB still leaves the UEFI firmware in the SPI flash \u2014 this does not remove UEFI-level infections.",
+      "d": "Secure Boot can prevent UEFI rootkits from loading \u2014 but it does not remove existing infections; it must be implemented before infection occurs."
+    }
+  },
+  {
+    "id": 356,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Firmware",
+    "difficulty": "hard",
+    "text": "An organization discovers that their enterprise network switches contain firmware from a manufacturer that has embedded an undocumented administrative backdoor. This is a supply chain firmware vulnerability. What are the security implications and remediation challenges?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Manufacturer backdoors in firmware are not a security concern \u2014 manufacturers need access for support purposes"
+      },
+      {
+        "id": "b",
+        "text": "Supply chain firmware backdoors create severe security implications: the attacker (or backdoor user) has access to all traffic and device controls with no log entries; the vulnerability exists in all deployed units and cannot be easily remediated through software patches (the backdoor may be in ROM or deeply embedded); discovery requires firmware reverse engineering (difficult without source code); impact extends to all traffic passing through compromised switches. Remediation options: firmware replacement if an unaffected version exists; device replacement; and strict network monitoring for anomalous switch behavior. Prevention requires supply chain hardware vetting and firmware verification at acquisition"
+      },
+      {
+        "id": "c",
+        "text": "Firmware backdoors are detectable through standard vulnerability scanning"
+      },
+      {
+        "id": "d",
+        "text": "Only switches with administrative access enabled are affected"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Manufacturer backdoors are a serious security concern \u2014 they provide access that bypasses all customer-controlled authentication and logging.",
+      "b": "Supply chain firmware backdoors combine the persistence of firmware with the privileged position of network infrastructure \u2014 creating a particularly serious and difficult-to-remediate vulnerability. This is the correct answer.",
+      "c": "Standard vulnerability scanners do not typically detect firmware-level backdoors \u2014 firmware analysis tools and reverse engineering are required.",
+      "d": "A firmware backdoor operates below the device's configuration \u2014 it is not controlled by administrative access settings."
+    }
+  },
+  {
+    "id": 357,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "End-of-life",
+    "difficulty": "easy",
+    "text": "What does 'end-of-life' (EOL) mean in the context of hardware vulnerabilities?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "End-of-life means the hardware device has physically stopped functioning"
+      },
+      {
+        "id": "b",
+        "text": "End-of-life refers to the point when a hardware vendor stops providing security patches, firmware updates, and technical support for a product \u2014 meaning any vulnerabilities discovered after EOL will permanently remain unpatched. EOL hardware continues to function but lacks ongoing security maintenance"
+      },
+      {
+        "id": "c",
+        "text": "End-of-life means the hardware warranty has expired \u2014 security patches continue"
+      },
+      {
+        "id": "d",
+        "text": "End-of-life only applies to software \u2014 hardware never reaches end-of-life status"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "EOL hardware continues to function \u2014 it is the security support lifecycle that ends, not the device's operation.",
+      "b": "EOL status means permanent security patching cessation \u2014 discovered vulnerabilities accumulate without remediation, creating growing security risk over time. This is the correct answer.",
+      "c": "Warranty expiration and EOL are separate lifecycles \u2014 security patches may continue after warranty expiry and vice versa.",
+      "d": "Hardware reaches EOL \u2014 routers, switches, firewalls, and IoT devices all have defined support lifecycles."
+    }
+  },
+  {
+    "id": 358,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "End-of-life",
+    "difficulty": "medium",
+    "text": "An organization's perimeter firewall reaches end-of-life with no security patches from the vendor. The device continues to function correctly and no current CVEs exist for it. A security manager argues it is safe to continue using until it fails. Evaluate this reasoning.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The security manager is correct \u2014 if no current CVEs exist, there is no risk"
+      },
+      {
+        "id": "b",
+        "text": "The reasoning is flawed: the absence of current CVEs is temporary \u2014 new vulnerabilities are discovered constantly, and an EOL device will never receive patches for future discoveries. The risk grows over time as the vulnerability backlog accumulates. Additionally, researchers may discover and publicize existing vulnerabilities that were previously unknown. A perimeter firewall is a critical security device \u2014 its compromise would expose the entire network. Compensating controls (monitoring, additional upstream protection) and replacement planning should begin immediately rather than waiting for failure or exploitation"
+      },
+      {
+        "id": "c",
+        "text": "The security manager is correct \u2014 hardware firewalls are more secure than software firewalls and do not need patches"
+      },
+      {
+        "id": "d",
+        "text": "The solution is to disable all firewall rules \u2014 an unconfigured EOL firewall is safer than a configured one"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The absence of current CVEs provides temporary false security \u2014 EOL guarantees that future vulnerabilities will be permanent.",
+      "b": "EOL risk is forward-looking \u2014 the danger is not current CVEs but the permanent inability to patch future discoveries. Critical security infrastructure with no patch path represents unacceptable long-term risk. This is the correct answer.",
+      "c": "Hardware firewalls still require firmware patches \u2014 the hardware vs. software distinction does not affect the need for security updates.",
+      "d": "Disabling all firewall rules would eliminate protection entirely \u2014 this is not a valid risk management approach."
+    }
+  },
+  {
+    "id": 359,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "End-of-life",
+    "difficulty": "hard",
+    "text": "A hospital's medical imaging equipment runs on hardware and software that reached EOL five years ago. The vendor no longer exists, making EOL an absolute \u2014 no patches will ever be available. The equipment is critical to patient care and cannot be immediately replaced. What comprehensive security approach should the hospital take?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The hospital must immediately shut down the equipment \u2014 EOL systems cannot be operated securely"
+      },
+      {
+        "id": "b",
+        "text": "Comprehensive approach: strict network isolation placing the equipment in a dedicated VLAN with firewall rules permitting only necessary DICOM communication with specific imaging workstations; no internet access; compensating controls including enhanced logging and monitoring of all network traffic to/from the equipment; physical access controls; documented formal risk acceptance signed by clinical and security leadership with clinical risk assessment; regulatory disclosure to relevant health authorities; development of replacement timeline and budget; and exploration of third-party extended support or security monitoring solutions. Patient care continuity must be balanced with maximum feasible risk reduction"
+      },
+      {
+        "id": "c",
+        "text": "The hospital should ignore the security risk \u2014 medical equipment EOL is not a cybersecurity concern"
+      },
+      {
+        "id": "d",
+        "text": "Third-party patches from non-vendors can be applied to eliminate the risk"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Immediate shutdown is clinically infeasible \u2014 risk management between security and patient care is required.",
+      "b": "Comprehensive compensating controls, formal risk acceptance, and replacement planning represent the appropriate response when EOL systems cannot be immediately replaced due to operational necessity. This is the correct answer.",
+      "c": "Medical equipment EOL is a documented cybersecurity concern \u2014 healthcare has been heavily targeted and medical devices have been exploited.",
+      "d": "Third-party patches for EOL medical equipment introduce additional risks \u2014 regulatory compliance and clinical validation requirements make this approach problematic without extensive vetting."
+    }
+  },
+  {
+    "id": 360,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "End-of-life",
+    "difficulty": "hard",
+    "text": "A security team creates an asset inventory and discovers that 15% of their infrastructure hardware (routers, switches, access points) has reached EOL status. They must develop a risk-based remediation prioritization. What factors should drive replacement priority?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Replace all EOL hardware simultaneously regardless of function or risk"
+      },
+      {
+        "id": "b",
+        "text": "Risk-based prioritization factors: network position and exposure (internet-facing devices with EOL status represent the highest risk \u2014 they face the most attack attempts); data sensitivity of traffic handled (devices processing financial, healthcare, or classified data warrant prioritization); criticality to operations (devices whose failure or compromise would have the greatest business impact); existing compensating controls (EOL devices already isolated with strong monitoring may be lower priority); public CVE history (devices with active exploitation history need faster replacement); and budget constraints requiring phased replacement over multiple fiscal years with compensating controls bridging the security gap"
+      },
+      {
+        "id": "c",
+        "text": "Replace the newest EOL hardware first \u2014 older hardware is more likely to work correctly despite EOL status"
+      },
+      {
+        "id": "d",
+        "text": "Network position is irrelevant \u2014 all EOL devices carry equal risk regardless of placement"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Simultaneous replacement of 15% of infrastructure is often not operationally or financially feasible \u2014 risk-based prioritization is necessary.",
+      "b": "Risk-based prioritization evaluates internet exposure, data sensitivity, operational criticality, and existing compensating controls \u2014 enabling efficient allocation of limited replacement budget to highest-risk devices first. This is the correct answer.",
+      "c": "Age is not the primary replacement priority factor \u2014 network position and exploitation risk drive urgency.",
+      "d": "Network position is the most important risk factor \u2014 an internet-facing EOL router faces direct attack attempts while an isolated internal switch has limited exposure."
+    }
+  },
+  {
+    "id": 361,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Legacy",
+    "difficulty": "easy",
+    "text": "How do legacy hardware systems differ from end-of-life systems as security vulnerabilities?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Legacy and EOL are identical terms \u2014 there is no meaningful distinction"
+      },
+      {
+        "id": "b",
+        "text": "End-of-life specifically means the vendor has stopped support and patching. Legacy is broader \u2014 referring to older systems that may still receive limited support but use outdated technologies, architectures, or protocols that are inherently less secure than modern alternatives (weak encryption, insecure protocols, limited security features). Legacy systems may still be patched but remain vulnerable due to architectural limitations that cannot be patched away"
+      },
+      {
+        "id": "c",
+        "text": "Legacy systems are always more secure than modern systems because they are simpler"
+      },
+      {
+        "id": "d",
+        "text": "Legacy hardware vulnerabilities can be eliminated through software updates alone"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Legacy and EOL are related but distinct \u2014 legacy refers to technological age and architectural limitations, EOL refers specifically to vendor support cessation.",
+      "b": "Legacy systems carry security risks beyond EOL status \u2014 their fundamental design may lack security capabilities that modern systems have. This is the correct answer.",
+      "c": "Simplicity does not equate to security \u2014 legacy systems often lack encryption, authentication, and access control capabilities of modern systems.",
+      "d": "Hardware architectural limitations (no TPM, weak crypto in silicon) cannot be remediated through software \u2014 some legacy security limitations are inherent to the hardware design."
+    }
+  },
+  {
+    "id": 362,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Legacy",
+    "difficulty": "medium",
+    "text": "An organization's manufacturing floor uses Programmable Logic Controllers (PLCs) from the 1990s that communicate using Modbus TCP with no authentication and no encryption. These legacy devices control physical machinery. What security risks does this legacy protocol create?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Modbus TCP is secure by design \u2014 industrial protocols do not need authentication"
+      },
+      {
+        "id": "b",
+        "text": "Modbus TCP was designed for trusted isolated networks \u2014 it has no authentication (any network-reachable device can issue commands), no encryption (commands and data are in plaintext), and no integrity protection (commands can be replayed or modified in transit). In connected environments, any attacker with network access can: read all sensor data and process values; issue arbitrary control commands to physical machinery; and potentially cause physical damage or safety incidents. Legacy OT protocols require network isolation (air gaps or very strict firewall rules) and modern protocol gateways as compensating controls"
+      },
+      {
+        "id": "c",
+        "text": "The lack of authentication only matters for internet-connected devices \u2014 internal networks are secure"
+      },
+      {
+        "id": "d",
+        "text": "Modbus vulnerabilities can be patched through PLC firmware updates"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Modbus TCP was designed for isolated networks \u2014 it was not designed with cybersecurity in mind and has no security features.",
+      "b": "Unauthenticated industrial protocols represent critical risks when network-accessible \u2014 arbitrary command injection can cause physical damage. This is the correct answer.",
+      "c": "Internal network segmentation reduces but does not eliminate risk \u2014 insider threats and lateral movement from IT to OT networks make internal-only assumptions dangerous.",
+      "d": "Modbus is a protocol specification \u2014 the authentication absence cannot be patched into the protocol through firmware updates without replacing the protocol."
+    }
+  },
+  {
+    "id": 363,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Legacy",
+    "difficulty": "hard",
+    "text": "A bank still uses a mainframe running COBOL applications from the 1970s for core transaction processing. The mainframe vendor provides security patches. A CISO argues the system is still secure. A security consultant identifies risks the CISO may be overlooking. What are the primary security concerns with legacy mainframe systems?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The CISO is correct \u2014 mainframes are inherently secure due to their architecture"
+      },
+      {
+        "id": "b",
+        "text": "Primary security concerns: COBOL code written in the 1970s likely lacks input validation and modern security controls (not designed against today's threat landscape); few security professionals understand COBOL and mainframe security \u2014 skill scarcity limits security assessment and incident response capability; integration with modern systems (APIs, web interfaces) introduces attack surface the mainframe was not designed to handle; mainframe security monitoring may not integrate with modern SIEM tools; and specialized knowledge concentrated in aging workforce creates continuity risk. While mainframes are operationally stable, their security posture requires specialized assessment"
+      },
+      {
+        "id": "c",
+        "text": "Legacy mainframes cannot be accessed remotely \u2014 they have no security exposure"
+      },
+      {
+        "id": "d",
+        "text": "The only risk is hardware failure \u2014 mainframe software is inherently secure"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Mainframes have robust availability features \u2014 their application-level security requires separate assessment and may have significant gaps.",
+      "b": "Legacy mainframe security requires addressing both the age of application code and the specialized knowledge required to assess and monitor it. This is the correct answer.",
+      "c": "Modern mainframes connect to networks through middleware and APIs \u2014 they have significant network exposure.",
+      "d": "Hardware reliability and software security are separate dimensions \u2014 mainframe software can contain exploitable vulnerabilities."
+    }
+  },
+  {
+    "id": 364,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Legacy",
+    "difficulty": "hard",
+    "text": "An organization's security team discovers that a critical business application runs on a legacy server using SSLv3 for encrypted communication. SSLv3 is vulnerable to the POODLE attack. The application vendor says upgrading TLS is not possible without a complete application rewrite. What does this illustrate about legacy cryptographic vulnerabilities?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "SSLv3 is still secure \u2014 POODLE was patched and no longer applies"
+      },
+      {
+        "id": "b",
+        "text": "This illustrates that legacy applications can have cryptographic vulnerabilities that cannot be remediated without significant development effort \u2014 the vulnerable protocol is embedded in the application architecture. This creates a dilemma: continuing to use SSLv3 exposes data to interception; upgrading requires expensive application rewriting; and compensating controls are limited (you can disable SSLv3 on the server but then the application fails). Organizations must evaluate the risk of continued SSLv3 use against the cost of remediation or replacement, potentially accepting the risk with compensating controls (network isolation, monitoring, accelerating replacement) if immediate remediation is not feasible"
+      },
+      {
+        "id": "c",
+        "text": "The solution is to disable all encryption \u2014 unencrypted traffic is easier to monitor for threats"
+      },
+      {
+        "id": "d",
+        "text": "POODLE only affects web browsers \u2014 server-to-server SSLv3 communication is not vulnerable"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "SSLv3/POODLE represents a real vulnerability \u2014 SSLv3 is disabled in all modern systems for this reason.",
+      "b": "Legacy cryptographic limitations embedded in application architecture illustrate how technical debt creates security vulnerabilities that require significant investment to remediate. This is the correct answer.",
+      "c": "Disabling encryption eliminates any protection \u2014 making the data fully accessible to any network observer.",
+      "d": "POODLE affects any SSLv3 implementation \u2014 not limited to web browsers."
+    }
+  },
+  {
+    "id": 365,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "VM escape",
+    "difficulty": "easy",
+    "text": "What is a virtual machine (VM) escape vulnerability?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A VM escape occurs when a virtual machine runs out of disk space and overwrites the host"
+      },
+      {
+        "id": "b",
+        "text": "A VM escape is a vulnerability where malicious code running inside a virtual machine breaks out of the VM's isolation boundary and gains access to the hypervisor or the host operating system \u2014 compromising the fundamental security guarantee of virtualization"
+      },
+      {
+        "id": "c",
+        "text": "A VM escape occurs when a user escapes from a virtual desktop to a physical desktop environment"
+      },
+      {
+        "id": "d",
+        "text": "A VM escape is when a VM's data escapes through the network to an unauthorized location"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Disk space issues cause operational problems \u2014 not security boundary violations.",
+      "b": "VM escape breaks the isolation that virtualization provides \u2014 allowing attackers within a guest VM to access the hypervisor, host OS, or other guest VMs. This is the correct answer.",
+      "c": "Virtual desktop access is an end-user experience issue \u2014 not a hypervisor security boundary violation.",
+      "d": "Data exfiltration through the network is a different vulnerability \u2014 VM escape specifically refers to breaking out of VM isolation boundaries."
+    }
+  },
+  {
+    "id": 366,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "VM escape",
+    "difficulty": "medium",
+    "text": "A cloud provider hosts multiple customer VMs on shared physical hosts. A customer discovers a VM escape vulnerability in the hypervisor being used. What are the security implications for the cloud provider and all customers sharing the affected hosts?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "VM escape only affects the attacker's own VM \u2014 other customers are not impacted"
+      },
+      {
+        "id": "b",
+        "text": "VM escape on a shared cloud host creates cross-tenant security violations: an attacker in one customer VM who successfully escapes can potentially access the hypervisor controlling all VMs on the host; read memory from other customers' running VMs (including encryption keys, credentials, and sensitive data in memory); interfere with other customers' VMs; and access the host's network and storage infrastructure. Cloud security relies fundamentally on hypervisor isolation \u2014 VM escape undermines the core multi-tenancy security model and represents a critical vulnerability requiring emergency patching"
+      },
+      {
+        "id": "c",
+        "text": "Cloud providers have additional protections that prevent VM escape from affecting other customers"
+      },
+      {
+        "id": "d",
+        "text": "VM escape vulnerabilities are theoretical \u2014 they have never been demonstrated in real cloud environments"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "VM escape grants access to the hypervisor that controls all VMs on the host \u2014 all co-located customers are at risk.",
+      "b": "Multi-tenant cloud security depends on hypervisor isolation \u2014 VM escape fundamentally violates the cloud's security model. This is the correct answer.",
+      "c": "While cloud providers implement additional security layers, a full VM escape that compromises the hypervisor can potentially bypass host-level protections.",
+      "d": "VM escape vulnerabilities have been demonstrated \u2014 Venom (2015), QEMU vulnerabilities, and others are documented examples."
+    }
+  },
+  {
+    "id": 367,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "VM escape",
+    "difficulty": "hard",
+    "text": "The Venom vulnerability (CVE-2015-3456) affected the virtual floppy disk controller in QEMU/KVM and Xen, enabling VM escape. Despite floppy disk controllers being legacy hardware, they were enabled by default in virtual machines. What security lesson does this illustrate about legacy hardware emulation in hypervisors?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The floppy disk controller vulnerability is irrelevant \u2014 no one uses virtual floppy disks"
+      },
+      {
+        "id": "b",
+        "text": "Venom illustrates that legacy device emulation in hypervisors creates attack surface that is often overlooked: virtual machines include emulated hardware components (floppy controllers, sound cards, USB controllers) that are rarely or never used by guest operating systems, yet their emulation code runs in the hypervisor with significant privilege. Bugs in emulation code for rarely-used devices may receive less security scrutiny and less frequent patching. The lesson: hypervisor attack surface includes all emulated hardware components, not just heavily used features; unnecessary device emulation should be disabled; and legacy hardware emulation code requires the same security rigor as other hypervisor components"
+      },
+      {
+        "id": "c",
+        "text": "Floppy disk controllers are so old that their code is thoroughly tested and cannot have bugs"
+      },
+      {
+        "id": "d",
+        "text": "The vulnerability was limited to systems that had physical floppy drives attached"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The vulnerability was in the emulation code present in all affected hypervisors \u2014 its legacy status made it less scrutinized, not irrelevant.",
+      "b": "Legacy hardware emulation creates overlooked attack surface in hypervisors \u2014 Venom demonstrated that unused but present emulation code can be exploited. This is the correct answer.",
+      "c": "Age does not correlate with code correctness \u2014 legacy code may have received less security review.",
+      "d": "The vulnerability was in software emulation \u2014 physical floppy drives were not required."
+    }
+  },
+  {
+    "id": 368,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "VM escape",
+    "difficulty": "hard",
+    "text": "A security team is hardening their virtual infrastructure against VM escape attacks. What defense-in-depth measures reduce the risk and impact of VM escape vulnerabilities?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "VM escape cannot be defended against \u2014 virtualization must be abandoned for physical isolation"
+      },
+      {
+        "id": "b",
+        "text": "Defense-in-depth for VM escape: hypervisor patching (most critical \u2014 applying hypervisor patches promptly eliminates known escape vulnerabilities); disabling unnecessary emulated devices (reduces attack surface); separating high-sensitivity workloads onto dedicated physical hosts (limits blast radius if escape occurs); hypervisor monitoring for anomalous behavior indicating escape attempts; limiting VM privileges (ensure VMs run with minimum necessary permissions); using hardware-assisted virtualization features (Intel VT-d, AMD-Vi) providing additional isolation; and implementing separate management networks for hypervisor management accessible only from dedicated admin systems"
+      },
+      {
+        "id": "c",
+        "text": "Running all VMs as the same operating system prevents VM escape attacks"
+      },
+      {
+        "id": "d",
+        "text": "VM escape can be completely prevented by configuring VMs in read-only mode"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "VM escape risk can be significantly reduced through layered defenses \u2014 virtualization abandonment is not required.",
+      "b": "Defense-in-depth for VM escape combines reducing attack surface, prompt patching, workload isolation, and monitoring to minimize both likelihood and impact. This is the correct answer.",
+      "c": "Guest OS homogeneity does not affect VM escape risk \u2014 escape vulnerabilities are in the hypervisor, not the guest OS.",
+      "d": "VM read-only mode is not a standard security configuration and does not prevent hypervisor-level VM escape."
+    }
+  },
+  {
+    "id": 369,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Resource reuse",
+    "difficulty": "easy",
+    "text": "What is resource reuse as a virtualization vulnerability?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Resource reuse occurs when a VM uses more CPU than allocated, slowing other VMs"
+      },
+      {
+        "id": "b",
+        "text": "Resource reuse vulnerability occurs when virtualization platforms reuse memory, storage, or other resources previously used by one tenant for another tenant without proper sanitization \u2014 potentially exposing data from a previous tenant's use of that resource to the new tenant"
+      },
+      {
+        "id": "c",
+        "text": "Resource reuse refers to recycling old VMs for new workloads"
+      },
+      {
+        "id": "d",
+        "text": "Resource reuse is when the hypervisor reuses the same network port for multiple VMs"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "CPU overuse is a resource contention issue \u2014 not a resource reuse vulnerability.",
+      "b": "Resource reuse vulnerabilities occur when allocated resources carry residual data from previous tenants \u2014 a form of data leakage between isolated workloads. This is the correct answer.",
+      "c": "Recycling VMs for new workloads is an operational practice \u2014 resource reuse vulnerability specifically refers to data remnants in reallocated resources.",
+      "d": "Network port sharing is a networking configuration \u2014 not the resource reuse vulnerability described."
+    }
+  },
+  {
+    "id": 370,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Resource reuse",
+    "difficulty": "medium",
+    "text": "A cloud provider decommissions a customer's VM and reallocates its disk storage to a new customer. If the cloud provider does not properly sanitize the storage before reallocation, what data could the new customer potentially access?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "No data could be accessed \u2014 cloud storage is automatically encrypted and cleared when VMs are decommissioned"
+      },
+      {
+        "id": "b",
+        "text": "Without proper sanitization, the new customer might access residual data from the previous tenant's disk: operating system files and configurations; application data and databases; cryptographic keys and certificates; credentials stored in configuration files; and any unencrypted sensitive data the previous tenant stored. The new customer might access this data by reading unallocated sectors on the virtual disk or by examining files not properly deleted. Proper sanitization requires cryptographic erasure (if encryption is used) or overwriting the storage blocks before reallocation"
+      },
+      {
+        "id": "c",
+        "text": "Cloud storage uses separate physical disks for each customer \u2014 reallocation between customers is impossible"
+      },
+      {
+        "id": "d",
+        "text": "The new customer can only access data that was explicitly shared by the previous tenant"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Automatic sanitization is not guaranteed \u2014 it is a specific security control that must be implemented and verified.",
+      "b": "Unsanitized disk reallocation can expose previous tenant data \u2014 this is a documented cloud security concern. This is the correct answer.",
+      "c": "Virtual disks often share physical storage media \u2014 separate physical disks per customer is not the standard cloud architecture.",
+      "d": "Data sharing requires explicit action \u2014 the risk is unintentional access to remnant data, not deliberate sharing."
+    }
+  },
+  {
+    "id": 371,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Resource reuse",
+    "difficulty": "hard",
+    "text": "A Rowhammer attack exploits a vulnerability in DRAM memory where repeatedly accessing one row of memory cells can flip bits in adjacent rows \u2014 potentially affecting another VM's memory on the same physical host. How does this hardware-level vulnerability affect virtualization isolation?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Rowhammer is a theoretical attack that cannot be executed in practice"
+      },
+      {
+        "id": "b",
+        "text": "Rowhammer demonstrates that hardware-level memory interactions can bypass software-defined virtualization isolation: the vulnerability exists in the physical DRAM, which is shared between all VMs on a host. A malicious VM can hammer memory rows to flip bits in memory allocated to other VMs or the hypervisor itself \u2014 potentially corrupting their data or escalating privileges. Software isolation mechanisms (hypervisor memory management) do not prevent physical bit-flip effects in adjacent DRAM rows. Defense requires: hardware mitigation (ECC memory detecting and correcting bit flips, Target Row Refresh technology); and memory isolation at the hardware level through address randomization or physical separation"
+      },
+      {
+        "id": "c",
+        "text": "Virtualization memory management completely prevents cross-VM memory access including Rowhammer"
+      },
+      {
+        "id": "d",
+        "text": "Rowhammer only affects non-virtualized systems \u2014 VMs have memory protection that prevents bit flips"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Rowhammer has been practically demonstrated \u2014 it has been used to escalate privileges and break VM isolation in research and real attacks.",
+      "b": "Rowhammer operates at the physical hardware level, below the software isolation that virtualization provides \u2014 software cannot prevent hardware-level electromagnetic interactions between memory cells. This is the correct answer.",
+      "c": "Software memory management cannot prevent physical DRAM cell interactions \u2014 Rowhammer specifically exploits this gap.",
+      "d": "VMs share physical DRAM with other VMs \u2014 Rowhammer targeting adjacent memory rows affects all workloads sharing that physical hardware."
+    }
+  },
+  {
+    "id": 372,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Resource reuse",
+    "difficulty": "hard",
+    "text": "A cloud security team wants to prevent resource reuse data leakage when reallocating storage between customers. What technical controls reliably prevent this?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Simply deleting files before reallocation is sufficient \u2014 deleted files cannot be recovered"
+      },
+      {
+        "id": "b",
+        "text": "Reliable prevention requires: at-rest encryption of all storage with per-customer keys (when the VM is decommissioned, the key is destroyed \u2014 making remaining data cryptographically inaccessible without the key \u2014 this is cryptographic erasure); or physical block overwriting of all storage blocks before reallocation (writing zeros or random data to every block). Simply deleting files is insufficient \u2014 deletion typically removes directory entries but leaves data on disk accessible through direct sector reads. File system formatting is similarly insufficient without secure overwrite or cryptographic erasure"
+      },
+      {
+        "id": "c",
+        "text": "Using separate physical disks for each customer eliminates resource reuse risk"
+      },
+      {
+        "id": "d",
+        "text": "Virtual disk snapshots prevent data from persisting after VM decommission"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "File deletion removes directory entries \u2014 the underlying data blocks remain accessible until overwritten.",
+      "b": "Cryptographic erasure (key destruction of encrypted storage) or physical block overwriting are the reliable mechanisms for preventing resource reuse data leakage. This is the correct answer.",
+      "c": "Separate physical disks per customer would prevent this risk but is not standard cloud architecture \u2014 and still requires proper sanitization before reuse within that customer's lifecycle.",
+      "d": "Snapshots capture VM state \u2014 they do not sanitize storage on decommission."
+    }
+  },
+  {
+    "id": 373,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Cloud-specific",
+    "difficulty": "easy",
+    "text": "What is a cloud-specific vulnerability that differs from traditional on-premises vulnerabilities?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Cloud environments have no vulnerabilities \u2014 providers manage all security"
+      },
+      {
+        "id": "b",
+        "text": "Cloud misconfiguration is a cloud-specific vulnerability \u2014 cloud APIs and management consoles allow users to easily expose resources (S3 buckets, databases, compute instances) to the internet through configuration errors. Unlike on-premises where network segmentation provides default protection, cloud resources may be directly internet-accessible if misconfigured. The ease and speed of cloud provisioning also increases the rate of accidental misconfigurations"
+      },
+      {
+        "id": "c",
+        "text": "Cloud vulnerabilities are identical to on-premises vulnerabilities \u2014 the environment makes no difference"
+      },
+      {
+        "id": "d",
+        "text": "Cloud-specific vulnerabilities only affect multi-tenant cloud environments \u2014 private clouds are identical to on-premises"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cloud security is a shared responsibility \u2014 customers retain significant responsibility for securing their configurations.",
+      "b": "Cloud misconfiguration is consistently identified as the leading cloud security vulnerability \u2014 the ease of configuration errors exposing resources publicly is unique to cloud environments. This is the correct answer.",
+      "c": "Cloud environments introduce unique attack surfaces (control plane APIs, metadata services, shared infrastructure) not present in traditional on-premises.",
+      "d": "Private clouds also have cloud-specific vulnerabilities \u2014 misconfiguration risks exist regardless of tenancy model."
+    }
+  },
+  {
+    "id": 374,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Cloud-specific",
+    "difficulty": "medium",
+    "text": "An attacker running on a cloud VM accesses the instance metadata service (IMDS) at 169.254.169.254 and retrieves IAM role credentials with broad AWS permissions. How does this SSRF-to-IMDS attack work and what makes it a cloud-specific vulnerability?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The IMDS endpoint is secure \u2014 credentials cannot be retrieved without authentication"
+      },
+      {
+        "id": "b",
+        "text": "SSRF (Server-Side Request Forgery) allows an attacker to make the server-side application issue requests to internal addresses. The cloud IMDS at 169.254.169.254 provides EC2 instance metadata including IAM role credentials without authentication \u2014 it was designed to be accessible from the instance itself. An SSRF vulnerability in an application running on the EC2 instance allows the attacker to use the application as a proxy to access IMDS and retrieve credentials. This is cloud-specific because: IMDS is a cloud infrastructure feature; the credentials retrieved provide cloud API access; and IMDSv2 (requiring PUT request before GET) specifically mitigates this attack pattern"
+      },
+      {
+        "id": "c",
+        "text": "The 169.254.169.254 address is blocked by all cloud providers \u2014 IMDS is not accessible from instances"
+      },
+      {
+        "id": "d",
+        "text": "IMDS credentials are rotated too frequently to be exploited \u2014 they expire before they can be used"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "IMDS v1 provides credentials without authentication from the instance \u2014 this is the exploited design.",
+      "b": "SSRF combined with cloud IMDS creates a powerful credential theft chain \u2014 unique to cloud environments where metadata services provide sensitive credentials accessible from instance network. This is the correct answer.",
+      "c": "IMDS is specifically accessible from the instance at the link-local address \u2014 this is an intentional cloud feature that becomes a vulnerability when SSRF exists.",
+      "d": "IAM role credentials from IMDS have expiration periods (typically hours) \u2014 sufficient time to use them for attacks."
+    }
+  },
+  {
+    "id": 375,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Cloud-specific",
+    "difficulty": "hard",
+    "text": "An organization uses a public cloud but stores encryption keys for their sensitive data in the same cloud provider. A cloud provider insider threat or cloud provider compromise would expose both the encrypted data and the decryption keys simultaneously. What cloud-specific vulnerability does this represent and how is it mitigated?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Storing keys and data together in the cloud is standard practice \u2014 no additional risk exists"
+      },
+      {
+        "id": "b",
+        "text": "This represents the key co-location vulnerability specific to cloud: storing encrypted data and the keys that decrypt it in the same provider environment means a single compromise (of the provider) exposes both. This defeats the purpose of encryption (protecting data if the storage is compromised). Mitigation: bring-your-own-key (BYOK) where the customer manages encryption keys in an on-premises or third-party HSM and exports them to the cloud only for encryption/decryption operations; or hold-your-own-key (HYOK) where keys never leave customer control and all encryption occurs customer-side. This ensures that even a full cloud provider compromise cannot expose plaintext data without access to separately held keys"
+      },
+      {
+        "id": "c",
+        "text": "Cloud providers are contractually prohibited from accessing customer data \u2014 the risk does not exist"
+      },
+      {
+        "id": "d",
+        "text": "The solution is to use stronger encryption algorithms \u2014 key storage location is irrelevant to security"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Key co-location is a documented security concern \u2014 it eliminates the protection that encryption is intended to provide against provider compromise.",
+      "b": "Key co-location is a cloud-specific data protection concern \u2014 BYOK and HYOK architectures address it by separating key management from the environment holding encrypted data. This is the correct answer.",
+      "c": "Contractual prohibitions do not prevent insider threats or security breaches \u2014 technical separation of keys is required.",
+      "d": "Encryption algorithm strength is irrelevant if the key is stored alongside the encrypted data and both are compromised."
+    }
+  },
+  {
+    "id": 376,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Cloud-specific",
+    "difficulty": "hard",
+    "text": "A DevOps team uses Infrastructure-as-Code (IaC) templates to provision cloud resources. A security scan finds that the IaC templates contain hardcoded AWS access keys. The templates are stored in a public GitHub repository. What cloud-specific vulnerability chain does this create?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Hardcoded keys in IaC are a minor issue \u2014 they are only used during deployment and then discarded"
+      },
+      {
+        "id": "b",
+        "text": "This creates a severe cloud-specific vulnerability chain: public GitHub repository exposure means automated scanners (like truffleHog, GitGuardian, or GitHub's own secret scanning) and malicious actors continuously monitor public repositories for leaked credentials; once AWS keys are discovered, attackers can immediately authenticate to AWS APIs with whatever permissions the keys hold; cloud account takeover can occur within minutes of key exposure; all resources in the account become accessible. Cloud APIs are internet-accessible by design \u2014 unlike on-premises where stolen credentials still require network access, cloud credentials provide direct internet-accessible control plane access. Mitigation requires immediate key rotation and using IAM roles/instance profiles instead of long-lived access keys"
+      },
+      {
+        "id": "c",
+        "text": "AWS keys in public repositories are automatically detected and invalidated by AWS within seconds"
+      },
+      {
+        "id": "d",
+        "text": "IaC templates are not executed directly \u2014 hardcoded keys cannot be used from static template files"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Hardcoded keys in public repositories are immediately exploitable \u2014 attackers actively scan for them.",
+      "b": "Cloud API access keys provide internet-accessible control plane access \u2014 unlike on-premises credentials requiring network access, cloud credential exposure enables immediate remote exploitation. This is the correct answer.",
+      "c": "AWS does have automated detection and notification \u2014 but not guaranteed invalidation within seconds, and attacker automation can exploit keys before detection.",
+      "d": "Keys in IaC templates are real, usable credentials \u2014 they are hardcoded because they are the actual keys used for authentication."
+    }
+  },
+  {
+    "id": 377,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Supply chain (vulnerability)",
+    "difficulty": "easy",
+    "text": "How does supply chain vulnerability differ from supply chain as an attack vector? What specific types of vulnerabilities fall under this category?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Supply chain vulnerability and supply chain attack vector are identical concepts"
+      },
+      {
+        "id": "b",
+        "text": "As a vulnerability type, supply chain vulnerabilities refer to weaknesses in the trust placed in supply chain components \u2014 software, hardware, or services that introduce vulnerabilities into an organization's environment through trusted channels. Types include: malicious code in open-source libraries; hardware with backdoors from manufacturers; software with insecure default configurations from vendors; components with known vulnerabilities that organizations inadvertently inherit; and service providers with security weaknesses that create indirect exposure"
+      },
+      {
+        "id": "c",
+        "text": "Supply chain vulnerabilities only apply to physical goods manufacturing \u2014 not software"
+      },
+      {
+        "id": "d",
+        "text": "Supply chain vulnerabilities can only be introduced by malicious actors \u2014 accidental introduction is not possible"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "As an attack vector, supply chain describes how attacks are delivered (through trusted relationships). As a vulnerability type, it describes the inherited weaknesses from trusted components.",
+      "b": "Supply chain vulnerabilities encompass both intentional (backdoors, malicious code) and unintentional (insecure defaults, inherited vulnerabilities) security weaknesses introduced through trusted components. This is the correct answer.",
+      "c": "Supply chain vulnerabilities are heavily concentrated in software \u2014 open-source dependencies, SDKs, and cloud services are major supply chain vulnerability sources.",
+      "d": "Many supply chain vulnerabilities are accidentally introduced \u2014 unintentional insecure coding, misconfigured defaults, and neglected dependency updates are common."
+    }
+  },
+  {
+    "id": 378,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Supply chain (vulnerability)",
+    "difficulty": "medium",
+    "text": "An organization's application depends on 847 npm packages (direct and transitive dependencies). A security scan identifies that 23 of these packages have known CVEs. How does this illustrate the scale of supply chain vulnerability management?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "An organization is only responsible for securing their direct code \u2014 third-party packages are the vendor's responsibility"
+      },
+      {
+        "id": "b",
+        "text": "The 847 package ecosystem illustrates the scale challenge of supply chain vulnerability management: each package represents inherited code from external authors with varying security practices; transitive dependencies (packages of packages) multiply the attack surface beyond what developers directly choose; 23 CVEs across 847 packages means approximately 3% have known vulnerabilities \u2014 a typical rate in modern applications; updating one package may break others due to version compatibility; and the organization is legally and operationally responsible for all code running in their application regardless of origin. Software Composition Analysis (SCA) tools must continuously track and alert on CVEs across the full dependency tree"
+      },
+      {
+        "id": "c",
+        "text": "23 CVEs in 847 packages is acceptable \u2014 some vulnerabilities are expected in large applications"
+      },
+      {
+        "id": "d",
+        "text": "The solution is to write all 847 packages internally \u2014 external dependencies should be eliminated"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Organizations are responsible for all code in their applications \u2014 regulatory frameworks and data protection requirements do not distinguish between first and third-party code.",
+      "b": "Large dependency trees create a significant, continuously evolving supply chain vulnerability management challenge \u2014 this is a fundamental characteristic of modern software development. This is the correct answer.",
+      "c": "Known CVEs require risk assessment and remediation \u2014 they are not universally acceptable. High-CVSS CVEs in critical dependencies require prompt remediation.",
+      "d": "Replacing all external dependencies with internally written code is impractical and would create different security challenges including less-reviewed code."
+    }
+  },
+  {
+    "id": 379,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Supply chain (vulnerability)",
+    "difficulty": "hard",
+    "text": "A hardware provider manufactures network interface cards (NICs) with embedded firmware containing a backdoor that allows the manufacturer to access any network traffic passing through the NIC at the firmware level \u2014 below OS monitoring capability. What makes this supply chain vulnerability particularly difficult to detect and remediate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "NIC firmware backdoors would be detected by standard network monitoring tools"
+      },
+      {
+        "id": "b",
+        "text": "Hardware supply chain backdoors at the firmware level are particularly difficult to: detect (firmware operates below the OS and network monitoring stack \u2014 the compromised NIC can capture traffic before the OS sees it and exfiltrate via covert channels the host cannot observe); attribute (distinguishing malicious firmware from benign operation requires specialized hardware analysis tools); remediate (firmware replacement requires the vendor's cooperation \u2014 a compromised vendor may not provide clean firmware; third-party firmware may not exist); and verify (even after reflashing, verifying firmware integrity requires specialized hardware analysis). This represents the highest difficulty category of supply chain vulnerability"
+      },
+      {
+        "id": "c",
+        "text": "NIC firmware backdoors are theoretical \u2014 network hardware cannot capture traffic below OS level"
+      },
+      {
+        "id": "d",
+        "text": "Standard antivirus software detects firmware-level backdoors in network hardware"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "NIC firmware operates below the network monitoring stack \u2014 traffic can be captured before monitoring tools have visibility.",
+      "b": "Firmware-level hardware backdoors represent the most challenging supply chain vulnerability category \u2014 operating below all software security controls. This is the correct answer.",
+      "c": "NIC firmware operates at the hardware level and can absolutely capture traffic before the OS processes it \u2014 this is a documented and researched attack surface.",
+      "d": "Antivirus operates within the OS and cannot monitor firmware-level operations on network hardware."
+    }
+  },
+  {
+    "id": 380,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Supply chain (vulnerability)",
+    "difficulty": "hard",
+    "text": "An organization evaluates whether to use an open-source library for a security-critical authentication component. The library has 50,000 GitHub stars but was recently transferred to a new maintainer. What supply chain vulnerability risk should concern the security team?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Popularity (50,000 stars) guarantees the library is secure \u2014 popular code is well-reviewed"
+      },
+      {
+        "id": "b",
+        "text": "Recent maintainer transfer creates significant supply chain risk: the new maintainer's intent and trustworthiness are unverified; malicious maintainer acquisition is a documented attack vector (attackers acquire control of popular libraries to insert backdoors \u2014 the 'event-stream' npm package incident demonstrated this); the original author's security practices may not continue; and organizational due diligence about the original author may not apply to the new maintainer. Red flags include: recently transferred popular security-critical packages; new maintainers with limited history; and rapid changes to package behavior after transfer. Security-critical components like authentication libraries require particularly careful supply chain vetting"
+      },
+      {
+        "id": "c",
+        "text": "A maintainer transfer is normal \u2014 open-source projects frequently change maintainers with no security impact"
+      },
+      {
+        "id": "d",
+        "text": "The solution is to fork the library \u2014 a private fork eliminates supply chain risk"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Popularity does not guarantee security \u2014 popular packages are specifically targeted for supply chain attacks because compromise reaches more victims.",
+      "b": "Malicious maintainer acquisition is a documented, real supply chain attack technique \u2014 security-critical libraries require careful vetting of maintainer trustworthiness after transfers. This is the correct answer.",
+      "c": "Maintainer transfers do carry security risk \u2014 the 'event-stream' npm incident where a malicious maintainer was granted control and inserted cryptocurrency-stealing code is a documented example.",
+      "d": "Forking a library shifts maintenance responsibility to the organization \u2014 without ongoing security review, the fork may drift into insecurity."
+    }
+  },
+  {
+    "id": 381,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Cryptographic",
+    "difficulty": "easy",
+    "text": "What are cryptographic vulnerabilities and what distinguishes them from other vulnerability types?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Cryptographic vulnerabilities only affect military-grade encryption \u2014 consumer applications are not affected"
+      },
+      {
+        "id": "b",
+        "text": "Cryptographic vulnerabilities are weaknesses in the design, implementation, or use of cryptographic algorithms or protocols \u2014 including: weak or broken algorithms (MD5, SHA-1, DES, SSLv3); improper key management (short keys, weak random number generation, key reuse); implementation errors (timing side channels, padding oracle vulnerabilities); and protocol design flaws. Unlike most vulnerabilities, cryptographic weaknesses may exist in correctly functioning software \u2014 the vulnerability is in the mathematical or implementation approach rather than a traditional coding error"
+      },
+      {
+        "id": "c",
+        "text": "Cryptographic vulnerabilities only exist in custom encryption implementations \u2014 standard library encryption is always secure"
+      },
+      {
+        "id": "d",
+        "text": "Cryptographic vulnerabilities require nation-state resources to exploit \u2014 they pose no practical threat to most organizations"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cryptographic vulnerabilities affect all applications that use cryptography \u2014 authentication systems, TLS, password storage, and data protection are all affected.",
+      "b": "Cryptographic vulnerabilities are distinctive because correctly functioning code can still be cryptographically insecure \u2014 the weakness is in the approach, not necessarily a programming error. This is the correct answer.",
+      "c": "Standard cryptographic libraries also have vulnerabilities \u2014 OpenSSL (Heartbleed), GnuTLS, and others have had serious implementation flaws.",
+      "d": "Many cryptographic attacks are practical without nation-state resources \u2014 rainbow tables for unsalted hashes, BEAST/POODLE attacks against SSL/TLS, and padding oracle attacks have been demonstrated with modest resources."
+    }
+  },
+  {
+    "id": 382,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Cryptographic",
+    "difficulty": "medium",
+    "text": "An application stores passwords using MD5 without salting. An attacker obtains the password database and cracks 78% of passwords in 4 hours using a GPU and rainbow tables. What cryptographic vulnerabilities enabled this rapid cracking?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "MD5 is secure for password storage \u2014 the breach must have occurred through other means"
+      },
+      {
+        "id": "b",
+        "text": "Multiple cryptographic vulnerabilities enabled the rapid cracking: MD5 is a fast hash (designed for speed \u2014 can compute billions per second on modern GPUs); lack of salting means identical passwords produce identical hashes (enabling rainbow table attacks and batch cracking of all users with the same password simultaneously); MD5 has no work factor/iteration count (unlike bcrypt/Argon2 which are intentionally slow); and rainbow tables precompute MD5 hashes of common passwords \u2014 making cracking instantaneous. Password storage requires purpose-built algorithms (bcrypt, Argon2id, scrypt) with salting and work factor"
+      },
+      {
+        "id": "c",
+        "text": "The attack succeeded because the passwords were too short \u2014 algorithm choice is not relevant"
+      },
+      {
+        "id": "d",
+        "text": "GPU-based cracking is not possible \u2014 password databases require physical access to crack"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "MD5 is explicitly unsuitable for password storage \u2014 it was designed for speed and lacks the properties needed for secure password hashing.",
+      "b": "The combination of MD5's speed, lack of salting, and lack of work factor creates optimal conditions for rapid GPU-accelerated cracking. This is the correct answer.",
+      "c": "Password length is a factor \u2014 but cryptographic algorithm choice is the primary vulnerability enabling this attack.",
+      "d": "GPU-based password cracking is a standard and widely available technique \u2014 physical access is not required for hash cracking."
+    }
+  },
+  {
+    "id": 383,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Cryptographic",
+    "difficulty": "hard",
+    "text": "A timing side-channel attack against a TLS implementation measures the time taken to process incorrect MAC values during HMAC verification. The implementation returns faster when the MAC fails early (first byte mismatch) vs. full comparison. How does this timing difference create a cryptographic vulnerability?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Timing differences of microseconds cannot be measured reliably \u2014 timing side-channels are theoretical"
+      },
+      {
+        "id": "b",
+        "text": "Non-constant-time MAC comparison leaks information through timing: if HMAC verification returns faster on early byte mismatch, an attacker can guess HMAC bytes one at a time \u2014 sending millions of requests with varying first bytes and measuring response time to identify which first byte takes slightly longer (indicating a match), then proceeding to the second byte. This oracle allows recovering the HMAC without the key, potentially enabling authentication bypass or message forgery. This is why cryptographic implementations must use constant-time comparison functions that always compare all bytes regardless of where a mismatch occurs \u2014 preventing any timing information leakage"
+      },
+      {
+        "id": "c",
+        "text": "HMAC computation time is not sensitive information \u2014 timing attacks only affect encryption operations"
+      },
+      {
+        "id": "d",
+        "text": "Network jitter would mask any timing differences \u2014 side-channel attacks cannot work over networks"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Timing side-channels have been practically exploited over networks \u2014 statistical analysis of many measurements can distinguish microsecond-level differences.",
+      "b": "Non-constant-time cryptographic operations leak information through timing \u2014 requiring constant-time implementations for all security-sensitive comparisons. This is the correct answer.",
+      "c": "HMAC verification timing is security-sensitive \u2014 timing of any cryptographic operation can leak information about secret values.",
+      "d": "Network jitter can be overcome statistically with sufficient measurements \u2014 practical timing attacks over the internet have been demonstrated."
+    }
+  },
+  {
+    "id": 384,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Cryptographic",
+    "difficulty": "hard",
+    "text": "A quantum computer running Shor's algorithm could factor the large primes underlying RSA encryption and solve discrete logarithm problems underlying elliptic curve cryptography. What does this represent as a cryptographic vulnerability and how should organizations prepare?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Quantum computers do not affect cryptography \u2014 quantum computing is a different field"
+      },
+      {
+        "id": "b",
+        "text": "Quantum computers represent a future cryptographic vulnerability that breaks the mathematical assumptions of current asymmetric cryptography (RSA, ECDSA, DH, ECDH) \u2014 once sufficiently powerful quantum computers exist, all asymmetric cryptography currently deployed would be retrospectively vulnerable to 'harvest now, decrypt later' attacks where encrypted data captured today is decrypted after quantum computers become available. Organizations should: inventory current cryptographic algorithm usage; begin transitioning to NIST-approved post-quantum cryptography algorithms (CRYSTALS-Kyber, CRYSTALS-Dilithium); prioritize long-lived sensitive data that must remain confidential beyond the quantum computing horizon; and implement crypto-agility enabling algorithm replacement without application rewrites"
+      },
+      {
+        "id": "c",
+        "text": "Symmetric encryption (AES-256) is also broken by quantum computers \u2014 all encryption must be replaced"
+      },
+      {
+        "id": "d",
+        "text": "Quantum computing threats are too far in the future to warrant current preparation"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Quantum computing specifically targets the mathematical foundations of asymmetric cryptography \u2014 Shor's algorithm directly breaks RSA and ECC.",
+      "b": "Quantum cryptographic vulnerability requires proactive preparation due to 'harvest now, decrypt later' attacks making current encrypted data vulnerable retrospectively. This is the correct answer.",
+      "c": "Symmetric encryption is less affected \u2014 Grover's algorithm reduces AES-256 to approximately AES-128 security, which remains secure with adequate key length.",
+      "d": "The NIST post-quantum cryptography standardization process completed in 2024 \u2014 preparation is actively underway and required for long-lived sensitive data."
+    }
+  },
+  {
+    "id": 385,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Misconfiguration",
+    "difficulty": "easy",
+    "text": "What is a security misconfiguration vulnerability and what makes it so common?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Misconfiguration vulnerabilities are rare \u2014 systems ship in secure configurations by default"
+      },
+      {
+        "id": "b",
+        "text": "Security misconfiguration occurs when systems, applications, or services are configured in ways that introduce security weaknesses \u2014 using default credentials, unnecessarily enabling features or services, leaving default configurations that were designed for ease of use rather than security, or incorrect permission settings. Misconfigurations are common because: default configurations prioritize usability over security; complex systems have many configuration options that are easy to set incorrectly; time pressure during deployment leads to shortcuts; and organizations may lack the expertise to determine the secure configuration for specialized systems"
+      },
+      {
+        "id": "c",
+        "text": "Misconfiguration only affects cloud environments \u2014 on-premises systems cannot be misconfigured"
+      },
+      {
+        "id": "d",
+        "text": "Security misconfiguration is primarily a human error problem that cannot be systematically addressed"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Many systems ship with insecure defaults \u2014 secure defaults are an active design goal that many products still do not achieve.",
+      "b": "Misconfiguration is consistently among the top security vulnerabilities \u2014 the combination of insecure defaults, configuration complexity, and deployment pressure makes it endemic. This is the correct answer.",
+      "c": "Misconfiguration affects all environments \u2014 cloud misconfigurations may be more visible due to internet exposure but on-premises systems are equally susceptible.",
+      "d": "Misconfiguration can be systematically addressed through secure configuration baselines, automated compliance scanning, IaC security scanning, and configuration management."
+    }
+  },
+  {
+    "id": 386,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Misconfiguration",
+    "difficulty": "medium",
+    "text": "An organization deploys a Kubernetes cluster and a security scan reveals: the API server accepts anonymous requests; the dashboard is exposed without authentication on the internet; containers run as root; and network policies do not exist (all pods can communicate with all other pods). Categorize these findings and explain their individual risks.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "These findings are normal for a default Kubernetes deployment \u2014 they require no remediation"
+      },
+      {
+        "id": "b",
+        "text": "All four are critical misconfigurations: API server anonymous access allows unauthenticated cluster control plane access (attacker can deploy pods, access secrets, escalate to node access); exposed dashboard without authentication provides the same control plane access through a web interface; containers running as root means container escape gives root access to the host; and absent network policies create a flat network where any compromised pod can reach all other pods and cluster services (enabling lateral movement). Default Kubernetes configurations are insecure \u2014 each finding represents a distinct misconfigurations risk requiring specific remediation (RBAC, authentication, non-root containers, network policies)"
+      },
+      {
+        "id": "c",
+        "text": "Only the internet-exposed dashboard is a security concern \u2014 internal misconfigurations do not matter"
+      },
+      {
+        "id": "d",
+        "text": "Kubernetes security is the cloud provider's responsibility \u2014 these configurations are automatically secured"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "These are critical security misconfigurations that have led to real-world Kubernetes cluster compromises.",
+      "b": "Each Kubernetes misconfiguration represents a distinct, serious risk \u2014 the combination creates a severely insecure cluster where compromise of one element enables escalation through all others. This is the correct answer.",
+      "c": "Internal misconfigurations matter \u2014 lateral movement, privilege escalation, and insider threats all exploit internal configuration weaknesses.",
+      "d": "Kubernetes security is a shared responsibility \u2014 the cloud provider secures the underlying infrastructure but customers configure their own Kubernetes deployments."
+    }
+  },
+  {
+    "id": 387,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Misconfiguration",
+    "difficulty": "hard",
+    "text": "An automated security scanner identifies 847 misconfigurations across an organization's cloud environment. Security staff can remediate approximately 50 per week. Leadership asks for a prioritization framework. What risk-based approach should guide remediation order?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Fix them in alphabetical order by resource name \u2014 all misconfigurations are equally important"
+      },
+      {
+        "id": "b",
+        "text": "Risk-based prioritization framework: (1) Severity of misconfiguration \u2014 internet-exposed resources without authentication are highest priority; storage with public read/write access to sensitive data; privilege misconfigurations granting excessive permissions. (2) Data sensitivity \u2014 misconfigurations affecting resources containing PII, financial data, or credentials prioritized over non-sensitive resources. (3) Exploitability \u2014 misconfigurations with known active exploitation patterns require faster remediation. (4) Blast radius \u2014 misconfigurations in central identity/IAM or shared infrastructure affect more resources if exploited. (5) Compensating controls \u2014 misconfigurations in well-monitored, network-isolated resources may be lower priority than equivalent misconfigurations in unmonitored, internet-facing resources"
+      },
+      {
+        "id": "c",
+        "text": "Prioritize the most recently discovered misconfigurations \u2014 older ones have already been accepted"
+      },
+      {
+        "id": "d",
+        "text": "Prioritize the easiest fixes first \u2014 maximizing remediation volume reduces overall risk fastest"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Alphabetical order ignores risk \u2014 a publicly exposed S3 bucket with customer data is far higher priority than an unused internal resource with a minor configuration issue.",
+      "b": "Multi-factor risk prioritization (severity, data sensitivity, exploitability, blast radius, compensating controls) enables efficient allocation of limited remediation capacity to highest-risk items. This is the correct answer.",
+      "c": "Age is not a risk indicator \u2014 old misconfigurations that remain unexploited are not necessarily lower risk than new ones.",
+      "d": "Easiest fixes first may resolve low-risk items while high-risk, difficult-to-fix misconfigurations remain \u2014 risk should drive priority, not implementation ease."
+    }
+  },
+  {
+    "id": 388,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Misconfiguration",
+    "difficulty": "hard",
+    "text": "An organization implements Infrastructure as Code (IaC) for all cloud deployments. Despite this, misconfigurations continue appearing in production. A security engineer identifies that IaC templates pass code review but contain misconfigurations that are only discovered post-deployment. What process improvement addresses this gap?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "IaC automatically prevents misconfigurations \u2014 if IaC is used, misconfigurations cannot occur"
+      },
+      {
+        "id": "b",
+        "text": "The gap between IaC code review and deployment-time misconfiguration requires shifting security left into the IaC development process: IaC security scanning tools (tfsec, Checkov, cfn-nag, KICS) analyze IaC templates before deployment, identifying misconfigurations in code before they reach production; integration into CI/CD pipelines blocking deployment of misconfigured templates; policy-as-code frameworks (Open Policy Agent) enforcing security requirements in IaC; and pre-commit hooks catching issues before code review. This shifts detection from post-deployment scanning to pre-deployment prevention \u2014 addressing the gap where human code review misses security configuration details"
+      },
+      {
+        "id": "c",
+        "text": "Post-deployment scanning is sufficient \u2014 misconfigurations are acceptable until discovered"
+      },
+      {
+        "id": "d",
+        "text": "The solution is to abandon IaC and use manual configuration \u2014 IaC is the cause of misconfigurations"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "IaC defines configurations \u2014 it can define secure or insecure configurations equally. The tool is neutral; the content determines security.",
+      "b": "IaC security scanning in CI/CD shifts misconfiguration detection left \u2014 preventing deployment of insecure templates rather than discovering misconfigurations post-deployment. This is the correct answer.",
+      "c": "Post-deployment discovery is too late \u2014 misconfigurations may be exploited during the discovery-to-remediation window.",
+      "d": "IaC enables consistent, auditable configurations \u2014 manual configuration is more prone to inconsistency and harder to version control and review."
+    }
+  },
+  {
+    "id": 389,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Side loading",
+    "difficulty": "easy",
+    "text": "What is side loading as a mobile device vulnerability?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Side loading refers to loading an application from external memory while another app is running simultaneously"
+      },
+      {
+        "id": "b",
+        "text": "Side loading is the installation of mobile applications from sources other than the official app store (Google Play, Apple App Store) \u2014 bypassing the app store's vetting and security scanning processes. Side-loaded applications may contain malware, request excessive permissions, or perform malicious activities that app store review would have caught"
+      },
+      {
+        "id": "c",
+        "text": "Side loading refers to loading malware from a USB cable connected to a mobile device"
+      },
+      {
+        "id": "d",
+        "text": "Side loading is a performance optimization technique where apps load content from multiple servers simultaneously"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Side loading refers to installation from unofficial sources \u2014 not simultaneous running of applications.",
+      "b": "Side loading bypasses the security screening that app stores apply \u2014 creating a pathway for malicious applications to reach users. This is the correct answer.",
+      "c": "USB-based malware installation is a removable device attack \u2014 side loading refers specifically to unofficial app installation.",
+      "d": "Content delivery from multiple servers is a CDN/performance technique \u2014 not mobile application side loading."
+    }
+  },
+  {
+    "id": 390,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Side loading",
+    "difficulty": "medium",
+    "text": "An Android device has 'Unknown Sources' (installation from outside Google Play) enabled. A user downloads and installs an APK from a third-party website that appears to be a popular banking application. The fake banking app overlays legitimate banking apps to capture credentials. How does side loading enable this attack?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Google Play would have detected this malicious app \u2014 enabling Unknown Sources provides no additional risk"
+      },
+      {
+        "id": "b",
+        "text": "Side loading enables this attack by bypassing Google Play's app review process: the malicious APK would likely be rejected by Google Play's malware scanning and review; 'Unknown Sources' enables installation of arbitrary APKs from any website; the user trusted the third-party website without app store vetting; the fake banking app gained installation without security review. Google Play Protect can scan side-loaded apps but detection is not guaranteed for new malware. The attack succeeds because the malicious app was never subjected to the vetting that legitimate app distribution requires"
+      },
+      {
+        "id": "c",
+        "text": "The attack would succeed even with Unknown Sources disabled because malware can bypass Android controls"
+      },
+      {
+        "id": "d",
+        "text": "Android overlay attacks require root access \u2014 this attack cannot succeed on a non-rooted device"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Google Play's vetting process is specifically what prevents many malicious apps from reaching users \u2014 side loading bypasses this protection.",
+      "b": "Side loading creates a distribution channel that bypasses app store security review \u2014 enabling malicious apps to reach users. This is the correct answer.",
+      "c": "Disabling Unknown Sources prevents installation of APKs from outside Google Play \u2014 the attack requires side loading to install the malicious APK.",
+      "d": "Overlay attacks do not require root \u2014 accessibility permissions can enable overlays on non-rooted devices."
+    }
+  },
+  {
+    "id": 391,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Side loading",
+    "difficulty": "hard",
+    "text": "An enterprise mobile security policy prohibits side loading, but an employee side-loads a productivity application they claim is legitimate. MDM logs show the app was installed from an APK downloaded from a file-sharing site. The app has broad system permissions. What security assessment should the security team perform?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The employee's explanation is sufficient \u2014 if they claim the app is legitimate, no investigation is needed"
+      },
+      {
+        "id": "b",
+        "text": "Security assessment required: (1) APK analysis \u2014 submit the APK hash to VirusTotal and dedicated mobile threat intelligence platforms; perform static analysis of the APK (decompile with jadx/apktool and review permissions, network connections, code patterns); conduct dynamic analysis in a sandbox environment (observe runtime behavior, network communications, file operations). (2) Device examination \u2014 review what data and permissions the app has accessed since installation; check for C2 communication in network logs; look for data exfiltration indicators. (3) Incident response preparation \u2014 be ready to wipe and re-enroll the device if the app is determined malicious. The combination of policy violation, unusual source, and broad permissions warrants thorough investigation"
+      },
+      {
+        "id": "c",
+        "text": "Simply uninstalling the app resolves all risk \u2014 no further investigation is needed"
+      },
+      {
+        "id": "d",
+        "text": "Side-loaded apps with broad permissions are normal \u2014 all apps request many permissions"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Employee explanation does not establish app legitimacy \u2014 technical analysis is required.",
+      "b": "A policy-violating side-loaded app from a file-sharing site with broad permissions requires comprehensive analysis \u2014 both static/dynamic APK analysis and device forensics. This is the correct answer.",
+      "c": "Uninstalling may remove active malware but data already exfiltrated cannot be recovered \u2014 and any persistence mechanisms must be identified.",
+      "d": "Broad permissions from a side-loaded app from an untrusted source are a significant red flag requiring investigation."
+    }
+  },
+  {
+    "id": 392,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Side loading",
+    "difficulty": "hard",
+    "text": "Apple's iOS historically prohibited side loading, requiring all apps to go through the App Store. The EU's Digital Markets Act (DMA) required Apple to allow side loading in the EU in 2024. What security implications does this regulatory requirement create?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The DMA requirement has no security implications \u2014 Apple's other security controls are sufficient"
+      },
+      {
+        "id": "b",
+        "text": "The DMA side loading requirement creates significant security implications for iOS in the EU: iOS's security model historically derived significant protection from App Store centralized vetting \u2014 side loading creates an alternative distribution path that attackers will exploit to distribute malware outside App Store review; EU iOS users face elevated malware risk compared to jurisdictions where App Store exclusivity is maintained; enterprise security policies must account for EU employee devices potentially having side-loaded apps; Apple implemented Notarization requirements (basic malware checks) for side-loaded apps but this provides less comprehensive protection than full App Store review; and the precedent creates ongoing regulatory and security tension between platform security and regulatory competition requirements"
+      },
+      {
+        "id": "c",
+        "text": "Side loading makes iOS identical in security to Android \u2014 both become equally insecure"
+      },
+      {
+        "id": "d",
+        "text": "The DMA requirement is beneficial \u2014 it improves iOS security by enabling faster app distribution"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "App Store centralized vetting is a meaningful security control \u2014 bypassing it does create additional risk.",
+      "b": "Regulatory requirements can create security trade-offs \u2014 the DMA's side loading mandate demonstrates how competition policy and security policy can conflict. This is the correct answer.",
+      "c": "iOS retains many security advantages beyond App Store exclusivity \u2014 sandbox architecture, ASLR, code signing \u2014 the risk increase from side loading is real but does not make iOS equivalent to Android security posture.",
+      "d": "Faster distribution is a business benefit \u2014 the security implication is increased malware risk from bypassing App Store review."
+    }
+  },
+  {
+    "id": 393,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Jailbreaking",
+    "difficulty": "easy",
+    "text": "What is mobile device jailbreaking and what security risks does it create?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Jailbreaking is the legal process of unlocking a phone to use on any carrier network"
+      },
+      {
+        "id": "b",
+        "text": "Jailbreaking exploits vulnerabilities in iOS (or rooting for Android) to remove manufacturer-imposed restrictions \u2014 gaining root access, enabling unsigned application installation, and bypassing security controls. Security risks: removes sandbox restrictions that isolate apps; allows installation of unreviewed apps with potentially malicious code; disables secure boot and code signing verification; makes the device ineligible for security patches from Apple; weakens or eliminates file system protection; and may install components (Cydia) that themselves have vulnerabilities"
+      },
+      {
+        "id": "c",
+        "text": "Jailbreaking is performed by the device manufacturer to add features for enterprise customers"
+      },
+      {
+        "id": "d",
+        "text": "Jailbreaking only removes cosmetic restrictions \u2014 it has no impact on device security"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Carrier unlocking is a separate, legitimate, and often legal activity \u2014 jailbreaking removes platform security restrictions, not carrier locks.",
+      "b": "Jailbreaking removes the fundamental security architecture of iOS \u2014 sandbox isolation, code signing, and secure boot \u2014 creating a significantly less secure device. This is the correct answer.",
+      "c": "Manufacturers do not jailbreak their own devices \u2014 they implement the security restrictions that jailbreaking removes.",
+      "d": "Jailbreaking specifically targets security restrictions \u2014 the impacts on device security are fundamental."
+    }
+  },
+  {
+    "id": 394,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Jailbreaking",
+    "difficulty": "medium",
+    "text": "An enterprise BYOD policy allows employees to use personal iPhones for work email and documents. A security audit reveals that 8 employees have jailbroken devices that are connected to corporate resources. What specific security risks do jailbroken devices pose to the enterprise?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Jailbroken devices pose no enterprise risk \u2014 the devices are personal property"
+      },
+      {
+        "id": "b",
+        "text": "Jailbroken devices connecting to corporate resources create specific enterprise risks: corporate email and documents are stored on a device without OS-level sandbox protection \u2014 malicious apps on the jailbroken device can read corporate data from other apps' storage; corporate credentials stored on the device are accessible to apps that bypass the keychain restrictions; MDM profiles may be removable by users with root access; jailbroken devices cannot receive normal OS security updates; and persistence mechanisms used for jailbreaking may themselves contain malicious code. Enterprise MDM should detect jailbreaking and block corporate resource access on compromised devices"
+      },
+      {
+        "id": "c",
+        "text": "The risk is limited because the devices are personal \u2014 corporate data is protected by the mail app"
+      },
+      {
+        "id": "d",
+        "text": "Jailbroken devices are more secure \u2014 users have more control over their device's security settings"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Personal device status does not eliminate enterprise risk \u2014 corporate data on the device is exposed to jailbreak-enabled security weaknesses.",
+      "b": "Jailbreaking removes iOS security controls that protect corporate data stored on the device \u2014 sandbox bypass, keychain exposure, and MDM circumvention create direct enterprise security risks. This is the correct answer.",
+      "c": "App-level data protection requires OS-level sandbox integrity \u2014 jailbreaking removes the sandbox that prevents other apps from accessing mail app data.",
+      "d": "Jailbreaking removes security controls \u2014 users gain operational flexibility at the cost of security restrictions that protected both user and corporate data."
+    }
+  },
+  {
+    "id": 395,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Jailbreaking",
+    "difficulty": "hard",
+    "text": "A mobile malware campaign specifically targets jailbroken iOS devices with a sophisticated banking trojan that intercepts SMS OTPs and overlays legitimate banking apps. Why does jailbreaking enable attacks that would be prevented on non-jailbroken devices?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Jailbreaking has no effect on banking security \u2014 banks use server-side verification"
+      },
+      {
+        "id": "b",
+        "text": "Jailbreaking enables this attack through multiple removed restrictions: SMS interception requires system-level access to message database \u2014 normally sandboxed and inaccessible to other apps; on jailbroken devices, apps with root access can read the SMS database directly; overlay attacks require permission to draw over other apps \u2014 sandboxed apps cannot normally overlay other apps without explicit accessibility permission, but root access circumvents this restriction; the malicious app can be installed from outside the App Store bypassing App Store review; and code signing verification is disabled \u2014 allowing unsigned, unreviewed code to execute. Each attack component specifically exploits protections that jailbreaking removes"
+      },
+      {
+        "id": "c",
+        "text": "The attack works equally well on non-jailbroken devices \u2014 jailbreaking is irrelevant to banking trojans"
+      },
+      {
+        "id": "d",
+        "text": "The banking trojan exploits a banking app vulnerability \u2014 the OS security model is not relevant"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Server-side verification is important \u2014 but the attack targets client-side OTP interception and UI overlay, which server-side verification cannot prevent.",
+      "b": "Each attack component leverages specific iOS security restrictions that jailbreaking removes \u2014 SMS access, overlay capability, and App Store bypass are all jailbreak-enabled attack surfaces. This is the correct answer.",
+      "c": "Each of these specific attack techniques is specifically prevented by iOS security controls on non-jailbroken devices.",
+      "d": "The OS security model is central \u2014 sandbox, code signing, and SMS access restrictions are the controls that prevent this attack on non-jailbroken devices."
+    }
+  },
+  {
+    "id": 396,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Jailbreaking",
+    "difficulty": "hard",
+    "text": "A security researcher uses a jailbroken iPhone for security research \u2014 analyzing app behavior, testing vulnerabilities, and performing penetration testing. How does this legitimate use case illustrate the dual-use nature of jailbreaking, and what should enterprise security policy consider about researchers' personal devices?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Security researchers should never use jailbroken devices \u2014 there is no legitimate reason to jailbreak"
+      },
+      {
+        "id": "b",
+        "text": "Security research legitimately requires jailbroken devices: dynamic analysis of iOS apps requires filesystem and process access only available with root; testing iOS-specific vulnerabilities requires a device in a known-vulnerable state; penetration testing iOS applications requires defeating controls being tested; and tool installation (Frida, Objection, SSL Kill Switch) requires jailbreaking. The dual-use nature means the same capability enabling malicious attacks also enables defensive research. Enterprise security policy for security researchers should: create a separate MDM profile or policy exception for researcher devices; use separate devices for research vs. corporate access; implement additional monitoring for research device corporate access; and require documented justification for researcher device exceptions rather than blanket prohibition"
+      },
+      {
+        "id": "c",
+        "text": "Researchers using jailbroken devices should be terminated \u2014 security professionals should not need to jailbreak devices"
+      },
+      {
+        "id": "d",
+        "text": "Jailbroken researcher devices are indistinguishable from jailbroken user devices \u2014 all should be treated identically"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Jailbreaking has legitimate and important security research applications \u2014 prohibition would impair iOS security research.",
+      "b": "Security tool capabilities are inherently dual-use \u2014 policy must differentiate between legitimate research use and general user jailbreaking based on context and compensating controls. This is the correct answer.",
+      "c": "iOS security research requiring jailbreaking is a legitimate professional activity \u2014 prohibition would exclude organizations from iOS security research.",
+      "d": "Context differentiates researcher and user jailbreaking \u2014 dedicated research devices with specific MDM profiles and controls are distinct from general BYOD devices."
+    }
+  },
+  {
+    "id": 397,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Zero-day",
+    "difficulty": "easy",
+    "text": "What is a zero-day vulnerability and why is it particularly dangerous?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A zero-day vulnerability is one that was discovered zero days ago \u2014 it becomes safe after one day"
+      },
+      {
+        "id": "b",
+        "text": "A zero-day vulnerability is a security flaw that is unknown to the software vendor and has no available patch \u2014 the vendor has had zero days to address it. Zero-days are particularly dangerous because: no patch exists (defenders cannot apply a fix); attackers who know about it can exploit it with no risk of targeted patching; traditional patch-focused defense is ineffective; and detection is harder (no existing signatures for a novel attack)"
+      },
+      {
+        "id": "c",
+        "text": "A zero-day is a vulnerability discovered on the first day of a month \u2014 monthly patches address them"
+      },
+      {
+        "id": "d",
+        "text": "Zero-day vulnerabilities only exist in open-source software where the code is publicly visible"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "'Zero days' refers to the vendor's response time \u2014 not the vulnerability's age.",
+      "b": "Zero-day vulnerabilities are unpatched and often unknown to defenders \u2014 they represent the most dangerous category because standard patch-based defenses provide no protection. This is the correct answer.",
+      "c": "Zero-day specifically refers to vendor awareness \u2014 not calendar timing.",
+      "d": "Zero-day vulnerabilities exist in all software \u2014 proprietary and open-source. Many major zero-days have been discovered in commercial proprietary software."
+    }
+  },
+  {
+    "id": 398,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Zero-day",
+    "difficulty": "medium",
+    "text": "A nation-state actor discovers a zero-day in a widely-used enterprise VPN product. Instead of immediately exploiting it broadly, they use it selectively against specific high-value targets over 18 months. When a security researcher independently discovers and reports the vulnerability, the vendor patches it. What does this scenario illustrate about the zero-day lifecycle?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Zero-days are always exploited immediately and broadly \u2014 selective use is not realistic"
+      },
+      {
+        "id": "b",
+        "text": "This illustrates the zero-day lifecycle: discovery (a party discovers the vulnerability); weaponization (exploit code is developed); selective exploitation (sophisticated actors use sparingly to avoid detection and extend the exploitation window \u2014 using a zero-day burns it once defenders notice and investigate); independent discovery (separate researchers find the same vulnerability \u2014 this occurs regularly as multiple parties research the same software); disclosure and patching (vendor learns of the vulnerability and releases a patch \u2014 the zero-day becomes an N-day vulnerability); and the 18-month window represents the time defenders were exposed with no patch available"
+      },
+      {
+        "id": "c",
+        "text": "The vendor is responsible for the exploitations during the 18-month period \u2014 they should have found the vulnerability sooner"
+      },
+      {
+        "id": "d",
+        "text": "Zero-days are only dangerous when disclosed \u2014 selective exploitation causes no security risk"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Sophisticated actors specifically manage zero-day use to extend exploitation windows \u2014 broad use risks discovery and patching.",
+      "b": "The zero-day lifecycle from discovery to disclosure involves multiple phases with strategic decisions by exploiting parties \u2014 the 18-month exploitation window represents real ongoing risk. This is the correct answer.",
+      "c": "Vendors cannot find all vulnerabilities before adversaries \u2014 this is an inherent challenge of complex software security.",
+      "d": "Selective exploitation still causes real security harm to the specific targeted organizations \u2014 it is not risk-free for targets."
+    }
+  },
+  {
+    "id": 399,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Zero-day",
+    "difficulty": "hard",
+    "text": "An organization cannot patch a critical zero-day vulnerability in their web application server because the vendor has not yet released a fix. What compensating controls can reduce zero-day exploitation risk while awaiting the patch?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Nothing can be done \u2014 zero-day vulnerabilities cannot be defended against before patching"
+      },
+      {
+        "id": "b",
+        "text": "Compensating controls for unpatched zero-days: WAF virtual patching (deploying WAF rules targeting the specific attack patterns for the zero-day \u2014 vendor and security community often publish WAF rules before official patches); network segmentation reducing attack surface (limiting which systems can reach the vulnerable component); enhanced monitoring and alerting tuned to indicators of the specific zero-day exploitation technique; temporary service restriction or disablement if the vulnerable feature is not critical; threat intelligence monitoring for exploitation indicators in the wild; and incident response preparation assuming the zero-day may already have been exploited. Virtual patching via WAF is often the most immediately effective compensating control"
+      },
+      {
+        "id": "c",
+        "text": "Removing the affected software entirely is the only option \u2014 all functionality must be disabled"
+      },
+      {
+        "id": "d",
+        "text": "Accepting the risk without compensating controls is standard practice for zero-days"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Compensating controls can significantly reduce zero-day exploitation risk \u2014 complete defense is possible in many cases.",
+      "b": "Virtual patching, segmentation, monitoring, and temporary service restriction provide layered risk reduction while awaiting the official patch. This is the correct answer.",
+      "c": "Service disablement is the last resort \u2014 compensating controls often allow continued operation with reduced risk.",
+      "d": "Accepting unmitigated zero-day risk is not standard practice \u2014 compensating controls are the standard response when patches are unavailable."
+    }
+  },
+  {
+    "id": 400,
+    "domain": "2.0",
+    "objective": "2.3",
+    "keyword": "Zero-day",
+    "difficulty": "hard",
+    "text": "A zero-day broker pays security researchers $2.5 million for a full chain exploit (browser zero-day + sandbox escape + privilege escalation) that achieves full iOS compromise with no user interaction. How does this commercial zero-day market affect the cybersecurity ecosystem?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Commercial zero-day markets improve security \u2014 they incentivize vulnerability discovery"
+      },
+      {
+        "id": "b",
+        "text": "The commercial zero-day market creates complex ecosystem effects: researchers are financially incentivized to sell to brokers rather than disclose to vendors (bug bounties typically pay far less \u2014 Apple's highest bug bounty is $2M); this keeps vulnerabilities unknown to defenders longer; governments and brokers weaponize these vulnerabilities against targets; once a zero-day is sold, no patch is created \u2014 all users of the affected software remain vulnerable; the market creates a perverse incentive where high-quality exploits are withheld from vendor disclosure to command premium prices. The ethical debate centers on whether selling vulnerabilities that are then used against populations is an acceptable market \u2014 CISA and many security professionals argue for coordinated disclosure being mandated, while others argue market incentives drive important vulnerability research"
+      },
+      {
+        "id": "c",
+        "text": "Zero-day markets are illegal and therefore have no effect on the security ecosystem"
+      },
+      {
+        "id": "d",
+        "text": "$2.5 million prices indicate only nation-states can afford zero-days \u2014 commercial markets only affect governments"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Commercial zero-day markets create incentives misaligned with broad security improvement \u2014 high prices incentivize withholding vulnerabilities from vendors.",
+      "b": "The commercial zero-day market creates complex tensions between incentivizing research and withholding vulnerability information from defenders \u2014 a fundamental ethical and policy challenge in cybersecurity. This is the correct answer.",
+      "c": "Zero-day markets operate in legal gray areas in many jurisdictions \u2014 they are not universally illegal and demonstrably affect the security ecosystem.",
+      "d": "Zero-days are sold to private companies, criminal organizations, and governments \u2014 not exclusively nation-states. The price reflects complexity, not exclusivity to state actors."
+    }
+  }
 ];

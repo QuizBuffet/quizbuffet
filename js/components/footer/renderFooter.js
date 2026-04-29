@@ -61,7 +61,7 @@ export function renderFooter() {
             <ul class="footer-privacy-list">
               <li><strong>100% local storage.</strong> All your progress lives in your browser's localStorage — nothing is ever sent to a server.</li>
               <li><strong>No backend.</strong> There is no database, no API, no user account, and no login. Zero attack surface on your data.</li>
-              <li><strong>No tracking.</strong> No analytics, no fingerprinting, no cookies tied to you. Your study habits are yours alone.</li>
+              <li><strong>No personal tracking.</strong> We use Google Analytics to count page visits only. No fingerprinting, no cookies tied to you personally. Your quiz answers and study habits are yours alone.</li>
               <li><strong>Nothing shared.</strong> Your answers, scores, and progress never leave your device. Period.</li>
               <li><strong>Open to inspect.</strong> Every line of code runs in your browser. Open DevTools and see for yourself.</li>
             </ul>

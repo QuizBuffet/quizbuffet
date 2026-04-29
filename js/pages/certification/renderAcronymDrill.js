@@ -1,4 +1,4 @@
-// Interactive acronym flashcard drill — collapsed by default so it doesn't delay the cert page render
+// Acronym matching game — pick 5 acronyms, show 10 definitions (5 correct + 5 distractors)
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -7,162 +7,125 @@ function shuffle(arr) {
   return arr;
 }
 
+const ROUND  = 5;   // acronyms per round
+const EXTRA  = 5;   // distractor definitions
+
 export function renderAcronymDrill(cert) {
   const el = document.getElementById('acronym-drill');
-  if (!el || !cert.acronyms || !cert.acronyms.length) return;
+  if (!el || !cert.acronyms || cert.acronyms.length < ROUND + EXTRA) return;
 
-  const deck = shuffle([...cert.acronyms]);
-  let idx = 0;
-  let open = false;
-  let tileWords = null; // set when hint is shown
+  const pool = shuffle([...cert.acronyms]);
+  let poolIdx = 0;
+  let targets = [];
+  let choices = [];
+  let matched = new Set(); // indices into targets[]
+  let selected = null;     // index into targets[], or null
+  let wrongThisRound = 0;
+  let score = { rounds: 0, perfect: 0 };
+
+  function loadRound() {
+    if (poolIdx + ROUND > pool.length) { shuffle(pool); poolIdx = 0; }
+    targets = pool.slice(poolIdx, poolIdx + ROUND);
+    poolIdx += ROUND;
+    const targetDefs = new Set(targets.map(x => x.d));
+    const extras = shuffle(pool.filter(x => !targetDefs.has(x.d))).slice(0, EXTRA);
+    choices  = shuffle([...targets, ...extras]);
+    matched  = new Set();
+    selected = null;
+    wrongThisRound = 0;
+  }
 
   function render() {
-    const done = idx >= deck.length;
+    const done = matched.size === ROUND;
     el.innerHTML = `
-      <button class="acronym-toggle" id="acr-toggle">
-        Acronyms (${deck.length}) ${open ? '▴' : '▾'}
-      </button>
-      ${open ? (done ? renderDone() : renderCard()) : ''}`;
-
-    document.getElementById('acr-toggle').addEventListener('click', () => {
-      open = !open;
-      render();
-      if (open && !done) document.getElementById('acr-input')?.focus();
-    });
-
-    if (open && done) {
-      document.getElementById('acr-restart').addEventListener('click', () => {
-        shuffle(deck);
-        idx = 0;
-        tileWords = null;
-        render();
-        document.getElementById('acr-input')?.focus();
-      });
-    }
-
-    if (open && !done) bindCard();
+      <h3 class="acronym-toggle">Acronym Match</h3>
+      ${renderBody(done)}`;
+    bind(done);
   }
 
-  function renderCard() {
-    const { a } = deck[idx];
-    const hintSection = tileWords
-      ? renderTiles(tileWords)
-      : `<input class="acronym-input" id="acr-input" type="text" placeholder="Type the full name…" autocomplete="off" autocorrect="off" spellcheck="false">
-         <button class="acronym-hint-btn" id="acr-hint-btn">Hint — show word tiles</button>`;
+  function renderBody(done) {
+    if (done) {
+      return `
+        <div class="acr-wrap">
+          <p class="acr-result">${wrongThisRound === 0 ? '★ Perfect round!' : '✓ Round complete'}</p>
+          <p class="acr-score-line">${score.perfect} perfect · ${score.rounds} round${score.rounds !== 1 ? 's' : ''}</p>
+          <button class="random-btn" id="acr-next">Next round →</button>
+        </div>`;
+    }
+
+    const remaining = ROUND - matched.size;
+    const hint = selected !== null
+      ? `Match <strong>${targets[selected].a}</strong> — choose its definition below`
+      : `${remaining} left · tap an acronym, then its definition`;
+
+    const termBtns = targets.map((t, i) => {
+      const cls = matched.has(i) ? ' matched' : selected === i ? ' selected' : '';
+      return `<button class="acr-term${cls}" data-i="${i}"${matched.has(i) ? ' disabled' : ''}>${t.a}</button>`;
+    }).join('');
+
+    const defBtns = choices.map((c, ci) => {
+      const isMatched = [...matched].some(ti => targets[ti].d === c.d);
+      return `<button class="acr-def${isMatched ? ' matched' : ''}" data-ci="${ci}"${isMatched ? ' disabled' : ''}>${c.d}</button>`;
+    }).join('');
+
     return `
-      <div class="acronym-card">
-        <div class="acronym-progress">${idx + 1} / ${deck.length}</div>
-        <div class="acronym-term">${a}</div>
-        ${hintSection}
-        <div class="acronym-feedback" id="acr-feedback"></div>
-        <button class="acronym-skip" id="acr-skip">Skip →</button>
+      <div class="acr-wrap">
+        <p class="acr-hint">${hint}</p>
+        <div class="acr-terms">${termBtns}</div>
+        <div class="acr-defs">${defBtns}</div>
       </div>`;
   }
 
-  function renderTiles(words) {
-    const tiles = words.map((w, i) =>
-      `<button class="acronym-tile" data-i="${i}">${w}</button>`
-    ).join('');
-    return `
-      <div class="acronym-tiles" id="acr-tiles">${tiles}</div>
-      <div class="acronym-building" id="acr-building"></div>`;
-  }
-
-  function renderDone() {
-    return `
-      <div class="acronym-card">
-        <p class="acronym-done">All ${deck.length} acronyms covered!</p>
-        <button class="random-btn" id="acr-restart">Shuffle &amp; restart</button>
-      </div>`;
-  }
-
-  function advance() {
-    idx++;
-    tileWords = null;
-    render();
-    if (idx < deck.length) document.getElementById('acr-input')?.focus();
-  }
-
-  function markCorrect(feedback, skip) {
-    const { d } = deck[idx];
-    feedback.textContent = '✓ ' + d;
-    feedback.className = 'acronym-feedback correct';
-    skip.style.visibility = 'hidden';
-    setTimeout(advance, 1200);
-  }
-
-  function bindCard() {
-    const feedback = document.getElementById('acr-feedback');
-    const skip     = document.getElementById('acr-skip');
-    const { d }    = deck[idx];
-
-    if (!tileWords) {
-      const input   = document.getElementById('acr-input');
-      const hintBtn = document.getElementById('acr-hint-btn');
-
-      input.focus();
-
-      input.addEventListener('input', () => {
-        if (input.value.trim().toLowerCase() === d.toLowerCase()) {
-          input.classList.add('correct');
-          input.disabled = true;
-          markCorrect(feedback, skip);
-        }
-      });
-
-      hintBtn.addEventListener('click', () => {
-        tileWords = shuffle(d.split(' '));
-        render();
-      });
-    } else {
-      bindTiles(d, feedback, skip);
+  function bind(done) {
+    if (done) {
+      document.getElementById('acr-next')?.addEventListener('click', () => { loadRound(); render(); });
+      return;
     }
 
-    skip.addEventListener('click', () => {
-      feedback.textContent = d;
-      feedback.className = 'acronym-feedback reveal';
-      skip.style.visibility = 'hidden';
-      document.querySelectorAll('.acronym-tile').forEach(t => t.disabled = true);
-      const input = document.getElementById('acr-input');
-      if (input) input.disabled = true;
-      setTimeout(advance, 1400);
+    document.querySelectorAll('.acr-term').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const i = parseInt(btn.dataset.i);
+        selected = selected === i ? null : i; // toggle off if tapped again
+        document.querySelectorAll('.acr-term').forEach(b => {
+          b.classList.toggle('selected', parseInt(b.dataset.i) === selected && !matched.has(parseInt(b.dataset.i)));
+        });
+        document.querySelector('.acr-hint').innerHTML = selected !== null
+          ? `Match <strong>${targets[selected].a}</strong> — choose its definition below`
+          : `${ROUND - matched.size} left · tap an acronym, then its definition`;
+      });
     });
-  }
 
-  function bindTiles(d, feedback, skip) {
-    const words    = d.split(' ');
-    const building = document.getElementById('acr-building');
-    const tiles    = document.querySelectorAll('.acronym-tile');
-    let selected   = [];
-
-    tiles.forEach(tile => {
-      tile.addEventListener('click', () => {
-        if (tile.disabled) return;
-        const word     = tile.textContent;
-        const expected = words[selected.length];
-
-        if (word === expected) {
-          tile.disabled = true;
-          tile.classList.add('used');
-          selected.push(word);
-          building.textContent = selected.join(' ');
-
-          if (selected.length === words.length) {
-            building.classList.add('correct');
-            markCorrect(feedback, skip);
+    document.querySelectorAll('.acr-def').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (selected === null || btn.disabled) return;
+        const ci = parseInt(btn.dataset.ci);
+        if (targets[selected].d === choices[ci].d) {
+          matched.add(selected);
+          const ti = selected;
+          selected = null;
+          // lock both matched items in-place without a full re-render
+          document.querySelector(`.acr-term[data-i="${ti}"]`).classList.remove('selected');
+          document.querySelector(`.acr-term[data-i="${ti}"]`).classList.add('matched');
+          document.querySelector(`.acr-term[data-i="${ti}"]`).disabled = true;
+          btn.classList.add('matched');
+          btn.disabled = true;
+          if (matched.size === ROUND) {
+            score.rounds++;
+            if (wrongThisRound === 0) score.perfect++;
+            render(); // show done screen
+          } else {
+            document.querySelector('.acr-hint').innerHTML =
+              `${ROUND - matched.size} left · tap an acronym, then its definition`;
           }
         } else {
-          building.classList.add('wrong');
-          setTimeout(() => {
-            building.classList.remove('wrong');
-            building.textContent = '';
-            selected = [];
-            tiles.forEach(t => { t.disabled = false; t.classList.remove('used'); });
-          }, 500);
+          wrongThisRound++;
+          btn.classList.add('wrong');
+          setTimeout(() => btn.classList.remove('wrong'), 500);
         }
       });
     });
   }
 
+  loadRound();
   render();
 }

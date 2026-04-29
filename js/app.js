@@ -78,6 +78,13 @@ async function route() {
   window.scrollTo(0, 0);
   renderNav(NAV_ACTIVE[path]);
 
+  if (typeof gtag === 'function') {
+    gtag('event', 'page_view', {
+      page_path: location.pathname + location.search,
+      page_title: document.title,
+    });
+  }
+
   switch (path) {
     case '/': {
       const { init } = await import('./pages/home/initHome.js');

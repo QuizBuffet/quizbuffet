@@ -691,8 +691,8 @@ a:active, button:active { opacity: 0.75; }
 [data-color="pink"] .settings-toggle      { border-radius: 8px; }
 [data-color="pink"] .nav-settings-btn    { border-radius: 8px; }
 [data-color="pink"] .settings-dropdown   { border-radius: 0 0 12px 12px; }
-[data-color="pink"] .acronym-input        { border-radius: 10px; }
-[data-color="pink"] .acronym-tile         { border-radius: 20px; }
+[data-color="pink"] .acr-term             { border-radius: 20px; }
+[data-color="pink"] .acr-def              { border-radius: 10px; }
 [data-color="pink"] .flag-btn             { border-radius: 20px; }
 [data-color="pink"] .sh-bar-wrap          { border-radius: 6px; }
 [data-color="pink"] .progress-bar-track   { border-radius: 6px; }
@@ -1144,29 +1144,34 @@ a:is(:hover, :active) { text-decoration: underline; }
 .ssp-btn.active { color: var(--link); font-weight: 600; }
 
 /* ── Acronym drill ─────────────────────────────────────────────────────────── */
-.acronym-toggle { width: 100%; text-align: left; background: none; border: none; border-bottom: 1px solid var(--border); padding: 10px 0; font-size: clamp(11px, 3vw, 12px); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; margin-top: 20px; }
-.acronym-toggle:is(:hover, :active) { color: var(--text); }
-.acronym-card { padding: 20px 0 10px; }
-.acronym-progress { font-size: 11px; color: var(--text-dim); margin-bottom: 12px; }
-.acronym-term { font-size: clamp(28px, 8vw, 40px); font-weight: 700; color: var(--text); margin-bottom: 16px; letter-spacing: 1px; }
-.acronym-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border-mid); background: var(--bg); color: var(--text); font-size: 16px; outline: none; margin-bottom: 8px; }
-.acronym-input:focus { border-color: var(--link); }
-.acronym-input.correct { border-color: #2a7; background: var(--correct-bg); color: #1a6; }
-.acronym-hint-btn { background: none; border: none; color: var(--text-dim); font-size: clamp(12px, 3.2vw, 14px); cursor: pointer; padding: 0; margin-bottom: 10px; display: block; }
-.acronym-hint-btn:is(:hover, :active) { color: var(--link); text-decoration: underline; }
-.acronym-tiles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-.acronym-tile { padding: 6px 12px; border: 1px solid var(--link); background: var(--bg); color: var(--link); font-size: clamp(13px, 3.5vw, 16px); cursor: pointer; }
-.acronym-tile:is(:hover, :active):not(:disabled) { background: var(--link-hover-bg); }
-.acronym-tile.used { opacity: 0.3; cursor: default; }
-.acronym-building { min-height: 28px; font-size: clamp(13px, 3.5vw, 16px); color: var(--text); margin-bottom: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); transition: background 0.15s; }
-.acronym-building.correct { color: #1a6; font-weight: 600; }
-.acronym-building.wrong   { background: var(--wrong-bg); color: #c33; }
-.acronym-feedback { font-size: clamp(13px, 3.5vw, 16px); min-height: 22px; margin-bottom: 10px; }
-.acronym-feedback.correct { color: #1a6; font-weight: 600; }
-.acronym-feedback.reveal  { color: var(--text-mid); }
-.acronym-skip { background: none; border: none; color: var(--link); font-size: clamp(13px, 3.5vw, 16px); cursor: pointer; padding: 0; }
-.acronym-skip:is(:hover, :active) { text-decoration: underline; }
-.acronym-done { font-size: clamp(14px, 3.8vw, 16px); color: var(--text-mid); margin-bottom: 14px; }
+/* ── Acronym matching game ──────────────────────────────────────────────────── */
+.acronym-toggle { width: 100%; text-align: left; background: none; border: none; border-bottom: 1px solid var(--border); padding: 10px 0; font-size: clamp(11px, 3vw, 13px); font-weight: normal; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 20px; }
+.acr-wrap { padding: 14px 0 10px; }
+.acr-hint { font-size: clamp(12px, 3.2vw, 13px); color: var(--text-dim); margin-bottom: 12px; min-height: 18px; }
+.acr-hint strong { color: var(--link); font-weight: 700; }
+.acr-terms { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.acr-term {
+  padding: 8px 16px; border: 1px solid var(--link); color: var(--link);
+  background: var(--bg); font-size: clamp(13px, 3.8vw, 16px); font-weight: 700;
+  letter-spacing: 0.5px; cursor: pointer;
+  transition: background 0.1s, border-color 0.1s, color 0.1s;
+}
+.acr-term:is(:hover, :active):not(:disabled):not(.matched) { background: var(--link-hover-bg); }
+.acr-term.selected { background: var(--link); color: #fff; }
+.acr-term.matched  { border-color: #2a7; color: #1a6; background: var(--correct-bg); cursor: default; }
+.acr-defs { display: grid; grid-template-columns: 1fr; gap: 6px; }
+@media (min-width: 560px) { .acr-defs { grid-template-columns: 1fr 1fr; } }
+.acr-def {
+  padding: 9px 11px; border: 1px solid var(--border-mid); color: var(--text-mid);
+  background: var(--surface); font-size: clamp(12px, 3.2vw, 13px); cursor: pointer;
+  text-align: left; line-height: 1.4;
+  transition: background 0.1s, border-color 0.1s, color 0.1s;
+}
+.acr-def:is(:hover, :active):not(:disabled):not(.matched) { border-color: var(--link); color: var(--text); background: var(--link-hover-bg); }
+.acr-def.matched { border-color: #2a7; background: var(--correct-bg); color: #1a6; cursor: default; }
+.acr-def.wrong   { border-color: #c33; background: var(--wrong-bg); color: #c33; }
+.acr-result    { font-size: clamp(15px, 4vw, 18px); font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.acr-score-line { font-size: clamp(12px, 3.2vw, 13px); color: var(--text-dim); margin-bottom: 14px; }
 
 /* ── Cloud+ spin ───────────────────────────────────────────────────────────── */
 .plus-ping {

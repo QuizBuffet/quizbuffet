@@ -35,10 +35,16 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
     saveCorrectAnswer(questionStorageKey, question.id);
     if (totalCount > 0) {
       const { correct } = getDomainProgress(questionStorageKey);
-      if (correct.length >= totalCount) markDomainComplete(questionStorageKey);
+      if (correct.length >= totalCount) {
+        markDomainComplete(questionStorageKey);
+        if (typeof gtag === 'function') {
+          gtag('event', 'domain_complete', { domain: questionStorageKey, total: totalCount });
+        }
+      }
     }
     const streak = recordCorrect();
     if (streak % 5 === 0) showStreakToast(streak, 'correct');
+    if (typeof gtag === 'function') gtag('event', 'quiz_correct', { domain: domainSlug });
   } else {
     playWrong();
     trackFailedAnswer(domainSlug, question.id);
@@ -46,6 +52,7 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
     incrementErrorCount(questionStorageKey, question.id);
     const streak = recordWrong();
     if (streak % 5 === 0) showStreakToast(streak, 'wrong');
+    if (typeof gtag === 'function') gtag('event', 'quiz_wrong', { domain: domainSlug });
   }
 
   renderExplanation(question, onNext);

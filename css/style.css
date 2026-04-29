@@ -618,14 +618,16 @@ a:active, button:active { opacity: 0.75; }
 }
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
-html { background-color: var(--footer-bg); }
+/* html bg = top Safari bounce color; body bg = bottom Safari bounce color */
+html { background-color: var(--nav-bg); }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   font-size: clamp(15px, 4vw, 18px);
   color: var(--text);
-  background: var(--bg);
+  background: var(--footer-bg);
   line-height: 1.6;
 }
+#main-content { background: var(--bg); }
 
 a { color: var(--link); text-decoration: none; }
 a:is(:hover, :active) { text-decoration: underline; }

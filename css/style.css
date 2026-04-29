@@ -739,6 +739,8 @@ a:is(:hover, :active) { text-decoration: underline; }
 
 .question-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
 .question-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.question-header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.question-id { font-size: 11px; color: var(--text-dim); font-family: monospace; letter-spacing: 0.3px; }
 .flag-btn { background: none; border: 1px solid var(--border); color: var(--text-muted); font-size: 16px; padding: 2px 8px; cursor: pointer; border-radius: 4px; line-height: 1; flex-shrink: 0; }
 .flag-btn:is(:hover, :active) { border-color: #e8900a; color: #e8900a; }
 .flag-btn.flagged { border-color: #e8900a; color: #e8900a; background: rgba(232,144,10,0.08); }

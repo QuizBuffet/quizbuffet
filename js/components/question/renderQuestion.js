@@ -10,7 +10,10 @@ export function renderQuestion(question, onAnswer, storageKey) {
   document.getElementById('question').innerHTML =
     `<div class="question-header">
       <div class="question-badges">${badge}${domainBadge}</div>
-      <button class="flag-btn${flagged ? ' flagged' : ''}" id="flag-btn" title="Flag for review" aria-label="${flagged ? 'Unflag question' : 'Flag question for review'}" aria-pressed="${flagged}">&#9873;</button>
+      <div class="question-header-right">
+        <span class="question-id">#${question.id}</span>
+        <button class="flag-btn${flagged ? ' flagged' : ''}" id="flag-btn" title="Flag for review" aria-label="${flagged ? 'Unflag question' : 'Flag question for review'}" aria-pressed="${flagged}">&#9873;</button>
+      </div>
     </div>
     <p class="question-text">${question.text}</p>`;
 

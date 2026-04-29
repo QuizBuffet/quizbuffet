@@ -3442,5 +3442,1602 @@ export const questions = [
       "c": "The CA adds significant information beyond the signature — including issuer identity, serial number, validity period, and extensions.",
       "d": "Private keys must never appear in CSRs or certificates — the CSR contains only the public key. Exposing the private key would invalidate the entire purpose of the PKI."
     }
+  },
+  {
+    "id": 165,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Nation-state",
+    "difficulty": "easy",
+    "text": "Which of the following BEST characterizes a nation-state threat actor?",
+    "answers": [
+      { "id": "a", "text": "A lone hacker motivated by personal financial gain" },
+      { "id": "b", "text": "A government-sponsored group with significant resources, advanced capabilities, and long-term strategic objectives — conducting espionage, sabotage, or influence operations on behalf of a country" },
+      { "id": "c", "text": "A hacktivist group protesting corporate environmental practices" },
+      { "id": "d", "text": "An organized crime syndicate conducting ransomware attacks for profit" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A lone financially motivated hacker is an individual criminal actor — not a nation-state.",
+      "b": "Nation-state actors are government-affiliated groups with substantial resources, advanced persistent threat (APT) capabilities, and geopolitical objectives. They are among the most sophisticated and well-funded threat actors. This is the correct answer.",
+      "c": "Hacktivists are ideologically motivated — not government-sponsored with national strategic objectives.",
+      "d": "Organized crime prioritizes financial gain — not national strategic objectives like espionage or infrastructure sabotage."
+    }
+  },
+  {
+    "id": 166,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Nation-state",
+    "difficulty": "medium",
+    "text": "A critical infrastructure company discovers attackers have been inside their network for 18 months, silently mapping SCADA systems without causing disruption. Which threat actor type does this behavior MOST likely indicate?",
+    "answers": [
+      { "id": "a", "text": "Unskilled attacker — they could not find the data they were looking for" },
+      { "id": "b", "text": "Nation-state actor — the 18-month dwell time, focus on critical infrastructure mapping, and non-destructive patience are hallmarks of a nation-state advanced persistent threat (APT) pre-positioning for potential future disruption" },
+      { "id": "c", "text": "Organized crime — they are preparing a ransomware deployment" },
+      { "id": "d", "text": "Hacktivist — they are documenting the company's environmental violations" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unskilled attackers typically cause quick, detectable damage — 18 months of stealthy persistence requires significant capability.",
+      "b": "Long-term stealthy access to critical infrastructure with mapping but no immediate destruction is a nation-state APT signature — pre-positioning for potential future use in geopolitical conflict. This is the correct answer.",
+      "c": "Organized crime typically moves faster to monetize access — 18 months of non-monetizing persistence is inconsistent with financial motivation.",
+      "d": "Hacktivists typically want their actions known — publishing evidence, not quietly mapping SCADA systems."
+    }
+  },
+  {
+    "id": 167,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Nation-state",
+    "difficulty": "hard",
+    "text": "A nation-state conducts a supply chain attack, compromising a software vendor's build process to distribute malware to thousands of organizations simultaneously. Which aspects of this attack reflect nation-state capabilities specifically?",
+    "answers": [
+      { "id": "a", "text": "The use of malware — any threat actor can use malware" },
+      { "id": "b", "text": "The combination of: sophisticated capability to compromise a well-secured software vendor; patience and resources to develop and maintain the operation over months; intelligence to select a high-value supply chain target affecting thousands of victims simultaneously; and strategic intent to access specific high-value targets among the thousands affected — these multi-dimensional requirements distinguish nation-state operations" },
+      { "id": "c", "text": "The fact that many organizations were affected — scale alone indicates nation-state involvement" },
+      { "id": "d", "text": "The use of a software vendor as the attack vector — only nation-states use supply chain attacks" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Malware use is common across all threat actor types — it is not a nation-state differentiator.",
+      "b": "Nation-state supply chain attacks require the combination of sophisticated vendor compromise capability, operational patience, intelligence-driven target selection, and strategic purpose beyond financial gain — these requirements together distinguish nation-state actors. This is the correct answer.",
+      "c": "Scale alone does not indicate nation-state — criminal botnets also affect millions. The sophistication and strategic intent are the distinguishing factors.",
+      "d": "Supply chain attacks are used by various threat actors including criminal groups — not exclusively nation-states."
+    }
+  },
+  {
+    "id": 168,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Nation-state",
+    "difficulty": "hard",
+    "text": "A security team discovers what appears to be a nation-state APT in their network. The attacker has not yet achieved their apparent objective. The team debates whether to immediately eject the attacker or monitor for intelligence value. What are the key considerations in this decision?",
+    "answers": [
+      { "id": "a", "text": "Always immediately eject all attackers — monitoring provides no benefit" },
+      { "id": "b", "text": "Monitoring considerations: intelligence value (understanding objectives, TTPs, and targets helps defenders and intelligence agencies), risk of further damage during monitoring period, legal and notification obligations, and whether the attacker will detect monitoring and escalate. Ejection considerations: immediate risk reduction, compliance requirements, liability during monitoring, and the difficulty of ensuring complete eradication. Legal counsel and law enforcement should be consulted — the decision involves significant legal, ethical, and operational trade-offs" },
+      { "id": "c", "text": "Always monitor indefinitely — intelligence gathering always outweighs risks" },
+      { "id": "d", "text": "The decision belongs entirely to the IT security team without legal or executive involvement" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Immediate ejection is often correct but the decision involves significant trade-offs that require analysis, not a blanket rule.",
+      "b": "Nation-state APT monitoring vs. ejection involves complex legal, operational, and strategic considerations requiring multi-stakeholder input. Both approaches have legitimate justifications depending on context. This is the correct answer.",
+      "c": "Indefinite monitoring creates ongoing liability and risk — the decision must balance intelligence value against exposure.",
+      "d": "Nation-state APT response requires legal counsel, executive leadership, and often law enforcement — it exceeds IT security team authority."
+    }
+  },
+  {
+    "id": 169,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Unskilled attacker",
+    "difficulty": "easy",
+    "text": "What term describes an attacker who uses pre-built tools and exploits created by others without understanding the underlying techniques?",
+    "answers": [
+      { "id": "a", "text": "Nation-state actor" },
+      { "id": "b", "text": "Script kiddie (unskilled attacker) — an individual who uses pre-written exploits, hacking tools, and scripts without the technical knowledge to develop their own, typically seeking notoriety or entertainment rather than strategic objectives" },
+      { "id": "c", "text": "Hacktivist" },
+      { "id": "d", "text": "Insider threat" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Nation-state actors have significant technical expertise and custom-developed tools — the opposite of an unskilled attacker.",
+      "b": "Script kiddies (unskilled attackers) rely on others' tools without understanding them — they are opportunistic, cause real damage, but lack the sophistication to develop novel attacks. This is the correct answer.",
+      "c": "Hacktivists may use various skill levels — they are defined by ideological motivation, not skill level.",
+      "d": "Insider threats leverage legitimate access — they are defined by their position, not skill level."
+    }
+  },
+  {
+    "id": 170,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Unskilled attacker",
+    "difficulty": "medium",
+    "text": "An unskilled attacker downloads a popular exploit kit and uses it to attack random internet-accessible servers. Despite low sophistication, why are unskilled attackers still a significant threat to organizations?",
+    "answers": [
+      { "id": "a", "text": "Unskilled attackers are not a significant threat — only sophisticated actors cause real damage" },
+      { "id": "b", "text": "Unskilled attackers are significant because: exploit kits are highly capable (created by skilled developers); they attack at massive scale (opportunistic, automated scanning); they successfully compromise unpatched systems regardless of attacker sophistication; they may inadvertently cause significant damage; and their volume means any organization with common vulnerabilities will eventually be targeted" },
+      { "id": "c", "text": "Unskilled attackers target only home users — not organizations" },
+      { "id": "d", "text": "Unskilled attackers only pose reputational risk — they cannot cause operational damage" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unskilled attackers cause significant real-world damage — many major breaches result from exploitation of known vulnerabilities by automated tools requiring minimal skill.",
+      "b": "The democratization of attack tools means unskilled attackers wield sophisticated capabilities — volume and opportunistic targeting ensure that vulnerable organizations will be hit regardless of attacker skill. This is the correct answer.",
+      "c": "Exploit kits scan the internet indiscriminately — organizations with internet-exposed services are regular targets.",
+      "d": "Ransomware deployed by unskilled attackers using exploit kits causes significant operational and financial damage — not just reputational."
+    }
+  },
+  {
+    "id": 171,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Unskilled attacker",
+    "difficulty": "hard",
+    "text": "A security analyst notices that identical exploitation attempts against their organization match public proof-of-concept code released 3 days ago for a newly disclosed vulnerability. The attack is unsuccessful because the patch was applied 24 hours ago. What does this scenario illustrate about unskilled attacker behavior?",
+    "answers": [
+      { "id": "a", "text": "The attack proves the attacker is a nation-state actor — they move very quickly after disclosure" },
+      { "id": "b", "text": "Unskilled attackers rapidly weaponize public exploits shortly after disclosure — the short window between disclosure and attack attempts demonstrates that patch deployment speed is critical. Organizations that patch quickly (as this one did) successfully defend against this common threat pattern. The matching of public PoC code confirms the attacker used existing tools rather than developed novel capability" },
+      { "id": "c", "text": "The patch was unnecessary — the attack failed for other reasons" },
+      { "id": "d", "text": "Unskilled attackers never succeed because they only use public tools" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Nation-state actors typically have zero-day capabilities and do not need to wait for public PoC code.",
+      "b": "Unskilled attackers using public PoC code immediately after disclosure is a well-documented pattern — the organization's quick patching was effective precisely because unskilled attackers rely on known exploits. This is the correct answer.",
+      "c": "The patch was the direct defense that worked — timing the patch before the exploitation attempt was the decisive factor.",
+      "d": "Unskilled attackers using public tools succeed regularly against unpatched systems — public tools are often highly effective."
+    }
+  },
+  {
+    "id": 172,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Unskilled attacker",
+    "difficulty": "hard",
+    "text": "An unskilled attacker accidentally installs a destructive wiper on a target system while attempting to deploy ransomware — confusing the tools in their exploit kit. The wiper destroys all data on the system. What does this scenario illustrate about unskilled attackers?",
+    "answers": [
+      { "id": "a", "text": "Unskilled attackers are harmless because they make mistakes" },
+      { "id": "b", "text": "Unskilled attackers can cause severe unintended damage precisely because they do not understand the tools they use — a mistake deploying the wrong tool causes irreversible data destruction. The lack of understanding that defines an unskilled attacker does not limit the damage potential; it makes outcomes less predictable and potentially worse. Organizations face real risk from both intentional and accidental damage" },
+      { "id": "c", "text": "The attacker intentionally used the wiper — all attackers know their tools" },
+      { "id": "d", "text": "The damage is minimal because the attacker was not skilled enough to exfiltrate data first" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Mistakes by unskilled attackers often cause more damage than intentional actions — accidental destruction is still destruction.",
+      "b": "Unskilled attackers operating powerful tools without understanding creates unpredictable, potentially worse outcomes than skilled actors who control their operations precisely. This is the correct answer.",
+      "c": "By definition, unskilled attackers do not fully understand their tools — assuming knowledge contradicts the threat actor classification.",
+      "d": "Data destruction without exfiltration is still significant operational and financial damage — the absence of exfiltration does not minimize the impact."
+    }
+  },
+  {
+    "id": 173,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Hacktivist",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes a hacktivist threat actor?",
+    "answers": [
+      { "id": "a", "text": "A government-sponsored attacker conducting espionage operations" },
+      { "id": "b", "text": "An individual or group that uses hacking techniques to advance political, social, or ideological causes — typically targeting organizations whose activities conflict with their beliefs, seeking to embarrass, disrupt, or publicize their grievances" },
+      { "id": "c", "text": "A criminal organization monetizing cyberattacks through ransomware and fraud" },
+      { "id": "d", "text": "An employee who leaks confidential data out of revenge" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Government-sponsored attackers are nation-state actors — hacktivists are ideologically motivated individuals or loosely organized groups.",
+      "b": "Hacktivism combines hacking with activism — the primary motivation is advancing a cause, not financial gain. Anonymous and similar groups are classic examples. This is the correct answer.",
+      "c": "Criminal organizations are motivated by financial gain — hacktivists are motivated by ideology.",
+      "d": "A revenge-motivated employee is an insider threat — hacktivists are externally targeting organizations for ideological reasons."
+    }
+  },
+  {
+    "id": 174,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Hacktivist",
+    "difficulty": "medium",
+    "text": "A hacktivist group defaces a pharmaceutical company's website with messaging criticizing drug pricing and leaks internal emails discussing pricing strategies. Which combination of attack types did they use and what were their apparent objectives?",
+    "answers": [
+      { "id": "a", "text": "They used ransomware for financial gain" },
+      { "id": "b", "text": "They used web defacement (to publicly broadcast their message) and data exfiltration with public leaking (to embarrass the company and provide evidence for their cause). Their objectives were publicity, reputational damage to the target, and advancing their cause — not financial gain. The combination is characteristic of hacktivist operations" },
+      { "id": "c", "text": "They conducted a DDoS attack to disrupt operations for profit" },
+      { "id": "d", "text": "They performed reconnaissance to sell the data to competitors" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Ransomware is financially motivated — the described actions (defacement, public leaking) serve ideological messaging goals.",
+      "b": "Hacktivist operations typically combine techniques to maximize publicity and embarrassment — defacement broadcasts the message, leaking provides supporting evidence, and both achieve reputational damage to advance their cause. This is the correct answer.",
+      "c": "DDoS for profit is a criminal extortion tactic — hacktivist DDoS is ideologically motivated disruption, not profit-seeking.",
+      "d": "Selling data to competitors is financially motivated industrial espionage — hacktivists publish data publicly for cause advancement."
+    }
+  },
+  {
+    "id": 175,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Hacktivist",
+    "difficulty": "hard",
+    "text": "A company is considering a controversial policy change that may attract hacktivist attention. How should the threat intelligence team assess hacktivist risk and what defensive measures are MOST appropriate?",
+    "answers": [
+      { "id": "a", "text": "Hacktivist threats cannot be predicted or defended against" },
+      { "id": "b", "text": "Threat assessment: monitor hacktivist forums and social media for discussion of the company as a target; assess which groups are active in the relevant cause area and their historical TTPs (DDoS, defacement, doxing, leaking). Defensive measures: DDoS mitigation services (hacktivists frequently use DDoS); web application hardening against defacement; data loss prevention (counter leaking); employee awareness of social engineering; public communications strategy to manage reputational risk from any successful attacks" },
+      { "id": "c", "text": "The only defense is reversing the controversial policy immediately" },
+      { "id": "d", "text": "Hacktivist groups only target government entities — corporations are not at risk" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Hacktivist threats can be assessed and defended against — their public nature (announcing targets, discussing plans openly) makes them more predictable than nation-state actors.",
+      "b": "Hacktivist defense combines threat intelligence (they often announce targets) with technical controls (DDoS, WAF, DLP) and communication strategy. This is the correct answer.",
+      "c": "Policy changes may be appropriate but security should not be held hostage to activist threats — defensive measures allow maintaining business decisions while managing risk.",
+      "d": "Hacktivists target corporations regularly — pharmaceutical companies, financial institutions, and oil companies are frequent targets."
+    }
+  },
+  {
+    "id": 176,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Hacktivist",
+    "difficulty": "hard",
+    "text": "A hacktivist group claims to have obtained a company's customer database and threatens to publish it unless the company publicly apologizes for a controversial action. How does this scenario blur the line between hacktivism and cybercrime?",
+    "answers": [
+      { "id": "a", "text": "This is clearly only hacktivism — the demand for a public apology is ideological" },
+      { "id": "b", "text": "Data theft with a conditional threat to publish constitutes extortion regardless of the ideological framing. When hacktivists use data as leverage with conditional demands, they cross into criminal extortion territory. The ideological motivation does not legally or ethically justify the criminal conduct. This blurring of motivation and method complicates threat classification and law enforcement response" },
+      { "id": "c", "text": "This is clearly only cybercrime — ideological motivation cannot coexist with criminal extortion" },
+      { "id": "d", "text": "The scenario is purely hypothetical — hacktivists never make conditional demands" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Extortion (threaten to publish unless demands met) is a criminal act regardless of whether the demand is monetary or a public apology.",
+      "b": "Threat actor motivations and criminal conduct are separate dimensions — hacktivism and criminal extortion can coexist when ideologically motivated actors use criminal methods. This creates classification challenges and legal complications. This is the correct answer.",
+      "c": "Ideological motivation absolutely coexists with criminal conduct — political terrorists are another example.",
+      "d": "Hacktivist groups making conditional demands (monetary and non-monetary) is well-documented in real incidents."
+    }
+  },
+  {
+    "id": 177,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Insider threat",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes an insider threat?",
+    "answers": [
+      { "id": "a", "text": "An attacker who breaks into an office building to steal hardware" },
+      { "id": "b", "text": "A current or former employee, contractor, or business partner who uses their authorized access to harm the organization — through intentional malicious action, unintentional negligence, or being compromised by an external actor" },
+      { "id": "c", "text": "A nation-state actor who uses stolen credentials to access corporate systems" },
+      { "id": "d", "text": "A hacktivist group that infiltrates a company's network from the internet" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Physical break-in is an external physical threat — insider threats involve authorized access being misused.",
+      "b": "Insider threats are distinguished by their legitimate access — they can be malicious (intentional harm), negligent (accidental harm), or compromised (external actor using insider's access). This is the correct answer.",
+      "c": "Using stolen credentials from outside is an external threat using compromised credentials — an insider threat involves people with legitimate organizational access.",
+      "d": "Hacktivists attacking from the internet are external threats — insider threats have authorized internal access."
+    }
+  },
+  {
+    "id": 178,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Insider threat",
+    "difficulty": "medium",
+    "text": "A disgruntled employee about to be terminated downloads 50,000 customer records and emails them to a competitor. Which controls would MOST effectively detect and prevent this insider threat?",
+    "answers": [
+      { "id": "a", "text": "A perimeter firewall blocking external access" },
+      { "id": "b", "text": "Data Loss Prevention (DLP) detecting and blocking mass data exfiltration via email; User and Entity Behavior Analytics (UEBA) alerting on unusual bulk download behavior; access controls limiting which employees can access all 50,000 records (least privilege); pre-termination access review and timely revocation; and monitoring for anomalous user activity" },
+      { "id": "c", "text": "Antivirus software on the employee's workstation" },
+      { "id": "d", "text": "Network IDS signatures for external attacker TTPs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Perimeter firewalls protect against external threats — they do not prevent authorized users from emailing data outward.",
+      "b": "Insider threat controls must address authorized users misusing legitimate access: DLP prevents exfiltration, UEBA detects behavioral anomalies, least privilege limits data accessible per person, and timely access revocation closes the window before termination. This is the correct answer.",
+      "c": "Antivirus targets malware — it does not detect or prevent authorized data theft.",
+      "d": "IDS signatures for external attacker TTPs are not designed to detect insider misuse of legitimate access."
+    }
+  },
+  {
+    "id": 179,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Insider threat",
+    "difficulty": "hard",
+    "text": "A financial analyst with legitimate access to trading systems places unauthorized trades that benefit an external party. Investigations reveal the analyst was recruited by an outside criminal organization. How does this complicate insider threat classification?",
+    "answers": [
+      { "id": "a", "text": "This is clearly only an external threat since an outside organization is involved" },
+      { "id": "b", "text": "This represents a hybrid insider-external threat: the insider provides the access and execution capability, while the external organization provides the direction and motivation. The controls for pure insider threats (behavioral monitoring, access controls) must be complemented with controls for external recruitment and manipulation: counterintelligence awareness, financial disclosure requirements, separation of duties, and monitoring for collusion indicators" },
+      { "id": "c", "text": "This is clearly only an insider threat since the analyst performed the actions" },
+      { "id": "d", "text": "External recruitment of insiders is too rare to warrant specific controls" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The insider performed the actions using legitimate access — insider threat controls are essential even though external direction is involved.",
+      "b": "Externally recruited insider threats combine characteristics of both insider (access, execution) and external threats (direction, motivation). Controls must address both dimensions. This is the correct answer.",
+      "c": "The external criminal organization's involvement means external threat actor controls (counterintelligence, external relationship monitoring) are also relevant.",
+      "d": "Externally recruited insiders are a well-documented threat — nation-state actors and organized crime both recruit organizational insiders."
+    }
+  },
+  {
+    "id": 180,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Insider threat",
+    "difficulty": "hard",
+    "text": "A security team discovers that a system administrator has been creating backdoor accounts on critical servers 'just in case they need emergency access.' The administrator has no malicious intent. How should this be classified and handled?",
+    "answers": [
+      { "id": "a", "text": "This is not an insider threat because the administrator had good intentions" },
+      { "id": "b", "text": "This is an unintentional insider threat — the administrator's actions, regardless of intent, created unauthorized backdoor accounts that represent significant security vulnerabilities. The backdoors could be discovered and exploited by external attackers. Handling should include: immediate remediation of the backdoor accounts, security education on proper emergency access procedures (break-glass processes), review of what other unauthorized changes this administrator may have made, and process controls preventing future unauthorized account creation" },
+      { "id": "c", "text": "This is acceptable behavior for a system administrator — emergency access is a legitimate need" },
+      { "id": "d", "text": "Only malicious insiders are classified as insider threats — negligent actions are excluded" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Intent does not determine the security risk — unauthorized backdoor accounts are dangerous regardless of why they were created.",
+      "b": "Unintentional insider threats are a major category — well-meaning employees taking unauthorized security shortcuts create real vulnerabilities. The response addresses both the immediate risk and the root cause. This is the correct answer.",
+      "c": "Emergency access should go through approved break-glass processes — informal backdoor accounts bypass all access controls and audit trails.",
+      "d": "Negligent and accidental insider actions are a primary insider threat category — intent does not determine classification."
+    }
+  },
+  {
+    "id": 181,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Organized crime",
+    "difficulty": "easy",
+    "text": "Which characteristic BEST distinguishes organized crime threat actors from unskilled attackers?",
+    "answers": [
+      { "id": "a", "text": "Organized crime uses more sophisticated technical tools" },
+      { "id": "b", "text": "Organized crime operates as structured business enterprises — with dedicated roles (developers, money launderers, negotiators), profit-driven operations, reinvestment of proceeds into capabilities, and sustainable long-term criminal business models rather than opportunistic individual attacks" },
+      { "id": "c", "text": "Organized crime exclusively targets financial institutions" },
+      { "id": "d", "text": "Organized crime only operates in specific geographic regions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Technical sophistication varies within organized crime — some use sophisticated tools, others purchase capabilities as a service.",
+      "b": "Organized crime's defining characteristic is organizational structure and profit motivation — they operate cybercrime as a business with roles, revenue streams, and reinvestment. This distinguishes them from individuals. This is the correct answer.",
+      "c": "Organized crime targets any profitable victim — ransomware campaigns target healthcare, manufacturing, and many other sectors.",
+      "d": "Cybercriminal organizations are global — Eastern European, Asian, and other regional groups operate internationally."
+    }
+  },
+  {
+    "id": 182,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Organized crime",
+    "difficulty": "medium",
+    "text": "A ransomware group operates as a Ransomware-as-a-Service (RaaS) model — the group develops the ransomware and provides it to affiliates who conduct attacks in exchange for a revenue share. How does this model affect the threat landscape?",
+    "answers": [
+      { "id": "a", "text": "RaaS makes ransomware less effective since affiliates share the revenue" },
+      { "id": "b", "text": "RaaS dramatically expands the threat landscape by separating technical capability development from attack execution — affiliates with minimal technical skill can conduct sophisticated ransomware attacks using the group's tooling. This increases attack volume, provides the core group with deniability, and scales the criminal operation beyond what a single group could execute directly" },
+      { "id": "c", "text": "RaaS only affects large enterprises — small businesses are not targeted by affiliates" },
+      { "id": "d", "text": "RaaS groups are easier to disrupt because they have more members to arrest" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Revenue sharing is a feature enabling scaling — RaaS significantly increases ransomware volume and reach.",
+      "b": "RaaS democratizes ransomware — the core group profits from scale while affiliates conduct attacks using enterprise-grade tooling. This is the correct answer.",
+      "c": "Affiliates attack targets of all sizes — small businesses are frequently targeted because they often have weaker defenses.",
+      "d": "RaaS makes disruption harder — taking down the core infrastructure does not stop affiliates who may switch to other RaaS providers."
+    }
+  },
+  {
+    "id": 183,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Organized crime",
+    "difficulty": "hard",
+    "text": "An organized crime group conducts business email compromise (BEC) attacks — impersonating executives to redirect wire transfers. Unlike ransomware, BEC leaves no malware artifacts. How does this change the detection and defense approach?",
+    "answers": [
+      { "id": "a", "text": "BEC is a ransomware variant — the same controls apply" },
+      { "id": "b", "text": "BEC is a social engineering attack with no malware component — traditional technical controls (AV, EDR) cannot detect it. Defense requires: email authentication (SPF, DKIM, DMARC) preventing domain spoofing; user training on BEC recognition; out-of-band verification procedures for wire transfers above thresholds; email header analysis for subtle spoofing indicators; and financial controls requiring dual authorization for transfers. Detection relies on process and behavioral controls rather than technical security tools" },
+      { "id": "c", "text": "BEC can be blocked entirely by installing antivirus on email servers" },
+      { "id": "d", "text": "BEC only targets email — no other communication vectors are used" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "BEC and ransomware are fundamentally different attack types requiring different defenses.",
+      "b": "BEC's purely social engineering nature means technical security tools provide limited detection — process controls, email authentication, and financial verification procedures are the primary defenses. This is the correct answer.",
+      "c": "Antivirus addresses malware — BEC has no malware component for AV to detect.",
+      "d": "BEC increasingly uses phone calls (vishing), text messages, and other channels alongside email — defense must address all communication vectors."
+    }
+  },
+  {
+    "id": 184,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Organized crime",
+    "difficulty": "hard",
+    "text": "Law enforcement successfully takes down the infrastructure of a major ransomware group, seizing servers and arresting members. Six months later, a new ransomware group emerges with similar TTPs. What does this pattern reveal about organized cybercrime resilience?",
+    "answers": [
+      { "id": "a", "text": "The same group reformed — law enforcement takedowns have permanent effect" },
+      { "id": "b", "text": "Organized cybercrime demonstrates structural resilience: remaining members form new groups; released/escaped members recruit new teams; the underlying criminal business model remains profitable; tooling, techniques, and knowledge persist among the ecosystem; and international jurisdictional gaps limit law enforcement effectiveness. Takedowns disrupt but rarely permanently eliminate the threat capability" },
+      { "id": "c", "text": "Law enforcement takedowns are completely ineffective and should be abandoned" },
+      { "id": "d", "text": "The pattern proves different criminal organizations share the same code — they are all the same group" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The group may have reformed or new actors adopted similar TTPs — takedowns are disruptive but rarely permanent.",
+      "b": "The cybercriminal ecosystem is resilient — talent, tools, and methods survive infrastructure takedowns. The profitable business model continuously incentivizes reconstitution. This is the correct answer.",
+      "c": "Law enforcement takedowns do provide real disruption and deterrence — they are valuable even without permanent elimination.",
+      "d": "Similar TTPs may indicate shared tooling, former members, or independent convergent development — not necessarily the same group."
+    }
+  },
+  {
+    "id": 185,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Shadow IT",
+    "difficulty": "easy",
+    "text": "What is shadow IT and why does it create security risks?",
+    "answers": [
+      { "id": "a", "text": "Shadow IT refers to attackers who mimic legitimate IT staff to gain physical access" },
+      { "id": "b", "text": "Shadow IT refers to technology systems, software, or services used by employees or departments without official IT knowledge or approval — creating security risks because these systems bypass security controls, compliance requirements, patching, monitoring, and data governance policies" },
+      { "id": "c", "text": "Shadow IT refers to IT systems that operate in dark data centers without proper documentation" },
+      { "id": "d", "text": "Shadow IT refers to legacy systems that are no longer officially supported but still in use" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Physical social engineering by attackers posing as IT staff is a different threat — shadow IT involves employees using unauthorized technology.",
+      "b": "Shadow IT emerges when employees use unsanctioned tools (personal cloud storage, free SaaS apps, unauthorized software) that bypass IT security controls and governance. This is the correct answer.",
+      "c": "Undocumented data centers may be shadow IT — but shadow IT broadly includes any unauthorized technology use, not just physical infrastructure.",
+      "d": "Legacy systems are typically known to IT — shadow IT specifically refers to technology unknown to or unapproved by IT."
+    }
+  },
+  {
+    "id": 186,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Shadow IT",
+    "difficulty": "medium",
+    "text": "A marketing team uses a free cloud-based file sharing service to collaborate on campaigns containing customer PII because the approved corporate solution is too slow. What specific security and compliance risks does this shadow IT usage create?",
+    "answers": [
+      { "id": "a", "text": "No risk — the marketing team has a legitimate business need and used available resources" },
+      { "id": "b", "text": "Customer PII stored in an unapproved service creates: data governance failures (where is data, who controls it?); regulatory non-compliance (GDPR, CCPA may require data to be in approved, auditable systems); no corporate DLP monitoring; unknown data retention and deletion practices of the free service; potential data breaches if the free service lacks enterprise security; inability to respond to data subject access requests; and loss of corporate data if team members leave" },
+      { "id": "c", "text": "The only risk is a performance improvement — the approved service should be made faster" },
+      { "id": "d", "text": "Shadow IT risks only apply to enterprise software — free consumer services are safe" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Business need does not justify bypassing data governance — the risks are real regardless of motivation.",
+      "b": "Shadow IT with PII creates cascading compliance and security failures — the organization has no visibility, control, or governance over this data. This is the correct answer.",
+      "c": "The performance issue is a valid root cause — but the response must address both the immediate security risk and the underlying need.",
+      "d": "Free consumer services often have weaker enterprise security controls and different data handling practices than enterprise-grade solutions."
+    }
+  },
+  {
+    "id": 187,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Shadow IT",
+    "difficulty": "hard",
+    "text": "A CISO discovers that 47 different cloud services are in use across the organization that are not in the approved technology catalog. Traditional network controls blocked known unauthorized services but employees found workarounds. What strategic approach addresses shadow IT at scale?",
+    "answers": [
+      { "id": "a", "text": "Block all cloud services — approve nothing until each is individually vetted" },
+      { "id": "b", "text": "Implement a Cloud Access Security Broker (CASB) for visibility and graduated control; create a streamlined self-service technology approval process addressing the speed/agility need that drives shadow IT; implement usage-based governance allowing low-risk services with monitoring while enforcing controls on high-risk ones; and address root causes by ensuring approved tools actually meet business needs. Blocking without alternatives drives more shadow IT" },
+      { "id": "c", "text": "Accept all 47 services as approved — they are already in use" },
+      { "id": "d", "text": "Shadow IT cannot be managed — employees will always find ways around controls" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Blanket blocking that drives workarounds has already failed — the approach must address root causes while implementing better controls.",
+      "b": "Effective shadow IT management requires both visibility (CASB), risk-based governance, and addressing the root cause (approved tools not meeting needs). Pure prohibition without alternatives drives more shadow IT. This is the correct answer.",
+      "c": "Retroactive approval without security review is not governance — it institutionalizes the security gap.",
+      "d": "Shadow IT can be significantly reduced through the right combination of controls, process improvement, and business engagement."
+    }
+  },
+  {
+    "id": 188,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Shadow IT",
+    "difficulty": "hard",
+    "text": "A developer creates a custom internal tool that bypasses the approved software development lifecycle because they believe the process is 'too bureaucratic.' The tool is deployed on a production server and processes customer data. This is shadow IT within IT. What unique risks does this scenario present?",
+    "answers": [
+      { "id": "a", "text": "Internal developer tools have no security risk since they were created by trusted employees" },
+      { "id": "b", "text": "Developer-created shadow IT presents unique risks: the tool was not security-reviewed (potential vulnerabilities in code processing customer data); not tested for reliability (production failures); not documented (single point of knowledge failure if the developer leaves); no patch management (vulnerabilities discovered later cannot be tracked and remediated); and circumvention of the SDLC means security gates (SAST, code review, penetration testing) were skipped for production customer data processing" },
+      { "id": "c", "text": "The risk is limited to compliance violations — technical security is unaffected" },
+      { "id": "d", "text": "Internal tools are inherently safer than external services since they stay within the network" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Developer intent and trust level do not compensate for the absence of security review — untested code processing customer data in production is a significant risk.",
+      "b": "SDLC bypass eliminates all security gates — the tool could have SQL injection, authentication bypass, or data handling vulnerabilities that security review would have caught. This is the correct answer.",
+      "c": "Unreviewed code processing customer data has real technical security vulnerabilities beyond compliance gaps.",
+      "d": "Network location does not make code secure — internally hosted vulnerable code is still exploitable by internal users or through other compromised systems."
+    }
+  },
+  {
+    "id": 189,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Internal/external",
+    "difficulty": "easy",
+    "text": "How does distinguishing between internal and external threat actors affect security control design?",
+    "answers": [
+      { "id": "a", "text": "The distinction is irrelevant — the same controls apply to all threats" },
+      { "id": "b", "text": "External threats originate outside the organization and must penetrate perimeter defenses — controls focus on preventing unauthorized access. Internal threats already have legitimate access — controls focus on monitoring behavior, limiting access scope (least privilege), and detecting misuse of authorized access. Conflating the two leads to gaps in either perimeter security or insider threat detection" },
+      { "id": "c", "text": "External threats are always more dangerous than internal threats" },
+      { "id": "d", "text": "Internal threats are impossible to defend against because employees have legitimate access" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "External and internal threats require fundamentally different control approaches — same controls for both leaves significant gaps.",
+      "b": "The access baseline differs: external attackers must break in while insiders already have access. Controls must address both attack paths distinctly. This is the correct answer.",
+      "c": "Both internal and external threats cause significant damage — neither is universally more dangerous.",
+      "d": "Internal threats are defensible through least privilege, behavioral monitoring, separation of duties, and other controls."
+    }
+  },
+  {
+    "id": 190,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Internal/external",
+    "difficulty": "medium",
+    "text": "A former employee's credentials are used to access corporate systems 2 days after their termination. This threat actor is BEST classified as:",
+    "answers": [
+      { "id": "a", "text": "Purely external — former employees are no longer internal" },
+      { "id": "b", "text": "This represents the insider-to-external transition problem — former employees become external actors at termination, but may retain access through inadequate offboarding. The threat combines insider knowledge (of systems, credentials, and where valuable data is) with external actor status. Controls must address both: timely access revocation (offboarding) and monitoring for post-termination access attempts" },
+      { "id": "c", "text": "Purely internal — the person was previously an employee" },
+      { "id": "d", "text": "A nation-state actor using stolen credentials" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Technically external but with insider knowledge — the transition threat is a specific security challenge requiring both offboarding controls and post-termination monitoring.",
+      "b": "Former employees represent a hybrid threat — external actors with insider knowledge and potentially retained access. Offboarding must immediately revoke all access. This is the correct answer.",
+      "c": "The person is no longer an insider at termination — though they retain insider knowledge.",
+      "d": "Nothing in the scenario suggests nation-state involvement — a former employee using retained credentials is the most likely explanation."
+    }
+  },
+  {
+    "id": 191,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Internal/external",
+    "difficulty": "hard",
+    "text": "A Zero Trust architecture treats all traffic as potentially hostile regardless of whether it originates internally or externally. How does this philosophy change the traditional internal vs. external threat classification for control design?",
+    "answers": [
+      { "id": "a", "text": "Zero Trust makes the internal/external distinction completely irrelevant for all purposes" },
+      { "id": "b", "text": "Zero Trust shifts the control paradigm: rather than trusting internal traffic and scrutinizing external traffic, every access request is verified regardless of origin. This does not make the internal/external distinction irrelevant — insider threats still require behavioral monitoring and data access controls, and external threats still require preventing unauthorized access. Zero Trust addresses the gap where lateral movement by internal or external actors exploited implicit network trust" },
+      { "id": "c", "text": "Zero Trust only applies to external threats — internal users are still trusted" },
+      { "id": "d", "text": "Zero Trust eliminates the need for any security controls beyond network perimeter protection" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Zero Trust changes how controls are applied — not whether the distinction exists. Insider threat and external threat characteristics still inform different control approaches.",
+      "b": "Zero Trust removes implicit network-location-based trust while the internal/external distinction still informs threat modeling — insider threats need behavioral controls, external threats need access prevention. Zero Trust closes the gap where network location determined trust level. This is the correct answer.",
+      "c": "Zero Trust explicitly removes internal user trust — every user, internal or external, must verify for each access request.",
+      "d": "Zero Trust requires comprehensive controls across identity, device, network, and data — not just perimeter protection."
+    }
+  },
+  {
+    "id": 192,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Internal/external",
+    "difficulty": "hard",
+    "text": "A penetration test reveals that an external attacker who gains initial foothold through a phishing attack can laterally move to access financial systems within 4 hours due to overly permissive internal network policies. How does this finding reflect the internal vs. external threat relationship?",
+    "answers": [
+      { "id": "a", "text": "The finding only demonstrates an external threat — internal network issues are unrelated" },
+      { "id": "b", "text": "The finding reveals how external threats exploit internal control gaps: external attackers who successfully breach the perimeter immediately become de facto internal threats with access to internal resources. Permissive internal networks designed for insider convenience become attack highways for external actors. The security implication is that internal controls (network segmentation, least privilege, micro-segmentation) must assume the internal network may be compromised by external actors" },
+      { "id": "c", "text": "The finding only demonstrates an internal threat — the phishing vector is irrelevant" },
+      { "id": "d", "text": "Internal network policies are beyond the scope of external threat remediation" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The external breach enabling internal lateral movement is precisely why internal controls matter for external threat defense.",
+      "b": "External threats leverage internal control gaps after breaching the perimeter — the full kill chain spans external (initial access) and internal (lateral movement, privilege escalation) phases. Defense requires both perimeter and internal controls. This is the correct answer.",
+      "c": "Both vectors are relevant — the phishing attack enabled the internal lateral movement.",
+      "d": "External threat remediation requires addressing internal controls that amplify the impact of external breaches."
+    }
+  },
+  {
+    "id": 193,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Resources/funding",
+    "difficulty": "easy",
+    "text": "How does an attacker's level of resources and funding affect their threat capability?",
+    "answers": [
+      { "id": "a", "text": "Resources only determine how many attacks can be conducted — not the sophistication" },
+      { "id": "b", "text": "Resources and funding enable: development of custom malware and zero-day exploits; hiring of skilled specialists; purchasing of criminal services (access brokers, bulletproof hosting); sustaining long-term operations; acquiring expensive hardware for cryptanalysis or credential cracking; and corrupting insiders. Well-funded threat actors can pursue targets that would defeat resource-constrained attackers" },
+      { "id": "c", "text": "Funding is irrelevant since the most effective attacks use free public tools" },
+      { "id": "d", "text": "Only nation-state actors have significant funding — criminal groups operate with minimal resources" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Resources directly enable capability development — zero-day research, custom tooling, and sustained operations require significant investment.",
+      "b": "Resources are a force multiplier: they enable custom capability development, talent acquisition, sustained operations, and purchasing capabilities from the criminal ecosystem. This is the correct answer.",
+      "c": "While effective attacks can use public tools, resources enable capabilities beyond what free tools provide — zero-days, custom malware, and long-term operations require investment.",
+      "d": "Organized crime generates billions in revenue — many criminal groups have substantial resources comparable to nation-state programs in some areas."
+    }
+  },
+  {
+    "id": 194,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Resources/funding",
+    "difficulty": "medium",
+    "text": "A nation-state threat actor uses a zero-day vulnerability that took an estimated 6-12 months of reverse engineering to discover. What does the investment required to find this zero-day reveal about the threat actor's resources?",
+    "answers": [
+      { "id": "a", "text": "Zero-days are freely available on the internet — no significant resources are required" },
+      { "id": "b", "text": "Six to twelve months of skilled reverse engineer time represents hundreds of thousands of dollars in personnel cost alone — plus research infrastructure, test environments, and operational security. This level of investment is only sustainable for threat actors with substantial ongoing funding: nation-states, very well-funded criminal organizations, or access to expensive zero-day markets where such exploits sell for hundreds of thousands of dollars" },
+      { "id": "c", "text": "Zero-days can be found by automated tools — human resources are not required" },
+      { "id": "d", "text": "The investment is irrelevant — zero-days provide no special advantage over known exploits" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Zero-days are not freely available — high-quality exploits sell for hundreds of thousands of dollars on legitimate and black markets.",
+      "b": "Zero-day research requires sustained investment in skilled personnel and research infrastructure — this resource requirement is a meaningful threat actor differentiator. This is the correct answer.",
+      "c": "Automated fuzzing and vulnerability discovery tools exist but significant human expertise is required to develop reliable exploits from discovered vulnerabilities.",
+      "d": "Zero-day vulnerabilities are specifically valuable because they have no available patches — they provide significant advantages over known, potentially patched exploits."
+    }
+  },
+  {
+    "id": 195,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Resources/funding",
+    "difficulty": "hard",
+    "text": "A security team is building a threat model for their organization. They identify two potential threat actors: a well-funded nation-state APT and a low-funded hacktivist group. How should resource disparity influence their defensive prioritization?",
+    "answers": [
+      { "id": "a", "text": "Defend equally against both — resource levels do not affect defensive priorities" },
+      { "id": "b", "text": "Defenses against a well-funded APT must address: zero-day exploits (patch where possible, use detection for gaps), supply chain attacks, advanced persistent access, and sophisticated evasion. Against low-funded hacktivists: prioritize DDoS mitigation, web application hardening, and public-facing asset security. The nation-state threat requires deeper defense-in-depth, advanced threat detection, and incident response capability — while hacktivist defenses focus on availability and public-facing systems" },
+      { "id": "c", "text": "Focus only on the nation-state threat — hacktivists are never dangerous" },
+      { "id": "d", "text": "Focus only on hacktivist threats — nation-state attacks cannot be defended against" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Resource levels directly affect what attacks are possible — defenses must be calibrated to the threat actor's capabilities.",
+      "b": "Threat modeling based on resource levels enables proportionate, efficient defense — different threat actors require different defensive focuses. Both merit attention with different control priorities. This is the correct answer.",
+      "c": "Hacktivists can cause significant reputational and operational damage — they merit specific defenses.",
+      "d": "While nation-state attacks cannot be completely prevented, defenses significantly reduce impact, dwell time, and attacker success — abandoning defense is not appropriate."
+    }
+  },
+  {
+    "id": 196,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Resources/funding",
+    "difficulty": "hard",
+    "text": "A criminal group offers 'access-as-a-service' — selling access to already-compromised corporate networks to other criminals. How does this criminal market dynamic affect the effective resources available to low-funded threat actors?",
+    "answers": [
+      { "id": "a", "text": "Access markets have no effect — attackers must compromise systems themselves" },
+      { "id": "b", "text": "Access markets (initial access brokers) fundamentally change the resource equation: low-funded actors can purchase pre-established network footholds, eliminating the need to invest in initial access capability. This dramatically lowers the barrier to sophisticated attacks — a well-funded actor's initial access investment is monetized repeatedly by selling to multiple buyers, enabling even resource-constrained groups to execute attacks inside corporate networks" },
+      { "id": "c", "text": "Access-as-a-service only benefits nation-state actors" },
+      { "id": "d", "text": "Purchasing access is illegal and therefore criminals do not use these markets" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Initial access broker markets are a well-established component of the criminal ecosystem — purchased access is widely used.",
+      "b": "Access markets commoditize initial access — the most resource-intensive phase of an attack can be purchased, enabling less-resourced actors to operate inside corporate networks. This is the correct answer.",
+      "c": "Access markets serve various buyers including ransomware affiliates and other criminal groups — not exclusively nation-states.",
+      "d": "Criminal markets operate precisely because criminals use them — legality does not prevent criminals from using efficient criminal services."
+    }
+  },
+  {
+    "id": 197,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Level of sophistication/capability",
+    "difficulty": "easy",
+    "text": "How does a threat actor's level of sophistication affect the controls an organization must deploy to defend against them?",
+    "answers": [
+      { "id": "a", "text": "Sophistication level has no effect — the same basic controls stop all threat actors" },
+      { "id": "b", "text": "Highly sophisticated threat actors can bypass or evade many standard controls — they use novel exploits, custom malware that evades AV, advanced evasion techniques, and living-off-the-land methods. Defense against sophisticated actors requires advanced detection capabilities (behavioral analytics, threat hunting), zero-trust architecture, and layered controls that assume outer defenses may fail" },
+      { "id": "c", "text": "More sophisticated attackers are always stopped by perimeter firewalls" },
+      { "id": "d", "text": "Sophistication only affects how quickly an attack succeeds — not whether defenses work" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Standard controls that stop unskilled attackers are routinely bypassed by sophisticated ones — control selection must account for attacker capability.",
+      "b": "Sophistication directly determines which controls are effective — signature-based AV, simple firewalls, and basic logging are insufficient against advanced actors who specifically develop techniques to bypass them. This is the correct answer.",
+      "c": "Sophisticated actors routinely bypass perimeter firewalls through phishing, supply chain attacks, and other techniques that establish connections from inside out.",
+      "d": "Sophistication affects both success probability and control effectiveness — sophisticated actors defeat defenses that stop less capable attackers."
+    }
+  },
+  {
+    "id": 198,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Level of sophistication/capability",
+    "difficulty": "medium",
+    "text": "An attacker uses only PowerShell, WMI, and scheduled tasks — all legitimate Windows tools — to move laterally and maintain persistence without dropping any malware files. What capability level does this demonstrate?",
+    "answers": [
+      { "id": "a", "text": "Low capability — the attacker is using free tools" },
+      { "id": "b", "text": "High capability — living-off-the-land (LotL) techniques using only legitimate system tools demonstrates sophisticated evasion capability. This approach evades file-based detection (AV/EDR signature matching), reduces forensic artifacts, and blends malicious activity with normal system operations — requiring behavioral analysis and advanced detection rather than signature-based controls" },
+      { "id": "c", "text": "Medium capability — PowerShell is only moderately difficult to use" },
+      { "id": "d", "text": "Low capability — sophisticated attackers always use custom malware" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Using free tools does not indicate low capability — the sophistication is in the technique and evasion, not the cost of tools.",
+      "b": "LotL attacks demonstrate high capability — operating entirely within legitimate tool behavior evades signature detection and requires sophisticated behavioral analytics to detect. This is the correct answer.",
+      "c": "PowerShell proficiency is necessary but insufficient — the sophistication is the operational security discipline of never using detectable malware.",
+      "d": "Custom malware is increasingly risky for attackers — LotL is often preferred by sophisticated actors precisely because it avoids malware detection."
+    }
+  },
+  {
+    "id": 199,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Level of sophistication/capability",
+    "difficulty": "hard",
+    "text": "A threat intelligence report indicates an APT group has developed a previously unknown vulnerability in a widely-used VPN product. They have been selectively using it only against high-value targets to avoid disclosure. What does this selective use reveal about their capability level and strategic sophistication?",
+    "answers": [
+      { "id": "a", "text": "Selective use indicates the exploit does not work reliably" },
+      { "id": "b", "text": "Selective use of a zero-day demonstrates operational sophistication beyond technical capability: they understand that broad use risks discovery and patching (burning the exploit); they have intelligence capability to identify which targets merit zero-day use vs. less valuable techniques; and they manage their exploit inventory as strategic assets. This tradecraft discipline distinguishes nation-state actors from less sophisticated groups who would broadly deploy valuable exploits until patched" },
+      { "id": "c", "text": "Selective use means the group has limited copies of the exploit" },
+      { "id": "d", "text": "A sophisticated group would use their best exploits on all available targets simultaneously" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Reliability issues would manifest as failed attacks — selective use against confirmed high-value targets indicates working capability and operational discipline.",
+      "b": "Zero-day stewardship — selective use to avoid burning an exploit — is a hallmark of nation-state operational sophistication beyond mere technical capability. This is the correct answer.",
+      "c": "Zero-day exploits are typically limited only by the number of vulnerable targets — selective use is a strategic choice, not a supply constraint.",
+      "d": "Broad use would accelerate discovery and patching — strategic actors deliberately avoid burning valuable exploits on low-value targets."
+    }
+  },
+  {
+    "id": 200,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Level of sophistication/capability",
+    "difficulty": "hard",
+    "text": "A security team is trying to attribute an attack to either a nation-state or sophisticated organized crime group. Both have similar technical TTPs. What non-technical indicators might help distinguish between them?",
+    "answers": [
+      { "id": "a", "text": "Technical TTPs are the only valid attribution evidence" },
+      { "id": "b", "text": "Non-technical attribution indicators include: targeting patterns (nation-states often target government, defense, and critical infrastructure; criminal groups target financially valuable organizations); monetization behavior (criminal groups typically monetize access; nation-states rarely do); operational timing (nation-state operations may align with geopolitical events); victim notification by intelligence agencies (governments often warn of state-sponsored activity); and dwell time objectives (nation-states may persist silently; criminals typically monetize faster)" },
+      { "id": "c", "text": "Attribution is irrelevant — defenses should be the same regardless" },
+      { "id": "d", "text": "Geographic IP origin definitively distinguishes nation-state from criminal actors" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Technical TTPs can be deliberately mimicked (false flag operations) — non-technical indicators provide complementary attribution evidence.",
+      "b": "Attribution combines technical and non-technical indicators — targeting patterns, monetization behavior, and geopolitical context provide meaningful attribution signals beyond TTPs alone. This is the correct answer.",
+      "c": "Attribution matters for response strategy, law enforcement engagement, and geopolitical considerations — it is not purely academic.",
+      "d": "Nation-state actors routinely use proxies, VPNs, and compromised infrastructure in other countries — IP geography is not reliable attribution evidence."
+    }
+  },
+  {
+    "id": 201,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Data exfiltration",
+    "difficulty": "easy",
+    "text": "Data exfiltration as a threat actor motivation refers to which attacker objective?",
+    "answers": [
+      { "id": "a", "text": "Destroying targeted data to cause operational disruption" },
+      { "id": "b", "text": "Stealing and removing sensitive data from the target organization — to sell it, use it for competitive advantage, provide it to foreign governments, or use it for leverage against the victim" },
+      { "id": "c", "text": "Encrypting data for ransom payment" },
+      { "id": "d", "text": "Modifying data to cause incorrect decisions based on false information" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Data destruction is a separate motivation (service disruption or sabotage) — exfiltration specifically involves copying and removing data.",
+      "b": "Data exfiltration is the unauthorized copying and removal of data from an organization — the data retains value after theft and can be monetized or leveraged in various ways. This is the correct answer.",
+      "c": "Ransomware encryption is a separate technique — though some attackers both exfiltrate and encrypt (double extortion).",
+      "d": "Data modification for deception is an integrity attack — exfiltration involves copying and removing data without necessarily modifying it."
+    }
+  },
+  {
+    "id": 202,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Data exfiltration",
+    "difficulty": "medium",
+    "text": "An attacker exfiltrates intellectual property from a pharmaceutical company — specifically drug formulas and clinical trial data. This data does not appear for sale on criminal markets. Which threat actor and motivation does this MOST suggest?",
+    "answers": [
+      { "id": "a", "text": "Organized crime — they will sell the data later" },
+      { "id": "b", "text": "Nation-state espionage — IP theft for competitive advantage (benefiting domestic pharmaceutical companies or government health programs) rather than criminal monetization. Nation-states conduct economic espionage to accelerate their domestic industries with stolen research, avoiding the criminal market exposure that would reveal the theft" },
+      { "id": "c", "text": "Hacktivist — they will leak the data to expose unethical research practices" },
+      { "id": "d", "text": "Unskilled attacker — they stole the data without a plan to use it" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Organized crime monetizes data through criminal markets — not appearing for sale suggests the data serves a different purpose.",
+      "b": "Nation-state economic espionage steals IP for domestic benefit — stolen pharmaceutical research reduces development costs and time for the sponsoring country's industry. Criminal markets would risk exposure. This is the correct answer.",
+      "c": "Hacktivists typically publish stolen data publicly — sensitive IP disappearing without public disclosure is inconsistent with hacktivist motives.",
+      "d": "An attacker without a plan would be unlikely to specifically target high-value research data — the targeting suggests clear strategic intent."
+    }
+  },
+  {
+    "id": 203,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Data exfiltration",
+    "difficulty": "hard",
+    "text": "A DLP system detects large data transfers to an external cloud storage service from a senior engineer's account over 3 weeks — totaling 40GB. The engineer claims they were backing up personal files. Security investigation reveals the data includes proprietary source code. What response process should be followed?",
+    "answers": [
+      { "id": "a", "text": "Accept the employee's explanation — senior engineers have broad data access rights" },
+      { "id": "b", "text": "Treat as a potential insider exfiltration incident: preserve forensic evidence immediately (do not alert the employee); engage HR and legal counsel; conduct a forensic analysis of exactly what data was transferred; determine whether the data constitutes trade secrets; interview the employee with HR present; assess whether the data reached unauthorized parties; and pursue appropriate disciplinary, legal, and remediation steps based on findings. The senior title does not exempt from data protection policies" },
+      { "id": "c", "text": "Immediately terminate the employee without investigation" },
+      { "id": "d", "text": "Only escalate if the engineer admits to exfiltration" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Data access rights do not include exfiltrating proprietary data to personal storage — the explanation must be verified through investigation.",
+      "b": "Insider data exfiltration investigations require forensic preservation, legal involvement, and systematic investigation before action — premature confrontation can compromise evidence. This is the correct answer.",
+      "c": "Immediate termination without investigation creates legal liability and destroys evidence.",
+      "d": "Waiting for admission is not an investigation methodology — forensic analysis provides evidence independent of the employee's statement."
+    }
+  },
+  {
+    "id": 204,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Data exfiltration",
+    "difficulty": "hard",
+    "text": "A threat actor exfiltrates data slowly over 6 months — averaging 50MB per day rather than a large one-time transfer. How does slow exfiltration complicate detection and what specific controls are needed?",
+    "answers": [
+      { "id": "a", "text": "Slow exfiltration is not a real technique — attackers always move quickly" },
+      { "id": "b", "text": "Slow exfiltration is deliberately designed to blend with normal network traffic and evade volume-based DLP thresholds and anomaly detection. Detection requires: cumulative data transfer analysis over extended periods (not just single-session thresholds); behavioral baseline comparison (is 50MB/day unusual for this user/system?); data sensitivity classification (the content matters as much as the volume); egress traffic destination analysis; and potentially endpoint monitoring to identify staged data before exfiltration" },
+      { "id": "c", "text": "Standard DLP policies block all slow exfiltration regardless of data type" },
+      { "id": "d", "text": "Slow exfiltration is impossible to detect — organizations should accept this risk" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Slow exfiltration ('low and slow') is a well-documented technique used by advanced actors to avoid detection.",
+      "b": "Low-and-slow exfiltration defeats point-in-time DLP thresholds — detection requires longitudinal analysis, behavioral baselining, and content-based controls. This is the correct answer.",
+      "c": "Standard DLP typically uses session or time-based thresholds — specifically designed to miss slow exfiltration.",
+      "d": "Slow exfiltration is detectable with appropriate longitudinal monitoring and behavioral analytics — acceptance is not required."
+    }
+  },
+  {
+    "id": 205,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Espionage",
+    "difficulty": "easy",
+    "text": "Which threat actor type MOST commonly conducts cyber espionage operations?",
+    "answers": [
+      { "id": "a", "text": "Unskilled attackers seeking financial gain" },
+      { "id": "b", "text": "Nation-state actors — governments conduct espionage to collect intelligence on foreign governments, military capabilities, diplomatic communications, and economic/scientific research to gain strategic advantage" },
+      { "id": "c", "text": "Hacktivists protesting government policies" },
+      { "id": "d", "text": "Organized crime groups seeking monetizable data" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unskilled attackers primarily seek financial gain or notoriety — not strategic intelligence collection.",
+      "b": "Espionage is the collection of secret intelligence — nation-states have the motivation (strategic advantage), resources, and patience for long-term espionage operations. This is the correct answer.",
+      "c": "Hacktivists seek publicity for their cause — not confidential intelligence collection.",
+      "d": "Organized crime seeks monetizable data — espionage for strategic intelligence is not profitable in the criminal marketplace."
+    }
+  },
+  {
+    "id": 206,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Espionage",
+    "difficulty": "medium",
+    "text": "A defense contractor discovers that encrypted communications between their engineers and a government client have been intercepted and decrypted by a foreign intelligence service. The foreign service had compromised the contractor's VPN. What type of threat does this represent?",
+    "answers": [
+      { "id": "a", "text": "Cybercrime — the attackers accessed the systems without authorization" },
+      { "id": "b", "text": "Cyber espionage — a foreign intelligence service targeted the defense contractor to collect sensitive government communications and potentially classified program details. The sophisticated VPN compromise and focus on government communications are consistent with state-sponsored intelligence collection rather than criminal monetization" },
+      { "id": "c", "text": "Hacktivism — the foreign service was protesting the defense contractor's activities" },
+      { "id": "d", "text": "Insider threat — the attacker used stolen credentials" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unauthorized access is criminal, but the motivation and actor (foreign intelligence service) classify this as espionage — the criminal law perspective and threat actor classification are different analyses.",
+      "b": "Foreign intelligence services targeting defense contractors for government communications is a classic espionage operation — the motivation is strategic intelligence collection, not financial gain. This is the correct answer.",
+      "c": "Foreign intelligence services do not conduct hacktivism — they collect intelligence for national advantage.",
+      "d": "Using stolen credentials is a technique — the threat actor classification is based on who (foreign intelligence service) and why (espionage), not the specific technique used."
+    }
+  },
+  {
+    "id": 207,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Espionage",
+    "difficulty": "hard",
+    "text": "A nation-state espionage operation targets a pharmaceutical company's COVID-19 vaccine research rather than government agencies. How does economic espionage against private companies serve nation-state interests?",
+    "answers": [
+      { "id": "a", "text": "Nations only conduct espionage against other governments — corporate targets indicate criminal activity" },
+      { "id": "b", "text": "Economic espionage against private companies serves nation-state interests by: accelerating domestic research and development (stealing years of research); enabling competitive advantage for domestic industries; providing access to dual-use technologies with military applications; reducing costs of developing competing products; and potentially enabling faster public health response. The COVID-19 example demonstrates that critical research represents national strategic interest even when conducted by private entities" },
+      { "id": "c", "text": "Nation-states would only target government health agencies — not private companies" },
+      { "id": "d", "text": "Economic espionage provides no national advantage since stolen research still requires development" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Economic espionage against private companies is a major nation-state activity — they target wherever valuable strategic information resides.",
+      "b": "Nation-states conduct economic espionage against private companies to capture research value — this is particularly relevant for pharmaceuticals, semiconductors, and other strategic technologies. This is the correct answer.",
+      "c": "Vaccine research was concentrated in private pharmaceutical companies during COVID-19 — nation-states target where the valuable information is.",
+      "d": "Stealing research eliminates years of development time and potentially billions in R&D costs — significant national advantage even accounting for additional development work."
+    }
+  },
+  {
+    "id": 208,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Espionage",
+    "difficulty": "hard",
+    "text": "A counterintelligence team discovers that a foreign intelligence service has been recruiting human sources inside an organization alongside their cyber operations. How does the combination of human intelligence (HUMINT) and cyber espionage create compounded security risks?",
+    "answers": [
+      { "id": "a", "text": "Human and cyber intelligence operations are entirely separate — combining them provides no additional advantage" },
+      { "id": "b", "text": "Combined HUMINT and cyber operations create compounded risks: human sources provide insider knowledge that makes cyber operations more targeted and effective (knowing which system has the data, who has access); cyber operations reduce the risk to human sources by obtaining some intelligence without human exposure; human sources can bypass technical controls by providing credentials or physically enabling access; and the combination makes attribution and detection significantly harder as both vectors must be investigated simultaneously" },
+      { "id": "c", "text": "Human sources in an organization can always be detected before causing harm" },
+      { "id": "d", "text": "Cyber controls are sufficient to prevent damage from compromised human sources" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Combined operations are specifically designed to leverage synergies — human intelligence guides cyber operations and vice versa.",
+      "b": "The combination of HUMINT and SIGINT/cyber operations creates a more capable intelligence collection capability than either alone — the synergies are specifically exploited by sophisticated intelligence services. This is the correct answer.",
+      "c": "Human insider recruitment is specifically difficult to detect — it is a primary focus of counterintelligence programs precisely because of this challenge.",
+      "d": "Cyber controls address technical attack vectors — a human insider with legitimate access can bypass many technical controls."
+    }
+  },
+  {
+    "id": 209,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Service disruption",
+    "difficulty": "easy",
+    "text": "Which attack type is MOST directly motivated by service disruption?",
+    "answers": [
+      { "id": "a", "text": "Phishing — collecting credentials for future access" },
+      { "id": "b", "text": "Distributed Denial of Service (DDoS) — overwhelming a target's resources to make services unavailable to legitimate users, either for ideological reasons, competitive advantage, extortion, or nation-state sabotage" },
+      { "id": "c", "text": "SQL injection — extracting data from databases" },
+      { "id": "d", "text": "Keylogging — capturing credentials as users type them" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Phishing targets credential collection for future access — not immediate service disruption.",
+      "b": "DDoS is the quintessential service disruption attack — making services unavailable through overwhelming traffic or resource exhaustion directly serves disruption objectives. This is the correct answer.",
+      "c": "SQL injection typically targets data extraction (exfiltration motivation) — not service disruption.",
+      "d": "Keylogging serves credential theft objectives — not service disruption."
+    }
+  },
+  {
+    "id": 210,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Service disruption",
+    "difficulty": "medium",
+    "text": "A ransomware attack encrypts all files on an organization's systems. Beyond the ransom payment objective, how does this attack also achieve a service disruption motivation?",
+    "answers": [
+      { "id": "a", "text": "Ransomware only serves financial motivation — service disruption is incidental" },
+      { "id": "b", "text": "Ransomware achieves service disruption as a core mechanism: encrypted systems become unusable, forcing operational shutdown. Service disruption is the leverage mechanism enabling the ransom demand — without disruption (unavailable data and systems), there would be no ransom motivation. Nation-states and terrorists increasingly use ransomware-style attacks purely for disruption without ransom demands, separating the two motivations" },
+      { "id": "c", "text": "Ransomware does not disrupt services — systems continue functioning with encrypted data" },
+      { "id": "d", "text": "Service disruption is only a side effect — ransom collection is the exclusive objective" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Service disruption is integral to ransomware's mechanism — it is not merely incidental.",
+      "b": "Ransomware operates by creating service disruption — the disruption IS the leverage. Nation-state actors have deployed ransomware-style wiper attacks (NotPetya) purely for disruption without ransom demands, demonstrating the two motivations can be separated. This is the correct answer.",
+      "c": "Encrypted files render systems non-operational — service disruption is precisely what ransomware achieves.",
+      "d": "Service disruption is the mechanism AND a motivation — pure disruption attacks (wipers without ransom demands) demonstrate disruption as a standalone objective."
+    }
+  },
+  {
+    "id": 211,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Service disruption",
+    "difficulty": "hard",
+    "text": "A geopolitical conflict escalates and a nation-state conducts cyberattacks against an adversary's power grid, causing widespread outages during winter. What makes targeting critical infrastructure a particularly concerning service disruption motivation?",
+    "answers": [
+      { "id": "a", "text": "Power grid attacks are not possible — critical infrastructure has sufficient protection" },
+      { "id": "b", "text": "Critical infrastructure disruption has outsized second and third-order effects: power grid failure cascades to hospitals (patient deaths), water treatment (public health), financial systems (economic damage), emergency services (reduced response capability), and supply chains. These cascading effects mean cyberattacks on critical infrastructure can achieve kinetic-equivalent harm without physical weapons — making it an increasingly used tool in nation-state conflict with significant international law implications" },
+      { "id": "c", "text": "The primary concern is economic — power outages only cause financial damage" },
+      { "id": "d", "text": "Critical infrastructure attacks are only relevant during active military conflicts" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Critical infrastructure attacks have been demonstrated — Ukraine's power grid attacks are documented examples.",
+      "b": "Critical infrastructure attacks create cascading societal impacts far beyond the immediate service disruption — the second and third-order effects on dependent systems create kinetic-equivalent harm. This is the correct answer.",
+      "c": "Economic damage is one dimension — loss of life from hospital failures and public health crises are more severe consequences.",
+      "d": "Critical infrastructure attacks occur during peacetime tensions — they are used as tools of coercion and leverage before military conflict as well."
+    }
+  },
+  {
+    "id": 212,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Service disruption",
+    "difficulty": "hard",
+    "text": "A competitor hires a criminal group to conduct a sustained DDoS attack against a company during their peak sales season (Black Friday), causing $5 million in lost revenue. How does this scenario combine multiple threat actor types and motivations?",
+    "answers": [
+      { "id": "a", "text": "This is purely organized crime — the competitor is irrelevant" },
+      { "id": "b", "text": "This combines: organized crime (the criminal group executing the attack for payment) acting as hired proxies for; a competitor (functioning as a threat actor with economic motivation) who uses the criminal group's service disruption capability for competitive advantage. The competitor's motivation is economic (eliminating competitor revenue) rather than typical criminal extortion. This illustrates how threat actors can be proxies for other parties — complicating attribution and legal response" },
+      { "id": "c", "text": "This is purely a competitive business practice — no criminal activity occurred" },
+      { "id": "d", "text": "The competitor becomes a nation-state actor by funding the attack" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The competitor as the directing party is central — organized crime served as a proxy tool for the competitor's business motivation.",
+      "b": "The scenario combines the organized crime execution capability with the competitor's business motivation — proxy relationships between different threat actor types are well-documented and complicate attribution. This is the correct answer.",
+      "c": "Hiring criminals to conduct DDoS attacks is criminal conspiracy — not a legitimate competitive practice.",
+      "d": "Being a corporate competitor does not make a party a nation-state actor — this would be corporate cybercrime."
+    }
+  },
+  {
+    "id": 213,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Financial gain",
+    "difficulty": "easy",
+    "text": "Which threat actor type is MOST consistently motivated by financial gain?",
+    "answers": [
+      { "id": "a", "text": "Nation-state actors" },
+      { "id": "b", "text": "Organized crime — they operate cybercrime as a profit-driven business, including ransomware, business email compromise, banking trojans, credit card fraud, and selling stolen data" },
+      { "id": "c", "text": "Hacktivists" },
+      { "id": "d", "text": "Nation-state actors conducting economic espionage" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Nation-state actors have strategic motivations beyond financial gain — espionage, sabotage, and geopolitical advantage are primary drivers.",
+      "b": "Organized crime is defined by its profit motive — all operations ultimately serve financial objectives. This is the correct answer.",
+      "c": "Hacktivists are ideologically motivated — their primary goal is advancing a cause, not financial profit.",
+      "d": "Economic espionage serves national economic interests — the benefit accrues to the nation, not as direct criminal profit."
+    }
+  },
+  {
+    "id": 214,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Financial gain",
+    "difficulty": "medium",
+    "text": "A ransomware group has received $50 million in ransom payments over the past year. They reinvest 30% into hiring additional developers, purchasing zero-day exploits, and expanding their affiliate network. What does this reinvestment pattern indicate?",
+    "answers": [
+      { "id": "a", "text": "The group is losing money and trying to break even" },
+      { "id": "b", "text": "The group is operating as a sophisticated criminal enterprise — reinvesting profits into capability development and organizational expansion. This business model makes financially motivated criminal groups increasingly capable over time, creating an escalating threat that improves with each successful campaign. The criminal economy is self-sustaining and growing" },
+      { "id": "c", "text": "Reinvestment is evidence of nation-state backing — only nations fund zero-day purchases" },
+      { "id": "d", "text": "The group will disband after making sufficient profit" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "30% reinvestment from a $50M revenue operation is substantial growth investment — not breakeven behavior.",
+      "b": "Profit reinvestment into capability development demonstrates that financial motivation drives organizational capability improvement — creating a self-reinforcing threat growth cycle. This is the correct answer.",
+      "c": "Successful criminal organizations can afford zero-day purchases without nation-state backing — criminal revenue enables significant capability investment.",
+      "d": "Criminal organizations typically continue as long as operations are profitable — profit motive sustains the enterprise rather than driving dissolution."
+    }
+  },
+  {
+    "id": 215,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Financial gain",
+    "difficulty": "hard",
+    "text": "A financially motivated attacker gains access to a company's network. They discover: (1) financial data valuable for stock trading; (2) customer credit card numbers; (3) employee PII; and (4) the opportunity to deploy ransomware. How might a sophisticated criminal group OPTIMALLY monetize this access?",
+    "answers": [
+      { "id": "a", "text": "Deploy ransomware immediately — it is the highest-value approach" },
+      { "id": "b", "text": "A sophisticated criminal group might: (1) exfiltrate financial data for insider trading or sale; (2) exfiltrate credit card data to sell on criminal markets; (3) exfiltrate PII for identity fraud or sale; (4) deploy ransomware only after completing data exfiltration — enabling double extortion (pay to recover AND pay to prevent publication). Immediate ransomware deployment forfeits the exfiltration opportunities. The optimal sequence maximizes revenue from multiple monetization streams simultaneously" },
+      { "id": "c", "text": "Sell network access to another criminal group — let them monetize it" },
+      { "id": "d", "text": "Report the access to the company for a bug bounty payment" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Immediate ransomware deployment alerts the victim before all data can be exfiltrated — sophisticated actors delay ransomware until exfiltration is complete.",
+      "b": "Sophisticated criminal optimization sequences activities to maximize total return — multiple revenue streams from a single access opportunity. Double extortion (exfiltrate then encrypt) is the now-standard sophisticated ransomware approach. This is the correct answer.",
+      "c": "Selling access is lower-value — direct exploitation extracts more value than selling to others.",
+      "d": "Bug bounty programs apply to security researchers operating within authorized scope — criminal actors who gained unauthorized access are committing crimes regardless of how they disclose."
+    }
+  },
+  {
+    "id": 216,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Financial gain",
+    "difficulty": "hard",
+    "text": "An organization pays a $2 million ransom to recover encrypted systems. Security researchers later determine the decryption tool provided is flawed and only recovers 60% of data. What risk does paying ransoms create for the broader ecosystem and for the paying organization?",
+    "answers": [
+      { "id": "a", "text": "Paying ransom is always the correct decision — it guarantees data recovery" },
+      { "id": "b", "text": "Paying ransom creates: systemic risks (funding criminal operations that will attack more victims; demonstrating that ransomware is profitable encouraging more attackers); and organizational risks (no guarantee of full recovery as demonstrated; organizations that pay are often targeted again as known payers; proceeds fund improved attack capabilities). Law enforcement agencies generally advise against payment while acknowledging the business reality. Proper backup and recovery planning eliminates the payment dilemma" },
+      { "id": "c", "text": "Ransom payment has no systemic effect — it only affects the paying organization" },
+      { "id": "d", "text": "Paying ransom is illegal in all jurisdictions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Ransom payment does not guarantee recovery — flawed decryptors, partial recovery, and repeat targeting are documented outcomes.",
+      "b": "Ransom payment creates both systemic (funding the criminal ecosystem) and organizational (repeat targeting, imperfect recovery) risks. This is the correct answer.",
+      "c": "Ransom payments fund criminal operations that attack other organizations — the systemic effect is significant.",
+      "d": "Ransom payment legality varies by jurisdiction and target — payments to sanctioned entities (e.g., certain ransomware groups on OFAC lists) may be illegal, but payment itself is not universally prohibited."
+    }
+  },
+  {
+    "id": 217,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Philosophical/political beliefs",
+    "difficulty": "easy",
+    "text": "A hacktivist group attacks a company involved in deforestation, defacing their website and leaking internal emails. Which motivation BEST describes this attack?",
+    "answers": [
+      { "id": "a", "text": "Financial gain — they plan to sell the leaked emails" },
+      { "id": "b", "text": "Philosophical/political beliefs — the attackers are motivated by environmental ideology, using cyber attacks to advance their cause against an organization whose activities conflict with their beliefs" },
+      { "id": "c", "text": "Espionage — they are gathering intelligence on deforestation operations" },
+      { "id": "d", "text": "Disruption/chaos — they have no specific grievance with the company" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Hacktivists who leak emails for publicity purposes rarely monetize — the goal is exposure and embarrassment, not financial gain.",
+      "b": "Environmental ideology motivating attacks against companies with conflicting practices is a classic philosophical/political motivation for hacktivism. This is the correct answer.",
+      "c": "Intelligence gathering for its own sake is espionage — hacktivist data collection serves their advocacy cause.",
+      "d": "There is a specific ideological grievance — this is motivated activism, not random chaos."
+    }
+  },
+  {
+    "id": 218,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Philosophical/political beliefs",
+    "difficulty": "medium",
+    "text": "Anonymous-affiliated hacktivists announce plans to target a government's internet censorship infrastructure in support of free speech principles. How does this ideological motivation affect their targeting and tactics?",
+    "answers": [
+      { "id": "a", "text": "Ideological motivation makes no difference to targeting — all hacktivists target randomly" },
+      { "id": "b", "text": "Ideological motivation drives very specific targeting: systems that directly implement the censorship they oppose, making the attack serve both disruption AND communication objectives. Their tactics tend toward high-visibility attacks (defacement, DDoS, data leaks) that generate media coverage and advance their message rather than stealthy operations — the goal is public awareness, not covert capability" },
+      { "id": "c", "text": "Free speech hacktivists only use legal means — they do not conduct actual cyberattacks" },
+      { "id": "d", "text": "Ideological hacktivists are never successful against government targets" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Hacktivists target specifically based on their beliefs — the ideology determines which organizations are targeted.",
+      "b": "Ideological motivation shapes both target selection (organizations opposing their values) and tactics (high-visibility operations that generate attention for their cause). This is the correct answer.",
+      "c": "Hacktivists do conduct illegal cyberattacks — their ideology does not constrain them to legal methods.",
+      "d": "Hacktivist attacks against governments have succeeded — Anonymous targeted various government websites effectively."
+    }
+  },
+  {
+    "id": 219,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Philosophical/political beliefs",
+    "difficulty": "hard",
+    "text": "A security team learns that their organization is on a hacktivist group's public target list due to their controversial immigration-related contracts with a government. Beyond technical defenses, what non-technical risk management approaches should be considered?",
+    "answers": [
+      { "id": "a", "text": "Only technical defenses matter — non-technical approaches are not security activities" },
+      { "id": "b", "text": "Non-technical risk management includes: executive and board communication about the elevated threat; public relations strategy for reputational damage from potential data leaks; legal review of the target list publication and potential legal remedies; employee security awareness briefing on the elevated threat environment (social engineering, phishing); third-party stakeholder communication if customer data may be at risk; and crisis communication planning for potential attack disclosure — attackers motivated by causing reputational damage require reputational defenses alongside technical ones" },
+      { "id": "c", "text": "Cancel the government contracts immediately to remove the motivation" },
+      { "id": "d", "text": "Publish a response to the hacktivist group on social media to deter them" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Ideologically motivated attacks specifically target reputational damage — non-technical defenses are essential components of the response.",
+      "b": "Hacktivist threats require both technical controls (preventing the attack) and non-technical preparation (managing the reputational and organizational impact if an attack succeeds). This is the correct answer.",
+      "c": "Contract cancellation may be appropriate as a business decision — but security strategy should not be driven solely by threat avoidance if it conflicts with legitimate business needs.",
+      "d": "Public engagement with hacktivist groups risks escalation and provides them additional publicity — typically not recommended."
+    }
+  },
+  {
+    "id": 220,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Philosophical/political beliefs",
+    "difficulty": "hard",
+    "text": "A nation-state conducts information operations — creating and spreading disinformation through social media — to influence a foreign election. This differs from traditional cyber attacks. How should security professionals classify and address this threat?",
+    "answers": [
+      { "id": "a", "text": "Information operations are not a cybersecurity issue — only technical attacks are security concerns" },
+      { "id": "b", "text": "Information operations represent a hybrid threat combining: philosophical/political motivation (influencing political outcomes) with cyber capabilities (creating fake accounts, hacking and leaking documents). Security professionals must address the technical components (account compromise, infrastructure for disinformation campaigns) while recognizing that the primary impact is societal/political rather than technical. Defense requires collaboration with platform operators, intelligence agencies, and election security teams beyond traditional IT security" },
+      { "id": "c", "text": "Information operations are only relevant for government security teams — not private sector security professionals" },
+      { "id": "d", "text": "Disinformation campaigns are protected free speech and cannot be addressed by security teams" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Information operations have technical components (account compromise, infrastructure) that fall within cybersecurity scope — the impact extends beyond technical damage.",
+      "b": "Information operations are a hybrid threat requiring both technical and non-technical responses across organizational and societal levels. Security professionals address the technical components while recognizing the broader context. This is the correct answer.",
+      "c": "Private sector organizations are involved in information operations — as targets (document theft for leaking) and as platforms (social media companies).",
+      "d": "Information operations involving hacking and fake account creation involve actual crimes — addressing the technical infrastructure is appropriate security work."
+    }
+  },
+  {
+    "id": 221,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Revenge",
+    "difficulty": "easy",
+    "text": "Which threat actor type is MOST commonly motivated by revenge?",
+    "answers": [
+      { "id": "a", "text": "Nation-state actors seeking strategic advantage" },
+      { "id": "b", "text": "Insider threats — particularly disgruntled current or former employees who feel wronged by their employer and seek to cause harm to the organization as retaliation" },
+      { "id": "c", "text": "Organized crime groups seeking financial gain" },
+      { "id": "d", "text": "Unskilled attackers seeking notoriety" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Nation-states pursue strategic interests — revenge is not a primary motivator for state-level cyber operations.",
+      "b": "Revenge is a primary motivation for insider threats — employees who perceive mistreatment (termination, passed-over promotion, disciplinary action) may act out against the organization using their access. This is the correct answer.",
+      "c": "Organized crime pursues profit — their targeting is based on financial opportunity, not personal grievance.",
+      "d": "Unskilled attackers typically seek notoriety, excitement, or opportunity — not revenge against specific organizations."
+    }
+  },
+  {
+    "id": 222,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Revenge",
+    "difficulty": "medium",
+    "text": "A system administrator is informed they will be laid off in two weeks. During this period, they delete critical backups and change server passwords. What controls would MOST effectively prevent this revenge-motivated insider action?",
+    "answers": [
+      { "id": "a", "text": "Install better antivirus software" },
+      { "id": "b", "text": "For termination scenarios: immediately revoke or substantially reduce access upon notification (not waiting until the final day); require dual-person authorization for critical operations like backup management; implement immutable backups that cannot be deleted through administrative interfaces; monitor privileged user activity with heightened scrutiny; and conduct a proper offboarding process. The two-week window with full access is the control gap that enabled the revenge attack" },
+      { "id": "c", "text": "Train the administrator on cybersecurity ethics" },
+      { "id": "d", "text": "The incident cannot be prevented — employees being terminated always have malicious intent" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Antivirus does not detect privileged administrators misusing their legitimate access.",
+      "b": "Insider threat controls for at-risk employees require immediate access adjustment, dual-authorization for critical operations, and immutable backup protection — the full two-week window with unrestricted access was the exploitable vulnerability. This is the correct answer.",
+      "c": "Ethics training cannot overcome revenge motivation — technical controls are necessary.",
+      "d": "Not all terminated employees act maliciously — but controls must address the elevated risk period."
+    }
+  },
+  {
+    "id": 223,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Revenge",
+    "difficulty": "hard",
+    "text": "A former employee who was publicly blamed for a major project failure that wasn't their fault launches a targeted attack against their former manager and company 18 months later. What does the 18-month delay suggest about revenge-motivated threats?",
+    "answers": [
+      { "id": "a", "text": "The 18-month delay proves this was not revenge — revenge attacks happen immediately" },
+      { "id": "b", "text": "Revenge-motivated threats may have significant delays between the triggering event and the attack — the former employee may have needed time to develop or acquire attack capability; the grievance may have been renewed by a new triggering event; or the delay represents waiting for reduced monitoring (assuming attention fades over time). Long-term revenge threats mean organizations cannot assume risk ends when an employee departs — continued monitoring of former high-access employee account activity is warranted" },
+      { "id": "c", "text": "The 18-month delay proves this was organized crime, not revenge" },
+      { "id": "d", "text": "The delay means the attack must have been less sophisticated" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Revenge attacks occur across all timeframes — the delay does not rule out revenge motivation.",
+      "b": "Delayed revenge attacks are well-documented — the time gap may reflect capability development, renewed triggering events, or deliberate strategy. Post-departure monitoring of former high-risk employees addresses this risk. This is the correct answer.",
+      "c": "Organized crime would not wait 18 months for a personal revenge attack against a specific manager — the personal targeting is consistent with revenge motivation.",
+      "d": "Attack sophistication is independent of timing — the delay does not imply reduced capability."
+    }
+  },
+  {
+    "id": 224,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Revenge",
+    "difficulty": "hard",
+    "text": "An organization terminates an employee following a genuine disciplinary process. The employee believes the termination was unjust. A security team wants to assess insider threat risk during and after termination. What behavioral indicators suggest elevated revenge motivation risk?",
+    "answers": [
+      { "id": "a", "text": "Any negative emotion about termination indicates high revenge risk" },
+      { "id": "b", "text": "Behavioral indicators of elevated risk include: public statements threatening harm to the organization or individuals; unusual access pattern changes (accessing systems not related to their role, bulk downloading); evidence of planning (searches for attack methods, discussion of revenge in monitored communications); significant grievance escalation with HR or legal; and unusual interest in security systems. Not all disgruntled employees become threats — risk assessment must balance security with respecting employee dignity during a difficult process" },
+      { "id": "c", "text": "All terminated employees should be treated as equally high-risk" },
+      { "id": "d", "text": "Behavioral indicators are irrelevant — only technical controls matter for insider threat" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Normal negative emotions about termination are expected — specific behavioral escalation indicators distinguish elevated risk.",
+      "b": "Risk assessment for revenge-motivated insider threats uses specific behavioral indicators to prioritize monitoring rather than treating all terminations equally. This is the correct answer.",
+      "c": "Treating all terminated employees as equally high-risk creates false positives and morale issues — graduated risk assessment is more appropriate.",
+      "d": "Behavioral indicators are primary inputs for insider threat risk assessment — technical controls implement the monitoring but behavioral analysis drives the risk classification."
+    }
+  },
+  {
+    "id": 225,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Disruption/chaos",
+    "difficulty": "easy",
+    "text": "Which threat actor motivation involves attacking systems with no specific strategic, financial, or ideological objective — simply to cause disorder?",
+    "answers": [
+      { "id": "a", "text": "Financial gain — disruption enables extortion" },
+      { "id": "b", "text": "Disruption/chaos — some threat actors, particularly unskilled attackers and certain extremist groups, are motivated by causing disorder, seeing damage, and demonstrating their ability to disrupt without a specific strategic objective beyond the disruption itself" },
+      { "id": "c", "text": "Espionage — data collection through disruptive operations" },
+      { "id": "d", "text": "Philosophical beliefs — disruption serves ideological goals" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Financial gain requires monetization — disruption/chaos motivation does not require financial return.",
+      "b": "Disruption/chaos as a standalone motivation is demonstrated by wiper attacks with no ransom, vandalism attacks with no clear message, and some extremist actors whose goal is simply creating disorder. This is the correct answer.",
+      "c": "Espionage is intelligence collection — disruption/chaos motivation involves attacks intended to damage rather than collect.",
+      "d": "Philosophical/political disruption has specific ideological goals — disruption/chaos motivation lacks specific strategic objectives."
+    }
+  },
+  {
+    "id": 226,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Disruption/chaos",
+    "difficulty": "medium",
+    "text": "A wiper malware attack destroys data on thousands of systems in a country's banking sector during a period of political tension. No ransom is demanded. What motivation does this MOST suggest?",
+    "answers": [
+      { "id": "a", "text": "Financial gain — the attackers are planning future ransom demands" },
+      { "id": "b", "text": "Disruption/chaos with possible nation-state direction — wiper attacks that destroy data without financial demands suggest motivation centered on causing maximum disruption and economic damage rather than profit. The political context and targeting of critical financial infrastructure suggests nation-state involvement using disruption as a geopolitical tool" },
+      { "id": "c", "text": "Data exfiltration — the data was exfiltrated before wiping" },
+      { "id": "d", "text": "Ethical hacking — the attacker is exposing banking sector vulnerabilities" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The absence of ransom demands and the destructive nature indicate disruption motivation — ransomware would preserve data for negotiation leverage.",
+      "b": "Wiper attacks destroying data without ransom in a political context represent disruption/chaos motivation — potentially as a nation-state geopolitical tool. NotPetya and similar attacks demonstrated this pattern. This is the correct answer.",
+      "c": "Data exfiltration before wiping is possible but the primary observable motivation from the described behavior is disruption.",
+      "d": "Ethical hackers operate within authorized scopes with disclosure intentions — destroying production banking data is criminal, not ethical."
+    }
+  },
+  {
+    "id": 227,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Disruption/chaos",
+    "difficulty": "hard",
+    "text": "Nation-state actors sometimes use disruption attacks against civilian infrastructure during geopolitical conflicts. How does the disruption/chaos motivation differ when used by nation-states versus individual actors?",
+    "answers": [
+      { "id": "a", "text": "Nation-state disruption is identical to individual disruption — motivation is the same" },
+      { "id": "b", "text": "Nation-state disruption is strategically purposeful: it serves geopolitical objectives (coercion, weakening adversary morale, demonstrating capability, signaling resolve) rather than being truly chaotic. What appears as chaos serves a strategic purpose — creating economic damage, undermining public confidence, or setting conditions for military operations. Individual disruption/chaos motivation is typically non-strategic. The distinction matters for attribution, response, and proportionality of defensive measures" },
+      { "id": "c", "text": "Nation-states never conduct disruption attacks — they are too sophisticated for such tactics" },
+      { "id": "d", "text": "Individual actors causing disruption always have national backing" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Nation-state disruption is instrumentalized for strategic purposes — not truly chaotic.",
+      "b": "Nation-state 'disruption/chaos' serves specific strategic objectives despite appearing chaotic — this distinction affects threat intelligence interpretation and response strategy. This is the correct answer.",
+      "c": "Nation-states extensively use disruption tactics — they are documented tools in nation-state conflict.",
+      "d": "Individual actors causing disruption may be entirely independent — state backing is not assumed without evidence."
+    }
+  },
+  {
+    "id": 228,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Disruption/chaos",
+    "difficulty": "hard",
+    "text": "A security team is trying to determine whether a ransomware attack in their environment is financially motivated (legitimate ransomware) or disruption-motivated (ransomware used as a cover for a destructive attack). What technical indicators help distinguish these motivations?",
+    "answers": [
+      { "id": "a", "text": "Both types of attacks are identical — motivation cannot be inferred from technical evidence" },
+      { "id": "b", "text": "Disruption-disguised-as-ransomware indicators include: unusable/fake decryption keys (the decryptor does not actually work); no negotiation infrastructure (no dark web contact page); overwriting the master boot record or file system structures beyond what's needed for encryption; destroying shadow copies and backups beyond the ransomware norm; attacking systems with no financial value alongside valuable ones; and unusually fast propagation prioritizing breadth over dwell time. Legitimate ransomware preserves decryption capability as the business model depends on it" },
+      { "id": "c", "text": "Only the ransom demand amount distinguishes the two — large demands indicate disruption" },
+      { "id": "d", "text": "Technical indicators are unreliable — only political context determines motivation" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Technical indicators do provide motivation inference — particularly around decryption infrastructure integrity.",
+      "b": "Destructive attacks disguised as ransomware (NotPetya, WhisperGate) have distinct technical indicators — the key differentiator is whether decryption infrastructure is genuine, since a financial model requires actually decrypting for paying victims. This is the correct answer.",
+      "c": "Ransom amount is not a reliable indicator — disruption attacks may use realistic ransom amounts as cover.",
+      "d": "Technical indicators are valuable — political context complements but does not replace technical analysis."
+    }
+  },
+  {
+    "id": 229,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "War",
+    "difficulty": "easy",
+    "text": "How do cyber operations fit into modern warfare?",
+    "answers": [
+      { "id": "a", "text": "Cyber operations are separate from warfare and have no military applications" },
+      { "id": "b", "text": "Cyber operations are an established domain of modern warfare — used for intelligence collection, disabling adversary military communications and systems, disrupting critical infrastructure to degrade civilian resilience, deception operations, and coordination with kinetic military operations" },
+      { "id": "c", "text": "Cyber warfare only involves hacking military networks — civilian infrastructure is excluded" },
+      { "id": "d", "text": "Cyber operations in warfare are limited to defensive activities only" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cyber operations are now a recognized military domain — cyber commands are established in major military forces worldwide.",
+      "b": "Cyber is the fifth operational domain (alongside land, sea, air, space) in modern military doctrine — it encompasses offensive, defensive, and intelligence operations. This is the correct answer.",
+      "c": "Civilian infrastructure is frequently targeted in cyber warfare to disrupt supply chains, degrade morale, and weaken economic capacity.",
+      "d": "Military cyber operations are both offensive and defensive — offensive operations targeting adversary systems are a core military cyber capability."
+    }
+  },
+  {
+    "id": 230,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "War",
+    "difficulty": "medium",
+    "text": "Prior to a conventional military invasion, a nation-state conducts cyberattacks against the target country's power grid, banking systems, and government communications. What is the strategic purpose of these pre-invasion cyber operations?",
+    "answers": [
+      { "id": "a", "text": "Pre-invasion cyber operations are purely symbolic — they cause no real damage" },
+      { "id": "b", "text": "Pre-invasion cyber operations serve multiple strategic purposes: degrading the defender's military command and control capability; disrupting civilian infrastructure to reduce national resilience and morale; creating uncertainty and confusion in the defender's leadership; preventing effective communication of the invasion to the population or international community; and potentially forcing defenders to focus on cyber incidents rather than military preparation" },
+      { "id": "c", "text": "Pre-invasion cyber operations are only used when kinetic attacks are not available" },
+      { "id": "d", "text": "Pre-invasion cyber operations are designed to give warning — to provide time to surrender before invasion" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Pre-invasion cyber operations can cause significant damage — power outages, banking disruption, and communication blackouts have real effects.",
+      "b": "Cyber operations before kinetic military action serve to degrade, confuse, and demoralize the defender — creating favorable conditions for the subsequent military operation. This is the correct answer.",
+      "c": "Cyber operations complement kinetic operations in combined arms warfare — they are used alongside kinetic capability, not as a substitute.",
+      "d": "Pre-invasion cyber operations are designed to degrade the defender's ability to resist — not to provide surrender warnings."
+    }
+  },
+  {
+    "id": 231,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "War",
+    "difficulty": "hard",
+    "text": "A private company's industrial control systems are collateral damage in a cyber warfare operation targeting the country's energy infrastructure. The company had no direct involvement in the conflict. What security and legal challenges does civilian collateral damage in cyber warfare create?",
+    "answers": [
+      { "id": "a", "text": "Private companies are not legitimate collateral damage — all cyber warfare only affects military targets" },
+      { "id": "b", "text": "Cyber warfare creates complex collateral damage challenges: cyber weapons (like worms) can propagate beyond intended targets to civilian systems globally; attributing nation-state attacks to private company insurers and legal systems is difficult; international humanitarian law's distinction between military and civilian targets is difficult to enforce in cyberspace; recovery costs fall on the private company not party to the conflict; and cyber sovereignty questions complicate legal recourse. Companies in geopolitically sensitive sectors must account for nation-state conflict as a threat scenario" },
+      { "id": "c", "text": "Collateral damage victims have straightforward legal remedies against attacking nations" },
+      { "id": "d", "text": "Only companies directly supporting military operations are at risk of collateral damage" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cyber weapons propagate without precise boundaries — civilian systems are regularly affected in cyber warfare operations.",
+      "b": "Cyber warfare collateral damage creates significant challenges: attribution, legal jurisdiction, insurance coverage, and international law application are all complex and unresolved. This is the correct answer.",
+      "c": "Legal remedies against nation-states for cyber warfare collateral damage are extremely limited — sovereign immunity and attribution challenges make recovery nearly impossible.",
+      "d": "Malware like NotPetya affected companies worldwide with no connection to the original conflict — critical infrastructure in any country is at risk."
+    }
+  },
+  {
+    "id": 232,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "War",
+    "difficulty": "hard",
+    "text": "An organization operates critical infrastructure in a country experiencing increasing geopolitical tensions with a foreign adversary. How should the threat of nation-state cyber warfare operations change their security posture?",
+    "answers": [
+      { "id": "a", "text": "Geopolitical tensions have no impact on private sector security decisions" },
+      { "id": "b", "text": "Elevated geopolitical risk requires: threat intelligence monitoring specific to relevant nation-state actors; enhanced network monitoring for APT indicators; operational technology (OT/ICS) security assessment since critical infrastructure is a primary warfare target; incident response planning for destructive attacks (not just data breaches); coordination with national CISA/equivalent for threat intelligence sharing; review of supply chain dependencies on adversary countries; and tabletop exercises for wartime cyber scenarios including extended outages" },
+      { "id": "c", "text": "Only government agencies need to adjust posture for geopolitical tensions" },
+      { "id": "d", "text": "Standard cybersecurity best practices are sufficient — nation-state threats require no additional preparation" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Critical infrastructure operators are primary targets in nation-state cyber warfare — geopolitical context directly affects risk level.",
+      "b": "Nation-state warfare threat requires specific security posture adjustments beyond standard cybersecurity — particularly for critical infrastructure operators who are primary targets in modern warfare doctrine. This is the correct answer.",
+      "c": "Private sector critical infrastructure is a primary target in nation-state cyber warfare — not only government agencies.",
+      "d": "Nation-state warfare threats require specific preparation beyond standard best practices — the threat actor capabilities and objectives differ significantly from criminal threats."
+    }
+  },
+  {
+    "id": 233,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Blackmail",
+    "difficulty": "easy",
+    "text": "What distinguishes blackmail as a threat actor motivation from pure financial gain?",
+    "answers": [
+      { "id": "a", "text": "There is no difference — blackmail and financial gain are identical motivations" },
+      { "id": "b", "text": "Blackmail uses leveraged threats — threatening to expose damaging information unless demands are met. Unlike straightforward financial theft, blackmail creates ongoing leverage and may involve non-monetary demands. The victim pays to prevent harm (exposure, reputation damage) rather than directly losing money to theft" },
+      { "id": "c", "text": "Blackmail never involves financial demands — it only seeks behavioral changes" },
+      { "id": "d", "text": "Blackmail is only relevant in physical crimes — not cyber threats" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Blackmail is a specific leverage-based motivation — it differs from straightforward theft in its mechanism and victim psychology.",
+      "b": "Blackmail uses threatened harm as leverage — paying to prevent exposure differs from pure theft in the attacker's mechanism and the victim's calculus. This is the correct answer.",
+      "c": "Blackmail frequently involves financial demands — threatening exposure unless money is paid is a core blackmail pattern.",
+      "d": "Cyber blackmail is a documented and growing threat — threatening to publish compromising data or exposing sensitive information online is a cyber blackmail variant."
+    }
+  },
+  {
+    "id": 234,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Blackmail",
+    "difficulty": "medium",
+    "text": "An attacker compromises a healthcare executive's email and discovers personal communications that would be damaging to their reputation. They send a private message demanding $500,000 to stay silent. Which security controls would MOST help prevent and detect this type of attack?",
+    "answers": [
+      { "id": "a", "text": "Antivirus software on the executive's device" },
+      { "id": "b", "text": "Email security with MFA protecting the executive's account (preventing initial compromise); email monitoring for unusual access patterns (detecting unauthorized access); data classification and access controls limiting who can read sensitive communications; security awareness training on protecting personal devices and accounts; incident response procedures for extortion scenarios; and advance executive briefing on reporting potential blackmail attempts to security teams rather than engaging with attackers independently" },
+      { "id": "c", "text": "Network perimeter firewalls protecting against external access" },
+      { "id": "d", "text": "Password manager for the executive's device" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Antivirus protects against malware — email account compromise may occur through phishing, credential stuffing, or stolen session tokens without malware.",
+      "b": "Targeted blackmail prevention requires: preventing initial access (MFA, email security), detecting unauthorized access (monitoring), protecting sensitive data, and preparing executives for the response. This is the correct answer.",
+      "c": "Perimeter firewalls protect the network — email account compromise via phishing or stolen credentials bypasses perimeter controls.",
+      "d": "Password managers help with credential hygiene — but the broader control set is needed for preventing and detecting executive email compromise."
+    }
+  },
+  {
+    "id": 235,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Blackmail",
+    "difficulty": "hard",
+    "text": "A ransomware group employs 'double extortion' — encrypting data AND threatening to publish it publicly unless ransom is paid. How does the blackmail dimension change the risk calculus for organizations considering whether to pay?",
+    "answers": [
+      { "id": "a", "text": "Double extortion has no additional impact — the decision is the same as standard ransomware" },
+      { "id": "b", "text": "Double extortion creates a separate and compounding blackmail threat: even with perfect backups enabling recovery without paying the ransom, organizations still face the blackmail threat of data publication. The decision must now separately evaluate: can we restore operations without paying? (backup question) AND can we accept the consequences of the data being published? (blackmail question). Data sensitivity, regulatory notification requirements, and reputational damage determine the blackmail component's leverage" },
+      { "id": "c", "text": "Double extortion always requires payment — there is no alternative" },
+      { "id": "d", "text": "Double extortion is only effective against organizations without backups" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Double extortion creates two separate leverage mechanisms that must be evaluated independently.",
+      "b": "Double extortion decouples the recovery question from the data exposure question — organizations with backups can recover operations but still face the blackmail threat of publication. This is the correct answer.",
+      "c": "Payment does not guarantee non-publication — criminals are not contractually bound to honor commitments.",
+      "d": "Organizations with backups still face the blackmail/publication threat — double extortion specifically targets organizations who might otherwise ignore ransom demands."
+    }
+  },
+  {
+    "id": 236,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Blackmail",
+    "difficulty": "hard",
+    "text": "A nation-state intelligence service covertly collects compromising personal information about foreign government officials and uses it to influence their behavior (kompromat). How does this represent blackmail as a nation-state tool?",
+    "answers": [
+      { "id": "a", "text": "Kompromat is not related to cybersecurity — it is purely a political activity" },
+      { "id": "b", "text": "Kompromat (compromising material) represents state-level blackmail as a foreign intelligence tool — using personal information to coerce foreign officials into taking favorable actions (sharing intelligence, changing policy positions, enabling espionage operations). Cyber espionage operations that compromise personal communications, financial records, and private behavior serve this blackmail function. This blurs the line between cybersecurity and counterintelligence, requiring security teams to consider personal privacy protection as an organizational security concern" },
+      { "id": "c", "text": "Kompromat is always fabricated — real information cannot be used for blackmail" },
+      { "id": "d", "text": "Only criminal organizations use blackmail — nation-states only conduct honorable intelligence operations" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Kompromat collection frequently involves cyber espionage — stealing personal communications, financial data, and private information is part of the intelligence collection for coercion.",
+      "b": "Nation-state blackmail through cyber-collected kompromat is a documented intelligence tactic — it extends cybersecurity considerations to personal privacy protection for high-value individuals. This is the correct answer.",
+      "c": "Kompromat uses real compromising information — fabricated information is a separate disinformation tactic.",
+      "d": "Intelligence services widely use coercive techniques including kompromat — this is a documented intelligence practice."
+    }
+  },
+  {
+    "id": 237,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Ethical",
+    "difficulty": "easy",
+    "text": "What distinguishes an ethical hacker from malicious threat actors?",
+    "answers": [
+      { "id": "a", "text": "Ethical hackers use less sophisticated techniques than malicious actors" },
+      { "id": "b", "text": "Ethical hackers (penetration testers, security researchers) operate with explicit authorization from the target organization — their goal is to identify and report vulnerabilities to improve security, not to exploit them for personal gain. The same technical techniques may be used but the authorization, intent, and outcome differ fundamentally" },
+      { "id": "c", "text": "Ethical hackers only test systems they personally own" },
+      { "id": "d", "text": "Ethical hackers always notify the media about vulnerabilities they discover" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Ethical hackers use the same techniques as malicious actors — the sophistication level is not the distinguishing factor.",
+      "b": "Authorization and intent are the defining differences — ethical hackers have permission to find vulnerabilities and report them for remediation. This is the correct answer.",
+      "c": "Ethical hackers test systems they are authorized to test — not just systems they own.",
+      "d": "Responsible disclosure (not public media) is the ethical standard — coordinating with vendors before public disclosure is the ethical practice."
+    }
+  },
+  {
+    "id": 238,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Ethical",
+    "difficulty": "medium",
+    "text": "A security researcher discovers a critical vulnerability in a widely-used medical device that could allow attackers to alter dosage settings remotely. They attempt to contact the manufacturer for 90 days with no response. What ethical considerations apply to their disclosure decision?",
+    "answers": [
+      { "id": "a", "text": "The researcher should publish immediately to protect patients — confidentiality is irrelevant" },
+      { "id": "b", "text": "Ethical considerations include: patient safety demands timely disclosure (delay enables continued risk to patients); responsible disclosure norms suggest allowing manufacturer time to patch (typically 90 days is considered reasonable); after 90 days without response, coordinating with ICS-CERT/FDA who can apply regulatory pressure; public disclosure may be appropriate if manufacturer remains unresponsive AND poses imminent patient risk; and the researcher must balance transparency (protecting patients) against enabling attackers (by publishing exploitable details)" },
+      { "id": "c", "text": "The researcher should sell the vulnerability to the highest bidder — they are not employed by the manufacturer" },
+      { "id": "d", "text": "The researcher should continue waiting indefinitely — public disclosure is never appropriate" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Immediate publication without coordination enables attackers to exploit the vulnerability before patches are available — this is the harm responsible disclosure aims to prevent.",
+      "b": "Medical device vulnerability disclosure involves complex ethical trade-offs — patient safety urgency vs. enabling exploitation. Regulatory authority coordination is particularly important for life-critical devices. This is the correct answer.",
+      "c": "Selling vulnerabilities to brokers conflicts with the ethical hacker motivation — this crosses into potentially criminal gray market activity.",
+      "d": "Indefinite waiting enables ongoing patient risk — responsible disclosure timelines exist precisely to balance these concerns."
+    }
+  },
+  {
+    "id": 239,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Ethical",
+    "difficulty": "hard",
+    "text": "A penetration tester during an authorized engagement discovers evidence of active criminal activity — illegal financial transactions in the target organization's database. They were not asked to look for this. What ethical and legal obligations apply?",
+    "answers": [
+      { "id": "a", "text": "The penetration tester should ignore it — they were not hired to investigate financial crime" },
+      { "id": "b", "text": "The penetration tester faces complex ethical and legal obligations: professional ethics require reporting material findings within the scope of their engagement; legal obligations vary by jurisdiction (mandatory reporting requirements for certain crimes); reporting to the client organization creates risk if the client is complicit; the tester may need to consult legal counsel about their own obligations; and documenting findings carefully protects them. The rules of engagement should have addressed this scenario — future engagements should include guidance on out-of-scope discoveries" },
+      { "id": "c", "text": "The penetration tester must immediately report to law enforcement — no other obligations exist" },
+      { "id": "d", "text": "Penetration testers have no obligations beyond their contracted scope" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Discovering evidence of active crime creates ethical and potentially legal obligations beyond contracted scope.",
+      "b": "Incidental discovery of criminal evidence during authorized testing creates complex obligations — professional ethics, legal requirements, and reporting chain considerations all apply. This is the correct answer.",
+      "c": "Immediate law enforcement reporting may not be the only or immediate obligation — legal counsel consultation is appropriate first.",
+      "d": "Ethical obligations exist beyond contracted scope — particularly for serious crimes with ongoing harm."
+    }
+  },
+  {
+    "id": 240,
+    "domain": "2.0",
+    "objective": "2.1",
+    "keyword": "Ethical",
+    "difficulty": "hard",
+    "text": "A government agency approaches an ethical hacker to develop offensive cyber weapons for use against adversaries. The hacker has the technical skills but has ethical concerns about dual-use of their capabilities. What ethical framework should they apply to this decision?",
+    "answers": [
+      { "id": "a", "text": "Government requests always override personal ethics — compliance is mandatory" },
+      { "id": "b", "text": "The ethical hacker must evaluate: legality and legitimacy of the use case (is this authorized by appropriate legal authority?); intended targets and collateral damage potential (cyber weapons can propagate beyond targets); oversight and accountability mechanisms (who reviews the weapons' use?); personal alignment with the mission and legal framework; and professional codes of conduct. Ethical hackers who develop offensive capabilities bear moral responsibility for foreseeable misuse — consulting professional and legal advisors is appropriate before accepting such engagements" },
+      { "id": "c", "text": "Ethical hackers should never work with government agencies — all offensive capabilities are unethical" },
+      { "id": "d", "text": "Developing offensive cyber weapons is inherently ethical if the government paying for it approves" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Government requests are not absolute ethical overrides — legal authorization is necessary but ethical evaluation remains the individual's responsibility.",
+      "b": "Offensive capability development involves significant ethical complexity — legality, oversight, collateral damage, and personal responsibility are all relevant factors. This is the correct answer.",
+      "c": "Authorized government offensive cyber operations are a legitimate and legal activity — blanket prohibition is not ethically required.",
+      "d": "Government approval is one factor but does not constitute complete ethical justification — particularly for capabilities with significant collateral damage potential."
+    }
   }
+
 ];

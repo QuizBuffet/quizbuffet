@@ -19,8 +19,10 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
 
   document.querySelectorAll('.answer-btn').forEach(btn => {
     btn.disabled = true;
-    if (btn.dataset.id === question.correct) btn.classList.add('correct');
-    else if (btn.dataset.id === chosen) btn.classList.add('wrong');
+    const isCorrect = btn.dataset.id === question.correct;
+    const isChosen  = btn.dataset.id === chosen;
+    if (isCorrect) { btn.classList.add('correct'); btn.setAttribute('aria-label', `${btn.dataset.id.toUpperCase()} — Correct answer`); }
+    else if (isChosen) { btn.classList.add('wrong'); btn.setAttribute('aria-label', `${btn.dataset.id.toUpperCase()} — Incorrect`); }
   });
 
   saveWrongAnswer(domainSlug, question.id, chosen);

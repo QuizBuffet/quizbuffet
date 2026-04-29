@@ -31,6 +31,8 @@ export function showStreakToast(streak, type) {
   if (!el) {
     el = document.createElement('div');
     el.id = 'streak-toast';
+    el.setAttribute('role', 'status');
+    el.setAttribute('aria-live', 'polite');
     document.body.appendChild(el);
   }
 

@@ -3,6 +3,12 @@
 a, button, [role="button"] { cursor: pointer; }
 a:active, button:active { opacity: 0.75; }
 
+/* ── Accessibility ──────────────────────────────────────────────────────────── */
+.skip-link { position: absolute; top: -100px; left: 16px; background: var(--btn-bg,#333); color: #fff; padding: 8px 16px; font-size: 14px; font-weight: 600; text-decoration: none; z-index: 99999; transition: top 0.1s; }
+.skip-link:focus { top: 16px; }
+:focus-visible { outline: 2px solid var(--link, #06c); outline-offset: 3px; }
+.color-swatch:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
 /* ── Colour tokens ─────────────────────────────────────────────────────────── */
 :root {
   --bg:              #fff;
@@ -684,7 +690,7 @@ a:is(:hover, :active) { text-decoration: underline; }
 .color-swatches { display: flex; gap: 5px; align-items: center; }
 .color-swatch {
   width: 14px; height: 14px; border-radius: 50%; border: 2px solid transparent;
-  cursor: pointer; padding: 0; flex-shrink: 0; outline: none;
+  cursor: pointer; padding: 0; flex-shrink: 0;
   transition: border-color 0.15s, transform 0.15s;
 }
 .color-swatch:is(:hover, :active)  { transform: scale(1.25); }
@@ -736,6 +742,7 @@ a:is(:hover, :active) { text-decoration: underline; }
 /* ── Quiz ──────────────────────────────────────────────────────────────────── */
 .quiz-meta { font-size: clamp(12px, 3.2vw, 15px); color: var(--text-muted); margin: 14px 0 8px; }
 .kbd-hint  { display: block; font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+@media (hover: none) { .kbd-hint { display: none; } }
 
 .question-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
 .question-badges { display: flex; gap: 6px; flex-wrap: wrap; }

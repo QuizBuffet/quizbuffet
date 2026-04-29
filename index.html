@@ -79,9 +79,12 @@
   </script>
 </head>
 <body>
-  <div id="nav"></div>
-  <div id="app"></div>
-  <div id="footer"></div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="nav" role="navigation" aria-label="Main navigation"></div>
+  <main id="main-content">
+    <div id="app"></div>
+  </main>
+  <div id="footer" role="contentinfo"></div>
   <script type="module" src="js/app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {

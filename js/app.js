@@ -43,10 +43,10 @@ const SHELLS = {
   '/quiz': `
     <main class="container">
       <div id="ad-top" class="ad-slot">Advertisement</div>
-      <div id="quiz-meta" class="quiz-meta"></div>
-      <div id="question"></div>
-      <div id="answers"></div>
-      <div id="explanation"></div>
+      <div id="quiz-meta" class="quiz-meta" role="status" aria-live="polite"></div>
+      <div id="question" aria-live="polite" aria-atomic="true"></div>
+      <div id="answers" role="group" aria-label="Answer choices"></div>
+      <div id="explanation" aria-live="polite"></div>
       <div id="ad-mid" class="ad-slot" style="display:none">Advertisement</div>
     </main>`,
 

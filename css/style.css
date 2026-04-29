@@ -494,7 +494,9 @@ a:active, button:active { opacity: 0.75; }
 [data-color="pink"] .domain-action-btn    { border-radius: 12px; }
 [data-color="pink"] .mix-quiz-btn         { border-radius: 12px; }
 [data-color="pink"] .not-found-btn        { border-radius: 12px; }
-[data-color="pink"] .theme-toggle         { border-radius: 8px; }
+[data-color="pink"] .settings-toggle      { border-radius: 8px; }
+[data-color="pink"] .nav-settings-btn    { border-radius: 8px; }
+[data-color="pink"] .settings-dropdown   { border-radius: 0 0 12px 12px; }
 [data-color="pink"] .acronym-input        { border-radius: 10px; }
 [data-color="pink"] .acronym-tile         { border-radius: 20px; }
 [data-color="pink"] .flag-btn             { border-radius: 20px; }
@@ -660,6 +662,7 @@ a:is(:hover, :active) { text-decoration: underline; }
 .container { max-width: 700px; margin: 0 auto; padding: 0 16px 48px; }
 
 /* ── Nav ───────────────────────────────────────────────────────────────────── */
+#nav { position: relative; }
 .nav { background: var(--nav-gradient, var(--nav-bg)); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 0; }
 .nav-logo { color: #fff; font-size: clamp(17px, 5vw, 20px); font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 8px; }
 .nav-logo-img { width: 28px; height: 28px; }
@@ -680,14 +683,46 @@ a:is(:hover, :active) { text-decoration: underline; }
 .nav-menu a:is(:hover, :active) { background: rgba(255,255,255,0.18); color: #fff; border-color: rgba(255,255,255,0.3); text-decoration: none; }
 .nav-menu a.active { background: rgba(255,255,255,0.22); color: #fff; border-color: rgba(255,255,255,0.42); }
 
-.theme-toggle {
+/* Settings gear button */
+.nav-settings-btn {
   background: none; border: 1px solid var(--nav-text); color: var(--nav-text);
-  font-size: 12px; padding: 2px 8px; cursor: pointer; font-family: inherit;
-  line-height: 1.5; white-space: nowrap;
+  font-size: 14px; padding: 2px 7px; cursor: pointer; font-family: inherit;
+  line-height: 1.5; border-radius: 4px; transition: border-color 0.15s, color 0.15s;
 }
-.theme-toggle:is(:hover, :active) { color: #fff; border-color: #fff; }
+.nav-settings-btn:is(:hover, :active) { color: #fff; border-color: #fff; }
 
-.color-swatches { display: flex; gap: 5px; align-items: center; }
+/* Settings dropdown panel */
+.settings-dropdown {
+  position: absolute; top: 100%; right: 0; z-index: 200;
+  background: var(--nav-bg); border: 1px solid rgba(255,255,255,0.18);
+  border-top: none; min-width: 220px; padding: 8px 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.settings-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 6px 14px;
+}
+.settings-label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+  color: var(--nav-text); opacity: 0.65; white-space: nowrap; flex-shrink: 0;
+}
+.settings-toggle {
+  background: none; border: 1px solid rgba(255,255,255,0.35); color: var(--nav-text);
+  font-size: 12px; padding: 2px 8px; cursor: pointer; font-family: inherit;
+  line-height: 1.5; border-radius: 4px; white-space: nowrap; transition: border-color 0.15s, color 0.15s;
+}
+.settings-toggle:is(:hover, :active) { color: #fff; border-color: #fff; }
+
+/* Color swatches inside dropdown */
+.color-swatches { display: flex; gap: 6px; align-items: center; }
+
+/* Cursor picker inside dropdown — hidden on touch devices */
+.cursor-picker { display: none; gap: 4px; align-items: center; }
+@media (hover: hover) { .cursor-picker { display: flex; } }
+@media (hover: none)  { .settings-cursor-row { display: none; } }
+.cursor-opt { background: none; border: 1px solid transparent; color: var(--nav-text); font-size: 14px; padding: 1px 5px; line-height: 1.4; border-radius: 4px; transition: border-color 0.15s; }
+.cursor-opt:is(:hover, :active) { border-color: rgba(255,255,255,0.3); }
+.cursor-opt.active { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.1); }
 .color-swatch {
   width: 14px; height: 14px; border-radius: 50%; border: 2px solid transparent;
   cursor: pointer; padding: 0; flex-shrink: 0;
@@ -751,7 +786,8 @@ a:is(:hover, :active) { text-decoration: underline; }
 .flag-btn { background: none; border: 1px solid var(--border); color: var(--text-muted); font-size: 16px; padding: 2px 8px; cursor: pointer; border-radius: 4px; line-height: 1; flex-shrink: 0; }
 .flag-btn:is(:hover, :active) { border-color: #e8900a; color: #e8900a; }
 .flag-btn.flagged { border-color: #e8900a; color: #e8900a; background: rgba(232,144,10,0.08); }
-.question-text { font-size: clamp(17px, 4.5vw, 22px); font-weight: 600; margin-bottom: 8px; line-height: 1.7; }
+.question-text { font-size: clamp(17px, 4.5vw, 22px); font-weight: 600; margin-bottom: 8px; line-height: 1.7; user-select: none; -webkit-user-select: none; }
+.answer-btn span, .explanation-item { user-select: none; -webkit-user-select: none; }
 .question-timer { text-align: right; font-size: 11px; font-family: monospace; color: var(--text-dim); margin-bottom: 12px; min-height: 16px; letter-spacing: 0.5px; }
 
 /* 16px + 48px min-height = proper iOS touch targets with no zoom */
@@ -1063,3 +1099,25 @@ a:is(:hover, :active) { text-decoration: underline; }
 .streak-toast--show { opacity: 1; transform: translateX(-50%) translateY(0); }
 .streak-toast--correct { background: #16a34a; color: #fff; }
 .streak-toast--wrong   { background: #b45309; color: #fff; }
+
+/* ── Answer button cursors (desktop only) ───────────────────────────────────── */
+@media (hover: hover) {
+  /* pencil — tip at top-left, hotspot 2 2 */
+  [data-cursor='pencil'] .answer-btn {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M5 5 L27 27' stroke='%23FFD700' stroke-width='6' stroke-linecap='butt'/%3E%3Cpolygon points='2,2 9,2 2,9' fill='%23444'/%3E%3Ccircle cx='27' cy='27' r='4' fill='%23FFB6C1' stroke='%23999' stroke-width='1'/%3E%3C/svg%3E") 2 2, pointer;
+  }
+  /* hammer — hotspot at striking face center top */
+  [data-cursor='hammer'] .answer-btn {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect x='14' y='12' width='5' height='18' rx='2' fill='%238B4513'/%3E%3Crect x='5' y='3' width='22' height='12' rx='3' fill='%23777' stroke='%23444' stroke-width='1.5'/%3E%3Crect x='5' y='3' width='10' height='12' rx='2' fill='%23999'/%3E%3C/svg%3E") 16 3, pointer;
+  }
+  /* crosshair — built-in */
+  [data-cursor='crosshair'] .answer-btn { cursor: crosshair; }
+  /* default — built-in pointer */
+  [data-cursor='default'] .answer-btn   { cursor: pointer; }
+}
+
+/* ── Touch press animation (mobile only) ────────────────────────────────────── */
+@media (hover: none) {
+  .answer-btn { transition: transform 0.08s ease, background 0.1s, border-color 0.1s; }
+  .answer-btn:active:not(:disabled) { transform: scale(0.95); }
+}

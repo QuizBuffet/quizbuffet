@@ -469,6 +469,200 @@ a:active, button:active { opacity: 0.75; }
   --footer-orb-d:    #701a40;
 }
 
+/* ── Buffet Restaurant — light ─────────────────────────────────────────────── */
+[data-color="buffet"] {
+  --bg:              #fdf6e8;
+  --surface:         #f5e8cc;
+  --subtle:          #ecdfc0;
+  --text:            #2c1810;
+  --text-mid:        #5c3a28;
+  --text-muted:      #8b6348;
+  --text-dim:        #b8967a;
+  --border:          #dfc99a;
+  --border-mid:      #c49050;
+  --border-sub:      #ecdfc0;
+  --link:            #8b1a1a;
+  --link-hover-bg:   #f5e8cc;
+  --nav-bg:          #2c1810;
+  --nav-gradient:    linear-gradient(135deg, #1a0d06 0%, #2c1810 55%, #3d2518 100%);
+  --nav-sub:         #1a0d06;
+  --nav-text:        #d4a96a;
+  --nav-track:       #4d2e18;
+  --track:           #e8d4a0;
+  --btn-bg:          #8b1a1a;
+  --btn-hover:       #6d1414;
+  --featured-bg:     #f5e8cc;
+  --featured-border: #c49050;
+  --correct-bg:      #f0f8ec;
+  --wrong-bg:        #fdf0f0;
+  --footer-bg:       #1a0d06;
+  --footer-border:   #3d2518;
+  --footer-accent:   #c8972a;
+  --footer-cert-color: #d4a96a;
+  --footer-cert-bd:  #3d2518;
+  --footer-cert-bg:  rgba(200,151,42,0.08);
+  --footer-line-a:   #8b1a1a;
+  --footer-line-b:   #c8972a;
+  --footer-line-c:   #5c3a28;
+  --footer-orb-a:    #3d1808;
+  --footer-orb-b:    #4d2e18;
+  --footer-orb-c:    #6d3810;
+  --footer-orb-d:    #2c1810;
+  --footer-text:     #e0e0e0;
+  --footer-text-sub: #c0c0c0;
+  --footer-text-dim: #888888;
+}
+/* Buffet — dark */
+[data-color="buffet"][data-theme="dark"] {
+  --bg:              #1a0f08;
+  --surface:         #251508;
+  --subtle:          #2c1a0c;
+  --text:            #f0e0c8;
+  --text-mid:        #d4b890;
+  --text-muted:      #a87850;
+  --text-dim:        #7a5838;
+  --border:          #3d2518;
+  --border-mid:      #5c3820;
+  --border-sub:      #2c1a0c;
+  --link:            #e09050;
+  --link-hover-bg:   #2c1a0c;
+  --nav-bg:          #100806;
+  --nav-sub:         #0a0503;
+  --nav-text:        #c8972a;
+  --nav-track:       #2c1810;
+  --track:           #3d2518;
+  --btn-bg:          #8b1a1a;
+  --btn-hover:       #a02020;
+  --featured-bg:     #251508;
+  --featured-border: #5c3820;
+  --correct-bg:      #0a180a;
+  --wrong-bg:        #180a0a;
+  --footer-bg:       #0a0503;
+  --footer-border:   #2c1810;
+  --footer-orb-a:    #2c1810;
+  --footer-orb-b:    #3d2518;
+  --footer-orb-c:    #4d3020;
+  --footer-orb-d:    #1a0d06;
+}
+
+/* ── Buffet — restaurant menu personality ──────────────────────────────────── */
+[data-color="buffet"] body {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+[data-color="buffet"] .nav-logo,
+[data-color="buffet"] .section-title,
+[data-color="buffet"] .featured-title,
+[data-color="buffet"] .domain-link {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Featured → Chef's Special plaque */
+[data-color="buffet"] .featured {
+  border: 2px double var(--border-mid);
+  border-radius: 0;
+  text-align: center;
+  padding: 28px 32px 24px;
+  position: relative;
+  background: var(--featured-bg);
+}
+[data-color="buffet"] .featured-label {
+  font-size: 0;
+  letter-spacing: 4px;
+}
+[data-color="buffet"] .featured-label::after {
+  content: '— ✦  Chef\'s Special  ✦ —';
+  font-size: 11px;
+  font-family: 'IM Fell English SC', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 10px;
+}
+[data-color="buffet"] .featured-title {
+  font-size: clamp(20px, 5vw, 28px);
+  display: block;
+  margin: 6px 0 8px;
+  font-style: italic;
+}
+
+/* Section title → menu header with ornaments */
+[data-color="buffet"] .section-title {
+  text-align: center;
+  font-family: 'IM Fell English SC', Georgia, serif;
+  font-size: clamp(13px, 3.5vw, 15px);
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 28px 0 4px;
+  text-transform: none;
+}
+[data-color="buffet"] .section-title::before { content: '— '; }
+[data-color="buffet"] .section-title::after  { content: ' —'; }
+[data-color="buffet"] #domains-label::before { content: '— '; }
+[data-color="buffet"] #domains-label::after  { content: ' —'; }
+
+/* Menu divider under section title */
+[data-color="buffet"] .section-title + *,
+[data-color="buffet"] #domains-label + * {
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
+/* Cert list → menu items with dot leaders */
+[data-color="buffet"] .domain-item {
+  border-bottom: none;
+  padding: 9px 2px;
+  position: relative;
+  align-items: baseline;
+}
+[data-color="buffet"] .domain-item::before {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  left: 0; right: 0;
+  border-bottom: 1px dotted var(--border-mid);
+  z-index: 0;
+}
+[data-color="buffet"] .domain-item > span:first-child,
+[data-color="buffet"] .domain-item > span:last-child {
+  background: var(--bg);
+  position: relative;
+  z-index: 1;
+}
+[data-color="buffet"] .domain-item > span:first-child { padding-right: 6px; }
+[data-color="buffet"] .domain-item > span:last-child  { padding-left: 6px;  }
+[data-color="buffet"] .domain-meta {
+  font-size: 12px;
+  font-family: 'IM Fell English SC', Georgia, serif;
+  letter-spacing: 0.5px;
+}
+
+/* Search → menu-styled input */
+[data-color="buffet"] .search-box {
+  border-radius: 0;
+  border-color: var(--border-mid);
+  font-family: Georgia, serif;
+  font-style: italic;
+  background: var(--surface);
+}
+[data-color="buffet"] .search-box::placeholder { font-style: italic; opacity: 0.6; }
+
+/* Buttons and answer choices → rounded still but warmer */
+[data-color="buffet"] .answer-btn,
+[data-color="buffet"] .domain-action-btn { border-radius: 0; border-color: var(--border-mid); }
+[data-color="buffet"] .next-btn         { border-radius: 2px; }
+[data-color="buffet"] .random-btn       { border-radius: 0; border-color: var(--border-mid); }
+
+/* Nav logo — menu header feel */
+[data-color="buffet"] .nav-logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(18px, 5vw, 22px);
+  letter-spacing: 0.5px;
+}
+
+/* Pink theme specific */
 /* ── Pink-specific personality overrides ───────────────────────────────────── */
 [data-color="pink"] body {
   font-family: 'Nunito', 'Trebuchet MS', 'Segoe UI', sans-serif;
@@ -731,6 +925,7 @@ a:is(:hover, :active) { text-decoration: underline; }
 .swatch-amber    { background: #f59e0b; }
 .swatch-classic  { background: #555; }
 .swatch-pink     { background: #ec4899; }
+.swatch-buffet   { background: linear-gradient(135deg, #8b1a1a 0%, #c8972a 100%); }
 
 /* Nav stats strip */
 .nav-stats { background: var(--nav-sub); padding: 5px 16px; display: flex; align-items: center; gap: 10px; }
@@ -1083,12 +1278,26 @@ a:is(:hover, :active) { text-decoration: underline; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-bottom { flex-direction: row; justify-content: space-between; align-items: baseline; }
 }
+@media (min-width: 800px) {
+  .container { max-width: 820px; }
+  .domain-link { font-size: 19px; }
+}
 @media (min-width: 860px) {
   .footer-grid { grid-template-columns: 1fr 1fr 1fr 1.4fr; }
   .footer .container { padding: 32px 32px 0; }
+  /* Buffet: two-column menu layout */
+  [data-color="buffet"] #cert-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 52px;
+  }
+  [data-color="buffet"] .domain-link { font-size: 20px; }
+  [data-color="buffet"] .domain-meta { font-size: 14px; }
 }
 @media (min-width: 1100px) {
+  .container { max-width: 1000px; }
   .footer .container { padding: 32px 48px 0; }
+  [data-color="buffet"] .domain-link { font-size: 21px; }
 }
 
 /* ── SW update toast ────────────────────────────────────────────────────────── */

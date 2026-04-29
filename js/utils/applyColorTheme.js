@@ -1,5 +1,5 @@
 export function getColorTheme() {
-  return localStorage.getItem('qb_color') || 'classic';
+  return localStorage.getItem('qb_color') || 'buffet';
 }
 
 export function applyColorTheme(c) {

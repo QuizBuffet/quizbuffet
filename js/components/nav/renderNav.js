@@ -61,6 +61,7 @@ export async function renderNav(active) {
   const colorTheme   = getColorTheme();
 
   const SWATCHES = [
+    { id: 'buffet',   label: 'Buffet'         },
     { id: 'navy',     label: 'Midnight Navy'  },
     { id: 'terminal', label: 'Terminal Green' },
     { id: 'amber',    label: 'Indigo Amber'   },

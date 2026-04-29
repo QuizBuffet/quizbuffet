@@ -6,6 +6,7 @@ import { getSoundEnabled, toggleSound } from '../../utils/soundPref.js';
 import { getCursor, setCursor, CURSORS } from '../../utils/cursorPref.js';
 
 const SWATCHES = [
+  { id: 'buffet',   label: 'Buffet'         },
   { id: 'navy',     label: 'Midnight Navy'  },
   { id: 'terminal', label: 'Terminal Green' },
   { id: 'amber',    label: 'Indigo Amber'   },

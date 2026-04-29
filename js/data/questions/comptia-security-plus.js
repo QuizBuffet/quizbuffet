@@ -2014,5 +2014,1433 @@ export const questions = [
       "c": "The maintenance window timing is one consideration — security-specific restart planning is also required for applications with cryptographic key material.",
       "d": "Reconstructing encryption keys from application logs would be a critical security vulnerability — keys should never appear in logs."
     }
+  },
+  {
+    "id": 97,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "PKI",
+    "difficulty": "easy",
+    "text": "In a Public Key Infrastructure (PKI), what is the PRIMARY function of the public key?",
+    "answers": [
+      { "id": "a", "text": "To decrypt data that was encrypted with the private key" },
+      { "id": "b", "text": "To encrypt data or verify digital signatures — it is shared openly and anyone can use it to send encrypted messages to the key owner or verify messages signed by the owner" },
+      { "id": "c", "text": "To sign documents on behalf of the certificate holder" },
+      { "id": "d", "text": "To authenticate the user to a server during TLS handshake" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Data encrypted with the private key is decrypted with the public key — but data encrypted with the public key is decrypted with the private key. This reversal is important.",
+      "b": "The public key has two uses: encrypting data that only the private key holder can decrypt, and verifying digital signatures created by the matching private key. It is distributed freely. This is the correct answer.",
+      "c": "Signing documents uses the private key — the public key verifies signatures, not creates them.",
+      "d": "During TLS, the server's public key is used by the client to encrypt the pre-master secret — but the broader answer is that public keys encrypt and verify."
+    }
+  },
+  {
+    "id": 98,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "PKI",
+    "difficulty": "medium",
+    "text": "What is key escrow in a PKI environment and why might an organization implement it?",
+    "answers": [
+      { "id": "a", "text": "Key escrow is the process of distributing public keys to all network users" },
+      { "id": "b", "text": "Key escrow involves storing a copy of private keys with a trusted third party or internal escrow agent — enabling recovery of encrypted data if the original key holder loses their key, leaves the organization, or is unavailable, while maintaining business continuity" },
+      { "id": "c", "text": "Key escrow is a method of encrypting private keys with the corresponding public key" },
+      { "id": "d", "text": "Key escrow refers to the expiration and renewal process for digital certificates" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Distributing public keys is a standard PKI operation — key escrow specifically involves private key backup with a trusted party.",
+      "b": "Key escrow stores private keys securely with an escrow agent so encrypted data remains recoverable if the primary key holder is unavailable. This balances data recovery needs against key security. This is the correct answer.",
+      "c": "Encrypting private keys with public keys would be circular — private keys are protected through their own secure storage.",
+      "d": "Certificate expiration and renewal is certificate lifecycle management — not key escrow."
+    }
+  },
+  {
+    "id": 99,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "PKI",
+    "difficulty": "hard",
+    "text": "An organization implements key escrow for employee encryption keys. A law enforcement agency presents a court order requiring access to encrypted communications of a specific employee under investigation. How does key escrow enable compliance while presenting a security risk?",
+    "answers": [
+      { "id": "a", "text": "Key escrow has no security risks — it is a purely beneficial capability" },
+      { "id": "b", "text": "Key escrow enables compliance by providing lawful access to escrowed private keys for authorized legal requests. The security risk is that the escrow system becomes a high-value target — compromise of the escrow agent gives attackers access to all escrowed private keys, decrypting all communications protected by those keys. The escrow system itself must be extremely well-secured" },
+      { "id": "c", "text": "Law enforcement access to escrowed keys is illegal regardless of court orders" },
+      { "id": "d", "text": "Key escrow provides access only to future communications — past encrypted data cannot be decrypted" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Key escrow creates significant security risks — the escrow system concentrates access to all private keys, making it an extremely valuable target.",
+      "b": "Key escrow enables lawful access (beneficial for compliance) while creating a concentrated target for attackers. The security of the escrow system is paramount — a breach exposes all escrowed communications. This is the correct answer.",
+      "c": "Key escrow can legally be required to comply with court orders — this is one of its primary use cases in regulated industries.",
+      "d": "Escrowed keys decrypt past encrypted data as well as future — private keys are used to decrypt any data encrypted with the corresponding public key."
+    }
+  },
+  {
+    "id": 100,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "PKI",
+    "difficulty": "hard",
+    "text": "An organization's PKI uses a two-tier hierarchy with an offline root CA and an online issuing CA. The root CA's private key is stored on an HSM in an air-gapped system. An administrator proposes bringing the root CA online to simplify certificate issuance. What is the PRIMARY security risk of this proposal?",
+    "answers": [
+      { "id": "a", "text": "Bringing the root CA online would slow down certificate issuance" },
+      { "id": "b", "text": "The root CA's private key is the ultimate trust anchor — if an online root CA is compromised, all certificates issued by the entire PKI hierarchy become untrusted, requiring complete PKI rebuild. Keeping the root CA offline protects this key from network-based attacks, limiting compromise risk to physical access only" },
+      { "id": "c", "text": "Online root CAs violate RFC standards and are technically prohibited" },
+      { "id": "d", "text": "The root CA should be online for certificate revocation to function properly" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "An online root CA would actually speed up direct certificate issuance — but this is precisely the risk, as it increases attack surface.",
+      "b": "The root CA's private key is the most critical element in the PKI — its compromise invalidates the entire trust hierarchy. Air-gapping limits the attack surface to physical access, dramatically reducing compromise risk. This is the correct answer.",
+      "c": "Online root CAs are technically possible — the offline requirement is a security best practice, not an RFC prohibition.",
+      "d": "Certificate revocation is handled by issuing/subordinate CAs and OCSP responders — the root CA does not need to be online for revocation to function."
+    }
+  },
+  {
+    "id": 101,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Encryption Levels",
+    "difficulty": "easy",
+    "text": "A company policy requires that all laptop hard drives be protected so that if a laptop is stolen, the data cannot be accessed even if the drive is removed and connected to another system. Which encryption level BEST meets this requirement?",
+    "answers": [
+      { "id": "a", "text": "File-level encryption — protecting individual sensitive files" },
+      { "id": "b", "text": "Full-disk encryption (FDE) — encrypting the entire drive including OS, applications, and all data, preventing access to any content without the decryption key even if the drive is removed" },
+      { "id": "c", "text": "Volume encryption — protecting a specific partition or volume" },
+      { "id": "d", "text": "Database encryption — protecting structured data in databases" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "File-level encryption protects individual files — an attacker accessing the drive would still see OS files, application data, temp files, and any unencrypted files.",
+      "b": "Full-disk encryption protects all data on the entire drive at the physical level — removing the drive yields only encrypted data with no accessible content. This is the correct answer.",
+      "c": "Volume encryption protects a specific volume — other volumes/partitions remain unencrypted and accessible.",
+      "d": "Database encryption protects database contents — other files on the drive remain accessible."
+    }
+  },
+  {
+    "id": 102,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Encryption Levels",
+    "difficulty": "medium",
+    "text": "A healthcare organization stores patient records in a database. Some records belong to public figures, and the organization wants to ensure that even database administrators cannot read specific high-sensitivity records. Which encryption level provides this granularity?",
+    "answers": [
+      { "id": "a", "text": "Full-disk encryption — encrypting the entire server disk" },
+      { "id": "b", "text": "Record-level encryption — encrypting individual database records with keys that even DBAs do not possess, ensuring only authorized applications or users with the specific record key can decrypt individual records" },
+      { "id": "c", "text": "Database-level encryption — encrypting the entire database" },
+      { "id": "d", "text": "Volume encryption — encrypting the storage volume containing the database" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "FDE protects against physical theft — DBAs with OS access can still access the database.",
+      "b": "Record-level encryption applies cryptographic protection to individual records with distinct keys — even DBAs with full database access cannot read records they don't have the specific decryption key for. This is the correct answer.",
+      "c": "Database-level encryption protects the database from external access — DBAs with database credentials can still read all records.",
+      "d": "Volume encryption protects the storage medium — authorized database users can still access all records."
+    }
+  },
+  {
+    "id": 103,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Encryption Levels",
+    "difficulty": "hard",
+    "text": "A security architect is designing data protection for a multi-tenant cloud application. Tenants' data must be isolated so that one tenant's breach cannot expose another's data. Which layered encryption approach BEST achieves this?",
+    "answers": [
+      { "id": "a", "text": "Full-disk encryption on the cloud servers protects all tenant data" },
+      { "id": "b", "text": "Implement tenant-specific encryption at the database or record level using per-tenant encryption keys stored in a tenant-isolated key management system. Each tenant's data is encrypted with a unique key — even if one tenant's data is accessed through a vulnerability, the encryption of other tenants' data with different keys prevents cross-tenant exposure" },
+      { "id": "c", "text": "File-level encryption on tenant data directories provides sufficient isolation" },
+      { "id": "d", "text": "Network isolation between tenant VLANs eliminates the need for data-level encryption" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "FDE protects against physical media theft — it does not provide tenant isolation at the application or database level.",
+      "b": "Per-tenant encryption keys at the database/record level ensure that even application-level vulnerabilities accessing another tenant's encrypted data yield only unintelligible ciphertext without the tenant-specific key. This is the correct answer.",
+      "c": "File-level encryption with shared filesystem access by the application may not prevent application-layer cross-tenant access.",
+      "d": "Network isolation prevents network-based lateral movement — but application vulnerabilities can still access other tenants' unencrypted database records."
+    }
+  },
+  {
+    "id": 104,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Encryption Levels",
+    "difficulty": "hard",
+    "text": "An organization implements transparent database encryption (TDE). A DBA with full database access exports a backup and copies it to an external drive. Does TDE protect this data?",
+    "answers": [
+      { "id": "a", "text": "Yes — TDE encrypts all data including backups, making the exported copy unreadable" },
+      { "id": "b", "text": "It depends on the TDE implementation: some TDE solutions encrypt backups in a way that is transparent to authorized users — if the backup is restored by an authorized user with the correct TDE key, it decrypts automatically. If the external drive is accessed without the TDE key, the backup may be protected. However, if the DBA also exports the TDE key, both the data and key are compromised — TDE does not address insider threats with key access" },
+      { "id": "c", "text": "TDE only protects data at rest on the database server — backups are always unencrypted" },
+      { "id": "d", "text": "TDE protects against all insider threats including authorized DBAs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "TDE backup protection depends on key management — if the key accompanies the backup, protection is lost.",
+      "b": "TDE's protection of backups depends on whether the key is separately controlled. TDE does not protect against insiders who have both data and key access — this is an inherent limitation of transparent encryption against privileged insiders. This is the correct answer.",
+      "c": "Many TDE implementations do encrypt backups — but key management determines whether the backup is truly protected.",
+      "d": "TDE is transparent to authorized users by design — authorized DBAs with key access can read all data, including backups."
+    }
+  },
+  {
+    "id": 105,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Encryption Types",
+    "difficulty": "easy",
+    "text": "What is the PRIMARY difference between symmetric and asymmetric encryption?",
+    "answers": [
+      { "id": "a", "text": "Symmetric encryption uses longer keys and is therefore more secure" },
+      { "id": "b", "text": "Symmetric encryption uses the same key for both encryption and decryption; asymmetric encryption uses a mathematically related key pair — a public key for encryption and a private key for decryption (or vice versa for signatures)" },
+      { "id": "c", "text": "Asymmetric encryption is always used for bulk data while symmetric is for key exchange" },
+      { "id": "d", "text": "Symmetric encryption is newer and replaces asymmetric encryption in modern systems" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Symmetric keys are typically shorter than asymmetric keys for equivalent security — e.g., AES-256 vs RSA-2048.",
+      "b": "The fundamental distinction is the key structure: symmetric (one shared key) vs. asymmetric (mathematically related key pair). This determines use cases, performance, and key distribution approaches. This is the correct answer.",
+      "c": "In hybrid cryptography, asymmetric is used for key exchange and symmetric for bulk data — but this is a common usage pattern, not the definitional difference.",
+      "d": "Both types are used in modern systems — they serve complementary roles and neither replaces the other."
+    }
+  },
+  {
+    "id": 106,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Encryption Types",
+    "difficulty": "medium",
+    "text": "HTTPS uses a hybrid encryption approach during the TLS handshake. Why is asymmetric encryption used for key exchange rather than encrypting all HTTPS traffic?",
+    "answers": [
+      { "id": "a", "text": "Asymmetric encryption is more secure than symmetric and should be used exclusively" },
+      { "id": "b", "text": "Asymmetric encryption is computationally expensive — encrypting large volumes of traffic with RSA or ECC would create significant performance overhead. Asymmetric encryption is used to securely exchange a symmetric session key during the handshake; symmetric encryption then handles the bulk data transfer efficiently" },
+      { "id": "c", "text": "Asymmetric encryption cannot encrypt data, only keys" },
+      { "id": "d", "text": "TLS does not use symmetric encryption — only asymmetric throughout the session" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Both types provide strong security — asymmetric is not more secure for bulk encryption, just mathematically different.",
+      "b": "The performance characteristics drive hybrid use: asymmetric encryption is orders of magnitude slower than symmetric for bulk data. Hybrid approaches leverage asymmetric for the key exchange problem (no shared secret needed) and symmetric for efficient bulk encryption. This is the correct answer.",
+      "c": "Asymmetric encryption can encrypt arbitrary data — but the performance cost makes it impractical for bulk traffic.",
+      "d": "TLS uses symmetric encryption for the bulk of the session data — asymmetric is only used during the handshake phase."
+    }
+  },
+  {
+    "id": 107,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Encryption Types",
+    "difficulty": "hard",
+    "text": "A security team evaluates two encryption algorithm options: RSA-2048 and AES-256. For protecting 10TB of archived medical records at rest, which is more appropriate and why?",
+    "answers": [
+      { "id": "a", "text": "RSA-2048 because it uses asymmetric encryption which is more secure" },
+      { "id": "b", "text": "AES-256 because symmetric encryption is significantly faster for bulk data encryption and AES-256 provides equivalent or greater security than RSA-2048 for data at rest. RSA-2048 is more appropriate for key exchange or digital signatures, not bulk data encryption" },
+      { "id": "c", "text": "RSA-2048 because the 2048-bit key is longer than 256 bits making it stronger" },
+      { "id": "d", "text": "Both provide identical performance — the choice is purely preference" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "RSA security does not translate to suitability for bulk data — AES-256 is appropriate and efficient for large data at rest.",
+      "b": "AES-256 is the correct choice: symmetric encryption is orders of magnitude faster for bulk data, AES-256 provides equivalent security to RSA-2048 or better for symmetric use cases, and RSA is designed for key exchange and signatures, not bulk encryption of 10TB datasets. This is the correct answer.",
+      "c": "Key length comparison between symmetric and asymmetric algorithms is not valid — 256-bit AES and 2048-bit RSA provide comparable but different security levels. Bit count alone does not determine strength across algorithm types.",
+      "d": "Performance difference between RSA and AES for bulk data encryption is dramatic — AES is vastly faster, making RSA impractical for 10TB."
+    }
+  },
+  {
+    "id": 108,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Encryption Types",
+    "difficulty": "hard",
+    "text": "An organization must select an encryption algorithm for a new IoT device with severely limited computational resources (8-bit microcontroller, 256 bytes RAM). Which consideration MOST influences the algorithm selection?",
+    "answers": [
+      { "id": "a", "text": "Always use AES-256 regardless of hardware constraints" },
+      { "id": "b", "text": "Lightweight symmetric encryption algorithms designed for constrained environments (such as ChaCha20, PRESENT, or lightweight AES modes) should be evaluated. Key length and algorithm complexity must be balanced against the device's computational limitations — a theoretically stronger algorithm that cannot run on the device provides no security" },
+      { "id": "c", "text": "IoT devices do not need encryption since they only transmit telemetry data" },
+      { "id": "d", "text": "RSA-4096 provides the best security for IoT devices" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "AES-256 may exceed the computational and memory capabilities of severely constrained IoT hardware — implementation may be impossible or insecure if resources are insufficient.",
+      "b": "Resource-constrained cryptography is a specialized field — the strongest feasible algorithm for the specific hardware profile must be selected. An algorithm that cannot be properly implemented provides no security. This is the correct answer.",
+      "c": "IoT telemetry data often carries sensitive information about industrial processes, user behavior, or physical environments — encryption is necessary.",
+      "d": "RSA-4096 is even more computationally demanding than AES-256 — entirely impractical for an 8-bit microcontroller with 256 bytes RAM."
+    }
+  },
+  {
+    "id": 109,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "TPM",
+    "difficulty": "easy",
+    "text": "What is a Trusted Platform Module (TPM) and what security function does it primarily provide?",
+    "answers": [
+      { "id": "a", "text": "A TPM is a software-based encryption library installed on servers" },
+      { "id": "b", "text": "A TPM is a dedicated hardware security chip integrated into computing devices that provides a hardware root of trust — securely storing cryptographic keys, performing cryptographic operations, and enabling platform integrity measurements to detect unauthorized changes to the boot process" },
+      { "id": "c", "text": "A TPM is a network device that manages encryption keys across an enterprise" },
+      { "id": "d", "text": "A TPM is a type of firewall that protects trusted platforms" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A TPM is a hardware chip — not a software library.",
+      "b": "The TPM is a dedicated security microcontroller built into (or attached to) a motherboard that provides hardware-rooted cryptographic capabilities including secure key storage, platform integrity measurements (PCR registers), and remote attestation. This is the correct answer.",
+      "c": "Enterprise key management is handled by dedicated key management systems — a TPM is a device-specific chip, not a network device.",
+      "d": "TPM stands for Trusted Platform Module — it is not a firewall."
+    }
+  },
+  {
+    "id": 110,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "TPM",
+    "difficulty": "medium",
+    "text": "A company uses BitLocker full-disk encryption with TPM. An attacker steals a laptop and attempts to access the data by removing the drive and connecting it to another system. How does the TPM protect the data in this scenario?",
+    "answers": [
+      { "id": "a", "text": "The TPM provides no protection if the drive is removed — it only protects from software attacks" },
+      { "id": "b", "text": "The BitLocker encryption key is sealed to the TPM and can only be released when the TPM measurements confirm the correct boot environment on the original hardware. Removing the drive to another system means the correct TPM is absent — the drive cannot be decrypted without the original TPM (and PIN/key if configured)" },
+      { "id": "c", "text": "The TPM remotely wipes the drive when it detects removal" },
+      { "id": "d", "text": "The TPM locks the drive permanently after 3 failed decryption attempts" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "TPM-sealed keys are specifically designed to protect against drive removal attacks — the key is hardware-bound to the original TPM.",
+      "b": "BitLocker's TPM binding seals the volume master key to the TPM and specific platform measurements. Without the original TPM present and producing the correct measurements, the key cannot be retrieved and the drive remains encrypted. This is the correct answer.",
+      "c": "TPMs do not perform remote wipe — they secure keys through hardware binding.",
+      "d": "TPM lockout after failed PIN attempts is a separate feature — the fundamental protection is key sealing to the hardware."
+    }
+  },
+  {
+    "id": 111,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "TPM",
+    "difficulty": "hard",
+    "text": "A security team performs remote attestation using TPM Platform Configuration Register (PCR) values. A server's current PCR values do not match the expected values from a known-good baseline. What does this indicate and what should the security response be?",
+    "answers": [
+      { "id": "a", "text": "PCR mismatches are normal and occur during routine software updates — no action required" },
+      { "id": "b", "text": "PCR mismatch indicates the server's boot sequence has changed since the baseline was established — possible causes include unauthorized firmware modification, bootkit/rootkit infection, or legitimate software updates that were not baselined. The security response should be to quarantine the server, perform forensic investigation to determine whether the change was authorized, and establish a new baseline only after confirming the system integrity" },
+      { "id": "c", "text": "PCR mismatch means the TPM chip has failed and should be replaced" },
+      { "id": "d", "text": "PCR values are not security-relevant — they only track hardware inventory" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Software updates do change PCR values — which is why baseline updates must accompany authorized changes. An unexpected mismatch requires investigation.",
+      "b": "PCR values measure boot integrity — unexpected changes may indicate malicious modification or unauthorized changes. The response requires investigation before accepting the new state. This is the correct answer.",
+      "c": "PCR mismatches reflect changes in measured components, not TPM chip failure — chip failure produces different error conditions.",
+      "d": "PCR values are a primary integrity measurement mechanism — they are security-critical for detecting boot-level compromises."
+    }
+  },
+  {
+    "id": 112,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "TPM",
+    "difficulty": "hard",
+    "text": "A developer proposes using a TPM to store API keys for a cloud service application running on a server. A security architect questions whether this is the right use case for TPM. What is the MOST accurate assessment?",
+    "answers": [
+      { "id": "a", "text": "TPMs are perfect for all key storage use cases including application API keys" },
+      { "id": "b", "text": "TPMs are optimized for platform integrity measurements and storing keys tied to the platform boot state (like FDE keys). Storing application API keys in TPM is technically possible but may not leverage TPM's strengths — an HSM or dedicated secrets management solution (HashiCorp Vault, cloud KMS) is typically more appropriate for application-level key storage, providing better key rotation, access control, and auditability for application credentials" },
+      { "id": "c", "text": "TPMs cannot store any type of key other than BitLocker volume master keys" },
+      { "id": "d", "text": "API keys should always be stored in environment variables — hardware security is unnecessary for API keys" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "While TPMs can store keys, they are not optimized for all key storage scenarios — particularly application-level credentials.",
+      "b": "TPM strengths are in platform binding and integrity measurement. Application API keys benefit more from HSMs or secrets managers offering rotation, fine-grained access control, audit logging, and multi-application access. This is the correct answer.",
+      "c": "TPMs can store various cryptographic keys beyond BitLocker keys — but application-level API keys are better served by dedicated secrets management.",
+      "d": "Environment variables are among the least secure methods for storing API keys — hardware or managed secret storage is strongly preferred."
+    }
+  },
+  {
+    "id": 113,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "HSM",
+    "difficulty": "easy",
+    "text": "What is a Hardware Security Module (HSM) and what security advantage does it provide over software-based key storage?",
+    "answers": [
+      { "id": "a", "text": "An HSM is a high-performance server that speeds up encryption operations" },
+      { "id": "b", "text": "An HSM is a dedicated hardware device that generates, stores, and manages cryptographic keys entirely within the physical device — private keys never leave the HSM in plaintext, and the device is tamper-resistant and tamper-evident, making key extraction extremely difficult even for an attacker with physical access" },
+      { "id": "c", "text": "An HSM is a software encryption library with a hardware accelerator" },
+      { "id": "d", "text": "An HSM is a network firewall that encrypts traffic between network segments" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Performance acceleration is a secondary benefit — the primary value is secure key storage and tamper resistance.",
+      "b": "HSMs provide hardware-rooted key protection: private keys are generated and stored within the physical boundary of the device, cryptographic operations are performed inside the HSM, and physical tamper resistance prevents key extraction even by attackers with physical access. This is the correct answer.",
+      "c": "An HSM performs cryptographic operations entirely in hardware — it is not a software library.",
+      "d": "Network encryption appliances are different from HSMs — HSMs specifically address key lifecycle management and cryptographic operations."
+    }
+  },
+  {
+    "id": 114,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "HSM",
+    "difficulty": "medium",
+    "text": "A certificate authority uses an HSM to store its CA private key. A server administrator attempts to export the CA private key from the HSM for backup purposes. The export fails with an access denied error. Why does this occur and is it the correct behavior?",
+    "answers": [
+      { "id": "a", "text": "The export failure is a malfunction — HSMs should allow key export for backup" },
+      { "id": "b", "text": "This is correct and expected behavior — HSMs are specifically designed to prevent private key export in plaintext. The key is protected within the hardware boundary. Backup is accomplished through encrypted key backup mechanisms (wrapped key export with a backup key) — not plaintext extraction. The error demonstrates the HSM working as intended" },
+      { "id": "c", "text": "The administrator needs root access on the HSM operating system to export keys" },
+      { "id": "d", "text": "HSMs do not support backup at all — the key is lost if the HSM fails" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Preventing plaintext key export is a core HSM security feature — it is not a malfunction.",
+      "b": "HSMs prevent plaintext key export by design — this is the primary protection mechanism. Authorized backup uses wrapped key export (key encrypted with a backup key) that cannot be used without the HSM. This is the correct answer.",
+      "c": "Root access does not bypass HSM security controls — the HSM's security boundary is hardware-enforced.",
+      "d": "HSMs support encrypted (wrapped) key backup — plaintext export is prohibited, not all backup."
+    }
+  },
+  {
+    "id": 115,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "HSM",
+    "difficulty": "hard",
+    "text": "A cloud provider offers a cloud HSM service. A customer's security team debates whether a cloud HSM provides equivalent security to an on-premises HSM. What is the MOST accurate security analysis?",
+    "answers": [
+      { "id": "a", "text": "Cloud HSMs are always less secure than on-premises HSMs due to network exposure" },
+      { "id": "b", "text": "Cloud HSMs (AWS CloudHSM, Azure Dedicated HSM) use validated hardware (FIPS 140-2 Level 3) with customer-exclusive key control — the cloud provider cannot access customer keys. Security differences include: physical access to hardware is controlled by the provider (not customer); network access introduces an attack path not present with on-premises HSMs. For most use cases, cloud HSMs meet enterprise security requirements; highly sensitive applications may prefer on-premises for physical control" },
+      { "id": "c", "text": "Cloud HSMs provide superior security since cloud providers have better physical security than most enterprises" },
+      { "id": "d", "text": "Cloud HSMs and software key storage are equivalent — the hardware is in the cloud anyway" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cloud HSMs use validated hardware and provide strong security — the comparison requires nuanced analysis, not blanket dismissal.",
+      "b": "Cloud HSMs provide strong security with some differences from on-premises: customer-exclusive key control, validated hardware, but physical access by the provider's staff and network access as an additional attack surface. This is the correct answer.",
+      "c": "Cloud provider physical security is excellent — but the customer still loses direct physical control of the hardware.",
+      "d": "Cloud HSMs provide hardware-rooted security fundamentally different from software key storage — comparing them incorrectly trivializes hardware security."
+    }
+  },
+  {
+    "id": 116,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "HSM",
+    "difficulty": "hard",
+    "text": "A payment processing application generates 10,000 cryptographic signing operations per second using RSA-2048. The software-based signing is consuming 80% of CPU capacity. An HSM is proposed to address this. Beyond key security, what additional benefit does HSM offloading provide?",
+    "answers": [
+      { "id": "a", "text": "HSMs slow down cryptographic operations — they should not be used for high-volume applications" },
+      { "id": "b", "text": "HSMs contain dedicated cryptographic processors (specialized ASICs) optimized for cryptographic operations — offloading 10,000 signing operations per second to an HSM frees CPU resources on the application servers while potentially achieving better performance than software-based cryptography. The HSM handles cryptographic workloads efficiently while simultaneously providing key security" },
+      { "id": "c", "text": "HSMs eliminate the need for CPU on application servers" },
+      { "id": "d", "text": "HSM offloading reduces network bandwidth requirements" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Modern HSMs with dedicated cryptographic ASICs are often faster than general-purpose CPU implementations for cryptographic operations.",
+      "b": "HSMs contain purpose-built cryptographic processors that handle signing and other operations efficiently — offloading cryptographic work frees application server CPU while maintaining or improving performance. This dual benefit (security + performance) is a key HSM value proposition. This is the correct answer.",
+      "c": "Application servers still need CPU for application logic — HSMs offload only cryptographic operations.",
+      "d": "HSM offloading does not reduce network bandwidth — it offloads computational work, not network traffic."
+    }
+  },
+  {
+    "id": 117,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Key Management System",
+    "difficulty": "easy",
+    "text": "What is the PRIMARY purpose of a key management system (KMS) in an enterprise?",
+    "answers": [
+      { "id": "a", "text": "To encrypt all network traffic between enterprise systems" },
+      { "id": "b", "text": "To centrally manage the full lifecycle of cryptographic keys — including generation, storage, distribution, rotation, revocation, and destruction — ensuring consistent key policies across the enterprise and reducing the risk of keys being lost, compromised, or improperly managed" },
+      { "id": "c", "text": "To replace HSMs with a software-only alternative" },
+      { "id": "d", "text": "To manage user passwords and authentication credentials" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Network encryption is a separate function — KMS manages the keys that may be used for network encryption among other purposes.",
+      "b": "A KMS provides centralized key lifecycle management — ensuring keys are properly generated, securely stored, distributed to authorized systems, rotated on schedule, and properly retired. This is the correct answer.",
+      "c": "KMS and HSM serve different functions — KMS manages key lifecycle, HSM provides hardware security for key operations. Many KMS solutions use HSMs as their secure backend.",
+      "d": "Password management is handled by password managers and identity systems — KMS manages cryptographic keys, not authentication credentials."
+    }
+  },
+  {
+    "id": 118,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Key Management System",
+    "difficulty": "medium",
+    "text": "An organization uses a cloud KMS where encryption keys are managed by the cloud provider. A compliance auditor raises a concern about this arrangement. What is the MOST valid security concern?",
+    "answers": [
+      { "id": "a", "text": "Cloud KMS is always insecure and should never be used" },
+      { "id": "b", "text": "Provider-managed KMS means the cloud provider controls the keys protecting your data — in a legal dispute with the provider, or if the provider is compromised or receives a government order, your data could potentially be accessed without your consent. Customer-managed keys (CMEK) or an external KMS where the customer controls all keys addresses this concern" },
+      { "id": "c", "text": "Cloud KMS cannot support key rotation — this is the auditor's concern" },
+      { "id": "d", "text": "Cloud KMS has no valid use case — all enterprises should use on-premises KMS" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cloud KMS can be appropriately secure depending on the threat model and key control arrangement.",
+      "b": "The valid concern is key sovereignty — who ultimately controls access to the keys determines who controls access to the encrypted data. Provider-managed keys mean the provider could access data under certain circumstances. Customer-managed keys (CMEK) address this. This is the correct answer.",
+      "c": "Cloud KMS solutions fully support automated key rotation — this is not the auditor's primary concern.",
+      "d": "Cloud KMS is widely and appropriately used — the concern is about key ownership, not deployment model."
+    }
+  },
+  {
+    "id": 119,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Key Management System",
+    "difficulty": "hard",
+    "text": "An organization's KMS policy requires automatic key rotation every 90 days for data encryption keys. During a quarterly audit, 12 keys are found to be 95 days old without rotation. What security risks does this key rotation failure create?",
+    "answers": [
+      { "id": "a", "text": "Key age has no security impact — the same key can be used indefinitely" },
+      { "id": "b", "text": "Delayed key rotation increases the risk associated with key compromise — the longer a key is in use, the more data is protected by that single key, and the more time an attacker with the key has to decrypt data. If the key was compromised at day 60, 35 additional days of data encrypted with the compromised key becomes accessible. Regular rotation limits the data exposure window per key" },
+      { "id": "c", "text": "Key rotation only matters for asymmetric keys — symmetric data encryption keys can be permanent" },
+      { "id": "d", "text": "The risk is only compliance-based — there is no operational security impact from delayed rotation" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Key longevity directly affects security — the longer a key is used, the more data is at risk if it is compromised.",
+      "b": "Key rotation limits the blast radius of key compromise — if a key is compromised, only data encrypted during that key's validity period is exposed. Delayed rotation extends this window and increases the amount of data at risk. This is the correct answer.",
+      "c": "Symmetric data encryption keys also benefit from rotation — the principle of limiting data per key applies regardless of key type.",
+      "d": "The operational security impact is real — delayed rotation extends data exposure windows beyond policy-defined acceptable limits."
+    }
+  },
+  {
+    "id": 120,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Key Management System",
+    "difficulty": "hard",
+    "text": "A secure enclave is used by a cloud application to process sensitive credit card data. The enclave's attestation report is verified before any data is sent to it. What does the attestation report verify, and why is this critical for data security?",
+    "answers": [
+      { "id": "a", "text": "The attestation report verifies that the enclave has sufficient CPU and memory resources" },
+      { "id": "b", "text": "The attestation report cryptographically verifies that: (1) the enclave code is exactly the expected code (measured and signed); (2) the enclave is running in a genuine hardware-protected environment; and (3) the security configuration is correct. This is critical because it ensures sensitive credit card data is only sent to verified, unmodified code running in genuine hardware isolation — preventing data from reaching compromised or malicious enclaves" },
+      { "id": "c", "text": "The attestation report verifies that the cloud provider has appropriate security certifications" },
+      { "id": "d", "text": "Attestation only verifies network connectivity to the enclave — not code integrity" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Resource verification is operational — attestation is about code and hardware integrity.",
+      "b": "Enclave attestation provides cryptographic proof of code integrity and genuine hardware protection — ensuring data is only sent to the exact expected code in a genuine hardware-isolated environment. This is the correct answer.",
+      "c": "Attestation is a technical cryptographic verification — not a certification audit process.",
+      "d": "Attestation goes far beyond network connectivity — it verifies the exact code identity and hardware environment."
+    }
+  },
+  {
+    "id": 121,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Steganography",
+    "difficulty": "easy",
+    "text": "What is steganography and how does it differ from encryption?",
+    "answers": [
+      { "id": "a", "text": "Steganography and encryption are the same — both protect data by making it unreadable" },
+      { "id": "b", "text": "Steganography hides the existence of a message by concealing it within an ordinary-looking carrier (such as an image or audio file) without altering the carrier's apparent nature. Encryption protects the content of a message by making it unreadable — but it does not hide that encrypted data exists. Steganography hides the message; encryption hides the meaning" },
+      { "id": "c", "text": "Steganography is a type of compression that reduces file sizes while concealing data" },
+      { "id": "d", "text": "Steganography is only used by attackers — it has no legitimate security use" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Steganography and encryption address different security goals — hiding existence vs. protecting content.",
+      "b": "The key distinction: steganography provides security through obscurity (the secret message appears to be a normal image/audio file), while encryption makes content unreadable but does not hide that secret data exists. Combining both provides stronger protection. This is the correct answer.",
+      "c": "Steganography hides data within a carrier — it is not a compression technique.",
+      "d": "Steganography has legitimate uses: digital watermarking, covert communication channels, and copyright protection."
+    }
+  },
+  {
+    "id": 122,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Steganography",
+    "difficulty": "medium",
+    "text": "An attacker embeds malware command-and-control instructions in image files posted to a public social media platform. When the malware on infected systems downloads and processes these images, it extracts hidden instructions. This technique is called:",
+    "answers": [
+      { "id": "a", "text": "SQL injection — the images contain SQL commands" },
+      { "id": "b", "text": "Steganographic C2 — using steganography to hide malware command-and-control communications within innocuous-appearing image files, evading network detection tools that do not expect malicious data in image files from legitimate platforms" },
+      { "id": "c", "text": "Buffer overflow — the images overflow the media player's buffer" },
+      { "id": "d", "text": "Man-in-the-middle — the attacker intercepts the image download" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "SQL injection targets database query parsing — steganographic C2 embeds data in carrier files.",
+      "b": "Steganographic C2 uses social media image files as an unwitting delivery channel for malware instructions — network security tools monitoring for C2 traffic often miss commands hidden in image files from legitimate platforms. This is the correct answer.",
+      "c": "Buffer overflow exploits memory handling bugs — steganographic C2 hides data in carrier file content.",
+      "d": "Man-in-the-middle intercepts communications in transit — steganographic C2 uses the content of legitimate-appearing files."
+    }
+  },
+  {
+    "id": 123,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Steganography",
+    "difficulty": "hard",
+    "text": "A digital forensics investigator is analyzing a suspected data exfiltration incident. The suspect sent thousands of images to an external email address. File analysis shows the images are valid JPEG files with normal metadata. How would the investigator determine if steganography was used?",
+    "answers": [
+      { "id": "a", "text": "The valid JPEG format proves no steganography was used" },
+      { "id": "b", "text": "The investigator would use steganalysis tools to detect statistical anomalies in the image data: LSB (least significant bit) analysis looking for non-random bit patterns in pixel data, chi-square attacks comparing expected vs. actual bit distributions, and comparison against the original source images if available. Valid JPEG format does not rule out steganography — the carrier file remains valid while concealing hidden data" },
+      { "id": "c", "text": "Normal metadata confirms no hidden data — steganography always modifies metadata" },
+      { "id": "d", "text": "Steganography cannot be detected once data is embedded — investigation is futile" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Steganographic techniques specifically preserve file validity — valid format does not prove absence of hidden data.",
+      "b": "Steganalysis detects statistical anomalies introduced by hidden data embedding — even valid files show detectable patterns from steganographic insertion. This is the correct answer.",
+      "c": "Steganography often avoids modifying visible metadata — it hides data in image pixel data, not necessarily metadata.",
+      "d": "Steganalysis is a well-developed field with effective detection techniques — detection is possible, especially for common steganographic tools."
+    }
+  },
+  {
+    "id": 124,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Steganography",
+    "difficulty": "hard",
+    "text": "A security team discovers that an insider is using an open-source steganography tool to hide sensitive documents within vacation photos before emailing them to a personal address. The organization has TLS inspection enabled on outbound email. Why did TLS inspection not detect this exfiltration?",
+    "answers": [
+      { "id": "a", "text": "TLS inspection would have detected the steganography — the system must have malfunctioned" },
+      { "id": "b", "text": "TLS inspection decrypts and inspects email content, but it analyzes known malicious patterns in cleartext. Standard DLP and email security tools look for sensitive data in plaintext form within attachments — they typically cannot detect sensitive data hidden within binary image files using steganography. The exfiltrated data was not in a form the inspection engine could recognize" },
+      { "id": "c", "text": "TLS inspection does not apply to email — it only inspects web traffic" },
+      { "id": "d", "text": "The insider used a VPN that bypassed TLS inspection" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "TLS inspection has inherent limitations — it does not detect data hidden through steganography.",
+      "b": "TLS inspection reveals cleartext content — but steganographically hidden data appears as normal pixel data in images. Standard DLP patterns do not match binary data hidden in image files. This is the correct answer.",
+      "c": "TLS inspection can apply to email traffic — but the limitation is detection capability for steganography, not scope.",
+      "d": "The scenario describes email through normal channels — VPN is not mentioned as a factor."
+    }
+  },
+  {
+    "id": 125,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Tokenization",
+    "difficulty": "easy",
+    "text": "What is tokenization and how does it protect sensitive data?",
+    "answers": [
+      { "id": "a", "text": "Tokenization encrypts sensitive data and stores the encrypted value in place of the original" },
+      { "id": "b", "text": "Tokenization replaces sensitive data (such as a credit card number) with a non-sensitive placeholder (token) that has no meaningful relationship to the original value — the actual sensitive data is stored securely in a token vault, and the token can be used in systems that previously handled the sensitive data without exposing it" },
+      { "id": "c", "text": "Tokenization is a method of compressing data to reduce storage requirements" },
+      { "id": "d", "text": "Tokenization applies a one-way hash to data, making it irreversible" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Encryption transforms data using a mathematical function — tokenization substitutes with a random placeholder with no mathematical relationship to the original.",
+      "b": "Tokenization substitutes sensitive data with a random token — the token has no value if stolen because there is no algorithmic way to derive the original data from it. The mapping is maintained in a secure vault. This is the correct answer.",
+      "c": "Tokenization does not compress data — it substitutes sensitive values with non-sensitive placeholders.",
+      "d": "Hashing is a one-way cryptographic operation — tokenization is reversible (via the vault) but uses random substitution rather than cryptographic transformation."
+    }
+  },
+  {
+    "id": 126,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Tokenization",
+    "difficulty": "medium",
+    "text": "A retailer tokenizes credit card numbers — replacing the 16-digit PAN with a random token. The token vault is breached, exposing the token-to-PAN mapping for all customers. What is the security impact?",
+    "answers": [
+      { "id": "a", "text": "No impact — tokens are useless without the original card numbers" },
+      { "id": "b", "text": "Critical impact — the token vault breach exposes the complete token-to-PAN mapping, effectively reversing the tokenization and exposing all customer credit card numbers. The token vault is the most security-critical component of a tokenization system — its compromise nullifies all tokenization protection" },
+      { "id": "c", "text": "Minimal impact — tokens can be reissued without customer disruption" },
+      { "id": "d", "text": "Moderate impact — only tokens used in the last 30 days are exposed" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The token vault IS the mapping between tokens and original data — its breach allows de-tokenization of all records.",
+      "b": "The token vault breach is catastrophic — it exposes the mapping that makes tokenization reversible, effectively exposing all credit card numbers that were tokenized. This illustrates that token vault security is paramount. This is the correct answer.",
+      "c": "Reissuing tokens does not help if the current mapping is already exposed — all historical PANs are already compromised.",
+      "d": "The token-to-PAN mapping persists for all records in the vault — not limited to recent tokens."
+    }
+  },
+  {
+    "id": 127,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Tokenization",
+    "difficulty": "hard",
+    "text": "A payment application stores credit card tokens instead of PANs. The application must still show the last 4 digits of the card for user recognition. What tokenization approach preserves this functionality while protecting the full PAN?",
+    "answers": [
+      { "id": "a", "text": "Store the full PAN alongside the token so the application can display the last 4 digits" },
+      { "id": "b", "text": "Use format-preserving tokenization — the token retains the original data format (16 digits) and the last 4 digits are preserved in the token as readable digits while the first 12 are replaced with random values. This enables user recognition without storing the sensitive full PAN" },
+      { "id": "c", "text": "Display a different card's last 4 digits — users cannot tell the difference" },
+      { "id": "d", "text": "The application must choose between tokenization and displaying last 4 digits — both cannot be achieved simultaneously" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Storing the full PAN alongside the token negates tokenization's purpose — the PAN is still exposed.",
+      "b": "Format-preserving tokenization (FPT) allows specific digits to be preserved (like the last 4) while tokenizing the rest — PCI DSS permits display of the last 4 digits, and FPT enables this while protecting the full PAN. This is the correct answer.",
+      "c": "Displaying incorrect card digits would mislead users — this is fraudulent and unacceptable.",
+      "d": "Format-preserving tokenization specifically enables both simultaneously — this limitation does not exist with proper tokenization techniques."
+    }
+  },
+  {
+    "id": 128,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Tokenization",
+    "difficulty": "hard",
+    "text": "A security architect compares tokenization vs. encryption for protecting a database of Social Security Numbers. For a use case where SSNs never need to be retrieved in their original form (only to verify that two records have the same SSN), which approach is MOST appropriate?",
+    "answers": [
+      { "id": "a", "text": "Tokenization — it is always better than encryption" },
+      { "id": "b", "text": "For this use case — where the original value never needs to be recovered but equality checking is needed — deterministic encryption or hashing with a secret key (HMAC) is most appropriate. Tokenization can work but requires a vault lookup for comparison. Hashing with consistent salt allows equality comparison without storing a vault mapping or the ability to reverse to the original SSN" },
+      { "id": "c", "text": "Plaintext storage is acceptable since SSNs are needed for comparison" },
+      { "id": "d", "text": "Encryption is always better than tokenization for databases" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Tokenization is not universally superior — the appropriate choice depends on the specific use case.",
+      "b": "When original value recovery is never needed and equality comparison is sufficient, deterministic hashing (HMAC with consistent input) or deterministic encryption provides equality checking without reversibility or vault dependency — more elegant for this specific use case. This is the correct answer.",
+      "c": "Plaintext SSN storage violates data protection principles — SSNs are sensitive data requiring protection.",
+      "d": "The optimal choice depends on use case — neither is universally superior."
+    }
+  },
+  {
+    "id": 129,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Data masking",
+    "difficulty": "easy",
+    "text": "What is data masking and what is its PRIMARY security purpose?",
+    "answers": [
+      { "id": "a", "text": "Data masking encrypts sensitive data before storing it in a database" },
+      { "id": "b", "text": "Data masking replaces sensitive data with realistic-looking but fake values — such as replacing real customer names, SSNs, or credit card numbers with plausible substitute data — enabling development, testing, and analytics without exposing real sensitive information" },
+      { "id": "c", "text": "Data masking applies a hash to sensitive fields making them irreversible" },
+      { "id": "d", "text": "Data masking prevents unauthorized users from viewing database tables" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Encryption scrambles data using cryptographic functions — masking replaces data with fake but realistic substitutes.",
+      "b": "Data masking substitutes real sensitive values with synthetic equivalents that maintain the same format and relational properties — allowing realistic application testing and analytics without exposing actual sensitive data. This is the correct answer.",
+      "c": "Hashing is a one-way function — masking is typically reversible or uses substitution that maintains data structure.",
+      "d": "Access control restricts who can view tables — masking modifies the data content visible to authorized users."
+    }
+  },
+  {
+    "id": 130,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Data masking",
+    "difficulty": "medium",
+    "text": "A healthcare developer needs production-like patient data to test a new application. The organization uses dynamic data masking. How does dynamic data masking differ from static data masking in this scenario?",
+    "answers": [
+      { "id": "a", "text": "Dynamic and static data masking are identical — both replace data before the developer accesses it" },
+      { "id": "b", "text": "Static masking creates a separate masked copy of the database for development use — the original data remains unchanged. Dynamic masking applies masking rules in real time at query time — unauthorized users see masked values from the live database while authorized users see real values, all from the same database without creating copies" },
+      { "id": "c", "text": "Dynamic masking is less secure than static masking" },
+      { "id": "d", "text": "Static masking can only be applied to text fields while dynamic masking works for all data types" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Static and dynamic masking are fundamentally different approaches with different operational characteristics.",
+      "b": "Static masking creates a separate masked dataset for development (original data untouched). Dynamic masking masks data in real time at the query layer — the same production database serves different views based on user permissions. This is the correct answer.",
+      "c": "Dynamic masking provides equivalent data protection — the security model differs but neither is inherently less secure.",
+      "d": "Both types support various data types — this limitation does not exist."
+    }
+  },
+  {
+    "id": 131,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Data masking",
+    "difficulty": "hard",
+    "text": "A data analyst receives a masked dataset for analytics. The dataset masks names and SSNs but retains ZIP codes, birth dates, and medical conditions. A researcher discovers they can re-identify 87% of records by combining these three fields. What type of privacy attack does this represent?",
+    "answers": [
+      { "id": "a", "text": "SQL injection — the analyst is querying the database directly" },
+      { "id": "b", "text": "Re-identification or de-anonymization — combining quasi-identifiers (ZIP code + birth date + condition) that individually seem non-sensitive can uniquely identify specific individuals. This demonstrates that effective data masking must consider the combination of retained fields, not just mask obviously identifying fields" },
+      { "id": "c", "text": "Man-in-the-middle — the analyst is intercepting data in transit" },
+      { "id": "d", "text": "Brute force — the analyst is guessing individual identities" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "No SQL injection is involved — the analyst is using legitimately provided data.",
+      "b": "Latanya Sweeney's famous research showed that ZIP code, birth date, and sex uniquely identify 87% of US residents. This is a re-identification attack on improperly anonymized data — masking only direct identifiers is insufficient. This is the correct answer.",
+      "c": "No network interception is involved — the attack uses the provided dataset directly.",
+      "d": "No guessing is needed — the combination of quasi-identifiers provides unique identification."
+    }
+  },
+  {
+    "id": 132,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Data masking",
+    "difficulty": "hard",
+    "text": "An organization implements data masking for customer data shared with a third-party analytics partner. The masking algorithm is deterministic — the same input always produces the same masked output. A security reviewer flags this as a risk. Why?",
+    "answers": [
+      { "id": "a", "text": "Deterministic masking is always more secure than random masking" },
+      { "id": "b", "text": "Deterministic masking enables linkage attacks — if the analytics partner also receives masked data from a different source using the same deterministic masking, identical masked values across datasets reveal that they represent the same individual, enabling re-identification without ever knowing the original value. Random (non-deterministic) masking prevents this cross-dataset linking" },
+      { "id": "c", "text": "Deterministic masking violates GDPR automatically" },
+      { "id": "d", "text": "The security reviewer is incorrect — deterministic masking is required for analytics" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Deterministic masking enables dataset linkage — random masking provides better privacy protection for cross-dataset scenarios.",
+      "b": "Deterministic masking's consistency enables dataset linking — the same person masked the same way in two datasets allows correlation without de-masking. Random masking prevents this at the cost of cross-dataset comparison capability. This is the correct answer.",
+      "c": "Deterministic masking compliance with GDPR depends on the overall implementation — it is not automatically non-compliant.",
+      "d": "Analytics can often work with non-deterministic masking — and when cross-dataset linking is needed, privacy-preserving techniques like differential privacy may be more appropriate."
+    }
+  },
+  {
+    "id": 133,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Hashing",
+    "difficulty": "easy",
+    "text": "What is the PRIMARY security property that makes cryptographic hashing useful for verifying data integrity?",
+    "answers": [
+      { "id": "a", "text": "Hashes are reversible, allowing recovery of the original data if needed" },
+      { "id": "b", "text": "A cryptographic hash function produces a fixed-size digest from input data where any change to the input — even a single bit — produces a completely different hash. This deterministic, collision-resistant one-way function enables verification that data has not been modified" },
+      { "id": "c", "text": "Hashes encrypt data during transmission to prevent eavesdropping" },
+      { "id": "d", "text": "Hashes compress large files to reduce storage requirements" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cryptographic hashes are one-way — they cannot be reversed to recover the original input.",
+      "b": "The avalanche effect (tiny input changes cause dramatically different hashes) and collision resistance make hashes valuable for integrity verification — comparing hashes before and after confirms data has not changed. This is the correct answer.",
+      "c": "Hashing does not encrypt — it creates a fixed-size fingerprint. Encryption is a separate process.",
+      "d": "Hashes do not compress data — the hash digest is fixed-size regardless of input size and is used for verification, not storage."
+    }
+  },
+  {
+    "id": 134,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Hashing",
+    "difficulty": "medium",
+    "text": "A password database stores SHA-256 hashes of user passwords. An attacker obtains the database and uses a rainbow table containing precomputed SHA-256 hashes of common passwords. Many passwords are cracked quickly. What does this demonstrate about using unsalted hashing for password storage?",
+    "answers": [
+      { "id": "a", "text": "SHA-256 is too weak for password hashing — MD5 would be more secure" },
+      { "id": "b", "text": "Unsalted hashing is vulnerable to rainbow table attacks — precomputed hash tables allow attackers to crack many passwords instantly without per-password computation. Each password hash for a common password is identical across all users using that password, enabling batch cracking. Salt (per-user random value) makes rainbow tables ineffective" },
+      { "id": "c", "text": "The database was not encrypted — encryption would have prevented the rainbow table attack" },
+      { "id": "d", "text": "SHA-256 is completely broken — bcrypt would also be cracked by rainbow tables" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "SHA-256 is stronger than MD5 — but neither is appropriate for password hashing without salting. Purpose-built password hashing functions (bcrypt, Argon2) are recommended.",
+      "b": "Rainbow tables precompute hashes of common passwords — without salt, identical passwords produce identical hashes making rainbow tables effective. Salt uniquifies each hash, defeating precomputed table attacks. This is the correct answer.",
+      "c": "Database encryption protects against physical access — but an attacker with database credentials can query the hashes. Rainbow tables work on the hashes themselves.",
+      "d": "bcrypt includes per-user salting by design — rainbow tables are not effective against salted hashes."
+    }
+  },
+  {
+    "id": 135,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Hashing",
+    "difficulty": "hard",
+    "text": "Two different files produce the same MD5 hash — a known MD5 collision. What security implication does this have for systems using MD5 for file integrity verification?",
+    "answers": [
+      { "id": "a", "text": "A single collision makes MD5 unusable for any purpose" },
+      { "id": "b", "text": "MD5 collision vulnerability means an attacker can craft a malicious file that produces the same hash as a legitimate file — if the integrity check only compares MD5 hashes, the malicious file will pass verification. Any system using MD5 for security-critical integrity verification should migrate to SHA-256 or SHA-3. MD5 is still acceptable for checksums where collision attacks are not a threat model concern" },
+      { "id": "c", "text": "MD5 collisions are theoretical and have never been demonstrated in practice" },
+      { "id": "d", "text": "File size differences would always distinguish the colliding files" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "MD5 remains useful for non-security purposes like checksums — it is unsuitable for security-critical integrity verification where collision attacks are a concern.",
+      "b": "Practical MD5 collision attacks exist — chosen-prefix collision attacks allow crafting malicious files with matching hashes. Security-critical integrity checks must use collision-resistant algorithms like SHA-256. This is the correct answer.",
+      "c": "MD5 collisions have been practically demonstrated — the Flame malware exploited MD5 collision attacks against Microsoft certificates.",
+      "d": "Collision attacks can produce files of the same size — file size comparison does not resolve MD5 collision attacks."
+    }
+  },
+  {
+    "id": 136,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Hashing",
+    "difficulty": "hard",
+    "text": "A software vendor distributes software updates and publishes SHA-256 hashes on their website. An attacker compromises both the download server (replacing software with malware) and the website (updating the published hash to match the malware). How does this attack succeed despite hash verification?",
+    "answers": [
+      { "id": "a", "text": "This attack is impossible — hash verification always detects tampered software" },
+      { "id": "b", "text": "The attack succeeds because hash verification only proves the downloaded file matches the published hash — if both the file and hash are controlled by the attacker (by compromising both sources), verification passes for the malicious file. Hash integrity is only meaningful if the hash is obtained from an independent, trusted source (e.g., signed with the vendor's private key and verified against a trusted certificate)" },
+      { "id": "c", "text": "SHA-256 is weak enough that attackers can generate matching hashes for arbitrary files" },
+      { "id": "d", "text": "The attacker must know the original file to compute a matching SHA-256 hash" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Hash verification fails when both the file and hash reference are compromised — the comparison is between two attacker-controlled values.",
+      "b": "Hash verification provides integrity of the file relative to the published hash — if the hash publication is also compromised, the verification is meaningless. Code signing with trusted certificates (independent of the distribution channel) addresses this by enabling hash verification against a trusted, unforgeable signature. This is the correct answer.",
+      "c": "SHA-256 is computationally infeasible to break — the attack works by replacing both file and hash, not by computing a collision.",
+      "d": "The attacker replaced the file with malware and computed the correct SHA-256 hash of the malware — no knowledge of the original file is needed."
+    }
+  },
+  {
+    "id": 137,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Salting",
+    "difficulty": "easy",
+    "text": "What is salting in the context of cryptographic password storage?",
+    "answers": [
+      { "id": "a", "text": "Salting adds encryption to the hash process to make it reversible" },
+      { "id": "b", "text": "Salting adds a random, unique value to each password before hashing — ensuring that even if two users have the same password, their stored hashes are different, and precomputed rainbow table attacks are defeated because the tables would need to include the unique salt" },
+      { "id": "c", "text": "Salting applies multiple rounds of hashing to slow down brute force attacks" },
+      { "id": "d", "text": "Salting encrypts the hash value after it is generated" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Salt does not make hashing reversible — it is a random value added to the input before hashing.",
+      "b": "Salt uniquifies password hashes — even identical passwords produce different hashes when different random salts are applied. This defeats rainbow tables (which would need to precompute hashes for every salt value) and prevents attackers from cracking multiple identical passwords simultaneously. This is the correct answer.",
+      "c": "Multiple rounds of hashing describes key stretching (work factor) — salting is about uniquification, not computational expense.",
+      "d": "Salt is added to the input before hashing — it does not encrypt the hash output."
+    }
+  },
+  {
+    "id": 138,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Salting",
+    "difficulty": "medium",
+    "text": "A developer stores all user password hashes with the same static salt value: 'app_salt_123'. Why is a static, shared salt fundamentally less secure than per-user random salts?",
+    "answers": [
+      { "id": "a", "text": "A static salt is equivalent to no salt — rainbow tables can simply include the static salt in their precomputation and crack all passwords simultaneously" },
+      { "id": "b", "text": "A static shared salt is significantly better than no salt, but loses two key benefits: users with the same password still have the same hash (enabling batch cracking), and an attacker who knows the static salt (through code review or database access) can build a custom rainbow table incorporating that specific salt, cracking all passwords simultaneously. Per-user random salts require per-hash brute force, eliminating batch attacks" },
+      { "id": "c", "text": "Static salts are preferred — they simplify salt management without security trade-offs" },
+      { "id": "d", "text": "A static salt is only a problem if it is stored in the database with the hashes" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A static salt still requires knowing the salt value to build the rainbow table — it is not equivalent to no salt, but provides much less protection than per-user salts.",
+      "b": "Static salt partially defeats rainbow tables (tables must include the specific salt) but still allows batch attacks (all users with the same password have the same hash) and custom table attacks (once the static salt is known, all passwords are equally vulnerable). Per-user salts require individually attacking each hash. This is the correct answer.",
+      "c": "Static salts sacrifice the per-user uniquification benefit — the security trade-off is significant.",
+      "d": "The attacker learns the static salt from any source — including source code, configuration files, or leaked hash analysis."
+    }
+  },
+  {
+    "id": 139,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Salting",
+    "difficulty": "hard",
+    "text": "A security team inherits a password database where salts are stored alongside hashes in the same table. A junior analyst argues that storing salts in the database defeats their purpose. Is this argument valid?",
+    "answers": [
+      { "id": "a", "text": "Yes — salts must be kept secret to be effective" },
+      { "id": "b", "text": "No — salts do not need to be secret to be effective. Their purpose is uniquification: ensuring identical passwords produce different hashes, preventing precomputed rainbow table attacks, and requiring individual per-hash brute force. Even if an attacker knows a user's salt, they must still brute force that specific hash individually. Storing salts alongside hashes is standard and correct practice" },
+      { "id": "c", "text": "Yes — salts should be stored in a separate secret database inaccessible to applications" },
+      { "id": "d", "text": "Salts must be stored in the hash value itself using a fixed prefix format" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Salts are not secrets — they serve a different function than secret keys.",
+      "b": "Salt's security value comes from uniquification, not secrecy. Even with salt knowledge, an attacker must brute force each hash individually with that specific salt — they cannot use precomputed tables or batch-crack identical passwords. Storing salts with hashes is standard practice in all major hashing implementations. This is the correct answer.",
+      "c": "Separate salt storage creates operational complexity with no security benefit — applications legitimately need the salt to verify passwords.",
+      "d": "Many hashing implementations (like bcrypt) do include the salt in the stored hash string — this is correct behavior, not a security problem."
+    }
+  },
+  {
+    "id": 140,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Salting",
+    "difficulty": "hard",
+    "text": "An organization migrates from SHA-256 + salt to Argon2id for password hashing. During migration, existing users' passwords are rehashed when they next log in. Users who haven't logged in after 6 months still have SHA-256 hashes. What is the security risk of this hybrid state?",
+    "answers": [
+      { "id": "a", "text": "No risk — SHA-256 with salt is fully secure" },
+      { "id": "b", "text": "SHA-256 is not a password hashing algorithm — it lacks the computational work factor needed to resist GPU-accelerated brute force. Users with SHA-256 hashes (even salted) can have their passwords cracked orders of magnitude faster than Argon2id hashes. The 6-month hybrid state means inactive users remain at greater risk. Proactive migration (forced password reset for inactive users) closes this gap" },
+      { "id": "c", "text": "Argon2id is less secure than SHA-256 — the migration is making things worse" },
+      { "id": "d", "text": "The hybrid state is permanent since some users will never log in" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "SHA-256 lacks computational work factor — modern GPUs can compute billions of SHA-256 hashes per second, making salted SHA-256 insufficient for password protection against well-resourced attackers.",
+      "b": "Password hashing algorithms (bcrypt, Argon2, scrypt) are designed to be computationally expensive — resisting GPU-accelerated brute force. SHA-256 was designed to be fast, making it poor for password hashing. Users with old hashes are at greater risk. This is the correct answer.",
+      "c": "Argon2id is specifically designed for password hashing and is more secure than SHA-256 for this purpose.",
+      "d": "Forced password reset for long-inactive accounts resolves the hybrid state — a defined policy for inactive account remediation is appropriate."
+    }
+  },
+  {
+    "id": 141,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Digital signatures",
+    "difficulty": "easy",
+    "text": "When a sender digitally signs a document, which key is used to create the signature and which key verifies it?",
+    "answers": [
+      { "id": "a", "text": "The sender's public key creates the signature; the sender's private key verifies it" },
+      { "id": "b", "text": "The sender's private key creates the signature; the sender's public key verifies it — the private key is unique to the sender, so only they can create a valid signature, while anyone with the public key can verify it" },
+      { "id": "c", "text": "The recipient's public key creates the signature; the recipient's private key verifies it" },
+      { "id": "d", "text": "A shared symmetric key creates and verifies the signature" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "This reverses the correct usage — the private key signs (proving identity), the public key verifies (anyone can check).",
+      "b": "Digital signature process: sender hashes the document, encrypts the hash with their private key (signature), recipient decrypts with sender's public key and compares hashes. Private key signing proves identity; public key verification enables anyone to confirm. This is the correct answer.",
+      "c": "The recipient's keys are used for encryption of messages to them — digital signatures use the sender's key pair.",
+      "d": "Symmetric keys create HMACs (message authentication codes) — digital signatures use asymmetric key pairs."
+    }
+  },
+  {
+    "id": 142,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Digital signatures",
+    "difficulty": "medium",
+    "text": "A digital signature is verified as valid, but the document was modified after signing and re-signed by a different party. How does the verification process detect or fail to detect this?",
+    "answers": [
+      { "id": "a", "text": "Digital signatures are unbreakable — modifications cannot occur after signing" },
+      { "id": "b", "text": "If the document was modified and re-signed by the different party, verification with that party's public key would succeed for their signature — the signature is valid but belongs to the wrong party. The recipient must verify that the signature belongs to the expected signer by checking the certificate and chain of trust, not just that a valid signature exists" },
+      { "id": "c", "text": "Modifying a signed document automatically invalidates all signatures on it" },
+      { "id": "d", "text": "Any valid signature is sufficient — the identity of the signer is irrelevant" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Documents can be modified and re-signed by others — digital signatures protect against undetected modification by a specific signer.",
+      "b": "Signature validity depends on both the cryptographic validity AND the identity of the signer. A valid signature from an unexpected party indicates the document was tampered with and re-signed. Recipients must verify signer identity against expected parties. This is the correct answer.",
+      "c": "Modifying and re-signing creates a new valid signature for the modified content — automatic invalidation only occurs if the original signature is checked against the modified content.",
+      "d": "Signer identity is the primary security value of digital signatures — non-repudiation requires knowing specifically who signed."
+    }
+  },
+  {
+    "id": 143,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Digital signatures",
+    "difficulty": "hard",
+    "text": "A code signing certificate expires while software signed with it is already deployed. A user's system tries to verify the signature on software downloaded today. The signature was created 2 years ago when the certificate was valid. Does the signature verify successfully?",
+    "answers": [
+      { "id": "a", "text": "No — expired certificates always cause verification failure" },
+      { "id": "b", "text": "It depends on the validation model: under shell model validation, the certificate must be valid at verification time — expired certificates fail. Under chain model (with timestamp), if the signature includes a trusted timestamp proving it was created while the certificate was valid, verification can succeed despite expiration. Windows Authenticode uses this model — software signed before expiry with a timestamp remains verifiable" },
+      { "id": "c", "text": "Yes — certificate expiration never affects signature verification" },
+      { "id": "d", "text": "The system should automatically renew the certificate and re-verify" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "With timestamps, signatures created before expiration can remain verifiable — blanket failure is not always correct.",
+      "b": "Timestamp authority support is the key factor — RFC 3161 timestamps record that the signature existed when the certificate was valid, enabling post-expiration verification. This is standard practice for code signing. This is the correct answer.",
+      "c": "Without timestamps, expired certificates do cause verification failure — the model matters.",
+      "d": "Systems do not automatically renew signing certificates — the signer must manage certificate lifecycle."
+    }
+  },
+  {
+    "id": 144,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Digital signatures",
+    "difficulty": "hard",
+    "text": "A developer signs application code with a certificate issued to 'ACME Corp' but the application is actually owned by 'Contoso Ltd'. Users see 'Publisher: ACME Corp' during installation. What security risk does this create?",
+    "answers": [
+      { "id": "a", "text": "No risk — the code is still signed and therefore safe" },
+      { "id": "b", "text": "Misleading publisher identity creates social engineering risk and breaks the trust chain — users see a different company name than expected, potentially causing them to accept or reject software incorrectly. More critically, if ACME Corp's certificate is compromised or revoked for unrelated reasons, Contoso's legitimate software loses its trusted signature. Publisher identity should match the actual software owner" },
+      { "id": "c", "text": "This is acceptable practice since any valid signature provides integrity" },
+      { "id": "d", "text": "The risk is only aesthetic — users rarely check publisher names" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A valid signature proves integrity and identifies the signer — but the identity must be correct for trust to be meaningful.",
+      "b": "Incorrect publisher identity undermines the identity assurance value of code signing — users make trust decisions based on publisher identity. Cross-company certificate usage also creates dependency on another company's certificate management. This is the correct answer.",
+      "c": "Integrity is one dimension — authenticity (verifying the correct party signed) is equally important.",
+      "d": "Users and automated security systems check publisher names for trust decisions — incorrect identity has real security implications."
+    }
+  },
+  {
+    "id": 145,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Key stretching",
+    "difficulty": "easy",
+    "text": "What is key stretching and why is it used for password-based key derivation?",
+    "answers": [
+      { "id": "a", "text": "Key stretching increases the key length from 128 bits to 256 bits for stronger encryption" },
+      { "id": "b", "text": "Key stretching applies a computationally expensive function to a password (or low-entropy key) many times — increasing the time required to test each password guess and making brute force attacks much slower without affecting legitimate users who enter their password once" },
+      { "id": "c", "text": "Key stretching makes encryption keys longer by padding them with random bits" },
+      { "id": "d", "text": "Key stretching converts symmetric keys into asymmetric key pairs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Key stretching addresses computational cost, not key length extension.",
+      "b": "Key stretching (PBKDF2, bcrypt, Argon2) applies many iterations of a hash or other computationally expensive process — making each password guess expensive. An attacker testing millions of passwords per second with GPU hardware is slowed to thousands or fewer per second. This is the correct answer.",
+      "c": "Padding keys with random bits is not key stretching — stretching applies computational work to make guessing expensive.",
+      "d": "Key stretching does not convert between key types — it adds computational cost to password-based key derivation."
+    }
+  },
+  {
+    "id": 146,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Key stretching",
+    "difficulty": "medium",
+    "text": "PBKDF2 is configured with 100,000 iterations. An attacker's GPU can compute SHA-256 at 10 billion hashes per second. With PBKDF2-SHA256 at 100,000 iterations, approximately how many password attempts can the attacker test per second?",
+    "answers": [
+      { "id": "a", "text": "10 billion per second — PBKDF2 does not significantly reduce cracking speed" },
+      { "id": "b", "text": "Approximately 100,000 per second (10,000,000,000 / 100,000 = 100,000) — each password attempt requires 100,000 SHA-256 operations, reducing the attacker's throughput by a factor of 100,000. This makes brute force significantly slower while only minimally impacting legitimate users who verify once" },
+      { "id": "c", "text": "Zero — PBKDF2 makes password cracking computationally impossible" },
+      { "id": "d", "text": "1 billion per second — PBKDF2 reduces cracking speed by only 10x" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "PBKDF2 with 100,000 iterations reduces throughput by exactly 100,000x — the primary security mechanism.",
+      "b": "10B SHA-256/second ÷ 100,000 iterations = 100,000 PBKDF2-SHA256 attempts per second. Key stretching slows brute force by the iteration count factor. This is the correct answer.",
+      "c": "Key stretching makes attacks much slower, not impossible — sufficiently weak passwords can still be cracked, just more slowly.",
+      "d": "100,000 iterations reduces speed by 100,000x — not 10x."
+    }
+  },
+  {
+    "id": 147,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Key stretching",
+    "difficulty": "hard",
+    "text": "An organization must choose between PBKDF2, bcrypt, and Argon2id for password hashing. Argon2id won the Password Hashing Competition. What specific advantage does Argon2id provide over PBKDF2 and bcrypt that makes it preferred for new implementations?",
+    "answers": [
+      { "id": "a", "text": "Argon2id is faster — faster hashing means better user experience" },
+      { "id": "b", "text": "Argon2id supports memory-hardness parameters — requiring configurable amounts of RAM per hash computation. PBKDF2 is purely CPU-intensive (attackers can parallelize efficiently with GPUs). bcrypt has limited memory requirements. Argon2id's memory-hardness means GPU attackers need large amounts of RAM per parallel computation, significantly limiting parallelization and making GPU-accelerated attacks less effective" },
+      { "id": "c", "text": "Argon2id uses longer hash outputs — larger hashes are more secure" },
+      { "id": "d", "text": "Argon2id is a symmetric cipher — it provides both hashing and encryption" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Faster hashing is a disadvantage for password hashing — each password check being faster means attackers can check more passwords per second.",
+      "b": "Memory-hardness is Argon2id's key advantage — GPU attacks require large RAM allocations per parallel thread, limiting the parallelization that makes GPU attacks devastating against CPU-only password hashing functions. This is the correct answer.",
+      "c": "Hash output length is configurable in all three — this is not Argon2id's differentiating feature.",
+      "d": "Argon2id is a key derivation function (password hashing function) — not a symmetric cipher."
+    }
+  },
+  {
+    "id": 148,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Key stretching",
+    "difficulty": "hard",
+    "text": "A legacy system uses 1,000 PBKDF2 iterations for password hashing (configured in 2010). Hardware performance has increased 100-fold since then. What is the security implication and recommended response?",
+    "answers": [
+      { "id": "a", "text": "The 1,000 iteration count remains appropriate since the algorithm is the same" },
+      { "id": "b", "text": "Hardware improvement directly undermines key stretching security — what required 1 second to brute force in 2010 now takes 10 milliseconds. The iteration count should be increased to maintain equivalent brute force resistance, targeting approximately 100,000+ iterations with modern hardware. Existing hashes should be updated when users next authenticate — a migration path similar to the algorithm upgrade scenario" },
+      { "id": "c", "text": "The algorithm should be replaced — iteration counts cannot be changed in deployed systems" },
+      { "id": "d", "text": "Adding more characters to the salt will compensate for the reduced iteration security" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The algorithm is the same but hardware performance makes low iteration counts increasingly vulnerable — the iteration count must scale with hardware.",
+      "b": "Key stretching security is directly proportional to computational cost relative to attacker hardware. Iteration counts must increase as hardware improves to maintain equivalent protection. Updating hashes on next login is the standard migration approach. This is the correct answer.",
+      "c": "Iteration counts can be changed — the system stores the count alongside the hash and uses it for verification. Progressive migration on login is standard.",
+      "d": "Longer salt uniquifies hashes — it does not increase the computational cost per guess. Only iteration count increases the brute force resistance."
+    }
+  },
+  {
+    "id": 149,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Blockchain",
+    "difficulty": "easy",
+    "text": "What security property does blockchain technology provide through its linked-block structure?",
+    "answers": [
+      { "id": "a", "text": "Blockchain encrypts all transactions making them confidential" },
+      { "id": "b", "text": "Blockchain provides immutability and tamper evidence — each block contains a cryptographic hash of the previous block. Modifying any historical block would invalidate all subsequent blocks' hashes, making unauthorized modification immediately detectable by the network" },
+      { "id": "c", "text": "Blockchain provides anonymity — transactions cannot be traced to individuals" },
+      { "id": "d", "text": "Blockchain prevents all double-spending through centralized transaction validation" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Most blockchain implementations (like Bitcoin) are publicly transparent — transactions are visible. Confidentiality is not blockchain's primary security property.",
+      "b": "The hash-linked chain provides integrity and tamper evidence — modifying a historical record changes its hash, which cascades through all subsequent blocks. The distributed network rejects chains that don't match the accepted ledger. This is the correct answer.",
+      "c": "Most public blockchains are pseudonymous at best — transactions are publicly visible and can often be de-anonymized.",
+      "d": "Decentralized consensus, not central validation, is the blockchain model for preventing double-spending."
+    }
+  },
+  {
+    "id": 150,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Blockchain",
+    "difficulty": "medium",
+    "text": "An organization considers using a blockchain to maintain an audit log of privileged administrator actions. What security advantage does blockchain provide over a traditional centralized audit log database?",
+    "answers": [
+      { "id": "a", "text": "Blockchain audit logs are faster to query than traditional databases" },
+      { "id": "b", "text": "A centralized audit log can be modified by an administrator with database access — including the very administrators being audited. A blockchain distributed across multiple nodes makes modification by any single party (including privileged admins) computationally infeasible without consensus of the network, providing stronger tamper resistance for audit records" },
+      { "id": "c", "text": "Blockchain logs require no storage space since they use compression" },
+      { "id": "d", "text": "Blockchain provides real-time alerting when administrators take suspicious actions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Blockchain databases are typically slower than traditional databases for queries — the advantage is tamper resistance, not performance.",
+      "b": "Tamper resistance is the key advantage: a DBA or sysadmin with traditional database access can delete or modify audit records to cover tracks. Blockchain's distributed consensus makes single-party modification infeasible. This is the correct answer.",
+      "c": "Blockchain does not compress data — it stores complete transaction histories which grow continuously.",
+      "d": "Blockchain provides immutable records — not real-time behavioral alerting."
+    }
+  },
+  {
+    "id": 151,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Blockchain",
+    "difficulty": "hard",
+    "text": "A private permissioned blockchain is proposed for supply chain tracking. A security reviewer notes that a 51% attack is a concern. What is a 51% attack and how does the permissioned nature of the blockchain affect this risk?",
+    "answers": [
+      { "id": "a", "text": "A 51% attack is when 51 attackers simultaneously try to access the blockchain" },
+      { "id": "b", "text": "A 51% attack occurs when a single entity controls more than 50% of the network's consensus power (hash power or stake), enabling them to manipulate the ledger by reversing transactions or double-spending. For a permissioned blockchain with a limited, known set of validators, a smaller group of compromised validators could achieve consensus dominance — making validator selection, geographic/organizational distribution, and governance critical security considerations" },
+      { "id": "c", "text": "Private blockchains are immune to 51% attacks by definition" },
+      { "id": "d", "text": "A 51% attack only affects cryptocurrency blockchains — not enterprise blockchains" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A 51% attack is about consensus power percentage — not the number of attackers.",
+      "b": "Consensus majority control allows ledger manipulation. For permissioned blockchains with few validators, compromising a majority of validators is easier than on public blockchains with thousands of nodes. Validator governance and distribution are critical security controls. This is the correct answer.",
+      "c": "Private/permissioned blockchains can face consensus attacks — often more easily than public blockchains due to fewer validators.",
+      "d": "51% attacks affect any blockchain using majority-consensus mechanisms — not limited to cryptocurrency."
+    }
+  },
+  {
+    "id": 152,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Blockchain",
+    "difficulty": "hard",
+    "text": "Smart contracts on a blockchain automatically execute business logic when conditions are met. A smart contract contains a vulnerability that allows an attacker to drain funds. Once deployed to an immutable blockchain, how does this create a unique security challenge?",
+    "answers": [
+      { "id": "a", "text": "Blockchain smart contracts can be patched like traditional software" },
+      { "id": "b", "text": "Blockchain immutability means deployed smart contract code cannot be modified after deployment — the vulnerability cannot be patched in the deployed contract. Mitigations include: deploying a proxy contract pattern that delegates to an upgradeable implementation; pausing contract functionality through a circuit breaker; deploying a new contract and migrating; or accepting the loss and compensating from reserves. This illustrates why rigorous security auditing BEFORE deployment is critical" },
+      { "id": "c", "text": "The blockchain network will automatically reject transactions exploiting the vulnerability" },
+      { "id": "d", "text": "The smart contract can be rolled back by the blockchain administrators" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unlike traditional software, deployed smart contract bytecode is immutable — patching requires deploying new contracts.",
+      "b": "Blockchain immutability creates unique challenges for security remediation — the deployed vulnerable code cannot be modified. Pre-deployment auditing is critical; post-deployment options are limited and complex. This is the correct answer.",
+      "c": "Blockchains execute valid transactions — they do not semantically validate smart contract logic for correctness.",
+      "d": "Blockchain design explicitly prevents administrative rollback — immutability is a core feature, not a bug to be overridden."
+    }
+  },
+  {
+    "id": 153,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Certificate Authorities",
+    "difficulty": "easy",
+    "text": "What is the role of a Certificate Authority (CA) in a PKI?",
+    "answers": [
+      { "id": "a", "text": "A CA generates encryption keys for all users in an organization" },
+      { "id": "b", "text": "A CA is a trusted entity that issues, signs, and manages digital certificates — binding public keys to verified identities. By signing a certificate with its private key, the CA vouches that the certificate holder is who they claim to be, allowing relying parties who trust the CA to trust the certificate" },
+      { "id": "c", "text": "A CA encrypts communications between users and servers" },
+      { "id": "d", "text": "A CA is a backup system for storing private keys" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Users generate their own key pairs and submit the public key to the CA for certification — the CA does not generate user keys.",
+      "b": "The CA is the trust anchor — it verifies identities and binds verified identities to public keys through signed certificates. Trust in the CA extends trust to all certificates it issues. This is the correct answer.",
+      "c": "Communications encryption uses the certificates issued by the CA — the CA itself does not perform the encryption.",
+      "d": "Key escrow (private key backup) is a separate function — CAs issue and sign certificates, not store private keys."
+    }
+  },
+  {
+    "id": 154,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Certificate Authorities",
+    "difficulty": "medium",
+    "text": "A website uses a certificate issued by a CA that is trusted by all major browsers. The CA's root certificate is removed from all browsers' trusted root stores due to policy violations. What happens to all websites using certificates from this CA?",
+    "answers": [
+      { "id": "a", "text": "The websites continue to work normally — individual certificates are not affected by CA trust changes" },
+      { "id": "b", "text": "Browsers will display certificate error warnings for all sites using certificates issued by the untrusted CA — the entire trust chain fails because the CA's root certificate is no longer trusted. All affected websites must obtain new certificates from a trusted CA to restore secure operation" },
+      { "id": "c", "text": "Only expired certificates from the removed CA are affected" },
+      { "id": "d", "text": "The websites can continue using their certificates if they add the CA's root to their server configuration" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Individual certificates are trusted only because their issuing CA is trusted — removing CA trust invalidates all issued certificates.",
+      "b": "Trust in certificates derives from trust in the issuing CA. Removing a root CA from the trust store causes all certificates in its chain to fail validation — browsers display error warnings and secure connections fail. This is the correct answer.",
+      "c": "Certificate expiry and CA trust removal are independent events — CA distrust affects all certificates from that CA regardless of expiry.",
+      "d": "Server-side configuration cannot override browser trust stores — CA trust decisions are controlled by browser and OS vendors."
+    }
+  },
+  {
+    "id": 155,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Certificate Authorities",
+    "difficulty": "hard",
+    "text": "A certificate transparency (CT) log reveals that a CA issued a certificate for 'google.com' to an organization that does not own google.com. This is discovered within hours. What process allows this rapid detection and what action follows?",
+    "answers": [
+      { "id": "a", "text": "Only Google's security team can detect fraudulent certificates for google.com" },
+      { "id": "b", "text": "Certificate Transparency logs are public, append-only logs of all issued certificates — domain owners and monitoring services actively watch CT logs for unauthorized certificate issuance for their domains. Once detected, the fraudulent certificate is revoked by the CA, the CA may face audit and potential trust removal, and the incident is investigated to understand how the mis-issuance occurred (compromised RA, social engineering, etc.)" },
+      { "id": "c", "text": "Certificate Transparency logs are only checked during TLS handshakes — not monitored continuously" },
+      { "id": "d", "text": "A fraudulent certificate for google.com would not function because browsers require additional authentication" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "CT monitoring can be performed by anyone — many security services and the affected domain owners monitor CT logs.",
+      "b": "CT logs enable rapid detection of mis-issued certificates — the response involves revocation, CA audit, and investigation. This illustrates CT's value as a detection mechanism for CA mis-issuance. This is the correct answer.",
+      "c": "CT logs are monitored continuously by domain owners and monitoring services — not just during handshakes.",
+      "d": "Fraudulent certificates from trusted CAs would function in browsers — which is precisely why CT monitoring and rapid revocation are critical."
+    }
+  },
+  {
+    "id": 156,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Certificate Authorities",
+    "difficulty": "hard",
+    "text": "An internal enterprise CA issues certificates for all internal services. An administrator accidentally generates the CA private key with only 1024-bit RSA. The CA has issued 500 certificates. What is the security risk and remediation?",
+    "answers": [
+      { "id": "a", "text": "1024-bit RSA is still secure — no remediation is needed" },
+      { "id": "b", "text": "RSA-1024 is considered computationally feasible to factor with modern hardware and is prohibited by NIST for use after 2013. The CA's weak key means all 500 issued certificates inherit this weakness. Remediation requires: generating a new CA key pair with minimum RSA-2048 (or ECC P-256 equivalent); re-issuing all 500 certificates from the new CA; distributing the new CA certificate to all trusting clients; and revoking/destroying the old 1024-bit CA key" },
+      { "id": "c", "text": "Only new certificates issued after the discovery need to be replaced" },
+      { "id": "d", "text": "The key length can be extended without regenerating the CA" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "RSA-1024 is deprecated and considered breakable — NIST deprecated it before 2014.",
+      "b": "A weak CA key compromises all certificates it issues — the complete remediation requires replacing the CA key, re-issuing all certificates, and updating client trust stores. This is operationally significant but necessary. This is the correct answer.",
+      "c": "All 500 existing certificates are at risk because they chain to the weak CA — replacement of only future certificates is insufficient.",
+      "d": "RSA key length is part of the key's mathematical structure — it cannot be extended after generation."
+    }
+  },
+  {
+    "id": 157,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "CRL/OCSP",
+    "difficulty": "easy",
+    "text": "What is the PRIMARY purpose of a Certificate Revocation List (CRL)?",
+    "answers": [
+      { "id": "a", "text": "A CRL lists all certificates that will expire within the next 30 days" },
+      { "id": "b", "text": "A CRL is a list published by a CA containing serial numbers of certificates that have been revoked before their natural expiration — enabling relying parties to check whether a certificate they are trusting has been invalidated" },
+      { "id": "c", "text": "A CRL lists all active, valid certificates issued by the CA" },
+      { "id": "d", "text": "A CRL is used to renew certificates that are approaching expiration" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "CRLs list revoked certificates — not certificates approaching expiration.",
+      "b": "CRLs provide revocation information — when a private key is compromised, a certificate is mis-issued, or a business relationship ends, the CA revokes the certificate and adds it to the CRL. Relying parties should check the CRL before trusting a certificate. This is the correct answer.",
+      "c": "CRLs list revoked certificates — the inverse of active valid certificates.",
+      "d": "Certificate renewal is a separate process — CRLs document revocation, not renewal."
+    }
+  },
+  {
+    "id": 158,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "CRL/OCSP",
+    "difficulty": "medium",
+    "text": "OCSP (Online Certificate Status Protocol) was developed as an alternative to CRLs. What specific limitation of CRLs does OCSP address?",
+    "answers": [
+      { "id": "a", "text": "OCSP provides faster certificate issuance than CRL-based systems" },
+      { "id": "b", "text": "CRLs grow very large over time and require downloading the entire list to check one certificate's status. OCSP allows real-time status queries for a single specific certificate without downloading the full list — reducing bandwidth and providing more current revocation status than a periodically published CRL" },
+      { "id": "c", "text": "OCSP enables certificates to be automatically renewed when they expire" },
+      { "id": "d", "text": "OCSP encrypts certificate status responses while CRLs are transmitted in plaintext" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "OCSP addresses revocation checking — not certificate issuance.",
+      "b": "CRL scalability is the problem OCSP solves: large CRLs consume bandwidth and become outdated between publications. OCSP queries a responder for a single certificate's current status in real time. This is the correct answer.",
+      "c": "Certificate renewal is outside OCSP's scope — OCSP only addresses revocation status checking.",
+      "d": "CRL distribution points can use HTTPS — OCSP signatures on responses provide integrity, but encryption is not the primary differentiator."
+    }
+  },
+  {
+    "id": 159,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "CRL/OCSP",
+    "difficulty": "hard",
+    "text": "A web server's certificate is revoked after its private key is compromised. However, the OCSP responder experiences downtime for 4 hours. During this time, browsers use 'soft fail' behavior. What security risk does soft fail OCSP create?",
+    "answers": [
+      { "id": "a", "text": "Soft fail OCSP prevents all connections during OCSP downtime — providing maximum security" },
+      { "id": "b", "text": "Soft fail means browsers accept the connection when OCSP is unavailable — treating 'cannot check revocation' as 'revocation status unknown, proceed anyway.' This allows connections to succeed with the compromised certificate during the OCSP downtime. Attackers can perform OCSP stapling attacks or block OCSP responses to keep revoked certificates appearing valid" },
+      { "id": "c", "text": "Soft fail is always more secure than hard fail for certificate revocation" },
+      { "id": "d", "text": "OCSP downtime has no security impact since certificates remain valid until expiration" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Soft fail is the opposite — it proceeds when OCSP is unavailable. Hard fail blocks connections when revocation status cannot be confirmed.",
+      "b": "Soft fail OCSP creates a revocation bypass attack surface — by blocking OCSP responses, attackers can prevent revocation from being checked, allowing compromised certificates to appear valid. OCSP stapling (where servers include OCSP responses in TLS handshakes) is the preferred mitigation. This is the correct answer.",
+      "c": "Hard fail (reject when OCSP unavailable) is more secure for revocation checking — soft fail trades availability for security.",
+      "d": "Revocation specifically addresses compromised keys that need invalidation before natural expiry — OCSP downtime is security-relevant."
+    }
+  },
+  {
+    "id": 160,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "CRL/OCSP",
+    "difficulty": "hard",
+    "text": "An organization's internal CA does not publish a CRL or operate an OCSP responder. An employee is terminated and their client certificate must be revoked. What security problem does the absence of revocation infrastructure create?",
+    "answers": [
+      { "id": "a", "text": "Certificate revocation is optional — certificates automatically become invalid when the holder leaves the organization" },
+      { "id": "b", "text": "Without CRL or OCSP, there is no mechanism to communicate revocation — the terminated employee's certificate remains technically valid to relying parties until it expires. If the certificate is used for client authentication, VPN access, or email signing, it continues to work even after termination. Services that rely on the certificate cannot distinguish it from valid certificates without a revocation check mechanism" },
+      { "id": "c", "text": "The CA should delete the certificate from its database — this revokes it without CRL/OCSP" },
+      { "id": "d", "text": "Active Directory can automatically invalidate certificates without CRL infrastructure" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Certificates have explicit expiration dates — they do not auto-invalidate when the holder's employment changes.",
+      "b": "Without revocation infrastructure, compromised or invalid certificates remain usable — the employee could continue authenticating to systems using the certificate until it expires. This is a critical security gap. This is the correct answer.",
+      "c": "Deleting a certificate from the CA database does not revoke it — relying parties have no mechanism to learn of the deletion.",
+      "d": "Active Directory can revoke smart card certificates through specific mechanisms — but this requires PKI integration and proper configuration, not an automatic process without CRL/OCSP."
+    }
+  },
+  {
+    "id": 161,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Certificate Types",
+    "difficulty": "easy",
+    "text": "What is the difference between a self-signed certificate and a certificate issued by a trusted third-party CA?",
+    "answers": [
+      { "id": "a", "text": "Self-signed certificates use weaker encryption than CA-issued certificates" },
+      { "id": "b", "text": "A self-signed certificate is signed by the entity that owns it — there is no third-party verification of the holder's identity. Third-party CA certificates are signed by a trusted CA that has verified the holder's identity. Browsers and clients trust third-party CA certificates automatically; self-signed certificates generate untrusted warnings unless manually added to trusted stores" },
+      { "id": "c", "text": "Self-signed certificates expire more quickly than CA-issued certificates" },
+      { "id": "d", "text": "Third-party CA certificates are always free while self-signed certificates cost money" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Both types can use the same cryptographic algorithms — the difference is in the trust chain, not encryption strength.",
+      "b": "The fundamental difference is trust establishment: self-signed certificates have no third-party verification, while CA-issued certificates rely on the CA's vetting and trust position. This is the correct answer.",
+      "c": "Certificate validity periods are configurable — self-signed certificates can have any validity period.",
+      "d": "Trusted CA certificates typically cost money; self-signed are free to generate (though Let's Encrypt offers free trusted certificates)."
+    }
+  },
+  {
+    "id": 162,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Certificate Types",
+    "difficulty": "medium",
+    "text": "A wildcard certificate is issued for *.example.com. Which domains does this certificate cover and which does it NOT cover?",
+    "answers": [
+      { "id": "a", "text": "It covers example.com and all subdomains at any depth" },
+      { "id": "b", "text": "A wildcard certificate covers all single-level subdomains of example.com (mail.example.com, www.example.com, api.example.com) but does NOT cover the apex domain example.com itself (in most implementations) or multi-level subdomains (dev.api.example.com)" },
+      { "id": "c", "text": "Wildcard certificates cover all domains in the .com TLD" },
+      { "id": "d", "text": "Wildcards cover only web (HTTP/HTTPS) traffic — not email or other services" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Wildcards are single-level — they do not cover multiple levels of subdomains.",
+      "b": "*.example.com matches exactly one additional label: mail.example.com, www.example.com, etc. It does not match example.com (apex) or deep subdomains like a.b.example.com. This is the correct answer.",
+      "c": "Wildcards are domain-specific — *.example.com has no authority over other .com domains.",
+      "d": "Certificate applicability is based on domain names — wildcard certificates apply to the specified domain regardless of the service (HTTP, SMTP, etc.)."
+    }
+  },
+  {
+    "id": 163,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Certificate Types",
+    "difficulty": "hard",
+    "text": "An organization uses a wildcard certificate for *.example.com across 15 different web servers. The wildcard private key is compromised on one server. What is the security impact and what practice would have reduced the blast radius?",
+    "answers": [
+      { "id": "a", "text": "Only the compromised server is affected — other servers' certificates are unrelated" },
+      { "id": "b", "text": "All 15 servers use the same wildcard certificate and private key — compromise of the key on one server exposes all subdomains covered by the wildcard. Any attacker with the key can impersonate any *.example.com subdomain. The wildcard must be revoked and replaced across all 15 servers. Using per-service individual certificates (Subject Alternative Names or individual certs) would limit exposure to the single compromised service" },
+      { "id": "c", "text": "Wildcard certificates cannot be compromised because they cover multiple domains" },
+      { "id": "d", "text": "The compromised server's certificate can be individually revoked without affecting others" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A wildcard certificate and private key are shared — compromise of the key on any server compromises the entire wildcard.",
+      "b": "Shared wildcard keys create single-point-of-failure for all covered subdomains. Per-service certificates limit compromise to one service. This is the correct answer.",
+      "c": "Wildcard certificates are as vulnerable to key compromise as any certificate — the scope of impact is larger due to the wildcard coverage.",
+      "d": "There is only one wildcard certificate — it cannot be revoked for only one server while keeping it valid for others."
+    }
+  },
+  {
+    "id": 164,
+    "domain": "1.0",
+    "objective": "1.4",
+    "keyword": "Certificate Types",
+    "difficulty": "hard",
+    "text": "A developer generates a Certificate Signing Request (CSR) for a new web server certificate. The CSR is submitted to a public CA. What information from the CSR does the CA use, and what information does the CA add when issuing the certificate?",
+    "answers": [
+      { "id": "a", "text": "The CA replaces all CSR information with its own data" },
+      { "id": "b", "text": "From the CSR, the CA uses: the public key (to embed in the certificate), the Subject Distinguished Name (organization, domain, etc.), and the Subject Alternative Names. The CA adds: its own issuer identity, a unique serial number, the validity period (not before/not after), the CA's digital signature over the certificate contents, and any extensions/policies. The private key never appears in the CSR or certificate — it stays with the requester" },
+      { "id": "c", "text": "The CA only adds its digital signature — all other information comes from the CSR exactly as submitted" },
+      { "id": "d", "text": "The CSR contains the private key which the CA uses to sign the certificate" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The CA incorporates and validates CSR information — it does not discard it entirely.",
+      "b": "The certificate is a collaboration: CSR provides identity claims and the public key; the CA verifies identity, sets validity, adds policy extensions, and signs the whole thing. Private keys never leave the requester. This is the correct answer.",
+      "c": "The CA adds significant information beyond the signature — including issuer identity, serial number, validity period, and extensions.",
+      "d": "Private keys must never appear in CSRs or certificates — the CSR contains only the public key. Exposing the private key would invalidate the entire purpose of the PKI."
+    }
   }
 ];

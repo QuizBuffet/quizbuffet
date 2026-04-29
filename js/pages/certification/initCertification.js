@@ -45,7 +45,7 @@ export function init() {
       'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
       'keywords': `${cert.name}, ${cert.code}, free practice test, exam questions, certification prep, quiz`,
     });
-    renderCertHeader(cert);
+    renderCertHeader(cert, totalQ);
     renderCertProgressSummary(cert);
     renderSessionSizePicker(() => {});
     renderMixQuizBtn(cert);

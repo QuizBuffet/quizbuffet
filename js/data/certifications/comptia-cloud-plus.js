@@ -12,11 +12,11 @@ export const cert = {
   acronyms,
   questions,
   domains: [
-    { slug: 'cloud-architecture',  name: 'Cloud Architecture',  number: '1.0', weight: 23, count: 8 },
-    { slug: 'deployment',          name: 'Deployment',          number: '2.0', weight: 19, count: 6 },
-    { slug: 'operations',          name: 'Operations',          number: '3.0', weight: 17, count: 6 },
-    { slug: 'security',            name: 'Security',            number: '4.0', weight: 19, count: 6 },
-    { slug: 'devops-fundamentals', name: 'DevOps Fundamentals', number: '5.0', weight: 10, count: 5 },
-    { slug: 'troubleshooting',     name: 'Troubleshooting',     number: '6.0', weight: 12, count: 5 },
+    { slug: 'cloud-architecture',  name: 'Cloud Architecture',  number: '1.0', weight: 23, count: 384 },
+    { slug: 'deployment',          name: 'Deployment',          number: '2.0', weight: 19, count: 208 },
+    { slug: 'operations',          name: 'Operations',          number: '3.0', weight: 17, count: 195 },
+    { slug: 'security',            name: 'Security',            number: '4.0', weight: 19, count: 232 },
+    { slug: 'devops-fundamentals', name: 'DevOps Fundamentals', number: '5.0', weight: 10, count: 112 },
+    { slug: 'troubleshooting',     name: 'Troubleshooting',     number: '6.0', weight: 12, count:  96 },
   ],
 };

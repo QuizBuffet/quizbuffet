@@ -1,3 +1,6 @@
+import { acronyms } from '../acronyms/comptia-security-plus.js';
+import { questions } from '../questions/comptia-security-plus.js';
+
 export const cert = {
   slug: 'comptia-security-plus',
   name: 'CompTIA Security+',
@@ -6,11 +9,13 @@ export const cert = {
   tagline: 'Core security skills for IT professionals defending enterprise environments',
   about: 'Security+ certifies professionals who can assess enterprise security posture, monitor hybrid environments, operate within governance and compliance frameworks, and identify and respond to security incidents.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 2 years IT administration with security focus',
+  acronyms,
+  questions,
   domains: [
-    { slug: 'general-security-concepts',                  name: 'General Security Concepts',                  weight: 12, count: 4 },
-    { slug: 'threats-vulnerabilities-and-mitigations',    name: 'Threats, Vulnerabilities, and Mitigations',  weight: 22, count: 5 },
-    { slug: 'security-architecture',                      name: 'Security Architecture',                      weight: 18, count: 4 },
-    { slug: 'security-operations',                        name: 'Security Operations',                        weight: 28, count: 9 },
-    { slug: 'security-program-management-and-oversight',  name: 'Security Program Management and Oversight',  weight: 20, count: 6 },
+    { slug: 'general-security-concepts',                  name: 'General Security Concepts',                  number: '1.0', weight: 12, count: 0 },
+    { slug: 'threats-vulnerabilities-and-mitigations',    name: 'Threats, Vulnerabilities, and Mitigations',  number: '2.0', weight: 22, count: 0 },
+    { slug: 'security-architecture',                      name: 'Security Architecture',                      number: '3.0', weight: 18, count: 0 },
+    { slug: 'security-operations',                        name: 'Security Operations',                        number: '4.0', weight: 28, count: 0 },
+    { slug: 'security-program-management-and-oversight',  name: 'Security Program Management and Oversight',  number: '5.0', weight: 20, count: 0 },
   ],
 };

@@ -1,0 +1,2018 @@
+export const questions = [
+  {
+    "id": 1,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Technical",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes a technical security control?",
+    "answers": [
+      { "id": "a", "text": "A policy requiring employees to lock their workstations when leaving their desks" },
+      { "id": "b", "text": "A hardware or software mechanism — such as a firewall, encryption, or access control list — that enforces security through technology rather than human action or policy" },
+      { "id": "c", "text": "A physical barrier such as a locked door that prevents unauthorized entry" },
+      { "id": "d", "text": "A governance procedure outlining how security incidents should be reported" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Requiring employees to lock workstations is an operational control — it relies on human behavior, not a technical mechanism.",
+      "b": "Technical controls are implemented through technology — firewalls, encryption, IDS/IPS, and access control lists all enforce security automatically without relying on human action. This is the correct answer.",
+      "c": "Physical barriers such as locked doors are physical controls — not technical controls.",
+      "d": "Governance procedures and reporting requirements are managerial controls — not technical controls."
+    }
+  },
+  {
+    "id": 2,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Technical",
+    "difficulty": "medium",
+    "text": "A security engineer configures a network to automatically block traffic from IP addresses that exceed 1,000 connection attempts per minute. Which control category does this BEST represent?",
+    "answers": [
+      { "id": "a", "text": "Managerial" },
+      { "id": "b", "text": "Physical" },
+      { "id": "c", "text": "Technical" },
+      { "id": "d", "text": "Operational" }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Managerial controls are administrative — such as policies, risk assessments, and governance procedures — not automated technology enforcement.",
+      "b": "Physical controls involve tangible barriers and access restrictions — not automated network traffic blocking.",
+      "c": "Automatically blocking connection attempts through network configuration is a technical control — it uses technology to enforce a security requirement without human intervention per event. This is the correct answer.",
+      "d": "Operational controls involve human processes and procedures — not automated technology mechanisms."
+    }
+  },
+  {
+    "id": 3,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Technical",
+    "difficulty": "hard",
+    "text": "An organization implements full-disk encryption, endpoint EDR agents, and certificate-based authentication across all laptops. A security auditor categorizes these controls. Which statement BEST describes how these controls should be classified?",
+    "answers": [
+      { "id": "a", "text": "They are all physical controls since they protect physical devices" },
+      { "id": "b", "text": "They are all technical controls — each uses a technology mechanism to enforce security. However, they serve different control types: FDE is preventive (prevents data access if lost), EDR is detective and corrective (detects and responds to threats), and certificate-based auth is preventive (prevents unauthorized access)" },
+      { "id": "c", "text": "They are operational controls because they require IT staff to deploy and manage them" },
+      { "id": "d", "text": "They are managerial controls because they were mandated by policy" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Physical controls involve physical barriers — protecting physical devices through software/hardware mechanisms is a technical control category.",
+      "b": "All three are technical controls (technology-based mechanisms), but they serve different control type purposes — illustrating that category and type are independent dimensions of classification. This is the correct answer.",
+      "c": "Requiring IT staff to deploy is an operational aspect, but the controls themselves are technical — the category describes what implements the control, not who manages it.",
+      "d": "Being mandated by policy makes it policy-required, but the control itself is implemented technically — the category describes the control mechanism, not its origin."
+    }
+  },
+  {
+    "id": 4,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Technical",
+    "difficulty": "hard",
+    "text": "A SIEM system automatically correlates log events, generates an alert for a potential insider threat, and initiates an automated workflow to disable the user's account pending investigation. How many distinct control types does this SINGLE technical system exercise?",
+    "answers": [
+      { "id": "a", "text": "One — it is only a detective control since it generates alerts" },
+      { "id": "b", "text": "Two — detective (correlating and alerting on the threat) and corrective (disabling the account to limit damage after detection)" },
+      { "id": "c", "text": "Three — preventive (blocking future actions), detective (alerting), and corrective (remediating)" },
+      { "id": "d", "text": "The SIEM is not a security control — it is only a monitoring tool" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The SIEM exercises more than detection — the automated account disabling is a corrective action taken after detection.",
+      "b": "The correlation and alerting is detective (identifies a suspected threat), and the automated account disabling is corrective (limits damage and remediates access after detection). A single system can serve multiple control types. This is the correct answer.",
+      "c": "Preventive controls stop threats before they occur — the SIEM acts after the threat indicator is detected, making corrective more accurate than preventive for the account disabling step.",
+      "d": "A SIEM that takes automated remediation actions is absolutely a security control — monitoring with automated response qualifies it as both detective and corrective."
+    }
+  },
+  {
+    "id": 5,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Managerial",
+    "difficulty": "easy",
+    "text": "Which of the following is the BEST example of a managerial security control?",
+    "answers": [
+      { "id": "a", "text": "Deploying an intrusion detection system on the network perimeter" },
+      { "id": "b", "text": "Conducting an annual risk assessment to identify and prioritize security risks to the organization" },
+      { "id": "c", "text": "Installing badge readers on all server room doors" },
+      { "id": "d", "text": "Requiring all employees to complete security awareness training" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "An IDS is a technical control — it uses technology to detect intrusions.",
+      "b": "A risk assessment is a managerial (administrative) control — it involves governance, oversight, and decision-making processes rather than technical or physical implementations. This is the correct answer.",
+      "c": "Badge readers on doors are physical controls — they involve physical access restriction mechanisms.",
+      "d": "Security awareness training is an operational control — it changes human behavior through education and procedure."
+    }
+  },
+  {
+    "id": 6,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Managerial",
+    "difficulty": "medium",
+    "text": "A CISO develops a data classification policy, an acceptable use policy, and a vendor risk management program. These are BEST categorized as which type of controls?",
+    "answers": [
+      { "id": "a", "text": "Technical controls" },
+      { "id": "b", "text": "Physical controls" },
+      { "id": "c", "text": "Managerial controls" },
+      { "id": "d", "text": "Operational controls" }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Technical controls are technology mechanisms — policies are not implemented through technology.",
+      "b": "Physical controls involve physical barriers — policies do not restrict physical access.",
+      "c": "Policies, risk programs, and governance frameworks are managerial (administrative) controls — they guide organizational behavior through oversight and governance rather than technical or physical mechanisms. This is the correct answer.",
+      "d": "Operational controls involve day-to-day procedures carried out by people — governance-level policies are managerial, though they may define operational procedures."
+    }
+  },
+  {
+    "id": 7,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Managerial",
+    "difficulty": "hard",
+    "text": "An auditor reviewing a financial services firm's security program finds that several security policies exist but have not been reviewed or updated in three years. The technical controls are current and operational controls are followed. What security risk does outdated managerial control documentation create?",
+    "answers": [
+      { "id": "a", "text": "No risk — technical and operational controls provide sufficient protection regardless of policy currency" },
+      { "id": "b", "text": "Outdated policies may no longer reflect the current threat landscape, regulatory requirements, or organizational changes — creating gaps between documented governance and actual risk posture, potential compliance failures, and unclear accountability when incidents occur" },
+      { "id": "c", "text": "The risk is purely cosmetic — auditors may flag it but it has no operational impact" },
+      { "id": "d", "text": "Outdated policies automatically become invalid and are replaced by default industry standards" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Technical and operational controls operate within the framework defined by managerial controls — without current policies, technical controls may be misconfigured and operational controls may follow outdated procedures.",
+      "b": "Outdated managerial controls create governance gaps — policies not reflecting current requirements may lead to regulatory non-compliance, unclear incident response authority, and misalignment between documented expectations and operational reality. This is the correct answer.",
+      "c": "Policy currency has direct operational impact — employees and systems operating under outdated policies may not meet current security requirements.",
+      "d": "Outdated policies remain in effect until replaced — they do not automatically default to industry standards."
+    }
+  },
+  {
+    "id": 8,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Managerial",
+    "difficulty": "hard",
+    "text": "A security team maps their controls to NIST CSF. They identify that their patch management schedule, vendor SLA requirements, and data retention policies are all currently categorized as operational controls. A senior security architect argues these should be managerial. Which viewpoint is MORE accurate and why?",
+    "answers": [
+      { "id": "a", "text": "The original categorization is correct — anything involving schedules or SLAs is operational" },
+      { "id": "b", "text": "The architect is partially correct: the policies governing patch frequency and retention periods are managerial controls (governance decisions), while the actual execution of patching and enforcing retention is operational. The SLA requirements in contracts are managerial. The key distinction is governance/decision vs. execution/procedure" },
+      { "id": "c", "text": "Both views are wrong — these are all technical controls because they relate to technology management" },
+      { "id": "d", "text": "Control categories are subjective — any categorization is equally valid" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The schedule as a policy document is a managerial control — the act of executing the schedule is operational. Conflating the two misses an important distinction.",
+      "b": "Managerial controls are governance decisions and policies — the decision about patch frequency, SLA requirements, and retention rules. Operational controls are the execution — actually running patches, monitoring SLA compliance, and enforcing retention. This dual nature is common and important to recognize. This is the correct answer.",
+      "c": "These are not technical controls — technical controls are technology mechanisms, not governance decisions or human procedures.",
+      "d": "Control categorization has defined meanings — while context matters, the distinction between governance (managerial) and execution (operational) is substantive, not arbitrary."
+    }
+  },
+  {
+    "id": 9,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Operational",
+    "difficulty": "easy",
+    "text": "Which of the following is the BEST example of an operational security control?",
+    "answers": [
+      { "id": "a", "text": "Encrypting sensitive data stored in a database" },
+      { "id": "b", "text": "Security guards performing regular patrols of a data center facility" },
+      { "id": "c", "text": "A firewall blocking inbound traffic on port 23" },
+      { "id": "d", "text": "A written incident response policy" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Database encryption is a technical control — it uses technology to protect data.",
+      "b": "Security guards performing patrols are an operational control — they are people following procedures to enforce security. Operational controls are carried out by humans. This is the correct answer.",
+      "c": "A firewall blocking ports is a technical control — it uses technology to enforce network security.",
+      "d": "A written incident response policy is a managerial control — it provides governance direction, not operational execution."
+    }
+  },
+  {
+    "id": 10,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Operational",
+    "difficulty": "medium",
+    "text": "An organization's security program includes mandatory security awareness training, a clean desk policy enforced by daily walkthroughs, and a visitor escort requirement in secure areas. These controls are BEST described as:",
+    "answers": [
+      { "id": "a", "text": "Technical controls — they improve overall security posture" },
+      { "id": "b", "text": "Managerial controls — they were defined by senior leadership" },
+      { "id": "c", "text": "Operational controls — they rely on human behavior, procedures, and day-to-day activities to enforce security" },
+      { "id": "d", "text": "Physical controls — they involve the physical workspace" }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Improving security posture is a general goal — not a defining characteristic of a specific control category.",
+      "b": "Being defined by leadership determines their governance origin but not their category — operational controls are defined by their implementation mechanism (people/procedures), not their source.",
+      "c": "Awareness training, clean desk enforcement, and escort requirements all rely on human behavior and established procedures — the defining characteristic of operational controls. This is the correct answer.",
+      "d": "While some physical spaces are involved, the controls themselves are behavioral/procedural — physical controls involve barriers and mechanisms, not behavioral requirements."
+    }
+  },
+  {
+    "id": 11,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Operational",
+    "difficulty": "hard",
+    "text": "An organization relies heavily on operational controls for access management — requiring manager approval emails for system access and manual quarterly access reviews. A security consultant recommends migrating to automated provisioning and automated access certification. What security concern does heavy reliance on operational controls create?",
+    "answers": [
+      { "id": "a", "text": "Operational controls are always more secure than technical controls" },
+      { "id": "b", "text": "Operational controls that depend on human action are subject to human error, inconsistency, scalability limitations, and circumvention — approval emails can be forged or ignored, manual reviews are often rubber-stamped, and the controls may fail to scale with organizational growth" },
+      { "id": "c", "text": "Operational controls are not recognized by compliance frameworks and should be eliminated" },
+      { "id": "d", "text": "The only risk is cost — operational controls are always functionally equivalent to technical controls" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Operational controls are more vulnerable to human error and inconsistency than properly implemented technical controls — the opposite is often true for reliability.",
+      "b": "Human-dependent controls introduce consistency and scale risks: approvals can be rushed, reviews can be superficial, and volume exceeds human capacity at scale. Technical controls automate enforcement consistently. This is the correct answer.",
+      "c": "Operational controls are recognized and required by many compliance frameworks — the concern is reliability and scale, not legitimacy.",
+      "d": "Functional equivalence fails under scale and human error — a technical control executes identically every time while human-executed controls vary in quality."
+    }
+  },
+  {
+    "id": 12,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Operational",
+    "difficulty": "hard",
+    "text": "A data center requires dual-person integrity (DPI) for all changes to production systems — two authorized personnel must be present for any production modification. This control is BEST categorized as which type and category?",
+    "answers": [
+      { "id": "a", "text": "Technical preventive — it uses a system to require two approvals" },
+      { "id": "b", "text": "Operational preventive — it is a human-enforced procedure requiring two people to prevent unauthorized or erroneous changes" },
+      { "id": "c", "text": "Physical detective — it detects when unauthorized persons enter the data center" },
+      { "id": "d", "text": "Managerial corrective — it is a policy that corrects errors after they occur" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "If enforced purely by human procedure rather than a technical system requiring cryptographic dual approval, it is operational — not technical.",
+      "b": "DPI as a human-enforced presence requirement is an operational control (relying on people following procedures) and preventive (prevents unauthorized single-person changes before they occur). This is the correct answer.",
+      "c": "DPI is not primarily a detection mechanism — it prevents unauthorized actions by requiring witness presence.",
+      "d": "DPI acts before changes occur — it is preventive, not corrective. The policy defining DPI is managerial, but the control implementation is operational."
+    }
+  },
+  {
+    "id": 13,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Physical",
+    "difficulty": "easy",
+    "text": "Which of the following is the BEST example of a physical security control?",
+    "answers": [
+      { "id": "a", "text": "A firewall rule blocking unauthorized network access" },
+      { "id": "b", "text": "Biometric door locks and mantraps controlling entry to a server room" },
+      { "id": "c", "text": "A policy prohibiting employees from bringing personal devices to work" },
+      { "id": "d", "text": "Encryption applied to data stored on servers" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Firewall rules are technical controls — they use network technology to restrict access.",
+      "b": "Biometric door locks and mantraps are physical controls — they use physical mechanisms to restrict physical access to the server room. This is the correct answer.",
+      "c": "Device policies are managerial or operational controls — they rely on governance and human behavior, not physical mechanisms.",
+      "d": "Data encryption is a technical control — it uses cryptographic technology to protect data."
+    }
+  },
+  {
+    "id": 14,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Physical",
+    "difficulty": "medium",
+    "text": "A facility installs cable locks on workstations, adds motion-activated lighting in parking areas, and installs shatterproof film on ground-floor windows. These are all examples of which control category?",
+    "answers": [
+      { "id": "a", "text": "Technical" },
+      { "id": "b", "text": "Operational" },
+      { "id": "c", "text": "Managerial" },
+      { "id": "d", "text": "Physical" }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Technical controls are software or hardware mechanisms protecting data and systems — not physical barriers and countermeasures.",
+      "b": "Operational controls rely on human procedures — these are physical mechanisms not requiring human action per event.",
+      "c": "Managerial controls are administrative and governance-based — not physical protective mechanisms.",
+      "d": "All three are physical controls — cable locks restrict physical device theft, motion-activated lighting deters and detects physical intruders, and shatterproof film prevents physical breach of windows. This is the correct answer."
+    }
+  },
+  {
+    "id": 15,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Physical",
+    "difficulty": "hard",
+    "text": "A data center uses a mantrap (access control vestibule) at the entry. The mantrap requires badge authentication before the outer door opens, and the inner door will not open until the outer door is fully closed. Which control type does the mantrap PRIMARILY implement?",
+    "answers": [
+      { "id": "a", "text": "Detective — it records who enters the facility" },
+      { "id": "b", "text": "Corrective — it fixes security breaches after they occur" },
+      { "id": "c", "text": "Preventive — it physically prevents tailgating and unauthorized entry by ensuring only one door can open at a time" },
+      { "id": "d", "text": "Compensating — it substitutes for a weaker control" }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Recording entries is a detective function — the mantrap's primary purpose is to prevent unauthorized entry, not merely record it.",
+      "b": "Corrective controls respond after an incident — the mantrap prevents incidents before they occur.",
+      "c": "The mantrap prevents tailgating and forced entry by design — only one door opens at a time, physically stopping unauthorized personnel from following authorized users. This is a preventive physical control. This is the correct answer.",
+      "d": "Compensating controls are alternatives when a primary control cannot be implemented — the mantrap is a primary preventive control, not a substitute."
+    }
+  },
+  {
+    "id": 16,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Physical",
+    "difficulty": "hard",
+    "text": "A security team reviews physical controls after a theft of server equipment. They find that the server room had a badge reader but no video surveillance, and no alarm if the door is held open. After the incident they add cameras, door-hold alarms, and inventory sensors. How do these new controls differ from the badge reader in terms of control type?",
+    "answers": [
+      { "id": "a", "text": "All four controls are preventive — they all protect the server room" },
+      { "id": "b", "text": "The badge reader is preventive (prevents unauthorized entry). Cameras are detective (record and identify events). Door-hold alarms are detective (alert on anomalous behavior). Inventory sensors can be detective (detect missing items) or corrective if they trigger lockdowns. The addition of detective controls provides visibility that was absent before" },
+      { "id": "c", "text": "Cameras are corrective controls because they help recover stolen items" },
+      { "id": "d", "text": "Alarms are preventive because they stop thieves" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Calling all physical controls preventive ignores the important distinctions between controls that prevent vs. detect vs. respond to incidents.",
+      "b": "The badge reader prevents unauthorized entry. Cameras detect and record events. Alarms detect anomalous conditions. Inventory sensors detect missing assets. The pre-incident gap was detective controls — the theft occurred and was not detected in real time. This is the correct answer.",
+      "c": "Cameras are detective controls — they record events. Post-incident camera review assists recovery but the control type is detective, not corrective.",
+      "d": "Alarms may deter some criminals, making them deterrent controls — they alert to ongoing events but do not physically stop the action once it has begun."
+    }
+  },
+  {
+    "id": 17,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Preventive",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes a preventive security control?",
+    "answers": [
+      { "id": "a", "text": "A control that identifies and logs unauthorized access attempts for later review" },
+      { "id": "b", "text": "A control that stops a security incident from occurring by blocking, restricting, or removing the ability to perform an unauthorized action" },
+      { "id": "c", "text": "A control that restores systems to normal operation after a security incident" },
+      { "id": "d", "text": "A control that discourages potential attackers through visible deterrence" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Logging unauthorized attempts describes a detective control — it identifies events after they occur.",
+      "b": "Preventive controls stop incidents before or as they happen — firewalls block traffic, encryption prevents data reading, and access controls prevent unauthorized actions. This is the correct answer.",
+      "c": "Restoring systems after an incident describes a corrective control — it acts after the incident.",
+      "d": "Discouraging attackers through visible deterrence describes a deterrent control — it discourages rather than technically prevents."
+    }
+  },
+  {
+    "id": 18,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Preventive",
+    "difficulty": "medium",
+    "text": "An organization implements application whitelisting — only pre-approved executables can run on endpoints. This control is BEST categorized as:",
+    "answers": [
+      { "id": "a", "text": "Detective — it identifies unauthorized applications" },
+      { "id": "b", "text": "Corrective — it removes unauthorized applications" },
+      { "id": "c", "text": "Preventive — it blocks unauthorized executables from running in the first place" },
+      { "id": "d", "text": "Deterrent — it discourages employees from installing unauthorized software" }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "If the control only detected unauthorized apps without blocking execution, it would be detective — but whitelisting blocks execution entirely.",
+      "b": "Corrective controls act after an incident — whitelisting prevents execution before it occurs.",
+      "c": "Application whitelisting is preventive — it stops unauthorized executables from running before they can cause harm, not after detection. This is the correct answer.",
+      "d": "A deterrent control discourages but does not technically block — whitelisting technically prevents execution regardless of user intent."
+    }
+  },
+  {
+    "id": 19,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Preventive",
+    "difficulty": "hard",
+    "text": "A network firewall is configured to block all outbound connections to known command-and-control (C2) IP addresses using a threat intelligence feed. An endpoint is infected with malware that attempts to contact a C2 server. The firewall blocks the connection. Which combination of control category and type does this represent?",
+    "answers": [
+      { "id": "a", "text": "Operational preventive — a human blocked the connection" },
+      { "id": "b", "text": "Technical preventive — technology automatically blocked an unauthorized outbound connection before the malware could communicate with C2 infrastructure" },
+      { "id": "c", "text": "Technical detective — the firewall logged the C2 connection attempt" },
+      { "id": "d", "text": "Physical corrective — the network hardware stopped the attack" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "No human action was required — the firewall automatically applied the block based on threat intelligence, making it technical, not operational.",
+      "b": "The firewall used technology (technical category) to block the C2 connection before it succeeded (preventive type) — stopping the malware callback that would enable attacker control. This is the correct answer.",
+      "c": "The firewall did log the attempt (detective), but blocking the connection is the preventive action — and when a control serves multiple functions, the primary purpose (blocking) determines the primary classification.",
+      "d": "Physical controls involve physical barriers — network hardware enforcing software rules is technical, not physical."
+    }
+  },
+  {
+    "id": 20,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Preventive",
+    "difficulty": "hard",
+    "text": "A security architect argues that no preventive control is 100% effective and that detective and corrective controls are equally important. A junior analyst disagrees, saying preventive controls should be the only focus. Which perspective is MOST aligned with security best practices?",
+    "answers": [
+      { "id": "a", "text": "The junior analyst — if all threats are prevented, detection and correction are unnecessary" },
+      { "id": "b", "text": "The security architect — defense-in-depth requires layered controls. Preventive controls reduce likelihood but cannot prevent all incidents. Detective controls provide visibility when prevention fails. Corrective controls limit damage and restore operations. All three are essential" },
+      { "id": "c", "text": "Neither — security controls are ineffective and security relies entirely on user behavior" },
+      { "id": "d", "text": "The junior analyst — budget should always prioritize prevention over detection and response" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "No control is perfect — assuming 100% prevention is unrealistic and leaves organizations blind when prevention fails.",
+      "b": "Defense-in-depth recognizes that prevention will sometimes fail. Layered controls provide detection when prevention misses, and corrective controls limit damage and restore normal operations. This is the correct answer.",
+      "c": "Security controls are fundamental — user behavior is one layer but cannot substitute for technical and physical controls.",
+      "d": "Concentrating only on prevention creates blind spots — organizations need detection to know when prevention fails and correction to recover."
+    }
+  },
+  {
+    "id": 21,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Deterrent",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes a deterrent security control?",
+    "answers": [
+      { "id": "a", "text": "A control that technically prevents unauthorized actions from succeeding" },
+      { "id": "b", "text": "A control that discourages potential attackers or violators by making the prospect of attack less appealing or more risky — without necessarily blocking the action technically" },
+      { "id": "c", "text": "A control that identifies and logs security events for later investigation" },
+      { "id": "d", "text": "A control that restores normal operations after a security incident" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Technically preventing unauthorized actions describes preventive controls — deterrents discourage rather than technically block.",
+      "b": "Deterrent controls reduce the likelihood of attacks by discouraging would-be attackers — visible cameras, warning signs, and lighting make attackers less likely to attempt an action even though they are not technically blocked. This is the correct answer.",
+      "c": "Identifying and logging events describes detective controls — deterrents operate before an event by discouraging attempts.",
+      "d": "Restoring operations describes corrective controls — deterrents operate at the decision stage before an attack is attempted."
+    }
+  },
+  {
+    "id": 22,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Deterrent",
+    "difficulty": "medium",
+    "text": "A company posts 'WARNING: All activity on this system is monitored and recorded' banners on all login screens. A security auditor notes this banner as a deterrent control. Why is this correctly classified as deterrent rather than detective?",
+    "answers": [
+      { "id": "a", "text": "Login banners technically block unauthorized access" },
+      { "id": "b", "text": "The banner discourages unauthorized access by informing potential attackers that their actions will be recorded — but it does not technically prevent login attempts or automatically detect intrusions. It changes attacker behavior through psychological deterrence rather than technical enforcement" },
+      { "id": "c", "text": "The banner is a corrective control because it helps prosecute attackers after incidents" },
+      { "id": "d", "text": "Login banners are operational controls because IT staff must configure them" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Login banners do not block access — they display informational text that the login process allows past.",
+      "b": "The banner's security value is psychological — it informs that monitoring exists, making attackers less likely to proceed. It does not technically detect or prevent anything on its own. This is the correct answer.",
+      "c": "Banners may support legal prosecution (a deterrent benefit), but their control type is deterrent — not corrective.",
+      "d": "Being configured by IT describes the operational aspect of deployment — the control's category (technical: displayed by technology) and type (deterrent: discourages by informing) are independent."
+    }
+  },
+  {
+    "id": 23,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Deterrent",
+    "difficulty": "hard",
+    "text": "A physical security team installs visible CCTV cameras and posts signage indicating '24-hour video surveillance in operation' even though only 30% of cameras are actively monitored. A security consultant questions whether this is appropriate. What is the security argument for and against this approach?",
+    "answers": [
+      { "id": "a", "text": "It is always appropriate — cameras are cameras and provide equal deterrence regardless of monitoring" },
+      { "id": "b", "text": "For: the visible presence of cameras deters opportunistic attackers even if unmonitored — deterrence value exists regardless of whether every feed is watched. Against: if sophisticated adversaries discover cameras are not monitored, deterrence value is lost and actual detection capability is weaker than implied. The honest risk: over-reliance on deterrence without actual detective capability creates a false sense of security" },
+      { "id": "c", "text": "It is never appropriate — all deterrent controls must be fully functional to be used" },
+      { "id": "d", "text": "The approach is appropriate only if signs do not mention surveillance" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Sophisticated attackers research environments before attacking — non-monitored cameras provide no detection value and their deterrence may be overcome by reconnaissance.",
+      "b": "The deterrence argument is valid for opportunistic attackers who see cameras and assume monitoring. The risk is that detective capability (actual monitoring) is overstated — if detection is needed for corrective action, unmonitored cameras fail. This balanced view is the correct answer.",
+      "c": "Partially implemented deterrents have legitimate security value — all-or-nothing thinking ignores realistic risk management trade-offs.",
+      "d": "Signage indicating surveillance is a standard deterrent practice — removing signs eliminates deterrent value while the cameras' limitations remain."
+    }
+  },
+  {
+    "id": 24,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Deterrent",
+    "difficulty": "hard",
+    "text": "A company implements a robust security awareness program specifically highlighting that 40% of employees who attempted to bypass security controls were caught and disciplined. From a security control perspective, publicizing enforcement outcomes is BEST described as:",
+    "answers": [
+      { "id": "a", "text": "A corrective control — disciplining employees corrects bad behavior" },
+      { "id": "b", "text": "A deterrent control — publicizing that violations are detected and punished discourages future violations by demonstrating credible consequences" },
+      { "id": "c", "text": "A detective control — it demonstrates that violations are detected" },
+      { "id": "d", "text": "A directive control — it directs employees toward correct behavior" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The discipline itself is corrective — but publicizing the enforcement outcomes is a separate deterrent action intended to prevent future violations.",
+      "b": "Publicizing enforcement creates deterrence — employees considering violations now know consequences are real and likely, making future violations less probable. This is the correct answer.",
+      "c": "The detection already occurred — publicizing it is a separate deterrent action leveraging the detection outcome.",
+      "d": "Directive controls provide instructions or mandates — publicizing enforcement outcomes creates deterrence through demonstrated consequences, not instructions."
+    }
+  },
+  {
+    "id": 25,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Detective",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes a detective security control?",
+    "answers": [
+      { "id": "a", "text": "A control that stops security incidents before they cause damage" },
+      { "id": "b", "text": "A control that identifies and alerts on security events, anomalies, or policy violations — providing visibility into what is happening in the environment" },
+      { "id": "c", "text": "A control that recovers systems to their pre-incident state" },
+      { "id": "d", "text": "A control that serves as a substitute when the primary control cannot be implemented" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Stopping incidents before damage describes a preventive control — detective controls identify events that occur, they do not stop them.",
+      "b": "Detective controls provide visibility — IDS alerts, log monitoring, integrity checkers, and SIEM systems identify security events after they begin or complete. This is the correct answer.",
+      "c": "Recovering systems describes a corrective control — detective controls identify events but do not restore systems.",
+      "d": "Substituting for a primary control describes a compensating control — detective controls specifically identify and alert on security events."
+    }
+  },
+  {
+    "id": 26,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Detective",
+    "difficulty": "medium",
+    "text": "A security team deploys a file integrity monitoring (FIM) system that alerts whenever critical system files are modified outside of approved change windows. This control is BEST classified as:",
+    "answers": [
+      { "id": "a", "text": "Preventive — it stops unauthorized file modifications" },
+      { "id": "b", "text": "Detective — it identifies and alerts on unauthorized or anomalous file changes after they occur" },
+      { "id": "c", "text": "Corrective — it reverses unauthorized file changes" },
+      { "id": "d", "text": "Deterrent — it discourages attackers from modifying files" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "FIM does not block file modifications — it detects and alerts on them after they have already occurred.",
+      "b": "FIM is a detective control — it monitors file state and alerts when changes occur outside expected parameters, providing visibility into potential tampering. This is the correct answer.",
+      "c": "Basic FIM alerts without restoring — corrective controls would reverse the changes. Advanced FIM with automatic restore would add a corrective function.",
+      "d": "FIM operates silently in the background — attackers are generally unaware of it, limiting its deterrent value."
+    }
+  },
+  {
+    "id": 27,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Detective",
+    "difficulty": "hard",
+    "text": "An IDS detects a port scan against a web server and generates an alert. A security analyst reviews the alert 6 hours later. The attacker exploited a vulnerability identified during the scan 2 hours after the scan completed. What limitation of detective controls does this scenario illustrate?",
+    "answers": [
+      { "id": "a", "text": "Detective controls are ineffective and should be replaced with preventive controls only" },
+      { "id": "b", "text": "Detective controls only provide value if monitoring is timely — an unreviewed alert provides no operational protection. Detection without response is insufficient. The gap between detection and response (6 hours review delay) allowed the attack to succeed. Effective detective controls require automated alerting, defined response times, and integration with response processes (SIEM + SOAR)" },
+      { "id": "c", "text": "The IDS failed to function correctly — a working IDS would have blocked the scan" },
+      { "id": "d", "text": "Port scans are not malicious and should not generate alerts" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Detective controls are essential for visibility — the problem is the response process, not the detective control category itself.",
+      "b": "Detection without timely response leaves an exploitation window. The value of detective controls is fully realized only when they are paired with prompt analysis and response procedures. This is the correct answer.",
+      "c": "An IDS detects — it does not block. Blocking is an IPS function. The IDS worked correctly by alerting.",
+      "d": "Port scans are a standard pre-attack reconnaissance technique — they are appropriate IDS alert triggers."
+    }
+  },
+  {
+    "id": 28,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Detective",
+    "difficulty": "hard",
+    "text": "A SIEM is configured with 500 alert rules generating 800 alerts per day. Analysts review approximately 50 alerts per day. The remaining 750 go unreviewed. From a security controls perspective, what is the PRIMARY risk?",
+    "answers": [
+      { "id": "a", "text": "The SIEM is not a detective control since analysts cannot review all alerts" },
+      { "id": "b", "text": "Alert fatigue and insufficient analyst capacity mean the detective control is effectively non-functional for 94% of generated alerts — real security incidents may be lost in unreviewed noise. The detective control provides coverage only in theory, not in practice" },
+      { "id": "c", "text": "The risk is only to compliance — operationally the organization is fully protected" },
+      { "id": "d", "text": "The solution is to generate more alerts to improve coverage" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The SIEM is a detective control — the issue is operational effectiveness, not control category classification.",
+      "b": "A detective control that generates more alerts than analysts can review effectively provides false assurance — incidents can hide in unreviewed queues. Effective detection requires alert tuning, automation, and appropriate analyst capacity. This is the correct answer.",
+      "c": "The risk is both operational and compliance — unreviewed security events represent real missed incidents, not just compliance gaps.",
+      "d": "More alerts with insufficient review makes the problem worse — fewer, higher-fidelity alerts are needed."
+    }
+  },
+  {
+    "id": 29,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Corrective",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes a corrective security control?",
+    "answers": [
+      { "id": "a", "text": "A control that identifies security incidents through monitoring and alerting" },
+      { "id": "b", "text": "A control that reduces the impact of a security incident after it has occurred by restoring systems, removing threats, or limiting ongoing damage" },
+      { "id": "c", "text": "A control that prevents security incidents from occurring in the first place" },
+      { "id": "d", "text": "A control that discourages attackers by demonstrating visible security measures" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Identifying incidents through monitoring describes detective controls — corrective controls act after detection.",
+      "b": "Corrective controls respond to and remediate security incidents — restoring backups after ransomware, quarantining infected systems, patching exploited vulnerabilities, and revoking compromised credentials are all corrective. This is the correct answer.",
+      "c": "Preventing incidents describes preventive controls — corrective controls respond after an incident has occurred.",
+      "d": "Discouraging attackers describes deterrent controls — corrective controls act after an incident."
+    }
+  },
+  {
+    "id": 30,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Corrective",
+    "difficulty": "medium",
+    "text": "After detecting ransomware on a system, a security team isolates the infected machine, removes the malware, restores data from clean backups, and patches the vulnerability that was exploited. These response actions are BEST categorized as:",
+    "answers": [
+      { "id": "a", "text": "Preventive controls — they prevent the ransomware from spreading further" },
+      { "id": "b", "text": "Corrective controls — they remediate the incident, restore normal operations, and address the root cause after the security event occurred" },
+      { "id": "c", "text": "Detective controls — they identify what the ransomware did to the system" },
+      { "id": "d", "text": "Compensating controls — they substitute for the failed preventive control" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Isolating the infected machine does prevent further spread — but the overall response set is corrective. Isolation can be both preventive (of spread) and corrective (responding to the incident), but the response process as a whole is corrective.",
+      "b": "The incident response actions — isolate, remove, restore, patch — are corrective controls responding to and remediating an active security incident. This is the correct answer.",
+      "c": "Detective controls identify the incident — these actions respond to an already-identified incident.",
+      "d": "Compensating controls are alternatives to standard controls — incident response actions are primary corrective controls, not substitutes."
+    }
+  },
+  {
+    "id": 31,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Corrective",
+    "difficulty": "hard",
+    "text": "An organization's EDR solution automatically quarantines a process exhibiting ransomware behavior — encrypting files at an unusual rate — before significant encryption occurs. How should this automated quarantine be classified?",
+    "answers": [
+      { "id": "a", "text": "Preventive only — it stopped the encryption" },
+      { "id": "b", "text": "The automated quarantine is both corrective (responding to and containing an identified security incident — the EDR already detected malicious activity and is now limiting damage) and has a preventive effect (stopping further encryption). The primary classification is corrective since it responds to an active, identified threat rather than blocking a potential one" },
+      { "id": "c", "text": "Managerial — an analyst decided to quarantine the process" },
+      { "id": "d", "text": "Physical — the system was isolated from the network" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Preventive controls stop threats before detection — by the time EDR quarantines a process, the threat has been detected and the control is responding to it, making it primarily corrective.",
+      "b": "The distinction matters: the EDR detected ransomware behavior (detective), then quarantined it in response (corrective with preventive effect on further damage). Automated incident response after detection is corrective. This is the correct answer.",
+      "c": "The automated quarantine was performed by the EDR system without analyst action — making it technical, not managerial.",
+      "d": "Automated process quarantine is a software mechanism — not a physical control."
+    }
+  },
+  {
+    "id": 32,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Corrective",
+    "difficulty": "hard",
+    "text": "A backup system enables restoration of encrypted files after a ransomware attack. The backup was not encrypted by the ransomware because it was stored offline. From a control perspective, the backup serves as BOTH a corrective control AND which other control type?",
+    "answers": [
+      { "id": "a", "text": "Deterrent — backups discourage ransomware attacks" },
+      { "id": "b", "text": "Compensating — the backup compensates for the failure of preventive controls (antimalware, patching) that allowed the ransomware to execute. It is also corrective because it restores operations after the incident" },
+      { "id": "c", "text": "Detective — the backup detects when files have been encrypted" },
+      { "id": "d", "text": "Directive — the backup directs employees on proper file storage" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Backups do not meaningfully deter ransomware attackers — some ransomware specifically targets accessible backups.",
+      "b": "Backups are corrective (restore operations after incidents) and compensating (provide recovery when preventive controls fail to stop ransomware). Both classifications are valid and commonly cited for backup controls. This is the correct answer.",
+      "c": "Backups do not detect file encryption — that is a FIM or EDR function.",
+      "d": "Directive controls provide instructions — backups are a technical mechanism, not guidance."
+    }
+  },
+  {
+    "id": 33,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Compensating",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes a compensating security control?",
+    "answers": [
+      { "id": "a", "text": "A control that detects security incidents through active monitoring" },
+      { "id": "b", "text": "An alternative control implemented when the preferred control is not feasible — providing an equivalent or sufficient level of protection given the specific circumstances" },
+      { "id": "c", "text": "A control that automatically remediates security incidents" },
+      { "id": "d", "text": "A control category that includes all physical security measures" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Active monitoring describes detective controls — compensating controls are alternatives to standard controls, not a monitoring function.",
+      "b": "Compensating controls are deployed when a standard control cannot be implemented — they provide equivalent protection through alternative means. PCI DSS explicitly recognizes compensating controls for requirements that cannot be met directly. This is the correct answer.",
+      "c": "Automatic remediation describes corrective controls — compensating controls substitute for required controls, not specifically for remediation.",
+      "d": "Physical security is a control category — compensating controls span all categories and are defined by their role as alternatives, not by what they protect."
+    }
+  },
+  {
+    "id": 34,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Compensating",
+    "difficulty": "medium",
+    "text": "A legacy industrial control system (ICS) cannot be patched due to vendor support constraints and operational requirements. The security team cannot apply the standard patching control. Which combination of compensating controls BEST addresses this risk?",
+    "answers": [
+      { "id": "a", "text": "Accept the risk — compensating controls are not effective for unpatched systems" },
+      { "id": "b", "text": "Network isolation (air gap or strict VLAN segmentation), enhanced monitoring of all ICS traffic, additional host-based controls where possible, strict access control requiring MFA for any connection, and formal documented risk acceptance — together compensating for the inability to patch" },
+      { "id": "c", "text": "Replace the ICS with a modern system immediately" },
+      { "id": "d", "text": "Inform regulators that patching is impossible and request an exemption from all security requirements" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Compensating controls are specifically designed for situations like this — accepting risk without compensating controls is irresponsible.",
+      "b": "Layered compensating controls reduce the exploitability and impact of the unpatched system: isolation limits attack paths, monitoring provides detection, access control reduces unauthorized access, and documentation provides compliance evidence. This is the correct answer.",
+      "c": "Immediate replacement may not be operationally feasible — compensating controls bridge the security gap until replacement is possible.",
+      "d": "Regulatory exemptions are not blanket waivers — compensating controls must still be documented and implemented."
+    }
+  },
+  {
+    "id": 35,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Compensating",
+    "difficulty": "hard",
+    "text": "A PCI DSS QSA (Qualified Security Assessor) reviews a compensating control submitted for Requirement 8.3.6 (password complexity minimum). The organization uses a short PIN (4 digits) combined with mandatory biometric authentication. The QSA must determine if this compensating control is acceptable. What criteria MUST the compensating control meet?",
+    "answers": [
+      { "id": "a", "text": "Any alternative control is acceptable as long as the organization documents it" },
+      { "id": "b", "text": "PCI DSS requires compensating controls to: (1) meet the intent and rigor of the original requirement, (2) provide a similar level of defense as the original control, (3) be above and beyond other PCI DSS requirements, and (4) be commensurate with the additional risk imposed. The PIN+biometrics combination may meet these criteria since biometrics address the identity verification intent with greater rigor than a complex password alone" },
+      { "id": "c", "text": "The compensating control is automatically rejected since any deviation from PCI DSS requirements is not allowed" },
+      { "id": "d", "text": "The QSA must accept any compensating control submitted by the organization" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Documentation is necessary but not sufficient — compensating controls must provide equivalent or superior protection to the original requirement.",
+      "b": "PCI DSS has specific criteria for compensating controls: meeting original intent, providing equivalent defense, being above other requirements, and commensurate with additional risk. Biometric authentication may satisfy the identity verification intent of complex passwords. This is the correct answer.",
+      "c": "PCI DSS explicitly allows compensating controls through a defined evaluation process — it is not prohibited.",
+      "d": "QSAs must evaluate compensating controls against defined criteria — they are not obligated to accept all submissions."
+    }
+  },
+  {
+    "id": 36,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Compensating",
+    "difficulty": "hard",
+    "text": "An organization implements enhanced logging and monitoring as a compensating control for a vulnerability that cannot be immediately patched due to business constraints. A security reviewer argues that monitoring is a detective control and cannot compensate for a missing preventive control. Is this argument valid?",
+    "answers": [
+      { "id": "a", "text": "Yes — compensating controls must always be the same type as the control they replace" },
+      { "id": "b", "text": "No — compensating controls can be of a different type than the control they replace, as long as they provide equivalent overall risk reduction. Enhanced monitoring does not prevent exploitation but reduces the risk by ensuring rapid detection and response, shortening the exploitation window. Whether this is 'equivalent' depends on the specific risk assessment" },
+      { "id": "c", "text": "Yes — detective controls never compensate for preventive controls under any framework" },
+      { "id": "d", "text": "The argument is irrelevant — compensating controls do not need to reduce the same risk as the original control" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Compensating controls are not required to be the same type — they must provide equivalent risk reduction, which can come from multiple control types working together.",
+      "b": "A detective control can compensate for a missing preventive control if it provides equivalent risk management — through early detection and rapid response limiting exploitation impact. Whether equivalence is achieved requires specific risk analysis. This is the correct answer.",
+      "c": "No framework absolutely prohibits detective controls as compensating measures — equivalent risk reduction, not type matching, is the criterion.",
+      "d": "Compensating controls must address the same underlying risk — they are specifically defined as providing equivalent risk reduction for the risk the original control was meant to address."
+    }
+  },
+  {
+    "id": 37,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Directive",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes a directive security control?",
+    "answers": [
+      { "id": "a", "text": "A control that automatically blocks unauthorized access attempts" },
+      { "id": "b", "text": "A control that specifies required behaviors, actions, or configuration settings through policies, regulations, standards, or instructions — directing what must be done to maintain security" },
+      { "id": "c", "text": "A control that monitors systems for security anomalies" },
+      { "id": "d", "text": "A control that restores systems after a security incident" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Automatically blocking unauthorized access describes preventive technical controls — directive controls specify required actions without enforcing them technically.",
+      "b": "Directive controls provide instructions, policies, and mandates — they tell people what to do (acceptable use policies, security procedures, compliance requirements) rather than technically enforcing or automatically detecting. This is the correct answer.",
+      "c": "Monitoring for anomalies describes detective controls — directive controls provide direction, not monitoring.",
+      "d": "Restoring systems describes corrective controls — directive controls direct behavior, not restoration."
+    }
+  },
+  {
+    "id": 38,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Directive",
+    "difficulty": "medium",
+    "text": "An organization publishes a password policy requiring passwords to be at least 12 characters, use complexity requirements, and be changed every 90 days. The policy is documented and employees must acknowledge it. This policy is BEST classified as which control type?",
+    "answers": [
+      { "id": "a", "text": "Preventive — it prevents weak passwords" },
+      { "id": "b", "text": "Detective — it identifies employees using weak passwords" },
+      { "id": "c", "text": "Directive — it specifies required password behavior through documented policy that employees must follow" },
+      { "id": "d", "text": "Technical — it enforces password complexity through a system" }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "The policy itself does not technically prevent weak passwords — if it is enforced by a technical system, that system is preventive, but the policy document is directive.",
+      "b": "The policy does not detect weak passwords — a password auditing tool would be detective.",
+      "c": "A documented password policy directing required behaviors is a directive control — it specifies what must be done through written requirements. When a system enforces the policy, that system becomes a preventive technical control. The policy document itself is directive. This is the correct answer.",
+      "d": "If a technical system enforces complexity, that system is a technical preventive control — the policy document directing the requirement is directive."
+    }
+  },
+  {
+    "id": 39,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Directive",
+    "difficulty": "hard",
+    "text": "An organization relies on GDPR Articles 5 and 32 compliance requirements to direct their data encryption practices. These regulatory requirements function as which type of security control for the organization?",
+    "answers": [
+      { "id": "a", "text": "Technical preventive — regulations technically enforce encryption" },
+      { "id": "b", "text": "Directive — external regulatory requirements direct organizations on what security practices must be implemented. The regulation specifies required behavior but relies on organizations to technically implement the required controls" },
+      { "id": "c", "text": "Detective — regulations detect when organizations fail to encrypt data" },
+      { "id": "d", "text": "Compensating — regulations substitute for internal security policies" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Regulations do not technically enforce encryption — they direct organizations to implement encryption and impose penalties for non-compliance.",
+      "b": "Regulatory requirements are directive controls — they specify what organizations must do through legal mandates. The organization must then implement technical controls to meet the directive requirements. This is the correct answer.",
+      "c": "Regulators may audit and detect non-compliance — but the regulations themselves are directive, not detective controls.",
+      "d": "Regulations are primary directives, not substitutes for other controls — they establish what must be done."
+    }
+  },
+  {
+    "id": 40,
+    "domain": "1.0",
+    "objective": "1.1",
+    "keyword": "Directive",
+    "difficulty": "hard",
+    "text": "A security team notes that directive controls (policies, procedures) are frequently listed as the weakest link in security programs. An attacker exploits a system by circumventing a password policy — the user shared their password despite the policy prohibiting it. What does this illustrate about directive controls and what additional controls address this gap?",
+    "answers": [
+      { "id": "a", "text": "Directive controls are useless and should be replaced entirely with technical controls" },
+      { "id": "b", "text": "Directive controls specify required behavior but cannot technically enforce it — they depend on human compliance. This gap is addressed by layering technical controls (that enforce the directive) alongside directive controls. In this case: technical password sharing prevention (system prevents displaying passwords), MFA (makes shared passwords insufficient alone), and monitoring (detects shared credential use from unusual locations)" },
+      { "id": "c", "text": "The user should be terminated — this is purely a human failure requiring no control changes" },
+      { "id": "d", "text": "More detailed password policies would have prevented this incident" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Directive controls establish the legal, governance, and cultural foundation — technical controls enforce specific requirements but cannot replace the governance framework.",
+      "b": "Directive controls are necessary but not sufficient — they require technical controls for enforcement. Layering technical controls on top of directive controls provides the compliance assurance that directives alone cannot. This is the correct answer.",
+      "c": "Individual accountability is important but addressing only human failure while leaving the control gap open invites future incidents.",
+      "d": "More detailed policies still rely on human compliance — without technical enforcement, detail does not prevent the behavior."
+    }
+  },
+  {
+    "id": 41,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "CIA",
+    "difficulty": "easy",
+    "text": "A hospital database containing patient records is encrypted so only authorized clinicians can read it. Which element of the CIA triad does encryption PRIMARILY support in this scenario?",
+    "answers": [
+      { "id": "a", "text": "Integrity — encryption ensures records cannot be altered" },
+      { "id": "b", "text": "Availability — encryption ensures records are always accessible" },
+      { "id": "c", "text": "Confidentiality — encryption ensures only authorized parties can read the patient data" },
+      { "id": "d", "text": "Accountability — encryption ensures actions are traceable" }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Encryption can support integrity through authenticated encryption modes, but its primary role here is preventing unauthorized reading — confidentiality.",
+      "b": "Encryption does not improve availability — it could reduce availability if keys are lost.",
+      "c": "Confidentiality ensures data is accessible only to authorized parties. Encrypting patient records so only authorized clinicians can read them directly supports confidentiality. This is the correct answer.",
+      "d": "Accountability relates to logging and audit trails — not encryption."
+    }
+  },
+  {
+    "id": 42,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "CIA",
+    "difficulty": "medium",
+    "text": "A ransomware attack encrypts all files on a company's file server, making them inaccessible to employees. Which element of the CIA triad is PRIMARILY violated?",
+    "answers": [
+      { "id": "a", "text": "Confidentiality — the attacker can now read all company files" },
+      { "id": "b", "text": "Integrity — the attacker modified the files by encrypting them" },
+      { "id": "c", "text": "Availability — legitimate users can no longer access the files they need" },
+      { "id": "d", "text": "Non-repudiation — the attacker cannot be identified" }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "The attacker encrypts files — they do not necessarily read or expose the original contents. Confidentiality may also be violated if data is exfiltrated, but inaccessibility is the primary impact described.",
+      "b": "The files are encrypted but not necessarily corrupted in terms of content integrity — availability is the primary violation when legitimate access is denied.",
+      "c": "Availability ensures authorized users can access resources when needed. Ransomware denying access to files is a direct availability attack. This is the correct answer.",
+      "d": "Non-repudiation is about proof of actions — it is not a CIA triad element."
+    }
+  },
+  {
+    "id": 43,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "CIA",
+    "difficulty": "hard",
+    "text": "An attacker performs a man-in-the-middle attack, intercepting financial transaction data and modifying the transaction amounts before forwarding them to the receiving bank. Which elements of the CIA triad are violated, and which is MOST directly impacted?",
+    "answers": [
+      { "id": "a", "text": "Only availability — the transactions are delayed by the interception" },
+      { "id": "b", "text": "Confidentiality is violated (attacker reads the transactions) and integrity is violated (amounts are modified). Integrity is MOST directly impacted because the data reaching the destination is different from what was sent — the fundamental accuracy and trustworthiness of the data is compromised" },
+      { "id": "c", "text": "Only confidentiality — the attacker reads the transaction data" },
+      { "id": "d", "text": "All three — the attack also causes availability issues for the banking system" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Availability is not the primary concern — the transactions reach the destination (modified), so availability is largely maintained.",
+      "b": "The MITM attack violates confidentiality (reading data) and integrity (modifying data). Integrity is the most direct violation — the receiving bank receives fraudulent transaction amounts that differ from what was sent. This is the correct answer.",
+      "c": "Confidentiality is violated, but modification of amounts means integrity is also violated — and is the more critical impact.",
+      "d": "Availability is not significantly impacted if transactions still reach the bank (albeit modified)."
+    }
+  },
+  {
+    "id": 44,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "CIA",
+    "difficulty": "hard",
+    "text": "A security architect must balance all three CIA properties for an online banking system. Adding more encryption layers improves confidentiality but increases latency, potentially reducing availability during peak loads. This illustrates which fundamental security challenge?",
+    "answers": [
+      { "id": "a", "text": "CIA properties are always complementary — improving one always improves the others" },
+      { "id": "b", "text": "CIA properties sometimes create trade-offs — security controls strengthening one property can negatively affect another. Security architects must balance these tensions based on risk appetite and business requirements" },
+      { "id": "c", "text": "Confidentiality is always the most important CIA property and should never be sacrificed" },
+      { "id": "d", "text": "The CIA triad is outdated — modern systems do not need to balance these properties" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "CIA properties frequently create tensions — stronger encryption improves confidentiality but adds processing overhead affecting availability.",
+      "b": "CIA trade-offs are a fundamental security architecture challenge. Excessive confidentiality controls can hurt availability; highly available systems may sacrifice some confidentiality through caching. Architects must balance based on the system's risk profile. This is the correct answer.",
+      "c": "The relative importance of CIA properties is system-dependent — a hospital may prioritize availability (life-critical systems) while a defense contractor may prioritize confidentiality.",
+      "d": "The CIA triad remains a foundational framework — modern security frameworks extend it but do not replace it."
+    }
+  },
+  {
+    "id": 45,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Non-repudiation",
+    "difficulty": "easy",
+    "text": "Which of the following BEST describes non-repudiation in information security?",
+    "answers": [
+      { "id": "a", "text": "Ensuring that only authorized users can access sensitive data" },
+      { "id": "b", "text": "Providing proof that an action or communication was performed by a specific party, so they cannot later deny having done it" },
+      { "id": "c", "text": "Ensuring data remains unaltered during transmission" },
+      { "id": "d", "text": "Making systems available when needed by authorized users" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Ensuring only authorized users access data describes confidentiality and access control — not non-repudiation.",
+      "b": "Non-repudiation provides cryptographic or audit-based proof that a specific party performed an action — they cannot credibly deny sending a message or performing a transaction. Digital signatures are the primary technical mechanism. This is the correct answer.",
+      "c": "Ensuring data remains unaltered describes integrity — non-repudiation proves who performed an action.",
+      "d": "Ensuring systems are available describes availability — non-repudiation is about accountability for actions."
+    }
+  },
+  {
+    "id": 46,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Non-repudiation",
+    "difficulty": "medium",
+    "text": "A company requires employees to digitally sign all expense reports using their personal PKI certificates. An employee later claims they never submitted a particular expense report. How does the digital signature support non-repudiation?",
+    "answers": [
+      { "id": "a", "text": "The digital signature proves the document was encrypted, so only the employee could have sent it" },
+      { "id": "b", "text": "The digital signature was created using the employee's private key, which only they possess. The signature can be verified with their public key, proving the document was signed by the certificate holder. The employee cannot credibly deny signing it without claiming their private key was compromised" },
+      { "id": "c", "text": "Digital signatures only prove document integrity, not the identity of the signer" },
+      { "id": "d", "text": "Non-repudiation requires a witness — digital signatures alone are insufficient" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Digital signatures use asymmetric cryptography — the private key signs, but encryption and signing are different operations.",
+      "b": "The private key used for signing is unique to the certificate holder. A valid signature verifiable with the holder's public key proves they signed it — non-repudiation is established. This is the correct answer.",
+      "c": "Digital signatures provide both integrity (document unchanged) and non-repudiation (signed by key holder) — not just integrity.",
+      "d": "Digital signatures provide technical non-repudiation without human witnesses — the cryptographic proof stands independently."
+    }
+  },
+  {
+    "id": 47,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Non-repudiation",
+    "difficulty": "hard",
+    "text": "An organization implements comprehensive audit logging, capturing all user actions with timestamps and username attribution. An employee attempts to deny deleting a critical record, claiming someone else must have used their account. The logs show the deletion was performed from the employee's authenticated session. What limitations of log-based non-repudiation does this scenario highlight?",
+    "answers": [
+      { "id": "a", "text": "Logs provide perfect non-repudiation and the employee's denial is impossible to sustain" },
+      { "id": "b", "text": "Log-based non-repudiation has a credential-sharing weakness — if account credentials were shared or compromised, the log accurately records the session but cannot prove who was physically using the authenticated session. True non-repudiation requires combining logs with stronger authentication (MFA, biometrics) and physical controls to close this gap" },
+      { "id": "c", "text": "Audit logs are inadmissible as evidence and provide no non-repudiation value" },
+      { "id": "d", "text": "The employee's denial is valid — logs are routinely manipulated and cannot be trusted" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Logs prove what the account did — not who was using the account. Credential sharing or compromise weakens the non-repudiation value.",
+      "b": "Log attribution depends on authentication quality — if credentials can be shared or compromised, logs attribute actions to the account, not necessarily the person. MFA and biometrics strengthen the link between authentication and physical identity. This is the correct answer.",
+      "c": "Audit logs are admissible in legal proceedings and are a primary non-repudiation mechanism — especially when combined with integrity protection (WORM storage, cryptographic signing).",
+      "d": "Properly protected audit logs (WORM, cryptographic integrity verification) are trusted evidence — the concern is attribution quality, not log authenticity."
+    }
+  },
+  {
+    "id": 48,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Non-repudiation",
+    "difficulty": "hard",
+    "text": "A financial institution requires non-repudiation for all wire transfers over $10,000. Which combination of technical controls provides the STRONGEST non-repudiation for this requirement?",
+    "answers": [
+      { "id": "a", "text": "Username and password authentication with audit logging" },
+      { "id": "b", "text": "Multi-factor authentication (requiring physical token + PIN) combined with digital signatures applied to each transaction using the user's HSM-protected private key, immutable timestamped audit logs, and video surveillance of the transaction terminal" },
+      { "id": "c", "text": "SSL/TLS encryption of all wire transfer communications" },
+      { "id": "d", "text": "Role-based access control limiting who can initiate wire transfers" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Password authentication is weak for non-repudiation — passwords can be shared and logs only prove account activity, not individual identity.",
+      "b": "The combination provides layered non-repudiation: MFA with physical token strengthens identity proof, HSM-protected digital signatures cryptographically bind the transaction to the key holder, immutable logs provide tamper-evident records, and video surveillance provides physical evidence. This is the correct answer.",
+      "c": "TLS encrypts communications providing confidentiality — it does not provide non-repudiation of the transaction itself.",
+      "d": "RBAC controls who can perform actions — it does not prove who actually performed a specific action (non-repudiation)."
+    }
+  },
+  {
+    "id": 49,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "AAA",
+    "difficulty": "easy",
+    "text": "A user enters their username and password to access a corporate VPN. After authentication, the system checks whether the user is permitted to access specific internal resources. Their VPN session activities are recorded. Which AAA components are demonstrated in sequence?",
+    "answers": [
+      { "id": "a", "text": "Authorization, Authentication, Accounting" },
+      { "id": "b", "text": "Authentication (username/password verification), Authorization (checking permitted resource access), Accounting (recording session activities)" },
+      { "id": "c", "text": "Accounting, Authorization, Authentication" },
+      { "id": "d", "text": "Authentication, Accounting, Authorization" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Authorization cannot occur before authentication — identity must be verified before permissions can be evaluated.",
+      "b": "AAA follows a defined sequence: Authentication verifies identity (who are you?), Authorization determines permissions (what can you do?), Accounting records activity (what did you do?). This is the correct answer.",
+      "c": "Accounting occurs after authentication and authorization — this ordering is incorrect.",
+      "d": "Accounting records what authorized users do — it follows authorization, not the other way around."
+    }
+  },
+  {
+    "id": 50,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "AAA",
+    "difficulty": "medium",
+    "text": "A RADIUS server is deployed to manage wireless network access. When a user connects, RADIUS verifies credentials against Active Directory, grants access to a specific VLAN based on group membership, and logs connection details including duration and bytes transferred. Which RADIUS functions map to Authentication, Authorization, and Accounting respectively?",
+    "answers": [
+      { "id": "a", "text": "VLAN assignment, credential verification, session logging" },
+      { "id": "b", "text": "Credential verification against AD (Authentication), VLAN assignment based on group membership (Authorization), logging connection details (Accounting)" },
+      { "id": "c", "text": "Session logging, VLAN assignment, credential verification" },
+      { "id": "d", "text": "RADIUS performs only authentication — VLANs and logging are separate systems" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "This incorrectly maps functions — VLAN assignment is authorization, not authentication.",
+      "b": "RADIUS AAA: credentials checked against AD is Authentication, VLAN assignment based on AD group is Authorization, and logging connection duration/bytes is Accounting. This is the correct answer.",
+      "c": "This ordering reverses the correct sequence — authentication must precede both authorization and accounting.",
+      "d": "RADIUS is a full AAA protocol — it handles authentication, authorization attribute assignment, and accounting (session records) in a single framework."
+    }
+  },
+  {
+    "id": 51,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "AAA",
+    "difficulty": "hard",
+    "text": "An organization uses TACACS+ for network device access. Compared to RADIUS, what is the PRIMARY security advantage of TACACS+ for this use case?",
+    "answers": [
+      { "id": "a", "text": "TACACS+ is faster than RADIUS, reducing authentication latency" },
+      { "id": "b", "text": "TACACS+ separates Authentication, Authorization, and Accounting into distinct transactions and encrypts the entire packet payload (not just the password). This allows granular per-command authorization on network devices and provides more comprehensive encryption, making it better suited for administrative device access" },
+      { "id": "c", "text": "TACACS+ uses UDP while RADIUS uses TCP, providing better reliability" },
+      { "id": "d", "text": "TACACS+ is an open standard while RADIUS is proprietary" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Performance is not the primary security differentiator — TACACS+ is often slightly slower due to full packet encryption.",
+      "b": "TACACS+ separates AAA into discrete exchanges (enabling granular authorization) and encrypts the full packet body. For network device access, per-command authorization is critical — administrators can be restricted to specific commands. This is the correct answer.",
+      "c": "This is reversed — TACACS+ uses TCP (reliable), RADIUS uses UDP (less overhead but less reliable).",
+      "d": "Both TACACS+ (Cisco-extended, now open) and RADIUS (RFC standard) have open specifications — this is not a meaningful differentiator."
+    }
+  },
+  {
+    "id": 52,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "AAA",
+    "difficulty": "hard",
+    "text": "An employee is authenticated but attempts to access a file they are not authorized to view. The system denies access and logs the attempt. From an AAA perspective, at which component did the security control prevent unauthorized access, and what did the third component record?",
+    "answers": [
+      { "id": "a", "text": "Authentication prevented the access; Authorization recorded the attempt" },
+      { "id": "b", "text": "Authorization enforced the permission boundary and prevented the unauthorized access. Accounting recorded the failed access attempt, the username, resource requested, timestamp, and outcome — providing an audit trail of the authorization violation" },
+      { "id": "c", "text": "Accounting prevented the access; Authentication recorded the attempt" },
+      { "id": "d", "text": "Authentication and Authorization both prevented access simultaneously" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Authentication already succeeded (the user is authenticated) — the unauthorized access attempt was stopped by Authorization, not Authentication.",
+      "b": "Authorization is the component that enforces what an authenticated user can do. The failed access attempt is recorded by Accounting — providing the audit trail needed to detect authorization violations. This is the correct answer.",
+      "c": "Accounting records events — it does not enforce access controls. This ordering is incorrect.",
+      "d": "Authentication already completed successfully — Authorization is the component that denied the specific resource access."
+    }
+  },
+  {
+    "id": 53,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Gap analysis",
+    "difficulty": "easy",
+    "text": "A security team compares their current security controls against the NIST Cybersecurity Framework requirements and identifies 12 controls they have not yet implemented. This process is BEST described as:",
+    "answers": [
+      { "id": "a", "text": "A penetration test — testing the effectiveness of existing controls" },
+      { "id": "b", "text": "A gap analysis — identifying the difference between the current security posture and the desired or required state" },
+      { "id": "c", "text": "A risk assessment — quantifying the probability and impact of security threats" },
+      { "id": "d", "text": "A vulnerability scan — identifying technical vulnerabilities in systems" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Penetration testing actively exploits vulnerabilities — it does not compare controls to frameworks.",
+      "b": "Gap analysis identifies the delta between current state and desired/required state — comparing existing controls to NIST CSF and finding missing controls is a textbook gap analysis. This is the correct answer.",
+      "c": "Risk assessment evaluates probability and impact of specific threats — not a framework compliance comparison.",
+      "d": "Vulnerability scanning identifies technical weaknesses — not control framework compliance gaps."
+    }
+  },
+  {
+    "id": 54,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Gap analysis",
+    "difficulty": "medium",
+    "text": "A financial services organization must comply with PCI DSS. They conduct a gap analysis and discover they have implemented 85% of PCI DSS requirements but lack network segmentation between cardholder data environments and corporate networks. How does identifying this gap support the organization?",
+    "answers": [
+      { "id": "a", "text": "It confirms the organization is already compliant since 85% is a passing threshold" },
+      { "id": "b", "text": "Identifying the network segmentation gap allows the organization to prioritize remediation before an audit, understand the compliance risk, quantify remediation effort, and prevent potential PCI DSS violations and associated fines — the gap analysis provides actionable intelligence for security improvement" },
+      { "id": "c", "text": "Gap analysis results are confidential and should not be shared with leadership" },
+      { "id": "d", "text": "The gap only matters if a breach occurs — until then it has no practical impact" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "PCI DSS requires full compliance — there is no passing percentage. The missing network segmentation is a significant gap.",
+      "b": "Gap analysis translates finding gaps into actionable remediation priorities — identifying the missing segmentation before an audit prevents compliance failure, fines, and potential breach exposure. This is the correct answer.",
+      "c": "Gap analysis results should be shared with leadership to drive resource allocation for remediation — they are essential for informed security investment decisions.",
+      "d": "Compliance gaps create real risk before any breach occurs — they indicate active exposure to threats and regulatory violations."
+    }
+  },
+  {
+    "id": 55,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Gap analysis",
+    "difficulty": "hard",
+    "text": "A gap analysis reveals that an organization's incident response capability scores 2 out of 5 against NIST CSF Respond function requirements. The organization's leadership asks how to interpret this score and what it means for business risk. What is the MOST accurate interpretation?",
+    "answers": [
+      { "id": "a", "text": "A score of 2/5 means the organization is 40% secure and will fail 60% of incidents" },
+      { "id": "b", "text": "A score of 2/5 indicates significant maturity gaps in incident response capabilities — the organization likely lacks documented response plans, trained response teams, tested procedures, or integration with threat intelligence. This means security incidents will take longer to detect, contain, and remediate, increasing the business impact (costs, downtime, data loss) when breaches occur" },
+      { "id": "c", "text": "The score is irrelevant — all organizations eventually achieve perfect incident response through experience" },
+      { "id": "d", "text": "A 2/5 score means 20% of incidents will be successfully handled" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Maturity scores are not linear probability metrics — they indicate capability development level, not a percentage of incidents handled.",
+      "b": "A low maturity score translates to longer response times, missed indicators, incomplete containment, and greater business impact during incidents. The business risk is extended breach duration and impact, not a fixed percentage of failure. This is the correct answer.",
+      "c": "Incident response maturity requires deliberate development — experience alone without systematic improvement does not achieve capability maturity.",
+      "d": "Maturity scores do not directly correlate to incident handling percentages — they indicate process and capability development level."
+    }
+  },
+  {
+    "id": 56,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Zero Trust",
+    "difficulty": "easy",
+    "text": "Which statement BEST describes the core principle of Zero Trust security?",
+    "answers": [
+      { "id": "a", "text": "All traffic within the corporate network perimeter is trusted and does not require authentication" },
+      { "id": "b", "text": "No user, device, or network location is inherently trusted — every access request must be continuously verified regardless of whether it originates inside or outside the traditional network perimeter" },
+      { "id": "c", "text": "External traffic is untrusted but internal traffic from corporate devices is always trusted" },
+      { "id": "d", "text": "Zero Trust applies only to cloud environments — on-premises networks maintain implicit trust" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Implicit trust within the perimeter is the traditional model Zero Trust explicitly rejects — insider threats and lateral movement exploit this assumption.",
+      "b": "Zero Trust's core principle is 'never trust, always verify' — authentication and authorization are required for every access request regardless of origin. This is the correct answer.",
+      "c": "Zero Trust eliminates the concept of trusted internal networks — even corporate devices on the internal network must continuously verify identity and authorization.",
+      "d": "Zero Trust applies to all environments — cloud, on-premises, and hybrid. The principle transcends deployment model."
+    }
+  },
+  {
+    "id": 57,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Zero Trust",
+    "difficulty": "medium",
+    "text": "In a Zero Trust architecture, what is the role of the Policy Engine?",
+    "answers": [
+      { "id": "a", "text": "The Policy Engine physically enforces access control at network boundaries" },
+      { "id": "b", "text": "The Policy Engine makes access decisions by evaluating the current trust level of subjects (users, devices) against defined policies — considering identity, device health, location, and behavioral factors to grant, deny, or conditionally permit access" },
+      { "id": "c", "text": "The Policy Engine manages user account provisioning and password resets" },
+      { "id": "d", "text": "The Policy Engine is the component that users interact with directly to request access" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Physical enforcement at network boundaries describes traditional perimeter security — the Policy Engine is a logical decision-making component in Zero Trust.",
+      "b": "The Policy Engine is the brain of the Zero Trust control plane — it evaluates trust signals (identity, device compliance, risk scores) against policies and makes the trust decision communicated to the Policy Administrator. This is the correct answer.",
+      "c": "User account management is an identity governance function — not the Policy Engine's role.",
+      "d": "Users interact with the Policy Enforcement Point — the Policy Engine is a backend decision engine."
+    }
+  },
+  {
+    "id": 58,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Zero Trust",
+    "difficulty": "hard",
+    "text": "A Zero Trust implementation includes the Policy Enforcement Point (PEP). A user requests access to an application. The Policy Engine grants conditional access requiring MFA re-authentication. How does the PEP interact with this decision in the Zero Trust data plane?",
+    "answers": [
+      { "id": "a", "text": "The PEP overrides the Policy Engine's decision if the user has previously been authenticated" },
+      { "id": "b", "text": "The PEP acts as the access gateway — it enforces the Policy Engine's decision by requiring MFA re-authentication before permitting the application access request. The PEP sits between subjects and resources, enforcing conditional access decisions from the control plane in real time" },
+      { "id": "c", "text": "The PEP makes independent access decisions without consulting the Policy Engine" },
+      { "id": "d", "text": "The PEP logs access attempts but does not enforce the Policy Engine's decisions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The PEP enforces Policy Engine decisions — it cannot override them. Previous authentication does not bypass the current conditional access requirement.",
+      "b": "The PEP is the enforcement mechanism in the data plane — it receives trust decisions from the Policy Engine (via Policy Administrator) and enforces them by permitting, denying, or conditioning access in real time. This is the correct answer.",
+      "c": "The PEP enforces but does not make independent policy decisions — that is the Policy Engine's role.",
+      "d": "The PEP actively enforces access decisions — it is more than a logging mechanism."
+    }
+  },
+  {
+    "id": 59,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Physical security",
+    "difficulty": "easy",
+    "text": "A security team installs concrete barriers in front of a data center entrance to prevent vehicles from ramming through the facility entrance. These barriers are BEST described as:",
+    "answers": [
+      { "id": "a", "text": "Fencing — they establish a security perimeter" },
+      { "id": "b", "text": "Bollards — short, sturdy posts designed to prevent vehicle access while allowing pedestrian passage" },
+      { "id": "c", "text": "Access control vestibules — they control who enters the facility" },
+      { "id": "d", "text": "Sensors — they detect unauthorized vehicles approaching" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Fencing creates a perimeter barrier — bollards are vehicle-impact-specific barriers, not perimeter fencing.",
+      "b": "Bollards are short, sturdy posts (concrete or steel) specifically designed to stop vehicle attacks — protecting building entrances from vehicle-ramming attacks while allowing pedestrian access. This is the correct answer.",
+      "c": "Access control vestibules control pedestrian entry — bollards specifically address vehicle threats.",
+      "d": "Sensors detect — bollards physically prevent. These serve different functions."
+    }
+  },
+  {
+    "id": 60,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Physical security",
+    "difficulty": "medium",
+    "text": "A secure facility uses an access control vestibule (mantrap) at all entrances. An employee holds the door open for a colleague who forgot their badge. What security principle is violated, and which control directly addresses this?",
+    "answers": [
+      { "id": "a", "text": "No violation occurs — helping colleagues is acceptable in secure facilities" },
+      { "id": "b", "text": "Tailgating violates the access control policy requiring individual authentication. The mantrap directly addresses this by ensuring only one door can be open at a time — if tailgating is detected (weight sensors, cameras, or dual door logic), the inner door will not open, physically preventing unauthorized entry" },
+      { "id": "c", "text": "The violation is a confidentiality issue — the employee shared their badge" },
+      { "id": "d", "text": "The violation is an integrity issue — badge data was compromised" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Tailgating is a physical security violation — secure facilities require individual authentication for accountability and access control.",
+      "b": "Tailgating bypasses individual authentication. Mantraps (access control vestibules) physically prevent tailgating by interlocking doors — the inner door only opens after the outer door closes and the individual authenticates. This is the correct answer.",
+      "c": "No badge was shared — physical tailgating bypasses the need for a badge by following an authorized person through.",
+      "d": "Badge data integrity is not the concern — unauthorized physical access through social engineering is."
+    }
+  },
+  {
+    "id": 61,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Physical security",
+    "difficulty": "hard",
+    "text": "A security team designs physical security for a new data center. They must select sensor types for different zones. The loading dock requires detection of large vehicles. Server rooms need detection of human presence without triggering on HVAC airflow. Parking areas need motion detection that works in complete darkness. Which sensor types BEST match each requirement?",
+    "answers": [
+      { "id": "a", "text": "Infrared for all three locations — IR works universally" },
+      { "id": "b", "text": "Loading dock: microwave sensors (detect large metal mass/movement through walls/barriers); server rooms: pressure sensors on floor tiles (detect human weight without triggering on air movement); parking areas: infrared motion sensors (detect body heat regardless of lighting conditions)" },
+      { "id": "c", "text": "Ultrasonic for loading docks, infrared for server rooms, pressure for parking" },
+      { "id": "d", "text": "Camera systems replace all sensor types with AI-based detection" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Infrared works for many applications but is not optimal for all three scenarios — particularly for detecting large vehicles through barriers or for weight-based human detection.",
+      "b": "Microwave sensors penetrate barriers and detect large metal masses — suitable for loading docks. Pressure sensors detect weight — human presence without HVAC air triggering false positives. Infrared detects body heat in complete darkness — ideal for unlit parking areas. This is the correct answer.",
+      "c": "Ultrasonic is effective for open spaces but may be disrupted by HVAC at loading docks. This mapping does not match the specific requirements as well as option B.",
+      "d": "Camera systems with AI detection require lighting for optical cameras — they do not inherently work in complete darkness without IR illumination."
+    }
+  },
+  {
+    "id": 62,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Physical security",
+    "difficulty": "hard",
+    "text": "A building security assessment finds that the facility uses access badges but has no visitor management system, no security guards, adequate lighting, and CCTV cameras that are only reviewed after incidents. An attacker performs social engineering by posing as an HVAC technician. Which COMBINATION of physical security controls would MOST effectively have prevented this?",
+    "answers": [
+      { "id": "a", "text": "Better lighting — the attacker would have been more visible" },
+      { "id": "b", "text": "A formal visitor management system requiring identity verification and escort, security guard presence to challenge unescorted individuals in secure areas, real-time CCTV monitoring with alert capabilities, and security awareness training for employees on social engineering tactics" },
+      { "id": "c", "text": "More CCTV cameras — covering all angles prevents social engineering" },
+      { "id": "d", "text": "Stronger access badge encryption — preventing badge cloning" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lighting helps visibility but does not stop social engineering — an attacker posing as a technician would simply appear more visible, not be challenged.",
+      "b": "Social engineering bypasses technical controls by exploiting human trust. Layered controls address this: visitor management creates checkpoints, security guards challenge unauthorized personnel, real-time monitoring enables response, and employee training creates a human detection layer. This is the correct answer.",
+      "c": "More cameras capture better evidence but do not prevent access — an attacker who has already entered is not stopped by more cameras.",
+      "d": "Badge cloning was not the attack vector — the attacker used social engineering to gain access without needing to clone a badge."
+    }
+  },
+  {
+    "id": 63,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Deception and disruption technology",
+    "difficulty": "easy",
+    "text": "A security team deploys a server on their network that appears to be a legitimate database server but contains no real data. It is configured to alert security analysts whenever any connection attempts are made to it. This is BEST described as:",
+    "answers": [
+      { "id": "a", "text": "A honeyfile — a decoy file designed to attract attackers" },
+      { "id": "b", "text": "A honeypot — a decoy system designed to lure attackers and detect unauthorized access attempts" },
+      { "id": "c", "text": "A honeynet — a network of decoy systems" },
+      { "id": "d", "text": "A honeytoken — a decoy credential or data element" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A honeyfile is a specific decoy file — not an entire decoy server system.",
+      "b": "A honeypot is a single decoy system designed to attract and detect attacker activity — legitimate users have no reason to access it, so any connection is a strong indicator of unauthorized activity. This is the correct answer.",
+      "c": "A honeynet is multiple interconnected honeypots simulating a complete network — a single decoy server is a honeypot.",
+      "d": "A honeytoken is a specific data element (credential, API key) — not a decoy server system."
+    }
+  },
+  {
+    "id": 64,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Deception and disruption technology",
+    "difficulty": "medium",
+    "text": "A security team embeds fake AWS API credentials in a publicly accessible GitHub repository as part of their threat detection strategy. When these credentials are used, an alert fires. This technique is BEST described as using a:",
+    "answers": [
+      { "id": "a", "text": "Honeypot — a decoy system in the cloud" },
+      { "id": "b", "text": "Honeytoken — a fake credential or data element designed to detect unauthorized use. When an attacker finds and attempts to use the credentials, the resulting API call triggers an alert indicating a credential exposure incident" },
+      { "id": "c", "text": "Honeynet — a network of fake cloud resources" },
+      { "id": "d", "text": "Honeyfile — a decoy document containing the credentials" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A honeypot is a decoy system — fake credentials placed as bait are honeytokens.",
+      "b": "Honeytokens are specific data elements (API keys, credentials, tokens) designed to detect unauthorized use. Using fake AWS credentials as bait in public repositories is a classic honeytoken deployment. This is the correct answer.",
+      "c": "A honeynet involves multiple interconnected systems — fake credentials are honeytokens.",
+      "d": "A honeyfile contains decoy data — the credentials themselves are the token. If the credentials were inside a file being tracked, the file would be the honeyfile and the credentials would be a honeytoken within it."
+    }
+  },
+  {
+    "id": 65,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Deception and disruption technology",
+    "difficulty": "hard",
+    "text": "A security operations team deploys a honeynet comprising fake web servers, database servers, and workstations interconnected with realistic traffic. An attacker compromises a real system and begins lateral movement. They discover and enter the honeynet. What intelligence does the honeynet provide that a single honeypot cannot?",
+    "answers": [
+      { "id": "a", "text": "A honeynet provides faster detection than a honeypot" },
+      { "id": "b", "text": "A honeynet enables observation of complete attack chains — the attacker's lateral movement techniques, privilege escalation methods, persistence mechanisms, tools used, communication patterns, and objectives become visible as they move through the fake network environment. This provides threat intelligence about the attacker's full TTPs (Tactics, Techniques, and Procedures) rather than a single point of contact" },
+      { "id": "c", "text": "A honeynet is more cost-effective than a honeypot" },
+      { "id": "d", "text": "A honeynet blocks attackers while a honeypot only detects them" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Detection speed is similar — the value of a honeynet is breadth of intelligence, not detection speed.",
+      "b": "Honeynets enable full attack chain observation — as attackers traverse multiple decoy systems, defenders observe their complete methodology, tools, and objectives. This threat intelligence is invaluable for improving defenses against the specific threat actor. This is the correct answer.",
+      "c": "Honeynets are typically more expensive than single honeypots — requiring more systems and management.",
+      "d": "Neither honeypots nor honeynets block attackers — both are detection and intelligence-gathering tools. Disruption is a secondary benefit if attackers spend time in decoy environments."
+    }
+  },
+  {
+    "id": 66,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Deception and disruption technology",
+    "difficulty": "hard",
+    "text": "A security team embeds canary tokens in highly sensitive documents — when the document is opened from an unauthorized system, the token makes an HTTP callback revealing the opener's IP address. The documents are placed in locations where only an insider threat or attacker with significant access would find them. Which deception technology term BEST describes these canary-embedded documents?",
+    "answers": [
+      { "id": "a", "text": "Honeypot — the documents are decoy systems" },
+      { "id": "b", "text": "Honeyfiles — the documents themselves are the decoy artifacts. The embedded canary tokens are honeytokens within the honeyfiles. When accessed by unauthorized parties, they reveal the access attempt through the callback mechanism" },
+      { "id": "c", "text": "Honeynet — the documents form a network of decoys" },
+      { "id": "d", "text": "Honeytoken — the entire document is the token" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Honeypots are decoy systems — documents are honeyfiles.",
+      "b": "The documents are honeyfiles (decoy file artifacts designed to attract unauthorized access). The embedded canary tokens are honeytokens within those files. Both terms apply at different granularities. This is the correct answer.",
+      "c": "A honeynet is multiple interconnected systems — decoy documents are honeyfiles.",
+      "d": "The document as a whole is the honeyfile — the embedded callback mechanism (canary token) is the honeytoken. Calling the entire document a honeytoken conflates the two levels of deception."
+    }
+  },
+  {
+    "id": 67,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Deception and disruption technology",
+    "difficulty": "hard",
+    "text": "A security team deploys deception technology across their environment — honeypots, honeyfiles, and honeytokens. Six months later, no alerts have fired. A junior analyst declares the investment wasted since 'nothing was detected.' A senior analyst disagrees. Which interpretation is MORE accurate?",
+    "answers": [
+      { "id": "a", "text": "The junior analyst is correct — no alerts means the technology provided no value" },
+      { "id": "b", "text": "The senior analyst is correct for multiple reasons: (1) no detection may mean the deception assets are well-placed and no threat actors with access have been present — a negative result; (2) deception technology has inherently low false positive rates — any firing would be high-confidence; (3) the presence of deception may have disrupted attacker operations as they tried to avoid detection. Six months without alerts with well-designed deception means the environment may be free of active threat actors who have reached those assets" },
+      { "id": "c", "text": "The technology should be replaced with a SIEM which generates more alerts" },
+      { "id": "d", "text": "Deception technology should fire alerts daily to prove its value" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "No alerts from deception technology is not inherently negative — it may mean no unauthorized access to those assets occurred, which is a security positive.",
+      "b": "Deception technology's value includes the negative case — the absence of alerts means either no threat actors with relevant access are present, or they are actively avoiding deception assets (itself useful intelligence). High-confidence alerts when they do fire are the primary operational value. This is the correct answer.",
+      "c": "SIEMs generate many alerts (including false positives) for different purposes — deception technology complements SIEMs by providing high-fidelity, low-volume alerts.",
+      "d": "Deception technology should only fire when unauthorized access occurs — artificial alerts undermine the high-confidence signal value."
+    }
+  },
+  {
+    "id": 68,
+    "domain": "1.0",
+    "objective": "1.2",
+    "keyword": "Gap analysis",
+    "difficulty": "hard",
+    "text": "A gap analysis for a healthcare organization comparing their controls against HIPAA Security Rule requirements reveals gaps in: (1) encryption of ePHI at rest, (2) workforce security training, and (3) audit controls for ePHI access. The organization has limited budget. How should they prioritize remediation of these gaps?",
+    "answers": [
+      { "id": "a", "text": "Remediate in alphabetical order — audit controls, encryption, workforce training" },
+      { "id": "b", "text": "Prioritize based on risk impact and likelihood: ePHI encryption at rest addresses the highest likelihood of data breach (physical theft/improper disposal), audit controls address regulatory enforcement priority (regulators require evidence of access monitoring), and workforce training addresses the most frequent breach cause (human error/phishing). A risk-based prioritization framework should be applied given budget constraints, likely placing encryption and audit controls first due to direct regulatory and breach risk" },
+      { "id": "c", "text": "Implement the cheapest control first to show progress" },
+      { "id": "d", "text": "Address all gaps simultaneously regardless of budget constraints" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Alphabetical prioritization ignores risk — gap analysis should drive risk-based prioritization.",
+      "b": "Risk-based prioritization considers likelihood of exploitation and magnitude of impact — ePHI encryption addresses direct breach risk, audit controls meet regulatory enforcement expectations, and training addresses the human factor. This framework is correct. This is the correct answer.",
+      "c": "Cost-based prioritization may implement low-risk controls while high-risk gaps remain open — risk should drive prioritization.",
+      "d": "Attempting all gaps simultaneously with limited budget typically results in none being fully implemented — prioritization enables effective resource allocation."
+    }
+  },
+  {
+    "id": 69,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Approval process",
+    "difficulty": "easy",
+    "text": "Why is a formal approval process essential to a secure change management program?",
+    "answers": [
+      { "id": "a", "text": "It slows down changes so attackers cannot exploit them during deployment" },
+      { "id": "b", "text": "It ensures that proposed changes are reviewed for security, business, and technical impact by appropriate stakeholders before implementation — preventing unauthorized or poorly planned changes that could introduce vulnerabilities or cause outages" },
+      { "id": "c", "text": "It gives the IT team legal authority to make changes to production systems" },
+      { "id": "d", "text": "It documents changes after they occur for audit purposes" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The purpose of approval is oversight and risk review — not deliberately slowing change to thwart attackers.",
+      "b": "A formal approval process ensures that changes are reviewed before implementation — catching security risks, compatibility issues, and business impacts that implementers may overlook. Unauthorized changes are a major source of security incidents. This is the correct answer.",
+      "c": "Legal authority to make changes is established by role and policy — the approval process ensures those authorized changes are vetted before execution.",
+      "d": "Approval occurs before implementation — post-change documentation is a separate step."
+    }
+  },
+  {
+    "id": 70,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Approval process",
+    "difficulty": "medium",
+    "text": "A developer pushes an emergency hotfix directly to production without going through the change management approval process. The fix inadvertently disables a security control. Which change management element would MOST directly have prevented this outcome?",
+    "answers": [
+      { "id": "a", "text": "A better backout plan for the hotfix" },
+      { "id": "b", "text": "Requiring all changes — including emergency changes — to go through at least an expedited approval process with security review, preventing unreviewed modifications to production that could disable security controls" },
+      { "id": "c", "text": "A longer maintenance window allowing more testing time" },
+      { "id": "d", "text": "Better version control of the production codebase" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A backout plan helps recover after a bad change — it does not prevent the security control from being disabled in the first place.",
+      "b": "Bypassing the approval process allowed an unreviewed change to reach production. Even emergency changes should have an expedited review — a security reviewer would likely catch that a security control was being disabled. This is the correct answer.",
+      "c": "The maintenance window is about timing — not about reviewing the content of the change for security impact.",
+      "d": "Version control tracks what changed — the approval process is what would have caught the security impact before the change was made."
+    }
+  },
+  {
+    "id": 71,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Ownership",
+    "difficulty": "easy",
+    "text": "In change management, what is the role of the change owner?",
+    "answers": [
+      { "id": "a", "text": "The change owner is responsible for approving all changes submitted by others" },
+      { "id": "b", "text": "The change owner is the individual or team accountable for the change — responsible for ensuring it is properly planned, tested, approved, implemented, and documented, and answerable if the change causes problems" },
+      { "id": "c", "text": "The change owner owns the hardware or software being changed" },
+      { "id": "d", "text": "The change owner is the senior executive who signs off on all IT changes" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The Change Advisory Board (CAB) typically approves changes — the change owner is accountable for the specific change, not all changes.",
+      "b": "The change owner has end-to-end accountability for their change — from planning and testing through implementation and documentation. They are the point of accountability if the change has problems. This is the correct answer.",
+      "c": "Asset ownership and change ownership are different concepts — the change owner is accountable for the change process, not necessarily the asset.",
+      "d": "Senior executives may approve certain high-impact changes — but the change owner is typically the person or team directly accountable for the change."
+    }
+  },
+  {
+    "id": 72,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Impact analysis",
+    "difficulty": "easy",
+    "text": "Before deploying a new firewall rule, a security team evaluates which applications and services might be affected and identifies three critical business applications that could be disrupted. This activity is BEST described as:",
+    "answers": [
+      { "id": "a", "text": "A vulnerability assessment — identifying weaknesses in the firewall" },
+      { "id": "b", "text": "An impact analysis — evaluating the potential effects of the proposed change on systems, services, and business operations before the change is made" },
+      { "id": "c", "text": "A gap analysis — comparing current and desired security states" },
+      { "id": "d", "text": "A threat model — identifying potential attackers who might exploit the new rule" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A vulnerability assessment identifies security weaknesses — not the business and operational impact of a change.",
+      "b": "Impact analysis evaluates what a proposed change might affect before implementation — identifying that three critical applications could be disrupted allows the team to plan accordingly. This is the correct answer.",
+      "c": "Gap analysis compares current to desired state — impact analysis evaluates the effect of a specific proposed change.",
+      "d": "Threat modeling identifies threats and attack vectors — impact analysis focuses on operational and business effects of changes."
+    }
+  },
+  {
+    "id": 73,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Impact analysis",
+    "difficulty": "medium",
+    "text": "A change management team performs an impact analysis for a proposed operating system upgrade across 500 workstations. The analysis should address which of the following security-relevant questions?",
+    "answers": [
+      { "id": "a", "text": "Only whether the upgrade will complete within the maintenance window" },
+      { "id": "b", "text": "Whether existing security agents (AV, EDR) are compatible with the new OS version; whether security patches are included; whether the upgrade requires disabling security controls during installation; and whether data migration might expose sensitive information during the process" },
+      { "id": "c", "text": "Only the cost of the upgrade licenses" },
+      { "id": "d", "text": "Whether employees prefer the new OS interface" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Maintenance window timing is one consideration — but security impact analysis must address compatibility, exposure, and security control continuity.",
+      "b": "Security-focused impact analysis for an OS upgrade must address: agent compatibility (will AV/EDR break?), patch content (are vulnerabilities addressed?), installation requirements (must security features be temporarily disabled?), and data handling during migration. This is the correct answer.",
+      "c": "Cost is a business consideration — not a security impact analysis question.",
+      "d": "User preference is a user adoption concern — not a security impact question."
+    }
+  },
+  {
+    "id": 74,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Backout plan",
+    "difficulty": "easy",
+    "text": "What is the purpose of a backout plan in change management?",
+    "answers": [
+      { "id": "a", "text": "A backout plan documents all the changes made during a maintenance window" },
+      { "id": "b", "text": "A backout plan provides documented procedures to reverse a change and restore the system to its pre-change state if the change causes problems or fails" },
+      { "id": "c", "text": "A backout plan identifies the stakeholders who need to approve a change" },
+      { "id": "d", "text": "A backout plan lists backup copies of data that will be created during the change" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Documenting changes made is part of change records — not the backout plan's primary purpose.",
+      "b": "A backout plan defines the steps to reverse a change if it fails — including who initiates it, what steps to follow, and how to verify the rollback succeeded. Without a backout plan, a failed change may cause extended outages. This is the correct answer.",
+      "c": "Stakeholder identification is part of change planning — not the backout plan.",
+      "d": "Backup creation may be part of the backout plan's preparation — but the plan itself describes how to reverse the change."
+    }
+  },
+  {
+    "id": 75,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Backout plan",
+    "difficulty": "medium",
+    "text": "A team deploys a database schema change during a maintenance window. Two hours into the deployment, critical errors occur. The team initiates the backout plan. The backout fails because the rollback script was written for the previous version, not accounting for a dependency that was also upgraded. What change management lesson does this illustrate?",
+    "answers": [
+      { "id": "a", "text": "Backout plans should never be created — changes should always be permanent" },
+      { "id": "b", "text": "Backout plans must be tested as rigorously as the change itself — and must account for all dependencies and parallel changes. An untested backout plan that fails during a real incident extends the outage and increases impact" },
+      { "id": "c", "text": "The error proves the change was unnecessary and should not have been made" },
+      { "id": "d", "text": "Backout plans should only be created for critical changes, not routine database updates" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Backout plans are essential risk management tools — permanent changes with no rollback capability greatly increase deployment risk.",
+      "b": "An untested backout plan is as dangerous as no backout plan. Testing the rollback procedure — including accounting for all dependencies — ensures it will actually work when needed. This is the correct answer.",
+      "c": "The error in the backout plan is a process failure — not evidence the change was unnecessary.",
+      "d": "All significant changes should have tested backout plans — including database updates that can have significant dependencies."
+    }
+  },
+  {
+    "id": 76,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Maintenance window",
+    "difficulty": "easy",
+    "text": "Why are maintenance windows an important component of secure change management?",
+    "answers": [
+      { "id": "a", "text": "Maintenance windows allow IT teams to avoid approval requirements for after-hours changes" },
+      { "id": "b", "text": "Maintenance windows define pre-approved time periods when changes can be made to systems — reducing the business impact of potential disruptions and ensuring changes occur when support resources are available and impact on users is minimized" },
+      { "id": "c", "text": "Maintenance windows are required by law for all system changes" },
+      { "id": "d", "text": "Maintenance windows prevent attackers from accessing systems during changes" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Maintenance windows do not bypass approval requirements — they define when approved changes are implemented.",
+      "b": "Maintenance windows reduce change risk by ensuring changes occur during low-usage periods when outages have minimal business impact, support resources are available, and changes can be properly monitored. This is the correct answer.",
+      "c": "Maintenance windows are best-practice change management — not universally legally required (though some regulated industries may require them).",
+      "d": "Maintenance windows don't prevent attacker access — they reduce business disruption risk from authorized changes."
+    }
+  },
+  {
+    "id": 77,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Maintenance window",
+    "difficulty": "hard",
+    "text": "A critical security vulnerability (CVSS 9.8) is publicly disclosed with active exploitation in the wild. The next scheduled maintenance window is 12 days away. How should change management handle this situation?",
+    "answers": [
+      { "id": "a", "text": "Wait for the scheduled maintenance window to ensure proper change control is followed" },
+      { "id": "b", "text": "Invoke the emergency change process — applying an expedited but still-reviewed change outside the normal maintenance window. The vulnerability's active exploitation creates unacceptable risk that outweighs the process disruption. Apply compensating controls immediately (network-level blocking, WAF rules) while the emergency patch is tested and deployed" },
+      { "id": "c", "text": "Patch immediately without any change management review to minimize exposure" },
+      { "id": "d", "text": "Accept the risk and document it — active exploitation does not guarantee the organization will be targeted" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Waiting 12 days with a CVSS 9.8 vulnerability under active exploitation is not acceptable — the risk of waiting outweighs the process disruption of an emergency change.",
+      "b": "Emergency change processes exist for exactly this situation — expedited review (not no review) with immediate compensating controls while the patch is properly tested and deployed. This is the correct answer.",
+      "c": "Patching without any review risks introducing additional problems — emergency change processes provide expedited review without the full overhead of normal change management.",
+      "d": "Active exploitation of a CVSS 9.8 vulnerability represents critical risk — documented risk acceptance is appropriate for low-severity issues, not critical actively-exploited vulnerabilities."
+    }
+  },
+  {
+    "id": 78,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Standard operating procedure",
+    "difficulty": "easy",
+    "text": "How do Standard Operating Procedures (SOPs) contribute to security in change management?",
+    "answers": [
+      { "id": "a", "text": "SOPs ensure all changes are automatically approved without manual review" },
+      { "id": "b", "text": "SOPs provide documented, repeatable step-by-step procedures for performing changes consistently and securely — reducing the likelihood of errors, omissions, and security misconfigurations that occur when staff improvise change procedures" },
+      { "id": "c", "text": "SOPs replace the need for testing since documented procedures are assumed to be correct" },
+      { "id": "d", "text": "SOPs are only required for compliance purposes and have no practical security benefit" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "SOPs define how to perform changes — not whether to approve them.",
+      "b": "SOPs ensure changes are performed consistently according to tested, secure procedures — preventing the security risks introduced by ad-hoc or improvised approaches. This is the correct answer.",
+      "c": "SOPs should be validated through testing — documentation of a procedure does not guarantee correctness without verification.",
+      "d": "SOPs have concrete security benefits: they prevent configuration errors, ensure security steps are not skipped, and enable consistent auditing of whether procedures are followed."
+    }
+  },
+  {
+    "id": 79,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Allow lists/deny lists",
+    "difficulty": "easy",
+    "text": "A security team is configuring a web application firewall to control which file types can be uploaded. They configure the WAF to only permit .pdf and .docx uploads and block all other types. This approach uses which security concept?",
+    "answers": [
+      { "id": "a", "text": "A deny list — specifying what is not allowed while permitting everything else" },
+      { "id": "b", "text": "An allow list — specifying only what is explicitly permitted and blocking everything not on the list" },
+      { "id": "c", "text": "A blacklist — an outdated term for the same concept as a deny list" },
+      { "id": "d", "text": "A sandbox — isolating file uploads for analysis" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A deny list blocks specific known-bad items while allowing everything else — permitting only .pdf and .docx blocks everything not explicitly listed, which is an allow list.",
+      "b": "An allow list (whitelist) permits only explicitly approved items — all other items are blocked by default. Permitting only .pdf and .docx while blocking all other file types is an allow list approach. This is the correct answer.",
+      "c": "Blacklist is an older term for deny list — the configuration described is an allow list, not a deny list.",
+      "d": "Sandboxing isolates files for analysis — not the same as restricting which file types are permitted."
+    }
+  },
+  {
+    "id": 80,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Allow lists/deny lists",
+    "difficulty": "medium",
+    "text": "A security team debates whether to implement an application allow list or a deny list for endpoint software control. Which approach provides STRONGER security and why?",
+    "answers": [
+      { "id": "a", "text": "Deny lists are stronger — they catch all known malware" },
+      { "id": "b", "text": "Allow lists are stronger — they only permit explicitly approved applications. Any application not on the list is blocked, including unknown malware that would not yet appear on a deny list. Deny lists are inherently reactive and can never be complete as new malware is constantly created" },
+      { "id": "c", "text": "Both approaches are equally effective — the choice is purely administrative" },
+      { "id": "d", "text": "Deny lists are stronger because they require no maintenance after initial setup" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Deny lists can only block known malware — zero-day and novel malware bypasses deny lists until signatures are added.",
+      "b": "Allow lists provide default-deny security — only pre-approved applications can run. Unknown, novel, or zero-day malware is blocked because it is not on the allow list. This is the correct answer.",
+      "c": "They are not equally effective — allow lists provide significantly stronger security at the cost of higher administrative overhead.",
+      "d": "Deny lists require constant updates as new malware emerges — they have higher maintenance requirements than allow lists, not lower."
+    }
+  },
+  {
+    "id": 81,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Restricted activities",
+    "difficulty": "medium",
+    "text": "A change management policy defines 'restricted activities' during change implementation. Which of the following BEST describes why certain activities are restricted during active change windows?",
+    "answers": [
+      { "id": "a", "text": "Restricted activities prevent employees from working during maintenance windows" },
+      { "id": "b", "text": "Restricting activities during change windows prevents concurrent changes from creating complex, difficult-to-diagnose interactions — ensuring that if a problem occurs, the root cause can be isolated to the specific change being implemented rather than an interaction between multiple simultaneous changes" },
+      { "id": "c", "text": "Restricted activities are required by law during all system modifications" },
+      { "id": "d", "text": "Restrictions during change windows prevent security teams from monitoring systems" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Restricted activities apply to concurrent changes — not employee work in general.",
+      "b": "Change management principles call for controlled change environments — allowing multiple concurrent changes makes problem isolation nearly impossible. Restricting concurrent activities ensures clear cause-and-effect visibility. This is the correct answer.",
+      "c": "Activity restrictions during change windows are best practice — not universally legally mandated.",
+      "d": "Security monitoring should continue during change windows — restricted activities apply to additional unplanned changes, not monitoring."
+    }
+  },
+  {
+    "id": 82,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Downtime",
+    "difficulty": "medium",
+    "text": "A change requires taking a critical authentication server offline for 30 minutes. During this downtime, users cannot log into any enterprise applications. What change management considerations should address this downtime risk?",
+    "answers": [
+      { "id": "a", "text": "Downtime risk should be accepted without additional planning since changes always require some downtime" },
+      { "id": "b", "text": "The change plan should address: scheduling during the lowest-usage window, communicating planned downtime to affected users in advance, deploying a high-availability configuration or failover authentication method for the duration, defining the exact downtime window with escalation triggers if it is exceeded, and having a tested backout plan if the change cannot be completed within the planned window" },
+      { "id": "c", "text": "Only notify users after the downtime has occurred" },
+      { "id": "d", "text": "Downtime of a non-production server requires no special change management consideration" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Accepting downtime risk without planning is a change management failure — downtime should be planned, minimized, and communicated.",
+      "b": "Downtime planning requires scheduling optimization, advance communication, temporary alternatives where possible, defined time boundaries with escalation triggers, and backout planning. This is the correct answer.",
+      "c": "Post-downtime notification is insufficient — users need advance notice to plan for the outage.",
+      "d": "An authentication server is critical infrastructure — even if labeled non-production in some systems, its downtime impacts all enterprise application logins."
+    }
+  },
+  {
+    "id": 83,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Service restart",
+    "difficulty": "medium",
+    "text": "A security update for a web application server requires a service restart. The application team notes that the restart will temporarily close all active user sessions. From a change management perspective, what security consideration is MOST important regarding service restarts?",
+    "answers": [
+      { "id": "a", "text": "Service restarts are always risk-free and require no special consideration" },
+      { "id": "b", "text": "Service restarts should be planned during low-usage periods, users should be notified in advance, session state should be managed to minimize data loss, and security teams should verify that services restart with the correct security configuration rather than defaulting to less secure settings" },
+      { "id": "c", "text": "Service restarts only need consideration if they take more than one hour" },
+      { "id": "d", "text": "Service restarts are purely operational concerns with no security implications" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Service restarts carry risks — session disruption, configuration changes, and potential for services to start in non-secure states.",
+      "b": "Security-relevant considerations for service restarts include: timing (user impact), session management (data loss), and verification that the service restarts with correct security configuration — some services revert to default settings on restart. This is the correct answer.",
+      "c": "Duration is not the primary concern — all service restarts have security implications regardless of duration.",
+      "d": "Service restarts have security implications — configuration verification after restart is a security-critical step."
+    }
+  },
+  {
+    "id": 84,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Legacy applications",
+    "difficulty": "medium",
+    "text": "A change management team proposes updating a firewall ruleset. During review, they discover that a legacy application — still in production — relies on an insecure protocol (Telnet) that would be blocked by the new ruleset. How should change management address this finding?",
+    "answers": [
+      { "id": "a", "text": "Block Telnet immediately — legacy applications cannot override security policies" },
+      { "id": "b", "text": "Document the legacy application dependency, assess the risk of blocking vs. permitting Telnet, implement the most restrictive feasible rule (limiting Telnet to specific source/destination IPs rather than broadly), implement compensating controls, and develop a migration plan to replace the legacy application with one supporting secure protocols" },
+      { "id": "c", "text": "Exclude all legacy application traffic from firewall rules permanently" },
+      { "id": "d", "text": "The change should be abandoned since legacy applications cannot be accommodated alongside security improvements" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Immediately blocking may break a production application — impact assessment and risk management must precede action.",
+      "b": "Legacy application dependencies require a balanced approach: minimize risk through tighter rules, implement compensating controls, and plan elimination of the root cause (the legacy application). This is the correct answer.",
+      "c": "Permanently excluding legacy application traffic from all security controls creates an ongoing security gap — targeted rules and compensating controls are more appropriate.",
+      "d": "Legacy dependencies are a common reality — change management must navigate them through risk management, not abandon security improvements."
+    }
+  },
+  {
+    "id": 85,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Dependencies",
+    "difficulty": "hard",
+    "text": "A change to update a shared authentication library affects 23 downstream applications. During post-change testing, 4 applications fail. The change team did not map all dependencies before implementation. What change management process failure does this represent and how could it have been avoided?",
+    "answers": [
+      { "id": "a", "text": "The applications failed due to bugs in the library update — dependency mapping is not related" },
+      { "id": "b", "text": "Incomplete dependency mapping before the change — a thorough dependency analysis would have identified all 23 affected applications, enabling pre-change testing with each, defining pass/fail criteria, and planning rollback triggers. The 4 failures could have been caught in the test environment rather than production" },
+      { "id": "c", "text": "Application failures during changes are inevitable and acceptable" },
+      { "id": "d", "text": "The solution is to make changes to shared libraries less frequently" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Dependency mapping directly reveals which applications consume the library — incomplete mapping leads exactly to unexpected failures in applications the change team did not test.",
+      "b": "Dependency mapping must precede changes to shared components — without knowing all consumers, testing is incomplete and production failures are predictable. This is the correct answer.",
+      "c": "Application failures from changes are a process failure — not an accepted operational reality.",
+      "d": "Frequency is not the root cause — even rare changes to shared libraries require complete dependency mapping."
+    }
+  },
+  {
+    "id": 86,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Dependencies",
+    "difficulty": "hard",
+    "text": "A security team is asked to review a change that will upgrade a cryptographic library used by 15 services. What dependency-related security considerations must be included in the change review?",
+    "answers": [
+      { "id": "a", "text": "Only check if the upgrade is compatible with the primary service — dependencies are an operational concern, not a security one" },
+      { "id": "b", "text": "Verify that the new library version: supports the same or stronger cryptographic algorithms used by all 15 services; does not deprecate algorithms that any service still requires; maintains backward compatibility for certificate formats; does not change key sizes in ways that break existing encrypted data; and does not alter API signatures that security functions in downstream services call" },
+      { "id": "c", "text": "Cryptographic library updates never have security implications for dependent services" },
+      { "id": "d", "text": "Review only the library's CVE history — functional dependency considerations are outside the security team's scope" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "All 15 services must be reviewed — a single missed dependency can leave a service unable to encrypt/decrypt data after the update.",
+      "b": "Cryptographic library updates have complex security dependency considerations: algorithm support changes, API compatibility, and data format compatibility all have security implications for dependent services. This is the correct answer.",
+      "c": "Cryptographic library updates frequently have significant security implications — deprecated algorithms, changed default settings, and API changes all affect dependent services.",
+      "d": "CVE history is one aspect — functional dependency compatibility is also a security concern when cryptographic functionality changes."
+    }
+  },
+  {
+    "id": 87,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Updating diagrams",
+    "difficulty": "easy",
+    "text": "After completing a network infrastructure change that added a new DMZ segment, the change management closure process requires updating network diagrams. Why is updating documentation a security-relevant step?",
+    "answers": [
+      { "id": "a", "text": "Updated diagrams are required only for compliance audits and have no operational security value" },
+      { "id": "b", "text": "Accurate, current network diagrams are essential for security operations — they enable correct firewall rule implementation, accurate scope definition for security assessments, effective incident response, and correct security architecture reviews. Outdated diagrams lead to security gaps in new segments that are not included in security monitoring" },
+      { "id": "c", "text": "Diagrams should only be updated annually during security reviews" },
+      { "id": "d", "text": "Network diagrams are not security documents and updating them is purely an administrative task" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Current diagrams have direct operational security value — they guide incident response, security assessments, and ongoing security operations.",
+      "b": "Accurate documentation is a security control — a new DMZ segment not reflected in diagrams may be excluded from security monitoring scope, vulnerability assessments, and firewall policy reviews. This is the correct answer.",
+      "c": "Diagrams must be updated when changes occur — annual review may leave security teams working with outdated information for months.",
+      "d": "Network diagrams are fundamental security documents — they guide firewall design, incident response, and security assessments."
+    }
+  },
+  {
+    "id": 88,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Updating diagrams",
+    "difficulty": "hard",
+    "text": "A security assessment team is preparing a penetration test scope. They reference network diagrams that were not updated after a cloud migration 8 months ago. The diagrams show on-premises systems that no longer exist and omit new cloud resources. What security risks does this documentation gap create?",
+    "answers": [
+      { "id": "a", "text": "The outdated diagrams have no security impact since the actual systems still function correctly" },
+      { "id": "b", "text": "The penetration test will miss the new cloud resources (untested attack surface), may include systems that no longer exist (wasted effort), and security teams relying on these diagrams for incident response, firewall management, and security architecture decisions will be working with incorrect network topology — potentially leaving cloud resources without appropriate security controls" },
+      { "id": "c", "text": "The documentation gap only matters if a breach occurs targeting the undocumented systems" },
+      { "id": "d", "text": "Penetration testers should independently discover all systems without relying on diagrams" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Outdated documentation creates real security gaps — undocumented cloud resources may lack proper security coverage.",
+      "b": "Documentation gaps create multiple security risks: untested attack surfaces, misaligned firewall policies, incomplete incident response scope, and inaccurate security assessments. This is the correct answer.",
+      "c": "Documentation gaps create security risk before any breach — proactive security coverage depends on accurate documentation.",
+      "d": "While penetration testers should use asset discovery, the scope and authorization depend on accurate documentation — testing unknown systems may be unauthorized."
+    }
+  },
+  {
+    "id": 89,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Updating policies/procedures",
+    "difficulty": "medium",
+    "text": "An organization implements multi-factor authentication across all systems. Their existing access control policy only references username and password requirements. What change management documentation step is required?",
+    "answers": [
+      { "id": "a", "text": "No policy update is needed — technical implementations supersede written policies" },
+      { "id": "b", "text": "The access control policy must be updated to reflect MFA requirements — policies and technical implementations must align. Outdated policies that contradict implemented controls create confusion, compliance issues, and may be cited in audits as evidence of governance failures" },
+      { "id": "c", "text": "Create a separate MFA-specific policy without modifying the existing access control policy" },
+      { "id": "d", "text": "Policy updates should wait until the annual policy review cycle" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Technical implementations and policies must be aligned — a policy contradicting actual technical controls creates a governance gap.",
+      "b": "Policy documentation must reflect actual security requirements and implemented controls — updated MFA requirements must be reflected in the access control policy to ensure consistent enforcement, clear employee expectations, and accurate compliance evidence. This is the correct answer.",
+      "c": "A separate policy creates fragmentation — updating the existing access control policy maintains a cohesive governance document.",
+      "d": "Policy updates should occur when significant security changes are implemented — waiting until annual review leaves a period where policies contradict reality."
+    }
+  },
+  {
+    "id": 90,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Version control",
+    "difficulty": "easy",
+    "text": "A security team maintains all firewall configurations and IaC templates in a Git repository with commit history. Why is version control important for security configurations?",
+    "answers": [
+      { "id": "a", "text": "Version control automatically applies security configurations to production systems" },
+      { "id": "b", "text": "Version control maintains a complete history of all changes to security configurations — enabling rollback to known-good states when changes cause problems, identification of who changed what and when for audit purposes, and detection of unauthorized configuration changes" },
+      { "id": "c", "text": "Version control is only beneficial for application code — not security configurations" },
+      { "id": "d", "text": "Version control prevents attackers from accessing configuration files" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Version control stores and tracks configurations — deployment to production requires additional pipeline tooling.",
+      "b": "Version control for security configurations enables: rollback to known-good states, attribution of changes (who changed what and when), detection of unauthorized modifications, and audit trails of configuration history. This is the correct answer.",
+      "c": "Version control is equally — if not more — important for security configurations as for application code, since configuration errors can directly create security vulnerabilities.",
+      "d": "Version control repositories should themselves be access-controlled — version control tracks changes but does not prevent access to the configurations."
+    }
+  },
+  {
+    "id": 91,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Version control",
+    "difficulty": "medium",
+    "text": "A security engineer accidentally introduces a misconfiguration in a firewall ruleset that opens an unintended port. Version control shows the change was made by the engineer's account 3 days ago. What security benefits does version control provide in this scenario?",
+    "answers": [
+      { "id": "a", "text": "Version control cannot help since the port has already been open for 3 days" },
+      { "id": "b", "text": "Version control enables: (1) precise identification of the exact change that introduced the misconfiguration; (2) attribution to the specific account that made the change; (3) rapid rollback to the last known-good configuration; and (4) audit trail for incident investigation. The 3-day exposure window can be assessed for potential exploitation using this timeline" },
+      { "id": "c", "text": "Version control only identifies the problem — it cannot help with remediation" },
+      { "id": "d", "text": "Version control is not a security tool — it is only useful for software developers" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "While the port was open for 3 days, version control immediately enables rollback and precise incident timeline analysis — both valuable.",
+      "b": "Version control provides identification (what changed), attribution (who changed it), remediation (rollback), and investigation (3-day exposure timeline). This is the correct answer.",
+      "c": "Version control explicitly enables remediation through rollback — reverting to the pre-misconfiguration state restores the correct firewall configuration.",
+      "d": "Version control is widely used for infrastructure and security configurations — not limited to application development."
+    }
+  },
+  {
+    "id": 92,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Version control",
+    "difficulty": "hard",
+    "text": "A security team discovers that a critical security policy document was modified without any change record 6 weeks ago. The organization uses version control for configurations but not for policy documents. How should the organization respond and what process improvement addresses the root cause?",
+    "answers": [
+      { "id": "a", "text": "The modification was likely made by a legitimate administrator — no action is required" },
+      { "id": "b", "text": "Investigate the unauthorized modification: compare current document to the last known-good version, review who had access and when the modification was made using available logs. Root cause: extend version control (or a document management system with version history and access logging) to all security documents — not just technical configurations. Policy documents are as security-critical as configurations" },
+      { "id": "c", "text": "Delete the current document and restore a backup — no further investigation needed" },
+      { "id": "d", "text": "Version control for policy documents is unnecessary overhead — only technical configurations require version tracking" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unauthorized modifications to security policy documents are potential indicators of insider threat or compliance manipulation — investigation is required.",
+      "b": "The response requires investigation of the unauthorized change and root cause analysis. The process improvement is extending version control to policy documents — giving the same historical tracking and access attribution to documents as to technical configurations. This is the correct answer.",
+      "c": "Restoring a backup without investigation destroys forensic evidence and misses the opportunity to understand how the change was made.",
+      "d": "Policy documents define security requirements — unauthorized changes are as impactful as configuration changes. Version control should apply to all security-relevant artifacts."
+    }
+  },
+  {
+    "id": 93,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Test results",
+    "difficulty": "medium",
+    "text": "A change to a web application includes new input validation code intended to prevent SQL injection. The change management process requires test results before production deployment. What tests should be included in the security test results?",
+    "answers": [
+      { "id": "a", "text": "Only functional tests confirming the application still works correctly" },
+      { "id": "b", "text": "Security test results should include: SAST (static analysis) scan results confirming no new vulnerabilities were introduced; DAST (dynamic analysis) results with SQL injection test cases confirming the input validation blocks injection attempts; regression tests confirming existing functionality still works; and potentially penetration test results for high-risk changes" },
+      { "id": "c", "text": "No security testing is required since the change is a security improvement" },
+      { "id": "d", "text": "Only test results from the development environment are required — production testing is not needed" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Functional tests confirm the application works — security tests confirm the security controls work and no new vulnerabilities were introduced.",
+      "b": "Security changes require security-specific test results: SAST, DAST, and regression testing together confirm the change achieved its security objective without introducing new problems. This is the correct answer.",
+      "c": "Security improvements can introduce new vulnerabilities (e.g., the input validation itself could have logic flaws) — security testing is always required.",
+      "d": "Development environment testing may not replicate all production conditions — appropriate staging/pre-production test results are required."
+    }
+  },
+  {
+    "id": 94,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Stakeholders",
+    "difficulty": "medium",
+    "text": "A proposed change will upgrade the encryption on a customer-facing API from TLS 1.2 to TLS 1.3. Who are the relevant stakeholders whose input should be included in the change management review?",
+    "answers": [
+      { "id": "a", "text": "Only the security team — encryption changes are a security matter" },
+      { "id": "b", "text": "Relevant stakeholders include: the security team (encryption policy compliance), application development team (API compatibility), operations team (deployment and monitoring), business relationship owners (customer impact), partner/customer representatives if the API serves external parties (compatibility of their TLS 1.3 support), and the change advisory board" },
+      { "id": "c", "text": "Only the IT operations team — they perform the deployment" },
+      { "id": "d", "text": "Only senior management — encryption decisions are executive-level decisions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Encryption changes have implications beyond security — application compatibility, customer impact, and operational deployment all require stakeholder input.",
+      "b": "TLS upgrade stakeholders span multiple teams: security (compliance), development (API compatibility), operations (deployment), and external parties (TLS 1.3 support of customers/partners who consume the API). This is the correct answer.",
+      "c": "Operations handles deployment — but development, security, and business stakeholders must also be involved.",
+      "d": "Senior management may need to approve significant changes — but technical and operational stakeholders must be engaged for the review."
+    }
+  },
+  {
+    "id": 95,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Stakeholders",
+    "difficulty": "hard",
+    "text": "A change management review for a major security platform replacement reveals that the legal and compliance team was not consulted. What risks does excluding legal/compliance stakeholders from security change reviews create?",
+    "answers": [
+      { "id": "a", "text": "Legal and compliance involvement is optional — security changes are purely technical decisions" },
+      { "id": "b", "text": "Excluding legal/compliance stakeholders risks: implementing a security solution that does not meet regulatory logging requirements; missing contractual obligations to maintain specific security certifications; creating data residency issues if the new platform stores data in different locations; and missing industry-specific compliance requirements that the old platform met" },
+      { "id": "c", "text": "Legal and compliance teams only need to be involved for compliance reporting — not change reviews" },
+      { "id": "d", "text": "The risk is only reputational — legal non-compliance from security changes has no operational impact" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Legal and compliance are essential stakeholders for security platform changes — regulatory and contractual requirements are often embedded in security requirements.",
+      "b": "Security platforms have direct compliance implications — logging formats, retention periods, encryption standards, and data residency are often regulatory requirements. Excluding legal/compliance risks deploying a technically sound system that fails compliance requirements. This is the correct answer.",
+      "c": "Legal and compliance must be involved in change reviews when changes affect compliance-relevant capabilities — not only during reporting.",
+      "d": "Legal non-compliance creates financial, operational, and reputational risks — not just reputational."
+    }
+  },
+  {
+    "id": 96,
+    "domain": "1.0",
+    "objective": "1.3",
+    "keyword": "Application restart",
+    "difficulty": "hard",
+    "text": "A security patch requires restarting a stateful application that holds active user sessions and in-memory encryption keys. The security team identifies that the restart will clear the in-memory keys, requiring re-keying from the HSM. What change management considerations are specifically relevant to this scenario?",
+    "answers": [
+      { "id": "a", "text": "Application restarts have no unique security considerations beyond general downtime planning" },
+      { "id": "b", "text": "Security-specific considerations include: verifying the HSM re-keying process is documented and tested before the maintenance window; ensuring the HSM is available and authenticated during the restart process; planning for the time required for re-keying (extending the maintenance window estimate); verifying that session tokens are properly invalidated on restart (not allowing stale authenticated sessions); and confirming the application starts with correct security configuration rather than defaulting to weaker settings" },
+      { "id": "c", "text": "Only schedule the restart during a maintenance window — no additional security considerations are required" },
+      { "id": "d", "text": "In-memory key loss is acceptable — keys can be reconstructed from the application logs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Stateful applications with in-memory cryptographic keys have specific security restart considerations — HSM re-keying, session invalidation, and secure startup are all security-relevant.",
+      "b": "This scenario requires security-specific restart planning: HSM availability and re-keying process testing, maintenance window extension for re-keying time, proper session invalidation, and startup configuration verification. This is the correct answer.",
+      "c": "The maintenance window timing is one consideration — security-specific restart planning is also required for applications with cryptographic key material.",
+      "d": "Reconstructing encryption keys from application logs would be a critical security vulnerability — keys should never appear in logs."
+    }
+  }
+];

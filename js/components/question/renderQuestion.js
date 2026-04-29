@@ -3,13 +3,14 @@ import { toggleFlag } from '../../storage/toggleFlag.js';
 
 export function renderQuestion(question, onAnswer, storageKey) {
   const diff = question.difficulty || '';
-  const badge = diff ? `<span class="badge-difficulty badge-${diff}">${diff}</span>` : '';
+  const badge       = diff ? `<span class="badge-difficulty badge-${diff}">${diff}</span>` : '';
   const domainBadge = question._domainName ? `<span class="badge-domain">${question._domainName}</span>` : '';
+  const objBadge    = question.objective   ? `<span class="badge-objective">Obj. ${question.objective}</span>` : '';
   const flagged = storageKey && getFlaggedQuestions(storageKey).includes(question.id);
 
   document.getElementById('question').innerHTML =
     `<div class="question-header">
-      <div class="question-badges">${badge}${domainBadge}</div>
+      <div class="question-badges">${domainBadge}${objBadge}${badge}</div>
       <div class="question-header-right">
         <span class="question-id">#${question.id}</span>
         <button class="flag-btn${flagged ? ' flagged' : ''}" id="flag-btn" title="Flag for review" aria-label="${flagged ? 'Unflag question' : 'Flag question for review'}" aria-pressed="${flagged}">&#9873;</button>

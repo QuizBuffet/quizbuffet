@@ -20537,6 +20537,5213 @@ export const questions = [
       "c": "Acceptable latency depends on application SLOs — if the increase violates latency SLOs, architectural adjustments are required.",
       "d": "Latency directly impacts user experience and application performance — cloud applications must be designed with latency considerations."
     }
+  },
+  {
+    "id": 949,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Event Monitoring",
+    "difficulty": "easy",
+    "text": "What is security event monitoring in cloud environments?",
+    "answers": [
+      { "id": "a", "text": "Monitoring cloud resource performance metrics like CPU and memory" },
+      { "id": "b", "text": "The continuous collection and analysis of security-relevant events — including authentication attempts, API calls, network flows, and resource changes — to detect suspicious activity, policy violations, and potential attacks in real time" },
+      { "id": "c", "text": "Scheduling maintenance windows based on historical event patterns" },
+      { "id": "d", "text": "Logging billing events to track cloud spending anomalies" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Performance monitoring tracks operational health — security event monitoring focuses on security-relevant activities.",
+      "b": "Security event monitoring aggregates and analyzes logs, alerts, and activity data from across the cloud environment to detect threats, suspicious behavior, and policy violations — enabling rapid detection and response to security incidents. This is the correct answer.",
+      "c": "Maintenance scheduling is an operational activity — not security event monitoring.",
+      "d": "Billing anomaly detection is a cost management function — security event monitoring focuses on threat detection."
+    }
+  },
+  {
+    "id": 950,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Event Monitoring",
+    "difficulty": "medium",
+    "text": "A cloud security team implements a SIEM to monitor security events. Which event sources provide the MOST comprehensive security visibility in a cloud environment?",
+    "answers": [
+      { "id": "a", "text": "Only CPU and memory utilization metrics" },
+      { "id": "b", "text": "Cloud control plane audit logs (CloudTrail/Activity Log), VPC flow logs for network traffic, application logs, identity provider authentication logs, WAF and IDS/IPS alerts, and cloud service-specific logs (S3 access logs, RDS audit logs) — collectively providing visibility across all attack surfaces" },
+      { "id": "c", "text": "Only logs from internet-facing web servers" },
+      { "id": "d", "text": "Only failed login attempt logs from the IAM service" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Performance metrics cannot detect security events — authentication failures, API misuse, and data exfiltration require security-specific log sources.",
+      "b": "Comprehensive security event monitoring requires multiple log sources across all cloud planes: control plane (who changed what), data plane (network traffic patterns), application plane (user behavior), identity plane (authentication events), and service-specific logs — together providing detection across all attack vectors. This is the correct answer.",
+      "c": "Internet-facing server logs capture only a fraction of security events — internal services, IAM, and network traffic are equally important.",
+      "d": "Failed login logs are valuable but represent only one attack vector — comprehensive monitoring requires all security-relevant event sources."
+    }
+  },
+  {
+    "id": 951,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Event Monitoring",
+    "difficulty": "hard",
+    "text": "A SIEM processes 10 billion security events per day from a large cloud environment. Analysts are overwhelmed reviewing all alerts. Which event monitoring design improvement MOST effectively prioritizes analyst attention?",
+    "answers": [
+      { "id": "a", "text": "Reduce event collection to only 1 million events per day by disabling most log sources" },
+      { "id": "b", "text": "Implement risk-based alert prioritization combining event severity, asset criticality, threat intelligence correlation, and user/entity behavioral analytics (UEBA) — surfacing high-fidelity, high-impact alerts to analysts while automated playbooks handle routine low-risk events, enabling analysts to focus on genuinely suspicious high-priority incidents" },
+      { "id": "c", "text": "Hire enough analysts to manually review all 10 billion events" },
+      { "id": "d", "text": "Disable alerting entirely and rely on daily manual log sampling" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Disabling log sources eliminates security visibility — the solution is intelligent prioritization, not data reduction.",
+      "b": "Risk-based prioritization with UEBA and threat intelligence correlation filters the 10 billion events into a manageable set of high-confidence, high-impact alerts. Automated playbooks handle routine events, freeing analysts for complex investigations that require human judgment. This is the correct answer.",
+      "c": "10 billion events per day cannot be manually reviewed by any practical number of analysts — automation is essential.",
+      "d": "Daily manual sampling provides no real-time detection — security events require near-real-time analysis."
+    }
+  },
+  {
+    "id": 952,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Event Monitoring",
+    "difficulty": "hard",
+    "text": "A security monitoring system detects that a cloud API is receiving requests 20x higher than normal volume, all targeting the same endpoint, from hundreds of distributed IPs. What type of security event is occurring and what monitoring data is most useful for investigation?",
+    "answers": [
+      { "id": "a", "text": "Normal traffic growth — no security event is occurring" },
+      { "id": "b", "text": "A distributed attack (likely DDoS or credential stuffing) against the API endpoint. Most useful monitoring data: API gateway access logs showing request patterns, WAF logs showing blocked vs. passed requests, authentication failure rates per source IP, response codes (429 rate limit vs. 200 success) to assess attack effectiveness, and threat intelligence lookups on source IPs to identify known attack infrastructure" },
+      { "id": "c", "text": "A normal marketing campaign driving traffic — no investigation needed" },
+      { "id": "d", "text": "A cloud provider infrastructure issue causing request duplication" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "20x traffic increase targeting one endpoint from hundreds of distributed IPs is a clear attack signature — not normal growth.",
+      "b": "The traffic pattern describes either DDoS (volume attack) or credential stuffing (authentication attack). API gateway logs reveal request patterns, WAF logs show attack signatures, authentication failure rates indicate credential stuffing, response codes measure effectiveness, and threat intelligence identifies known malicious IPs — together enabling rapid incident classification and response. This is the correct answer.",
+      "c": "Marketing campaigns increase traffic uniformly — not 20x concentrated on one endpoint from hundreds of distributed IPs.",
+      "d": "Cloud provider infrastructure issues cause errors or unavailability — not a coordinated multi-source targeted request pattern."
+    }
+  },
+  {
+    "id": 953,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Deviation from Baseline",
+    "difficulty": "easy",
+    "text": "What is baseline deviation detection in cloud security monitoring?",
+    "answers": [
+      { "id": "a", "text": "Comparing cloud costs against the annual IT budget baseline" },
+      { "id": "b", "text": "Identifying when cloud resource behavior, user activity, or network traffic deviates significantly from established normal patterns — which may indicate a security incident, compromise, or policy violation that warrants investigation" },
+      { "id": "c", "text": "Measuring application performance against SLO baseline targets" },
+      { "id": "d", "text": "Comparing code deployments against the approved release baseline" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Budget comparison is financial management — baseline deviation in security refers to behavioral anomalies.",
+      "b": "Baseline deviation detection establishes what is 'normal' for each cloud resource, user, and workload — then alerts when actual behavior significantly differs (unusual login times, unexpected API call patterns, abnormal data transfer volumes). Deviations from normal are often the first indicator of compromise. This is the correct answer.",
+      "c": "SLO performance monitoring is operational — security baseline deviation focuses on behavioral anomalies indicating threats.",
+      "d": "Release baseline comparison is a configuration management function — not security behavioral deviation detection."
+    }
+  },
+  {
+    "id": 954,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Deviation from Baseline",
+    "difficulty": "medium",
+    "text": "A user who normally accesses cloud resources from the US between 9 AM–6 PM EST suddenly authenticates at 3 AM from a country they have never accessed from before and immediately downloads 50GB of data. What does this deviation from baseline indicate?",
+    "answers": [
+      { "id": "a", "text": "The user is working late on an important project — no concern" },
+      { "id": "b", "text": "Multiple simultaneous baseline deviations (unusual time, unknown country, large data download) create a high-confidence indicator of account compromise — the user's credentials may have been stolen and are being used by an attacker to exfiltrate data. Immediate response: suspend the session, lock the account, verify with the legitimate user out-of-band, and investigate the download" },
+      { "id": "c", "text": "Time zone differences explain all deviations — no investigation needed" },
+      { "id": "d", "text": "Wait for the download to complete before assessing whether it is suspicious" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The combination of unusual time + impossible geography + large immediate download is a high-confidence compromise indicator — not attributable to working late.",
+      "b": "Multiple simultaneous deviations are compounding risk indicators — each deviation alone might be explainable, but the combination of all three simultaneously creates a high-fidelity compromise signal requiring immediate response. This is the correct answer.",
+      "c": "Time zone differences explain off-hours access but not new-country access plus simultaneous 50GB download — the combination warrants immediate investigation.",
+      "d": "Waiting for the download to complete allows exfiltration to finish — immediate session suspension is required upon detection."
+    }
+  },
+  {
+    "id": 955,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Deviation from Baseline",
+    "difficulty": "hard",
+    "text": "A cloud monitoring system establishes baselines using machine learning on 90 days of historical data. A new application deployment changes normal traffic patterns — the ML model now generates false positive alerts for the new normal behavior. How should baseline management handle this?",
+    "answers": [
+      { "id": "a", "text": "Disable ML-based baseline detection since it generates false positives" },
+      { "id": "b", "text": "Implement change-aware baseline management: suppress alerts during known deployment windows, trigger baseline relearning periods after significant changes, allow security teams to acknowledge known-good behavioral changes that should update the model, and distinguish between intentional operational changes and unexpected behavioral anomalies" },
+      { "id": "c", "text": "Extend the baseline learning period from 90 days to 5 years" },
+      { "id": "d", "text": "Only alert on deviations that have occurred 10+ times to eliminate noise" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "False positives during change events are a management challenge — disabling ML detection eliminates valuable threat detection capability.",
+      "b": "Operational changes legitimately alter behavioral baselines. Change-aware baseline management accommodates intentional changes through planned relearning while maintaining sensitivity to unexpected deviations — keeping detection accurate through operational evolution. This is the correct answer.",
+      "c": "5-year learning periods adapt too slowly to current operational patterns — baselines must reflect recent behavior.",
+      "d": "Requiring 10+ occurrences before alerting on deviations means attackers can perform 9 malicious actions undetected — frequency thresholds should be risk-calibrated, not used to suppress genuine anomalies."
+    }
+  },
+  {
+    "id": 956,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Deviation from Baseline",
+    "difficulty": "hard",
+    "text": "A cloud security tool flags that an IAM role assumed 50 times in the last hour, compared to its baseline of 2 times per day. Investigation shows this is a legitimate CI/CD pipeline that was recently scaled out significantly. What process improvement prevents this from recurring as a false positive?",
+    "answers": [
+      { "id": "a", "text": "Remove the baseline alert for IAM role assumption frequency" },
+      { "id": "b", "text": "Integrate change management with the security monitoring system: when the CI/CD scaling change is approved and deployed, automatically adjust the role assumption baseline to reflect the new expected frequency or suppress the alert for a relearning period — making operational context visible to the monitoring system" },
+      { "id": "c", "text": "Create a separate IAM role for each pipeline instance to distribute the assumption count" },
+      { "id": "d", "text": "Disable IAM assumption monitoring for all CI/CD related roles" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Removing IAM role assumption monitoring eliminates visibility into potential privilege escalation — the baseline should be updated, not removed.",
+      "b": "Integrating change management with security monitoring allows planned operational changes to inform baseline updates — preventing false positives from legitimate scaling while maintaining detection sensitivity for unexpected role assumption spikes. This is the correct answer.",
+      "c": "Multiple roles for pipeline instances creates IAM sprawl and complicates permission management — baseline management is the correct solution.",
+      "d": "Disabling CI/CD role monitoring creates a blind spot for a high-value attack vector — attackers frequently target pipeline credentials for lateral movement."
+    }
+  },
+  {
+    "id": 957,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Unnecessary Open Ports",
+    "difficulty": "easy",
+    "text": "Why are unnecessary open ports a security risk in cloud environments?",
+    "answers": [
+      { "id": "a", "text": "Open ports consume excessive bandwidth and slow network performance" },
+      { "id": "b", "text": "Unnecessary open ports expand the attack surface — each open port represents a potential entry point for attackers. Services listening on ports may have vulnerabilities that attackers can exploit, and administrative ports (SSH, RDP) exposed to the internet are targets for brute force and exploitation" },
+      { "id": "c", "text": "Open ports increase cloud costs by consuming more network resources" },
+      { "id": "d", "text": "Unnecessary open ports violate cloud provider terms of service" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Open ports themselves do not significantly affect bandwidth — the security risk is from attack surface exposure.",
+      "b": "Every open port is a potential attack vector — services listening on ports have software with potential vulnerabilities, and administrative ports directly accessible from the internet attract constant automated attack attempts. Closing unnecessary ports eliminates these attack vectors entirely. This is the correct answer.",
+      "c": "Open ports do not directly affect cloud costs — network data transfer costs are based on traffic volume, not port count.",
+      "d": "Cloud providers do not prohibit open ports as a terms of service matter — the risk is security, not contractual."
+    }
+  },
+  {
+    "id": 958,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Unnecessary Open Ports",
+    "difficulty": "medium",
+    "text": "A cloud security scan identifies a database server with ports 22 (SSH), 3306 (MySQL), 8080 (HTTP), and 5900 (VNC) accessible from the public internet. Only SSH is needed for remote management and it should be restricted to corporate IP ranges. What remediation is required?",
+    "answers": [
+      { "id": "a", "text": "All ports are necessary for database server management — no changes needed" },
+      { "id": "b", "text": "Restrict SSH (22) to corporate IP ranges only, close port 3306 (database port should never be internet-accessible — only the application tier needs access), close port 8080 (no web service should run on a database server), and close port 5900 (VNC provides unencrypted graphical access — a severe security risk on internet-accessible systems)" },
+      { "id": "c", "text": "Add a password requirement to each open port to secure them" },
+      { "id": "d", "text": "Change all ports to non-standard numbers to obscure them from scanners" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Three of the four ports are completely unnecessary for a database server — internet-accessible database and VNC ports are severe security violations.",
+      "b": "Least-privilege network access: database ports should only be accessible from the application tier (not the internet), VNC exposes full desktop access and is insecure over the internet, HTTP running on a database server indicates potential misconfiguration, and SSH restricted to corporate IPs is the only appropriate remote management. This is the correct answer.",
+      "c": "Passwords protect service access but do not eliminate the attack surface of exposed ports — closing unnecessary ports is more effective than adding credentials.",
+      "d": "Port obscurity (security through obscurity) provides minimal protection — automated scanners identify services on non-standard ports within seconds."
+    }
+  },
+  {
+    "id": 959,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Unnecessary Open Ports",
+    "difficulty": "hard",
+    "text": "A continuous cloud security monitoring system alerts that a new port 4444 has appeared on a production instance that was not present during the last scan 24 hours ago. No change request was approved for this instance. What does this indicate?",
+    "answers": [
+      { "id": "a", "text": "Port 4444 is commonly used by developers — no investigation needed" },
+      { "id": "b", "text": "An unapproved new port on a production instance without a change request is a strong indicator of compromise — port 4444 is commonly associated with Metasploit reverse shells and malware C2 communications. Immediate response: isolate the instance, preserve forensic evidence, investigate the process listening on 4444, and determine how the port was opened and by what process" },
+      { "id": "c", "text": "Port 4444 was likely opened by a cloud provider maintenance operation" },
+      { "id": "d", "text": "Wait for the development team to acknowledge the port before taking action" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Port 4444 is specifically associated with Metasploit bind shells and is not a legitimate development port — this warrants immediate investigation.",
+      "b": "Unauthorized new ports on production instances are high-confidence compromise indicators. Port 4444 is commonly used by Metasploit for reverse shell communication — a new unauthorized process binding to this port strongly indicates malware installation or active exploitation. Immediate isolation and forensic investigation are required. This is the correct answer.",
+      "c": "Cloud providers do not open arbitrary ports on customer instances — provider maintenance operations do not create new listening services on customer VMs.",
+      "d": "Waiting for team acknowledgment allows potential C2 communication to continue — immediate containment is required upon detection of unauthorized ports."
+    }
+  },
+  {
+    "id": 960,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Unnecessary Open Ports",
+    "difficulty": "hard",
+    "text": "A cloud security team wants to continuously monitor for new open ports appearing on production instances. Which monitoring approach provides the MOST effective detection?",
+    "answers": [
+      { "id": "a", "text": "Manual quarterly port scans of all instances" },
+      { "id": "b", "text": "Automated daily or continuous port scanning of all instances combined with configuration drift detection that alerts immediately when any new listening service appears that was not present in the previously approved baseline — integrating with change management to distinguish approved changes from unauthorized ones" },
+      { "id": "c", "text": "Review server logs manually for new service installations" },
+      { "id": "d", "text": "Rely on cloud provider to notify customers when new ports are opened" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Quarterly scanning means unauthorized ports can exist for up to 3 months undetected — continuous or daily scanning is required.",
+      "b": "Automated continuous port monitoring with change management integration provides the earliest possible detection of unauthorized new services — immediately distinguishing approved changes from potential compromise indicators. This is the correct answer.",
+      "c": "Manual log review cannot detect process binding to ports without specific log correlation — automated port scanning is more reliable.",
+      "d": "Cloud providers do not monitor or report on customer instance port configurations — this is entirely the customer's responsibility."
+    }
+  },
+  {
+    "id": 961,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Vulnerability Exploitation",
+    "difficulty": "easy",
+    "text": "What indicators in cloud monitoring suggest active vulnerability exploitation?",
+    "answers": [
+      { "id": "a", "text": "High CPU utilization during business hours" },
+      { "id": "b", "text": "Unusual process execution, unexpected network connections to external IPs, privilege escalation events, authentication anomalies, new user accounts created unexpectedly, and abnormal file system modifications — collectively indicating that a vulnerability may have been exploited to gain unauthorized access or execute malicious code" },
+      { "id": "c", "text": "Increased storage costs from growing application data" },
+      { "id": "d", "text": "More users accessing the application than yesterday" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "High CPU during business hours is normal operational behavior — exploitation indicators are abnormal events.",
+      "b": "Exploitation indicators include: unexpected processes (malware execution), unusual outbound connections (C2 or exfiltration), privilege escalation (attacker gaining elevated access), new unexpected accounts (persistence mechanisms), and unauthorized file modifications (webshells, backdoors). Together these paint a picture of post-exploitation activity. This is the correct answer.",
+      "c": "Growing storage costs indicate data growth — not exploitation indicators.",
+      "d": "More users is business growth — not an exploitation indicator."
+    }
+  },
+  {
+    "id": 962,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Vulnerability Exploitation",
+    "difficulty": "medium",
+    "text": "A WAF detects SQL injection attempts against a web application and logs them. The application's database logs show successful queries that should not have executed — data from internal tables is being read by the application under the attack account's session. What has occurred?",
+    "answers": [
+      { "id": "a", "text": "The WAF detected and blocked all SQL injection attempts successfully" },
+      { "id": "b", "text": "The SQL injection vulnerability was successfully exploited — the WAF detected the attacks but did not block all variants, and some payloads bypassed WAF detection and executed against the database. This is a confirmed vulnerability exploitation incident requiring immediate response: disable the vulnerable endpoint, patch the SQL injection vulnerability, assess what data was accessed, and review WAF rule coverage" },
+      { "id": "c", "text": "The database query patterns are normal — no exploitation occurred" },
+      { "id": "d", "text": "The WAF logs show detection — successful exploitation is impossible when a WAF is deployed" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Successful database queries from attacker sessions indicate WAF bypass — detection without blocking means some injection payloads reached the database.",
+      "b": "WAF detection combined with unauthorized database query execution confirms exploitation — some SQL injection payloads bypassed WAF detection. This is an active confirmed breach requiring immediate containment, vulnerability patching, data access assessment, and WAF rule enhancement. This is the correct answer.",
+      "c": "Unexpected internal table queries under attack session accounts are not normal — they indicate successful data exfiltration via SQL injection.",
+      "d": "WAFs detect many attacks but attackers continuously develop bypass techniques — WAF deployment does not guarantee prevention of all SQL injection exploitation."
+    }
+  },
+  {
+    "id": 963,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Vulnerability Exploitation",
+    "difficulty": "hard",
+    "text": "A threat hunting team searches cloud logs for indicators of Log4Shell (CVE-2021-44228) exploitation — specifically JNDI lookup strings in HTTP request headers. Which log sources are MOST important to search?",
+    "answers": [
+      { "id": "a", "text": "Database query logs and storage access logs" },
+      { "id": "b", "text": "Web server and application logs containing the full HTTP request headers where JNDI lookup strings would appear, WAF logs showing detected or blocked injection attempts, DNS logs showing outbound JNDI callback queries to attacker-controlled domains (a key exploitation indicator), and network flow logs showing connections to external LDAP servers used in the exploit chain" },
+      { "id": "c", "text": "IAM authentication logs and billing records" },
+      { "id": "d", "text": "Cloud provider infrastructure logs and hardware event logs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Database and storage logs would not capture JNDI lookup strings in HTTP headers — web and network logs are the relevant sources.",
+      "b": "Log4Shell exploitation appears in: HTTP request headers (where JNDI strings are injected), DNS logs (victim server queries attacker LDAP — a unique exploitation indicator), network flow logs (connection to attacker LDAP server), and WAF logs (if attack signatures are present). These together provide the most comprehensive exploitation detection. This is the correct answer.",
+      "c": "Authentication and billing logs do not capture HTTP request content or DNS queries — not relevant for Log4Shell hunting.",
+      "d": "Cloud provider infrastructure logs do not capture customer application HTTP request content — customer-controlled log sources are required."
+    }
+  },
+  {
+    "id": 964,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Social Engineering",
+    "difficulty": "easy",
+    "text": "What cloud-specific phishing/social engineering indicators should security monitoring detect?",
+    "answers": [
+      { "id": "a", "text": "Users accessing cloud resources from their normal work locations" },
+      { "id": "b", "text": "Suspicious OAuth application consent grants requesting broad permissions, users clicking links in emails to fake cloud provider login pages, MFA fatigue attacks (repeated push notifications), help desk calls requesting password resets or MFA bypasses, and sudden account access from new devices or locations immediately following reported phishing emails" },
+      { "id": "c", "text": "Normal login events during business hours from known locations" },
+      { "id": "d", "text": "Automated service account API calls within expected volumes" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Normal access from known locations is baseline behavior — social engineering indicators are anomalous events.",
+      "b": "Cloud-specific social engineering indicators span multiple channels: OAuth consent to malicious apps, credential harvesting via fake login pages, MFA fatigue attacks exploiting push notification approval, social engineering of help desk staff, and post-phishing account access anomalies. All are monitoring targets in a comprehensive cloud security program. This is the correct answer.",
+      "c": "Normal business-hours access from known locations is baseline behavior — not a social engineering indicator.",
+      "d": "Expected-volume service account calls are normal operational activity — not a social engineering indicator."
+    }
+  },
+  {
+    "id": 965,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Social Engineering",
+    "difficulty": "medium",
+    "text": "A monitoring system detects that 15 employees received identical emails claiming to be from the cloud provider requesting account re-verification through an external link. Three employees clicked the link. What immediate security actions are required?",
+    "answers": [
+      { "id": "a", "text": "Wait to see if any employees enter their credentials before taking action" },
+      { "id": "b", "text": "Immediately: (1) block the phishing domain in email gateways and web proxies, (2) identify and notify all 15 email recipients to not click the link, (3) force credential resets and MFA re-enrollment for the 3 employees who clicked, (4) monitor those 3 accounts for unauthorized access in the hours following the click, (5) investigate email gateway controls to understand how the phishing email bypassed filters" },
+      { "id": "c", "text": "Send the employees an awareness training email about phishing" },
+      { "id": "d", "text": "Ask the cloud provider to investigate since the email impersonated them" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Waiting for credential submission allows a credential harvest to succeed — proactive blocking and user notification are required immediately.",
+      "b": "Phishing response requires simultaneous actions: block the threat vector (phishing domain), prevent further clicks (notify remaining 12 employees), protect potentially compromised accounts (reset credentials for clickers), monitor for post-phishing compromise, and remediate the detection gap (email filter bypass). This is the correct answer.",
+      "c": "Training is valuable long-term but does not address the immediate threat to the 3 employees who already clicked.",
+      "d": "Cloud providers do not investigate email phishing impersonating them on behalf of customers — internal incident response is the responsibility of the affected organization."
+    }
+  },
+  {
+    "id": 966,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Social Engineering",
+    "difficulty": "hard",
+    "text": "An attacker successfully phishes an engineer's cloud console credentials and MFA. They log in and immediately create a new IAM user with administrator access as a backdoor. Which monitoring controls would have detected this attack chain?",
+    "answers": [
+      { "id": "a", "text": "Endpoint antivirus on the engineer's workstation" },
+      { "id": "b", "text": "SIEM alerts for: (1) new IAM user creation (CloudTrail CreateUser event), (2) administrator policy attachment to new user (AttachUserPolicy with AdministratorAccess), (3) login from new IP/geography immediately after the phishing email was reported, (4) impossible travel detection if the login location differs significantly from the engineer's known locations — each alert providing detection opportunity at different attack chain stages" },
+      { "id": "c", "text": "Storage access logging on all S3 buckets" },
+      { "id": "d", "text": "CPU monitoring on all cloud instances" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Endpoint antivirus would not detect web-based credential phishing or subsequent IAM console actions — it operates at the OS level.",
+      "b": "Multi-stage monitoring catches each attack phase: geographic anomaly detection catches the initial stolen-credential login, CloudTrail monitoring catches IAM user creation (a high-risk action that should be rare and reviewed), administrator policy attachment is a critical alert trigger, and correlation with reported phishing emails confirms the attack chain. This is the correct answer.",
+      "c": "S3 access logging would not detect IAM user creation — it monitors data access, not identity management changes.",
+      "d": "CPU monitoring is an operational metric — it would not detect IAM administrator backdoor creation."
+    }
+  },
+  {
+    "id": 967,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Malware/Ransomware",
+    "difficulty": "easy",
+    "text": "What cloud-specific indicators suggest malware or ransomware activity on cloud instances?",
+    "answers": [
+      { "id": "a", "text": "Normal scheduled maintenance causing temporary CPU spikes" },
+      { "id": "b", "text": "Unusual file system activity (mass file encryption or deletion), unexpected processes executing in cloud instances, outbound connections to known malware C2 infrastructure, rapid deletion of cloud snapshots or backups, unusual CPU/disk/network spikes inconsistent with the workload's normal profile, and API calls to delete or modify backup and snapshot resources" },
+      { "id": "c", "text": "Routine application deployments updating files across instances" },
+      { "id": "d", "text": "Users logging in during approved business hours from expected locations" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Scheduled maintenance causes known, predictable activity — malware indicators are unexpected and anomalous.",
+      "b": "Ransomware in cloud environments targets: file systems (mass encryption), backups (deletion to prevent recovery), snapshots (deletion to prevent rollback), API access (to spread laterally or delete cloud-level backups), and network connections (to C2 for key exchange). All of these represent strong malware/ransomware indicators in cloud monitoring. This is the correct answer.",
+      "c": "Deployment activity is known and tracked — unexpected file system activity from unknown processes is the malware indicator.",
+      "d": "Normal login activity from expected locations is baseline behavior — not a malware indicator."
+    }
+  },
+  {
+    "id": 968,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Malware/Ransomware",
+    "difficulty": "medium",
+    "text": "CloudTrail logs show that an IAM role made 200 API calls in 5 minutes including DeleteSnapshot, DeleteBackup, and PutBucketVersioning (disabling versioning) on S3 buckets. What attack is this and what immediate response is required?",
+    "answers": [
+      { "id": "a", "text": "This is routine backup maintenance — no action needed" },
+      { "id": "b", "text": "This is a ransomware attack's cloud-specific backup destruction phase — the attacker is deleting snapshots and backups to prevent recovery before or after encrypting data. Immediate response: revoke the compromised IAM role's credentials, stop the API calls, assess which backups were deleted, check for encrypted or deleted data, activate incident response, and restore from any surviving off-account backups" },
+      { "id": "c", "text": "Scheduled backup cleanup jobs perform these operations — monitor for 24 hours before responding" },
+      { "id": "d", "text": "This is a cloud provider performing maintenance — wait for the provider to notify you" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Backup deletion combined with versioning disabling in rapid succession is a documented ransomware preparation pattern — not routine maintenance.",
+      "b": "Cloud ransomware attacks systematically destroy backup capabilities before or during data encryption to prevent recovery. The API call pattern (snapshot deletion + versioning disablement) is a high-confidence ransomware indicator requiring immediate credential revocation and incident response activation. This is the correct answer.",
+      "c": "Legitimate backup cleanup jobs are scheduled and expected — 200 API calls targeting backup deletion and versioning in 5 minutes is not a normal scheduled job pattern.",
+      "d": "Cloud providers do not delete customer snapshots or modify customer S3 versioning settings — this is entirely customer-side activity."
+    }
+  },
+  {
+    "id": 969,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Malware/Ransomware",
+    "difficulty": "hard",
+    "text": "After containing a ransomware attack on cloud instances, the incident response team must determine the initial infection vector. Which cloud logs and forensic sources BEST support root cause analysis?",
+    "answers": [
+      { "id": "a", "text": "Only the encrypted files on affected instances" },
+      { "id": "b", "text": "CloudTrail logs for API calls before the attack (identifying the initial compromised credential or role), VPC flow logs (showing the first malicious inbound or outbound connection), instance system logs (identifying the initial process execution and user context), EDR process trees (showing the malware execution chain), and email/web proxy logs (if phishing or drive-by download was the initial vector) — correlating these sources reconstructs the full attack timeline" },
+      { "id": "c", "text": "Only the ransom demand message left by the attackers" },
+      { "id": "d", "text": "Ask the cloud provider to investigate the source of the attack" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Encrypted files confirm ransomware presence but provide no information about the infection vector.",
+      "b": "Root cause analysis requires tracing backwards through multiple log sources: CloudTrail identifies which credential or role was the entry point, VPC flow logs show the network path, system logs show initial process execution, EDR shows the malware execution chain, and upstream logs (email/web) identify the initial user interaction. Together they reconstruct the full attack timeline. This is the correct answer.",
+      "c": "Ransom notes confirm the ransomware family but typically contain no actionable forensic information about infection vectors.",
+      "d": "Cloud providers investigate their infrastructure but do not investigate customer-side ransomware incidents — root cause analysis is the customer's responsibility."
+    }
+  },
+  {
+    "id": 970,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "DDoS",
+    "difficulty": "easy",
+    "text": "What cloud monitoring indicators suggest an active DDoS attack?",
+    "answers": [
+      { "id": "a", "text": "Gradual traffic increase over several weeks during a product launch" },
+      { "id": "b", "text": "Sudden dramatic traffic spike from many distributed sources, service response times increasing sharply, high rate of failed requests or timeouts, resource utilization (CPU, network) approaching or reaching saturation, and requests dominated by patterns characteristic of DDoS (many requests to the same endpoint, unusual protocol distribution, or bot-like user agents)" },
+      { "id": "c", "text": "A single user downloading a large file" },
+      { "id": "d", "text": "Scheduled batch job causing predictable CPU peaks" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Gradual traffic increase during a product launch is expected organic growth — not DDoS.",
+      "b": "DDoS monitoring indicators combine multiple signals: sudden traffic volume anomaly, distributed source pattern, service degradation (latency/errors), resource saturation, and attack-characteristic request patterns. Together these distinguish DDoS from legitimate traffic spikes. This is the correct answer.",
+      "c": "Single large file download affects individual session bandwidth — not DDoS indicators.",
+      "d": "Scheduled batch jobs produce predictable, anticipated CPU patterns — not DDoS indicators."
+    }
+  },
+  {
+    "id": 971,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "DDoS",
+    "difficulty": "medium",
+    "text": "Cloud monitoring detects that traffic to a web application has increased from 1,000 req/sec to 500,000 req/sec in 2 minutes, with 90% of requests having identical User-Agent strings and targeting a single API endpoint. Service is degraded. What type of DDoS is this and how is it classified?",
+    "answers": [
+      { "id": "a", "text": "A volumetric Layer 3/4 attack targeting network bandwidth" },
+      { "id": "b", "text": "An application-layer (Layer 7) DDoS attack — high request volumes targeting a specific API endpoint with bot-like identical User-Agent strings indicate HTTP flooding by an automated botnet. Unlike volumetric attacks, this targets application resources rather than network bandwidth, requiring WAF and behavioral analysis defenses" },
+      { "id": "c", "text": "A legitimate marketing campaign generating viral traffic" },
+      { "id": "d", "text": "An infrastructure failure causing request multiplication" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Volumetric Layer 3/4 attacks flood network bandwidth with packets — this attack uses valid HTTP requests targeting application logic, making it Layer 7.",
+      "b": "The indicators confirm Layer 7 HTTP flood DDoS: HTTP protocol (not raw packets), targeting a specific application endpoint, bot signatures (identical User-Agents), and automated scale (500x increase in 2 minutes). Layer 7 attacks require application-aware defenses (WAF, behavioral analysis) rather than just network-level protection. This is the correct answer.",
+      "c": "Viral marketing traffic is organic and distributed across various User-Agents and endpoints — identical User-Agents and single endpoint targeting indicate a bot attack.",
+      "d": "Infrastructure failures cause request errors, not sudden multiplication of new requests from external sources."
+    }
+  },
+  {
+    "id": 972,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "DDoS",
+    "difficulty": "hard",
+    "text": "A cloud environment monitors both inbound DDoS attacks against its own services AND outbound attack traffic from its own instances being used as part of a botnet attacking external targets. Which outbound DDoS participation indicator MOST clearly appears in cloud monitoring?",
+    "answers": [
+      { "id": "a", "text": "High inbound traffic to the cloud environment" },
+      { "id": "b", "text": "Unusual outbound traffic volume from cloud instances to the same external destination IPs at high packet rates, VPC flow logs showing sustained high-volume outbound connections to targets not in the application's normal communication patterns, and network bandwidth consumption significantly exceeding baseline on specific instances — indicating those instances have been compromised and are participating in a botnet" },
+      { "id": "c", "text": "Normal inbound web traffic patterns to the cloud application" },
+      { "id": "d", "text": "High API call rates to the cloud provider's management plane" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "High inbound traffic indicates the cloud environment is a DDoS target — outbound participation is the opposite direction.",
+      "b": "Compromised instances participating in botnets appear in outbound traffic monitoring: VPC flow logs showing high-volume connections to external targets, bandwidth anomalies on specific instances, and traffic to IPs not in the application's normal communication profile all indicate potential botnet participation. This is the correct answer.",
+      "c": "Normal inbound traffic indicates the cloud services are operating normally — outbound botnet participation is the opposite direction.",
+      "d": "Management API calls are cloud configuration operations — not indicative of DDoS botnet participation by compromised instances."
+    }
+  },
+  {
+    "id": 973,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Cryptojacking",
+    "difficulty": "easy",
+    "text": "What is cryptojacking in cloud environments?",
+    "answers": [
+      { "id": "a", "text": "Attacks that encrypt customer data and demand ransom" },
+      { "id": "b", "text": "The unauthorized use of compromised cloud compute resources to mine cryptocurrency — attackers exploit cloud credentials or vulnerabilities to provision or access compute instances and run cryptocurrency mining software at the victim's expense" },
+      { "id": "c", "text": "Stealing cloud encryption keys to decrypt customer data" },
+      { "id": "d", "text": "Using cloud services to break cryptographic algorithms" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Data encryption for ransom describes ransomware — cryptojacking uses compute resources for cryptocurrency mining, not data encryption.",
+      "b": "Cryptojacking abuses compromised cloud compute resources for financial gain — the attacker mines cryptocurrency using stolen compute cycles, resulting in unusually high cloud bills for the victim and degraded performance for legitimate workloads. This is the correct answer.",
+      "c": "Stealing encryption keys is a key compromise attack — cryptojacking specifically targets compute resources for mining, not key material.",
+      "d": "Breaking cryptographic algorithms describes a cryptanalysis attack — cryptojacking uses compute for profitable mining, not cryptanalysis."
+    }
+  },
+  {
+    "id": 974,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Cryptojacking",
+    "difficulty": "medium",
+    "text": "A cloud billing alert shows that compute costs increased 800% over 48 hours with no corresponding increase in application traffic. CloudTrail shows 15 new EC2 instances were launched using IAM credentials belonging to a service account. What has likely occurred and what is the response?",
+    "answers": [
+      { "id": "a", "text": "The development team is testing scalability — no action needed" },
+      { "id": "b", "text": "The service account credentials were likely compromised and used for cryptojacking — 15 unauthorized instances launched without corresponding application traffic growth is a classic cryptomining pattern. Response: immediately revoke the compromised service account credentials, terminate the unauthorized instances, investigate how credentials were compromised, assess all API activity from those credentials, and review billing for the full scope of unauthorized resource usage" },
+      { "id": "c", "text": "Auto-scaling responded to traffic — the billing alert is a false positive" },
+      { "id": "d", "text": "The cloud provider provisioned extra capacity automatically" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Legitimate scalability testing would be coordinated, documented, and correlated with test traffic — unauthorized instance creation by service accounts is not a test scenario.",
+      "b": "Unauthorized instance provisioning via compromised credentials with no legitimate traffic correlation is the hallmark of cloud cryptojacking. Immediate credential revocation stops ongoing abuse, instance termination ends the mining activity, and investigation determines the credential compromise vector. This is the correct answer.",
+      "c": "Auto-scaling responds to defined metrics like CPU or request count — it does not launch instances without corresponding traffic increases.",
+      "d": "Cloud providers do not autonomously provision additional customer instances — all instance launches are customer-initiated."
+    }
+  },
+  {
+    "id": 975,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Cryptojacking",
+    "difficulty": "hard",
+    "text": "Which cloud monitoring controls MOST effectively detect cryptojacking before it generates significant costs?",
+    "answers": [
+      { "id": "a", "text": "Monthly billing reviews comparing costs to budget" },
+      { "id": "b", "text": "Real-time billing anomaly alerts triggered when hourly compute costs exceed defined thresholds, sustained high CPU utilization alerts on instances with no corresponding application traffic increase, detection of cryptocurrency mining software signatures by EDR, monitoring for mining pool communication in outbound network traffic, and CloudTrail alerts for unauthorized instance creation from service account credentials" },
+      { "id": "c", "text": "Weekly cost optimization reviews" },
+      { "id": "d", "text": "Annual security audits reviewing all cloud spending" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Monthly billing reviews detect cryptojacking weeks after it begins — costs can be substantial by then.",
+      "b": "Early cryptojacking detection requires real-time signals: immediate billing anomaly alerts catch cost spikes within hours, CPU-without-traffic anomalies identify mining instances, EDR catches known mining software signatures, network monitoring catches mining pool communication, and CloudTrail alerts catch unauthorized instance provisioning — all operating in near-real-time. This is the correct answer.",
+      "c": "Weekly reviews still allow cryptojacking to run for days — real-time detection is required.",
+      "d": "Annual audits are far too slow to detect cryptojacking — attackers can generate massive costs in hours."
+    }
+  },
+  {
+    "id": 976,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Zombie Instances",
+    "difficulty": "easy",
+    "text": "What are zombie instances in cloud security?",
+    "answers": [
+      { "id": "a", "text": "Failed instance deployments that never successfully started" },
+      { "id": "b", "text": "Cloud instances that are still running and accumulating costs but are no longer serving any legitimate purpose — abandoned, forgotten, or unmanaged instances that may be unpatched, unmonitored, and represent both a financial waste and a security risk" },
+      { "id": "c", "text": "Instances that have been scheduled for termination but have not yet stopped" },
+      { "id": "d", "text": "Backup instances that remain dormant until a primary instance fails" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Failed deployments generate error events — zombie instances are running instances with no legitimate purpose.",
+      "b": "Zombie instances are running cloud resources that have been forgotten or abandoned — they consume costs, often run unpatched software (no one manages them), are not covered by monitoring (no one watches them), and represent attack-accessible infrastructure. This is the correct answer.",
+      "c": "Instances scheduled for termination have a known endpoint — zombie instances have no planned lifecycle.",
+      "d": "Standby failover instances have a defined purpose (DR) and are actively managed — zombie instances serve no current purpose."
+    }
+  },
+  {
+    "id": 977,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Zombie Instances",
+    "difficulty": "medium",
+    "text": "A cloud governance audit identifies 30 instances that have had no inbound traffic, no outbound connections, and no management API calls for over 6 months. They were originally provisioned for a project that has since been cancelled. What security and cost risks do these zombie instances present?",
+    "answers": [
+      { "id": "a", "text": "No risk — inactive instances cannot be exploited" },
+      { "id": "b", "text": "Zombie instances represent: (1) security risk — unmonitored, likely unpatched instances with internet-facing exposure are high-value attack targets with no one watching for compromise; (2) financial waste — 6 months of compute costs for zero business value; (3) compliance risk — instances outside active management may not meet security baseline requirements; (4) attack staging risk — compromised zombie instances can be used for lateral movement or as C2 relay points" },
+      { "id": "c", "text": "Only the cost risk matters — security risk requires active traffic to exploit" },
+      { "id": "d", "text": "Zombie instances should be kept as spare capacity for future projects" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Inactive cloud instances can absolutely be exploited — they have IP addresses, open ports, and potentially vulnerable software. The absence of legitimate traffic makes attacks less likely to be noticed.",
+      "b": "Zombie instances combine multiple risk dimensions: unmonitored security posture (high vulnerability exposure), unpatched software (no lifecycle management), financial waste, compliance gaps, and potential use as attacker infrastructure if compromised. All are legitimate security and cost concerns. This is the correct answer.",
+      "c": "Security risk does not require active legitimate traffic — attackers seek out quiet, unmonitored systems precisely because compromise is less likely to be detected.",
+      "d": "Spare capacity should be properly managed and terminated when not needed — unmanaged running instances are a liability, not an asset."
+    }
+  },
+  {
+    "id": 978,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Zombie Instances",
+    "difficulty": "hard",
+    "text": "Which combination of monitoring and governance controls MOST effectively prevents zombie instance accumulation in a large cloud environment?",
+    "answers": [
+      { "id": "a", "text": "Monthly manual instance audits by each team" },
+      { "id": "b", "text": "Mandatory resource tagging with owner and project at creation (enabling ownership accountability), automated detection of instances with no traffic or API activity for defined periods, cost anomaly alerting to surface unrecognized spending, automated instance lifecycle policies requiring periodic re-justification, and regular governance reviews using cloud asset inventory tools — creating a proactive identification-before-accumulation process" },
+      { "id": "c", "text": "Terminate all instances older than 90 days automatically" },
+      { "id": "d", "text": "Charge each team for their cloud usage to incentivize resource cleanup" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Monthly manual audits are too slow for large dynamic environments — automated detection enables immediate identification.",
+      "b": "Comprehensive zombie prevention combines: tagging for ownership accountability, automated activity monitoring for early detection, cost alerts for unexpected spending, lifecycle policies requiring active justification, and regular governance reviews — together preventing zombie accumulation before it becomes a significant risk or cost problem. This is the correct answer.",
+      "c": "Automatic termination of all 90-day-old instances would destroy legitimate long-running workloads — lifecycle management must be selective and informed.",
+      "d": "Cost chargeback creates financial incentives but relies on voluntary action — automated detection with governance processes provides more reliable results."
+    }
+  },
+  {
+    "id": 979,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Zombie Instances",
+    "difficulty": "hard",
+    "text": "A zombie instance that has been running unmonitored for 8 months is discovered to be actively serving malware — its web server is hosting exploit kit landing pages. What does this incident reveal about zombie instance security risk?",
+    "answers": [
+      { "id": "a", "text": "Zombie instances cannot be used to serve malware since they have no legitimate traffic" },
+      { "id": "b", "text": "Zombie instances are ideal attacker infrastructure: unmonitored (no one watching for compromise indicators), likely unpatched (making initial compromise easier), running on legitimate cloud IP reputation (harder to block than known malicious IPs), and the victim organization's cloud bill pays for the attacker's hosting. The incident confirms that unmonitored running instances will eventually be discovered and exploited by attackers" },
+      { "id": "c", "text": "Only the development team that created the instance is responsible — not the security team" },
+      { "id": "d", "text": "The cloud provider should have detected and shut down the malware hosting automatically" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Zombie instances are accessible from the internet and can serve any content an attacker installs — absence of legitimate traffic does not prevent malicious traffic.",
+      "b": "Zombie instances combine every attacker's preference: easy to compromise (unpatched), invisible to defenders (unmonitored), hosted on reputable cloud infrastructure (avoiding IP blocklists), and free for the attacker (the victim pays the cloud bill). This incident perfectly illustrates why zombie instances are a serious security liability. This is the correct answer.",
+      "c": "Security responsibility for all running instances regardless of creator belongs to the cloud account team — zombie instances require proactive governance.",
+      "d": "Cloud providers do not inspect customer instance content for malware or shut down customer-hosted content automatically — account security is the customer's responsibility."
+    }
+  },
+  {
+    "id": 980,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Metadata",
+    "difficulty": "easy",
+    "text": "What is the cloud instance metadata service and why is it a security consideration?",
+    "answers": [
+      { "id": "a", "text": "A cloud provider database storing customer account billing information" },
+      { "id": "b", "text": "A local HTTP endpoint (169.254.169.254) accessible from within cloud instances that provides instance-specific configuration, user data scripts, and — critically — temporary IAM credentials for the instance's assigned role. If an application running on the instance can be tricked into making server-side requests to this endpoint, attackers can steal IAM credentials" },
+      { "id": "c", "text": "A network monitoring system tracking metadata about cloud traffic flows" },
+      { "id": "d", "text": "A service that stores application configuration metadata in a managed key-value store" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Billing information is managed in the cloud provider's billing portal — not the instance metadata service.",
+      "b": "The metadata service (IMDS) provides instances with their IAM role credentials, making it a high-value attack target via SSRF (Server-Side Request Forgery) — if a web application makes requests to attacker-controlled URLs, the attacker can redirect to 169.254.169.254 to steal credentials. IMDSv2 with session-oriented requests mitigates this risk. This is the correct answer.",
+      "c": "Network traffic metadata is captured in flow logs — the instance metadata service is an instance-local configuration endpoint.",
+      "d": "Application configuration stores (Parameter Store, Secrets Manager) are separate services — the metadata service provides instance-specific configuration and temporary credentials."
+    }
+  },
+  {
+    "id": 981,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Metadata",
+    "difficulty": "medium",
+    "text": "A web application running on an EC2 instance makes HTTP requests to URLs provided by users. An attacker submits the URL http://169.254.169.254/latest/meta-data/iam/security-credentials/ as the target URL. The application fetches and returns the response. What attack has occurred?",
+    "answers": [
+      { "id": "a", "text": "A cross-site scripting (XSS) attack against the web application" },
+      { "id": "b", "text": "A Server-Side Request Forgery (SSRF) attack exploiting the instance metadata service — the application was tricked into fetching the metadata service endpoint and returned the EC2 instance's IAM role credentials (access key, secret key, session token) to the attacker, who can now use these to access AWS services with the instance's permissions" },
+      { "id": "c", "text": "A DNS rebinding attack redirecting traffic to the metadata service" },
+      { "id": "d", "text": "A SQL injection attack against the application database" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "XSS injects client-side scripts — SSRF causes the server to make unauthorized requests on the attacker's behalf.",
+      "b": "SSRF via the metadata service is one of the most impactful cloud vulnerabilities — the application fetched the IAM credentials endpoint and exposed the role's temporary credentials to the attacker. These credentials can be used immediately to access S3 buckets, EC2 APIs, and other services with the instance's IAM permissions. This is the correct answer.",
+      "c": "DNS rebinding is a different attack mechanism — this is a direct SSRF to the link-local metadata service IP.",
+      "d": "SQL injection targets database query parsing — SSRF targets server-side HTTP request functionality."
+    }
+  },
+  {
+    "id": 982,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Metadata",
+    "difficulty": "hard",
+    "text": "Which combination of controls MOST effectively prevents metadata service exploitation through SSRF attacks?",
+    "answers": [
+      { "id": "a", "text": "Encrypt the instance metadata to prevent credential theft" },
+      { "id": "b", "text": "Enforce IMDSv2 (requiring session-oriented PUT requests that SSRF cannot easily replicate), validate and allowlist application URL inputs to block internal IP ranges (169.254.0.0/16, 10.0.0.0/8), use IMDSv2 hop limit of 1 to prevent metadata access from containerized workloads not expected to need it, and monitor for unexpected metadata service access in instance logs" },
+      { "id": "c", "text": "Move the metadata service to a different port to obscure it from attackers" },
+      { "id": "d", "text": "Require VPN access to the metadata service" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The metadata service returns credentials in response to valid requests — encryption of the service itself would not prevent SSRF-mediated credential theft.",
+      "b": "IMDSv2 requires a PUT request to obtain a session token before GET requests — SSRF attacks using simple GET requests cannot obtain IMDSv2 tokens, breaking the attack chain. URL validation blocking internal ranges prevents SSRF reach to the metadata service. Hop limit prevents container-to-host metadata access. This is the correct answer.",
+      "c": "Port obscurity provides minimal security — attackers know to try alternative metadata service access methods.",
+      "d": "The metadata service is accessible only from within the instance — VPN cannot control access from within the instance itself."
+    }
+  },
+  {
+    "id": 983,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Metadata",
+    "difficulty": "hard",
+    "text": "A cloud monitoring system detects that an instance's IAM role credentials (obtained from the metadata service) were used from an external IP address that is not the instance's IP address. What does this indicate and what is the response?",
+    "answers": [
+      { "id": "a", "text": "IAM credentials can be used from any IP address — this is normal behavior" },
+      { "id": "b", "text": "Instance IAM credentials being used from an external IP indicates the credentials were stolen from the instance — likely via SSRF, malware, or credential theft. Response: immediately revoke the instance credentials by detaching and re-attaching the IAM role (generating new credentials), investigate how credentials were exfiltrated, audit all API actions taken with the stolen credentials from the external IP, and remediate the exploitation vector" },
+      { "id": "c", "text": "The instance is using a NAT gateway and its external IP differs from the private IP" },
+      { "id": "d", "text": "IAM credential sharing between instances is normal for load-balanced workloads" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "While IAM credentials technically work from any IP, instance role credentials obtained from the metadata service should only be used by the instance itself — external IP usage is a strong compromise indicator.",
+      "b": "Instance credentials used from a non-instance IP indicates credential theft and active exploitation. Revoking by role rotation stops ongoing abuse immediately. The investigation determines how credentials were exfiltrated (SSRF, malware, exposed in logs). Auditing external API calls reveals what the attacker did with the stolen credentials. This is the correct answer.",
+      "c": "NAT gateway traffic appears with the NAT gateway's public IP — but the specific AWS API calls would still show the internal source. More importantly, if the source IP is truly external and not the NAT gateway, this confirms theft.",
+      "d": "Instance role credentials are instance-specific — they are not designed to be shared across instances and doing so indicates credential theft."
+    }
+  },
+  {
+    "id": 984,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Metadata",
+    "difficulty": "hard",
+    "text": "A Kubernetes pod running on a cloud node has access to the node's instance metadata service. An attacker who compromises the pod uses the node's IAM role credentials to access cloud resources outside the pod's intended scope. Which Kubernetes security control MOST directly prevents this?",
+    "answers": [
+      { "id": "a", "text": "Encrypting pod-to-pod communication with mTLS" },
+      { "id": "b", "text": "Use IRSA (IAM Roles for Service Accounts on EKS) or Workload Identity (GKE) to assign fine-grained IAM roles directly to pods — combined with IMDSv2 hop count of 1 which prevents pods from reaching the node's metadata service, forcing pods to use their own pod-specific credentials rather than inheriting the broad node role" },
+      { "id": "c", "text": "Running all pods as non-root to prevent metadata service access" },
+      { "id": "d", "text": "Implementing network policies blocking pod-to-pod traffic" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "mTLS encrypts service-to-service communication — it does not prevent pods from accessing the node metadata service.",
+      "b": "IRSA/Workload Identity provides pod-level IAM credentials scoped to the pod's specific needs — pods don't need node-level credentials. IMDSv2 hop limit of 1 prevents the extra network hop from the container network to the host, blocking pod access to the node metadata service. Together these eliminate the attack path. This is the correct answer.",
+      "c": "Non-root containers can still make HTTP requests to the metadata service IP — root is not required for network access.",
+      "d": "Network policies control pod-to-pod traffic — they do not block access to the link-local metadata service IP (169.254.169.254)."
+    }
+  },
+  {
+    "id": 985,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Metadata",
+    "difficulty": "hard",
+    "text": "Cloud instance user data scripts (metadata passed at launch) are used to bootstrap configuration. A security scan finds that user data contains hardcoded database credentials visible in plaintext through the metadata service. What security risks does this create?",
+    "answers": [
+      { "id": "a", "text": "User data is encrypted and cannot be read through the metadata service" },
+      { "id": "b", "text": "User data is accessible to any process running on the instance via the metadata service without authentication — credentials stored in user data are readable by any application, malware, or attacker with code execution on the instance. Additionally, user data may be logged in CloudTrail, visible in the console, and accessible to anyone with ec2:DescribeInstances permissions. Credentials should be retrieved from Secrets Manager at bootstrap rather than embedded in user data" },
+      { "id": "c", "text": "User data scripts are deleted after first execution and cannot be read again" },
+      { "id": "d", "text": "Only the instance owner can read user data through the metadata service" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "User data is stored and served in plaintext by the metadata service — it is not encrypted at rest in the metadata endpoint.",
+      "b": "User data is a widely accessible attack surface: any process on the instance can read it via the metadata service without additional authentication, it appears in CloudTrail logs, is visible to anyone with ec2:DescribeInstances access, and persists for the instance lifetime. Hardcoded credentials in user data are a significant credential exposure risk. This is the correct answer.",
+      "c": "User data persists and remains readable throughout the instance lifetime — it is not deleted after first execution.",
+      "d": "The metadata service does not authenticate callers — any process on the instance can read user data."
+    }
+  },
+  {
+    "id": 986,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Metadata",
+    "difficulty": "hard",
+    "text": "A cloud security assessment finds that an organization's instances use IMDSv1, which does not require session tokens and is vulnerable to SSRF. The organization has 500 instances and 200 applications that may break if IMDSv2 is enforced. How should the migration to IMDSv2 be managed?",
+    "answers": [
+      { "id": "a", "text": "Immediately enforce IMDSv2 on all 500 instances simultaneously and fix broken applications afterward" },
+      { "id": "b", "text": "Run instances in 'IMDSv2 preferred but not required' mode to collect CloudTrail data on which applications use IMDSv1 metadata calls, identify and update those applications to use IMDSv2 (SDK updates handle this automatically for modern SDK versions), test thoroughly in staging, then progressively enforce IMDSv2 by instance group — completing the migration before enforcing at the account level with a Service Control Policy" },
+      { "id": "c", "text": "Accept IMDSv1 risk permanently since the migration is too complex" },
+      { "id": "d", "text": "Terminate all 500 instances and rebuild with IMDSv2-enforced images" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Simultaneous enforcement without testing would break potentially all 200 applications — a staged approach is required.",
+      "b": "The staged IMDSv2 migration approach: discover actual IMDSv1 usage through CloudTrail, update applications (modern AWS SDKs already use IMDSv2 automatically), validate in staging, enforce progressively by instance group, and complete with account-level SCP enforcement — balancing security urgency with operational continuity. This is the correct answer.",
+      "c": "IMDSv1 SSRF vulnerability is a well-documented critical risk — indefinite acceptance without migration is not appropriate.",
+      "d": "Terminating and rebuilding 500 production instances causes massive disruption — staged migration is operationally superior."
+    }
+  },
+  {
+    "id": 987,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Metadata",
+    "difficulty": "hard",
+    "text": "An attacker exfiltrates temporary IAM credentials from the metadata service. The credentials have a 6-hour validity period. The organization detects the theft 2 hours after it occurred. What is the MOST effective immediate action to stop ongoing misuse?",
+    "answers": [
+      { "id": "a", "text": "Wait for the credentials to expire in 4 hours since nothing can be done with temporary credentials" },
+      { "id": "b", "text": "Immediately detach and re-attach the IAM role from the instance — this invalidates all existing temporary credentials and issues new ones. Simultaneously, use IAM to explicitly deny the specific credentials using the aws:TokenIssueTime condition key, and review all API calls made with the stolen credentials during the 2-hour exposure window" },
+      { "id": "c", "text": "Delete the IAM role permanently to prevent further credential issuance" },
+      { "id": "d", "text": "Change the IAM role permissions to remove all access — stopping the attacker but also stopping the legitimate application" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "4 hours of remaining credential validity allows significant damage — attackers can exfiltrate large amounts of data or make many destructive API calls in 4 hours.",
+      "b": "Role detachment and re-attachment revokes existing temporary credentials by issuing new ones — old credentials generated before the role was re-attached are no longer valid. The aws:TokenIssueTime condition can be used in an explicit deny policy to revoke all credentials issued before a specific time. Combined with impact assessment of the 2-hour exposure window, this is the comprehensive immediate response. This is the correct answer.",
+      "c": "Deleting the IAM role stops the application from functioning at all — revocation and re-issuance is more targeted.",
+      "d": "Removing all IAM role permissions stops the attacker but also stops the legitimate application — selective credential revocation through role cycling is more targeted."
+    }
+  },
+  {
+    "id": 988,
+    "domain": "4.0",
+    "objective": "4.6",
+    "keyword": "Metadata",
+    "difficulty": "hard",
+    "text": "A cloud security monitoring rule alerts when any process on an instance makes more than 10 requests per minute to the metadata service. During normal operations, the instance makes 2 requests per day. An alert fires showing 500 requests per minute. What does this anomaly suggest?",
+    "answers": [
+      { "id": "a", "text": "The instance is performing normally — metadata service requests are expected" },
+      { "id": "b", "text": "500 metadata requests per minute is a strong indicator of automated credential harvesting — either malware systematically querying the metadata service to refresh stolen credentials, an SSRF attack from a vulnerable application receiving a high volume of malicious requests, or a reconnaissance tool mapping the metadata service. Investigation should focus on which process is generating the requests and whether credentials have been exfiltrated" },
+      { "id": "c", "text": "The metadata service is experiencing a performance issue and retrying" },
+      { "id": "d", "text": "Auto-scaling is causing the instance to request new credentials frequently" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A 250x increase in metadata service requests (from 2/day to 500/minute) is an extreme anomaly — not normal operation.",
+      "b": "High-volume metadata service requests indicate either: automated malware credential harvesting (repeatedly requesting fresh credentials), high-volume SSRF attack redirecting hundreds of external requests to the metadata endpoint, or a reconnaissance tool. All scenarios indicate a security incident requiring immediate investigation of the process generating requests. This is the correct answer.",
+      "c": "The metadata service does not perform retries on behalf of instances — the instance processes make the requests directly.",
+      "d": "Auto-scaling launches new instances — it does not cause running instances to make 500 metadata requests per minute."
+    }
+  },
+  {
+    "id": 989,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Version Management",
+    "difficulty": "easy",
+    "text": "What is version management in the context of cloud DevOps source control?",
+    "answers": [
+      { "id": "a", "text": "Managing the version numbers displayed in application user interfaces" },
+      { "id": "b", "text": "Tracking all changes to code, configuration, and infrastructure over time using a version control system — enabling teams to see the full history of changes, who made them, why they were made, and the ability to revert to any previous state" },
+      { "id": "c", "text": "Managing software license versions for cloud-deployed applications" },
+      { "id": "d", "text": "Controlling which version of the cloud provider's API the application uses" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "UI version numbers are a display concern — version management in DevOps refers to tracking changes in source control systems.",
+      "b": "Version management through systems like Git maintains a complete, auditable history of all code and configuration changes — who changed what, when, and with what justification — enabling rollback, parallel development, and change tracking. This is the correct answer.",
+      "c": "License management is a procurement and compliance function — not source control version management.",
+      "d": "API version selection is an application configuration decision — version management in DevOps refers to tracking changes in source control."
+    }
+  },
+  {
+    "id": 990,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Version Management",
+    "difficulty": "medium",
+    "text": "A team deploys a new application version that breaks production. They need to quickly revert to the previous working state. How does version management in Git enable this?",
+    "answers": [
+      { "id": "a", "text": "Git automatically reverts failed deployments without human intervention" },
+      { "id": "b", "text": "Git's complete history of all commits allows the team to identify the last known-good commit, use `git revert` to create a new commit undoing the breaking changes, or `git checkout` to roll back to a previous state — enabling rapid, controlled rollback without losing the change history of what was attempted" },
+      { "id": "c", "text": "Version management only tracks files — it cannot help with production rollback" },
+      { "id": "d", "text": "The team must contact the cloud provider to restore the previous application version" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Git tracks changes but does not automatically revert deployments — human-initiated commands or pipeline automation trigger rollbacks.",
+      "b": "Git's immutable commit history makes rollback straightforward: identify the last stable commit, use revert (adds a new commit undoing changes, preserving history) or reset (moves HEAD pointer back, potentially losing history), then redeploy — enabling rapid recovery from broken deployments. This is the correct answer.",
+      "c": "Git version management is specifically designed to enable rollback to any previous state — this is one of its primary operational benefits.",
+      "d": "Application version management is the team's responsibility through their source control system — cloud providers do not manage application code versioning."
+    }
+  },
+  {
+    "id": 991,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Version Management",
+    "difficulty": "hard",
+    "text": "A team uses semantic versioning (SemVer) for their cloud application — format MAJOR.MINOR.PATCH. Which version change is appropriate when adding a new feature that is backward-compatible with the existing API?",
+    "answers": [
+      { "id": "a", "text": "Increment MAJOR (e.g., 2.0.0) to signal the new feature's importance" },
+      { "id": "b", "text": "Increment MINOR (e.g., 1.3.0 → 1.4.0) — new backward-compatible features increment the MINOR version. MAJOR increments for breaking changes, MINOR for backward-compatible features, and PATCH for backward-compatible bug fixes" },
+      { "id": "c", "text": "Increment PATCH (e.g., 1.3.0 → 1.3.1) since no existing behavior changed" },
+      { "id": "d", "text": "The version number does not change for new features — only for bug fixes" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "MAJOR increments signal breaking API changes — backward-compatible additions do not break existing consumers and should not increment MAJOR.",
+      "b": "SemVer convention: MAJOR.MINOR.PATCH — MAJOR for breaking changes, MINOR for backward-compatible new features, PATCH for backward-compatible bug fixes. A new backward-compatible feature increments MINOR. This is the correct answer.",
+      "c": "PATCH is for bug fixes that do not change the API — new features increment MINOR even when backward-compatible.",
+      "d": "Version numbers must change when new features are added to communicate the change to consumers of the API or library."
+    }
+  },
+  {
+    "id": 992,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Version Management",
+    "difficulty": "hard",
+    "text": "A cloud team manages IaC templates in Git alongside application code. An infrastructure change breaks production. Version management shows the IaC change was made directly to the main branch without a pull request 3 hours ago. What governance failure does this reveal?",
+    "answers": [
+      { "id": "a", "text": "Git version management cannot be used for IaC templates — only for application code" },
+      { "id": "b", "text": "Direct commits to the main branch bypassed the code review process — IaC changes must follow the same pull request, review, and approval workflow as application code. Branch protection rules should prevent direct commits to main, requiring all changes to go through pull requests with required reviewers" },
+      { "id": "c", "text": "The version history accurately recorded the change — no governance failure occurred" },
+      { "id": "d", "text": "IaC changes should be applied directly to main since they are configuration, not code" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "IaC templates absolutely benefit from version management in Git — this is a best practice for infrastructure lifecycle management.",
+      "b": "Direct commits to main branches bypass the peer review safety net that catches errors before production impact. Branch protection rules with required pull requests and reviewer approvals prevent this — the same governance applied to application code must apply to IaC changes that directly affect production infrastructure. This is the correct answer.",
+      "c": "Recording that a change was made does not validate that the change was reviewed — the governance failure is the missing review process.",
+      "d": "IaC changes affect production infrastructure and require the same review rigor as application code — treating them as simple configuration bypasses essential quality controls."
+    }
+  },
+  {
+    "id": 993,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Review",
+    "difficulty": "easy",
+    "text": "What is the purpose of code review in cloud DevOps workflows?",
+    "answers": [
+      { "id": "a", "text": "To measure how fast developers write code for performance evaluations" },
+      { "id": "b", "text": "To have one or more peers examine code changes before they are merged — catching bugs, security vulnerabilities, design issues, and policy violations that the author may have missed, while also spreading knowledge across the team" },
+      { "id": "c", "text": "To format code according to style guidelines automatically" },
+      { "id": "d", "text": "To compile and run code to verify it executes without errors" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Code review is a quality and knowledge-sharing activity — not a performance measurement tool.",
+      "b": "Code review is a peer quality gate — reviewers catch logic errors, security vulnerabilities (hardcoded credentials, SQL injection, insecure API calls), architectural issues, and policy violations before code reaches production, while simultaneously distributing knowledge of the codebase across the team. This is the correct answer.",
+      "c": "Automated formatting is handled by linters and formatters — code review is a human judgment process.",
+      "d": "Compilation and test execution are automated pipeline steps — code review is a human examination of code logic and design."
+    }
+  },
+  {
+    "id": 994,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Review",
+    "difficulty": "medium",
+    "text": "During a code review, a reviewer notices that a developer is storing database connection strings directly in the application source code. What is the reviewer's responsibility and appropriate action?",
+    "answers": [
+      { "id": "a", "text": "Approve the pull request since the connection string is needed for the application to work" },
+      { "id": "b", "text": "Block the pull request, document the security finding, require the developer to move the connection string to a secrets manager or environment variable, and verify the corrected approach before approval — code review is a critical security gate that must prevent hardcoded credentials from reaching the codebase" },
+      { "id": "c", "text": "Ask the developer to encrypt the connection string before hardcoding it" },
+      { "id": "d", "text": "Leave a comment but approve since fixing secrets is the security team's job" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The functionality need does not justify a security vulnerability — connection strings must never be hardcoded in source code.",
+      "b": "Code reviewers are responsible for blocking security vulnerabilities — hardcoded credentials are a critical security finding that must be rejected. The reviewer blocks the PR, documents the issue, requires remediation using secrets management, and verifies the fix before approving. This is the correct answer.",
+      "c": "Encrypting a hardcoded connection string in source code still exposes it in the repository — secrets must be externalized from code entirely.",
+      "d": "Security responsibility belongs to every team member — code reviewers who see security issues must act, not defer to a separate security team."
+    }
+  },
+  {
+    "id": 995,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Review",
+    "difficulty": "hard",
+    "text": "A team implements mandatory code review for all changes but finds reviews are rubber-stamped — reviewers approve within seconds without meaningful examination. Which practices MOST effectively improve code review quality?",
+    "answers": [
+      { "id": "a", "text": "Reduce the number of required reviewers to speed up the process" },
+      { "id": "b", "text": "Implement review quality measures: require reviewers to leave at least one substantive comment, set minimum review time thresholds, rotate reviewer assignments to prevent approval collusion, use automated pre-review checks (linting, security scanning, test coverage) to surface issues before human review, and include review quality in team health metrics" },
+      { "id": "c", "text": "Remove code review requirements since they are not adding value" },
+      { "id": "d", "text": "Have only one senior engineer review all code to ensure quality" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Fewer reviewers reduces coverage — the problem is review quality, not reviewer count.",
+      "b": "Rubber-stamp reviews require systemic fixes: substantive comment requirements, time thresholds (reviewers who approve in <60 seconds have not read the code), rotation to prevent buddy-approval patterns, automated pre-checks to focus human attention on logic rather than formatting, and accountability through quality metrics. This is the correct answer.",
+      "c": "Removing code review eliminates a critical quality gate — improving the process is preferable to removing it.",
+      "d": "Centralizing all reviews on one senior engineer creates a bottleneck and single point of knowledge — distributed review with accountability measures is more scalable."
+    }
+  },
+  {
+    "id": 996,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Review",
+    "difficulty": "hard",
+    "text": "A security-focused code review checklist for cloud applications should include which items?",
+    "answers": [
+      { "id": "a", "text": "Only checking that the code follows the team's formatting style guide" },
+      { "id": "b", "text": "Verification that no credentials or secrets are hardcoded, input validation is present for all external inputs, authentication and authorization checks are correctly implemented for all endpoints, cloud SDK calls use appropriate IAM roles rather than hardcoded keys, error messages do not expose internal details, and dependencies do not include known vulnerable versions" },
+      { "id": "c", "text": "Only verifying that the code compiles without errors" },
+      { "id": "d", "text": "Checking only that new code does not change existing test coverage percentages" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Formatting style is enforced by automated linters — security code review focuses on vulnerability patterns.",
+      "b": "Security-focused code review systematically checks the OWASP-relevant patterns most commonly missed by automated tools: credential exposure, input validation, authorization logic, secure SDK usage, information disclosure, and dependency vulnerabilities. This is the correct answer.",
+      "c": "Compilation checking is automated — security review requires examining code logic for vulnerability patterns.",
+      "d": "Test coverage metrics are automated — security review examines specific vulnerability patterns in the code logic itself."
+    }
+  },
+  {
+    "id": 997,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Pull Request",
+    "difficulty": "easy",
+    "text": "What is a pull request (PR) in cloud DevOps source control?",
+    "answers": [
+      { "id": "a", "text": "A request to download code from a remote repository to a local machine" },
+      { "id": "b", "text": "A formal request to merge code changes from one branch into another — typically from a feature branch into the main branch — that triggers code review, automated checks, and team discussion before the merge is approved" },
+      { "id": "c", "text": "A customer request for a new application feature" },
+      { "id": "d", "text": "A request to the cloud provider to pull application logs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Pulling code from a remote repository is a `git pull` or `git fetch` operation — a pull request is a collaboration mechanism, not a download request.",
+      "b": "A pull request (or merge request in GitLab) is the collaboration workflow through which developers propose changes, trigger automated CI checks, receive peer review feedback, and get formal approval before merging into a protected branch. This is the correct answer.",
+      "c": "Feature requests from customers are product management items — pull requests are source control workflow mechanisms.",
+      "d": "Log retrieval is an operational monitoring function — pull requests are source control collaboration workflows."
+    }
+  },
+  {
+    "id": 998,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Pull Request",
+    "difficulty": "medium",
+    "text": "A cloud team requires all pull requests to pass automated checks before merging. Which set of automated PR checks provides the MOST comprehensive quality gate?",
+    "answers": [
+      { "id": "a", "text": "Only spell-checking commit messages" },
+      { "id": "b", "text": "Automated unit and integration tests, static code analysis (linting, SAST), security scanning for credentials and known vulnerabilities, code coverage thresholds, IaC validation (terraform plan/validate), and container image scanning for base image CVEs — collectively ensuring functional correctness, security, and compliance before any human review" },
+      { "id": "c", "text": "Only checking that the PR has a description" },
+      { "id": "d", "text": "Only verifying the branch name follows naming conventions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Commit message spelling is a minor quality check — comprehensive PR automation requires functional and security validation.",
+      "b": "Comprehensive PR automation validates multiple dimensions: functional correctness (tests), code quality (linting), security (SAST, credential scanning), coverage (regression detection), infrastructure validity (IaC validation), and container security (image scanning) — all automated before human review focuses on logic and design. This is the correct answer.",
+      "c": "PR description is a documentation practice — not a substantive quality gate.",
+      "d": "Branch naming is a convention — not a quality or security validation."
+    }
+  },
+  {
+    "id": 999,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Pull Request",
+    "difficulty": "hard",
+    "text": "A team's pull request process requires two approvals. A developer submits a PR, another developer approves it, then the author approves their own PR as the second approval and merges. What governance failure has occurred?",
+    "answers": [
+      { "id": "a", "text": "No failure — the PR met the two-approval requirement" },
+      { "id": "b", "text": "Self-approval of pull requests defeats the peer review purpose — the two-approval requirement implies two independent reviewers, not the author counting their own PR as a review. Branch protection rules should prevent authors from approving their own PRs, requiring both approvals to come from other team members" },
+      { "id": "c", "text": "The second reviewer should have been a senior engineer — seniority matters more than independence" },
+      { "id": "d", "text": "The PR should have required three approvals to prevent this scenario" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The spirit of the two-approval requirement is two independent peer reviewers — self-approval circumvents the entire peer review purpose.",
+      "b": "Author self-approval is a common governance bypass that defeats peer review. Branch protection rules in GitHub/GitLab can explicitly prevent PR authors from approving their own changes — enforcing genuine independent review. This is the correct answer.",
+      "c": "Reviewer seniority is one consideration — but the fundamental issue is self-approval bypassing independent review.",
+      "d": "More approvals help, but without prohibiting self-approval, authors could still bypass review by counting their own."
+    }
+  },
+  {
+    "id": 1000,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Pull Request",
+    "difficulty": "hard",
+    "text": "A PR modifies 150 files across 5 different components. Reviewers report the PR is too large to review effectively. What development and PR best practice was violated?",
+    "answers": [
+      { "id": "a", "text": "PRs should contain as many changes as possible to reduce overhead" },
+      { "id": "b", "text": "PRs should be small, focused, and single-purpose — 150 files across 5 components is far too large for effective review. Reviewers face cognitive overload and miss issues. The work should be decomposed into smaller PRs, each addressing a single logical change that can be reviewed thoroughly in a single session" },
+      { "id": "c", "text": "The number of files in a PR is irrelevant — only the number of lines changed matters" },
+      { "id": "d", "text": "Large PRs are acceptable when the entire change must be released together" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Large PRs create review fatigue and increase the probability of missed bugs — small, focused PRs enable thorough review.",
+      "b": "PR size best practice: changes should be small enough for a reviewer to understand completely in a single review session (typically <400 lines, single logical concern). 150 files across 5 components creates cognitive overload making effective review impossible. Decomposing into feature-based smaller PRs improves review quality significantly. This is the correct answer.",
+      "c": "File count and change scope both affect reviewability — 150 files is likely many hundreds of lines and multiple concerns.",
+      "d": "Even large features can be decomposed into smaller independent PRs through feature flags, incremental architecture changes, and interface-first development — monolithic PRs are rarely a technical necessity."
+    }
+  },
+  {
+    "id": 1001,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Push",
+    "difficulty": "easy",
+    "text": "What is a code push in Git-based source control?",
+    "answers": [
+      { "id": "a", "text": "Downloading code from a remote repository to a local working directory" },
+      { "id": "b", "text": "Uploading local commits from a developer's local repository to a remote repository — making those changes available to other team members and triggering CI/CD pipeline automation" },
+      { "id": "c", "text": "Deploying application code from a repository directly to production servers" },
+      { "id": "d", "text": "Forcing a code review to complete immediately without waiting for reviewer feedback" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Downloading from remote to local describes `git pull` or `git fetch` — push is the opposite direction.",
+      "b": "`git push` uploads locally committed changes to the remote repository (GitHub, GitLab, Bitbucket) — making them visible to teammates and triggering CI/CD workflows that test and validate the changes. This is the correct answer.",
+      "c": "Deployment to servers is a separate CI/CD pipeline step — code push only transfers commits to the remote repository.",
+      "d": "Review processes are separate from code push — push triggers CI automation but not forced review completion."
+    }
+  },
+  {
+    "id": 1002,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Push",
+    "difficulty": "medium",
+    "text": "A developer attempts to push code directly to the main branch of a protected repository but receives an error: 'remote: error: GH006: Protected branch update failed.' What does this indicate about the repository configuration?",
+    "answers": [
+      { "id": "a", "text": "The developer's Git installation is corrupted" },
+      { "id": "b", "text": "Branch protection rules are configured to prevent direct pushes to the main branch — all changes must go through a pull request with required reviews and passing CI checks before merging. This governance control prevents unauthorized or unreviewed changes from reaching the protected branch" },
+      { "id": "c", "text": "The remote repository is offline for maintenance" },
+      { "id": "d", "text": "The developer's local branch is not synchronized with the remote" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A corrupted Git installation would produce different error types — the GH006 error is a specific GitHub branch protection rejection.",
+      "b": "Branch protection rules block direct pushes to protected branches (main, master, production) — enforcing the pull request workflow for all changes. This is a deliberate governance control ensuring all changes receive review and pass CI before merging. This is the correct answer.",
+      "c": "A maintenance outage would produce connectivity errors — GH006 is a specific branch protection rejection message.",
+      "d": "Synchronization issues produce different error messages — GH006 specifically indicates a branch protection rule block."
+    }
+  },
+  {
+    "id": 1003,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Push",
+    "difficulty": "hard",
+    "text": "A CI/CD pipeline is triggered automatically when code is pushed to any branch. For the main branch, the pipeline also deploys to production. A developer accidentally pushes a broken feature branch to origin. What happens and what should the pipeline configuration do differently?",
+    "answers": [
+      { "id": "a", "text": "The broken feature branch push triggers a production deployment — CI/CD cannot distinguish between branches" },
+      { "id": "b", "text": "A well-configured pipeline differentiates between branches: feature branch pushes trigger build and test only (no deployment), main branch pushes trigger build, test, and staging deployment, and production deployment requires an explicit tag or manual approval. Branch-specific pipeline rules prevent feature branch pushes from accidentally triggering production deployments" },
+      { "id": "c", "text": "All branch pushes should trigger identical pipeline behavior for consistency" },
+      { "id": "d", "text": "Pipelines cannot be configured to behave differently per branch" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A well-designed pipeline does distinguish between branches — same-behavior-for-all-branches is a pipeline design antipattern.",
+      "b": "Branch-aware pipelines are standard practice: feature branches get CI (build + test), main branch gets CI + staging deployment, production deployments require explicit triggers (tags, manual approval). This prevents accidental production deployments from feature branch pushes. This is the correct answer.",
+      "c": "Identical pipeline behavior for all branches creates the risk of accidental production deployments — branch-specific rules are essential.",
+      "d": "Modern CI/CD platforms (GitHub Actions, GitLab CI, Jenkins) support extensive branch-conditional pipeline logic — this statement is incorrect."
+    }
+  },
+  {
+    "id": 1004,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Commit",
+    "difficulty": "easy",
+    "text": "What is a Git commit and why is a meaningful commit message important?",
+    "answers": [
+      { "id": "a", "text": "A commit is a file backup — commit messages are metadata that only the author reads" },
+      { "id": "b", "text": "A commit is a snapshot of code changes saved to the local repository's history. Meaningful commit messages explain WHY the change was made — not just what changed — enabling future developers to understand the reasoning behind decisions when reviewing history months or years later" },
+      { "id": "c", "text": "Commits are automatically created by the CI/CD pipeline — developers do not write them" },
+      { "id": "d", "text": "Commit messages are purely decorative and have no operational value" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Commits are not simple backups — they are versioned, addressable snapshots with author attribution and messages. Commit messages are read by the entire team, not just the author.",
+      "b": "A commit permanently records a set of changes in Git history with an author, timestamp, and message. Meaningful messages (explaining the 'why' — bug being fixed, feature being implemented, decision rationale) enable future developers to understand the intent behind changes when debugging or reviewing history. This is the correct answer.",
+      "c": "Developers create commits manually — CI/CD pipelines may create automated commits for generated artifacts, but the primary commits come from developers.",
+      "d": "Commit messages are highly operationally valuable — they are the primary documentation of why code changed over time."
+    }
+  },
+  {
+    "id": 1005,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Commit",
+    "difficulty": "medium",
+    "text": "A developer makes a commit with the message 'fix stuff' that addresses a security vulnerability in the authentication module. Why is this commit message inadequate for a cloud DevOps team?",
+    "answers": [
+      { "id": "a", "text": "The message is too short — it should be at least 50 characters" },
+      { "id": "b", "text": "'fix stuff' provides no information about what was fixed, why, or the security impact — when a security incident requires reviewing authentication changes from 6 months ago, this message provides no guidance. A proper message like 'Fix JWT signature validation bypass in auth middleware (CVE-XXXX)' tells the team what changed, why, and its security significance" },
+      { "id": "c", "text": "Commit messages should use a specific emoji format to be adequate" },
+      { "id": "d", "text": "The message is fine since the code diff shows what changed" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Character count is a minor convention — the fundamental inadequacy is the absence of meaningful content.",
+      "b": "Vague commit messages create information debt — the code diff shows WHAT changed but the commit message must explain WHY. For security fixes especially, the message should identify the vulnerability, the fix approach, and any CVE reference — enabling future security audits and incident investigations to efficiently navigate history. This is the correct answer.",
+      "c": "Emoji conventions are team style preferences — the fundamental issue is informational content, not format.",
+      "d": "Diffs show what changed structurally — they cannot convey the business or security reason for the change, which is the commit message's critical role."
+    }
+  },
+  {
+    "id": 1006,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Commit",
+    "difficulty": "hard",
+    "text": "A team adopts Conventional Commits format (e.g., feat:, fix:, chore:, security:) for all commit messages. How does this structured commit format benefit cloud DevOps workflows?",
+    "answers": [
+      { "id": "a", "text": "Conventional Commits format only affects developer experience — it has no technical benefits" },
+      { "id": "b", "text": "Structured commit messages enable automated changelog generation (grouping features, fixes, and breaking changes), automated semantic version bumping based on commit types (feat → MINOR, fix → PATCH, BREAKING CHANGE → MAJOR), and CI/CD pipeline branching based on commit type (security: commits trigger immediate security scanning or expedited deployment)" },
+      { "id": "c", "text": "Conventional Commits requires a specific programming language to implement" },
+      { "id": "d", "text": "Structured commits are only useful for open-source projects — not internal cloud applications" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Conventional Commits has significant technical automation benefits — not just developer experience improvements.",
+      "b": "Machine-readable commit format enables automated tooling: semantic-release generates changelogs and version bumps from commit type patterns, release-please automates release PR creation, and CI pipelines can apply different automation rules based on commit types (e.g., expedited security review for security: commits). This is the correct answer.",
+      "c": "Conventional Commits is a commit message format standard — it is language-agnostic.",
+      "d": "Structured commits provide automation benefits for any team — particularly valuable for internal cloud applications where automated versioning and deployment pipelines can leverage the structure."
+    }
+  },
+  {
+    "id": 1007,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Merge",
+    "difficulty": "easy",
+    "text": "What is a code merge in Git source control?",
+    "answers": [
+      { "id": "a", "text": "Combining multiple repositories into a single repository" },
+      { "id": "b", "text": "Integrating the changes from one branch into another — typically combining a feature branch's commits into the main branch after the pull request is approved — creating a unified history that includes both branches' changes" },
+      { "id": "c", "text": "Resolving file conflicts between developers on the same team" },
+      { "id": "d", "text": "Copying the entire codebase to a new repository for deployment" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Combining repositories is a separate Git operation (subtree merge or repository migration) — standard code merge integrates branch histories.",
+      "b": "Code merge integrates the commit history from one branch into another — when a feature branch is completed and reviewed, merging it into main combines its changes with the main branch history, making the feature available in the target branch. This is the correct answer.",
+      "c": "Conflict resolution is a step in the merge process for conflicting changes — not the definition of a merge itself.",
+      "d": "Repository copying is a separate operation — code merge integrates branches within a repository."
+    }
+  },
+  {
+    "id": 1008,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Merge",
+    "difficulty": "medium",
+    "text": "Two developers modify the same line of a configuration file in separate branches. When merging, Git reports a merge conflict. What must happen before the merge can complete?",
+    "answers": [
+      { "id": "a", "text": "Git automatically selects the most recent change and resolves the conflict" },
+      { "id": "b", "text": "A developer must manually examine both versions of the conflicted line, decide which change (or a combination of both) should be kept, edit the file to resolve the conflict markers, stage the resolved file, and complete the merge commit — Git cannot automatically determine which version is semantically correct" },
+      { "id": "c", "text": "The developer who made the later commit automatically wins the conflict" },
+      { "id": "d", "text": "The conflict forces both branches to be deleted — a new branch must be created" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Git does not automatically resolve semantic conflicts — it marks them and requires human resolution.",
+      "b": "Merge conflicts require human judgment: Git inserts conflict markers showing both versions, a developer examines the intent of each change, decides the correct resolution (may combine both changes, keep one, or write a third solution), resolves the markers, and completes the merge. This is the correct answer.",
+      "c": "Commit timestamp has no bearing on conflict resolution — the correct version is determined by semantic intent, not timing.",
+      "d": "Branches are not deleted on conflict — the merge is paused awaiting conflict resolution before continuing."
+    }
+  },
+  {
+    "id": 1009,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Code Merge",
+    "difficulty": "hard",
+    "text": "A team debates using `git merge` vs. `git rebase` for integrating feature branches into main. What is the key difference and when is each appropriate?",
+    "answers": [
+      { "id": "a", "text": "Merge and rebase produce identical results — the choice is purely aesthetic" },
+      { "id": "b", "text": "Merge preserves the true history of when feature branch commits were made, creating a merge commit — it shows the exact development timeline. Rebase rewrites history by replaying commits onto the tip of main, creating a linear history without merge commits. Merge is appropriate for shared or published branches (preserves history). Rebase is appropriate for local feature branches before PR submission (creates cleaner linear history)" },
+      { "id": "c", "text": "Rebase should never be used since it modifies commit history" },
+      { "id": "d", "text": "Merge should never be used since it creates unnecessary merge commits" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Merge and rebase produce different commit histories with different tradeoffs — the choice matters significantly for team workflows.",
+      "b": "The fundamental difference is history: merge preserves complete branching history with merge commits (accurate but potentially complex); rebase rewrites commits onto the target branch tip creating linear history (cleaner but modifies commit SHAs). The golden rule: never rebase shared/published branches (breaks others' local repos), freely rebase private feature branches before review. This is the correct answer.",
+      "c": "Rebase is a legitimate and widely used Git workflow — it is appropriate for local, unshared branch work.",
+      "d": "Merge is the standard integration mechanism — merge commits provide valuable branching context in project history."
+    }
+  },
+  {
+    "id": 1010,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Branch Management",
+    "difficulty": "easy",
+    "text": "What is branch management in Git-based cloud DevOps?",
+    "answers": [
+      { "id": "a", "text": "Managing network routing between different cloud availability zones" },
+      { "id": "b", "text": "The practice of creating, naming, protecting, and maintaining Git branches to support parallel development workflows — enabling features to be developed in isolation, releases to be managed separately, and hotfixes to be applied without disrupting ongoing development" },
+      { "id": "c", "text": "Managing company organizational branches and their cloud access" },
+      { "id": "d", "text": "Configuring load balancer rules to direct traffic between application versions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Network routing is a cloud infrastructure concern — branch management refers to Git repository organization.",
+      "b": "Git branch management defines how teams organize parallel work streams — feature branches isolate development, release branches stabilize releases, and hotfix branches enable emergency production fixes without polluting ongoing development. This is the correct answer.",
+      "c": "Organizational management is an HR function — branch management in DevOps refers to Git repository branches.",
+      "d": "Load balancer traffic routing is a network infrastructure concern — Git branch management organizes code development workflows."
+    }
+  },
+  {
+    "id": 1011,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Branch Management",
+    "difficulty": "medium",
+    "text": "A development team uses Git Flow with main, develop, feature/*, release/*, and hotfix/* branches. A critical production bug is discovered. Which branch strategy correctly handles an emergency hotfix?",
+    "answers": [
+      { "id": "a", "text": "Create a new feature branch from develop and merge it to develop first" },
+      { "id": "b", "text": "Create a hotfix/* branch from main (production), fix the bug, merge the hotfix back to both main (for immediate production deployment) and develop (to keep the fix in ongoing development), then tag the main merge as a new patch release" },
+      { "id": "c", "text": "Wait for the current sprint to end and include the fix in the next release" },
+      { "id": "d", "text": "Push the fix directly to main without creating a branch" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Creating from develop and merging to develop includes all in-progress development work in the hotfix — the hotfix may become entangled with unrelated incomplete features.",
+      "b": "Git Flow hotfix strategy: branch from main (production baseline), fix only the specific bug, merge to main (deploy immediately), merge to develop (prevent regression when develop is next released), and tag the patch release. This isolates the emergency fix from ongoing development. This is the correct answer.",
+      "c": "Critical production bugs cannot wait for the next sprint — emergency hotfixes require immediate action.",
+      "d": "Direct commits to main bypass code review and CI — even emergency fixes must follow the PR process with expedited review."
+    }
+  },
+  {
+    "id": 1012,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Branch Management",
+    "difficulty": "hard",
+    "text": "A team has 50 long-lived feature branches ranging from 2 to 8 months old. When they try to merge them to main, they encounter hundreds of conflicts. What branch management anti-pattern caused this?",
+    "answers": [
+      { "id": "a", "text": "Feature branches should be kept as long as necessary — the age is not the problem" },
+      { "id": "b", "text": "Long-lived feature branches that are not regularly synchronized with main accumulate divergence — as main evolves with other merges, old branches drift further apart, making eventual merge increasingly painful. Best practice is to regularly rebase or merge main into feature branches (at least daily in active codebases), keeping branches short-lived and frequently integrated" },
+      { "id": "c", "text": "The team should use fewer branches to avoid this problem" },
+      { "id": "d", "text": "Conflicts are expected with 50 branches — there is no way to prevent this" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Branch longevity is directly correlated with merge conflict severity — long-lived branches accumulate divergence that makes integration progressively harder.",
+      "b": "Long-lived branches are the primary cause of painful merges. Continuous integration disciplines (feature flags, trunk-based development, or frequent branch synchronization) keep branches short-lived and in sync with main — preventing divergence accumulation. This is the correct answer.",
+      "c": "Fewer branches reduce the problem but do not address the root cause — branch longevity and synchronization frequency are the key variables.",
+      "d": "Conflicts are preventable through branch synchronization discipline — accepting conflicts as inevitable accepts poor branch hygiene."
+    }
+  },
+  {
+    "id": 1013,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Branch Management",
+    "difficulty": "hard",
+    "text": "A cloud team adopts trunk-based development instead of Git Flow. In trunk-based development, all developers commit directly to main (trunk) multiple times per day using short-lived feature branches or feature flags. What is the PRIMARY benefit for CI/CD pipelines?",
+    "answers": [
+      { "id": "a", "text": "Trunk-based development eliminates the need for automated testing" },
+      { "id": "b", "text": "Continuous integration with main multiple times per day means the integration pipeline always runs against the most current codebase — catching integration issues within hours rather than days or weeks, keeping the main branch always deployable, reducing merge conflict risk, and enabling continuous delivery where every commit can potentially reach production" },
+      { "id": "c", "text": "Trunk-based development requires no code review since changes are small" },
+      { "id": "d", "text": "Trunk-based development only works for single-developer teams" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Trunk-based development requires more rigorous automated testing — frequent commits to main demand a robust test suite as the primary safety net.",
+      "b": "Trunk-based development's CI/CD benefit: main is always in a deployable state, integration issues are detected within hours, branch divergence is minimized, and the delivery pipeline can deliver any commit to production — enabling true continuous delivery. This is the correct answer.",
+      "c": "Trunk-based development still requires code review — short-lived branches (typically <1 day) are reviewed before merging, or pair programming replaces async review.",
+      "d": "Trunk-based development scales to large teams — Google, Facebook, and many large-scale organizations use trunk-based development with extensive automation to manage it at scale."
+    }
+  },
+  {
+    "id": 1014,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Branch Management",
+    "difficulty": "hard",
+    "text": "A team's main branch has diverged significantly from a long-lived release/1.2 branch that is still serving 30% of customers on the older version. A security patch must be applied to both branches. What branch management practice MOST efficiently handles this dual-branch patching requirement?",
+    "answers": [
+      { "id": "a", "text": "Apply the patch only to main and wait for release/1.2 customers to upgrade" },
+      { "id": "b", "text": "Create the security fix as a standalone commit on the branch where the vulnerable code exists, use `git cherry-pick` to apply that specific commit to the other branch — avoiding a full merge that would pull unrelated changes between the diverged branches — then deploy and release both fixes independently" },
+      { "id": "c", "text": "Merge main into release/1.2 completely and then apply the security patch once" },
+      { "id": "d", "text": "Apply the patch manually by editing files on each branch separately without using Git cherry-pick" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Security patches must be applied to all supported versions — leaving 30% of customers on a vulnerable version is unacceptable.",
+      "b": "Cherry-pick selectively applies a specific commit to another branch — the security fix commit can be applied to release/1.2 without pulling in all the unrelated changes that have diverged between branches. This maintains branch isolation while sharing the security fix. This is the correct answer.",
+      "c": "Merging main into release/1.2 completely introduces all unrelated feature changes to the stable release branch — potentially breaking the stable version with untested features.",
+      "d": "Manual file editing without cherry-pick risks introducing inconsistencies and loses the commit traceability that connects the patch across both branches."
+    }
+  },
+  {
+    "id": 1015,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Branch Management",
+    "difficulty": "hard",
+    "text": "A team enforces that feature branches must be deleted after merging to prevent repository clutter. A post-merge bug requires examining the original feature branch commits. How does this impact investigation and what practice balances cleanup with history preservation?",
+    "answers": [
+      { "id": "a", "text": "Deleted branches permanently lose their commit history — investigation is impossible" },
+      { "id": "b", "text": "Git preserves all commits even after branch deletion — the commits exist in main's history after merge and can be examined. However, referencing commits by branch name becomes impossible. Best practice: delete branches after merge (keeping the repo clean) but require meaningful PR titles and descriptions that become part of the merge commit — making the context findable through `git log` and PR references" },
+      { "id": "c", "text": "Branches should never be deleted since future investigation may be needed" },
+      { "id": "d", "text": "Deleted branch commits are purged from the repository after 30 days by Git" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Git commit objects persist after branch deletion — the branch pointer is removed but all commits merged into main remain accessible.",
+      "b": "Git's object model preserves all merged commits permanently — branch deletion only removes the named reference, not the commit history. Meaningful merge commit messages and PR references enable navigation of the history. This balances repo cleanliness with investigation capability. This is the correct answer.",
+      "c": "Keeping all feature branches permanently creates thousands of stale branches in active repos — deletion after merge is correct hygiene.",
+      "d": "Git does not automatically purge merged commit objects — they persist indefinitely as part of the repository's commit graph."
+    }
+  },
+  {
+    "id": 1016,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Branch Management",
+    "difficulty": "hard",
+    "text": "A cloud organization requires an audit trail of who approved each merge to main for compliance. Which branch management configuration provides this traceability?",
+    "answers": [
+      { "id": "a", "text": "Recording approvals in a spreadsheet alongside each merge" },
+      { "id": "b", "text": "Configure protected branches requiring PR reviews, enable required status checks, use squash or merge commits that reference the PR number, and ensure the source control platform (GitHub/GitLab) retains PR review history including reviewer identity, approval timestamps, and review comments — providing a complete immutable audit trail linked to each merged commit" },
+      { "id": "c", "text": "Email notifications to the security team for each merge" },
+      { "id": "d", "text": "Compliance audit trails cannot be achieved through source control alone" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Manual spreadsheets are not immutable, not automatically updated, and cannot be relied upon as compliance evidence.",
+      "b": "Source control platforms maintain immutable PR review records: who reviewed, when they approved, what comments were made, and which CI checks passed — all linked to the merge commit via PR number. This provides the complete, auditor-verifiable chain of custody for every code change. This is the correct answer.",
+      "c": "Email notifications are not immutable records and cannot be used as compliance evidence — platform-maintained PR history is authoritative.",
+      "d": "Modern source control platforms specifically support compliance use cases through immutable audit logs of all review and approval activity."
+    }
+  },
+  {
+    "id": 1017,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Automation",
+    "difficulty": "easy",
+    "text": "What is the PRIMARY benefit of automation in CI/CD pipelines for cloud deployments?",
+    "answers": [
+      { "id": "a", "text": "Automation eliminates the need for software engineers in the deployment process" },
+      { "id": "b", "text": "Automation ensures that build, test, and deployment steps execute consistently and repeatably every time — eliminating manual errors, reducing deployment time, enforcing quality gates, and enabling teams to deploy more frequently with greater confidence" },
+      { "id": "c", "text": "Automation only benefits large teams — small teams should use manual deployments" },
+      { "id": "d", "text": "Automation in CI/CD primarily reduces cloud infrastructure costs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Automation handles repetitive mechanical tasks — engineers remain essential for design, architecture, and complex problem-solving.",
+      "b": "CI/CD automation delivers consistency (same steps every time), speed (pipelines run in minutes vs. hours of manual effort), reliability (no forgotten steps or manual errors), and frequency (automated pipelines enable multiple deployments per day). This is the correct answer.",
+      "c": "Automation benefits teams of all sizes — even solo developers gain from automated testing and deployment pipelines.",
+      "d": "CI/CD automation primarily improves quality and speed — infrastructure cost reduction is a separate optimization concern."
+    }
+  },
+  {
+    "id": 1018,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Automation",
+    "difficulty": "medium",
+    "text": "A team deploys to production manually — an engineer SSHs to each server, pulls the latest code, runs migrations, and restarts services. This takes 45 minutes and occasionally fails mid-deployment. Which automation improvements MOST directly address these problems?",
+    "answers": [
+      { "id": "a", "text": "Hire a dedicated deployment engineer to perform manual deployments more carefully" },
+      { "id": "b", "text": "Implement a CI/CD pipeline that automates the entire deployment sequence — running database migrations through a pipeline step, deploying to all servers simultaneously using infrastructure automation (Ansible, deployment orchestrators), adding automated health checks post-deployment, and including automatic rollback if health checks fail — reducing deployment time to minutes with consistent execution" },
+      { "id": "c", "text": "Document the manual deployment steps more thoroughly" },
+      { "id": "d", "text": "Reduce deployment frequency to monthly to minimize the risk of mid-deployment failures" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A dedicated deployment engineer still performs manual steps subject to human error — automation eliminates the error source.",
+      "b": "Pipeline automation replaces sequential manual steps with parallel automated execution, adds health check validation, and includes automatic rollback — transforming an unreliable 45-minute manual process into a consistent, fast, self-validating automated deployment. This is the correct answer.",
+      "c": "Better documentation improves manual consistency but does not eliminate human error or reduce deployment time.",
+      "d": "Reducing frequency decreases deployment risk per event but accumulates technical debt between releases — automation enables frequent safe deployments."
+    }
+  },
+  {
+    "id": 1019,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Automation",
+    "difficulty": "hard",
+    "text": "A CI/CD pipeline is fully automated from code push to production deployment. A deployment accidentally deletes a production database table. What automation control would MOST effectively have prevented this?",
+    "answers": [
+      { "id": "a", "text": "Remove automation entirely since it caused the incident" },
+      { "id": "b", "text": "Add a mandatory human approval gate before production database migration steps, implement automated migration dry-runs that output planned changes for review, add destructive operation detection that flags or blocks migrations containing DROP, TRUNCATE, or DELETE operations requiring explicit override, and test migrations in a production-equivalent staging environment first" },
+      { "id": "c", "text": "Slow down the pipeline to give engineers time to notice issues" },
+      { "id": "d", "text": "Disable database migration automation and only automate application code deployment" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The incident was caused by insufficient pipeline controls — removing automation eliminates its substantial benefits while not addressing the root cause.",
+      "b": "The automation failure was in the control design — adding human approval for destructive database operations, dry-run output review, destructive operation detection with explicit override requirements, and staging validation creates the safeguards that prevent automated pipelines from accidentally deleting production data. This is the correct answer.",
+      "c": "Slowing the pipeline does not add controls — it only extends the time between start and the point where the error occurs.",
+      "d": "Database migration automation is valuable and safe with proper controls — disabling it entirely reintroduces manual error risk."
+    }
+  },
+  {
+    "id": 1020,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Automation",
+    "difficulty": "hard",
+    "text": "A team wants to implement Infrastructure as Code automation in their CI/CD pipeline. Which pipeline stage sequence MOST safely automates IaC deployment to production?",
+    "answers": [
+      { "id": "a", "text": "Directly apply terraform apply to production on every commit to main" },
+      { "id": "b", "text": "Lint and validate IaC (terraform validate/tflint) → Security scan (Checkov/tfsec) → terraform plan in staging → Review plan output → Apply to staging → Integration test staging → terraform plan in production (output for review) → Human approval gate → terraform apply in production → Smoke tests" },
+      { "id": "c", "text": "Run terraform apply in production and rollback if anything breaks" },
+      { "id": "d", "text": "Skip staging and apply directly to production with a 5-minute monitoring window" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Direct production application without validation, staging, or approval creates unacceptable production risk for infrastructure changes.",
+      "b": "The sequence progressively validates at each stage: syntax validation catches errors early, security scanning prevents misconfigurations, staging deployment validates the plan against real infrastructure, human review of the production plan catches unexpected changes, and post-deployment smoke tests confirm success — each stage catching issues before they reach production. This is the correct answer.",
+      "c": "Apply-then-rollback accepts production breakage as an outcome — prevention through staged validation is preferable.",
+      "d": "Skipping staging removes the critical validation layer where infrastructure failures can be caught safely."
+    }
+  },
+  {
+    "id": 1021,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Code Integration",
+    "difficulty": "easy",
+    "text": "What is Continuous Integration (CI) in cloud DevOps pipelines?",
+    "answers": [
+      { "id": "a", "text": "Continuously deploying code changes to production as they are written" },
+      { "id": "b", "text": "The practice of frequently merging developer code changes into a shared repository, where each integration is automatically verified by building the code and running tests — catching integration issues early when they are cheapest to fix" },
+      { "id": "c", "text": "Integrating third-party cloud services into an application's code" },
+      { "id": "d", "text": "Maintaining a continuously running integration test environment" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Continuous deployment to production is CD (Continuous Deployment) — CI focuses on integrating and validating code changes in the shared repository.",
+      "b": "CI automates the verification of every code integration: when developers push changes, the pipeline automatically builds the code and runs tests — providing immediate feedback on whether the integration broke anything. This is the correct answer.",
+      "c": "API integration with third-party services is application development work — not what CI pipeline integration refers to.",
+      "d": "A persistent test environment is infrastructure — CI is the automated process of building and testing on each code change."
+    }
+  },
+  {
+    "id": 1022,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Code Integration",
+    "difficulty": "medium",
+    "text": "A team practices CI but their builds take 45 minutes. Developers receive feedback on failures 45 minutes after their commit. What problem does slow CI feedback cause and how should it be addressed?",
+    "answers": [
+      { "id": "a", "text": "Slow CI feedback is acceptable since 45 minutes is a reasonable build time" },
+      { "id": "b", "text": "Slow CI feedback breaks the CI value proposition — by 45 minutes, developers have context-switched to new tasks, making failure investigation harder and encouraging them to batch more changes before committing (defeating frequent integration). Solutions: parallelize test suites, separate fast smoke tests from slow integration tests, cache dependencies, use faster build hardware, and only run full test suites on PR/main merges" },
+      { "id": "c", "text": "Developers should wait at their desk during the 45-minute build instead of continuing work" },
+      { "id": "d", "text": "The solution is to reduce the number of automated tests to speed up builds" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "45-minute CI feedback significantly reduces the value of CI — fast feedback (ideally under 10 minutes) is essential for CI effectiveness.",
+      "b": "CI feedback loops must be fast enough that developers can fix failures immediately without context switching. Parallel test execution, test tier separation, dependency caching, and hardware optimization can reduce 45-minute builds to under 10 minutes while maintaining test coverage. This is the correct answer.",
+      "c": "Requiring developers to wait reduces productivity — fast parallel CI allows developers to work on the next task while the pipeline runs.",
+      "d": "Removing tests to speed builds sacrifices quality — build optimization techniques maintain coverage while improving speed."
+    }
+  },
+  {
+    "id": 1023,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Code Integration",
+    "difficulty": "hard",
+    "text": "A team's CI pipeline frequently fails due to flaky tests — tests that pass and fail intermittently without code changes. What impact does test flakiness have on CI effectiveness and how should it be addressed?",
+    "answers": [
+      { "id": "a", "text": "Flaky tests are expected and teams should simply rerun pipelines until they pass" },
+      { "id": "b", "text": "Flaky tests erode trust in CI — when tests fail randomly, developers stop trusting test failures as meaningful signals and begin dismissing real failures as flakiness. This breaks the CI feedback loop entirely. Address by: quarantining flaky tests to a separate suite that does not block merges while they are investigated, fixing the underlying non-determinism (timing dependencies, test order dependencies, external service dependencies), and tracking flakiness rates as a quality metric" },
+      { "id": "c", "text": "Flaky tests indicate the code being tested is unstable — the application has bugs" },
+      { "id": "d", "text": "The solution for flaky tests is to increase the test timeout values" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Accepting flaky tests and rerunning pipelines treats the symptom — it destroys CI's value as a reliable quality signal.",
+      "b": "Flaky tests are a CI anti-pattern that undermines the entire CI feedback mechanism — when developers can't distinguish real failures from random noise, they ignore all test failures. Systematic quarantine and root cause investigation are required to maintain CI reliability. This is the correct answer.",
+      "c": "Flaky tests usually indicate test quality problems (timing, external dependencies, test isolation) — not necessarily application bugs.",
+      "d": "Increasing timeouts may fix timing-related flakiness but does not address test isolation, external dependency, or test order problems that cause most flakiness."
+    }
+  },
+  {
+    "id": 1024,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Code Integration",
+    "difficulty": "hard",
+    "text": "A microservices team runs CI for each service independently. After a release, a service fails because a dependent microservice's API changed in an incompatible way — but each service's CI passed individually. What CI practice prevents this class of integration failure?",
+    "answers": [
+      { "id": "a", "text": "Run each microservice's CI in sequence rather than in parallel" },
+      { "id": "b", "text": "Implement contract testing (e.g., Pact) where each service defines and publishes its API contract, and CI verifies that providers satisfy all registered consumer contracts — catching API compatibility breaks before deployment without requiring full integration environment runs on every commit" },
+      { "id": "c", "text": "Deploy all microservices together in a single monolithic pipeline to catch integration issues" },
+      { "id": "d", "text": "Manual integration testing by the QA team before each release" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Sequential individual CI runs do not test inter-service contract compatibility — they test each service in isolation.",
+      "b": "Contract testing verifies API compatibility between services without requiring a running integration environment — consumer services define expected API behavior, and CI for provider services validates that changes do not break registered consumer contracts. This catches breaking API changes before deployment. This is the correct answer.",
+      "c": "Monolithic pipelines eliminate the microservices independence benefit and create a bottleneck — contract testing achieves the same safety with maintained independence.",
+      "d": "Manual integration testing is slow, infrequent, and not scalable — automated contract testing provides continuous integration compatibility verification."
+    }
+  },
+  {
+    "id": 1025,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Code Deployment/Build",
+    "difficulty": "easy",
+    "text": "What is the difference between Continuous Delivery and Continuous Deployment in CI/CD pipelines?",
+    "answers": [
+      { "id": "a", "text": "Continuous Delivery and Continuous Deployment are the same — both automatically deploy to production" },
+      { "id": "b", "text": "Continuous Delivery ensures code is always in a deployable state and deployment to production requires a manual trigger or approval. Continuous Deployment automatically deploys every passing commit to production without human intervention — Delivery includes a manual gate, Deployment removes it" },
+      { "id": "c", "text": "Continuous Delivery deploys to staging while Continuous Deployment deploys to development" },
+      { "id": "d", "text": "Continuous Deployment is less automated than Continuous Delivery" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "They differ specifically in whether production deployment requires manual approval — a significant operational distinction.",
+      "b": "Continuous Delivery: pipeline runs all the way to production-ready, but a human pulls the trigger for production deployment. Continuous Deployment: every commit that passes all pipeline stages automatically deploys to production with no human approval required. This is the correct answer.",
+      "c": "Both terms refer to production deployment readiness — not separate environment distinctions.",
+      "d": "Continuous Deployment is more automated — it removes the manual approval step that Continuous Delivery retains."
+    }
+  },
+  {
+    "id": 1026,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Code Deployment/Build",
+    "difficulty": "medium",
+    "text": "A CI/CD build pipeline for a containerized cloud application should include which build stages in what order?",
+    "answers": [
+      { "id": "a", "text": "Build container image → Push to production → Test later" },
+      { "id": "b", "text": "Code checkout → Dependency installation → Compile/build → Unit tests → Build container image → Security scan image → Push to registry → Integration tests → Staging deployment → Acceptance tests → Production deployment approval" },
+      { "id": "c", "text": "Deploy to production → Test if it works → Rollback if needed" },
+      { "id": "d", "text": "Security scan → Push to production → Run tests after deployment" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Pushing to production before testing is the exact anti-pattern CI/CD prevents — testing must precede production deployment.",
+      "b": "The correct build pipeline progression shifts quality gates left: early unit tests catch failures before expensive container builds, image security scanning catches vulnerabilities before deployment, staging deployment validates in a realistic environment, and production deployment follows all preceding validations. This is the correct answer.",
+      "c": "Deploy-then-test means production users are exposed to broken code — CI/CD shifts testing before deployment.",
+      "d": "Security scanning must occur before pushing to any registry — images with known vulnerabilities should not be distributed even to staging registries."
+    }
+  },
+  {
+    "id": 1027,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Code Deployment/Build",
+    "difficulty": "hard",
+    "text": "A team's CI/CD pipeline builds a Docker image on every commit — including commits to feature branches. Each build pulls dependencies from the internet, taking 15 minutes. Which build optimization MOST reduces build time without sacrificing reliability?",
+    "answers": [
+      { "id": "a", "text": "Skip building images for feature branch commits" },
+      { "id": "b", "text": "Implement Docker layer caching — structure the Dockerfile to copy dependency files and install dependencies before copying application code, enabling Docker to cache the dependency layer and only rebuild from the application code layer when code changes (not when dependencies are unchanged). Also cache the build system's package registry downloads between runs" },
+      { "id": "c", "text": "Reduce the number of pipeline stages to speed up overall execution" },
+      { "id": "d", "text": "Increase the CI server hardware to 64 cores to build faster" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Feature branch builds validate that the image can be built — skipping them removes an early integration feedback mechanism.",
+      "b": "Docker layer caching is the primary build optimization — by ordering Dockerfile instructions to install dependencies before copying application code, unchanged dependencies are cached and reused across builds. Most build time is typically in dependency installation, so caching reduces 15-minute builds to under 2 minutes when only code changes. This is the correct answer.",
+      "c": "Reducing stages sacrifices validation coverage — optimization should maintain all quality gates while reducing execution time.",
+      "d": "Hardware scaling helps parallel tests but does not address the fundamental bottleneck of re-downloading dependencies on every build."
+    }
+  },
+  {
+    "id": 1028,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Code Deployment/Build",
+    "difficulty": "hard",
+    "text": "A cloud-native application uses a CI/CD pipeline that deploys every successful main branch commit to production automatically (Continuous Deployment). An average of 20 commits per day reach main. What practices MUST be in place to make this deployment frequency safe?",
+    "answers": [
+      { "id": "a", "text": "20 daily production deployments are always unsafe — reduce to one weekly release" },
+      { "id": "b", "text": "Comprehensive automated test suite covering the full deployment scope, feature flags to decouple deployment from feature activation, canary or blue-green deployment strategy to limit blast radius, automated rollback triggered by health check failures, application performance monitoring for immediate anomaly detection, and on-call rotation with clear escalation for deployment incidents" },
+      { "id": "c", "text": "Only deploy every commit immediately — no additional safeguards are needed" },
+      { "id": "d", "text": "20 deployments per day requires manual review for each — automate only the build step" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "High-frequency deployment is safe with the right practices — Netflix, Amazon, and Google deploy thousands of times per day.",
+      "b": "High-frequency CD requires a complete safety ecosystem: automated tests as the primary quality gate, feature flags to safely ship incomplete features without activating them, gradual traffic shifting to limit user impact, automatic rollback for failures, real-time monitoring to detect production issues immediately, and on-call readiness. Together these make frequent deployment safe. This is the correct answer.",
+      "c": "Automated deployment without safeguards amplifies defects at frequency — safety practices are not optional for high-frequency CD.",
+      "d": "Manual review of 20 daily deployments defeats the CD automation benefit — automated safeguards replace manual review at deployment time."
+    }
+  },
+  {
+    "id": 1029,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Testing",
+    "difficulty": "easy",
+    "text": "What types of automated testing should be included in a cloud application CI/CD pipeline?",
+    "answers": [
+      { "id": "a", "text": "Only unit tests since they are the fastest to run" },
+      { "id": "b", "text": "A test pyramid: unit tests (numerous, fast, test individual functions), integration tests (test component interactions and cloud service integrations), end-to-end tests (test complete user workflows), performance tests (validate latency and throughput), and security tests (SAST, dependency scanning, DAST) — each type catching different categories of defects" },
+      { "id": "c", "text": "Only manual testing by QA engineers before each production deployment" },
+      { "id": "d", "text": "Only end-to-end tests since they provide the most realistic coverage" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unit tests alone miss integration, API contract, and end-to-end behavior issues — the test pyramid requires multiple layers.",
+      "b": "The test pyramid provides comprehensive defect detection: unit tests catch logic errors fastest, integration tests validate component interactions, end-to-end tests validate complete user journeys, performance tests prevent regressions, and security tests prevent vulnerability deployment. Each layer catches distinct defect categories. This is the correct answer.",
+      "c": "Manual-only testing cannot scale with CI/CD pipeline frequency — automation enables testing on every commit.",
+      "d": "End-to-end tests are slow and expensive — using them exclusively without faster unit and integration tests would make pipelines impractically slow."
+    }
+  },
+  {
+    "id": 1030,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Testing",
+    "difficulty": "medium",
+    "text": "A CI/CD pipeline has 95% code coverage but a bug slips through to production. The bug involves incorrect handling of a cloud API rate limit response. Why did coverage not catch this?",
+    "answers": [
+      { "id": "a", "text": "95% coverage is not high enough — 100% coverage would have caught the bug" },
+      { "id": "b", "text": "Code coverage measures which lines are executed during tests, not whether all scenarios are tested correctly — the rate limit handling code may have been executed but no test specifically verified the correct behavior when a rate limit response is received. Coverage metrics can indicate which code is untested but cannot guarantee that covered code behaves correctly in all scenarios" },
+      { "id": "c", "text": "The bug was in the cloud provider's API — testing cannot catch external API behavior" },
+      { "id": "d", "text": "Cloud API integration cannot be tested in automated pipelines" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "100% coverage would execute the rate limit handling code — but would not guarantee correct behavior without a specific test asserting correct rate limit response handling.",
+      "b": "Coverage is a necessary but insufficient quality metric — it indicates lines executed, not behavioral correctness for all inputs and scenarios. A test that calls the code but does not assert the rate limit handling behavior provides coverage without validation. This is the correct answer.",
+      "c": "Rate limit handling is client-side code that can be tested by mocking/stubbing the API response to return a 429 status — testing is the developer's responsibility.",
+      "d": "Cloud API integrations can and should be tested using mocks, stubs, and contract tests in automated pipelines — cloud API unavailability is not a valid reason to skip integration testing."
+    }
+  },
+  {
+    "id": 1031,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Testing",
+    "difficulty": "hard",
+    "text": "A cloud microservices application has 300 end-to-end tests that take 4 hours to run in a CI pipeline. This makes the feedback loop too slow for frequent deployments. Which testing strategy MOST effectively maintains confidence while reducing pipeline duration?",
+    "answers": [
+      { "id": "a", "text": "Delete 250 tests to reduce the suite to 50 that run in 40 minutes" },
+      { "id": "b", "text": "Implement a test pyramid strategy: run only unit and integration tests (fast, ~5 minutes) on every commit in the primary pipeline; run a subset of critical E2E tests (~30 minutes) on PRs targeting main; run the full E2E suite on a scheduled basis (nightly or pre-release) rather than on every commit — trading immediate comprehensive coverage for faster feedback on routine changes" },
+      { "id": "c", "text": "Accept the 4-hour pipeline as the cost of quality" },
+      { "id": "d", "text": "Parallelize all 300 E2E tests on 300 machines simultaneously" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Arbitrarily deleting tests sacrifices coverage — strategic test tier separation maintains coverage while improving pipeline speed.",
+      "b": "Test tiering matches test type to feedback urgency: fast unit/integration tests on every commit provide immediate feedback, a representative E2E subset on PRs catches major regressions, and full E2E runs periodically provide comprehensive validation. This is the correct answer.",
+      "c": "A 4-hour CI pipeline fundamentally breaks the CI feedback model — developers cannot wait 4 hours for feedback on every commit.",
+      "d": "Parallelizing 300 E2E tests requires significant infrastructure and still takes some time — test tiering is more architecturally sound and cost-effective."
+    }
+  },
+  {
+    "id": 1032,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Testing",
+    "difficulty": "hard",
+    "text": "A cloud team implements chaos engineering as part of their CI/CD testing. Chaos experiments inject failures (instance termination, network partition, latency injection) into staging environments. What does this testing validate?",
+    "answers": [
+      { "id": "a", "text": "Whether individual unit functions execute correctly under normal conditions" },
+      { "id": "b", "text": "System resilience under real failure conditions — validating that auto-healing, failover, retry logic, graceful degradation, and disaster recovery mechanisms actually work as designed. This moves beyond testing code correctness to testing system behavior under the failure modes that occur in production, discovering resilience gaps before they cause real incidents" },
+      { "id": "c", "text": "The performance characteristics of the application under peak load" },
+      { "id": "d", "text": "Whether the CI pipeline itself can handle infrastructure failures" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unit tests validate individual function correctness — chaos engineering validates system behavior under infrastructure failures.",
+      "b": "Chaos engineering tests the resilience mechanisms that conventional testing cannot — you cannot unit test whether your auto-scaling actually responds correctly to instance termination under real traffic. Chaos experiments validate these mechanisms in realistic conditions, discovering gaps before production incidents. This is the correct answer.",
+      "c": "Load and performance testing validates throughput under normal conditions — chaos engineering specifically tests behavior under failure conditions.",
+      "d": "Chaos engineering targets the application's resilience — not the CI pipeline infrastructure itself."
+    }
+  },
+  {
+    "id": 1033,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Security",
+    "difficulty": "easy",
+    "text": "What is DevSecOps and how does it integrate security into CI/CD pipelines?",
+    "answers": [
+      { "id": "a", "text": "A separate security team that reviews deployments after they reach production" },
+      { "id": "b", "text": "The practice of integrating security checks directly into the CI/CD pipeline — shifting security left so that security scanning, vulnerability detection, and compliance checking occur automatically on every code change rather than as a separate gate at the end of the development process" },
+      { "id": "c", "text": "A cloud security service that monitors applications post-deployment" },
+      { "id": "d", "text": "A governance framework requiring security sign-off before any code is written" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Post-deployment security review is the old model DevSecOps replaces — security integrated into CI/CD finds issues before they reach production.",
+      "b": "DevSecOps embeds security into every pipeline stage: credential scanning on commit, SAST during build, dependency scanning in test stages, container image scanning before push, and infrastructure policy checks before deployment — making security a continuous pipeline quality gate rather than an end-stage gate. This is the correct answer.",
+      "c": "Post-deployment monitoring is one layer — DevSecOps specifically shifts security left into the development pipeline.",
+      "d": "Pre-coding security requirements are valuable but DevSecOps specifically refers to automated security integration in CI/CD pipelines."
+    }
+  },
+  {
+    "id": 1034,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Security",
+    "difficulty": "medium",
+    "text": "A CI/CD pipeline includes a SAST (Static Application Security Testing) stage. A developer's PR triggers the SAST scan and reveals a high-severity SQL injection vulnerability. What should happen?",
+    "answers": [
+      { "id": "a", "text": "Approve the PR and fix the SQL injection in a follow-up commit" },
+      { "id": "b", "text": "The pipeline should automatically block the PR from merging on high-severity findings, the developer must fix the SQL injection before the PR can be approved, and the security finding should be tracked in the security backlog even after fix to identify patterns of similar vulnerabilities" },
+      { "id": "c", "text": "Mark the finding as a false positive and proceed with the merge" },
+      { "id": "d", "text": "Inform the security team and wait for their manual review before proceeding" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Merging SQL injection vulnerabilities then fixing them separately means the vulnerability exists in main — the pipeline must block, not defer.",
+      "b": "High-severity security findings from automated SAST must block pipeline progression — this is the entire point of security integration in CI/CD. Fix-before-merge eliminates the vulnerability before it ever reaches the codebase. Pattern tracking helps improve developer security education. This is the correct answer.",
+      "c": "SQL injection is rarely a false positive — dismissing it without investigation risks deploying a real vulnerability.",
+      "d": "Manual security team review is the old model — automated SAST with pipeline blocking provides faster, more consistent enforcement."
+    }
+  },
+  {
+    "id": 1035,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Security",
+    "difficulty": "hard",
+    "text": "A CI/CD security pipeline scans dependency manifests and finds that 40 of 200 dependencies have known CVEs. 35 of these are in test-only dependencies that never run in production. How should the team handle this finding?",
+    "answers": [
+      { "id": "a", "text": "Block all 40 CVEs equally regardless of whether they affect production" },
+      { "id": "b", "text": "Prioritize the 5 production dependencies with CVEs for immediate remediation. For the 35 test-only CVEs, assess whether they could affect build infrastructure (some test frameworks process user input), document the risk distinction, update test dependencies where patches exist, and configure the scanner to distinguish production scope from dev/test scope — avoiding developer fatigue from false-urgency CVE alerts" },
+      { "id": "c", "text": "Ignore all dependency CVEs since modern applications always have some vulnerabilities" },
+      { "id": "d", "text": "Remove all test dependencies to eliminate the test CVE findings" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Treating test-only CVEs with the same urgency as production CVEs creates alert fatigue — risk-based prioritization is more effective.",
+      "b": "Production CVEs are the immediate priority — test dependency CVEs warrant assessment and remediation where patches exist but carry lower business risk since they do not reach production users. Scope-aware scanning reduces noise and focuses developer attention on genuine production risks. This is the correct answer.",
+      "c": "Ignoring CVEs entirely is unacceptable — risk-based prioritization between production and test scope is the appropriate calibration.",
+      "d": "Removing test dependencies eliminates the testing capability — fixing or accepting risk for test dependency CVEs is the appropriate approach."
+    }
+  },
+  {
+    "id": 1036,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Security",
+    "difficulty": "hard",
+    "text": "A team's CI/CD pipeline uses a service account with full administrator permissions to deploy infrastructure. A security review flags this as a significant risk. How should the pipeline's security posture be improved?",
+    "answers": [
+      { "id": "a", "text": "Administrator access is necessary for deployment pipelines — no improvement is possible" },
+      { "id": "b", "text": "Apply least privilege to the pipeline service account — grant only the specific IAM permissions required for each deployment step, use separate service accounts for different pipeline environments (dev/staging/prod) with escalating permission requirements, store the service account credentials in a secrets manager rather than pipeline environment variables, and audit all pipeline service account API calls" },
+      { "id": "c", "text": "Use the root account for pipeline deployments to ensure no permission errors" },
+      { "id": "d", "text": "Share one administrator service account across all pipelines for simplicity" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Deployment pipelines can and should operate with least-privilege permissions — administrator access is not required for most deployments.",
+      "b": "Pipeline service account hardening: permission scoping to deployment-required actions only, environment-specific accounts with appropriate privilege levels, secrets manager for credential storage, and audit logging of all pipeline API actions. This limits the blast radius if pipeline credentials are compromised. This is the correct answer.",
+      "c": "Root account usage for any automated process is a critical security violation — root should never be used for pipeline deployments.",
+      "d": "Shared administrator accounts prevent individual pipeline auditability and create massive blast radius on compromise — separate least-privilege accounts are essential."
+    }
+  },
+  {
+    "id": 1037,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Workflow",
+    "difficulty": "easy",
+    "text": "What is a CI/CD pipeline workflow in cloud DevOps?",
+    "answers": [
+      { "id": "a", "text": "A manual checklist of steps engineers follow before deployment" },
+      { "id": "b", "text": "An automated sequence of defined stages — triggered by code events (push, PR, tag) — that execute build, test, security, and deployment steps in a defined order, with each stage's success or failure determining whether subsequent stages proceed" },
+      { "id": "c", "text": "A meeting workflow for sprint planning and retrospectives" },
+      { "id": "d", "text": "A documentation process for recording deployment decisions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Manual checklists are the pre-automation approach — CI/CD workflows automate and enforce the sequence.",
+      "b": "A CI/CD workflow defines the automated pipeline stages, their triggers, dependencies between stages, and success criteria — creating a repeatable, automated quality gate from code change to deployment. This is the correct answer.",
+      "c": "Sprint ceremonies are agile process rituals — CI/CD workflows are technical automation definitions.",
+      "d": "Documentation processes are knowledge management practices — CI/CD workflows are automated execution sequences."
+    }
+  },
+  {
+    "id": 1038,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Workflow",
+    "difficulty": "medium",
+    "text": "A GitHub Actions workflow is defined to run on push to any branch. The workflow takes 30 minutes and includes production deployment. A developer pushes to a test branch. What happens and what workflow configuration prevents unintended production deployments?",
+    "answers": [
+      { "id": "a", "text": "GitHub Actions only runs on the main branch by default — no changes needed" },
+      { "id": "b", "text": "The workflow runs fully including production deployment — a misconfigured trigger. Fix: use branch-specific triggers (only run full deployment on main or release branches) and environment-specific job conditions using branch context to prevent test branch pushes from triggering production deployment steps" },
+      { "id": "c", "text": "The workflow will detect it is a test branch and skip deployment automatically" },
+      { "id": "d", "text": "Production deployment steps are always skipped when no approval is given" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "GitHub Actions triggers must be explicitly configured — by default they do not restrict to main only.",
+      "b": "Triggering production deployments on any branch push is a dangerous misconfiguration. Branch-specific trigger conditions (on: push: branches: [main]) and job-level conditions (if: github.ref == 'refs/heads/main') prevent test branch pushes from executing production deployment jobs. This is the correct answer.",
+      "c": "GitHub Actions does not automatically detect intent — workflows execute exactly as configured regardless of branch semantics.",
+      "d": "Approval gates must be explicitly configured as required environments — they are not applied automatically."
+    }
+  },
+  {
+    "id": 1039,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Workflow",
+    "difficulty": "hard",
+    "text": "A complex CI/CD workflow has 15 sequential stages taking 2 hours total. Most stages are independent and could run in parallel. Which workflow redesign MOST reduces total pipeline execution time?",
+    "answers": [
+      { "id": "a", "text": "Remove the slowest 5 stages to reduce execution time" },
+      { "id": "b", "text": "Identify stages with no dependency relationships and execute them in parallel jobs — for example running unit tests, linting, security scanning, and dependency vulnerability checks simultaneously rather than sequentially — then synchronize the parallel jobs before proceeding to dependent stages like deployment" },
+      { "id": "c", "text": "Run all 15 stages on faster hardware instead of parallelizing" },
+      { "id": "d", "text": "Sequential execution is required for CI/CD correctness — parallelization is not appropriate" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Removing stages sacrifices quality gates — parallel execution achieves speed improvement while maintaining all validation.",
+      "b": "Independent stages that do not depend on each other's outputs can run in parallel — the total pipeline time becomes determined by the longest parallel path rather than the sum of all stages. Unit tests, linting, security scanning, and vulnerability checks can all run simultaneously, dramatically reducing total execution time. This is the correct answer.",
+      "c": "Hardware scaling improves each individual stage — parallelization reduces total wall-clock time by running independent stages concurrently.",
+      "d": "CI/CD pipelines support parallel job execution — most modern CI platforms (GitHub Actions, GitLab CI, Jenkins) natively support parallel stage execution."
+    }
+  },
+  {
+    "id": 1040,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Artifacts",
+    "difficulty": "easy",
+    "text": "What are build artifacts in CI/CD pipelines?",
+    "answers": [
+      { "id": "a", "text": "The source code files that are input to the build process" },
+      { "id": "b", "text": "The outputs produced by the build stage — such as compiled binaries, JAR files, Docker images, Lambda deployment packages, or Helm charts — that are stored and used by subsequent pipeline stages for testing and deployment" },
+      { "id": "c", "text": "The test results and logs generated during pipeline execution" },
+      { "id": "d", "text": "The infrastructure templates used to provision cloud resources" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Source code is the input to the build — artifacts are the outputs produced by building from source.",
+      "b": "Build artifacts are the deployable outputs of the build process — compiled code, packaged applications, container images — that represent a specific version of the application ready for testing and deployment. This is the correct answer.",
+      "c": "Test results and logs are pipeline execution records — not build artifacts in the deployment sense.",
+      "d": "IaC templates are source inputs — build artifacts are the compiled/packaged application outputs."
+    }
+  },
+  {
+    "id": 1041,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Artifacts",
+    "difficulty": "medium",
+    "text": "A CI/CD pipeline builds a new Docker image on every PR and pushes it to an artifact registry. After 6 months, the registry contains 15,000 images consuming significant storage. What artifact management practice prevents this?",
+    "answers": [
+      { "id": "a", "text": "Store only the most recent image and delete all others immediately" },
+      { "id": "b", "text": "Implement artifact lifecycle policies: retain tagged release images indefinitely (or for compliance period), retain the last N builds for main branch (e.g., last 30 days), and automatically delete feature branch PR images after a defined retention period (e.g., 7 days after PR close). This balances retention of deployable artifacts with storage cost management" },
+      { "id": "c", "text": "Stop building Docker images on PR merges — only build on production deployments" },
+      { "id": "d", "text": "Archive all 15,000 images to cold storage to reduce costs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Keeping only the latest image prevents rollback to previous versions — retention of recent images is operationally important.",
+      "b": "Tiered artifact retention matches retention period to artifact importance: release artifacts have long retention for rollback and compliance, recent main builds support operational needs, and PR/feature branch artifacts have short retention since they are rarely needed after review. This is the correct answer.",
+      "c": "Not building on PR merges eliminates the CI validation of the merged state — the merged image is what would actually be deployed.",
+      "d": "Cold storage for container images is impractical — images require fast retrieval during deployment and cannot be in cold storage during active use."
+    }
+  },
+  {
+    "id": 1042,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Artifacts",
+    "difficulty": "hard",
+    "text": "A supply chain security review finds that CI/CD pipelines build artifacts by downloading dependencies from public package registries on every build. What supply chain risk does this create and how should artifacts be secured?",
+    "answers": [
+      { "id": "a", "text": "Public package registry downloads are standard practice with no supply chain risk" },
+      { "id": "b", "text": "Direct public registry downloads create supply chain risks: dependency confusion attacks (malicious packages with matching internal package names), typosquatting (malicious packages with similar names), compromised legitimate packages (like the log4j incident), and internet dependency creating build instability. Mitigate with: internal artifact proxy/mirror that caches approved packages, dependency pinning with hash verification, automated dependency vulnerability scanning, and SBOM (Software Bill of Materials) generation for all artifacts" },
+      { "id": "c", "text": "The only supply chain risk is if the CI server is compromised" },
+      { "id": "d", "text": "Dependency downloads are the cloud provider's responsibility to secure" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Supply chain attacks through public package registries are a well-documented and growing threat category — this is not a low-risk practice.",
+      "b": "Supply chain security for CI/CD artifacts requires defense-in-depth: internal mirrors to control which packages are permitted, hash pinning to prevent substitution attacks, vulnerability scanning of all dependencies, and SBOM for complete dependency visibility. This is the correct answer.",
+      "c": "Supply chain attacks occur through the build process itself — a compromised dependency affects all builds even on secure CI infrastructure.",
+      "d": "Package registry security is a shared concern — cloud providers secure their managed registries, but public registry downloads are entirely the customer's responsibility to validate."
+    }
+  },
+  {
+    "id": 1043,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Repositories",
+    "difficulty": "easy",
+    "text": "What is an artifact repository (registry) in CI/CD and how does it differ from a source code repository?",
+    "answers": [
+      { "id": "a", "text": "Artifact repositories and source code repositories are the same — both store the same types of files" },
+      { "id": "b", "text": "Source code repositories (Git/GitHub/GitLab) store human-readable code with full version history and branching. Artifact repositories (JFrog Artifactory, AWS ECR, Azure Container Registry, Nexus) store compiled binary artifacts, container images, and packages — optimized for binary storage, versioning by build number, and efficient download by deployment systems" },
+      { "id": "c", "text": "Artifact repositories are only used for database backups" },
+      { "id": "d", "text": "Source code repositories store the final deployable artifacts while artifact repositories store source code" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Source code and artifact repositories serve fundamentally different purposes with different storage optimization.",
+      "b": "Source code repositories optimize for text diff, branching, and collaboration on human-readable code. Artifact repositories optimize for binary storage, content-addressed retrieval, and efficient distribution to deployment targets — each repository type serves a distinct role in the CI/CD pipeline. This is the correct answer.",
+      "c": "Artifact repositories store build outputs (container images, compiled packages) — not database backups.",
+      "d": "This reverses the correct roles — source code repositories store code, artifact repositories store compiled/built outputs."
+    }
+  },
+  {
+    "id": 1044,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Repositories",
+    "difficulty": "medium",
+    "text": "A security team discovers that a public Docker Hub repository is used as the source for base images in all CI/CD pipelines. A malicious image update on Docker Hub with the same tag was pulled by the pipeline. What repository security practice prevents this?",
+    "answers": [
+      { "id": "a", "text": "Trust Docker Hub official images entirely since they are maintained by Docker" },
+      { "id": "b", "text": "Use an internal private registry as a curated mirror — approved base images are imported, scanned, and stored in the internal registry. CI/CD pipelines pull only from the internal registry, not directly from Docker Hub. Image digests (SHA256) rather than mutable tags are used to ensure pipelines always use the exact approved version regardless of tag mutations" },
+      { "id": "c", "text": "Pull images directly from Docker Hub but scan them after download" },
+      { "id": "d", "text": "Use only the latest tag to ensure the newest security fixes are always used" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Even Docker Hub official images can be compromised — internal registry mirroring with scanning provides an additional validation layer.",
+      "b": "Internal registry mirroring decouples pipelines from external registry changes — approved images at specific digests are the only source, preventing mutable tag attacks where a malicious image is pushed with the same tag. Image digest pinning ensures exact reproducibility regardless of external changes. This is the correct answer.",
+      "c": "Scanning after download allows malicious images to enter the build environment during the brief pre-scan window — internal registry pre-approval prevents malicious images from reaching CI servers at all.",
+      "d": "The 'latest' tag is the most dangerous approach — it is mutable and any update to the 'latest' tag on the external registry immediately affects all pipelines using it."
+    }
+  },
+  {
+    "id": 1045,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Repositories",
+    "difficulty": "hard",
+    "text": "A mono-repository contains code for 20 microservices. A CI/CD pipeline triggers a build for all 20 services on every commit, even when only one service's code changed. This wastes significant compute resources. Which repository and pipeline strategy MOST efficiently targets builds?",
+    "answers": [
+      { "id": "a", "text": "Split the monorepo into 20 separate repositories — one per microservice" },
+      { "id": "b", "text": "Implement path-based CI triggers that detect which service directories changed in each commit and only build/test the affected services — using change detection tools (turborepo, nx, Bazel) that understand dependency graphs and only rebuild services affected by the changed code, including services that depend on shared libraries" },
+      { "id": "c", "text": "Build all 20 services in parallel to minimize wall-clock time regardless of change scope" },
+      { "id": "d", "text": "Accept full builds on every commit as the cost of monorepo architecture" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Splitting into 20 repos solves targeted builds but creates cross-service coordination complexity — monorepo with intelligent builds is often preferred.",
+      "b": "Path-based CI triggers with dependency-aware build tools solve the monorepo targeted build problem — only services with changed code (or services depending on changed shared code) are rebuilt, dramatically reducing unnecessary compute consumption while maintaining correctness. This is the correct answer.",
+      "c": "Parallel full builds improve wall-clock time but still consume 20x the compute resources regardless of change scope — waste reduction requires targeted building.",
+      "d": "Full builds on every commit in a 20-service monorepo creates an unsustainable CI compute cost — intelligent path-based triggering is the standard solution."
+    }
+  },
+  {
+    "id": 1046,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Repositories",
+    "difficulty": "hard",
+    "text": "A team uses multiple artifact repositories: a development registry for PR builds, a staging registry for validated builds, and a production registry for release-approved builds. An artifact promotion policy requires images to pass security scans in each environment before promotion. How does this multi-registry strategy improve security?",
+    "answers": [
+      { "id": "a", "text": "Multiple registries create unnecessary complexity — one shared registry is more secure" },
+      { "id": "b", "text": "Gated artifact promotion ensures only validated, scanned artifacts advance to higher environments — a vulnerability discovered in development prevents promotion to staging; a staging issue prevents promotion to production. Production only contains artifacts that have successfully passed all security gates, creating a verifiable chain of custody from build through production approval" },
+      { "id": "c", "text": "Security scanning should only occur in the production registry" },
+      { "id": "d", "text": "Registry separation only affects cost — it has no security implications" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A single shared registry does not enforce promotion gates — any pipeline could push directly to the production registry without passing security validation.",
+      "b": "Registry separation with promotion policies creates a security gatekeeping function: artifacts cannot reach production without passing security validation at each stage. The chain of custody provides audit evidence that every production artifact was validated through each gate. This is the correct answer.",
+      "c": "Production-only scanning is too late — vulnerabilities should be caught at the earliest possible stage when remediation is least disruptive.",
+      "d": "Registry separation directly implements access control and promotion gates — security implications are fundamental, not incidental."
+    }
+  },
+  {
+    "id": 1047,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Repositories",
+    "difficulty": "hard",
+    "text": "A compliance audit requires proof that every artifact deployed to production was built from approved source code, passed all required tests, and was not modified after build. Which combination of repository practices provides this evidence?",
+    "answers": [
+      { "id": "a", "text": "A spreadsheet maintained by the release manager recording each deployment" },
+      { "id": "b", "text": "Artifact signing (using Sigstore/Cosign or GPG) at build time — creating a cryptographic signature proving the artifact's origin and build pipeline. Artifact provenance records (SLSA attestations) linking the artifact to its source commit, build environment, and pipeline run. Immutable artifact storage (content-addressed registries where pushing does not overwrite existing content) — together providing a tamper-evident, cryptographically verifiable audit trail from source to production" },
+      { "id": "c", "text": "Git tags on the source repository at the time of deployment" },
+      { "id": "d", "text": "Screenshots of the CI/CD pipeline execution logs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Manual spreadsheets can be modified and cannot prove artifact integrity — cryptographic evidence is required for compliance.",
+      "b": "Artifact signing provides cryptographic proof that the artifact was created by the authorized pipeline. Provenance records link the artifact to its exact source commit and pipeline execution. Immutable storage proves the artifact was not modified after build. Together these provide the audit evidence compliance requires. This is the correct answer.",
+      "c": "Git tags prove which source code was tagged but cannot prove what artifact was built from it or whether the artifact was modified after build.",
+      "d": "Screenshots are not tamper-evident and cannot prove artifact integrity — cryptographic signing and provenance are required."
+    }
+  },
+  {
+    "id": 1048,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Repositories",
+    "difficulty": "hard",
+    "text": "A team stores all CI/CD pipeline configuration files (GitHub Actions YAML, Jenkinsfile) in the same repository as their application code. A developer modifies the pipeline configuration to skip security scanning, gets the PR approved by a colleague unfamiliar with pipeline security, and merges. What governance controls prevent pipeline configuration tampering?",
+    "answers": [
+      { "id": "a", "text": "Pipeline configuration in the same repo is inherently insecure — move all pipelines to a separate repo" },
+      { "id": "b", "text": "Implement CODEOWNERS rules requiring pipeline configuration changes to be reviewed and approved by the security or DevOps team (not just any team member), set up automated detection that alerts when pipeline security stage configurations change, enforce pipeline definition schema validation that prevents removing required security stages, and maintain a separate trusted pipeline definition in a protected location that cannot be overridden by application repo changes" },
+      { "id": "c", "text": "Trust all developers to make appropriate pipeline changes — no additional controls needed" },
+      { "id": "d", "text": "Require all developers to complete security training before being allowed to modify pipelines" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Separate repos can help but create synchronization complexity — CODEOWNERS and policy controls within the same repo are often sufficient.",
+      "b": "CODEOWNERS enforcement requires security/DevOps review for pipeline security stage modifications — preventing unauthorized security bypass. Schema validation prevents malformed or incomplete pipeline definitions. Automated detection provides visibility into pipeline changes that affect security posture. Together these make unauthorized security bypass visible and difficult. This is the correct answer.",
+      "c": "Trust without technical controls creates exploitable gaps — even well-intentioned developers may make mistakes affecting security stages.",
+      "d": "Training is valuable but does not technically prevent pipeline modifications — CODEOWNERS and automated validation provide technical enforcement."
+    }
+  },
+  {
+    "id": 1049,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Event-driven Architectures",
+    "difficulty": "easy",
+    "text": "What is an event-driven architecture in cloud system integration?",
+    "answers": [
+      { "id": "a", "text": "An architecture where all services poll a central database for new work" },
+      { "id": "b", "text": "An architectural pattern where services communicate by producing and consuming events — a service publishes an event when something significant happens, and other services that care about that event react asynchronously, enabling loose coupling between producers and consumers" },
+      { "id": "c", "text": "An architecture where a central orchestrator calls each service in sequence" },
+      { "id": "d", "text": "A scheduling system that triggers services at defined time intervals" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Polling a central database is a synchronous, tightly coupled pattern — event-driven architectures use asynchronous event propagation.",
+      "b": "Event-driven architecture decouples producers from consumers through events — a payment service publishes a 'payment completed' event without knowing which services care, and inventory, notification, and analytics services independently react to that event. This is the correct answer.",
+      "c": "A central orchestrator calling services sequentially describes a synchronous orchestration pattern — event-driven uses asynchronous choreography.",
+      "d": "Time-based triggers describe scheduled tasks — event-driven architectures respond to business events, not time intervals."
+    }
+  },
+  {
+    "id": 1050,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Event-driven Architectures",
+    "difficulty": "medium",
+    "text": "A cloud e-commerce platform uses event-driven architecture. When an order is placed, an 'order.created' event is published to an event bus. The inventory, shipping, email notification, and analytics services all consume this event independently. What advantage does this provide over synchronous API calls?",
+    "answers": [
+      { "id": "a", "text": "The order service must wait for all four downstream services to respond before confirming the order" },
+      { "id": "b", "text": "The order service completes immediately after publishing the event — it does not wait for downstream processing. If the email service is temporarily down, the event is retained in the broker and processed when the service recovers. Adding a new consumer (e.g., fraud detection) requires no changes to the order service — the producer has no knowledge of or dependency on its consumers" },
+      { "id": "c", "text": "Synchronous calls would be more reliable since they confirm each step succeeded" },
+      { "id": "d", "text": "Event-driven architecture requires all four services to be available simultaneously for the order to succeed" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Waiting for all downstream responses describes synchronous calls — event-driven architectures fire-and-forget, enabling immediate producer completion.",
+      "b": "Event-driven decoupling provides three key benefits: producer availability is not dependent on consumer availability, new consumers can be added without producer changes, and events are durable in the broker enabling recovery from temporary consumer failures. This is the correct answer.",
+      "c": "Synchronous calls are more brittle — one slow or failed downstream service blocks the entire chain. Event-driven architecture improves resilience.",
+      "d": "Event-driven architecture specifically solves the simultaneous availability requirement — consumers process events when they are available, not necessarily simultaneously with the producer."
+    }
+  },
+  {
+    "id": 1051,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Event-driven Architectures",
+    "difficulty": "hard",
+    "text": "An event-driven system processes 'payment.processed' events to update account balances. Due to a temporary failure, a consumer processes the same event twice — charging the customer twice. What event-driven design pattern prevents this?",
+    "answers": [
+      { "id": "a", "text": "Process events faster to prevent duplicate deliveries" },
+      { "id": "b", "text": "Implement idempotent event consumers — each payment event carries a unique event ID, and the consumer checks if this event ID has already been processed (using a deduplication store) before applying the balance update. If the event was previously processed, the duplicate is safely ignored without applying the charge again" },
+      { "id": "c", "text": "Use exactly-once delivery guarantees from the message broker to prevent all duplicates" },
+      { "id": "d", "text": "Event-driven systems cannot reliably handle financial transactions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Processing speed does not prevent duplicate delivery — at-least-once delivery semantics in most brokers means duplicates are inherent to the architecture.",
+      "b": "Idempotent consumers are the standard pattern for safe event processing: unique event IDs enable deduplication at the consumer — if the same event ID has been processed before, the operation is safely skipped. This handles at-least-once delivery without duplicate side effects. This is the correct answer.",
+      "c": "Exactly-once delivery is technically complex and not guaranteed by most brokers — idempotent consumers provide safety without requiring exactly-once broker guarantees.",
+      "d": "Event-driven architectures are widely used in financial systems — with idempotent design, they handle financial transactions reliably."
+    }
+  },
+  {
+    "id": 1052,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Event-driven Architectures",
+    "difficulty": "hard",
+    "text": "A cloud microservices system uses an event broker (Kafka) for all inter-service communication. A downstream consumer cannot keep up with event production rate, causing consumer lag to grow continuously. What is this condition called and how is it addressed?",
+    "answers": [
+      { "id": "a", "text": "This is normal Kafka operation — consumer lag is an expected metric" },
+      { "id": "b", "text": "This is backpressure — the consumer is overwhelmed by event production rate. Solutions: horizontally scale consumer instances (Kafka consumer groups distribute partition processing), optimize consumer processing logic to increase throughput, implement event filtering to discard events the consumer does not need to process, or add a processing buffer layer that pre-processes events before the consumer" },
+      { "id": "c", "text": "Reduce event production rate by slowing down producers" },
+      { "id": "d", "text": "Increase Kafka topic partition count to automatically distribute consumer load" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Growing consumer lag indicates the system cannot keep up — while some lag is normal, continuously growing lag is a production issue requiring attention.",
+      "b": "Backpressure is a fundamental event-driven architecture challenge — solutions involve scaling consumer processing capacity through horizontal scaling, improving per-consumer throughput efficiency, or reducing the processing load through filtering. This is the correct answer.",
+      "c": "Slowing producers impacts the entire system — consumer-side scaling is the appropriate solution.",
+      "d": "Increasing partitions enables more consumer parallelism — but only if consumer instances are also scaled. Increasing partitions alone without adding consumer instances does not help."
+    }
+  },
+  {
+    "id": 1053,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Web Services REST",
+    "difficulty": "easy",
+    "text": "What is a REST API and what makes it well-suited for cloud service integration?",
+    "answers": [
+      { "id": "a", "text": "REST is a binary protocol optimized for low-latency internal microservice communication" },
+      { "id": "b", "text": "REST (Representational State Transfer) is an architectural style using standard HTTP methods (GET, POST, PUT, DELETE) and stateless request/response communication over HTTP/HTTPS — making it universally compatible with any HTTP client, firewall-friendly, and easy to consume from any programming language or cloud service" },
+      { "id": "c", "text": "REST requires a special runtime environment that must be installed on cloud servers" },
+      { "id": "d", "text": "REST APIs use XML messages and require complex parsing libraries" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "REST uses HTTP — a text-based protocol standard, not a binary protocol. gRPC is the binary alternative.",
+      "b": "REST's use of standard HTTP makes it universally accessible — every programming language, cloud provider, and tool supports HTTP. Stateless requests make scaling simple. Standard methods (GET/POST/PUT/DELETE) map to CRUD operations intuitively. This is the correct answer.",
+      "c": "REST requires no special runtime — any HTTP client can consume a REST API.",
+      "d": "REST typically uses JSON (not XML) and requires no complex parsing libraries — JSON parsers are built into virtually every language runtime."
+    }
+  },
+  {
+    "id": 1054,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Web Services REST",
+    "difficulty": "medium",
+    "text": "A cloud REST API returns HTTP 200 OK with a body of `{\"error\": \"resource not found\"}` instead of HTTP 404. What REST API design principle does this violate?",
+    "answers": [
+      { "id": "a", "text": "No violation — always returning 200 OK is a valid REST pattern for consistency" },
+      { "id": "b", "text": "This violates proper HTTP status code usage — REST APIs should use semantically correct HTTP status codes (404 for not found, 400 for bad request, 500 for server error) so that clients, API gateways, load balancers, and monitoring systems can correctly interpret responses without parsing the body. Wrapping errors in 200 responses breaks standard HTTP tooling" },
+      { "id": "c", "text": "JSON error bodies should not be used in REST APIs — only plain text" },
+      { "id": "d", "text": "REST APIs should never return error information to clients" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Always returning 200 OK is a documented REST anti-pattern — it breaks the uniform HTTP status code contract.",
+      "b": "HTTP status codes are a REST API's primary communication channel for success/failure — 404 tells proxies, monitoring systems, and clients that the resource doesn't exist without requiring body parsing. Wrapping errors in 200 responses forces all consumers to parse bodies for error detection and breaks standard HTTP tooling. This is the correct answer.",
+      "c": "JSON error bodies are the modern REST standard — plain text errors are actually less informative.",
+      "d": "REST APIs should provide informative error responses — clients need error context to handle failures appropriately."
+    }
+  },
+  {
+    "id": 1055,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Web Services REST",
+    "difficulty": "hard",
+    "text": "A cloud platform's REST API needs to support both a legacy SOAP client and modern REST clients. What integration approach MOST cleanly supports both without maintaining two separate APIs?",
+    "answers": [
+      { "id": "a", "text": "Force the legacy SOAP client to update to REST immediately" },
+      { "id": "b", "text": "Deploy an API gateway or adapter layer that translates SOAP requests to REST and vice versa — the SOAP client sends WSDL-defined XML requests to the gateway, which transforms them into REST/JSON calls to the backend service and converts responses back to SOAP XML format, allowing the modern REST backend to remain clean while supporting legacy integration during the transition period" },
+      { "id": "c", "text": "Build and maintain completely separate SOAP and REST APIs with duplicated business logic" },
+      { "id": "d", "text": "SOAP and REST cannot interoperate — the systems cannot be integrated" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Forcing immediate client updates ignores real-world migration constraints — legacy systems may have long update cycles.",
+      "b": "A translation layer (API gateway with SOAP-to-REST mediation) allows the modern backend to remain REST-native while the gateway handles protocol translation for legacy clients — the standard enterprise integration pattern for managing protocol transitions without duplicating business logic. This is the correct answer.",
+      "c": "Separate APIs with duplicated business logic creates maintenance burden and consistency risks — a translation layer is more maintainable.",
+      "d": "SOAP and REST integration through mediation layers is a well-established enterprise integration pattern — it is absolutely achievable."
+    }
+  },
+  {
+    "id": 1056,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Web Services REST",
+    "difficulty": "hard",
+    "text": "A REST API manages cloud resources. A client sends GET /resources/123 and receives the full resource including 50 fields. The client only needs 3 fields. What REST design limitation does this illustrate and what approach addresses it?",
+    "answers": [
+      { "id": "a", "text": "REST APIs should always return all available fields — clients should filter locally" },
+      { "id": "b", "text": "This illustrates REST's over-fetching problem — the API returns more data than the client needs, wasting bandwidth and client processing. Solutions: implement sparse fieldsets (allow clients to specify ?fields=id,name,status), implement API versioning with client-specific endpoints, or adopt GraphQL which solves over-fetching by allowing clients to specify exactly which fields they need in each query" },
+      { "id": "c", "text": "The client should cache the full 50-field response and use only the 3 fields it needs" },
+      { "id": "d", "text": "Limiting REST APIs to 3 fields per endpoint solves this problem" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Client-side filtering wastes network bandwidth and server serialization processing — server-side field selection is more efficient.",
+      "b": "Over-fetching is a documented REST limitation — returning more data than needed wastes bandwidth and processing. Sparse fieldsets provide a REST-native solution; GraphQL provides a complete solution by making field selection a first-class API feature. This is the correct answer.",
+      "c": "Caching wastes the bandwidth of transmitting 50 fields every request even when only 3 are needed — server-side filtering addresses this at the source.",
+      "d": "Limiting endpoints to 3 fields creates under-fetching problems for clients needing more fields — flexible field selection is the solution."
+    }
+  },
+  {
+    "id": 1057,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Web Sockets",
+    "difficulty": "easy",
+    "text": "What is WebSocket and when is it preferred over REST for cloud application integration?",
+    "answers": [
+      { "id": "a", "text": "WebSocket is a security protocol for encrypting REST API calls" },
+      { "id": "b", "text": "WebSocket provides a full-duplex persistent connection between client and server over a single TCP connection — preferred when low-latency, bidirectional real-time communication is needed (chat applications, live dashboards, collaborative editing, real-time gaming, live data feeds) where polling would be inefficient" },
+      { "id": "c", "text": "WebSocket is used for batch data transfer between cloud data centers" },
+      { "id": "d", "text": "WebSocket is only used for video streaming applications" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "WebSocket is a communication protocol — not a security/encryption layer.",
+      "b": "WebSocket upgrades an HTTP connection to a persistent bidirectional channel — the server can push data to clients without the client polling, making it ideal for real-time applications where REST's request-response model would require constant polling at high frequency. This is the correct answer.",
+      "c": "Batch data transfer between data centers uses dedicated data transfer services — not WebSocket.",
+      "d": "WebSocket is used for any real-time bidirectional communication — not limited to video streaming."
+    }
+  },
+  {
+    "id": 1058,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Web Sockets",
+    "difficulty": "medium",
+    "text": "A cloud-hosted stock trading platform needs to push real-time price updates to 100,000 concurrent browser clients. Why is WebSocket more appropriate than REST polling for this use case?",
+    "answers": [
+      { "id": "a", "text": "REST polling every second from 100,000 clients creates the same server load as WebSocket" },
+      { "id": "b", "text": "REST polling at 1-second intervals would generate 100,000 HTTP requests per second to the server — each creating a new TCP connection, HTTP headers, and response overhead even when prices haven't changed. WebSocket maintains 100,000 persistent connections and only pushes data when prices actually change, dramatically reducing server load, latency, and bandwidth" },
+      { "id": "c", "text": "WebSocket can only support 1,000 concurrent connections — REST polling scales better" },
+      { "id": "d", "text": "REST polling provides lower latency than WebSocket for price updates" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "REST polling at high frequency from many clients creates enormous request overhead — WebSocket's persistent connection model is fundamentally more efficient.",
+      "b": "At 100,000 clients polling every second, the server handles 100,000 request/response cycles per second with HTTP overhead for each. WebSocket maintains persistent connections and pushes only when data changes — dramatically more efficient for this high-frequency real-time use case. This is the correct answer.",
+      "c": "WebSocket scales to millions of concurrent connections on properly architected cloud infrastructure — it is specifically designed for high-concurrency real-time applications.",
+      "d": "WebSocket provides lower latency than polling — server-push eliminates the polling interval wait time between data changes and client receipt."
+    }
+  },
+  {
+    "id": 1059,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Web Sockets",
+    "difficulty": "hard",
+    "text": "A cloud application using WebSocket connections behind a load balancer fails intermittently. Investigation shows that the load balancer's 60-second idle connection timeout is closing WebSocket connections that are open but temporarily inactive. How should this be resolved?",
+    "answers": [
+      { "id": "a", "text": "Disable the load balancer and use direct client-to-server connections" },
+      { "id": "b", "text": "Implement WebSocket ping/pong heartbeat messages at intervals shorter than the load balancer timeout (e.g., every 30 seconds) to keep connections active, AND configure the load balancer to increase its WebSocket idle timeout to accommodate the application's expected periods of inactivity — addressing both the application and infrastructure layer" },
+      { "id": "c", "text": "Switch from WebSocket to HTTP polling since load balancers do not support WebSocket" },
+      { "id": "d", "text": "Accept connection drops as expected WebSocket behavior and implement client reconnection only" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Removing the load balancer eliminates scalability and high availability — addressing the timeout configuration is the correct approach.",
+      "b": "WebSocket timeout issues require both layers: heartbeat messages (ping/pong) prevent idle timeout at the load balancer by maintaining activity, AND increasing the load balancer timeout accommodates legitimate idle periods. Together they maintain connections through the load balancer without constant artificial activity. This is the correct answer.",
+      "c": "Modern load balancers (AWS ALB, Azure Load Balancer) explicitly support WebSocket — switching to polling is unnecessary.",
+      "d": "Client reconnection handles the symptom — addressing the root cause (timeout configuration) prevents the drops entirely."
+    }
+  },
+  {
+    "id": 1060,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Web Sockets",
+    "difficulty": "hard",
+    "text": "A cloud application uses WebSocket for real-time notifications. An autoscaler adds new server instances during peak load. Existing WebSocket clients are connected to the original instances. New clients connect to new instances. How does this create an architecture challenge and what solves it?",
+    "answers": [
+      { "id": "a", "text": "WebSocket connections automatically migrate to new instances during autoscaling" },
+      { "id": "b", "text": "WebSocket connections are stateful and tied to specific server instances — when the application needs to broadcast a notification to all connected clients, a message sent to instance A cannot reach clients connected to instance B. Solution: use a pub/sub system (Redis Pub/Sub, AWS SNS) as a shared message bus — when a notification is published, all instances receive it through the bus and forward to their locally connected clients" },
+      { "id": "c", "text": "Autoscaling should be disabled for applications using WebSocket" },
+      { "id": "d", "text": "WebSocket clients automatically reconnect to new instances when autoscaling occurs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "WebSocket connections are TCP connections tied to specific server instances — they cannot migrate automatically.",
+      "b": "This is the 'sticky session vs. shared state' challenge for WebSocket at scale. A pub/sub bus enables any server instance to broadcast to all connected clients across all instances — instance A publishes to Redis, all instances receive it and push to their local clients. This enables horizontal scaling of WebSocket servers. This is the correct answer.",
+      "c": "Autoscaling is necessary for WebSocket applications at scale — architectural patterns like pub/sub enable it safely.",
+      "d": "WebSocket client reconnection on autoscaling would cause mass reconnection events — the pub/sub pattern maintains existing connections."
+    }
+  },
+  {
+    "id": 1061,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "GraphQL",
+    "difficulty": "easy",
+    "text": "What is GraphQL and what problem does it solve compared to REST APIs?",
+    "answers": [
+      { "id": "a", "text": "GraphQL is a database query language for cloud-hosted relational databases" },
+      { "id": "b", "text": "GraphQL is an API query language and runtime that allows clients to request exactly the data they need — no more, no less — solving REST's over-fetching (too much data) and under-fetching (too many requests needed) problems by letting clients specify their data requirements in a single query" },
+      { "id": "c", "text": "GraphQL replaces SQL for querying cloud object storage" },
+      { "id": "d", "text": "GraphQL is a graphics processing API for cloud rendering workloads" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "GraphQL is an API query language for client-server communication — not a relational database query language.",
+      "b": "GraphQL gives clients complete control over response shape — a single GraphQL query can fetch exactly the fields needed from multiple related resources, eliminating both over-fetching (getting unused fields) and under-fetching (needing multiple REST endpoints). This is the correct answer.",
+      "c": "Cloud object storage uses provider-specific APIs — not GraphQL.",
+      "d": "GraphQL has no relationship to graphics processing — it is an API communication protocol."
+    }
+  },
+  {
+    "id": 1062,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "GraphQL",
+    "difficulty": "medium",
+    "text": "A mobile app client needs to display a user's profile with their name, avatar, and 5 most recent orders. Using REST, this requires 2 API calls: GET /users/123 (returns 20 fields) and GET /users/123/orders?limit=5 (returns full order objects with 15 fields each). How does GraphQL improve this?",
+    "answers": [
+      { "id": "a", "text": "GraphQL requires even more API calls to retrieve nested resources" },
+      { "id": "b", "text": "A single GraphQL query specifies exactly the needed fields across both resources: query { user(id: 123) { name, avatar, orders(limit: 5) { id, date, total } } } — one network round trip returns precisely the 3 user fields and 3 order fields per order needed, eliminating over-fetching and the N+1 request pattern" },
+      { "id": "c", "text": "GraphQL would require 10 separate queries to retrieve the nested order data" },
+      { "id": "d", "text": "GraphQL only works for read operations — it cannot fetch orders alongside user data" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "GraphQL reduces API calls — a single query fetches nested related resources in one network round trip.",
+      "b": "GraphQL's declarative query model allows expressing the exact data shape needed across multiple related entities in a single request — eliminating both over-fetching (unused fields not returned) and multiple round trips (one query replaces two REST calls). This is the correct answer.",
+      "c": "GraphQL resolves nested relationships server-side and returns them in a single response — it does not generate multiple client-side queries.",
+      "d": "GraphQL fully supports reading nested related resources in a single operation — relationships are a first-class concept in GraphQL schema design."
+    }
+  },
+  {
+    "id": 1063,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "GraphQL",
+    "difficulty": "hard",
+    "text": "A GraphQL API allows clients to query arbitrarily nested data. A malicious client submits a deeply nested query: query { users { orders { products { reviews { users { orders { products { ... } } } } } } } } that causes the server to make thousands of database queries. What security vulnerability is this and how is it mitigated?",
+    "answers": [
+      { "id": "a", "text": "This is normal GraphQL behavior that cannot be restricted" },
+      { "id": "b", "text": "This is a GraphQL denial-of-service attack through query complexity — deeply nested circular queries can exhaust server and database resources. Mitigations: implement query depth limiting (reject queries deeper than N levels), query complexity analysis (assign cost to each field and reject queries exceeding a cost threshold), query timeout enforcement, and disable introspection in production to prevent schema exploration that aids attack crafting" },
+      { "id": "c", "text": "GraphQL automatically detects circular queries and stops processing" },
+      { "id": "d", "text": "Only authenticated users can submit GraphQL queries so this attack is not possible" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unrestricted query nesting is a documented GraphQL security vulnerability — it must be explicitly mitigated.",
+      "b": "GraphQL's flexible query model creates DoS risk through deep nesting or broad fan-out. Depth limiting prevents runaway nesting, complexity analysis catches expensive-but-shallow queries, and timeouts provide a safety net. These are standard production GraphQL security controls. This is the correct answer.",
+      "c": "GraphQL does not natively detect or limit circular queries — explicit middleware controls are required.",
+      "d": "Authentication does not prevent authenticated users from submitting malicious queries — query complexity controls protect the server regardless of authentication status."
+    }
+  },
+  {
+    "id": 1064,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "GraphQL",
+    "difficulty": "hard",
+    "text": "A team debates replacing their 15 REST microservice APIs with a single GraphQL gateway. What are the key advantages AND risks of this federated GraphQL approach?",
+    "answers": [
+      { "id": "a", "text": "GraphQL always improves performance compared to REST for all use cases" },
+      { "id": "b", "text": "Advantages: single endpoint simplifies client integration, clients get exactly the data they need across multiple services in one request, schema federation enables each microservice to own its schema domain, and the API surface is self-documenting through introspection. Risks: the gateway becomes a potential single point of failure, resolver N+1 database query problems require careful batching (DataLoader), caching is more complex than REST (no URL-based cache), and schema changes across federated services require coordination" },
+      { "id": "c", "text": "GraphQL has no risks — it is strictly superior to REST for microservice integration" },
+      { "id": "d", "text": "A single GraphQL gateway defeats the purpose of microservices architecture" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "GraphQL improves data fetching efficiency for complex queries but adds gateway overhead — it is not universally faster than REST.",
+      "b": "Federated GraphQL is a legitimate and powerful pattern with real tradeoffs: the developer experience improvements (single endpoint, precise data fetching, self-documentation) come with operational complexity (gateway availability, resolver performance, caching strategy, schema coordination). Understanding both sides is required for informed architecture decisions. This is the correct answer.",
+      "c": "GraphQL has real operational challenges — dismissing all risks is incorrect and leads to unprepared implementations.",
+      "d": "Federated GraphQL (Apollo Federation, GraphQL Mesh) is specifically designed to work with microservices — each service owns its schema domain while the gateway provides a unified API surface."
+    }
+  },
+  {
+    "id": 1065,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Ansible",
+    "difficulty": "easy",
+    "text": "What is Ansible and what is its PRIMARY use in cloud DevOps?",
+    "answers": [
+      { "id": "a", "text": "Ansible is a container orchestration platform for managing Kubernetes clusters" },
+      { "id": "b", "text": "Ansible is an agentless configuration management and automation tool that uses YAML playbooks to define and enforce system configurations, software installations, and operational tasks across cloud instances — without requiring any agent software installed on managed nodes" },
+      { "id": "c", "text": "Ansible is a cloud provider's proprietary infrastructure provisioning service" },
+      { "id": "d", "text": "Ansible is a monitoring platform for collecting cloud metrics and logs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Container orchestration describes Kubernetes — Ansible is a configuration management and automation tool.",
+      "b": "Ansible's agentless design (using SSH and WinRM) differentiates it from Chef and Puppet — no agents to install or maintain on managed nodes. YAML playbooks define desired configuration states applied idempotently across cloud infrastructure. This is the correct answer.",
+      "c": "Ansible is an open-source tool maintained by Red Hat — not a cloud provider proprietary service.",
+      "d": "Monitoring and metrics collection describe the ELK stack and Grafana — Ansible focuses on configuration and automation."
+    }
+  },
+  {
+    "id": 1066,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Ansible",
+    "difficulty": "medium",
+    "text": "An Ansible playbook task uses the `apt` module to install nginx and is marked as `state: present`. If nginx is already installed, what happens when the playbook runs?",
+    "answers": [
+      { "id": "a", "text": "Ansible reinstalls nginx, overwriting the existing installation" },
+      { "id": "b", "text": "Ansible checks whether nginx is already installed — since it is present and `state: present` is the desired state, no action is taken and the task reports 'ok' rather than 'changed'. This idempotent behavior makes Ansible safe to run repeatedly" },
+      { "id": "c", "text": "Ansible reports an error since nginx is already installed" },
+      { "id": "d", "text": "Ansible uninstalls and reinstalls nginx to ensure the latest version" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Ansible's idempotency means it checks current state before taking action — if desired state matches actual state, no change occurs.",
+      "b": "Idempotency is a core Ansible principle — modules check whether the desired state is already achieved and only take action when a change is needed. Running a playbook multiple times produces the same result, making automation safe and repeatable. This is the correct answer.",
+      "c": "Ansible does not error on existing installations — it recognizes the desired state is already met.",
+      "d": "Ansible does not upgrade by default with `state: present` — upgrading requires `state: latest`."
+    }
+  },
+  {
+    "id": 1067,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Ansible",
+    "difficulty": "hard",
+    "text": "An Ansible inventory contains 500 cloud hosts. A playbook updates a configuration file across all 500 hosts. The playbook uses `serial: 50` in its configuration. What does this control?",
+    "answers": [
+      { "id": "a", "text": "Ansible will only manage 50 hosts total and skip the remaining 450" },
+      { "id": "b", "text": "`serial: 50` limits Ansible to running the playbook against 50 hosts at a time — completing all tasks on the first 50 before moving to the next batch. This rolling execution prevents simultaneously updating all 500 hosts, maintaining service availability during the configuration change" },
+      { "id": "c", "text": "Ansible will run 50 tasks simultaneously across all 500 hosts" },
+      { "id": "d", "text": "The playbook will retry up to 50 times if it fails on any host" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Serial limits batch size — all 500 hosts are still managed, just in sequential batches.",
+      "b": "`serial` controls rolling execution — updating 50 hosts at a time ensures at most 10% of hosts are simultaneously in a configuration change state, protecting service availability. This is the correct answer.",
+      "c": "Serial controls host batch size — not the number of simultaneous task executions within a batch.",
+      "d": "Retry behavior is controlled by separate `retries` and `until` parameters — serial controls batch execution."
+    }
+  },
+  {
+    "id": 1068,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Ansible",
+    "difficulty": "hard",
+    "text": "An Ansible playbook includes a task that uses a database password stored in `group_vars/all.yml` in plaintext. The repository is shared with the development team. What security improvement is needed?",
+    "answers": [
+      { "id": "a", "text": "Move the plaintext password to a different variable file" },
+      { "id": "b", "text": "Encrypt the sensitive variable using Ansible Vault — the password is stored as an encrypted blob in version control, decrypted at runtime using a vault password or vault password file. Only team members with the vault password can decrypt the value, while the encrypted content is safely committed to the shared repository" },
+      { "id": "c", "text": "Remove the password from the playbook entirely and prompt engineers to enter it manually during each run" },
+      { "id": "d", "text": "Base64 encode the password — this protects it from casual observation in the repository" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Moving to a different variable file does not address plaintext exposure — the variable is still plaintext regardless of its location.",
+      "b": "Ansible Vault provides encryption for sensitive variables — the encrypted value is safe to commit to version control while only users with the vault password can use the playbook. This is the correct answer.",
+      "c": "Manual password entry on every run is operationally impractical for automated CI/CD pipelines — Vault provides automation-friendly encrypted credential management.",
+      "d": "Base64 is encoding, not encryption — anyone with repository access can trivially decode it. It provides no meaningful security."
+    }
+  },
+  {
+    "id": 1069,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Docker",
+    "difficulty": "easy",
+    "text": "What problem does Docker solve in cloud application deployment?",
+    "answers": [
+      { "id": "a", "text": "Docker provides a cloud provider's virtual machine service" },
+      { "id": "b", "text": "Docker packages applications and their dependencies into portable containers — ensuring the application runs identically in development, testing, and production environments, eliminating the 'it works on my machine' problem caused by environmental differences" },
+      { "id": "c", "text": "Docker is a cloud monitoring tool for tracking application performance" },
+      { "id": "d", "text": "Docker provides version control for application source code" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Virtual machines are provided by hypervisors and cloud providers — Docker uses container technology, which shares the host OS kernel.",
+      "b": "Docker containers bundle an application with its runtime dependencies into a self-contained unit — the same container image runs identically across developer laptops, CI environments, and production cloud servers, eliminating environmental inconsistency. This is the correct answer.",
+      "c": "Monitoring and performance tracking describe Grafana, Prometheus, and APM tools — not Docker.",
+      "d": "Source code version control describes Git — Docker manages application runtime packaging."
+    }
+  },
+  {
+    "id": 1070,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Docker",
+    "difficulty": "medium",
+    "text": "A Dockerfile uses `FROM ubuntu:latest` as the base image. A security team flags this as a risk. What are the security concerns with using `:latest` tags in production Dockerfiles?",
+    "answers": [
+      { "id": "a", "text": "`:latest` always provides the most secure version — it always has the newest security patches" },
+      { "id": "b", "text": "`:latest` is a mutable tag — it can point to different image versions at different build times. A build today may use a different base image than a build next week, making builds non-reproducible. If a new `ubuntu:latest` introduces a vulnerability or breaking change, all subsequent builds are automatically affected without any explicit version change in the Dockerfile" },
+      { "id": "c", "text": "`:latest` tags are not supported in production Docker registries" },
+      { "id": "d", "text": "The security concern is that Ubuntu is too large — use Alpine Linux instead" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "`:latest` tags may pull newer images with new vulnerabilities — they do not guarantee the most secure version.",
+      "b": "Mutable tags break build reproducibility — the same Dockerfile can produce different images on different days if the base image's `:latest` tag points to different content. Pin to specific digest (SHA256) or version tags for reproducible, auditable builds. This is the correct answer.",
+      "c": "`:latest` tags are widely used — the issue is their mutability, not registry support.",
+      "d": "Base image size is a separate optimization concern — `:latest` mutability is the security issue being flagged."
+    }
+  },
+  {
+    "id": 1071,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Docker",
+    "difficulty": "hard",
+    "text": "A Docker image for a web application is 4.2GB. The team wants to reduce the image size for faster CI builds and deployment pulls. Which Dockerfile optimization techniques MOST effectively reduce image size?",
+    "answers": [
+      { "id": "a", "text": "Compress the application code before adding it to the Docker image" },
+      { "id": "b", "text": "Use multi-stage builds — compile/build the application in a full SDK stage and copy only the compiled artifacts into a minimal runtime base image (alpine or distroless). Combine RUN commands into single layers (minimizing layer count), remove build dependencies and package manager caches in the same layer they are installed, and use a minimal base image appropriate for the runtime (node:alpine instead of node:latest)" },
+      { "id": "c", "text": "Add more layers to the Dockerfile — each layer reduces the final image size" },
+      { "id": "d", "text": "Docker images cannot be optimized — size is determined by the application" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Compressing application code saves minimal space — build tool dependencies, package managers, and SDK layers are typically the largest contributors.",
+      "b": "Multi-stage builds are the most impactful optimization — the final runtime image contains only the compiled application and its runtime dependencies, not the SDK, build tools, and development packages. Combined with minimal base images and layer consolidation, images can be reduced from GBs to tens of MBs. This is the correct answer.",
+      "c": "More layers increase image size — Docker image layers are additive. Fewer, consolidated layers reduce size.",
+      "d": "Docker image optimization is well-established with significant size reduction achievable — multi-stage builds can reduce 4GB images to under 100MB."
+    }
+  },
+  {
+    "id": 1072,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Docker",
+    "difficulty": "hard",
+    "text": "A container running in a cloud environment writes logs to stdout/stderr. The Docker daemon captures these logs. After 2 weeks, the log files on the host fill the disk. What Docker logging configuration prevents this?",
+    "answers": [
+      { "id": "a", "text": "Configure containers to suppress all logging output" },
+      { "id": "b", "text": "Configure the Docker log driver with rotation limits: set `--log-opt max-size=100m --log-opt max-file=3` to limit log files to 100MB each with a maximum of 3 rotated files, or use a centralized logging driver (fluentd, awslogs, gcplogs) that ships logs to a managed log service, eliminating local log accumulation entirely" },
+      { "id": "c", "text": "Restart containers regularly to clear their accumulated log files" },
+      { "id": "d", "text": "Configure containers to write logs to a fixed-size file internally" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Suppressing logs eliminates observability — log rotation or centralized shipping addresses the storage problem while maintaining logging.",
+      "b": "Log rotation limits prevent disk exhaustion from container logs: max-size caps individual log file size, max-file limits rotated file count. Centralized logging drivers are even better — logs ship to managed services (CloudWatch, Stackdriver) with no local storage accumulation. This is the correct answer.",
+      "c": "Container restarts clear logs but also restart the application — this is not a viable log management approach.",
+      "d": "Writing to fixed-size internal files would require container-level log management that is non-standard and difficult to monitor externally."
+    }
+  },
+  {
+    "id": 1073,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "ELK Stack",
+    "difficulty": "easy",
+    "text": "What does the ELK Stack consist of and what is its role in cloud DevOps?",
+    "answers": [
+      { "id": "a", "text": "ELK stands for Encryption, Logging, Kubernetes — a security monitoring framework" },
+      { "id": "b", "text": "ELK is Elasticsearch (search and analytics engine), Logstash (log ingestion and transformation pipeline), and Kibana (visualization and dashboarding) — together providing a centralized log management, search, and analytics platform for cloud environments" },
+      { "id": "c", "text": "ELK is a container orchestration platform competing with Kubernetes" },
+      { "id": "d", "text": "ELK stands for Event-driven, Load-balanced, Kubernetes — a cloud architecture pattern" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "ELK is not an acronym for security concepts — it refers to three specific software tools.",
+      "b": "The ELK Stack (now part of the Elastic Stack with Beats for log shipping) provides the foundation for centralized logging: Logstash ingests and transforms logs from multiple sources, Elasticsearch stores and indexes them for fast search, and Kibana provides dashboards, search interfaces, and visualization. This is the correct answer.",
+      "c": "Container orchestration is Kubernetes — ELK is a log management and analytics platform.",
+      "d": "ELK is a specific tool stack acronym — not a cloud architecture pattern name."
+    }
+  },
+  {
+    "id": 1074,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "ELK Stack",
+    "difficulty": "medium",
+    "text": "A cloud team deploys ELK stack for centralized logging. They configure Filebeat on each application server to ship logs. The Elasticsearch cluster is receiving 100GB of logs per day. After 60 days, disk space is exhausted. Which ELK lifecycle management feature addresses this?",
+    "answers": [
+      { "id": "a", "text": "Delete the Elasticsearch cluster and reinstall with more disk" },
+      { "id": "b", "text": "Configure Index Lifecycle Management (ILM) policies that automatically transition indices through hot (active querying), warm (less frequent access), cold (infrequent access, compressed), and delete phases based on age — automatically expiring old indices after the defined retention period and freeing disk space without manual intervention" },
+      { "id": "c", "text": "Compress all logs with gzip before shipping to Elasticsearch" },
+      { "id": "d", "text": "Stop collecting logs from lower-priority application servers" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Adding more disk is a capacity expansion — ILM provides automated lifecycle management that prevents disk exhaustion through controlled data aging.",
+      "b": "ILM automates the full log lifecycle: hot indices serve active queries on fast storage, warm indices are less-queried data on slower storage, cold indices are archived, and delete phase removes data past retention period — all automatically according to defined time rules. This is the correct answer.",
+      "c": "Compression reduces storage by a factor but does not provide lifecycle management or automatic deletion — disk will still eventually fill.",
+      "d": "Stopping log collection from servers reduces observability — lifecycle management maintains full collection while managing storage efficiently."
+    }
+  },
+  {
+    "id": 1075,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "ELK Stack",
+    "difficulty": "hard",
+    "text": "A security team wants to use the ELK stack to detect suspicious login patterns — specifically users with more than 5 failed logins in 1 minute followed by a successful login. Which ELK capability enables this detection?",
+    "answers": [
+      { "id": "a", "text": "Elasticsearch full-text search for the word 'failed' in log messages" },
+      { "id": "b", "text": "Elasticsearch's aggregation queries combined with Kibana alerting or Elastic SIEM detection rules — time-windowed aggregations count failed login events per user per minute and trigger alerts when the threshold is exceeded, then correlate with subsequent successful logins to detect the brute force then success pattern" },
+      { "id": "c", "text": "Logstash pipeline filtering that blocks login attempts exceeding 5 failures" },
+      { "id": "d", "text": "Kibana dashboards that display failed login counts for manual review" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Full-text search finds individual log entries — correlation across multiple events over time requires aggregation and alerting.",
+      "b": "Time-windowed aggregations detect behavioral patterns across multiple log events — counting events per entity in a time window and correlating sequences (failed then succeeded) is exactly the use case for Elasticsearch aggregations combined with Kibana/SIEM alerting rules. This is the correct answer.",
+      "c": "Logstash is an ingestion pipeline — it processes logs as they arrive but cannot retroactively correlate historical events in time windows.",
+      "d": "Manual dashboard review cannot provide real-time automated detection — alerting rules provide automated detection without human monitoring."
+    }
+  },
+  {
+    "id": 1076,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "ELK Stack",
+    "difficulty": "hard",
+    "text": "An ELK deployment ingests logs from 200 cloud services. Kibana searches are taking 30+ seconds for common queries. An Elasticsearch cluster has 3 nodes each at 80% CPU and 90% heap utilization. What are the MOST likely root causes and remediation steps?",
+    "answers": [
+      { "id": "a", "text": "Kibana needs to be upgraded to the latest version to improve search speed" },
+      { "id": "b", "text": "The cluster is under-resourced for the query and ingestion load: add Elasticsearch nodes to distribute shards and reduce per-node load, separate dedicated master nodes from data nodes, tune JVM heap settings (not exceeding 50% of available RAM), optimize index mappings to avoid mapping explosions, implement index tiering to move old data to fewer, larger shards, and review query patterns for inefficient aggregations" },
+      { "id": "c", "text": "Reduce the number of log sources from 200 to 20 to reduce search complexity" },
+      { "id": "d", "text": "Switch from Kibana to Grafana for faster dashboard queries" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Kibana delegates search to Elasticsearch — Kibana version does not affect underlying search performance.",
+      "b": "80% CPU and 90% heap at 3 nodes indicate cluster resource saturation. Horizontal scaling (more nodes), role separation (master/data), heap tuning, mapping optimization, and query optimization collectively address the root causes of slow search performance. This is the correct answer.",
+      "c": "Reducing log sources reduces observability — scaling the cluster addresses performance without sacrificing visibility.",
+      "d": "Grafana queries Elasticsearch through the same API — switching frontends does not improve underlying cluster performance."
+    }
+  },
+  {
+    "id": 1077,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Git",
+    "difficulty": "easy",
+    "text": "What is Git and why is it foundational to cloud DevOps practices?",
+    "answers": [
+      { "id": "a", "text": "Git is a cloud provider's built-in deployment service" },
+      { "id": "b", "text": "Git is a distributed version control system that tracks changes to code and configuration over time — enabling multiple developers to collaborate, providing complete change history, supporting branching workflows, and serving as the source of truth that triggers CI/CD pipelines in modern cloud DevOps practices" },
+      { "id": "c", "text": "Git is a graphical interface for managing cloud infrastructure" },
+      { "id": "d", "text": "Git is a container registry for storing Docker images" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Git is an open-source tool created by Linus Torvalds — not a cloud provider service.",
+      "b": "Git's distributed version control enables the entire modern DevOps workflow: every developer has a full repository copy, changes are tracked with attribution, branches enable parallel work streams, and Git events (push, PR) trigger automated CI/CD pipeline execution. This is the correct answer.",
+      "c": "Graphical infrastructure management describes cloud management consoles — Git is a command-line and programmatic version control system.",
+      "d": "Container registries store Docker images — Git stores source code and configuration as version-controlled text."
+    }
+  },
+  {
+    "id": 1078,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Git",
+    "difficulty": "medium",
+    "text": "A developer accidentally commits a 500MB binary file to a Git repository, making clone and pull operations very slow. How does Git handle this and what is the appropriate remedy?",
+    "answers": [
+      { "id": "a", "text": "Git automatically compresses large files to reduce repository size" },
+      { "id": "b", "text": "Git stores all committed content permanently in the repository history — even if the file is deleted in a subsequent commit, the 500MB binary remains in the history. Remedy: use `git filter-branch` or BFG Repo Cleaner to rewrite history and remove the binary from all historical commits, then force-push. Prevent recurrence with .gitignore rules for binary files and Git LFS for large files that must be tracked" },
+      { "id": "c", "text": "Simply delete the file and commit — the repository size returns to normal" },
+      { "id": "d", "text": "Git rejects files larger than 100MB automatically, so this cannot happen" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Git compresses objects but does not automatically handle large binaries specially — the full binary content is stored.",
+      "b": "Git history is immutable — deleting a file in a new commit removes it from the working tree but not from history. History rewriting tools are required to remove large files from all historical commits. This is the correct answer.",
+      "c": "Deleting and recommitting removes the file from the working tree but the 500MB remains in Git history — the repository does not shrink.",
+      "d": "Git has no built-in file size limit — large files can be committed without restriction (though GitHub and other hosts may impose limits)."
+    }
+  },
+  {
+    "id": 1079,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Git",
+    "difficulty": "hard",
+    "text": "A team uses GitOps — the practice of using Git as the single source of truth for cloud infrastructure state. An operations engineer makes a manual change to a Kubernetes configuration through kubectl. What happens in a GitOps model and why?",
+    "answers": [
+      { "id": "a", "text": "The GitOps controller detects the manual change and updates the Git repository to match" },
+      { "id": "b", "text": "A GitOps controller (ArgoCD, Flux) continuously compares cluster state against the Git repository — when it detects the manual kubectl change has created drift, it reconciles by reverting the cluster to the state defined in Git. Manual changes outside Git are automatically corrected, enforcing Git as the sole mechanism for cluster configuration changes" },
+      { "id": "c", "text": "GitOps only applies to application code — not Kubernetes configuration" },
+      { "id": "d", "text": "The manual change is preserved since live cluster state takes precedence over Git" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "GitOps controllers reconcile cluster to Git — they do not update Git to match manual cluster changes.",
+      "b": "GitOps enforces Git as the authoritative truth — any deviation between the cluster and Git is automatically corrected toward Git's desired state. This makes unauthorized or accidental manual changes self-correcting. This is the correct answer.",
+      "c": "GitOps applies to all Kubernetes resources including configuration, deployments, and infrastructure — not limited to application code.",
+      "d": "Git, not live cluster state, takes precedence in GitOps — this is the fundamental principle of the GitOps model."
+    }
+  },
+  {
+    "id": 1080,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "GitHub Actions",
+    "difficulty": "easy",
+    "text": "What is GitHub Actions and what does it enable in cloud DevOps workflows?",
+    "answers": [
+      { "id": "a", "text": "GitHub Actions is a project management tool for tracking developer tasks" },
+      { "id": "b", "text": "GitHub Actions is a CI/CD and workflow automation platform built into GitHub — enabling teams to define automated pipelines in YAML that trigger on repository events (push, pull request, schedule, manual dispatch) to build, test, and deploy applications to cloud environments" },
+      { "id": "c", "text": "GitHub Actions is a code review tool that automatically approves pull requests" },
+      { "id": "d", "text": "GitHub Actions is a cloud provider's infrastructure provisioning service" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Project management in GitHub is handled by Issues and Projects — GitHub Actions is an automation/CI platform.",
+      "b": "GitHub Actions provides native CI/CD within GitHub: workflows defined as YAML files in `.github/workflows/` are triggered by repository events and run on GitHub-hosted or self-hosted runners, automating the full software delivery pipeline. This is the correct answer.",
+      "c": "Code review automation is a separate function — GitHub Actions automates build, test, and deployment pipelines.",
+      "d": "GitHub Actions is not a cloud provider infrastructure service — it is a workflow automation platform that can deploy to cloud providers."
+    }
+  },
+  {
+    "id": 1081,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "GitHub Actions",
+    "difficulty": "medium",
+    "text": "A GitHub Actions workflow deploys to AWS production. The workflow uses `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` stored as GitHub Secrets. A security review recommends replacing these with OIDC-based authentication. Why?",
+    "answers": [
+      { "id": "a", "text": "OIDC authentication is slower than access keys — the recommendation should be rejected" },
+      { "id": "b", "text": "GitHub Secrets storing long-term AWS access keys create persistent credential exposure risk — if a secret is leaked or GitHub is compromised, the keys remain valid indefinitely. OIDC federation allows GitHub Actions to assume an AWS IAM role using short-lived tokens issued per workflow run — no long-term credentials are stored anywhere, eliminating the static credential risk" },
+      { "id": "c", "text": "AWS does not support OIDC-based authentication from GitHub Actions" },
+      { "id": "d", "text": "GitHub Secrets are perfectly secure — OIDC provides no security improvement" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "OIDC token exchange adds minimal latency — the security benefit far outweighs the negligible performance difference.",
+      "b": "Long-term credentials stored in secrets require rotation and remain valid if leaked until manually revoked. OIDC-based authentication generates short-lived tokens per workflow run — credentials automatically expire after the run, reducing the attack window from indefinite to minutes. This is the correct answer.",
+      "c": "AWS explicitly supports GitHub Actions OIDC federation through IAM identity providers — it is documented AWS-recommended practice.",
+      "d": "GitHub Secrets are encrypted at rest but long-term keys remain a higher risk than short-lived OIDC tokens — OIDC provides significant security improvement."
+    }
+  },
+  {
+    "id": 1082,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "GitHub Actions",
+    "difficulty": "hard",
+    "text": "A GitHub Actions workflow builds and pushes a Docker image, then deploys to production. The workflow takes 45 minutes. Analysis shows 30 minutes are spent pulling Docker layers that are identical across builds. Which GitHub Actions optimization addresses this?",
+    "answers": [
+      { "id": "a", "text": "Use a faster programming language to reduce build time" },
+      { "id": "b", "text": "Enable GitHub Actions cache for Docker layer caching using `actions/cache` or Docker Buildx's cache-to/cache-from with GitHub Actions cache — storing built Docker layers in the cache between workflow runs so unchanged layers are restored from cache rather than rebuilt or pulled, reducing the 30-minute layer pull time to seconds" },
+      { "id": "c", "text": "Reduce the number of Docker layers to minimize pull time" },
+      { "id": "d", "text": "Run the workflow on a self-hosted runner with pre-pulled images" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Programming language does not affect Docker layer pull time — caching addresses the network download of pre-built layers.",
+      "b": "GitHub Actions provides built-in caching that persists between workflow runs. Docker Buildx with GitHub Actions cache stores built layers between runs — subsequent builds restore unchanged layers from cache rather than pulling from the registry, converting 30 minutes of network transfer to seconds of cache restoration. This is the correct answer.",
+      "c": "Reducing layer count reduces pull granularity but does not reduce the total data downloaded — caching eliminates re-downloading unchanged data.",
+      "d": "Self-hosted runners with pre-pulled images also work but require infrastructure management — GitHub Actions cache is the simpler solution for GitHub-hosted runners."
+    }
+  },
+  {
+    "id": 1083,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Grafana",
+    "difficulty": "easy",
+    "text": "What is Grafana and how is it used in cloud DevOps observability?",
+    "answers": [
+      { "id": "a", "text": "Grafana is a log ingestion pipeline for shipping application logs to Elasticsearch" },
+      { "id": "b", "text": "Grafana is an open-source analytics and visualization platform that connects to multiple data sources (Prometheus, CloudWatch, Elasticsearch, InfluxDB) to create dashboards, graphs, and alerts — providing a unified observability interface for monitoring cloud infrastructure and application metrics" },
+      { "id": "c", "text": "Grafana is a configuration management tool for applying settings to cloud instances" },
+      { "id": "d", "text": "Grafana is a container registry for storing and managing Docker images" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Log ingestion pipelines describe Logstash or Fluent Bit — Grafana is a visualization and dashboarding platform.",
+      "b": "Grafana sits in front of time-series databases and other data sources, transforming raw metrics data into actionable dashboards. Its ability to connect to many different backends makes it a universal observability frontend for cloud environments. This is the correct answer.",
+      "c": "Configuration management describes Ansible and Chef — Grafana is a visualization tool.",
+      "d": "Container registries store Docker images — Grafana visualizes metrics from monitoring systems."
+    }
+  },
+  {
+    "id": 1084,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Grafana",
+    "difficulty": "medium",
+    "text": "A team uses Grafana with Prometheus to monitor cloud infrastructure. They want to alert when CPU utilization exceeds 85% for more than 5 minutes. Which Grafana feature enables this?",
+    "answers": [
+      { "id": "a", "text": "Grafana dashboards automatically send alerts when metrics exceed thresholds" },
+      { "id": "b", "text": "Grafana Alerting rules — configured against Prometheus data source queries, with a condition (CPU > 85%), an evaluation interval, and a for duration (5 minutes) ensuring transient spikes do not trigger alerts. When triggered, alert notifications route to configured channels (Slack, PagerDuty, email) via contact points" },
+      { "id": "c", "text": "Prometheus automatically sends alerts to Grafana when thresholds are exceeded" },
+      { "id": "d", "text": "CPU alerting requires separate Prometheus AlertManager — Grafana cannot create CPU alerts" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Dashboard panels display data but do not automatically send alerts — Grafana Alerting requires explicit alert rule configuration.",
+      "b": "Grafana Alerting (Grafana-managed alerts or data-source-managed alerts) evaluates PromQL queries against Prometheus on a schedule and triggers notifications when conditions persist for the specified duration — providing sophisticated alert management within Grafana. This is the correct answer.",
+      "c": "Prometheus AlertManager works alongside Grafana but is separate — Grafana also provides its own alerting capability that queries Prometheus directly.",
+      "d": "Grafana's built-in alerting can query Prometheus and create CPU alerts — Prometheus AlertManager is complementary, not required."
+    }
+  },
+  {
+    "id": 1085,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Grafana",
+    "difficulty": "hard",
+    "text": "A cloud team builds a Grafana dashboard that displays metrics from AWS CloudWatch (application metrics), Prometheus (infrastructure metrics), and Elasticsearch (log-derived metrics) on a single screen. What Grafana capability enables this multi-source dashboard?",
+    "answers": [
+      { "id": "a", "text": "Grafana can only display data from one data source per dashboard" },
+      { "id": "b", "text": "Grafana's multi-source data source support allows individual panels within the same dashboard to query different data sources — each panel can be independently configured to query CloudWatch, Prometheus, or Elasticsearch, enabling a unified observability view that correlates metrics, infrastructure data, and log-derived indicators on a single screen" },
+      { "id": "c", "text": "All data sources must be aggregated into a single database before Grafana can display them together" },
+      { "id": "d", "text": "Grafana requires a separate plugin for each cloud provider data source" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Grafana explicitly supports multiple data sources per dashboard — this is one of its primary differentiating capabilities.",
+      "b": "Grafana's panel-level data source configuration enables mixing data sources within a single dashboard — CloudWatch for AWS service metrics, Prometheus for infrastructure metrics, Elasticsearch for log data — creating a unified view without requiring data migration into a single backend. This is the correct answer.",
+      "c": "Grafana queries data sources directly at display time — no pre-aggregation into a single database is required.",
+      "d": "Grafana ships with many built-in data source plugins including CloudWatch, Prometheus, and Elasticsearch — separate plugins are available but not always required."
+    }
+  },
+  {
+    "id": 1086,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Jenkins",
+    "difficulty": "easy",
+    "text": "What is Jenkins and what role does it play in cloud CI/CD?",
+    "answers": [
+      { "id": "a", "text": "Jenkins is a cloud provider's managed container orchestration service" },
+      { "id": "b", "text": "Jenkins is an open-source automation server that orchestrates CI/CD pipelines — building code, running tests, and deploying applications to cloud environments through configurable jobs and pipelines, with extensive plugin ecosystem support for virtually any tool integration" },
+      { "id": "c", "text": "Jenkins is a secrets management platform for storing cloud credentials" },
+      { "id": "d", "text": "Jenkins is a monitoring and alerting platform for cloud infrastructure" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Container orchestration describes Kubernetes — Jenkins is a CI/CD automation server.",
+      "b": "Jenkins is one of the most widely deployed CI/CD servers — its plugin ecosystem (2000+ plugins) enables integration with virtually any version control system, build tool, test framework, and cloud deployment target, making it highly flexible for complex CI/CD requirements. This is the correct answer.",
+      "c": "Secrets management describes HashiCorp Vault or cloud provider secrets services — Jenkins is a CI/CD automation platform.",
+      "d": "Monitoring and alerting describe Prometheus/Grafana and ELK — Jenkins focuses on build and deployment automation."
+    }
+  },
+  {
+    "id": 1087,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Jenkins",
+    "difficulty": "medium",
+    "text": "A Jenkins Pipeline is defined as a Jenkinsfile stored in the source code repository. What advantage does this 'Pipeline as Code' approach provide over configuring pipelines through the Jenkins GUI?",
+    "answers": [
+      { "id": "a", "text": "Jenkinsfile pipelines execute faster than GUI-configured pipelines" },
+      { "id": "b", "text": "Jenkinsfile stored in the repository version-controls the pipeline definition alongside the code — pipeline changes are tracked in Git history, reviewable through pull requests, consistent across branches, and automatically available to any Jenkins instance that accesses the repository without manual GUI configuration" },
+      { "id": "c", "text": "GUI-configured Jenkins pipelines are more powerful — Jenkinsfile has limited functionality" },
+      { "id": "d", "text": "Jenkinsfile pipelines cannot be used for production deployments" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Execution speed is equivalent — Pipeline as Code provides governance and maintainability benefits, not performance benefits.",
+      "b": "Pipeline as Code applies software engineering practices to CI/CD configuration: version control, code review, history tracking, and reproducibility. The pipeline evolves with the codebase and does not require manual GUI reconfiguration when switching branches or repositories. This is the correct answer.",
+      "c": "Jenkinsfile supports the full Jenkins Pipeline DSL including all pipeline capabilities — it is not limited compared to GUI configuration.",
+      "d": "Jenkinsfile pipelines are used for production deployments at scale — this statement is incorrect."
+    }
+  },
+  {
+    "id": 1088,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Jenkins",
+    "difficulty": "hard",
+    "text": "A Jenkins controller is a single point of failure and bottleneck — all builds run on it directly. The team wants to scale to support 500 concurrent builds. Which Jenkins architecture addresses this?",
+    "answers": [
+      { "id": "a", "text": "Use a larger Jenkins controller server to handle more concurrent builds" },
+      { "id": "b", "text": "Implement Jenkins distributed builds with controller/agent architecture — the Jenkins controller manages job scheduling and the UI, while Jenkins agents (on cloud instances or Kubernetes pods) execute the actual build workloads. Cloud-based dynamic agent provisioning (Kubernetes plugin, EC2 plugin) spins agents up on demand and terminates them when jobs complete — scaling to 500 concurrent builds without a fixed agent pool" },
+      { "id": "c", "text": "Run 500 separate Jenkins controller instances — one per build job" },
+      { "id": "d", "text": "Jenkins cannot scale beyond 50 concurrent builds regardless of architecture" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Vertical scaling of the controller is limited — build execution should be offloaded to distributed agents, not concentrated on the controller.",
+      "b": "Jenkins controller/agent architecture separates scheduling (controller) from execution (agents) — dynamic cloud-based agents scale to any number of concurrent builds on demand. Kubernetes and cloud provider plugins create and destroy agent pods/instances automatically. This is the correct answer.",
+      "c": "Multiple controllers create management and configuration fragmentation — distributed agents extend a single controller to scale build execution.",
+      "d": "Jenkins scales to thousands of concurrent builds with proper distributed agent architecture — organizations run Jenkins at massive scale."
+    }
+  },
+  {
+    "id": 1089,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Kubernetes",
+    "difficulty": "easy",
+    "text": "What is Kubernetes and what problem does it solve in cloud environments?",
+    "answers": [
+      { "id": "a", "text": "Kubernetes is a cloud provider's virtual machine management service" },
+      { "id": "b", "text": "Kubernetes is an open-source container orchestration platform that automates deploying, scaling, and managing containerized applications — handling container scheduling, health monitoring, self-healing (restarting failed containers), horizontal scaling, load balancing, and rolling updates across cloud infrastructure" },
+      { "id": "c", "text": "Kubernetes is a CI/CD pipeline tool for building and testing application code" },
+      { "id": "d", "text": "Kubernetes is a monitoring platform for collecting container performance metrics" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Virtual machine management is handled by cloud provider compute services — Kubernetes orchestrates containers, not VMs.",
+      "b": "Kubernetes solves the operational complexity of running containerized applications at scale — instead of manually managing which containers run on which servers, Kubernetes automates placement, scaling, and recovery, treating the cluster as a single unified platform. This is the correct answer.",
+      "c": "CI/CD describes tools like Jenkins and GitHub Actions — Kubernetes manages running containerized applications post-deployment.",
+      "d": "Container monitoring is provided by tools like Prometheus and Grafana — Kubernetes manages container lifecycle, not metrics collection."
+    }
+  },
+  {
+    "id": 1090,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Kubernetes",
+    "difficulty": "medium",
+    "text": "A Kubernetes pod fails and is repeatedly restarting with status `CrashLoopBackOff`. What does this status indicate and how should it be investigated?",
+    "answers": [
+      { "id": "a", "text": "CrashLoopBackOff indicates the container image is too large for the node" },
+      { "id": "b", "text": "CrashLoopBackOff indicates the container is starting, crashing, and Kubernetes is restarting it with exponential backoff delays. Investigation: use `kubectl logs <pod>` to view crash output, `kubectl describe pod <pod>` to see recent events and restart count, and `kubectl logs <pod> --previous` to view the logs from the previous crashed instance — identifying the root cause (application error, missing config, OOMKilled)" },
+      { "id": "c", "text": "CrashLoopBackOff is normal Kubernetes behavior and requires no action" },
+      { "id": "d", "text": "CrashLoopBackOff indicates a network policy is blocking the container from starting" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Image size affects pull time — CrashLoopBackOff indicates the container starts but crashes immediately or very quickly after starting.",
+      "b": "CrashLoopBackOff means the container process exits (crashes) and Kubernetes keeps restarting it with increasing delays. kubectl logs provides crash output, describe shows events, and --previous logs show the most recent crash — together identifying application exceptions, missing environment variables, failed health checks, or memory exhaustion. This is the correct answer.",
+      "c": "CrashLoopBackOff is a failure state requiring investigation — it indicates the application is not running successfully.",
+      "d": "Network policies affect network connectivity — CrashLoopBackOff indicates the container process itself is crashing, not a connectivity issue preventing startup."
+    }
+  },
+  {
+    "id": 1091,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Kubernetes",
+    "difficulty": "hard",
+    "text": "A Kubernetes cluster runs 100 pods across 5 nodes. Node A fails. What happens to the pods that were running on Node A?",
+    "answers": [
+      { "id": "a", "text": "The pods on Node A are permanently lost — the workloads must be manually redeployed" },
+      { "id": "b", "text": "Kubernetes detects the node failure through health checks, marks Node A as NotReady, and the controller manager evicts the pods. The Deployment controllers detect that pod replicas are below the desired count and schedule replacement pods on the remaining healthy nodes (B, C, D, E) — automatically restoring the desired number of running pods" },
+      { "id": "c", "text": "All pods in the cluster are restarted to ensure consistency after a node failure" },
+      { "id": "d", "text": "The cluster pauses all operations until Node A is manually replaced" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Kubernetes self-healing automatically reschedules failed pods — manual redeployment is the pre-Kubernetes approach Kubernetes eliminates.",
+      "b": "Kubernetes's self-healing loop: node failure detection → pod eviction → Deployment controller reconciliation → pod rescheduling on healthy nodes. This is the fundamental value proposition of Kubernetes — automatically maintaining desired application state despite infrastructure failures. This is the correct answer.",
+      "c": "Only pods on the failed node are affected — healthy pods on other nodes continue running without interruption.",
+      "d": "Kubernetes continues normal operations on remaining healthy nodes — it does not pause the cluster on node failure."
+    }
+  },
+  {
+    "id": 1092,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Kubernetes",
+    "difficulty": "hard",
+    "text": "A Kubernetes application pod needs read access to AWS S3 but not to any other AWS services. The pod currently uses a node IAM role that grants EC2 full access to all AWS services. How should this be corrected following least privilege?",
+    "answers": [
+      { "id": "a", "text": "The node IAM role must have broad permissions since all pods on the node inherit it" },
+      { "id": "b", "text": "Implement IRSA (IAM Roles for Service Accounts) — create a specific IAM role with only S3 read permissions, configure it as an IAM role annotation on the Kubernetes service account, and associate the pod with that service account. The pod receives pod-specific temporary credentials scoped to S3 read only, rather than inheriting the node's broad EC2 full access role" },
+      { "id": "c", "text": "Reduce the node IAM role permissions to S3 read only for all pods on the node" },
+      { "id": "d", "text": "Store AWS credentials for S3 access in a Kubernetes Secret and mount it in the pod" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "IRSA specifically solves the problem of pods needing different permissions from each other and from the node.",
+      "b": "IRSA provides pod-level IAM identity — each pod receives credentials for its specific annotated IAM role rather than inheriting the broad node role. This implements least privilege at pod granularity. This is the correct answer.",
+      "c": "Reducing the node role to S3 read restricts all pods on that node — other pods legitimately needing EC2 access would lose required permissions.",
+      "d": "Storing long-term AWS credentials in Kubernetes Secrets is a security anti-pattern — IRSA provides automatically rotating short-lived credentials without any stored static credentials."
+    }
+  },
+  {
+    "id": 1093,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Terraform",
+    "difficulty": "easy",
+    "text": "What is Terraform and what distinguishes it from other cloud provisioning tools?",
+    "answers": [
+      { "id": "a", "text": "Terraform is a configuration management tool that applies settings to existing servers" },
+      { "id": "b", "text": "Terraform is an open-source Infrastructure as Code tool that provisions and manages cloud resources using a declarative HCL language — supporting multiple cloud providers (AWS, Azure, GCP) with a consistent workflow, maintaining a state file tracking provisioned resources, and planning changes before applying them" },
+      { "id": "c", "text": "Terraform is a container build tool for creating Docker images" },
+      { "id": "d", "text": "Terraform is a monitoring platform for cloud infrastructure metrics" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Configuration management of existing servers describes Ansible — Terraform provisions new infrastructure resources.",
+      "b": "Terraform's key differentiators: multi-cloud provider support (one tool for AWS, Azure, GCP, and hundreds of others), declarative HCL syntax describing desired state, execution planning (terraform plan shows changes before applying), and state management tracking real-world infrastructure. This is the correct answer.",
+      "c": "Docker build tools create container images — Terraform provisions cloud infrastructure.",
+      "d": "Monitoring platforms collect and display metrics — Terraform creates and manages the infrastructure being monitored."
+    }
+  },
+  {
+    "id": 1094,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Terraform",
+    "difficulty": "medium",
+    "text": "A team runs `terraform apply` and it creates 5 resources. A second `terraform apply` with no code changes runs immediately after. What happens and why?",
+    "answers": [
+      { "id": "a", "text": "The second apply creates 5 more duplicate resources" },
+      { "id": "b", "text": "The second apply makes no changes — Terraform compares its state file (which records the 5 resources created in the first apply) against the desired configuration and finds no difference. It outputs 'No changes. Infrastructure is up-to-date.' This idempotent behavior makes Terraform safe to run repeatedly" },
+      { "id": "c", "text": "The second apply destroys and recreates all 5 resources to ensure freshness" },
+      { "id": "d", "text": "Terraform requires a new plan file before a second apply can run" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Terraform's state file prevents duplicate resource creation — it knows the resources already exist.",
+      "b": "Terraform's idempotency: the state file records all managed resources and their properties. On the second apply, the plan phase finds no difference between desired (HCL) and actual (state) — resulting in zero changes. This is the correct answer.",
+      "c": "Terraform does not destroy and recreate resources unnecessarily — only when configuration changes require it.",
+      "d": "Terraform can generate a new plan and apply it in sequence with `terraform apply` — a separate plan file is optional, not required."
+    }
+  },
+  {
+    "id": 1095,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Terraform",
+    "difficulty": "hard",
+    "text": "Two engineers simultaneously run `terraform apply` against the same Terraform state file stored in local storage. Both applies succeed but the state file is now corrupted with conflicting resource records. How should Terraform state be managed in team environments?",
+    "answers": [
+      { "id": "a", "text": "Each engineer should have their own separate state file for each environment" },
+      { "id": "b", "text": "Use remote state with state locking — store the state file in a shared backend (S3 + DynamoDB, Terraform Cloud, Azure Blob Storage) that implements state locking. When one engineer applies, the lock prevents concurrent applies until the first completes, serializing state mutations and preventing corruption" },
+      { "id": "c", "text": "Terraform state corruption is unavoidable in team environments — accept and manually fix it" },
+      { "id": "d", "text": "Only one engineer should ever have Terraform access to prevent concurrent applies" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Separate state files per engineer create divergent infrastructure definitions — a single shared state is required for team environments.",
+      "b": "Remote state with locking is the standard solution for team Terraform: centralized storage ensures all engineers share the same state view, and locking prevents concurrent applies that corrupt state. This is the correct answer.",
+      "c": "Terraform state corruption from concurrent applies is entirely preventable — remote state with locking is the standard solution.",
+      "d": "Single-engineer access creates a bottleneck — the correct solution maintains team access while preventing concurrent modification through locking."
+    }
+  },
+  {
+    "id": 1096,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Terraform",
+    "difficulty": "hard",
+    "text": "A team uses Terraform workspaces to manage dev, staging, and production environments from the same configuration. A variable `instance_count` defaults to 2 but production needs 20. Which Terraform mechanism MOST cleanly handles environment-specific variable values?",
+    "answers": [
+      { "id": "a", "text": "Hard-code the production value in the main Terraform configuration" },
+      { "id": "b", "text": "Use workspace-specific .tfvars files (dev.tfvars, staging.tfvars, prod.tfvars) passed with `-var-file=prod.tfvars` per environment, or use the `terraform.workspace` variable in expressions to select environment-specific values from a locals map — keeping the configuration generic while providing environment-specific overrides" },
+      { "id": "c", "text": "Create three completely separate Terraform configurations — one per environment" },
+      { "id": "d", "text": "Terraform workspaces cannot support different variable values per workspace" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Hard-coding production values in shared configuration means dev and staging also get production values — environment-specific values must be parameterized.",
+      "b": "Environment-specific .tfvars files or workspace-conditional locals maintain a single configuration source while providing environment-appropriate variable values — the deployment pipeline selects the correct variable file per environment. This is the correct answer.",
+      "c": "Separate configurations per environment duplicate code and require synchronizing changes across three files — workspace-parameterized configurations avoid this.",
+      "d": "Terraform workspaces are specifically designed to support environment-specific configurations — workspace-conditional variable values are a primary use case."
+    }
+  },
+  {
+    "id": 1097,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Terraform",
+    "difficulty": "hard",
+    "text": "A Terraform configuration manages 200 cloud resources. The team wants to add a new resource but the `terraform plan` shows it will also destroy and recreate 15 existing resources unexpectedly. What should the team do before running `terraform apply`?",
+    "answers": [
+      { "id": "a", "text": "Run terraform apply immediately — unexpected destroys are normal Terraform behavior" },
+      { "id": "b", "text": "Investigate why 15 resources are planned for destruction: review plan output for the resources and understand why they need recreation (provider version change, breaking argument change, dependency ordering). If the destructions are unintended, use targeted applies (`terraform apply -target=<new_resource>`) to add only the new resource, or adjust the configuration to use in-place updates instead of destroy-and-recreate" },
+      { "id": "c", "text": "Accept the 15 destructions since adding new resources always requires existing ones to be rebuilt" },
+      { "id": "d", "text": "Revert to the previous Terraform provider version to avoid all changes" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unexpected destructions of production resources are not normal — they indicate a configuration or provider issue requiring investigation before applying.",
+      "b": "Unexpected plan output must be investigated before applying — understanding why resources are being destroyed prevents accidental production data loss or service disruption. Targeted applies allow adding the new resource without triggering the unexpected destructions until the root cause is understood. This is the correct answer.",
+      "c": "New resources do not inherently require existing resources to be destroyed — unexpected destructions indicate a configuration problem.",
+      "d": "Reverting provider versions avoids the immediate issue but may prevent needed functionality — investigation and targeted remediation is more appropriate."
+    }
+  },
+  {
+    "id": 1098,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Terraform",
+    "difficulty": "hard",
+    "text": "A Terraform module is used by 20 teams across an organization. A breaking change to the module requires all 20 teams to update their configurations simultaneously. What module versioning approach prevents forced simultaneous upgrades?",
+    "answers": [
+      { "id": "a", "text": "Update the module and force all 20 teams to update immediately by removing the old version" },
+      { "id": "b", "text": "Publish the breaking change as a new major version (v2.0.0) while keeping v1.x.x available in the module registry — teams reference `version = '~> 1.0'` to stay on v1.x while new teams adopt v2.0. Provide a migration guide and support period for teams to upgrade on their own schedule, eventually deprecating v1.x after sufficient adoption" },
+      { "id": "c", "text": "Terraform modules cannot be versioned — all module consumers share the same code" },
+      { "id": "d", "text": "Notify all 20 teams by email and require them to update within 24 hours" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Forcing simultaneous updates across 20 teams causes immediate disruption for all — semantic versioning enables gradual migration.",
+      "b": "Semantic versioning with major version bumps for breaking changes allows teams to adopt v2.0 on their own schedule while continuing to work with v1.x until they have time to migrate. This is the standard module lifecycle management approach. This is the correct answer.",
+      "c": "Terraform module registries (Terraform Registry, GitLab, private registries) explicitly support versioned module releases — consumers pin to specific version constraints.",
+      "d": "24-hour forced updates across 20 teams creates simultaneous disruption — gradual migration with version compatibility is the correct approach."
+    }
+  },
+  {
+    "id": 1099,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Terraform",
+    "difficulty": "hard",
+    "text": "An organization uses Terraform to manage cloud infrastructure but wants to enforce security policies — for example, prohibiting S3 buckets with public access enabled. Which Terraform-native mechanism enforces this policy as code?",
+    "answers": [
+      { "id": "a", "text": "Add comments in Terraform code asking engineers not to enable public S3 access" },
+      { "id": "b", "text": "Implement Sentinel policies (Terraform Enterprise/Cloud) or OPA (Open Policy Agent) with Conftest — these policy-as-code frameworks evaluate Terraform plans against defined rules before apply, blocking plans that violate policies (like public S3 access) before resources are created. Combined with CI/CD pipeline integration, policies are enforced on every plan" },
+      { "id": "c", "text": "Manually review every terraform plan output before approving applies" },
+      { "id": "d", "text": "Terraform cannot enforce security policies — use AWS Config instead" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Comments cannot technically enforce policies — engineers can ignore them and the Terraform apply will succeed.",
+      "b": "Sentinel and OPA/Conftest evaluate terraform plan output against machine-readable policy rules — blocking non-compliant infrastructure before it is created. This is the correct answer.",
+      "c": "Manual review is slow, inconsistent, and cannot scale with CI/CD pipeline frequency — automated policy enforcement is required.",
+      "d": "AWS Config detects non-compliant resources after they are created — Terraform policy-as-code prevents them from being created in the first place, which is preferable."
+    }
+  },
+  {
+    "id": 1100,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Terraform",
+    "difficulty": "hard",
+    "text": "A Terraform resource block for an AWS RDS instance does not include the `deletion_protection = true` attribute. A developer accidentally runs `terraform destroy` and deletes the production database. Which Terraform configuration prevents this?",
+    "answers": [
+      { "id": "a", "text": "Terraform cannot prevent resource deletion — manual processes must protect databases" },
+      { "id": "b", "text": "Enable deletion protection at multiple layers: set `deletion_protection = true` in the Terraform RDS resource block (prevents deletion through the AWS API), add a `lifecycle { prevent_destroy = true }` block in the Terraform resource (causes terraform destroy to error before making any AWS API calls), and restrict terraform destroy execution via CI/CD pipeline controls requiring elevated approval" },
+      { "id": "c", "text": "Set the `prevent_destroy` flag only in the terraform.tfvars file" },
+      { "id": "d", "text": "Terraform destroy always prompts for confirmation — this accident cannot happen" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Terraform provides explicit mechanisms to prevent resource deletion — both at the resource configuration and lifecycle level.",
+      "b": "Defense-in-depth for critical resources: AWS-level deletion protection prevents the API from deleting the instance, Terraform lifecycle prevent_destroy blocks the terraform plan from even generating a destroy action, and CI/CD controls add human approval for any destroy operations. Multiple independent layers prevent accidental production database deletion. This is the correct answer.",
+      "c": "prevent_destroy is a lifecycle block in the resource definition — tfvars files do not support lifecycle meta-arguments.",
+      "d": "`terraform destroy` does prompt for confirmation interactively — but automated CI/CD pipelines with `-auto-approve` bypass this prompt. Configuration-level protections are required."
+    }
+  },
+  {
+    "id": 1101,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Incompatibility",
+    "difficulty": "easy",
+    "text": "A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show 'SSL handshake failed — unsupported protocol version'. What type of deployment issue is this?",
+    "answers": [
+      { "id": "a", "text": "A resource limit issue — the database connection pool is exhausted" },
+      { "id": "b", "text": "A compatibility issue — the new application version requires a TLS version that the database server does not support, or vice versa. The application and database have incompatible security protocol configurations" },
+      { "id": "c", "text": "A regional availability issue — the database is in a different region" },
+      { "id": "d", "text": "A misconfiguration — the database hostname is incorrect in the application config" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Connection pool exhaustion produces errors like 'too many connections' — not SSL handshake failures.",
+      "b": "SSL handshake failure indicates a TLS protocol version mismatch — the client and server cannot agree on a common protocol version. This is a compatibility issue between application and database TLS configurations. This is the correct answer.",
+      "c": "Cross-region connectivity would fail at the network layer — not with an SSL handshake message.",
+      "d": "An incorrect hostname would produce a connection refused or DNS resolution failure — not an SSL handshake error."
+    }
+  },
+  {
+    "id": 1102,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Incompatibility",
+    "difficulty": "medium",
+    "text": "A cloud function upgraded from Python 3.8 to Python 3.11 fails with `ImportError: cannot import name 'X' from 'library_y'`. The library version in requirements.txt has not changed. What is the MOST likely cause?",
+    "answers": [
+      { "id": "a", "text": "Python 3.11 runs slower than Python 3.8 causing timeout failures" },
+      { "id": "b", "text": "The library version in requirements.txt was compatible with Python 3.8 but contains code that is incompatible with Python 3.11 — the specific import may have been removed or renamed in newer Python versions, or the library itself has not been updated to support Python 3.11's changes" },
+      { "id": "c", "text": "The cloud provider does not support Python 3.11 functions" },
+      { "id": "d", "text": "The requirements.txt file was not deployed with the updated function" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Python version upgrades do not directly cause timeouts from speed differences — ImportError indicates a code compatibility issue.",
+      "b": "Library compatibility with Python runtime versions is a common deployment issue — libraries pinned to a working version for Python 3.8 may have internal code that breaks with Python 3.11 changes (removed stdlib features, changed C API behavior). This is the correct answer.",
+      "c": "Major cloud providers support current Python versions — Python 3.11 is widely available.",
+      "d": "Missing requirements.txt would cause all imports to fail — a specific ImportError for one item suggests the library is present but incompatible."
+    }
+  },
+  {
+    "id": 1103,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Incompatibility",
+    "difficulty": "hard",
+    "text": "A Terraform deployment fails with: 'Error: Unsupported argument — An argument named \"new_feature\" is not expected here.' The Terraform code was written using provider documentation for version 4.5 but the provider version locked in terraform.lock.hcl is 3.8. What troubleshooting steps resolve this?",
+    "answers": [
+      { "id": "a", "text": "Remove the new_feature argument since it is not supported in any provider version" },
+      { "id": "b", "text": "The Terraform code uses an argument introduced in provider version 4.5 but the lock file pins version 3.8 — resolution: update the provider version constraint in terraform.tf to allow ≥4.5, run `terraform init -upgrade` to update the lock file to the newer provider version, then rerun the deployment" },
+      { "id": "c", "text": "Upgrade Terraform itself to the latest version" },
+      { "id": "d", "text": "Delete the terraform.lock.hcl file and run terraform apply directly" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The argument is supported — in the correct provider version. The issue is version mismatch, not invalid syntax.",
+      "b": "Provider version mismatch between documentation used for code authoring and the locked version causes argument compatibility errors. Updating the version constraint and running terraform init -upgrade resolves the lock file and enables the newer provider features. This is the correct answer.",
+      "c": "The Terraform CLI version is not the issue — the provider plugin version is the incompatible component.",
+      "d": "Deleting the lock file without updating the version constraint allows terraform init to pick any version, potentially choosing one that still doesn't support the argument."
+    }
+  },
+  {
+    "id": 1104,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Incompatibility",
+    "difficulty": "hard",
+    "text": "A containerized application works in development but fails in cloud production with 'exec format error'. Development uses an Apple M1 Mac (ARM64) and production runs on x86_64 instances. What is the problem and solution?",
+    "answers": [
+      { "id": "a", "text": "The container has insufficient memory in production" },
+      { "id": "b", "text": "The container image was built for ARM64 architecture on the M1 Mac but production cloud instances run x86_64 — these are incompatible CPU instruction sets. Solution: build a multi-architecture image using Docker Buildx (--platform linux/amd64,linux/arm64) or build specifically for linux/amd64 to match production" },
+      { "id": "c", "text": "The application code contains syntax errors that only appear in production" },
+      { "id": "d", "text": "The container registry does not support the production cloud provider" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Exec format errors indicate binary architecture incompatibility — not memory issues.",
+      "b": "CPU architecture incompatibility is a common issue when developers use Apple Silicon (ARM64) but production runs on x86_64 (AMD64). The container binary cannot execute on the wrong CPU architecture. Multi-arch builds or architecture-specific production builds resolve this. This is the correct answer.",
+      "c": "Syntax errors produce application-level errors — exec format error is an OS-level binary execution failure.",
+      "d": "Container registries are architecture-agnostic — they store images regardless of CPU target."
+    }
+  },
+  {
+    "id": 1105,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Misconfigurations",
+    "difficulty": "easy",
+    "text": "A newly deployed cloud web server is unreachable from the internet. The server is running and the application is listening on port 443. The security group has inbound rule allowing port 80 from 0.0.0.0/0 but no rule for port 443. What is the issue?",
+    "answers": [
+      { "id": "a", "text": "The server needs a public IP address assigned" },
+      { "id": "b", "text": "A misconfiguration — the security group allows port 80 (HTTP) but not port 443 (HTTPS). Since the application listens on 443 and there is no security group rule permitting inbound traffic on 443, all HTTPS traffic is blocked at the security group level" },
+      { "id": "c", "text": "The application must be configured to listen on port 80 instead of 443" },
+      { "id": "d", "text": "The SSL certificate is invalid, causing connection failures" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Public IP assignment would cause routing failures — the security group blocking port 443 is the specific issue described.",
+      "b": "Security group rules act as stateful firewalls — only explicitly permitted traffic reaches the instance. Port 443 missing from the inbound rules means HTTPS traffic is dropped before reaching the application. This is the correct answer.",
+      "c": "Changing the application port would require reconfiguration of both the app and the security group — adding the missing 443 rule is the simpler correct fix.",
+      "d": "Invalid SSL certificates produce certificate errors in the browser — the connection would still be established. A missing security group rule blocks the TCP connection entirely before TLS negotiation occurs."
+    }
+  },
+  {
+    "id": 1106,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Misconfigurations",
+    "difficulty": "medium",
+    "text": "A cloud application deployment fails with 'Error: Access Denied — iam:PassRole'. The CI/CD pipeline service account is attempting to attach an IAM role to a new EC2 instance during deployment. What misconfiguration caused this?",
+    "answers": [
+      { "id": "a", "text": "The IAM role being attached to EC2 does not have sufficient permissions" },
+      { "id": "b", "text": "The CI/CD pipeline service account's IAM policy is missing the `iam:PassRole` permission — this specific permission is required when an IAM entity (the pipeline) associates an IAM role with a resource (the EC2 instance). Without it, the pipeline cannot assign roles to instances even if it has EC2 creation permissions" },
+      { "id": "c", "text": "EC2 instances cannot have IAM roles attached by automated pipelines" },
+      { "id": "d", "text": "The EC2 instance type does not support IAM role attachment" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The error is about the pipeline's ability to pass the role — not the role's own permissions.",
+      "b": "iam:PassRole is a specific AWS permission required when passing an IAM role to a service. Without it, entities cannot associate roles with EC2 instances, Lambda functions, or other services — even if they have all other required permissions for those services. This is the correct answer.",
+      "c": "Automated pipelines absolutely can attach IAM roles to EC2 instances — they need iam:PassRole in their own policy.",
+      "d": "IAM role attachment is supported across all EC2 instance types — this limitation does not exist."
+    }
+  },
+  {
+    "id": 1107,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Misconfigurations",
+    "difficulty": "hard",
+    "text": "A Kubernetes deployment fails to start pods with: 'Warning: Failed to pull image: ImagePullBackOff'. The image exists in a private registry. The deployment manifest specifies the correct image name. What is the MOST likely misconfiguration?",
+    "answers": [
+      { "id": "a", "text": "The image is too large for the Kubernetes node" },
+      { "id": "b", "text": "The deployment is missing an `imagePullSecrets` reference — the Kubernetes namespace needs a Secret containing registry credentials, and the deployment spec must reference it. Without credentials, the kubelet cannot authenticate to the private registry to pull the image" },
+      { "id": "c", "text": "The registry is temporarily offline — retry after a few minutes" },
+      { "id": "d", "text": "The image name must include the full SHA256 digest, not just the tag" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "ImagePullBackOff indicates an authentication or network failure — not a size issue.",
+      "b": "Private registry access from Kubernetes requires: a Secret containing registry credentials and an imagePullSecrets reference in the pod spec (or on the service account). Missing this configuration prevents kubelet from authenticating to pull the image. This is the correct answer.",
+      "c": "BackOff means Kubernetes has attempted and failed multiple times — registry downtime would still show the same error, but investigating credentials first is more actionable.",
+      "d": "Tags work for image specification in Kubernetes — SHA256 digests are more precise but not required."
+    }
+  },
+  {
+    "id": 1108,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Misconfigurations",
+    "difficulty": "hard",
+    "text": "An auto-scaling group launches new instances but they consistently fail health checks within 2 minutes and are terminated. Logs show the application is starting but health check HTTP requests to /health return 502. What should be investigated first?",
+    "answers": [
+      { "id": "a", "text": "The health check endpoint URL is misspelled in the load balancer configuration" },
+      { "id": "b", "text": "Investigate the application startup time vs. health check grace period — if the application takes 90 seconds to fully initialize but the health check grace period is 60 seconds, instances are terminated before the application is ready to serve traffic. Increase the health check grace period to exceed the application's startup time, or implement a health check that returns 200 only when fully ready" },
+      { "id": "c", "text": "Increase the auto-scaling group maximum instance count" },
+      { "id": "d", "text": "The 502 indicates the load balancer is overloaded — scale the load balancer" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A misspelled URL would return 404 — 502 indicates the proxy received an invalid response from the upstream application.",
+      "b": "502 from a load balancer means the backend application is not responding correctly yet — common during startup. Health check grace period misconfiguration (too short for the application initialization time) causes premature termination of still-starting instances. This is the correct answer.",
+      "c": "More instances with the same startup problem creates more failed instances — fixing the grace period resolves the root cause.",
+      "d": "502s from new instances during startup are application initialization issues — not load balancer overload."
+    }
+  },
+  {
+    "id": 1109,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Outdated Component Definitions",
+    "difficulty": "easy",
+    "text": "A CI/CD pipeline fails with: 'Error: Resource type `aws_s3_bucket_acl` not found in provider'. The Terraform configuration was written for an older AWS provider version. What type of deployment issue is this?",
+    "answers": [
+      { "id": "a", "text": "A network connectivity issue preventing the provider from contacting AWS" },
+      { "id": "b", "text": "An outdated component definition — the resource type `aws_s3_bucket_acl` may have been introduced in a newer provider version than the one currently installed, or the configuration references resource types using the old schema that has since been restructured" },
+      { "id": "c", "text": "A permissions issue — the pipeline lacks permissions to create S3 ACLs" },
+      { "id": "d", "text": "An S3 region limitation — ACL resources are only available in specific regions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Provider connectivity issues produce different error types — 'resource type not found' specifically indicates a schema/version issue.",
+      "b": "Resource type availability is provider-version-specific — aws_s3_bucket_acl was introduced in AWS provider 4.x. If the lock file pins an older version, the resource type is unknown. This is an outdated component definition issue. This is the correct answer.",
+      "c": "Permission errors produce different error messages referencing access denied — not missing resource types.",
+      "d": "S3 resource availability is not region-gated in Terraform provider schemas."
+    }
+  },
+  {
+    "id": 1110,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Outdated Component Definitions",
+    "difficulty": "medium",
+    "text": "A Kubernetes deployment manifest uses `apiVersion: extensions/v1beta1` for an Ingress resource. After upgrading the cluster to Kubernetes 1.22, all Ingress deployments fail. What is the cause?",
+    "answers": [
+      { "id": "a", "text": "The Ingress controller needs to be reinstalled after the cluster upgrade" },
+      { "id": "b", "text": "The `extensions/v1beta1` API group for Ingress was removed in Kubernetes 1.22 — the manifest uses an outdated API version. The deployment must be updated to use `networking.k8s.io/v1` which became the stable Ingress API in Kubernetes 1.19" },
+      { "id": "c", "text": "Kubernetes 1.22 does not support Ingress resources" },
+      { "id": "d", "text": "The cluster upgrade requires all namespaces to be recreated" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Ingress controller reinstallation would not resolve API version incompatibility — the manifest itself must be updated.",
+      "b": "Kubernetes removes deprecated API versions after a deprecation window. extensions/v1beta1 was deprecated in Kubernetes 1.14 and removed in 1.22 — manifests using the old API group fail after the upgrade. Updating to networking.k8s.io/v1 resolves the issue. This is the correct answer.",
+      "c": "Kubernetes 1.22 fully supports Ingress — it removed only the deprecated extensions/v1beta1 API version.",
+      "d": "Namespace recreation is not required for cluster upgrades — only API version compatibility in manifests needs updating."
+    }
+  },
+  {
+    "id": 1111,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Outdated Component Definitions",
+    "difficulty": "hard",
+    "text": "A CloudFormation stack deployment fails with: 'Template format error: Unrecognized resource type: AWS::Lambda::Function'. The template was working 2 years ago and has not been modified. What is the MOST likely explanation?",
+    "answers": [
+      { "id": "a", "text": "CloudFormation does not support Lambda functions" },
+      { "id": "b", "text": "This is unlikely for a core service like Lambda — more likely causes include: the template is being deployed to a region that does not support Lambda, a typo in the resource type name, or the template is using a resource property that has been restructured. If the template truly worked before without modification, a regional Lambda unavailability or account-level service restriction should be investigated" },
+      { "id": "c", "text": "Lambda resource definitions were renamed in a recent CloudFormation update" },
+      { "id": "d", "text": "The CloudFormation service is experiencing a global outage" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "AWS::Lambda::Function is a core, well-supported CloudFormation resource type.",
+      "b": "AWS::Lambda::Function is a stable resource type — 'unrecognized resource type' for core services is more likely a regional limitation, typo in the resource type, or a template that was actually modified inadvertently. Investigating the actual deployed template and the target region resolves this. This is the correct answer.",
+      "c": "Lambda resource type names have not been renamed — they are stable across CloudFormation versions.",
+      "d": "A global CloudFormation outage would affect all templates — not produce a specific resource type error."
+    }
+  },
+  {
+    "id": 1112,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Outdated Component Definitions",
+    "difficulty": "hard",
+    "text": "An Ansible playbook was written 3 years ago and uses `include:` for task inclusion. Running it today produces a deprecation warning and the tasks are skipped. What change is required?",
+    "answers": [
+      { "id": "a", "text": "Upgrade to a newer version of Python to resolve the include compatibility" },
+      { "id": "b", "text": "The bare `include:` directive was deprecated and eventually removed in newer Ansible versions — replace with `include_tasks:` for dynamic task file inclusion or `import_tasks:` for static inclusion. Outdated playbooks using removed directives produce warnings or failures depending on the Ansible version" },
+      { "id": "c", "text": "The YAML syntax in the playbook is invalid and must be reformatted" },
+      { "id": "d", "text": "Ansible no longer supports task inclusion — all tasks must be in a single playbook file" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Python version does not affect Ansible task directive syntax — this is an Ansible API change.",
+      "b": "Ansible has iteratively replaced bare `include:` with explicit `include_tasks:` and `import_tasks:` directives with different semantics — playbooks written for older Ansible versions need updating when deployed with newer Ansible releases. This is the correct answer.",
+      "c": "YAML syntax is valid — the `include:` key is an outdated Ansible directive, not a YAML error.",
+      "d": "Ansible fully supports task inclusion — just through the updated directive names."
+    }
+  },
+  {
+    "id": 1113,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Deprecation",
+    "difficulty": "easy",
+    "text": "A cloud provider announces that a specific instance type (m3.xlarge) will be deprecated in 90 days. Applications currently running on m3.xlarge instances will not be automatically migrated. What must the operations team do?",
+    "answers": [
+      { "id": "a", "text": "Do nothing — deprecated instances continue running indefinitely after the deprecation date" },
+      { "id": "b", "text": "Inventory all workloads running on m3.xlarge, migrate them to a supported equivalent instance type (e.g., m5.xlarge or m6i.xlarge) within the 90-day window, and update any IaC templates or auto-scaling configurations referencing the deprecated instance type" },
+      { "id": "c", "text": "Purchase reserved instances for m3.xlarge to lock in continued availability" },
+      { "id": "d", "text": "Contact the cloud provider to request a permanent exemption for existing m3.xlarge instances" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "After deprecation, instance types are no longer available for new launches and existing instances may be forcibly migrated or stopped — proactive migration is required.",
+      "b": "Proactive migration within the deprecation window prevents forced migration under time pressure: identify affected workloads, select equivalent instance types, migrate and validate, and update all configurations referencing the deprecated type. This is the correct answer.",
+      "c": "Reserved instances can only be purchased for current, supported instance types — reservations do not prevent deprecation.",
+      "d": "Cloud providers do not grant permanent deprecation exemptions — retirement timelines are firm and apply universally."
+    }
+  },
+  {
+    "id": 1114,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Deprecation",
+    "difficulty": "medium",
+    "text": "AWS announces that EC2-Classic will be retired and all EC2-Classic instances will be forcibly migrated to VPC. A company has 15 applications still running in EC2-Classic. What deployment issues will they encounter during migration?",
+    "answers": [
+      { "id": "a", "text": "No issues — EC2-Classic and VPC instances are interchangeable" },
+      { "id": "b", "text": "EC2-Classic to VPC migration involves significant networking differences: EC2-Classic instances use flat network addressing without VPC isolation, while VPC requires subnet planning, security group migration (EC2-Classic security groups are not VPC security groups), private IP reassignment (EC2-Classic IPs are not preserved in VPC), and application configurations referencing EC2-Classic-specific network behavior may break" },
+      { "id": "c", "text": "Applications will be automatically reconfigured by AWS during the forced migration" },
+      { "id": "d", "text": "Only network-facing applications are affected — backend services migrate transparently" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "EC2-Classic and VPC have fundamentally different networking models — they are not interchangeable.",
+      "b": "EC2-Classic retirement requires comprehensive migration planning: VPC subnet design, security group conversion, private IP changes affecting service discovery, and potential application configuration updates for services that depended on EC2-Classic network behavior. This is the correct answer.",
+      "c": "AWS provides migration tooling and guidance but does not automatically reconfigure customer applications — migration responsibility lies with the customer.",
+      "d": "All network-dependent services are affected — not only internet-facing applications. Service-to-service communication also changes during VPC migration."
+    }
+  },
+  {
+    "id": 1115,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Deprecation",
+    "difficulty": "hard",
+    "text": "A cloud team receives a deprecation notice that their managed database engine (MySQL 5.7) will reach end of support in 6 months and automatic upgrades to MySQL 8.0 will begin. Their application has not been tested with MySQL 8.0. What must they do?",
+    "answers": [
+      { "id": "a", "text": "Do nothing — MySQL 8.0 is fully backward compatible with MySQL 5.7 applications" },
+      { "id": "b", "text": "Test the application against MySQL 8.0 in a staging environment — MySQL 8.0 has breaking changes including stricter SQL mode defaults, removed functions, changed authentication plugins, and character set changes. Identify and fix incompatibilities before the automatic upgrade window, or opt into early upgrade to control timing rather than having it forced" },
+      { "id": "c", "text": "Migrate to a different database engine to avoid the MySQL 8.0 migration entirely" },
+      { "id": "d", "text": "Request a permanent extension to keep MySQL 5.7 since it still functions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "MySQL 8.0 has documented breaking changes from 5.7 — assuming backward compatibility without testing risks production failures.",
+      "b": "Major database version upgrades require compatibility testing — MySQL 8.0 changes SQL mode strictness, removes deprecated functions, changes default character sets, and modifies authentication behavior. Testing in staging and fixing incompatibilities before the forced upgrade prevents production failures. This is the correct answer.",
+      "c": "Database engine migration is a much larger effort than MySQL version upgrade — addressing the MySQL 8.0 compatibility is the appropriate path.",
+      "d": "Cloud providers enforce database engine end-of-support timelines — permanent extensions are not granted for major version deprecations."
+    }
+  },
+  {
+    "id": 1116,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Deprecation",
+    "difficulty": "hard",
+    "text": "A cloud team uses a deprecated IAM policy syntax that will stop being accepted by the IAM API in 30 days. The policies are defined in 200 Terraform files across multiple repositories. What is the MOST efficient remediation approach?",
+    "answers": [
+      { "id": "a", "text": "Manually edit each of the 200 Terraform files individually" },
+      { "id": "b", "text": "Use automated refactoring tools — write a script or use sed/awk/grep to identify and replace the deprecated policy syntax across all repositories in bulk, test the updated policies in a non-production environment, then deploy the corrected policies through the CI/CD pipeline before the 30-day deadline" },
+      { "id": "c", "text": "Wait until the API stops accepting the old syntax and fix errors as they appear" },
+      { "id": "d", "text": "Request the cloud provider extend the deprecation deadline for 6 more months" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Manual editing of 200 files is time-consuming and error-prone — automated bulk refactoring is more reliable and efficient.",
+      "b": "Automated refactoring with scripting or code transformation tools handles bulk syntax updates across many files efficiently — the changes can be validated in pre-production before the deadline. This is the correct answer.",
+      "c": "Waiting for the API to stop accepting the syntax means 200 Terraform applies will fail simultaneously — proactive migration is required.",
+      "d": "Cloud providers do not typically grant deadline extensions for API deprecations — they affect all customers and the timeline is firm."
+    }
+  },
+  {
+    "id": 1117,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Outages",
+    "difficulty": "easy",
+    "text": "A cloud application becomes completely unavailable. Users report all requests are timing out. CloudWatch shows the EC2 instances are running with normal CPU but all are in an 'Unhealthy' state in the load balancer target group. What should be investigated first?",
+    "answers": [
+      { "id": "a", "text": "The instances need to be rebooted to restore health" },
+      { "id": "b", "text": "Investigate what changed recently that caused the health checks to fail — check the health check endpoint configuration (path, port, expected response code), review application logs on the instances for errors, verify the application is actually listening on the health check port, and confirm the security groups permit health check traffic from the load balancer" },
+      { "id": "c", "text": "Increase the instance type to handle higher load" },
+      { "id": "d", "text": "Contact the cloud provider since all instances being unhealthy simultaneously indicates a provider issue" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Rebooting without diagnosing the cause may temporarily restore health but the root cause will recur.",
+      "b": "Simultaneous unhealthy status across all instances suggests either a configuration change (health check path changed, security group modified) or an application-level issue (all instances experiencing the same error). Systematic investigation of recent changes and application logs identifies the root cause. This is the correct answer.",
+      "c": "CPU is normal — compute capacity is not the issue.",
+      "d": "A cloud provider issue could cause this, but it should be investigated after ruling out configuration and application issues — provider issues are less common than application-side problems."
+    }
+  },
+  {
+    "id": 1118,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Outages",
+    "difficulty": "medium",
+    "text": "A deployment to production succeeds but 15 minutes later the application begins returning 500 errors for all requests. The deployment has not been changed. What troubleshooting approach BEST identifies the cause?",
+    "answers": [
+      { "id": "a", "text": "Roll back the deployment immediately without investigating" },
+      { "id": "b", "text": "Correlate the 500 errors with recent changes and metrics: check application logs for error stack traces, review database connection pool metrics (possible exhaustion 15 minutes after deployment as traffic builds), check for memory leaks causing OOM errors, review any downstream service health, and compare metrics from before/after deployment to identify what changed between deployment success and error onset" },
+      { "id": "c", "text": "The 15-minute delay means the deployment is not responsible — investigate infrastructure issues" },
+      { "id": "d", "text": "Scale up instances to handle the increased load causing 500 errors" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Immediate rollback stops the incident but misses root cause — investigation during or after rollback prevents recurrence.",
+      "b": "A 15-minute delay between deployment and errors is typical for issues that develop under load: connection pool exhaustion, memory leaks, thread pool saturation, or downstream service degradation often emerge only after traffic builds to steady state. Correlating logs and metrics identifies the actual cause. This is the correct answer.",
+      "c": "The 15-minute delay does not rule out the deployment — latent issues from deployment changes often emerge under load.",
+      "d": "500 errors from application failures are not resolved by adding instances — the underlying error must be identified and fixed."
+    }
+  },
+  {
+    "id": 1119,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Outages",
+    "difficulty": "hard",
+    "text": "A multi-tier cloud application experiences a complete outage. The web tier instances are healthy. The application tier instances show high CPU. The database tier shows normal load. Users see 'Service Unavailable'. What is the MOST systematic troubleshooting approach?",
+    "answers": [
+      { "id": "a", "text": "Restart all application tier instances immediately" },
+      { "id": "b", "text": "Follow the request path from user to database: confirm web tier is receiving and forwarding requests (check web logs for upstream errors), investigate why application tier CPU is high (thread dump, JVM heap, connection queues), check application tier logs for errors being thrown, verify connectivity between application and database tiers (security groups, connection pool metrics), and identify whether high CPU is the cause or a symptom of another bottleneck" },
+      { "id": "c", "text": "Scale the database tier since high application CPU typically indicates database bottleneck" },
+      { "id": "d", "text": "The issue must be a cloud provider network problem since the database is healthy" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Restarting without diagnosis may temporarily clear the symptom — high CPU may return immediately if the root cause persists.",
+      "b": "Systematic request-path tracing identifies where requests are failing: the web tier being healthy rules out frontend issues, high application tier CPU indicates a bottleneck there, but the cause could be many things — thread contention, connection pool blocking, external service timeout causing thread accumulation, or CPU-intensive error handling. Methodical investigation identifies the root cause. This is the correct answer.",
+      "c": "Database load is normal — the bottleneck appears to be in the application tier, not the database.",
+      "d": "Network issues between tiers would show connection errors — application tier CPU being high suggests the application is receiving and processing requests but is overwhelmed or blocked."
+    }
+  },
+  {
+    "id": 1120,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Resource Limits",
+    "difficulty": "easy",
+    "text": "A cloud application deployment fails with: 'You have reached your vCPU limit for this region'. What type of deployment issue is this and how is it resolved?",
+    "answers": [
+      { "id": "a", "text": "A billing issue — the account has not been charged for existing instances" },
+      { "id": "b", "text": "A resource limit issue — AWS imposes default service quotas (limits) on the number of vCPUs per region per account. The deployment requires more vCPUs than the current quota allows. Resolution: request a service quota increase through the AWS Service Quotas console or Support, or deploy to a different region" },
+      { "id": "c", "text": "A misconfiguration — the instance type selected uses too many vCPUs" },
+      { "id": "d", "text": "An outage — AWS has temporarily suspended vCPU capacity in this region" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "vCPU limits are service quotas, not billing issues — they exist to prevent accidental resource proliferation.",
+      "b": "Cloud providers impose default service quotas that limit resource usage per account per region. vCPU limits are a common bottleneck during scale-out. Service quota increase requests are typically approved within hours to days for legitimate business needs. This is the correct answer.",
+      "c": "Instance type selection is a configuration choice — the resource limit issue is the account-level quota, not the instance size.",
+      "d": "Regional outages affect all services — a specific vCPU quota message indicates an account-level limit, not an infrastructure failure."
+    }
+  },
+  {
+    "id": 1121,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Resource Limits",
+    "difficulty": "medium",
+    "text": "A Kubernetes pod is repeatedly OOMKilled (Out of Memory Killed). The pod's memory limit is set to 256Mi but the application typically uses 400Mi during normal operation. What must be done?",
+    "answers": [
+      { "id": "a", "text": "Disable memory limits for this pod so Kubernetes does not restrict its memory usage" },
+      { "id": "b", "text": "Increase the pod's memory limit to accommodate actual usage — set the limit to at least 512Mi (providing headroom above the 400Mi typical usage), and set the memory request to 400Mi so Kubernetes schedules the pod on nodes with sufficient available memory. Profile the application's peak memory usage to set appropriate limits" },
+      { "id": "c", "text": "Reduce the application's functionality to use less than 256Mi" },
+      { "id": "d", "text": "OOMKilled is expected behavior — configure the pod to restart more quickly" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Pods without memory limits can consume unlimited node memory, starving other pods — limits are essential for cluster stability.",
+      "b": "Memory limits below actual usage cause OOMKilled — the limit must be set above peak usage with headroom for spikes. Setting both request (scheduling guarantee) and limit (maximum allowed) correctly addresses both scheduling and runtime behavior. This is the correct answer.",
+      "c": "Reducing application functionality to fit an artificially low limit is the wrong approach — limits should match application requirements.",
+      "d": "OOMKilled indicates the pod needs more memory — accepting it as normal and speeding up restarts does not resolve the underlying resource mismatch."
+    }
+  },
+  {
+    "id": 1122,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Resource Limits",
+    "difficulty": "hard",
+    "text": "An AWS Lambda function fails with 'Task timed out after 900 seconds'. Lambda's maximum timeout is 900 seconds (15 minutes). The function processes large files that consistently take 20+ minutes. What is the solution?",
+    "answers": [
+      { "id": "a", "text": "Request AWS to increase the Lambda timeout limit beyond 900 seconds" },
+      { "id": "b", "text": "Lambda's 15-minute hard limit cannot be increased — the architecture must be redesigned: split the processing into chunks that each complete within 15 minutes, use Step Functions to orchestrate multi-step processing across multiple Lambda invocations, or move the long-running workload to a different compute service (ECS Fargate, EC2, AWS Batch) that supports longer execution times" },
+      { "id": "c", "text": "Increase the Lambda memory allocation to process files faster within the timeout" },
+      { "id": "d", "text": "Use Lambda SnapStart to reduce initialization time and gain more processing time" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lambda's 900-second timeout is a hard service limit — it cannot be increased regardless of support tier or request.",
+      "b": "Hard service limits require architectural adaptation — Lambda is not designed for long-running processes. Chunked processing, Step Functions orchestration, or migrating to a compute service without the timeout constraint are the correct architectural responses. This is the correct answer.",
+      "c": "More memory improves CPU allocation and speed, but a 20-minute process cannot be reduced to 15 minutes through memory alone for I/O-bound file processing.",
+      "d": "Lambda SnapStart reduces initialization (cold start) time — it does not affect the execution timeout or processing throughput."
+    }
+  },
+  {
+    "id": 1123,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Resource Limits",
+    "difficulty": "hard",
+    "text": "A deployment pipeline fails intermittently when provisioning RDS instances with: 'DB instance quota of 40 has been reached'. The account currently shows 38 DB instances. Why might this occur and how should it be investigated?",
+    "answers": [
+      { "id": "a", "text": "The RDS quota is shared with other database services and may be double-counted" },
+      { "id": "b", "text": "The actual count may include instances in deleting state not yet visible in the console, instances in the pipeline that failed mid-creation and are being cleaned up, or read replicas counted separately from primary instances. Investigation: use the AWS CLI to list all RDS instances including those in transitional states, check for instances in deleting/creating states, and verify the actual quota through the Service Quotas console" },
+      { "id": "c", "text": "The quota count is a cached value — wait 24 hours for the quota counter to reset" },
+      { "id": "d", "text": "RDS quotas apply per region and the pipeline is deploying across regions" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "RDS quotas count RDS instances specifically — they are not shared with other database services.",
+      "b": "Resource quota counts include all instances in all states including transitional states (deleting, creating) that may not appear in basic console views. Failed deployments may leave orphaned instances consuming quota. CLI-based full enumeration provides the accurate count. This is the correct answer.",
+      "c": "Service quotas are not cached counts that reset — they reflect real-time resource counts.",
+      "d": "RDS quotas are per-region — if the pipeline deploys to a single region, cross-region counting is not the issue."
+    }
+  },
+  {
+    "id": 1124,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Regional Service Availability",
+    "difficulty": "easy",
+    "text": "A deployment fails because an application attempts to use AWS Rekognition for image analysis in the ap-southeast-3 region. The API call returns 'service not available'. What type of deployment issue is this?",
+    "answers": [
+      { "id": "a", "text": "A permissions issue — the IAM role lacks Rekognition permissions" },
+      { "id": "b", "text": "A regional service availability issue — not all AWS services are available in all regions. AWS Rekognition may not be available in the ap-southeast-3 region. The application must either deploy to a region where Rekognition is available or architect cross-region API calls" },
+      { "id": "c", "text": "A quota issue — the Rekognition API call limit has been exceeded" },
+      { "id": "d", "text": "A misconfiguration — the Rekognition endpoint URL is incorrect" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Permissions errors produce 'access denied' messages — 'service not available' indicates the service does not exist in this region.",
+      "b": "AWS service availability varies by region — newer or specialized services like Rekognition are often available in primary regions (us-east-1, us-west-2, eu-west-1) before expanding to newer regions. This is a regional service availability issue. This is the correct answer.",
+      "c": "API quota errors produce throttling messages — not 'service not available'.",
+      "d": "SDK endpoints are automatically determined by region — 'service not available' is not an endpoint configuration error."
+    }
+  },
+  {
+    "id": 1125,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Regional Service Availability",
+    "difficulty": "medium",
+    "text": "A company requires deploying their entire application stack to a specific country for data sovereignty. Their IaC template uses services that are not yet available in that country's cloud region. What options should they evaluate?",
+    "answers": [
+      { "id": "a", "text": "Deploy to the nearest available region and claim data sovereignty compliance" },
+      { "id": "b", "text": "Evaluate alternatives: replace unavailable managed services with self-hosted equivalents on available compute (e.g., self-managed Kafka instead of managed Kinesis if unavailable), split architecture with data-sensitive components in the required region and non-sensitive components in a region with full service availability, or wait for the provider to expand the service to that region" },
+      { "id": "c", "text": "Request the cloud provider to immediately deploy all services to the required region" },
+      { "id": "d", "text": "Services not available in a region will be automatically replicated from the nearest available region" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Deploying to a different region does not satisfy data sovereignty requirements — data must physically reside in the required jurisdiction.",
+      "b": "Regional service unavailability requires architectural adaptation: self-hosted alternatives on available compute, hybrid architectures separating data-sensitive and non-sensitive workloads, or waiting for service expansion. This is the correct answer.",
+      "c": "Cloud providers expand services based on demand and infrastructure investment — individual customer requests do not accelerate region launches.",
+      "d": "Cloud services are not automatically replicated across regions — each region has independent service availability."
+    }
+  },
+  {
+    "id": 1126,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Regional Service Availability",
+    "difficulty": "hard",
+    "text": "A Terraform deployment uses AWS services that are available in us-east-1 but the organization's security policy requires deploying to us-gov-west-1 (GovCloud). The Terraform plan shows multiple resource creation errors. What is the ROOT CAUSE pattern here?",
+    "answers": [
+      { "id": "a", "text": "GovCloud requires a different version of Terraform than commercial regions" },
+      { "id": "b", "text": "AWS GovCloud has a subset of commercial region services — some services available in us-east-1 may not be available in us-gov-west-1, or may have different resource names, API endpoints, ARN formats (arn:aws-us-gov: instead of arn:aws:), and service quotas. Terraform configurations must account for GovCloud-specific service availability and ARN patterns" },
+      { "id": "c", "text": "Terraform does not support GovCloud deployments" },
+      { "id": "d", "text": "GovCloud errors are always authentication-related — verify GovCloud credentials" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Terraform version is not GovCloud-specific — the same Terraform binary supports both commercial and GovCloud regions.",
+      "b": "GovCloud regions have distinct service availability, ARN namespaces (arn:aws-us-gov:), different endpoints, and sometimes different service names or API behaviors. Terraform code written for commercial regions requires review and adaptation for GovCloud deployment. This is the correct answer.",
+      "c": "Terraform fully supports GovCloud through the AWS provider with GovCloud-specific endpoints — it requires configuration, not a different tool.",
+      "d": "Authentication is a component of GovCloud access but the resource creation errors described indicate service availability issues beyond authentication."
+    }
+  },
+  {
+    "id": 1127,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Regional Service Availability",
+    "difficulty": "hard",
+    "text": "An application architect is designing a multi-region active-active deployment across 4 regions. During testing, one region's deployment fails because a specific managed database feature used by the application is in preview (not generally available) in that region. How should this be handled in the architecture?",
+    "answers": [
+      { "id": "a", "text": "Exclude the region from the active-active deployment until the feature reaches GA" },
+      { "id": "b", "text": "Evaluate whether the feature's absence in that region can be worked around through application-layer compensation (implementing the missing feature in application code), whether a different equivalent service can provide the same capability, or whether the region is critical enough to include at reduced functionality vs. excluded entirely — documenting the regional capability difference in architecture decisions" },
+      { "id": "c", "text": "Request preview access to enable the feature in all regions simultaneously" },
+      { "id": "d", "text": "Preview features in one region will automatically propagate to all regions within 24 hours" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Excluding a region entirely reduces the active-active design's geographic coverage — evaluation of alternatives is preferable to immediate exclusion.",
+      "b": "Regional feature availability differences require architectural decision-making: application-layer workarounds may provide equivalent functionality, alternative services may substitute, or the region may be included with documented capability differences. The decision must be informed by the feature's criticality to the application. This is the correct answer.",
+      "c": "Preview access requests are evaluated per region independently — enabling preview in one region does not affect other regions.",
+      "d": "Preview features propagate to GA in regions based on the provider's rollout schedule — they do not automatically spread within 24 hours."
+    }
+  },
+  {
+    "id": 1128,
+    "domain": "6.0",
+    "objective": "6.1",
+    "keyword": "Regional Service Availability",
+    "difficulty": "hard",
+    "text": "A deployment pipeline is configured to automatically deploy to the nearest available region when the primary region has a service outage. During a real outage, the failover deployment fails because the failover region lacks a specific managed ML service used by the application. What design flaw does this reveal?",
+    "answers": [
+      { "id": "a", "text": "Automated failover should never be used — manual failover prevents this issue" },
+      { "id": "b", "text": "The failover region was selected based only on geographic proximity and cost, without validating that all required services are available in the target region. DR design must verify that the failover region provides complete service parity for all application dependencies — or the architecture must degrade gracefully when specific services are unavailable in the failover region" },
+      { "id": "c", "text": "ML services are always available in all regions — the outage must be causing additional service failures" },
+      { "id": "d", "text": "The failover region needs more instances to compensate for the missing service" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Automated failover is essential for meeting aggressive RTOs — the issue is incomplete failover region validation, not the automation concept.",
+      "b": "DR region selection must include service availability validation for all required services — not just compute and networking. This is a common DR design gap discovered only during actual failover events. Proactive service availability validation in the DR region and graceful degradation design prevent this failure mode. This is the correct answer.",
+      "c": "Managed ML services have significantly limited regional availability compared to core compute services — assuming universal availability is incorrect.",
+      "d": "Adding more instances cannot substitute for a missing managed service — the service either exists in the region or it does not."
+    }
+  },
+  {
+    "id": 1129,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "DHCP",
+    "difficulty": "easy",
+    "text": "A newly launched cloud instance cannot connect to any network resources and shows IP address 169.254.x.x. What does this indicate?",
+    "answers": [
+      { "id": "a", "text": "The instance has been assigned a valid private IP by the cloud provider" },
+      { "id": "b", "text": "The instance failed to obtain an IP address from DHCP — 169.254.x.x is an APIPA (Automatic Private IP Addressing) address assigned by the OS when DHCP is unreachable, indicating the instance cannot communicate with the cloud's DHCP service" },
+      { "id": "c", "text": "The instance is using a reserved management IP range" },
+      { "id": "d", "text": "The 169.254.x.x address is the cloud instance metadata service IP" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cloud provider DHCP assigns addresses from the VPC subnet CIDR — 169.254.x.x is never a valid assigned private IP.",
+      "b": "APIPA (169.254.0.0/16) is assigned by Windows and some Linux systems when DHCP fails — it indicates the DHCP client could not reach the DHCP server. In cloud environments this suggests a subnet misconfiguration, DHCP service failure, or incorrect DHCP client configuration. This is the correct answer.",
+      "c": "169.254.0.0/16 is link-local — it is not a cloud provider management reservation.",
+      "d": "The instance metadata service uses 169.254.169.254 — but the instance receiving this as its primary IP address rather than reaching it as an endpoint indicates DHCP failure."
+    }
+  },
+  {
+    "id": 1130,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "DHCP",
+    "difficulty": "medium",
+    "text": "Cloud instances in a VPC subnet are intermittently receiving incorrect IP addresses from a pool already allocated to other instances. Multiple instances end up with duplicate IPs causing connectivity failures. What is the MOST likely cause?",
+    "answers": [
+      { "id": "a", "text": "The subnet CIDR range is too small for the number of instances" },
+      { "id": "b", "text": "A rogue DHCP server is running on one of the instances, responding to DHCP requests before the legitimate cloud DHCP server. Cloud providers' managed DHCP should be the only DHCP source — an instance running unauthorized DHCP server software distributes conflicting leases" },
+      { "id": "c", "text": "The VPC routing table is missing an entry for the subnet" },
+      { "id": "d", "text": "Instances are rebooting faster than DHCP lease expiration allows" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Subnet exhaustion causes DHCP failure (no available IPs) — not duplicate IP assignment.",
+      "b": "A rogue DHCP server is the primary cause of duplicate IP assignment in cloud VPCs. Cloud security group configurations typically prevent this in managed environments, but a misconfigured instance running DHCP server software can disrupt the entire subnet. This is the correct answer.",
+      "c": "Missing routing table entries cause connectivity failures — they do not cause DHCP to assign duplicate IPs.",
+      "d": "DHCP lease management handles rapid reboots correctly — the same instance receives the same IP via lease renewal."
+    }
+  },
+  {
+    "id": 1131,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "DHCP",
+    "difficulty": "hard",
+    "text": "A cloud instance running a containerized application works correctly immediately after launch but loses network connectivity after exactly 24 hours every time. The host instance maintains connectivity. What is the MOST likely cause?",
+    "answers": [
+      { "id": "a", "text": "The cloud provider terminates instances after 24 hours" },
+      { "id": "b", "text": "The container's network namespace has a 24-hour DHCP lease that is not being renewed — the container network stack may not be configured to renew leases, or the DHCP renewal is failing. When the lease expires without renewal, the container loses its IP assignment. Investigating the container's DHCP client configuration and ensuring renewal works resolves this" },
+      { "id": "c", "text": "The security group rules expire after 24 hours" },
+      { "id": "d", "text": "The container image contains a 24-hour time-limited license" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cloud providers do not automatically terminate instances after 24 hours — instance lifetime is controlled by the customer.",
+      "b": "DHCP leases have configurable expiration times — if a container's network stack does not properly renew its DHCP lease before expiration, it loses its IP address precisely at the lease duration. The 24-hour pattern matches a common DHCP lease duration. This is the correct answer.",
+      "c": "Security group rules are persistent — they do not expire after time periods.",
+      "d": "Application time limits produce application-level failures — not network connectivity loss at a network layer."
+    }
+  },
+  {
+    "id": 1132,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "DHCP",
+    "difficulty": "hard",
+    "text": "An organization creates a new VPC subnet with CIDR 10.0.5.0/24 and launches 10 instances. 5 instances receive IPs from 10.0.5.0/24 but 5 instances receive IPs from 10.0.3.0/24 (a different subnet). What misconfiguration likely caused this?",
+    "answers": [
+      { "id": "a", "text": "The new subnet has overlapping CIDR with the existing subnet 10.0.3.0/24" },
+      { "id": "b", "text": "The instances were launched with the wrong subnet ID specified — 5 instances were accidentally launched in subnet 10.0.3.0/24 rather than 10.0.5.0/24, receiving correct IPs for the subnet they are actually in. The launch configuration or IaC template likely references the wrong subnet identifier" },
+      { "id": "c", "text": "Cloud DHCP cannot distinguish between subnets and assigns IPs randomly" },
+      { "id": "d", "text": "The VPC DHCP options set is incorrectly configured to use CIDR 10.0.3.0/24" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Non-overlapping CIDRs (10.0.5.0/24 and 10.0.3.0/24) cannot cause cross-subnet IP assignment — instances receive IPs from the subnet they are actually placed in.",
+      "b": "Cloud DHCP assigns IPs from the subnet CIDR where the instance is placed — instances receiving 10.0.3.x IPs are actually in the 10.0.3.0/24 subnet, not the intended 10.0.5.0/24. The launch configuration specifying the wrong subnet ID is the most likely root cause. This is the correct answer.",
+      "c": "Cloud DHCP is deterministic — each subnet has its own DHCP scope and instances receive IPs from their actual subnet.",
+      "d": "DHCP options sets configure DNS and NTP servers — they do not control IP address assignment ranges."
+    }
+  },
+  {
+    "id": 1133,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "DNS",
+    "difficulty": "easy",
+    "text": "A cloud application can connect to services using IP addresses but fails when using hostnames. `ping google.com` fails with 'Name or service not known'. What is the MOST likely cause?",
+    "answers": [
+      { "id": "a", "text": "The instance lacks sufficient CPU to perform DNS lookups" },
+      { "id": "b", "text": "DNS resolution is failing — the instance either has no DNS server configured, is configured with an unreachable DNS server IP, or the security group is blocking UDP port 53 traffic to the DNS resolver" },
+      { "id": "c", "text": "The instance needs to be rebooted for DNS to function" },
+      { "id": "d", "text": "DNS resolution requires special cloud provider licensing" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "DNS lookups are computationally trivial — CPU is not a factor in DNS failures.",
+      "b": "Working IP connectivity with failed hostname resolution confirms DNS is the issue. Root causes include: missing or incorrect /etc/resolv.conf, unreachable DNS server IP, or security group/NACL blocking UDP 53 to the DNS resolver. This is the correct answer.",
+      "c": "DNS functionality is configuration-dependent — rebooting without fixing configuration will not restore DNS.",
+      "d": "DNS resolution is a standard network service — no special licensing is required."
+    }
+  },
+  {
+    "id": 1134,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "DNS",
+    "difficulty": "medium",
+    "text": "After a cloud deployment, an application correctly resolves the new service's hostname to its new IP address, but 15% of users still reach the old server IP. DNS TTL for the record was 48 hours before the change. What is happening?",
+    "answers": [
+      { "id": "a", "text": "The DNS change was not applied correctly to all nameservers" },
+      { "id": "b", "text": "DNS caching — the 48-hour TTL means ISPs, corporate resolvers, and operating systems cached the old DNS record for up to 48 hours after the change. Users whose resolver cached the record before the change will continue reaching the old IP until their cached entry expires. Pre-change TTL reduction (to 5 minutes) is the standard preventive practice" },
+      { "id": "c", "text": "The new server is rejecting connections from 15% of users" },
+      { "id": "d", "text": "BGP routing updates require 48 hours to propagate globally" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Modern authoritative DNS is typically multi-region and propagates quickly — the issue is client-side caching, not propagation.",
+      "b": "High DNS TTLs cause extended caching of old records — users whose resolver cached the DNS response before the change continue using the cached IP for the full TTL duration. Reducing TTL to 5 minutes before planned changes minimizes this transition period. This is the correct answer.",
+      "c": "Server rejection would show connection errors — users reaching the old server receive responses from the old deployment.",
+      "d": "BGP propagation affects IP routing — not DNS record caching. DNS and routing are separate systems."
+    }
+  },
+  {
+    "id": 1135,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "DNS",
+    "difficulty": "hard",
+    "text": "A Kubernetes service has a ClusterIP and is accessible from within the cluster using its service name. Pods in a different namespace cannot resolve the service using just its short name. They must use the fully qualified domain name (FQDN). Why?",
+    "answers": [
+      { "id": "a", "text": "Kubernetes DNS only works for services in the default namespace" },
+      { "id": "b", "text": "Kubernetes DNS search domains are namespace-scoped — short name resolution searches within the pod's own namespace first. Cross-namespace service discovery requires the FQDN format: service-name.namespace.svc.cluster.local. Pods in namespace-A cannot resolve short names for services in namespace-B without explicit namespace qualification" },
+      { "id": "c", "text": "Services must be exposed as NodePort to be accessible across namespaces" },
+      { "id": "d", "text": "Network policies block cross-namespace DNS queries" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Kubernetes DNS works across all namespaces — namespace scope only affects short name resolution, not full DNS accessibility.",
+      "b": "Kubernetes CoreDNS implements search domain logic — pod DNS configuration includes search domains for the pod's namespace (svc.cluster.local, namespace.svc.cluster.local). Short names only match services in the same namespace. Cross-namespace access requires FQDN. This is the correct answer.",
+      "c": "ClusterIP services are accessible across namespaces via DNS — NodePort is for external cluster access.",
+      "d": "Network policies control network traffic — they do not affect DNS query resolution."
+    }
+  },
+  {
+    "id": 1136,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "DNS",
+    "difficulty": "hard",
+    "text": "A cloud application intermittently fails with 'connection refused' errors targeting an internal service. Investigation shows the internal service DNS name resolves to an IP that was previously assigned to the service but is now assigned to a different service after the original service was restarted. What caused this and how is it prevented?",
+    "answers": [
+      { "id": "a", "text": "DNS caching is not a factor for internal cloud DNS — the issue must be a security group" },
+      { "id": "b", "text": "DNS TTL caching of the old IP — when the original service restarts with a new IP, the DNS record is updated but the consuming application has cached the old IP. The old IP is now assigned to a different service, causing misdirected connections. Prevention: use health-checked DNS records, ensure consuming applications respect DNS TTLs, or use service mesh for dynamic endpoint discovery that bypasses DNS caching" },
+      { "id": "c", "text": "This is impossible in cloud environments since IPs are never reassigned" },
+      { "id": "d", "text": "The consuming application should use the IP directly instead of DNS" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Internal cloud DNS is also subject to caching — TTL values apply to all DNS resolvers including those for internal zones.",
+      "b": "IP reuse combined with DNS caching creates misdirected connections — a classic cloud DNS pitfall. Applications that cache DNS resolutions beyond TTL expiry may connect to unexpected services when IPs are reassigned. Service mesh or short TTLs with proper cache respect mitigate this. This is the correct answer.",
+      "c": "Cloud IPs (especially private IPs in subnets) are absolutely reused — IP reassignment is common in dynamic cloud environments.",
+      "d": "Using IPs directly makes the application fragile to IP changes and defeats the purpose of DNS — proper DNS TTL management is the correct solution."
+    }
+  },
+  {
+    "id": 1137,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "NTP",
+    "difficulty": "easy",
+    "text": "Cloud instances in a private subnet cannot reach external NTP servers. The instances' system clocks drift several minutes per day. What problem does clock drift cause in cloud environments?",
+    "answers": [
+      { "id": "a", "text": "Clock drift only affects scheduled cron jobs — no security or connectivity impact" },
+      { "id": "b", "text": "Significant clock drift causes multiple issues: AWS API calls fail with 'Request has expired' when the timestamp differs more than 5 minutes from server time, TLS certificate validation fails when certificate validity periods don't align with system time, authentication tokens (JWT, Kerberos) with time-based validity fail, and log correlation becomes impossible across systems with different times" },
+      { "id": "c", "text": "Clock drift causes increased CPU utilization on affected instances" },
+      { "id": "d", "text": "NTP synchronization is optional for cloud instances — drift has no functional impact" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Clock drift affects security, API calls, and distributed system correctness — not only cron scheduling.",
+      "b": "Clock drift has cascading effects: AWS signature validation rejects requests with >5-minute time differences, expired or not-yet-valid TLS certificates cause connection failures when system time is wrong, time-based security tokens fail validation, and distributed log correlation requires synchronized timestamps. This is the correct answer.",
+      "c": "CPU utilization is not affected by clock drift — correctness and security are the impacts.",
+      "d": "NTP synchronization is operationally critical — clock drift causes real service failures in cloud environments."
+    }
+  },
+  {
+    "id": 1138,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "NTP",
+    "difficulty": "medium",
+    "text": "Cloud instances in a private subnet without internet access need NTP synchronization. External NTP servers are unreachable. What solution provides NTP for private instances?",
+    "answers": [
+      { "id": "a", "text": "Private instances do not need NTP — they use the instance hardware clock which never drifts" },
+      { "id": "b", "text": "Configure instances to use the cloud provider's internal NTP service — AWS provides 169.254.169.123 (Amazon Time Sync Service) accessible from all instances without internet access. Azure and GCP have equivalent internal time servers that are always reachable from within the cloud network without internet or VPN connectivity" },
+      { "id": "c", "text": "Deploy a dedicated NTP server on a public subnet and allow all private instances to access it via NAT" },
+      { "id": "d", "text": "NTP is only required when deploying to regulated industries — it is optional otherwise" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Hardware clocks do drift — that is precisely why NTP is needed even for instances without internet access.",
+      "b": "Cloud providers offer internal NTP services reachable without internet access: AWS Amazon Time Sync Service (169.254.169.123), Azure time.windows.com (resolved internally), and GCP metadata.google.internal — all accessible from private subnets without any internet gateway or NAT. This is the correct answer.",
+      "c": "A public subnet NTP server with NAT works but is unnecessarily complex when the cloud provider's internal NTP service is directly available.",
+      "d": "NTP is required for all cloud instances regardless of industry — clock synchronization is fundamental to distributed system correctness."
+    }
+  },
+  {
+    "id": 1139,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "NTP",
+    "difficulty": "hard",
+    "text": "An NTP server is configured with `restrict default noquery nomodify` in its configuration. Client instances can synchronize their clocks but cannot query the NTP server's status using `ntpq`. What does this configuration accomplish?",
+    "answers": [
+      { "id": "a", "text": "The configuration prevents any NTP synchronization from occurring" },
+      { "id": "b", "text": "The restrict directive limits what NTP clients can do with the server — `noquery` prevents clients from querying the server's status (preventing information disclosure and NTP amplification attacks), `nomodify` prevents clients from changing the server's configuration. Clients can still synchronize time but cannot interrogate or configure the server" },
+      { "id": "c", "text": "This configuration enables NTP authentication for all client connections" },
+      { "id": "d", "text": "The restrict directive limits NTP synchronization to specific time zones" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "NTP synchronization (time updates) is separate from query operations — `noquery` and `nomodify` restrict management operations, not time synchronization.",
+      "b": "NTP restrict directives implement security hardening: `noquery` prevents status queries (used in DDoS amplification attacks and information gathering), `nomodify` prevents configuration changes from untrusted clients. Time synchronization continues unaffected. This is the correct answer.",
+      "c": "NTP authentication is configured separately through `key` and `trustedkey` directives — restrict handles access control.",
+      "d": "NTP operates in UTC — time zones are a presentation layer concept, not an NTP configuration parameter."
+    }
+  },
+  {
+    "id": 1140,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "NTP",
+    "difficulty": "hard",
+    "text": "A distributed cloud application uses timestamps for event ordering and deduplication. Two services running on different instances have clock skew of 3 seconds between them. Events happening within the same 3-second window arrive at the processing service in incorrect order. Why is NTP alone insufficient for this use case?",
+    "answers": [
+      { "id": "a", "text": "NTP is always accurate to within milliseconds — 3-second skew cannot occur with NTP enabled" },
+      { "id": "b", "text": "NTP reduces clock skew to milliseconds but cannot eliminate it entirely — for strict event ordering requiring sub-millisecond precision, NTP is insufficient. Solutions include: logical clocks (Lamport timestamps, vector clocks) that provide causal ordering without absolute time, hardware timestamping with PTP (Precision Time Protocol) for microsecond accuracy, or cloud provider synchronized clocks with GPS accuracy (AWS Time Sync with Chrony in PHC mode)" },
+      { "id": "c", "text": "NTP should be configured with a higher poll rate to achieve 3-second accuracy" },
+      { "id": "d", "text": "Event ordering should rely on database auto-increment IDs rather than timestamps" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "NTP achieves 1-50ms accuracy in typical deployments — 3-second skew suggests either NTP is misconfigured or not running.",
+      "b": "For strict distributed event ordering, NTP is a floor — it reduces skew but cannot eliminate it. Applications requiring deterministic ordering use logical clocks (causal ordering) or PTP (hardware-level time synchronization). This is the correct answer.",
+      "c": "NTP poll rate controls synchronization frequency — it does not improve the accuracy achievable through NTP over internet connections.",
+      "d": "Auto-increment IDs provide ordering within a single database — they cannot order events across distributed services."
+    }
+  },
+  {
+    "id": 1141,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "NAT",
+    "difficulty": "easy",
+    "text": "Instances in a private cloud subnet need to access the internet to download software updates but must not be directly accessible from the internet. Which cloud network component enables this?",
+    "answers": [
+      { "id": "a", "text": "An internet gateway attached directly to the private subnet" },
+      { "id": "b", "text": "A NAT gateway (or NAT instance) in a public subnet — private instances route outbound internet traffic through the NAT gateway which translates their private source IPs to the NAT gateway's public IP. Return traffic is directed to the NAT gateway which forwards it to the originating private instance, while inbound connections from the internet cannot initiate connections to private instances" },
+      { "id": "c", "text": "A VPN connection to the cloud provider's network edge" },
+      { "id": "d", "text": "An elastic network interface with a public IP attached to each private instance" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "An internet gateway attached to a private subnet would make instances directly internet-accessible — NAT provides outbound-only internet access.",
+      "b": "NAT gateway provides outbound internet access for private instances while blocking inbound internet connections — exactly the requirement. Private instances can initiate outbound connections through NAT but cannot receive inbound connections from the internet. This is the correct answer.",
+      "c": "VPN connections provide secure access between networks — not outbound internet access for private instances.",
+      "d": "Public IPs on private instances make them internet-accessible — violating the requirement for no direct internet access."
+    }
+  },
+  {
+    "id": 1142,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "NAT",
+    "difficulty": "medium",
+    "text": "Private subnet instances can access the internet successfully. However, a new instance in the same subnet cannot reach the internet. Other instances in the subnet work correctly. What should be investigated first?",
+    "answers": [
+      { "id": "a", "text": "The NAT gateway is failing since other instances are also affected" },
+      { "id": "b", "text": "Check the new instance's subnet route table association — the new instance may be in a subnet that is not associated with the route table containing the NAT gateway route (0.0.0.0/0 → NAT gateway). Also verify the instance's security group allows outbound traffic and the NAT gateway has sufficient capacity" },
+      { "id": "c", "text": "The instance is missing a public IP address — assign an elastic IP to the private instance" },
+      { "id": "d", "text": "Restart the NAT gateway service since it cannot handle the new instance" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Other instances working correctly rules out NAT gateway failure — the issue is specific to the new instance.",
+      "b": "When one instance fails while others succeed, the issue is instance-specific: wrong subnet (not associated with the NAT route table), missing security group egress rule, or the instance being placed in the wrong subnet. Route table association is the most common cause. This is the correct answer.",
+      "c": "Private instances should not have public IPs — they use NAT for internet access, not direct public IP assignment.",
+      "d": "Managed NAT gateways scale automatically — restarting is not applicable and would disrupt all other instances."
+    }
+  },
+  {
+    "id": 1143,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "NAT",
+    "difficulty": "hard",
+    "text": "A cloud application behind a NAT gateway makes outbound connections to an external API. The external API provider reports seeing connections from many different source IPs from the cloud environment. The team expected all traffic to use the NAT gateway's single Elastic IP. What explains multiple source IPs?",
+    "answers": [
+      { "id": "a", "text": "NAT gateways randomly change their IP address for load balancing" },
+      { "id": "b", "text": "The application is deployed across multiple availability zones, each with its own NAT gateway — AWS best practice is one NAT gateway per AZ for high availability. Traffic from instances in different AZs exits through their respective AZ NAT gateways, each with a different Elastic IP. If the external API requires a single source IP whitelist, all traffic must route through one NAT gateway or IP allowlisting must include all NAT gateway IPs" },
+      { "id": "c", "text": "Some instances are using internet gateways directly instead of the NAT gateway" },
+      { "id": "d", "text": "The external API is incorrectly logging source IPs due to load balancer insertion" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "NAT gateways have stable Elastic IPs — they do not randomly rotate.",
+      "b": "Multi-AZ deployments with per-AZ NAT gateways produce different source IPs per AZ — a common operational discovery when external partners whitelist IPs. Each NAT gateway has its own Elastic IP. This is the correct answer.",
+      "c": "Private instances cannot use internet gateways directly — they route through NAT or remain private.",
+      "d": "NAT gateway source IP translation is deterministic — logging on both sides would confirm the multiple source IPs."
+    }
+  },
+  {
+    "id": 1144,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "HTTP Status Codes",
+    "difficulty": "easy",
+    "text": "A cloud-hosted API returns HTTP 429 to client requests. What does this status code indicate and how should clients respond?",
+    "answers": [
+      { "id": "a", "text": "HTTP 429 indicates a server-side internal error — the server has crashed" },
+      { "id": "b", "text": "HTTP 429 Too Many Requests indicates the client has exceeded a rate limit — the server is throttling the request. Clients should implement exponential backoff and retry after the duration specified in the Retry-After response header" },
+      { "id": "c", "text": "HTTP 429 indicates the requested resource was not found" },
+      { "id": "d", "text": "HTTP 429 indicates the client's authentication credentials have expired" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "HTTP 429 is a client-induced rate limit response — server crashes produce 500-series errors.",
+      "b": "HTTP 429 Too Many Requests is the standard rate limiting response — the server is deliberately throttling the client for exceeding request limits. Exponential backoff with jitter is the recommended retry strategy. This is the correct answer.",
+      "c": "Resource not found is HTTP 404 — not 429.",
+      "d": "Authentication credential issues produce HTTP 401 (Unauthorized) or 403 (Forbidden) — not 429."
+    }
+  },
+  {
+    "id": 1145,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "HTTP Status Codes",
+    "difficulty": "medium",
+    "text": "A cloud load balancer is returning HTTP 502 Bad Gateway errors for all requests. The backend instances appear healthy in the EC2 console. What should be investigated?",
+    "answers": [
+      { "id": "a", "text": "The load balancer itself has failed — replace it with a new load balancer" },
+      { "id": "b", "text": "HTTP 502 indicates the load balancer received an invalid response from the backend — investigate: whether the application is actually running and listening on the expected port, whether the health check port matches the application port, whether security groups allow traffic from the load balancer's IP range to the instances, and whether the application is crashing on startup after health checks pass" },
+      { "id": "c", "text": "HTTP 502 indicates the client's browser is misconfigured" },
+      { "id": "d", "text": "HTTP 502 indicates a DNS resolution failure at the load balancer" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "502 is generated by the load balancer when it cannot get a valid response from backends — the load balancer itself is functioning, the backends are the issue.",
+      "b": "502 Bad Gateway indicates the load balancer connected to the backend but received an invalid or no response. EC2 instances being healthy in the console does not mean the application is running — the instance may be running while the application is crashed. This is the correct answer.",
+      "c": "502 is a server-side error — it indicates a backend problem, not a client configuration issue.",
+      "d": "DNS resolution failures produce connection errors at the client — not 502 at the load balancer."
+    }
+  },
+  {
+    "id": 1146,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "HTTP Status Codes",
+    "difficulty": "hard",
+    "text": "A cloud API returns HTTP 504 Gateway Timeout errors intermittently, particularly during peak traffic. The backend processes requests successfully within 25 seconds. The load balancer idle timeout is set to 20 seconds. What is the relationship between these facts?",
+    "answers": [
+      { "id": "a", "text": "504 errors are unrelated to load balancer timeout configuration" },
+      { "id": "b", "text": "The load balancer closes connections idle for more than 20 seconds before the backend responds. Since processing takes 25 seconds, the load balancer times out the connection 5 seconds before completion and returns 504 to the client. Resolution: increase the load balancer idle timeout to exceed the maximum expected backend processing time (e.g., 60 seconds) or optimize backend processing to complete within the timeout" },
+      { "id": "c", "text": "HTTP 504 indicates client-side network timeouts — not load balancer configuration" },
+      { "id": "d", "text": "The backend should reduce processing time to under 1 second for all requests" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "504 Gateway Timeout is directly caused by backend or load balancer timeout expiration — the timeout configuration is the root cause.",
+      "b": "Load balancer idle timeout shorter than backend processing time is a textbook 504 cause — the load balancer drops the connection before the backend finishes, returning 504 to the client while the backend continues processing uselessly. This is the correct answer.",
+      "c": "504 is returned by the gateway (load balancer) when it times out — not a client-side network issue.",
+      "d": "Sub-second processing may not be feasible for all request types — increasing the timeout is the appropriate operational fix for legitimate long-running requests."
+    }
+  },
+  {
+    "id": 1147,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Latency",
+    "difficulty": "easy",
+    "text": "Users in Europe report slow response times from a cloud application hosted in AWS us-east-1. Users in the US report normal response times. What is the PRIMARY cause of the latency difference?",
+    "answers": [
+      { "id": "a", "text": "European users have slower internet connections than US users" },
+      { "id": "b", "text": "Physical network distance — data must travel across the Atlantic Ocean (approximately 9,000km) adding 80-120ms of round-trip latency for transatlantic connections. This is the speed-of-light limit for the physical distance, independent of internet quality" },
+      { "id": "c", "text": "The application is throttling European users to reserve capacity for US users" },
+      { "id": "d", "text": "European DNS resolution is slower than US resolution for AWS services" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "European internet infrastructure is equivalent to US infrastructure — geographic distance, not connection quality, causes transatlantic latency.",
+      "b": "Transatlantic latency is a physical limitation — light travels at approximately 200,000 km/s in fiber, making the round-trip time for transatlantic connections approximately 80-120ms before any application processing. This is an unavoidable consequence of geographic distance. This is the correct answer.",
+      "c": "Cloud applications do not automatically throttle by geography — the latency is physical, not policy-based.",
+      "d": "DNS resolution is typically milliseconds — it is not the primary cause of 80-120ms transatlantic application latency."
+    }
+  },
+  {
+    "id": 1148,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Latency",
+    "difficulty": "medium",
+    "text": "A cloud application's p99 latency spikes to 2,000ms every 5 minutes while p50 remains at 50ms. The spike lasts about 30 seconds. CPU and memory are normal during spikes. What pattern does this suggest?",
+    "answers": [
+      { "id": "a", "text": "Network congestion occurring every 5 minutes" },
+      { "id": "b", "text": "Periodic garbage collection pauses — a JVM or managed runtime GC pause would cause p99 spikes while p50 remains normal (most requests complete normally, but the 1% caught during GC wait for the pause to complete). The 30-second duration and 5-minute interval suggest scheduled or threshold-triggered full GC cycles" },
+      { "id": "c", "text": "Auto-scaling is adding instances every 5 minutes causing temporary capacity reduction" },
+      { "id": "d", "text": "The monitoring tool is aggregating metrics in 5-minute windows showing false spikes" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Network congestion would affect all percentiles — not create a p99 spike while p50 stays normal.",
+      "b": "The p99-only periodic spike pattern with consistent interval is characteristic of garbage collection pauses — requests caught waiting during GC stop-the-world phases experience elevated latency while most requests (p50) complete normally before or after the pause. This is the correct answer.",
+      "c": "Auto-scaling events would cause broader latency increases across percentiles — not isolated p99 spikes.",
+      "d": "5-minute metric aggregation windows would smooth out spikes — the 30-second spike duration within a 5-minute period would be visible in both aggregated and raw metrics."
+    }
+  },
+  {
+    "id": 1149,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Latency",
+    "difficulty": "hard",
+    "text": "A microservices application has a total p99 latency of 800ms. Distributed tracing shows a single database query taking 750ms in the trace. The database CPU is 8% and the query plan shows a full table scan on a 50M row table. What is the root cause and solution?",
+    "answers": [
+      { "id": "a", "text": "The database needs more CPU to execute the query faster" },
+      { "id": "b", "text": "The full table scan on 50M rows is the root cause — the database is reading every row because the query lacks an index on the filter column. Adding an appropriate index allows the database to locate matching rows directly instead of scanning all 50M rows, potentially reducing the 750ms query time to milliseconds. Low CPU confirms the bottleneck is I/O (reading rows), not compute" },
+      { "id": "c", "text": "The table must be partitioned across multiple database instances to reduce query time" },
+      { "id": "d", "text": "Caching the query result in Redis eliminates the latency without needing a database index" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Low CPU with high latency from a full table scan indicates I/O bottleneck — more CPU does not reduce I/O scan time.",
+      "b": "Full table scans on large tables are the primary source of database latency — an index on the filter column converts an O(n) full scan to an O(log n) indexed lookup, eliminating the 750ms query time. This is the correct answer.",
+      "c": "Table partitioning may help at extreme scales — but adding an index is the immediate and simpler solution for a missing index problem.",
+      "d": "Caching addresses read frequency — it does not fix the underlying query performance problem that affects cache-miss requests and cache warm-up."
+    }
+  },
+  {
+    "id": 1150,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Bandwidth",
+    "difficulty": "easy",
+    "text": "A cloud instance transfers data at 200 Mbps but the expected throughput is 1 Gbps. The instance is an m5.large (up to 10 Gbps network). What should be investigated first?",
+    "answers": [
+      { "id": "a", "text": "The m5.large does not support network speeds above 200 Mbps" },
+      { "id": "b", "text": "Investigate the receiving endpoint's bandwidth capability, whether enhanced networking (ENA/SR-IOV) is enabled on the instance, the network baseline bandwidth guarantee vs. burst (m5.large has 10 Gbps maximum but baseline may be lower), and whether the application is able to saturate the available network bandwidth through parallel connections or large transfer sizes" },
+      { "id": "c", "text": "Network performance is fixed at 200 Mbps for all EC2 instances" },
+      { "id": "d", "text": "The instance needs to be rebooted to activate the full network bandwidth" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "m5.large supports up to 10 Gbps — 200 Mbps utilization suggests a bottleneck elsewhere.",
+      "b": "Actual network throughput depends on multiple factors: the destination endpoint's bandwidth capability (a single TCP connection to a distant server may only achieve 200 Mbps due to TCP window sizing and latency), enhanced networking enablement, and whether the application uses enough parallel connections to saturate available bandwidth. This is the correct answer.",
+      "c": "EC2 network performance varies significantly by instance type and configuration — 200 Mbps is far below m5.large capability.",
+      "d": "Rebooting does not increase network bandwidth — configuration and architectural factors determine actual throughput."
+    }
+  },
+  {
+    "id": 1151,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Bandwidth",
+    "difficulty": "medium",
+    "text": "A cloud-hosted video streaming service experiences quality degradation for users during peak hours (7-10 PM). Monitoring shows the instance's network interface is at 95% utilization during these periods. What solutions should be evaluated?",
+    "answers": [
+      { "id": "a", "text": "Reduce video quality for all users to stay within bandwidth limits" },
+      { "id": "b", "text": "Scale horizontally — add more streaming instances behind a load balancer to distribute the bandwidth demand across multiple instances. Also evaluate: CDN integration to offload static video content delivery, upgrading to higher network bandwidth instance types, and auto-scaling triggers based on network utilization metrics" },
+      { "id": "c", "text": "Increase the video streaming server's CPU allocation" },
+      { "id": "d", "text": "Schedule maintenance during peak hours to reduce non-streaming traffic" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Reducing quality degrades user experience — scaling to maintain quality at peak demand is the correct approach.",
+      "b": "Network bandwidth saturation at peak is a scaling problem — horizontal scaling distributes load across multiple instances, each with their own network bandwidth allocation. CDN offloading is particularly effective for video content since CDN nodes serve content locally with much higher aggregate bandwidth. This is the correct answer.",
+      "c": "CPU is not the constraint — network bandwidth is at 95%. CPU scaling does not address network saturation.",
+      "d": "Scheduling maintenance during peak hours worsens the user experience — capacity scaling is required."
+    }
+  },
+  {
+    "id": 1152,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Bandwidth",
+    "difficulty": "hard",
+    "text": "An application transfers large datasets between two cloud regions. Transfer speed is 50 Mbps despite both endpoints having 10 Gbps network interfaces. The distance between regions adds approximately 50ms round-trip latency. Why is transfer speed limited and how can it be improved?",
+    "answers": [
+      { "id": "a", "text": "50 Mbps is the maximum inter-region transfer speed — this cannot be increased" },
+      { "id": "b", "text": "TCP throughput is limited by the TCP window size divided by round-trip time (bandwidth-delay product). With 50ms RTT, a default TCP window of 64KB limits throughput to approximately 10 Mbps per connection. Solutions: increase TCP window size (enable TCP window scaling), use multiple parallel TCP connections, or use AWS DataSync/Transfer Family which are optimized for high-latency long-distance transfers" },
+      { "id": "c", "text": "Inter-region transfers are throttled by cloud providers to 50 Mbps by default" },
+      { "id": "d", "text": "The 50ms latency is causing packet loss that reduces throughput" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Inter-region transfers are not capped at 50 Mbps — high-latency TCP window constraints limit single-connection throughput.",
+      "b": "The bandwidth-delay product determines TCP throughput: throughput = window_size / RTT. Default TCP window sizes are designed for LAN (low latency) environments and severely underperform over WAN. Parallel connections, window scaling, or protocol-optimized transfer tools dramatically improve inter-region throughput. This is the correct answer.",
+      "c": "Cloud providers charge for inter-region data transfer but do not throttle bandwidth to 50 Mbps — TCP window constraints cause this limitation.",
+      "d": "50ms latency does not cause packet loss — it reduces TCP throughput through the bandwidth-delay product mechanism."
+    }
+  },
+  {
+    "id": 1153,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Misconfiguration",
+    "difficulty": "easy",
+    "text": "A cloud VPC has a public subnet with an internet gateway but instances in the subnet cannot reach the internet. The instances have public IPs assigned. What is the MOST likely misconfiguration?",
+    "answers": [
+      { "id": "a", "text": "The instances need to be rebooted to recognize the internet gateway" },
+      { "id": "b", "text": "The route table associated with the subnet is missing a route for 0.0.0.0/0 → internet gateway. Without this route, traffic destined for the internet has no path even though the internet gateway is attached to the VPC" },
+      { "id": "c", "text": "Internet gateways must be placed in each subnet individually" },
+      { "id": "d", "text": "The instances require Elastic IPs instead of auto-assigned public IPs" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Rebooting does not change routing table configuration — the route must be added to the route table.",
+      "b": "Internet gateway attachment to a VPC is necessary but not sufficient — each public subnet's route table must also contain a default route (0.0.0.0/0) pointing to the internet gateway. Without this route, packets destined for external IPs have no path. This is the correct answer.",
+      "c": "Internet gateways are VPC-level resources — one internet gateway serves all public subnets in the VPC.",
+      "d": "Auto-assigned public IPs work for internet access — the routing table missing the internet gateway route is the specific issue."
+    }
+  },
+  {
+    "id": 1154,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Misconfiguration",
+    "difficulty": "medium",
+    "text": "A cloud VPN connection between on-premises and AWS appears 'UP' in the AWS console but on-premises hosts cannot ping AWS instances. The AWS instances' security groups allow ICMP from the on-premises CIDR. What should be checked next?",
+    "answers": [
+      { "id": "a", "text": "The VPN connection status showing 'UP' guarantees full connectivity — the issue must be DNS" },
+      { "id": "b", "text": "Check the on-premises routing — on-premises routers must have routes directing traffic for the AWS VPC CIDR through the VPN tunnel. Also verify the AWS route table contains a route for the on-premises CIDR through the Virtual Private Gateway. VPN 'UP' only means the tunnel is established — both sides must have routes to direct traffic through it" },
+      { "id": "c", "text": "Enable VPN flow logs to capture the failing traffic" },
+      { "id": "d", "text": "The VPN tunnel encryption is blocking ICMP packets" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "VPN 'UP' indicates tunnel establishment — it does not guarantee routing is configured on both sides to use the tunnel.",
+      "b": "VPN connectivity requires bi-directional routing: on-premises must route AWS CIDR traffic into the VPN tunnel, and AWS must route on-premises CIDR traffic through the Virtual Private Gateway. Missing routes on either side cause the described symptom. This is the correct answer.",
+      "c": "VPN flow logs help with traffic analysis after routing is confirmed correct — routing is the first thing to verify.",
+      "d": "VPN encryption is transparent to the traffic it carries — ICMP works through VPN tunnels when routing is correct."
+    }
+  },
+  {
+    "id": 1155,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Misconfiguration",
+    "difficulty": "hard",
+    "text": "A cloud load balancer with multiple target groups routes traffic based on path. Requests to /api go to the API target group and requests to /static go to the CDN target group. A new path /admin is being incorrectly routed to the API target group instead of the Admin target group. What is the MOST likely misconfiguration?",
+    "answers": [
+      { "id": "a", "text": "The Admin target group instances are unhealthy" },
+      { "id": "b", "text": "The listener rules are evaluated in priority order — if the /api rule has lower priority number than the /admin rule, /admin requests may match the /api rule first if /api is configured as a prefix match (matching /api, /api/*, but also possibly /admin if poorly configured). Check rule ordering and ensure the /admin rule has higher priority than broader matching rules" },
+      { "id": "c", "text": "Path-based routing cannot distinguish between /api and /admin" },
+      { "id": "d", "text": "The /admin path requires SSL termination at a different port" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unhealthy target group instances would cause 502/503 errors — not traffic routed to the wrong target group.",
+      "b": "Load balancer listener rules are evaluated by priority — lower priority numbers are evaluated first. If a broad rule matches /admin requests before the specific /admin rule is evaluated, traffic routes to the wrong target. Rule ordering and specificity are common misconfiguration sources. This is the correct answer.",
+      "c": "Path-based routing rules can distinguish any path patterns — this is a standard load balancer capability.",
+      "d": "TLS termination is not path-dependent — all paths handled by the same listener use the same TLS configuration."
+    }
+  },
+  {
+    "id": 1156,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Protocol Issues",
+    "difficulty": "easy",
+    "text": "A cloud application communicates with a backend service using TLS 1.0. A security team mandates TLS 1.2 minimum. After enforcing TLS 1.2+ on the backend, the application fails with 'SSL handshake failed'. What must be done?",
+    "answers": [
+      { "id": "a", "text": "Re-enable TLS 1.0 on the backend since the application requires it" },
+      { "id": "b", "text": "Update the application's TLS client configuration to negotiate TLS 1.2 or higher — the application is still configured to offer TLS 1.0 in its client hello, but the backend now rejects anything below TLS 1.2. Both client and server must be updated when changing TLS protocol versions" },
+      { "id": "c", "text": "Generate a new TLS certificate since the current certificate is not compatible with TLS 1.2" },
+      { "id": "d", "text": "TLS version negotiation is automatic — no configuration change is needed in the application" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Re-enabling TLS 1.0 would fix connectivity but violates the security mandate — the application must be updated.",
+      "b": "TLS version enforcement requires updating both the server (done) and client (the application). The client must be configured to offer TLS 1.2+ in its hello handshake — many older applications or libraries require explicit configuration to enable TLS 1.2. This is the correct answer.",
+      "c": "TLS certificates are independent of TLS protocol version — certificate compatibility does not determine which protocol versions are negotiated.",
+      "d": "TLS negotiation is not fully automatic — client TLS libraries offer the versions they are configured to support."
+    }
+  },
+  {
+    "id": 1157,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Protocol Issues",
+    "difficulty": "medium",
+    "text": "A cloud application uses HTTP/1.1 to communicate with a backend API. Performance testing shows the application makes 100 sequential requests per second where each request blocks waiting for the previous response. How does HTTP/2 address this limitation?",
+    "answers": [
+      { "id": "a", "text": "HTTP/2 is faster than HTTP/1.1 because it compresses URLs" },
+      { "id": "b", "text": "HTTP/2 supports multiplexing — multiple requests can be sent and responses received concurrently over a single connection without waiting for previous requests to complete. This eliminates HTTP/1.1 head-of-line blocking where a slow response blocks all subsequent requests on that connection" },
+      { "id": "c", "text": "HTTP/2 uses UDP instead of TCP for faster transmission" },
+      { "id": "d", "text": "HTTP/2 automatically caches all API responses to eliminate repeated requests" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "HTTP/2 compresses headers (HPACK), not URLs — the primary performance benefit is multiplexing.",
+      "b": "HTTP/2 request multiplexing eliminates the sequential blocking of HTTP/1.1 — multiple requests inflight simultaneously over a single connection removes the head-of-line blocking that forces HTTP/1.1 clients to either wait or open multiple connections. This is the correct answer.",
+      "c": "HTTP/2 runs over TCP — HTTP/3 (QUIC) uses UDP. HTTP/2 itself maintains TCP reliability.",
+      "d": "HTTP/2 has no built-in response caching — caching is handled by application-layer cache headers, CDNs, and reverse proxies."
+    }
+  },
+  {
+    "id": 1158,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Protocol Issues",
+    "difficulty": "hard",
+    "text": "A cloud application sends gRPC requests to a service behind an AWS Application Load Balancer. The ALB is configured for HTTPS on port 443. gRPC calls return 'Unimplemented' errors immediately. What is the protocol misconfiguration?",
+    "answers": [
+      { "id": "a", "text": "gRPC cannot use port 443 — it requires port 50051" },
+      { "id": "b", "text": "AWS ALB requires explicit gRPC protocol configuration — the target group must be set to 'gRPC' protocol type (not HTTP), and the ALB listener must use HTTP/2 which gRPC requires. An ALB configured for standard HTTP/1.1 HTTPS cannot handle gRPC traffic correctly because gRPC requires HTTP/2 with multiplexing and trailer support" },
+      { "id": "c", "text": "gRPC uses UDP which ALB does not support — use NLB instead" },
+      { "id": "d", "text": "'Unimplemented' is a gRPC application-level error — not a protocol error" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "gRPC can use any port including 443 — port is not the issue.",
+      "b": "gRPC requires HTTP/2 for multiplexing, stream support, and trailers. ALB target groups must be configured with the gRPC protocol type to properly handle gRPC traffic, including preserving gRPC metadata and trailers. Standard HTTPS target groups on ALB default to HTTP/1.1 behavior which gRPC does not support. This is the correct answer.",
+      "c": "gRPC uses HTTP/2 over TCP — NLB is not required for gRPC when ALB is properly configured.",
+      "d": "While 'Unimplemented' is a gRPC status code, it commonly appears when the ALB cannot route gRPC requests to the backend — it manifests as a protocol issue at the load balancer layer."
+    }
+  },
+  {
+    "id": 1159,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "IP Addressing",
+    "difficulty": "easy",
+    "text": "Two cloud VPCs both use the CIDR range 10.0.0.0/16. The team wants to establish VPC peering between them. What problem does this create?",
+    "answers": [
+      { "id": "a", "text": "VPC peering requires both VPCs to be in the same AWS account" },
+      { "id": "b", "text": "Overlapping CIDR blocks prevent VPC peering — routing cannot distinguish which VPC a 10.0.x.x address belongs to. VPC peering requires non-overlapping CIDRs so that routing tables can direct traffic to the correct VPC" },
+      { "id": "c", "text": "VPC peering automatically resolves CIDR conflicts using NAT" },
+      { "id": "d", "text": "Overlapping CIDRs only affect traffic routing between the VPCs — peering itself can still be established" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "VPC peering works across accounts and regions — CIDR overlap is the technical limitation.",
+      "b": "VPC peering requires non-overlapping CIDRs as a hard requirement — AWS explicitly rejects peering connection creation between VPCs with overlapping address ranges because routing would be ambiguous. This is the correct answer.",
+      "c": "VPC peering does not include NAT — it provides direct routing between VPCs with non-overlapping CIDRs.",
+      "d": "AWS prevents peering creation between overlapping CIDR VPCs — the peering cannot be established, not just routing-limited."
+    }
+  },
+  {
+    "id": 1160,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "IP Addressing",
+    "difficulty": "medium",
+    "text": "A cloud administrator creates a subnet with CIDR 10.0.1.0/24 expecting 256 usable IP addresses. AWS reports only 251 addresses are available. What accounts for the 5-address discrepancy?",
+    "answers": [
+      { "id": "a", "text": "AWS charges for 5 addresses as a gateway fee" },
+      { "id": "b", "text": "AWS reserves 5 IP addresses in every subnet: the network address (10.0.1.0), VPC router (10.0.1.1), DNS server (10.0.1.2), reserved for future use (10.0.1.3), and broadcast address (10.0.1.255). These cannot be assigned to instances, leaving 251 usable addresses from the /24" },
+      { "id": "c", "text": "5 addresses are always reserved for AWS support team access" },
+      { "id": "d", "text": "The /24 subnet actually only provides 251 addresses by RFC specification" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "AWS does not charge a gateway fee per subnet address — the reservation is functional.",
+      "b": "AWS's subnet reservation policy reserves the first four and last IP address in every subnet for network infrastructure functions. This is documented AWS behavior and not a charge — the reserved addresses serve VPC infrastructure functions. This is the correct answer.",
+      "c": "AWS support does not reserve addresses for access — the reservations are functional infrastructure addresses.",
+      "d": "The /24 RFC provides 256 addresses (254 usable with standard network/broadcast) — AWS reserves 5 total (network + 3 AWS infrastructure + broadcast)."
+    }
+  },
+  {
+    "id": 1161,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "IP Addressing",
+    "difficulty": "hard",
+    "text": "A cloud deployment uses IPv6 dual-stack VPC. An application is configured to prefer IPv4 but some clients are connecting via IPv6, causing unexpected routing behavior. The application server responds differently based on whether it received the request via IPv4 or IPv6. What investigation steps resolve this?",
+    "answers": [
+      { "id": "a", "text": "Disable IPv6 on the VPC to force all traffic through IPv4" },
+      { "id": "b", "text": "Investigate the application's source IP handling — in dual-stack environments, the application must correctly handle both IPv4 and IPv6 client addresses. Check whether the application correctly extracts the original client IP from X-Forwarded-For headers (which may contain IPv6 addresses), whether IP-based logic (geolocation, rate limiting, access control) handles both address families correctly, and whether any middleware is treating IPv6 connections differently" },
+      { "id": "c", "text": "Configure the load balancer to convert all IPv6 connections to IPv4 before forwarding" },
+      { "id": "d", "text": "IPv4 and IPv6 cannot coexist in the same VPC — choose one protocol" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Disabling IPv6 is a drastic measure that limits future flexibility — investigating and fixing the application behavior is preferable.",
+      "b": "Dual-stack deployment requires applications to correctly handle both IPv4 and IPv6 source addresses — rate limiting, geolocation, access control lists, and logging that only handle IPv4 format addresses will malfunction or produce unexpected behavior when receiving IPv6 connections. This is the correct answer.",
+      "c": "Application Load Balancers can handle dual-stack but translate IPv6 to IPv4 for backend targets using dualstack mode — this may already be the case, or may be the solution.",
+      "d": "IPv4/IPv6 dual-stack is a fully supported and common VPC configuration — they coexist by design."
+    }
+  },
+  {
+    "id": 1162,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Routing",
+    "difficulty": "easy",
+    "text": "A cloud instance can communicate with other instances in the same subnet but cannot reach instances in other subnets within the same VPC. What is the MOST likely cause?",
+    "answers": [
+      { "id": "a", "text": "Instances in different subnets cannot communicate within the same VPC" },
+      { "id": "b", "text": "The subnet's route table is missing a local route for the VPC CIDR — without a route allowing traffic to the broader VPC CIDR range, the instance can only reach the local subnet. The local VPC route (VPC CIDR → local) should be present automatically but may have been accidentally removed" },
+      { "id": "c", "text": "The security group on the destination instance is blocking traffic" },
+      { "id": "d", "text": "Cross-subnet communication requires VPC peering even within the same VPC" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Instances in different subnets absolutely can communicate within the same VPC — the local route enables this.",
+      "b": "The local route (VPC CIDR → local) in the route table enables intra-VPC communication between subnets. This route is automatically created and cannot normally be deleted, but custom route tables that replace the default may be missing it. This is the correct answer.",
+      "c": "Security groups could be the issue — but the route table local route should be checked first since it's the network-layer prerequisite.",
+      "d": "VPC peering is for communication between different VPCs — instances within the same VPC communicate via the local route."
+    }
+  },
+  {
+    "id": 1163,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Routing",
+    "difficulty": "medium",
+    "text": "A cloud network has a Transit Gateway connecting 5 VPCs and on-premises. Traffic from VPC-A to VPC-B works. Traffic from VPC-A to VPC-C fails. All VPCs are attached to the Transit Gateway. What should be investigated?",
+    "answers": [
+      { "id": "a", "text": "Transit Gateways cannot connect more than 2 VPCs simultaneously" },
+      { "id": "b", "text": "Check Transit Gateway route tables — each VPC attachment must have routes to the other VPCs' CIDRs in the Transit Gateway route table. If VPC-C's CIDR is missing from the TGW route table, or if VPC-C's route table lacks a route sending traffic to the TGW for VPC-A's CIDR, traffic will fail. Also verify VPC-C's attachment is associated with the correct TGW route table" },
+      { "id": "c", "text": "VPC-C must be in the same availability zone as VPC-A" },
+      { "id": "d", "text": "Re-attach VPC-C to the Transit Gateway to restore connectivity" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Transit Gateways support thousands of VPC attachments — not limited to 2.",
+      "b": "Transit Gateway routing requires configuration at two levels: the TGW route table (must contain routes for all VPC CIDRs) and each VPC's route table (must have routes sending cross-VPC traffic to the TGW). Missing routes on either side cause selective connectivity failures. This is the correct answer.",
+      "c": "Transit Gateways operate at the regional level — AZ placement is not relevant for VPC connectivity.",
+      "d": "Re-attaching VPC-C will not fix a routing table misconfiguration — the routes must be explicitly configured."
+    }
+  },
+  {
+    "id": 1164,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Routing",
+    "difficulty": "hard",
+    "text": "Two cloud routes exist for the same destination in a routing table: 10.0.0.0/16 via TGW and 10.0.0.0/24 via VPC peering. A packet destined for 10.0.0.50 is being routed via VPC peering instead of TGW. A packet for 10.0.1.50 routes via TGW. Why?",
+    "answers": [
+      { "id": "a", "text": "VPC peering always takes priority over Transit Gateway routes" },
+      { "id": "b", "text": "Longest prefix match — 10.0.0.0/24 is more specific than 10.0.0.0/16. Network routing always prefers the most specific matching route. For 10.0.0.50, /24 matches (100% match) so VPC peering is used. For 10.0.1.50, only /16 matches so TGW is used. This is standard routing behavior, not a misconfiguration" },
+      { "id": "c", "text": "VPC peering has lower administrative distance than Transit Gateway" },
+      { "id": "d", "text": "The packet size determines which route is chosen for identical destinations" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Route selection is based on prefix length — VPC peering does not have inherent priority over TGW.",
+      "b": "Longest prefix match is the fundamental routing principle — more specific routes (longer subnet masks) always take precedence over less specific routes. This is by design and is correct routing behavior. This is the correct answer.",
+      "c": "Administrative distance is a concept in traditional routing protocols — AWS routing tables select the most specific matching route.",
+      "d": "Packet size (MTU) affects fragmentation — it does not determine which route is selected."
+    }
+  },
+  {
+    "id": 1165,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Switching/VLAN",
+    "difficulty": "easy",
+    "text": "In a cloud environment, VLANs and traditional layer 2 switching are abstracted. What cloud constructs serve the equivalent function of VLANs for network segmentation?",
+    "answers": [
+      { "id": "a", "text": "Cloud providers use physical VLANs identical to on-premises environments" },
+      { "id": "b", "text": "VPCs and subnets serve the equivalent function — VPCs provide complete network isolation (similar to separate physical networks), subnets provide segmentation within a VPC (similar to VLANs), and security groups provide instance-level access control. Cloud overlay networks abstract the physical switching layer" },
+      { "id": "c", "text": "VLAN functionality is not available in cloud environments — all instances share a flat network" },
+      { "id": "d", "text": "Cloud VLANs are configured using the 802.1Q protocol on cloud instances" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cloud providers use software-defined networking over commodity hardware — physical VLANs are not exposed to customers.",
+      "b": "Cloud SDN abstracts physical switching — VPCs provide equivalent isolation to physically separate networks, subnets segment within VPCs, and security groups provide granular access control. These virtual constructs replace physical VLAN infrastructure. This is the correct answer.",
+      "c": "Cloud networks provide extensive segmentation capabilities — VPCs and subnets provide stronger isolation than typical VLAN implementations.",
+      "d": "802.1Q VLAN tagging is a physical network protocol — cloud customers use SDN constructs (VPC/subnet) rather than physical VLAN configuration."
+    }
+  },
+  {
+    "id": 1166,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Switching/VLAN",
+    "difficulty": "medium",
+    "text": "A cloud deployment connects to on-premises via AWS Direct Connect. The on-premises network uses VLANs to segment traffic. The Direct Connect must carry traffic for multiple on-premises VLANs to multiple VPCs. Which Direct Connect feature supports this multi-VLAN connectivity?",
+    "answers": [
+      { "id": "a", "text": "Direct Connect supports only a single VLAN per connection" },
+      { "id": "b", "text": "AWS Direct Connect uses Virtual Interfaces (VIFs) — each VIF is associated with a specific VLAN ID (802.1Q tag). Multiple private VIFs can be created on a single physical Direct Connect connection, each using a different VLAN ID to carry traffic for different VPCs. This allows one physical connection to serve multiple VPC destinations using VLAN-based multiplexing" },
+      { "id": "c", "text": "Multiple VLANs require multiple physical Direct Connect connections" },
+      { "id": "d", "text": "VLAN support requires the 100 Gbps Direct Connect tier" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Direct Connect supports multiple VIFs (and therefore multiple VLANs) per physical connection.",
+      "b": "Direct Connect VIFs use 802.1Q VLAN tags to differentiate traffic — each VIF has a unique VLAN ID, allowing a single physical connection to carry logically separated traffic streams to multiple VPCs. This is the correct answer.",
+      "c": "Multiple VLANs can be multiplexed over a single Direct Connect connection using VIFs — separate physical connections are not required.",
+      "d": "VLAN support (VIFs) is available on all Direct Connect connection speeds — not limited to 100 Gbps."
+    }
+  },
+  {
+    "id": 1167,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Switching/VLAN",
+    "difficulty": "hard",
+    "text": "A cloud SDN deployment uses VXLANs to extend Layer 2 domains across multiple availability zones. A network engineer notices that broadcast traffic is flooding across all AZs causing unnecessary bandwidth consumption. What is the fundamental challenge of extending Layer 2 across cloud AZs and how is it addressed?",
+    "answers": [
+      { "id": "a", "text": "VXLAN technology eliminates all broadcast traffic automatically" },
+      { "id": "b", "text": "Layer 2 broadcast domains inherently scale poorly — ARP broadcasts, DHCP broadcasts, and unknown unicast flooding consume bandwidth proportional to the number of endpoints. In cloud environments spanning multiple AZs, this creates significant cross-AZ bandwidth costs and performance issues. Solutions: implement VXLAN with head-end replication control (limiting broadcast to relevant endpoints), use ARP proxy (cloud SDN handles ARP without flooding), or prefer Layer 3 routed architectures that eliminate broadcast domains" },
+      { "id": "c", "text": "Broadcast traffic cannot cross availability zones — the flooding must be caused by multicast" },
+      { "id": "d", "text": "Adding more VXLAN tunnel endpoints reduces broadcast traffic" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "VXLAN encapsulates traffic including broadcasts — it does not eliminate broadcast behavior, it transports it across IP networks.",
+      "b": "Scaling Layer 2 domains across AZs amplifies broadcast traffic impact — each new endpoint receives all broadcasts. Cloud SDN typically handles this through ARP proxy (the SDN controller responds to ARP requests without flooding), flood control (limiting who receives broadcasts), and design guidance toward Layer 3 architectures. This is the correct answer.",
+      "c": "VXLAN does carry broadcast traffic across AZs — the question describes exactly this problem.",
+      "d": "More tunnel endpoints increase the broadcast replication burden — reducing the Layer 2 domain scope or using ARP proxy reduces flooding."
+    }
+  },
+  {
+    "id": 1168,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Switching/VLAN",
+    "difficulty": "hard",
+    "text": "A cloud network engineer is troubleshooting connectivity between an on-premises server and a cloud instance connected via Direct Connect. The on-premises server is on VLAN 100. The Direct Connect private VIF is configured with VLAN 200. The BGP session on the VIF is established but the on-premises server cannot reach the cloud instance. What is the MOST likely cause?",
+    "answers": [
+      { "id": "a", "text": "BGP requires identical VLAN IDs on both sides of the Direct Connect connection" },
+      { "id": "b", "text": "The VLAN mismatch between the on-premises server (VLAN 100) and the Direct Connect VIF (VLAN 200) — traffic from the on-premises server on VLAN 100 may not be reaching the Direct Connect interface that is expecting VLAN 200 tagged frames. The on-premises router/switch must tag frames destined for AWS with VLAN 200 before sending them on the Direct Connect physical connection" },
+      { "id": "c", "text": "BGP session establishment confirms full connectivity — the issue must be security groups" },
+      { "id": "d", "text": "Direct Connect only supports VLAN IDs between 1 and 100" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "BGP operates at Layer 3 — VLAN IDs (Layer 2) do not need to match for BGP to establish, but they must match for frame delivery.",
+      "b": "Direct Connect uses 802.1Q VLAN tagging — the physical connection carries VLAN-tagged frames, and the VIF VLAN ID must match what the on-premises equipment sends. If the on-premises server is on VLAN 100 but the Direct Connect interface expects VLAN 200, the on-premises router must translate VLAN 100 to VLAN 200 at the edge device before frames reach the Direct Connect port. This is the correct answer.",
+      "c": "BGP session operates on the VIF interface itself — it can establish even if end-to-end device communication fails due to VLAN mismatch.",
+      "d": "AWS Direct Connect supports VLAN IDs from 1 to 4094 — no restriction to 1-100."
+    }
+  },
+  {
+    "id": 1169,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Switching/VLAN",
+    "difficulty": "hard",
+    "text": "A cloud network implements micro-segmentation using security groups as virtual switches. A developer reports that their test instance can ping a production database instance despite being on different 'segments'. Investigation shows both instances are in the same security group. What design flaw does this reveal?",
+    "answers": [
+      { "id": "a", "text": "Security groups cannot prevent communication between instances in the same group" },
+      { "id": "b", "text": "Combining test and production resources in the same security group defeats micro-segmentation — security groups that allow intra-group traffic (a common default) permit all instances in the group to communicate. Production and test environments must use separate security groups with explicit rules controlling which inter-environment traffic is permitted, following environment isolation principles" },
+      { "id": "c", "text": "The ping is allowed by the VPC's default allow-all traffic policy" },
+      { "id": "d", "text": "Security groups can only segment traffic at the VPC level — not between instances" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Security groups can absolutely prevent communication — the issue is the design choice to place test and production in the same group.",
+      "b": "Micro-segmentation requires environment separation at the security group level — placing production and test resources in the same security group that permits intra-group traffic eliminates the segmentation boundary. Separate security groups with explicit cross-environment rules enforce environment isolation. This is the correct answer.",
+      "c": "VPCs do not have default allow-all policies — traffic must be explicitly permitted by security groups.",
+      "d": "Security groups provide instance-level segmentation — they are the primary micro-segmentation tool in cloud environments."
+    }
+  },
+  {
+    "id": 1170,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Switching/VLAN",
+    "difficulty": "hard",
+    "text": "A cloud network topology has a hub-and-spoke design using Transit Gateway. All spoke VPCs route traffic through a central inspection VPC for security scanning before reaching other spokes. A spoke VPC now needs direct high-bandwidth communication with another spoke VPC without going through the hub for performance reasons. What architectural change enables this?",
+    "answers": [
+      { "id": "a", "text": "Hub-and-spoke cannot be modified — all traffic must go through the central hub" },
+      { "id": "b", "text": "Add direct VPC peering between the two spoke VPCs that need high-bandwidth direct communication — traffic between these two VPCs takes the peering path (bypassing TGW and hub inspection) while all other inter-spoke traffic continues through the TGW hub. The route tables in both spoke VPCs must prioritize the peering route (more specific) over the TGW route for these specific CIDRs" },
+      { "id": "c", "text": "Upgrade the Transit Gateway to a higher bandwidth tier" },
+      { "id": "d", "text": "Deploy a second Transit Gateway dedicated to high-bandwidth spoke-to-spoke traffic" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Hub-and-spoke is a design pattern that can be modified with direct peering for specific high-bandwidth paths.",
+      "b": "VPC peering between specific spokes provides direct bandwidth without TGW transit — longest prefix match in route tables ensures the more specific peering route is preferred for direct spoke-to-spoke traffic while the TGW default route handles all other inter-VPC traffic. This is the correct answer.",
+      "c": "TGW bandwidth is not the constraint — the inspection VPC and additional hops are the latency/bandwidth concern.",
+      "d": "A second TGW still introduces a transit hop — direct peering eliminates the transit entirely for specific pairs."
+    }
+  },
+  {
+    "id": 1171,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Switching/VLAN",
+    "difficulty": "hard",
+    "text": "An organization migrates from traditional VLAN-based on-premises network segmentation to cloud VPC-based segmentation. The security team wants equivalent controls to on-premises where unknown traffic is blocked at layer 2 switches. Which cloud feature provides the closest equivalent to switch-level port security?",
+    "answers": [
+      { "id": "a", "text": "Cloud networks do not have an equivalent to switch-level port security" },
+      { "id": "b", "text": "Source/destination check on EC2 network interfaces (disabled for NAT instances/routers, enabled for regular instances) prevents spoofed IP traffic — instances cannot send traffic with source IPs not assigned to them, equivalent to port security preventing MAC spoofing. Security groups at the instance level provide the equivalent of switch ACLs. Additionally, AWS Network Firewall provides stateful packet inspection at the VPC level" },
+      { "id": "c", "text": "Only VPC NACLs provide layer 2 equivalent security in cloud environments" },
+      { "id": "d", "text": "Cloud environments automatically prevent all spoofed traffic without any configuration" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cloud environments provide multiple controls that equivalent or exceed traditional switch-level port security.",
+      "b": "Source/destination check prevents IP spoofing (equivalent to switch port security against MAC/IP spoofing), security groups provide instance-level packet filtering (equivalent to switch ACLs), and AWS Network Firewall provides deep packet inspection — together providing comprehensive controls equivalent to on-premises switch security. This is the correct answer.",
+      "c": "NACLs are stateless subnet-level controls — security groups provide more granular instance-level controls similar to switch port security.",
+      "d": "Source/destination check is automatically enabled — this is correct. Cloud hypervisors do enforce source IP checking, which does prevent basic IP spoofing without explicit configuration."
+    }
+  },
+  {
+    "id": 1172,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Routing",
+    "difficulty": "hard",
+    "text": "An AWS VPC with BGP-based dynamic routing through a virtual private gateway receives a route advertisement from on-premises for 0.0.0.0/0 (default route). All internet-bound traffic from the VPC suddenly routes through the on-premises network instead of the internet gateway. What caused this and how is it prevented?",
+    "answers": [
+      { "id": "a", "text": "BGP cannot advertise default routes — this scenario is impossible" },
+      { "id": "b", "text": "The on-premises network advertised a default route (0.0.0.0/0) via BGP which was propagated to VPC route tables through the VGW. AWS VPC route tables can receive BGP-propagated routes — a default route from on-premises overrides the intent to use the internet gateway for external traffic. Prevention: configure BGP route filtering on the VGW to reject default route advertisements from on-premises, or use explicit routes for on-premises CIDRs without route propagation" },
+      { "id": "c", "text": "Disable the internet gateway to restore normal routing" },
+      { "id": "d", "text": "BGP default routes only affect on-premises routing — they cannot affect VPC route tables" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "BGP absolutely supports default route (0.0.0.0/0) advertisement — this is a standard BGP use case.",
+      "b": "BGP route propagation from on-premises to VPC route tables can include default routes — an accidental or intentional default route advertisement causes all internet traffic to be black-holed or rerouted through on-premises. Route filtering on the VGW prevents unintended route propagation. This is the correct answer.",
+      "c": "Disabling the internet gateway removes a valid resource — the correct fix is preventing the unintended BGP route advertisement.",
+      "d": "BGP-propagated routes are directly injected into VPC route tables when VGW route propagation is enabled — they absolutely affect VPC routing."
+    }
+  },
+  {
+    "id": 1173,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Routing",
+    "difficulty": "hard",
+    "text": "A cloud network has asymmetric routing — traffic from VPC-A to VPC-B flows through Firewall-1, but return traffic from VPC-B to VPC-A flows through Firewall-2. Both firewalls maintain separate stateful connection tables. Connections are being reset. Why does asymmetric routing break stateful firewalls?",
+    "answers": [
+      { "id": "a", "text": "Stateful firewalls do not support cloud environments" },
+      { "id": "b", "text": "Stateful firewalls maintain connection state tables — when a connection is established through Firewall-1, Firewall-1 tracks the session state (SYN, established, etc.). When return traffic arrives at Firewall-2 instead, Firewall-2 has no record of this connection and treats the return packets as unsolicited traffic, dropping or resetting them. Symmetric routing (traffic flows through the same firewall in both directions) is required for stateful inspection" },
+      { "id": "c", "text": "Return traffic should use the same firewall — reset the routing tables to fix this" },
+      { "id": "d", "text": "Asymmetric routing is normal and stateful firewalls automatically synchronize state" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Stateful firewalls are fully supported in cloud environments — asymmetric routing is the specific issue.",
+      "b": "Stateful firewall connection tracking requires symmetric routing — each firewall only knows about connections it has seen from the start. Asymmetric routing breaks stateful inspection because the return path firewall has no session context. This is the correct answer.",
+      "c": "Routing tables must ensure symmetric paths for stateful inspection to function — the advice to 'reset routing tables' is vague but the underlying solution is correct.",
+      "d": "Stateful firewalls do not automatically synchronize state across separate devices without explicit high-availability clustering configuration."
+    }
+  },
+  {
+    "id": 1174,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Latency",
+    "difficulty": "hard",
+    "text": "A cloud application shows normal latency for 99% of requests but 1% of requests take 10x longer. Distributed tracing shows these slow requests all wait on the same external payment API which occasionally takes 3 seconds instead of 100ms. The payment API timeout is set to 30 seconds. How does this slow external dependency impact the application and what mitigation reduces the blast radius?",
+    "answers": [
+      { "id": "a", "text": "External API latency cannot affect internal application performance" },
+      { "id": "b", "text": "Long external API calls hold threads/connections for their full duration — if many concurrent slow calls accumulate, the thread pool becomes exhausted, causing requests not dependent on the payment API to also queue and experience latency. Mitigation: implement the circuit breaker pattern (stop calling the slow API when it exceeds a threshold, return cached/fallback responses), use bulkhead pattern (isolate payment API calls in a separate thread pool so thread exhaustion doesn't cascade to other request types), and reduce timeout to match SLO requirements" },
+      { "id": "c", "text": "Increase the payment API timeout to 60 seconds to prevent failures" },
+      { "id": "d", "text": "The 1% slow requests are acceptable and require no mitigation" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "External dependency latency absolutely impacts application performance through thread pool exhaustion and cascade effects.",
+      "b": "The circuit breaker and bulkhead patterns are specifically designed to prevent external dependency failures from cascading into broader service degradation. Shorter timeouts, bulkhead thread pool isolation, and circuit breaker fallbacks limit the blast radius of slow external APIs. This is the correct answer.",
+      "c": "Increasing timeout to 60 seconds makes the problem worse — threads are held longer, increasing cascade risk.",
+      "d": "1% slow requests that cascade to affect other requests are a significant reliability concern — especially at scale where 1% of millions of requests is still many failures."
+    }
+  },
+  {
+    "id": 1175,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "Bandwidth",
+    "difficulty": "hard",
+    "text": "A cloud deployment's network monitoring shows that VPC flow logs indicate 80% of data transfer costs are from data flowing between cloud instances and S3 within the same region. The team expects this traffic to be free (same-region S3 traffic). Why might they be incurring charges?",
+    "answers": [
+      { "id": "a", "text": "Same-region S3 data transfer is never free — standard data transfer rates always apply" },
+      { "id": "b", "text": "Same-region instance-to-S3 data transfer is free only when using a VPC endpoint for S3. If instances access S3 through the internet gateway (S3 public endpoints via the public internet path), standard data transfer charges apply even within the same region. Deploying an S3 VPC gateway endpoint eliminates the charge by keeping traffic on the AWS private network" },
+      { "id": "c", "text": "S3 charges for all inbound data regardless of source" },
+      { "id": "d", "text": "The VPC flow logs are incorrectly reporting the traffic volume" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Same-region instance-to-S3 traffic IS free when using VPC endpoints — the routing path determines whether charges apply.",
+      "b": "Data transfer costs depend on the traffic path: traffic flowing through internet gateways incurs data transfer charges even for same-region S3 access. VPC gateway endpoints for S3 and DynamoDB route traffic through the AWS private network, eliminating data transfer charges. This is the correct answer.",
+      "c": "S3 charges for data out but not for inbound data from EC2 within the same region via VPC endpoint — the routing path is the determining factor.",
+      "d": "VPC flow logs accurately capture traffic volumes — the issue is the routing path, not measurement error."
+    }
+  },
+  {
+    "id": 1176,
+    "domain": "6.0",
+    "objective": "6.2",
+    "keyword": "HTTP Status Codes",
+    "difficulty": "hard",
+    "text": "A cloud API gateway returns HTTP 401 for requests that include a valid JWT token. The token was issued 4 hours ago and has a 6-hour expiry. The API gateway validates tokens against a JWKS endpoint. What is the MOST likely cause?",
+    "answers": [
+      { "id": "a", "text": "JWT tokens expire after 4 hours by default regardless of the configured expiry" },
+      { "id": "b", "text": "The API gateway's JWKS cache may contain outdated public keys — if the identity provider rotated its signing keys in the last 4 hours, the API gateway still has the old public key cached and cannot validate tokens signed with the new key. Resolution: check JWKS cache TTL, force a JWKS refresh, or verify if key rotation occurred. Also check for clock skew between the token issuer and API gateway causing 'nbf' (not before) or 'iat' (issued at) validation failures" },
+      { "id": "c", "text": "HTTP 401 always indicates an expired token — ignore the configured 6-hour expiry" },
+      { "id": "d", "text": "JWT tokens cannot be validated by API gateways — use API keys instead" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "JWT expiry is determined by the 'exp' claim in the token — not a fixed 4-hour default.",
+      "b": "JWKS key rotation is a common cause of unexpected JWT validation failures — if the identity provider rotated its signing key pair, old tokens signed with the previous key cannot be validated against the new cached JWKS. Force-refreshing the JWKS cache resolves this. Clock skew is another common 401 cause for valid tokens. This is the correct answer.",
+      "c": "HTTP 401 can have many causes beyond expiry — JWKS key mismatch and clock skew are common in API gateway JWT validation.",
+      "d": "JWT validation by API gateways is a standard, widely supported capability."
+    }
+  },
+  {
+    "id": 1177,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Cipher Suite Deprecations",
+    "difficulty": "easy",
+    "text": "A cloud application's TLS handshake fails with 'no shared cipher'. The client supports only TLS_RSA_WITH_RC4_128_SHA. The server was recently hardened to reject deprecated cipher suites. What is the issue?",
+    "answers": [
+      { "id": "a", "text": "The server's TLS certificate is expired" },
+      { "id": "b", "text": "RC4-based cipher suites are deprecated and insecure — the hardened server no longer supports them, and the client only offers the deprecated cipher, leaving no common cipher for negotiation. The client must be updated to support modern cipher suites (TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384) that the server accepts" },
+      { "id": "c", "text": "The TLS version is incompatible — the client must use TLS 1.0" },
+      { "id": "d", "text": "The server needs to re-enable RC4 to maintain backward compatibility" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Certificate expiration produces a different error — 'no shared cipher' specifically indicates no mutually supported cipher suite exists.",
+      "b": "RC4 was deprecated due to known cryptographic weaknesses — browsers and hardened servers reject it. When a client only supports deprecated ciphers and a server only accepts modern ones, the TLS handshake fails with 'no shared cipher'. The client must be updated, not the server downgraded. This is the correct answer.",
+      "c": "'No shared cipher' is independent of TLS version — the cipher suite negotiation happens after version negotiation.",
+      "d": "Re-enabling RC4 creates a known vulnerability — updating the client is the correct remediation, not weakening the server."
+    }
+  },
+  {
+    "id": 1178,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Cipher Suite Deprecations",
+    "difficulty": "medium",
+    "text": "A compliance audit flags that a cloud load balancer's TLS policy includes TLS_RSA_WITH_3DES_EDE_CBC_SHA (3DES). The auditor cites SWEET32 vulnerability. What should be done?",
+    "answers": [
+      { "id": "a", "text": "3DES is secure and SWEET32 only applies to older protocols" },
+      { "id": "b", "text": "Remove 3DES from the load balancer's TLS security policy — SWEET32 is a birthday attack against 64-bit block ciphers including 3DES that allows traffic decryption after approximately 785GB of data over a single TLS session. Modern TLS policies should use only AES-GCM cipher suites which use 128-bit blocks immune to SWEET32. Update the load balancer to a security policy that excludes 3DES" },
+      { "id": "c", "text": "SWEET32 only affects sessions over 1TB — short sessions with 3DES are safe" },
+      { "id": "d", "text": "The auditor is incorrect — 3DES with CBC is not affected by SWEET32" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "SWEET32 specifically targets 64-bit block ciphers including 3DES regardless of protocol version.",
+      "b": "SWEET32 (CVE-2016-2183) demonstrated practical attacks against 64-bit block ciphers like 3DES — removing 3DES from TLS cipher suite policies and replacing with AES-GCM (128-bit block cipher) is the correct remediation. This is the correct answer.",
+      "c": "The SWEET32 birthday bound for 3DES is approximately 785GB — achievable in long-lived TLS connections in modern environments.",
+      "d": "3DES-CBC is explicitly the target of SWEET32 — the auditor's finding is correct."
+    }
+  },
+  {
+    "id": 1179,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Cipher Suite Deprecations",
+    "difficulty": "hard",
+    "text": "After removing all deprecated cipher suites from a cloud API gateway, 5% of clients report TLS connection failures. Client inventory shows these are embedded IoT devices that cannot be updated. How should this be handled?",
+    "answers": [
+      { "id": "a", "text": "Re-enable the deprecated cipher suites for all clients to restore universal connectivity" },
+      { "id": "b", "text": "Implement a segmented TLS policy — deploy a separate API gateway endpoint or virtual host for legacy IoT clients that maintains the minimum required cipher suites (only what the IoT devices need, not all deprecated suites), with compensating controls (network isolation of IoT traffic, enhanced monitoring, shorter session limits). Document the exception with risk acceptance and an IoT device replacement roadmap" },
+      { "id": "c", "text": "Block all IoT devices from accessing the API since they cannot support secure ciphers" },
+      { "id": "d", "text": "Issue new firmware to all IoT devices over the deprecated TLS connection" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Re-enabling deprecated ciphers for all clients creates vulnerability exposure for all connections — not just the legacy devices.",
+      "b": "Segmented endpoints allow minimum-necessary cipher support for constrained legacy devices in isolation — the main endpoint maintains security policy while the legacy endpoint serves only the devices that need it, with compensating controls reducing risk. This is the correct answer.",
+      "c": "Blocking all IoT devices may disrupt critical business operations — a risk-managed approach with compensating controls is preferable.",
+      "d": "Delivering firmware over a deprecated cipher connection is circular — if the device cannot support modern ciphers, it may also not reliably accept firmware updates this way."
+    }
+  },
+  {
+    "id": 1180,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Cipher Suite Deprecations",
+    "difficulty": "hard",
+    "text": "A cloud security scan reports that a managed database service's TLS configuration uses CBC mode cipher suites. The team wants to migrate to AEAD (Authenticated Encryption with Associated Data) cipher suites. What advantage do AEAD ciphers provide over CBC ciphers?",
+    "answers": [
+      { "id": "a", "text": "AEAD ciphers are faster but provide less security than CBC ciphers" },
+      { "id": "b", "text": "AEAD ciphers (like AES-GCM) combine encryption and authentication in a single operation — providing both confidentiality and integrity/authenticity without separate HMAC. CBC mode requires separate MAC computation and is vulnerable to padding oracle attacks (POODLE, BEAST, Lucky13). AEAD eliminates these vulnerabilities and provides implicit integrity checking, making it more secure and often more efficient than CBC+HMAC" },
+      { "id": "c", "text": "AEAD ciphers only work with TLS 1.3 and cannot be used with TLS 1.2" },
+      { "id": "d", "text": "AEAD and CBC ciphers provide identical security — the choice is purely a performance consideration" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "AEAD ciphers are both more secure and more efficient than CBC+HMAC — they do not trade security for speed.",
+      "b": "AEAD's combined encrypt-then-authenticate eliminates padding oracle vulnerabilities inherent in CBC mode (POODLE, BEAST, Lucky13). GCM's implicit authentication prevents ciphertext tampering without a separate MAC. This is why TLS 1.3 mandates only AEAD cipher suites. This is the correct answer.",
+      "c": "AEAD cipher suites (AES-128-GCM, AES-256-GCM, CHACHA20-POLY1305) are supported in TLS 1.2 as well as TLS 1.3.",
+      "d": "AEAD provides significant security improvements over CBC — they are not equivalent."
+    }
+  },
+  {
+    "id": 1181,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Authorization/Privilege Escalation",
+    "difficulty": "easy",
+    "text": "A cloud security alert fires when a developer IAM user suddenly creates an IAM role with administrator permissions and assumes it. The developer's original IAM policy does not include iam:CreateRole. How did this occur?",
+    "answers": [
+      { "id": "a", "text": "IAM permissions automatically expand when users are active for more than 24 hours" },
+      { "id": "b", "text": "This is privilege escalation — the developer may have exploited a misconfigured permission such as iam:PassRole to an existing admin role, used a lambda or other service with excessive permissions to create the role on their behalf, or found a boundary policy gap. The alert indicates unauthorized privilege elevation requiring immediate investigation and the account should be reviewed for all actions taken during the elevated access window" },
+      { "id": "c", "text": "The developer legitimately needs administrator access — the alert is a false positive" },
+      { "id": "d", "text": "IAM policy evaluation allows any action if the user has been verified with MFA" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "IAM permissions do not automatically expand based on activity duration — this statement is incorrect.",
+      "b": "Privilege escalation in cloud IAM exploits indirect paths — creating roles via services with excessive permissions, chaining iam:PassRole with existing admin roles, or exploiting permission boundary gaps. A developer creating admin roles beyond their policy is a confirmed security incident. This is the correct answer.",
+      "c": "Creating admin roles outside policy scope is not a legitimate activity — it is a security incident requiring investigation.",
+      "d": "MFA satisfies authentication — it does not expand authorization beyond defined IAM policies."
+    }
+  },
+  {
+    "id": 1182,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Authorization/Privilege Escalation",
+    "difficulty": "medium",
+    "text": "A cloud security review identifies that a Lambda function has an execution role with iam:* permissions. What privilege escalation risk does this create?",
+    "answers": [
+      { "id": "a", "text": "No risk — Lambda functions cannot use IAM permissions for privilege escalation" },
+      { "id": "b", "text": "A Lambda function with iam:* can create new IAM users with administrator access, attach administrator policies to existing users, create access keys for privileged users, or modify permission boundaries — effectively giving anyone who can trigger the Lambda function the ability to elevate privileges in the entire AWS account. This is a critical misconfiguration" },
+      { "id": "c", "text": "iam:* only grants read access to IAM resources — not the ability to create or modify" },
+      { "id": "d", "text": "Lambda execution roles are separate from IAM and cannot interact with IAM resources" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Lambda functions with iam:* permissions are a well-documented privilege escalation vector — attackers who can invoke or compromise the Lambda can use it to elevate privileges.",
+      "b": "Wildcard iam:* grants all IAM actions — a compromised or misused Lambda with this role can perform any IAM action including creating admin users and access keys. This is a critical least-privilege violation. This is the correct answer.",
+      "c": "iam:* includes write and administrative actions (CreateUser, AttachUserPolicy, CreateAccessKey) — not read-only.",
+      "d": "Lambda execution roles are standard IAM roles — they can perform any IAM action their policy permits."
+    }
+  },
+  {
+    "id": 1183,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Authorization/Privilege Escalation",
+    "difficulty": "hard",
+    "text": "A Kubernetes security audit finds that a pod in the default namespace has a service account with cluster-admin ClusterRoleBinding. The pod runs a web application. An attacker compromises the web application via SQL injection. What is the impact?",
+    "answers": [
+      { "id": "a", "text": "SQL injection in a web application cannot affect Kubernetes cluster permissions" },
+      { "id": "b", "text": "Critical cluster-wide privilege escalation — the compromised web application pod can use the mounted service account token to make Kubernetes API calls with cluster-admin privileges: create/delete pods, access secrets across all namespaces, modify RBAC policies, deploy malicious workloads, and potentially escape to the underlying nodes. SQL injection → application compromise → cluster-admin API access is a complete Kubernetes cluster takeover path" },
+      { "id": "c", "text": "The impact is limited to the pod's namespace since it is in the default namespace" },
+      { "id": "d", "text": "ClusterRoleBinding only applies to cluster-level resources — not to namespaced resources" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Kubernetes service account tokens are automatically mounted in pods and accessible to any process in the pod — SQL injection enabling command execution leads directly to cluster API access.",
+      "b": "The attack chain: SQL injection → code execution → read mounted service account token → Kubernetes API calls with cluster-admin. This grants full cluster control — a catastrophic security incident. This is the correct answer.",
+      "c": "ClusterRoleBinding with cluster-admin grants access across all namespaces — not limited to the default namespace.",
+      "d": "ClusterRoleBinding with cluster-admin grants access to both cluster-level and all namespaced resources — this is the nature of cluster-admin."
+    }
+  },
+  {
+    "id": 1184,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Authorization/Privilege Escalation",
+    "difficulty": "hard",
+    "text": "Cloud monitoring detects that an EC2 instance's IAM role has called `sts:AssumeRole` to assume a different role with broader permissions than the instance role itself. The assumed role has S3 and RDS full access. The application running on the instance does not legitimately need these permissions. What security issue does this indicate?",
+    "answers": [
+      { "id": "a", "text": "AssumeRole is a normal operation — cross-role access is expected behavior" },
+      { "id": "b", "text": "This indicates privilege escalation through role chaining — the instance role has sts:AssumeRole permission allowing it to assume a more privileged role. If the application does not need S3/RDS access, this assumption is unauthorized and may indicate the instance is compromised. Immediately investigate what API calls were made with the assumed role, revoke the sts:AssumeRole permission from the instance role, and assess what data was accessed" },
+      { "id": "c", "text": "The assumed role's S3 and RDS permissions are separate from the instance and cannot be misused" },
+      { "id": "d", "text": "sts:AssumeRole calls are not logged in CloudTrail — this detection is not possible" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "AssumeRole for permissions the application does not legitimately need is privilege escalation — not normal operation.",
+      "b": "Unexplained role assumption for broader permissions than required indicates either compromised instance or misconfigured application. Immediate investigation, permission revocation, and API call audit are required. This is the correct answer.",
+      "c": "The assumed role's permissions apply fully to whoever assumes it — the instance can use all S3/RDS permissions during the assumed session.",
+      "d": "sts:AssumeRole calls are explicitly logged in CloudTrail — this is one of the primary audit mechanisms for role usage."
+    }
+  },
+  {
+    "id": 1185,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Authentication/Leaked Credentials",
+    "difficulty": "easy",
+    "text": "A GitHub repository scanner alerts that AWS access keys were committed to a public repository 30 minutes ago. The keys have EC2 and S3 full access. What is the IMMEDIATE priority action?",
+    "answers": [
+      { "id": "a", "text": "Delete the repository to remove the public exposure" },
+      { "id": "b", "text": "Immediately revoke (delete or deactivate) the exposed access keys in the AWS IAM console — this stops all ongoing unauthorized use. Then review CloudTrail for any API activity in the 30 minutes since exposure, assess what resources were accessed or modified, rotate any dependent credentials, and investigate what data or resources may be compromised" },
+      { "id": "c", "text": "Make the repository private — this removes public access to the keys" },
+      { "id": "d", "text": "Rotate the keys within 48 hours — automated scanners take time to discover leaked credentials" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Deleting the repository does not revoke the keys — automated tools may have already captured them during the 30-minute window. Key revocation is the critical first step.",
+      "b": "Immediate key revocation stops ongoing unauthorized access regardless of who has already captured the credentials. CloudTrail review determines the impact scope. This is the correct answer.",
+      "c": "Making the repository private does not revoke keys already potentially copied — automated scanning tools operate continuously and may have captured the keys within seconds of the commit.",
+      "d": "Automated credential scanning tools discover leaked credentials within minutes — 48 hours of delay with exposed admin credentials is catastrophically late."
+    }
+  },
+  {
+    "id": 1186,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Authentication/Leaked Credentials",
+    "difficulty": "medium",
+    "text": "CloudTrail logs show that valid IAM credentials for a service account were used from 3 different countries simultaneously over a 2-hour period. The service runs on instances in us-east-1. What does this indicate and what is the response?",
+    "answers": [
+      { "id": "a", "text": "The service has global users — multi-country API calls are expected" },
+      { "id": "b", "text": "Simultaneous use from multiple countries indicates credential compromise — a single service running in us-east-1 cannot simultaneously make API calls from 3 different countries. The service account credentials have been stolen and are being used by unauthorized parties. Response: immediately revoke credentials, investigate the source of credential theft, audit all API calls from non-US locations, and assess what actions were performed with the stolen credentials" },
+      { "id": "c", "text": "VPN usage by service account operators explains the multi-country access" },
+      { "id": "d", "text": "Cloud providers route API calls through multiple geographic points adding false location data" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A service account for an automated process running in us-east-1 would make API calls from AWS network addresses — not from 3 different countries.",
+      "b": "Impossible geolocation (simultaneous multi-country API calls from a single service account) is a definitive compromise indicator — automated services do not travel between countries. This is the correct answer.",
+      "c": "Service accounts are not operated by humans — they run automatically. VPN usage is not an explanation for service account geographic distribution.",
+      "d": "CloudTrail records the source IP of API calls accurately — geographic routing does not cause false location attribution."
+    }
+  },
+  {
+    "id": 1187,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Authentication/Leaked Credentials",
+    "difficulty": "hard",
+    "text": "A cloud security team discovers that database passwords are stored in plaintext in environment variables in a containerized application's ECS task definition. The task definition is visible to all developers with ECS read access. What are all the vulnerabilities this creates and what is the complete remediation?",
+    "answers": [
+      { "id": "a", "text": "Environment variables are secure — they are only visible inside the running container" },
+      { "id": "b", "text": "Multiple vulnerabilities: (1) ECS task definitions with plaintext secrets are visible to anyone with ecs:DescribeTaskDefinition — all developers can see the database password; (2) CloudTrail and other logging may capture environment variable values; (3) container image layers containing ENV directives persist in registries. Complete remediation: migrate secrets to AWS Secrets Manager or Parameter Store (SecureString), update task definitions to reference secrets by ARN (ECS injects them as environment variables at runtime from the secrets service without exposing in task definitions), audit who has accessed the task definitions, rotate the database passwords, and review access logs for unauthorized database connections" },
+      { "id": "c", "text": "Restrict ECS read access to senior developers only" },
+      { "id": "d", "text": "Encrypt the environment variables using base64 encoding" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "ECS task definition environment variables are visible in the ECS console, CLI, and API to anyone with ecs:DescribeTaskDefinition — not just inside running containers.",
+      "b": "Plaintext secrets in ECS task definitions create multiple exposure vectors — API access, logging, and registry storage. Complete remediation requires secrets migration, task definition update, credential rotation, and access audit. This is the correct answer.",
+      "c": "Restricting access reduces the exposure surface but does not eliminate plaintext storage — secrets must be properly managed.",
+      "d": "Base64 encoding is not encryption — it provides zero security benefit for sensitive credentials."
+    }
+  },
+  {
+    "id": 1188,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Authentication/Leaked Credentials",
+    "difficulty": "hard",
+    "text": "A penetration test discovers that a cloud application's API accepts a JWT token signed with the algorithm 'none' — meaning no signature verification. An attacker can forge tokens to claim any user identity. What vulnerability class is this and how is it remediated?",
+    "answers": [
+      { "id": "a", "text": "This is a performance optimization — signature verification is optional for trusted clients" },
+      { "id": "b", "text": "This is a critical authentication bypass vulnerability — the JWT 'none' algorithm attack exploits libraries that accept unsigned tokens if the header specifies alg:none. Remediation: explicitly whitelist only the expected signature algorithms (RS256, ES256) in the JWT validation library configuration, reject tokens with alg:none or unexpected algorithms regardless of what the token header claims, and validate that the signature is present and valid before accepting any token claims" },
+      { "id": "c", "text": "JWT tokens with 'none' algorithm are only accepted in development environments" },
+      { "id": "d", "text": "The vulnerability only allows read access — not write operations requiring separate authentication" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Accepting unsigned tokens in production is a critical authentication bypass — not a performance optimization.",
+      "b": "The JWT 'none' algorithm vulnerability is a well-documented critical authentication bypass in the OWASP API Security Top 10. Libraries must explicitly reject algorithm:none and enforce expected signing algorithms. This is the correct answer.",
+      "c": "Production systems accepting alg:none is a critical vulnerability — it should not be present in any environment.",
+      "d": "Authentication bypass through forged tokens grants the attacker complete identity impersonation — not limited to read operations."
+    }
+  },
+  {
+    "id": 1189,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Software Vulnerabilities",
+    "difficulty": "easy",
+    "text": "A cloud application's dependency scan identifies a critical CVE in a logging library (Log4j). The vulnerability allows remote code execution. The library version 2.14.1 is in use. What immediate actions are required?",
+    "answers": [
+      { "id": "a", "text": "Wait for the next scheduled quarterly patching cycle to address the vulnerability" },
+      { "id": "b", "text": "Immediately: (1) apply WAF rules blocking JNDI lookup strings in all input vectors (interim mitigation), (2) update Log4j to the patched version (2.17.1+ for Log4Shell) in all affected applications, (3) rebuild and redeploy container images with the updated dependency, (4) scan all applications for Log4j usage including transitive dependencies, (5) review logs for exploitation indicators (JNDI callback DNS queries, unexpected outbound connections)" },
+      { "id": "c", "text": "The vulnerability only affects Java applications — other languages using logging are not impacted" },
+      { "id": "d", "text": "Disable all logging to eliminate the vulnerable code path" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Remote code execution CVEs cannot wait for quarterly patching — Log4Shell was actively exploited within hours of disclosure.",
+      "b": "Critical RCE vulnerabilities require emergency response: immediate interim mitigations (WAF rules), comprehensive dependency scanning, rapid patching, and retroactive exploitation indicator review. This is the correct answer.",
+      "c": "Log4j is a Java library — only Java applications using it are directly vulnerable. However, scanning all applications for transitive Log4j dependencies is essential.",
+      "d": "Disabling logging would break application observability and incident detection — patching the library is the correct remediation."
+    }
+  },
+  {
+    "id": 1190,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Software Vulnerabilities",
+    "difficulty": "medium",
+    "text": "A cloud application uses an open-source web framework with a known SSRF vulnerability. The vulnerability allows attackers to make the application server request internal cloud metadata service endpoints. What is the attack impact and defensive measures?",
+    "answers": [
+      { "id": "a", "text": "SSRF only allows reading public web pages — internal metadata is not accessible" },
+      { "id": "b", "text": "SSRF against the cloud metadata service (169.254.169.254) can retrieve IAM role temporary credentials, allowing an attacker to pivot from a web vulnerability to full cloud account access. Defenses: patch the SSRF vulnerability immediately, enforce IMDSv2 (requiring PUT requests that SSRF cannot easily replicate), implement WAF rules blocking requests to metadata service IP ranges, and configure strict URL validation blocking private/link-local IP ranges in user-controlled inputs" },
+      { "id": "c", "text": "The metadata service is only accessible from the instance console — SSRF cannot reach it" },
+      { "id": "d", "text": "Changing the application's instance type eliminates the metadata service exposure" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "SSRF specifically enables access to internal network resources — the cloud metadata service is a primary target for SSRF exploitation.",
+      "b": "SSRF → metadata service → IAM credentials is a documented critical attack chain. IMDSv2 is specifically designed to break this chain by requiring session-token-based access that SSRF cannot easily replicate. This is the correct answer.",
+      "c": "The metadata service is accessible over HTTP from within the instance network — SSRF uses the application server as a proxy to reach it.",
+      "d": "All EC2 instance types have the same metadata service accessible at 169.254.169.254 — instance type change does not affect this exposure."
+    }
+  },
+  {
+    "id": 1191,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Software Vulnerabilities",
+    "difficulty": "hard",
+    "text": "A cloud application's container image scan finds that 3 of 15 base image layers contain high-severity CVEs. The vulnerabilities are in OS packages included in the base image but not used by the application. The image has been in production for 6 months. What is the complete remediation approach?",
+    "answers": [
+      { "id": "a", "text": "The vulnerabilities are in unused packages — they can be ignored since the application does not call them" },
+      { "id": "b", "text": "Remediate in order: (1) update to a patched base image version or distroless/minimal base image that excludes unnecessary packages, (2) rebuild the application container image on the patched base, (3) scan the rebuilt image to verify CVE resolution, (4) deploy the patched image using rolling update to minimize downtime, (5) implement automated base image update triggers in CI/CD so future base image patches are automatically incorporated. Review whether any exploitation occurred during the 6-month exposure window using audit logs" },
+      { "id": "c", "text": "Remove only the specific vulnerable packages from the running containers" },
+      { "id": "d", "text": "Add a network policy blocking external access to the vulnerable container ports" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unused packages with known CVEs can be exploited by attackers who achieve any code execution within the container — 'unused by the application' does not mean unexploitable.",
+      "b": "Complete remediation involves patching the base image, rebuilding, scanning, deploying, automating future updates, and reviewing the 6-month exposure window for indicators of exploitation. This is the correct answer.",
+      "c": "Modifying running containers violates immutable infrastructure principles and changes are lost on restart — base image updates and rebuild is the correct approach.",
+      "d": "Network policies control traffic but do not patch the vulnerable packages — the vulnerabilities remain and can be exploited via any code execution within the container."
+    }
+  },
+  {
+    "id": 1192,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Software Vulnerabilities",
+    "difficulty": "hard",
+    "text": "A cloud security team performs threat modeling and identifies that their managed Kubernetes cluster's etcd database is directly accessible from the cluster's internal network without authentication (no client certificate required). What is the severity and impact of this misconfiguration?",
+    "answers": [
+      { "id": "a", "text": "etcd exposure is low risk since it is only accessible within the cluster network" },
+      { "id": "b", "text": "Critical severity — etcd stores all Kubernetes cluster state including secrets (encoded base64, not encrypted by default), RBAC configurations, service account tokens, and all cluster resource definitions. Unauthenticated etcd access allows an attacker to: read all cluster secrets including API server credentials and service account tokens, modify RBAC policies to grant unlimited cluster access, inject malicious workloads by writing directly to etcd, and effectively achieve complete cluster compromise without touching the API server" },
+      { "id": "c", "text": "etcd is protected by the Kubernetes API server — direct etcd access is always blocked" },
+      { "id": "d", "text": "etcd only stores infrastructure metadata — application secrets are stored separately" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Internal network accessibility does not reduce severity — any compromised pod or lateral movement gives access to etcd, leading to complete cluster compromise.",
+      "b": "Unauthenticated etcd access is a critical, complete cluster compromise — etcd is the authoritative store for all cluster state including secrets. This is the correct answer.",
+      "c": "etcd is accessible on its own network port — bypassing the API server entirely. The API server is a client of etcd, not a protecting proxy.",
+      "d": "etcd stores all Kubernetes secrets (including those created by applications) — it is not limited to infrastructure metadata."
+    }
+  },
+  {
+    "id": 1193,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Unauthorized Software",
+    "difficulty": "easy",
+    "text": "Cloud monitoring detects that a production EC2 instance has installed and is running cryptocurrency mining software (XMRig). No change request was approved for this software. What has most likely occurred and what is the immediate response?",
+    "answers": [
+      { "id": "a", "text": "A developer legitimately installed mining software for testing purposes" },
+      { "id": "b", "text": "The instance has been compromised — cryptojacking attack where an attacker gained code execution and installed mining software to profit from the instance's compute at the organization's expense. Immediate response: isolate the instance (security group quarantine), preserve forensic evidence (memory dump, disk snapshot before termination), investigate the initial access vector, terminate the compromised instance, audit for lateral movement to other instances, and rotate any credentials accessible from the compromised instance" },
+      { "id": "c", "text": "XMRig is legitimate cloud monitoring software — no action needed" },
+      { "id": "d", "text": "Increase the instance size to accommodate the mining workload" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Mining software on production instances without change approval is a security incident — not a developer test.",
+      "b": "Unauthorized cryptocurrency mining on cloud instances is a confirmed compromise — attackers use stolen credentials or vulnerabilities to install mining software. The response follows standard incident response: isolate, preserve evidence, investigate, remediate, and assess impact. This is the correct answer.",
+      "c": "XMRig is an open-source cryptocurrency miner — not monitoring software.",
+      "d": "Accommodating unauthorized software is not appropriate — the compromise must be remediated."
+    }
+  },
+  {
+    "id": 1194,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Unauthorized Software",
+    "difficulty": "medium",
+    "text": "A cloud security scan identifies that multiple EC2 instances are running a peer-to-peer file sharing application not in the approved software list. The instances serve an internal HR application. What are the security risks and remediation steps?",
+    "answers": [
+      { "id": "a", "text": "Peer-to-peer software has no security implications on servers — only on user workstations" },
+      { "id": "b", "text": "P2P software on production HR application servers creates multiple risks: P2P applications open listening ports creating additional attack surface, may exfiltrate sensitive HR data through the P2P network, consume bandwidth affecting the HR application, may have their own vulnerabilities, and indicate a security control gap allowing unauthorized software installation. Remediation: remove the P2P software immediately, identify who installed it and why, restrict instance permissions to prevent unauthorized software installation (using least-privilege IAM, locked-down OS configurations, application whitelisting), and review what data may have been shared" },
+      { "id": "c", "text": "Add the P2P application to the approved software list to resolve the compliance violation" },
+      { "id": "d", "text": "Monitor the P2P traffic to ensure no sensitive data is shared before taking action" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unauthorized software on servers creates equal or greater risk than on workstations — servers often have access to more sensitive data and systems.",
+      "b": "P2P software on HR application servers combines multiple risks: data exfiltration potential, attack surface expansion, and control gap evidence. Immediate removal and root cause investigation are required. This is the correct answer.",
+      "c": "Adding P2P software to the approved list on HR servers is inappropriate — P2P file sharing has no legitimate purpose on production servers and creates unacceptable data exposure risk.",
+      "d": "Monitoring without removal allows the risks to continue — immediate removal is required while investigation proceeds in parallel."
+    }
+  },
+  {
+    "id": 1195,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Unauthorized Software",
+    "difficulty": "hard",
+    "text": "A Kubernetes admission controller (OPA/Gatekeeper) is configured to reject pods running containers from unapproved image registries. A developer bypasses this by modifying an approved image to include unauthorized binaries and pushing it to the approved registry. The admission controller approves the pod since the registry is approved. What defense-in-depth control detects or prevents this registry-bypass technique?",
+    "answers": [
+      { "id": "a", "text": "The admission controller correctly approved the pod — no additional controls are needed" },
+      { "id": "b", "text": "Registry-source controls alone are insufficient — implement image signing and verification (Sigstore/Cosign, Notary): only images with valid cryptographic signatures from approved CI/CD pipelines are admitted. The admission controller verifies signatures in addition to registry source. Also implement runtime security (Falco) that detects unauthorized binary execution within containers — if unexpected executables run, alerts fire regardless of how the binary was introduced" },
+      { "id": "c", "text": "Block all developers from pushing to the approved registry" },
+      { "id": "d", "text": "Scan the approved registry weekly to identify unauthorized images" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Registry-source-only admission control is bypassable — image content verification and runtime monitoring are required for defense-in-depth.",
+      "b": "Image signing verifies that only binaries built through approved CI/CD pipelines (which scan for unauthorized software) can be admitted — a developer cannot push a modified image without it failing signature verification. Runtime security provides detection if signing is bypassed. This is the correct answer.",
+      "c": "Blocking all developer pushes prevents the bypass but also prevents legitimate deployments — signing with CI/CD-controlled keys is the practical solution.",
+      "d": "Weekly scans detect the issue with significant delay — admission-time signature verification and runtime detection provide real-time protection."
+    }
+  },
+  {
+    "id": 1196,
+    "domain": "6.0",
+    "objective": "6.3",
+    "keyword": "Unauthorized Software",
+    "difficulty": "hard",
+    "text": "A cloud security team uses AWS Config to detect EC2 instances running unauthorized software. Config rules check for approved software package lists. An attacker installs a rootkit that hides processes and installed packages from the OS package manager. Why does this defeat Config-based detection and what controls detect rootkit-level unauthorized software?",
+    "answers": [
+      { "id": "a", "text": "AWS Config directly inspects memory and running processes — rootkits cannot hide from it" },
+      { "id": "b", "text": "AWS Config uses SSM agents to query the OS package manager and running processes — a rootkit that intercepts these system calls can hide itself from Config's visibility. Detection requires: external integrity verification (comparing known-good golden image hashes against current instance state from outside the compromised OS), memory forensics from a separate trusted system, EDR tools with kernel-level visibility that may detect rootkit installation behaviors, network traffic analysis (rootkits still generate network activity), and hypervisor-level monitoring (the cloud provider's hypervisor can see all VM state regardless of guest OS manipulation)" },
+      { "id": "c", "text": "Rootkits are not possible on cloud instances — the hypervisor prevents OS modification" },
+      { "id": "d", "text": "Rebooting the instance will remove the rootkit and restore Config detection capability" }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "AWS Config relies on SSM agents querying the guest OS — a rootkit hiding from OS system calls hides from SSM and therefore Config.",
+      "b": "Rootkit detection requires out-of-band or hypervisor-level visibility that the compromised OS cannot manipulate. External image integrity verification, network anomaly detection, and hypervisor monitoring provide detection that rootkits cannot evade. This is the correct answer.",
+      "c": "Rootkits can run in cloud VMs — the hypervisor virtualizes hardware access but does not prevent guest OS kernel modification.",
+      "d": "Sophisticated rootkits achieve persistence that survives reboots — reboot alone does not remove a persistent rootkit."
+    }
   }
-
 ]

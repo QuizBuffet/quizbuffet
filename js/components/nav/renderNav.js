@@ -3,6 +3,7 @@ import { certifications } from '../../data/certifications/index.js';
 import { getTotalQuestionCount } from '../../loader/getTotalQuestionCount.js';
 import { getTheme, applyTheme } from '../../utils/applyTheme.js';
 import { getColorTheme, applyColorTheme } from '../../utils/applyColorTheme.js';
+import { getSoundEnabled, toggleSound } from '../../utils/soundPref.js';
 
 function getNavStats() {
   const totalDomains = certifications.reduce((sum, c) => sum + c.domains.length, 0);
@@ -57,7 +58,8 @@ export async function renderNav(active) {
     ? `<span class="nav-stat-correct">${totalCorrect} correct</span><span class="nav-stat-wrong">${totalWrong} wrong</span>`
     : `<span class="nav-stat-text">no answers yet</span>`;
 
-  const isDark    = getTheme() === 'dark';
+  const isDark      = getTheme() === 'dark';
+  const soundOn     = getSoundEnabled();
   const colorTheme = getColorTheme();
   const SWATCHES = [
     { id: 'navy',     label: 'Midnight Navy'  },
@@ -76,6 +78,7 @@ export async function renderNav(active) {
       <div class="nav-menu">
         ${links.map(l => `<a href="${l.href}" ${active === l.label ? 'class="active"' : ''}>${l.label}</a>`).join('')}
         <div class="color-swatches">${swatches}</div>
+        <button class="theme-toggle" id="sound-toggle" aria-label="${soundOn ? 'Mute sounds' : 'Enable sounds'}">${soundOn ? '🔊' : '🔇'}</button>
         <button class="theme-toggle" id="theme-toggle">${isDark ? 'Light' : 'Dark'}</button>
       </div>
     </nav>
@@ -87,6 +90,13 @@ export async function renderNav(active) {
       </div>
       ${rightLabel}
     </div>`;
+
+  document.getElementById('sound-toggle').addEventListener('click', () => {
+    const on = toggleSound();
+    const btn = document.getElementById('sound-toggle');
+    btn.textContent = on ? '🔊' : '🔇';
+    btn.setAttribute('aria-label', on ? 'Mute sounds' : 'Enable sounds');
+  });
 
   document.getElementById('theme-toggle').addEventListener('click', () => {
     const next = getTheme() === 'dark' ? 'light' : 'dark';

@@ -11,6 +11,7 @@ import { trackFailedAnswer } from '../../state/trackFailedAnswer.js';
 import { incrementErrorCount } from '../../storage/incrementErrorCount.js';
 import { recordCorrect, recordWrong } from '../../storage/streak.js';
 import { showStreakToast } from '../../components/streakToast/showStreakToast.js';
+import { playCorrect, playWrong } from '../../utils/playSound.js';
 
 // domainSlug = session key (sessionStorage); questionStorageKey = per-question domain key (localStorage)
 // In mixed-domain mode these differ: session key is certSlug--__mix__, save key is the question's actual domain
@@ -28,6 +29,7 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
   saveWrongAnswer(domainSlug, question.id, chosen);
 
   if (chosen === question.correct) {
+    playCorrect();
     saveCorrectAnswer(questionStorageKey, question.id);
     if (totalCount > 0) {
       const { correct } = getDomainProgress(questionStorageKey);
@@ -36,6 +38,7 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
     const streak = recordCorrect();
     if (streak % 5 === 0) showStreakToast(streak, 'correct');
   } else {
+    playWrong();
     trackFailedAnswer(domainSlug, question.id);
     saveFailedAnswer(questionStorageKey, question.id);
     incrementErrorCount(questionStorageKey, question.id);

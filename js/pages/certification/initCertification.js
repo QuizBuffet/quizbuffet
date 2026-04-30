@@ -7,11 +7,12 @@ import { renderCertProgressSummary } from './renderCertProgressSummary.js';
 import { renderAcronymDrill } from './renderAcronymDrill.js';
 import { renderSessionSizePicker } from './renderSessionSizePicker.js';
 import { renderMixQuizBtn } from './renderMixQuizBtn.js';
+import { loadDomain } from '../../loader/loadDomain.js';
 import { getHashParams } from '../../router/hashRouter.js';
 import { setMeta } from '../../components/meta/setMeta.js';
 import { setJsonLd } from '../../components/meta/setJsonLd.js';
 
-export function init() {
+export async function init() {
   renderAd('ad-top');
   const certSlug = getHashParams().get('cert') || '';
   const cert = certifications.find(c => c.slug === certSlug);
@@ -20,9 +21,21 @@ export function init() {
     document.getElementById('cert-header').innerHTML = '<p>Certification not found. <a href="/">← Home</a></p>';
     setJsonLd(null);
   } else {
-    const totalQ = cert.questions
-      ? cert.questions.length
-      : cert.domains.reduce((s, d) => s + d.count, 0);
+    // Render immediately with placeholder, then update once all domains are fetched
+    renderCertHeader(cert, null);
+    renderCertProgressSummary(cert);
+    renderSessionSizePicker(() => {});
+    renderMixQuizBtn(cert);
+    renderCertDomainList(cert);
+    renderAcronymDrill(cert);
+
+    // Fetch all domain counts in parallel — loadDomain caches results for the quiz
+    const counts = await Promise.all(
+      cert.domains.map(d => loadDomain(cert.slug, d.slug, cert).then(qs => qs.length))
+    );
+    const totalQ = counts.reduce((s, n) => s + n, 0);
+
+    renderCertHeader(cert, totalQ);
     setMeta(
       `${cert.name} (${cert.code}) Free Practice Test`,
       `Free ${cert.name} (${cert.code}) practice test — ${totalQ}+ exam questions across ${cert.domains.length} domains. No account needed. Track progress domain-by-domain until you're ready to pass.`
@@ -45,12 +58,6 @@ export function init() {
       'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
       'keywords': `${cert.name}, ${cert.code}, free practice test, exam questions, certification prep, quiz`,
     });
-    renderCertHeader(cert, totalQ);
-    renderCertProgressSummary(cert);
-    renderSessionSizePicker(() => {});
-    renderMixQuizBtn(cert);
-    renderCertDomainList(cert);
-    renderAcronymDrill(cert);
   }
 
   renderAd('ad-bottom');

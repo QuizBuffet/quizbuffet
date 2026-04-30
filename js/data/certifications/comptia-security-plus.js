@@ -10,10 +10,10 @@ export const cert = {
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 2 years IT administration with security focus',
   acronyms,
   domains: [
-    { slug: 'general-security-concepts',                  name: 'General Security Concepts',                  number: '1.0', weight: 12, count: 164 },
-    { slug: 'threats-vulnerabilities-and-mitigations',    name: 'Threats, Vulnerabilities, and Mitigations',  number: '2.0', weight: 22, count: 446 },
-    { slug: 'security-architecture',                      name: 'Security Architecture',                      number: '3.0', weight: 18, count: 158 },
-    { slug: 'security-operations',                        name: 'Security Operations',                        number: '4.0', weight: 28, count: 644 },
-    { slug: 'security-program-management-and-oversight',  name: 'Security Program Management and Oversight',  number: '5.0', weight: 20, count: 319 },
+    { slug: 'general-security-concepts',                  name: 'General Security Concepts',                  number: '1.0', weight: 12 },
+    { slug: 'threats-vulnerabilities-and-mitigations',    name: 'Threats, Vulnerabilities, and Mitigations',  number: '2.0', weight: 22 },
+    { slug: 'security-architecture',                      name: 'Security Architecture',                      number: '3.0', weight: 18 },
+    { slug: 'security-operations',                        name: 'Security Operations',                        number: '4.0', weight: 28 },
+    { slug: 'security-program-management-and-oversight',  name: 'Security Program Management and Oversight',  number: '5.0', weight: 20 },
   ],
 };

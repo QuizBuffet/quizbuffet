@@ -12,10 +12,6 @@ export async function getTotalQuestionCount() {
   );
 
   const fetches = entries.map(({ cert, domain }) => {
-    if (cert.questions) {
-      const count = cert.questions.filter(q => q.domain === domain.number).length;
-      return Promise.resolve({ cert, domain, count });
-    }
     return fetch(`data/certifications/${cert.slug}/${domain.slug}.json`)
       .then(r => r.ok ? r.json() : Promise.reject())
       .catch(() => fetch(`${GITHUB_BASE}/${cert.slug}/${domain.slug}.json`)

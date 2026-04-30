@@ -11,7 +11,10 @@
       "Bash(read f *)",
       "Bash(python3 -c 'import json; d=json.load\\(open\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\); print\\(len\\(d.get\\('\\\\''questions'\\\\'',[]\\)\\)\\)')",
       "Bash(code /Users/gradikayamba/btwinus)",
-      "Bash(open -a \"Visual Studio Code\" /Users/gradikayamba/btwinus)"
+      "Bash(open -a \"Visual Studio Code\" /Users/gradikayamba/btwinus)",
+      "Bash(sort -t: -k3)",
+      "Bash(python3 -)",
+      "Bash(grep -vE \"font-size:\\(1[5-9]|[2-9][0-9]|[1-9][0-9]{2,}\\)px\")"
     ]
   }
 }

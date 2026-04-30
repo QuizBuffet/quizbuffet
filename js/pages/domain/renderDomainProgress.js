@@ -10,7 +10,7 @@ export function renderDomainProgress(prog, totalCount) {
   const pct       = totalCount > 0 ? Math.round((correct / totalCount) * 100) : 0;
 
   if (attempted === 0 && !prog.completed) {
-    el.innerHTML = `<p style="color:var(--text-muted);font-size:clamp(12px,3.2vw,14px);margin:8px 0 16px">${totalCount} questions &middot; Not started yet</p>`;
+    el.innerHTML = `<p style="color:var(--text-muted);font-size:clamp(15px,3.8vw,17px);margin:8px 0 16px">${totalCount} questions &middot; Not started yet</p>`;
     return;
   }
 
@@ -29,5 +29,5 @@ export function renderDomainProgress(prog, totalCount) {
     <div class="progress-bar-track" style="margin:8px 0 6px">
       <div class="progress-bar-fill" style="width:${pct}%"></div>
     </div>
-    <p style="font-size:clamp(12px,3vw,13px);color:var(--text-muted);margin-bottom:16px">${pct}% correct &middot; ${statusText}</p>`;
+    <p style="font-size:clamp(15px,3.8vw,17px);color:var(--text-muted);margin-bottom:16px">${pct}% correct &middot; ${statusText}</p>`;
 }

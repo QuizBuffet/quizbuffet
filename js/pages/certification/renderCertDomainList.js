@@ -9,7 +9,7 @@ export function renderCertDomainList(cert) {
     const key = `${cert.slug}--${d.slug}`;
     const prog = getDomainProgress(key);
     const url = `/domain?cert=${cert.slug}&domain=${d.slug}`;
-    const weight = `<span style="color:var(--text-dim);font-size:11px;margin-left:6px">${d.weight}%</span>`;
+    const weight = `<span class="domain-meta" style="margin-left:6px">${d.weight}%</span>`;
     const count = cert.questions
       ? cert.questions.filter(q => q.domain === d.number).length
       : d.count;

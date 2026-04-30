@@ -9,7 +9,7 @@ export function renderCertList(certifications, filter = '') {
   );
 
   if (!filtered.length) {
-    el.innerHTML = '<p style="color:var(--text-muted);font-size:13px;padding:8px 0">No certifications found.</p>';
+    el.innerHTML = '<p style="color:var(--text-muted);font-size:15px;padding:8px 0">No certifications found.</p>';
     return;
   }
 

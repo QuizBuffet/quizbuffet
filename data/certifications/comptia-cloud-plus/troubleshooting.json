@@ -3,5 +3,2982 @@
   "name": "Troubleshooting",
   "cert": "comptia-cloud-plus",
   "version": 1,
-  "questions": []
+  "questions": [
+    {
+      "id": 1101,
+      "objective": "6.1",
+      "difficulty": "easy",
+      "text": "A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show 'SSL handshake failed \u2014 unsupported protocol version'. What type of deployment issue is this?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A resource limit issue \u2014 the database connection pool is exhausted"
+        },
+        {
+          "id": "b",
+          "text": "A compatibility issue \u2014 the new application version requires a TLS version that the database server does not support, or vice versa. The application and database have incompatible security protocol configurations"
+        },
+        {
+          "id": "c",
+          "text": "A regional availability issue \u2014 the database is in a different region"
+        },
+        {
+          "id": "d",
+          "text": "A misconfiguration \u2014 the database hostname is incorrect in the application config"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Connection pool exhaustion produces errors like 'too many connections' \u2014 not SSL handshake failures.",
+        "b": "SSL handshake failure indicates a TLS protocol version mismatch \u2014 the client and server cannot agree on a common protocol version. This is a compatibility issue between application and database TLS configurations. This is the correct answer.",
+        "c": "Cross-region connectivity would fail at the network layer \u2014 not with an SSL handshake message.",
+        "d": "An incorrect hostname would produce a connection refused or DNS resolution failure \u2014 not an SSL handshake error."
+      }
+    },
+    {
+      "id": 1102,
+      "objective": "6.1",
+      "difficulty": "medium",
+      "text": "A cloud function upgraded from Python 3.8 to Python 3.11 fails with `ImportError: cannot import name 'X' from 'library_y'`. The library version in requirements.txt has not changed. What is the MOST likely cause?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Python 3.11 runs slower than Python 3.8 causing timeout failures"
+        },
+        {
+          "id": "b",
+          "text": "The library version in requirements.txt was compatible with Python 3.8 but contains code that is incompatible with Python 3.11 \u2014 the specific import may have been removed or renamed in newer Python versions, or the library itself has not been updated to support Python 3.11's changes"
+        },
+        {
+          "id": "c",
+          "text": "The cloud provider does not support Python 3.11 functions"
+        },
+        {
+          "id": "d",
+          "text": "The requirements.txt file was not deployed with the updated function"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Python version upgrades do not directly cause timeouts from speed differences \u2014 ImportError indicates a code compatibility issue.",
+        "b": "Library compatibility with Python runtime versions is a common deployment issue \u2014 libraries pinned to a working version for Python 3.8 may have internal code that breaks with Python 3.11 changes (removed stdlib features, changed C API behavior). This is the correct answer.",
+        "c": "Major cloud providers support current Python versions \u2014 Python 3.11 is widely available.",
+        "d": "Missing requirements.txt would cause all imports to fail \u2014 a specific ImportError for one item suggests the library is present but incompatible."
+      }
+    },
+    {
+      "id": 1103,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A Terraform deployment fails with: 'Error: Unsupported argument \u2014 An argument named \"new_feature\" is not expected here.' The Terraform code was written using provider documentation for version 4.5 but the provider version locked in terraform.lock.hcl is 3.8. What troubleshooting steps resolve this?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Remove the new_feature argument since it is not supported in any provider version"
+        },
+        {
+          "id": "b",
+          "text": "The Terraform code uses an argument introduced in provider version 4.5 but the lock file pins version 3.8 \u2014 resolution: update the provider version constraint in terraform.tf to allow \u22654.5, run `terraform init -upgrade` to update the lock file to the newer provider version, then rerun the deployment"
+        },
+        {
+          "id": "c",
+          "text": "Upgrade Terraform itself to the latest version"
+        },
+        {
+          "id": "d",
+          "text": "Delete the terraform.lock.hcl file and run terraform apply directly"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "The argument is supported \u2014 in the correct provider version. The issue is version mismatch, not invalid syntax.",
+        "b": "Provider version mismatch between documentation used for code authoring and the locked version causes argument compatibility errors. Updating the version constraint and running terraform init -upgrade resolves the lock file and enables the newer provider features. This is the correct answer.",
+        "c": "The Terraform CLI version is not the issue \u2014 the provider plugin version is the incompatible component.",
+        "d": "Deleting the lock file without updating the version constraint allows terraform init to pick any version, potentially choosing one that still doesn't support the argument."
+      }
+    },
+    {
+      "id": 1104,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A containerized application works in development but fails in cloud production with 'exec format error'. Development uses an Apple M1 Mac (ARM64) and production runs on x86_64 instances. What is the problem and solution?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The container has insufficient memory in production"
+        },
+        {
+          "id": "b",
+          "text": "The container image was built for ARM64 architecture on the M1 Mac but production cloud instances run x86_64 \u2014 these are incompatible CPU instruction sets. Solution: build a multi-architecture image using Docker Buildx (--platform linux/amd64,linux/arm64) or build specifically for linux/amd64 to match production"
+        },
+        {
+          "id": "c",
+          "text": "The application code contains syntax errors that only appear in production"
+        },
+        {
+          "id": "d",
+          "text": "The container registry does not support the production cloud provider"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Exec format errors indicate binary architecture incompatibility \u2014 not memory issues.",
+        "b": "CPU architecture incompatibility is a common issue when developers use Apple Silicon (ARM64) but production runs on x86_64 (AMD64). The container binary cannot execute on the wrong CPU architecture. Multi-arch builds or architecture-specific production builds resolve this. This is the correct answer.",
+        "c": "Syntax errors produce application-level errors \u2014 exec format error is an OS-level binary execution failure.",
+        "d": "Container registries are architecture-agnostic \u2014 they store images regardless of CPU target."
+      }
+    },
+    {
+      "id": 1105,
+      "objective": "6.1",
+      "difficulty": "easy",
+      "text": "A newly deployed cloud web server is unreachable from the internet. The server is running and the application is listening on port 443. The security group has inbound rule allowing port 80 from 0.0.0.0/0 but no rule for port 443. What is the issue?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The server needs a public IP address assigned"
+        },
+        {
+          "id": "b",
+          "text": "A misconfiguration \u2014 the security group allows port 80 (HTTP) but not port 443 (HTTPS). Since the application listens on 443 and there is no security group rule permitting inbound traffic on 443, all HTTPS traffic is blocked at the security group level"
+        },
+        {
+          "id": "c",
+          "text": "The application must be configured to listen on port 80 instead of 443"
+        },
+        {
+          "id": "d",
+          "text": "The SSL certificate is invalid, causing connection failures"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Public IP assignment would cause routing failures \u2014 the security group blocking port 443 is the specific issue described.",
+        "b": "Security group rules act as stateful firewalls \u2014 only explicitly permitted traffic reaches the instance. Port 443 missing from the inbound rules means HTTPS traffic is dropped before reaching the application. This is the correct answer.",
+        "c": "Changing the application port would require reconfiguration of both the app and the security group \u2014 adding the missing 443 rule is the simpler correct fix.",
+        "d": "Invalid SSL certificates produce certificate errors in the browser \u2014 the connection would still be established. A missing security group rule blocks the TCP connection entirely before TLS negotiation occurs."
+      }
+    },
+    {
+      "id": 1106,
+      "objective": "6.1",
+      "difficulty": "medium",
+      "text": "A cloud application deployment fails with 'Error: Access Denied \u2014 iam:PassRole'. The CI/CD pipeline service account is attempting to attach an IAM role to a new EC2 instance during deployment. What misconfiguration caused this?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The IAM role being attached to EC2 does not have sufficient permissions"
+        },
+        {
+          "id": "b",
+          "text": "The CI/CD pipeline service account's IAM policy is missing the `iam:PassRole` permission \u2014 this specific permission is required when an IAM entity (the pipeline) associates an IAM role with a resource (the EC2 instance). Without it, the pipeline cannot assign roles to instances even if it has EC2 creation permissions"
+        },
+        {
+          "id": "c",
+          "text": "EC2 instances cannot have IAM roles attached by automated pipelines"
+        },
+        {
+          "id": "d",
+          "text": "The EC2 instance type does not support IAM role attachment"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "The error is about the pipeline's ability to pass the role \u2014 not the role's own permissions.",
+        "b": "iam:PassRole is a specific AWS permission required when passing an IAM role to a service. Without it, entities cannot associate roles with EC2 instances, Lambda functions, or other services \u2014 even if they have all other required permissions for those services. This is the correct answer.",
+        "c": "Automated pipelines absolutely can attach IAM roles to EC2 instances \u2014 they need iam:PassRole in their own policy.",
+        "d": "IAM role attachment is supported across all EC2 instance types \u2014 this limitation does not exist."
+      }
+    },
+    {
+      "id": 1107,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A Kubernetes deployment fails to start pods with: 'Warning: Failed to pull image: ImagePullBackOff'. The image exists in a private registry. The deployment manifest specifies the correct image name. What is the MOST likely misconfiguration?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The image is too large for the Kubernetes node"
+        },
+        {
+          "id": "b",
+          "text": "The deployment is missing an `imagePullSecrets` reference \u2014 the Kubernetes namespace needs a Secret containing registry credentials, and the deployment spec must reference it. Without credentials, the kubelet cannot authenticate to the private registry to pull the image"
+        },
+        {
+          "id": "c",
+          "text": "The registry is temporarily offline \u2014 retry after a few minutes"
+        },
+        {
+          "id": "d",
+          "text": "The image name must include the full SHA256 digest, not just the tag"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "ImagePullBackOff indicates an authentication or network failure \u2014 not a size issue.",
+        "b": "Private registry access from Kubernetes requires: a Secret containing registry credentials and an imagePullSecrets reference in the pod spec (or on the service account). Missing this configuration prevents kubelet from authenticating to pull the image. This is the correct answer.",
+        "c": "BackOff means Kubernetes has attempted and failed multiple times \u2014 registry downtime would still show the same error, but investigating credentials first is more actionable.",
+        "d": "Tags work for image specification in Kubernetes \u2014 SHA256 digests are more precise but not required."
+      }
+    },
+    {
+      "id": 1108,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "An auto-scaling group launches new instances but they consistently fail health checks within 2 minutes and are terminated. Logs show the application is starting but health check HTTP requests to /health return 502. What should be investigated first?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The health check endpoint URL is misspelled in the load balancer configuration"
+        },
+        {
+          "id": "b",
+          "text": "Investigate the application startup time vs. health check grace period \u2014 if the application takes 90 seconds to fully initialize but the health check grace period is 60 seconds, instances are terminated before the application is ready to serve traffic. Increase the health check grace period to exceed the application's startup time, or implement a health check that returns 200 only when fully ready"
+        },
+        {
+          "id": "c",
+          "text": "Increase the auto-scaling group maximum instance count"
+        },
+        {
+          "id": "d",
+          "text": "The 502 indicates the load balancer is overloaded \u2014 scale the load balancer"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "A misspelled URL would return 404 \u2014 502 indicates the proxy received an invalid response from the upstream application.",
+        "b": "502 from a load balancer means the backend application is not responding correctly yet \u2014 common during startup. Health check grace period misconfiguration (too short for the application initialization time) causes premature termination of still-starting instances. This is the correct answer.",
+        "c": "More instances with the same startup problem creates more failed instances \u2014 fixing the grace period resolves the root cause.",
+        "d": "502s from new instances during startup are application initialization issues \u2014 not load balancer overload."
+      }
+    },
+    {
+      "id": 1109,
+      "objective": "6.1",
+      "difficulty": "easy",
+      "text": "A CI/CD pipeline fails with: 'Error: Resource type `aws_s3_bucket_acl` not found in provider'. The Terraform configuration was written for an older AWS provider version. What type of deployment issue is this?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A network connectivity issue preventing the provider from contacting AWS"
+        },
+        {
+          "id": "b",
+          "text": "An outdated component definition \u2014 the resource type `aws_s3_bucket_acl` may have been introduced in a newer provider version than the one currently installed, or the configuration references resource types using the old schema that has since been restructured"
+        },
+        {
+          "id": "c",
+          "text": "A permissions issue \u2014 the pipeline lacks permissions to create S3 ACLs"
+        },
+        {
+          "id": "d",
+          "text": "An S3 region limitation \u2014 ACL resources are only available in specific regions"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Provider connectivity issues produce different error types \u2014 'resource type not found' specifically indicates a schema/version issue.",
+        "b": "Resource type availability is provider-version-specific \u2014 aws_s3_bucket_acl was introduced in AWS provider 4.x. If the lock file pins an older version, the resource type is unknown. This is an outdated component definition issue. This is the correct answer.",
+        "c": "Permission errors produce different error messages referencing access denied \u2014 not missing resource types.",
+        "d": "S3 resource availability is not region-gated in Terraform provider schemas."
+      }
+    },
+    {
+      "id": 1110,
+      "objective": "6.1",
+      "difficulty": "medium",
+      "text": "A Kubernetes deployment manifest uses `apiVersion: extensions/v1beta1` for an Ingress resource. After upgrading the cluster to Kubernetes 1.22, all Ingress deployments fail. What is the cause?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The Ingress controller needs to be reinstalled after the cluster upgrade"
+        },
+        {
+          "id": "b",
+          "text": "The `extensions/v1beta1` API group for Ingress was removed in Kubernetes 1.22 \u2014 the manifest uses an outdated API version. The deployment must be updated to use `networking.k8s.io/v1` which became the stable Ingress API in Kubernetes 1.19"
+        },
+        {
+          "id": "c",
+          "text": "Kubernetes 1.22 does not support Ingress resources"
+        },
+        {
+          "id": "d",
+          "text": "The cluster upgrade requires all namespaces to be recreated"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Ingress controller reinstallation would not resolve API version incompatibility \u2014 the manifest itself must be updated.",
+        "b": "Kubernetes removes deprecated API versions after a deprecation window. extensions/v1beta1 was deprecated in Kubernetes 1.14 and removed in 1.22 \u2014 manifests using the old API group fail after the upgrade. Updating to networking.k8s.io/v1 resolves the issue. This is the correct answer.",
+        "c": "Kubernetes 1.22 fully supports Ingress \u2014 it removed only the deprecated extensions/v1beta1 API version.",
+        "d": "Namespace recreation is not required for cluster upgrades \u2014 only API version compatibility in manifests needs updating."
+      }
+    },
+    {
+      "id": 1111,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A CloudFormation stack deployment fails with: 'Template format error: Unrecognized resource type: AWS::Lambda::Function'. The template was working 2 years ago and has not been modified. What is the MOST likely explanation?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "CloudFormation does not support Lambda functions"
+        },
+        {
+          "id": "b",
+          "text": "This is unlikely for a core service like Lambda \u2014 more likely causes include: the template is being deployed to a region that does not support Lambda, a typo in the resource type name, or the template is using a resource property that has been restructured. If the template truly worked before without modification, a regional Lambda unavailability or account-level service restriction should be investigated"
+        },
+        {
+          "id": "c",
+          "text": "Lambda resource definitions were renamed in a recent CloudFormation update"
+        },
+        {
+          "id": "d",
+          "text": "The CloudFormation service is experiencing a global outage"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AWS::Lambda::Function is a core, well-supported CloudFormation resource type.",
+        "b": "AWS::Lambda::Function is a stable resource type \u2014 'unrecognized resource type' for core services is more likely a regional limitation, typo in the resource type, or a template that was actually modified inadvertently. Investigating the actual deployed template and the target region resolves this. This is the correct answer.",
+        "c": "Lambda resource type names have not been renamed \u2014 they are stable across CloudFormation versions.",
+        "d": "A global CloudFormation outage would affect all templates \u2014 not produce a specific resource type error."
+      }
+    },
+    {
+      "id": 1112,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "An Ansible playbook was written 3 years ago and uses `include:` for task inclusion. Running it today produces a deprecation warning and the tasks are skipped. What change is required?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Upgrade to a newer version of Python to resolve the include compatibility"
+        },
+        {
+          "id": "b",
+          "text": "The bare `include:` directive was deprecated and eventually removed in newer Ansible versions \u2014 replace with `include_tasks:` for dynamic task file inclusion or `import_tasks:` for static inclusion. Outdated playbooks using removed directives produce warnings or failures depending on the Ansible version"
+        },
+        {
+          "id": "c",
+          "text": "The YAML syntax in the playbook is invalid and must be reformatted"
+        },
+        {
+          "id": "d",
+          "text": "Ansible no longer supports task inclusion \u2014 all tasks must be in a single playbook file"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Python version does not affect Ansible task directive syntax \u2014 this is an Ansible API change.",
+        "b": "Ansible has iteratively replaced bare `include:` with explicit `include_tasks:` and `import_tasks:` directives with different semantics \u2014 playbooks written for older Ansible versions need updating when deployed with newer Ansible releases. This is the correct answer.",
+        "c": "YAML syntax is valid \u2014 the `include:` key is an outdated Ansible directive, not a YAML error.",
+        "d": "Ansible fully supports task inclusion \u2014 just through the updated directive names."
+      }
+    },
+    {
+      "id": 1113,
+      "objective": "6.1",
+      "difficulty": "easy",
+      "text": "A cloud provider announces that a specific instance type (m3.xlarge) will be deprecated in 90 days. Applications currently running on m3.xlarge instances will not be automatically migrated. What must the operations team do?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Do nothing \u2014 deprecated instances continue running indefinitely after the deprecation date"
+        },
+        {
+          "id": "b",
+          "text": "Inventory all workloads running on m3.xlarge, migrate them to a supported equivalent instance type (e.g., m5.xlarge or m6i.xlarge) within the 90-day window, and update any IaC templates or auto-scaling configurations referencing the deprecated instance type"
+        },
+        {
+          "id": "c",
+          "text": "Purchase reserved instances for m3.xlarge to lock in continued availability"
+        },
+        {
+          "id": "d",
+          "text": "Contact the cloud provider to request a permanent exemption for existing m3.xlarge instances"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "After deprecation, instance types are no longer available for new launches and existing instances may be forcibly migrated or stopped \u2014 proactive migration is required.",
+        "b": "Proactive migration within the deprecation window prevents forced migration under time pressure: identify affected workloads, select equivalent instance types, migrate and validate, and update all configurations referencing the deprecated type. This is the correct answer.",
+        "c": "Reserved instances can only be purchased for current, supported instance types \u2014 reservations do not prevent deprecation.",
+        "d": "Cloud providers do not grant permanent deprecation exemptions \u2014 retirement timelines are firm and apply universally."
+      }
+    },
+    {
+      "id": 1114,
+      "objective": "6.1",
+      "difficulty": "medium",
+      "text": "AWS announces that EC2-Classic will be retired and all EC2-Classic instances will be forcibly migrated to VPC. A company has 15 applications still running in EC2-Classic. What deployment issues will they encounter during migration?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "No issues \u2014 EC2-Classic and VPC instances are interchangeable"
+        },
+        {
+          "id": "b",
+          "text": "EC2-Classic to VPC migration involves significant networking differences: EC2-Classic instances use flat network addressing without VPC isolation, while VPC requires subnet planning, security group migration (EC2-Classic security groups are not VPC security groups), private IP reassignment (EC2-Classic IPs are not preserved in VPC), and application configurations referencing EC2-Classic-specific network behavior may break"
+        },
+        {
+          "id": "c",
+          "text": "Applications will be automatically reconfigured by AWS during the forced migration"
+        },
+        {
+          "id": "d",
+          "text": "Only network-facing applications are affected \u2014 backend services migrate transparently"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "EC2-Classic and VPC have fundamentally different networking models \u2014 they are not interchangeable.",
+        "b": "EC2-Classic retirement requires comprehensive migration planning: VPC subnet design, security group conversion, private IP changes affecting service discovery, and potential application configuration updates for services that depended on EC2-Classic network behavior. This is the correct answer.",
+        "c": "AWS provides migration tooling and guidance but does not automatically reconfigure customer applications \u2014 migration responsibility lies with the customer.",
+        "d": "All network-dependent services are affected \u2014 not only internet-facing applications. Service-to-service communication also changes during VPC migration."
+      }
+    },
+    {
+      "id": 1115,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A cloud team receives a deprecation notice that their managed database engine (MySQL 5.7) will reach end of support in 6 months and automatic upgrades to MySQL 8.0 will begin. Their application has not been tested with MySQL 8.0. What must they do?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Do nothing \u2014 MySQL 8.0 is fully backward compatible with MySQL 5.7 applications"
+        },
+        {
+          "id": "b",
+          "text": "Test the application against MySQL 8.0 in a staging environment \u2014 MySQL 8.0 has breaking changes including stricter SQL mode defaults, removed functions, changed authentication plugins, and character set changes. Identify and fix incompatibilities before the automatic upgrade window, or opt into early upgrade to control timing rather than having it forced"
+        },
+        {
+          "id": "c",
+          "text": "Migrate to a different database engine to avoid the MySQL 8.0 migration entirely"
+        },
+        {
+          "id": "d",
+          "text": "Request a permanent extension to keep MySQL 5.7 since it still functions"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "MySQL 8.0 has documented breaking changes from 5.7 \u2014 assuming backward compatibility without testing risks production failures.",
+        "b": "Major database version upgrades require compatibility testing \u2014 MySQL 8.0 changes SQL mode strictness, removes deprecated functions, changes default character sets, and modifies authentication behavior. Testing in staging and fixing incompatibilities before the forced upgrade prevents production failures. This is the correct answer.",
+        "c": "Database engine migration is a much larger effort than MySQL version upgrade \u2014 addressing the MySQL 8.0 compatibility is the appropriate path.",
+        "d": "Cloud providers enforce database engine end-of-support timelines \u2014 permanent extensions are not granted for major version deprecations."
+      }
+    },
+    {
+      "id": 1116,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A cloud team uses a deprecated IAM policy syntax that will stop being accepted by the IAM API in 30 days. The policies are defined in 200 Terraform files across multiple repositories. What is the MOST efficient remediation approach?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Manually edit each of the 200 Terraform files individually"
+        },
+        {
+          "id": "b",
+          "text": "Use automated refactoring tools \u2014 write a script or use sed/awk/grep to identify and replace the deprecated policy syntax across all repositories in bulk, test the updated policies in a non-production environment, then deploy the corrected policies through the CI/CD pipeline before the 30-day deadline"
+        },
+        {
+          "id": "c",
+          "text": "Wait until the API stops accepting the old syntax and fix errors as they appear"
+        },
+        {
+          "id": "d",
+          "text": "Request the cloud provider extend the deprecation deadline for 6 more months"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Manual editing of 200 files is time-consuming and error-prone \u2014 automated bulk refactoring is more reliable and efficient.",
+        "b": "Automated refactoring with scripting or code transformation tools handles bulk syntax updates across many files efficiently \u2014 the changes can be validated in pre-production before the deadline. This is the correct answer.",
+        "c": "Waiting for the API to stop accepting the syntax means 200 Terraform applies will fail simultaneously \u2014 proactive migration is required.",
+        "d": "Cloud providers do not typically grant deadline extensions for API deprecations \u2014 they affect all customers and the timeline is firm."
+      }
+    },
+    {
+      "id": 1117,
+      "objective": "6.1",
+      "difficulty": "easy",
+      "text": "A cloud application becomes completely unavailable. Users report all requests are timing out. CloudWatch shows the EC2 instances are running with normal CPU but all are in an 'Unhealthy' state in the load balancer target group. What should be investigated first?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The instances need to be rebooted to restore health"
+        },
+        {
+          "id": "b",
+          "text": "Investigate what changed recently that caused the health checks to fail \u2014 check the health check endpoint configuration (path, port, expected response code), review application logs on the instances for errors, verify the application is actually listening on the health check port, and confirm the security groups permit health check traffic from the load balancer"
+        },
+        {
+          "id": "c",
+          "text": "Increase the instance type to handle higher load"
+        },
+        {
+          "id": "d",
+          "text": "Contact the cloud provider since all instances being unhealthy simultaneously indicates a provider issue"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Rebooting without diagnosing the cause may temporarily restore health but the root cause will recur.",
+        "b": "Simultaneous unhealthy status across all instances suggests either a configuration change (health check path changed, security group modified) or an application-level issue (all instances experiencing the same error). Systematic investigation of recent changes and application logs identifies the root cause. This is the correct answer.",
+        "c": "CPU is normal \u2014 compute capacity is not the issue.",
+        "d": "A cloud provider issue could cause this, but it should be investigated after ruling out configuration and application issues \u2014 provider issues are less common than application-side problems."
+      }
+    },
+    {
+      "id": 1118,
+      "objective": "6.1",
+      "difficulty": "medium",
+      "text": "A deployment to production succeeds but 15 minutes later the application begins returning 500 errors for all requests. The deployment has not been changed. What troubleshooting approach BEST identifies the cause?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Roll back the deployment immediately without investigating"
+        },
+        {
+          "id": "b",
+          "text": "Correlate the 500 errors with recent changes and metrics: check application logs for error stack traces, review database connection pool metrics (possible exhaustion 15 minutes after deployment as traffic builds), check for memory leaks causing OOM errors, review any downstream service health, and compare metrics from before/after deployment to identify what changed between deployment success and error onset"
+        },
+        {
+          "id": "c",
+          "text": "The 15-minute delay means the deployment is not responsible \u2014 investigate infrastructure issues"
+        },
+        {
+          "id": "d",
+          "text": "Scale up instances to handle the increased load causing 500 errors"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Immediate rollback stops the incident but misses root cause \u2014 investigation during or after rollback prevents recurrence.",
+        "b": "A 15-minute delay between deployment and errors is typical for issues that develop under load: connection pool exhaustion, memory leaks, thread pool saturation, or downstream service degradation often emerge only after traffic builds to steady state. Correlating logs and metrics identifies the actual cause. This is the correct answer.",
+        "c": "The 15-minute delay does not rule out the deployment \u2014 latent issues from deployment changes often emerge under load.",
+        "d": "500 errors from application failures are not resolved by adding instances \u2014 the underlying error must be identified and fixed."
+      }
+    },
+    {
+      "id": 1119,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A multi-tier cloud application experiences a complete outage. The web tier instances are healthy. The application tier instances show high CPU. The database tier shows normal load. Users see 'Service Unavailable'. What is the MOST systematic troubleshooting approach?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Restart all application tier instances immediately"
+        },
+        {
+          "id": "b",
+          "text": "Follow the request path from user to database: confirm web tier is receiving and forwarding requests (check web logs for upstream errors), investigate why application tier CPU is high (thread dump, JVM heap, connection queues), check application tier logs for errors being thrown, verify connectivity between application and database tiers (security groups, connection pool metrics), and identify whether high CPU is the cause or a symptom of another bottleneck"
+        },
+        {
+          "id": "c",
+          "text": "Scale the database tier since high application CPU typically indicates database bottleneck"
+        },
+        {
+          "id": "d",
+          "text": "The issue must be a cloud provider network problem since the database is healthy"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Restarting without diagnosis may temporarily clear the symptom \u2014 high CPU may return immediately if the root cause persists.",
+        "b": "Systematic request-path tracing identifies where requests are failing: the web tier being healthy rules out frontend issues, high application tier CPU indicates a bottleneck there, but the cause could be many things \u2014 thread contention, connection pool blocking, external service timeout causing thread accumulation, or CPU-intensive error handling. Methodical investigation identifies the root cause. This is the correct answer.",
+        "c": "Database load is normal \u2014 the bottleneck appears to be in the application tier, not the database.",
+        "d": "Network issues between tiers would show connection errors \u2014 application tier CPU being high suggests the application is receiving and processing requests but is overwhelmed or blocked."
+      }
+    },
+    {
+      "id": 1120,
+      "objective": "6.1",
+      "difficulty": "easy",
+      "text": "A cloud application deployment fails with: 'You have reached your vCPU limit for this region'. What type of deployment issue is this and how is it resolved?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A billing issue \u2014 the account has not been charged for existing instances"
+        },
+        {
+          "id": "b",
+          "text": "A resource limit issue \u2014 AWS imposes default service quotas (limits) on the number of vCPUs per region per account. The deployment requires more vCPUs than the current quota allows. Resolution: request a service quota increase through the AWS Service Quotas console or Support, or deploy to a different region"
+        },
+        {
+          "id": "c",
+          "text": "A misconfiguration \u2014 the instance type selected uses too many vCPUs"
+        },
+        {
+          "id": "d",
+          "text": "An outage \u2014 AWS has temporarily suspended vCPU capacity in this region"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "vCPU limits are service quotas, not billing issues \u2014 they exist to prevent accidental resource proliferation.",
+        "b": "Cloud providers impose default service quotas that limit resource usage per account per region. vCPU limits are a common bottleneck during scale-out. Service quota increase requests are typically approved within hours to days for legitimate business needs. This is the correct answer.",
+        "c": "Instance type selection is a configuration choice \u2014 the resource limit issue is the account-level quota, not the instance size.",
+        "d": "Regional outages affect all services \u2014 a specific vCPU quota message indicates an account-level limit, not an infrastructure failure."
+      }
+    },
+    {
+      "id": 1121,
+      "objective": "6.1",
+      "difficulty": "medium",
+      "text": "A Kubernetes pod is repeatedly OOMKilled (Out of Memory Killed). The pod's memory limit is set to 256Mi but the application typically uses 400Mi during normal operation. What must be done?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Disable memory limits for this pod so Kubernetes does not restrict its memory usage"
+        },
+        {
+          "id": "b",
+          "text": "Increase the pod's memory limit to accommodate actual usage \u2014 set the limit to at least 512Mi (providing headroom above the 400Mi typical usage), and set the memory request to 400Mi so Kubernetes schedules the pod on nodes with sufficient available memory. Profile the application's peak memory usage to set appropriate limits"
+        },
+        {
+          "id": "c",
+          "text": "Reduce the application's functionality to use less than 256Mi"
+        },
+        {
+          "id": "d",
+          "text": "OOMKilled is expected behavior \u2014 configure the pod to restart more quickly"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Pods without memory limits can consume unlimited node memory, starving other pods \u2014 limits are essential for cluster stability.",
+        "b": "Memory limits below actual usage cause OOMKilled \u2014 the limit must be set above peak usage with headroom for spikes. Setting both request (scheduling guarantee) and limit (maximum allowed) correctly addresses both scheduling and runtime behavior. This is the correct answer.",
+        "c": "Reducing application functionality to fit an artificially low limit is the wrong approach \u2014 limits should match application requirements.",
+        "d": "OOMKilled indicates the pod needs more memory \u2014 accepting it as normal and speeding up restarts does not resolve the underlying resource mismatch."
+      }
+    },
+    {
+      "id": 1122,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "An AWS Lambda function fails with 'Task timed out after 900 seconds'. Lambda's maximum timeout is 900 seconds (15 minutes). The function processes large files that consistently take 20+ minutes. What is the solution?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Request AWS to increase the Lambda timeout limit beyond 900 seconds"
+        },
+        {
+          "id": "b",
+          "text": "Lambda's 15-minute hard limit cannot be increased \u2014 the architecture must be redesigned: split the processing into chunks that each complete within 15 minutes, use Step Functions to orchestrate multi-step processing across multiple Lambda invocations, or move the long-running workload to a different compute service (ECS Fargate, EC2, AWS Batch) that supports longer execution times"
+        },
+        {
+          "id": "c",
+          "text": "Increase the Lambda memory allocation to process files faster within the timeout"
+        },
+        {
+          "id": "d",
+          "text": "Use Lambda SnapStart to reduce initialization time and gain more processing time"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Lambda's 900-second timeout is a hard service limit \u2014 it cannot be increased regardless of support tier or request.",
+        "b": "Hard service limits require architectural adaptation \u2014 Lambda is not designed for long-running processes. Chunked processing, Step Functions orchestration, or migrating to a compute service without the timeout constraint are the correct architectural responses. This is the correct answer.",
+        "c": "More memory improves CPU allocation and speed, but a 20-minute process cannot be reduced to 15 minutes through memory alone for I/O-bound file processing.",
+        "d": "Lambda SnapStart reduces initialization (cold start) time \u2014 it does not affect the execution timeout or processing throughput."
+      }
+    },
+    {
+      "id": 1123,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A deployment pipeline fails intermittently when provisioning RDS instances with: 'DB instance quota of 40 has been reached'. The account currently shows 38 DB instances. Why might this occur and how should it be investigated?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The RDS quota is shared with other database services and may be double-counted"
+        },
+        {
+          "id": "b",
+          "text": "The actual count may include instances in deleting state not yet visible in the console, instances in the pipeline that failed mid-creation and are being cleaned up, or read replicas counted separately from primary instances. Investigation: use the AWS CLI to list all RDS instances including those in transitional states, check for instances in deleting/creating states, and verify the actual quota through the Service Quotas console"
+        },
+        {
+          "id": "c",
+          "text": "The quota count is a cached value \u2014 wait 24 hours for the quota counter to reset"
+        },
+        {
+          "id": "d",
+          "text": "RDS quotas apply per region and the pipeline is deploying across regions"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "RDS quotas count RDS instances specifically \u2014 they are not shared with other database services.",
+        "b": "Resource quota counts include all instances in all states including transitional states (deleting, creating) that may not appear in basic console views. Failed deployments may leave orphaned instances consuming quota. CLI-based full enumeration provides the accurate count. This is the correct answer.",
+        "c": "Service quotas are not cached counts that reset \u2014 they reflect real-time resource counts.",
+        "d": "RDS quotas are per-region \u2014 if the pipeline deploys to a single region, cross-region counting is not the issue."
+      }
+    },
+    {
+      "id": 1124,
+      "objective": "6.1",
+      "difficulty": "easy",
+      "text": "A deployment fails because an application attempts to use AWS Rekognition for image analysis in the ap-southeast-3 region. The API call returns 'service not available'. What type of deployment issue is this?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A permissions issue \u2014 the IAM role lacks Rekognition permissions"
+        },
+        {
+          "id": "b",
+          "text": "A regional service availability issue \u2014 not all AWS services are available in all regions. AWS Rekognition may not be available in the ap-southeast-3 region. The application must either deploy to a region where Rekognition is available or architect cross-region API calls"
+        },
+        {
+          "id": "c",
+          "text": "A quota issue \u2014 the Rekognition API call limit has been exceeded"
+        },
+        {
+          "id": "d",
+          "text": "A misconfiguration \u2014 the Rekognition endpoint URL is incorrect"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Permissions errors produce 'access denied' messages \u2014 'service not available' indicates the service does not exist in this region.",
+        "b": "AWS service availability varies by region \u2014 newer or specialized services like Rekognition are often available in primary regions (us-east-1, us-west-2, eu-west-1) before expanding to newer regions. This is a regional service availability issue. This is the correct answer.",
+        "c": "API quota errors produce throttling messages \u2014 not 'service not available'.",
+        "d": "SDK endpoints are automatically determined by region \u2014 'service not available' is not an endpoint configuration error."
+      }
+    },
+    {
+      "id": 1125,
+      "objective": "6.1",
+      "difficulty": "medium",
+      "text": "A company requires deploying their entire application stack to a specific country for data sovereignty. Their IaC template uses services that are not yet available in that country's cloud region. What options should they evaluate?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Deploy to the nearest available region and claim data sovereignty compliance"
+        },
+        {
+          "id": "b",
+          "text": "Evaluate alternatives: replace unavailable managed services with self-hosted equivalents on available compute (e.g., self-managed Kafka instead of managed Kinesis if unavailable), split architecture with data-sensitive components in the required region and non-sensitive components in a region with full service availability, or wait for the provider to expand the service to that region"
+        },
+        {
+          "id": "c",
+          "text": "Request the cloud provider to immediately deploy all services to the required region"
+        },
+        {
+          "id": "d",
+          "text": "Services not available in a region will be automatically replicated from the nearest available region"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Deploying to a different region does not satisfy data sovereignty requirements \u2014 data must physically reside in the required jurisdiction.",
+        "b": "Regional service unavailability requires architectural adaptation: self-hosted alternatives on available compute, hybrid architectures separating data-sensitive and non-sensitive workloads, or waiting for service expansion. This is the correct answer.",
+        "c": "Cloud providers expand services based on demand and infrastructure investment \u2014 individual customer requests do not accelerate region launches.",
+        "d": "Cloud services are not automatically replicated across regions \u2014 each region has independent service availability."
+      }
+    },
+    {
+      "id": 1126,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A Terraform deployment uses AWS services that are available in us-east-1 but the organization's security policy requires deploying to us-gov-west-1 (GovCloud). The Terraform plan shows multiple resource creation errors. What is the ROOT CAUSE pattern here?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "GovCloud requires a different version of Terraform than commercial regions"
+        },
+        {
+          "id": "b",
+          "text": "AWS GovCloud has a subset of commercial region services \u2014 some services available in us-east-1 may not be available in us-gov-west-1, or may have different resource names, API endpoints, ARN formats (arn:aws-us-gov: instead of arn:aws:), and service quotas. Terraform configurations must account for GovCloud-specific service availability and ARN patterns"
+        },
+        {
+          "id": "c",
+          "text": "Terraform does not support GovCloud deployments"
+        },
+        {
+          "id": "d",
+          "text": "GovCloud errors are always authentication-related \u2014 verify GovCloud credentials"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Terraform version is not GovCloud-specific \u2014 the same Terraform binary supports both commercial and GovCloud regions.",
+        "b": "GovCloud regions have distinct service availability, ARN namespaces (arn:aws-us-gov:), different endpoints, and sometimes different service names or API behaviors. Terraform code written for commercial regions requires review and adaptation for GovCloud deployment. This is the correct answer.",
+        "c": "Terraform fully supports GovCloud through the AWS provider with GovCloud-specific endpoints \u2014 it requires configuration, not a different tool.",
+        "d": "Authentication is a component of GovCloud access but the resource creation errors described indicate service availability issues beyond authentication."
+      }
+    },
+    {
+      "id": 1127,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "An application architect is designing a multi-region active-active deployment across 4 regions. During testing, one region's deployment fails because a specific managed database feature used by the application is in preview (not generally available) in that region. How should this be handled in the architecture?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Exclude the region from the active-active deployment until the feature reaches GA"
+        },
+        {
+          "id": "b",
+          "text": "Evaluate whether the feature's absence in that region can be worked around through application-layer compensation (implementing the missing feature in application code), whether a different equivalent service can provide the same capability, or whether the region is critical enough to include at reduced functionality vs. excluded entirely \u2014 documenting the regional capability difference in architecture decisions"
+        },
+        {
+          "id": "c",
+          "text": "Request preview access to enable the feature in all regions simultaneously"
+        },
+        {
+          "id": "d",
+          "text": "Preview features in one region will automatically propagate to all regions within 24 hours"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Excluding a region entirely reduces the active-active design's geographic coverage \u2014 evaluation of alternatives is preferable to immediate exclusion.",
+        "b": "Regional feature availability differences require architectural decision-making: application-layer workarounds may provide equivalent functionality, alternative services may substitute, or the region may be included with documented capability differences. The decision must be informed by the feature's criticality to the application. This is the correct answer.",
+        "c": "Preview access requests are evaluated per region independently \u2014 enabling preview in one region does not affect other regions.",
+        "d": "Preview features propagate to GA in regions based on the provider's rollout schedule \u2014 they do not automatically spread within 24 hours."
+      }
+    },
+    {
+      "id": 1128,
+      "objective": "6.1",
+      "difficulty": "hard",
+      "text": "A deployment pipeline is configured to automatically deploy to the nearest available region when the primary region has a service outage. During a real outage, the failover deployment fails because the failover region lacks a specific managed ML service used by the application. What design flaw does this reveal?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Automated failover should never be used \u2014 manual failover prevents this issue"
+        },
+        {
+          "id": "b",
+          "text": "The failover region was selected based only on geographic proximity and cost, without validating that all required services are available in the target region. DR design must verify that the failover region provides complete service parity for all application dependencies \u2014 or the architecture must degrade gracefully when specific services are unavailable in the failover region"
+        },
+        {
+          "id": "c",
+          "text": "ML services are always available in all regions \u2014 the outage must be causing additional service failures"
+        },
+        {
+          "id": "d",
+          "text": "The failover region needs more instances to compensate for the missing service"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Automated failover is essential for meeting aggressive RTOs \u2014 the issue is incomplete failover region validation, not the automation concept.",
+        "b": "DR region selection must include service availability validation for all required services \u2014 not just compute and networking. This is a common DR design gap discovered only during actual failover events. Proactive service availability validation in the DR region and graceful degradation design prevent this failure mode. This is the correct answer.",
+        "c": "Managed ML services have significantly limited regional availability compared to core compute services \u2014 assuming universal availability is incorrect.",
+        "d": "Adding more instances cannot substitute for a missing managed service \u2014 the service either exists in the region or it does not."
+      }
+    },
+    {
+      "id": 1129,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "A newly launched cloud instance cannot connect to any network resources and shows IP address 169.254.x.x. What does this indicate?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The instance has been assigned a valid private IP by the cloud provider"
+        },
+        {
+          "id": "b",
+          "text": "The instance failed to obtain an IP address from DHCP \u2014 169.254.x.x is an APIPA (Automatic Private IP Addressing) address assigned by the OS when DHCP is unreachable, indicating the instance cannot communicate with the cloud's DHCP service"
+        },
+        {
+          "id": "c",
+          "text": "The instance is using a reserved management IP range"
+        },
+        {
+          "id": "d",
+          "text": "The 169.254.x.x address is the cloud instance metadata service IP"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Cloud provider DHCP assigns addresses from the VPC subnet CIDR \u2014 169.254.x.x is never a valid assigned private IP.",
+        "b": "APIPA (169.254.0.0/16) is assigned by Windows and some Linux systems when DHCP fails \u2014 it indicates the DHCP client could not reach the DHCP server. In cloud environments this suggests a subnet misconfiguration, DHCP service failure, or incorrect DHCP client configuration. This is the correct answer.",
+        "c": "169.254.0.0/16 is link-local \u2014 it is not a cloud provider management reservation.",
+        "d": "The instance metadata service uses 169.254.169.254 \u2014 but the instance receiving this as its primary IP address rather than reaching it as an endpoint indicates DHCP failure."
+      }
+    },
+    {
+      "id": 1130,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "Cloud instances in a VPC subnet are intermittently receiving incorrect IP addresses from a pool already allocated to other instances. Multiple instances end up with duplicate IPs causing connectivity failures. What is the MOST likely cause?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The subnet CIDR range is too small for the number of instances"
+        },
+        {
+          "id": "b",
+          "text": "A rogue DHCP server is running on one of the instances, responding to DHCP requests before the legitimate cloud DHCP server. Cloud providers' managed DHCP should be the only DHCP source \u2014 an instance running unauthorized DHCP server software distributes conflicting leases"
+        },
+        {
+          "id": "c",
+          "text": "The VPC routing table is missing an entry for the subnet"
+        },
+        {
+          "id": "d",
+          "text": "Instances are rebooting faster than DHCP lease expiration allows"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Subnet exhaustion causes DHCP failure (no available IPs) \u2014 not duplicate IP assignment.",
+        "b": "A rogue DHCP server is the primary cause of duplicate IP assignment in cloud VPCs. Cloud security group configurations typically prevent this in managed environments, but a misconfigured instance running DHCP server software can disrupt the entire subnet. This is the correct answer.",
+        "c": "Missing routing table entries cause connectivity failures \u2014 they do not cause DHCP to assign duplicate IPs.",
+        "d": "DHCP lease management handles rapid reboots correctly \u2014 the same instance receives the same IP via lease renewal."
+      }
+    },
+    {
+      "id": 1131,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud instance running a containerized application works correctly immediately after launch but loses network connectivity after exactly 24 hours every time. The host instance maintains connectivity. What is the MOST likely cause?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The cloud provider terminates instances after 24 hours"
+        },
+        {
+          "id": "b",
+          "text": "The container's network namespace has a 24-hour DHCP lease that is not being renewed \u2014 the container network stack may not be configured to renew leases, or the DHCP renewal is failing. When the lease expires without renewal, the container loses its IP assignment. Investigating the container's DHCP client configuration and ensuring renewal works resolves this"
+        },
+        {
+          "id": "c",
+          "text": "The security group rules expire after 24 hours"
+        },
+        {
+          "id": "d",
+          "text": "The container image contains a 24-hour time-limited license"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Cloud providers do not automatically terminate instances after 24 hours \u2014 instance lifetime is controlled by the customer.",
+        "b": "DHCP leases have configurable expiration times \u2014 if a container's network stack does not properly renew its DHCP lease before expiration, it loses its IP address precisely at the lease duration. The 24-hour pattern matches a common DHCP lease duration. This is the correct answer.",
+        "c": "Security group rules are persistent \u2014 they do not expire after time periods.",
+        "d": "Application time limits produce application-level failures \u2014 not network connectivity loss at a network layer."
+      }
+    },
+    {
+      "id": 1132,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "An organization creates a new VPC subnet with CIDR 10.0.5.0/24 and launches 10 instances. 5 instances receive IPs from 10.0.5.0/24 but 5 instances receive IPs from 10.0.3.0/24 (a different subnet). What misconfiguration likely caused this?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The new subnet has overlapping CIDR with the existing subnet 10.0.3.0/24"
+        },
+        {
+          "id": "b",
+          "text": "The instances were launched with the wrong subnet ID specified \u2014 5 instances were accidentally launched in subnet 10.0.3.0/24 rather than 10.0.5.0/24, receiving correct IPs for the subnet they are actually in. The launch configuration or IaC template likely references the wrong subnet identifier"
+        },
+        {
+          "id": "c",
+          "text": "Cloud DHCP cannot distinguish between subnets and assigns IPs randomly"
+        },
+        {
+          "id": "d",
+          "text": "The VPC DHCP options set is incorrectly configured to use CIDR 10.0.3.0/24"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Non-overlapping CIDRs (10.0.5.0/24 and 10.0.3.0/24) cannot cause cross-subnet IP assignment \u2014 instances receive IPs from the subnet they are actually placed in.",
+        "b": "Cloud DHCP assigns IPs from the subnet CIDR where the instance is placed \u2014 instances receiving 10.0.3.x IPs are actually in the 10.0.3.0/24 subnet, not the intended 10.0.5.0/24. The launch configuration specifying the wrong subnet ID is the most likely root cause. This is the correct answer.",
+        "c": "Cloud DHCP is deterministic \u2014 each subnet has its own DHCP scope and instances receive IPs from their actual subnet.",
+        "d": "DHCP options sets configure DNS and NTP servers \u2014 they do not control IP address assignment ranges."
+      }
+    },
+    {
+      "id": 1133,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "A cloud application can connect to services using IP addresses but fails when using hostnames. `ping google.com` fails with 'Name or service not known'. What is the MOST likely cause?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The instance lacks sufficient CPU to perform DNS lookups"
+        },
+        {
+          "id": "b",
+          "text": "DNS resolution is failing \u2014 the instance either has no DNS server configured, is configured with an unreachable DNS server IP, or the security group is blocking UDP port 53 traffic to the DNS resolver"
+        },
+        {
+          "id": "c",
+          "text": "The instance needs to be rebooted for DNS to function"
+        },
+        {
+          "id": "d",
+          "text": "DNS resolution requires special cloud provider licensing"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "DNS lookups are computationally trivial \u2014 CPU is not a factor in DNS failures.",
+        "b": "Working IP connectivity with failed hostname resolution confirms DNS is the issue. Root causes include: missing or incorrect /etc/resolv.conf, unreachable DNS server IP, or security group/NACL blocking UDP 53 to the DNS resolver. This is the correct answer.",
+        "c": "DNS functionality is configuration-dependent \u2014 rebooting without fixing configuration will not restore DNS.",
+        "d": "DNS resolution is a standard network service \u2014 no special licensing is required."
+      }
+    },
+    {
+      "id": 1134,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "After a cloud deployment, an application correctly resolves the new service's hostname to its new IP address, but 15% of users still reach the old server IP. DNS TTL for the record was 48 hours before the change. What is happening?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The DNS change was not applied correctly to all nameservers"
+        },
+        {
+          "id": "b",
+          "text": "DNS caching \u2014 the 48-hour TTL means ISPs, corporate resolvers, and operating systems cached the old DNS record for up to 48 hours after the change. Users whose resolver cached the record before the change will continue reaching the old IP until their cached entry expires. Pre-change TTL reduction (to 5 minutes) is the standard preventive practice"
+        },
+        {
+          "id": "c",
+          "text": "The new server is rejecting connections from 15% of users"
+        },
+        {
+          "id": "d",
+          "text": "BGP routing updates require 48 hours to propagate globally"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Modern authoritative DNS is typically multi-region and propagates quickly \u2014 the issue is client-side caching, not propagation.",
+        "b": "High DNS TTLs cause extended caching of old records \u2014 users whose resolver cached the DNS response before the change continue using the cached IP for the full TTL duration. Reducing TTL to 5 minutes before planned changes minimizes this transition period. This is the correct answer.",
+        "c": "Server rejection would show connection errors \u2014 users reaching the old server receive responses from the old deployment.",
+        "d": "BGP propagation affects IP routing \u2014 not DNS record caching. DNS and routing are separate systems."
+      }
+    },
+    {
+      "id": 1135,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A Kubernetes service has a ClusterIP and is accessible from within the cluster using its service name. Pods in a different namespace cannot resolve the service using just its short name. They must use the fully qualified domain name (FQDN). Why?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Kubernetes DNS only works for services in the default namespace"
+        },
+        {
+          "id": "b",
+          "text": "Kubernetes DNS search domains are namespace-scoped \u2014 short name resolution searches within the pod's own namespace first. Cross-namespace service discovery requires the FQDN format: service-name.namespace.svc.cluster.local. Pods in namespace-A cannot resolve short names for services in namespace-B without explicit namespace qualification"
+        },
+        {
+          "id": "c",
+          "text": "Services must be exposed as NodePort to be accessible across namespaces"
+        },
+        {
+          "id": "d",
+          "text": "Network policies block cross-namespace DNS queries"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Kubernetes DNS works across all namespaces \u2014 namespace scope only affects short name resolution, not full DNS accessibility.",
+        "b": "Kubernetes CoreDNS implements search domain logic \u2014 pod DNS configuration includes search domains for the pod's namespace (svc.cluster.local, namespace.svc.cluster.local). Short names only match services in the same namespace. Cross-namespace access requires FQDN. This is the correct answer.",
+        "c": "ClusterIP services are accessible across namespaces via DNS \u2014 NodePort is for external cluster access.",
+        "d": "Network policies control network traffic \u2014 they do not affect DNS query resolution."
+      }
+    },
+    {
+      "id": 1136,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud application intermittently fails with 'connection refused' errors targeting an internal service. Investigation shows the internal service DNS name resolves to an IP that was previously assigned to the service but is now assigned to a different service after the original service was restarted. What caused this and how is it prevented?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "DNS caching is not a factor for internal cloud DNS \u2014 the issue must be a security group"
+        },
+        {
+          "id": "b",
+          "text": "DNS TTL caching of the old IP \u2014 when the original service restarts with a new IP, the DNS record is updated but the consuming application has cached the old IP. The old IP is now assigned to a different service, causing misdirected connections. Prevention: use health-checked DNS records, ensure consuming applications respect DNS TTLs, or use service mesh for dynamic endpoint discovery that bypasses DNS caching"
+        },
+        {
+          "id": "c",
+          "text": "This is impossible in cloud environments since IPs are never reassigned"
+        },
+        {
+          "id": "d",
+          "text": "The consuming application should use the IP directly instead of DNS"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Internal cloud DNS is also subject to caching \u2014 TTL values apply to all DNS resolvers including those for internal zones.",
+        "b": "IP reuse combined with DNS caching creates misdirected connections \u2014 a classic cloud DNS pitfall. Applications that cache DNS resolutions beyond TTL expiry may connect to unexpected services when IPs are reassigned. Service mesh or short TTLs with proper cache respect mitigate this. This is the correct answer.",
+        "c": "Cloud IPs (especially private IPs in subnets) are absolutely reused \u2014 IP reassignment is common in dynamic cloud environments.",
+        "d": "Using IPs directly makes the application fragile to IP changes and defeats the purpose of DNS \u2014 proper DNS TTL management is the correct solution."
+      }
+    },
+    {
+      "id": 1137,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "Cloud instances in a private subnet cannot reach external NTP servers. The instances' system clocks drift several minutes per day. What problem does clock drift cause in cloud environments?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Clock drift only affects scheduled cron jobs \u2014 no security or connectivity impact"
+        },
+        {
+          "id": "b",
+          "text": "Significant clock drift causes multiple issues: AWS API calls fail with 'Request has expired' when the timestamp differs more than 5 minutes from server time, TLS certificate validation fails when certificate validity periods don't align with system time, authentication tokens (JWT, Kerberos) with time-based validity fail, and log correlation becomes impossible across systems with different times"
+        },
+        {
+          "id": "c",
+          "text": "Clock drift causes increased CPU utilization on affected instances"
+        },
+        {
+          "id": "d",
+          "text": "NTP synchronization is optional for cloud instances \u2014 drift has no functional impact"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Clock drift affects security, API calls, and distributed system correctness \u2014 not only cron scheduling.",
+        "b": "Clock drift has cascading effects: AWS signature validation rejects requests with >5-minute time differences, expired or not-yet-valid TLS certificates cause connection failures when system time is wrong, time-based security tokens fail validation, and distributed log correlation requires synchronized timestamps. This is the correct answer.",
+        "c": "CPU utilization is not affected by clock drift \u2014 correctness and security are the impacts.",
+        "d": "NTP synchronization is operationally critical \u2014 clock drift causes real service failures in cloud environments."
+      }
+    },
+    {
+      "id": 1138,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "Cloud instances in a private subnet without internet access need NTP synchronization. External NTP servers are unreachable. What solution provides NTP for private instances?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Private instances do not need NTP \u2014 they use the instance hardware clock which never drifts"
+        },
+        {
+          "id": "b",
+          "text": "Configure instances to use the cloud provider's internal NTP service \u2014 AWS provides 169.254.169.123 (Amazon Time Sync Service) accessible from all instances without internet access. Azure and GCP have equivalent internal time servers that are always reachable from within the cloud network without internet or VPN connectivity"
+        },
+        {
+          "id": "c",
+          "text": "Deploy a dedicated NTP server on a public subnet and allow all private instances to access it via NAT"
+        },
+        {
+          "id": "d",
+          "text": "NTP is only required when deploying to regulated industries \u2014 it is optional otherwise"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Hardware clocks do drift \u2014 that is precisely why NTP is needed even for instances without internet access.",
+        "b": "Cloud providers offer internal NTP services reachable without internet access: AWS Amazon Time Sync Service (169.254.169.123), Azure time.windows.com (resolved internally), and GCP metadata.google.internal \u2014 all accessible from private subnets without any internet gateway or NAT. This is the correct answer.",
+        "c": "A public subnet NTP server with NAT works but is unnecessarily complex when the cloud provider's internal NTP service is directly available.",
+        "d": "NTP is required for all cloud instances regardless of industry \u2014 clock synchronization is fundamental to distributed system correctness."
+      }
+    },
+    {
+      "id": 1139,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "An NTP server is configured with `restrict default noquery nomodify` in its configuration. Client instances can synchronize their clocks but cannot query the NTP server's status using `ntpq`. What does this configuration accomplish?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The configuration prevents any NTP synchronization from occurring"
+        },
+        {
+          "id": "b",
+          "text": "The restrict directive limits what NTP clients can do with the server \u2014 `noquery` prevents clients from querying the server's status (preventing information disclosure and NTP amplification attacks), `nomodify` prevents clients from changing the server's configuration. Clients can still synchronize time but cannot interrogate or configure the server"
+        },
+        {
+          "id": "c",
+          "text": "This configuration enables NTP authentication for all client connections"
+        },
+        {
+          "id": "d",
+          "text": "The restrict directive limits NTP synchronization to specific time zones"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "NTP synchronization (time updates) is separate from query operations \u2014 `noquery` and `nomodify` restrict management operations, not time synchronization.",
+        "b": "NTP restrict directives implement security hardening: `noquery` prevents status queries (used in DDoS amplification attacks and information gathering), `nomodify` prevents configuration changes from untrusted clients. Time synchronization continues unaffected. This is the correct answer.",
+        "c": "NTP authentication is configured separately through `key` and `trustedkey` directives \u2014 restrict handles access control.",
+        "d": "NTP operates in UTC \u2014 time zones are a presentation layer concept, not an NTP configuration parameter."
+      }
+    },
+    {
+      "id": 1140,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A distributed cloud application uses timestamps for event ordering and deduplication. Two services running on different instances have clock skew of 3 seconds between them. Events happening within the same 3-second window arrive at the processing service in incorrect order. Why is NTP alone insufficient for this use case?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "NTP is always accurate to within milliseconds \u2014 3-second skew cannot occur with NTP enabled"
+        },
+        {
+          "id": "b",
+          "text": "NTP reduces clock skew to milliseconds but cannot eliminate it entirely \u2014 for strict event ordering requiring sub-millisecond precision, NTP is insufficient. Solutions include: logical clocks (Lamport timestamps, vector clocks) that provide causal ordering without absolute time, hardware timestamping with PTP (Precision Time Protocol) for microsecond accuracy, or cloud provider synchronized clocks with GPS accuracy (AWS Time Sync with Chrony in PHC mode)"
+        },
+        {
+          "id": "c",
+          "text": "NTP should be configured with a higher poll rate to achieve 3-second accuracy"
+        },
+        {
+          "id": "d",
+          "text": "Event ordering should rely on database auto-increment IDs rather than timestamps"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "NTP achieves 1-50ms accuracy in typical deployments \u2014 3-second skew suggests either NTP is misconfigured or not running.",
+        "b": "For strict distributed event ordering, NTP is a floor \u2014 it reduces skew but cannot eliminate it. Applications requiring deterministic ordering use logical clocks (causal ordering) or PTP (hardware-level time synchronization). This is the correct answer.",
+        "c": "NTP poll rate controls synchronization frequency \u2014 it does not improve the accuracy achievable through NTP over internet connections.",
+        "d": "Auto-increment IDs provide ordering within a single database \u2014 they cannot order events across distributed services."
+      }
+    },
+    {
+      "id": 1141,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "Instances in a private cloud subnet need to access the internet to download software updates but must not be directly accessible from the internet. Which cloud network component enables this?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "An internet gateway attached directly to the private subnet"
+        },
+        {
+          "id": "b",
+          "text": "A NAT gateway (or NAT instance) in a public subnet \u2014 private instances route outbound internet traffic through the NAT gateway which translates their private source IPs to the NAT gateway's public IP. Return traffic is directed to the NAT gateway which forwards it to the originating private instance, while inbound connections from the internet cannot initiate connections to private instances"
+        },
+        {
+          "id": "c",
+          "text": "A VPN connection to the cloud provider's network edge"
+        },
+        {
+          "id": "d",
+          "text": "An elastic network interface with a public IP attached to each private instance"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "An internet gateway attached to a private subnet would make instances directly internet-accessible \u2014 NAT provides outbound-only internet access.",
+        "b": "NAT gateway provides outbound internet access for private instances while blocking inbound internet connections \u2014 exactly the requirement. Private instances can initiate outbound connections through NAT but cannot receive inbound connections from the internet. This is the correct answer.",
+        "c": "VPN connections provide secure access between networks \u2014 not outbound internet access for private instances.",
+        "d": "Public IPs on private instances make them internet-accessible \u2014 violating the requirement for no direct internet access."
+      }
+    },
+    {
+      "id": 1142,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "Private subnet instances can access the internet successfully. However, a new instance in the same subnet cannot reach the internet. Other instances in the subnet work correctly. What should be investigated first?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The NAT gateway is failing since other instances are also affected"
+        },
+        {
+          "id": "b",
+          "text": "Check the new instance's subnet route table association \u2014 the new instance may be in a subnet that is not associated with the route table containing the NAT gateway route (0.0.0.0/0 \u2192 NAT gateway). Also verify the instance's security group allows outbound traffic and the NAT gateway has sufficient capacity"
+        },
+        {
+          "id": "c",
+          "text": "The instance is missing a public IP address \u2014 assign an elastic IP to the private instance"
+        },
+        {
+          "id": "d",
+          "text": "Restart the NAT gateway service since it cannot handle the new instance"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Other instances working correctly rules out NAT gateway failure \u2014 the issue is specific to the new instance.",
+        "b": "When one instance fails while others succeed, the issue is instance-specific: wrong subnet (not associated with the NAT route table), missing security group egress rule, or the instance being placed in the wrong subnet. Route table association is the most common cause. This is the correct answer.",
+        "c": "Private instances should not have public IPs \u2014 they use NAT for internet access, not direct public IP assignment.",
+        "d": "Managed NAT gateways scale automatically \u2014 restarting is not applicable and would disrupt all other instances."
+      }
+    },
+    {
+      "id": 1143,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud application behind a NAT gateway makes outbound connections to an external API. The external API provider reports seeing connections from many different source IPs from the cloud environment. The team expected all traffic to use the NAT gateway's single Elastic IP. What explains multiple source IPs?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "NAT gateways randomly change their IP address for load balancing"
+        },
+        {
+          "id": "b",
+          "text": "The application is deployed across multiple availability zones, each with its own NAT gateway \u2014 AWS best practice is one NAT gateway per AZ for high availability. Traffic from instances in different AZs exits through their respective AZ NAT gateways, each with a different Elastic IP. If the external API requires a single source IP whitelist, all traffic must route through one NAT gateway or IP allowlisting must include all NAT gateway IPs"
+        },
+        {
+          "id": "c",
+          "text": "Some instances are using internet gateways directly instead of the NAT gateway"
+        },
+        {
+          "id": "d",
+          "text": "The external API is incorrectly logging source IPs due to load balancer insertion"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "NAT gateways have stable Elastic IPs \u2014 they do not randomly rotate.",
+        "b": "Multi-AZ deployments with per-AZ NAT gateways produce different source IPs per AZ \u2014 a common operational discovery when external partners whitelist IPs. Each NAT gateway has its own Elastic IP. This is the correct answer.",
+        "c": "Private instances cannot use internet gateways directly \u2014 they route through NAT or remain private.",
+        "d": "NAT gateway source IP translation is deterministic \u2014 logging on both sides would confirm the multiple source IPs."
+      }
+    },
+    {
+      "id": 1144,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "A cloud-hosted API returns HTTP 429 to client requests. What does this status code indicate and how should clients respond?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "HTTP 429 indicates a server-side internal error \u2014 the server has crashed"
+        },
+        {
+          "id": "b",
+          "text": "HTTP 429 Too Many Requests indicates the client has exceeded a rate limit \u2014 the server is throttling the request. Clients should implement exponential backoff and retry after the duration specified in the Retry-After response header"
+        },
+        {
+          "id": "c",
+          "text": "HTTP 429 indicates the requested resource was not found"
+        },
+        {
+          "id": "d",
+          "text": "HTTP 429 indicates the client's authentication credentials have expired"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "HTTP 429 is a client-induced rate limit response \u2014 server crashes produce 500-series errors.",
+        "b": "HTTP 429 Too Many Requests is the standard rate limiting response \u2014 the server is deliberately throttling the client for exceeding request limits. Exponential backoff with jitter is the recommended retry strategy. This is the correct answer.",
+        "c": "Resource not found is HTTP 404 \u2014 not 429.",
+        "d": "Authentication credential issues produce HTTP 401 (Unauthorized) or 403 (Forbidden) \u2014 not 429."
+      }
+    },
+    {
+      "id": 1145,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "A cloud load balancer is returning HTTP 502 Bad Gateway errors for all requests. The backend instances appear healthy in the EC2 console. What should be investigated?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The load balancer itself has failed \u2014 replace it with a new load balancer"
+        },
+        {
+          "id": "b",
+          "text": "HTTP 502 indicates the load balancer received an invalid response from the backend \u2014 investigate: whether the application is actually running and listening on the expected port, whether the health check port matches the application port, whether security groups allow traffic from the load balancer's IP range to the instances, and whether the application is crashing on startup after health checks pass"
+        },
+        {
+          "id": "c",
+          "text": "HTTP 502 indicates the client's browser is misconfigured"
+        },
+        {
+          "id": "d",
+          "text": "HTTP 502 indicates a DNS resolution failure at the load balancer"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "502 is generated by the load balancer when it cannot get a valid response from backends \u2014 the load balancer itself is functioning, the backends are the issue.",
+        "b": "502 Bad Gateway indicates the load balancer connected to the backend but received an invalid or no response. EC2 instances being healthy in the console does not mean the application is running \u2014 the instance may be running while the application is crashed. This is the correct answer.",
+        "c": "502 is a server-side error \u2014 it indicates a backend problem, not a client configuration issue.",
+        "d": "DNS resolution failures produce connection errors at the client \u2014 not 502 at the load balancer."
+      }
+    },
+    {
+      "id": 1146,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud API returns HTTP 504 Gateway Timeout errors intermittently, particularly during peak traffic. The backend processes requests successfully within 25 seconds. The load balancer idle timeout is set to 20 seconds. What is the relationship between these facts?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "504 errors are unrelated to load balancer timeout configuration"
+        },
+        {
+          "id": "b",
+          "text": "The load balancer closes connections idle for more than 20 seconds before the backend responds. Since processing takes 25 seconds, the load balancer times out the connection 5 seconds before completion and returns 504 to the client. Resolution: increase the load balancer idle timeout to exceed the maximum expected backend processing time (e.g., 60 seconds) or optimize backend processing to complete within the timeout"
+        },
+        {
+          "id": "c",
+          "text": "HTTP 504 indicates client-side network timeouts \u2014 not load balancer configuration"
+        },
+        {
+          "id": "d",
+          "text": "The backend should reduce processing time to under 1 second for all requests"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "504 Gateway Timeout is directly caused by backend or load balancer timeout expiration \u2014 the timeout configuration is the root cause.",
+        "b": "Load balancer idle timeout shorter than backend processing time is a textbook 504 cause \u2014 the load balancer drops the connection before the backend finishes, returning 504 to the client while the backend continues processing uselessly. This is the correct answer.",
+        "c": "504 is returned by the gateway (load balancer) when it times out \u2014 not a client-side network issue.",
+        "d": "Sub-second processing may not be feasible for all request types \u2014 increasing the timeout is the appropriate operational fix for legitimate long-running requests."
+      }
+    },
+    {
+      "id": 1147,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "Users in Europe report slow response times from a cloud application hosted in AWS us-east-1. Users in the US report normal response times. What is the PRIMARY cause of the latency difference?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "European users have slower internet connections than US users"
+        },
+        {
+          "id": "b",
+          "text": "Physical network distance \u2014 data must travel across the Atlantic Ocean (approximately 9,000km) adding 80-120ms of round-trip latency for transatlantic connections. This is the speed-of-light limit for the physical distance, independent of internet quality"
+        },
+        {
+          "id": "c",
+          "text": "The application is throttling European users to reserve capacity for US users"
+        },
+        {
+          "id": "d",
+          "text": "European DNS resolution is slower than US resolution for AWS services"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "European internet infrastructure is equivalent to US infrastructure \u2014 geographic distance, not connection quality, causes transatlantic latency.",
+        "b": "Transatlantic latency is a physical limitation \u2014 light travels at approximately 200,000 km/s in fiber, making the round-trip time for transatlantic connections approximately 80-120ms before any application processing. This is an unavoidable consequence of geographic distance. This is the correct answer.",
+        "c": "Cloud applications do not automatically throttle by geography \u2014 the latency is physical, not policy-based.",
+        "d": "DNS resolution is typically milliseconds \u2014 it is not the primary cause of 80-120ms transatlantic application latency."
+      }
+    },
+    {
+      "id": 1148,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "A cloud application's p99 latency spikes to 2,000ms every 5 minutes while p50 remains at 50ms. The spike lasts about 30 seconds. CPU and memory are normal during spikes. What pattern does this suggest?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Network congestion occurring every 5 minutes"
+        },
+        {
+          "id": "b",
+          "text": "Periodic garbage collection pauses \u2014 a JVM or managed runtime GC pause would cause p99 spikes while p50 remains normal (most requests complete normally, but the 1% caught during GC wait for the pause to complete). The 30-second duration and 5-minute interval suggest scheduled or threshold-triggered full GC cycles"
+        },
+        {
+          "id": "c",
+          "text": "Auto-scaling is adding instances every 5 minutes causing temporary capacity reduction"
+        },
+        {
+          "id": "d",
+          "text": "The monitoring tool is aggregating metrics in 5-minute windows showing false spikes"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Network congestion would affect all percentiles \u2014 not create a p99 spike while p50 stays normal.",
+        "b": "The p99-only periodic spike pattern with consistent interval is characteristic of garbage collection pauses \u2014 requests caught waiting during GC stop-the-world phases experience elevated latency while most requests (p50) complete normally before or after the pause. This is the correct answer.",
+        "c": "Auto-scaling events would cause broader latency increases across percentiles \u2014 not isolated p99 spikes.",
+        "d": "5-minute metric aggregation windows would smooth out spikes \u2014 the 30-second spike duration within a 5-minute period would be visible in both aggregated and raw metrics."
+      }
+    },
+    {
+      "id": 1149,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A microservices application has a total p99 latency of 800ms. Distributed tracing shows a single database query taking 750ms in the trace. The database CPU is 8% and the query plan shows a full table scan on a 50M row table. What is the root cause and solution?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The database needs more CPU to execute the query faster"
+        },
+        {
+          "id": "b",
+          "text": "The full table scan on 50M rows is the root cause \u2014 the database is reading every row because the query lacks an index on the filter column. Adding an appropriate index allows the database to locate matching rows directly instead of scanning all 50M rows, potentially reducing the 750ms query time to milliseconds. Low CPU confirms the bottleneck is I/O (reading rows), not compute"
+        },
+        {
+          "id": "c",
+          "text": "The table must be partitioned across multiple database instances to reduce query time"
+        },
+        {
+          "id": "d",
+          "text": "Caching the query result in Redis eliminates the latency without needing a database index"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Low CPU with high latency from a full table scan indicates I/O bottleneck \u2014 more CPU does not reduce I/O scan time.",
+        "b": "Full table scans on large tables are the primary source of database latency \u2014 an index on the filter column converts an O(n) full scan to an O(log n) indexed lookup, eliminating the 750ms query time. This is the correct answer.",
+        "c": "Table partitioning may help at extreme scales \u2014 but adding an index is the immediate and simpler solution for a missing index problem.",
+        "d": "Caching addresses read frequency \u2014 it does not fix the underlying query performance problem that affects cache-miss requests and cache warm-up."
+      }
+    },
+    {
+      "id": 1150,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "A cloud instance transfers data at 200 Mbps but the expected throughput is 1 Gbps. The instance is an m5.large (up to 10 Gbps network). What should be investigated first?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The m5.large does not support network speeds above 200 Mbps"
+        },
+        {
+          "id": "b",
+          "text": "Investigate the receiving endpoint's bandwidth capability, whether enhanced networking (ENA/SR-IOV) is enabled on the instance, the network baseline bandwidth guarantee vs. burst (m5.large has 10 Gbps maximum but baseline may be lower), and whether the application is able to saturate the available network bandwidth through parallel connections or large transfer sizes"
+        },
+        {
+          "id": "c",
+          "text": "Network performance is fixed at 200 Mbps for all EC2 instances"
+        },
+        {
+          "id": "d",
+          "text": "The instance needs to be rebooted to activate the full network bandwidth"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "m5.large supports up to 10 Gbps \u2014 200 Mbps utilization suggests a bottleneck elsewhere.",
+        "b": "Actual network throughput depends on multiple factors: the destination endpoint's bandwidth capability (a single TCP connection to a distant server may only achieve 200 Mbps due to TCP window sizing and latency), enhanced networking enablement, and whether the application uses enough parallel connections to saturate available bandwidth. This is the correct answer.",
+        "c": "EC2 network performance varies significantly by instance type and configuration \u2014 200 Mbps is far below m5.large capability.",
+        "d": "Rebooting does not increase network bandwidth \u2014 configuration and architectural factors determine actual throughput."
+      }
+    },
+    {
+      "id": 1151,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "A cloud-hosted video streaming service experiences quality degradation for users during peak hours (7-10 PM). Monitoring shows the instance's network interface is at 95% utilization during these periods. What solutions should be evaluated?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Reduce video quality for all users to stay within bandwidth limits"
+        },
+        {
+          "id": "b",
+          "text": "Scale horizontally \u2014 add more streaming instances behind a load balancer to distribute the bandwidth demand across multiple instances. Also evaluate: CDN integration to offload static video content delivery, upgrading to higher network bandwidth instance types, and auto-scaling triggers based on network utilization metrics"
+        },
+        {
+          "id": "c",
+          "text": "Increase the video streaming server's CPU allocation"
+        },
+        {
+          "id": "d",
+          "text": "Schedule maintenance during peak hours to reduce non-streaming traffic"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Reducing quality degrades user experience \u2014 scaling to maintain quality at peak demand is the correct approach.",
+        "b": "Network bandwidth saturation at peak is a scaling problem \u2014 horizontal scaling distributes load across multiple instances, each with their own network bandwidth allocation. CDN offloading is particularly effective for video content since CDN nodes serve content locally with much higher aggregate bandwidth. This is the correct answer.",
+        "c": "CPU is not the constraint \u2014 network bandwidth is at 95%. CPU scaling does not address network saturation.",
+        "d": "Scheduling maintenance during peak hours worsens the user experience \u2014 capacity scaling is required."
+      }
+    },
+    {
+      "id": 1152,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "An application transfers large datasets between two cloud regions. Transfer speed is 50 Mbps despite both endpoints having 10 Gbps network interfaces. The distance between regions adds approximately 50ms round-trip latency. Why is transfer speed limited and how can it be improved?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "50 Mbps is the maximum inter-region transfer speed \u2014 this cannot be increased"
+        },
+        {
+          "id": "b",
+          "text": "TCP throughput is limited by the TCP window size divided by round-trip time (bandwidth-delay product). With 50ms RTT, a default TCP window of 64KB limits throughput to approximately 10 Mbps per connection. Solutions: increase TCP window size (enable TCP window scaling), use multiple parallel TCP connections, or use AWS DataSync/Transfer Family which are optimized for high-latency long-distance transfers"
+        },
+        {
+          "id": "c",
+          "text": "Inter-region transfers are throttled by cloud providers to 50 Mbps by default"
+        },
+        {
+          "id": "d",
+          "text": "The 50ms latency is causing packet loss that reduces throughput"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Inter-region transfers are not capped at 50 Mbps \u2014 high-latency TCP window constraints limit single-connection throughput.",
+        "b": "The bandwidth-delay product determines TCP throughput: throughput = window_size / RTT. Default TCP window sizes are designed for LAN (low latency) environments and severely underperform over WAN. Parallel connections, window scaling, or protocol-optimized transfer tools dramatically improve inter-region throughput. This is the correct answer.",
+        "c": "Cloud providers charge for inter-region data transfer but do not throttle bandwidth to 50 Mbps \u2014 TCP window constraints cause this limitation.",
+        "d": "50ms latency does not cause packet loss \u2014 it reduces TCP throughput through the bandwidth-delay product mechanism."
+      }
+    },
+    {
+      "id": 1153,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "A cloud VPC has a public subnet with an internet gateway but instances in the subnet cannot reach the internet. The instances have public IPs assigned. What is the MOST likely misconfiguration?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The instances need to be rebooted to recognize the internet gateway"
+        },
+        {
+          "id": "b",
+          "text": "The route table associated with the subnet is missing a route for 0.0.0.0/0 \u2192 internet gateway. Without this route, traffic destined for the internet has no path even though the internet gateway is attached to the VPC"
+        },
+        {
+          "id": "c",
+          "text": "Internet gateways must be placed in each subnet individually"
+        },
+        {
+          "id": "d",
+          "text": "The instances require Elastic IPs instead of auto-assigned public IPs"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Rebooting does not change routing table configuration \u2014 the route must be added to the route table.",
+        "b": "Internet gateway attachment to a VPC is necessary but not sufficient \u2014 each public subnet's route table must also contain a default route (0.0.0.0/0) pointing to the internet gateway. Without this route, packets destined for external IPs have no path. This is the correct answer.",
+        "c": "Internet gateways are VPC-level resources \u2014 one internet gateway serves all public subnets in the VPC.",
+        "d": "Auto-assigned public IPs work for internet access \u2014 the routing table missing the internet gateway route is the specific issue."
+      }
+    },
+    {
+      "id": 1154,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "A cloud VPN connection between on-premises and AWS appears 'UP' in the AWS console but on-premises hosts cannot ping AWS instances. The AWS instances' security groups allow ICMP from the on-premises CIDR. What should be checked next?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The VPN connection status showing 'UP' guarantees full connectivity \u2014 the issue must be DNS"
+        },
+        {
+          "id": "b",
+          "text": "Check the on-premises routing \u2014 on-premises routers must have routes directing traffic for the AWS VPC CIDR through the VPN tunnel. Also verify the AWS route table contains a route for the on-premises CIDR through the Virtual Private Gateway. VPN 'UP' only means the tunnel is established \u2014 both sides must have routes to direct traffic through it"
+        },
+        {
+          "id": "c",
+          "text": "Enable VPN flow logs to capture the failing traffic"
+        },
+        {
+          "id": "d",
+          "text": "The VPN tunnel encryption is blocking ICMP packets"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "VPN 'UP' indicates tunnel establishment \u2014 it does not guarantee routing is configured on both sides to use the tunnel.",
+        "b": "VPN connectivity requires bi-directional routing: on-premises must route AWS CIDR traffic into the VPN tunnel, and AWS must route on-premises CIDR traffic through the Virtual Private Gateway. Missing routes on either side cause the described symptom. This is the correct answer.",
+        "c": "VPN flow logs help with traffic analysis after routing is confirmed correct \u2014 routing is the first thing to verify.",
+        "d": "VPN encryption is transparent to the traffic it carries \u2014 ICMP works through VPN tunnels when routing is correct."
+      }
+    },
+    {
+      "id": 1155,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud load balancer with multiple target groups routes traffic based on path. Requests to /api go to the API target group and requests to /static go to the CDN target group. A new path /admin is being incorrectly routed to the API target group instead of the Admin target group. What is the MOST likely misconfiguration?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The Admin target group instances are unhealthy"
+        },
+        {
+          "id": "b",
+          "text": "The listener rules are evaluated in priority order \u2014 if the /api rule has lower priority number than the /admin rule, /admin requests may match the /api rule first if /api is configured as a prefix match (matching /api, /api/*, but also possibly /admin if poorly configured). Check rule ordering and ensure the /admin rule has higher priority than broader matching rules"
+        },
+        {
+          "id": "c",
+          "text": "Path-based routing cannot distinguish between /api and /admin"
+        },
+        {
+          "id": "d",
+          "text": "The /admin path requires SSL termination at a different port"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Unhealthy target group instances would cause 502/503 errors \u2014 not traffic routed to the wrong target group.",
+        "b": "Load balancer listener rules are evaluated by priority \u2014 lower priority numbers are evaluated first. If a broad rule matches /admin requests before the specific /admin rule is evaluated, traffic routes to the wrong target. Rule ordering and specificity are common misconfiguration sources. This is the correct answer.",
+        "c": "Path-based routing rules can distinguish any path patterns \u2014 this is a standard load balancer capability.",
+        "d": "TLS termination is not path-dependent \u2014 all paths handled by the same listener use the same TLS configuration."
+      }
+    },
+    {
+      "id": 1156,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "A cloud application communicates with a backend service using TLS 1.0. A security team mandates TLS 1.2 minimum. After enforcing TLS 1.2+ on the backend, the application fails with 'SSL handshake failed'. What must be done?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Re-enable TLS 1.0 on the backend since the application requires it"
+        },
+        {
+          "id": "b",
+          "text": "Update the application's TLS client configuration to negotiate TLS 1.2 or higher \u2014 the application is still configured to offer TLS 1.0 in its client hello, but the backend now rejects anything below TLS 1.2. Both client and server must be updated when changing TLS protocol versions"
+        },
+        {
+          "id": "c",
+          "text": "Generate a new TLS certificate since the current certificate is not compatible with TLS 1.2"
+        },
+        {
+          "id": "d",
+          "text": "TLS version negotiation is automatic \u2014 no configuration change is needed in the application"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Re-enabling TLS 1.0 would fix connectivity but violates the security mandate \u2014 the application must be updated.",
+        "b": "TLS version enforcement requires updating both the server (done) and client (the application). The client must be configured to offer TLS 1.2+ in its hello handshake \u2014 many older applications or libraries require explicit configuration to enable TLS 1.2. This is the correct answer.",
+        "c": "TLS certificates are independent of TLS protocol version \u2014 certificate compatibility does not determine which protocol versions are negotiated.",
+        "d": "TLS negotiation is not fully automatic \u2014 client TLS libraries offer the versions they are configured to support."
+      }
+    },
+    {
+      "id": 1157,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "A cloud application uses HTTP/1.1 to communicate with a backend API. Performance testing shows the application makes 100 sequential requests per second where each request blocks waiting for the previous response. How does HTTP/2 address this limitation?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "HTTP/2 is faster than HTTP/1.1 because it compresses URLs"
+        },
+        {
+          "id": "b",
+          "text": "HTTP/2 supports multiplexing \u2014 multiple requests can be sent and responses received concurrently over a single connection without waiting for previous requests to complete. This eliminates HTTP/1.1 head-of-line blocking where a slow response blocks all subsequent requests on that connection"
+        },
+        {
+          "id": "c",
+          "text": "HTTP/2 uses UDP instead of TCP for faster transmission"
+        },
+        {
+          "id": "d",
+          "text": "HTTP/2 automatically caches all API responses to eliminate repeated requests"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "HTTP/2 compresses headers (HPACK), not URLs \u2014 the primary performance benefit is multiplexing.",
+        "b": "HTTP/2 request multiplexing eliminates the sequential blocking of HTTP/1.1 \u2014 multiple requests inflight simultaneously over a single connection removes the head-of-line blocking that forces HTTP/1.1 clients to either wait or open multiple connections. This is the correct answer.",
+        "c": "HTTP/2 runs over TCP \u2014 HTTP/3 (QUIC) uses UDP. HTTP/2 itself maintains TCP reliability.",
+        "d": "HTTP/2 has no built-in response caching \u2014 caching is handled by application-layer cache headers, CDNs, and reverse proxies."
+      }
+    },
+    {
+      "id": 1158,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud application sends gRPC requests to a service behind an AWS Application Load Balancer. The ALB is configured for HTTPS on port 443. gRPC calls return 'Unimplemented' errors immediately. What is the protocol misconfiguration?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "gRPC cannot use port 443 \u2014 it requires port 50051"
+        },
+        {
+          "id": "b",
+          "text": "AWS ALB requires explicit gRPC protocol configuration \u2014 the target group must be set to 'gRPC' protocol type (not HTTP), and the ALB listener must use HTTP/2 which gRPC requires. An ALB configured for standard HTTP/1.1 HTTPS cannot handle gRPC traffic correctly because gRPC requires HTTP/2 with multiplexing and trailer support"
+        },
+        {
+          "id": "c",
+          "text": "gRPC uses UDP which ALB does not support \u2014 use NLB instead"
+        },
+        {
+          "id": "d",
+          "text": "'Unimplemented' is a gRPC application-level error \u2014 not a protocol error"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "gRPC can use any port including 443 \u2014 port is not the issue.",
+        "b": "gRPC requires HTTP/2 for multiplexing, stream support, and trailers. ALB target groups must be configured with the gRPC protocol type to properly handle gRPC traffic, including preserving gRPC metadata and trailers. Standard HTTPS target groups on ALB default to HTTP/1.1 behavior which gRPC does not support. This is the correct answer.",
+        "c": "gRPC uses HTTP/2 over TCP \u2014 NLB is not required for gRPC when ALB is properly configured.",
+        "d": "While 'Unimplemented' is a gRPC status code, it commonly appears when the ALB cannot route gRPC requests to the backend \u2014 it manifests as a protocol issue at the load balancer layer."
+      }
+    },
+    {
+      "id": 1159,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "Two cloud VPCs both use the CIDR range 10.0.0.0/16. The team wants to establish VPC peering between them. What problem does this create?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "VPC peering requires both VPCs to be in the same AWS account"
+        },
+        {
+          "id": "b",
+          "text": "Overlapping CIDR blocks prevent VPC peering \u2014 routing cannot distinguish which VPC a 10.0.x.x address belongs to. VPC peering requires non-overlapping CIDRs so that routing tables can direct traffic to the correct VPC"
+        },
+        {
+          "id": "c",
+          "text": "VPC peering automatically resolves CIDR conflicts using NAT"
+        },
+        {
+          "id": "d",
+          "text": "Overlapping CIDRs only affect traffic routing between the VPCs \u2014 peering itself can still be established"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "VPC peering works across accounts and regions \u2014 CIDR overlap is the technical limitation.",
+        "b": "VPC peering requires non-overlapping CIDRs as a hard requirement \u2014 AWS explicitly rejects peering connection creation between VPCs with overlapping address ranges because routing would be ambiguous. This is the correct answer.",
+        "c": "VPC peering does not include NAT \u2014 it provides direct routing between VPCs with non-overlapping CIDRs.",
+        "d": "AWS prevents peering creation between overlapping CIDR VPCs \u2014 the peering cannot be established, not just routing-limited."
+      }
+    },
+    {
+      "id": 1160,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "A cloud administrator creates a subnet with CIDR 10.0.1.0/24 expecting 256 usable IP addresses. AWS reports only 251 addresses are available. What accounts for the 5-address discrepancy?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS charges for 5 addresses as a gateway fee"
+        },
+        {
+          "id": "b",
+          "text": "AWS reserves 5 IP addresses in every subnet: the network address (10.0.1.0), VPC router (10.0.1.1), DNS server (10.0.1.2), reserved for future use (10.0.1.3), and broadcast address (10.0.1.255). These cannot be assigned to instances, leaving 251 usable addresses from the /24"
+        },
+        {
+          "id": "c",
+          "text": "5 addresses are always reserved for AWS support team access"
+        },
+        {
+          "id": "d",
+          "text": "The /24 subnet actually only provides 251 addresses by RFC specification"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AWS does not charge a gateway fee per subnet address \u2014 the reservation is functional.",
+        "b": "AWS's subnet reservation policy reserves the first four and last IP address in every subnet for network infrastructure functions. This is documented AWS behavior and not a charge \u2014 the reserved addresses serve VPC infrastructure functions. This is the correct answer.",
+        "c": "AWS support does not reserve addresses for access \u2014 the reservations are functional infrastructure addresses.",
+        "d": "The /24 RFC provides 256 addresses (254 usable with standard network/broadcast) \u2014 AWS reserves 5 total (network + 3 AWS infrastructure + broadcast)."
+      }
+    },
+    {
+      "id": 1161,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud deployment uses IPv6 dual-stack VPC. An application is configured to prefer IPv4 but some clients are connecting via IPv6, causing unexpected routing behavior. The application server responds differently based on whether it received the request via IPv4 or IPv6. What investigation steps resolve this?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Disable IPv6 on the VPC to force all traffic through IPv4"
+        },
+        {
+          "id": "b",
+          "text": "Investigate the application's source IP handling \u2014 in dual-stack environments, the application must correctly handle both IPv4 and IPv6 client addresses. Check whether the application correctly extracts the original client IP from X-Forwarded-For headers (which may contain IPv6 addresses), whether IP-based logic (geolocation, rate limiting, access control) handles both address families correctly, and whether any middleware is treating IPv6 connections differently"
+        },
+        {
+          "id": "c",
+          "text": "Configure the load balancer to convert all IPv6 connections to IPv4 before forwarding"
+        },
+        {
+          "id": "d",
+          "text": "IPv4 and IPv6 cannot coexist in the same VPC \u2014 choose one protocol"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Disabling IPv6 is a drastic measure that limits future flexibility \u2014 investigating and fixing the application behavior is preferable.",
+        "b": "Dual-stack deployment requires applications to correctly handle both IPv4 and IPv6 source addresses \u2014 rate limiting, geolocation, access control lists, and logging that only handle IPv4 format addresses will malfunction or produce unexpected behavior when receiving IPv6 connections. This is the correct answer.",
+        "c": "Application Load Balancers can handle dual-stack but translate IPv6 to IPv4 for backend targets using dualstack mode \u2014 this may already be the case, or may be the solution.",
+        "d": "IPv4/IPv6 dual-stack is a fully supported and common VPC configuration \u2014 they coexist by design."
+      }
+    },
+    {
+      "id": 1162,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "A cloud instance can communicate with other instances in the same subnet but cannot reach instances in other subnets within the same VPC. What is the MOST likely cause?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Instances in different subnets cannot communicate within the same VPC"
+        },
+        {
+          "id": "b",
+          "text": "The subnet's route table is missing a local route for the VPC CIDR \u2014 without a route allowing traffic to the broader VPC CIDR range, the instance can only reach the local subnet. The local VPC route (VPC CIDR \u2192 local) should be present automatically but may have been accidentally removed"
+        },
+        {
+          "id": "c",
+          "text": "The security group on the destination instance is blocking traffic"
+        },
+        {
+          "id": "d",
+          "text": "Cross-subnet communication requires VPC peering even within the same VPC"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Instances in different subnets absolutely can communicate within the same VPC \u2014 the local route enables this.",
+        "b": "The local route (VPC CIDR \u2192 local) in the route table enables intra-VPC communication between subnets. This route is automatically created and cannot normally be deleted, but custom route tables that replace the default may be missing it. This is the correct answer.",
+        "c": "Security groups could be the issue \u2014 but the route table local route should be checked first since it's the network-layer prerequisite.",
+        "d": "VPC peering is for communication between different VPCs \u2014 instances within the same VPC communicate via the local route."
+      }
+    },
+    {
+      "id": 1163,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "A cloud network has a Transit Gateway connecting 5 VPCs and on-premises. Traffic from VPC-A to VPC-B works. Traffic from VPC-A to VPC-C fails. All VPCs are attached to the Transit Gateway. What should be investigated?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Transit Gateways cannot connect more than 2 VPCs simultaneously"
+        },
+        {
+          "id": "b",
+          "text": "Check Transit Gateway route tables \u2014 each VPC attachment must have routes to the other VPCs' CIDRs in the Transit Gateway route table. If VPC-C's CIDR is missing from the TGW route table, or if VPC-C's route table lacks a route sending traffic to the TGW for VPC-A's CIDR, traffic will fail. Also verify VPC-C's attachment is associated with the correct TGW route table"
+        },
+        {
+          "id": "c",
+          "text": "VPC-C must be in the same availability zone as VPC-A"
+        },
+        {
+          "id": "d",
+          "text": "Re-attach VPC-C to the Transit Gateway to restore connectivity"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Transit Gateways support thousands of VPC attachments \u2014 not limited to 2.",
+        "b": "Transit Gateway routing requires configuration at two levels: the TGW route table (must contain routes for all VPC CIDRs) and each VPC's route table (must have routes sending cross-VPC traffic to the TGW). Missing routes on either side cause selective connectivity failures. This is the correct answer.",
+        "c": "Transit Gateways operate at the regional level \u2014 AZ placement is not relevant for VPC connectivity.",
+        "d": "Re-attaching VPC-C will not fix a routing table misconfiguration \u2014 the routes must be explicitly configured."
+      }
+    },
+    {
+      "id": 1164,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "Two cloud routes exist for the same destination in a routing table: 10.0.0.0/16 via TGW and 10.0.0.0/24 via VPC peering. A packet destined for 10.0.0.50 is being routed via VPC peering instead of TGW. A packet for 10.0.1.50 routes via TGW. Why?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "VPC peering always takes priority over Transit Gateway routes"
+        },
+        {
+          "id": "b",
+          "text": "Longest prefix match \u2014 10.0.0.0/24 is more specific than 10.0.0.0/16. Network routing always prefers the most specific matching route. For 10.0.0.50, /24 matches (100% match) so VPC peering is used. For 10.0.1.50, only /16 matches so TGW is used. This is standard routing behavior, not a misconfiguration"
+        },
+        {
+          "id": "c",
+          "text": "VPC peering has lower administrative distance than Transit Gateway"
+        },
+        {
+          "id": "d",
+          "text": "The packet size determines which route is chosen for identical destinations"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Route selection is based on prefix length \u2014 VPC peering does not have inherent priority over TGW.",
+        "b": "Longest prefix match is the fundamental routing principle \u2014 more specific routes (longer subnet masks) always take precedence over less specific routes. This is by design and is correct routing behavior. This is the correct answer.",
+        "c": "Administrative distance is a concept in traditional routing protocols \u2014 AWS routing tables select the most specific matching route.",
+        "d": "Packet size (MTU) affects fragmentation \u2014 it does not determine which route is selected."
+      }
+    },
+    {
+      "id": 1165,
+      "objective": "6.2",
+      "difficulty": "easy",
+      "text": "In a cloud environment, VLANs and traditional layer 2 switching are abstracted. What cloud constructs serve the equivalent function of VLANs for network segmentation?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Cloud providers use physical VLANs identical to on-premises environments"
+        },
+        {
+          "id": "b",
+          "text": "VPCs and subnets serve the equivalent function \u2014 VPCs provide complete network isolation (similar to separate physical networks), subnets provide segmentation within a VPC (similar to VLANs), and security groups provide instance-level access control. Cloud overlay networks abstract the physical switching layer"
+        },
+        {
+          "id": "c",
+          "text": "VLAN functionality is not available in cloud environments \u2014 all instances share a flat network"
+        },
+        {
+          "id": "d",
+          "text": "Cloud VLANs are configured using the 802.1Q protocol on cloud instances"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Cloud providers use software-defined networking over commodity hardware \u2014 physical VLANs are not exposed to customers.",
+        "b": "Cloud SDN abstracts physical switching \u2014 VPCs provide equivalent isolation to physically separate networks, subnets segment within VPCs, and security groups provide granular access control. These virtual constructs replace physical VLAN infrastructure. This is the correct answer.",
+        "c": "Cloud networks provide extensive segmentation capabilities \u2014 VPCs and subnets provide stronger isolation than typical VLAN implementations.",
+        "d": "802.1Q VLAN tagging is a physical network protocol \u2014 cloud customers use SDN constructs (VPC/subnet) rather than physical VLAN configuration."
+      }
+    },
+    {
+      "id": 1166,
+      "objective": "6.2",
+      "difficulty": "medium",
+      "text": "A cloud deployment connects to on-premises via AWS Direct Connect. The on-premises network uses VLANs to segment traffic. The Direct Connect must carry traffic for multiple on-premises VLANs to multiple VPCs. Which Direct Connect feature supports this multi-VLAN connectivity?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Direct Connect supports only a single VLAN per connection"
+        },
+        {
+          "id": "b",
+          "text": "AWS Direct Connect uses Virtual Interfaces (VIFs) \u2014 each VIF is associated with a specific VLAN ID (802.1Q tag). Multiple private VIFs can be created on a single physical Direct Connect connection, each using a different VLAN ID to carry traffic for different VPCs. This allows one physical connection to serve multiple VPC destinations using VLAN-based multiplexing"
+        },
+        {
+          "id": "c",
+          "text": "Multiple VLANs require multiple physical Direct Connect connections"
+        },
+        {
+          "id": "d",
+          "text": "VLAN support requires the 100 Gbps Direct Connect tier"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Direct Connect supports multiple VIFs (and therefore multiple VLANs) per physical connection.",
+        "b": "Direct Connect VIFs use 802.1Q VLAN tags to differentiate traffic \u2014 each VIF has a unique VLAN ID, allowing a single physical connection to carry logically separated traffic streams to multiple VPCs. This is the correct answer.",
+        "c": "Multiple VLANs can be multiplexed over a single Direct Connect connection using VIFs \u2014 separate physical connections are not required.",
+        "d": "VLAN support (VIFs) is available on all Direct Connect connection speeds \u2014 not limited to 100 Gbps."
+      }
+    },
+    {
+      "id": 1167,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud SDN deployment uses VXLANs to extend Layer 2 domains across multiple availability zones. A network engineer notices that broadcast traffic is flooding across all AZs causing unnecessary bandwidth consumption. What is the fundamental challenge of extending Layer 2 across cloud AZs and how is it addressed?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "VXLAN technology eliminates all broadcast traffic automatically"
+        },
+        {
+          "id": "b",
+          "text": "Layer 2 broadcast domains inherently scale poorly \u2014 ARP broadcasts, DHCP broadcasts, and unknown unicast flooding consume bandwidth proportional to the number of endpoints. In cloud environments spanning multiple AZs, this creates significant cross-AZ bandwidth costs and performance issues. Solutions: implement VXLAN with head-end replication control (limiting broadcast to relevant endpoints), use ARP proxy (cloud SDN handles ARP without flooding), or prefer Layer 3 routed architectures that eliminate broadcast domains"
+        },
+        {
+          "id": "c",
+          "text": "Broadcast traffic cannot cross availability zones \u2014 the flooding must be caused by multicast"
+        },
+        {
+          "id": "d",
+          "text": "Adding more VXLAN tunnel endpoints reduces broadcast traffic"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "VXLAN encapsulates traffic including broadcasts \u2014 it does not eliminate broadcast behavior, it transports it across IP networks.",
+        "b": "Scaling Layer 2 domains across AZs amplifies broadcast traffic impact \u2014 each new endpoint receives all broadcasts. Cloud SDN typically handles this through ARP proxy (the SDN controller responds to ARP requests without flooding), flood control (limiting who receives broadcasts), and design guidance toward Layer 3 architectures. This is the correct answer.",
+        "c": "VXLAN does carry broadcast traffic across AZs \u2014 the question describes exactly this problem.",
+        "d": "More tunnel endpoints increase the broadcast replication burden \u2014 reducing the Layer 2 domain scope or using ARP proxy reduces flooding."
+      }
+    },
+    {
+      "id": 1168,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud network engineer is troubleshooting connectivity between an on-premises server and a cloud instance connected via Direct Connect. The on-premises server is on VLAN 100. The Direct Connect private VIF is configured with VLAN 200. The BGP session on the VIF is established but the on-premises server cannot reach the cloud instance. What is the MOST likely cause?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "BGP requires identical VLAN IDs on both sides of the Direct Connect connection"
+        },
+        {
+          "id": "b",
+          "text": "The VLAN mismatch between the on-premises server (VLAN 100) and the Direct Connect VIF (VLAN 200) \u2014 traffic from the on-premises server on VLAN 100 may not be reaching the Direct Connect interface that is expecting VLAN 200 tagged frames. The on-premises router/switch must tag frames destined for AWS with VLAN 200 before sending them on the Direct Connect physical connection"
+        },
+        {
+          "id": "c",
+          "text": "BGP session establishment confirms full connectivity \u2014 the issue must be security groups"
+        },
+        {
+          "id": "d",
+          "text": "Direct Connect only supports VLAN IDs between 1 and 100"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "BGP operates at Layer 3 \u2014 VLAN IDs (Layer 2) do not need to match for BGP to establish, but they must match for frame delivery.",
+        "b": "Direct Connect uses 802.1Q VLAN tagging \u2014 the physical connection carries VLAN-tagged frames, and the VIF VLAN ID must match what the on-premises equipment sends. If the on-premises server is on VLAN 100 but the Direct Connect interface expects VLAN 200, the on-premises router must translate VLAN 100 to VLAN 200 at the edge device before frames reach the Direct Connect port. This is the correct answer.",
+        "c": "BGP session operates on the VIF interface itself \u2014 it can establish even if end-to-end device communication fails due to VLAN mismatch.",
+        "d": "AWS Direct Connect supports VLAN IDs from 1 to 4094 \u2014 no restriction to 1-100."
+      }
+    },
+    {
+      "id": 1169,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud network implements micro-segmentation using security groups as virtual switches. A developer reports that their test instance can ping a production database instance despite being on different 'segments'. Investigation shows both instances are in the same security group. What design flaw does this reveal?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Security groups cannot prevent communication between instances in the same group"
+        },
+        {
+          "id": "b",
+          "text": "Combining test and production resources in the same security group defeats micro-segmentation \u2014 security groups that allow intra-group traffic (a common default) permit all instances in the group to communicate. Production and test environments must use separate security groups with explicit rules controlling which inter-environment traffic is permitted, following environment isolation principles"
+        },
+        {
+          "id": "c",
+          "text": "The ping is allowed by the VPC's default allow-all traffic policy"
+        },
+        {
+          "id": "d",
+          "text": "Security groups can only segment traffic at the VPC level \u2014 not between instances"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Security groups can absolutely prevent communication \u2014 the issue is the design choice to place test and production in the same group.",
+        "b": "Micro-segmentation requires environment separation at the security group level \u2014 placing production and test resources in the same security group that permits intra-group traffic eliminates the segmentation boundary. Separate security groups with explicit cross-environment rules enforce environment isolation. This is the correct answer.",
+        "c": "VPCs do not have default allow-all policies \u2014 traffic must be explicitly permitted by security groups.",
+        "d": "Security groups provide instance-level segmentation \u2014 they are the primary micro-segmentation tool in cloud environments."
+      }
+    },
+    {
+      "id": 1170,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud network topology has a hub-and-spoke design using Transit Gateway. All spoke VPCs route traffic through a central inspection VPC for security scanning before reaching other spokes. A spoke VPC now needs direct high-bandwidth communication with another spoke VPC without going through the hub for performance reasons. What architectural change enables this?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Hub-and-spoke cannot be modified \u2014 all traffic must go through the central hub"
+        },
+        {
+          "id": "b",
+          "text": "Add direct VPC peering between the two spoke VPCs that need high-bandwidth direct communication \u2014 traffic between these two VPCs takes the peering path (bypassing TGW and hub inspection) while all other inter-spoke traffic continues through the TGW hub. The route tables in both spoke VPCs must prioritize the peering route (more specific) over the TGW route for these specific CIDRs"
+        },
+        {
+          "id": "c",
+          "text": "Upgrade the Transit Gateway to a higher bandwidth tier"
+        },
+        {
+          "id": "d",
+          "text": "Deploy a second Transit Gateway dedicated to high-bandwidth spoke-to-spoke traffic"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Hub-and-spoke is a design pattern that can be modified with direct peering for specific high-bandwidth paths.",
+        "b": "VPC peering between specific spokes provides direct bandwidth without TGW transit \u2014 longest prefix match in route tables ensures the more specific peering route is preferred for direct spoke-to-spoke traffic while the TGW default route handles all other inter-VPC traffic. This is the correct answer.",
+        "c": "TGW bandwidth is not the constraint \u2014 the inspection VPC and additional hops are the latency/bandwidth concern.",
+        "d": "A second TGW still introduces a transit hop \u2014 direct peering eliminates the transit entirely for specific pairs."
+      }
+    },
+    {
+      "id": 1171,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "An organization migrates from traditional VLAN-based on-premises network segmentation to cloud VPC-based segmentation. The security team wants equivalent controls to on-premises where unknown traffic is blocked at layer 2 switches. Which cloud feature provides the closest equivalent to switch-level port security?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Cloud networks do not have an equivalent to switch-level port security"
+        },
+        {
+          "id": "b",
+          "text": "Source/destination check on EC2 network interfaces (disabled for NAT instances/routers, enabled for regular instances) prevents spoofed IP traffic \u2014 instances cannot send traffic with source IPs not assigned to them, equivalent to port security preventing MAC spoofing. Security groups at the instance level provide the equivalent of switch ACLs. Additionally, AWS Network Firewall provides stateful packet inspection at the VPC level"
+        },
+        {
+          "id": "c",
+          "text": "Only VPC NACLs provide layer 2 equivalent security in cloud environments"
+        },
+        {
+          "id": "d",
+          "text": "Cloud environments automatically prevent all spoofed traffic without any configuration"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Cloud environments provide multiple controls that equivalent or exceed traditional switch-level port security.",
+        "b": "Source/destination check prevents IP spoofing (equivalent to switch port security against MAC/IP spoofing), security groups provide instance-level packet filtering (equivalent to switch ACLs), and AWS Network Firewall provides deep packet inspection \u2014 together providing comprehensive controls equivalent to on-premises switch security. This is the correct answer.",
+        "c": "NACLs are stateless subnet-level controls \u2014 security groups provide more granular instance-level controls similar to switch port security.",
+        "d": "Source/destination check is automatically enabled \u2014 this is correct. Cloud hypervisors do enforce source IP checking, which does prevent basic IP spoofing without explicit configuration."
+      }
+    },
+    {
+      "id": 1172,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "An AWS VPC with BGP-based dynamic routing through a virtual private gateway receives a route advertisement from on-premises for 0.0.0.0/0 (default route). All internet-bound traffic from the VPC suddenly routes through the on-premises network instead of the internet gateway. What caused this and how is it prevented?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "BGP cannot advertise default routes \u2014 this scenario is impossible"
+        },
+        {
+          "id": "b",
+          "text": "The on-premises network advertised a default route (0.0.0.0/0) via BGP which was propagated to VPC route tables through the VGW. AWS VPC route tables can receive BGP-propagated routes \u2014 a default route from on-premises overrides the intent to use the internet gateway for external traffic. Prevention: configure BGP route filtering on the VGW to reject default route advertisements from on-premises, or use explicit routes for on-premises CIDRs without route propagation"
+        },
+        {
+          "id": "c",
+          "text": "Disable the internet gateway to restore normal routing"
+        },
+        {
+          "id": "d",
+          "text": "BGP default routes only affect on-premises routing \u2014 they cannot affect VPC route tables"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "BGP absolutely supports default route (0.0.0.0/0) advertisement \u2014 this is a standard BGP use case.",
+        "b": "BGP route propagation from on-premises to VPC route tables can include default routes \u2014 an accidental or intentional default route advertisement causes all internet traffic to be black-holed or rerouted through on-premises. Route filtering on the VGW prevents unintended route propagation. This is the correct answer.",
+        "c": "Disabling the internet gateway removes a valid resource \u2014 the correct fix is preventing the unintended BGP route advertisement.",
+        "d": "BGP-propagated routes are directly injected into VPC route tables when VGW route propagation is enabled \u2014 they absolutely affect VPC routing."
+      }
+    },
+    {
+      "id": 1173,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud network has asymmetric routing \u2014 traffic from VPC-A to VPC-B flows through Firewall-1, but return traffic from VPC-B to VPC-A flows through Firewall-2. Both firewalls maintain separate stateful connection tables. Connections are being reset. Why does asymmetric routing break stateful firewalls?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Stateful firewalls do not support cloud environments"
+        },
+        {
+          "id": "b",
+          "text": "Stateful firewalls maintain connection state tables \u2014 when a connection is established through Firewall-1, Firewall-1 tracks the session state (SYN, established, etc.). When return traffic arrives at Firewall-2 instead, Firewall-2 has no record of this connection and treats the return packets as unsolicited traffic, dropping or resetting them. Symmetric routing (traffic flows through the same firewall in both directions) is required for stateful inspection"
+        },
+        {
+          "id": "c",
+          "text": "Return traffic should use the same firewall \u2014 reset the routing tables to fix this"
+        },
+        {
+          "id": "d",
+          "text": "Asymmetric routing is normal and stateful firewalls automatically synchronize state"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Stateful firewalls are fully supported in cloud environments \u2014 asymmetric routing is the specific issue.",
+        "b": "Stateful firewall connection tracking requires symmetric routing \u2014 each firewall only knows about connections it has seen from the start. Asymmetric routing breaks stateful inspection because the return path firewall has no session context. This is the correct answer.",
+        "c": "Routing tables must ensure symmetric paths for stateful inspection to function \u2014 the advice to 'reset routing tables' is vague but the underlying solution is correct.",
+        "d": "Stateful firewalls do not automatically synchronize state across separate devices without explicit high-availability clustering configuration."
+      }
+    },
+    {
+      "id": 1174,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud application shows normal latency for 99% of requests but 1% of requests take 10x longer. Distributed tracing shows these slow requests all wait on the same external payment API which occasionally takes 3 seconds instead of 100ms. The payment API timeout is set to 30 seconds. How does this slow external dependency impact the application and what mitigation reduces the blast radius?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "External API latency cannot affect internal application performance"
+        },
+        {
+          "id": "b",
+          "text": "Long external API calls hold threads/connections for their full duration \u2014 if many concurrent slow calls accumulate, the thread pool becomes exhausted, causing requests not dependent on the payment API to also queue and experience latency. Mitigation: implement the circuit breaker pattern (stop calling the slow API when it exceeds a threshold, return cached/fallback responses), use bulkhead pattern (isolate payment API calls in a separate thread pool so thread exhaustion doesn't cascade to other request types), and reduce timeout to match SLO requirements"
+        },
+        {
+          "id": "c",
+          "text": "Increase the payment API timeout to 60 seconds to prevent failures"
+        },
+        {
+          "id": "d",
+          "text": "The 1% slow requests are acceptable and require no mitigation"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "External dependency latency absolutely impacts application performance through thread pool exhaustion and cascade effects.",
+        "b": "The circuit breaker and bulkhead patterns are specifically designed to prevent external dependency failures from cascading into broader service degradation. Shorter timeouts, bulkhead thread pool isolation, and circuit breaker fallbacks limit the blast radius of slow external APIs. This is the correct answer.",
+        "c": "Increasing timeout to 60 seconds makes the problem worse \u2014 threads are held longer, increasing cascade risk.",
+        "d": "1% slow requests that cascade to affect other requests are a significant reliability concern \u2014 especially at scale where 1% of millions of requests is still many failures."
+      }
+    },
+    {
+      "id": 1175,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud deployment's network monitoring shows that VPC flow logs indicate 80% of data transfer costs are from data flowing between cloud instances and S3 within the same region. The team expects this traffic to be free (same-region S3 traffic). Why might they be incurring charges?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Same-region S3 data transfer is never free \u2014 standard data transfer rates always apply"
+        },
+        {
+          "id": "b",
+          "text": "Same-region instance-to-S3 data transfer is free only when using a VPC endpoint for S3. If instances access S3 through the internet gateway (S3 public endpoints via the public internet path), standard data transfer charges apply even within the same region. Deploying an S3 VPC gateway endpoint eliminates the charge by keeping traffic on the AWS private network"
+        },
+        {
+          "id": "c",
+          "text": "S3 charges for all inbound data regardless of source"
+        },
+        {
+          "id": "d",
+          "text": "The VPC flow logs are incorrectly reporting the traffic volume"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Same-region instance-to-S3 traffic IS free when using VPC endpoints \u2014 the routing path determines whether charges apply.",
+        "b": "Data transfer costs depend on the traffic path: traffic flowing through internet gateways incurs data transfer charges even for same-region S3 access. VPC gateway endpoints for S3 and DynamoDB route traffic through the AWS private network, eliminating data transfer charges. This is the correct answer.",
+        "c": "S3 charges for data out but not for inbound data from EC2 within the same region via VPC endpoint \u2014 the routing path is the determining factor.",
+        "d": "VPC flow logs accurately capture traffic volumes \u2014 the issue is the routing path, not measurement error."
+      }
+    },
+    {
+      "id": 1176,
+      "objective": "6.2",
+      "difficulty": "hard",
+      "text": "A cloud API gateway returns HTTP 401 for requests that include a valid JWT token. The token was issued 4 hours ago and has a 6-hour expiry. The API gateway validates tokens against a JWKS endpoint. What is the MOST likely cause?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "JWT tokens expire after 4 hours by default regardless of the configured expiry"
+        },
+        {
+          "id": "b",
+          "text": "The API gateway's JWKS cache may contain outdated public keys \u2014 if the identity provider rotated its signing keys in the last 4 hours, the API gateway still has the old public key cached and cannot validate tokens signed with the new key. Resolution: check JWKS cache TTL, force a JWKS refresh, or verify if key rotation occurred. Also check for clock skew between the token issuer and API gateway causing 'nbf' (not before) or 'iat' (issued at) validation failures"
+        },
+        {
+          "id": "c",
+          "text": "HTTP 401 always indicates an expired token \u2014 ignore the configured 6-hour expiry"
+        },
+        {
+          "id": "d",
+          "text": "JWT tokens cannot be validated by API gateways \u2014 use API keys instead"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "JWT expiry is determined by the 'exp' claim in the token \u2014 not a fixed 4-hour default.",
+        "b": "JWKS key rotation is a common cause of unexpected JWT validation failures \u2014 if the identity provider rotated its signing key pair, old tokens signed with the previous key cannot be validated against the new cached JWKS. Force-refreshing the JWKS cache resolves this. Clock skew is another common 401 cause for valid tokens. This is the correct answer.",
+        "c": "HTTP 401 can have many causes beyond expiry \u2014 JWKS key mismatch and clock skew are common in API gateway JWT validation.",
+        "d": "JWT validation by API gateways is a standard, widely supported capability."
+      }
+    },
+    {
+      "id": 1177,
+      "objective": "6.3",
+      "difficulty": "easy",
+      "text": "A cloud application's TLS handshake fails with 'no shared cipher'. The client supports only TLS_RSA_WITH_RC4_128_SHA. The server was recently hardened to reject deprecated cipher suites. What is the issue?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The server's TLS certificate is expired"
+        },
+        {
+          "id": "b",
+          "text": "RC4-based cipher suites are deprecated and insecure \u2014 the hardened server no longer supports them, and the client only offers the deprecated cipher, leaving no common cipher for negotiation. The client must be updated to support modern cipher suites (TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384) that the server accepts"
+        },
+        {
+          "id": "c",
+          "text": "The TLS version is incompatible \u2014 the client must use TLS 1.0"
+        },
+        {
+          "id": "d",
+          "text": "The server needs to re-enable RC4 to maintain backward compatibility"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Certificate expiration produces a different error \u2014 'no shared cipher' specifically indicates no mutually supported cipher suite exists.",
+        "b": "RC4 was deprecated due to known cryptographic weaknesses \u2014 browsers and hardened servers reject it. When a client only supports deprecated ciphers and a server only accepts modern ones, the TLS handshake fails with 'no shared cipher'. The client must be updated, not the server downgraded. This is the correct answer.",
+        "c": "'No shared cipher' is independent of TLS version \u2014 the cipher suite negotiation happens after version negotiation.",
+        "d": "Re-enabling RC4 creates a known vulnerability \u2014 updating the client is the correct remediation, not weakening the server."
+      }
+    },
+    {
+      "id": 1178,
+      "objective": "6.3",
+      "difficulty": "medium",
+      "text": "A compliance audit flags that a cloud load balancer's TLS policy includes TLS_RSA_WITH_3DES_EDE_CBC_SHA (3DES). The auditor cites SWEET32 vulnerability. What should be done?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "3DES is secure and SWEET32 only applies to older protocols"
+        },
+        {
+          "id": "b",
+          "text": "Remove 3DES from the load balancer's TLS security policy \u2014 SWEET32 is a birthday attack against 64-bit block ciphers including 3DES that allows traffic decryption after approximately 785GB of data over a single TLS session. Modern TLS policies should use only AES-GCM cipher suites which use 128-bit blocks immune to SWEET32. Update the load balancer to a security policy that excludes 3DES"
+        },
+        {
+          "id": "c",
+          "text": "SWEET32 only affects sessions over 1TB \u2014 short sessions with 3DES are safe"
+        },
+        {
+          "id": "d",
+          "text": "The auditor is incorrect \u2014 3DES with CBC is not affected by SWEET32"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "SWEET32 specifically targets 64-bit block ciphers including 3DES regardless of protocol version.",
+        "b": "SWEET32 (CVE-2016-2183) demonstrated practical attacks against 64-bit block ciphers like 3DES \u2014 removing 3DES from TLS cipher suite policies and replacing with AES-GCM (128-bit block cipher) is the correct remediation. This is the correct answer.",
+        "c": "The SWEET32 birthday bound for 3DES is approximately 785GB \u2014 achievable in long-lived TLS connections in modern environments.",
+        "d": "3DES-CBC is explicitly the target of SWEET32 \u2014 the auditor's finding is correct."
+      }
+    },
+    {
+      "id": 1179,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "After removing all deprecated cipher suites from a cloud API gateway, 5% of clients report TLS connection failures. Client inventory shows these are embedded IoT devices that cannot be updated. How should this be handled?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Re-enable the deprecated cipher suites for all clients to restore universal connectivity"
+        },
+        {
+          "id": "b",
+          "text": "Implement a segmented TLS policy \u2014 deploy a separate API gateway endpoint or virtual host for legacy IoT clients that maintains the minimum required cipher suites (only what the IoT devices need, not all deprecated suites), with compensating controls (network isolation of IoT traffic, enhanced monitoring, shorter session limits). Document the exception with risk acceptance and an IoT device replacement roadmap"
+        },
+        {
+          "id": "c",
+          "text": "Block all IoT devices from accessing the API since they cannot support secure ciphers"
+        },
+        {
+          "id": "d",
+          "text": "Issue new firmware to all IoT devices over the deprecated TLS connection"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Re-enabling deprecated ciphers for all clients creates vulnerability exposure for all connections \u2014 not just the legacy devices.",
+        "b": "Segmented endpoints allow minimum-necessary cipher support for constrained legacy devices in isolation \u2014 the main endpoint maintains security policy while the legacy endpoint serves only the devices that need it, with compensating controls reducing risk. This is the correct answer.",
+        "c": "Blocking all IoT devices may disrupt critical business operations \u2014 a risk-managed approach with compensating controls is preferable.",
+        "d": "Delivering firmware over a deprecated cipher connection is circular \u2014 if the device cannot support modern ciphers, it may also not reliably accept firmware updates this way."
+      }
+    },
+    {
+      "id": 1180,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "A cloud security scan reports that a managed database service's TLS configuration uses CBC mode cipher suites. The team wants to migrate to AEAD (Authenticated Encryption with Associated Data) cipher suites. What advantage do AEAD ciphers provide over CBC ciphers?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AEAD ciphers are faster but provide less security than CBC ciphers"
+        },
+        {
+          "id": "b",
+          "text": "AEAD ciphers (like AES-GCM) combine encryption and authentication in a single operation \u2014 providing both confidentiality and integrity/authenticity without separate HMAC. CBC mode requires separate MAC computation and is vulnerable to padding oracle attacks (POODLE, BEAST, Lucky13). AEAD eliminates these vulnerabilities and provides implicit integrity checking, making it more secure and often more efficient than CBC+HMAC"
+        },
+        {
+          "id": "c",
+          "text": "AEAD ciphers only work with TLS 1.3 and cannot be used with TLS 1.2"
+        },
+        {
+          "id": "d",
+          "text": "AEAD and CBC ciphers provide identical security \u2014 the choice is purely a performance consideration"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AEAD ciphers are both more secure and more efficient than CBC+HMAC \u2014 they do not trade security for speed.",
+        "b": "AEAD's combined encrypt-then-authenticate eliminates padding oracle vulnerabilities inherent in CBC mode (POODLE, BEAST, Lucky13). GCM's implicit authentication prevents ciphertext tampering without a separate MAC. This is why TLS 1.3 mandates only AEAD cipher suites. This is the correct answer.",
+        "c": "AEAD cipher suites (AES-128-GCM, AES-256-GCM, CHACHA20-POLY1305) are supported in TLS 1.2 as well as TLS 1.3.",
+        "d": "AEAD provides significant security improvements over CBC \u2014 they are not equivalent."
+      }
+    },
+    {
+      "id": 1181,
+      "objective": "6.3",
+      "difficulty": "easy",
+      "text": "A cloud security alert fires when a developer IAM user suddenly creates an IAM role with administrator permissions and assumes it. The developer's original IAM policy does not include iam:CreateRole. How did this occur?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "IAM permissions automatically expand when users are active for more than 24 hours"
+        },
+        {
+          "id": "b",
+          "text": "This is privilege escalation \u2014 the developer may have exploited a misconfigured permission such as iam:PassRole to an existing admin role, used a lambda or other service with excessive permissions to create the role on their behalf, or found a boundary policy gap. The alert indicates unauthorized privilege elevation requiring immediate investigation and the account should be reviewed for all actions taken during the elevated access window"
+        },
+        {
+          "id": "c",
+          "text": "The developer legitimately needs administrator access \u2014 the alert is a false positive"
+        },
+        {
+          "id": "d",
+          "text": "IAM policy evaluation allows any action if the user has been verified with MFA"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "IAM permissions do not automatically expand based on activity duration \u2014 this statement is incorrect.",
+        "b": "Privilege escalation in cloud IAM exploits indirect paths \u2014 creating roles via services with excessive permissions, chaining iam:PassRole with existing admin roles, or exploiting permission boundary gaps. A developer creating admin roles beyond their policy is a confirmed security incident. This is the correct answer.",
+        "c": "Creating admin roles outside policy scope is not a legitimate activity \u2014 it is a security incident requiring investigation.",
+        "d": "MFA satisfies authentication \u2014 it does not expand authorization beyond defined IAM policies."
+      }
+    },
+    {
+      "id": 1182,
+      "objective": "6.3",
+      "difficulty": "medium",
+      "text": "A cloud security review identifies that a Lambda function has an execution role with iam:* permissions. What privilege escalation risk does this create?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "No risk \u2014 Lambda functions cannot use IAM permissions for privilege escalation"
+        },
+        {
+          "id": "b",
+          "text": "A Lambda function with iam:* can create new IAM users with administrator access, attach administrator policies to existing users, create access keys for privileged users, or modify permission boundaries \u2014 effectively giving anyone who can trigger the Lambda function the ability to elevate privileges in the entire AWS account. This is a critical misconfiguration"
+        },
+        {
+          "id": "c",
+          "text": "iam:* only grants read access to IAM resources \u2014 not the ability to create or modify"
+        },
+        {
+          "id": "d",
+          "text": "Lambda execution roles are separate from IAM and cannot interact with IAM resources"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Lambda functions with iam:* permissions are a well-documented privilege escalation vector \u2014 attackers who can invoke or compromise the Lambda can use it to elevate privileges.",
+        "b": "Wildcard iam:* grants all IAM actions \u2014 a compromised or misused Lambda with this role can perform any IAM action including creating admin users and access keys. This is a critical least-privilege violation. This is the correct answer.",
+        "c": "iam:* includes write and administrative actions (CreateUser, AttachUserPolicy, CreateAccessKey) \u2014 not read-only.",
+        "d": "Lambda execution roles are standard IAM roles \u2014 they can perform any IAM action their policy permits."
+      }
+    },
+    {
+      "id": 1183,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "A Kubernetes security audit finds that a pod in the default namespace has a service account with cluster-admin ClusterRoleBinding. The pod runs a web application. An attacker compromises the web application via SQL injection. What is the impact?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "SQL injection in a web application cannot affect Kubernetes cluster permissions"
+        },
+        {
+          "id": "b",
+          "text": "Critical cluster-wide privilege escalation \u2014 the compromised web application pod can use the mounted service account token to make Kubernetes API calls with cluster-admin privileges: create/delete pods, access secrets across all namespaces, modify RBAC policies, deploy malicious workloads, and potentially escape to the underlying nodes. SQL injection \u2192 application compromise \u2192 cluster-admin API access is a complete Kubernetes cluster takeover path"
+        },
+        {
+          "id": "c",
+          "text": "The impact is limited to the pod's namespace since it is in the default namespace"
+        },
+        {
+          "id": "d",
+          "text": "ClusterRoleBinding only applies to cluster-level resources \u2014 not to namespaced resources"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Kubernetes service account tokens are automatically mounted in pods and accessible to any process in the pod \u2014 SQL injection enabling command execution leads directly to cluster API access.",
+        "b": "The attack chain: SQL injection \u2192 code execution \u2192 read mounted service account token \u2192 Kubernetes API calls with cluster-admin. This grants full cluster control \u2014 a catastrophic security incident. This is the correct answer.",
+        "c": "ClusterRoleBinding with cluster-admin grants access across all namespaces \u2014 not limited to the default namespace.",
+        "d": "ClusterRoleBinding with cluster-admin grants access to both cluster-level and all namespaced resources \u2014 this is the nature of cluster-admin."
+      }
+    },
+    {
+      "id": 1184,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "Cloud monitoring detects that an EC2 instance's IAM role has called `sts:AssumeRole` to assume a different role with broader permissions than the instance role itself. The assumed role has S3 and RDS full access. The application running on the instance does not legitimately need these permissions. What security issue does this indicate?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AssumeRole is a normal operation \u2014 cross-role access is expected behavior"
+        },
+        {
+          "id": "b",
+          "text": "This indicates privilege escalation through role chaining \u2014 the instance role has sts:AssumeRole permission allowing it to assume a more privileged role. If the application does not need S3/RDS access, this assumption is unauthorized and may indicate the instance is compromised. Immediately investigate what API calls were made with the assumed role, revoke the sts:AssumeRole permission from the instance role, and assess what data was accessed"
+        },
+        {
+          "id": "c",
+          "text": "The assumed role's S3 and RDS permissions are separate from the instance and cannot be misused"
+        },
+        {
+          "id": "d",
+          "text": "sts:AssumeRole calls are not logged in CloudTrail \u2014 this detection is not possible"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AssumeRole for permissions the application does not legitimately need is privilege escalation \u2014 not normal operation.",
+        "b": "Unexplained role assumption for broader permissions than required indicates either compromised instance or misconfigured application. Immediate investigation, permission revocation, and API call audit are required. This is the correct answer.",
+        "c": "The assumed role's permissions apply fully to whoever assumes it \u2014 the instance can use all S3/RDS permissions during the assumed session.",
+        "d": "sts:AssumeRole calls are explicitly logged in CloudTrail \u2014 this is one of the primary audit mechanisms for role usage."
+      }
+    },
+    {
+      "id": 1185,
+      "objective": "6.3",
+      "difficulty": "easy",
+      "text": "A GitHub repository scanner alerts that AWS access keys were committed to a public repository 30 minutes ago. The keys have EC2 and S3 full access. What is the IMMEDIATE priority action?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Delete the repository to remove the public exposure"
+        },
+        {
+          "id": "b",
+          "text": "Immediately revoke (delete or deactivate) the exposed access keys in the AWS IAM console \u2014 this stops all ongoing unauthorized use. Then review CloudTrail for any API activity in the 30 minutes since exposure, assess what resources were accessed or modified, rotate any dependent credentials, and investigate what data or resources may be compromised"
+        },
+        {
+          "id": "c",
+          "text": "Make the repository private \u2014 this removes public access to the keys"
+        },
+        {
+          "id": "d",
+          "text": "Rotate the keys within 48 hours \u2014 automated scanners take time to discover leaked credentials"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Deleting the repository does not revoke the keys \u2014 automated tools may have already captured them during the 30-minute window. Key revocation is the critical first step.",
+        "b": "Immediate key revocation stops ongoing unauthorized access regardless of who has already captured the credentials. CloudTrail review determines the impact scope. This is the correct answer.",
+        "c": "Making the repository private does not revoke keys already potentially copied \u2014 automated scanning tools operate continuously and may have captured the keys within seconds of the commit.",
+        "d": "Automated credential scanning tools discover leaked credentials within minutes \u2014 48 hours of delay with exposed admin credentials is catastrophically late."
+      }
+    },
+    {
+      "id": 1186,
+      "objective": "6.3",
+      "difficulty": "medium",
+      "text": "CloudTrail logs show that valid IAM credentials for a service account were used from 3 different countries simultaneously over a 2-hour period. The service runs on instances in us-east-1. What does this indicate and what is the response?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The service has global users \u2014 multi-country API calls are expected"
+        },
+        {
+          "id": "b",
+          "text": "Simultaneous use from multiple countries indicates credential compromise \u2014 a single service running in us-east-1 cannot simultaneously make API calls from 3 different countries. The service account credentials have been stolen and are being used by unauthorized parties. Response: immediately revoke credentials, investigate the source of credential theft, audit all API calls from non-US locations, and assess what actions were performed with the stolen credentials"
+        },
+        {
+          "id": "c",
+          "text": "VPN usage by service account operators explains the multi-country access"
+        },
+        {
+          "id": "d",
+          "text": "Cloud providers route API calls through multiple geographic points adding false location data"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "A service account for an automated process running in us-east-1 would make API calls from AWS network addresses \u2014 not from 3 different countries.",
+        "b": "Impossible geolocation (simultaneous multi-country API calls from a single service account) is a definitive compromise indicator \u2014 automated services do not travel between countries. This is the correct answer.",
+        "c": "Service accounts are not operated by humans \u2014 they run automatically. VPN usage is not an explanation for service account geographic distribution.",
+        "d": "CloudTrail records the source IP of API calls accurately \u2014 geographic routing does not cause false location attribution."
+      }
+    },
+    {
+      "id": 1187,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "A cloud security team discovers that database passwords are stored in plaintext in environment variables in a containerized application's ECS task definition. The task definition is visible to all developers with ECS read access. What are all the vulnerabilities this creates and what is the complete remediation?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Environment variables are secure \u2014 they are only visible inside the running container"
+        },
+        {
+          "id": "b",
+          "text": "Multiple vulnerabilities: (1) ECS task definitions with plaintext secrets are visible to anyone with ecs:DescribeTaskDefinition \u2014 all developers can see the database password; (2) CloudTrail and other logging may capture environment variable values; (3) container image layers containing ENV directives persist in registries. Complete remediation: migrate secrets to AWS Secrets Manager or Parameter Store (SecureString), update task definitions to reference secrets by ARN (ECS injects them as environment variables at runtime from the secrets service without exposing in task definitions), audit who has accessed the task definitions, rotate the database passwords, and review access logs for unauthorized database connections"
+        },
+        {
+          "id": "c",
+          "text": "Restrict ECS read access to senior developers only"
+        },
+        {
+          "id": "d",
+          "text": "Encrypt the environment variables using base64 encoding"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "ECS task definition environment variables are visible in the ECS console, CLI, and API to anyone with ecs:DescribeTaskDefinition \u2014 not just inside running containers.",
+        "b": "Plaintext secrets in ECS task definitions create multiple exposure vectors \u2014 API access, logging, and registry storage. Complete remediation requires secrets migration, task definition update, credential rotation, and access audit. This is the correct answer.",
+        "c": "Restricting access reduces the exposure surface but does not eliminate plaintext storage \u2014 secrets must be properly managed.",
+        "d": "Base64 encoding is not encryption \u2014 it provides zero security benefit for sensitive credentials."
+      }
+    },
+    {
+      "id": 1188,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "A penetration test discovers that a cloud application's API accepts a JWT token signed with the algorithm 'none' \u2014 meaning no signature verification. An attacker can forge tokens to claim any user identity. What vulnerability class is this and how is it remediated?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "This is a performance optimization \u2014 signature verification is optional for trusted clients"
+        },
+        {
+          "id": "b",
+          "text": "This is a critical authentication bypass vulnerability \u2014 the JWT 'none' algorithm attack exploits libraries that accept unsigned tokens if the header specifies alg:none. Remediation: explicitly whitelist only the expected signature algorithms (RS256, ES256) in the JWT validation library configuration, reject tokens with alg:none or unexpected algorithms regardless of what the token header claims, and validate that the signature is present and valid before accepting any token claims"
+        },
+        {
+          "id": "c",
+          "text": "JWT tokens with 'none' algorithm are only accepted in development environments"
+        },
+        {
+          "id": "d",
+          "text": "The vulnerability only allows read access \u2014 not write operations requiring separate authentication"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Accepting unsigned tokens in production is a critical authentication bypass \u2014 not a performance optimization.",
+        "b": "The JWT 'none' algorithm vulnerability is a well-documented critical authentication bypass in the OWASP API Security Top 10. Libraries must explicitly reject algorithm:none and enforce expected signing algorithms. This is the correct answer.",
+        "c": "Production systems accepting alg:none is a critical vulnerability \u2014 it should not be present in any environment.",
+        "d": "Authentication bypass through forged tokens grants the attacker complete identity impersonation \u2014 not limited to read operations."
+      }
+    },
+    {
+      "id": 1189,
+      "objective": "6.3",
+      "difficulty": "easy",
+      "text": "A cloud application's dependency scan identifies a critical CVE in a logging library (Log4j). The vulnerability allows remote code execution. The library version 2.14.1 is in use. What immediate actions are required?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Wait for the next scheduled quarterly patching cycle to address the vulnerability"
+        },
+        {
+          "id": "b",
+          "text": "Immediately: (1) apply WAF rules blocking JNDI lookup strings in all input vectors (interim mitigation), (2) update Log4j to the patched version (2.17.1+ for Log4Shell) in all affected applications, (3) rebuild and redeploy container images with the updated dependency, (4) scan all applications for Log4j usage including transitive dependencies, (5) review logs for exploitation indicators (JNDI callback DNS queries, unexpected outbound connections)"
+        },
+        {
+          "id": "c",
+          "text": "The vulnerability only affects Java applications \u2014 other languages using logging are not impacted"
+        },
+        {
+          "id": "d",
+          "text": "Disable all logging to eliminate the vulnerable code path"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Remote code execution CVEs cannot wait for quarterly patching \u2014 Log4Shell was actively exploited within hours of disclosure.",
+        "b": "Critical RCE vulnerabilities require emergency response: immediate interim mitigations (WAF rules), comprehensive dependency scanning, rapid patching, and retroactive exploitation indicator review. This is the correct answer.",
+        "c": "Log4j is a Java library \u2014 only Java applications using it are directly vulnerable. However, scanning all applications for transitive Log4j dependencies is essential.",
+        "d": "Disabling logging would break application observability and incident detection \u2014 patching the library is the correct remediation."
+      }
+    },
+    {
+      "id": 1190,
+      "objective": "6.3",
+      "difficulty": "medium",
+      "text": "A cloud application uses an open-source web framework with a known SSRF vulnerability. The vulnerability allows attackers to make the application server request internal cloud metadata service endpoints. What is the attack impact and defensive measures?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "SSRF only allows reading public web pages \u2014 internal metadata is not accessible"
+        },
+        {
+          "id": "b",
+          "text": "SSRF against the cloud metadata service (169.254.169.254) can retrieve IAM role temporary credentials, allowing an attacker to pivot from a web vulnerability to full cloud account access. Defenses: patch the SSRF vulnerability immediately, enforce IMDSv2 (requiring PUT requests that SSRF cannot easily replicate), implement WAF rules blocking requests to metadata service IP ranges, and configure strict URL validation blocking private/link-local IP ranges in user-controlled inputs"
+        },
+        {
+          "id": "c",
+          "text": "The metadata service is only accessible from the instance console \u2014 SSRF cannot reach it"
+        },
+        {
+          "id": "d",
+          "text": "Changing the application's instance type eliminates the metadata service exposure"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "SSRF specifically enables access to internal network resources \u2014 the cloud metadata service is a primary target for SSRF exploitation.",
+        "b": "SSRF \u2192 metadata service \u2192 IAM credentials is a documented critical attack chain. IMDSv2 is specifically designed to break this chain by requiring session-token-based access that SSRF cannot easily replicate. This is the correct answer.",
+        "c": "The metadata service is accessible over HTTP from within the instance network \u2014 SSRF uses the application server as a proxy to reach it.",
+        "d": "All EC2 instance types have the same metadata service accessible at 169.254.169.254 \u2014 instance type change does not affect this exposure."
+      }
+    },
+    {
+      "id": 1191,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "A cloud application's container image scan finds that 3 of 15 base image layers contain high-severity CVEs. The vulnerabilities are in OS packages included in the base image but not used by the application. The image has been in production for 6 months. What is the complete remediation approach?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The vulnerabilities are in unused packages \u2014 they can be ignored since the application does not call them"
+        },
+        {
+          "id": "b",
+          "text": "Remediate in order: (1) update to a patched base image version or distroless/minimal base image that excludes unnecessary packages, (2) rebuild the application container image on the patched base, (3) scan the rebuilt image to verify CVE resolution, (4) deploy the patched image using rolling update to minimize downtime, (5) implement automated base image update triggers in CI/CD so future base image patches are automatically incorporated. Review whether any exploitation occurred during the 6-month exposure window using audit logs"
+        },
+        {
+          "id": "c",
+          "text": "Remove only the specific vulnerable packages from the running containers"
+        },
+        {
+          "id": "d",
+          "text": "Add a network policy blocking external access to the vulnerable container ports"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Unused packages with known CVEs can be exploited by attackers who achieve any code execution within the container \u2014 'unused by the application' does not mean unexploitable.",
+        "b": "Complete remediation involves patching the base image, rebuilding, scanning, deploying, automating future updates, and reviewing the 6-month exposure window for indicators of exploitation. This is the correct answer.",
+        "c": "Modifying running containers violates immutable infrastructure principles and changes are lost on restart \u2014 base image updates and rebuild is the correct approach.",
+        "d": "Network policies control traffic but do not patch the vulnerable packages \u2014 the vulnerabilities remain and can be exploited via any code execution within the container."
+      }
+    },
+    {
+      "id": 1192,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "A cloud security team performs threat modeling and identifies that their managed Kubernetes cluster's etcd database is directly accessible from the cluster's internal network without authentication (no client certificate required). What is the severity and impact of this misconfiguration?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "etcd exposure is low risk since it is only accessible within the cluster network"
+        },
+        {
+          "id": "b",
+          "text": "Critical severity \u2014 etcd stores all Kubernetes cluster state including secrets (encoded base64, not encrypted by default), RBAC configurations, service account tokens, and all cluster resource definitions. Unauthenticated etcd access allows an attacker to: read all cluster secrets including API server credentials and service account tokens, modify RBAC policies to grant unlimited cluster access, inject malicious workloads by writing directly to etcd, and effectively achieve complete cluster compromise without touching the API server"
+        },
+        {
+          "id": "c",
+          "text": "etcd is protected by the Kubernetes API server \u2014 direct etcd access is always blocked"
+        },
+        {
+          "id": "d",
+          "text": "etcd only stores infrastructure metadata \u2014 application secrets are stored separately"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Internal network accessibility does not reduce severity \u2014 any compromised pod or lateral movement gives access to etcd, leading to complete cluster compromise.",
+        "b": "Unauthenticated etcd access is a critical, complete cluster compromise \u2014 etcd is the authoritative store for all cluster state including secrets. This is the correct answer.",
+        "c": "etcd is accessible on its own network port \u2014 bypassing the API server entirely. The API server is a client of etcd, not a protecting proxy.",
+        "d": "etcd stores all Kubernetes secrets (including those created by applications) \u2014 it is not limited to infrastructure metadata."
+      }
+    },
+    {
+      "id": 1193,
+      "objective": "6.3",
+      "difficulty": "easy",
+      "text": "Cloud monitoring detects that a production EC2 instance has installed and is running cryptocurrency mining software (XMRig). No change request was approved for this software. What has most likely occurred and what is the immediate response?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A developer legitimately installed mining software for testing purposes"
+        },
+        {
+          "id": "b",
+          "text": "The instance has been compromised \u2014 cryptojacking attack where an attacker gained code execution and installed mining software to profit from the instance's compute at the organization's expense. Immediate response: isolate the instance (security group quarantine), preserve forensic evidence (memory dump, disk snapshot before termination), investigate the initial access vector, terminate the compromised instance, audit for lateral movement to other instances, and rotate any credentials accessible from the compromised instance"
+        },
+        {
+          "id": "c",
+          "text": "XMRig is legitimate cloud monitoring software \u2014 no action needed"
+        },
+        {
+          "id": "d",
+          "text": "Increase the instance size to accommodate the mining workload"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Mining software on production instances without change approval is a security incident \u2014 not a developer test.",
+        "b": "Unauthorized cryptocurrency mining on cloud instances is a confirmed compromise \u2014 attackers use stolen credentials or vulnerabilities to install mining software. The response follows standard incident response: isolate, preserve evidence, investigate, remediate, and assess impact. This is the correct answer.",
+        "c": "XMRig is an open-source cryptocurrency miner \u2014 not monitoring software.",
+        "d": "Accommodating unauthorized software is not appropriate \u2014 the compromise must be remediated."
+      }
+    },
+    {
+      "id": 1194,
+      "objective": "6.3",
+      "difficulty": "medium",
+      "text": "A cloud security scan identifies that multiple EC2 instances are running a peer-to-peer file sharing application not in the approved software list. The instances serve an internal HR application. What are the security risks and remediation steps?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Peer-to-peer software has no security implications on servers \u2014 only on user workstations"
+        },
+        {
+          "id": "b",
+          "text": "P2P software on production HR application servers creates multiple risks: P2P applications open listening ports creating additional attack surface, may exfiltrate sensitive HR data through the P2P network, consume bandwidth affecting the HR application, may have their own vulnerabilities, and indicate a security control gap allowing unauthorized software installation. Remediation: remove the P2P software immediately, identify who installed it and why, restrict instance permissions to prevent unauthorized software installation (using least-privilege IAM, locked-down OS configurations, application whitelisting), and review what data may have been shared"
+        },
+        {
+          "id": "c",
+          "text": "Add the P2P application to the approved software list to resolve the compliance violation"
+        },
+        {
+          "id": "d",
+          "text": "Monitor the P2P traffic to ensure no sensitive data is shared before taking action"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Unauthorized software on servers creates equal or greater risk than on workstations \u2014 servers often have access to more sensitive data and systems.",
+        "b": "P2P software on HR application servers combines multiple risks: data exfiltration potential, attack surface expansion, and control gap evidence. Immediate removal and root cause investigation are required. This is the correct answer.",
+        "c": "Adding P2P software to the approved list on HR servers is inappropriate \u2014 P2P file sharing has no legitimate purpose on production servers and creates unacceptable data exposure risk.",
+        "d": "Monitoring without removal allows the risks to continue \u2014 immediate removal is required while investigation proceeds in parallel."
+      }
+    },
+    {
+      "id": 1195,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "A Kubernetes admission controller (OPA/Gatekeeper) is configured to reject pods running containers from unapproved image registries. A developer bypasses this by modifying an approved image to include unauthorized binaries and pushing it to the approved registry. The admission controller approves the pod since the registry is approved. What defense-in-depth control detects or prevents this registry-bypass technique?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The admission controller correctly approved the pod \u2014 no additional controls are needed"
+        },
+        {
+          "id": "b",
+          "text": "Registry-source controls alone are insufficient \u2014 implement image signing and verification (Sigstore/Cosign, Notary): only images with valid cryptographic signatures from approved CI/CD pipelines are admitted. The admission controller verifies signatures in addition to registry source. Also implement runtime security (Falco) that detects unauthorized binary execution within containers \u2014 if unexpected executables run, alerts fire regardless of how the binary was introduced"
+        },
+        {
+          "id": "c",
+          "text": "Block all developers from pushing to the approved registry"
+        },
+        {
+          "id": "d",
+          "text": "Scan the approved registry weekly to identify unauthorized images"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Registry-source-only admission control is bypassable \u2014 image content verification and runtime monitoring are required for defense-in-depth.",
+        "b": "Image signing verifies that only binaries built through approved CI/CD pipelines (which scan for unauthorized software) can be admitted \u2014 a developer cannot push a modified image without it failing signature verification. Runtime security provides detection if signing is bypassed. This is the correct answer.",
+        "c": "Blocking all developer pushes prevents the bypass but also prevents legitimate deployments \u2014 signing with CI/CD-controlled keys is the practical solution.",
+        "d": "Weekly scans detect the issue with significant delay \u2014 admission-time signature verification and runtime detection provide real-time protection."
+      }
+    },
+    {
+      "id": 1196,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "A cloud security team uses AWS Config to detect EC2 instances running unauthorized software. Config rules check for approved software package lists. An attacker installs a rootkit that hides processes and installed packages from the OS package manager. Why does this defeat Config-based detection and what controls detect rootkit-level unauthorized software?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Config directly inspects memory and running processes \u2014 rootkits cannot hide from it"
+        },
+        {
+          "id": "b",
+          "text": "AWS Config uses SSM agents to query the OS package manager and running processes \u2014 a rootkit that intercepts these system calls can hide itself from Config's visibility. Detection requires: external integrity verification (comparing known-good golden image hashes against current instance state from outside the compromised OS), memory forensics from a separate trusted system, EDR tools with kernel-level visibility that may detect rootkit installation behaviors, network traffic analysis (rootkits still generate network activity), and hypervisor-level monitoring (the cloud provider's hypervisor can see all VM state regardless of guest OS manipulation)"
+        },
+        {
+          "id": "c",
+          "text": "Rootkits are not possible on cloud instances \u2014 the hypervisor prevents OS modification"
+        },
+        {
+          "id": "d",
+          "text": "Rebooting the instance will remove the rootkit and restore Config detection capability"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AWS Config relies on SSM agents querying the guest OS \u2014 a rootkit hiding from OS system calls hides from SSM and therefore Config.",
+        "b": "Rootkit detection requires out-of-band or hypervisor-level visibility that the compromised OS cannot manipulate. External image integrity verification, network anomaly detection, and hypervisor monitoring provide detection that rootkits cannot evade. This is the correct answer.",
+        "c": "Rootkits can run in cloud VMs \u2014 the hypervisor virtualizes hardware access but does not prevent guest OS kernel modification.",
+        "d": "Sophisticated rootkits achieve persistence that survives reboots \u2014 reboot alone does not remove a persistent rootkit."
+      }
+    }
+  ]
 }

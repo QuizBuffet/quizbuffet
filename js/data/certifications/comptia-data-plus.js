@@ -8,7 +8,7 @@ export const cert = {
   details: 'Multiple-choice and performance-based · Recommended 1.5–2 years of experience with databases, analytical tools, statistics, and data visualization',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
-    { provider: 'amazon',  label: 'Study Guide',       url: '' },
+    { provider: 'amazon',  label: 'Shop CompTIA Data+ Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+data%2B&tag=0003aa-20' },
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
   domains: [

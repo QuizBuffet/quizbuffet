@@ -8,7 +8,7 @@ export const cert = {
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 12 months hands-on experience · Passing score 675/900',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
-    { provider: 'amazon',  label: 'Study Guide',       url: '' },
+    { provider: 'amazon',  label: 'Shop CompTIA A+ 220-1101 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+a%2B+220-1101&tag=0003aa-20' },
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
   domains: [

@@ -8,7 +8,7 @@ export const cert = {
   details: 'Multiple-choice and performance-based · Recommended 4 years SOC/IR experience · Passing score 750/900',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
-    { provider: 'amazon',  label: 'Study Guide',       url: '' },
+    { provider: 'amazon',  label: 'Shop CompTIA CySA+ Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+cysa%2B&tag=0003aa-20' },
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
   domains: [

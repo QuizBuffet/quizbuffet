@@ -8,7 +8,7 @@ export const cert = {
   details: '75 questions · 60 minutes · Passing score 650/900 · Multiple-choice',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
-    { provider: 'amazon',  label: 'Study Guide',       url: '' },
+    { provider: 'amazon',  label: 'Shop CompTIA ITF+ Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+itf%2B&tag=0003aa-20' },
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
   domains: [

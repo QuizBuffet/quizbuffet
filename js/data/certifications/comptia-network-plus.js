@@ -11,7 +11,7 @@ export const cert = {
   acronyms,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
-    { provider: 'amazon',  label: 'Study Guide',       url: '' },
+    { provider: 'amazon',  label: 'Shop CompTIA Network+ N10-009 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+network%2B+n10-009&tag=0003aa-20' },
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
   domains: [

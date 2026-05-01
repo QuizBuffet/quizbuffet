@@ -9,6 +9,11 @@ export const cert = {
   about: 'Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2–3 years of hands-on cloud or systems experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 750/900 · Multiple-choice and performance-based',
   acronyms,
+  affiliates: [
+    { provider: 'udemy',   label: 'Video Course',     url: '' },
+    { provider: 'amazon',  label: 'Study Guide',       url: '' },
+    { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
+  ],
   domains: [
     { slug: 'cloud-architecture',  name: 'Cloud Architecture',  number: '1.0', weight: 23 },
     { slug: 'deployment',          name: 'Deployment',          number: '2.0', weight: 19 },

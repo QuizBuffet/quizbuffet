@@ -134,7 +134,7 @@ export async function init() {
 
   if (prog.completed) {
     document.getElementById('quiz-meta').textContent = `${domainName} · Completed`;
-    renderDomainComplete(questions, prog.failed, storageKey, backLink);
+    renderDomainComplete(questions, prog.failed, storageKey, backLink, certMeta);
     return;
   }
 

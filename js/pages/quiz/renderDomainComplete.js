@@ -2,8 +2,9 @@
 import { refresh } from '../../router/hashRouter.js';
 import { resetDomain } from '../../storage/resetDomain.js';
 import { getDomainProgress } from '../../storage/getDomainProgress.js';
+import { affiliateLinksHTML } from '../../components/affiliates/affiliateLinksHTML.js';
 
-export function renderDomainComplete(questions, failedIds, domainSlug, backLink = 'index.html') {
+export function renderDomainComplete(questions, failedIds, domainSlug, backLink = 'index.html', certMeta = null) {
   const failedSet  = new Set(failedIds);
   const passedIds  = questions.filter(q => !failedSet.has(q.id)).map(q => q.id);
   const passCount  = passedIds.length;
@@ -30,7 +31,8 @@ export function renderDomainComplete(questions, failedIds, domainSlug, backLink 
     ${retakeFailedBtn}
     ${retakePassedBtn}
     <button class="next-btn" id="start-fresh" style="margin-top:8px">Start Fresh</button>
-    <a href="${backLink}" class="next-btn" style="text-align:center;text-decoration:none;display:block;margin-top:8px">← Back</a>`;
+    <a href="${backLink}" class="next-btn" style="text-align:center;text-decoration:none;display:block;margin-top:8px">← Back</a>
+    ${affiliateLinksHTML(certMeta?.affiliates)}`;
   document.getElementById('answers').innerHTML = '';
   document.getElementById('explanation').innerHTML = '';
 

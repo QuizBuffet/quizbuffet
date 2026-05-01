@@ -16,7 +16,8 @@
       "Bash(python3 -)",
       "Bash(grep -vE \"font-size:\\(1[5-9]|[2-9][0-9]|[1-9][0-9]{2,}\\)px\")",
       "Bash(sort -k5 -rh)",
-      "Bash(node sync-counts.js)"
+      "Bash(node sync-counts.js)",
+      "Bash(python3)"
     ]
   }
 }

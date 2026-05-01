@@ -27,6 +27,7 @@ const SHELLS = {
       <div id="mix-quiz"></div>
       <div id="domain-list"></div>
       <div id="acronym-drill"></div>
+      <div id="affiliates"></div>
       <div id="ad-bottom" class="ad-slot">Advertisement</div>
     </main>`,
 

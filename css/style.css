@@ -946,6 +946,20 @@ a:is(:hover, :active) { text-decoration: underline; }
 .domain-item { padding: 10px 0; border-bottom: 1px solid var(--border-sub); display: flex; justify-content: space-between; align-items: center; }
 .domain-link { font-size: clamp(15px, 4vw, 18px); }
 .domain-meta { font-size: clamp(15px, 3.7vw, 17px); color: var(--text-muted); white-space: nowrap; margin-left: 8px; }
+.cert-empty { opacity: 0.45; }
+.cert-empty .domain-link { pointer-events: none; cursor: default; color: var(--text-muted); }
+
+/* ── Affiliate links ───────────────────────────────────────────────────────── */
+.affiliate-section { margin: 28px 0 8px; padding-top: 20px; border-top: 1px solid var(--border-sub); }
+.affiliate-title { font-size: clamp(15px, 3.8vw, 17px); font-weight: 600; margin-bottom: 12px; color: var(--text); }
+.affiliate-links { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.affiliate-link { display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px; border: 1px solid var(--border-sub); color: var(--text); font-size: clamp(15px, 3.7vw, 16px); text-decoration: none; min-height: 44px; }
+.affiliate-link:hover { border-color: var(--link); color: var(--link); }
+.affiliate-badge { font-size: 12px; font-weight: 700; padding: 2px 6px; border-radius: 3px; color: #fff; white-space: nowrap; }
+.affiliate-badge-udemy   { background: #a435f0; }
+.affiliate-badge-amazon  { background: #e47911; }
+.affiliate-badge-comptia { background: #c8102e; }
+.affiliate-disclosure { font-size: 13px; color: var(--text-muted); margin: 0; }
 
 /* Random domain button */
 .random-btn { display: block; width: 100%; padding: 12px 16px; background: var(--bg); border: 1px solid var(--link); color: var(--link); font-size: clamp(15px, 4.1vw, 17px); cursor: pointer; text-align: left; margin: 14px 0; min-height: 44px; }

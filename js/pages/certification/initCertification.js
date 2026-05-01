@@ -11,6 +11,7 @@ import { loadDomain } from '../../loader/loadDomain.js';
 import { getHashParams } from '../../router/hashRouter.js';
 import { setMeta } from '../../components/meta/setMeta.js';
 import { setJsonLd } from '../../components/meta/setJsonLd.js';
+import { affiliateLinksHTML } from '../../components/affiliates/affiliateLinksHTML.js';
 
 export async function init() {
   renderAd('ad-top');
@@ -28,6 +29,9 @@ export async function init() {
     renderMixQuizBtn(cert);
     renderCertDomainList(cert);
     renderAcronymDrill(cert);
+
+    const affiliatesEl = document.getElementById('affiliates');
+    if (affiliatesEl) affiliatesEl.innerHTML = affiliateLinksHTML(cert.affiliates);
 
     // Fetch all domain counts in parallel — loadDomain caches results for the quiz
     const counts = await Promise.all(

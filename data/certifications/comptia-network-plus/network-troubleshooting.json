@@ -3,5 +3,1328 @@
   "name": "Network Troubleshooting",
   "cert": "comptia-network-plus",
   "version": 1,
-  "questions": []
+  "questions": [
+    
+  {
+    "id": 732,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Troubleshooting methodology",
+    "difficulty": "easy",
+    "text": "A user calls the help desk reporting their computer cannot access the internet but can access the internal file server. What CompTIA troubleshooting methodology step comes first and what questions should be asked?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The first step is Identify the Problem \u2014 gathering information by questioning the user: When did the problem start? What were you doing when it first occurred? Has anything changed recently (new software installed, Windows update, cable moved)? Does anyone else in your area have the same problem? Can you access any internet site or just some? This information narrows the scope \u2014 the fact that the file server is accessible but the internet is not suggests the workstation IP configuration, default gateway, or DNS may be the issue rather than the physical connection; approaching systematically with questions before taking action prevents wasted effort chasing the wrong cause"
+      },
+      {
+        "id": "b",
+        "text": "The first step is to immediately reboot the user's computer; rebooting resolves most network issues and should always be the first action before gathering any information"
+      },
+      {
+        "id": "c",
+        "text": "The first step is to check all firewall rules; internet access problems are always caused by firewall misconfigurations and the help desk should review the firewall rule set before asking the user any questions"
+      },
+      {
+        "id": "d",
+        "text": "The first step is to escalate immediately to the network team; help desk staff should not troubleshoot network issues and must escalate without gathering any information to avoid causing further problems"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Identify the Problem is explicitly step one in CompTIA's troubleshooting methodology; gathering information through user questions provides the data needed to form an intelligent theory; the symptom pattern (internal works, internet fails) already provides diagnostic value before any technical investigation begins. This is the correct answer.",
+      "b": "Rebooting without gathering information skips the identification phase and may mask important clues about root cause; the methodology requires understanding the problem before attempting solutions.",
+      "c": "Firewall review is a possible investigation step after forming a theory, not the first step before understanding the problem; jumping to a specific technology without understanding the symptoms may waste significant time.",
+      "d": "Escalation is appropriate when the current tier cannot resolve the issue; it is not the first step for all network issues; gathering information first enables an informed escalation with useful context."
+    }
+  },
+  {
+    "id": 733,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Troubleshooting methodology",
+    "difficulty": "medium",
+    "text": "A network engineer has identified that intermittent packet loss affects 30 users on VLAN 20. They form two competing theories: (1) a failing switch uplink port, (2) a spanning tree topology change causing brief forwarding interruptions. How does the methodology guide testing both theories and what does divide and conquer mean in this context?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The engineer should implement both solutions simultaneously; fixing both the switch port and the spanning tree configuration at the same time resolves the issue faster than testing one at a time"
+      },
+      {
+        "id": "b",
+        "text": "Divide and conquer means dividing the work between two engineers; one engineer tests Theory 1 while another simultaneously tests Theory 2 and implements both fixes; the divide refers to dividing the labor not the diagnostic approach"
+      },
+      {
+        "id": "c",
+        "text": "CompTIA methodology requires testing each theory independently to confirm or deny it: for Theory 1 (failing port) the engineer checks interface error counters (show interface) looking for incrementing CRC errors, input errors, or output drops on the uplink; if errors are present and correlate with the outage timing the theory is confirmed; for Theory 2 (STP topology changes) the engineer checks show spanning-tree detail for topology change counts and timing correlation; divide and conquer means starting testing at the most likely failure layer rather than always starting at Layer 1 or Layer 7 \u2014 since both theories point to Layer 2 the engineer tests there directly instead of starting from physical cable inspection; if Theory 1 is confirmed the next step is replacing the port or cable; if not confirmed a new theory is established or escalation occurs; testing one theory at a time prevents confusion about which fix resolved the problem"
+      },
+      {
+        "id": "d",
+        "text": "Both theories should be dismissed and the engineer should start fresh with a bottom-to-top OSI approach beginning with physical layer inspection of every cable connected to VLAN 20 regardless of which theories have been formed"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Implementing multiple changes simultaneously prevents knowing which change fixed the problem and may introduce new issues; changes should be tested individually.",
+      "b": "Divide and conquer in troubleshooting methodology refers to starting diagnostic testing at a middle OSI layer based on symptoms rather than always starting at Layer 1 or Layer 7; it is not about dividing labor between engineers.",
+      "c": "Testing theories individually with specific diagnostic commands and divide-and-conquer starting at the most likely OSI layer are both correct methodology applications; interface error counters and STP topology change counters are the specific evidence sources for each theory. This is the correct answer.",
+      "d": "A bottom-to-top approach starting from physical inspection is one valid approach but is not required when symptoms clearly point to a specific layer; divide and conquer allows starting where the evidence points."
+    }
+  },
+  {
+    "id": 734,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Troubleshooting methodology",
+    "difficulty": "hard",
+    "text": "A change management system shows that a routing protocol configuration was changed at 2 PM yesterday. Network performance issues began at 2:15 PM and continue. The network engineer confirms the theory that the routing change caused suboptimal path selection. What are the next methodology steps and what documentation is required?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Immediately roll back the routing change without further analysis; any change that correlates with a problem should be automatically reverted without establishing a plan of action"
+      },
+      {
+        "id": "b",
+        "text": "After confirming the theory immediately escalate to management before taking any action; the engineer should not implement any resolution without explicit management approval for every change regardless of severity or urgency"
+      },
+      {
+        "id": "c",
+        "text": "The methodology is complete once the theory is confirmed; documentation is optional and only required for major outages; for performance issues the engineer should implement the fix without further planning or documentation"
+      },
+      {
+        "id": "d",
+        "text": "After confirming the theory the methodology steps are: Establish a Plan of Action \u2014 determine whether to roll back the routing change (fastest resolution) or modify the configuration to achieve the intended goal without the performance impact; identify potential effects of each option; Implement the Solution \u2014 execute the plan; Verify Full System Functionality \u2014 confirm the performance issue is resolved, check that routing behaves as expected, verify no other services were affected; Document Findings \u2014 record in the change management system the root cause (routing change caused suboptimal path selection), the symptoms and their timeline, the diagnostic steps taken, the resolution applied, and lessons learned (perhaps improve change testing procedures to catch routing impact before production); documentation ensures the organization learns from the incident"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Automatic rollback without a plan of action ignores the potential effects of the rollback itself and skips the planning step; the original change had an intended purpose that should be considered.",
+      "b": "Management escalation is appropriate for some situations but is not a universal required step between theory confirmation and resolution.",
+      "c": "Documentation is explicitly required by CompTIA's troubleshooting methodology for all incidents not just major outages; the documented lessons learned prevent future recurrence.",
+      "d": "Plan of action, implementation, verification, and documentation are the final four steps of CompTIA's methodology after theory confirmation; each step serves a specific purpose; documentation is explicitly mandatory throughout the process. This is the correct answer."
+    }
+  },
+  {
+    "id": 735,
+    "domain": "5.0",
+    "objective": "5.1",
+    "keyword": "Troubleshooting methodology",
+    "difficulty": "medium",
+    "text": "A help desk ticket describes: My VPN keeps disconnecting every hour. The engineer asks when it started and the user says after the IT update last Tuesday. Which methodology step does determine if anything has changed serve and how does this information narrow the investigation?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Determine if anything has changed is the final step in the methodology used only after all other approaches have failed; the IT update information should be gathered last not early in the troubleshooting process"
+      },
+      {
+        "id": "b",
+        "text": "Determine if anything has changed is part of the Identify the Problem step \u2014 gathering information about recent changes is critical because most network problems correlate with recent changes; knowing the IT update happened Tuesday and the VPN disconnections started Tuesday immediately narrows the investigation from why does VPN disconnect (broad) to what did the Tuesday update change that affects VPN session persistence (specific); the engineer can review the change log for Tuesday's update looking for VPN client software updates, certificate changes, firewall rule modifications, or security policy changes affecting session timeout; this dramatically reduces investigation time compared to starting from scratch; the information also helps form an initial theory before any technical diagnostic work begins"
+      },
+      {
+        "id": "c",
+        "text": "The information about the IT update is irrelevant because IT updates are always tested before deployment and cannot cause production issues; the engineer should disregard the timing correlation and look for other causes"
+      },
+      {
+        "id": "d",
+        "text": "Determine if anything has changed is a separate step that occurs after establishing a theory; the timing information gathered from the user would only be used after the engineer has independently identified a suspected cause"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Gathering change information is an early step within Identify the Problem; it is explicitly listed as a sub-step of the first phase not a last resort.",
+      "b": "Change correlation is one of the most powerful troubleshooting shortcuts; when problem onset correlates with a known change the investigation starts at the change rather than at an open-ended search; the methodology explicitly includes Determine if anything has changed as part of information gathering for this reason. This is the correct answer.",
+      "c": "IT updates regularly cause production issues despite testing; change correlation is a valid and important diagnostic signal; dismissing the timing correlation would be a methodology error.",
+      "d": "Change information is gathered in the identification phase before theories are formed; the change information informs the first theory rather than confirming a theory already formed independently."
+    }
+  },
+  {
+    "id": 736,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Cable issues",
+    "difficulty": "easy",
+    "text": "A network technician installs a 90-meter Cat5e cable run. Users on that run report slow and unreliable connectivity. Testing shows high error rates but the cable tests pass continuity. What physical layer issues could cause this and what is the likely cause?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Several physical layer issues could cause high error rates on a passing-continuity cable: attenuation \u2014 at 90 meters (near the 100m Cat5e limit) signal strength is reduced and combined with any connector losses, patch cable lengths, or aging cable quality could push the channel over the attenuation limit causing bit errors; crosstalk \u2014 if the cable was installed near fluorescent lights, power cables, or other EMI sources interference causes errors that do not show as opens or shorts in continuity testing; improper termination \u2014 if pairs were untwisted beyond 13mm at terminations the reduced twist degrades crosstalk performance causing near-end crosstalk (NEXT) errors; the most likely cause at 90m with existing errors is that the total channel length (90m plus patch cables at each end) may exceed 100m or the cable quality and termination combined are insufficient for the attenuation budget; verify with a cable certification tester not just continuity tester"
+      },
+      {
+        "id": "b",
+        "text": "Cat5e cannot physically carry data at distances over 50 meters; 90 meters exceeds the absolute maximum for any Ethernet standard; the entire cable run must be replaced with fiber optic"
+      },
+      {
+        "id": "c",
+        "text": "The errors are caused by incorrect IP addressing; physical cable errors and IP configuration errors produce identical symptoms; change the IP subnet mask before investigating the physical layer"
+      },
+      {
+        "id": "d",
+        "text": "Cat5e cable runs longer than 50 meters require a signal booster (repeater) every 25 meters; without boosters all Cat5e runs over 50m experience the described errors; install repeaters at 50m intervals"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Attenuation, crosstalk, and improper termination all cause bit errors without showing as continuity failures; a continuity tester only verifies conductors connect end-to-end; a certification tester measures the actual electrical performance parameters (insertion loss, NEXT, return loss) needed to confirm Cat5e compliance. This is the correct answer.",
+      "b": "Cat5e supports 100m total channel length including patch cables; 90m of horizontal cable leaving headroom for patch cables is within specification but close to the limit.",
+      "c": "Physical cable errors and IP addressing errors have distinct symptoms; physical errors appear as interface error counters (CRC, input errors) while IP errors manifest as routing/reachability failures.",
+      "d": "Ethernet over copper has a 100m channel limit; repeaters are not used within horizontal cable runs; the solution to exceeding 100m is deploying an intermediate switch or using fiber not inserting repeaters."
+    }
+  },
+  {
+    "id": 737,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Cable issues",
+    "difficulty": "medium",
+    "text": "A fiber optic link between two switches shows the interface as up but experiences intermittent packet loss. The transceiver receive power is -18 dBm and the minimum receiver sensitivity is -20 dBm. The TX power is +1 dBm and fiber loss budget is 3 dB. What is the optical power budget situation and what could explain the intermittent packet loss?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The link is fine; -18 dBm receive power is above the -20 dBm minimum sensitivity providing 2 dB of margin; no investigation is needed as the link meets specifications"
+      },
+      {
+        "id": "b",
+        "text": "The intermittent packet loss is caused by the switches automatically renegotiating speed and duplex; fiber optic links cannot negotiate properly and always require manual speed configuration; set both switches to 1000 full duplex to resolve the intermittent packet loss"
+      },
+      {
+        "id": "c",
+        "text": "The power budget analysis: TX power +1 dBm minus fiber loss budget 3 dB equals expected receive power of -2 dBm; actual receive power is -18 dBm indicating approximately 16 dB of unaccounted loss; the link barely passes minimum sensitivity (-18 dBm vs -20 dBm minimum) with only 2 dB margin; the margin is dangerously low and intermittent packet loss results when any additional loss occurs such as temperature fluctuations causing connector expansion, micro-bends under varying building stress, or contaminated connector faces that sometimes partially block light; while the link works the 2 dB margin is insufficient for reliable operation (standard design allows 3-6 dB margin); the 16 dB unexplained loss difference indicates: dirty or damaged connectors causing high connector loss, a cracked or excessively bent fiber causing micro-bend loss, or incorrect fiber type (mixing single-mode and multimode); the fix requires cleaning all connectors with proper cleaning tools, inspecting connectors with a fiber microscope, and using an OTDR to locate high-loss points along the link"
+      },
+      {
+        "id": "d",
+        "text": "The -18 dBm receive power indicates the fiber is transmitting in the wrong direction; TX and RX fibers are transposed at one of the connectors; swapping the TX and RX strands resolves the packet loss and brings receive power to the expected level"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "2 dB margin is insufficient for reliable operation; while technically above minimum sensitivity the lack of margin means any degradation causes errors; the large discrepancy between expected and actual receive power (16 dB unexplained loss) is a critical finding requiring investigation.",
+      "b": "Fiber optic links do not negotiate speed through autonegotiation the same way copper does; speed negotiation issues would not cause intermittent packet loss correlated with marginal receive power.",
+      "c": "Power budget analysis revealing 16 dB of unexplained loss alongside inadequate margin is the correct diagnostic approach; contaminated connectors are the most common cause of high fiber optic connector loss and are easily remediated with proper cleaning. This is the correct answer.",
+      "d": "If TX/RX were transposed the interface would be down (no light received at all) not up with marginal power; the interface is up so light is arriving in the correct direction."
+    }
+  },
+  {
+    "id": 738,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Cable issues",
+    "difficulty": "hard",
+    "text": "A new 10GBase-T deployment fails certification testing on multiple cable runs. The tester shows ANEXT (Alien Near-End Crosstalk) failures on bundled cables but individual cables pass when tested alone. What does this indicate and what installation practice corrections are needed?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "ANEXT failures indicate the cables are too long; shorten all cable runs to under 50 meters and ANEXT will pass; length is the only factor affecting ANEXT in Cat6A deployments"
+      },
+      {
+        "id": "b",
+        "text": "ANEXT failures are caused by incorrect cable jacket color; Cat6A cables must use a specific jacket color for 10GBase-T certification; ensure all cables in the bundle use the same jacket color to resolve ANEXT failures"
+      },
+      {
+        "id": "c",
+        "text": "ANEXT failures indicate the wrong tester was used; ANEXT is not a real certification parameter and does not affect network performance; recertify with a standard Cat6 tester that does not measure ANEXT to pass the certification"
+      },
+      {
+        "id": "d",
+        "text": "ANEXT failures on bundled cables that pass individually indicate that electromagnetic coupling between adjacent cables is exceeding the Cat6A specification; 10GBase-T is uniquely sensitive to alien crosstalk because it uses all four pairs simultaneously for bidirectional transmission at high frequencies (500 MHz for Cat6A); individual cable testing isolates each cable removing the coupling effect; when bundled together the transmissions on neighboring cables induce interference in the test cable; installation practice corrections include: maintaining proper cable separation; using individually shielded Cat6A (F/UTP or S/FTP) instead of unshielded Cat6A which relies on physical separation for ANEXT compliance; avoiding tightly cinching cable bundles with zip ties which compress cables together increasing coupling; using horizontal cable managers that space cables rather than bundling them; verifying that Cat6A cable was used consistently and not mixed with Cat6 which cannot meet ANEXT specifications; re-testing with cables separated to confirm the bundling is the cause"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "ANEXT is a function of cable proximity and coupling not length; shortening cables does not reduce the electromagnetic coupling between adjacent cables.",
+      "b": "Jacket color has no electrical significance for ANEXT; ANEXT is determined by the cable's construction (shielding, twist rates, jacket material) not its color.",
+      "c": "ANEXT (PS-ANEXT) is a real and mandatory Cat6A certification parameter defined in TIA-568 specifically for 10GBase-T support; it is not a phantom parameter and directly affects 10G network reliability.",
+      "d": "Bundling-induced ANEXT failure is the exact scenario that the Cat6A standard was developed to address; the 500 MHz bandwidth requirement for 10GBase-T made ANEXT a critical specification that Cat6 cannot meet; separation and shielding are the correct remediation approaches for ANEXT failures in bundled installations. This is the correct answer."
+    }
+  },
+  {
+    "id": 739,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Interface issues",
+    "difficulty": "easy",
+    "text": "A switch interface shows incrementing CRC errors and occasional runts. What do these counters indicate and what physical layer causes should be investigated?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "CRC errors indicate software corruption in the switch operating system and runts indicate that the switch is overloaded; upgrade the switch firmware and add more RAM to resolve both counters"
+      },
+      {
+        "id": "b",
+        "text": "CRC (Cyclic Redundancy Check) errors indicate frames arrived with invalid checksums \u2014 the frame data was corrupted in transit and failed the integrity check; common causes include damaged cables, dirty or oxidized connectors, EMI interference on the cable, and duplex mismatches; runts are frames smaller than the minimum Ethernet frame size (64 bytes) indicating either collisions causing truncated frames (duplex mismatch) or a malfunctioning NIC generating undersized frames; both symptoms together strongly suggest a duplex mismatch between the switch port and the connected device (one side is full-duplex, the other is half-duplex causing collisions and corrupt short frames), cable damage or excessive length, or a failing NIC; verify the duplex setting on both the switch port and connected device as the first diagnostic step"
+      },
+      {
+        "id": "c",
+        "text": "CRC errors and runts are normal on all busy switch ports; any port transmitting more than 1000 frames per minute generates CRC errors and runts as a normal byproduct of high utilization; these counters do not require investigation unless they exceed 5 percent of total frames"
+      },
+      {
+        "id": "d",
+        "text": "CRC errors indicate the cable is too long and runts indicate the cable is too short; adjust the cable length to the correct specification for the interface type to clear both counters"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "CRC errors are Layer 1/2 physical/data link issues not software corruption; runts indicate frame size problems not memory issues; firmware and RAM are unrelated to these counters.",
+      "b": "CRC and runt correlation pointing to duplex mismatch is the classic interface counter diagnostic pattern; duplex mismatches create a situation where the full-duplex side transmits continuously while the half-duplex side expects collision detection pauses, generating collisions that produce truncated frames (runts) and checksum failures (CRC errors). This is the correct answer.",
+      "c": "CRC errors and runts are abnormal on any healthy interface regardless of utilization; any non-zero CRC error rate warrants investigation; high utilization causes drops not CRC errors or runts.",
+      "d": "Cable length causes attenuation and bit errors that may appear as CRC errors but length does not cause runts; runts are caused by frame truncation from collisions or hardware failure not cable length."
+    }
+  },
+  {
+    "id": 740,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Interface issues",
+    "difficulty": "medium",
+    "text": "A network engineer discovers a switch port in err-disabled state. The connected device is an IP camera. What typically causes err-disabled and how is it recovered?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Err-disabled is an automated protection state that Cisco switches enter when a security or operational violation is detected on a port; common triggers include: port security violation (the port received a frame from an unauthorized MAC address exceeding the configured limit), BPDU guard violation (the port received a spanning tree BPDU on a PortFast-enabled port), a unidirectional link detection failure, or inline power (PoE) budget exceeded; recovery options include: manually clearing the err-disabled state (shutdown then no shutdown on the port interface) after identifying and resolving the root cause \u2014 without fixing the root cause the port will immediately re-enter err-disabled; configuring errdisable recovery cause and errdisable recovery interval for automatic recovery after a timeout; the show interfaces status err-disabled command shows which ports are err-disabled and show log typically shows the reason"
+      },
+      {
+        "id": "b",
+        "text": "Err-disabled is a normal operational state that all switch ports enter after 24 hours of continuous operation; the port automatically recovers after a 5-minute cooling period; no administrator action is required"
+      },
+      {
+        "id": "c",
+        "text": "Err-disabled means the connected device has been manually disabled by an administrator; the administrator who disabled the port must re-enable it; there is no way to recover an err-disabled port without administrator action on the connected device"
+      },
+      {
+        "id": "d",
+        "text": "Err-disabled is exclusive to fiber optic ports; copper ports cannot enter err-disabled state; the IP camera must be using a fiber transceiver which has an incompatible wavelength causing the err-disabled condition"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Err-disabled is triggered by specific violations and requires root cause identification before recovery; the common triggers (port security, BPDU guard, PoE budget) with specific diagnostic commands and recovery methods are the complete answer. This is the correct answer.",
+      "b": "Err-disabled is a security/protection triggered state not a routine operational cycle; it does not occur automatically after 24 hours and does not auto-recover without configuration.",
+      "c": "Err-disabled is not the same as administratively down; administratively down is manual; err-disabled is automated violation detection; they are different states with different recovery procedures.",
+      "d": "Err-disabled occurs on both copper and fiber ports; it is triggered by protocol violations not interface media type."
+    }
+  },
+  {
+    "id": 741,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Interface issues",
+    "difficulty": "hard",
+    "text": "A show interface command on a router shows: 5000 packets input, 4500 packets output, 0 input errors, 0 CRC, 0 frame, 850 drops, 0 ignored. What does the drops counter indicate and what is the likely cause and resolution?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "850 drops on an interface with 5000 input packets (17 percent drop rate) is normal for a busy router interface; drops are expected and indicate the router is functioning correctly by discarding excess traffic"
+      },
+      {
+        "id": "b",
+        "text": "The drops counter indicates the number of packets that failed CRC verification; since the CRC counter shows 0 the drops are a display bug in the router software; update the router IOS to resolve the incorrect counter display"
+      },
+      {
+        "id": "c",
+        "text": "The drops counter on a router interface indicates packets that were received but could not be processed or queued because the input queue was full; with 17 percent of received packets being dropped this is a significant congestion or processing problem; likely causes include: the interface is receiving traffic faster than the router can process it (CPU overload causing packet drops when the input queue fills); an interface receiving a DDoS or traffic flood that exceeds processing capacity; a rate mismatch where the incoming interface runs faster than the outgoing interface causing persistent queue buildup; mismatched MTU causing fragmentation overhead; or QoS misconfiguration causing excessive policing drops; resolution depends on root cause: check router CPU utilization (show processes cpu) to determine if this is a processing overload issue; verify interface utilization on both ingress and egress to identify bottlenecks; implement QoS to prioritize critical traffic and shape or drop low-priority traffic before the input queue fills"
+      },
+      {
+        "id": "d",
+        "text": "850 drops indicates 850 firewall rule denies; router interface drops are identical to firewall deny actions; review the ACL applied to this interface and remove the rules causing excessive drops"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "17 percent packet drop rate is not normal for a healthy router interface; any significant drop rate indicates a performance problem requiring investigation.",
+      "b": "Drops and CRC errors are separate counters measuring different things; CRC counts corrupt frames; drops counts frames discarded due to queue overflow; they are not related.",
+      "c": "Input queue drops indicate the router's processing capacity cannot keep up with received traffic; the 17 percent drop rate is severe and causes significant application performance degradation; CPU utilization investigation and QoS implementation are the correct diagnostic and remediation approach. This is the correct answer.",
+      "d": "ACL deny actions are counted in the ACL explicit deny counter not the interface drops counter; interface drops specifically indicate queue overflow or processing capacity limitations."
+    }
+  },
+  {
+    "id": 742,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Hardware issues (PoE/transceivers)",
+    "difficulty": "easy",
+    "text": "A network engineer deploys 20 IP cameras on a switch with a total PoE budget of 370W. Each camera is rated for 15.4W (802.3af Class 3). The switch also powers 8 VoIP phones at 3.84W each. After adding the 20th camera, the last two cameras do not power up. What is the cause?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The cameras are defective; PoE switches can power unlimited devices as long as each device draws less than the per-port maximum; the total PoE budget is irrelevant when individual devices are within the per-port limit"
+      },
+      {
+        "id": "b",
+        "text": "The switch spanning tree is blocking the ports connected to cameras 19 and 20; spanning tree port blocking prevents PoE delivery to those ports; disable spanning tree on those ports to restore power"
+      },
+      {
+        "id": "c",
+        "text": "The cameras use the wrong PoE standard; IP cameras require 802.3at (PoE+) but the switch only supports 802.3af; upgrade the switch to 802.3at to power all cameras simultaneously"
+      },
+      {
+        "id": "d",
+        "text": "The PoE budget has been exceeded: cameras 20 times 15.4W equals 308W plus phones 8 times 3.84W equals 30.72W totaling 338.72W; however most PoE switches reserve the configured class wattage not the actual drawn wattage; the switch may allocate power reservations that approach the 370W total budget; with 18 cameras (277.2W) plus 8 phones (30.72W) equals 307.92W the switch is within budget; adding cameras 19 and 20 pushes the allocated power over the budget causing the switch to deny PoE to those ports to protect the power supply; the show power inline command reveals current allocation vs budget; resolution involves either reducing the number of PoE devices, adding a second PoE switch, using higher-efficiency PoE devices, or adding a PoE injector for specific devices"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Total PoE budget is a hard limit; the switch power supply can only provide a fixed total wattage regardless of how many devices are within per-port limits; exceeding total budget causes the switch to deny power to new devices.",
+      "b": "Spanning tree blocking affects data forwarding not PoE power delivery; PoE is negotiated at Layer 1 before spanning tree has any effect; STP blocking does not prevent PoE.",
+      "c": "If the PoE standard were incorrect the cameras would not power up at all from the beginning; the problem is specifically the last two cameras (19 and 20) failing after the budget is consumed.",
+      "d": "PoE budget exceeded is the correct diagnosis; the math confirms the total approaches the 370W budget; PoE switches deny power to additional devices when the budget is reached rather than overloading the power supply; show power inline is the correct diagnostic command. This is the correct answer."
+    }
+  },
+  {
+    "id": 743,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Hardware issues (PoE/transceivers)",
+    "difficulty": "medium",
+    "text": "A switch port with an SFP transceiver shows line protocol is down even though the fiber cable appears connected. The engineer swaps the transceiver with a spare and the link comes up immediately. What are two common transceiver issues that could have caused the original failure?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "SFP transceiver failures are always caused by overheating; the only solution is improving data center cooling; transceivers do not fail for any other reason"
+      },
+      {
+        "id": "b",
+        "text": "Two common SFP transceiver issues: first, transceiver mismatch \u2014 if the original SFP was the wrong type for the link (such as a 1000BASE-SX multimode transceiver connected to a single-mode fiber, or a 1310nm transceiver connected to a switch expecting 850nm) the link cannot establish even with a physically connected cable; second, signal strength failure \u2014 the transceiver laser output may have degraded over time or from physical damage resulting in insufficient transmit power to drive the link even with an intact fiber; the receive power on the remote switch would be below minimum sensitivity causing the link to stay down; the show interfaces transceiver command (on platforms that support it) shows TX power and RX power values that diagnose both issues; incompatible wavelength causes zero link establishment while low TX power causes marginal link quality or intermittent issues before complete failure"
+      },
+      {
+        "id": "c",
+        "text": "The link failure was caused by spanning tree blocking; SFP transceivers enter a fail state when spanning tree blocks their port; replacing the transceiver temporarily overrides spanning tree blocking until the next topology recalculation"
+      },
+      {
+        "id": "d",
+        "text": "Third-party SFP transceivers are the cause; only vendor-branded transceivers (Cisco SFPs in Cisco switches) function correctly; all third-party transceivers eventually fail regardless of compatibility; replace with genuine vendor transceivers"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Transceiver failures have multiple causes including mismatch, aging laser output, physical damage, and dirty connectors; overheating is one factor but not the exclusive cause.",
+      "b": "Mismatch (wrong wavelength or fiber type) and signal strength degradation are the two most common SFP transceiver issues; the diagnostic commands and the distinguishing symptoms (mismatch equals no link; degraded signal equals intermittent or marginal link) are correct. This is the correct answer.",
+      "c": "Spanning tree has no effect on SFP transceiver function; spanning tree operates at Layer 2 and affects whether a port forwards traffic, not whether the physical link establishes.",
+      "d": "Third-party transceivers do work in most enterprise switches; some vendors require enabling support for third-party transceivers with a command; the failure of a single transceiver is not evidence that all third-party transceivers fail."
+    }
+  },
+  {
+    "id": 744,
+    "domain": "5.0",
+    "objective": "5.2",
+    "keyword": "Hardware issues (PoE/transceivers)",
+    "difficulty": "hard",
+    "text": "A building deploys 802.3bt (PoE++) Type 4 devices (90W maximum) on a Cat5e cabling plant. The network team notices that some devices power on initially but then reset under load. What technical issue does Cat5e cabling create for high-power PoE delivery and what cabling is required?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Cat5e cabling creates resistance-based power delivery problems for high-power PoE: 802.3bt Type 4 uses all four pairs to deliver up to 90W; while Cat5e is electrically adequate for two-pair PoE at lower wattages the higher current required for 90W across all four pairs generates I squared R heating in the conductors; Cat5e uses 24 AWG conductors with higher resistance than the 22 AWG conductors in Cat6/6A; at high PoE loads Cat5e resistance causes voltage drop at the powered device end \u2014 a device may receive insufficient voltage under full load despite 802.3bt negotiation completing at startup; the devices reset under load because the voltage drops below the minimum operating voltage when drawing full power; 802.3bt standard explicitly recommends Cat6A cabling for Type 3 and Type 4 PoE applications; remediation requires upgrading to Cat6 or Cat6A cabling for all 802.3bt applications"
+      },
+      {
+        "id": "b",
+        "text": "Cat5e supports PoE++ at full 90W without any limitation; Ethernet cabling power delivery is independent of cable category; any Cat5e cable that supports Gigabit Ethernet can deliver 90W PoE without issues"
+      },
+      {
+        "id": "c",
+        "text": "The devices reset because 802.3bt is incompatible with standard RJ45 connectors used in Cat5e terminations; 802.3bt requires specialized PoE++ connectors that are physically different from standard RJ45; replace all RJ45 terminations with PoE++ compatible connectors"
+      },
+      {
+        "id": "d",
+        "text": "The issue is that Cat5e is limited to 100 Mbps and 802.3bt requires Gigabit Ethernet; the reset under load is triggered when the device attempts to upshift to Gigabit speed which Cat5e cannot support; the resolution is locking all switch ports to 100 Mbps"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Voltage drop from Cat5e conductor resistance under high-power PoE load is the specific technical failure mode; I squared R power dissipation in the cable combined with voltage drop causing devices to reset under load is accurate; 802.3bt standard documentation specifically recommends Cat6A for Type 3 and 4 PoE. This is the correct answer.",
+      "b": "Cable category significantly affects PoE delivery at high wattages; Cat5e 24 AWG conductors have higher resistance than Cat6 22 AWG causing greater voltage drop under high current loads.",
+      "c": "802.3bt uses standard RJ45 connectors; no specialized connector type exists for PoE++; the physical interface is identical to standard Ethernet.",
+      "d": "Cat5e supports Gigabit Ethernet (1000BASE-T); the speed capability of Cat5e is not the issue; the resistance of 24 AWG conductors under high current is the problem."
+    }
+  },
+  {
+    "id": 745,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "STP issues",
+    "difficulty": "easy",
+    "text": "A network engineer notices that after adding a new switch to the network, all users on VLAN 10 lose connectivity for approximately 30 seconds every few minutes. What STP behavior is likely causing this?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The new switch is sending too many DHCP requests causing IP address exhaustion; the 30-second outage corresponds to DHCP lease renewal failures not STP"
+      },
+      {
+        "id": "b",
+        "text": "The 30-second outage is caused by the STP hello timer; the standard hello timer is 30 seconds and every hello packet causes a brief forwarding pause on all switch ports; this is expected STP behavior that cannot be changed"
+      },
+      {
+        "id": "c",
+        "text": "The new switch is likely causing repeated Spanning Tree topology changes; if the new switch has ports that frequently transition between up and down states it generates Topology Change Notifications (TCNs) that cause all switches to flush their MAC address tables; while the MAC tables rebuild all traffic is flooded as unknown unicast causing congestion and forwarding disruptions; the 30-second intervals may correspond to STP reconvergence events or TCN propagation; possible causes include: an unstable port on the new switch that is flapping, the new switch lacking PortFast configuration on access ports causing normal device connections to trigger STP topology changes, or the new switch priority being lower than the existing root bridge causing root bridge election disputes; diagnose with show spanning-tree detail looking for topology change counts and show spanning-tree vlan 10 to verify root bridge and port states"
+      },
+      {
+        "id": "d",
+        "text": "The new switch is causing a routing loop; loops in switched networks are not related to STP; the STP protocol only affects wireless networks and has no impact on wired VLAN connectivity"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "DHCP exhaustion causes devices to receive 169.254.x.x APIPA addresses; it does not cause periodic 30-second connectivity interruptions for all users.",
+      "b": "The STP hello timer (2 seconds default) is for BPDU transmission and does not cause forwarding pauses; hello BPDUs are handled in control plane and do not interrupt data plane forwarding.",
+      "c": "STP topology changes causing MAC table flushes and the resulting flooding/congestion is the classic symptom of periodic brief outages after adding new switches; PortFast on access ports prevents normal device connections from triggering topology changes. This is the correct answer.",
+      "d": "STP specifically addresses Layer 2 switching loops in wired networks; it is not limited to wireless; STP is the primary mechanism preventing broadcast storms from physical loops in switched networks."
+    }
+  },
+  {
+    "id": 746,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "STP issues",
+    "difficulty": "medium",
+    "text": "A network has two distribution switches (DS1 priority 4096 and DS2 priority 8192) and multiple access switches. A newly installed access switch AS3 with default priority (32768) is now the root bridge for VLAN 20, causing suboptimal traffic paths. What is the remediation?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "AS3 becoming root bridge is correct network behavior; the switch with the highest priority number always becomes root bridge; 32768 is higher than 8192 so AS3 should be root"
+      },
+      {
+        "id": "b",
+        "text": "This behavior is prevented by STP automatically; STP always selects the switch with the most uplinks as root bridge regardless of bridge priority configuration; AS3 with fewer uplinks cannot become root bridge"
+      },
+      {
+        "id": "c",
+        "text": "AS3 becoming root bridge improves network performance because access switches have more ports than distribution switches; more ports on the root bridge means more direct paths for all VLANs"
+      },
+      {
+        "id": "d",
+        "text": "STP root bridge election uses the lowest Bridge ID (priority plus MAC address); DS1 with priority 4096 should be root since 4096 is lower than 8192 and 32768; if AS3 somehow became root it indicates a misconfiguration; when AS3 is root, traffic for VLAN 20 flows through the access switch (with limited capacity and no redundant uplinks) instead of the high-capacity distribution switches causing suboptimal traffic paths, potential congestion, and loss of redundancy; mitigation requires setting AS3 bridge priority to 61440 (the maximum) for VLAN 20 with spanning-tree vlan 20 priority 61440; additionally configure BPDU guard on all access switch ports facing end devices to prevent any future unauthorized switch from influencing STP topology; run show spanning-tree vlan 20 to confirm DS1 is root after the priority change"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "STP root bridge election selects the lowest Bridge ID; lower priority number wins; 4096 is absolutely lower than 32768 in priority comparison so DS1 should be root; the scenario indicates a misconfiguration.",
+      "b": "STP does not automatically prefer switches with more uplinks; priority and MAC address determine root bridge selection; access switches can become root bridges if not properly configured with high priority values.",
+      "c": "Root bridge selection based on port count is not how STP works; a misconfigured access switch as root bridge degrades network performance.",
+      "d": "The impact of an access switch becoming root bridge and the correct remediation (setting access switch priority to maximum 61440 and BPDU guard on access ports) are the key points. This is the correct answer."
+    }
+  },
+  {
+    "id": 747,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "STP issues",
+    "difficulty": "hard",
+    "text": "A technician connects two switches with two uplink cables for redundancy but immediately a broadcast storm starts consuming 100% of all switch ports bandwidth. No STP is configured. After removing one cable the storm stops. What caused this and what STP feature prevents it in production networks?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The broadcast storm was caused by incorrect IP addressing; when two uplinks connect two switches the IP routing creates a routing loop; STP does not prevent routing loops; fix the IP addressing to resolve the storm"
+      },
+      {
+        "id": "b",
+        "text": "Without STP the two switch connections create a physical Layer 2 loop; a broadcast frame (ARP request, DHCP discover, or similar) enters Switch A on Port 1 and is flooded out all ports including both uplinks to Switch B; Switch B receives the same broadcast on both uplinks simultaneously and floods it back to Switch A on both uplinks; Switch A receives copies of the same frame and floods again creating an infinite loop; broadcasts multiply exponentially with each traversal of the loop consuming all available bandwidth within milliseconds (broadcast storm); STP (Spanning Tree Protocol) prevents this by electing a root bridge and then blocking redundant physical paths \u2014 one of the two uplinks between the switches is placed in blocking state by STP; only one logical path exists between any two switches while the second cable provides redundancy that STP automatically activates if the primary path fails; the specific STP feature that prevents the loop is the blocking port state which discards all received frames (except BPDUs) preventing the loop while maintaining the physical connection as a standby path"
+      },
+      {
+        "id": "c",
+        "text": "The broadcast storm was caused by the two switches having duplicate MAC addresses; when two network devices share the same MAC address any frame addressed to that MAC creates a loop; replace one switch with a device that has a unique MAC address"
+      },
+      {
+        "id": "d",
+        "text": "Broadcast storms from dual connections only occur with managed switches; unmanaged switches automatically prevent loops through hardware-based loop detection; replace the managed switches with unmanaged switches to prevent broadcast storms without requiring STP configuration"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Broadcast storms are a Layer 2 switching phenomenon not a Layer 3 routing issue; STP specifically prevents Layer 2 loops; this is not an IP addressing or routing problem.",
+      "b": "The exponential broadcast multiplication in a physical loop and STP blocking port state as the prevention mechanism are both correct; this is the foundational reason STP exists in switched networks. This is the correct answer.",
+      "c": "Duplicate MAC addresses cause forwarding issues but not broadcast storms in the described topology; broadcast storms require physical loops not MAC conflicts.",
+      "d": "Unmanaged switches do not inherently prevent Layer 2 loops; many do not include loop detection; managed switches with STP are the standard solution."
+    }
+  },
+  {
+    "id": 748,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "IP/VLAN/routing issues",
+    "difficulty": "easy",
+    "text": "A new workstation can ping its default gateway (10.1.5.1) but cannot reach any server in the 10.1.10.0/24 subnet. The servers are on a different VLAN but on the same physical switches. What is the most likely cause?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The workstation is likely on an incorrect VLAN or the default gateway does not have inter-VLAN routing configured; if the workstation is on VLAN 5 (10.1.5.0/24) and the servers are on VLAN 10 (10.1.10.0/24) inter-VLAN communication requires routing through a Layer 3 device acting as default gateway; the workstation can reach its gateway (10.1.5.1) on VLAN 5 but if the gateway has no route to 10.1.10.0/24 or if inter-VLAN routing is not configured the workstation cannot reach VLAN 10 servers; additional possibilities: the workstation has an incorrect subnet mask (such as /8 instead of /24) causing it to believe 10.1.10.x addresses are on the local subnet and attempting direct ARP rather than routing through the gateway; verify: correct VLAN assignment on the switch port, correct IP/mask/gateway on the workstation, and inter-VLAN routing configuration on the gateway"
+      },
+      {
+        "id": "b",
+        "text": "The workstation needs a longer cable to reach the servers on VLAN 10; physical distance affects which VLAN a device is on and the short cable prevents cross-VLAN communication"
+      },
+      {
+        "id": "c",
+        "text": "VLANs are a physical network concept; devices on the same physical switch are always on the same VLAN; the servers and workstation must be on different physical switches to explain the connectivity problem"
+      },
+      {
+        "id": "d",
+        "text": "The problem is that VLAN 10 is administratively disabled; all traffic to disabled VLANs is dropped at the switch; enable VLAN 10 on all switches and the workstation will immediately reach the servers"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Inter-VLAN routing requirement and common misconfigurations (wrong VLAN assignment, incorrect subnet mask, missing routes) are the correct analysis; pinging the gateway confirming basic IP connectivity while failing cross-VLAN routing is the classic inter-VLAN troubleshooting scenario. This is the correct answer.",
+      "b": "VLANs are logical not physical constructs; cable length does not determine VLAN membership; VLAN assignment is configured on switch ports.",
+      "c": "Devices on the same physical switch can be on different VLANs; VLAN assignment is per-port configuration not per-switch.",
+      "d": "While VLAN disabled state is possible the scenario indicates pinging within VLAN 5 works fine; the inter-VLAN routing issue is the more common and likely cause of this specific symptom pattern."
+    }
+  },
+  {
+    "id": 749,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "IP/VLAN/routing issues",
+    "difficulty": "medium",
+    "text": "A DHCP scope for 192.168.1.0/24 has 254 addresses. The show ip dhcp pool command shows 254 addresses in use and 0 available. New devices cannot receive IP addresses. What is this condition called, what causes it, and what are the solutions?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "This condition is called DHCP poisoning; an attacker has injected 254 fake DHCP leases exhausting the pool; the solution is enabling DHCP snooping and rebooting the DHCP server to clear all leases"
+      },
+      {
+        "id": "b",
+        "text": "The DHCP server software has a bug causing it to report 0 available addresses incorrectly; the actual pool has addresses available but the display is wrong; restart the DHCP service to refresh the pool display without adding any real addresses"
+      },
+      {
+        "id": "c",
+        "text": "This is DHCP address pool exhaustion; the scope has assigned all available addresses leaving none for new devices; common causes include: lease time set too long (devices that have left the network still hold leases for days or weeks before expiring); DHCP scope too small for the number of devices; abandoned leases from devices that were removed without releasing their DHCP leases; IP conflict with static addresses reducing the effective pool; ghost or unauthorized devices consuming addresses; solutions include: reduce lease time to allow addresses to recycle faster; expand the scope to a larger subnet if more address space is available; identify and purge stale leases manually using clear ip dhcp binding on Cisco; investigate whether unauthorized devices are consuming addresses; add exclusions for statically assigned addresses if they are within the scope range"
+      },
+      {
+        "id": "d",
+        "text": "Pool exhaustion only affects IPv4; adding IPv6 addresses to the scope provides unlimited additional addresses that devices can use when the IPv4 pool is exhausted; configure DHCPv6 as a fallback for exhausted IPv4 scopes"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Address pool exhaustion is not DHCP poisoning; DHCP poisoning is a rogue server attack; pool exhaustion is a capacity or lease time management issue; the described symptoms (254 in use, 0 available, new devices cannot get IPs) are classic pool exhaustion.",
+      "b": "While display bugs exist in some DHCP implementations a consistent 0 available with 254 in use is almost always actual exhaustion not a display error.",
+      "c": "Address pool exhaustion with its causes (long lease times, small scope, abandoned leases) and solutions (lease time reduction, scope expansion, stale lease clearing, device investigation) is the complete answer. This is the correct answer.",
+      "d": "DHCPv6 is a separate address family that cannot substitute for IPv4 addresses; devices needing IPv4 addresses cannot use IPv6 addresses in their place."
+    }
+  },
+  {
+    "id": 750,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "IP/VLAN/routing issues",
+    "difficulty": "hard",
+    "text": "Two devices on the same subnet both have IP address 10.1.1.50 configured. Describe the symptoms users experience, how to detect this condition, and how to identify which device has the duplicate address.",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Duplicate IP addresses have no effect on network operation; switches use MAC addresses not IP addresses for forwarding so two devices with the same IP coexist without any symptoms or conflicts"
+      },
+      {
+        "id": "b",
+        "text": "The switch automatically detects duplicate IPs and blocks one of the conflicting ports in err-disabled state; the blocked port identifies the offending device; check show interfaces status for any err-disabled ports on the subnet VLAN"
+      },
+      {
+        "id": "c",
+        "text": "Duplicate IP addresses cause the entire subnet to go down; all 254 devices on the /24 subnet cannot communicate because the ARP conflict prevents all ARP resolution for all IP addresses on the subnet"
+      },
+      {
+        "id": "d",
+        "text": "Duplicate IP address symptoms: both devices experience intermittent connectivity because when any device on the subnet sends an ARP request for 10.1.1.50 both devices respond with their own MAC address; the querying device caches whichever ARP reply arrived last and sends frames to that MAC; traffic alternates between the two devices causing sessions to break (an HTTPS session established with one device receives responses from the other); this appears as connection resets, authentication failures, and intermittent access; Windows and Linux both display IP address conflict detected notifications and may disable the conflicting interface; detection: the ARP table on any nearby switch or router shows the MAC address for 10.1.1.50 changing between two different MACs over time (use show arp and note the changing MAC); DHCP server logs show both MACs claiming the same address if DHCP is used; identification: ping 10.1.1.50 then immediately run arp -a on the workstation to see which MAC is currently cached; check switch MAC address table (show mac address-table address <MAC>) to identify which switch port each MAC is connected to; the switch port tells you the physical location"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "IP addresses are used by Layer 3; duplicate IPs cause real connectivity problems because applications connect to IP addresses not MAC addresses; ARP table instability breaks sessions.",
+      "b": "Standard switch err-disabled triggers do not include duplicate IP detection; IP address management is a Layer 3 function not a standard switch port protection trigger.",
+      "c": "Duplicate IPs affect only the conflicting address not the entire subnet; other devices with unique IPs continue communicating normally.",
+      "d": "The ARP instability causing session breakage, the OS conflict detection, the changing ARP table entry as the diagnostic indicator, and the switch port lookup process for physical identification are all accurate and complete. This is the correct answer."
+    }
+  },
+  {
+    "id": 751,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Wireless issues",
+    "difficulty": "easy",
+    "text": "Users in a conference room report that WiFi is slow even though the signal bars show full strength. What wireless issues could cause poor performance despite strong signal?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Full signal bars always indicate optimal performance; slow WiFi with full bars is impossible and the users must have a software problem unrelated to the wireless network"
+      },
+      {
+        "id": "b",
+        "text": "Full signal strength does not guarantee good performance; multiple wireless issues cause poor throughput despite strong signal: channel overlap and co-channel interference \u2014 if multiple APs in the area use the same or overlapping channels devices compete for airtime causing high retry rates and reduced throughput even with strong signal; high client density \u2014 a conference room with many users on one AP competes for the same radio airtime; nearby interfering devices (microwave ovens, cordless phones, Bluetooth devices) on the 2.4 GHz band may not reduce signal strength enough to show in bars but cause repeated frame errors requiring retransmissions; the AP may be overloaded with clients; RF interference from neighboring networks using the same channel; verify the channel being used and its congestion level with a WiFi analyzer showing channel utilization and interference sources"
+      },
+      {
+        "id": "c",
+        "text": "The issue is that conference rooms block WiFi completely; the metal reinforcement in conference room walls reduces WiFi to unusable speeds regardless of AP placement; the only solution is running an Ethernet cable into the conference room"
+      },
+      {
+        "id": "d",
+        "text": "Full signal bars with slow performance indicates the AP is overheating; APs automatically throttle transmission speed when internal temperature exceeds 40 degrees Celsius; improve data center cooling in the APs location"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Full signal does not equal full performance; signal strength (RSSI) measures received power while throughput depends on many additional factors including interference, congestion, and client density.",
+      "b": "Channel congestion, co-channel interference, client density, and non-WiFi interference are all causes of poor throughput despite strong signal; a WiFi analyzer revealing channel utilization and interference sources is the correct diagnostic tool. This is the correct answer.",
+      "c": "Conference room construction varies; while heavy metal construction can attenuate signal the scenario states full signal bars which means signal is adequate; the issue is throughput not signal strength.",
+      "d": "AP thermal throttling does occur but typically requires higher temperatures than 40 degrees Celsius; the more common causes of this symptom are interference and congestion."
+    }
+  },
+  {
+    "id": 752,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Wireless issues",
+    "difficulty": "medium",
+    "text": "Users report that their laptops disconnect from WiFi when walking between floors in a building. They must manually reconnect each time. What wireless roaming issue causes this and what configuration fixes it?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Sticky client behavior is the likely cause; this occurs when a client device holds on to the connection to its current AP even when its signal weakens significantly because it has moved away rather than proactively roaming to a closer AP with stronger signal; the client continues using the weak signal from the floor 1 AP while walking to floor 2 because the AP signal threshold for roaming is not triggered until connectivity completely fails; configuration fixes include: setting minimum RSSI thresholds on the wireless controller that force clients to roam when signal drops below a specified level (aggressive roaming); enabling BSS Transition Management (802.11v) that allows APs to suggest better APs to clients; deploying 802.11r (Fast BSS Transition) to reduce roaming handoff time so clients roam more quickly; configuring 802.11k (Radio Resource Management) so clients can discover neighboring APs proactively; ensuring APs on adjacent floors have overlapping coverage so roaming has a viable target AP before connectivity is fully lost"
+      },
+      {
+        "id": "b",
+        "text": "WiFi roaming between floors is not technically possible; WiFi signals cannot penetrate floor materials so devices must disconnect and reconnect manually when changing floors; this is expected behavior with no configuration fix"
+      },
+      {
+        "id": "c",
+        "text": "The issue is DHCP lease expiration during roaming; when a client moves between floors it receives a new IP address from a new DHCP scope causing the connection to restart; configuring a single DHCP scope for the entire building eliminates the IP change and prevents disconnections"
+      },
+      {
+        "id": "d",
+        "text": "WPA3 encryption cannot maintain sessions during AP transitions; the encryption handshake must complete from scratch at each new AP causing disconnections; downgrade to WPA2 which supports seamless AP transitions without re-authentication"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Sticky client is the textbook cause of this symptom; 802.11r/k/v (the roaming improvement standards) and minimum RSSI enforcement are the standard enterprise wireless controller configuration fixes. This is the correct answer.",
+      "b": "WiFi absolutely penetrates floor materials in most building constructions; proper AP placement provides inter-floor coverage; roaming between floors is a standard enterprise WiFi use case.",
+      "c": "DHCP roaming issues exist but modern wireless controllers use centralized IP assignment that maintains the same IP across AP transitions; DHCP scope differences between floors is a rare configuration error not the standard cause of this symptom.",
+      "d": "WPA3 and WPA2 both support roaming; 802.11r reduces handoff time for both; WPA3 does not make roaming worse."
+    }
+  },
+  {
+    "id": 753,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "Wireless issues",
+    "difficulty": "hard",
+    "text": "A warehouse deployment uses 2.4 GHz WiFi for barcode scanners. After a large refrigeration system is installed, scanner connectivity degrades significantly. A WiFi analyzer shows the 2.4 GHz spectrum is heavily congested with intermittent 20 MHz-wide noise bursts. What is the interference source and what are the options?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The refrigeration system power consumption is reducing the electrical voltage available for the WiFi APs causing them to reduce transmit power; add dedicated power circuits for the WiFi APs to restore full transmit power"
+      },
+      {
+        "id": "b",
+        "text": "The refrigeration system is absorbing WiFi signals through Faraday cage effect of the metal cabinet; metal refrigeration equipment completely blocks all WiFi signals within 2 meters; relocate all barcode scanners and APs to areas more than 2 meters from any refrigeration equipment"
+      },
+      {
+        "id": "c",
+        "text": "Industrial refrigeration systems use compressor motors that can generate broadband electromagnetic interference on the 2.4 GHz band; additionally large refrigeration systems may use ISM-band (2.4 GHz) communication for monitoring and control; the 20 MHz-wide intermittent noise bursts are characteristic of a wideband interference source possibly from the refrigeration system variable frequency drive (VFD) motor controller which generates harmonics across wide spectrum ranges; options for resolution: migrate barcode scanners to 5 GHz \u2014 5 GHz is much less susceptible to industrial interference and has more non-overlapping channels; if 5 GHz barcode scanners are not available add shielding around the WiFi APs near the refrigeration equipment; change 2.4 GHz channel selection to the least affected channel identified by the WiFi analyzer; add additional APs closer to the affected areas to compensate for interference through higher RSSI; install additional EMI filtering on the refrigeration system power supply"
+      },
+      {
+        "id": "d",
+        "text": "The 2.4 GHz interference is caused by Bluetooth devices used by warehouse workers; Bluetooth operates on 2.4 GHz and all Bluetooth activity should be prohibited in warehouses using 2.4 GHz WiFi; implement a no-Bluetooth policy and the interference will stop"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Power consumption does not cause RF interference; AP transmit power is regulated internally and not dependent on electrical voltage variations within normal ranges.",
+      "b": "Metal refrigeration cabinets attenuate WiFi signal by reflection and absorption but not to 100% blocking; the symptom is intermittent noise bursts not simple signal blocking.",
+      "c": "VFD (Variable Frequency Drive) motor controllers in industrial equipment are a documented source of 2.4 GHz interference; the 20 MHz-wide noise burst characteristic matches VFD harmonic interference; migration to 5 GHz is the most reliable long-term solution for industrial wireless environments with heavy machinery. This is the correct answer.",
+      "d": "Bluetooth does operate at 2.4 GHz using frequency hopping but the described 20 MHz-wide bursts are not characteristic of Bluetooth narrow 1 MHz channels; warehouse Bluetooth devices would not newly appear after a refrigeration system installation."
+    }
+  },
+  {
+    "id": 754,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Performance issues",
+    "difficulty": "easy",
+    "text": "Users report that video calls are choppy with occasional freezing. Network monitoring shows 3% packet loss and 80ms of jitter on the path between offices. Which performance metrics are most responsible for the video call quality problems?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Bandwidth is the primary cause; video calls require minimum 100 Mbps of bandwidth and any link below this threshold causes the described symptoms"
+      },
+      {
+        "id": "b",
+        "text": "The video conferencing software is misconfigured; 3% packet loss and 80ms jitter are normal network characteristics that video codecs handle without any quality degradation; update the video software to the latest version to resolve the choppiness"
+      },
+      {
+        "id": "c",
+        "text": "CRC errors on the physical interface are causing the packet loss and jitter; replace all cables between the offices and both metrics will return to acceptable levels"
+      },
+      {
+        "id": "d",
+        "text": "Jitter (variation in packet delay) and packet loss are the primary culprits for video call quality degradation: jitter of 80ms means packets arrive with timing variations up to 80ms between successive packets; video codecs encode frames at precise intervals (30 or 60 fps) and when packets arrive inconsistently the receiving buffer is exhausted causing freeze-frame or pixelation; packet loss of 3% means approximately 1 in 33 video frames is missing \u2014 video codecs can interpolate some loss but 3% is significant enough to cause visible freezing; acceptable thresholds for video conferencing are typically jitter under 30ms and packet loss under 1%; the choppy experience with freezing is the direct symptom of both metrics exceeding acceptable thresholds; latency (the base one-way delay) causes conversation delays while jitter causes the choppiness; the combination indicates a congested or poorly QoS-configured network path"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Modern video conferencing (Teams, Zoom, WebEx) uses adaptive bitrate codecs that function well on much less than 100 Mbps; a single HD video call uses 1-8 Mbps; bandwidth alone is rarely the cause of choppy video when jitter and packet loss are elevated.",
+      "b": "3% packet loss and 80ms jitter significantly exceed acceptable video conferencing thresholds; these are not normal characteristics for a well-functioning network path designed for real-time communication.",
+      "c": "CRC errors are a possible cause of packet loss but the question asks which metrics are responsible for the symptoms; jitter and packet loss are the metrics that directly explain the choppiness and freezing regardless of their root cause.",
+      "d": "Jitter above 30ms and packet loss above 1% are the specific thresholds that cause perceptible video degradation; jitter causes choppiness from inconsistent frame delivery timing; packet loss causes freezing from missing frames; these are the correct performance metrics to target. This is the correct answer."
+    }
+  },
+  {
+    "id": 755,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Performance issues",
+    "difficulty": "medium",
+    "text": "A company's 1 Gbps WAN link shows 95% utilization consistently. Applications are slow but packet loss is minimal. What performance concepts explain this and what solutions address it?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "95% WAN utilization is optimal; networks should always be run at maximum utilization for best efficiency; slow applications at 95% utilization indicate the applications are inefficient not that the network is congested"
+      },
+      {
+        "id": "b",
+        "text": "The 95% utilization indicates congestion and bottlenecking: with only 5% headroom any traffic burst immediately saturates the link causing packets to queue in router buffers; this queuing increases latency (packets wait in queue before being transmitted) even when packet loss has not yet started; applications experience latency-sensitive degradation (slow page loads, delayed responses, sluggish interactive sessions) before packet loss becomes measurable; the throughput capacity has effectively become a bottleneck limiting all application performance; solutions include: WAN circuit upgrade (increasing capacity) to provide headroom for traffic bursts; QoS (Quality of Service) implementation to prioritize critical applications (VoIP, interactive sessions) over bulk transfers (backups, software updates) that can tolerate delay; SD-WAN with traffic steering that load-balances critical application traffic across multiple WAN links; traffic analysis to identify and potentially eliminate or schedule low-priority high-volume traffic (large file transfers, video downloads) during off-peak hours; WAN optimization through compression and deduplication to reduce the effective bandwidth consumption of repetitive data"
+      },
+      {
+        "id": "c",
+        "text": "95% utilization with minimal packet loss means the network is performing perfectly; slow applications are caused by server-side processing delays not network congestion; investigate server CPU and disk I/O before considering network upgrades"
+      },
+      {
+        "id": "d",
+        "text": "The solution is increasing packet size to maximum MTU (9000 bytes jumbo frames); larger packets carry more data per transmission reducing the number of packets needed for the same throughput and bringing utilization down to acceptable levels"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "95% sustained utilization leaves no headroom for bursts causing queue buildup and latency; networks should maintain utilization headroom (typically targeting 70-80% maximum sustained utilization) to accommodate traffic bursts without congestion.",
+      "b": "Congestion causing latency before packet loss is the characteristic of a bottlenecked WAN link; QoS, capacity upgrade, and traffic engineering are the correct solution categories. This is the correct answer.",
+      "c": "Network congestion at 95% utilization does cause slow applications even with minimal packet loss; queuing latency is measurable and impactful before packet loss begins; dismissing network as a cause at 95% utilization is incorrect.",
+      "d": "Jumbo frames (9000 byte MTU) only work when all devices in the path support them; WAN links typically have a 1500-byte MTU; jumbo frames on a standard WAN would cause fragmentation overhead worsening performance; this is not the correct solution."
+    }
+  },
+  {
+    "id": 756,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Performance issues",
+    "difficulty": "medium",
+    "text": "A network engineer is troubleshooting slow file transfers between a user and a file server. Ping shows 2ms latency but large file downloads take 30 minutes for a 500MB file. What bandwidth and throughput concepts explain why low latency does not guarantee fast file transfers?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Ping latency (round-trip time for a small ICMP packet) measures the base delay for a single packet traversal but does not measure throughput capacity (the sustained data rate available for bulk transfers); a 500MB file transferred in 30 minutes equals approximately 2.2 Mbps throughput despite 2ms ping latency; throughput can be limited by: TCP window size limitations (the TCP receive window limits how much unacknowledged data can be in flight simultaneously; small windows prevent filling high-bandwidth links even with low latency; the bandwidth-delay product for 2ms latency and 100 Mbps link is only 25KB but the default TCP window may be even smaller); network policy throttling or QoS shaping on file transfer traffic; server disk I/O speed limiting the read rate; antivirus scanning of transferred files; network device processing limitations; use iperf3 to test raw TCP throughput separately from ping to isolate the bottleneck between network capacity and application-level constraints"
+      },
+      {
+        "id": "b",
+        "text": "Low latency guarantees fast file transfers; if ping shows 2ms latency then file transfers must also complete at maximum speed; the 30-minute transfer time proves the file server is the bottleneck not the network"
+      },
+      {
+        "id": "c",
+        "text": "The file transfer speed is correct; 500MB in 30 minutes equals approximately 2 Mbps which is the maximum speed of all Ethernet connections regardless of whether they are 100 Mbps or 1 Gbps; Ethernet is limited to 2 Mbps for file transfers due to protocol overhead"
+      },
+      {
+        "id": "d",
+        "text": "Low latency and high throughput are always identical; 2ms latency means the link can transfer data at 2ms per byte resulting in 500 bytes per second; a 500MB file taking 30 minutes proves the ping measurement is incorrect"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "The bandwidth-delay product, TCP window size limitations, and the correct tool for throughput testing (iperf3) explain why low latency does not equal fast bulk transfer; this is a fundamental networking concept distinguishing latency from throughput. This is the correct answer.",
+      "b": "Ping latency and throughput are independent measurements; low latency enables fast interactive response but does not guarantee high throughput for bulk data transfers; throughput depends on TCP window size, link capacity, and processing capacity.",
+      "c": "Ethernet does not have a 2 Mbps limitation; 100 Mbps, 1 Gbps, 10 Gbps, and 100 Gbps Ethernet all exist and regularly achieve throughput approaching their rated speeds; the described transfer speed is abnormally slow.",
+      "d": "Latency and throughput are measured in different units (milliseconds vs bits per second) and have no direct mathematical relationship; the calculation described is not meaningful."
+    }
+  },
+  {
+    "id": 757,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Performance issues",
+    "difficulty": "hard",
+    "text": "An organization identifies that their 10 Gbps data center fabric has a bottleneck at the core switch where multiple 10 Gbps uplinks from access switches feed into 10 Gbps core uplinks. East-west traffic (server-to-server) experiences 40% packet loss during peak load. What architectural concept describes this bottleneck and what design change addresses it?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The bottleneck is caused by incorrect VLAN configuration; all east-west traffic must be on the same VLAN to avoid inter-VLAN routing overhead; configure all servers on VLAN 1 to eliminate the bottleneck"
+      },
+      {
+        "id": "b",
+        "text": "The bottleneck is caused by spanning tree blocking redundant uplinks between access and core switches; disable spanning tree on all core uplinks to allow all links to forward simultaneously and eliminate the bottleneck"
+      },
+      {
+        "id": "c",
+        "text": "This is a subscription ratio (oversubscription) bottleneck: the core switch is receiving more traffic from access-layer uplinks than its core uplinks can carry; if 8 access switches each with a 10 Gbps uplink connect to a core with only 4 x 10 Gbps uplinks the subscription ratio is 8:4 (2:1) oversubscription; during peak east-west traffic when all servers communicate simultaneously total offered load exceeds core capacity causing 40% packet loss in the bottleneck buffers; traditional three-tier (core-distribution-access) architectures commonly create this east-west traffic bottleneck as north-south (client-server) was historically dominant; modern data center design uses spine-leaf architecture to address this: every leaf switch connects to every spine switch with equal-cost paths; traffic between any two servers takes at most two hops (source leaf to spine to destination leaf); ECMP (Equal-Cost Multi-Path) load balances east-west traffic across all spine switches distributing load; by adding spine switches the aggregate bandwidth scales linearly; this architecture eliminates the oversubscription bottleneck that three-tier creates for east-west traffic"
+      },
+      {
+        "id": "d",
+        "text": "Packet loss during peak load is normal behavior for any network above 80% utilization; 40% packet loss indicates the network is performing within normal parameters for a data center fabric; no architectural changes are needed"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "VLAN configuration does not affect the physical bandwidth capacity of uplinks; putting all servers on one VLAN would cause massive broadcast domain issues without addressing the uplink bandwidth bottleneck.",
+      "b": "Disabling spanning tree on uplinks without a loop prevention mechanism would cause broadcast storms; ECMP with equal-cost load balancing (available with ECMP-aware routing) is the correct way to use all uplinks simultaneously.",
+      "c": "Oversubscription in three-tier architecture and spine-leaf as the solution for east-west traffic scalability are the correct architectural concepts; modern cloud data centers (AWS, Azure, Google) universally use spine-leaf for exactly this reason. This is the correct answer.",
+      "d": "40% packet loss is not normal or acceptable for any production network; it indicates a severe design flaw causing loss of nearly half of all east-west traffic; this requires architectural correction."
+    }
+  },
+  {
+    "id": 758,
+    "domain": "5.0",
+    "objective": "5.4",
+    "keyword": "Performance issues",
+    "difficulty": "easy",
+    "text": "What is the difference between latency and jitter in network performance and which one primarily affects real-time applications like VoIP?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Latency and jitter are identical measurements of the same network characteristic; latency is the technical term used by engineers while jitter is the user-facing term; they always have the same numerical value"
+      },
+      {
+        "id": "b",
+        "text": "Latency only affects download speed while jitter only affects upload speed; the two metrics apply to different traffic directions and are measured separately for each direction of data flow"
+      },
+      {
+        "id": "c",
+        "text": "Jitter measures the physical vibration of network cables caused by nearby machinery; high jitter indicates cables are physically shaking and should be secured with additional cable ties; latency measures the electrical resistance of cables which increases with length"
+      },
+      {
+        "id": "d",
+        "text": "Latency is the total time it takes for a packet to travel from source to destination (one-way delay) or round-trip time (RTT); it is a fixed characteristic of a path (distance plus processing time); jitter is the variation in latency between successive packets \u2014 if packet 1 takes 20ms, packet 2 takes 35ms, and packet 3 takes 18ms the jitter is the statistical variance (approximately 15ms in this example); real-time applications like VoIP are primarily affected by jitter: VoIP encodes voice into packets sent at precise intervals (every 20ms for G.711); if packets arrive with varying delays the playout buffer at the receiving end either empties (causing silence/clicks from missing packets) or overflows (causing choppiness); latency causes conversation delay (the noticeable delay before the other person responds) but jitter causes the audio quality degradation (choppy, robotic sound); a VoIP call with 150ms latency but 5ms jitter sounds fine; the same call with 20ms latency but 100ms jitter sounds terrible"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Latency and jitter are distinct measurements; latency measures the base delay while jitter measures the consistency of that delay; they can have very different values on the same network path.",
+      "b": "Both latency and jitter affect all traffic in both directions; they are not directionally specific; the distinction between them is conceptual (base delay vs. delay variation) not directional.",
+      "c": "Jitter in networking is a timing measurement not a physical vibration measurement; cable securing does not affect network jitter; latency is not measured by cable resistance.",
+      "d": "Latency as base delay and jitter as delay variation with VoIP as the primary jitter-sensitive application is the complete and accurate answer; the playout buffer explanation of why jitter matters for voice quality is the key insight. This is the correct answer."
+    }
+  },
+  {
+    "id": 759,
+    "domain": "5.0",
+    "objective": "5.3",
+    "keyword": "IP/VLAN/routing issues",
+    "difficulty": "medium",
+    "text": "A router has a default route (0.0.0.0/0) pointing to the ISP and specific routes for internal subnets. A new server on subnet 10.20.30.0/24 cannot be reached from other sites. The routing table at the hub router shows no route for 10.20.30.0/24. What concepts explain route selection and what is the fix?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Default routes always take priority over specific routes; since the default route covers all IPs including 10.20.30.0/24 the server should be reachable; the problem is on the server itself not the routing table"
+      },
+      {
+        "id": "b",
+        "text": "Route selection uses longest-prefix-match: the router selects the most specific route that matches the destination IP; for traffic to 10.20.30.5 the router checks its routing table for the longest matching prefix \u2014 if 10.20.30.0/24 is not in the table the router falls back to the default route 0.0.0.0/0 (matching all addresses with a 0-bit prefix) and forwards to the ISP instead of the internal network; traffic exits to the internet and fails since 10.20.30.0 is a private address; the fix requires: adding a static route for 10.20.30.0/24 pointing to the branch office router, or configuring the routing protocol (OSPF, BGP, EIGRP) to advertise the new subnet from the branch where the server resides; if OSPF is used verify the new server subnet is included in the OSPF area configuration and that the adjacency between the branch router and hub router is up (show ip ospf neighbor); verify with show ip route 10.20.30.5 to confirm which path the router would select"
+      },
+      {
+        "id": "c",
+        "text": "The routing table missing a route means the subnet does not exist; the server on 10.20.30.0/24 must be reconfigured to use a subnet that is already in the routing table; subnets cannot be created without first adding them to the routing table"
+      },
+      {
+        "id": "d",
+        "text": "Routing tables are automatically updated by DHCP; when the server receives its DHCP lease the hub router automatically adds a route for its subnet; verify that DHCP is configured on the new server and the route will appear within 60 seconds"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Default routes have the least specific prefix (0 bits) and are used only when no more specific route matches; specific routes override default routes through longest-prefix-match; traffic is not correctly delivered to 10.20.30.0/24 via the default route because that route leads to the ISP.",
+      "b": "Longest-prefix-match explaining why default route is selected when 10.20.30.0/24 is absent and the solutions (static route or routing protocol advertisement) are the complete answer. This is the correct answer.",
+      "c": "Subnets are IP addressing concepts independent of routing tables; a subnet can exist on a network without a route in every router; routes must be added through configuration or routing protocols to make the subnet reachable from other networks.",
+      "d": "DHCP assigns IP addresses to hosts and does not automatically update routing tables on routers; routing tables are populated through static configuration or dynamic routing protocols, not DHCP."
+    }
+  },
+  {
+    "id": 760,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "CLI tools",
+    "difficulty": "easy",
+    "text": "A network engineer needs to: (1) test basic connectivity to 8.8.8.8, (2) identify where packets are being dropped between their workstation and 8.8.8.8, (3) see which local ports are listening, (4) find the IP address of google.com. Which command addresses each need?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "(1) ping 8.8.8.8 \u2014 sends ICMP echo requests and reports round-trip time and packet loss confirming basic IP reachability; (2) traceroute 8.8.8.8 (Linux/Mac) or tracert 8.8.8.8 (Windows) \u2014 sends packets with incrementing TTL values revealing each hop and its round-trip time, identifying where latency increases or where packets stop returning (indicating the drop point); (3) netstat -an or ss -tlnp (Linux) \u2014 shows all network connections and listening ports on the local system identifying which services are accepting connections on which ports; (4) nslookup google.com or dig google.com \u2014 queries DNS and returns the resolved IP address(es) for the hostname"
+      },
+      {
+        "id": "b",
+        "text": "(1) nslookup 8.8.8.8, (2) netstat, (3) dig, (4) ping google.com \u2014 these are the standard four commands for these tasks"
+      },
+      {
+        "id": "c",
+        "text": "(1) arp, (2) ipconfig, (3) ping, (4) traceroute \u2014 these four commands serve the described functions in the same order"
+      },
+      {
+        "id": "d",
+        "text": "(1) netstat, (2) nslookup, (3) traceroute, (4) ping \u2014 each command serves one specific function only and cannot be used for any other purpose"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Ping for reachability, traceroute for path analysis and drop identification, netstat for local port visibility, and nslookup/dig for DNS resolution are the four correct command-to-function mappings. This is the correct answer.",
+      "b": "The assignments are incorrect; ping tests connectivity not nslookup; netstat shows ports not path information; dig resolves DNS not ping.",
+      "c": "The assignments are incorrect; arp shows ARP table not test connectivity; ipconfig shows local IP configuration not path information.",
+      "d": "The assignments are incorrect; netstat shows connections not test connectivity; nslookup resolves DNS not trace paths."
+    }
+  },
+  {
+    "id": 761,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "CLI tools",
+    "difficulty": "medium",
+    "text": "A security engineer captures traffic on a Linux server using tcpdump and also wants to query DNS directly to test resolution. They use 'tcpdump -i eth0 port 53' and 'dig @8.8.8.8 example.com'. What does each command do specifically and what information does each provide that the other cannot?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "tcpdump and dig perform identical functions; both capture DNS traffic; dig is a graphical version of tcpdump designed for DNS specifically; use either tool interchangeably for DNS investigation"
+      },
+      {
+        "id": "b",
+        "text": "tcpdump -i eth0 port 53 only captures traffic on port 53 UDP; DNS over HTTPS (DoH) on port 443 and DNS over TLS (DoT) on port 853 are invisible to this command; dig @8.8.8.8 only works when UDP port 53 is not blocked; both tools fail when modern encrypted DNS is deployed"
+      },
+      {
+        "id": "c",
+        "text": "tcpdump -i eth0 port 53 captures all DNS packets (queries and responses) on interface eth0 in real time showing the raw network traffic including source IP, destination IP, DNS query type, queried name, and response contents for ALL DNS activity on the system from all processes simultaneously; it reveals what the system is actually querying versus what applications believe they are querying and captures the complete packet including any anomalies; dig @8.8.8.8 example.com directly queries the DNS server at 8.8.8.8 (Google Public DNS) for example.com and displays the structured response including the answer section (resolved IPs), authority section (nameservers), additional section (glue records), query time, and which server answered; dig tests a specific resolver directly without going through system resolver settings; tcpdump cannot initiate DNS queries (it only captures) and dig cannot capture all system DNS traffic (it only makes a specific query); together they provide both visibility into system-wide DNS behavior and targeted resolver testing"
+      },
+      {
+        "id": "d",
+        "text": "The @8.8.8.8 parameter in dig specifies the source IP address of the query not the destination resolver; dig queries the system default resolver and tags packets with source IP 8.8.8.8; this is used to test firewall rules that filter by source IP"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "tcpdump and dig have fundamentally different functions; tcpdump is a passive packet capture tool while dig is an active DNS query tool; they are complementary not interchangeable.",
+      "b": "While the observation about DoH/DoT is technically correct it does not describe the primary functions of either tool accurately; the main distinction is passive capture vs. active query not protocol encryption.",
+      "c": "The passive capture (tcpdump seeing all system DNS traffic) vs. active query (dig testing a specific resolver) distinction with their unique information contributions is the complete answer; together they provide comprehensive DNS troubleshooting capability. This is the correct answer.",
+      "d": "The @8.8.8.8 parameter in dig specifies the resolver to query (the destination DNS server) not the source IP; it overrides the system default resolver for that specific query."
+    }
+  },
+  {
+    "id": 762,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "CLI tools",
+    "difficulty": "hard",
+    "text": "A network engineer runs 'nmap -sV -p 22,80,443,3389 192.168.1.0/24' on an internal subnet. What does each flag do, what information does the scan provide, and what security policy considerations apply to running Nmap on a production network?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Nmap is only legal to run against external internet IP addresses; scanning internal networks is illegal regardless of whether the engineer owns the network; the engineer should use ping sweep instead of Nmap on internal subnets"
+      },
+      {
+        "id": "b",
+        "text": "Nmap scans require root or administrator privileges on the scanning machine but produce no traffic on the network; the scan works by querying the switch MAC address table locally rather than sending packets to target hosts; no authorization is needed because the scan generates no network traffic"
+      },
+      {
+        "id": "c",
+        "text": "The -sV flag instructs Nmap to only scan virtual machines and skip physical servers; the -p flag specifies the scanning priority level (higher numbers scan first); the scan creates a complete backup of all 254 hosts on the subnet for disaster recovery purposes"
+      },
+      {
+        "id": "d",
+        "text": "Command breakdown: -sV performs service version detection \u2014 after finding open ports Nmap probes them to identify the specific application and version (e.g., OpenSSH 8.9 on port 22, Apache 2.4.54 on port 80); -p 22,80,443,3389 restricts the scan to those four specific ports (SSH, HTTP, HTTPS, RDP) rather than scanning all 65,535 ports; 192.168.1.0/24 targets all 254 hosts on the subnet; the scan provides: which hosts are up and responding, which of the four ports are open on each host, and what service and version is running on each open port; this is valuable for security auditing (finding unexpected open ports or unpatched service versions), asset inventory, and vulnerability assessment; security policy considerations: Nmap service version scanning generates network traffic that IDS/SIEM systems will detect and alert on; scanning should be authorized in the change management system and scheduled during low-impact windows; scanning may trigger false-positive security alerts requiring SOC notification in advance; some IPS configurations block aggressive scanning causing the scan itself to be disrupted; written authorization from the system owner is required before scanning production systems even on internal networks; document the scan results in the asset inventory"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Network engineers routinely scan internal networks they own and manage; Nmap is a standard network management tool; the legal and authorization question relates to authorization not internal vs. external distinction.",
+      "b": "Nmap absolutely sends packets to target hosts; the SYN scan (-sS) sends TCP SYN packets; the service version detection (-sV) sends application-layer probes; Nmap generates network traffic that is visible to IDS and switch logs.",
+      "c": "The flag descriptions are completely incorrect; -sV means service version detection and -p means port specification; Nmap does not create backups.",
+      "d": "Accurate flag description (-sV for version detection, -p for port specification), information produced (host status, open ports, service versions), and security considerations (IDS detection, authorization requirement, SOC notification) are all correct. This is the correct answer."
+    }
+  },
+  {
+    "id": 763,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "CLI tools",
+    "difficulty": "medium",
+    "text": "A network technician on a Linux workstation needs to: find the workstation's current IP, gateway, and MAC address; view the ARP cache; and check if port 443 is listening locally. What specific commands accomplish each task?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Use ping for IP address, traceroute for gateway, nmap for MAC address, netstat for ARP cache, and dig for listening ports \u2014 these five commands cover all five needs"
+      },
+      {
+        "id": "b",
+        "text": "ip addr show (or ifconfig on older systems) \u2014 displays all interfaces with their IP addresses, MAC addresses (listed as ether), and network masks; ip route show (or route -n) \u2014 displays the routing table including the default route which identifies the default gateway (line beginning with 0.0.0.0 or default); arp -n or ip neighbor show \u2014 displays the ARP cache showing IP-to-MAC mappings that the workstation has recently learned; ss -tlnp or netstat -tlnp \u2014 shows TCP listening ports (-t for TCP, -l for listening, -n for numeric, -p for process name); filtering for port 443 with 'ss -tlnp | grep 443' or 'netstat -tlnp | grep 443' shows whether a process is listening on that port; on Windows the equivalents are ipconfig /all (IP+MAC), route print (gateway), arp -a (ARP cache), and netstat -an | findstr :443 (port check)"
+      },
+      {
+        "id": "c",
+        "text": "Use a single command 'nmap localhost' which displays all IP addresses, MAC addresses, gateway information, ARP cache entries, and listening ports in one output; Nmap replaces all other diagnostic commands for local system information"
+      },
+      {
+        "id": "d",
+        "text": "Use the dig command for all five needs; dig supports special queries that return IP address, gateway, MAC address, ARP cache, and port status when combined with the appropriate record type options"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "The command assignments are incorrect; ping does not show IP configuration; traceroute does not show gateway (beyond finding the first hop); nmap does not directly show MAC addresses through local configuration.",
+      "b": "ip addr, ip route, arp/ip neighbor, and ss/netstat are the correct commands for local IP configuration, gateway, ARP cache, and listening port inspection respectively; the Windows equivalents are also correctly provided. This is the correct answer.",
+      "c": "Nmap targets network hosts and does not replace ip addr, ip route, arp, and netstat for local system information; Nmap requires root for raw socket access and is a network scanner not a local configuration tool.",
+      "d": "Dig is a DNS query tool that resolves hostnames to IPs; it cannot display local IP configuration, ARP cache, or listening ports; it serves only DNS query functions."
+    }
+  },
+  {
+    "id": 764,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "Hardware tools",
+    "difficulty": "easy",
+    "text": "A network technician needs to trace an unlabeled cable through a wall and also check if a fiber cable is broken. Which tools are needed for each task?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A toner (tone generator and inductive probe or amplifier probe) traces the unlabeled copper cable: the tone generator connects to one end of the cable and transmits an audio tone; the probe held near cables detects the tone through the cable jacket and insulation allowing the technician to follow the cable through walls and to the correct patch panel port without needing physical access to both ends simultaneously; a visual fault locator (VFL) \u2014 a device that injects a visible red laser light (635-650nm) into a fiber optic cable \u2014 is used to check for breaks: the red light is visible at any break point, crack, or damaged connector in the fiber where light leaks out; an intact fiber carries the light to the far end without visible leakage; both tools are handheld, inexpensive, and do not require powered network infrastructure to operate"
+      },
+      {
+        "id": "b",
+        "text": "A toner (tone generator and probe) for both tasks; toners work on all cable types including fiber optic and are the universal cable tracing and testing tool for all network media"
+      },
+      {
+        "id": "c",
+        "text": "A Wi-Fi analyzer for both tasks; Wi-Fi analyzers can detect all cable types using RF signal analysis and also test fiber continuity by measuring 2.4 GHz signal attenuation through the cable"
+      },
+      {
+        "id": "d",
+        "text": "A cable tester for both tasks; cable testers simultaneously test all cable types including fiber and copper and can trace cables through walls using the built-in tone generation feature that works on fiber optic cables"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Toner/probe for copper cable tracing and visual fault locator for fiber break detection are the correct tool-to-task mappings; each tool is designed for its specific media type and purpose. This is the correct answer.",
+      "b": "Toners work through electromagnetic induction and require copper conductors; they cannot generate a traceable tone in fiber optic cables which carry light not electrical signals.",
+      "c": "Wi-Fi analyzers measure radio frequency signals in the air; they cannot trace cables or test fiber continuity.",
+      "d": "Standard cable testers verify wire map and continuity but do not function as toners for in-wall tracing; cable testers require access to both ends simultaneously; they cannot trace fiber breaks through visual inspection."
+    }
+  },
+  {
+    "id": 765,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "Hardware tools",
+    "difficulty": "medium",
+    "text": "A SOC analyst needs to capture all packets on a 10 Gbps link between a web server and the firewall for security analysis without impacting traffic flow. A network TAP is deployed. How does a TAP differ from a SPAN port and why is it preferred for security monitoring?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A TAP and SPAN port are identical technologies with different names; choose whichever is available on the network equipment as they provide exactly the same packet capture quality"
+      },
+      {
+        "id": "b",
+        "text": "A TAP is used only for fiber optic links while SPAN ports work only with copper cables; the media type determines which technology is appropriate; the SOC should use a TAP only if the web server connection uses fiber"
+      },
+      {
+        "id": "c",
+        "text": "A network TAP (Test Access Point) is a passive hardware device inserted inline on the physical cable between the web server and firewall; it creates a physical copy of all electrical or optical signals on the link and sends them to the monitoring port; TAPs are preferred over SPAN ports for security monitoring because: TAPs capture 100% of traffic with zero packet loss even when the link is at 100% utilization (SPAN ports drop packets when the monitor port cannot keep up with aggregate source traffic); TAPs are fully passive and transparent \u2014 they have no IP address, cannot be detected, targeted, or compromised by attackers on the monitored network, and continue functioning if the network switch fails or reboots; TAPs capture both directions of traffic as separate streams preserving timing relationships (some SPAN implementations merge both directions onto one output introducing timing artifacts); TAPs do not consume switch ASIC resources (SPAN processing impacts switch performance at high traffic volumes); the trade-off is that TAPs require physical inline installation (cutting the cable to insert the TAP) which requires a maintenance window; SPAN is configured in software on existing switches without physical changes"
+      },
+      {
+        "id": "d",
+        "text": "TAPs actively filter traffic before sending it to the monitoring port removing duplicate packets and error frames; SPAN ports pass raw unfiltered traffic; TAPs provide cleaner captures while SPAN provides more complete captures; for security analysis the filtered TAP output is preferred"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "TAPs and SPAN ports have meaningful technical differences including packet loss behavior, switch resource consumption, detectability, and full-duplex stream handling; they are not interchangeable.",
+      "b": "TAPs are available for both fiber optic (optical TAPs) and copper (electrical TAPs) links; SPAN ports work on both media types as well; the choice is not determined by cable type.",
+      "c": "Zero packet loss, passive transparency, switch independence, and full-duplex stream preservation are the four key advantages of TAPs over SPAN for security monitoring; the physical installation trade-off is accurately described. This is the correct answer.",
+      "d": "TAPs are passive and do not filter traffic; they provide exact copies of everything on the link including all errors and malformed frames; SPAN ports may drop packets under high load but do not filter traffic deliberately."
+    }
+  },
+  {
+    "id": 766,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "Hardware tools",
+    "difficulty": "hard",
+    "text": "A network engineer deploys a Wi-Fi analyzer in a healthcare facility and discovers 15 overlapping SSIDs on channels 1, 6, and 11 with signal strengths between -45 dBm and -75 dBm. The 2.4 GHz spectrum shows 80% channel utilization on channel 6. What does this data indicate and what remediation does the analyzer inform?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "15 SSIDs on three channels is optimal wireless design; all 2.4 GHz channels should be occupied to ensure maximum coverage throughout the facility; 80% channel utilization confirms all three channels are being used efficiently"
+      },
+      {
+        "id": "b",
+        "text": "The analyzer data is inconclusive; Wi-Fi analyzers cannot reliably measure channel utilization in healthcare facilities because medical equipment generates electromagnetic interference that corrupts the measurement; repeat the analysis in a non-medical environment to get accurate readings"
+      },
+      {
+        "id": "c",
+        "text": "The 80% channel 6 utilization is caused by a rogue access point broadcasting on channel 6; disable all other APs and identify the rogue AP using its BSSID in the analyzer output; removing the rogue AP will restore channel utilization to 0%"
+      },
+      {
+        "id": "d",
+        "text": "The Wi-Fi analyzer data reveals significant wireless problems: 80% channel utilization on channel 6 means 80% of available airtime is consumed \u2014 with multiple SSIDs competing for the same channel, clients experience significant retry rates, reduced throughput, and latency; even with strong signal (-45 dBm) devices on channel 6 perform poorly because they must wait for the channel to be available before transmitting (CSMA/CA contention); the -75 dBm signals are near the -80 dBm noise floor meaning those APs barely cover their areas; in a healthcare facility with medical devices on 2.4 GHz (some wireless medical equipment) the high contention directly impacts reliability of patient monitoring systems; remediation informed by the analyzer: migrate capacity to 5 GHz (which has 25 non-overlapping channels at 20 MHz and is far less congested in healthcare facilities) for all non-legacy devices; audit which systems require 2.4 GHz and minimize 2.4 GHz AP transmit power to reduce coverage overlap and co-channel contention; verify that channels 1, 6, and 11 are properly assigned with no overlap; evaluate whether some APs should be disabled or relocated based on the signal strength map; implement 802.11r/k/v for proper roaming as the density increases"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "15 SSIDs on three channels means many APs are co-channel competing on each channel; this is poor wireless design causing contention; 80% channel utilization is too high for reliable performance.",
+      "b": "Wi-Fi analyzers do measure channel utilization accurately in healthcare settings; medical equipment may appear as interference sources in the spectrum analysis which is actually useful data; the analyzer works correctly in these environments.",
+      "c": "Multiple SSIDs on the same channel are expected in dense deployments; the high utilization is caused by the aggregate of all these APs competing not a single rogue; a rogue AP is one possible contributor but the wholesale analysis shows a systemic density problem.",
+      "d": "Co-channel interference analysis, the impact on healthcare reliability, and the 5 GHz migration remediation are all correct; Wi-Fi analyzers specifically provide the channel utilization and signal data needed to diagnose these exact conditions. This is the correct answer."
+    }
+  },
+  {
+    "id": 767,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "Device commands",
+    "difficulty": "easy",
+    "text": "A network engineer troubleshooting a connectivity issue needs to: see the MAC address table on a switch, check which VLANs are configured, and view the ARP cache on a router. What show commands provide this information?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "show mac address-table \u2014 displays the switch's CAM table mapping MAC addresses to switch ports and VLANs; this helps identify which physical port a specific device is connected to and is used to trace traffic paths through the switch fabric; show vlan \u2014 displays all configured VLANs with their ID, name, status (active/suspended), and which ports are assigned to each VLAN; this verifies correct VLAN configuration and port assignments; show arp \u2014 displays the router's ARP cache mapping IP addresses to MAC addresses for directly connected devices; this helps verify that the router has correctly learned the MAC address of devices on its connected subnets and is essential for diagnosing ARP-related connectivity issues"
+      },
+      {
+        "id": "b",
+        "text": "show ip interface for MAC table, show running-config for VLANs, show ip route for ARP cache \u2014 these three commands provide all the requested information"
+      },
+      {
+        "id": "c",
+        "text": "show interface for MAC table, show cdp neighbors for VLANs, show ip bgp for ARP cache \u2014 these commands provide the requested information on Cisco IOS devices"
+      },
+      {
+        "id": "d",
+        "text": "show power inline for MAC table, show spanning-tree for VLANs, show processes for ARP cache \u2014 these commands are the correct Cisco IOS syntax for the three requested information types"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Show mac address-table for CAM table, show vlan for VLAN configuration, and show arp for the ARP cache are the three correct command mappings with accurate descriptions of what each provides. This is the correct answer.",
+      "b": "The command assignments are incorrect; show ip interface shows IP configuration not MAC address tables; show running-config contains VLAN configuration but show vlan is the specific command; show ip route shows the routing table not ARP cache.",
+      "c": "The assignments are incorrect; show interface shows interface statistics not MAC address tables; show cdp neighbors shows directly connected Cisco devices not VLAN configuration; show ip bgp shows BGP routes not ARP cache.",
+      "d": "All three command assignments are incorrect; show power inline shows PoE power status not MAC table; show spanning-tree shows STP topology not VLAN configuration; show processes shows CPU processes not ARP cache."
+    }
+  },
+  {
+    "id": 768,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "Device commands",
+    "difficulty": "medium",
+    "text": "A network engineer investigates why a switch port is not forwarding traffic. They run show interface GigabitEthernet0/1 and see: 'GigabitEthernet0/1 is up, line protocol is down.' They also see 'output drops: 4521' on GigabitEthernet0/2. What does each output indicate and what is investigated next?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "GigabitEthernet0/1 up/line protocol down is normal during system startup; the port becomes fully operational after a 60-second initialization period; output drops on 0/2 indicate the interface is functioning correctly at maximum capacity"
+      },
+      {
+        "id": "b",
+        "text": "GigabitEthernet0/1 up/line protocol down means the port has been administratively disabled using the shutdown command; use no shutdown to re-enable it; the output drops on 0/2 indicate the interface has experienced 4521 physical cable disconnections"
+      },
+      {
+        "id": "c",
+        "text": "GigabitEthernet0/1 is up but line protocol is down indicates a Layer 1/Layer 2 mismatch: the physical signal is present (carrier detect on the cable \u2014 up) but the Layer 2 protocol (the data-link layer handshake confirming frame synchronization) has not established; common causes include: speed or duplex mismatch between the switch port and the connected device; the remote device is not sending keepalives or valid Layer 2 frames; a Layer 2 encapsulation mismatch (rare on Ethernet but occurs on WAN interfaces); or the remote device has a physical layer issue with its NIC generating signal but not valid frames; investigate by checking the connected device NIC status, verifying speed/duplex configuration on both sides (show interface shows configured speed and duplex), and testing with a known-good cable and device; the 4521 output drops on GigabitEthernet0/2 indicate that the interface's output queue is discarding packets because traffic is arriving faster than it can be transmitted \u2014 the egress interface is congested; investigate by checking interface utilization (show interface shows output rate) and determining if QoS is configured to manage the congestion"
+      },
+      {
+        "id": "d",
+        "text": "Both status messages are errors in the SNMP MIB display; the actual interface status can only be determined by physically inspecting the port LED; show interface output is unreliable for diagnosing real interface issues"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Up/line protocol down is not a startup state; it persists until the Layer 2 issue is resolved; output drops indicate congestion not normal maximum operation.",
+      "b": "Administratively disabled shows as administratively down not up/line protocol down; the two states have different show interface output; output drops count packet discards due to queue congestion not physical disconnections.",
+      "c": "The up/line protocol down distinction (Layer 1 physical signal vs. Layer 2 protocol establishment) and output drops as egress congestion indicators are both correct interpretations; these are standard show interface diagnostic readings that network engineers must interpret correctly. This is the correct answer.",
+      "d": "Show interface is the primary Cisco IOS tool for interface diagnostics; it provides accurate real-time status information; it is the standard and reliable method for diagnosing interface issues."
+    }
+  },
+  {
+    "id": 769,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "Device commands",
+    "difficulty": "hard",
+    "text": "A network engineer is troubleshooting a routing issue. They run show route on a router and see two routes to 10.50.0.0/16: one via OSPF with metric 110 and one via EIGRP with metric 90. They also run show config and find a static route to 10.50.0.0/16. What does route selection do with these three competing routes and which is installed in the forwarding table?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The static route is always used when multiple routes exist to the same destination; static routes override all dynamic routing protocols regardless of metric or administrative distance"
+      },
+      {
+        "id": "b",
+        "text": "The EIGRP route with metric 90 is selected because 90 is lower than 110 (OSPF metric); the static route has no metric so it cannot be compared and is ignored; the static route is only used if EIGRP and OSPF routes are removed from the routing table"
+      },
+      {
+        "id": "c",
+        "text": "All three routes are simultaneously active and the router load-balances traffic equally across all three paths; this is called multi-protocol load balancing and is the default behavior when multiple routing sources have routes to the same destination"
+      },
+      {
+        "id": "d",
+        "text": "When multiple routes to the same destination exist from different sources the router uses Administrative Distance (AD) to select which route to install in the FIB (Forwarding Information Base) for actual packet forwarding; AD is a measure of the trustworthiness of the routing source with lower being more trusted; Cisco default ADs: static route = 1, EIGRP = 90, OSPF = 110; since static route has AD 1 (lower than both EIGRP 90 and OSPF 110) the static route is installed in the forwarding table and used for packet forwarding; EIGRP and OSPF routes are in the routing table but not in the active forwarding path; the metric values listed (110 for OSPF, 90 for EIGRP) are the route metrics within each protocol not the AD \u2014 OSPF metric of 110 and EIGRP metric of 90 would only be compared if both routes came from the same protocol (ECMP within one protocol); metrics are only compared between routes of the same AD; to verify which route is active use show ip route 10.50.0.0 which shows the installed route with an S (static), D (EIGRP), or O (OSPF) prefix indicating the source"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Static routes with default AD of 1 do take precedence over OSPF (110) and EIGRP (90) but the statement that static routes always override is an oversimplification; a static route configured with a higher AD (called a floating static route) would not override dynamic routes; the specific AD values determine selection.",
+      "b": "Metrics are only compared between routes from the same protocol; OSPF metric and EIGRP metric are not comparable (they use different calculation methods and scales); administrative distance is the selection criterion between protocols.",
+      "c": "Multi-protocol load balancing across routes from different sources (static, EIGRP, OSPF) is not the default behavior; the route with lowest AD is selected as the single active route; equal-cost load balancing occurs only within one protocol when multiple equal-metric routes from the same source exist.",
+      "d": "Administrative distance as the inter-protocol route selection criterion with the specific default AD values (static=1, EIGRP=90, OSPF=110) and the distinction between AD and metric (intra-protocol) is the complete and accurate answer. This is the correct answer."
+    }
+  },
+  {
+    "id": 770,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "Device commands",
+    "difficulty": "medium",
+    "text": "A network engineer runs show power inline on a Cisco PoE switch and sees: 'Available: 370.0(w) Used: 352.3(w) Remaining: 17.7(w).' An IP phone is not powering up on port Gi0/24. Show power inline Gi0/24 shows 'off.' What does this output indicate and what should be done?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The power inline output is a display bug; there is always sufficient PoE power available regardless of what show power inline reports; reset the switch to refresh the power accounting and the phone will power up"
+      },
+      {
+        "id": "b",
+        "text": "The switch has only 17.7W of remaining PoE budget but standard IP phones (802.3af Class 2) require 6.49W and PoE+ phones (802.3at Class 4) require up to 30W; if the phone is PoE+ class the switch cannot allocate the required 30W from the remaining 17.7W and denies power to port Gi0/24 (shown as off); if the phone is standard 802.3af the 17.7W should be sufficient \u2014 in this case the off state may indicate: the phone MAC is not being detected (bad cable), PoE is administratively disabled on the port (power inline never on Gi0/24), or the phone is not drawing power correctly; solutions: verify the phone PoE class requirement and compare to remaining budget; if budget is insufficient remove or replace a high-wattage device elsewhere on the switch or add a PoE injector for the phone; if budget is sufficient check the port configuration (show run interface Gi0/24) for any PoE restriction and check the cable; power inline Gi0/24 auto can re-enable auto-negotiated PoE on the port"
+      },
+      {
+        "id": "c",
+        "text": "The remaining 17.7W indicates the phone is receiving 17.7W of power which is sufficient for all IP phone models; the off status in show power inline indicates the phone is in power-saving standby mode not that it is unpowered; wait 5 minutes for the phone to wake from standby"
+      },
+      {
+        "id": "d",
+        "text": "IP phones never use show power inline; show power inline only displays information for security cameras and wireless APs; use show cdp neighbors to verify IP phone PoE status"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Show power inline is an accurate real-time display of PoE budget allocation; it is not a bug; resetting the switch would potentially drop all powered devices and not add power budget.",
+      "b": "Comparing remaining budget to phone class requirement, identifying possible causes for off state when budget appears sufficient, and providing specific remediation steps are all correct diagnostic thinking. This is the correct answer.",
+      "c": "The remaining 17.7W is what is left in the switch budget not what the phone receives; off in power inline means the port is not currently supplying power; standby mode in an IP phone would still show active power consumption.",
+      "d": "Show power inline is the correct command for PoE port status on all PoE-powered devices including IP phones; CDP neighbors shows device connectivity not PoE status."
+    }
+  },
+  {
+    "id": 771,
+    "domain": "5.0",
+    "objective": "5.5",
+    "keyword": "Device commands",
+    "difficulty": "hard",
+    "text": "A network engineer uses show route on a router and finds no route to the destination 192.168.50.0/24 despite the remote site advertising it via OSPF. Show ip ospf neighbor shows the OSPF adjacency is full. What additional show commands help diagnose why the OSPF route is not appearing in the routing table?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The route is missing because OSPF is not running; show route confirming no route means the OSPF process has failed; restart the OSPF process with no router ospf 1 followed by router ospf 1 and the route will appear"
+      },
+      {
+        "id": "b",
+        "text": "When OSPF adjacency is full but a specific route is missing from the routing table despite the remote site advertising it, several show commands help isolate the cause: show ip ospf database \u2014 displays the OSPF link-state database; if the Type 3 LSA (inter-area summary) or Type 1/2 LSA for 192.168.50.0/24 is absent from the database the route is not being advertised into this area despite adjacency being up (possible area type mismatch, area authentication failure, or summarization suppressing the route); show ip ospf database network \u2014 specifically shows network LSAs for multi-access networks; show ip route ospf \u2014 lists only OSPF-learned routes and confirms if the route is in the table under any variant; show run | section router ospf \u2014 shows the OSPF configuration including network statements (verify 192.168.50.x is included in a network statement on the advertising router), area configurations, and any distribute-list or route filtering that may be suppressing the route; common causes: a distribute-list or prefix-list filtering 192.168.50.0/24 from being installed; the route is in a stub area and the ABR is summarizing it away; the advertising router does not have the network statement covering 192.168.50.x; an OSPF area mismatch between the two routers"
+      },
+      {
+        "id": "c",
+        "text": "The route is missing because 192.168.50.0/24 is a private address range blocked by OSPF; OSPF cannot advertise RFC1918 private addresses between areas; use BGP instead of OSPF for RFC1918 route advertisement between sites"
+      },
+      {
+        "id": "d",
+        "text": "Show ip ospf neighbor showing full adjacency guarantees that all routes from that neighbor are in the local routing table; if a route is missing with full adjacency the route does not exist at the remote site; verify the remote site has a connected interface in 192.168.50.0/24"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Full OSPF adjacency means the process is running; the issue is specific route advertisement or filtering not a process failure; restarting OSPF would drop all adjacencies causing a broader outage.",
+      "b": "Show ip ospf database for LSA verification, show run for configuration audit including network statements and route filters, and the list of common causes (distribute-list, stub area, network statement, area mismatch) represent comprehensive OSPF troubleshooting methodology. This is the correct answer.",
+      "c": "OSPF has no restriction on advertising RFC1918 private addresses; OSPF operates purely based on network statements and area configuration; address range type does not determine OSPF advertisement eligibility.",
+      "d": "Full adjacency means the database exchange completed but does not guarantee all routes from that site appear in the local table; route filtering (distribute-lists, prefix-lists, area configurations) can suppress specific routes from being installed even with full adjacency."
+    }
+  }
+
+  ]
 }

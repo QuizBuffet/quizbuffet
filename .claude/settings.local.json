@@ -28,7 +28,18 @@
       "Bash(python3 -c \"import json; data=json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/it-concepts-and-terminology.json'\\)\\); print\\('Valid JSON'\\); print\\(f'Total questions: {len\\(data[\\\\\"questions\\\\\"]\\)}'\\); ids=[q[\\\\\"id\\\\\"] for q in data[\\\\\"questions\\\\\"]]; print\\(f'ID range: {min\\(ids\\)} to {max\\(ids\\)}'\\); gaps=[i for i in range\\(1,257\\) if i not in ids]; print\\(f'Gaps: {gaps if gaps else \\\\\"None\\\\\"}'\\); diffs=[q[\\\\\"difficulty\\\\\"] for q in data[\\\\\"questions\\\\\"]]; from collections import Counter; print\\(f'Difficulty distribution: {dict\\(Counter\\(diffs\\)\\)}'\\)\")",
       "Bash(python3 -c \"import json; data = json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/applications-and-software.json'\\)\\); print\\(f'Valid JSON. Questions: {len\\(data[\\\\\"questions\\\\\"]\\)}'\\); ids = [q[\\\\\"id\\\\\"] for q in data[\\\\\"questions\\\\\"]]; print\\(f'ID range: {min\\(ids\\)}–{max\\(ids\\)}'\\); print\\(f'Sequential gaps: {[i for i in range\\(min\\(ids\\), max\\(ids\\)+1\\) if i not in ids]}'\\); from collections import Counter; diffs = Counter\\(q[\\\\\"difficulty\\\\\"] for q in data[\\\\\"questions\\\\\"]\\); print\\(f'Difficulties: {dict\\(diffs\\)}'\\)\")",
       "Bash(python3 -c \"import json; data = json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/applications-and-software.json'\\)\\); print\\(type\\(data\\)\\); print\\(list\\(data.keys\\(\\)\\) if isinstance\\(data, dict\\) else type\\(data[0]\\)\\)\")",
-      "Bash(python3 -c \"import json; data = json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/applications-and-software.json'\\)\\); q = data['questions'][0]; print\\(list\\(q.keys\\(\\)\\)\\); print\\(q\\)\")"
+      "Bash(python3 -c \"import json; data = json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/applications-and-software.json'\\)\\); q = data['questions'][0]; print\\(list\\(q.keys\\(\\)\\)\\); print\\(q\\)\")",
+      "Bash(node --check js/app.js)",
+      "Bash(node --check js/router/initRouter.js js/components/meta/setMeta.js js/pages/home/renderCertList.js js/pages/home/initHome.js js/pages/certification/renderCertDomainList.js js/pages/certification/initCertification.js js/pages/domain/initDomain.js js/pages/quiz/initQuiz.js js/pages/certification/renderMixQuizBtn.js js/components/footer/renderFooter.js js/pages/progress/renderStorageView.js js/pages/home/renderRandomBtn.js js/pages/progress/initProgress.js)",
+      "Bash(node --check /Users/gradikayamba/quizbuffet/js/app.js)",
+      "Bash(node --check /Users/gradikayamba/quizbuffet/js/router/initRouter.js)",
+      "Bash(node --check /Users/gradikayamba/quizbuffet/js/data/certifications/comptia-itf-plus.js)",
+      "Bash(node --check /Users/gradikayamba/quizbuffet/js/data/acronyms/comptia-itf-plus.js)",
+      "Bash(node --check /Users/gradikayamba/quizbuffet/js/data/certifications/index.js)",
+      "Bash(node --check /Users/gradikayamba/quizbuffet/js/data/certifications/comptia-a-plus-core-2.js)",
+      "Bash(node --check /Users/gradikayamba/quizbuffet/js/data/certifications/comptia-a-plus-core-1.js)",
+      "Bash(python3 -c \"import json; json.load\\(open\\('data/certifications/comptia-network-plus/network-troubleshooting.json'\\)\\)\")",
+      "Bash(python3 -c \"import json; json.load\\(open\\('data/certifications/comptia-itf-plus/it-concepts-and-terminology.json'\\)\\)\")"
     ]
   }
 }

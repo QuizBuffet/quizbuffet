@@ -17,7 +17,18 @@
       "Bash(grep -vE \"font-size:\\(1[5-9]|[2-9][0-9]|[1-9][0-9]{2,}\\)px\")",
       "Bash(sort -k5 -rh)",
       "Bash(node sync-counts.js)",
-      "Bash(python3)"
+      "Bash(python3)",
+      "Bash(python3 -c \"import json; d = json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/it-concepts-and-terminology.json'\\)\\); print\\('Valid JSON. Questions:', len\\(d['questions']\\)\\); print\\('First ID:', d['questions'][0]['id']\\); print\\('Last ID:', d['questions'][-1]['id']\\)\")",
+      "Bash(pip install *)",
+      "Bash(python3 -c \"import anthropic; print\\(anthropic.__version__\\)\")",
+      "Bash(pip3 install *)",
+      "Bash(env)",
+      "Read(//Users/gradikayamba/.claude/**)",
+      "Bash(python3 -c \"import json; data=json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/infrastructure.json'\\)\\); print\\(f'Valid JSON. Keys: {list\\(data.keys\\(\\)\\)}'\\); qs=data.get\\('questions',[]\\); print\\(f'Question count: {len\\(qs\\)}'\\); ids=[q.get\\('id'\\) for q in qs]; print\\(f'First ID: {ids[0]}, Last ID: {ids[-1]}'\\); gaps=[ids[i+1]-ids[i] for i in range\\(len\\(ids\\)-1\\) if ids[i+1]-ids[i]!=1]; print\\(f'ID gaps: {gaps if gaps else \\\\\"None\\\\\"}'\\)\")",
+      "Bash(python3 -c \"import json; data=json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/it-concepts-and-terminology.json'\\)\\); print\\('Valid JSON'\\); print\\(f'Total questions: {len\\(data[\\\\\"questions\\\\\"]\\)}'\\); ids=[q[\\\\\"id\\\\\"] for q in data[\\\\\"questions\\\\\"]]; print\\(f'ID range: {min\\(ids\\)} to {max\\(ids\\)}'\\); gaps=[i for i in range\\(1,257\\) if i not in ids]; print\\(f'Gaps: {gaps if gaps else \\\\\"None\\\\\"}'\\); diffs=[q[\\\\\"difficulty\\\\\"] for q in data[\\\\\"questions\\\\\"]]; from collections import Counter; print\\(f'Difficulty distribution: {dict\\(Counter\\(diffs\\)\\)}'\\)\")",
+      "Bash(python3 -c \"import json; data = json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/applications-and-software.json'\\)\\); print\\(f'Valid JSON. Questions: {len\\(data[\\\\\"questions\\\\\"]\\)}'\\); ids = [q[\\\\\"id\\\\\"] for q in data[\\\\\"questions\\\\\"]]; print\\(f'ID range: {min\\(ids\\)}–{max\\(ids\\)}'\\); print\\(f'Sequential gaps: {[i for i in range\\(min\\(ids\\), max\\(ids\\)+1\\) if i not in ids]}'\\); from collections import Counter; diffs = Counter\\(q[\\\\\"difficulty\\\\\"] for q in data[\\\\\"questions\\\\\"]\\); print\\(f'Difficulties: {dict\\(diffs\\)}'\\)\")",
+      "Bash(python3 -c \"import json; data = json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/applications-and-software.json'\\)\\); print\\(type\\(data\\)\\); print\\(list\\(data.keys\\(\\)\\) if isinstance\\(data, dict\\) else type\\(data[0]\\)\\)\")",
+      "Bash(python3 -c \"import json; data = json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-itf-plus/applications-and-software.json'\\)\\); q = data['questions'][0]; print\\(list\\(q.keys\\(\\)\\)\\); print\\(q\\)\")"
     ]
   }
 }

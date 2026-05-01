@@ -1,3 +1,5 @@
+import { acronyms } from '../acronyms/comptia-a-plus-core-1.js';
+
 export const cert = {
   slug: 'comptia-a-plus-core-1',
   name: 'CompTIA A+ Core 1',
@@ -11,6 +13,7 @@ export const cert = {
     { provider: 'amazon',  label: 'Shop CompTIA A+ 220-1101 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+a%2B+220-1101&tag=0003aa-20' },
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
+  acronyms,
   domains: [
     { slug: 'mobile-devices',                        name: 'Mobile Devices',                        weight: 15 },
     { slug: 'networking',                            name: 'Networking',                            weight: 20 },

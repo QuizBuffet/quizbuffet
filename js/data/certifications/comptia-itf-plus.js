@@ -1,3 +1,5 @@
+import { acronyms } from '../acronyms/comptia-itf-plus.js';
+
 export const cert = {
   slug: 'comptia-itf-plus',
   name: 'CompTIA ITF+',
@@ -11,6 +13,7 @@ export const cert = {
     { provider: 'amazon',  label: 'Shop CompTIA ITF+ Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+itf%2B&tag=0003aa-20' },
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
+  acronyms,
   domains: [
     { slug: 'it-concepts-and-terminology', name: 'IT Concepts and Terminology', weight: 17 },
     { slug: 'infrastructure',              name: 'Infrastructure',              weight: 22 },

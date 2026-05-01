@@ -4,7 +4,7 @@ import { renderResetButtons } from './renderResetButtons.js';
 import { setMeta } from '../../components/meta/setMeta.js';
 
 export function init() {
-  setMeta('Your Progress', 'Track your quiz scores and progress across all cybersecurity certification domains on QuizBuffet.');
+  setMeta('Your Progress', 'Track your quiz scores and progress across all cybersecurity certification domains on QuizBuffet.', { noindex: true });
 
   function render() {
     renderStorageStats();

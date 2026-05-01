@@ -23,7 +23,7 @@ export function renderStorageView(onReset) {
       if (!prog.completed && c === 0 && f === 0) {
         return `<div class="prog-domain-row prog-domain-empty">
           <span class="prog-status">–</span>
-          <a class="prog-domain-name" href="/domain?cert=${cert.slug}&domain=${domain.slug}">${domain.name}</a>
+          <a class="prog-domain-name" href="/${cert.slug}/${domain.slug}/">${domain.name}</a>
           <span class="prog-domain-stats">Not started</span>
         </div>`;
       }
@@ -39,7 +39,7 @@ export function renderStorageView(onReset) {
 
       return `<div class="prog-domain-row ${cls}">
         <span class="prog-status">${icon}</span>
-        <a class="prog-domain-name" href="/domain?cert=${cert.slug}&domain=${domain.slug}">${domain.name}</a>
+        <a class="prog-domain-name" href="/${cert.slug}/${domain.slug}/">${domain.name}</a>
         <span class="prog-domain-mid">
           <span class="prog-mini-bar-wrap"><span class="prog-mini-bar" style="width:${barPct}%"></span></span>
           <span class="prog-domain-stats">${stats}</span>

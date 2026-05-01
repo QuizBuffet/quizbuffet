@@ -4,7 +4,7 @@ export function renderMixQuizBtn(cert) {
   const el = document.getElementById('mix-quiz');
   if (!el) return;
 
-  const url = `/quiz?cert=${cert.slug}&domain=__mix__`;
+  const url = `/${cert.slug}/mix/`;
   el.innerHTML = `<button class="mix-quiz-btn" id="mix-quiz-btn">⇄ Mixed Quiz — all domains</button>`;
 
   document.getElementById('mix-quiz-btn').addEventListener('click', () => {

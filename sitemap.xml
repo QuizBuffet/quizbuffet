@@ -4,128 +4,83 @@
   <!-- Static pages -->
   <url>
     <loc>https://quizbuffet.com/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Certification pages -->
-  <url>
-    <loc>https://quizbuffet.com/cert?cert=comptia-cloud-plus</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://quizbuffet.com/cert?cert=comptia-security-plus</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://quizbuffet.com/cert?cert=comptia-network-plus</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://quizbuffet.com/cert?cert=comptia-a-plus-core-1</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://quizbuffet.com/cert?cert=comptia-a-plus-core-2</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://quizbuffet.com/cert?cert=comptia-cysa-plus</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://quizbuffet.com/cert?cert=comptia-pentest-plus</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://quizbuffet.com/cert?cert=comptia-data-plus</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://quizbuffet.com/cert?cert=comptia-itf-plus</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <url><loc>https://quizbuffet.com/comptia-cloud-plus/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-security-plus/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-network-plus/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-1/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-2/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cysa-plus/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-pentest-plus/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-data-plus/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-itf-plus/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- CompTIA Cloud+ domains -->
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=cloud-architecture</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=deployment</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=operations</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=security</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=devops-fundamentals</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cloud-plus&amp;domain=troubleshooting</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cloud-plus/cloud-architecture/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cloud-plus/deployment/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cloud-plus/operations/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cloud-plus/security/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cloud-plus/devops-fundamentals/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cloud-plus/troubleshooting/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- CompTIA Security+ domains -->
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=general-security-concepts</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=threats-vulnerabilities-and-mitigations</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=security-architecture</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=security-operations</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-security-plus&amp;domain=security-program-management-and-oversight</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-security-plus/general-security-concepts/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-security-plus/threats-vulnerabilities-and-mitigations/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-security-plus/security-architecture/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-security-plus/security-operations/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-security-plus/security-program-management-and-oversight/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- CompTIA Network+ domains -->
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=networking-concepts</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=network-implementation</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=network-operations</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=network-security</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-network-plus&amp;domain=network-troubleshooting</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-network-plus/networking-concepts/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-network-plus/network-implementation/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-network-plus/network-operations/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-network-plus/network-security/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-network-plus/network-troubleshooting/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- CompTIA A+ Core 1 domains -->
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=mobile-devices</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=networking</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=hardware</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=virtualization-and-cloud-computing</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-1&amp;domain=hardware-and-network-troubleshooting</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-1/mobile-devices/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-1/networking/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-1/hardware/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-1/virtualization-and-cloud-computing/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-1/hardware-and-network-troubleshooting/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- CompTIA A+ Core 2 domains -->
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-2&amp;domain=operating-systems</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-2&amp;domain=security</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-2&amp;domain=software-troubleshooting</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-a-plus-core-2&amp;domain=operational-procedures</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-2/operating-systems/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-2/security/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-2/software-troubleshooting/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-a-plus-core-2/operational-procedures/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- CompTIA CySA+ domains -->
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cysa-plus&amp;domain=security-operations</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cysa-plus&amp;domain=vulnerability-management</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cysa-plus&amp;domain=incident-response-management</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-cysa-plus&amp;domain=reporting-and-communication</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cysa-plus/security-operations/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cysa-plus/vulnerability-management/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cysa-plus/incident-response-management/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-cysa-plus/reporting-and-communication/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- CompTIA PenTest+ domains -->
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=engagement-management</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=reconnaissance-and-enumeration</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=vulnerability-discovery-and-analysis</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=attacks-and-exploits</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-pentest-plus&amp;domain=post-exploitation-and-lateral-movement</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-pentest-plus/engagement-management/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-pentest-plus/reconnaissance-and-enumeration/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-pentest-plus/vulnerability-discovery-and-analysis/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-pentest-plus/attacks-and-exploits/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-pentest-plus/post-exploitation-and-lateral-movement/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- CompTIA Data+ domains -->
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=data-concepts-and-environments</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=data-acquisition-and-preparation</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=data-analysis</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=visualization-and-reporting</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-data-plus&amp;domain=data-governance</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-data-plus/data-concepts-and-environments/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-data-plus/data-acquisition-and-preparation/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-data-plus/data-analysis/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-data-plus/visualization-and-reporting/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-data-plus/data-governance/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- CompTIA ITF+ domains -->
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=it-concepts-and-terminology</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=infrastructure</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=applications-and-software</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=software-development</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=database-fundamentals</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://quizbuffet.com/domain?cert=comptia-itf-plus&amp;domain=security</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-itf-plus/it-concepts-and-terminology/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-itf-plus/infrastructure/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-itf-plus/applications-and-software/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-itf-plus/software-development/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-itf-plus/database-fundamentals/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://quizbuffet.com/comptia-itf-plus/security/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 </urlset>

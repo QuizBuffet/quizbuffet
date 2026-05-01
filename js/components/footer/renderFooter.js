@@ -21,7 +21,7 @@ export function renderFooter() {
   const year = new Date().getFullYear();
 
   const certLinks = certifications.map(c =>
-    `<a href="/cert?cert=${c.slug}" class="footer-cert-link">${c.name} <span class="footer-cert-code">${c.code}</span></a>`
+    `<a href="/${c.slug}/" class="footer-cert-link">${c.name} <span class="footer-cert-code">${c.code}</span></a>`
   ).join('');
 
   el.innerHTML = `

@@ -17,7 +17,7 @@ export function renderCertList(certifications, filter = '') {
   el.innerHTML = filtered.map(c => `
     <div class="domain-item" data-cert-item="${c.slug}">
       <span>
-        <a href="/cert?cert=${c.slug}" class="domain-link">${c.name}</a>
+        <a href="/${c.slug}/" class="domain-link">${c.name}</a>
         <span class="domain-meta" style="margin-left:6px">${c.code}</span>
       </span>
       <span class="domain-meta" data-cert-count="${c.slug}">…</span>

@@ -1,11 +1,12 @@
-// URL param helpers — reads from hash instead of location.search now that the app is a SPA
-import { getHashParams } from './hashRouter.js';
-
+// URL param helpers — reads cert and domain slugs from clean path segments
 export function getRouteParams() {
-  const params = getHashParams();
-  return {
-    cert:   params.get('cert')   || '',
-    domain: params.get('domain') || '',
-    id:     params.get('id') ? parseInt(params.get('id')) : null,
-  };
+  const raw = location.pathname.replace('/index.html', '') || '/';
+  const path = raw === '/' ? '/' : raw.replace(/\/$/, '');
+  const segments = path === '/' ? [] : path.split('/').filter(Boolean);
+
+  const cert = segments[0] || '';
+  const rawDomain = segments[1] || '';
+  const domain = rawDomain === 'mix' ? '__mix__' : rawDomain;
+
+  return { cert, domain, id: null };
 }

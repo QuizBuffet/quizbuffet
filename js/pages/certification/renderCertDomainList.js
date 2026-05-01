@@ -8,7 +8,7 @@ export function renderCertDomainList(cert) {
   el.innerHTML = cert.domains.map(d => {
     const key   = `${cert.slug}--${d.slug}`;
     const prog  = getDomainProgress(key);
-    const url   = `/domain?cert=${cert.slug}&domain=${d.slug}`;
+    const url   = `/${cert.slug}/${d.slug}/`;
     const weight = `<span class="domain-meta" style="margin-left:6px">${d.weight}%</span>`;
 
     let right;

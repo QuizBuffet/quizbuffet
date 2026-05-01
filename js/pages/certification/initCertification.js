@@ -8,14 +8,14 @@ import { renderAcronymDrill } from './renderAcronymDrill.js';
 import { renderSessionSizePicker } from './renderSessionSizePicker.js';
 import { renderMixQuizBtn } from './renderMixQuizBtn.js';
 import { loadDomain } from '../../loader/loadDomain.js';
-import { getHashParams } from '../../router/hashRouter.js';
+import { getRouteParams } from '../../router/initRouter.js';
 import { setMeta } from '../../components/meta/setMeta.js';
 import { setJsonLd } from '../../components/meta/setJsonLd.js';
 import { affiliateLinksHTML } from '../../components/affiliates/affiliateLinksHTML.js';
 
 export async function init() {
   renderAd('ad-top');
-  const certSlug = getHashParams().get('cert') || '';
+  const certSlug = getRouteParams().cert;
   const cert = certifications.find(c => c.slug === certSlug);
 
   if (!cert) {
@@ -46,21 +46,52 @@ export async function init() {
     );
     setJsonLd({
       '@context': 'https://schema.org',
-      '@type': 'Course',
-      'name': `${cert.name} (${cert.code}) Free Practice Test`,
-      'courseCode': cert.code,
-      'description': cert.about || `Free ${cert.name} exam practice questions organized by domain. Quiz yourself on every topic until you're ready to pass.`,
-      'url': `https://quizbuffet.com/cert?cert=${cert.slug}`,
-      'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
-      'educationalLevel': 'Professional',
-      'teaches': cert.domains.map(d => d.name),
-      'hasCourseInstance': {
-        '@type': 'CourseInstance',
-        'courseMode': 'online',
-        'courseWorkload': `${totalQ}+ questions across ${cert.domains.length} exam domains`,
-      },
-      'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
-      'keywords': `${cert.name}, ${cert.code}, free practice test, exam questions, certification prep, quiz`,
+      '@graph': [
+        {
+          '@type': 'Course',
+          'name': `${cert.name} (${cert.code}) Free Practice Test`,
+          'courseCode': cert.code,
+          'description': cert.about || `Free ${cert.name} exam practice questions organized by domain. Quiz yourself on every topic until you're ready to pass.`,
+          'url': `https://quizbuffet.com/${cert.slug}/`,
+          'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
+          'educationalLevel': 'Professional',
+          'teaches': cert.domains.map(d => d.name),
+          'hasCourseInstance': {
+            '@type': 'CourseInstance',
+            'courseMode': 'online',
+            'courseWorkload': `${totalQ}+ questions across ${cert.domains.length} exam domains`,
+          },
+          'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
+          'keywords': `${cert.name}, ${cert.code}, free practice test, exam questions, certification prep, quiz`,
+        },
+        {
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://quizbuffet.com/' },
+            { '@type': 'ListItem', 'position': 2, 'name': cert.name, 'item': `https://quizbuffet.com/${cert.slug}/` },
+          ],
+        },
+        {
+          '@type': 'FAQPage',
+          'mainEntity': [
+            {
+              '@type': 'Question',
+              'name': `What is ${cert.name}?`,
+              'acceptedAnswer': { '@type': 'Answer', 'text': cert.about },
+            },
+            {
+              '@type': 'Question',
+              'name': `How many questions are on the ${cert.name} (${cert.code}) exam?`,
+              'acceptedAnswer': { '@type': 'Answer', 'text': cert.details },
+            },
+            {
+              '@type': 'Question',
+              'name': `Is this ${cert.name} practice test free?`,
+              'acceptedAnswer': { '@type': 'Answer', 'text': `Yes, all ${totalQ}+ practice questions are completely free. No account or sign-up required.` },
+            },
+          ],
+        },
+      ],
     });
   }
 

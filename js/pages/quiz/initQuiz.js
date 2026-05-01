@@ -32,22 +32,33 @@ export async function init() {
 
   // ── Mixed-domain mode ──────────────────────────────────────────────────────
   if (domainSlug === '__mix__') {
-    const backLink = certSlug ? `/cert?cert=${certSlug}` : '/';
+    const backLink = certSlug ? `/${certSlug}/` : '/';
     const mixName  = certMeta ? `${certMeta.name} Mix` : 'Mixed Quiz';
     setMeta(mixName, `Free mixed practice test across all ${certMeta?.name || ''} domains. No account needed — instant feedback on every question.`);
+    const allQ  = await loadAllDomains(certMeta);
     setJsonLd({
       '@context': 'https://schema.org',
-      '@type': 'Quiz',
-      'name': `${mixName} Free Practice Quiz`,
-      'description': `Free mixed practice test covering all ${certMeta?.name || ''} exam domains. Randomized questions with instant feedback.`,
-      'url': `https://quizbuffet.com/quiz?cert=${certSlug}&domain=__mix__`,
-      'numberOfQuestions': allQ.length,
-      'educationalLevel': 'Professional',
-      'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
-      'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
+      '@graph': [
+        {
+          '@type': 'Quiz',
+          'name': `${mixName} Free Practice Quiz`,
+          'description': `Free mixed practice test covering all ${certMeta?.name || ''} exam domains. Randomized questions with instant feedback.`,
+          'url': `https://quizbuffet.com/${certSlug}/mix/`,
+          'numberOfQuestions': allQ.length,
+          'educationalLevel': 'Professional',
+          'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
+          'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://quizbuffet.com/' },
+            { '@type': 'ListItem', 'position': 2, 'name': certMeta?.name, 'item': `https://quizbuffet.com/${certSlug}/` },
+            { '@type': 'ListItem', 'position': 3, 'name': 'Mixed Quiz', 'item': `https://quizbuffet.com/${certSlug}/mix/` },
+          ],
+        },
+      ],
     });
-
-    const allQ  = await loadAllDomains(certMeta);
     const qMap  = Object.fromEntries(allQ.map(q => [q.id, q]));
 
     // Re-show results screen if user navigates back to a finished session
@@ -98,7 +109,7 @@ export async function init() {
   // ── Single-domain mode ─────────────────────────────────────────────────────
   const domainMeta = certMeta?.domains.find(d => d.slug === domainSlug);
   const domainName = domainMeta?.name || domainSlug;
-  const backLink   = certSlug ? `/domain?cert=${certSlug}&domain=${domainSlug}` : '/';
+  const backLink   = certSlug ? `/${certSlug}/${domainSlug}/` : '/';
 
   const questions = await loadDomain(certSlug, domainSlug, certMeta);
 
@@ -118,15 +129,28 @@ export async function init() {
     );
     setJsonLd({
       '@context': 'https://schema.org',
-      '@type': 'Quiz',
-      'name': `${domainMeta.name} — ${certMeta?.name} Free Practice Quiz`,
-      'description': `Free ${domainMeta.name} practice quiz for the ${certMeta?.name} (${certMeta?.code}) exam. ${questions.length} questions with instant feedback and explanations.`,
-      'url': `https://quizbuffet.com/quiz?cert=${certSlug}&domain=${domainSlug}`,
-      'numberOfQuestions': questions.length,
-      'educationalLevel': 'Professional',
-      'teaches': domainMeta.name,
-      'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
-      'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
+      '@graph': [
+        {
+          '@type': 'Quiz',
+          'name': `${domainMeta.name} — ${certMeta?.name} Free Practice Quiz`,
+          'description': `Free ${domainMeta.name} practice quiz for the ${certMeta?.name} (${certMeta?.code}) exam. ${questions.length} questions with instant feedback and explanations.`,
+          'url': `https://quizbuffet.com/${certSlug}/${domainSlug}/quiz/`,
+          'numberOfQuestions': questions.length,
+          'educationalLevel': 'Professional',
+          'teaches': domainMeta.name,
+          'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
+          'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
+        },
+        {
+          '@type': 'BreadcrumbList',
+          'itemListElement': [
+            { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://quizbuffet.com/' },
+            { '@type': 'ListItem', 'position': 2, 'name': certMeta?.name, 'item': `https://quizbuffet.com/${certSlug}/` },
+            { '@type': 'ListItem', 'position': 3, 'name': domainMeta.name, 'item': `https://quizbuffet.com/${certSlug}/${domainSlug}/` },
+            { '@type': 'ListItem', 'position': 4, 'name': 'Quiz', 'item': `https://quizbuffet.com/${certSlug}/${domainSlug}/quiz/` },
+          ],
+        },
+      ],
     });
   }
 

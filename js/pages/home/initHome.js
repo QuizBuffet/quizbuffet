@@ -25,7 +25,7 @@ export function init() {
     'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
     'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
   });
-  renderFeatured({ name: certifications[0].name, slug: `/cert?cert=${certifications[0].slug}`, description: certifications[0].tagline });
+  renderFeatured({ name: certifications[0].name, slug: `/${certifications[0].slug}/`, description: certifications[0].tagline });
   renderAd('ad-top');
   renderRandomBtn();
   renderSearch(filter => renderCertList(certifications, filter));

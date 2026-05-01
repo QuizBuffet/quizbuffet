@@ -1,5 +1,5 @@
-// Updates page title, description, and social (OG/Twitter) meta tags on every route change
-export function setMeta(title, description) {
+// Updates page title, description, social meta tags, robots, and canonical on every route change
+export function setMeta(title, description, { noindex = false } = {}) {
   const full = `${title} | QuizBuffet`;
   document.title = full;
 
@@ -19,4 +19,12 @@ export function setMeta(title, description) {
   }
 
   document.querySelector('link[rel="canonical"]')?.setAttribute('href', pageUrl);
+
+  let robotsMeta = document.querySelector('meta[name="robots"]');
+  if (!robotsMeta) {
+    robotsMeta = document.createElement('meta');
+    robotsMeta.name = 'robots';
+    document.head.appendChild(robotsMeta);
+  }
+  robotsMeta.content = noindex ? 'noindex, follow' : 'index, follow';
 }

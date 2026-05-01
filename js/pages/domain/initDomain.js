@@ -21,8 +21,8 @@ export async function init() {
 
   const certMeta   = certifications.find(c => c.slug === certSlug);
   const domainMeta = certMeta?.domains.find(d => d.slug === domainSlug);
-  const certBack   = certSlug ? `/cert?cert=${certSlug}` : '/';
-  const quizUrl    = `/quiz?cert=${certSlug}&domain=${domainSlug}`;
+  const certBack   = certSlug ? `/${certSlug}/` : '/';
+  const quizUrl    = `/${certSlug}/${domainSlug}/quiz/`;
 
   if (!certMeta || !domainMeta) {
     document.getElementById('domain-header').innerHTML = `<p>Domain not found. <a href="${certBack}">← Back</a></p>`;
@@ -39,21 +39,33 @@ export async function init() {
   );
   setJsonLd({
     '@context': 'https://schema.org',
-    '@type': ['Quiz', 'LearningResource'],
-    'name': `${domainMeta.name} — ${certMeta.name} Free Practice Quiz`,
-    'description': `${questions.length} free ${domainMeta.name} practice questions for the ${certMeta.name} (${certMeta.code}) exam. Instant feedback, progress tracking, and explanations.`,
-    'url': `https://quizbuffet.com/domain?cert=${certSlug}&domain=${domainSlug}`,
-    'numberOfQuestions': questions.length,
-    'educationalLevel': 'Professional',
-    'learningResourceType': 'Practice Quiz',
-    'teaches': domainMeta.name,
-    'about': [
-      { '@type': 'Thing', 'name': certMeta.name },
-      { '@type': 'Thing', 'name': domainMeta.name },
+    '@graph': [
+      {
+        '@type': ['Quiz', 'LearningResource'],
+        'name': `${domainMeta.name} — ${certMeta.name} Free Practice Quiz`,
+        'description': `${questions.length} free ${domainMeta.name} practice questions for the ${certMeta.name} (${certMeta.code}) exam. Instant feedback, progress tracking, and explanations.`,
+        'url': `https://quizbuffet.com/${certSlug}/${domainSlug}/`,
+        'numberOfQuestions': questions.length,
+        'educationalLevel': 'Professional',
+        'learningResourceType': 'Practice Quiz',
+        'teaches': domainMeta.name,
+        'about': [
+          { '@type': 'Thing', 'name': certMeta.name },
+          { '@type': 'Thing', 'name': domainMeta.name },
+        ],
+        'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
+        'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
+        'keywords': `${domainMeta.name}, ${certMeta.name}, ${certMeta.code}, free practice test, exam questions`,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://quizbuffet.com/' },
+          { '@type': 'ListItem', 'position': 2, 'name': certMeta.name, 'item': `https://quizbuffet.com/${certSlug}/` },
+          { '@type': 'ListItem', 'position': 3, 'name': domainMeta.name, 'item': `https://quizbuffet.com/${certSlug}/${domainSlug}/` },
+        ],
+      },
     ],
-    'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
-    'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
-    'keywords': `${domainMeta.name}, ${certMeta.name}, ${certMeta.code}, free practice test, exam questions`,
   });
   const prog      = getDomainProgress(storageKey);
 

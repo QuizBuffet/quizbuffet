@@ -1,4 +1,4 @@
-// Single-page app entry point — owns the hash router, page shells, and lazy-loads each page's init module
+// Single-page app entry point — owns the path router, page shells, and lazy-loads each page's init module
 import { renderNav } from './components/nav/renderNav.js';
 import { renderFooter } from './components/footer/renderFooter.js';
 import { checkInactivityReset } from './storage/checkInactivityReset.js';
@@ -6,7 +6,7 @@ import { checkInactivityReset } from './storage/checkInactivityReset.js';
 checkInactivityReset();
 
 const SHELLS = {
-  '/': `
+  home: `
     <main class="container">
       <div id="featured"></div>
       <div id="ad-top" class="ad-slot">Advertisement</div>
@@ -17,7 +17,7 @@ const SHELLS = {
       <div id="ad-bottom" class="ad-slot">Advertisement</div>
     </main>`,
 
-  '/cert': `
+  cert: `
     <main class="container">
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <div id="cert-header"></div>
@@ -31,7 +31,7 @@ const SHELLS = {
       <div id="ad-bottom" class="ad-slot">Advertisement</div>
     </main>`,
 
-  '/domain': `
+  domain: `
     <main class="container">
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <div id="domain-header"></div>
@@ -44,7 +44,7 @@ const SHELLS = {
       <div id="ad-bottom" class="ad-slot">Advertisement</div>
     </main>`,
 
-  '/quiz': `
+  quiz: `
     <main class="container">
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <div id="quiz-meta" class="quiz-meta" role="status" aria-live="polite"></div>
@@ -55,7 +55,7 @@ const SHELLS = {
       <div id="ad-mid" class="ad-slot" style="display:none">Advertisement</div>
     </main>`,
 
-  '/progress': `
+  progress: `
     <main class="container">
       <div id="progress-overview"></div>
       <div id="progress-certs"></div>
@@ -63,12 +63,45 @@ const SHELLS = {
     </main>`,
 };
 
-const NAV_ACTIVE = { '/': 'Home', '/progress': 'Progress' };
+const NAV_ACTIVE = { home: 'Home', progress: 'Progress' };
+
+function getPage() {
+  const raw = location.pathname.replace('/index.html', '') || '/';
+  const path = raw === '/' ? '/' : raw.replace(/\/$/, '');
+  const segments = path === '/' ? [] : path.split('/').filter(Boolean);
+
+  // Backward-compat redirects for old query-param URLs
+  if (segments[0] === 'cert') {
+    const certSlug = new URLSearchParams(location.search).get('cert');
+    if (certSlug) { history.replaceState({}, '', `/${certSlug}/`); return getPage(); }
+  }
+  if (segments[0] === 'domain') {
+    const p = new URLSearchParams(location.search);
+    const c = p.get('cert'), d = p.get('domain');
+    if (c && d) { history.replaceState({}, '', `/${c}/${d}/`); return getPage(); }
+  }
+  if (segments[0] === 'quiz') {
+    const p = new URLSearchParams(location.search);
+    const c = p.get('cert'), d = p.get('domain');
+    if (c && d) {
+      history.replaceState({}, '', d === '__mix__' ? `/${c}/mix/` : `/${c}/${d}/quiz/`);
+      return getPage();
+    }
+  }
+
+  if (segments.length === 0) return 'home';
+  if (segments[0] === 'progress') return 'progress';
+  if (segments.length === 1) return 'cert';
+  if (segments.length === 2 && segments[1] === 'mix') return 'quiz';
+  if (segments.length === 2) return 'domain';
+  if (segments.length === 3 && segments[2] === 'quiz') return 'quiz';
+  return '404';
+}
 
 async function route() {
-  const path = location.pathname.replace('/index.html', '') || '/';
+  const page = getPage();
 
-  document.getElementById('app').innerHTML = SHELLS[path] ||
+  document.getElementById('app').innerHTML = SHELLS[page] ||
     `<main class="container">
       <div class="not-found">
         <div class="not-found-code">404</div>
@@ -80,7 +113,7 @@ async function route() {
     </main>`;
 
   window.scrollTo(0, 0);
-  renderNav(NAV_ACTIVE[path]);
+  renderNav(NAV_ACTIVE[page]);
 
   if (typeof gtag === 'function') {
     gtag('event', 'page_view', {
@@ -89,28 +122,28 @@ async function route() {
     });
   }
 
-  switch (path) {
-    case '/': {
+  switch (page) {
+    case 'home': {
       const { init } = await import('./pages/home/initHome.js');
       init();
       break;
     }
-    case '/cert': {
+    case 'cert': {
       const { init } = await import('./pages/certification/initCertification.js');
       init();
       break;
     }
-    case '/domain': {
+    case 'domain': {
       const { init } = await import('./pages/domain/initDomain.js');
       await init();
       break;
     }
-    case '/quiz': {
+    case 'quiz': {
       const { init } = await import('./pages/quiz/initQuiz.js');
       await init();
       break;
     }
-    case '/progress': {
+    case 'progress': {
       const { init } = await import('./pages/progress/initProgress.js');
       init();
       break;

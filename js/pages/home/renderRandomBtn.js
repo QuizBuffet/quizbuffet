@@ -22,7 +22,7 @@ export function renderRandomBtn() {
     if (!pool.length) return;
 
     const pick = pool[Math.floor(Math.random() * pool.length)];
-    history.pushState({}, '', `/domain?cert=${pick.cert.slug}&domain=${pick.domain.slug}`);
+    history.pushState({}, '', `/${pick.cert.slug}/${pick.domain.slug}/`);
     window.dispatchEvent(new Event('popstate'));
   });
 }

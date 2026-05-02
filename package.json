@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "start": "npx serve -s .",
-    "sync": "node sync-counts.js"
+    "sync": "node sync-counts.js",
+    "build:seo": "node scripts/build-seo.mjs"
   }
 }

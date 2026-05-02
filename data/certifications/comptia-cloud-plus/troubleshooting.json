@@ -2979,6 +2979,130 @@
         "c": "Rootkits can run in cloud VMs \u2014 the hypervisor virtualizes hardware access but does not prevent guest OS kernel modification.",
         "d": "Sophisticated rootkits achieve persistence that survives reboots \u2014 reboot alone does not remove a persistent rootkit."
       }
+    },
+    {
+      "id": 1197,
+      "objective": "6.3",
+      "difficulty": "easy",
+      "text": "A technician notices that a cloud-hosted web application is responding slowly. Checking the storage metrics, the technician sees that disk I/O wait time is consistently above 90% and IOPS are maxed out on the attached volume. The application database is on the same volume as the OS. What is the MOST likely cause and immediate remediation?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The virtual machine's CPU is overloaded, which indirectly causes disk reads and writes to queue up and appear as high I/O wait"
+        },
+        {
+          "id": "b",
+          "text": "The storage volume is I/O-bound because the database and OS are sharing a single volume that cannot sustain the required IOPS. The volume's provisioned IOPS limit is being reached, causing I/O requests to queue. The immediate remediation is to move the database to a dedicated high-IOPS volume (such as a provisioned IOPS SSD) sized for the workload's throughput requirements"
+        },
+        {
+          "id": "c",
+          "text": "The application has a memory leak that is filling the disk with swap file writes, and the fix is to restart the application process"
+        },
+        {
+          "id": "d",
+          "text": "The cloud provider's storage backend is experiencing an outage, and the technician should wait for the provider to resolve the issue"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "High CPU can cause latency but I/O wait above 90% with maxed IOPS is a storage bottleneck, not a CPU bottleneck \u2014 CPU and I/O wait metrics would need to be read together, and this scenario clearly points to the storage layer.",
+        "b": "Sharing a single volume between the OS and a database means database I/O competes with OS I/O, and a standard volume's IOPS cap is quickly reached under database load. Separating the database onto a dedicated provisioned-IOPS volume resolves the contention. This is the correct answer.",
+        "c": "A memory leak causing swap writes would appear as gradual disk-space consumption and increasing swap usage \u2014 not as maxed IOPS with high I/O wait on a single volume shared with the OS.",
+        "d": "A provider-side outage would typically affect multiple services and be reflected in provider health dashboards \u2014 maxed IOPS on a single instance volume points to a configuration and capacity issue, not a provider outage."
+      }
+    },
+    {
+      "id": 1198,
+      "objective": "6.3",
+      "difficulty": "medium",
+      "text": "A technician is troubleshooting a batch-processing cloud workload that runs large numerical simulations. The virtual machine has 16 vCPUs but the simulation completes no faster than it did on an 8-vCPU instance. CPU utilization graphs show that only 4 vCPUs are ever above 10% utilization simultaneously. What is the MOST likely cause of the poor compute scaling?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The cloud provider is throttling the instance's CPU due to a billing limit, so the additional vCPUs are available but not permitted to run at full speed"
+        },
+        {
+          "id": "b",
+          "text": "The instance type selected does not support hyperthreading, which limits the effective CPU count to half the advertised vCPU total"
+        },
+        {
+          "id": "c",
+          "text": "The simulation application is not written to use multi-threading or parallel processing \u2014 it runs as a single-threaded or lightly-threaded process, so additional vCPUs sit idle regardless of how many are provisioned. The fix is to either refactor the application to parallelize work across threads or use a distributed computing framework that can spread simulation tasks across multiple processes"
+        },
+        {
+          "id": "d",
+          "text": "The instance lacks enough network bandwidth to feed all 16 vCPUs with simulation input data from object storage, creating a network-bound bottleneck that makes the extra CPUs unnecessary"
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Cloud providers do not silently throttle CPU cores for billing reasons \u2014 CPU credits (on burstable instance types) affect clock speed or burst duration, but 12 of 16 vCPUs sitting below 10% utilization indicates the workload is not using them, not that they are throttled.",
+        "b": "Hyperthreading affects how physical cores are exposed as vCPUs but would not cause exactly 4 out of 16 vCPUs to be active \u2014 and the observed pattern of idle vCPUs clearly indicates the application is not dispatching work to them.",
+        "c": "A simulation with no parallel execution model uses only as many threads as it spawns \u2014 if the code is single-threaded or uses a fixed small thread pool, extra vCPUs are wasted. The consistent pattern of only 4 active vCPUs on a 16-vCPU instance confirms the application is the bottleneck, not the infrastructure. This is the correct answer.",
+        "d": "Network bandwidth could be a bottleneck for data-intensive workloads, but a network bottleneck would appear as high network utilization and waiting I/O \u2014 it would not explain 12 vCPUs sitting at under 10% utilization while the simulation runs."
+      }
+    },
+    {
+      "id": 1199,
+      "objective": "6.3",
+      "difficulty": "medium-hard",
+      "text": "A technician notices that a cloud application's memory utilization metric reported by the hypervisor stays at 40%, yet the application repeatedly crashes with out-of-memory (OOM) errors. The instance has 32 GB of RAM. Application logs show it was allocating objects rapidly just before each crash. What is the MOST likely explanation?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The hypervisor-reported memory metric is accurate, and the OOM errors are caused by the operating system's memory overcommit policy preventing the application from using more than 40% of available RAM"
+        },
+        {
+          "id": "b",
+          "text": "The application has a coding error causing stack overflow exceptions that are misreported as OOM errors in the logs, and the fix is to increase the thread stack size"
+        },
+        {
+          "id": "c",
+          "text": "The cloud instance type does not support memory-intensive workloads and must be replaced with a memory-optimized instance family"
+        },
+        {
+          "id": "d",
+          "text": "The application has a memory leak \u2014 it allocates memory for objects but never releases them, causing heap usage to grow until the process exhausts its addressable or OS-allocated memory limit. The hypervisor reports the total instance memory utilization (which includes all processes and the OS), masking the runaway growth within the single application's heap. Profiling with a heap analyzer will confirm unbounded object growth, and the fix is to identify and correct the missing deallocation or object lifecycle mismanagement in the application code"
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Linux memory overcommit allows processes to allocate virtual memory beyond physical RAM, but OOM kills occur when physical pages are actually exhausted \u2014 at 40% total instance memory usage, overcommit policy alone would not trigger OOM unless the application's own heap is consuming a large fraction of that 40% and exceeds its limit.",
+        "b": "Stack overflow and heap OOM produce different error types \u2014 a stack overflow throws a StackOverflowError or segfault, not an OOM. Rapid object allocation described in the logs points to heap exhaustion, not stack exhaustion.",
+        "c": "The instance has 32 GB of RAM and only 40% is reportedly used \u2014 switching instance families would not resolve a memory leak that will eventually exhaust any amount of RAM.",
+        "d": "A memory leak causes the application's own heap to grow continuously regardless of total instance memory usage. The hypervisor metric reflects aggregate instance RAM usage across all processes and the OS, so the leaking application's portion can be steadily growing while the overall percentage appears moderate. Rapid object allocation without corresponding deallocation is a classic memory leak signature. This is the correct answer."
+      }
+    },
+    {
+      "id": 1200,
+      "objective": "6.3",
+      "difficulty": "hard",
+      "text": "A technician is investigating high latency between two microservices deployed in the same cloud region. Service A calls Service B synchronously on every user request. Latency between the services averages 80 ms, but cloud provider network metrics show inter-instance latency in the same availability zone is under 1 ms. Application tracing reveals that Service B's response time is under 2 ms. Where is the remaining ~78 ms being spent, and what should the technician investigate?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The 78 ms gap is consumed by TCP connection establishment overhead on each request \u2014 Service A is not reusing HTTP connections and is completing a full TCP three-way handshake plus TLS negotiation for every synchronous call to Service B. The fix is to enable HTTP keep-alive and connection pooling in Service A's HTTP client so that connections are reused across requests, eliminating per-request handshake latency"
+        },
+        {
+          "id": "b",
+          "text": "Service B is misreporting its response time due to a bug in its tracing instrumentation, and the actual processing time is closer to 80 ms \u2014 the fix is to recalibrate the tracing library"
+        },
+        {
+          "id": "c",
+          "text": "The cloud provider's software-defined network is adding 78 ms of overhead on all east-west traffic within the same availability zone, and the technician should open a support ticket"
+        },
+        {
+          "id": "d",
+          "text": "Service A is deployed in a container with an incorrect CPU limit that throttles its ability to process Service B's response quickly enough, causing the observed latency"
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "When network round-trip time is under 1 ms and server processing time is under 2 ms, but observed end-to-end latency is 80 ms, the gap is almost always connection setup overhead. A full TCP handshake plus TLS 1.2 negotiation adds 2\u20134 round trips; with additional DNS resolution this can exceed 50\u201380 ms. HTTP keep-alive and connection pooling eliminate per-request handshakes by reusing established connections, which directly collapses the observed latency. This is the correct answer.",
+        "b": "Tracing instrumentation bugs that misreport response time by 40x would be an extraordinary failure \u2014 and would not explain the systematic gap observable from Service A's perspective across many requests. Instrumentation errors are a last resort diagnosis after architectural causes are ruled out.",
+        "c": "Cloud provider SDN latency within the same availability zone is consistently sub-millisecond \u2014 provider metrics already confirm this. Blaming the provider without evidence, when connection-level causes are unexamined, is premature and would delay resolution.",
+        "d": "CPU throttling on Service A would slow response processing time and increase CPU wait metrics \u2014 it would not produce a clean 78 ms gap that disappears after the response is received, nor would it explain latency that occurs before Service A's CPU has work to do."
+      }
     }
   ]
 }

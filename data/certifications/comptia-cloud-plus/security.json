@@ -3191,7 +3191,7 @@
       ],
       "correct": "b",
       "explanations": {
-        "a": "Hardware tokens are one MFA mechanism \u2014 token-based authentication in IAM specifically refers to digitally signed authentication tokens.",
+        "a": "Hardware tokens are one MFA mechanism \u2014 token-based authentication in digitally signed authentication tokens.",
         "b": "Token-based authentication uses cryptographically signed tokens (JWT, SAML, OAuth tokens) that carry identity claims. Services verify token signatures without a round-trip to the identity store \u2014 enabling scalable, stateless authentication for APIs and distributed systems. This is the correct answer.",
         "c": "SMS OTP is one MFA delivery method \u2014 not what token-based authentication refers to in the IAM context.",
         "d": "Billing credits are commercial features \u2014 not authentication mechanisms."

@@ -3067,9 +3067,9 @@
       ],
       "correct": "d",
       "explanations": {
-        "a": "Constraints are rules that protect data accuracy, such as uniqueness, required values, or valid relationships. A foreign key stores a value that refers to a primary key in another table, creating a relationship.",
-        "b": "Rows, also called records, represent individual entries in a table. A foreign key stores a value that refers to a primary key in another table, creating a relationship.",
-        "c": "A primary key uniquely identifies each record in a table. A foreign key stores a value that refers to a primary key in another table, creating a relationship.",
+        "a": "Constraints are rules that protect data accuracy, such as uniqueness, required values, or valid relationships. a primary key in another table, creating a relationship.",
+        "b": "Rows, also called records, represent individual entries in a table. a primary key in another table, creating a relationship.",
+        "c": "A primary key uniquely identifies each record in a table. a primary key in another table, creating a relationship.",
         "d": "A foreign key stores a value that refers to a primary key in another table, creating a relationship. This is the correct answer."
       }
     },
@@ -3101,9 +3101,9 @@
       "correct": "a",
       "explanations": {
         "a": "A foreign key stores a value that refers to a primary key in another table, creating a relationship. This is the correct answer.",
-        "b": "Constraints are rules that protect data accuracy, such as uniqueness, required values, or valid relationships. A foreign key stores a value that refers to a primary key in another table, creating a relationship.",
-        "c": "Rows, also called records, represent individual entries in a table. A foreign key stores a value that refers to a primary key in another table, creating a relationship.",
-        "d": "A primary key uniquely identifies each record in a table. A foreign key stores a value that refers to a primary key in another table, creating a relationship."
+        "b": "Constraints are rules that protect data accuracy, such as uniqueness, required values, or valid relationships. a primary key in another table, creating a relationship.",
+        "c": "Rows, also called records, represent individual entries in a table. a primary key in another table, creating a relationship.",
+        "d": "A primary key uniquely identifies each record in a table. a primary key in another table, creating a relationship."
       }
     },
     {
@@ -3133,10 +3133,10 @@
       ],
       "correct": "b",
       "explanations": {
-        "a": "Rows, also called records, represent individual entries in a table. A foreign key stores a value that refers to a primary key in another table, creating a relationship.",
+        "a": "Rows, also called records, represent individual entries in a table. a primary key in another table, creating a relationship.",
         "b": "A foreign key stores a value that refers to a primary key in another table, creating a relationship. This is the correct answer.",
-        "c": "A primary key uniquely identifies each record in a table. A foreign key stores a value that refers to a primary key in another table, creating a relationship.",
-        "d": "Constraints are rules that protect data accuracy, such as uniqueness, required values, or valid relationships. A foreign key stores a value that refers to a primary key in another table, creating a relationship."
+        "c": "A primary key uniquely identifies each record in a table. a primary key in another table, creating a relationship.",
+        "d": "Constraints are rules that protect data accuracy, such as uniqueness, required values, or valid relationships. a primary key in another table, creating a relationship."
       }
     },
     {
@@ -3166,10 +3166,10 @@
       ],
       "correct": "c",
       "explanations": {
-        "a": "Constraints are rules that protect data accuracy, such as uniqueness, required values, or valid relationships. A foreign key stores a value that refers to a primary key in another table, creating a relationship.",
-        "b": "Rows, also called records, represent individual entries in a table. A foreign key stores a value that refers to a primary key in another table, creating a relationship.",
+        "a": "Constraints are rules that protect data accuracy, such as uniqueness, required values, or valid relationships. a primary key in another table, creating a relationship.",
+        "b": "Rows, also called records, represent individual entries in a table. a primary key in another table, creating a relationship.",
         "c": "A foreign key stores a value that refers to a primary key in another table, creating a relationship. This is the correct answer.",
-        "d": "A primary key uniquely identifies each record in a table. A foreign key stores a value that refers to a primary key in another table, creating a relationship."
+        "d": "A primary key uniquely identifies each record in a table. a primary key in another table, creating a relationship."
       }
     },
     {

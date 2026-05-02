@@ -29,10 +29,10 @@
       ],
       "correct": "b",
       "explanations": {
-        "a": "UI version numbers are a display concern \u2014 version management in DevOps refers to tracking changes in source control systems.",
+        "a": "UI version numbers are a display concern \u2014 version management in tracking changes in source control systems.",
         "b": "Version management through systems like Git maintains a complete, auditable history of all code and configuration changes \u2014 who changed what, when, and with what justification \u2014 enabling rollback, parallel development, and change tracking. This is the correct answer.",
         "c": "License management is a procurement and compliance function \u2014 not source control version management.",
-        "d": "API version selection is an application configuration decision \u2014 version management in DevOps refers to tracking changes in source control."
+        "d": "API version selection is an application configuration decision \u2014 version management in tracking changes in source control."
       }
     },
     {
@@ -682,7 +682,7 @@
       "explanations": {
         "a": "Network routing is a cloud infrastructure concern \u2014 branch management refers to Git repository organization.",
         "b": "Git branch management defines how teams organize parallel work streams \u2014 feature branches isolate development, release branches stabilize releases, and hotfix branches enable emergency production fixes without polluting ongoing development. This is the correct answer.",
-        "c": "Organizational management is an HR function \u2014 branch management in DevOps refers to Git repository branches.",
+        "c": "Organizational management is an HR function \u2014 branch management in Git repository branches.",
         "d": "Load balancer traffic routing is a network infrastructure concern \u2014 Git branch management organizes code development workflows."
       }
     },
@@ -1396,7 +1396,7 @@
         "a": "Post-deployment security review is the old model DevSecOps replaces \u2014 security integrated into CI/CD finds issues before they reach production.",
         "b": "DevSecOps embeds security into every pipeline stage: credential scanning on commit, SAST during build, dependency scanning in test stages, container image scanning before push, and infrastructure policy checks before deployment \u2014 making security a continuous pipeline quality gate rather than an end-stage gate. This is the correct answer.",
         "c": "Post-deployment monitoring is one layer \u2014 DevSecOps specifically shifts security left into the development pipeline.",
-        "d": "Pre-coding security requirements are valuable but DevSecOps specifically refers to automated security integration in CI/CD pipelines."
+        "d": "Pre-coding security requirements are valuable but automated security integration in CI/CD pipelines."
       }
     },
     {

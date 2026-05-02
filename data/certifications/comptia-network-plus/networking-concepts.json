@@ -6733,7 +6733,7 @@
         "a": "OM3 multimode fiber does support 10 Gbps \u2014 10GBASE-SR (850nm) achieves 300 meters over OM3 and 400 meters over OM4; multimode fiber supports 10G, 25G, 40G, and 100G at appropriate short distances; modal dispersion limits distance, not maximum speed.",
         "b": "OM3 fiber does not have a 5 Gbps limitation \u2014 it either supports the full 10G speed within distance limits or it doesn't; there is no half-speed operation mode for fiber; OM4 extends the maximum distance of 10GBASE-SR to 400 meters but both support full 10 Gbps.",
         "c": "OM3 laser-optimized multimode fiber was specifically designed for 10G applications \u2014 10GBASE-SR (IEEE 802.3ae) achieves 300 meters over OM3; at 80 meters the existing OM3 infrastructure fully supports 10 Gbps with significant distance margin remaining; no cable replacement is needed. This is the correct answer.",
-        "d": "The OM numbering (OM1, OM2, OM3, OM4, OM5) refers to the fiber's bandwidth-distance product and modal bandwidth specifications \u2014 it does not encode a megabit speed limit; OM3 (2000 MHz\u00b7km bandwidth) was standardized specifically to support 10G Ethernet."
+        "d": "The OM numbering (OM1, OM2, OM3, OM4, the fiber's bandwidth-distance product and modal bandwidth specifications \u2014 it does not encode a megabit speed limit; OM3 (2000 MHz\u00b7km bandwidth) was standardized specifically to support 10G Ethernet."
       }
     },
     {
@@ -9703,7 +9703,7 @@
         "a": "Remote employee access describes remote access VPN (IPSec/SSL VPN), not DCI \u2014 DCI is specifically about interconnecting data center facilities, not end-user connectivity.",
         "b": "Data Center Interconnect extends Layer 2 segments between physically separate facilities \u2014 VXLAN's ability to encapsulate Ethernet frames and transport them over any IP network makes it ideal for DCI; the extended Layer 2 domain allows VMs to migrate between data centers retaining their network identity; this is essential for geo-redundant active-active designs and planned/unplanned failover scenarios. This is the correct answer.",
         "c": "While hybrid cloud connectivity exists, major cloud providers use their own overlay technologies (AWS uses a custom overlay, Azure uses VxLAN internally) \u2014 cloud connectivity from on-premises uses Direct Connect, VPN gateways, or cloud-specific SD-WAN integrations rather than standard VXLAN between on-premises and cloud; the claim that AWS and Azure natively support VXLAN as a standard connectivity protocol is inaccurate.",
-        "d": "The connection between data center switching tiers uses standard Ethernet/IP \u2014 VXLAN operates as an overlay above the physical switching fabric; DCI specifically refers to inter-facility connectivity between separate physical locations, not intra-facility layer interconnection."
+        "d": "The connection between data center switching tiers uses standard Ethernet/IP \u2014 VXLAN operates as an overlay above the physical switching fabric; inter-facility connectivity between separate physical locations, not intra-facility layer interconnection."
       }
     },
     {
@@ -10366,138 +10366,137 @@
         "d": "ff02::1 is not a loopback address \u2014 the IPv6 loopback is ::1/128; ff02::1 is a multicast group address that represents all nodes on the link; these serve completely different purposes and are in different address spaces."
       }
     },
-  {
-    "id": 315,
-    "domain": "1.0",
-    "objective": "1.8",
-    "keyword": "IPv6 compatibility",
-    "difficulty": "easy",
-    "text": "What are the three primary IPv6 transition and compatibility mechanisms and what does each accomplish?",
-    "answers": [
-      {
-        "id": "a",
-        "text": "Dual stack runs both IPv4 and IPv6 simultaneously on the same device using the same interface \u2014 a device configured with dual stack has both an IPv4 and an IPv6 address and can communicate natively with either protocol without translation or tunneling; tunneling encapsulates IPv6 packets inside IPv4 packets to cross IPv4-only network segments; NAT64 translates between IPv6 and IPv4 allowing IPv6-only clients to communicate with IPv4-only servers"
-      },
-      {
-        "id": "b",
-        "text": "The three mechanisms are: dual stack (using two separate network interfaces \u2014 one for IPv4 and one for IPv6), tunneling (encrypting IPv6 traffic for security), and NAT64 (assigning 64-bit NAT addresses to IPv4 devices upgrading them to IPv6 compatibility)"
-      },
-      {
-        "id": "c",
-        "text": "The three mechanisms are: protocol translation (converting IPv4 headers to IPv6 headers at the source device), address pooling (sharing one IPv6 address among many IPv4 devices using port multiplexing), and encapsulation (wrapping IPv6 packets in HTTP headers for web-based transport)"
-      },
-      {
-        "id": "d",
-        "text": "The three mechanisms are all forms of NAT \u2014 NAT44 (IPv4 to IPv4), NAT66 (IPv6 to IPv6), and NAT64 (IPv6 to IPv4); dual stack and tunneling are marketing terms that both describe different NAT64 implementations"
+    {
+      "id": 315,
+      "domain": "1.0",
+      "objective": "1.8",
+      "keyword": "IPv6 compatibility",
+      "difficulty": "easy",
+      "text": "What are the three primary IPv6 transition and compatibility mechanisms and what does each accomplish?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Dual stack runs both IPv4 and IPv6 simultaneously on the same device using the same interface \u2014 a device configured with dual stack has both an IPv4 and an IPv6 address and can communicate natively with either protocol without translation or tunneling; tunneling encapsulates IPv6 packets inside IPv4 packets to cross IPv4-only network segments; NAT64 translates between IPv6 and IPv4 allowing IPv6-only clients to communicate with IPv4-only servers"
+        },
+        {
+          "id": "b",
+          "text": "The three mechanisms are: dual stack (using two separate network interfaces \u2014 one for IPv4 and one for IPv6), tunneling (encrypting IPv6 traffic for security), and NAT64 (assigning 64-bit NAT addresses to IPv4 devices upgrading them to IPv6 compatibility)"
+        },
+        {
+          "id": "c",
+          "text": "The three mechanisms are: protocol translation (converting IPv4 headers to IPv6 headers at the source device), address pooling (sharing one IPv6 address among many IPv4 devices using port multiplexing), and encapsulation (wrapping IPv6 packets in HTTP headers for web-based transport)"
+        },
+        {
+          "id": "d",
+          "text": "The three mechanisms are all forms of NAT \u2014 NAT44 (IPv4 to IPv4), NAT66 (IPv6 to IPv6), and NAT64 (IPv6 to IPv4); dual stack and tunneling are marketing terms that both describe different NAT64 implementations"
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "The three main IPv6 transition mechanisms serve distinct purposes \u2014 dual stack is the preferred long-term approach where devices natively support both protocols simultaneously, preferring IPv6 when available; tunneling (6in4, 6to4, ISATAP, Teredo) carries IPv6 traffic over existing IPv4 infrastructure; NAT64 (with DNS64) enables IPv6-only networks to reach IPv4-only services without requiring IPv4 on the client. This is the correct answer.",
+        "b": "Dual stack does not require separate interfaces \u2014 both IPv4 and IPv6 addresses are configured on the same interface simultaneously; tunneling is not for encryption (that is IPSec's role); NAT64 does not upgrade IPv4 devices to IPv6 \u2014 it translates between already-IPv6 clients and IPv4 servers.",
+        "c": "Protocol translation at the source device is not how these mechanisms work \u2014 IPv4 and IPv6 headers have fundamentally different structures; address pooling describes PAT/NAPT which is an IPv4 mechanism; HTTP encapsulation is not a standard IPv6 transition technique.",
+        "d": "Dual stack and tunneling are not forms of NAT \u2014 dual stack runs both protocols natively without any address translation; tunneling encapsulates packets without translating them; NAT64 is the only translation mechanism among the three; these are distinct technologies not variations of NAT."
       }
-    ],
-    "correct": "a",
-    "explanations": {
-      "a": "The three main IPv6 transition mechanisms serve distinct purposes \u2014 dual stack is the preferred long-term approach where devices natively support both protocols simultaneously, preferring IPv6 when available; tunneling (6in4, 6to4, ISATAP, Teredo) carries IPv6 traffic over existing IPv4 infrastructure; NAT64 (with DNS64) enables IPv6-only networks to reach IPv4-only services without requiring IPv4 on the client. This is the correct answer.",
-      "b": "Dual stack does not require separate interfaces \u2014 both IPv4 and IPv6 addresses are configured on the same interface simultaneously; tunneling is not for encryption (that is IPSec's role); NAT64 does not upgrade IPv4 devices to IPv6 \u2014 it translates between already-IPv6 clients and IPv4 servers.",
-      "c": "Protocol translation at the source device is not how these mechanisms work \u2014 IPv4 and IPv6 headers have fundamentally different structures; address pooling describes PAT/NAPT which is an IPv4 mechanism; HTTP encapsulation is not a standard IPv6 transition technique.",
-      "d": "Dual stack and tunneling are not forms of NAT \u2014 dual stack runs both protocols natively without any address translation; tunneling encapsulates packets without translating them; NAT64 is the only translation mechanism among the three; these are distinct technologies not variations of NAT."
-    }
-  },
-  {
-    "id": 316,
-    "domain": "1.0",
-    "objective": "1.8",
-    "keyword": "IPv6 compatibility",
-    "difficulty": "medium",
-    "text": "A mobile operator deploys an IPv6-only network for new 5G subscribers. Many internet services (including some banking apps) still run IPv4-only servers. What mechanism allows the IPv6-only subscribers to reach these IPv4-only services?",
-    "answers": [
-      {
-        "id": "a",
-        "text": "The IPv6-only subscribers simply cannot access IPv4-only services \u2014 IPv6-only networks are isolated from IPv4 internet resources until those services upgrade to IPv6; mobile operators should not deploy IPv6-only networks until all internet services are dual-stack"
-      },
-      {
-        "id": "b",
-        "text": "NAT64 combined with DNS64 enables IPv6-only clients to reach IPv4-only servers \u2014 DNS64 synthesizes IPv6 addresses for IPv4-only hostnames by embedding the IPv4 address in a well-known IPv6 prefix (64:ff9b::/96); when the IPv6 client sends traffic to this synthesized IPv6 address, the NAT64 gateway translates the IPv6 packet to IPv4 and forwards it to the actual IPv4 server; the server's IPv4 response is translated back to IPv6 and delivered to the client; the client never needs an IPv4 address"
-      },
-      {
-        "id": "c",
-        "text": "The IPv6-only subscribers use tunneling \u2014 each 5G device automatically creates a 6in4 tunnel to a dual-stack server at the mobile operator; the tunnel gives each device a virtual IPv4 address used to access IPv4 services while maintaining IPv6 on the 5G radio interface"
-      },
-      {
-        "id": "d",
-        "text": "The mobile operator assigns hidden IPv4 addresses to all subscribers in addition to IPv6 \u2014 these IPv4 addresses are not visible in the device's interface settings but are used transparently by the operating system whenever an IPv4-only destination is contacted"
+    },
+    {
+      "id": 316,
+      "domain": "1.0",
+      "objective": "1.8",
+      "keyword": "IPv6 compatibility",
+      "difficulty": "medium",
+      "text": "A mobile operator deploys an IPv6-only network for new 5G subscribers. Many internet services (including some banking apps) still run IPv4-only servers. What mechanism allows the IPv6-only subscribers to reach these IPv4-only services?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "The IPv6-only subscribers simply cannot access IPv4-only services \u2014 IPv6-only networks are isolated from IPv4 internet resources until those services upgrade to IPv6; mobile operators should not deploy IPv6-only networks until all internet services are dual-stack"
+        },
+        {
+          "id": "b",
+          "text": "NAT64 combined with DNS64 enables IPv6-only clients to reach IPv4-only servers \u2014 DNS64 synthesizes IPv6 addresses for IPv4-only hostnames by embedding the IPv4 address in a well-known IPv6 prefix (64:ff9b::/96); when the IPv6 client sends traffic to this synthesized IPv6 address, the NAT64 gateway translates the IPv6 packet to IPv4 and forwards it to the actual IPv4 server; the server's IPv4 response is translated back to IPv6 and delivered to the client; the client never needs an IPv4 address"
+        },
+        {
+          "id": "c",
+          "text": "The IPv6-only subscribers use tunneling \u2014 each 5G device automatically creates a 6in4 tunnel to a dual-stack server at the mobile operator; the tunnel gives each device a virtual IPv4 address used to access IPv4 services while maintaining IPv6 on the 5G radio interface"
+        },
+        {
+          "id": "d",
+          "text": "The mobile operator assigns hidden IPv4 addresses to all subscribers in addition to IPv6 \u2014 these IPv4 addresses are not visible in the device's interface settings but are used transparently by the operating system whenever an IPv4-only destination is contacted"
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "IPv6-only network deployment with NAT64 is a proven operational model \u2014 Apple, T-Mobile, Google Fi, and many mobile operators worldwide have deployed NAT64/DNS64; the mechanism specifically solves the problem of IPv6-only clients reaching IPv4 services; waiting for universal IPv6 adoption would delay network modernization indefinitely.",
+        "b": "NAT64 with DNS64 is the standard solution for IPv6-only networks reaching IPv4 services \u2014 DNS64 intercepts DNS queries for IPv4-only domains (returning only A records), creates a synthesized AAAA record with the IPv4 address embedded in the 64:ff9b::/96 prefix; NAT64 gateways translate the resulting IPv6 traffic to IPv4; RFC 6146 defines NAT64 and RFC 6147 defines DNS64; this mechanism is deployed at scale by major mobile operators. This is the correct answer.",
+        "c": "6in4 tunneling gives IPv6 traffic an IPv4 transport path \u2014 it does not work in reverse to give IPv6-only devices access to IPv4 services; tunneling encapsulates IPv6 in IPv4 headers but still requires the endpoint to have IPv4 to create the tunnel; an IPv6-only device has no IPv4 address to use as a tunnel endpoint.",
+        "d": "Hidden IPv4 addresses are not a standard mechanism \u2014 this would essentially be carrier-grade NAT (CGNAT) where the operator maintains an IPv4 address behind the scenes; while CGNAT exists it means the device actually has IPv4 connectivity (even if hidden) and the network is not truly IPv6-only; NAT64 is the mechanism that enables genuine IPv6-only operation."
       }
-    ],
-    "correct": "b",
-    "explanations": {
-      "a": "IPv6-only network deployment with NAT64 is a proven operational model \u2014 Apple, T-Mobile, Google Fi, and many mobile operators worldwide have deployed NAT64/DNS64; the mechanism specifically solves the problem of IPv6-only clients reaching IPv4 services; waiting for universal IPv6 adoption would delay network modernization indefinitely.",
-      "b": "NAT64 with DNS64 is the standard solution for IPv6-only networks reaching IPv4 services \u2014 DNS64 intercepts DNS queries for IPv4-only domains (returning only A records), creates a synthesized AAAA record with the IPv4 address embedded in the 64:ff9b::/96 prefix; NAT64 gateways translate the resulting IPv6 traffic to IPv4; RFC 6146 defines NAT64 and RFC 6147 defines DNS64; this mechanism is deployed at scale by major mobile operators. This is the correct answer.",
-      "c": "6in4 tunneling gives IPv6 traffic an IPv4 transport path \u2014 it does not work in reverse to give IPv6-only devices access to IPv4 services; tunneling encapsulates IPv6 in IPv4 headers but still requires the endpoint to have IPv4 to create the tunnel; an IPv6-only device has no IPv4 address to use as a tunnel endpoint.",
-      "d": "Hidden IPv4 addresses are not a standard mechanism \u2014 this would essentially be carrier-grade NAT (CGNAT) where the operator maintains an IPv4 address behind the scenes; while CGNAT exists it means the device actually has IPv4 connectivity (even if hidden) and the network is not truly IPv6-only; NAT64 is the mechanism that enables genuine IPv6-only operation."
-    }
-  },
-  {
-    "id": 317,
-    "domain": "1.0",
-    "objective": "1.8",
-    "keyword": "IPv6 compatibility",
-    "difficulty": "medium",
-    "text": "A company's IPv6 packets must traverse a service provider network that is IPv4-only. An engineer configures a 6in4 tunnel between two routers at the edges of the IPv4 network. How does this tunnel work and what is its limitation?",
-    "answers": [
-      {
-        "id": "a",
-        "text": "A 6in4 tunnel encrypts IPv6 packets using AES-256 before injecting them into the IPv4 network \u2014 the limitation is that each encrypted packet requires 256 bytes of additional overhead reducing the effective MTU by 50%"
-      },
-      {
-        "id": "b",
-        "text": "A 6in4 tunnel routes IPv6 traffic through IPv6 relay servers located in countries with IPv6 infrastructure \u2014 the IPv4 network is bypassed entirely by routing around it through third-party relay servers; the limitation is that relay server locations are outside the company's control"
-      },
-      {
-        "id": "c",
-        "text": "A 6in4 tunnel works by converting IPv6 addresses to IPv4 addresses at the tunnel entry point \u2014 each IPv6 device is assigned a mapped IPv4 address; the limitation is that the 32-bit IPv4 space cannot represent all possible IPv6 addresses requiring a translation database at each tunnel endpoint"
-      },
-      {
-        "id": "d",
-        "text": "A 6in4 tunnel encapsulates IPv6 packets inside IPv4 packets (IP protocol 41) \u2014 the sending router adds an IPv4 header with the destination set to the remote tunnel endpoint; the IPv4 network forwards the encapsulated packet normally; the receiving router removes the IPv4 header and forwards the original IPv6 packet; the key limitation is that 6in4 tunnels use statically configured IPv4 addresses for both endpoints making them inflexible for dynamic environments and requiring both endpoints to have static public IPv4 addresses"
+    },
+    {
+      "id": 317,
+      "domain": "1.0",
+      "objective": "1.8",
+      "keyword": "IPv6 compatibility",
+      "difficulty": "medium",
+      "text": "A company's IPv6 packets must traverse a service provider network that is IPv4-only. An engineer configures a 6in4 tunnel between two routers at the edges of the IPv4 network. How does this tunnel work and what is its limitation?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A 6in4 tunnel encrypts IPv6 packets using AES-256 before injecting them into the IPv4 network \u2014 the limitation is that each encrypted packet requires 256 bytes of additional overhead reducing the effective MTU by 50%"
+        },
+        {
+          "id": "b",
+          "text": "A 6in4 tunnel routes IPv6 traffic through IPv6 relay servers located in countries with IPv6 infrastructure \u2014 the IPv4 network is bypassed entirely by routing around it through third-party relay servers; the limitation is that relay server locations are outside the company's control"
+        },
+        {
+          "id": "c",
+          "text": "A 6in4 tunnel works by converting IPv6 addresses to IPv4 addresses at the tunnel entry point \u2014 each IPv6 device is assigned a mapped IPv4 address; the limitation is that the 32-bit IPv4 space cannot represent all possible IPv6 addresses requiring a translation database at each tunnel endpoint"
+        },
+        {
+          "id": "d",
+          "text": "A 6in4 tunnel encapsulates IPv6 packets inside IPv4 packets (IP protocol 41) \u2014 the sending router adds an IPv4 header with the destination set to the remote tunnel endpoint; the IPv4 network forwards the encapsulated packet normally; the receiving router removes the IPv4 header and forwards the original IPv6 packet; the key limitation is that 6in4 tunnels use statically configured IPv4 addresses for both endpoints making them inflexible for dynamic environments and requiring both endpoints to have static public IPv4 addresses"
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "6in4 tunneling does not encrypt traffic \u2014 it is a simple encapsulation mechanism that adds an IPv4 header around the IPv6 packet; encryption requires IPSec applied separately; the MTU overhead is approximately 20 bytes (IPv4 header size), not 256 bytes.",
+        "b": "6in4 does not route through third-party relay servers \u2014 it creates a direct tunnel between two configured endpoints; the tunnel traverses the existing IPv4 network without bypassing or going around it; relay servers describe technologies like Teredo or 6to4 anycast, not 6in4.",
+        "c": "6in4 does not convert IPv6 addresses to IPv4 addresses \u2014 it encapsulates complete IPv6 packets without modifying their contents; NAT64 performs the address translation described; 6in4 is pure encapsulation preserving the original IPv6 packet intact.",
+        "d": "6in4 (RFC 4213) encapsulates IPv6 packets in IPv4 using protocol number 41 \u2014 this allows IPv6 traffic to traverse IPv4-only infrastructure transparently; the endpoints are configured statically with each other's IPv4 addresses; static configuration is the key limitation for scalability since every new site-to-site pair requires manual tunnel configuration; 6to4 (RFC 3056) addressed the static limitation by deriving tunnel endpoints from the IPv6 prefix but has been deprecated due to reliability issues. This is the correct answer."
       }
-    ],
-    "correct": "d",
-    "explanations": {
-      "a": "6in4 tunneling does not encrypt traffic \u2014 it is a simple encapsulation mechanism that adds an IPv4 header around the IPv6 packet; encryption requires IPSec applied separately; the MTU overhead is approximately 20 bytes (IPv4 header size), not 256 bytes.",
-      "b": "6in4 does not route through third-party relay servers \u2014 it creates a direct tunnel between two configured endpoints; the tunnel traverses the existing IPv4 network without bypassing or going around it; relay servers describe technologies like Teredo or 6to4 anycast, not 6in4.",
-      "c": "6in4 does not convert IPv6 addresses to IPv4 addresses \u2014 it encapsulates complete IPv6 packets without modifying their contents; NAT64 performs the address translation described; 6in4 is pure encapsulation preserving the original IPv6 packet intact.",
-      "d": "6in4 (RFC 4213) encapsulates IPv6 packets in IPv4 using protocol number 41 \u2014 this allows IPv6 traffic to traverse IPv4-only infrastructure transparently; the endpoints are configured statically with each other's IPv4 addresses; static configuration is the key limitation for scalability since every new site-to-site pair requires manual tunnel configuration; 6to4 (RFC 3056) addressed the static limitation by deriving tunnel endpoints from the IPv6 prefix but has been deprecated due to reliability issues. This is the correct answer."
-    }
-  },
-  {
-    "id": 318,
-    "domain": "1.0",
-    "objective": "1.8",
-    "keyword": "IPv6 compatibility",
-    "difficulty": "hard",
-    "text": "An enterprise network architect is planning IPv6 deployment. Three options are proposed: (1) dual stack on all devices immediately, (2) IPv6-only with NAT64, (3) 6in4 tunneling over the existing IPv4 backbone. For a large enterprise with 10,000 devices, legacy IPv4-only applications, and a 3-year migration timeline, which approach is most appropriate and what are the critical considerations?",
-    "answers": [
-      {
-        "id": "a",
-        "text": "IPv6-only with NAT64 is best for large enterprises \u2014 it eliminates IPv4 immediately and the NAT64 gateway handles all legacy application compatibility; the 3-year timeline is unnecessary since NAT64 makes the transition instantaneous with no device-level changes required"
-      },
-      {
-        "id": "b",
-        "text": "6in4 tunneling is the best approach \u2014 tunneling IPv6 over the existing IPv4 backbone requires no changes to the production network; all 10,000 devices receive IPv6 addresses through tunnels; after 3 years the tunnels are removed; this approach has no operational complexity"
-      },
-      {
-        "id": "c",
-        "text": "Dual stack is the most appropriate approach for this enterprise \u2014 it allows gradual migration over 3 years without breaking legacy IPv4 applications; devices gain native IPv6 while retaining full IPv4 functionality; applications can be tested and migrated to IPv6 at their own pace; critical considerations include: validating that all applications function correctly on IPv6 (some may have IPv4 hardcoded addresses), updating security policies and monitoring tools for IPv6 traffic, address planning for the IPv6 prefix allocation, and training network operations staff on IPv6 troubleshooting; dual stack avoids the NAT64 compatibility risks for complex legacy applications"
-      },
-      {
-        "id": "d",
-        "text": "None of the three options is suitable \u2014 large enterprises must wait for a future IPv7 specification that provides a non-disruptive migration path; the 3-year timeline is insufficient for any IPv6 transition in an enterprise with 10,000 devices and legacy applications"
+    },
+    {
+      "id": 318,
+      "domain": "1.0",
+      "objective": "1.8",
+      "keyword": "IPv6 compatibility",
+      "difficulty": "hard",
+      "text": "An enterprise network architect is planning IPv6 deployment. Three options are proposed: (1) dual stack on all devices immediately, (2) IPv6-only with NAT64, (3) 6in4 tunneling over the existing IPv4 backbone. For a large enterprise with 10,000 devices, legacy IPv4-only applications, and a 3-year migration timeline, which approach is most appropriate and what are the critical considerations?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "IPv6-only with NAT64 is best for large enterprises \u2014 it eliminates IPv4 immediately and the NAT64 gateway handles all legacy application compatibility; the 3-year timeline is unnecessary since NAT64 makes the transition instantaneous with no device-level changes required"
+        },
+        {
+          "id": "b",
+          "text": "6in4 tunneling is the best approach \u2014 tunneling IPv6 over the existing IPv4 backbone requires no changes to the production network; all 10,000 devices receive IPv6 addresses through tunnels; after 3 years the tunnels are removed; this approach has no operational complexity"
+        },
+        {
+          "id": "c",
+          "text": "Dual stack is the most appropriate approach for this enterprise \u2014 it allows gradual migration over 3 years without breaking legacy IPv4 applications; devices gain native IPv6 while retaining full IPv4 functionality; applications can be tested and migrated to IPv6 at their own pace; critical considerations include: validating that all applications function correctly on IPv6 (some may have IPv4 hardcoded addresses), updating security policies and monitoring tools for IPv6 traffic, address planning for the IPv6 prefix allocation, and training network operations staff on IPv6 troubleshooting; dual stack avoids the NAT64 compatibility risks for complex legacy applications"
+        },
+        {
+          "id": "d",
+          "text": "None of the three options is suitable \u2014 large enterprises must wait for a future IPv7 specification that provides a non-disruptive migration path; the 3-year timeline is insufficient for any IPv6 transition in an enterprise with 10,000 devices and legacy applications"
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "NAT64 is not instantaneous and has significant application compatibility challenges \u2014 applications that embed IPv4 addresses in application-layer payloads (FTP active mode, SIP, some database connection strings) break with NAT64; enterprise applications often have IPv4 dependencies that NAT64 cannot handle; the 3-year timeline is realistic for proper dual stack migration.",
+        "b": "6in4 tunneling at enterprise scale (10,000 devices) creates significant operational complexity \u2014 managing thousands of static tunnels is administratively burdensome; tunnels add MTU constraints (IPv4 header overhead reduces the effective MTU); overlay tunneling for all internal traffic is less efficient than native dual stack; tunneling is a transitional mechanism not a replacement for proper dual stack deployment.",
+        "c": "Dual stack is the IETF-recommended and industry-standard approach for enterprise IPv6 migration \u2014 it provides the safest path by maintaining complete IPv4 functionality while adding IPv6 capabilities; organizations can prioritize IPv6 for new applications while legacy systems continue on IPv4; the 3-year timeline allows systematic application testing, network infrastructure upgrades, staff training, and security policy updates; Apple, Microsoft, Google, and major enterprises have all used dual stack for their IPv6 deployments. This is the correct answer.",
+        "d": "IPv7 does not exist as a planned specification \u2014 IPv6 is the current and future IP protocol; thousands of enterprises with millions of devices have successfully completed IPv6 migrations using dual stack; the 3-year timeline is entirely realistic for phased dual stack deployment."
       }
-    ],
-    "correct": "c",
-    "explanations": {
-      "a": "NAT64 is not instantaneous and has significant application compatibility challenges \u2014 applications that embed IPv4 addresses in application-layer payloads (FTP active mode, SIP, some database connection strings) break with NAT64; enterprise applications often have IPv4 dependencies that NAT64 cannot handle; the 3-year timeline is realistic for proper dual stack migration.",
-      "b": "6in4 tunneling at enterprise scale (10,000 devices) creates significant operational complexity \u2014 managing thousands of static tunnels is administratively burdensome; tunnels add MTU constraints (IPv4 header overhead reduces the effective MTU); overlay tunneling for all internal traffic is less efficient than native dual stack; tunneling is a transitional mechanism not a replacement for proper dual stack deployment.",
-      "c": "Dual stack is the IETF-recommended and industry-standard approach for enterprise IPv6 migration \u2014 it provides the safest path by maintaining complete IPv4 functionality while adding IPv6 capabilities; organizations can prioritize IPv6 for new applications while legacy systems continue on IPv4; the 3-year timeline allows systematic application testing, network infrastructure upgrades, staff training, and security policy updates; Apple, Microsoft, Google, and major enterprises have all used dual stack for their IPv6 deployments. This is the correct answer.",
-      "d": "IPv7 does not exist as a planned specification \u2014 IPv6 is the current and future IP protocol; thousands of enterprises with millions of devices have successfully completed IPv6 migrations using dual stack; the 3-year timeline is entirely realistic for phased dual stack deployment."
     }
-  }
-
   ]
 }

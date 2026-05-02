@@ -10827,6 +10827,1722 @@
         "c": "Jitter means jitter is variation in packet delay that disrupts real-time traffic such as voice and video. External interference means external interference is unwanted radio or electrical noise from nearby devices, structures, or signals that disrupts wireless or cabling performance.",
         "d": "Poor VoIP quality means poor VoIP quality includes choppy audio, delay, echo, dropped calls, or robotic sound caused by latency, jitter, packet loss, congestion, or QoS problems. External interference means external interference is unwanted radio or electrical noise from nearby devices, structures, or signals that disrupts wireless or cabling performance."
       }
+    },
+    {
+      "id": 2049,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Corporate policies and impacts",
+      "difficulty": "easy",
+      "text": "Which option best defines Corporate policies and impacts in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Corporate policies and impacts must be considered before changes because troubleshooting can affect users, data, security, compliance, and business operations."
+        },
+        {
+          "id": "b",
+          "text": "Questioning the obvious means checking simple causes first, such as power, cables, input source, WiFi status, or paper in a printer."
+        },
+        {
+          "id": "c",
+          "text": "Conducting research means using vendor documentation, knowledge bases, logs, or internal records when symptoms require more information."
+        },
+        {
+          "id": "d",
+          "text": "Testing the theory means performing a focused check to confirm or eliminate the suspected cause."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Corporate policies and impacts must be considered before changes because troubleshooting can affect users, data, security, compliance, and business operations. This step prevents a technical fix from creating a business or security problem. This is the correct answer.",
+        "b": "Question the obvious means questioning the obvious means checking simple causes first, such as power, cables, input source, WiFi status, or paper in a printer. Corporate policies and impacts means corporate policies and impacts must be considered before changes because troubleshooting can affect users, data, security, compliance, and business operations.",
+        "c": "Conduct external or internal research means conducting research means using vendor documentation, knowledge bases, logs, or internal records when symptoms require more information. Corporate policies and impacts means corporate policies and impacts must be considered before changes because troubleshooting can affect users, data, security, compliance, and business operations.",
+        "d": "Test the theory means testing the theory means performing a focused check to confirm or eliminate the suspected cause. Corporate policies and impacts means corporate policies and impacts must be considered before changes because troubleshooting can affect users, data, security, compliance, and business operations."
+      }
+    },
+    {
+      "id": 2050,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Identify the problem",
+      "difficulty": "easy",
+      "text": "Which option best defines Identify the problem in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Conducting research means using vendor documentation, knowledge bases, logs, or internal records when symptoms require more information."
+        },
+        {
+          "id": "b",
+          "text": "Identifying the problem means defining what is actually failing before changing settings or replacing parts."
+        },
+        {
+          "id": "c",
+          "text": "Testing the theory means performing a focused check to confirm or eliminate the suspected cause."
+        },
+        {
+          "id": "d",
+          "text": "Re-establishing a theory or escalating is required when the test does not confirm the suspected cause."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Conduct external or internal research means conducting research means using vendor documentation, knowledge bases, logs, or internal records when symptoms require more information. Identify the problem means identifying the problem means defining what is actually failing before changing settings or replacing parts.",
+        "b": "Identifying the problem means defining what is actually failing before changing settings or replacing parts. Clear problem identification keeps troubleshooting focused on evidence rather than guesses. This is the correct answer.",
+        "c": "Test the theory means testing the theory means performing a focused check to confirm or eliminate the suspected cause. Identify the problem means identifying the problem means defining what is actually failing before changing settings or replacing parts.",
+        "d": "Re-establish theory or escalate means re-establishing a theory or escalating is required when the test does not confirm the suspected cause. Identify the problem means identifying the problem means defining what is actually failing before changing settings or replacing parts."
+      }
+    },
+    {
+      "id": 2051,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Gather information from the user",
+      "difficulty": "easy",
+      "text": "Which option best defines Gather information from the user in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Testing the theory means performing a focused check to confirm or eliminate the suspected cause."
+        },
+        {
+          "id": "b",
+          "text": "Re-establishing a theory or escalating is required when the test does not confirm the suspected cause."
+        },
+        {
+          "id": "c",
+          "text": "Gathering information from the user collects symptoms, error messages, timing, scope, and recent activity from the person experiencing the issue."
+        },
+        {
+          "id": "d",
+          "text": "Establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Test the theory means testing the theory means performing a focused check to confirm or eliminate the suspected cause. Gather information from the user means gathering information from the user collects symptoms, error messages, timing, scope, and recent activity from the person experiencing the issue.",
+        "b": "Re-establish theory or escalate means re-establishing a theory or escalating is required when the test does not confirm the suspected cause. Gather information from the user means gathering information from the user collects symptoms, error messages, timing, scope, and recent activity from the person experiencing the issue.",
+        "c": "Gathering information from the user collects symptoms, error messages, timing, scope, and recent activity from the person experiencing the issue. User information often reveals what changed or how the failure appears in real use. This is the correct answer.",
+        "d": "Establish a plan of action means establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution. Gather information from the user means gathering information from the user collects symptoms, error messages, timing, scope, and recent activity from the person experiencing the issue."
+      }
+    },
+    {
+      "id": 2052,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Identify user changes",
+      "difficulty": "easy",
+      "text": "Which option best defines Identify user changes in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Re-establishing a theory or escalating is required when the test does not confirm the suspected cause."
+        },
+        {
+          "id": "b",
+          "text": "Establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution."
+        },
+        {
+          "id": "c",
+          "text": "Verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair."
+        },
+        {
+          "id": "d",
+          "text": "Identifying user changes means asking what hardware, software, settings, cables, location, or behavior changed before the issue began."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Re-establish theory or escalate means re-establishing a theory or escalating is required when the test does not confirm the suspected cause. Identify user changes means identifying user changes means asking what hardware, software, settings, cables, location, or behavior changed before the issue began.",
+        "b": "Establish a plan of action means establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution. Identify user changes means identifying user changes means asking what hardware, software, settings, cables, location, or behavior changed before the issue began.",
+        "c": "Verify full system functionality means verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair. Identify user changes means identifying user changes means asking what hardware, software, settings, cables, location, or behavior changed before the issue began.",
+        "d": "Identifying user changes means asking what hardware, software, settings, cables, location, or behavior changed before the issue began. Recent changes are often strong clues to the root cause. This is the correct answer."
+      }
+    },
+    {
+      "id": 2053,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Perform backups before changes",
+      "difficulty": "easy",
+      "text": "Which option best defines Perform backups before changes in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Performing backups before changes protects important data before troubleshooting actions that could alter, delete, or corrupt information."
+        },
+        {
+          "id": "b",
+          "text": "Establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution."
+        },
+        {
+          "id": "c",
+          "text": "Verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair."
+        },
+        {
+          "id": "d",
+          "text": "Documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Performing backups before changes protects important data before troubleshooting actions that could alter, delete, or corrupt information. Backups reduce risk when the repair process touches storage, operating systems, or user files. This is the correct answer.",
+        "b": "Establish a plan of action means establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution. Perform backups before changes means performing backups before changes protects important data before troubleshooting actions that could alter, delete, or corrupt information.",
+        "c": "Verify full system functionality means verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair. Perform backups before changes means performing backups before changes protects important data before troubleshooting actions that could alter, delete, or corrupt information.",
+        "d": "Document findings, actions, and outcomes means documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result. Perform backups before changes means performing backups before changes protects important data before troubleshooting actions that could alter, delete, or corrupt information."
+      }
+    },
+    {
+      "id": 2054,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Inquire about environmental changes",
+      "difficulty": "easy",
+      "text": "Which option best defines Inquire about environmental changes in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair."
+        },
+        {
+          "id": "b",
+          "text": "Inquiring about environmental changes checks for heat, dust, moisture, power, construction, cabling, or location changes that could affect equipment."
+        },
+        {
+          "id": "c",
+          "text": "Documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result."
+        },
+        {
+          "id": "d",
+          "text": "POST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Verify full system functionality means verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair. Inquire about environmental changes means inquiring about environmental changes checks for heat, dust, moisture, power, construction, cabling, or location changes that could affect equipment.",
+        "b": "Inquiring about environmental changes checks for heat, dust, moisture, power, construction, cabling, or location changes that could affect equipment. Environmental causes can create hardware and network symptoms that look like component failures. This is the correct answer.",
+        "c": "Document findings, actions, and outcomes means documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result. Inquire about environmental changes means inquiring about environmental changes checks for heat, dust, moisture, power, construction, cabling, or location changes that could affect equipment.",
+        "d": "POST beeps means pOST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads. Inquire about environmental changes means inquiring about environmental changes checks for heat, dust, moisture, power, construction, cabling, or location changes that could affect equipment."
+      }
+    },
+    {
+      "id": 2055,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Establish a theory of probable cause",
+      "difficulty": "easy",
+      "text": "Which option best defines Establish a theory of probable cause in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result."
+        },
+        {
+          "id": "b",
+          "text": "POST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads."
+        },
+        {
+          "id": "c",
+          "text": "Establishing a theory of probable cause means forming the most likely explanation for the symptoms based on gathered evidence."
+        },
+        {
+          "id": "d",
+          "text": "A blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Document findings, actions, and outcomes means documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result. Establish a theory of probable cause means establishing a theory of probable cause means forming the most likely explanation for the symptoms based on gathered evidence.",
+        "b": "POST beeps means pOST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads. Establish a theory of probable cause means establishing a theory of probable cause means forming the most likely explanation for the symptoms based on gathered evidence.",
+        "c": "Establishing a theory of probable cause means forming the most likely explanation for the symptoms based on gathered evidence. The theory guides what to test next instead of applying random fixes. This is the correct answer.",
+        "d": "Blue screen of death means a blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure. Establish a theory of probable cause means establishing a theory of probable cause means forming the most likely explanation for the symptoms based on gathered evidence."
+      }
+    },
+    {
+      "id": 2056,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Question the obvious",
+      "difficulty": "easy",
+      "text": "Which option best defines Question the obvious in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "POST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads."
+        },
+        {
+          "id": "b",
+          "text": "A blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure."
+        },
+        {
+          "id": "c",
+          "text": "A black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related."
+        },
+        {
+          "id": "d",
+          "text": "Questioning the obvious means checking simple causes first, such as power, cables, input source, WiFi status, or paper in a printer."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "POST beeps means pOST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads. Question the obvious means questioning the obvious means checking simple causes first, such as power, cables, input source, WiFi status, or paper in a printer.",
+        "b": "Blue screen of death means a blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure. Question the obvious means questioning the obvious means checking simple causes first, such as power, cables, input source, WiFi status, or paper in a printer.",
+        "c": "Black screen means a black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related. Question the obvious means questioning the obvious means checking simple causes first, such as power, cables, input source, WiFi status, or paper in a printer.",
+        "d": "Questioning the obvious means checking simple causes first, such as power, cables, input source, WiFi status, or paper in a printer. Simple causes are common and can be resolved before deeper diagnostics are needed. This is the correct answer."
+      }
+    },
+    {
+      "id": 2057,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Conduct external or internal research",
+      "difficulty": "easy",
+      "text": "Which option best defines Conduct external or internal research in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Conducting research means using vendor documentation, knowledge bases, logs, or internal records when symptoms require more information."
+        },
+        {
+          "id": "b",
+          "text": "A blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure."
+        },
+        {
+          "id": "c",
+          "text": "A black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related."
+        },
+        {
+          "id": "d",
+          "text": "No power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Conducting research means using vendor documentation, knowledge bases, logs, or internal records when symptoms require more information. Research is useful when the issue is unfamiliar or may match a known problem. This is the correct answer.",
+        "b": "Blue screen of death means a blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure. Conduct external or internal research means conducting research means using vendor documentation, knowledge bases, logs, or internal records when symptoms require more information.",
+        "c": "Black screen means a black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related. Conduct external or internal research means conducting research means using vendor documentation, knowledge bases, logs, or internal records when symptoms require more information.",
+        "d": "No power means no power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response. Conduct external or internal research means conducting research means using vendor documentation, knowledge bases, logs, or internal records when symptoms require more information."
+      }
+    },
+    {
+      "id": 2058,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Test the theory",
+      "difficulty": "easy",
+      "text": "Which option best defines Test the theory in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related."
+        },
+        {
+          "id": "b",
+          "text": "Testing the theory means performing a focused check to confirm or eliminate the suspected cause."
+        },
+        {
+          "id": "c",
+          "text": "No power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response."
+        },
+        {
+          "id": "d",
+          "text": "Sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Black screen means a black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related. Test the theory means testing the theory means performing a focused check to confirm or eliminate the suspected cause.",
+        "b": "Testing the theory means performing a focused check to confirm or eliminate the suspected cause. Testing prevents a technician from treating an unverified guess as the root cause. This is the correct answer.",
+        "c": "No power means no power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response. Test the theory means testing the theory means performing a focused check to confirm or eliminate the suspected cause.",
+        "d": "Sluggish performance means sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware. Test the theory means testing the theory means performing a focused check to confirm or eliminate the suspected cause."
+      }
+    },
+    {
+      "id": 2059,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Re-establish theory or escalate",
+      "difficulty": "easy",
+      "text": "Which option best defines Re-establish theory or escalate in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "No power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response."
+        },
+        {
+          "id": "b",
+          "text": "Sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware."
+        },
+        {
+          "id": "c",
+          "text": "Re-establishing a theory or escalating is required when the test does not confirm the suspected cause."
+        },
+        {
+          "id": "d",
+          "text": "Overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "No power means no power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response. Re-establish theory or escalate means re-establishing a theory or escalating is required when the test does not confirm the suspected cause.",
+        "b": "Sluggish performance means sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware. Re-establish theory or escalate means re-establishing a theory or escalating is required when the test does not confirm the suspected cause.",
+        "c": "Re-establishing a theory or escalating is required when the test does not confirm the suspected cause. A failed test means the technician needs a new explanation or help from a higher support level. This is the correct answer.",
+        "d": "Overheating means overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load. Re-establish theory or escalate means re-establishing a theory or escalating is required when the test does not confirm the suspected cause."
+      }
+    },
+    {
+      "id": 2060,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Establish a plan of action",
+      "difficulty": "easy",
+      "text": "Which option best defines Establish a plan of action in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware."
+        },
+        {
+          "id": "b",
+          "text": "Overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load."
+        },
+        {
+          "id": "c",
+          "text": "A burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit."
+        },
+        {
+          "id": "d",
+          "text": "Establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Sluggish performance means sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware. Establish a plan of action means establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution.",
+        "b": "Overheating means overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load. Establish a plan of action means establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution.",
+        "c": "Burning smell means a burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit. Establish a plan of action means establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution.",
+        "d": "Establishing a plan of action means deciding the corrective steps and considering their effects before implementing the solution. Planning reduces downtime, data loss, and unexpected side effects. This is the correct answer."
+      }
+    },
+    {
+      "id": 2061,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Verify full system functionality",
+      "difficulty": "easy",
+      "text": "Which option best defines Verify full system functionality in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair."
+        },
+        {
+          "id": "b",
+          "text": "Overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load."
+        },
+        {
+          "id": "c",
+          "text": "A burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit."
+        },
+        {
+          "id": "d",
+          "text": "Intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair. Verification ensures the fix actually solved the problem rather than hiding a symptom. This is the correct answer.",
+        "b": "Overheating means overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load. Verify full system functionality means verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair.",
+        "c": "Burning smell means a burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit. Verify full system functionality means verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair.",
+        "d": "Intermittent shutdown means intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware. Verify full system functionality means verifying full system functionality confirms that the original issue is resolved and that related functions still work after the repair."
+      }
+    },
+    {
+      "id": 2062,
+      "domain": "5.0",
+      "objective": "5.1",
+      "keyword": "Document findings, actions, and outcomes",
+      "difficulty": "easy",
+      "text": "Which option best defines Document findings, actions, and outcomes in objective 5.1 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit."
+        },
+        {
+          "id": "b",
+          "text": "Documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result."
+        },
+        {
+          "id": "c",
+          "text": "Intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware."
+        },
+        {
+          "id": "d",
+          "text": "Application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Burning smell means a burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit. Document findings, actions, and outcomes means documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result.",
+        "b": "Documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result. Documentation helps future troubleshooting, audits, training, and repeat incidents. This is the correct answer.",
+        "c": "Intermittent shutdown means intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware. Document findings, actions, and outcomes means documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result.",
+        "d": "Application crashes means application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware. Document findings, actions, and outcomes means documenting findings, actions, and outcomes records what was discovered, what was changed, and the final result."
+      }
+    },
+    {
+      "id": 2063,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "POST beeps",
+      "difficulty": "easy",
+      "text": "Which option best defines POST beeps in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware."
+        },
+        {
+          "id": "b",
+          "text": "Application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware."
+        },
+        {
+          "id": "c",
+          "text": "POST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads."
+        },
+        {
+          "id": "d",
+          "text": "A grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Intermittent shutdown means intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware. POST beeps means pOST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads.",
+        "b": "Application crashes means application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware. POST beeps means pOST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads.",
+        "c": "POST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads. Beep patterns often point to memory, video, motherboard, or other hardware faults. This is the correct answer.",
+        "d": "Grinding noise means a grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component. POST beeps means pOST beeps are audible diagnostic codes produced during startup to indicate hardware problems detected before the operating system loads."
+      }
+    },
+    {
+      "id": 2064,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Blue screen of death",
+      "difficulty": "easy",
+      "text": "Which option best defines Blue screen of death in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware."
+        },
+        {
+          "id": "b",
+          "text": "A grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component."
+        },
+        {
+          "id": "c",
+          "text": "Capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure."
+        },
+        {
+          "id": "d",
+          "text": "A blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Application crashes means application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware. Blue screen of death means a blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure.",
+        "b": "Grinding noise means a grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component. Blue screen of death means a blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure.",
+        "c": "Capacitor swelling means capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure. Blue screen of death means a blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure.",
+        "d": "A blue screen of death is a Windows crash screen that usually indicates a severe driver, hardware, memory, or kernel-level failure. BSOD troubleshooting focuses on stop codes, recent changes, drivers, and hardware stability. This is the correct answer."
+      }
+    },
+    {
+      "id": 2065,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Black screen",
+      "difficulty": "easy",
+      "text": "Which option best defines Black screen in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related."
+        },
+        {
+          "id": "b",
+          "text": "A grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component."
+        },
+        {
+          "id": "c",
+          "text": "Capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure."
+        },
+        {
+          "id": "d",
+          "text": "An inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "A black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related. Black screen troubleshooting starts by separating display failure from system startup failure. This is the correct answer.",
+        "b": "Grinding noise means a grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component. Black screen means a black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related.",
+        "c": "Capacitor swelling means capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure. Black screen means a black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related.",
+        "d": "Inaccurate system date and time means an inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure. Black screen means a black screen means the system or display is not presenting usable video output even though the cause may be power, display, GPU, cabling, or boot-related."
+      }
+    },
+    {
+      "id": 2066,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "No power",
+      "difficulty": "easy",
+      "text": "Which option best defines No power in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure."
+        },
+        {
+          "id": "b",
+          "text": "No power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response."
+        },
+        {
+          "id": "c",
+          "text": "An inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure."
+        },
+        {
+          "id": "d",
+          "text": "LED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Capacitor swelling means capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure. No power means no power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response.",
+        "b": "No power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response. Power source, adapter, PSU, battery, cabling, and power button checks come before OS troubleshooting. This is the correct answer.",
+        "c": "Inaccurate system date and time means an inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure. No power means no power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response.",
+        "d": "LED status indicators means lED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states. No power means no power means the device shows no signs of electrical operation, such as fans, lights, screen activity, or startup response."
+      }
+    },
+    {
+      "id": 2067,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Sluggish performance",
+      "difficulty": "easy",
+      "text": "Which option best defines Sluggish performance in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "An inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure."
+        },
+        {
+          "id": "b",
+          "text": "LED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states."
+        },
+        {
+          "id": "c",
+          "text": "Sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware."
+        },
+        {
+          "id": "d",
+          "text": "Grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Inaccurate system date and time means an inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure. Sluggish performance means sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware.",
+        "b": "LED status indicators means lED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states. Sluggish performance means sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware.",
+        "c": "Sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware. Performance troubleshooting compares CPU, RAM, storage, temperature, and software load. This is the correct answer.",
+        "d": "Storage grinding noises means grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem. Sluggish performance means sluggish performance means the system responds slowly because of possible resource limits, failing storage, overheating, malware, background tasks, or insufficient hardware."
+      }
+    },
+    {
+      "id": 2068,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Overheating",
+      "difficulty": "easy",
+      "text": "Which option best defines Overheating in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "LED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states."
+        },
+        {
+          "id": "b",
+          "text": "Grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem."
+        },
+        {
+          "id": "c",
+          "text": "Clicking sounds from a hard drive often indicate actuator, head, or mechanical failure."
+        },
+        {
+          "id": "d",
+          "text": "Overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "LED status indicators means lED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states. Overheating means overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load.",
+        "b": "Storage grinding noises means grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem. Overheating means overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load.",
+        "c": "Clicking sounds means clicking sounds from a hard drive often indicate actuator, head, or mechanical failure. Overheating means overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load.",
+        "d": "Overheating occurs when a component exceeds safe operating temperatures due to cooling failure, dust, poor airflow, dried thermal material, or heavy load. Thermal problems can cause throttling, shutdowns, crashes, and hardware damage. This is the correct answer."
+      }
+    },
+    {
+      "id": 2069,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Burning smell",
+      "difficulty": "easy",
+      "text": "Which option best defines Burning smell in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit."
+        },
+        {
+          "id": "b",
+          "text": "Grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem."
+        },
+        {
+          "id": "c",
+          "text": "Clicking sounds from a hard drive often indicate actuator, head, or mechanical failure."
+        },
+        {
+          "id": "d",
+          "text": "Bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "A burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit. The system should be powered down and inspected because continued operation can create safety and hardware risks. This is the correct answer.",
+        "b": "Storage grinding noises means grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem. Burning smell means a burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit.",
+        "c": "Clicking sounds means clicking sounds from a hard drive often indicate actuator, head, or mechanical failure. Burning smell means a burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit.",
+        "d": "Bootable device not found means bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system. Burning smell means a burning smell indicates a possible electrical fault, overheating component, failing power supply, or damaged circuit."
+      }
+    },
+    {
+      "id": 2070,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Intermittent shutdown",
+      "difficulty": "easy",
+      "text": "Which option best defines Intermittent shutdown in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Clicking sounds from a hard drive often indicate actuator, head, or mechanical failure."
+        },
+        {
+          "id": "b",
+          "text": "Intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware."
+        },
+        {
+          "id": "c",
+          "text": "Bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system."
+        },
+        {
+          "id": "d",
+          "text": "Data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Clicking sounds means clicking sounds from a hard drive often indicate actuator, head, or mechanical failure. Intermittent shutdown means intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware.",
+        "b": "Intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware. Random shutdowns require checking logs, temperatures, power delivery, and recent hardware changes. This is the correct answer.",
+        "c": "Bootable device not found means bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system. Intermittent shutdown means intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware.",
+        "d": "Data loss or corruption means data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues. Intermittent shutdown means intermittent shutdown means the system powers off unexpectedly at irregular times, often due to overheating, power instability, battery issues, or failing hardware."
+      }
+    },
+    {
+      "id": 2071,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Application crashes",
+      "difficulty": "easy",
+      "text": "Which option best defines Application crashes in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system."
+        },
+        {
+          "id": "b",
+          "text": "Data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues."
+        },
+        {
+          "id": "c",
+          "text": "Application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware."
+        },
+        {
+          "id": "d",
+          "text": "RAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Bootable device not found means bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system. Application crashes means application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware.",
+        "b": "Data loss or corruption means data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues. Application crashes means application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware.",
+        "c": "Application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware. Repeated crashes can indicate either an application-specific issue or a broader system problem. This is the correct answer.",
+        "d": "RAID failure means rAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data. Application crashes means application crashes occur when a program closes or stops responding because of software bugs, corrupted files, driver conflicts, insufficient resources, or unstable hardware."
+      }
+    },
+    {
+      "id": 2072,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Grinding noise",
+      "difficulty": "easy",
+      "text": "Which option best defines Grinding noise in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues."
+        },
+        {
+          "id": "b",
+          "text": "RAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data."
+        },
+        {
+          "id": "c",
+          "text": "A S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem."
+        },
+        {
+          "id": "d",
+          "text": "A grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Data loss or corruption means data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues. Grinding noise means a grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component.",
+        "b": "RAID failure means rAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data. Grinding noise means a grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component.",
+        "c": "S.M.A.R.T. failure means a S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem. Grinding noise means a grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component.",
+        "d": "A grinding noise usually indicates a mechanical problem such as a failing fan, hard drive, optical drive, or printer component. Mechanical noises should be isolated quickly because moving parts may fail completely. This is the correct answer."
+      }
+    },
+    {
+      "id": 2073,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Capacitor swelling",
+      "difficulty": "easy",
+      "text": "Which option best defines Capacitor swelling in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure."
+        },
+        {
+          "id": "b",
+          "text": "RAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data."
+        },
+        {
+          "id": "c",
+          "text": "A S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem."
+        },
+        {
+          "id": "d",
+          "text": "Extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure. Swollen capacitors can cause instability, boot failure, or complete hardware failure. This is the correct answer.",
+        "b": "RAID failure means rAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data. Capacitor swelling means capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure.",
+        "c": "S.M.A.R.T. failure means a S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem. Capacitor swelling means capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure.",
+        "d": "Extended read/write times means extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load. Capacitor swelling means capacitor swelling is a visible bulging or leaking capacitor condition that indicates motherboard or power circuitry failure."
+      }
+    },
+    {
+      "id": 2074,
+      "domain": "5.0",
+      "objective": "5.2",
+      "keyword": "Inaccurate system date and time",
+      "difficulty": "easy",
+      "text": "Which option best defines Inaccurate system date and time in objective 5.2 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem."
+        },
+        {
+          "id": "b",
+          "text": "An inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure."
+        },
+        {
+          "id": "c",
+          "text": "Extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load."
+        },
+        {
+          "id": "d",
+          "text": "IOPS measures input/output operations per second and describes how many read or write operations storage can handle."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "S.M.A.R.T. failure means a S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem. Inaccurate system date and time means an inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure.",
+        "b": "An inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure. Incorrect time can affect certificates, authentication, logs, and scheduled tasks. This is the correct answer.",
+        "c": "Extended read/write times means extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load. Inaccurate system date and time means an inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure.",
+        "d": "IOPS means iOPS measures input/output operations per second and describes how many read or write operations storage can handle. Inaccurate system date and time means an inaccurate system date and time can indicate a depleted CMOS battery, incorrect firmware settings, or time synchronization failure."
+      }
+    },
+    {
+      "id": 2075,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "LED status indicators",
+      "difficulty": "easy",
+      "text": "Which option best defines LED status indicators in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load."
+        },
+        {
+          "id": "b",
+          "text": "IOPS measures input/output operations per second and describes how many read or write operations storage can handle."
+        },
+        {
+          "id": "c",
+          "text": "LED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states."
+        },
+        {
+          "id": "d",
+          "text": "Missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Extended read/write times means extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load. LED status indicators means lED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states.",
+        "b": "IOPS means iOPS measures input/output operations per second and describes how many read or write operations storage can handle. LED status indicators means lED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states.",
+        "c": "LED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states. Indicator patterns help identify failed or active drives without opening software tools first. This is the correct answer.",
+        "d": "Missing drives in OS means missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly. LED status indicators means lED status indicators on drives or arrays provide visual information about activity, fault, rebuild, or connectivity states."
+      }
+    },
+    {
+      "id": 2076,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "Storage grinding noises",
+      "difficulty": "easy",
+      "text": "Which option best defines Storage grinding noises in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "IOPS measures input/output operations per second and describes how many read or write operations storage can handle."
+        },
+        {
+          "id": "b",
+          "text": "Missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly."
+        },
+        {
+          "id": "c",
+          "text": "Incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1."
+        },
+        {
+          "id": "d",
+          "text": "Grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "IOPS means iOPS measures input/output operations per second and describes how many read or write operations storage can handle. Storage grinding noises means grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem.",
+        "b": "Missing drives in OS means missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly. Storage grinding noises means grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem.",
+        "c": "Incorrect data source means incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1. Storage grinding noises means grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem.",
+        "d": "Grinding noises from storage devices usually indicate mechanical hard drive failure or another moving component problem. Mechanical drive noises should prompt immediate backup and replacement planning. This is the correct answer."
+      }
+    },
+    {
+      "id": 2077,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "Clicking sounds",
+      "difficulty": "easy",
+      "text": "Which option best defines Clicking sounds in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Clicking sounds from a hard drive often indicate actuator, head, or mechanical failure."
+        },
+        {
+          "id": "b",
+          "text": "Missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly."
+        },
+        {
+          "id": "c",
+          "text": "Incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1."
+        },
+        {
+          "id": "d",
+          "text": "Physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Clicking sounds from a hard drive often indicate actuator, head, or mechanical failure. Clicking drives are at high risk of data loss and should not be treated as simple software issues. This is the correct answer.",
+        "b": "Missing drives in OS means missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly. Clicking sounds means clicking sounds from a hard drive often indicate actuator, head, or mechanical failure.",
+        "c": "Incorrect data source means incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1. Clicking sounds means clicking sounds from a hard drive often indicate actuator, head, or mechanical failure.",
+        "d": "Physical cabling issues means physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables. Clicking sounds means clicking sounds from a hard drive often indicate actuator, head, or mechanical failure."
+      }
+    },
+    {
+      "id": 2078,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "Bootable device not found",
+      "difficulty": "easy",
+      "text": "Which option best defines Bootable device not found in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1."
+        },
+        {
+          "id": "b",
+          "text": "Bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system."
+        },
+        {
+          "id": "c",
+          "text": "Physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables."
+        },
+        {
+          "id": "d",
+          "text": "A burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Incorrect data source means incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1. Bootable device not found means bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system.",
+        "b": "Bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system. The cause may be boot order, disconnected drive, failed drive, corrupted boot files, or missing OS. This is the correct answer.",
+        "c": "Physical cabling issues means physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables. Bootable device not found means bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system.",
+        "d": "Burned-out bulb means a burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition. Bootable device not found means bootable device not found means the system firmware cannot locate a valid boot device or bootable operating system."
+      }
+    },
+    {
+      "id": 2079,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "Data loss or corruption",
+      "difficulty": "easy",
+      "text": "Which option best defines Data loss or corruption in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables."
+        },
+        {
+          "id": "b",
+          "text": "A burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition."
+        },
+        {
+          "id": "c",
+          "text": "Data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues."
+        },
+        {
+          "id": "d",
+          "text": "A fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Physical cabling issues means physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables. Data loss or corruption means data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues.",
+        "b": "Burned-out bulb means a burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition. Data loss or corruption means data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues.",
+        "c": "Data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues. This symptom requires protecting remaining data before aggressive repair attempts. This is the correct answer.",
+        "d": "Fuzzy image means a fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems. Data loss or corruption means data loss or corruption means files are missing, unreadable, altered, or damaged due to storage failure, unsafe shutdowns, malware, or filesystem issues."
+      }
+    },
+    {
+      "id": 2080,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "RAID failure",
+      "difficulty": "easy",
+      "text": "Which option best defines RAID failure in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition."
+        },
+        {
+          "id": "b",
+          "text": "A fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems."
+        },
+        {
+          "id": "c",
+          "text": "Display burn-in is persistent image retention caused by static content remaining on a screen for long periods."
+        },
+        {
+          "id": "d",
+          "text": "RAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Burned-out bulb means a burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition. RAID failure means rAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data.",
+        "b": "Fuzzy image means a fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems. RAID failure means rAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data.",
+        "c": "Display burn-in means display burn-in is persistent image retention caused by static content remaining on a screen for long periods. RAID failure means rAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data.",
+        "d": "RAID failure occurs when one or more disks or the controller cause the array to become degraded, unavailable, or unable to protect data. RAID troubleshooting depends on the RAID level and whether redundancy still exists. This is the correct answer."
+      }
+    },
+    {
+      "id": 2081,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "S.M.A.R.T. failure",
+      "difficulty": "easy",
+      "text": "Which option best defines S.M.A.R.T. failure in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem."
+        },
+        {
+          "id": "b",
+          "text": "A fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems."
+        },
+        {
+          "id": "c",
+          "text": "Display burn-in is persistent image retention caused by static content remaining on a screen for long periods."
+        },
+        {
+          "id": "d",
+          "text": "Dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "A S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem. S.M.A.R.T. warnings should trigger backup and drive replacement rather than being ignored. This is the correct answer.",
+        "b": "Fuzzy image means a fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems. S.M.A.R.T. failure means a S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem.",
+        "c": "Display burn-in means display burn-in is persistent image retention caused by static content remaining on a screen for long periods. S.M.A.R.T. failure means a S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem.",
+        "d": "Dead pixels means dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly. S.M.A.R.T. failure means a S.M.A.R.T. failure warning means the drive\u2019s self-monitoring data predicts or reports a serious reliability problem."
+      }
+    },
+    {
+      "id": 2082,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "Extended read/write times",
+      "difficulty": "easy",
+      "text": "Which option best defines Extended read/write times in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Display burn-in is persistent image retention caused by static content remaining on a screen for long periods."
+        },
+        {
+          "id": "b",
+          "text": "Extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load."
+        },
+        {
+          "id": "c",
+          "text": "Dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly."
+        },
+        {
+          "id": "d",
+          "text": "A flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Display burn-in means display burn-in is persistent image retention caused by static content remaining on a screen for long periods. Extended read/write times means extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load.",
+        "b": "Extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load. Slow storage can cause application delays, boot delays, and apparent system sluggishness. This is the correct answer.",
+        "c": "Dead pixels means dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly. Extended read/write times means extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load.",
+        "d": "Flashing screen means a flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability. Extended read/write times means extended read/write times mean storage operations are taking unusually long due to failing media, fragmentation, controller issues, interface problems, or heavy load."
+      }
+    },
+    {
+      "id": 2083,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "IOPS",
+      "difficulty": "easy",
+      "text": "Which option best defines IOPS in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly."
+        },
+        {
+          "id": "b",
+          "text": "A flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability."
+        },
+        {
+          "id": "c",
+          "text": "IOPS measures input/output operations per second and describes how many read or write operations storage can handle."
+        },
+        {
+          "id": "d",
+          "text": "Incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Dead pixels means dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly. IOPS means iOPS measures input/output operations per second and describes how many read or write operations storage can handle.",
+        "b": "Flashing screen means a flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability. IOPS means iOPS measures input/output operations per second and describes how many read or write operations storage can handle.",
+        "c": "IOPS measures input/output operations per second and describes how many read or write operations storage can handle. Low IOPS can explain poor performance even when total storage capacity is sufficient. This is the correct answer.",
+        "d": "Incorrect color display means incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion. IOPS means iOPS measures input/output operations per second and describes how many read or write operations storage can handle."
+      }
+    },
+    {
+      "id": 2084,
+      "domain": "5.0",
+      "objective": "5.3",
+      "keyword": "Missing drives in OS",
+      "difficulty": "easy",
+      "text": "Which option best defines Missing drives in OS in objective 5.3 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability."
+        },
+        {
+          "id": "b",
+          "text": "Incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion."
+        },
+        {
+          "id": "c",
+          "text": "Display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output."
+        },
+        {
+          "id": "d",
+          "text": "Missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Flashing screen means a flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability. Missing drives in OS means missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly.",
+        "b": "Incorrect color display means incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion. Missing drives in OS means missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly.",
+        "c": "Display audio issues means display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output. Missing drives in OS means missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly.",
+        "d": "Missing drives in the operating system indicate that storage is not detected, mounted, partitioned, assigned a drive letter, or functioning correctly. Troubleshooting checks firmware detection, cables, disk management, drivers, and drive health. This is the correct answer."
+      }
+    },
+    {
+      "id": 2085,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Incorrect data source",
+      "difficulty": "easy",
+      "text": "Which option best defines Incorrect data source in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1."
+        },
+        {
+          "id": "b",
+          "text": "Incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion."
+        },
+        {
+          "id": "c",
+          "text": "Display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output."
+        },
+        {
+          "id": "d",
+          "text": "A dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1. Input selection should be checked before replacing cables or hardware. This is the correct answer.",
+        "b": "Incorrect color display means incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion. Incorrect data source means incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1.",
+        "c": "Display audio issues means display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output. Incorrect data source means incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1.",
+        "d": "Dim image means a dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light. Incorrect data source means incorrect data source means the display or projector is set to the wrong input, such as HDMI 2 instead of HDMI 1."
+      }
+    },
+    {
+      "id": 2086,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Physical cabling issues",
+      "difficulty": "easy",
+      "text": "Which option best defines Physical cabling issues in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output."
+        },
+        {
+          "id": "b",
+          "text": "Physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables."
+        },
+        {
+          "id": "c",
+          "text": "A dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light."
+        },
+        {
+          "id": "d",
+          "text": "Intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Display audio issues means display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output. Physical cabling issues means physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables.",
+        "b": "Physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables. Cable faults can cause no image, intermittent display, artifacts, or missing audio. This is the correct answer.",
+        "c": "Dim image means a dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light. Physical cabling issues means physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables.",
+        "d": "Intermittent projector shutdown means intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues. Physical cabling issues means physical cabling issues include loose, damaged, incompatible, or incorrectly connected video or audio cables."
+      }
+    },
+    {
+      "id": 2087,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Burned-out bulb",
+      "difficulty": "easy",
+      "text": "Which option best defines Burned-out bulb in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light."
+        },
+        {
+          "id": "b",
+          "text": "Intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues."
+        },
+        {
+          "id": "c",
+          "text": "A burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition."
+        },
+        {
+          "id": "d",
+          "text": "Poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Dim image means a dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light. Burned-out bulb means a burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition.",
+        "b": "Intermittent projector shutdown means intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues. Burned-out bulb means a burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition.",
+        "c": "A burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition. Projector lamp life and warning indicators help confirm this symptom. This is the correct answer.",
+        "d": "Poor battery health means poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage. Burned-out bulb means a burned-out bulb prevents a lamp-based projector from producing a normal image or causes a very dim/no-light condition."
+      }
+    },
+    {
+      "id": 2088,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Fuzzy image",
+      "difficulty": "easy",
+      "text": "Which option best defines Fuzzy image in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues."
+        },
+        {
+          "id": "b",
+          "text": "Poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage."
+        },
+        {
+          "id": "c",
+          "text": "A swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards."
+        },
+        {
+          "id": "d",
+          "text": "A fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Intermittent projector shutdown means intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues. Fuzzy image means a fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems.",
+        "b": "Poor battery health means poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage. Fuzzy image means a fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems.",
+        "c": "Swollen battery means a swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards. Fuzzy image means a fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems.",
+        "d": "A fuzzy image can result from poor focus, incorrect resolution, bad cable quality, scaling issues, or projector distance problems. Focus and native resolution should be checked before assuming a display panel failure. This is the correct answer."
+      }
+    },
+    {
+      "id": 2089,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Display burn-in",
+      "difficulty": "easy",
+      "text": "Which option best defines Display burn-in in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Display burn-in is persistent image retention caused by static content remaining on a screen for long periods."
+        },
+        {
+          "id": "b",
+          "text": "Poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage."
+        },
+        {
+          "id": "c",
+          "text": "A swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards."
+        },
+        {
+          "id": "d",
+          "text": "A broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Display burn-in is persistent image retention caused by static content remaining on a screen for long periods. Burn-in is associated with panel wear or image retention rather than a signal cable setting. This is the correct answer.",
+        "b": "Poor battery health means poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage. Display burn-in means display burn-in is persistent image retention caused by static content remaining on a screen for long periods.",
+        "c": "Swollen battery means a swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards. Display burn-in means display burn-in is persistent image retention caused by static content remaining on a screen for long periods.",
+        "d": "Broken screen means a broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety. Display burn-in means display burn-in is persistent image retention caused by static content remaining on a screen for long periods."
+      }
+    },
+    {
+      "id": 2090,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Dead pixels",
+      "difficulty": "easy",
+      "text": "Which option best defines Dead pixels in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards."
+        },
+        {
+          "id": "b",
+          "text": "Dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly."
+        },
+        {
+          "id": "c",
+          "text": "A broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety."
+        },
+        {
+          "id": "d",
+          "text": "Improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Swollen battery means a swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards. Dead pixels means dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly.",
+        "b": "Dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly. Dead pixels are panel-level defects and are not fixed by changing the video input source. This is the correct answer.",
+        "c": "Broken screen means a broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety. Dead pixels means dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly.",
+        "d": "Improper charging means improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems. Dead pixels means dead pixels are individual screen pixels that remain black, stuck, or fail to change correctly."
+      }
+    },
+    {
+      "id": 2091,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Flashing screen",
+      "difficulty": "easy",
+      "text": "Which option best defines Flashing screen in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety."
+        },
+        {
+          "id": "b",
+          "text": "Improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems."
+        },
+        {
+          "id": "c",
+          "text": "A flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability."
+        },
+        {
+          "id": "d",
+          "text": "Poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Broken screen means a broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety. Flashing screen means a flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability.",
+        "b": "Improper charging means improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems. Flashing screen means a flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability.",
+        "c": "A flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability. The cause must be isolated between source device, cable, adapter, display, and power. This is the correct answer.",
+        "d": "Poor or no connectivity means poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services. Flashing screen means a flashing screen shows repeated flicker or signal loss due to cable issues, refresh rate mismatch, driver problems, failing display hardware, or power instability."
+      }
+    },
+    {
+      "id": 2092,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Incorrect color display",
+      "difficulty": "easy",
+      "text": "Which option best defines Incorrect color display in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems."
+        },
+        {
+          "id": "b",
+          "text": "Poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services."
+        },
+        {
+          "id": "c",
+          "text": "Liquid damage occurs when moisture enters the device and affects circuits, ports, battery, display, or sensors."
+        },
+        {
+          "id": "d",
+          "text": "Incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Improper charging means improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems. Incorrect color display means incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion.",
+        "b": "Poor or no connectivity means poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services. Incorrect color display means incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion.",
+        "c": "Liquid damage means liquid damage occurs when moisture enters the device and affects circuits, ports, battery, display, or sensors. Incorrect color display means incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion.",
+        "d": "Incorrect color display appears as wrong hues, missing color channels, washed-out output, or color distortion. Common causes include cable damage, adapter problems, driver settings, color profiles, and display hardware. This is the correct answer."
+      }
+    },
+    {
+      "id": 2093,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Display audio issues",
+      "difficulty": "easy",
+      "text": "Which option best defines Display audio issues in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output."
+        },
+        {
+          "id": "b",
+          "text": "Poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services."
+        },
+        {
+          "id": "c",
+          "text": "Liquid damage occurs when moisture enters the device and affects circuits, ports, battery, display, or sensors."
+        },
+        {
+          "id": "d",
+          "text": "Mobile overheating occurs when a phone or tablet becomes too hot due to charging issues, heavy apps, environment, battery faults, or hardware problems."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output. HDMI and DisplayPort can carry audio, so output device settings and cable support matter. This is the correct answer.",
+        "b": "Poor or no connectivity means poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services. Display audio issues means display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output.",
+        "c": "Liquid damage means liquid damage occurs when moisture enters the device and affects circuits, ports, battery, display, or sensors. Display audio issues means display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output.",
+        "d": "Mobile overheating means mobile overheating occurs when a phone or tablet becomes too hot due to charging issues, heavy apps, environment, battery faults, or hardware problems. Display audio issues means display audio issues occur when video is present but sound is missing, distorted, or routed to the wrong output."
+      }
+    },
+    {
+      "id": 2094,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Dim image",
+      "difficulty": "easy",
+      "text": "Which option best defines Dim image in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Liquid damage occurs when moisture enters the device and affects circuits, ports, battery, display, or sensors."
+        },
+        {
+          "id": "b",
+          "text": "A dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light."
+        },
+        {
+          "id": "c",
+          "text": "Mobile overheating occurs when a phone or tablet becomes too hot due to charging issues, heavy apps, environment, battery faults, or hardware problems."
+        },
+        {
+          "id": "d",
+          "text": "Digitizer issues affect touch input, causing missed taps, ghost touches, dead zones, or inaccurate touch response."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Liquid damage means liquid damage occurs when moisture enters the device and affects circuits, ports, battery, display, or sensors. Dim image means a dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light.",
+        "b": "A dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light. Dimness is different from a fuzzy image because sharpness may remain normal while brightness is low. This is the correct answer.",
+        "c": "Mobile overheating means mobile overheating occurs when a phone or tablet becomes too hot due to charging issues, heavy apps, environment, battery faults, or hardware problems. Dim image means a dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light.",
+        "d": "Digitizer issues means digitizer issues affect touch input, causing missed taps, ghost touches, dead zones, or inaccurate touch response. Dim image means a dim image may result from low brightness settings, failing backlight, projector lamp wear, eco mode, or ambient light."
+      }
+    },
+    {
+      "id": 2095,
+      "domain": "5.0",
+      "objective": "5.4",
+      "keyword": "Intermittent projector shutdown",
+      "difficulty": "easy",
+      "text": "Which option best defines Intermittent projector shutdown in objective 5.4 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Mobile overheating occurs when a phone or tablet becomes too hot due to charging issues, heavy apps, environment, battery faults, or hardware problems."
+        },
+        {
+          "id": "b",
+          "text": "Digitizer issues affect touch input, causing missed taps, ghost touches, dead zones, or inaccurate touch response."
+        },
+        {
+          "id": "c",
+          "text": "Intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues."
+        },
+        {
+          "id": "d",
+          "text": "Physically damaged ports prevent reliable charging, docking, data transfer, or accessory connection."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Mobile overheating means mobile overheating occurs when a phone or tablet becomes too hot due to charging issues, heavy apps, environment, battery faults, or hardware problems. Intermittent projector shutdown means intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues.",
+        "b": "Digitizer issues means digitizer issues affect touch input, causing missed taps, ghost touches, dead zones, or inaccurate touch response. Intermittent projector shutdown means intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues.",
+        "c": "Intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues. Projectors often shut down to protect components when temperature or lamp faults occur. This is the correct answer.",
+        "d": "Physically damaged ports means physically damaged ports prevent reliable charging, docking, data transfer, or accessory connection. Intermittent projector shutdown means intermittent projector shutdown commonly results from overheating, clogged filters, failing fans, lamp problems, or power issues."
+      }
+    },
+    {
+      "id": 2096,
+      "domain": "5.0",
+      "objective": "5.5",
+      "keyword": "Poor battery health",
+      "difficulty": "easy",
+      "text": "Which option best defines Poor battery health in objective 5.5 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Digitizer issues affect touch input, causing missed taps, ghost touches, dead zones, or inaccurate touch response."
+        },
+        {
+          "id": "b",
+          "text": "Physically damaged ports prevent reliable charging, docking, data transfer, or accessory connection."
+        },
+        {
+          "id": "c",
+          "text": "Mobile malware is malicious software on a phone or tablet that may cause pop-ups, unusual data use, battery drain, unauthorized apps, or account compromise."
+        },
+        {
+          "id": "d",
+          "text": "Poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Digitizer issues means digitizer issues affect touch input, causing missed taps, ghost touches, dead zones, or inaccurate touch response. Poor battery health means poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage.",
+        "b": "Physically damaged ports means physically damaged ports prevent reliable charging, docking, data transfer, or accessory connection. Poor battery health means poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage.",
+        "c": "Mobile malware means mobile malware is malicious software on a phone or tablet that may cause pop-ups, unusual data use, battery drain, unauthorized apps, or account compromise. Poor battery health means poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage.",
+        "d": "Poor battery health means the battery holds less charge or drains faster because of age, wear, charge cycles, or damage. Battery health affects runtime even when the charger and applications are functioning correctly. This is the correct answer."
+      }
+    },
+    {
+      "id": 2097,
+      "domain": "5.0",
+      "objective": "5.5",
+      "keyword": "Swollen battery",
+      "difficulty": "easy",
+      "text": "Which option best defines Swollen battery in objective 5.5 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards."
+        },
+        {
+          "id": "b",
+          "text": "Physically damaged ports prevent reliable charging, docking, data transfer, or accessory connection."
+        },
+        {
+          "id": "c",
+          "text": "Mobile malware is malicious software on a phone or tablet that may cause pop-ups, unusual data use, battery drain, unauthorized apps, or account compromise."
+        },
+        {
+          "id": "d",
+          "text": "Cursor drift or touch calibration problems cause pointer or touch input to move inaccurately or register in the wrong location."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "A swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards. Swollen batteries should be handled carefully and replaced because they can be dangerous. This is the correct answer.",
+        "b": "Physically damaged ports means physically damaged ports prevent reliable charging, docking, data transfer, or accessory connection. Swollen battery means a swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards.",
+        "c": "Mobile malware means mobile malware is malicious software on a phone or tablet that may cause pop-ups, unusual data use, battery drain, unauthorized apps, or account compromise. Swollen battery means a swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards.",
+        "d": "Cursor drift or touch calibration means cursor drift or touch calibration problems cause pointer or touch input to move inaccurately or register in the wrong location. Swollen battery means a swollen battery is a physically expanded battery that may lift screens, deform cases, or create safety hazards."
+      }
+    },
+    {
+      "id": 2098,
+      "domain": "5.0",
+      "objective": "5.5",
+      "keyword": "Broken screen",
+      "difficulty": "easy",
+      "text": "Which option best defines Broken screen in objective 5.5 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Mobile malware is malicious software on a phone or tablet that may cause pop-ups, unusual data use, battery drain, unauthorized apps, or account compromise."
+        },
+        {
+          "id": "b",
+          "text": "A broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety."
+        },
+        {
+          "id": "c",
+          "text": "Cursor drift or touch calibration problems cause pointer or touch input to move inaccurately or register in the wrong location."
+        },
+        {
+          "id": "d",
+          "text": "Lines down printed pages indicate repeated vertical marks often caused by toner, drum, fuser, printhead, rollers, or debris problems."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Mobile malware means mobile malware is malicious software on a phone or tablet that may cause pop-ups, unusual data use, battery drain, unauthorized apps, or account compromise. Broken screen means a broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety.",
+        "b": "A broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety. Screen damage is a hardware condition rather than an application or network setting. This is the correct answer.",
+        "c": "Cursor drift or touch calibration means cursor drift or touch calibration problems cause pointer or touch input to move inaccurately or register in the wrong location. Broken screen means a broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety.",
+        "d": "Lines down printed pages means lines down printed pages indicate repeated vertical marks often caused by toner, drum, fuser, printhead, rollers, or debris problems. Broken screen means a broken screen is physical display glass or panel damage that affects visibility, touch use, or device safety."
+      }
+    },
+    {
+      "id": 2099,
+      "domain": "5.0",
+      "objective": "5.5",
+      "keyword": "Improper charging",
+      "difficulty": "easy",
+      "text": "Which option best defines Improper charging in objective 5.5 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Cursor drift or touch calibration problems cause pointer or touch input to move inaccurately or register in the wrong location."
+        },
+        {
+          "id": "b",
+          "text": "Lines down printed pages indicate repeated vertical marks often caused by toner, drum, fuser, printhead, rollers, or debris problems."
+        },
+        {
+          "id": "c",
+          "text": "Improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems."
+        },
+        {
+          "id": "d",
+          "text": "Garbled print appears as unreadable characters or incorrect output caused by wrong drivers, corrupted print jobs, incompatible printer language, or communication problems."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Cursor drift or touch calibration means cursor drift or touch calibration problems cause pointer or touch input to move inaccurately or register in the wrong location. Improper charging means improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems.",
+        "b": "Lines down printed pages means lines down printed pages indicate repeated vertical marks often caused by toner, drum, fuser, printhead, rollers, or debris problems. Improper charging means improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems.",
+        "c": "Improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems. Troubleshooting should test known-good chargers and inspect the port before replacing the device. This is the correct answer.",
+        "d": "Garbled print means garbled print appears as unreadable characters or incorrect output caused by wrong drivers, corrupted print jobs, incompatible printer language, or communication problems. Improper charging means improper charging means the device does not charge normally due to adapter, cable, port, battery, power source, or charging circuit problems."
+      }
+    },
+    {
+      "id": 2100,
+      "domain": "5.0",
+      "objective": "5.5",
+      "keyword": "Poor or no connectivity",
+      "difficulty": "easy",
+      "text": "Which option best defines Poor or no connectivity in objective 5.5 of hardware and network troubleshooting?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Lines down printed pages indicate repeated vertical marks often caused by toner, drum, fuser, printhead, rollers, or debris problems."
+        },
+        {
+          "id": "b",
+          "text": "Garbled print appears as unreadable characters or incorrect output caused by wrong drivers, corrupted print jobs, incompatible printer language, or communication problems."
+        },
+        {
+          "id": "c",
+          "text": "Toner not fusing to paper means toner wipes or flakes off because the fuser is not properly bonding toner to the page."
+        },
+        {
+          "id": "d",
+          "text": "Poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Lines down printed pages means lines down printed pages indicate repeated vertical marks often caused by toner, drum, fuser, printhead, rollers, or debris problems. Poor or no connectivity means poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services.",
+        "b": "Garbled print means garbled print appears as unreadable characters or incorrect output caused by wrong drivers, corrupted print jobs, incompatible printer language, or communication problems. Poor or no connectivity means poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services.",
+        "c": "Toner not fusing to paper means toner not fusing to paper means toner wipes or flakes off because the fuser is not properly bonding toner to the page. Poor or no connectivity means poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services.",
+        "d": "Poor or no connectivity means the mobile device cannot reliably connect to WiFi, cellular, Bluetooth, or other network services. Connectivity troubleshooting checks radios, airplane mode, signal, credentials, profiles, and service availability. This is the correct answer."
+      }
     }
   ]
 }

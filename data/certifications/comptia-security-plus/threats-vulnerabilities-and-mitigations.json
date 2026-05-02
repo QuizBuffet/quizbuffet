@@ -652,7 +652,7 @@
         "a": "Physical social engineering by attackers posing as IT staff is a different threat \u2014 shadow IT involves employees using unauthorized technology.",
         "b": "Shadow IT emerges when employees use unsanctioned tools (personal cloud storage, free SaaS apps, unauthorized software) that bypass IT security controls and governance. This is the correct answer.",
         "c": "Undocumented data centers may be shadow IT \u2014 but shadow IT broadly includes any unauthorized technology use, not just physical infrastructure.",
-        "d": "Legacy systems are typically known to IT \u2014 shadow IT specifically refers to technology unknown to or unapproved by IT."
+        "d": "Legacy systems are typically known to IT \u2014 shadow technology unknown to or unapproved by IT."
       }
     },
     {
@@ -6232,7 +6232,7 @@
         "a": "Disk space issues cause operational problems \u2014 not security boundary violations.",
         "b": "VM escape breaks the isolation that virtualization provides \u2014 allowing attackers within a guest VM to access the hypervisor, host OS, or other guest VMs. This is the correct answer.",
         "c": "Virtual desktop access is an end-user experience issue \u2014 not a hypervisor security boundary violation.",
-        "d": "Data exfiltration through the network is a different vulnerability \u2014 VM escape specifically refers to breaking out of VM isolation boundaries."
+        "d": "Data exfiltration through the network is a different vulnerability \u2014 breaking out of VM isolation boundaries."
       }
     },
     {

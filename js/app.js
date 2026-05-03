@@ -9,6 +9,7 @@ const SHELLS = {
   home: `
     <main class="container container-home">
       <div id="featured"></div>
+      <div id="cs-marquee"></div>
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <div id="random-btn"></div>
       <div id="search"></div>

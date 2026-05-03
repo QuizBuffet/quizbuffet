@@ -1,5 +1,6 @@
 // Entry point for the home route — wires search input to cert list filter
 import { renderFeatured } from './renderFeatured.js';
+import { renderComingSoonMarquee } from './renderComingSoonMarquee.js';
 import { renderRandomBtn } from './renderRandomBtn.js';
 import { renderSearch } from './renderSearch.js';
 import { renderCertList } from './renderCertList.js';
@@ -32,7 +33,8 @@ export async function init() {
     if (res.ok) comingSoon = await res.json();
   } catch (_) {}
 
-  renderFeatured({ name: certifications[0].name, slug: `/${certifications[0].slug}/`, description: certifications[0].tagline });
+  renderFeatured(null, certifications);
+  renderComingSoonMarquee(comingSoon);
   renderAd('ad-top');
   renderRandomBtn();
   renderSearch(filter => renderCertList(certifications, comingSoon, filter));

@@ -5,6 +5,14 @@ import { getColorTheme, applyColorTheme } from '../../utils/applyColorTheme.js';
 import { getSoundEnabled, toggleSound } from '../../utils/soundPref.js';
 import { getCursor, setCursor, CURSORS } from '../../utils/cursorPref.js';
 
+async function loadComingSoon() {
+  try {
+    const res = await fetch('/data/coming-soon.json');
+    if (res.ok) return await res.json();
+  } catch (_) {}
+  return [];
+}
+
 const SWATCHES = [
   { id: 'buffet',   label: 'Buffet'         },
   { id: 'navy',     label: 'Midnight Navy'  },
@@ -14,15 +22,24 @@ const SWATCHES = [
   { id: 'pink',     label: 'Plush Pink'     },
 ];
 
-export function renderFooter() {
+export async function renderFooter() {
   const el = document.getElementById('footer');
   if (!el) return;
 
   const year = new Date().getFullYear();
+  const comingSoon = await loadComingSoon();
 
-  const certLinks = certifications.map(c =>
-    `<a href="/${c.slug}/" class="footer-cert-link">${c.name} <span class="footer-cert-code">${c.code}</span></a>`
+  const liveSorted = [...certifications].sort((a, b) => a.name.localeCompare(b.name));
+  const certLinks = liveSorted.map(c =>
+    `<a href="/${c.slug}/" class="footer-cert-link" title="${c.name} (${c.code})">${c.name} <span class="footer-cert-code">${c.code}</span></a>`
   ).join('');
+
+  // Coming-soon chips in footer: compact (rank + code only) so they fit in a single column
+  const csTop = comingSoon.slice(0, 16);
+  const csLinks = csTop.map((c, i) =>
+    `<a href="/${c.slug}/" class="footer-cert-link footer-cert-soon" title="${c.name} (${c.code})"><span class="footer-cert-rank">#${i + 1}</span><span class="footer-cert-code">${c.code}</span></a>`
+  ).join('');
+  const csMore = comingSoon.length > csTop.length ? `<a href="/" class="footer-cert-more">+${comingSoon.length - csTop.length} more in development</a>` : '';
 
   el.innerHTML = `
     <footer class="footer">
@@ -43,17 +60,20 @@ export function renderFooter() {
               This is a personal, private study tool — not a commercial platform.
               No accounts. No sign-ups. No emails collected. Just you and your questions.
             </p>
-          </div>
 
-          <div class="footer-col">
-            <div class="footer-col-title">Available Certifications</div>
-            <div class="footer-certs">${certLinks}</div>
-          </div>
-
-          <div class="footer-col">
-            <div class="footer-col-title">Contact</div>
+            <div class="footer-col-title footer-col-title-inline">Contact</div>
             <p class="footer-body">Have a question, found a bug, or want to suggest content?</p>
             <a class="footer-contact-btn" href="mailto:artivicolab@gmail.com?subject=QuizBuffet">Contact Us →</a>
+          </div>
+
+          <div class="footer-col footer-col-certs">
+            <div class="footer-col-title">Certifications <span class="footer-col-count">${liveSorted.length + comingSoon.length}</span></div>
+
+            <div class="footer-subtitle">Available now <span class="footer-col-count">${liveSorted.length}</span></div>
+            <div class="footer-certs">${certLinks}</div>
+
+            <div class="footer-subtitle footer-subtitle-soon">Coming soon <span class="footer-col-count">${comingSoon.length}</span></div>
+            <div class="footer-certs">${csLinks}${csMore}</div>
           </div>
 
           <div class="footer-col">

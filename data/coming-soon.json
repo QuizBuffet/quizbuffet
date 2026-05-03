@@ -1,0 +1,335 @@
+[
+  {
+    "slug": "cisco-ccna",
+    "name": "Cisco CCNA",
+    "code": "200-301",
+    "vendor": "Cisco",
+    "category": "IT & Networking",
+    "tagline": "The industry-standard entry into network engineering careers",
+    "about": "CCNA (Cisco Certified Network Associate) covers networking fundamentals, IP services, security fundamentals, automation, and programmability. It is the most-requested networking certification on job postings and a common requirement for network administrator and engineer roles."
+  },
+  {
+    "slug": "aws-cloud-practitioner",
+    "name": "AWS Certified Cloud Practitioner",
+    "code": "CLF-C02",
+    "vendor": "AWS",
+    "category": "Cloud",
+    "tagline": "Foundational AWS knowledge for technical and non-technical professionals",
+    "about": "AWS Certified Cloud Practitioner validates foundational understanding of AWS Cloud concepts, services, security, architecture, pricing, and support. It is a common starting point for cloud careers and a prerequisite mindset check for higher AWS certifications."
+  },
+  {
+    "slug": "aws-solutions-architect-associate",
+    "name": "AWS Certified Solutions Architect – Associate",
+    "code": "SAA-C03",
+    "vendor": "AWS",
+    "category": "Cloud",
+    "tagline": "The most popular cloud certification for designing AWS workloads",
+    "about": "AWS Certified Solutions Architect – Associate validates the ability to design distributed systems on AWS that meet customer requirements for availability, cost, performance, and security. One of the highest-demand cloud certifications by job posting volume."
+  },
+  {
+    "slug": "microsoft-az-900",
+    "name": "Microsoft Azure Fundamentals (AZ-900)",
+    "code": "AZ-900",
+    "vendor": "Microsoft",
+    "category": "Cloud",
+    "tagline": "Foundational Azure knowledge for cloud beginners and decision-makers",
+    "about": "AZ-900 covers cloud concepts, core Azure services, security, privacy, compliance, pricing, and support. It is Microsoft's entry-level cloud certification and a common stepping stone toward associate-level Azure certifications."
+  },
+  {
+    "slug": "microsoft-az-104",
+    "name": "Microsoft Azure Administrator Associate (AZ-104)",
+    "code": "AZ-104",
+    "vendor": "Microsoft",
+    "category": "Cloud",
+    "tagline": "Day-to-day Azure infrastructure administration skills",
+    "about": "AZ-104 validates skills for managing Azure subscriptions, identities, storage, virtual networks, compute resources, and monitoring. It is Microsoft's most in-demand associate-level Azure certification for cloud administrators."
+  },
+  {
+    "slug": "isc2-cissp",
+    "name": "ISC2 CISSP",
+    "code": "CISSP",
+    "vendor": "ISC2",
+    "category": "Cybersecurity",
+    "tagline": "The gold-standard senior cybersecurity certification",
+    "about": "CISSP (Certified Information Systems Security Professional) covers eight security domains: security and risk management, asset security, architecture, communications, identity management, assessment, operations, and software security. Frequently a hiring requirement for senior security roles."
+  },
+  {
+    "slug": "itil-foundation",
+    "name": "ITIL 4 Foundation",
+    "code": "ITIL 4",
+    "vendor": "PeopleCert",
+    "category": "IT Service Management",
+    "tagline": "The most widely adopted IT service management framework",
+    "about": "ITIL 4 Foundation introduces the ITIL service value system, the four dimensions of service management, key practices, and core principles. It is the most commonly listed ITSM credential on enterprise IT job postings."
+  },
+  {
+    "slug": "osha-10-construction",
+    "name": "OSHA 10-Hour Construction",
+    "code": "OSHA 10",
+    "vendor": "OSHA",
+    "category": "Safety",
+    "tagline": "Required entry-level safety training for construction workers",
+    "about": "OSHA 10-Hour Construction covers worker safety rights, fall protection, electrical hazards, struck-by and caught-in hazards, personal protective equipment, and health hazards. Required by many states and employers before working on construction sites."
+  },
+  {
+    "slug": "osha-30-construction",
+    "name": "OSHA 30-Hour Construction",
+    "code": "OSHA 30",
+    "vendor": "OSHA",
+    "category": "Safety",
+    "tagline": "Supervisor-level construction safety certification",
+    "about": "OSHA 30-Hour Construction provides expanded safety training for supervisors and workers with safety responsibilities. Covers all OSHA 10 topics in greater depth plus management of safety programs, recordkeeping, and incident investigation."
+  },
+  {
+    "slug": "forklift-certification",
+    "name": "Forklift Operator Certification",
+    "code": "OSHA 1910.178",
+    "vendor": "OSHA",
+    "category": "Safety",
+    "tagline": "Required certification for operating powered industrial trucks",
+    "about": "Forklift Operator Certification covers truck types and capacities, stability principles, pre-shift inspection, safe operation in pedestrian areas, load handling, and refueling/recharging. Required by OSHA 29 CFR 1910.178 for any worker operating a forklift on the job."
+  },
+  {
+    "slug": "cpr-aed",
+    "name": "CPR / AED Certification",
+    "code": "CPR/AED",
+    "vendor": "American Red Cross / AHA",
+    "category": "Healthcare",
+    "tagline": "Lifesaving cardiac and breathing emergency skills",
+    "about": "CPR/AED certification covers chest compressions, rescue breathing, and automated external defibrillator use for adult, child, and infant emergencies. A common requirement for healthcare workers, teachers, lifeguards, fitness staff, and many other roles."
+  },
+  {
+    "slug": "bls",
+    "name": "Basic Life Support (BLS)",
+    "code": "BLS",
+    "vendor": "American Heart Association",
+    "category": "Healthcare",
+    "tagline": "Required CPR-level credential for healthcare professionals",
+    "about": "BLS certification covers high-quality CPR, AED use, ventilation with barrier devices and bag-mask, and team-based resuscitation for adults, children, and infants. Required for nurses, EMTs, doctors, and most clinical healthcare roles."
+  },
+  {
+    "slug": "emt",
+    "name": "EMT (Emergency Medical Technician)",
+    "code": "NREMT",
+    "vendor": "NREMT",
+    "category": "Healthcare",
+    "tagline": "Entry-level certification for emergency medical services",
+    "about": "EMT certification covers patient assessment, airway management, trauma care, medical emergencies, pharmacology, and ambulance operations. Required by most states for ambulance and emergency response roles, validated through NREMT cognitive and psychomotor exams."
+  },
+  {
+    "slug": "cna",
+    "name": "Certified Nursing Assistant (CNA)",
+    "code": "CNA",
+    "vendor": "State Boards",
+    "category": "Healthcare",
+    "tagline": "Entry point into the nursing and long-term care field",
+    "about": "CNA covers basic nursing skills, infection control, vital signs, communication, residents' rights, and personal care. Required for working in nursing homes and long-term care under federal OBRA regulations and tested via state competency exams."
+  },
+  {
+    "slug": "medical-assistant",
+    "name": "Certified Medical Assistant (CMA)",
+    "code": "CMA",
+    "vendor": "AAMA / NHA / AMT",
+    "category": "Healthcare",
+    "tagline": "Clinical and administrative support for medical practices",
+    "about": "Medical Assistant certifications (CMA, RMA, CCMA) cover clinical procedures, medical terminology, anatomy, phlebotomy basics, EKG, vital signs, medication administration, and front-office tasks like scheduling, insurance, and EHR documentation."
+  },
+  {
+    "slug": "phlebotomy-technician",
+    "name": "Certified Phlebotomy Technician (CPT)",
+    "code": "CPT",
+    "vendor": "NHA / ASCP / ASPT",
+    "category": "Healthcare",
+    "tagline": "Specialized blood-draw certification for clinical labs",
+    "about": "CPT certification covers venipuncture, capillary collection, specimen handling, patient identification, infection control, anatomy of the circulatory system, and clinical lab procedures. A short-program credential commonly used as an entry point into healthcare."
+  },
+  {
+    "slug": "medical-billing-coding",
+    "name": "Medical Billing and Coding (CPC / CCS)",
+    "code": "CPC / CCS",
+    "vendor": "AAPC / AHIMA",
+    "category": "Healthcare",
+    "tagline": "Healthcare reimbursement, ICD-10, CPT, and HCPCS coding",
+    "about": "Medical Billing and Coding certifications (CPC from AAPC, CCS from AHIMA) cover ICD-10-CM diagnosis codes, CPT procedure codes, HCPCS Level II codes, anatomy, medical terminology, payer rules, and the revenue cycle. High-demand role with strong remote-work options."
+  },
+  {
+    "slug": "cdl-class-a",
+    "name": "CDL Class A",
+    "code": "CDL-A",
+    "vendor": "FMCSA / State DMV",
+    "category": "Transportation",
+    "tagline": "Federal license required to drive tractor-trailers and large combination vehicles",
+    "about": "CDL Class A licensing covers vehicle inspection, basic vehicle control, on-road driving, air brakes, combination vehicles, and federal motor carrier safety regulations. Required for operating any combination vehicle with a gross vehicle weight rating over 26,001 pounds."
+  },
+  {
+    "slug": "faa-part-107",
+    "name": "FAA Part 107 (Remote Pilot)",
+    "code": "Part 107",
+    "vendor": "FAA",
+    "category": "Aviation",
+    "tagline": "Required certificate for commercial drone operations in the U.S.",
+    "about": "FAA Part 107 covers airspace classification, weather, drone performance, regulations, emergency procedures, and operational limitations. Required by 14 CFR Part 107 for any commercial small unmanned aircraft (sUAS) operations in the United States."
+  },
+  {
+    "slug": "faa-private-pilot",
+    "name": "FAA Private Pilot Certificate",
+    "code": "PPL",
+    "vendor": "FAA",
+    "category": "Aviation",
+    "tagline": "Foundational pilot certificate for personal flight",
+    "about": "Private Pilot Certificate covers regulations, navigation, weather, aerodynamics, aircraft systems, performance and weight balance, and emergency procedures. Required for piloting most personal single-engine aircraft and a stepping stone toward commercial pilot training."
+  },
+  {
+    "slug": "faa-airframe-powerplant",
+    "name": "A&P (Airframe and Powerplant) Mechanic",
+    "code": "FAA A&P",
+    "vendor": "FAA",
+    "category": "Aviation",
+    "tagline": "FAA certification for aircraft maintenance technicians",
+    "about": "A&P certification covers airframe structures, systems, powerplant theory, inspection, and FAA regulations. Required for performing or signing off most airline and general-aviation maintenance work in the United States."
+  },
+  {
+    "slug": "real-estate-license",
+    "name": "Real Estate Salesperson License",
+    "code": "Real Estate License",
+    "vendor": "State Real Estate Commissions",
+    "category": "Real Estate",
+    "tagline": "State-required license to legally represent real estate buyers and sellers",
+    "about": "Real Estate Salesperson licensing covers real estate principles, contracts, agency, financing, fair housing, property management, valuation, and state-specific law. Required by every U.S. state for representing clients in real estate transactions for compensation."
+  },
+  {
+    "slug": "insurance-license",
+    "name": "Insurance Producer License",
+    "code": "Life / Health / P&C",
+    "vendor": "State Insurance Departments",
+    "category": "Insurance",
+    "tagline": "State licenses for selling life, health, and property/casualty insurance",
+    "about": "Insurance Producer licensing covers insurance principles, policy types, regulations, ethics, and state-specific law for life, health, and property and casualty lines. Required by every state for selling, soliciting, or negotiating insurance products."
+  },
+  {
+    "slug": "nmls-mlo",
+    "name": "NMLS Mortgage Loan Originator (MLO)",
+    "code": "SAFE MLO",
+    "vendor": "NMLS",
+    "category": "Mortgage",
+    "tagline": "Federal SAFE Act licensing exam for mortgage originators",
+    "about": "NMLS MLO covers federal mortgage law (RESPA, TILA, ECOA, HMDA), mortgage products and programs, ethics, uniform state content, and state-specific law. Required by the SAFE Act for any individual originating residential mortgage loans."
+  },
+  {
+    "slug": "servsafe-food-handler",
+    "name": "ServSafe Food Handler",
+    "code": "ServSafe FH",
+    "vendor": "National Restaurant Association",
+    "category": "Food Service",
+    "tagline": "Entry-level food safety certification for restaurant workers",
+    "about": "ServSafe Food Handler covers basic food safety, personal hygiene, cross-contamination, time and temperature control, cleaning and sanitizing, and allergen awareness. Required by many state and local jurisdictions for anyone handling food in restaurants."
+  },
+  {
+    "slug": "servsafe-manager",
+    "name": "ServSafe Food Protection Manager",
+    "code": "ServSafe Manager",
+    "vendor": "National Restaurant Association",
+    "category": "Food Service",
+    "tagline": "ANSI-accredited manager-level food safety certification",
+    "about": "ServSafe Food Protection Manager certification covers foodborne illness, the flow of food, food safety management systems, sanitary facilities and equipment, regulatory authorities, and crisis management. Accepted by jurisdictions nationwide as the food protection manager certification."
+  },
+  {
+    "slug": "epa-608",
+    "name": "EPA 608 Refrigerant Handling Certification",
+    "code": "EPA 608",
+    "vendor": "EPA",
+    "category": "HVAC",
+    "tagline": "Federal certification required to handle HVAC refrigerants",
+    "about": "EPA 608 covers ozone depletion, the Clean Air Act, refrigerant recovery and recycling, leak detection, safety, and shipping for stationary refrigeration and air-conditioning equipment. Required under EPA Section 608 for purchasing or servicing equipment containing regulated refrigerants."
+  },
+  {
+    "slug": "electrician-license",
+    "name": "Electrician License (Apprentice / Journeyman / Master)",
+    "code": "NEC / State License",
+    "vendor": "State Boards",
+    "category": "Trades",
+    "tagline": "State-licensed credential for residential and commercial electrical work",
+    "about": "Electrician licensing covers the National Electrical Code (NEC), wiring methods, conductor sizing, overcurrent protection, grounding and bonding, motors, transformers, hazardous locations, and safety. Licensed at apprentice, journeyman, and master levels by state regulators."
+  },
+  {
+    "slug": "plumbing-license",
+    "name": "Plumbing License (Apprentice / Journeyman / Master)",
+    "code": "UPC / IPC / State",
+    "vendor": "State Boards",
+    "category": "Trades",
+    "tagline": "State-licensed credential for plumbing system installation and repair",
+    "about": "Plumbing licensing covers code (UPC or IPC), drain-waste-vent systems, water supply, fixture installation, gas piping, backflow prevention, and trade safety. Licensed at apprentice, journeyman, and master levels by state regulators."
+  },
+  {
+    "slug": "ase-automotive",
+    "name": "ASE Automotive Certification",
+    "code": "ASE A1–A9 / G1",
+    "vendor": "ASE",
+    "category": "Automotive",
+    "tagline": "Industry-standard certification for automotive technicians",
+    "about": "ASE Automotive certifications cover engine repair, transmission, drivetrain, suspension and steering, brakes, electrical systems, HVAC, engine performance, light-duty diesel, and maintenance and light repair. Most automotive repair shops prefer or require ASE-certified technicians."
+  },
+  {
+    "slug": "aws-certified-welder",
+    "name": "AWS Certified Welder",
+    "code": "AWS QC7",
+    "vendor": "American Welding Society",
+    "category": "Trades",
+    "tagline": "Performance-based certification for production welders",
+    "about": "AWS Certified Welder is a performance-based credential confirming a welder can produce sound welds to a specified procedure on a specified material and process. Widely accepted across construction, manufacturing, pipeline, and shipbuilding industries."
+  },
+  {
+    "slug": "cosmetology-license",
+    "name": "Cosmetology License",
+    "code": "Cosmetology",
+    "vendor": "State Boards",
+    "category": "Beauty",
+    "tagline": "State-licensed credential for hair, skin, and nail services",
+    "about": "Cosmetology licensing covers hair cutting and styling, chemical services, skin care, nail care, sanitation and infection control, anatomy, and state-specific law. Required by every state for performing cosmetology services for compensation."
+  },
+  {
+    "slug": "barber-license",
+    "name": "Barber License",
+    "code": "Barber",
+    "vendor": "State Boards",
+    "category": "Beauty",
+    "tagline": "State-licensed credential for barbering services",
+    "about": "Barber licensing covers haircutting, shaving, beard trimming, sanitation, scalp and skin care, anatomy, and state-specific law. Required by every state for performing barbering services for compensation."
+  },
+  {
+    "slug": "esthetician-license",
+    "name": "Esthetician License",
+    "code": "Esthetician",
+    "vendor": "State Boards",
+    "category": "Beauty",
+    "tagline": "State-licensed credential for skin care services",
+    "about": "Esthetician licensing covers facials, hair removal, makeup, skin analysis, chemical exfoliation, sanitation, anatomy, and state-specific law. Required by most states for performing professional skin care services for compensation."
+  },
+  {
+    "slug": "personal-trainer-nasm",
+    "name": "Certified Personal Trainer (NASM-CPT)",
+    "code": "NASM-CPT",
+    "vendor": "NASM",
+    "category": "Fitness",
+    "tagline": "NCCA-accredited personal training certification",
+    "about": "NASM-CPT covers the OPT (Optimum Performance Training) model, exercise science, assessment, program design, nutrition, and client behavior change. NCCA-accredited and one of the most widely accepted personal trainer certifications in the United States."
+  },
+  {
+    "slug": "pmp",
+    "name": "Project Management Professional (PMP)",
+    "code": "PMP",
+    "vendor": "PMI",
+    "category": "Project Management",
+    "tagline": "The flagship project management certification",
+    "about": "PMP validates skills in leading projects across predictive (waterfall), agile, and hybrid approaches. Covers people, process, and business environment domains. Required or preferred for many senior project manager and program manager roles across industries."
+  },
+  {
+    "slug": "quickbooks-proadvisor",
+    "name": "QuickBooks ProAdvisor",
+    "code": "QuickBooks ProAdvisor",
+    "vendor": "Intuit",
+    "category": "Accounting",
+    "tagline": "Intuit-certified credential for QuickBooks Online and Desktop",
+    "about": "QuickBooks ProAdvisor certification covers the use of QuickBooks Online for setup, lists, transactions, banking, sales tax, payroll, and reports for accounting and bookkeeping professionals. Free certification offered by Intuit through QuickBooks Online Accountant."
+  }
+]

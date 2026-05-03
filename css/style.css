@@ -859,6 +859,7 @@ a:is(:hover, :active) { text-decoration: underline; }
 }
 
 .container { max-width: 700px; margin: 0 auto; padding: 0 16px 48px; }
+.container.container-home { max-width: none; padding-left: clamp(16px, 4vw, 64px); padding-right: clamp(16px, 4vw, 64px); }
 
 /* ── Nav ───────────────────────────────────────────────────────────────────── */
 #nav { position: relative; }
@@ -957,6 +958,82 @@ a:is(:hover, :active) { text-decoration: underline; }
 .domain-meta { font-size: clamp(15px, 3.7vw, 17px); color: var(--text-muted); white-space: nowrap; margin-left: 8px; }
 .cert-empty { opacity: 0.45; }
 .cert-empty .domain-link { pointer-events: none; cursor: default; color: var(--text-muted); }
+
+/* Cert list sections (Available now / Coming soon) */
+.cert-list-section { margin-bottom: 28px; }
+.cert-list-section:last-child { margin-bottom: 0; }
+.cert-list-heading { display: flex; align-items: center; gap: 8px; font-size: clamp(14px, 3.4vw, 15px); font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-sub); }
+.cert-list-heading .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+.cert-list-heading .dot-live { background: #2e9b4a; box-shadow: 0 0 0 3px rgba(46, 155, 74, 0.18); }
+.cert-list-heading .dot-soon { background: #c9920c; box-shadow: 0 0 0 3px rgba(201, 146, 12, 0.18); }
+.cert-list-count { margin-left: auto; font-size: 12px; font-weight: 500; color: var(--text-muted); background: var(--surface, #f5f5f5); padding: 2px 8px; border-radius: 10px; letter-spacing: 0; text-transform: none; }
+
+/* Cert card grid — multi-column on wider screens, single column on mobile */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.cert-card { display: flex; flex-direction: column; padding: 14px 16px; border: 1px solid var(--border-sub); border-radius: 8px; background: var(--surface, var(--bg)); text-decoration: none; color: inherit; transition: border-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease; min-height: 100px; }
+.cert-card,
+.cert-card:hover,
+.cert-card:focus,
+.cert-card:active,
+.cert-card *,
+.cert-card *:hover,
+.cert-card *:focus,
+.cert-card *:active { text-decoration: none !important; }
+.cert-card-name { font-weight: 600; font-size: clamp(15px, 3.8vw, 16px); line-height: 1.3; margin-bottom: 4px; color: var(--link, #06c); }
+.cert-card-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+.cert-card-footer { font-size: 13px; color: var(--text-muted); margin-top: auto; padding-top: 6px; border-top: 1px dashed var(--border-sub); }
+.cert-card-footer strong { color: var(--text, #222); font-weight: 700; }
+.cert-card-domains { color: var(--text-muted); }
+.cert-card.cert-empty { opacity: 0.55; pointer-events: none; }
+.cert-card.cert-coming-soon { opacity: 0.85; }
+.cert-card.cert-coming-soon .cert-card-footer { color: #c9920c; font-weight: 600; }
+.cert-card.cert-coming-soon .cert-card-name { color: var(--text, #222); }
+
+/* Green pulse on hover/touch — only for live (actionable) cards */
+.cert-card:not(.cert-coming-soon):hover,
+.cert-card:not(.cert-coming-soon):focus-visible,
+.cert-card:not(.cert-coming-soon):active {
+  border-color: #2e9b4a;
+  box-shadow: 0 0 0 3px rgba(46, 155, 74, 0.18), 0 2px 10px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+  opacity: 1;
+  animation: cert-pulse 1.4s ease-in-out infinite;
+}
+@keyframes cert-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(46, 155, 74, 0.20), 0 2px 10px rgba(0,0,0,0.06); }
+  50%      { box-shadow: 0 0 0 6px rgba(46, 155, 74, 0.10), 0 2px 14px rgba(0,0,0,0.08); }
+}
+
+/* Coming-soon hover: subtle, no pulse */
+.cert-card.cert-coming-soon:hover,
+.cert-card.cert-coming-soon:focus-visible,
+.cert-card.cert-coming-soon:active {
+  border-color: var(--text-muted);
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+/* Priority badge on coming-soon cards (visible to you for build planning) */
+.cert-card-priority {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #c9920c;
+  background: rgba(201, 146, 12, 0.12);
+  padding: 2px 7px;
+  border-radius: 10px;
+  letter-spacing: 0.02em;
+}
+.cert-card.cert-coming-soon { position: relative; }
+.cert-card.cert-coming-soon .cert-card-name { padding-right: 38px; /* leave room for the priority badge */ }
+
+@media (min-width: 720px) {
+  .cert-grid { gap: 14px; }
+  .cert-card { padding: 16px 18px; }
+}
 
 /* ── Affiliate links ───────────────────────────────────────────────────────── */
 .affiliate-section { margin: 28px 0 8px; padding-top: 20px; border-top: 1px solid var(--border-sub); }
@@ -1308,17 +1385,12 @@ a:is(:hover, :active) { text-decoration: underline; }
 }
 @media (min-width: 800px) {
   .container { max-width: 820px; }
+  .container.container-home { max-width: none; }
   .domain-link { font-size: 19px; }
 }
 @media (min-width: 860px) {
   .footer-grid { grid-template-columns: 1fr 1fr 1fr 1.4fr; }
   .footer .container { padding: 32px 32px 0; }
-  /* Buffet: two-column menu layout */
-  [data-color="buffet"] #cert-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 52px;
-  }
   [data-color="buffet"] .domain-link { font-size: 20px; }
   [data-color="buffet"] .domain-meta { font-size: 15px; }
 }

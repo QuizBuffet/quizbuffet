@@ -1068,7 +1068,10 @@ a:is(:hover, :active) { text-decoration: underline; }
 /* ── Featured carousel ────────────────────────────────────────────────────── */
 .featured-carousel { position: relative; margin: 18px 0 20px; border-radius: 16px; overflow: hidden; min-height: 260px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
 .featured-stage { position: relative; }
-.featured-slide { position: relative; padding: clamp(28px, 5vw, 56px) clamp(24px, 6vw, 80px); color: #fff; background: linear-gradient(135deg, var(--c1, #333) 0%, var(--c2, #666) 100%); animation: featured-fade-in 0.5s ease both; min-height: 260px; display: flex; flex-direction: column; justify-content: center; }
+.featured-slide { position: relative; padding: clamp(28px, 5vw, 56px) clamp(20px, 6vw, 80px) clamp(48px, 5vw, 64px); color: #fff; background: linear-gradient(135deg, var(--c1, #333) 0%, var(--c2, #666) 100%); animation: featured-fade-in 0.5s ease both; min-height: 260px; display: flex; flex-direction: column; justify-content: center; }
+@media (min-width: 720px) {
+  .featured-slide { padding-left: 80px; padding-right: 80px; }
+}
 .featured-slide::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 90% 0%, rgba(255,255,255,0.18), transparent 55%); pointer-events: none; }
 .featured-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.85; margin-bottom: 10px; }
 .featured-headline { font-size: clamp(28px, 5vw, 48px); font-weight: 700; line-height: 1.1; margin: 0 0 6px; color: #fff !important; }
@@ -1076,10 +1079,13 @@ a:is(:hover, :active) { text-decoration: underline; }
 .featured-desc { font-size: clamp(15px, 2.4vw, 18px); max-width: 60ch; line-height: 1.45; opacity: 0.95; margin: 0 0 22px; }
 .featured-cta { display: inline-block; align-self: flex-start; padding: 12px 22px; background: rgba(255,255,255,0.18); color: #fff !important; border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none !important; transition: background 0.15s, transform 0.1s; }
 .featured-cta:hover { background: rgba(255,255,255,0.28); transform: translateY(-1px); }
-.featured-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(255,255,255,0.85); color: #222; font-size: 26px; line-height: 1; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; opacity: 0.9; transition: opacity 0.15s, background 0.15s; }
+.featured-nav { display: none; position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(255,255,255,0.85); color: #222; font-size: 26px; line-height: 1; align-items: center; justify-content: center; cursor: pointer; z-index: 2; opacity: 0.9; transition: opacity 0.15s, background 0.15s; }
 .featured-nav:hover { opacity: 1; background: #fff; }
 .featured-prev { left: 14px; }
 .featured-next { right: 14px; }
+@media (min-width: 720px) {
+  .featured-nav { display: flex; }
+}
 .featured-dots { position: absolute; bottom: 16px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 2; }
 .featured-dot { width: 9px; height: 9px; border-radius: 50%; border: none; background: rgba(255,255,255,0.4); cursor: pointer; padding: 0; transition: background 0.15s, transform 0.15s; }
 .featured-dot:hover { background: rgba(255,255,255,0.7); }

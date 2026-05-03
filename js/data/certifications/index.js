@@ -7,6 +7,7 @@ import { cert as comptiaNetworkPlus } from './comptia-network-plus.js';
 import { cert as comptiaSecurityPlus } from './comptia-security-plus.js';
 import { cert as comptiaAPlusCore2 } from './comptia-a-plus-core-2.js';
 import { cert as comptiaDataPlus } from './comptia-data-plus.js';
+import { cert as ciscoCcna } from './cisco-ccna.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -18,4 +19,5 @@ export const certifications = [
   comptiaNetworkPlus,
   comptiaSecurityPlus,
   comptiaDataPlus,
+  ciscoCcna,
 ];

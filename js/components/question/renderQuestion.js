@@ -1,6 +1,14 @@
 import { getFlaggedQuestions } from '../../storage/getFlaggedQuestions.js';
 import { toggleFlag } from '../../storage/toggleFlag.js';
 
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function codeBlock(code) {
+  return code ? `<pre class="q-code">${escapeHtml(code)}</pre>` : '';
+}
+
 export function renderQuestion(question, onAnswer, storageKey) {
   const diff = question.difficulty || '';
   const badge       = diff ? `<span class="badge-difficulty badge-${diff}">${diff}</span>` : '';
@@ -16,11 +24,12 @@ export function renderQuestion(question, onAnswer, storageKey) {
         <button class="flag-btn${flagged ? ' flagged' : ''}" id="flag-btn" title="Flag for review" aria-label="${flagged ? 'Unflag question' : 'Flag question for review'}" aria-pressed="${flagged}">&#9873;</button>
       </div>
     </div>
-    <p class="question-text">${question.text}</p>`;
+    <p class="question-text">${question.text}</p>
+    ${codeBlock(question.code)}`;
 
   document.getElementById('answers').innerHTML = question.answers
     .map(a => `<button class="answer-btn" data-id="${a.id}" aria-label="Answer ${a.id.toUpperCase()}: ${a.text}">
-      <span>${a.id.toUpperCase()}. ${a.text}</span>
+      <span>${a.id.toUpperCase()}. ${a.text}${a.code ? `<pre class="q-code q-code-answer">${escapeHtml(a.code)}</pre>` : ''}</span>
       <kbd class="answer-key">${a.id.toUpperCase()}</kbd>
     </button>`)
     .join('');

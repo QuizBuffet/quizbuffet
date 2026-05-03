@@ -1125,6 +1125,11 @@ a:is(:hover, :active) { text-decoration: underline; }
 .answer-btn span, .explanation-item { user-select: none; -webkit-user-select: none; }
 .question-timer { text-align: right; font-size: 15px; font-family: monospace; color: var(--text-dim); margin-bottom: 12px; min-height: 16px; letter-spacing: 0.5px; }
 
+/* Code blocks for CLI commands, configs, and command output */
+.q-code { font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace; font-size: clamp(13px, 3.4vw, 14px); line-height: 1.5; background: var(--surface, #f4f4f4); color: var(--text, #222); border: 1px solid var(--border-sub); border-left: 3px solid var(--accent, #06c); border-radius: 6px; padding: 10px 12px; margin: 10px 0 14px; white-space: pre; overflow-x: auto; user-select: text; -webkit-user-select: text; tab-size: 4; }
+.q-code-answer { display: block; margin: 8px 0 0; font-size: clamp(12px, 3vw, 13px); padding: 8px 10px; }
+[data-theme="dark"] .q-code { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+
 /* 16px + 48px min-height = proper iOS touch targets with no zoom */
 .answer-btn {
   display: flex; justify-content: space-between; align-items: center;

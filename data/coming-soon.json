@@ -1,14 +1,5 @@
 [
   {
-    "slug": "cisco-ccna",
-    "name": "Cisco CCNA",
-    "code": "200-301",
-    "vendor": "Cisco",
-    "category": "IT & Networking",
-    "tagline": "The industry-standard entry into network engineering careers",
-    "about": "CCNA (Cisco Certified Network Associate) covers networking fundamentals, IP services, security fundamentals, automation, and programmability. It is the most-requested networking certification on job postings and a common requirement for network administrator and engineer roles."
-  },
-  {
     "slug": "aws-cloud-practitioner",
     "name": "AWS Certified Cloud Practitioner",
     "code": "CLF-C02",
@@ -19,12 +10,12 @@
   },
   {
     "slug": "aws-solutions-architect-associate",
-    "name": "AWS Certified Solutions Architect – Associate",
+    "name": "AWS Certified Solutions Architect \u2013 Associate",
     "code": "SAA-C03",
     "vendor": "AWS",
     "category": "Cloud",
     "tagline": "The most popular cloud certification for designing AWS workloads",
-    "about": "AWS Certified Solutions Architect – Associate validates the ability to design distributed systems on AWS that meet customer requirements for availability, cost, performance, and security. One of the highest-demand cloud certifications by job posting volume."
+    "about": "AWS Certified Solutions Architect \u2013 Associate validates the ability to design distributed systems on AWS that meet customer requirements for availability, cost, performance, and security. One of the highest-demand cloud certifications by job posting volume."
   },
   {
     "slug": "microsoft-az-900",
@@ -263,7 +254,7 @@
   {
     "slug": "ase-automotive",
     "name": "ASE Automotive Certification",
-    "code": "ASE A1–A9 / G1",
+    "code": "ASE A1\u2013A9 / G1",
     "vendor": "ASE",
     "category": "Automotive",
     "tagline": "Industry-standard certification for automotive technicians",

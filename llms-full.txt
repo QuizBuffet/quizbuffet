@@ -368,40 +368,53 @@ A: The AWS Management Console is a web-based interface for accessing and managin
 **Q: Which option correctly defines AWS CLI?**
 A: The AWS Command Line Interface lets users manage AWS services from a command-line shell.
 
+## AWS Certified Solutions Architect – Associate (SAA-C03)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-solutions-architect-associate/
+Total questions: 0
+
+AWS Certified Solutions Architect – Associate (SAA-C03) validates the ability to design solutions on AWS that are secure, resilient, high-performing, and cost-optimized — based on the AWS Well-Architected Framework. Aimed at candidates with at least 1 year of hands-on experience designing cloud solutions on AWS.
+
+### Domains
+- 1.0 Design Secure Architectures (30% of exam)
+- 2.0 Design Resilient Architectures (26% of exam)
+- 3.0 Design High-Performing Architectures (24% of exam)
+- 4.0 Design Cost-Optimized Architectures (20% of exam)
+
+
 
 ## Coming soon (in priority order)
-- AWS Certified Solutions Architect – Associate (SAA-C03) — https://quizbuffet.com/aws-solutions-architect-associate/ — priority #1
-- Microsoft Azure Fundamentals (AZ-900) (AZ-900) — https://quizbuffet.com/microsoft-az-900/ — priority #2
-- Microsoft Azure Administrator Associate (AZ-104) (AZ-104) — https://quizbuffet.com/microsoft-az-104/ — priority #3
-- ISC2 CISSP (CISSP) — https://quizbuffet.com/isc2-cissp/ — priority #4
-- ITIL 4 Foundation (ITIL 4) — https://quizbuffet.com/itil-foundation/ — priority #5
-- OSHA 10-Hour Construction (OSHA 10) — https://quizbuffet.com/osha-10-construction/ — priority #6
-- OSHA 30-Hour Construction (OSHA 30) — https://quizbuffet.com/osha-30-construction/ — priority #7
-- Forklift Operator Certification (OSHA 1910.178) — https://quizbuffet.com/forklift-certification/ — priority #8
-- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #9
-- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #10
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #11
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #12
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #13
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #14
-- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #15
-- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #16
-- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #17
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #18
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #19
-- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #20
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #21
-- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #22
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #23
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #24
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #25
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #26
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #27
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #28
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #29
-- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #30
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #31
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #32
-- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #33
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #34
-- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #35
+- Microsoft Azure Fundamentals (AZ-900) (AZ-900) — https://quizbuffet.com/microsoft-az-900/ — priority #1
+- Microsoft Azure Administrator Associate (AZ-104) (AZ-104) — https://quizbuffet.com/microsoft-az-104/ — priority #2
+- ISC2 CISSP (CISSP) — https://quizbuffet.com/isc2-cissp/ — priority #3
+- ITIL 4 Foundation (ITIL 4) — https://quizbuffet.com/itil-foundation/ — priority #4
+- OSHA 10-Hour Construction (OSHA 10) — https://quizbuffet.com/osha-10-construction/ — priority #5
+- OSHA 30-Hour Construction (OSHA 30) — https://quizbuffet.com/osha-30-construction/ — priority #6
+- Forklift Operator Certification (OSHA 1910.178) — https://quizbuffet.com/forklift-certification/ — priority #7
+- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #8
+- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #9
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #10
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #11
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #12
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #13
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #14
+- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #15
+- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #16
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #17
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #18
+- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #19
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #20
+- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #21
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #22
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #23
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #24
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #25
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #26
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #27
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #28
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #29
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #30
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #31
+- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #32
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #33
+- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #34

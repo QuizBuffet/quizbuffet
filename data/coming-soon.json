@@ -1,14 +1,5 @@
 [
   {
-    "slug": "aws-solutions-architect-associate",
-    "name": "AWS Certified Solutions Architect \u2013 Associate",
-    "code": "SAA-C03",
-    "vendor": "AWS",
-    "category": "Cloud",
-    "tagline": "The most popular cloud certification for designing AWS workloads",
-    "about": "AWS Certified Solutions Architect \u2013 Associate validates the ability to design distributed systems on AWS that meet customer requirements for availability, cost, performance, and security. One of the highest-demand cloud certifications by job posting volume."
-  },
-  {
     "slug": "microsoft-az-900",
     "name": "Microsoft Azure Fundamentals (AZ-900)",
     "code": "AZ-900",

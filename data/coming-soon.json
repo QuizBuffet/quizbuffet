@@ -1,14 +1,5 @@
 [
   {
-    "slug": "aws-cloud-practitioner",
-    "name": "AWS Certified Cloud Practitioner",
-    "code": "CLF-C02",
-    "vendor": "AWS",
-    "category": "Cloud",
-    "tagline": "Foundational AWS knowledge for technical and non-technical professionals",
-    "about": "AWS Certified Cloud Practitioner validates foundational understanding of AWS Cloud concepts, services, security, architecture, pricing, and support. It is a common starting point for cloud careers and a prerequisite mindset check for higher AWS certifications."
-  },
-  {
     "slug": "aws-solutions-architect-associate",
     "name": "AWS Certified Solutions Architect \u2013 Associate",
     "code": "SAA-C03",

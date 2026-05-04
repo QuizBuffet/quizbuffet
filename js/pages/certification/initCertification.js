@@ -4,7 +4,7 @@ import { certifications } from '../../data/certifications/index.js';
 import { renderCertHeader } from './renderCertHeader.js';
 import { renderCertDomainList } from './renderCertDomainList.js';
 import { renderCertProgressSummary } from './renderCertProgressSummary.js';
-import { renderAcronymDrill } from './renderAcronymDrill.js';
+import { renderAcronymDrill, renderServiceDrill } from './renderAcronymDrill.js';
 import { renderSessionSizePicker } from './renderSessionSizePicker.js';
 import { renderMixQuizBtn } from './renderMixQuizBtn.js';
 import { loadDomain } from '../../loader/loadDomain.js';
@@ -55,6 +55,7 @@ export async function init() {
     renderMixQuizBtn(cert);
     renderCertDomainList(cert);
     renderAcronymDrill(cert);
+    renderServiceDrill(cert);
 
     const affiliatesEl = document.getElementById('affiliates');
     if (affiliatesEl) affiliatesEl.innerHTML = affiliateLinksHTML(cert.affiliates);

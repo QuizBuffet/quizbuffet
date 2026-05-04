@@ -3,5 +3,1590 @@
   "name": "Billing Pricing And Support",
   "cert": "aws-cloud-practitioner",
   "version": 1,
-  "questions": []
+  "questions": [
+    {
+      "id": 353,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "On-Demand Instances",
+      "difficulty": "easy",
+      "text": "Which description best matches On-Demand Instances in AWS Cloud Practitioner Domain 4.0 Billing, Pricing, and Support?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "b",
+          "text": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        },
+        {
+          "id": "c",
+          "text": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "d",
+          "text": "Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This is the correct answer.",
+        "b": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 354,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "On-Demand Instances",
+      "difficulty": "medium",
+      "text": "A company is comparing AWS pricing or purchasing options involving On-Demand Instances. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Reserved Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        },
+        {
+          "id": "b",
+          "text": "On-Demand Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "c",
+          "text": "Spot Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "d",
+          "text": "Savings Plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.",
+        "c": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 355,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "On-Demand Instances",
+      "difficulty": "medium-hard",
+      "text": "A workload has specific cost, commitment, interruption, licensing, or data-transfer requirements. Which scenario best matches On-Demand Instances?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to Reserved Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to Spot Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to On-Demand Instances when the pricing, cost-management, billing, or support decision depends on this distinction: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to Savings Plans when the pricing, cost-management, billing, or support decision depends on this distinction: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.",
+        "d": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 356,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "On-Demand Instances",
+      "difficulty": "hard",
+      "text": "A purchasing decision must match workload flexibility, commitment, interruption tolerance, licensing, or transfer behavior. Which answer applies On-Demand Instances most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Reserved Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        },
+        {
+          "id": "b",
+          "text": "Spot Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "c",
+          "text": "Savings Plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "d",
+          "text": "On-Demand Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. On-Demand Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer."
+      }
+    },
+    {
+      "id": 357,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Reserved Instances",
+      "difficulty": "easy",
+      "text": "Which option correctly defines Reserved Instances?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "b",
+          "text": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        },
+        {
+          "id": "c",
+          "text": "AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "d",
+          "text": "AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AWS Pricing Calculator means AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. This is the correct answer.",
+        "c": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 358,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Reserved Instances",
+      "difficulty": "medium",
+      "text": "A company is comparing AWS pricing or purchasing options involving Reserved Instances. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Pricing Calculator is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "b",
+          "text": "AWS Organizations consolidated billing is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "c",
+          "text": "Reserved Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        },
+        {
+          "id": "d",
+          "text": "AWS Support plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "AWS Pricing Calculator means AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.",
+        "d": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 359,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Reserved Instances",
+      "difficulty": "medium-hard",
+      "text": "A workload has specific cost, commitment, interruption, licensing, or data-transfer requirements. Which scenario best matches Reserved Instances?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to AWS Pricing Calculator when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to AWS Organizations consolidated billing when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to AWS Support plans when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to Reserved Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "AWS Pricing Calculator means AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer."
+      }
+    },
+    {
+      "id": 360,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Reserved Instances",
+      "difficulty": "hard",
+      "text": "A purchasing decision must match workload flexibility, commitment, interruption tolerance, licensing, or transfer behavior. Which answer applies Reserved Instances most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Reserved Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        },
+        {
+          "id": "b",
+          "text": "AWS Pricing Calculator is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "c",
+          "text": "AWS Organizations consolidated billing is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "d",
+          "text": "AWS Support plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.",
+        "b": "AWS Pricing Calculator means AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. Reserved Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 361,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Spot Instances",
+      "difficulty": "easy",
+      "text": "How is Spot Instances best understood in an AWS billing, pricing, and support context?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "b",
+          "text": "Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "c",
+          "text": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "d",
+          "text": "AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. This is the correct answer.",
+        "d": "AWS Budgets means AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 362,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Spot Instances",
+      "difficulty": "medium",
+      "text": "A company is comparing AWS pricing or purchasing options involving Spot Instances. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Dedicated Hosts is the best match when the AWS billing, pricing, or support scenario requires this meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "b",
+          "text": "Data transfer costs is the best match when the AWS billing, pricing, or support scenario requires this meaning: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "c",
+          "text": "AWS Budgets is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits."
+        },
+        {
+          "id": "d",
+          "text": "Spot Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "AWS Budgets means AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer."
+      }
+    },
+    {
+      "id": 363,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Spot Instances",
+      "difficulty": "medium-hard",
+      "text": "A workload has specific cost, commitment, interruption, licensing, or data-transfer requirements. Which scenario best matches Spot Instances?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to Spot Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to Dedicated Hosts when the pricing, cost-management, billing, or support decision depends on this distinction: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to Data transfer costs when the pricing, cost-management, billing, or support decision depends on this distinction: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to AWS Budgets when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.",
+        "b": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "AWS Budgets means AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 364,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Spot Instances",
+      "difficulty": "hard",
+      "text": "A purchasing decision must match workload flexibility, commitment, interruption tolerance, licensing, or transfer behavior. Which answer applies Spot Instances most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Dedicated Hosts is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "b",
+          "text": "Spot Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "c",
+          "text": "Data transfer costs is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "d",
+          "text": "AWS Budgets is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.",
+        "c": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "AWS Budgets means AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits. Spot Instances is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 365,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Savings Plans",
+      "difficulty": "easy",
+      "text": "Select the description that best identifies Savings Plans.",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "b",
+          "text": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "c",
+          "text": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        },
+        {
+          "id": "d",
+          "text": "Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. This is the correct answer."
+      }
+    },
+    {
+      "id": 366,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Savings Plans",
+      "difficulty": "medium",
+      "text": "A company is comparing AWS pricing or purchasing options involving Savings Plans. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Savings Plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trusted Advisor is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "c",
+          "text": "On-Demand Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "d",
+          "text": "Reserved Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.",
+        "b": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 367,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Savings Plans",
+      "difficulty": "medium-hard",
+      "text": "A workload has specific cost, commitment, interruption, licensing, or data-transfer requirements. Which scenario best matches Savings Plans?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to AWS Trusted Advisor when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to Savings Plans when the pricing, cost-management, billing, or support decision depends on this distinction: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to On-Demand Instances when the pricing, cost-management, billing, or support decision depends on this distinction: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to Reserved Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.",
+        "c": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 368,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Savings Plans",
+      "difficulty": "hard",
+      "text": "A purchasing decision must match workload flexibility, commitment, interruption tolerance, licensing, or transfer behavior. Which answer applies Savings Plans most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Trusted Advisor is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "b",
+          "text": "On-Demand Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "c",
+          "text": "Savings Plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "d",
+          "text": "Reserved Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.",
+        "d": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. Savings Plans is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 369,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Dedicated Hosts",
+      "difficulty": "easy",
+      "text": "Which description best matches Dedicated Hosts in AWS Cloud Practitioner Domain 4.0 Billing, Pricing, and Support?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "b",
+          "text": "AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "c",
+          "text": "AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "d",
+          "text": "AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. This is the correct answer.",
+        "b": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "AWS Pricing Calculator means AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 370,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Dedicated Hosts",
+      "difficulty": "medium",
+      "text": "A company is comparing AWS pricing or purchasing options involving Dedicated Hosts. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Cost Explorer is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "b",
+          "text": "Dedicated Hosts is the best match when the AWS billing, pricing, or support scenario requires this meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "c",
+          "text": "AWS Pricing Calculator is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "d",
+          "text": "AWS Organizations consolidated billing is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.",
+        "c": "AWS Pricing Calculator means AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 371,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Dedicated Hosts",
+      "difficulty": "medium-hard",
+      "text": "A workload has specific cost, commitment, interruption, licensing, or data-transfer requirements. Which scenario best matches Dedicated Hosts?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to AWS Cost Explorer when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to AWS Pricing Calculator when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to Dedicated Hosts when the pricing, cost-management, billing, or support decision depends on this distinction: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to AWS Organizations consolidated billing when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "AWS Pricing Calculator means AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.",
+        "d": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 372,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Dedicated Hosts",
+      "difficulty": "hard",
+      "text": "A purchasing decision must match workload flexibility, commitment, interruption tolerance, licensing, or transfer behavior. Which answer applies Dedicated Hosts most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Cost Explorer is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "b",
+          "text": "AWS Pricing Calculator is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "c",
+          "text": "AWS Organizations consolidated billing is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "d",
+          "text": "Dedicated Hosts is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "AWS Pricing Calculator means AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. Dedicated Hosts is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer."
+      }
+    },
+    {
+      "id": 373,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Data transfer costs",
+      "difficulty": "easy",
+      "text": "Which option correctly defines Data transfer costs?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "b",
+          "text": "Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "c",
+          "text": "Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "d",
+          "text": "Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. This is the correct answer.",
+        "c": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 374,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Data transfer costs",
+      "difficulty": "medium",
+      "text": "A company is comparing AWS pricing or purchasing options involving Data transfer costs. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Spot Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "b",
+          "text": "Savings Plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "c",
+          "text": "Data transfer costs is the best match when the AWS billing, pricing, or support scenario requires this meaning: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "d",
+          "text": "Dedicated Hosts is the best match when the AWS billing, pricing, or support scenario requires this meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.",
+        "d": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 375,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Data transfer costs",
+      "difficulty": "medium-hard",
+      "text": "A workload has specific cost, commitment, interruption, licensing, or data-transfer requirements. Which scenario best matches Data transfer costs?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to Spot Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to Savings Plans when the pricing, cost-management, billing, or support decision depends on this distinction: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to Dedicated Hosts when the pricing, cost-management, billing, or support decision depends on this distinction: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to Data transfer costs when the pricing, cost-management, billing, or support decision depends on this distinction: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "b": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer."
+      }
+    },
+    {
+      "id": 376,
+      "domain": "4.0",
+      "objective": "4.1",
+      "keyword": "Data transfer costs",
+      "difficulty": "hard",
+      "text": "A purchasing decision must match workload flexibility, commitment, interruption tolerance, licensing, or transfer behavior. Which answer applies Data transfer costs most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Data transfer costs is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "b",
+          "text": "Spot Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "c",
+          "text": "Savings Plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "d",
+          "text": "Dedicated Hosts is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.",
+        "b": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "c": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior.",
+        "d": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. Data transfer costs is different because the scenario is asking about a specific AWS pricing or purchasing option, commitment model, interruption risk, dedicated hardware need, or data transfer cost behavior."
+      }
+    },
+    {
+      "id": 377,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Budgets",
+      "difficulty": "easy",
+      "text": "How is AWS Budgets best understood in an AWS billing, pricing, and support context?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "c",
+          "text": "AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits."
+        },
+        {
+          "id": "d",
+          "text": "AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits. This is the correct answer.",
+        "d": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 378,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Budgets",
+      "difficulty": "medium",
+      "text": "A finance or cloud operations team needs a billing or cost-management resource involving AWS Budgets. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Support plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trusted Advisor is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "c",
+          "text": "AWS Cost Explorer is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "d",
+          "text": "AWS Budgets is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer."
+      }
+    },
+    {
+      "id": 379,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Budgets",
+      "difficulty": "medium-hard",
+      "text": "A team needs to set alerts, analyze spending, estimate costs, or consolidate account billing. Which scenario best matches AWS Budgets?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to AWS Budgets when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to AWS Support plans when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to AWS Trusted Advisor when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to AWS Cost Explorer when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.",
+        "b": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 380,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Budgets",
+      "difficulty": "hard",
+      "text": "A cost governance decision must choose the correct AWS resource for budgets, forecasting, estimates, analysis, or consolidated billing. Which answer applies AWS Budgets most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Support plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "b",
+          "text": "AWS Budgets is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits."
+        },
+        {
+          "id": "c",
+          "text": "AWS Trusted Advisor is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "d",
+          "text": "AWS Cost Explorer is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.",
+        "c": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. AWS Budgets is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 381,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Cost Explorer",
+      "difficulty": "easy",
+      "text": "Select the description that best identifies AWS Cost Explorer.",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "b",
+          "text": "Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "c",
+          "text": "Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "d",
+          "text": "AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. This is the correct answer."
+      }
+    },
+    {
+      "id": 382,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Cost Explorer",
+      "difficulty": "medium",
+      "text": "A finance or cloud operations team needs a billing or cost-management resource involving AWS Cost Explorer. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Cost Explorer is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "b",
+          "text": "Spot Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "c",
+          "text": "Savings Plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "d",
+          "text": "Dedicated Hosts is the best match when the AWS billing, pricing, or support scenario requires this meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.",
+        "b": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 383,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Cost Explorer",
+      "difficulty": "medium-hard",
+      "text": "A team needs to set alerts, analyze spending, estimate costs, or consolidate account billing. Which scenario best matches AWS Cost Explorer?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to Spot Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to AWS Cost Explorer when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to Savings Plans when the pricing, cost-management, billing, or support decision depends on this distinction: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to Dedicated Hosts when the pricing, cost-management, billing, or support decision depends on this distinction: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.",
+        "c": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 384,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Cost Explorer",
+      "difficulty": "hard",
+      "text": "A cost governance decision must choose the correct AWS resource for budgets, forecasting, estimates, analysis, or consolidated billing. Which answer applies AWS Cost Explorer most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Spot Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
+        },
+        {
+          "id": "b",
+          "text": "Savings Plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "c",
+          "text": "AWS Cost Explorer is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "d",
+          "text": "Dedicated Hosts is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Spot Instances means Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.",
+        "d": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. AWS Cost Explorer is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 385,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Pricing Calculator",
+      "difficulty": "easy",
+      "text": "Which description best matches AWS Pricing Calculator in AWS Cloud Practitioner Domain 4.0 Billing, Pricing, and Support?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "b",
+          "text": "AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "c",
+          "text": "AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "d",
+          "text": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. This is the correct answer.",
+        "b": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 386,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Pricing Calculator",
+      "difficulty": "medium",
+      "text": "A finance or cloud operations team needs a billing or cost-management resource involving AWS Pricing Calculator. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Cost Explorer is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "b",
+          "text": "AWS Pricing Calculator is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "c",
+          "text": "AWS Organizations consolidated billing is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "d",
+          "text": "On-Demand Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.",
+        "c": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 387,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Pricing Calculator",
+      "difficulty": "medium-hard",
+      "text": "A team needs to set alerts, analyze spending, estimate costs, or consolidate account billing. Which scenario best matches AWS Pricing Calculator?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to AWS Cost Explorer when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to AWS Organizations consolidated billing when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to AWS Pricing Calculator when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to On-Demand Instances when the pricing, cost-management, billing, or support decision depends on this distinction: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.",
+        "d": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 388,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Pricing Calculator",
+      "difficulty": "hard",
+      "text": "A cost governance decision must choose the correct AWS resource for budgets, forecasting, estimates, analysis, or consolidated billing. Which answer applies AWS Pricing Calculator most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Cost Explorer is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time."
+        },
+        {
+          "id": "b",
+          "text": "AWS Organizations consolidated billing is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "c",
+          "text": "On-Demand Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "d",
+          "text": "AWS Pricing Calculator is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "AWS Cost Explorer means AWS Cost Explorer helps visualize, analyze, and forecast AWS costs and usage over time. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Organizations consolidated billing means AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. AWS Pricing Calculator is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer."
+      }
+    },
+    {
+      "id": 389,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Organizations consolidated billing",
+      "difficulty": "easy",
+      "text": "Which option correctly defines AWS Organizations consolidated billing?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "b",
+          "text": "AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "c",
+          "text": "AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. This is the correct answer.",
+        "c": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 390,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Organizations consolidated billing",
+      "difficulty": "medium",
+      "text": "A finance or cloud operations team needs a billing or cost-management resource involving AWS Organizations consolidated billing. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Data transfer costs is the best match when the AWS billing, pricing, or support scenario requires this meaning: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "b",
+          "text": "AWS Support plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "c",
+          "text": "AWS Organizations consolidated billing is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.",
+        "d": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 391,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Organizations consolidated billing",
+      "difficulty": "medium-hard",
+      "text": "A team needs to set alerts, analyze spending, estimate costs, or consolidate account billing. Which scenario best matches AWS Organizations consolidated billing?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to Data transfer costs when the pricing, cost-management, billing, or support decision depends on this distinction: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to AWS Support plans when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to AWS Trusted Advisor when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to AWS Organizations consolidated billing when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "b": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer."
+      }
+    },
+    {
+      "id": 392,
+      "domain": "4.0",
+      "objective": "4.2",
+      "keyword": "AWS Organizations consolidated billing",
+      "difficulty": "hard",
+      "text": "A cost governance decision must choose the correct AWS resource for budgets, forecasting, estimates, analysis, or consolidated billing. Which answer applies AWS Organizations consolidated billing most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Organizations consolidated billing is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management."
+        },
+        {
+          "id": "b",
+          "text": "Data transfer costs is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "c",
+          "text": "AWS Support plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.",
+        "b": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "c": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource.",
+        "d": "AWS Trusted Advisor means AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. AWS Organizations consolidated billing is different because the scenario is asking about the right billing, budgeting, cost analysis, forecasting, estimate, or consolidated billing resource."
+      }
+    },
+    {
+      "id": 393,
+      "domain": "4.0",
+      "objective": "4.3",
+      "keyword": "AWS Support plans",
+      "difficulty": "easy",
+      "text": "How is AWS Support plans best understood in an AWS billing, pricing, and support context?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "b",
+          "text": "Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "c",
+          "text": "AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "d",
+          "text": "Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "b": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "c": "AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. This is the correct answer.",
+        "d": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard."
+      }
+    },
+    {
+      "id": 394,
+      "domain": "4.0",
+      "objective": "4.3",
+      "keyword": "AWS Support plans",
+      "difficulty": "medium",
+      "text": "A company needs AWS support or advisory guidance involving AWS Support plans. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Savings Plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "b",
+          "text": "Dedicated Hosts is the best match when the AWS billing, pricing, or support scenario requires this meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "c",
+          "text": "Data transfer costs is the best match when the AWS billing, pricing, or support scenario requires this meaning: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        },
+        {
+          "id": "d",
+          "text": "AWS Support plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "b": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "c": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "d": "AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer."
+      }
+    },
+    {
+      "id": 395,
+      "domain": "4.0",
+      "objective": "4.3",
+      "keyword": "AWS Support plans",
+      "difficulty": "medium-hard",
+      "text": "A team needs technical guidance or recommendations for cost, performance, security, or service limits. Which scenario best matches AWS Support plans?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to AWS Support plans when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to Savings Plans when the pricing, cost-management, billing, or support decision depends on this distinction: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to Dedicated Hosts when the pricing, cost-management, billing, or support decision depends on this distinction: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to Data transfer costs when the pricing, cost-management, billing, or support decision depends on this distinction: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.",
+        "b": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "c": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "d": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard."
+      }
+    },
+    {
+      "id": 396,
+      "domain": "4.0",
+      "objective": "4.3",
+      "keyword": "AWS Support plans",
+      "difficulty": "hard",
+      "text": "A support decision must distinguish support-plan capabilities from advisory checks and cost tools. Which answer applies AWS Support plans most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Savings Plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term."
+        },
+        {
+          "id": "b",
+          "text": "AWS Support plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "c",
+          "text": "Dedicated Hosts is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements."
+        },
+        {
+          "id": "d",
+          "text": "Data transfer costs is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "Savings Plans means Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "b": "AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.",
+        "c": "Dedicated Hosts means Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "d": "Data transfer costs means Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet. AWS Support plans is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard."
+      }
+    },
+    {
+      "id": 397,
+      "domain": "4.0",
+      "objective": "4.3",
+      "keyword": "AWS Trusted Advisor",
+      "difficulty": "easy",
+      "text": "Select the description that best identifies AWS Trusted Advisor.",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "b",
+          "text": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "c",
+          "text": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        }
+      ],
+      "correct": "d",
+      "explanations": {
+        "a": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "b": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "c": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "d": "AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. This is the correct answer."
+      }
+    },
+    {
+      "id": 398,
+      "domain": "4.0",
+      "objective": "4.3",
+      "keyword": "AWS Trusted Advisor",
+      "difficulty": "medium",
+      "text": "A company needs AWS support or advisory guidance involving AWS Trusted Advisor. Which answer best describes it?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Trusted Advisor is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "b",
+          "text": "AWS Support plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "c",
+          "text": "On-Demand Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "d",
+          "text": "Reserved Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        }
+      ],
+      "correct": "a",
+      "explanations": {
+        "a": "AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.",
+        "b": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "c": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "d": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard."
+      }
+    },
+    {
+      "id": 399,
+      "domain": "4.0",
+      "objective": "4.3",
+      "keyword": "AWS Trusted Advisor",
+      "difficulty": "medium-hard",
+      "text": "A team needs technical guidance or recommendations for cost, performance, security, or service limits. Which scenario best matches AWS Trusted Advisor?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "A scenario points to AWS Support plans when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "b",
+          "text": "A scenario points to AWS Trusted Advisor when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "c",
+          "text": "A scenario points to On-Demand Instances when the pricing, cost-management, billing, or support decision depends on this distinction: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "d",
+          "text": "A scenario points to Reserved Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        }
+      ],
+      "correct": "b",
+      "explanations": {
+        "a": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "b": "AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.",
+        "c": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "d": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard."
+      }
+    },
+    {
+      "id": 400,
+      "domain": "4.0",
+      "objective": "4.3",
+      "keyword": "AWS Trusted Advisor",
+      "difficulty": "hard",
+      "text": "A support decision must distinguish support-plan capabilities from advisory checks and cost tools. Which answer applies AWS Trusted Advisor most accurately?",
+      "answers": [
+        {
+          "id": "a",
+          "text": "AWS Support plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts."
+        },
+        {
+          "id": "b",
+          "text": "On-Demand Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
+        },
+        {
+          "id": "c",
+          "text": "AWS Trusted Advisor is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits."
+        },
+        {
+          "id": "d",
+          "text": "Reserved Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
+        }
+      ],
+      "correct": "c",
+      "explanations": {
+        "a": "AWS Support plans means AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "b": "On-Demand Instances means On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard.",
+        "c": "AWS Trusted Advisor provides recommendations across areas such as cost optimization, performance, security, fault tolerance, and service limits. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.",
+        "d": "Reserved Instances means Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. AWS Trusted Advisor is different because the scenario is asking about AWS technical support, advisory recommendations, operational guidance, or support-plan capability rather than a pricing model or billing dashboard."
+      }
+    }
+  ]
 }

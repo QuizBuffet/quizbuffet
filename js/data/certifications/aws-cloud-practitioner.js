@@ -1,4 +1,5 @@
 import { acronyms } from '../acronyms/aws-cloud-practitioner.js';
+import { services } from '../services/aws-cloud-practitioner.js';
 
 export const cert = {
   slug: 'aws-cloud-practitioner',
@@ -9,6 +10,7 @@ export const cert = {
   about: 'AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud — value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.',
   details: '50 scored questions + 15 unscored · Multiple-choice and multiple-response · Pass score 700/1000',
   acronyms,
+  services,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop AWS Cloud Practitioner CLF-C02 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=aws+certified+cloud+practitioner+clf-c02&tag=0003aa-20' },

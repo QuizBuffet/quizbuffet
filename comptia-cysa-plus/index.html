@@ -21,6 +21,8 @@
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/comptia-cysa-plus.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -74,6 +76,15 @@
       "courseCode": "CS0-003",
       "description": "CySA+ (Cybersecurity Analyst+) certifies analysts who detect and respond to threats, perform vulnerability management, and conduct incident response. It covers security operations, threat hunting, vulnerability scanning and prioritization, incident handling, and communicating findings to stakeholders. Aimed at professionals with 4 years of hands-on SOC or incident response experience.",
       "url": "https://quizbuffet.com/comptia-cysa-plus/",
+      "inLanguage": "en-US",
+      "dateModified": "2026-05-04",
+      "educationalCredentialAwarded": "CompTIA CySA+",
+      "teaches": [
+        "Security Operations",
+        "Vulnerability Management",
+        "Incident Response Management",
+        "Reporting and Communication"
+      ],
       "provider": {
         "@type": "Organization",
         "name": "QuizBuffet",
@@ -85,11 +96,34 @@
         "courseWorkload": "PT27H"
       },
       "about": [
-        "Security Operations",
-        "Vulnerability Management",
-        "Incident Response Management",
-        "Reporting and Communication"
-      ]
+        {
+          "@type": "Organization",
+          "name": "CompTIA",
+          "sameAs": "https://en.wikipedia.org/wiki/CompTIA"
+        },
+        {
+          "@type": "Thing",
+          "name": "Security Operations"
+        },
+        {
+          "@type": "Thing",
+          "name": "Vulnerability Management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Incident Response Management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Reporting and Communication"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
     },
     {
       "@type": "FAQPage",
@@ -99,7 +133,7 @@
           "name": "Which description best matches Security operations architecture concepts in CySA+ Objective 1.0 Security Operations?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Security operations architecture concepts describe the systems, networks, identities, logging, encryption, and data protections analysts must understand to detect and respond to threats. This is the correct answer."
+            "text": "Security operations architecture concepts describe the systems, networks, identities, logging, encryption, and data protections analysts must understand to detect and respond to threats."
           }
         },
         {
@@ -107,7 +141,7 @@
           "name": "Which option correctly defines Log ingestion?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Log ingestion is the collection and intake of event data from systems, applications, network devices, cloud services, and security tools into an analysis platform. This is the correct answer."
+            "text": "Log ingestion is the collection and intake of event data from systems, applications, network devices, cloud services, and security tools into an analysis platform."
           }
         },
         {
@@ -115,7 +149,7 @@
           "name": "How is Time synchronization best understood in a security operations context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Time synchronization aligns clocks across systems so logs and events can be correlated accurately during investigations. This is the correct answer."
+            "text": "Time synchronization aligns clocks across systems so logs and events can be correlated accurately during investigations."
           }
         },
         {
@@ -123,7 +157,7 @@
           "name": "Which description best matches Asset discovery in CySA+ Objective 2.0 Vulnerability Management?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Asset discovery identifies systems, services, devices, cloud resources, applications, and other assets that may need vulnerability assessment. This is the correct answer."
+            "text": "Asset discovery identifies systems, services, devices, cloud resources, applications, and other assets that may need vulnerability assessment."
           }
         },
         {
@@ -131,7 +165,7 @@
           "name": "Which option correctly defines Map scans?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Map scans discover reachable hosts, ports, services, and network layout so analysts understand what exists in the environment. This is the correct answer."
+            "text": "Map scans discover reachable hosts, ports, services, and network layout so analysts understand what exists in the environment."
           }
         },
         {
@@ -139,7 +173,7 @@
           "name": "How is Device fingerprinting best understood in a vulnerability management context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Device fingerprinting identifies device type, operating system, service versions, or platform traits based on observed characteristics. This is the correct answer."
+            "text": "Device fingerprinting identifies device type, operating system, service versions, or platform traits based on observed characteristics."
           }
         },
         {
@@ -147,7 +181,7 @@
           "name": "Which description best matches Cyber kill chain in CySA+ Objective 3.0 Incident Response and Management?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The cyber kill chain is a phased model that describes common stages of an attack from reconnaissance through actions on objectives. This is the correct answer."
+            "text": "The cyber kill chain is a phased model that describes common stages of an attack from reconnaissance through actions on objectives."
           }
         },
         {
@@ -155,7 +189,7 @@
           "name": "Which option correctly defines Reconnaissance?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Reconnaissance is the attack phase where an adversary gathers information about targets, technologies, people, and weaknesses before attempting compromise. This is the correct answer."
+            "text": "Reconnaissance is the attack phase where an adversary gathers information about targets, technologies, people, and weaknesses before attempting compromise."
           }
         },
         {
@@ -163,7 +197,7 @@
           "name": "How is Weaponization best understood in an incident response context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Weaponization is the attack phase where an adversary prepares a payload, exploit, or delivery package for use against a target. This is the correct answer."
+            "text": "Weaponization is the attack phase where an adversary prepares a payload, exploit, or delivery package for use against a target."
           }
         },
         {
@@ -171,7 +205,7 @@
           "name": "Which description best matches Vulnerability management reporting in CySA+ Objective 4.0 Reporting and Communication?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vulnerability management reporting communicates vulnerability findings, affected assets, risk, mitigation, recurrence, and prioritization to stakeholders. This is the correct answer."
+            "text": "Vulnerability management reporting communicates vulnerability findings, affected assets, risk, mitigation, recurrence, and prioritization to stakeholders."
           }
         },
         {
@@ -179,7 +213,7 @@
           "name": "Which option correctly defines Vulnerabilities?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vulnerabilities are weaknesses in systems, applications, configurations, or processes that could be exploited or create risk. This is the correct answer."
+            "text": "Vulnerabilities are weaknesses in systems, applications, configurations, or processes that could be exploited or create risk."
           }
         },
         {
@@ -187,7 +221,7 @@
           "name": "How is Affected hosts best understood in a reporting and communication context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Affected hosts are systems, devices, servers, endpoints, or workloads impacted by a vulnerability or finding. This is the correct answer."
+            "text": "Affected hosts are systems, devices, servers, endpoints, or workloads impacted by a vulnerability or finding."
           }
         }
       ]

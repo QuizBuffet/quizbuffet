@@ -21,6 +21,8 @@
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/cisco-ccna.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -74,6 +76,17 @@
       "courseCode": "200-301",
       "description": "CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability — including AI/ML in network operations and REST APIs.",
       "url": "https://quizbuffet.com/cisco-ccna/",
+      "inLanguage": "en-US",
+      "dateModified": "2026-05-04",
+      "educationalCredentialAwarded": "Cisco CCNA",
+      "teaches": [
+        "Network Fundamentals",
+        "Network Access",
+        "IP Connectivity",
+        "IP Services",
+        "Security Fundamentals",
+        "Automation and Programmability"
+      ],
       "provider": {
         "@type": "Organization",
         "name": "QuizBuffet",
@@ -85,13 +98,42 @@
         "courseWorkload": "PT13H"
       },
       "about": [
-        "Network Fundamentals",
-        "Network Access",
-        "IP Connectivity",
-        "IP Services",
-        "Security Fundamentals",
-        "Automation and Programmability"
-      ]
+        {
+          "@type": "Organization",
+          "name": "Cisco",
+          "sameAs": "https://en.wikipedia.org/wiki/Cisco"
+        },
+        {
+          "@type": "Thing",
+          "name": "Network Fundamentals"
+        },
+        {
+          "@type": "Thing",
+          "name": "Network Access"
+        },
+        {
+          "@type": "Thing",
+          "name": "IP Connectivity"
+        },
+        {
+          "@type": "Thing",
+          "name": "IP Services"
+        },
+        {
+          "@type": "Thing",
+          "name": "Security Fundamentals"
+        },
+        {
+          "@type": "Thing",
+          "name": "Automation and Programmability"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
     },
     {
       "@type": "FAQPage",
@@ -101,7 +143,7 @@
           "name": "Which description best matches Routers in CCNA Objective 1.0 Network Fundamentals?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Routers forward packets between IP networks, choose paths using routing information, and separate broadcast domains. This is the correct answer."
+            "text": "Routers forward packets between IP networks, choose paths using routing information, and separate broadcast domains."
           }
         },
         {
@@ -109,7 +151,7 @@
           "name": "Which option correctly defines Layer 2 switches?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Layer 2 switches forward Ethernet frames within a LAN using MAC address learning and a MAC address table. This is the correct answer."
+            "text": "Layer 2 switches forward Ethernet frames within a LAN using MAC address learning and a MAC address table."
           }
         },
         {
@@ -117,7 +159,7 @@
           "name": "Which description best matches VLANs in CCNA Objective 2.0 Network Access?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "VLANs logically segment a Layer 2 network into separate broadcast domains on switches. This is the correct answer."
+            "text": "VLANs logically segment a Layer 2 network into separate broadcast domains on switches."
           }
         },
         {
@@ -125,7 +167,7 @@
           "name": "Which option correctly defines Normal range VLANs?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches. This is the correct answer."
+            "text": "Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches."
           }
         },
         {
@@ -133,7 +175,7 @@
           "name": "Which description best matches Routing table in CCNA Objective 3.0 IP Connectivity?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A routing table lists known routes and the information a router uses to choose where to forward packets. This is the correct answer."
+            "text": "A routing table lists known routes and the information a router uses to choose where to forward packets."
           }
         },
         {
@@ -141,7 +183,7 @@
           "name": "Which option correctly defines Routing protocol code?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source. This is the correct answer."
+            "text": "A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source."
           }
         },
         {
@@ -149,7 +191,7 @@
           "name": "Which description best matches Inside source NAT in CCNA Objective 4.0 IP Services?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network. This is the correct answer."
+            "text": "Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network."
           }
         },
         {
@@ -157,7 +199,7 @@
           "name": "Which option correctly defines Static NAT?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Static NAT creates a one-to-one translation between an inside local address and an inside global address. This is the correct answer."
+            "text": "Static NAT creates a one-to-one translation between an inside local address and an inside global address."
           }
         },
         {
@@ -165,7 +207,7 @@
           "name": "Which description best matches Threats in CCNA Objective 5.0 Security Fundamentals?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Threats are potential events or actors that can exploit weaknesses and harm systems, data, or operations. This is the correct answer."
+            "text": "Threats are potential events or actors that can exploit weaknesses and harm systems, data, or operations."
           }
         },
         {
@@ -173,7 +215,7 @@
           "name": "Which option correctly defines Vulnerabilities?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vulnerabilities are weaknesses in systems, configurations, software, processes, or controls that can be exploited. This is the correct answer."
+            "text": "Vulnerabilities are weaknesses in systems, configurations, software, processes, or controls that can be exploited."
           }
         },
         {
@@ -181,7 +223,7 @@
           "name": "Which description best matches Automation impact on network management in CCNA Objective 6.0 Automation and Programmability?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Automation changes network management by making configuration, monitoring, deployment, and troubleshooting more repeatable, scalable, and less manual. This is the correct answer."
+            "text": "Automation changes network management by making configuration, monitoring, deployment, and troubleshooting more repeatable, scalable, and less manual."
           }
         },
         {
@@ -189,7 +231,7 @@
           "name": "Which option correctly defines Traditional network management?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Traditional network management configures and monitors devices individually, often through CLI-based or device-by-device workflows. This is the correct answer."
+            "text": "Traditional network management configures and monitors devices individually, often through CLI-based or device-by-device workflows."
           }
         }
       ]

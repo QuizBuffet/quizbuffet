@@ -21,6 +21,8 @@
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/comptia-a-plus-core-2.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -74,6 +76,15 @@
       "courseCode": "220-1202",
       "description": "A+ Core 2 (220-1202) is the second of two exams required for the CompTIA A+ certification. It covers operating systems, security, software troubleshooting, and operational procedures for IT support specialists.",
       "url": "https://quizbuffet.com/comptia-a-plus-core-2/",
+      "inLanguage": "en-US",
+      "dateModified": "2026-05-04",
+      "educationalCredentialAwarded": "CompTIA A+ Core 2",
+      "teaches": [
+        "Operating Systems",
+        "Security",
+        "Software Troubleshooting",
+        "Operational Procedures"
+      ],
       "provider": {
         "@type": "Organization",
         "name": "QuizBuffet",
@@ -85,11 +96,34 @@
         "courseWorkload": "PT53H"
       },
       "about": [
-        "Operating Systems",
-        "Security",
-        "Software Troubleshooting",
-        "Operational Procedures"
-      ]
+        {
+          "@type": "Organization",
+          "name": "CompTIA",
+          "sameAs": "https://en.wikipedia.org/wiki/CompTIA"
+        },
+        {
+          "@type": "Thing",
+          "name": "Operating Systems"
+        },
+        {
+          "@type": "Thing",
+          "name": "Security"
+        },
+        {
+          "@type": "Thing",
+          "name": "Software Troubleshooting"
+        },
+        {
+          "@type": "Thing",
+          "name": "Operational Procedures"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
     },
     {
       "@type": "FAQPage",
@@ -99,7 +133,7 @@
           "name": "What does Operating system mean in Core 2 Objective 1.0 Operating Systems?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Operating system is software that manages hardware resources, provides services to applications, and gives users a way to interact with a device. This is the correct answer."
+            "text": "Operating system is software that manages hardware resources, provides services to applications, and gives users a way to interact with a device."
           }
         },
         {
@@ -107,7 +141,7 @@
           "name": "Which option correctly defines Workstation operating system?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Workstation operating system is an operating system designed for desktop or laptop productivity, application use, peripheral support, and end-user interaction. This is the correct answer."
+            "text": "Workstation operating system is an operating system designed for desktop or laptop productivity, application use, peripheral support, and end-user interaction."
           }
         },
         {
@@ -115,7 +149,7 @@
           "name": "How is Windows best described in a Windows, macOS, or Linux context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Windows is a Microsoft workstation operating system used in business environments for desktop applications, domain integration, management tools, and broad hardware support. This is the correct answer."
+            "text": "Windows is a Microsoft workstation operating system used in business environments for desktop applications, domain integration, management tools, and broad hardware support."
           }
         },
         {
@@ -123,7 +157,7 @@
           "name": "What does Security measures mean in Core 2 Objective 2.0 Security?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Security measures are controls used to protect people, devices, data, facilities, networks, and accounts from unauthorized access or harm. This is the correct answer."
+            "text": "Security measures are controls used to protect people, devices, data, facilities, networks, and accounts from unauthorized access or harm."
           }
         },
         {
@@ -131,7 +165,7 @@
           "name": "Which option correctly defines Physical security?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Physical security protects buildings, rooms, equipment, and people from unauthorized physical access or physical damage. This is the correct answer."
+            "text": "Physical security protects buildings, rooms, equipment, and people from unauthorized physical access or physical damage."
           }
         },
         {
@@ -139,7 +173,7 @@
           "name": "How is Bollards best described in a security context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Bollards are fixed or removable posts used to stop or slow vehicles from reaching protected entrances, sidewalks, or equipment areas. This is the correct answer."
+            "text": "Bollards are fixed or removable posts used to stop or slow vehicles from reaching protected entrances, sidewalks, or equipment areas."
           }
         },
         {
@@ -147,7 +181,7 @@
           "name": "What does Blue screen of death mean in Core 2 Objective 3.0 Software Troubleshooting?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A blue screen of death is a Windows stop error that occurs when the operating system encounters a serious fault it cannot safely recover from. This is the correct answer."
+            "text": "A blue screen of death is a Windows stop error that occurs when the operating system encounters a serious fault it cannot safely recover from."
           }
         },
         {
@@ -155,7 +189,7 @@
           "name": "Which option correctly defines Degraded performance?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Degraded performance means Windows responds slowly or inefficiently because of resource pressure, background activity, malware, driver problems, storage issues, or configuration problems. This is the correct answer."
+            "text": "Degraded performance means Windows responds slowly or inefficiently because of resource pressure, background activity, malware, driver problems, storage issues, or configuration problems."
           }
         },
         {
@@ -163,7 +197,7 @@
           "name": "How is Boot issues best described in a software troubleshooting context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Boot issues occur when Windows cannot start normally or becomes stuck during startup because of boot files, drivers, updates, hardware, or configuration faults. This is the correct answer."
+            "text": "Boot issues occur when Windows cannot start normally or becomes stuck during startup because of boot files, drivers, updates, hardware, or configuration faults."
           }
         },
         {
@@ -171,7 +205,7 @@
           "name": "What does Documentation mean in Core 2 Objective 4.0 Operational Procedures?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Documentation records support information, technical procedures, assets, incidents, service expectations, and repeatable processes. This is the correct answer."
+            "text": "Documentation records support information, technical procedures, assets, incidents, service expectations, and repeatable processes."
           }
         },
         {
@@ -179,7 +213,7 @@
           "name": "Which option correctly defines Support systems information management?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Support systems information management organizes ticket, device, asset, procedure, and knowledge information so support teams can work consistently. This is the correct answer."
+            "text": "Support systems information management organizes ticket, device, asset, procedure, and knowledge information so support teams can work consistently."
           }
         },
         {
@@ -187,7 +221,7 @@
           "name": "How is Ticketing systems best described in an operational procedures context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ticketing systems track support requests, incidents, progress, ownership, severity, escalation, and resolution. This is the correct answer."
+            "text": "Ticketing systems track support requests, incidents, progress, ownership, severity, escalation, and resolution."
           }
         }
       ]

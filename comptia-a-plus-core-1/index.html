@@ -21,6 +21,8 @@
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/comptia-a-plus-core-1.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -74,6 +76,16 @@
       "courseCode": "220-1101",
       "description": "A+ Core 1 (220-1101) is the first of two exams required for the CompTIA A+ certification. It covers mobile devices, networking, hardware, virtualization, cloud computing, and hardware troubleshooting.",
       "url": "https://quizbuffet.com/comptia-a-plus-core-1/",
+      "inLanguage": "en-US",
+      "dateModified": "2026-05-04",
+      "educationalCredentialAwarded": "CompTIA A+ Core 1",
+      "teaches": [
+        "Mobile Devices",
+        "Networking",
+        "Hardware",
+        "Virtualization and Cloud Computing",
+        "Hardware and Network Troubleshooting"
+      ],
       "provider": {
         "@type": "Organization",
         "name": "QuizBuffet",
@@ -85,12 +97,38 @@
         "courseWorkload": "PT35H"
       },
       "about": [
-        "Mobile Devices",
-        "Networking",
-        "Hardware",
-        "Virtualization and Cloud Computing",
-        "Hardware and Network Troubleshooting"
-      ]
+        {
+          "@type": "Organization",
+          "name": "CompTIA",
+          "sameAs": "https://en.wikipedia.org/wiki/CompTIA"
+        },
+        {
+          "@type": "Thing",
+          "name": "Mobile Devices"
+        },
+        {
+          "@type": "Thing",
+          "name": "Networking"
+        },
+        {
+          "@type": "Thing",
+          "name": "Hardware"
+        },
+        {
+          "@type": "Thing",
+          "name": "Virtualization and Cloud Computing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Hardware and Network Troubleshooting"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
     },
     {
       "@type": "FAQPage",
@@ -100,7 +138,7 @@
           "name": "In mobile device support, what is the primary purpose of Laptop hardware/device replacement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Planning replacement of field-serviceable laptop components such as batteries, RAM, storage, keyboards, keys, and wireless cards while checking model compatibility, service documentation, and ESD safety. This is the correct answer."
+            "text": "Laptop hardware/device replacement refers to planning replacement of field-serviceable laptop components such as batteries, RAM, storage, keyboards, keys, and wireless cards while checking model compatibility, service documentation, and ESD safety."
           }
         },
         {
@@ -108,7 +146,7 @@
           "name": "In mobile device support, what is the primary purpose of Battery?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A removable or internal power pack that stores energy for mobile operation; replacement requires the correct form factor, connector, capacity rating, and safe handling of swollen or damaged cells. This is the correct answer."
+            "text": "Battery refers to a removable or internal power pack that stores energy for mobile operation; replacement requires the correct form factor, connector, capacity rating, and safe handling of swollen or damaged cells."
           }
         },
         {
@@ -116,7 +154,7 @@
           "name": "In mobile device support, what is the primary purpose of Keyboard/keys?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Laptop input components that may be replaced as a full keyboard assembly or individual keycaps depending on model design and damage type. This is the correct answer."
+            "text": "Keyboard/keys refers to laptop input components that may be replaced as a full keyboard assembly or individual keycaps depending on model design and damage type."
           }
         },
         {
@@ -124,7 +162,7 @@
           "name": "What is the primary purpose of Protocol ports in Objective 2.0 networking?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services. Knowing common ports helps technicians recognize traffic and troubleshoot blocked or misdirected services. This is the correct answer."
+            "text": "Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services."
           }
         },
         {
@@ -132,7 +170,7 @@
           "name": "What is the primary purpose of FTP ports 20/21 in Objective 2.0 networking?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer. Using FTP without security exposes credentials and file contents in clear text, so it is mainly associated with basic legacy file transfer rather than encrypted remote administration. This is the correct answer."
+            "text": "FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer."
           }
         },
         {
@@ -140,7 +178,7 @@
           "name": "What is the primary purpose of SSH port 22 in Objective 2.0 networking?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems. SSH replaced insecure remote terminal tools such as Telnet because it encrypts authentication and session traffic. This is the correct answer."
+            "text": "SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems."
           }
         },
         {
@@ -148,7 +186,7 @@
           "name": "What is the primary purpose of Network cables in Objective 3.0 Hardware?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Network cables carry data between network devices and endpoints, commonly using copper twisted pair, coaxial, or fiber media. This directly matches the hardware concept being tested for Network cables. This is the correct answer."
+            "text": "Network cables carry data between network devices and endpoints, commonly using copper twisted pair, coaxial, or fiber media."
           }
         },
         {
@@ -156,7 +194,7 @@
           "name": "What is the primary purpose of Copper network cable in Objective 3.0 Hardware?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Copper network cable carries electrical signals over conductive wire and is commonly used for Ethernet runs inside buildings. This directly matches the hardware concept being tested for Copper network cable. This is the correct answer."
+            "text": "Copper network cable carries electrical signals over conductive wire and is commonly used for Ethernet runs inside buildings."
           }
         },
         {
@@ -164,7 +202,7 @@
           "name": "What is the primary purpose of Cat 5 in Objective 3.0 Hardware?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cat 5 is an older twisted-pair Ethernet cable category that supports legacy Fast Ethernet and limited Gigabit use under favorable conditions. This directly matches the hardware concept being tested for Cat 5. This is the correct answer."
+            "text": "Cat 5 is an older twisted-pair Ethernet cable category that supports legacy Fast Ethernet and limited Gigabit use under favorable conditions."
           }
         },
         {
@@ -172,7 +210,7 @@
           "name": "What is the primary purpose of Private cloud in virtualization and cloud computing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A private cloud is a cloud environment dedicated to one organization, giving that organization greater control over access, security, configuration, and resource placement. Private cloud is chosen when control and dedicated use matter more than broad public-provider sharing. This is the correct answer."
+            "text": "A private cloud is a cloud environment dedicated to one organization, giving that organization greater control over access, security, configuration, and resource placement."
           }
         },
         {
@@ -180,7 +218,7 @@
           "name": "What is the primary purpose of Public cloud in virtualization and cloud computing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A public cloud is a provider-owned cloud environment that delivers shared computing services to multiple customers over the internet. Public cloud is commonly selected for scalability, broad availability, and reduced need to own physical infrastructure. This is the correct answer."
+            "text": "A public cloud is a provider-owned cloud environment that delivers shared computing services to multiple customers over the internet."
           }
         },
         {
@@ -188,7 +226,7 @@
           "name": "What is the primary purpose of Hybrid cloud in virtualization and cloud computing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A hybrid cloud combines private cloud, public cloud, or on-premises resources so workloads and data can move or integrate across environments. Hybrid cloud is useful when an organization needs both local control and public-cloud flexibility. This is the correct answer."
+            "text": "A hybrid cloud combines private cloud, public cloud, or on-premises resources so workloads and data can move or integrate across environments."
           }
         }
       ]

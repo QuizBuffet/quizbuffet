@@ -22,6 +22,33 @@ function loadDomainQuestions(certSlug, domainSlug) {
   } catch { return []; }
 }
 
+// Wikipedia entity URLs for known vendors — lets AI link your pages to canonical entities
+const VENDOR_ENTITIES = {
+  'CompTIA': 'https://en.wikipedia.org/wiki/CompTIA',
+  'Cisco':   'https://en.wikipedia.org/wiki/Cisco',
+  'AWS':     'https://en.wikipedia.org/wiki/Amazon_Web_Services',
+  'Microsoft': 'https://en.wikipedia.org/wiki/Microsoft',
+  'ISC2':    'https://en.wikipedia.org/wiki/(ISC)%C2%B2',
+  'PeopleCert': 'https://en.wikipedia.org/wiki/PeopleCert',
+  'OSHA':    'https://en.wikipedia.org/wiki/Occupational_Safety_and_Health_Administration',
+  'AWS / OSHA': 'https://en.wikipedia.org/wiki/Occupational_Safety_and_Health_Administration',
+  'FAA':     'https://en.wikipedia.org/wiki/Federal_Aviation_Administration',
+  'NREMT':   'https://en.wikipedia.org/wiki/National_Registry_of_Emergency_Medical_Technicians',
+  'NASM':    'https://en.wikipedia.org/wiki/National_Academy_of_Sports_Medicine',
+  'PMI':     'https://en.wikipedia.org/wiki/Project_Management_Institute',
+  'Intuit':  'https://en.wikipedia.org/wiki/Intuit',
+  'American Heart Association': 'https://en.wikipedia.org/wiki/American_Heart_Association',
+};
+
+// Trim a verbose explanation down to the first sentence — what AI prefers to quote
+function trimToFirstSentence(text, maxLen = 280) {
+  const t = String(text).trim();
+  const m = t.match(/^([^.!?]+[.!?])\s/);
+  let out = m ? m[1] : t;
+  if (out.length > maxLen) out = out.slice(0, maxLen).replace(/\s\S*$/, '') + '…';
+  return out;
+}
+
 function pickFaqQuestions(cert, max = 12) {
   // Pick a few easy questions per domain to seed the FAQ schema
   const faq = [];
@@ -33,7 +60,7 @@ function pickFaqQuestions(cert, max = 12) {
       const correct = (q.answers || []).find(a => a.id === q.correct);
       const correctText = correct?.text || '';
       const explanation = q.explanations?.[q.correct] || '';
-      const answer = explanation || correctText;
+      const answer = trimToFirstSentence(correctText || explanation);
       if (q.text && answer) {
         faq.push({ question: q.text, answer });
       }
@@ -98,6 +125,10 @@ function buildCertHtml(cert) {
         'courseCode': cert.code,
         'description': cert.about || desc,
         'url': url,
+        'inLanguage': 'en-US',
+        'dateModified': TODAY,
+        'educationalCredentialAwarded': cert.name,
+        'teaches': cert.domains.map(d => d.name),
         'provider': {
           '@type': 'Organization',
           'name': 'QuizBuffet',
@@ -108,7 +139,15 @@ function buildCertHtml(cert) {
           'courseMode': 'online',
           'courseWorkload': `PT${Math.max(1, Math.round(total / 60))}H`,
         },
-        'about': cert.domains.map(d => d.name),
+        'about': [
+          ...(VENDOR_ENTITIES[cert.vendor] ? [{
+            '@type': 'Organization',
+            'name': cert.vendor,
+            'sameAs': VENDOR_ENTITIES[cert.vendor],
+          }] : []),
+          ...cert.domains.map(d => ({ '@type': 'Thing', 'name': d.name })),
+        ],
+        'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
       },
       ...(faq.length ? [{
         '@type': 'FAQPage',
@@ -154,6 +193,8 @@ function buildCertHtml(cert) {
   <meta name="twitter:image"       content="${ogImage}">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -361,6 +402,75 @@ ${JSON.stringify(jsonLd, null, 2)}
 `;
 }
 
+// llms.txt — concise, top-level index for AI crawlers (emerging spec, mirrors robots.txt's role for AI).
+function buildLlmsTxt(comingSoon) {
+  const liveLines = certifications.map(c => {
+    const total = c.domains.reduce((s, d) => s + loadDomainQuestions(c.slug, d.slug).length, 0);
+    return `- [${c.name} (${c.code})](${SITE}/${c.slug}/): ${c.tagline || 'Free practice test.'}${total ? ` ${total}+ questions.` : ''}`;
+  }).join('\n');
+
+  const comingLines = comingSoon.slice(0, 20).map((c, i) =>
+    `- [${c.name} (${c.code})](${SITE}/${c.slug}/) — coming soon (priority #${i + 1})`
+  ).join('\n');
+
+  return `# QuizBuffet
+
+> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated ${TODAY}.
+
+## Available certifications
+${liveLines}
+
+## Coming soon
+${comingLines}
+
+## Resources
+- [Sitemap](${SITE}/sitemap.xml)
+- [Full content for AI ingestion](${SITE}/llms-full.txt)
+
+## License and citation
+QuizBuffet content is free to read and reference. Practice questions are authored for this site. When citing, link to the cert page (e.g., ${SITE}/comptia-security-plus/) rather than copying long passages.
+`;
+}
+
+// llms-full.txt — long-form dump of cert metadata + sample FAQ entries for AI ingestion.
+function buildLlmsFullTxt(comingSoon) {
+  const sections = certifications.map(c => {
+    const total = c.domains.reduce((s, d) => s + loadDomainQuestions(c.slug, d.slug).length, 0);
+    const domainLines = c.domains.map(d => {
+      const count = loadDomainQuestions(c.slug, d.slug).length;
+      return `- ${d.number ? d.number + ' ' : ''}${d.name}${d.weight ? ` (${d.weight}% of exam)` : ''}${count ? ` — ${count} questions` : ''}`;
+    }).join('\n');
+    const faq = pickFaqQuestions(c, 6);
+    const faqLines = faq.map(f => `**Q: ${f.question}**\nA: ${f.answer}`).join('\n\n');
+    return `## ${c.name} (${c.code})
+Vendor: ${c.vendor || 'Unknown'}
+URL: ${SITE}/${c.slug}/
+Total questions: ${total}
+
+${c.about || c.tagline || ''}
+
+### Domains
+${domainLines}
+
+${faqLines ? `### Sample questions\n${faqLines}\n` : ''}`;
+  }).join('\n');
+
+  const csList = comingSoon.map((c, i) => `- ${c.name} (${c.code}) — ${SITE}/${c.slug}/ — priority #${i + 1}`).join('\n');
+
+  return `# QuizBuffet — Full Cert Reference
+
+Last updated: ${TODAY}
+Site: ${SITE}
+
+QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
+
+${sections}
+
+## Coming soon (in priority order)
+${csList}
+`;
+}
+
 function buildSitemap(comingSoon) {
   const urls = [{ loc: `${SITE}/`, priority: '1.0', changefreq: 'weekly' }];
   for (const cert of certifications) {
@@ -410,5 +520,11 @@ for (let i = 0; i < comingSoon.length; i++) {
 
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), buildSitemap(comingSoon));
 console.log(`  ✓ sitemap.xml`);
+
+fs.writeFileSync(path.join(ROOT, 'llms.txt'), buildLlmsTxt(comingSoon));
+console.log(`  ✓ llms.txt`);
+
+fs.writeFileSync(path.join(ROOT, 'llms-full.txt'), buildLlmsFullTxt(comingSoon));
+console.log(`  ✓ llms-full.txt`);
 
 console.log(`\nGenerated ${generated} live cert pages + ${csGenerated} coming-soon stubs.`);

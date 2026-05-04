@@ -21,6 +21,8 @@
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/aws-cloud-practitioner.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -74,6 +76,15 @@
       "courseCode": "CLF-C02",
       "description": "AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud — value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.",
       "url": "https://quizbuffet.com/aws-cloud-practitioner/",
+      "inLanguage": "en-US",
+      "dateModified": "2026-05-04",
+      "educationalCredentialAwarded": "AWS Certified Cloud Practitioner",
+      "teaches": [
+        "Cloud Concepts",
+        "Security and Compliance",
+        "Cloud Technology and Services",
+        "Billing, Pricing, and Support"
+      ],
       "provider": {
         "@type": "Organization",
         "name": "QuizBuffet",
@@ -85,11 +96,34 @@
         "courseWorkload": "PT7H"
       },
       "about": [
-        "Cloud Concepts",
-        "Security and Compliance",
-        "Cloud Technology and Services",
-        "Billing, Pricing, and Support"
-      ]
+        {
+          "@type": "Organization",
+          "name": "AWS",
+          "sameAs": "https://en.wikipedia.org/wiki/Amazon_Web_Services"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cloud Concepts"
+        },
+        {
+          "@type": "Thing",
+          "name": "Security and Compliance"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cloud Technology and Services"
+        },
+        {
+          "@type": "Thing",
+          "name": "Billing, Pricing, and Support"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
     },
     {
       "@type": "FAQPage",
@@ -99,7 +133,7 @@
           "name": "Which description best matches AWS Cloud value proposition in AWS Cloud Practitioner Domain 1.0 Cloud Concepts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The AWS Cloud value proposition is the ability to use AWS technology services to gain flexibility, scalability, reliability, global reach, and cost advantages without owning all underlying infrastructure. This is the correct answer."
+            "text": "The AWS Cloud value proposition is the ability to use AWS technology services to gain flexibility, scalability, reliability, global reach, and cost advantages without owning all underlying infrastructure."
           }
         },
         {
@@ -107,7 +141,7 @@
           "name": "Which option correctly defines Global infrastructure benefits?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Global infrastructure benefits include deploying workloads closer to users, reaching global markets faster, and using AWS Regions and edge infrastructure to support performance and availability. This is the correct answer."
+            "text": "Global infrastructure benefits include deploying workloads closer to users, reaching global markets faster, and using AWS Regions and edge infrastructure to support performance and availability."
           }
         },
         {
@@ -115,7 +149,7 @@
           "name": "How is Speed of deployment best understood in an AWS Cloud concepts context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Speed of deployment means cloud resources can be provisioned quickly instead of waiting for traditional hardware purchasing and installation cycles. This is the correct answer."
+            "text": "Speed of deployment means cloud resources can be provisioned quickly instead of waiting for traditional hardware purchasing and installation cycles."
           }
         },
         {
@@ -123,7 +157,7 @@
           "name": "Which description best matches AWS shared responsibility model in AWS Cloud Practitioner Domain 2.0 Security and Compliance?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The AWS shared responsibility model defines which security responsibilities belong to AWS and which belong to the customer. This is the correct answer."
+            "text": "The AWS shared responsibility model defines which security responsibilities belong to AWS and which belong to the customer."
           }
         },
         {
@@ -131,7 +165,7 @@
           "name": "Which option correctly defines AWS responsibilities?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AWS responsibilities include security of the cloud, such as protecting the infrastructure that runs AWS services. This is the correct answer."
+            "text": "AWS responsibilities include security of the cloud, such as protecting the infrastructure that runs AWS services."
           }
         },
         {
@@ -139,7 +173,7 @@
           "name": "How is Customer responsibilities best understood in an AWS security and compliance context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Customer responsibilities include security in the cloud, such as managing data, identities, access, and customer-controlled configurations. This is the correct answer."
+            "text": "Customer responsibilities include security in the cloud, such as managing data, identities, access, and customer-controlled configurations."
           }
         },
         {
@@ -147,7 +181,7 @@
           "name": "Which description best matches AWS Management Console in AWS Cloud Practitioner Domain 3.0 Cloud Technology and Services?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The AWS Management Console is a web-based interface for accessing and managing AWS services. This is the correct answer."
+            "text": "The AWS Management Console is a web-based interface for accessing and managing AWS services."
           }
         },
         {
@@ -155,7 +189,7 @@
           "name": "Which option correctly defines AWS CLI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The AWS Command Line Interface lets users manage AWS services from a command-line shell. This is the correct answer."
+            "text": "The AWS Command Line Interface lets users manage AWS services from a command-line shell."
           }
         },
         {
@@ -163,7 +197,7 @@
           "name": "How is AWS SDKs best understood in an AWS cloud technology and services context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AWS SDKs provide language-specific libraries for programmatic access to AWS services. This is the correct answer."
+            "text": "AWS SDKs provide language-specific libraries for programmatic access to AWS services."
           }
         },
         {
@@ -171,7 +205,7 @@
           "name": "Which description best matches On-Demand Instances in AWS Cloud Practitioner Domain 4.0 Billing, Pricing, and Support?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This is the correct answer."
+            "text": "On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment."
           }
         },
         {
@@ -179,7 +213,7 @@
           "name": "Which option correctly defines Reserved Instances?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. This is the correct answer."
+            "text": "Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term."
           }
         },
         {
@@ -187,7 +221,7 @@
           "name": "How is Spot Instances best understood in an AWS billing, pricing, and support context?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. This is the correct answer."
+            "text": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back."
           }
         }
       ]

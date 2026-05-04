@@ -21,6 +21,8 @@
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/comptia-itf-plus.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -74,6 +76,17 @@
       "courseCode": "FC0-U61",
       "description": "ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT concepts for people exploring a career in technology. It covers computing basics, hardware, networking, operating systems, software, databases, and security fundamentals. No prior experience required — ideal for advanced end users and those considering CompTIA A+.",
       "url": "https://quizbuffet.com/comptia-itf-plus/",
+      "inLanguage": "en-US",
+      "dateModified": "2026-05-04",
+      "educationalCredentialAwarded": "CompTIA ITF+",
+      "teaches": [
+        "IT Concepts and Terminology",
+        "Infrastructure",
+        "Applications and Software",
+        "Software Development",
+        "Database Fundamentals",
+        "Security"
+      ],
       "provider": {
         "@type": "Organization",
         "name": "QuizBuffet",
@@ -85,13 +98,42 @@
         "courseWorkload": "PT32H"
       },
       "about": [
-        "IT Concepts and Terminology",
-        "Infrastructure",
-        "Applications and Software",
-        "Software Development",
-        "Database Fundamentals",
-        "Security"
-      ]
+        {
+          "@type": "Organization",
+          "name": "CompTIA",
+          "sameAs": "https://en.wikipedia.org/wiki/CompTIA"
+        },
+        {
+          "@type": "Thing",
+          "name": "IT Concepts and Terminology"
+        },
+        {
+          "@type": "Thing",
+          "name": "Infrastructure"
+        },
+        {
+          "@type": "Thing",
+          "name": "Applications and Software"
+        },
+        {
+          "@type": "Thing",
+          "name": "Software Development"
+        },
+        {
+          "@type": "Thing",
+          "name": "Database Fundamentals"
+        },
+        {
+          "@type": "Thing",
+          "name": "Security"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
     },
     {
       "@type": "FAQPage",
@@ -101,7 +143,7 @@
           "name": "Which statement best describes Binary in Objective 1.1 (Compare and contrast notational systems)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Correct. The term Binary refers to a base-2 notational system that uses only 0 and 1; it maps naturally to off/on electrical states in computing. Confusing binary with hexadecimal hides the fact that binary is the lowest-level representation; hex is only a compact shorthand for binary."
+            "text": "The term Binary refers to a base-2 notational system that uses only 0 and 1; it maps naturally to off/on electrical states in computing."
           }
         },
         {
@@ -109,7 +151,7 @@
           "name": "Which statement best describes Hexadecimal in Objective 1.1 (Compare and contrast notational systems)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Correct. The term Hexadecimal refers to a base-16 notational system using digits 0-9 and letters A-F; one hex digit represents four binary bits. Hexadecimal is common for memory addresses, color codes, and low-level values because it compresses binary into a human-readable form."
+            "text": "The term Hexadecimal refers to a base-16 notational system using digits 0-9 and letters A-F; one hex digit represents four binary bits."
           }
         },
         {
@@ -117,7 +159,7 @@
           "name": "Which statement best describes Networking interfaces in the context of CompTIA ITF+ Objective 2.1?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Networking interfaces is correctly matched to its role: connection types used to attach a computer or device to a network, including wired ports such as RJ-45 and wireless technologies such as Bluetooth, NFC, or Wi-Fi-related radio links."
+            "text": "Networking interfaces refers to connection types used to attach a computer or device to a network, including wired ports such as RJ-45 and wireless technologies such as Bluetooth, NFC, or Wi-Fi-related radio links."
           }
         },
         {
@@ -125,7 +167,7 @@
           "name": "Which statement best describes Wired networking in the context of CompTIA ITF+ Objective 2.1?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wired networking is correctly matched to its role: network connectivity that uses a physical cable, such as telephone cabling for RJ-11 or Ethernet cabling for RJ-45, instead of radio communication."
+            "text": "Wired networking refers to network connectivity that uses a physical cable, such as telephone cabling for RJ-11 or Ethernet cabling for RJ-45, instead of radio communication."
           }
         },
         {
@@ -133,7 +175,7 @@
           "name": "What is the purpose of Interface between applications and hardware in applications and operating systems?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Interface between applications and hardware is identified by this idea: The operating system provides the layer that lets applications request CPU, memory, storage, display, input, and device access without controlling hardware directly. This is the correct answer."
+            "text": "Interface between applications and hardware is best described this way: The operating system provides the layer that lets applications request CPU, memory, storage, display, input, and device access without controlling hardware directly."
           }
         },
         {
@@ -141,7 +183,7 @@
           "name": "What is the purpose of Disk management in applications and operating systems?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Disk management: Disk management is the OS function used to partition, format, label, mount, resize, and monitor storage devices and volumes. This is the correct answer."
+            "text": "Disk management is best described this way: Disk management is the OS function used to partition, format, label, mount, resize, and monitor storage devices and volumes."
           }
         },
         {
@@ -149,7 +191,7 @@
           "name": "Which statement best defines Interpreted programming languages?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Interpreted programming languages is the tested concept. Interpreted programming languages are executed by an interpreter at run time rather than being fully converted into a standalone machine-code executable before execution. This is the correct answer."
+            "text": "Interpreted programming languages are executed by an interpreter at run time rather than being fully converted into a standalone machine-code executable before execution."
           }
         },
         {
@@ -157,7 +199,7 @@
           "name": "Which statement best defines Scripting languages?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Scripting languages is the tested concept. Scripting languages are commonly used to automate tasks, glue systems together, and run commands through an interpreter or runtime environment. This is the correct answer."
+            "text": "Scripting languages are commonly used to automate tasks, glue systems together, and run commands through an interpreter or runtime environment."
           }
         },
         {
@@ -165,7 +207,7 @@
           "name": "In database fundamentals, what does Database purpose mean?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A database organizes data so it can be stored, searched, updated, and reported in a controlled way. This is the correct answer."
+            "text": "A database organizes data so it can be stored, searched, updated, and reported in a controlled way."
           }
         },
         {
@@ -173,7 +215,7 @@
           "name": "In database fundamentals, what does Create data mean?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Creating data adds new information to a system, such as a new customer record or inventory item. This is the correct answer."
+            "text": "Creating data adds new information to a system, such as a new customer record or inventory item."
           }
         },
         {
@@ -181,7 +223,7 @@
           "name": "What best describes Confidentiality concerns in CompTIA ITF+ security terminology?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The concept of Confidentiality concerns refers to risks that expose information to people or systems that are not authorized to see it. Operationally, the task is to focus on preventing unauthorized viewing or disclosure. This is the correct answer."
+            "text": "The concept of Confidentiality concerns refers to risks that expose information to people or systems that are not authorized to see it; operationally, the task is to focus on preventing unauthorized viewing or disclosure."
           }
         },
         {
@@ -189,7 +231,7 @@
           "name": "What best describes Snooping in CompTIA ITF+ security terminology?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The concept of Snooping refers to casual or unauthorized looking through data, screens, files, or network information without permission. Operationally, the task is to prevent unauthorized viewing. This is the correct answer."
+            "text": "The concept of Snooping refers to casual or unauthorized looking through data, screens, files, or network information without permission; operationally, the task is to prevent unauthorized viewing."
           }
         }
       ]

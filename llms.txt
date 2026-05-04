@@ -1,0 +1,45 @@
+# QuizBuffet
+
+> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated 2026-05-04.
+
+## Available certifications
+- [CompTIA Cloud+ (CV0-004)](https://quizbuffet.com/comptia-cloud-plus/): Cloud infrastructure skills for engineers and sysadmins 1200+ questions.
+- [CompTIA ITF+ (FC0-U61)](https://quizbuffet.com/comptia-itf-plus/): IT fundamentals for beginners and career changers 1900+ questions.
+- [CompTIA CySA+ (CS0-003)](https://quizbuffet.com/comptia-cysa-plus/): Threat detection and incident response for security analysts 1600+ questions.
+- [CompTIA PenTest+ (PT0-003)](https://quizbuffet.com/comptia-pentest-plus/): Penetration testing and vulnerability management for security professionals 2160+ questions.
+- [CompTIA A+ Core 1 (220-1101)](https://quizbuffet.com/comptia-a-plus-core-1/): Hardware, networking, and troubleshooting for IT support technicians 2100+ questions.
+- [CompTIA A+ Core 2 (220-1202)](https://quizbuffet.com/comptia-a-plus-core-2/): Operating systems, security, and troubleshooting for IT support technicians 3200+ questions.
+- [CompTIA Network+ (N10-009)](https://quizbuffet.com/comptia-network-plus/): Core networking skills for IT infrastructure professionals 1119+ questions.
+- [CompTIA Security+ (SY0-701)](https://quizbuffet.com/comptia-security-plus/): Core security skills for IT professionals defending enterprise environments 1900+ questions.
+- [CompTIA Data+ (DA0-002)](https://quizbuffet.com/comptia-data-plus/): Data acquisition, analysis, and governance for data-driven decision making 1000+ questions.
+- [Cisco CCNA (200-301)](https://quizbuffet.com/cisco-ccna/): The industry-standard entry into network engineering careers 800+ questions.
+- [AWS Certified Cloud Practitioner (CLF-C02)](https://quizbuffet.com/aws-cloud-practitioner/): Foundational AWS knowledge for technical and non-technical professionals 400+ questions.
+
+## Coming soon
+- [AWS Certified Solutions Architect – Associate (SAA-C03)](https://quizbuffet.com/aws-solutions-architect-associate/) — coming soon (priority #1)
+- [Microsoft Azure Fundamentals (AZ-900) (AZ-900)](https://quizbuffet.com/microsoft-az-900/) — coming soon (priority #2)
+- [Microsoft Azure Administrator Associate (AZ-104) (AZ-104)](https://quizbuffet.com/microsoft-az-104/) — coming soon (priority #3)
+- [ISC2 CISSP (CISSP)](https://quizbuffet.com/isc2-cissp/) — coming soon (priority #4)
+- [ITIL 4 Foundation (ITIL 4)](https://quizbuffet.com/itil-foundation/) — coming soon (priority #5)
+- [OSHA 10-Hour Construction (OSHA 10)](https://quizbuffet.com/osha-10-construction/) — coming soon (priority #6)
+- [OSHA 30-Hour Construction (OSHA 30)](https://quizbuffet.com/osha-30-construction/) — coming soon (priority #7)
+- [Forklift Operator Certification (OSHA 1910.178)](https://quizbuffet.com/forklift-certification/) — coming soon (priority #8)
+- [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/) — coming soon (priority #9)
+- [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/) — coming soon (priority #10)
+- [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #11)
+- [Certified Nursing Assistant (CNA) (CNA)](https://quizbuffet.com/cna/) — coming soon (priority #12)
+- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #13)
+- [Certified Phlebotomy Technician (CPT) (CPT)](https://quizbuffet.com/phlebotomy-technician/) — coming soon (priority #14)
+- [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #15)
+- [CDL Class A (CDL-A)](https://quizbuffet.com/cdl-class-a/) — coming soon (priority #16)
+- [FAA Part 107 (Remote Pilot) (Part 107)](https://quizbuffet.com/faa-part-107/) — coming soon (priority #17)
+- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #18)
+- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #19)
+- [Real Estate Salesperson License (Real Estate License)](https://quizbuffet.com/real-estate-license/) — coming soon (priority #20)
+
+## Resources
+- [Sitemap](https://quizbuffet.com/sitemap.xml)
+- [Full content for AI ingestion](https://quizbuffet.com/llms-full.txt)
+
+## License and citation
+QuizBuffet content is free to read and reference. Practice questions are authored for this site. When citing, link to the cert page (e.g., https://quizbuffet.com/comptia-security-plus/) rather than copying long passages.

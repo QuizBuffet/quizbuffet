@@ -1,0 +1,407 @@
+# QuizBuffet — Full Cert Reference
+
+Last updated: 2026-05-04
+Site: https://quizbuffet.com
+
+QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
+
+## CompTIA Cloud+ (CV0-004)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-cloud-plus/
+Total questions: 1200
+
+Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2–3 years of hands-on cloud or systems experience.
+
+### Domains
+- 1.0 Cloud Architecture (23% of exam) — 384 questions
+- 2.0 Deployment (19% of exam) — 208 questions
+- 3.0 Operations (17% of exam) — 164 questions
+- 4.0 Security (19% of exam) — 232 questions
+- 5.0 DevOps Fundamentals (10% of exam) — 112 questions
+- 6.0 Troubleshooting (12% of exam) — 100 questions
+
+### Sample questions
+**Q: Which of the following BEST describes Infrastructure as a Service (IaaS)?**
+A: A model that provides virtualized computing resources such as VMs, storage, and networking over the internet
+
+**Q: Which of the following BEST describes a public cloud deployment model?**
+A: Cloud infrastructure owned and operated by a third-party provider, shared among multiple customers over the internet, with resources provisioned on demand
+
+**Q: What is the PRIMARY purpose of logging in a cloud environment?**
+A: To record events, errors, transactions, and system activities over time — providing an audit trail and data source for troubleshooting, security analysis, and compliance
+
+**Q: What does scanning scope define in a cloud vulnerability management program?**
+A: The boundaries of what is included in vulnerability scans — which cloud resources, networks, applications, and environments are assessed for vulnerabilities
+
+**Q: What is version management in the context of cloud DevOps source control?**
+A: Tracking all changes to code, configuration, and infrastructure over time using a version control system — enabling teams to see the full history of changes, who made them, why they were made, and the ability to revert to any previous state
+
+**Q: A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show 'SSL handshake failed — unsupported protocol version'. What type of deployment issue is this?**
+A: A compatibility issue — the new application version requires a TLS version that the database server does not support, or vice versa.
+
+## CompTIA ITF+ (FC0-U61)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-itf-plus/
+Total questions: 1900
+
+ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT concepts for people exploring a career in technology. It covers computing basics, hardware, networking, operating systems, software, databases, and security fundamentals. No prior experience required — ideal for advanced end users and those considering CompTIA A+.
+
+### Domains
+- IT Concepts and Terminology (17% of exam) — 256 questions
+- Infrastructure (22% of exam) — 464 questions
+- Applications and Software (18% of exam) — 408 questions
+- Software Development (12% of exam) — 144 questions
+- Database Fundamentals (11% of exam) — 184 questions
+- Security (20% of exam) — 444 questions
+
+### Sample questions
+**Q: Which statement best describes Binary in Objective 1.1 (Compare and contrast notational systems)?**
+A: The term Binary refers to a base-2 notational system that uses only 0 and 1; it maps naturally to off/on electrical states in computing.
+
+**Q: Which statement best describes Networking interfaces in the context of CompTIA ITF+ Objective 2.1?**
+A: Networking interfaces refers to connection types used to attach a computer or device to a network, including wired ports such as RJ-45 and wireless technologies such as Bluetooth, NFC, or Wi-Fi-related radio links.
+
+**Q: What is the purpose of Interface between applications and hardware in applications and operating systems?**
+A: Interface between applications and hardware is best described this way: The operating system provides the layer that lets applications request CPU, memory, storage, display, input, and device access without controlling hardware directly.
+
+**Q: Which statement best defines Interpreted programming languages?**
+A: Interpreted programming languages are executed by an interpreter at run time rather than being fully converted into a standalone machine-code executable before execution.
+
+**Q: In database fundamentals, what does Database purpose mean?**
+A: A database organizes data so it can be stored, searched, updated, and reported in a controlled way.
+
+**Q: What best describes Confidentiality concerns in CompTIA ITF+ security terminology?**
+A: The concept of Confidentiality concerns refers to risks that expose information to people or systems that are not authorized to see it; operationally, the task is to focus on preventing unauthorized viewing or disclosure.
+
+## CompTIA CySA+ (CS0-003)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-cysa-plus/
+Total questions: 1600
+
+CySA+ (Cybersecurity Analyst+) certifies analysts who detect and respond to threats, perform vulnerability management, and conduct incident response. It covers security operations, threat hunting, vulnerability scanning and prioritization, incident handling, and communicating findings to stakeholders. Aimed at professionals with 4 years of hands-on SOC or incident response experience.
+
+### Domains
+- Security Operations (33% of exam) — 688 questions
+- Vulnerability Management (30% of exam) — 528 questions
+- Incident Response Management (20% of exam) — 172 questions
+- Reporting and Communication (17% of exam) — 212 questions
+
+### Sample questions
+**Q: Which description best matches Security operations architecture concepts in CySA+ Objective 1.0 Security Operations?**
+A: Security operations architecture concepts describe the systems, networks, identities, logging, encryption, and data protections analysts must understand to detect and respond to threats.
+
+**Q: Which option correctly defines Log ingestion?**
+A: Log ingestion is the collection and intake of event data from systems, applications, network devices, cloud services, and security tools into an analysis platform.
+
+**Q: Which description best matches Asset discovery in CySA+ Objective 2.0 Vulnerability Management?**
+A: Asset discovery identifies systems, services, devices, cloud resources, applications, and other assets that may need vulnerability assessment.
+
+**Q: Which option correctly defines Map scans?**
+A: Map scans discover reachable hosts, ports, services, and network layout so analysts understand what exists in the environment.
+
+**Q: Which description best matches Cyber kill chain in CySA+ Objective 3.0 Incident Response and Management?**
+A: The cyber kill chain is a phased model that describes common stages of an attack from reconnaissance through actions on objectives.
+
+**Q: Which option correctly defines Reconnaissance?**
+A: Reconnaissance is the attack phase where an adversary gathers information about targets, technologies, people, and weaknesses before attempting compromise.
+
+## CompTIA PenTest+ (PT0-003)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-pentest-plus/
+Total questions: 2160
+
+PenTest+ certifies professionals who can plan, scope, and execute penetration tests across networks, applications, and cloud environments, and communicate findings to stakeholders.
+
+### Domains
+- Engagement Management (13% of exam) — 416 questions
+- Reconnaissance and Enumeration (21% of exam) — 324 questions
+- Vulnerability Discovery and Analysis (17% of exam) — 196 questions
+- Attacks and Exploits (35% of exam) — 884 questions
+- Post-exploitation and Lateral Movement (14% of exam) — 340 questions
+
+### Sample questions
+**Q: Which description best matches Scope definition in PenTest+ Objective 1.0 Engagement Management?**
+A: Scope definition identifies what is included, excluded, allowed, limited, and expected during a penetration test.
+
+**Q: Which option correctly defines Regulations, frameworks, and standards?**
+A: Regulations, frameworks, and standards define compliance, privacy, security, and control requirements that shape how the engagement may be performed.
+
+**Q: Which description best matches Active reconnaissance in PenTest+ Objective 2.0 Reconnaissance and Enumeration?**
+A: Active reconnaissance directly interacts with targets or target-controlled infrastructure to gather information.
+
+**Q: Which option correctly defines Passive reconnaissance?**
+A: Passive reconnaissance gathers information without directly interacting with the target’s systems.
+
+**Q: Which description best matches Container scans in PenTest+ Objective 3.0 Vulnerability Discovery and Analysis?**
+A: Container scans assess container images, runtimes, configurations, and dependencies for vulnerabilities and insecure settings.
+
+**Q: Which option correctly defines Sidecar scans?**
+A: Sidecar scans use a sidecar component or companion process to observe or assess containerized workloads without changing the main application container.
+
+## CompTIA A+ Core 1 (220-1101)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-a-plus-core-1/
+Total questions: 2100
+
+A+ Core 1 (220-1101) is the first of two exams required for the CompTIA A+ certification. It covers mobile devices, networking, hardware, virtualization, cloud computing, and hardware troubleshooting.
+
+### Domains
+- Mobile Devices (15% of exam) — 264 questions
+- Networking (20% of exam) — 500 questions
+- Hardware (25% of exam) — 856 questions
+- Virtualization and Cloud Computing (11% of exam) — 100 questions
+- Hardware and Network Troubleshooting (29% of exam) — 380 questions
+
+### Sample questions
+**Q: In mobile device support, what is the primary purpose of Laptop hardware/device replacement?**
+A: Laptop hardware/device replacement refers to planning replacement of field-serviceable laptop components such as batteries, RAM, storage, keyboards, keys, and wireless cards while checking model compatibility, service documentation, and ESD safety.
+
+**Q: In mobile device support, what is the primary purpose of Battery?**
+A: Battery refers to a removable or internal power pack that stores energy for mobile operation; replacement requires the correct form factor, connector, capacity rating, and safe handling of swollen or damaged cells.
+
+**Q: What is the primary purpose of Protocol ports in Objective 2.0 networking?**
+A: Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services.
+
+**Q: What is the primary purpose of FTP ports 20/21 in Objective 2.0 networking?**
+A: FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer.
+
+**Q: What is the primary purpose of Network cables in Objective 3.0 Hardware?**
+A: Network cables carry data between network devices and endpoints, commonly using copper twisted pair, coaxial, or fiber media.
+
+**Q: What is the primary purpose of Copper network cable in Objective 3.0 Hardware?**
+A: Copper network cable carries electrical signals over conductive wire and is commonly used for Ethernet runs inside buildings.
+
+## CompTIA A+ Core 2 (220-1202)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-a-plus-core-2/
+Total questions: 3200
+
+A+ Core 2 (220-1202) is the second of two exams required for the CompTIA A+ certification. It covers operating systems, security, software troubleshooting, and operational procedures for IT support specialists.
+
+### Domains
+- Operating Systems (28% of exam) — 1200 questions
+- Security (28% of exam) — 1040 questions
+- Software Troubleshooting (23% of exam) — 220 questions
+- Operational Procedures (21% of exam) — 740 questions
+
+### Sample questions
+**Q: What does Operating system mean in Core 2 Objective 1.0 Operating Systems?**
+A: Operating system is software that manages hardware resources, provides services to applications, and gives users a way to interact with a device.
+
+**Q: Which option correctly defines Workstation operating system?**
+A: Workstation operating system is an operating system designed for desktop or laptop productivity, application use, peripheral support, and end-user interaction.
+
+**Q: What does Security measures mean in Core 2 Objective 2.0 Security?**
+A: Security measures are controls used to protect people, devices, data, facilities, networks, and accounts from unauthorized access or harm.
+
+**Q: Which option correctly defines Physical security?**
+A: Physical security protects buildings, rooms, equipment, and people from unauthorized physical access or physical damage.
+
+**Q: What does Blue screen of death mean in Core 2 Objective 3.0 Software Troubleshooting?**
+A: A blue screen of death is a Windows stop error that occurs when the operating system encounters a serious fault it cannot safely recover from.
+
+**Q: Which option correctly defines Degraded performance?**
+A: Degraded performance means Windows responds slowly or inefficiently because of resource pressure, background activity, malware, driver problems, storage issues, or configuration problems.
+
+## CompTIA Network+ (N10-009)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-network-plus/
+Total questions: 1119
+
+Network+ certifies professionals who can deploy wired and wireless networks, configure network services, implement security hardening, and troubleshoot performance and availability issues. It covers networking concepts, IP addressing, routing, switching, wireless, cloud connectivity, and network troubleshooting. Recommended for professionals with 9–12 months of networking experience.
+
+### Domains
+- 1.0 Networking Concepts (23% of exam) — 318 questions
+- 2.0 Network Implementation (20% of exam) — 112 questions
+- 3.0 Network Operations (19% of exam) — 201 questions
+- 4.0 Network Security (14% of exam) — 100 questions
+- 5.0 Network Troubleshooting (24% of exam) — 388 questions
+
+### Sample questions
+**Q: What is the primary purpose of the OSI (Open Systems Interconnection) reference model in networking?**
+A: The OSI model is a conceptual framework that standardizes how different network systems communicate by dividing the communication process into seven distinct layers, each with specific functions — enabling interoperability between products from different vendors
+
+**Q: Which of the following best describes the function of Layer 1 (Physical) of the OSI model?**
+A: Layer 1 is responsible for the transmission and reception of raw bit streams over a physical medium, defining electrical signals, light pulses, or radio frequencies, as well as connector types, cable specifications, and signaling standards
+
+**Q: What is a static route and when is it most appropriate to use?**
+A: A static route is a manually configured route that tells the router how to reach a specific destination network — it does not change unless an administrator modifies it; static routes are most appropriate for small stable networks with few routes, stub networks with only one…
+
+**Q: What is the primary distinction between OSPF, EIGRP, and BGP in terms of their use cases?**
+A: OSPF and EIGRP are Interior Gateway Protocols (IGPs) used for routing within a single organization's network (autonomous system); BGP is an Exterior Gateway Protocol (EGP) used for routing between autonomous systems — BGP is the protocol of the internet backbone exchanging…
+
+**Q: What is the difference between a physical network diagram and a logical network diagram?**
+A: A physical diagram shows the actual physical layout of hardware including device locations, rack positions, cable runs, and physical connections between equipment; a logical diagram shows how the network functions including IP addressing, VLANs, routing protocols, and traffic…
+
+**Q: What information does a rack diagram document and why is it important for data center operations?**
+A: A rack diagram documents the physical layout of equipment within a rack including which devices occupy which rack units (U positions), device models and serial numbers, cable connections between devices, power draw per device, and patch panel port assignments; it is important…
+
+## CompTIA Security+ (SY0-701)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-security-plus/
+Total questions: 1900
+
+Security+ certifies professionals who can assess enterprise security posture, monitor hybrid environments, operate within governance and compliance frameworks, and identify and respond to security incidents.
+
+### Domains
+- 1.0 General Security Concepts (12% of exam) — 164 questions
+- 2.0 Threats, Vulnerabilities, and Mitigations (22% of exam) — 446 questions
+- 3.0 Security Architecture (18% of exam) — 199 questions
+- 4.0 Security Operations (28% of exam) — 644 questions
+- 5.0 Security Program Management and Oversight (20% of exam) — 447 questions
+
+### Sample questions
+**Q: Which of the following BEST describes a technical security control?**
+A: A hardware or software mechanism — such as a firewall, encryption, or access control list — that enforces security through technology rather than human action or policy
+
+**Q: Which of the following is the BEST example of a managerial security control?**
+A: Conducting an annual risk assessment to identify and prioritize security risks to the organization
+
+**Q: Which of the following BEST characterizes a nation-state threat actor?**
+A: A government-sponsored group with significant resources, advanced capabilities, and long-term strategic objectives — conducting espionage, sabotage, or influence operations on behalf of a country
+
+**Q: What term describes an attacker who uses pre-built tools and exploits created by others without understanding the underlying techniques?**
+A: Script kiddie (unskilled attacker) — an individual who uses pre-written exploits, hacking tools, and scripts without the technical knowledge to develop their own, typically seeking notoriety or entertainment rather than strategic objectives
+
+**Q: What is the shared responsibility model in cloud computing and why is it a critical security concept?**
+A: The shared responsibility model divides security responsibilities between the cloud provider and the customer: the provider is always responsible for the physical infrastructure, hypervisor, and core cloud services; the customer is always responsible for their data, access…
+
+**Q: What is a hybrid cloud architecture and what unique security challenges does it introduce?**
+A: A hybrid cloud combines on-premises infrastructure with public cloud services — connected through VPN or private network links.
+
+## CompTIA Data+ (DA0-002)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-data-plus/
+Total questions: 1000
+
+Data+ certifies professionals who can translate business requirements into data-driven decisions by acquiring, preparing, and transforming data, applying statistical methods, creating visualizations, and adhering to governance and quality standards throughout the data life cycle.
+
+### Domains
+- Data Concepts and Environments (20% of exam) — 392 questions
+- Data Acquisition and Preparation (22% of exam) — 160 questions
+- Data Analysis (24% of exam) — 120 questions
+- Visualization and Reporting (20% of exam) — 144 questions
+- Data Governance (14% of exam) — 184 questions
+
+### Sample questions
+**Q: What does Database types mean in Data+ Objective 1.0 Data Concepts and Environments?**
+A: Database types describe how data is organized, stored, related, and queried in a database system.
+
+**Q: Which option correctly defines Relational database?**
+A: A relational database stores data in tables with rows and columns and uses relationships, keys, and SQL-style querying to connect data.
+
+**Q: What does Data integration mean in Data+ Objective 2.0 Data Acquisition and Preparation?**
+A: Data integration combines data from different sources into a unified view or target environment for analysis, reporting, or processing.
+
+**Q: Which option correctly defines Join?**
+A: A join combines rows from two or more tables based on related columns or matching keys.
+
+**Q: What does Mock-up mean in Data+ Objective 3.0 Data Analysis?**
+A: A mock-up is a preliminary visual or layout draft used to confirm design, content, and expectations before building the final analysis output.
+
+**Q: Which option correctly defines Accessibility?**
+A: Accessibility means designing analysis outputs so users with different visual, motor, cognitive, or technical needs can understand and use them.
+
+## Cisco CCNA (200-301)
+Vendor: Cisco
+URL: https://quizbuffet.com/cisco-ccna/
+Total questions: 800
+
+CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability — including AI/ML in network operations and REST APIs.
+
+### Domains
+- 1.0 Network Fundamentals (20% of exam) — 160 questions
+- 2.0 Network Access (20% of exam) — 160 questions
+- 3.0 IP Connectivity (25% of exam) — 200 questions
+- 4.0 IP Services (10% of exam) — 80 questions
+- 5.0 Security Fundamentals (15% of exam) — 120 questions
+- 6.0 Automation and Programmability (10% of exam) — 80 questions
+
+### Sample questions
+**Q: Which description best matches Routers in CCNA Objective 1.0 Network Fundamentals?**
+A: Routers forward packets between IP networks, choose paths using routing information, and separate broadcast domains.
+
+**Q: Which description best matches VLANs in CCNA Objective 2.0 Network Access?**
+A: VLANs logically segment a Layer 2 network into separate broadcast domains on switches.
+
+**Q: Which description best matches Routing table in CCNA Objective 3.0 IP Connectivity?**
+A: A routing table lists known routes and the information a router uses to choose where to forward packets.
+
+**Q: Which description best matches Inside source NAT in CCNA Objective 4.0 IP Services?**
+A: Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network.
+
+**Q: Which description best matches Threats in CCNA Objective 5.0 Security Fundamentals?**
+A: Threats are potential events or actors that can exploit weaknesses and harm systems, data, or operations.
+
+**Q: Which description best matches Automation impact on network management in CCNA Objective 6.0 Automation and Programmability?**
+A: Automation changes network management by making configuration, monitoring, deployment, and troubleshooting more repeatable, scalable, and less manual.
+
+## AWS Certified Cloud Practitioner (CLF-C02)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-cloud-practitioner/
+Total questions: 400
+
+AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud — value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.
+
+### Domains
+- 1.0 Cloud Concepts (24% of exam) — 96 questions
+- 2.0 Security and Compliance (30% of exam) — 120 questions
+- 3.0 Cloud Technology and Services (34% of exam) — 136 questions
+- 4.0 Billing, Pricing, and Support (12% of exam) — 48 questions
+
+### Sample questions
+**Q: Which description best matches AWS Cloud value proposition in AWS Cloud Practitioner Domain 1.0 Cloud Concepts?**
+A: The AWS Cloud value proposition is the ability to use AWS technology services to gain flexibility, scalability, reliability, global reach, and cost advantages without owning all underlying infrastructure.
+
+**Q: Which option correctly defines Global infrastructure benefits?**
+A: Global infrastructure benefits include deploying workloads closer to users, reaching global markets faster, and using AWS Regions and edge infrastructure to support performance and availability.
+
+**Q: Which description best matches AWS shared responsibility model in AWS Cloud Practitioner Domain 2.0 Security and Compliance?**
+A: The AWS shared responsibility model defines which security responsibilities belong to AWS and which belong to the customer.
+
+**Q: Which option correctly defines AWS responsibilities?**
+A: AWS responsibilities include security of the cloud, such as protecting the infrastructure that runs AWS services.
+
+**Q: Which description best matches AWS Management Console in AWS Cloud Practitioner Domain 3.0 Cloud Technology and Services?**
+A: The AWS Management Console is a web-based interface for accessing and managing AWS services.
+
+**Q: Which option correctly defines AWS CLI?**
+A: The AWS Command Line Interface lets users manage AWS services from a command-line shell.
+
+
+## Coming soon (in priority order)
+- AWS Certified Solutions Architect – Associate (SAA-C03) — https://quizbuffet.com/aws-solutions-architect-associate/ — priority #1
+- Microsoft Azure Fundamentals (AZ-900) (AZ-900) — https://quizbuffet.com/microsoft-az-900/ — priority #2
+- Microsoft Azure Administrator Associate (AZ-104) (AZ-104) — https://quizbuffet.com/microsoft-az-104/ — priority #3
+- ISC2 CISSP (CISSP) — https://quizbuffet.com/isc2-cissp/ — priority #4
+- ITIL 4 Foundation (ITIL 4) — https://quizbuffet.com/itil-foundation/ — priority #5
+- OSHA 10-Hour Construction (OSHA 10) — https://quizbuffet.com/osha-10-construction/ — priority #6
+- OSHA 30-Hour Construction (OSHA 30) — https://quizbuffet.com/osha-30-construction/ — priority #7
+- Forklift Operator Certification (OSHA 1910.178) — https://quizbuffet.com/forklift-certification/ — priority #8
+- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #9
+- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #10
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #11
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #12
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #13
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #14
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #15
+- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #16
+- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #17
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #18
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #19
+- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #20
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #21
+- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #22
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #23
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #24
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #25
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #26
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #27
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #28
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #29
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #30
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #31
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #32
+- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #33
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #34
+- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #35

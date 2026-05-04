@@ -21,6 +21,8 @@
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/comptia-security-plus.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -74,6 +76,16 @@
       "courseCode": "SY0-701",
       "description": "Security+ certifies professionals who can assess enterprise security posture, monitor hybrid environments, operate within governance and compliance frameworks, and identify and respond to security incidents.",
       "url": "https://quizbuffet.com/comptia-security-plus/",
+      "inLanguage": "en-US",
+      "dateModified": "2026-05-04",
+      "educationalCredentialAwarded": "CompTIA Security+",
+      "teaches": [
+        "General Security Concepts",
+        "Threats, Vulnerabilities, and Mitigations",
+        "Security Architecture",
+        "Security Operations",
+        "Security Program Management and Oversight"
+      ],
       "provider": {
         "@type": "Organization",
         "name": "QuizBuffet",
@@ -85,12 +97,38 @@
         "courseWorkload": "PT32H"
       },
       "about": [
-        "General Security Concepts",
-        "Threats, Vulnerabilities, and Mitigations",
-        "Security Architecture",
-        "Security Operations",
-        "Security Program Management and Oversight"
-      ]
+        {
+          "@type": "Organization",
+          "name": "CompTIA",
+          "sameAs": "https://en.wikipedia.org/wiki/CompTIA"
+        },
+        {
+          "@type": "Thing",
+          "name": "General Security Concepts"
+        },
+        {
+          "@type": "Thing",
+          "name": "Threats, Vulnerabilities, and Mitigations"
+        },
+        {
+          "@type": "Thing",
+          "name": "Security Architecture"
+        },
+        {
+          "@type": "Thing",
+          "name": "Security Operations"
+        },
+        {
+          "@type": "Thing",
+          "name": "Security Program Management and Oversight"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
     },
     {
       "@type": "FAQPage",
@@ -100,7 +138,7 @@
           "name": "Which of the following BEST describes a technical security control?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Technical controls are implemented through technology — firewalls, encryption, IDS/IPS, and access control lists all enforce security automatically without relying on human action. This is the correct answer."
+            "text": "A hardware or software mechanism — such as a firewall, encryption, or access control list — that enforces security through technology rather than human action or policy"
           }
         },
         {
@@ -108,7 +146,7 @@
           "name": "Which of the following is the BEST example of a managerial security control?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A risk assessment is a managerial (administrative) control — it involves governance, oversight, and decision-making processes rather than technical or physical implementations. This is the correct answer."
+            "text": "Conducting an annual risk assessment to identify and prioritize security risks to the organization"
           }
         },
         {
@@ -116,7 +154,7 @@
           "name": "Which of the following is the BEST example of an operational security control?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Security guards performing patrols are an operational control — they are people following procedures to enforce security. Operational controls are carried out by humans. This is the correct answer."
+            "text": "Security guards performing regular patrols of a data center facility"
           }
         },
         {
@@ -124,7 +162,7 @@
           "name": "Which of the following BEST characterizes a nation-state threat actor?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nation-state actors are government-affiliated groups with substantial resources, advanced persistent threat (APT) capabilities, and geopolitical objectives. They are among the most sophisticated and well-funded threat actors. This is the correct answer."
+            "text": "A government-sponsored group with significant resources, advanced capabilities, and long-term strategic objectives — conducting espionage, sabotage, or influence operations on behalf of a country"
           }
         },
         {
@@ -132,7 +170,7 @@
           "name": "What term describes an attacker who uses pre-built tools and exploits created by others without understanding the underlying techniques?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Script kiddies (unskilled attackers) rely on others' tools without understanding them — they are opportunistic, cause real damage, but lack the sophistication to develop novel attacks. This is the correct answer."
+            "text": "Script kiddie (unskilled attacker) — an individual who uses pre-written exploits, hacking tools, and scripts without the technical knowledge to develop their own, typically seeking notoriety or entertainment rather than strategic objectives"
           }
         },
         {
@@ -140,7 +178,7 @@
           "name": "Which of the following BEST describes a hacktivist threat actor?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Hacktivism combines hacking with activism — the primary motivation is advancing a cause, not financial gain. Anonymous and similar groups are classic examples. This is the correct answer."
+            "text": "An individual or group that uses hacking techniques to advance political, social, or ideological causes — typically targeting organizations whose activities conflict with their beliefs, seeking to embarrass, disrupt, or publicize their grievances"
           }
         },
         {
@@ -148,7 +186,7 @@
           "name": "What is the shared responsibility model in cloud computing and why is it a critical security concept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The shared responsibility model defines exactly who secures what — customer and provider responsibilities are clearly delineated and vary by service model. This is the correct answer."
+            "text": "The shared responsibility model divides security responsibilities between the cloud provider and the customer: the provider is always responsible for the physical infrastructure, hypervisor, and core cloud services; the customer is always responsible for their data, access…"
           }
         },
         {
@@ -156,7 +194,7 @@
           "name": "What is a hybrid cloud architecture and what unique security challenges does it introduce?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Hybrid environments require managing security across two different control planes, identity systems, and monitoring frameworks — creating unique complexity. This is the correct answer."
+            "text": "A hybrid cloud combines on-premises infrastructure with public cloud services — connected through VPN or private network links."
           }
         },
         {
@@ -164,7 +202,7 @@
           "name": "What is Infrastructure as Code (IaC) and what security implications does it have?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "IaC has significant security implications — both positive (consistency, code review) and negative (secrets exposure, template targeting) that must be managed. This is the correct answer."
+            "text": "Infrastructure as Code defines and provisions infrastructure through machine-readable configuration files rather than manual processes."
           }
         },
         {
@@ -172,7 +210,7 @@
           "name": "What is a secure baseline and what three activities are required to maintain it?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Establish, deploy, and maintain are the three lifecycle activities for secure baselines — each is required for effective baseline management. This is the correct answer."
+            "text": "A secure baseline is a documented, approved security configuration standard for a system type — defining required settings for OS hardening, services, accounts, network configuration, and security controls."
           }
         },
         {
@@ -180,7 +218,7 @@
           "name": "What are the key security hardening measures for corporate mobile devices (smartphones and tablets)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mobile device hardening spans encryption, authentication, MDM controls, network security, and update management — a comprehensive approach. This is the correct answer."
+            "text": "Key mobile device hardening measures: enable full-device encryption (FileVault equivalent for mobile); enforce PIN/biometric lock with short auto-lock timeout; MDM enrollment enabling remote wipe if lost or stolen; disable developer mode and USB debugging; restrict app…"
           }
         },
         {
@@ -188,7 +226,7 @@
           "name": "What are the essential security hardening steps for corporate Windows workstations?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Workstation hardening spans account privilege, encryption, endpoint protection, service reduction, policy enforcement, patching, and credential protection — a comprehensive set. This is the correct answer."
+            "text": "Essential Windows workstation hardening: remove local administrator rights for standard users; enable full-disk encryption (BitLocker); deploy endpoint protection (EDR); configure Windows Firewall (host-based firewall enabled, default deny inbound); disable unused services and…"
           }
         }
       ]

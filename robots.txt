@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://quizbuffet.com/sitemap.xml
+
+# AI / LLM crawlers — see llms.txt for a guided index
+# https://llmstxt.org/

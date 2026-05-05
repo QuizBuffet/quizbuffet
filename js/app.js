@@ -19,7 +19,7 @@ const SHELLS = {
     </main>`,
 
   cert: `
-    <main class="container">
+    <main class="container container-wide">
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <div id="cert-header"></div>
       <div id="progress-summary"></div>
@@ -58,8 +58,9 @@ const SHELLS = {
     </main>`,
 
   progress: `
-    <main class="container">
+    <main class="container container-wide">
       <div id="progress-overview"></div>
+      <div id="progress-radars"></div>
       <div id="progress-certs"></div>
       <div id="progress-footer"></div>
     </main>`,

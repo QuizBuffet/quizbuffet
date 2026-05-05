@@ -54,9 +54,12 @@ export function renderStorageView(onReset) {
     const certAcc = certAttempted > 0 ? Math.round(certCorrect / certAttempted * 100) : 0;
     const certBarPct = certAttempted > 0 ? certAcc : 0;
 
-    cards.push(`<div class="prog-cert-card">
+    cards.push(`<div class="prog-cert-card" data-cert="${cert.slug}">
       <div class="prog-cert-header">
-        <span class="prog-cert-name">${cert.name}</span>
+        <div class="prog-cert-header-row">
+          <span class="prog-cert-name">${cert.name}</span>
+          <button class="prog-cert-reset-btn" data-cert="${cert.slug}" title="Reset all ${cert.name} progress" aria-label="Reset all ${cert.name} progress">Reset cert</button>
+        </div>
         <span class="prog-cert-meta">${cert.code} · ${certComplete}/${cert.domains.length} complete · ${certCorrect} correct · ${certAcc}% accuracy</span>
         <div class="prog-cert-bar-wrap"><div class="prog-cert-bar" style="width:${certBarPct}%"></div></div>
       </div>
@@ -68,11 +71,26 @@ export function renderStorageView(onReset) {
     ? cards.join('')
     : `<p class="prog-empty">No progress saved yet.</p>`;
 
+  // Per-domain reset (single domain)
   el.querySelectorAll('.prog-reset-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const name = btn.closest('.prog-domain-row').querySelector('.prog-domain-name').textContent;
       if (!confirm(`Reset "${name}"? This cannot be undone.`)) return;
       resetDomain(btn.dataset.key);
+      onReset();
+    });
+  });
+
+  // Per-cert reset (all domains of one cert)
+  el.querySelectorAll('.prog-cert-reset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const slug = btn.dataset.cert;
+      const cert = certifications.find(c => c.slug === slug);
+      if (!cert) return;
+      if (!confirm(`Reset all progress for ${cert.name}? This will clear ${cert.domains.length} domain${cert.domains.length === 1 ? '' : 's'} and cannot be undone.`)) return;
+      for (const d of cert.domains) {
+        resetDomain(`${cert.slug}--${d.slug}`);
+      }
       onReset();
     });
   });

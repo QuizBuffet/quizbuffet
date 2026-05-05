@@ -1449,6 +1449,81 @@ a:is(:hover, :active) { text-decoration: underline; }
 .footer-cert-soon { opacity: 0.78; padding: 4px 8px !important; font-size: 13px !important; gap: 4px; display: inline-flex !important; align-items: center; }
 .footer-cert-rank { display: inline-block; font-size: 10px; font-weight: 700; color: #c9920c; background: rgba(201, 146, 12, 0.18); padding: 1px 5px; border-radius: 6px; }
 .footer-cert-more { display: inline-block; margin-top: 4px; font-size: 12px; color: var(--footer-cert-color); opacity: 0.6; font-style: italic; text-decoration: underline; }
+.footer-rss-btn { position: relative; display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 6px 12px; font-size: 14px; font-weight: 600; color: #fff; background: #ee802f; border-radius: 4px; text-decoration: none !important; transition: background 0.15s, transform 0.1s; overflow: hidden; isolation: isolate; animation: rss-pulse 2.6s ease-out infinite; }
+.footer-rss-btn:hover, .footer-rss-btn:focus-visible { background: #d96b1a; transform: translateY(-1px); }
+.footer-rss-btn svg { flex-shrink: 0; position: relative; z-index: 2; }
+.footer-rss-btn > * { position: relative; z-index: 2; }
+
+/* Diagonal sheen that sweeps across the button every cycle */
+.footer-rss-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.55) 48%, rgba(255,255,255,0.55) 52%, transparent 75%);
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  background-position: -120% 0;
+  pointer-events: none;
+  z-index: 1;
+  animation: rss-sheen 3.4s ease-in-out infinite;
+}
+
+/* Soft outer glow that pulses (the "light going around it") */
+@keyframes rss-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(238,128,47,0.55), 0 0 14px 2px rgba(238,128,47,0.25); }
+  50%      { box-shadow: 0 0 0 8px rgba(238,128,47,0), 0 0 22px 6px rgba(238,128,47,0.45); }
+}
+@keyframes rss-sheen {
+  0%   { background-position: -120% 0; }
+  60%  { background-position: 220% 0; }
+  100% { background-position: 220% 0; }
+}
+
+.footer-rss-btn:hover { animation-duration: 1.6s, 1.6s; }
+
+/* Animated text — shimmer sweep + soft glow synced to the button pulse */
+.footer-rss-text {
+  background: linear-gradient(110deg, #fff 0%, #fff 35%, #fff7e0 50%, #fff 65%, #fff 100%);
+  background-size: 220% 100%;
+  background-position: -120% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 0 0 0 transparent;
+  animation: rss-text-shimmer 3.4s ease-in-out infinite, rss-text-glow 2.6s ease-out infinite;
+  letter-spacing: 0.02em;
+}
+
+@keyframes rss-text-shimmer {
+  0%   { background-position: -120% 0; }
+  60%  { background-position: 220% 0; }
+  100% { background-position: 220% 0; }
+}
+@keyframes rss-text-glow {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 240, 210, 0)); }
+  50%      { filter: drop-shadow(0 0 4px rgba(255, 240, 210, 0.85)); }
+}
+
+/* Icon — subtle bobble + on hover, a quick pop */
+.footer-rss-icon {
+  animation: rss-icon-pulse 2.6s ease-out infinite;
+  transform-origin: center;
+}
+@keyframes rss-icon-pulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,255,255,0)); }
+  50%      { transform: scale(1.12); filter: drop-shadow(0 0 3px rgba(255,255,255,0.7)); }
+}
+.footer-rss-btn:hover .footer-rss-icon { animation-duration: 1.2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-rss-btn,
+  .footer-rss-text,
+  .footer-rss-icon { animation: none; }
+  .footer-rss-btn::before { animation: none; background: none; }
+  .footer-rss-text { background: none; -webkit-text-fill-color: #fff; color: #fff; }
+}
 
 .footer-privacy-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .footer-privacy-list li { font-size: 15px; color: var(--footer-text-sub); line-height: 1.7; padding-left: 14px; border-left: 2px solid var(--footer-border); }

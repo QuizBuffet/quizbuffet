@@ -85,6 +85,13 @@ export async function renderFooter() {
               <li><strong>Nothing shared.</strong> Your answers, scores, and progress never leave your device. Period.</li>
               <li><strong>Open to inspect.</strong> Every line of code runs in your browser. Open DevTools and see for yourself.</li>
             </ul>
+
+            <div class="footer-col-title footer-col-title-inline">Stay Updated</div>
+            <p class="footer-body">Get notified when new certs go live.</p>
+            <a class="footer-rss-btn" href="/feed.xml" title="Subscribe via RSS to get new cert launches in your reader">
+              <svg class="footer-rss-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.18 15.64a2.18 2.18 0 1 1 0 4.36 2.18 2.18 0 0 1 0-4.36zM4 4.44A19.56 19.56 0 0 1 23.56 24h-2.83A16.73 16.73 0 0 0 4 7.27V4.44zm0 5.66a13.9 13.9 0 0 1 13.9 13.9h-2.83A11.07 11.07 0 0 0 4 12.93V10.1z"/></svg>
+              <span class="footer-rss-text">RSS feed</span>
+            </a>
           </div>
 
         </div>

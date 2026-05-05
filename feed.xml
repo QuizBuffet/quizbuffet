@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QuizBuffet — Free Certification Practice Tests</title>
+    <link>https://quizbuffet.com/</link>
+    <atom:link href="https://quizbuffet.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. New cert content and exam-prep updates as they go live.</description>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 05 May 2026 19:03:51 GMT</lastBuildDate>
+    <ttl>1440</ttl>
+    <item>
+      <title>AWS Certified Solutions Architect – Associate (SAA-C03) — 600 free practice questions</title>
+      <link>https://quizbuffet.com/aws-solutions-architect-associate/</link>
+      <description>The most popular cloud certification for designing AWS workloads 600 questions across 4 domains. Free, no account needed.</description>
+      <category>AWS</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/aws-solutions-architect-associate/</guid>
+    </item>
+    <item>
+      <title>AWS Certified Cloud Practitioner (CLF-C02) — 400 free practice questions</title>
+      <link>https://quizbuffet.com/aws-cloud-practitioner/</link>
+      <description>Foundational AWS knowledge for technical and non-technical professionals 400 questions across 4 domains. Free, no account needed.</description>
+      <category>AWS</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/aws-cloud-practitioner/</guid>
+    </item>
+    <item>
+      <title>Cisco CCNA (200-301) — 800 free practice questions</title>
+      <link>https://quizbuffet.com/cisco-ccna/</link>
+      <description>The industry-standard entry into network engineering careers 800 questions across 6 domains. Free, no account needed.</description>
+      <category>Cisco</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/cisco-ccna/</guid>
+    </item>
+    <item>
+      <title>CompTIA Data+ (DA0-002) — 1000 free practice questions</title>
+      <link>https://quizbuffet.com/comptia-data-plus/</link>
+      <description>Data acquisition, analysis, and governance for data-driven decision making 1000 questions across 5 domains. Free, no account needed.</description>
+      <category>CompTIA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/comptia-data-plus/</guid>
+    </item>
+    <item>
+      <title>CompTIA Security+ (SY0-701) — 1900 free practice questions</title>
+      <link>https://quizbuffet.com/comptia-security-plus/</link>
+      <description>Core security skills for IT professionals defending enterprise environments 1900 questions across 5 domains. Free, no account needed.</description>
+      <category>CompTIA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/comptia-security-plus/</guid>
+    </item>
+    <item>
+      <title>CompTIA Network+ (N10-009) — 1119 free practice questions</title>
+      <link>https://quizbuffet.com/comptia-network-plus/</link>
+      <description>Core networking skills for IT infrastructure professionals 1119 questions across 5 domains. Free, no account needed.</description>
+      <category>CompTIA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/comptia-network-plus/</guid>
+    </item>
+    <item>
+      <title>CompTIA A+ Core 2 (220-1202) — 3200 free practice questions</title>
+      <link>https://quizbuffet.com/comptia-a-plus-core-2/</link>
+      <description>Operating systems, security, and troubleshooting for IT support technicians 3200 questions across 4 domains. Free, no account needed.</description>
+      <category>CompTIA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/comptia-a-plus-core-2/</guid>
+    </item>
+    <item>
+      <title>CompTIA A+ Core 1 (220-1101) — 2100 free practice questions</title>
+      <link>https://quizbuffet.com/comptia-a-plus-core-1/</link>
+      <description>Hardware, networking, and troubleshooting for IT support technicians 2100 questions across 5 domains. Free, no account needed.</description>
+      <category>CompTIA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/comptia-a-plus-core-1/</guid>
+    </item>
+    <item>
+      <title>CompTIA PenTest+ (PT0-003) — 2160 free practice questions</title>
+      <link>https://quizbuffet.com/comptia-pentest-plus/</link>
+      <description>Penetration testing and vulnerability management for security professionals 2160 questions across 5 domains. Free, no account needed.</description>
+      <category>CompTIA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/comptia-pentest-plus/</guid>
+    </item>
+    <item>
+      <title>CompTIA CySA+ (CS0-003) — 1600 free practice questions</title>
+      <link>https://quizbuffet.com/comptia-cysa-plus/</link>
+      <description>Threat detection and incident response for security analysts 1600 questions across 4 domains. Free, no account needed.</description>
+      <category>CompTIA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/comptia-cysa-plus/</guid>
+    </item>
+    <item>
+      <title>CompTIA ITF+ (FC0-U61) — 1900 free practice questions</title>
+      <link>https://quizbuffet.com/comptia-itf-plus/</link>
+      <description>IT fundamentals for beginners and career changers 1900 questions across 6 domains. Free, no account needed.</description>
+      <category>CompTIA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/comptia-itf-plus/</guid>
+    </item>
+    <item>
+      <title>CompTIA Cloud+ (CV0-004) — 1200 free practice questions</title>
+      <link>https://quizbuffet.com/comptia-cloud-plus/</link>
+      <description>Cloud infrastructure skills for engineers and sysadmins 1200 questions across 6 domains. Free, no account needed.</description>
+      <category>CompTIA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/comptia-cloud-plus/</guid>
+    </item>
+    <item>
+      <title>Microsoft Azure Fundamentals (AZ-900) (AZ-900) — coming soon</title>
+      <link>https://quizbuffet.com/microsoft-az-900/</link>
+      <description>Foundational Azure knowledge for cloud beginners and decision-makers Free practice test in development (priority #1).</description>
+      <category>Microsoft</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/microsoft-az-900/</guid>
+    </item>
+    <item>
+      <title>Microsoft Azure Administrator Associate (AZ-104) (AZ-104) — coming soon</title>
+      <link>https://quizbuffet.com/microsoft-az-104/</link>
+      <description>Day-to-day Azure infrastructure administration skills Free practice test in development (priority #2).</description>
+      <category>Microsoft</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/microsoft-az-104/</guid>
+    </item>
+    <item>
+      <title>ISC2 CISSP (CISSP) — coming soon</title>
+      <link>https://quizbuffet.com/isc2-cissp/</link>
+      <description>The gold-standard senior cybersecurity certification Free practice test in development (priority #3).</description>
+      <category>ISC2</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/isc2-cissp/</guid>
+    </item>
+    <item>
+      <title>ITIL 4 Foundation (ITIL 4) — coming soon</title>
+      <link>https://quizbuffet.com/itil-foundation/</link>
+      <description>The most widely adopted IT service management framework Free practice test in development (priority #4).</description>
+      <category>PeopleCert</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/itil-foundation/</guid>
+    </item>
+    <item>
+      <title>OSHA 10-Hour Construction (OSHA 10) — coming soon</title>
+      <link>https://quizbuffet.com/osha-10-construction/</link>
+      <description>Required entry-level safety training for construction workers Free practice test in development (priority #5).</description>
+      <category>OSHA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/osha-10-construction/</guid>
+    </item>
+    <item>
+      <title>OSHA 30-Hour Construction (OSHA 30) — coming soon</title>
+      <link>https://quizbuffet.com/osha-30-construction/</link>
+      <description>Supervisor-level construction safety certification Free practice test in development (priority #6).</description>
+      <category>OSHA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/osha-30-construction/</guid>
+    </item>
+    <item>
+      <title>Forklift Operator Certification (OSHA 1910.178) — coming soon</title>
+      <link>https://quizbuffet.com/forklift-certification/</link>
+      <description>Required certification for operating powered industrial trucks Free practice test in development (priority #7).</description>
+      <category>OSHA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/forklift-certification/</guid>
+    </item>
+    <item>
+      <title>CPR / AED Certification (CPR/AED) — coming soon</title>
+      <link>https://quizbuffet.com/cpr-aed/</link>
+      <description>Lifesaving cardiac and breathing emergency skills Free practice test in development (priority #8).</description>
+      <category>American Red Cross / AHA</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/cpr-aed/</guid>
+    </item>
+    <item>
+      <title>Basic Life Support (BLS) (BLS) — coming soon</title>
+      <link>https://quizbuffet.com/bls/</link>
+      <description>Required CPR-level credential for healthcare professionals Free practice test in development (priority #9).</description>
+      <category>American Heart Association</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/bls/</guid>
+    </item>
+    <item>
+      <title>EMT (Emergency Medical Technician) (NREMT) — coming soon</title>
+      <link>https://quizbuffet.com/emt/</link>
+      <description>Entry-level certification for emergency medical services Free practice test in development (priority #10).</description>
+      <category>NREMT</category>
+      <pubDate>Tue, 05 May 2026 19:03:51 GMT</pubDate>
+      <guid isPermaLink="true">https://quizbuffet.com/emt/</guid>
+    </item>
+  </channel>
+</rss>

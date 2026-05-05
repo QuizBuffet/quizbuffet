@@ -195,6 +195,7 @@ function buildCertHtml(cert) {
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -425,6 +426,7 @@ ${comingLines}
 
 ## Resources
 - [Sitemap](${SITE}/sitemap.xml)
+- [RSS feed](${SITE}/feed.xml) — new cert launches and updates
 - [Full content for AI ingestion](${SITE}/llms-full.txt)
 
 ## License and citation
@@ -468,6 +470,56 @@ ${sections}
 
 ## Coming soon (in priority order)
 ${csList}
+`;
+}
+
+// RSS 2.0 feed — one item per live cert + top coming-soon entries.
+// Stable <guid> per cert URL so RSS readers don't re-fire on every rebuild.
+function buildRssFeed(comingSoon) {
+  const buildDate = new Date().toUTCString();
+
+  const liveItems = [...certifications]
+    .map(cert => {
+      const total = cert.domains.reduce((s, d) => s + loadDomainQuestions(cert.slug, d.slug).length, 0);
+      return { cert, total, soon: false };
+    })
+    // Newest live certs first (later in the index = newer)
+    .reverse();
+
+  const csItems = comingSoon.slice(0, 10).map((cert, i) => ({ cert, total: 0, soon: true, rank: i + 1 }));
+
+  const items = [...liveItems, ...csItems].map(({ cert, total, soon, rank }) => {
+    const url = `${SITE}/${cert.slug}/`;
+    const title = soon
+      ? `${cert.name} (${cert.code}) — coming soon`
+      : `${cert.name} (${cert.code}) — ${total} free practice questions`;
+    const desc = soon
+      ? `${cert.tagline || ''} Free practice test in development${rank ? ` (priority #${rank})` : ''}.`.trim()
+      : `${cert.tagline || ''} ${total} questions across ${cert.domains.length} domains. Free, no account needed.`.trim();
+    return `    <item>
+      <title>${htmlEscape(title)}</title>
+      <link>${url}</link>
+      <description>${htmlEscape(desc)}</description>
+      <category>${htmlEscape(cert.vendor || 'Certification')}</category>
+      <pubDate>${buildDate}</pubDate>
+      <guid isPermaLink="true">${url}</guid>
+    </item>`;
+  }).join('\n');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QuizBuffet — Free Certification Practice Tests</title>
+    <link>${SITE}/</link>
+    <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. New cert content and exam-prep updates as they go live.</description>
+    <language>en-US</language>
+    <lastBuildDate>${buildDate}</lastBuildDate>
+    <ttl>1440</ttl>
+${items}
+  </channel>
+</rss>
 `;
 }
 
@@ -526,5 +578,8 @@ console.log(`  ✓ llms.txt`);
 
 fs.writeFileSync(path.join(ROOT, 'llms-full.txt'), buildLlmsFullTxt(comingSoon));
 console.log(`  ✓ llms-full.txt`);
+
+fs.writeFileSync(path.join(ROOT, 'feed.xml'), buildRssFeed(comingSoon));
+console.log(`  ✓ feed.xml (RSS)`);
 
 console.log(`\nGenerated ${generated} live cert pages + ${csGenerated} coming-soon stubs.`);

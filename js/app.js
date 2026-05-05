@@ -171,6 +171,9 @@ document.addEventListener('click', e => {
   try { url = new URL(a.href); } catch (_) { return; }
   if (url.origin !== location.origin) return;
 
+  // Let the browser handle non-HTML resources (RSS, sitemap, robots, llms, etc.) with a real navigation
+  if (/\.(xml|txt|json|pdf|svg|png|jpe?g|gif|webp|ico|zip|md|csv)$/i.test(url.pathname)) return;
+
   const dest = url.pathname + url.search;
   if (dest === location.pathname + location.search) return;
 

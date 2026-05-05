@@ -1,6 +1,6 @@
 # QuizBuffet — Full Cert Reference
 
-Last updated: 2026-05-04
+Last updated: 2026-05-05
 Site: https://quizbuffet.com
 
 QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
@@ -371,16 +371,34 @@ A: The AWS Command Line Interface lets users manage AWS services from a command-
 ## AWS Certified Solutions Architect – Associate (SAA-C03)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-solutions-architect-associate/
-Total questions: 0
+Total questions: 600
 
 AWS Certified Solutions Architect – Associate (SAA-C03) validates the ability to design solutions on AWS that are secure, resilient, high-performing, and cost-optimized — based on the AWS Well-Architected Framework. Aimed at candidates with at least 1 year of hands-on experience designing cloud solutions on AWS.
 
 ### Domains
-- 1.0 Design Secure Architectures (30% of exam)
-- 2.0 Design Resilient Architectures (26% of exam)
-- 3.0 Design High-Performing Architectures (24% of exam)
-- 4.0 Design Cost-Optimized Architectures (20% of exam)
+- 1.0 Design Secure Architectures (30% of exam) — 180 questions
+- 2.0 Design Resilient Architectures (26% of exam) — 156 questions
+- 3.0 Design High-Performing Architectures (24% of exam) — 144 questions
+- 4.0 Design Cost-Optimized Architectures (20% of exam) — 120 questions
 
+### Sample questions
+**Q: Which description best matches Secure access to AWS resources in AWS Solutions Architect Associate Domain 1.0 Design Secure Architectures?**
+A: Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure.
+
+**Q: Which option correctly defines IAM users?**
+A: IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs.
+
+**Q: Which description best matches Scalable architecture design in AWS Solutions Architect Associate Domain 2.0 Design Resilient Architectures?**
+A: Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application.
+
+**Q: Which option correctly defines Loosely coupled architecture?**
+A: Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others.
+
+**Q: Which description best matches Object storage with Amazon S3 in AWS Solutions Architect Associate Domain 3.0 Design High-Performing Architectures?**
+A: Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data.
+
+**Q: Which option correctly defines Block storage with Amazon EBS?**
+A: Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.
 
 
 ## Coming soon (in priority order)

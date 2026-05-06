@@ -10,6 +10,7 @@ import { cert as comptiaDataPlus } from './comptia-data-plus.js';
 import { cert as ciscoCcna } from './cisco-ccna.js';
 import { cert as awsCloudPractitioner } from './aws-cloud-practitioner.js';
 import { cert as awsSolutionsArchitectAssociate } from './aws-solutions-architect-associate.js';
+import { cert as awsAiPractitioner } from './aws-ai-practitioner.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -24,4 +25,5 @@ export const certifications = [
   ciscoCcna,
   awsCloudPractitioner,
   awsSolutionsArchitectAssociate,
+  awsAiPractitioner,
 ];

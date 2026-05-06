@@ -1,6 +1,6 @@
 # QuizBuffet
 
-> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated 2026-05-05.
+> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated 2026-05-06.
 
 ## Available certifications
 - [CompTIA Cloud+ (CV0-004)](https://quizbuffet.com/comptia-cloud-plus/): Cloud infrastructure skills for engineers and sysadmins 1200+ questions.
@@ -15,6 +15,7 @@
 - [Cisco CCNA (200-301)](https://quizbuffet.com/cisco-ccna/): The industry-standard entry into network engineering careers 800+ questions.
 - [AWS Certified Cloud Practitioner (CLF-C02)](https://quizbuffet.com/aws-cloud-practitioner/): Foundational AWS knowledge for technical and non-technical professionals 400+ questions.
 - [AWS Certified Solutions Architect – Associate (SAA-C03)](https://quizbuffet.com/aws-solutions-architect-associate/): The most popular cloud certification for designing AWS workloads 600+ questions.
+- [AWS Certified AI Practitioner (AIF-C01)](https://quizbuffet.com/aws-ai-practitioner/): Foundational AI, ML, and generative-AI knowledge for the AWS Cloud
 
 ## Coming soon
 - [Microsoft Azure Fundamentals (AZ-900) (AZ-900)](https://quizbuffet.com/microsoft-az-900/) — coming soon (priority #1)

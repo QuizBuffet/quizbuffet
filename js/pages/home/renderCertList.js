@@ -1,7 +1,87 @@
 import { loadDomain } from '../../loader/loadDomain.js';
 
-// Renders two grid sections: Available Now (live certs, alphabetical with question counts)
-// and Coming Soon (priority-ordered placeholders). Search filter applies to both.
+// Live cert categories — coming-soon entries already carry their own `category` field.
+const LIVE_CATEGORY = {
+  'comptia-a-plus-core-1':              'IT Foundations',
+  'comptia-a-plus-core-2':              'IT Foundations',
+  'comptia-itf-plus':                   'IT Foundations',
+  'comptia-network-plus':               'Networking',
+  'cisco-ccna':                         'Networking',
+  'comptia-security-plus':              'Cybersecurity',
+  'comptia-cysa-plus':                  'Cybersecurity',
+  'comptia-pentest-plus':               'Cybersecurity',
+  'comptia-cloud-plus':                 'Cloud',
+  'aws-cloud-practitioner':             'Cloud',
+  'aws-solutions-architect-associate':  'Cloud',
+  'aws-ai-practitioner':                'Data & AI',
+  'comptia-data-plus':                  'Data & AI',
+};
+
+const CATEGORY_ORDER = [
+  'IT Foundations', 'Networking', 'Cybersecurity', 'Cloud', 'Data & AI',
+  'IT Service Management', 'Project Management', 'Business', 'Accounting',
+  'Healthcare', 'Safety', 'Trades', 'HVAC', 'Automotive',
+  'Transportation', 'Aviation',
+  'Real Estate', 'Insurance', 'Mortgage',
+  'Food Service', 'Beauty', 'Fitness',
+];
+
+function categoryOf(cert, isLive) {
+  if (isLive) return LIVE_CATEGORY[cert.slug] || cert.category || 'Other';
+  return cert.category || 'Other';
+}
+
+function groupByCategory(certs, isLive) {
+  const groups = new Map();
+  for (const c of certs) {
+    const cat = categoryOf(c, isLive);
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat).push(c);
+  }
+  return [...groups.entries()].sort(([a], [b]) => {
+    const ai = CATEGORY_ORDER.indexOf(a);
+    const bi = CATEGORY_ORDER.indexOf(b);
+    if (ai === -1 && bi === -1) return a.localeCompare(b);
+    if (ai === -1) return 1;
+    if (bi === -1) return -1;
+    return ai - bi;
+  });
+}
+
+function renderLiveCard(c) {
+  return `
+    <a href="/${c.slug}/" class="cert-card" data-cert-item="${c.slug}">
+      <div class="cert-card-name">${c.name}</div>
+      <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
+      <div class="cert-card-footer" data-cert-count="${c.slug}">…</div>
+    </a>`;
+}
+
+function renderCsCard(c, comingSoon) {
+  const priority = comingSoon.indexOf(c) + 1;
+  return `
+    <a href="/${c.slug}/" class="cert-card cert-coming-soon">
+      <span class="cert-card-priority" title="Build priority">#${priority}</span>
+      <div class="cert-card-name">${c.name}</div>
+      <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
+      <div class="cert-card-footer">Coming soon</div>
+    </a>`;
+}
+
+function renderCategorizedSection(label, dotClass, total, groups, cardFn) {
+  if (!total) return '';
+  const inner = groups.map(([cat, items]) => `
+    <div class="cert-category">
+      <h4 class="cert-category-heading">${cat} <span class="cert-list-count">${items.length}</span></h4>
+      <div class="cert-category-cards">${items.map(cardFn).join('')}</div>
+    </div>`).join('');
+  return `
+    <section class="cert-list-section">
+      <h3 class="cert-list-heading"><span class="dot ${dotClass}"></span> ${label} <span class="cert-list-count">${total}</span></h3>
+      <div class="cert-categories">${inner}</div>
+    </section>`;
+}
+
 export function renderCertList(live, comingSoon = [], filter = '') {
   const el = document.getElementById('cert-list');
   if (!el) return;
@@ -10,7 +90,8 @@ export function renderCertList(live, comingSoon = [], filter = '') {
   const matches = c =>
     c.name.toLowerCase().includes(f) ||
     (c.code || '').toLowerCase().includes(f) ||
-    (c.vendor || '').toLowerCase().includes(f);
+    (c.vendor || '').toLowerCase().includes(f) ||
+    (categoryOf(c, true) || categoryOf(c, false) || '').toLowerCase().includes(f);
 
   const liveSorted = [...live].sort((a, b) => a.name.localeCompare(b.name));
   const liveFiltered = f ? liveSorted.filter(matches) : liveSorted;
@@ -21,37 +102,12 @@ export function renderCertList(live, comingSoon = [], filter = '') {
     return;
   }
 
-  const liveCards = liveFiltered.map(c => `
-    <a href="/${c.slug}/" class="cert-card" data-cert-item="${c.slug}">
-      <div class="cert-card-name">${c.name}</div>
-      <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
-      <div class="cert-card-footer" data-cert-count="${c.slug}">…</div>
-    </a>`).join('');
-
-  // Coming-soon cards keep their JSON priority order (#1 = highest demand)
-  const csCards = csFiltered.map((c) => {
-    const originalIdx = comingSoon.indexOf(c);
-    const priority = originalIdx + 1;
-    return `
-    <a href="/${c.slug}/" class="cert-card cert-coming-soon">
-      <span class="cert-card-priority" title="Build priority">#${priority}</span>
-      <div class="cert-card-name">${c.name}</div>
-      <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
-      <div class="cert-card-footer">Coming soon${c.category ? ` · ${c.category}` : ''}</div>
-    </a>`;
-  }).join('');
+  const liveGroups = groupByCategory(liveFiltered, true);
+  const csGroups = groupByCategory(csFiltered, false);
 
   el.innerHTML = `
-    ${liveFiltered.length ? `
-      <div class="cert-list-section">
-        <h3 class="cert-list-heading"><span class="dot dot-live"></span> Available now <span class="cert-list-count">${liveFiltered.length}</span></h3>
-        <div class="cert-grid">${liveCards}</div>
-      </div>` : ''}
-    ${csFiltered.length ? `
-      <div class="cert-list-section">
-        <h3 class="cert-list-heading"><span class="dot dot-soon"></span> Coming soon <span class="cert-list-count">${csFiltered.length}</span></h3>
-        <div class="cert-grid">${csCards}</div>
-      </div>` : ''}
+    ${renderCategorizedSection('Available now', 'dot-live', liveFiltered.length, liveGroups, renderLiveCard)}
+    ${renderCategorizedSection('Coming soon', 'dot-soon', csFiltered.length, csGroups, c => renderCsCard(c, comingSoon))}
   `;
 
   liveFiltered.forEach(cert => {

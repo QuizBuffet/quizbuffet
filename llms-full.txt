@@ -1,6 +1,6 @@
 # QuizBuffet — Full Cert Reference
 
-Last updated: 2026-05-05
+Last updated: 2026-05-06
 Site: https://quizbuffet.com
 
 QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
@@ -399,6 +399,21 @@ A: Object storage with Amazon S3 stores data as objects in buckets and scales fo
 
 **Q: Which option correctly defines Block storage with Amazon EBS?**
 A: Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.
+
+## AWS Certified AI Practitioner (AIF-C01)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-ai-practitioner/
+Total questions: 0
+
+AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of AI, machine learning, and generative AI on AWS — including foundation models, prompt engineering, responsible AI, and security for AI workloads. It is designed for professionals who use, evaluate, or work alongside AI/ML systems but are not necessarily building them.
+
+### Domains
+- 1.0 Fundamentals of AI and ML (20% of exam)
+- 2.0 Fundamentals of Generative AI (24% of exam)
+- 3.0 Applications of Foundation Models (28% of exam)
+- 4.0 Guidelines for Responsible AI (14% of exam)
+- 5.0 Security, Compliance, and Governance for AI Solutions (14% of exam)
+
 
 
 ## Coming soon (in priority order)

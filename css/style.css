@@ -987,6 +987,41 @@ a:is(:hover, :active) { text-decoration: underline; }
 .cert-radar-dot { cursor: help; }
 .cert-radar-help { font-size: 14px; line-height: 1.55; color: var(--text-muted); max-width: 70ch; margin: 0 0 14px; padding: 10px 12px; background: var(--surface, rgba(0,0,0,0.03)); border-left: 3px solid #2e9b4a; border-radius: 4px; }
 
+/* Categories within a section — multi-column flow so short categories tuck together
+   and we don't get big empty gaps below short categories adjacent to tall ones. */
+.cert-categories {
+  column-count: 2;
+  column-gap: 14px;
+}
+@media (min-width: 720px)  { .cert-categories { column-count: 3; column-gap: 18px; } }
+@media (min-width: 1100px) { .cert-categories { column-count: 4; column-gap: 22px; } }
+@media (min-width: 1500px) { .cert-categories { column-count: 5; } }
+
+.cert-category {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  display: block;
+  margin: 0 0 16px;
+}
+.cert-category-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--border-sub);
+}
+.cert-category-heading .cert-list-count { font-size: 10px; padding: 1px 5px; }
+
+/* Cards inside a category — vertical stack inside the column cell */
+.cert-category-cards { display: flex; flex-direction: column; gap: 8px; }
+
 /* Cert list sections (Available now / Coming soon) */
 .cert-list-section { margin-bottom: 28px; }
 .cert-list-section:last-child { margin-bottom: 0; }
@@ -1482,47 +1517,9 @@ a:is(:hover, :active) { text-decoration: underline; }
 
 .footer-rss-btn:hover { animation-duration: 1.6s, 1.6s; }
 
-/* Animated text — shimmer sweep + soft glow synced to the button pulse */
-.footer-rss-text {
-  background: linear-gradient(110deg, #fff 0%, #fff 35%, #fff7e0 50%, #fff 65%, #fff 100%);
-  background-size: 220% 100%;
-  background-position: -120% 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  text-shadow: 0 0 0 transparent;
-  animation: rss-text-shimmer 3.4s ease-in-out infinite, rss-text-glow 2.6s ease-out infinite;
-  letter-spacing: 0.02em;
-}
-
-@keyframes rss-text-shimmer {
-  0%   { background-position: -120% 0; }
-  60%  { background-position: 220% 0; }
-  100% { background-position: 220% 0; }
-}
-@keyframes rss-text-glow {
-  0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 240, 210, 0)); }
-  50%      { filter: drop-shadow(0 0 4px rgba(255, 240, 210, 0.85)); }
-}
-
-/* Icon — subtle bobble + on hover, a quick pop */
-.footer-rss-icon {
-  animation: rss-icon-pulse 2.6s ease-out infinite;
-  transform-origin: center;
-}
-@keyframes rss-icon-pulse {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255,255,255,0)); }
-  50%      { transform: scale(1.12); filter: drop-shadow(0 0 3px rgba(255,255,255,0.7)); }
-}
-.footer-rss-btn:hover .footer-rss-icon { animation-duration: 1.2s; }
-
 @media (prefers-reduced-motion: reduce) {
-  .footer-rss-btn,
-  .footer-rss-text,
-  .footer-rss-icon { animation: none; }
+  .footer-rss-btn { animation: none; }
   .footer-rss-btn::before { animation: none; background: none; }
-  .footer-rss-text { background: none; -webkit-text-fill-color: #fff; color: #fff; }
 }
 
 .footer-privacy-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }

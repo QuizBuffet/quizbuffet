@@ -1,4 +1,5 @@
 import { loadDomain } from '../../loader/loadDomain.js';
+import { loadSalaries, getSalaryEntry, formatCompactUSD, collarLabel } from '../../data/salaries/loadSalaries.js';
 
 // Live cert categories — coming-soon entries already carry their own `category` field.
 const LIVE_CATEGORY = {
@@ -13,6 +14,7 @@ const LIVE_CATEGORY = {
   'comptia-cloud-plus':                 'Cloud',
   'aws-cloud-practitioner':             'Cloud',
   'aws-solutions-architect-associate':  'Cloud',
+  'aws-cloudops-engineer-associate':    'Cloud',
   'aws-ai-practitioner':                'Data & AI',
   'aws-ml-engineer-associate':          'Data & AI',
   'aws-genai-developer-professional':   'Data & AI',
@@ -55,6 +57,7 @@ function renderLiveCard(c) {
     <a href="/${c.slug}/" class="cert-card" data-cert-item="${c.slug}">
       <div class="cert-card-name">${c.name}</div>
       <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
+      <div class="cert-card-salary" data-salary="${c.slug}"></div>
       <div class="cert-card-footer" data-cert-count="${c.slug}">…</div>
     </a>`;
 }
@@ -66,8 +69,23 @@ function renderCsCard(c, comingSoon) {
       <span class="cert-card-priority" title="Build priority">#${priority}</span>
       <div class="cert-card-name">${c.name}</div>
       <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
+      <div class="cert-card-salary" data-salary="${c.slug}"></div>
       <div class="cert-card-footer">Coming soon</div>
     </a>`;
+}
+
+function fillSalaries(rootEl) {
+  loadSalaries().then(salaries => {
+    rootEl.querySelectorAll('[data-salary]').forEach(slot => {
+      const entry = getSalaryEntry(salaries, slot.dataset.salary);
+      if (!entry) { slot.remove(); return; }
+      const collar = collarLabel(entry.collar);
+      const mid = formatCompactUSD(entry.salary.mid);
+      slot.innerHTML = `
+        <span class="cert-card-salary-mid">${mid} median</span>
+        <span class="cert-card-salary-collar" title="${collar.label}">${collar.icon}</span>`;
+    });
+  });
 }
 
 function renderCategorizedSection(label, dotClass, total, groups, cardFn) {
@@ -111,6 +129,8 @@ export function renderCertList(live, comingSoon = [], filter = '') {
     ${renderCategorizedSection('Available now', 'dot-live', liveFiltered.length, liveGroups, renderLiveCard)}
     ${renderCategorizedSection('Coming soon', 'dot-soon', csFiltered.length, csGroups, c => renderCsCard(c, comingSoon))}
   `;
+
+  fillSalaries(el);
 
   liveFiltered.forEach(cert => {
     Promise.all(

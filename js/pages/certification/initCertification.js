@@ -12,6 +12,7 @@ import { getRouteParams } from '../../router/initRouter.js';
 import { setMeta } from '../../components/meta/setMeta.js';
 import { setJsonLd } from '../../components/meta/setJsonLd.js';
 import { affiliateLinksHTML } from '../../components/affiliates/affiliateLinksHTML.js';
+import { renderSalaryPanel } from '../../components/salary/renderSalaryPanel.js';
 
 export async function init() {
   renderAd('ad-top');
@@ -50,6 +51,7 @@ export async function init() {
   } else {
     // Render immediately with placeholder, then update once all domains are fetched
     renderCertHeader(cert, null);
+    renderSalaryPanel('salary-panel', cert.slug);
     renderCertProgressSummary(cert);
     renderSessionSizePicker(() => {});
     renderMixQuizBtn(cert);

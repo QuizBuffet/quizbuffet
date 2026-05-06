@@ -3,6 +3,8 @@
   "scripts": {
     "start": "npx serve -s .",
     "sync": "node sync-counts.js",
-    "build:seo": "node scripts/build-seo.mjs"
+    "build:seo": "node scripts/build-seo.mjs",
+    "check:weights": "node scripts/check-weights.mjs",
+    "check:salaries": "node scripts/check-salaries.mjs"
   }
 }

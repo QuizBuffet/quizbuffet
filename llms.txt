@@ -17,7 +17,8 @@
 - [AWS Certified Solutions Architect – Associate (SAA-C03)](https://quizbuffet.com/aws-solutions-architect-associate/): The most popular cloud certification for designing AWS workloads 600+ questions.
 - [AWS Certified AI Practitioner (AIF-C01)](https://quizbuffet.com/aws-ai-practitioner/): Foundational AI, ML, and generative-AI knowledge for the AWS Cloud 500+ questions.
 - [AWS Certified Machine Learning Engineer – Associate (MLA-C01)](https://quizbuffet.com/aws-ml-engineer-associate/): Build, deploy, and operate ML solutions on AWS 500+ questions.
-- [AWS Certified Generative AI Developer – Professional (AIP-C01)](https://quizbuffet.com/aws-genai-developer-professional/): Build, integrate, and operate production GenAI solutions on AWS
+- [AWS Certified Generative AI Developer – Professional (AIP-C01)](https://quizbuffet.com/aws-genai-developer-professional/): Build, integrate, and operate production GenAI solutions on AWS 688+ questions.
+- [AWS Certified CloudOps Engineer – Associate (SOA-C03)](https://quizbuffet.com/aws-cloudops-engineer-associate/): Deploy, manage, and operate workloads on AWS
 
 ## Coming soon
 - [Microsoft Azure Fundamentals (AZ-900) (AZ-900)](https://quizbuffet.com/microsoft-az-900/) — coming soon (priority #1)

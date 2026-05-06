@@ -22,6 +22,7 @@ const SHELLS = {
     <main class="container container-wide">
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <div id="cert-header"></div>
+      <div id="salary-panel"></div>
       <div id="progress-summary"></div>
       <h2 class="section-title" id="domains-label">Exam Domains</h2>
       <div id="session-size-picker"></div>

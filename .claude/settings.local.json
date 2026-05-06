@@ -44,7 +44,8 @@
       "Bash(git checkout *)",
       "Bash(node scripts/build-seo.mjs)",
       "Bash(node /Users/gradikayamba/quizbuffet/scripts/build-seo.mjs)",
-      "Bash(node /Users/gradikayamba/quizbuffet/scripts/check-weights.mjs)"
+      "Bash(node /Users/gradikayamba/quizbuffet/scripts/check-weights.mjs)",
+      "Bash(node /Users/gradikayamba/quizbuffet/scripts/check-salaries.mjs)"
     ]
   }
 }

@@ -468,16 +468,49 @@ A: SageMaker batch transform involves running offline inference against a batch 
 ## AWS Certified Generative AI Developer – Professional (AIP-C01)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-genai-developer-professional/
-Total questions: 0
+Total questions: 688
 
 AWS Certified Generative AI Developer – Professional (AIP-C01) validates the ability to integrate foundation models into applications and business workflows, including RAG and vector store design, agentic AI, prompt engineering and management, FM API integration, model deployment strategies, AI safety and governance, performance and cost optimization, and evaluation, monitoring, and troubleshooting of GenAI applications.
 
 ### Domains
-- 1.0 Foundation Model Integration, Data Management, and Compliance (31% of exam)
-- 2.0 Implementation and Integration (26% of exam)
-- 3.0 AI Safety, Security, and Governance (20% of exam)
-- 4.0 Operational Efficiency and Optimization for GenAI Applications (12% of exam)
-- 5.0 Testing, Validation, and Troubleshooting (11% of exam)
+- 1.0 Foundation Model Integration, Data Management, and Compliance (31% of exam) — 210 questions
+- 2.0 Implementation and Integration (26% of exam) — 188 questions
+- 3.0 AI Safety, Security, and Governance (20% of exam) — 136 questions
+- 4.0 Operational Efficiency and Optimization for GenAI Applications (12% of exam) — 80 questions
+- 5.0 Testing, Validation, and Troubleshooting (11% of exam) — 74 questions
+
+### Sample questions
+**Q: Which description best matches GenAI solution architecture in AWS AIP-C01 Domain 1.0 Foundation Model Integration, Data Management, and Compliance?**
+A: GenAI solution architecture involves aligning foundation models, integration patterns, deployment choices, and technical constraints to a business use case.
+
+**Q: Which description best matches Proof of concept implementation in AWS AIP-C01 Domain 1.0 Foundation Model Integration, Data Management, and Compliance?**
+A: Proof of concept implementation involves validating GenAI feasibility, performance characteristics, and business value before full-scale deployment.
+
+**Q: Which description best matches Agent memory management in AWS AIP-C01 Domain 2.0 Implementation and Integration?**
+A: Agent memory management involves maintaining relevant state, context, and history so an AI agent can complete tasks across multiple interactions.
+
+**Q: Which description best matches Agent state management in AWS AIP-C01 Domain 2.0 Implementation and Integration?**
+A: Agent state management involves tracking the current task, tool results, intermediate decisions, and workflow progress for an autonomous AI system.
+
+**Q: Which description best matches Bedrock guardrails for input filtering in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?**
+A: Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model.
+
+**Q: Which description best matches Custom moderation workflow in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?**
+A: Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction.
+
+## AWS Certified CloudOps Engineer – Associate (SOA-C03)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-cloudops-engineer-associate/
+Total questions: 0
+
+AWS Certified CloudOps Engineer – Associate (SOA-C03) validates the ability to deploy, manage, and operate workloads on AWS. It covers monitoring and logging, performance optimization, reliability and business continuity, deployment and automation, security and compliance, and networking and content delivery — including hands-on use of CloudWatch, CloudFormation, Systems Manager, IAM, VPC, and the AWS CLI.
+
+### Domains
+- 1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization (22% of exam)
+- 2.0 Reliability and Business Continuity (22% of exam)
+- 3.0 Deployment, Provisioning, and Automation (22% of exam)
+- 4.0 Security and Compliance (16% of exam)
+- 5.0 Networking and Content Delivery (18% of exam)
 
 
 

@@ -38,7 +38,13 @@ function groupByCategory(certs, isLive) {
     if (!groups.has(cat)) groups.set(cat, []);
     groups.get(cat).push(c);
   }
-  return [...groups.entries()].sort(([a], [b]) => {
+  // Sort by item count ascending so smallest categories appear first.
+  // With CSS multi-column + break-inside: avoid, this lets the browser pack tiny
+  // categories together at the start of column 1, distributing taller ones evenly
+  // across remaining columns and avoiding a half-empty rightmost column.
+  // Tiebreaker: CATEGORY_ORDER, then alphabetical.
+  return [...groups.entries()].sort(([a, aArr], [b, bArr]) => {
+    if (aArr.length !== bArr.length) return aArr.length - bArr.length;
     const ai = CATEGORY_ORDER.indexOf(a);
     const bi = CATEGORY_ORDER.indexOf(b);
     if (ai === -1 && bi === -1) return a.localeCompare(b);

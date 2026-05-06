@@ -1,4 +1,4 @@
-const CACHE = 'qb-v32';
+const CACHE = 'qb-v33';
 
 self.addEventListener('install', () => self.skipWaiting());
 

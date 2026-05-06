@@ -1143,6 +1143,58 @@ a:is(:hover, :active) { text-decoration: underline; }
 .progress-bar-track { background: var(--track); height: 5px; margin-top: 8px; border-radius: 2px; }
 .progress-bar-fill { background: var(--link); height: 5px; border-radius: 2px; }
 
+/* ── Back to top floating button ───────────────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  right: clamp(14px, 3vw, 24px);
+  bottom: clamp(14px, 3vw, 24px);
+  width: 48px; height: 48px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: none; border-radius: 999px;
+  background: #2e9b4a; color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  opacity: 0; transform: translateY(12px) scale(0.9); pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.2s ease, background 0.15s;
+  z-index: 200;
+  isolation: isolate;
+}
+.back-to-top.btt-visible {
+  opacity: 1; transform: translateY(0) scale(1); pointer-events: auto;
+  animation: btt-pulse 2.4s ease-out infinite;
+}
+.back-to-top:hover, .back-to-top:focus-visible {
+  background: #258a3e;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+  outline: none;
+}
+.back-to-top:active { transform: translateY(0) scale(0.94); }
+.back-to-top .btt-arrow {
+  display: block;
+  transition: transform 0.2s ease;
+}
+.back-to-top:hover .btt-arrow,
+.back-to-top:focus-visible .btt-arrow {
+  animation: btt-arrow-bounce 0.7s ease-in-out infinite;
+}
+
+/* Soft outward halo that pulses while the button is visible */
+@keyframes btt-pulse {
+  0%   { box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0   rgba(46,155,74,0.55); }
+  60%  { box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 14px rgba(46,155,74,0.00); }
+  100% { box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0   rgba(46,155,74,0.00); }
+}
+/* Arrow nudges up on hover so the button feels eager */
+@keyframes btt-arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top.btt-visible { animation: none; }
+  .back-to-top:hover .btt-arrow,
+  .back-to-top:focus-visible .btt-arrow { animation: none; }
+}
+
 /* ── Salary panel (cert page) ──────────────────────────────────────────────── */
 .salary-panel { border: 1px solid var(--border-sub); border-left: 3px solid #2e9b4a; background: var(--surface, rgba(46,155,74,0.04)); border-radius: 8px; padding: 14px 16px; margin: 12px 0 18px; }
 .salary-row { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; }

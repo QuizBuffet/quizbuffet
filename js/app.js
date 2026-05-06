@@ -1,6 +1,7 @@
 // Single-page app entry point — owns the path router, page shells, and lazy-loads each page's init module
 import { renderNav } from './components/nav/renderNav.js';
 import { renderFooter } from './components/footer/renderFooter.js';
+import { renderBackToTop } from './components/backToTop/renderBackToTop.js';
 import { checkInactivityReset } from './storage/checkInactivityReset.js';
 
 checkInactivityReset();
@@ -156,6 +157,7 @@ async function route() {
 }
 
 renderFooter();
+renderBackToTop();
 window.addEventListener('popstate', route);
 route();
 

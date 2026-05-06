@@ -987,12 +987,26 @@ a:is(:hover, :active) { text-decoration: underline; }
 .cert-radar-dot { cursor: help; }
 .cert-radar-help { font-size: 14px; line-height: 1.55; color: var(--text-muted); max-width: 70ch; margin: 0 0 14px; padding: 10px 12px; background: var(--surface, rgba(0,0,0,0.03)); border-left: 3px solid #2e9b4a; border-radius: 4px; }
 
-/* Categories stack vertically; cards inside each category flow in a responsive grid. */
+/* Small/medium screens: stack categories, cards flow in a grid inside each.
+   Desktop+: switch to multi-column flow so small categories tile side-by-side. */
 .cert-categories { display: block; }
 
 .cert-category {
   display: block;
   margin: 0 0 18px;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+@media (min-width: 1100px) {
+  .cert-categories { column-count: 2; column-gap: 22px; }
+}
+@media (min-width: 1500px) {
+  .cert-categories { column-count: 3; column-gap: 26px; }
+}
+@media (min-width: 1900px) {
+  .cert-categories { column-count: 4; }
 }
 .cert-category-heading {
   display: flex;
@@ -1009,15 +1023,19 @@ a:is(:hover, :active) { text-decoration: underline; }
 }
 .cert-category-heading .cert-list-count { font-size: 10px; padding: 1px 5px; }
 
-/* Cards inside a category — responsive grid */
+/* Cards inside a category — multi-col on small screens, single-col once
+   the outer container itself goes multi-column on desktop+. */
 .cert-category-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
-@media (min-width: 720px)  { .cert-category-cards { grid-template-columns: repeat(3, 1fr); gap: 10px; } }
-@media (min-width: 1100px) { .cert-category-cards { grid-template-columns: repeat(4, 1fr); gap: 12px; } }
-@media (min-width: 1500px) { .cert-category-cards { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 720px) and (max-width: 1099px) {
+  .cert-category-cards { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+}
+@media (min-width: 1100px) {
+  .cert-category-cards { grid-template-columns: 1fr; gap: 8px; }
+}
 
 /* Cert list sections (Available now / Coming soon) */
 .cert-list-section { margin-bottom: 28px; }
@@ -1463,13 +1481,13 @@ a:is(:hover, :active) { text-decoration: underline; }
 .footer-brand-img { width: 30px; height: 30px; }
 .footer-tagline { font-size: 15px; color: var(--footer-text); margin-bottom: 10px; font-style: italic; }
 .footer-body    { font-size: 15px; color: var(--footer-text-sub); line-height: 1.8; }
-.footer-contact-btn { display: inline-block; margin-top: 12px; padding: 8px 18px; font-size: 15px; font-weight: 600; color: var(--footer-bg); background: var(--footer-accent); text-decoration: none; letter-spacing: 0.3px; }
+.footer-contact-btn { display: inline-block; margin-top: 12px; padding: 8px 18px; font-size: 15px; font-weight: 600; color: var(--footer-bg); background: var(--footer-accent); text-decoration: none; letter-spacing: 0.3px; border-radius: 8px; }
 .footer-contact-btn:is(:hover, :active) { filter: brightness(1.15); }
 
 .footer-col-title { font-size: 15px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--footer-accent); font-weight: 700; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--footer-border); }
 
 .footer-certs { display: flex; flex-wrap: wrap; gap: 7px; }
-.footer-cert-link { font-size: 15px; color: var(--footer-cert-color); border: 1px solid var(--footer-cert-bd); padding: 5px 10px; white-space: nowrap; background: var(--footer-cert-bg); transition: background 0.15s, border-color 0.15s, color 0.15s; text-decoration: none !important; display: inline-block; }
+.footer-cert-link { font-size: 15px; color: var(--footer-cert-color); border: 1px solid var(--footer-cert-bd); padding: 5px 10px; white-space: nowrap; background: var(--footer-cert-bg); transition: background 0.15s, border-color 0.15s, color 0.15s; text-decoration: none !important; display: inline-block; border-radius: 6px; }
 .footer-cert-link::before, .footer-cert-link::after { display: none !important; }
 .footer-cert-link:is(:hover, :active) { background: var(--footer-cert-bg); border-color: var(--footer-accent); color: var(--footer-accent); filter: brightness(1.3); text-decoration: none !important; }
 .footer-cert-code { color: var(--footer-border); font-size: 15px; margin-left: 3px; filter: brightness(2.5); }
@@ -1481,7 +1499,7 @@ a:is(:hover, :active) { text-decoration: underline; }
 .footer-cert-soon { opacity: 0.78; padding: 4px 8px !important; font-size: 13px !important; gap: 4px; display: inline-flex !important; align-items: center; }
 .footer-cert-rank { display: inline-block; font-size: 10px; font-weight: 700; color: #c9920c; background: rgba(201, 146, 12, 0.18); padding: 1px 5px; border-radius: 6px; }
 .footer-cert-more { display: inline-block; margin-top: 4px; font-size: 12px; color: var(--footer-cert-color); opacity: 0.6; font-style: italic; text-decoration: underline; }
-.footer-rss-btn { position: relative; display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 6px 12px; font-size: 14px; font-weight: 600; color: #fff; background: #ee802f; border-radius: 4px; text-decoration: none !important; transition: background 0.15s, transform 0.1s; overflow: hidden; isolation: isolate; animation: rss-pulse 2.6s ease-out infinite; }
+.footer-rss-btn { position: relative; display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 6px 12px; font-size: 14px; font-weight: 600; color: #fff; background: #ee802f; border-radius: 8px; text-decoration: none !important; transition: background 0.15s, transform 0.1s; overflow: hidden; isolation: isolate; animation: rss-pulse 2.6s ease-out infinite; }
 .footer-rss-btn:hover, .footer-rss-btn:focus-visible { background: #d96b1a; transform: translateY(-1px); }
 .footer-rss-btn svg { flex-shrink: 0; position: relative; z-index: 2; }
 .footer-rss-btn > * { position: relative; z-index: 2; }

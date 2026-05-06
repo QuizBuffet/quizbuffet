@@ -403,16 +403,48 @@ A: Block storage with Amazon EBS provides persistent block volumes for EC2 insta
 ## AWS Certified AI Practitioner (AIF-C01)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-ai-practitioner/
-Total questions: 0
+Total questions: 500
 
 AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of AI, machine learning, and generative AI on AWS — including foundation models, prompt engineering, responsible AI, and security for AI workloads. It is designed for professionals who use, evaluate, or work alongside AI/ML systems but are not necessarily building them.
 
 ### Domains
-- 1.0 Fundamentals of AI and ML (20% of exam)
-- 2.0 Fundamentals of Generative AI (24% of exam)
-- 3.0 Applications of Foundation Models (28% of exam)
-- 4.0 Guidelines for Responsible AI (14% of exam)
-- 5.0 Security, Compliance, and Governance for AI Solutions (14% of exam)
+- 1.0 Fundamentals of AI and ML (20% of exam) — 100 questions
+- 2.0 Fundamentals of Generative AI (24% of exam) — 120 questions
+- 3.0 Applications of Foundation Models (28% of exam) — 140 questions
+- 4.0 Guidelines for Responsible AI (14% of exam) — 70 questions
+- 5.0 Security, Compliance, and Governance for AI Solutions (14% of exam) — 70 questions
+
+### Sample questions
+**Q: Which description best matches Artificial intelligence in AWS Certified AI Practitioner Domain 1.0 Fundamentals of AI and ML?**
+A: Artificial intelligence is the broad field of creating systems that can perform tasks that normally require human intelligence, such as understanding language, recognizing images, making predictions, or assisting decisions.
+
+**Q: Which description best matches Machine learning in AWS Certified AI Practitioner Domain 1.0 Fundamentals of AI and ML?**
+A: Machine learning is a subset of AI where systems learn patterns from data to make predictions or decisions without being explicitly programmed for every rule.
+
+**Q: Which description best matches Generative AI in AWS Certified AI Practitioner Domain 2.0 Fundamentals of GenAI?**
+A: Generative AI creates new content such as text, images, audio, code, summaries, or responses based on learned patterns and prompts.
+
+**Q: Which description best matches Tokens in AWS Certified AI Practitioner Domain 2.0 Fundamentals of GenAI?**
+A: Tokens are units of text or data that a generative AI model processes as input or produces as output.
+
+**Q: Which description best matches Foundation model selection in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?**
+A: Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length.
+
+**Q: Which description best matches Model modality in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?**
+A: Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.
+
+## AWS Certified Machine Learning Engineer – Associate (MLA-C01)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-ml-engineer-associate/
+Total questions: 0
+
+AWS Certified Machine Learning Engineer – Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.
+
+### Domains
+- 1.0 Data Preparation for Machine Learning (28% of exam)
+- 2.0 ML Model Development (26% of exam)
+- 3.0 Deployment and Orchestration of ML Workflows (22% of exam)
+- 4.0 ML Solution Monitoring, Maintenance, and Security (24% of exam)
 
 
 

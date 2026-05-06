@@ -436,15 +436,48 @@ A: Model modality describes the type of data a foundation model can process or g
 ## AWS Certified Machine Learning Engineer – Associate (MLA-C01)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-ml-engineer-associate/
-Total questions: 0
+Total questions: 500
 
 AWS Certified Machine Learning Engineer – Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.
 
 ### Domains
-- 1.0 Data Preparation for Machine Learning (28% of exam)
-- 2.0 ML Model Development (26% of exam)
-- 3.0 Deployment and Orchestration of ML Workflows (22% of exam)
-- 4.0 ML Solution Monitoring, Maintenance, and Security (24% of exam)
+- 1.0 Data Preparation for Machine Learning (28% of exam) — 140 questions
+- 2.0 ML Model Development (26% of exam) — 130 questions
+- 3.0 Deployment and Orchestration of ML Workflows (22% of exam) — 110 questions
+- 4.0 ML Solution Monitoring, Maintenance, and Security (24% of exam) — 120 questions
+
+### Sample questions
+**Q: Which description best matches Apache Parquet in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?**
+A: Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets.
+
+**Q: Which description best matches JSON in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?**
+A: JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data.
+
+**Q: Which description best matches ML algorithm selection in AWS MLA-C01 Domain 2.0 ML Model Development?**
+A: ML algorithm selection involves selecting an algorithm based on the business problem, available data, interpretability needs, performance requirements, and operational constraints.
+
+**Q: Which description best matches Classification algorithm in AWS MLA-C01 Domain 2.0 ML Model Development?**
+A: Classification algorithm involves a modeling approach used when the target output is a category or class label.
+
+**Q: Which description best matches SageMaker real-time endpoint in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?**
+A: SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users.
+
+**Q: Which description best matches SageMaker batch transform in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?**
+A: SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required.
+
+## AWS Certified Generative AI Developer – Professional (AIP-C01)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-genai-developer-professional/
+Total questions: 0
+
+AWS Certified Generative AI Developer – Professional (AIP-C01) validates the ability to integrate foundation models into applications and business workflows, including RAG and vector store design, agentic AI, prompt engineering and management, FM API integration, model deployment strategies, AI safety and governance, performance and cost optimization, and evaluation, monitoring, and troubleshooting of GenAI applications.
+
+### Domains
+- 1.0 Foundation Model Integration, Data Management, and Compliance (31% of exam)
+- 2.0 Implementation and Integration (26% of exam)
+- 3.0 AI Safety, Security, and Governance (20% of exam)
+- 4.0 Operational Efficiency and Optimization for GenAI Applications (12% of exam)
+- 5.0 Testing, Validation, and Troubleshooting (11% of exam)
 
 
 

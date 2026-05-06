@@ -1401,7 +1401,23 @@ a:is(:hover, :active) { text-decoration: underline; }
 }
 .acr-def:is(:hover, :active):not(:disabled):not(.matched) { border-color: var(--link); color: var(--text); background: var(--link-hover-bg); }
 .acr-def.matched { border-color: #2a7; background: var(--correct-bg); color: #1a6; cursor: default; }
-.acr-def.wrong   { border-color: #c33; background: var(--wrong-bg); color: #c33; }
+.acr-def.wrong {
+  border-color: #c33; background: var(--wrong-bg); color: #c33;
+  pointer-events: none;
+  animation: acr-wrong-flash 320ms ease-out forwards;
+}
+@keyframes acr-wrong-flash {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-4px); }
+  40%  { transform: translateX(4px); }
+  60%  { transform: translateX(-3px); }
+  80%  { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .acr-def.wrong { animation: acr-wrong-hold 320ms linear forwards; }
+}
+@keyframes acr-wrong-hold { from {} to {} }
 .acr-result    { font-size: clamp(15px, 4vw, 18px); font-weight: 700; color: var(--text); margin-bottom: 4px; }
 .acr-score-line { font-size: clamp(15px, 4.0vw, 17px); color: var(--text-dim); margin-bottom: 14px; }
 

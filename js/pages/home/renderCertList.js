@@ -15,6 +15,7 @@ const LIVE_CATEGORY = {
   'aws-solutions-architect-associate':  'Cloud',
   'aws-ai-practitioner':                'Data & AI',
   'aws-ml-engineer-associate':          'Data & AI',
+  'aws-genai-developer-professional':   'Data & AI',
   'comptia-data-plus':                  'Data & AI',
 };
 

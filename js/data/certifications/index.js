@@ -12,6 +12,7 @@ import { cert as awsCloudPractitioner } from './aws-cloud-practitioner.js';
 import { cert as awsSolutionsArchitectAssociate } from './aws-solutions-architect-associate.js';
 import { cert as awsAiPractitioner } from './aws-ai-practitioner.js';
 import { cert as awsMlEngineerAssociate } from './aws-ml-engineer-associate.js';
+import { cert as awsGenaiDeveloperProfessional } from './aws-genai-developer-professional.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -28,4 +29,5 @@ export const certifications = [
   awsSolutionsArchitectAssociate,
   awsAiPractitioner,
   awsMlEngineerAssociate,
+  awsGenaiDeveloperProfessional,
 ];

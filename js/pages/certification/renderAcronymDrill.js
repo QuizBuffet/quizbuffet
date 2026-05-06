@@ -6,6 +6,7 @@ export function renderAcronymDrill(cert) {
     heading: 'Acronym Match',
     items: cert.acronyms,
     hintNoun: 'acronym',
+    soundProfile: 'acronym',
   });
 }
 
@@ -15,5 +16,6 @@ export function renderServiceDrill(cert) {
     heading: 'Service Match',
     items: cert.services,
     hintNoun: 'service',
+    soundProfile: 'service',
   });
 }

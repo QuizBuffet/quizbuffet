@@ -11,7 +11,64 @@ function shuffle(arr) {
 const ROUND = 5;
 const EXTRA = 5;
 
-export function renderMatchDrill({ mountId, heading, items, hintNoun = 'term' }) {
+// Lazy-init shared AudioContext. iOS Safari requires the first node to be created
+// inside a user-gesture handler, which is the case here (every play() is inside a click).
+let _audioCtx = null;
+function audioCtx() {
+  if (_audioCtx) return _audioCtx;
+  const Ctor = window.AudioContext || window.webkitAudioContext;
+  if (!Ctor) return null;
+  _audioCtx = new Ctor();
+  return _audioCtx;
+}
+
+function playTone(freqs, durMs, type = 'sine') {
+  const ctx = audioCtx();
+  if (!ctx) return;
+  if (ctx.state === 'suspended') ctx.resume();
+  const t0 = ctx.currentTime;
+  const dur = durMs / 1000;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = type;
+  if (Array.isArray(freqs)) {
+    osc.frequency.setValueAtTime(freqs[0], t0);
+    osc.frequency.linearRampToValueAtTime(freqs[freqs.length - 1], t0 + dur);
+  } else {
+    osc.frequency.setValueAtTime(freqs, t0);
+  }
+  gain.gain.setValueAtTime(0.0001, t0);
+  gain.gain.exponentialRampToValueAtTime(0.18, t0 + 0.01);
+  gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+  osc.connect(gain).connect(ctx.destination);
+  osc.start(t0);
+  osc.stop(t0 + dur + 0.02);
+}
+
+// Each drill gets its own sonic identity so a user playing both can tell them apart by ear.
+const SOUND_PROFILES = {
+  // Acronym Match — clean, vocal-feeling sine tones (abstract / linguistic).
+  acronym: {
+    correct: { freqs: [660, 990],   dur: 140, type: 'sine' },     // bright ascending chime
+    wrong:   { freqs: [220, 175],   dur: 180, type: 'sawtooth' }, // short low buzz
+  },
+  // Service Match — brighter, more "digital" triangle/square (technical / system-y).
+  service: {
+    correct: { freqs: [880, 1320],  dur: 130, type: 'triangle' }, // crisp digital ding
+    wrong:   { freqs: [180, 130],   dur: 200, type: 'square' },   // dull tech thud
+  },
+};
+
+function playCorrect(profile) {
+  const cfg = (SOUND_PROFILES[profile] || SOUND_PROFILES.acronym).correct;
+  playTone(cfg.freqs, cfg.dur, cfg.type);
+}
+function playWrong(profile) {
+  const cfg = (SOUND_PROFILES[profile] || SOUND_PROFILES.acronym).wrong;
+  playTone(cfg.freqs, cfg.dur, cfg.type);
+}
+
+export function renderMatchDrill({ mountId, heading, items, hintNoun = 'term', soundProfile = 'acronym' }) {
   const el = document.getElementById(mountId);
   if (!el || !items || items.length < ROUND + EXTRA) return;
 
@@ -96,9 +153,10 @@ export function renderMatchDrill({ mountId, heading, items, hintNoun = 'term' })
 
     el.querySelectorAll('.acr-def').forEach(btn => {
       btn.addEventListener('click', () => {
-        if (selected === null || btn.disabled) return;
+        if (selected === null || btn.disabled || btn.classList.contains('wrong')) return;
         const ci = parseInt(btn.dataset.ci);
         if (targets[selected].d === choices[ci].d) {
+          playCorrect(soundProfile);
           matched.add(selected);
           const ti = selected;
           selected = null;
@@ -117,9 +175,12 @@ export function renderMatchDrill({ mountId, heading, items, hintNoun = 'term' })
               `${ROUND - matched.size} left · tap a ${hintNoun}, then its match`;
           }
         } else {
+          playWrong(soundProfile);
           wrongThisRound++;
           btn.classList.add('wrong');
-          setTimeout(() => btn.classList.remove('wrong'), 500);
+          // Removal is locked to the CSS animation rather than a setTimeout so the
+          // visual end and the class removal can't drift out of sync.
+          btn.addEventListener('animationend', () => btn.classList.remove('wrong'), { once: true });
         }
       });
     });

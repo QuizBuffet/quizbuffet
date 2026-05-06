@@ -43,7 +43,8 @@
       "Bash(python3 -c \"import json; data = json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/comptia-cloud-plus/troubleshooting.json'\\)\\); ids = [q['id'] for q in data['questions']]; print\\('Total questions:', len\\(data['questions']\\)\\); print\\('Last 4 IDs:', ids[-4:]\\); new_qs = [q for q in data['questions'] if q['id'] >= 1197]; print\\('New questions:'\\); [print\\(f\\\\\"  ID {q['id']}: difficulty={q['difficulty']}, objective={q['objective']}, correct={q['correct']}\\\\\"\\) for q in new_qs]\")",
       "Bash(git checkout *)",
       "Bash(node scripts/build-seo.mjs)",
-      "Bash(node /Users/gradikayamba/quizbuffet/scripts/build-seo.mjs)"
+      "Bash(node /Users/gradikayamba/quizbuffet/scripts/build-seo.mjs)",
+      "Bash(node /Users/gradikayamba/quizbuffet/scripts/check-weights.mjs)"
     ]
   }
 }

@@ -3,6 +3,7 @@
 // Mobile: shows on long-press (450ms touch hold), absorbs the tap so navigation doesn't fire.
 // Keyboard: shows on focus-visible.
 import { loadSalaries, getSalaryEntry, formatFullUSD, collarLabel } from '../../data/salaries/loadSalaries.js';
+import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
 
 const SHOW_DELAY = 250;
 const HIDE_DELAY = 120;     // grace period after mouseleave (covers card-to-card transitions)
@@ -18,6 +19,7 @@ let touchSuppressClick = false;
 let salariesP = null;
 let countsP = null;
 let comingSoonP = null;
+let pricingP = null;
 
 function ensureTip() {
   if (tip) return tip;
@@ -52,12 +54,13 @@ async function fetchData() {
   if (!salariesP) salariesP = loadSalaries();
   if (!countsP)   countsP = fetch('/data/counts.json').then(r => r.ok ? r.json() : { perCert: {} }).catch(() => ({ perCert: {} }));
   if (!comingSoonP) comingSoonP = fetch('/data/coming-soon.json').then(r => r.ok ? r.json() : []).catch(() => []);
-  const [salaries, counts, comingSoon] = await Promise.all([salariesP, countsP, comingSoonP]);
-  return { salaries, counts, comingSoon };
+  if (!pricingP) pricingP = loadPricing();
+  const [salaries, counts, comingSoon, pricing] = await Promise.all([salariesP, countsP, comingSoonP, pricingP]);
+  return { salaries, counts, comingSoon, pricing };
 }
 
 async function buildContent(slug, certs) {
-  const { salaries, counts, comingSoon } = await fetchData();
+  const { salaries, counts, comingSoon, pricing } = await fetchData();
   const live = certs.find(c => c.slug === slug);
   const cs   = !live ? comingSoon.find(c => c.slug === slug) : null;
   const cert = live || cs;
@@ -67,6 +70,7 @@ async function buildContent(slug, certs) {
   const tagline = cert.tagline || '';
   const aboutFirst = firstSentence(cert.about || '');
   const sal = getSalaryEntry(salaries, slug);
+  const price = getPricingEntry(pricing, slug);
   const qcount = (counts.perCert && counts.perCert[slug]) || null;
   const collar = sal ? collarLabel(sal.collar) : null;
 
@@ -79,6 +83,9 @@ async function buildContent(slug, certs) {
   }
   if (sal) {
     stats.push(`<span class="cert-preview-stat">${formatFullUSD(sal.salary.mid)} median · ${collar.icon} ${collar.label}</span>`);
+  }
+  if (price) {
+    stats.push(`<span class="cert-preview-stat">${formatPrice(price.practice_usd)} elsewhere · <strong>free here</strong></span>`);
   }
 
   return `

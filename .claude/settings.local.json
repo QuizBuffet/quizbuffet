@@ -54,7 +54,9 @@
       "Bash(node -e \"const d='Free CompTIA practice tests for Security+, Network+, A+, CySA+, PenTest+, Cloud+, Data+, and ITF+. Domain-by-domain quizzes with instant feedback and progress tracking. No account needed.';console.log\\('desc length:',d.length\\)\")",
       "Bash(python3 /tmp/rewrite_itil_v3.py)",
       "Bash(node --input-type=module -e \"import\\('./js/data/certifications/osha-10-construction.js'\\).then\\(m=>console.log\\('cert OK:', m.cert.slug, '|', m.cert.domains.length, 'domains | weights sum =', m.cert.domains.reduce\\(\\(s,d\\)=>s+d.weight,0\\), '| acronyms =', m.cert.acronyms.length, '| concepts =', m.cert.services.length\\)\\)\")",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(node --input-type=module -e \"import\\('./js/data/certifications/osha-30-construction.js'\\).then\\(m=>console.log\\('cert OK:', m.cert.slug, '|', m.cert.domains.length, 'domains | weights sum =', m.cert.domains.reduce\\(\\(s,d\\)=>s+d.weight,0\\), '| acronyms =', m.cert.acronyms.length, '| concepts =', m.cert.services.length\\)\\)\")",
+      "Bash(rm foundations-for-safety-leadership.json)"
     ]
   }
 }

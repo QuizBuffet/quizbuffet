@@ -120,13 +120,41 @@ Leave `data/counts.json` alone until the cert has enough questions to flip live.
 
 ## Workflow: flipping a cert from "coming soon" to "live"
 
-When a cert has enough questions across all domains:
+Run every step. Do not say "ready to deploy" until all of them pass.
+
+### Pre-flight: re-validate every domain file
+
+Before touching counts or SEO, programmatically run the four [Required checks](#required-checks-before-reporting-a-domain-json-done) across **all** domain files for the cert at once — not one file at a time. The script must report, per file:
+
+- Schema validity (top-level keys, all 12 question fields, 4 answers with `a/b/c/d`, valid `correct`, complete `explanations`, consistent cert metadata).
+- Difficulty distribution and correct-answer position distribution (both should be roughly even across `a/b/c/d` and `easy/medium/medium-hard/hard`).
+- Sub-objective coverage count.
+- Duplicate first-10-word stems (must be 0).
+- Duplicate answer strings (must be 0).
+- Minification (file is a single line; raw text equals `json.dumps(d, separators=(',',':'), ensure_ascii=False)`).
+
+If duplicates exist, fix in place: rewrite duplicate stems by varying only the first sentence, and rewrite duplicate answer strings to preserve meaning (correct stays correct, distractor stays wrong). Preserve `id`, `correct`, `explanations`, `objective`, `difficulty`, `keyword`, and metadata exactly. Re-minify.
+
+### Flip-live steps
 
 1. The cert should already be out of [data/coming-soon.json](data/coming-soon.json) (removed when work began). Confirm it's not there.
-2. Add `"<slug>": <total-question-count>` to [data/counts.json](data/counts.json) and update `total`, `liveCerts`, `comingSoonCerts`, `generatedAt`.
-3. Run `npm run check:weights` to confirm domain weighting matches the exam guide.
-4. Run `npm run build:seo` to regenerate static HTML, OG images, and the sitemap.
-5. Bump the service worker cache version in [sw.js](sw.js).
+2. Add `"<slug>": <total-question-count>` to [data/counts.json](data/counts.json) and update `total`, `liveCerts`, `comingSoonCerts`, `generatedAt`. (`build:seo` will also rewrite this file, but updating it first is a useful sanity check.)
+3. Run `npm run check:weights`. The script will flag any domain whose declared weight in the cert metadata doesn't match the actual share of questions on disk. The usual fix is to align the declared weights in [js/data/certifications/<slug>.js](js/data/certifications/) to the actual distribution. Re-run until it passes.
+4. Run `npm run build:seo` to regenerate per-cert HTML, OG images, sitemap, llms.txt, feed.xml, and `data/counts.json`. Note: `build:seo` also picks up any other cert that was registered but not in counts — surface this in your report so the user knows what else flipped.
+5. Bump the service worker cache version in [sw.js](sw.js) (e.g. `qb-v106` → `qb-v107`).
+
+### Post-flight verification
+
+After the steps above, programmatically confirm:
+
+- [data/counts.json](data/counts.json): `total === sum(perCert)` and `liveCerts === Object.keys(perCert).length`.
+- The cert appears in [sitemap.xml](sitemap.xml) (one entry for the landing page plus one per domain quiz).
+- The OG image exists at `icons/og/<slug>.svg`.
+- The cert is listed in [llms.txt](llms.txt).
+- The cert's slug no longer appears in [data/coming-soon.json](data/coming-soon.json).
+- [sw.js](sw.js) cache version was bumped.
+
+Only after every check passes is the cert deploy-ready.
 
 ---
 

@@ -13,6 +13,7 @@ import { setMeta } from '../../components/meta/setMeta.js';
 import { setJsonLd } from '../../components/meta/setJsonLd.js';
 import { affiliateLinksHTML } from '../../components/affiliates/affiliateLinksHTML.js';
 import { renderSalaryPanel } from '../../components/salary/renderSalaryPanel.js';
+import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
 
 export async function init() {
   renderAd('ad-top');
@@ -42,8 +43,16 @@ export async function init() {
           <div style="font-weight:700;font-size:1.15rem;margin-bottom:0.5rem;">📚 Coming Soon</div>
           <p style="margin:0 0 0.75rem;">${comingSoon.tagline || ''}</p>
           ${comingSoon.about ? `<p style="font-size:0.95rem;color:var(--text-muted);margin:0 0 0.75rem;">${comingSoon.about}</p>` : ''}
+          <p class="cert-header-price" data-price="${comingSoon.slug}" style="margin:0.75rem 0 0;"></p>
           <p style="margin:1rem 0 0;"><a href="/" class="btn">← Back to all certifications</a></p>
         </div>`;
+      loadPricing().then(pricing => {
+        const slot = document.querySelector('[data-price]');
+        if (!slot) return;
+        const entry = getPricingEntry(pricing, slot.dataset.price);
+        if (!entry) { slot.remove(); return; }
+        slot.innerHTML = `<span class="cert-header-price-other">Other practice tests: ${formatPrice(entry.practice_usd)}</span> · <strong class="cert-header-price-us">Free when ready</strong>`;
+      });
     } else {
       document.getElementById('cert-header').innerHTML = '<p>Certification not found. <a href="/">← Home</a></p>';
     }

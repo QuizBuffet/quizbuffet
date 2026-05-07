@@ -25,6 +25,8 @@ import { cert as microsoftAz104 } from './microsoft-az-104.js';
 import { cert as isc2Cissp } from './isc2-cissp.js';
 import { cert as itilFoundation } from './itil-foundation.js';
 import { cert as osha10Construction } from './osha-10-construction.js';
+import { cert as osha30Construction } from './osha-30-construction.js';
+import { cert as forkliftCertification } from './forklift-certification.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -54,4 +56,6 @@ export const certifications = [
   isc2Cissp,
   itilFoundation,
   osha10Construction,
+  osha30Construction,
+  forkliftCertification,
 ];

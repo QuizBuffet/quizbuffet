@@ -1,0 +1,87 @@
+// Forklift Operator Certification — in-scope concepts and definitions across the seven domains.
+export const services = [
+  // Domain 1: Forklift Fundamentals and General Rules
+  { a: 'Forklift',                    d: 'Mobile, power-driven vehicle used to carry, push, pull, lift, stack, or tier material; same as a powered industrial truck (PIT)' },
+  { a: 'Powered industrial truck',    d: 'OSHA term for any motorized truck used to lift, stack, or move materials — covered under 29 CFR 1910.178' },
+  { a: 'Vehicles not covered',        d: 'Compressed-air or nonflammable compressed-gas trucks, farm vehicles, and earth-moving equipment such as skid steers' },
+  { a: 'ANSI/ITSDF B56.1',            d: 'Voluntary consensus standard for the design and construction of low and high lift trucks; OSHA references it for compliance' },
+  { a: 'Approved forklift',           d: 'Forklift listed or approved for fire-safety purposes by a nationally recognized testing laboratory' },
+  { a: 'Manufacturer approval',       d: 'Modifications or additions affecting capacity or safe operation require prior written approval from the manufacturer' },
+  { a: 'Front-end attachment marking', d: 'Non-OEM attachments must be marked with the attachment ID and approximate combined weight of forklift + attachment at maximum elevation with a centered load' },
+  { a: 'Overhead guard',              d: 'Cage-style guard that protects the operator from falling objects; openings must not exceed 6 inches in one dimension and must extend over the operator including during forward tilt' },
+  { a: 'Load backrest',               d: 'Vertical extension behind the forks that prevents loose or stacked items from falling toward the operator; openings must not exceed 6 inches in one dimension' },
+  { a: 'Shear-point guard',           d: 'Barrier between the operator and the mast chains or other shear points to prevent caught-in injuries' },
+  { a: 'Data plate',                  d: 'Manufacturer plate showing model, serial, weight, attachment, and rated capacity at a specified load center and lift height — must be legible' },
+
+  // Domain 2: Stability and Load Center
+  { a: 'Fulcrum point',               d: 'Pivot used to balance the forklift; the front (drive) wheels are the fulcrum on a sit-down counterbalanced forklift' },
+  { a: 'Counterbalance',              d: 'Mass of the forklift behind the drive axle that offsets the load weight in front of the forks' },
+  { a: 'Center of gravity (CG)',      d: 'Single point around which an object is balanced; on a forklift it shifts as the mast tilts and the upright moves' },
+  { a: 'Combined center of gravity',  d: 'New center of gravity of the forklift plus the load it is carrying — must remain inside the stability triangle' },
+  { a: 'Stability triangle',          d: 'Imaginary triangle connecting the two drive wheels and the pivot of the steering axle; the combined CG must stay within this triangle' },
+  { a: 'Tip forward',                 d: 'Occurs when the combined CG moves in front of the drive axle (overload, load too high or too far out, sudden braking, traveling down a ramp with load forward, forks striking an obstruction)' },
+  { a: 'Tip sideways',                d: 'Occurs when the combined CG moves outside the stability triangle laterally (tight turns, turning on ramps, fast acceleration into a turn, uneven surface)' },
+  { a: 'Load center',                 d: 'Horizontal distance from the front vertical face of the forks to the line of action through the load’s center of gravity; most forklifts are rated at 24 inches' },
+  { a: 'Rated capacity',              d: 'Maximum load the forklift can safely handle at the rated load center and lift height shown on the data plate' },
+  { a: 'Capacity reduction',          d: 'When a load extends beyond the rated load center, or when attachments are used, the forklift’s usable capacity decreases' },
+  { a: 'Mast tilt',                   d: 'Forward tilt moves the CG forward (less stable); backward tilt holds the CG closer to the truck (more stable for travel)' },
+  { a: 'Lift height effect',          d: 'Raising a load lifts the combined CG, narrowing the margin before tip-over — never raise or lower while moving' },
+  { a: 'Dynamic forces',              d: 'Acceleration, braking, turning, and traveling on inclines or uneven surfaces all shift the combined CG and can cause tip-over' },
+  { a: 'Unloaded tip-over',           d: 'An unloaded forklift can tip over more easily than a loaded forklift with the load lowered, because the counterweight raises the rear CG' },
+
+  // Domain 3: Pre-Operation and Seat Belt Safety
+  { a: 'Pre-operation inspection',    d: 'Daily walk-around and operational check before each shift; defects must be reported and the forklift removed from service if unsafe' },
+  { a: 'Seat belt / operator restraint', d: 'Required when provided; prevents the operator from being thrown from the seat during a tip-over' },
+  { a: 'Operator restraint use',      d: 'Operators must use restraints when exposed to overturn hazards or areas where they could be thrown from the compartment; OSHA can cite for non-use' },
+  { a: 'Manufacturer manual',         d: 'Operators must be trained in the manual’s instructions, warnings, and precautions for the specific truck model' },
+  { a: 'Hazard evaluation',           d: 'Considers speed, docks, ramps, traffic, surface condition, tight areas, speed bumps, debris, tire condition, railroad tracks, potholes, slick surfaces, and combined CG' },
+  { a: 'Stay-with-the-truck',         d: 'Best practice: never jump from a tipping forklift — stay belted in, brace, and lean away from the impact' },
+
+  // Domain 4: Load Handling, Traveling, and Stacking
+  { a: 'Picking up a load',           d: 'Confirm rated capacity, position forks properly, balance the load, drive fully under, slightly tilt back, lift, then back, stop, and lower 2–6 inches from the floor' },
+  { a: 'Traveling with a load',       d: 'Communicate with pedestrians, no riders, safe speed, follow distance of multiple forklift lengths, watch surface, slight back-tilt, sweeping turns, sound horn at corners and blind areas, lift/lower only when stopped' },
+  { a: 'Placing and stacking',        d: 'Stop fully before raising, never under raised load, tilt level over the stack, fully retract forks before turning or lowering, check behind before backing, square stacks, never exceed rated capacity' },
+  { a: 'No riders',                   d: 'Only the operator may ride a forklift; passengers and bystanders are prohibited from riding on the truck or load' },
+  { a: 'Travel height (load)',        d: '2–6 inches above the floor with a slight back-tilt for stability and visibility while traveling' },
+  { a: 'Driving in reverse',          d: 'Recommended when the load obstructs the operator’s forward view; check behind before moving' },
+  { a: 'Attachments increase capacity needs', d: 'Trucks fitted with attachments must be operated as partially loaded even when "empty," because the attachment shifts the CG forward' },
+  { a: 'Railroad tracks',             d: 'Cross diagonally to avoid load shift and getting stuck; never park within 8 feet of the nearest rail' },
+  { a: 'Emergency vehicle right-of-way', d: 'Forklift operators must yield to emergency vehicles' },
+  { a: 'Unattended forklift',         d: 'Lower forks fully, neutralize controls, shut off power, set the brake, and chock wheels if on an incline' },
+  { a: 'Dock edge clearance',         d: 'Maintain a safe distance from the edge of any elevated dock, ramp, or platform' },
+  { a: 'No horseplay or stunts',      d: 'Prohibited — speeding, bumping, racing, or using forks to lift people are all violations' },
+
+  // Domain 5: Operating Around Pedestrians
+  { a: 'Pedestrian incidents',        d: 'Most forklift-related incidents involve pedestrians; controls must address visibility, separation, and communication' },
+  { a: 'Designated walkways',         d: 'Painted or marked pedestrian paths separate from forklift travel lanes' },
+  { a: 'High-visibility apparel',     d: 'ANSI/ISEA 107 vests required for workers walking outside designated walkways' },
+  { a: 'Blind spots',                 d: 'Areas the operator cannot see directly; minimize with mirrors, signage, and route planning' },
+  { a: 'Peak-flow restriction',       d: 'Limit forklift use near time clocks, break rooms, cafeterias, and main exits during shift change and breaks' },
+  { a: 'Physical barriers',           d: 'Bollards, guardrails, or hard barriers isolating workstations from forklift aisles' },
+  { a: 'Proximity detection lights',  d: 'Blue spotlights or red zones projected ahead of or beside the forklift to warn pedestrians' },
+  { a: 'Audible warning (horn)',      d: 'Used at corners, intersections, blind areas, and any location where pedestrians may not see the truck' },
+  { a: 'Eye contact',                 d: 'Operator and pedestrian must communicate visually before either crosses the other’s path' },
+
+  // Domain 6: Lifting People on Work Platforms
+  { a: 'Work platform (forklift)',    d: 'Personnel platform attached to the forks; permitted only when the manufacturer does not prohibit it' },
+  { a: 'Platform requirements',       d: 'Guardrails or equivalent fall protection, firmly secured to the carriage or forks, protective barrier between worker and mast where chains/shear points exist' },
+  { a: 'Operator stays with truck',   d: 'The forklift operator must remain at the controls the entire time workers are on the platform' },
+  { a: '4-foot travel limit',         d: 'Forklift must not travel point-to-point with the platform raised above 4 feet; inching at very slow speed is allowed only when necessary' },
+  { a: 'Normal operating position',   d: 'Operator must be in the normal seat/stand position when raising or lowering a worker on a platform' },
+  { a: 'Capacity not exceeded',       d: 'Combined weight of platform, workers, and tools must not exceed the forklift’s rated capacity at the lift height' },
+  { a: 'Mobile elevating work platform (MEWP) preferred', d: 'When feasible, use equipment specifically designed to lift people (scissor lift, boom lift) instead of a forklift' },
+
+  // Domain 7: Training, Evaluation, and Certification
+  { a: 'Training combination',        d: 'Required: formal instruction (lectures, videos, written material), practical hands-on training, and an evaluation of operator performance' },
+  { a: 'Trainer qualifications',      d: 'Trainer must have the knowledge, training, and experience to train and evaluate operators — including practical skill and judgment' },
+  { a: 'Forklift-related topics',     d: 'Truck-specific operating instructions, controls, engine/motor, steering, visibility, attachments, capacity, stability, inspection, refueling/charging, and operating limits' },
+  { a: 'Workplace-related topics',    d: 'Surface conditions, load composition, manipulation/stacking, pedestrian traffic, narrow aisles, hazardous (classified) locations, ramps, ventilation/CO buildup' },
+  { a: 'Prior-training credit',       d: 'If a topic was previously covered and is appropriate for the current forklift and worksite, repeat training is not required — but the operator must still be evaluated as competent' },
+  { a: 'Evaluation every 3 years',    d: 'Each operator’s competency must be re-evaluated by the employer at least once every three years' },
+  { a: 'Certification document',      d: 'Must record operator name, trainer name, training and evaluation dates, topics covered, and how training was implemented' },
+  { a: 'Refresher trigger: unsafe operation', d: 'Required when the operator is observed operating unsafely or receives an evaluation showing unsafe operation' },
+  { a: 'Refresher trigger: accident or near-miss', d: 'Required after an accident or near-miss incident' },
+  { a: 'Refresher trigger: different equipment', d: 'Required when assigned to a different type of forklift or a new attachment' },
+  { a: 'Refresher trigger: changed condition', d: 'Required when a workplace condition changes in a way that could affect safe operation' },
+  { a: 'Third-party training allowed', d: 'Someone other than the employer can train and evaluate, but off-site training must be supplemented with site-specific instruction; the employer still certifies the operator' },
+];

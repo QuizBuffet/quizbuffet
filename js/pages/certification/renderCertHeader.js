@@ -1,4 +1,6 @@
 // Renders cert name, code, about blurb, and exam details at the top of certification.html
+import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
+
 export function renderCertHeader(cert, totalQ) {
   const el = document.getElementById('cert-header');
   if (!el) return;
@@ -12,5 +14,14 @@ export function renderCertHeader(cert, totalQ) {
       <h1 style="font-size:clamp(20px,5vw,26px);font-weight:700;margin:4px 0 6px;line-height:1.3">${nameHtml} <span style="color:var(--text-muted);font-weight:400;font-size:clamp(15px,3.8vw,17px)">${cert.code}</span>${qBadge}</h1>
       <p style="color:var(--text-mid);font-size:clamp(15px,4vw,17px);line-height:1.7;margin-bottom:8px">${cert.about}</p>
       <p style="color:var(--text-muted);font-size:clamp(15px,3.8vw,17px)">${cert.details}</p>
+      <p class="cert-header-price" data-price="${cert.slug}"></p>
     </div>`;
+
+  loadPricing().then(pricing => {
+    const slot = el.querySelector('[data-price]');
+    if (!slot) return;
+    const entry = getPricingEntry(pricing, slot.dataset.price);
+    if (!entry) { slot.remove(); return; }
+    slot.innerHTML = `<span class="cert-header-price-other">Other practice tests: ${formatPrice(entry.practice_usd)}</span> · <strong class="cert-header-price-us">Free on QuizBuffet</strong>`;
+  });
 }

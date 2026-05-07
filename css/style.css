@@ -1247,6 +1247,12 @@ a:is(:hover, :active) { text-decoration: underline; }
 .cert-card-salary-collar { font-size: 13px; line-height: 1; opacity: 0.85; }
 .cert-card.cert-coming-soon .cert-card-salary { background: rgba(201, 146, 12, 0.10); }
 .cert-card.cert-coming-soon .cert-card-salary-mid { color: #c9920c; }
+.cert-card-price { display: flex; align-items: center; gap: 6px; font-size: 12px; margin: 0 0 8px; line-height: 1.3; flex-wrap: wrap; }
+.cert-card-price-other { color: var(--text-muted); text-decoration: line-through; }
+.cert-card-price-us { color: var(--accent-text, #2a7a2a); font-weight: 700; }
+.cert-header-price { font-size: clamp(15px, 3.8vw, 17px); margin: 8px 0 0; line-height: 1.5; }
+.cert-header-price-other { color: var(--text-muted); text-decoration: line-through; }
+.cert-header-price-us { color: var(--accent-text, #2a7a2a); font-weight: 700; }
 .cert-card-footer { font-size: 13px; color: var(--text-muted); margin-top: auto; padding-top: 6px; border-top: 1px dashed var(--border-sub); }
 .cert-card-footer strong { color: var(--text, #222); font-weight: 700; }
 .cert-card-domains { color: var(--text-muted); }

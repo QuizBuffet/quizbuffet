@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "purpose": "Per-cert practice-test alternative price (in USD) used for the savings comparison on home cards and cert pages.",
+    "schema": {
+      "practice_usd": "What a paid practice-test product (Udemy / MeasureUp / NHA / Sheppard / etc.) typically costs for a comparable set",
+      "course_usd": "Optional: typical paid prep course price (Pluralsight, A Cloud Guru, OSHA training course). Used for context, not the savings claim.",
+      "exam_usd": "Optional: official exam fee charged by the vendor. Used for context, not the savings claim."
+    },
+    "anchor": "Display copy uses practice_usd as the 'others charge $X' anchor; QuizBuffet is free."
+  },
+
+  "comptia-cloud-plus":                    { "practice_usd": 30, "exam_usd": 370 },
+  "comptia-itf-plus":                      { "practice_usd": 25, "exam_usd": 145 },
+  "comptia-cysa-plus":                     { "practice_usd": 30, "exam_usd": 404 },
+  "comptia-pentest-plus":                  { "practice_usd": 30, "exam_usd": 404 },
+  "comptia-a-plus-core-1":                 { "practice_usd": 30, "exam_usd": 263 },
+  "comptia-a-plus-core-2":                 { "practice_usd": 30, "exam_usd": 263 },
+  "comptia-network-plus":                  { "practice_usd": 30, "exam_usd": 369 },
+  "comptia-security-plus":                 { "practice_usd": 30, "exam_usd": 404 },
+  "comptia-data-plus":                     { "practice_usd": 30, "exam_usd": 263 },
+
+  "cisco-ccna":                            { "practice_usd": 99, "exam_usd": 300 },
+
+  "aws-cloud-practitioner":                { "practice_usd": 25, "exam_usd": 100 },
+  "aws-solutions-architect-associate":     { "practice_usd": 25, "exam_usd": 150 },
+  "aws-ai-practitioner":                   { "practice_usd": 25, "exam_usd": 100 },
+  "aws-ml-engineer-associate":             { "practice_usd": 25, "exam_usd": 150 },
+  "aws-genai-developer-professional":      { "practice_usd": 25, "exam_usd": 300 },
+  "aws-cloudops-engineer-associate":       { "practice_usd": 25, "exam_usd": 150 },
+  "aws-data-engineer-associate":           { "practice_usd": 25, "exam_usd": 150 },
+  "aws-developer-associate":               { "practice_usd": 25, "exam_usd": 150 },
+  "aws-devops-engineer-professional":      { "practice_usd": 25, "exam_usd": 300 },
+  "aws-security-specialty":                { "practice_usd": 25, "exam_usd": 300 },
+  "aws-advanced-networking-specialty":     { "practice_usd": 25, "exam_usd": 300 },
+  "aws-solutions-architect-professional":  { "practice_usd": 25, "exam_usd": 300 },
+
+  "microsoft-az-900":                      { "practice_usd": 20, "exam_usd": 99  },
+  "microsoft-az-104":                      { "practice_usd": 20, "exam_usd": 165 },
+
+  "isc2-cissp":                            { "practice_usd": 25, "exam_usd": 749 },
+  "itil-foundation":                       { "practice_usd": 75, "exam_usd": 285 },
+
+  "osha-10-construction":                  { "practice_usd": 30, "course_usd": 80,  "exam_usd": 0 },
+  "osha-30-construction":                  { "practice_usd": 50, "course_usd": 160, "exam_usd": 0 },
+
+  "forklift-certification":                { "practice_usd": 15, "course_usd": 75 },
+  "cpr-aed":                               { "practice_usd": 30, "course_usd": 35 },
+  "bls":                                   { "practice_usd": 40, "course_usd": 60 },
+  "emt":                                   { "practice_usd": 35 },
+  "cna":                                   { "practice_usd": 30 },
+  "medical-assistant":                     { "practice_usd": 50 },
+  "phlebotomy-technician":                 { "practice_usd": 35 },
+  "medical-billing-coding":                { "practice_usd": 75 },
+
+  "cdl-class-a":                           { "practice_usd": 20 },
+  "faa-part-107":                          { "practice_usd": 50 },
+  "faa-private-pilot":                     { "practice_usd": 60 },
+  "faa-airframe-powerplant":               { "practice_usd": 75 },
+
+  "real-estate-license":                   { "practice_usd": 100 },
+  "insurance-license":                     { "practice_usd": 75  },
+  "nmls-mlo":                              { "practice_usd": 75  },
+
+  "servsafe-food-handler":                 { "practice_usd": 20 },
+  "servsafe-manager":                      { "practice_usd": 30 },
+
+  "epa-608":                               { "practice_usd": 20 },
+  "electrician-license":                   { "practice_usd": 50 },
+  "plumbing-license":                      { "practice_usd": 50 },
+  "ase-automotive":                        { "practice_usd": 20 },
+  "aws-certified-welder":                  { "practice_usd": 50 },
+
+  "cosmetology-license":                   { "practice_usd": 39 },
+  "barber-license":                        { "practice_usd": 35 },
+  "esthetician-license":                   { "practice_usd": 39 },
+
+  "personal-trainer-nasm":                 { "practice_usd": 50 },
+  "pmp":                                   { "practice_usd": 79, "exam_usd": 555 },
+  "quickbooks-proadvisor":                 { "practice_usd": 25 }
+}

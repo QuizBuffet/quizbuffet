@@ -1,5 +1,6 @@
 import { loadDomain } from '../../loader/loadDomain.js';
 import { loadSalaries, getSalaryEntry, formatCompactUSD, collarLabel } from '../../data/salaries/loadSalaries.js';
+import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
 import { attachCertPreview } from '../../components/certPreview/certPreview.js';
 
 // Live cert categories — coming-soon entries already carry their own `category` field.
@@ -67,6 +68,7 @@ function renderLiveCard(c) {
       <div class="cert-card-name">${c.name}</div>
       <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
       <div class="cert-card-salary" data-salary="${c.slug}"></div>
+      <div class="cert-card-price" data-price="${c.slug}"></div>
       <div class="cert-card-footer" data-cert-count="${c.slug}">…</div>
     </a>`;
 }
@@ -79,6 +81,7 @@ function renderCsCard(c, comingSoon) {
       <div class="cert-card-name">${c.name}</div>
       <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
       <div class="cert-card-salary" data-salary="${c.slug}"></div>
+      <div class="cert-card-price" data-price="${c.slug}"></div>
       <div class="cert-card-footer">Coming soon</div>
     </a>`;
 }
@@ -95,6 +98,18 @@ function fillSalaries(rootEl) {
         <span class="cert-card-salary-collar" title="${collar.label}">${collar.icon}</span>`;
     });
     scheduleCollarShakes();
+  });
+}
+
+function fillPricing(rootEl) {
+  loadPricing().then(pricing => {
+    rootEl.querySelectorAll('[data-price]').forEach(slot => {
+      const entry = getPricingEntry(pricing, slot.dataset.price);
+      if (!entry) { slot.remove(); return; }
+      slot.innerHTML = `
+        <span class="cert-card-price-other">${formatPrice(entry.practice_usd)} elsewhere</span>
+        <span class="cert-card-price-us">free here</span>`;
+    });
   });
 }
 
@@ -168,6 +183,7 @@ export function renderCertList(live, comingSoon = [], filter = '') {
   `;
 
   fillSalaries(el);
+  fillPricing(el);
   attachCertPreview(el, live);
 
   liveFiltered.forEach(cert => {

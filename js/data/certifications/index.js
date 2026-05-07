@@ -20,6 +20,7 @@ import { cert as awsDevopsEngineerProfessional } from './aws-devops-engineer-pro
 import { cert as awsSecuritySpecialty } from './aws-security-specialty.js';
 import { cert as awsAdvancedNetworkingSpecialty } from './aws-advanced-networking-specialty.js';
 import { cert as awsSolutionsArchitectProfessional } from './aws-solutions-architect-professional.js';
+import { cert as microsoftAz900 } from './microsoft-az-900.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -44,4 +45,5 @@ export const certifications = [
   awsSecuritySpecialty,
   awsAdvancedNetworkingSpecialty,
   awsSolutionsArchitectProfessional,
+  microsoftAz900,
 ];

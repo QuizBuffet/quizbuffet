@@ -21,6 +21,7 @@ const LIVE_CATEGORY = {
   'aws-security-specialty':             'Cybersecurity',
   'aws-advanced-networking-specialty':  'Networking',
   'aws-solutions-architect-professional': 'Cloud',
+  'microsoft-az-900':                   'Cloud',
   'aws-ai-practitioner':                'Data & AI',
   'aws-ml-engineer-associate':          'Data & AI',
   'aws-genai-developer-professional':   'Data & AI',

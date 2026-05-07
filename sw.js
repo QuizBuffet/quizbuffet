@@ -1,4 +1,4 @@
-const CACHE = 'qb-v84';
+const CACHE = 'qb-v85';
 
 self.addEventListener('install', () => self.skipWaiting());
 
@@ -17,19 +17,22 @@ self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (url.origin !== location.origin) return;
 
-  // Always fetch HTML fresh so the browser detects SW changes on next visit
-  if (e.request.mode === 'navigate') {
-    e.respondWith(fetch(e.request).catch(() => caches.match('/')));
-    return;
-  }
+  // Don't intercept navigations — let the browser handle HTML directly.
+  // This avoids returning a null response if the cache miss occurs offline.
+  if (e.request.mode === 'navigate') return;
 
-  // Network-first, cache fallback for all other assets
+  // Network-first, cache fallback. Always returns a real Response — never null.
   e.respondWith(
     fetch(e.request)
       .then(res => {
-        if (res.ok) caches.open(CACHE).then(c => c.put(e.request, res.clone()));
+        if (res && res.ok) {
+          const clone = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, clone));
+        }
         return res;
       })
-      .catch(() => caches.match(e.request))
+      .catch(() => caches.match(e.request).then(cached =>
+        cached || new Response('', { status: 504, statusText: 'Offline' })
+      ))
   );
 });

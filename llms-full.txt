@@ -1,6 +1,6 @@
 # QuizBuffet — Full Cert Reference
 
-Last updated: 2026-05-06
+Last updated: 2026-05-07
 Site: https://quizbuffet.com
 
 QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
@@ -566,16 +566,34 @@ A: DAG syntax, scheduler health, worker capacity, and environment logs
 ## AWS Certified Developer – Associate (DVA-C02)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-developer-associate/
-Total questions: 0
+Total questions: 500
 
 AWS Certified Developer – Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.
 
 ### Domains
-- 1.0 Development with AWS Services (32% of exam)
-- 2.0 Security (26% of exam)
-- 3.0 Deployment (24% of exam)
-- 4.0 Troubleshooting and Optimization (18% of exam)
+- 1.0 Development with AWS Services (32% of exam) — 160 questions
+- 2.0 Security (26% of exam) — 130 questions
+- 3.0 Deployment (24% of exam) — 120 questions
+- 4.0 Troubleshooting and Optimization (18% of exam) — 90 questions
 
+### Sample questions
+**Q: A shopping application needs to publish an OrderCreated event and let billing, inventory, and notification components react independently. Which pattern should the developer use?**
+A: Event-driven fanout with Amazon EventBridge or Amazon SNS
+
+**Q: A notification service should not need to know which service created the event it consumes. Which design helps?**
+A: EventBridge event bus with event patterns
+
+**Q: A web application must let employees sign in with a corporate SAML identity provider and receive temporary access to AWS-backed application resources. Which approach fits?**
+A: Use Amazon Cognito federation with the corporate identity provider
+
+**Q: A developer wants application users to authenticate through a social provider but keep authorization decisions in the application. Which split is appropriate?**
+A: Use the identity provider for authentication and application logic for authorization
+
+**Q: A Lambda deployment ZIP fails because the handler imports a library that was not included. What should be added to the artifact?**
+A: The required runtime dependency or a referenced Lambda layer
+
+**Q: A Lambda function needs a shared observability extension across multiple functions. Which packaging option fits?**
+A: A Lambda layer or extension included with the functions
 
 
 ## Coming soon (in priority order)

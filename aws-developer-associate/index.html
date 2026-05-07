@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AWS Certified Developer – Associate (DVA-C02) Free Practice Test | QuizBuffet</title>
-  <meta name="description" content="Free AWS Certified Developer – Associate (DVA-C02) practice test — 0+ exam questions across 4 domains with instant feedback. Develop, deploy, and debug cloud-based applications on AWS">
+  <meta name="description" content="Free AWS Certified Developer – Associate (DVA-C02) practice test — 500+ exam questions across 4 domains with instant feedback. Develop, deploy, and debug cloud-based applications on AWS">
   <link rel="canonical" href="https://quizbuffet.com/aws-developer-associate/">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
   <meta property="og:title"       content="AWS Certified Developer – Associate (DVA-C02) Free Practice Test | QuizBuffet">
-  <meta property="og:description" content="Free AWS Certified Developer – Associate (DVA-C02) practice test — 0+ exam questions across 4 domains with instant feedback. Develop, deploy, and debug cloud-based applications on AWS">
+  <meta property="og:description" content="Free AWS Certified Developer – Associate (DVA-C02) practice test — 500+ exam questions across 4 domains with instant feedback. Develop, deploy, and debug cloud-based applications on AWS">
   <meta property="og:image"       content="https://quizbuffet.com/icons/og/aws-developer-associate.svg">
   <meta property="og:url"         content="https://quizbuffet.com/aws-developer-associate/">
 
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="AWS Certified Developer – Associate (DVA-C02) Free Practice Test | QuizBuffet">
-  <meta name="twitter:description" content="Free AWS Certified Developer – Associate (DVA-C02) practice test — 0+ exam questions across 4 domains with instant feedback. Develop, deploy, and debug cloud-based applications on AWS">
+  <meta name="twitter:description" content="Free AWS Certified Developer – Associate (DVA-C02) practice test — 500+ exam questions across 4 domains with instant feedback. Develop, deploy, and debug cloud-based applications on AWS">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/aws-developer-associate.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -78,7 +78,7 @@
       "description": "AWS Certified Developer – Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.",
       "url": "https://quizbuffet.com/aws-developer-associate/",
       "inLanguage": "en-US",
-      "dateModified": "2026-05-06",
+      "dateModified": "2026-05-07",
       "educationalCredentialAwarded": "AWS Certified Developer – Associate",
       "teaches": [
         "Development with AWS Services",
@@ -94,7 +94,7 @@
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
-        "courseWorkload": "PT1H"
+        "courseWorkload": "PT8H"
       },
       "about": [
         {
@@ -125,6 +125,107 @@
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "A shopping application needs to publish an OrderCreated event and let billing, inventory, and notification components react independently. Which pattern should the developer use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Event-driven fanout with Amazon EventBridge or Amazon SNS"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A notification service should not need to know which service created the event it consumes. Which design helps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EventBridge event bus with event patterns"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An application stores user session data in DynamoDB and lets any container process the next request. What is the benefit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The application tier remains stateless"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A web application must let employees sign in with a corporate SAML identity provider and receive temporary access to AWS-backed application resources. Which approach fits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use Amazon Cognito federation with the corporate identity provider"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A developer wants application users to authenticate through a social provider but keep authorization decisions in the application. Which split is appropriate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the identity provider for authentication and application logic for authorization"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An API receives a bearer token. What must the API verify before trusting the claims?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Signature, issuer, audience, expiration, and required scopes or claims"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Lambda deployment ZIP fails because the handler imports a library that was not included. What should be added to the artifact?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The required runtime dependency or a referenced Lambda layer"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Lambda function needs a shared observability extension across multiple functions. Which packaging option fits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Lambda layer or extension included with the functions"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A static web application uses Amplify branches for environments. What file organization helps safe releases?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep application source, build settings, and environment-specific files under version control"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Lambda function returns successful responses but sometimes writes duplicate orders after SDK timeouts. What should the developer inspect first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Retry and idempotency logic around the write operation"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A user reports a slow checkout request. Which evidence best connects the request across services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trace with correlated application logs and latency metrics"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A developer needs all log events for a single requestId across many Lambda log streams. Which tool should be used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CloudWatch Logs Insights query filtered by requestId"
+          }
+        }
+      ]
     }
   ]
 }
@@ -137,15 +238,15 @@
     <section id="seo-static">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; AWS Certified Developer – Associate</nav>
       <h1>AWS Certified Developer – Associate (DVA-C02) Free Practice Test</h1>
-      <p><strong>0+ exam-style questions</strong> across 4 domains, organized exactly like the real DVA-C02 exam. Instant feedback on every question, progress tracking, and no account required.</p>
+      <p><strong>500+ exam-style questions</strong> across 4 domains, organized exactly like the real DVA-C02 exam. Instant feedback on every question, progress tracking, and no account required.</p>
       <p>AWS Certified Developer – Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.</p>
       <p><em>65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000</em></p>
       <h2>Exam Domains</h2>
       <ul>
-          <li><a href="/aws-developer-associate/development-with-aws-services/"><strong>1.0 Development with AWS Services</strong> (32% of exam)</a></li>
-          <li><a href="/aws-developer-associate/security/"><strong>2.0 Security</strong> (26% of exam)</a></li>
-          <li><a href="/aws-developer-associate/deployment/"><strong>3.0 Deployment</strong> (24% of exam)</a></li>
-          <li><a href="/aws-developer-associate/troubleshooting-and-optimization/"><strong>4.0 Troubleshooting and Optimization</strong> (18% of exam)</a></li>
+          <li><a href="/aws-developer-associate/development-with-aws-services/"><strong>1.0 Development with AWS Services</strong> — 160 questions (32% of exam)</a></li>
+          <li><a href="/aws-developer-associate/security/"><strong>2.0 Security</strong> — 130 questions (26% of exam)</a></li>
+          <li><a href="/aws-developer-associate/deployment/"><strong>3.0 Deployment</strong> — 120 questions (24% of exam)</a></li>
+          <li><a href="/aws-developer-associate/troubleshooting-and-optimization/"><strong>4.0 Troubleshooting and Optimization</strong> — 90 questions (18% of exam)</a></li>
       </ul>
       <h2>Study Resources</h2>
       <ul>

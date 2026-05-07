@@ -104,7 +104,7 @@ function scheduleCollarShakes() {
   if (shakeScheduled) return;
   shakeScheduled = true;
   const tick = () => {
-    if (document.hidden || !document.hasFocus()) {
+    if (document.hidden) {
       setTimeout(tick, 4000);
       return;
     }
@@ -112,10 +112,13 @@ function scheduleCollarShakes() {
       .filter(el => el.offsetParent !== null);
     if (icons.length) {
       const pick = icons[Math.floor(Math.random() * icons.length)];
+      pick.classList.remove('shake');
+      // Force reflow so re-adding the class restarts the animation
+      void pick.offsetWidth;
       pick.classList.add('shake');
       pick.addEventListener('animationend', () => pick.classList.remove('shake'), { once: true });
     }
-    const delay = 500 + Math.random() * 1300;
+    const delay = icons.length ? (500 + Math.random() * 1300) : 800;
     setTimeout(tick, delay);
   };
   setTimeout(tick, 400);

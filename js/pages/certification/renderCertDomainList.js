@@ -5,26 +5,26 @@ export function renderCertDomainList(cert) {
   const el = document.getElementById('domain-list');
   if (!el) return;
 
-  el.innerHTML = cert.domains.map(d => {
+  el.innerHTML = cert.domains.map((d, i) => {
     const key   = `${cert.slug}--${d.slug}`;
     const prog  = getDomainProgress(key);
     const url   = `/${cert.slug}/${d.slug}/`;
-    const weight = `<span class="domain-meta" style="margin-left:6px">${d.weight}%</span>`;
-
-    let right;
-    if (prog.completed) {
-      right = `<a href="${url}" class="take-again-link">Take Again</a>`;
-    } else if (prog.correct.length) {
-      right = `<span class="domain-meta" data-count-key="${key}">${prog.correct.length} / …</span>`;
-    } else {
-      right = `<span class="domain-meta" data-count-key="${key}">… questions</span>`;
-    }
+    const num   = (d.number || '').toString().replace(/\.0$/, '') || String(i + 1);
 
     return `
-      <div class="domain-item">
-        <span><a href="${url}" class="domain-link">${d.name}</a>${weight}</span>
-        ${right}
-      </div>`;
+      <a href="${url}" class="domain-item ${prog.completed ? 'is-completed' : ''}" data-domain-key="${key}">
+        <div class="domain-number-badge"><span>${num}</span></div>
+        <div class="domain-body">
+          <div class="domain-link">${d.name}</div>
+          <div class="domain-bar" aria-hidden="true">
+            <div class="domain-bar-fill" style="width: ${Math.min(100, d.weight * 2)}%"></div>
+          </div>
+          <div class="domain-meta-row">
+            <span class="domain-weight">${d.weight}% of exam</span>
+            <span class="domain-meta" data-count-key="${key}">${prog.completed ? '✓ Completed' : (prog.correct.length ? `${prog.correct.length} / …` : '… questions')}</span>
+          </div>
+        </div>
+      </a>`;
   }).join('');
 
   cert.domains.forEach(d => {

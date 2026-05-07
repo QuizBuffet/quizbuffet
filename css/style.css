@@ -705,31 +705,15 @@ a:active, button:active { opacity: 0.75; }
   padding-top: 8px;
 }
 
-/* Cert list → menu items with dot leaders */
+/* Buffet theme — menu-card domain items */
 [data-color="buffet"] .domain-item {
-  border-bottom: none;
-  padding: 9px 2px;
-  position: relative;
-  align-items: baseline;
+  border: 1px solid var(--border-mid);
+  border-radius: 0;
+  background: var(--surface);
 }
-[data-color="buffet"] .domain-item::before {
-  content: '';
-  position: absolute;
-  bottom: 12px;
-  left: 0; right: 0;
-  border-bottom: 1px dotted var(--border-mid);
-  z-index: 0;
-}
-[data-color="buffet"] .domain-item > span:first-child,
-[data-color="buffet"] .domain-item > span:last-child {
-  background: var(--bg);
-  position: relative;
-  z-index: 1;
-}
-[data-color="buffet"] .domain-item > span:first-child { padding-right: 6px; }
-[data-color="buffet"] .domain-item > span:last-child  { padding-left: 6px;  }
-[data-color="buffet"] .domain-meta {
-  font-size: 15px;
+[data-color="buffet"] .domain-number-badge { border-radius: 0; }
+[data-color="buffet"] .domain-meta,
+[data-color="buffet"] .domain-weight {
   font-family: 'IM Fell English SC', Georgia, serif;
   letter-spacing: 0.5px;
 }
@@ -1040,19 +1024,96 @@ a:is(:hover, :active) { text-decoration: underline; }
 .section-title { font-size: clamp(15px, 4.0vw, 17px); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0 10px; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
 
 /* ── Domain list ───────────────────────────────────────────────────────────── */
-.domain-item { padding: 10px 0; border-bottom: 1px solid var(--border-sub); display: flex; justify-content: space-between; align-items: center; }
-
-/* On wide cert/progress pages, arrange the domain list in 2 columns to use the extra room */
+#domain-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+.domain-item {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  padding: 18px 28px;
+  border: 1px solid var(--border-sub);
+  border-radius: 10px;
+  background: var(--surface, transparent);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+.domain-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  text-decoration: none;
+}
+.domain-item.is-completed { background: var(--accent-soft-2); border-color: var(--accent); }
+.domain-number-badge {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  align-self: center;
+}
+.domain-number-badge span { line-height: 1; }
+.domain-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.domain-link {
+  font-size: clamp(15px, 3.6vw, 16px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text, #222);
+  word-break: break-word;
+  text-decoration: none !important;
+}
+.domain-item, .domain-item:hover, .domain-item:active { text-decoration: none !important; }
+.domain-bar {
+  height: 4px;
+  background: var(--accent-soft-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.domain-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+.domain-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.domain-weight {
+  font-weight: 700;
+  color: var(--accent-text);
+  letter-spacing: 0.2px;
+}
+.domain-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
 @media (min-width: 980px) {
-  .container-wide #domain-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
   .container-wide #progress-certs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
   .container-wide #progress-certs > * { min-width: 0; }
 }
-@media (min-width: 1400px) {
-  .container-wide #domain-list { grid-template-columns: 1fr 1fr 1fr; gap: 0 40px; }
-}
-.domain-link { font-size: clamp(15px, 4vw, 18px); }
-.domain-meta { font-size: clamp(15px, 3.7vw, 17px); color: var(--text-muted); white-space: nowrap; margin-left: 8px; }
 .cert-empty { opacity: 0.45; }
 .cert-empty .domain-link { pointer-events: none; cursor: default; color: var(--text-muted); }
 

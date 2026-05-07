@@ -5,6 +5,7 @@ import { renderRandomBtn } from './renderRandomBtn.js';
 import { renderSearch } from './renderSearch.js';
 import { renderCertList } from './renderCertList.js';
 import { renderAd } from '../../components/ad/renderAd.js';
+import { renderTotalBadge } from '../../components/totalBadge/renderTotalBadge.js';
 import { certifications } from '../../data/certifications/index.js';
 import { setMeta } from '../../components/meta/setMeta.js';
 import { setJsonLd } from '../../components/meta/setJsonLd.js';
@@ -38,6 +39,7 @@ export async function init() {
   renderAd('ad-top');
   renderRandomBtn();
   renderSearch(filter => renderCertList(certifications, comingSoon, filter));
+  renderTotalBadge('total-badge');
   renderCertList(certifications, comingSoon);
   renderAd('ad-bottom');
 }

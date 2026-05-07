@@ -14,6 +14,7 @@ const SHELLS = {
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <div id="random-btn"></div>
       <div id="search"></div>
+      <div id="total-badge"></div>
       <h2 class="section-title">Certifications</h2>
       <div id="cert-list"></div>
       <div id="ad-bottom" class="ad-slot">Advertisement</div>

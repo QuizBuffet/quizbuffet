@@ -549,11 +549,18 @@ ${body}
 
 // Main
 let generated = 0;
+const perCertCounts = {};
+let grandTotal = 0;
 for (const cert of certifications) {
   const dir = path.join(ROOT, cert.slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), buildCertHtml(cert));
   fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildOgSvg(cert));
+  // Tally questions for the global counts file
+  let n = 0;
+  for (const dom of cert.domains) n += loadDomainQuestions(cert.slug, dom.slug).length;
+  perCertCounts[cert.slug] = n;
+  grandTotal += n;
   console.log(`  ✓ ${cert.slug}/index.html + og`);
   generated++;
 }
@@ -581,5 +588,15 @@ console.log(`  ✓ llms-full.txt`);
 
 fs.writeFileSync(path.join(ROOT, 'feed.xml'), buildRssFeed(comingSoon));
 console.log(`  ✓ feed.xml (RSS)`);
+
+const counts = {
+  total: grandTotal,
+  liveCerts: certifications.length,
+  comingSoonCerts: comingSoon.length,
+  generatedAt: TODAY,
+  perCert: perCertCounts,
+};
+fs.writeFileSync(path.join(ROOT, 'data', 'counts.json'), JSON.stringify(counts));
+console.log(`  ✓ data/counts.json (${grandTotal.toLocaleString()} questions across ${certifications.length} certs)`);
 
 console.log(`\nGenerated ${generated} live cert pages + ${csGenerated} coming-soon stubs.`);

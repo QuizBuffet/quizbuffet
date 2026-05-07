@@ -1143,6 +1143,81 @@ a:is(:hover, :active) { text-decoration: underline; }
 .progress-bar-track { background: var(--track); height: 5px; margin-top: 8px; border-radius: 2px; }
 .progress-bar-fill { background: var(--link); height: 5px; border-radius: 2px; }
 
+/* ── Total questions badge of honor (home page) ────────────────────────────── */
+.total-badge {
+  position: relative;
+  margin: 18px 0 22px;
+  padding: 18px 22px;
+  border: 1px solid rgba(46, 155, 74, 0.35);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(46, 155, 74, 0.10), rgba(60, 200, 100, 0.04) 60%, rgba(46, 155, 74, 0.08));
+  overflow: hidden;
+  isolation: isolate;
+  animation: total-badge-glow 3.6s ease-in-out infinite;
+}
+.total-badge-content {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px 22px;
+}
+.total-badge-fig {
+  display: inline-flex; align-items: baseline; gap: 2px;
+}
+.total-badge-num {
+  font-size: clamp(32px, 8vw, 48px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+  background: linear-gradient(135deg, #1a8a3e 0%, #2e9b4a 50%, #4cc168 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+.total-badge-plus {
+  font-size: clamp(22px, 6vw, 34px);
+  font-weight: 800;
+  color: #2e9b4a;
+  margin-left: 2px;
+}
+.total-badge-meta { display: flex; flex-direction: column; gap: 2px; }
+.total-badge-label {
+  font-size: clamp(14px, 3.4vw, 16px);
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+.total-badge-sub {
+  font-size: clamp(12px, 3.2vw, 14px);
+  color: var(--text-muted);
+}
+.total-badge-sub strong { color: #1a6; font-weight: 700; }
+
+/* Diagonal shine that sweeps across every few seconds */
+.total-badge-shine {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 1;
+  background: linear-gradient(120deg,
+    transparent 0%, transparent 35%,
+    rgba(255,255,255,0.28) 50%,
+    transparent 65%, transparent 100%);
+  background-size: 220% 220%;
+  animation: total-badge-shine 4.2s ease-in-out infinite;
+}
+@keyframes total-badge-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(46,155,74,0.18), 0 4px 18px rgba(46,155,74,0.10); }
+  50%      { box-shadow: 0 0 0 6px rgba(46,155,74,0.05), 0 6px 24px rgba(46,155,74,0.20); }
+}
+@keyframes total-badge-shine {
+  0%   { background-position: 220% 0; }
+  60%  { background-position: -120% 0; }
+  100% { background-position: -120% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .total-badge { animation: none; }
+  .total-badge-shine { display: none; }
+}
+
 /* ── Back to top floating button ───────────────────────────────────────────── */
 .back-to-top {
   position: fixed;
@@ -1216,9 +1291,18 @@ a:is(:hover, :active) { text-decoration: underline; }
 .featured-title { font-size: clamp(15px, 4.2vw, 18px); color: var(--link); display: block; margin: 4px 0; }
 
 /* ── Featured carousel ────────────────────────────────────────────────────── */
-.featured-carousel { position: relative; margin: 18px 0 20px; border-radius: 16px; overflow: hidden; min-height: 260px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
-.featured-stage { position: relative; }
-.featured-slide { position: relative; padding: clamp(28px, 5vw, 56px) clamp(20px, 6vw, 80px) clamp(48px, 5vw, 64px); color: #fff; background: linear-gradient(135deg, var(--c1, #333) 0%, var(--c2, #666) 100%); animation: featured-fade-in 0.5s ease both; min-height: 260px; display: flex; flex-direction: column; justify-content: center; }
+/* Carousel auto-rotates every 6s. The slide content varies in height (different
+   cert name lengths and tagline lengths), so without a stable container height
+   the page below would jump on each rotation. We lock the carousel and stage
+   to the same min-height so the auto-advance can't push surrounding content. */
+.featured-carousel { position: relative; margin: 18px 0 20px; border-radius: 16px; overflow: hidden; min-height: 360px; box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+.featured-stage { position: relative; min-height: 360px; }
+.featured-slide { position: relative; padding: clamp(28px, 5vw, 56px) clamp(20px, 6vw, 80px) clamp(48px, 5vw, 64px); color: #fff; background: linear-gradient(135deg, var(--c1, #333) 0%, var(--c2, #666) 100%); animation: featured-fade-in 0.5s ease both; min-height: 360px; display: flex; flex-direction: column; justify-content: center; }
+@media (min-width: 720px) {
+  .featured-carousel,
+  .featured-stage,
+  .featured-slide { min-height: 320px; }
+}
 @media (min-width: 720px) {
   .featured-slide { padding-left: 80px; padding-right: 80px; }
 }
@@ -1564,6 +1648,14 @@ a:is(:hover, :active) { text-decoration: underline; }
 
 .footer .container { max-width: none; padding-bottom: 0; padding-top: 36px; padding-left: clamp(16px, 4vw, 64px); padding-right: clamp(16px, 4vw, 64px); position: relative; z-index: 1; }
 .footer-grid { display: grid; grid-template-columns: 1fr; gap: 36px; margin-bottom: 36px; }
+/* Grid items default to min-width: auto, which lets a long unbroken label
+   (e.g. a cert pill with white-space: nowrap) push the whole column past
+   the viewport. min-width: 0 lets the column shrink so wrapping works. */
+.footer-col { min-width: 0; }
+.footer-col p,
+.footer-col li,
+.footer-body,
+.footer-privacy-list li { overflow-wrap: anywhere; word-break: break-word; }
 
 .footer-brand   { font-size: 22px; font-weight: bold; color: #f1f5f9; margin-bottom: 10px; letter-spacing: -0.3px; display: flex; align-items: center; gap: 8px; }
 .footer-brand-img { width: 30px; height: 30px; }
@@ -1574,8 +1666,13 @@ a:is(:hover, :active) { text-decoration: underline; }
 
 .footer-col-title { font-size: 15px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--footer-accent); font-weight: 700; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--footer-border); }
 
-.footer-certs { display: flex; flex-wrap: wrap; gap: 7px; }
-.footer-cert-link { font-size: 15px; color: var(--footer-cert-color); border: 1px solid var(--footer-cert-bd); padding: 5px 10px; white-space: nowrap; background: var(--footer-cert-bg); transition: background 0.15s, border-color 0.15s, color 0.15s; text-decoration: none !important; display: inline-block; border-radius: 6px; }
+.footer-certs { display: flex; flex-wrap: wrap; gap: 7px; max-width: 100%; }
+.footer-cert-link { font-size: 15px; color: var(--footer-cert-color); border: 1px solid var(--footer-cert-bd); padding: 5px 10px; white-space: nowrap; background: var(--footer-cert-bg); transition: background 0.15s, border-color 0.15s, color 0.15s; text-decoration: none !important; display: inline-block; border-radius: 6px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 480px) {
+  /* On narrow phones, allow long cert names to wrap inside the pill so they
+     can't push the column past the viewport. */
+  .footer-cert-link { white-space: normal; overflow: visible; text-overflow: clip; word-break: break-word; }
+}
 .footer-cert-link::before, .footer-cert-link::after { display: none !important; }
 .footer-cert-link:is(:hover, :active) { background: var(--footer-cert-bg); border-color: var(--footer-accent); color: var(--footer-accent); filter: brightness(1.3); text-decoration: none !important; }
 .footer-cert-code { color: var(--footer-border); font-size: 15px; margin-left: 3px; filter: brightness(2.5); }

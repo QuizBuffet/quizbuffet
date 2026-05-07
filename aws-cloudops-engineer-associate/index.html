@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AWS Certified CloudOps Engineer – Associate (SOA-C03) Free Practice Test | QuizBuffet</title>
-  <meta name="description" content="Free AWS Certified CloudOps Engineer – Associate (SOA-C03) practice test — 0+ exam questions across 5 domains with instant feedback. Deploy, manage, and operate workloads on AWS">
+  <meta name="description" content="Free AWS Certified CloudOps Engineer – Associate (SOA-C03) practice test — 500+ exam questions across 5 domains with instant feedback. Deploy, manage, and operate workloads on AWS">
   <link rel="canonical" href="https://quizbuffet.com/aws-cloudops-engineer-associate/">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
   <meta property="og:title"       content="AWS Certified CloudOps Engineer – Associate (SOA-C03) Free Practice Test | QuizBuffet">
-  <meta property="og:description" content="Free AWS Certified CloudOps Engineer – Associate (SOA-C03) practice test — 0+ exam questions across 5 domains with instant feedback. Deploy, manage, and operate workloads on AWS">
+  <meta property="og:description" content="Free AWS Certified CloudOps Engineer – Associate (SOA-C03) practice test — 500+ exam questions across 5 domains with instant feedback. Deploy, manage, and operate workloads on AWS">
   <meta property="og:image"       content="https://quizbuffet.com/icons/og/aws-cloudops-engineer-associate.svg">
   <meta property="og:url"         content="https://quizbuffet.com/aws-cloudops-engineer-associate/">
 
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="AWS Certified CloudOps Engineer – Associate (SOA-C03) Free Practice Test | QuizBuffet">
-  <meta name="twitter:description" content="Free AWS Certified CloudOps Engineer – Associate (SOA-C03) practice test — 0+ exam questions across 5 domains with instant feedback. Deploy, manage, and operate workloads on AWS">
+  <meta name="twitter:description" content="Free AWS Certified CloudOps Engineer – Associate (SOA-C03) practice test — 500+ exam questions across 5 domains with instant feedback. Deploy, manage, and operate workloads on AWS">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/aws-cloudops-engineer-associate.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -95,7 +95,7 @@
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
-        "courseWorkload": "PT1H"
+        "courseWorkload": "PT8H"
       },
       "about": [
         {
@@ -130,6 +130,107 @@
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "A CloudOps engineer must collect application latency metrics from an EC2-hosted service and retain API activity history for incident investigations. Which combination should the engineer configure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amazon CloudWatch metrics for latency and AWS CloudTrail trails for API activity"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A workload owner needs a dashboard that combines Lambda error metrics, ALB target response times, and RDS CPU metrics. Which service should be the primary visualization layer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amazon CloudWatch dashboards"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An application emits custom business metrics from EC2. The operations team wants the metrics available for alarms and dashboards. Which API should the application use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PutMetricData to publish custom metrics to Amazon CloudWatch"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A web application on EC2 has traffic spikes every weekday morning. The operations team wants capacity to increase automatically based on demand. What should be configured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An Auto Scaling group with a target tracking scaling policy"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An Auto Scaling group scales in too aggressively and terminates instances before requests complete. Which adjustment is most appropriate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tune cooldowns, health checks, and termination policies"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Kubernetes workload on EKS needs pod replicas to increase based on CPU. Which component should be configured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Horizontal Pod Autoscaler with metrics available to the cluster"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A CloudOps engineer needs a repeatable process to build hardened Amazon Machine Images with current patches and validation tests. Which service should be used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amazon EC2 Image Builder"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A CloudOps team wants every new EC2 instance to launch from the latest approved image without manual image lookup. Which approach helps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Publish the approved AMI ID to Systems Manager Parameter Store and reference it during launch"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A CloudOps engineer must create both x86 and ARM AMIs for the same application. Which image pipeline design is best?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use separate EC2 Image Builder pipeline configurations or workflows for each architecture"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A company requires console users to use an additional authentication factor before accessing AWS accounts. Which IAM feature should be enforced?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multi-factor authentication"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An operations team needs workforce users to access multiple AWS accounts through centralized federation. Which service should be considered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AWS IAM Identity Center"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A developer receives AccessDenied when calling an AWS API. Which tool can simulate whether the developer's policies allow the action?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IAM policy simulator"
+          }
+        }
+      ]
     }
   ]
 }
@@ -142,16 +243,16 @@
     <section id="seo-static">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; AWS Certified CloudOps Engineer – Associate</nav>
       <h1>AWS Certified CloudOps Engineer – Associate (SOA-C03) Free Practice Test</h1>
-      <p><strong>0+ exam-style questions</strong> across 5 domains, organized exactly like the real SOA-C03 exam. Instant feedback on every question, progress tracking, and no account required.</p>
+      <p><strong>500+ exam-style questions</strong> across 5 domains, organized exactly like the real SOA-C03 exam. Instant feedback on every question, progress tracking, and no account required.</p>
       <p>AWS Certified CloudOps Engineer – Associate (SOA-C03) validates the ability to deploy, manage, and operate workloads on AWS. It covers monitoring and logging, performance optimization, reliability and business continuity, deployment and automation, security and compliance, and networking and content delivery — including hands-on use of CloudWatch, CloudFormation, Systems Manager, IAM, VPC, and the AWS CLI.</p>
       <p><em>65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000</em></p>
       <h2>Exam Domains</h2>
       <ul>
-          <li><a href="/aws-cloudops-engineer-associate/monitoring-logging-analysis-remediation-and-performance-optimization/"><strong>1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization</strong> (22% of exam)</a></li>
-          <li><a href="/aws-cloudops-engineer-associate/reliability-and-business-continuity/"><strong>2.0 Reliability and Business Continuity</strong> (22% of exam)</a></li>
-          <li><a href="/aws-cloudops-engineer-associate/deployment-provisioning-and-automation/"><strong>3.0 Deployment, Provisioning, and Automation</strong> (22% of exam)</a></li>
-          <li><a href="/aws-cloudops-engineer-associate/security-and-compliance/"><strong>4.0 Security and Compliance</strong> (16% of exam)</a></li>
-          <li><a href="/aws-cloudops-engineer-associate/networking-and-content-delivery/"><strong>5.0 Networking and Content Delivery</strong> (18% of exam)</a></li>
+          <li><a href="/aws-cloudops-engineer-associate/monitoring-logging-analysis-remediation-and-performance-optimization/"><strong>1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization</strong> — 110 questions (22% of exam)</a></li>
+          <li><a href="/aws-cloudops-engineer-associate/reliability-and-business-continuity/"><strong>2.0 Reliability and Business Continuity</strong> — 110 questions (22% of exam)</a></li>
+          <li><a href="/aws-cloudops-engineer-associate/deployment-provisioning-and-automation/"><strong>3.0 Deployment, Provisioning, and Automation</strong> — 110 questions (22% of exam)</a></li>
+          <li><a href="/aws-cloudops-engineer-associate/security-and-compliance/"><strong>4.0 Security and Compliance</strong> — 80 questions (16% of exam)</a></li>
+          <li><a href="/aws-cloudops-engineer-associate/networking-and-content-delivery/"><strong>5.0 Networking and Content Delivery</strong> — 90 questions (18% of exam)</a></li>
       </ul>
       <h2>Study Resources</h2>
       <ul>

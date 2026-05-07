@@ -501,16 +501,80 @@ A: Custom moderation workflow involves using Step Functions and Lambda to apply 
 ## AWS Certified CloudOps Engineer – Associate (SOA-C03)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-cloudops-engineer-associate/
-Total questions: 0
+Total questions: 500
 
 AWS Certified CloudOps Engineer – Associate (SOA-C03) validates the ability to deploy, manage, and operate workloads on AWS. It covers monitoring and logging, performance optimization, reliability and business continuity, deployment and automation, security and compliance, and networking and content delivery — including hands-on use of CloudWatch, CloudFormation, Systems Manager, IAM, VPC, and the AWS CLI.
 
 ### Domains
-- 1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization (22% of exam)
-- 2.0 Reliability and Business Continuity (22% of exam)
-- 3.0 Deployment, Provisioning, and Automation (22% of exam)
-- 4.0 Security and Compliance (16% of exam)
-- 5.0 Networking and Content Delivery (18% of exam)
+- 1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization (22% of exam) — 110 questions
+- 2.0 Reliability and Business Continuity (22% of exam) — 110 questions
+- 3.0 Deployment, Provisioning, and Automation (22% of exam) — 110 questions
+- 4.0 Security and Compliance (16% of exam) — 80 questions
+- 5.0 Networking and Content Delivery (18% of exam) — 90 questions
+
+### Sample questions
+**Q: A CloudOps engineer must collect application latency metrics from an EC2-hosted service and retain API activity history for incident investigations. Which combination should the engineer configure?**
+A: Amazon CloudWatch metrics for latency and AWS CloudTrail trails for API activity
+
+**Q: A workload owner needs a dashboard that combines Lambda error metrics, ALB target response times, and RDS CPU metrics. Which service should be the primary visualization layer?**
+A: Amazon CloudWatch dashboards
+
+**Q: A web application on EC2 has traffic spikes every weekday morning. The operations team wants capacity to increase automatically based on demand. What should be configured?**
+A: An Auto Scaling group with a target tracking scaling policy
+
+**Q: An Auto Scaling group scales in too aggressively and terminates instances before requests complete. Which adjustment is most appropriate?**
+A: Tune cooldowns, health checks, and termination policies
+
+**Q: A CloudOps engineer needs a repeatable process to build hardened Amazon Machine Images with current patches and validation tests. Which service should be used?**
+A: Amazon EC2 Image Builder
+
+**Q: A CloudOps team wants every new EC2 instance to launch from the latest approved image without manual image lookup. Which approach helps?**
+A: Publish the approved AMI ID to Systems Manager Parameter Store and reference it during launch
+
+## AWS Certified Data Engineer – Associate (DEA-C01)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-data-engineer-associate/
+Total questions: 500
+
+AWS Certified Data Engineer – Associate (DEA-C01) validates the ability to implement data pipelines and to monitor, troubleshoot, and optimize cost and performance issues. It covers data ingestion and transformation, data store choice and management, data cataloging and schema evolution, pipeline orchestration and automation, programming concepts, data quality and analysis, and data security, governance, and privacy on AWS.
+
+### Domains
+- 1.0 Data Ingestion and Transformation (34% of exam) — 170 questions
+- 2.0 Data Store Management (26% of exam) — 130 questions
+- 3.0 Data Operations and Support (22% of exam) — 110 questions
+- 4.0 Data Security and Governance (18% of exam) — 90 questions
+
+### Sample questions
+**Q: A data engineering team must ingest clickstream events continuously from thousands of clients and allow multiple consumers to process the stream independently. Which AWS service should be used for the streaming source?**
+A: Amazon Kinesis Data Streams
+
+**Q: A streaming pipeline must deliver events into Apache Flink processing with low latency and later archive raw data to S3. Which ingestion source is most appropriate?**
+A: Kinesis Data Streams feeding stream processing and archival consumers
+
+**Q: A data warehouse must support complex analytical SQL over terabytes of curated relational data with predictable query performance. Which service should be selected?**
+A: Amazon Redshift
+
+**Q: A relational application workload needs transactions, SQL, and managed database operations. Which service is suitable?**
+A: Amazon RDS
+
+**Q: A daily ETL pipeline has extract, validation, transform, and load steps with retries and conditional branches. Which service can coordinate these steps?**
+A: AWS Step Functions
+
+**Q: An MWAA DAG stays queued and never starts after a deployment. What should be checked first?**
+A: DAG syntax, scheduler health, worker capacity, and environment logs
+
+## AWS Certified Developer – Associate (DVA-C02)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-developer-associate/
+Total questions: 0
+
+AWS Certified Developer – Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.
+
+### Domains
+- 1.0 Development with AWS Services (32% of exam)
+- 2.0 Security (26% of exam)
+- 3.0 Deployment (24% of exam)
+- 4.0 Troubleshooting and Optimization (18% of exam)
 
 
 

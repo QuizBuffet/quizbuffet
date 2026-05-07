@@ -1,1 +1,3028 @@
-{"slug":"incident-and-event-response","name":"Incident and Event Response","cert":"aws-devops-engineer-professional","version":1,"questions":[]}
+{"slug":"incident-and-event-response","name":"Incident and Event Response","cert":"aws-devops-engineer-professional","version":1,"questions":[
+    
+  {
+    "id": 415,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Event sources, event patterns, and event-driven response workflows",
+    "keyword": "event source and pattern routing",
+    "difficulty": "easy",
+    "text": "A production account emits a GuardDuty finding for credential exfiltration. The security team wants the event to start an incident workflow without polling. Which event-driven design should be used?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Use an EventBridge rule that matches GuardDuty finding events and targets an incident workflow"
+      },
+      {
+        "id": "b",
+        "text": "Schedule a daily script that searches for new findings"
+      },
+      {
+        "id": "c",
+        "text": "Ask analysts to refresh the GuardDuty console manually"
+      },
+      {
+        "id": "d",
+        "text": "Store the finding ID in a static parameter and wait for a deployment"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "GuardDuty findings are emitted as events, and EventBridge can route matching events directly to response automation or notification targets. This is the correct answer.",
+      "b": "Daily polling delays response and does not use the event source that already exists.",
+      "c": "Manual console checks are not reliable for time-sensitive incident response.",
+      "d": "A static parameter does not route live security findings to responders."
+    }
+  },
+  {
+    "id": 416,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Event sources, event patterns, and event-driven response workflows",
+    "keyword": "event source and pattern routing",
+    "difficulty": "medium",
+    "text": "A DevOps team wants to detect CloudFormation stack failures and notify the application owner. What should the event pattern match?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only successful stack creation events"
+      },
+      {
+        "id": "b",
+        "text": "CloudFormation stack status change events for failed or rollback states"
+      },
+      {
+        "id": "c",
+        "text": "Only monthly billing events"
+      },
+      {
+        "id": "d",
+        "text": "Only S3 object lifecycle transition events"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Successful events do not identify the failure condition that needs incident response.",
+      "b": "Stack status events identify failed infrastructure changes and can be routed to the correct owner for response. This is the correct answer.",
+      "c": "Billing events do not describe CloudFormation rollback status.",
+      "d": "Lifecycle transitions do not indicate stack deployment failures."
+    }
+  },
+  {
+    "id": 417,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Event sources, event patterns, and event-driven response workflows",
+    "keyword": "event source and pattern routing",
+    "difficulty": "medium-hard",
+    "text": "A company wants one response workflow for EC2 instance health failures and a different workflow for unauthorized IAM changes. What is the right pattern?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Send every event to one generic target with no classification"
+      },
+      {
+        "id": "b",
+        "text": "Disable event matching and rely on a shared mailbox"
+      },
+      {
+        "id": "c",
+        "text": "Create separate event rules that match each event type and route to different targets"
+      },
+      {
+        "id": "d",
+        "text": "Use the EC2 instance name as the only event selector for IAM events"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Generic routing makes ownership unclear and can increase response time.",
+      "b": "A mailbox without structured routing does not preserve event type or priority reliably.",
+      "c": "Different operational and security events need different owners, severity, and remediation paths. This is the correct answer.",
+      "d": "Instance names do not identify IAM change events."
+    }
+  },
+  {
+    "id": 418,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Event sources, event patterns, and event-driven response workflows",
+    "keyword": "event source and pattern routing",
+    "difficulty": "hard",
+    "text": "A pipeline emits custom events when a release starts, succeeds, or fails. Which design makes those events useful for incident workflows?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Put the entire event meaning only in a free-form message string"
+      },
+      {
+        "id": "b",
+        "text": "Use a different field schema for every service release"
+      },
+      {
+        "id": "c",
+        "text": "Include deployment secrets as event fields for convenience"
+      },
+      {
+        "id": "d",
+        "text": "Include stable detail fields such as service, environment, version, status, and owner"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Free-form messages are harder to route and correlate than stable fields.",
+      "b": "Inconsistent schemas make central event rules difficult to maintain.",
+      "c": "Secrets should not be placed in operational events.",
+      "d": "Structured event detail fields allow rules, dashboards, and incident tooling to route and correlate release events. This is the correct answer."
+    }
+  },
+  {
+    "id": 419,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Event sources, event patterns, and event-driven response workflows",
+    "keyword": "event source and pattern routing",
+    "difficulty": "easy",
+    "text": "An operations team receives too many EventBridge notifications because a rule matches all AWS API calls. What should be adjusted?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Narrow the event pattern to specific sources, detail types, resources, or event names"
+      },
+      {
+        "id": "b",
+        "text": "Increase the number of responders on every alert"
+      },
+      {
+        "id": "c",
+        "text": "Delete all event rules and rely on memory"
+      },
+      {
+        "id": "d",
+        "text": "Match on random request IDs instead of event meaning"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Specific event patterns reduce noise and make incident response events actionable. This is the correct answer.",
+      "b": "More responders do not fix noisy event selection.",
+      "c": "Removing event rules eliminates automated detection.",
+      "d": "Random identifiers do not represent stable incident conditions."
+    }
+  },
+  {
+    "id": 420,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Event sources, event patterns, and event-driven response workflows",
+    "keyword": "event source and pattern routing",
+    "difficulty": "medium",
+    "text": "A remediation target should run only for events from production accounts. What should the event-driven response include?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A target that ignores event account identity"
+      },
+      {
+        "id": "b",
+        "text": "Account or environment filtering in the event pattern or routing layer"
+      },
+      {
+        "id": "c",
+        "text": "A response that treats all sandbox events as critical production incidents"
+      },
+      {
+        "id": "d",
+        "text": "A rule that matches only the event timestamp format"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Ignoring account identity can trigger the wrong response path.",
+      "b": "Filtering by account or environment prevents nonproduction events from triggering production response workflows. This is the correct answer.",
+      "c": "Equal severity for sandbox and production creates alert fatigue.",
+      "d": "Timestamp format does not identify the affected environment."
+    }
+  },
+  {
+    "id": 421,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Incident severity, ownership, escalation, and communication",
+    "keyword": "incident severity and escalation",
+    "difficulty": "medium-hard",
+    "text": "A database outage affects customer checkout globally. Which incident classification is most appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Low-priority ticket for the next planning meeting"
+      },
+      {
+        "id": "b",
+        "text": "Silent remediation with no communication record"
+      },
+      {
+        "id": "c",
+        "text": "High-severity incident with immediate escalation to service owners and leadership communications"
+      },
+      {
+        "id": "d",
+        "text": "Developer-only notification with no service owner involvement"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "A global checkout outage cannot wait for normal planning cycles.",
+      "b": "Major incidents need communication and evidence, not silent action only.",
+      "c": "Customer-impacting global checkout failure requires urgent response, clear ownership, and coordinated communication. This is the correct answer.",
+      "d": "Service owners and response leads are needed for business-impacting outages."
+    }
+  },
+  {
+    "id": 422,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Incident severity, ownership, escalation, and communication",
+    "keyword": "incident severity and escalation",
+    "difficulty": "hard",
+    "text": "A warning alarm fires for a noncritical batch job that retries successfully. What response model is most appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Page the entire company for every retry"
+      },
+      {
+        "id": "b",
+        "text": "Ignore the condition forever because it recovered once"
+      },
+      {
+        "id": "c",
+        "text": "Treat the event as a security breach without evidence"
+      },
+      {
+        "id": "d",
+        "text": "Lower-severity notification or ticket with no immediate page if service objectives are not at risk"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Escalating every transient retry creates noise and reduces trust in alerts.",
+      "b": "Recovered warnings can still deserve trend tracking or follow-up.",
+      "c": "A retrying batch job is not automatically a security incident.",
+      "d": "Incident severity should reflect impact and urgency so responders are not paged for noncritical self-recovered conditions. This is the correct answer."
+    }
+  },
+  {
+    "id": 423,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Incident severity, ownership, escalation, and communication",
+    "keyword": "incident severity and escalation",
+    "difficulty": "easy",
+    "text": "During a major incident, two teams make conflicting changes to the same production service. What incident-management role or process would reduce this risk?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Assign an incident commander and define a change coordination channel"
+      },
+      {
+        "id": "b",
+        "text": "Let every engineer independently apply fixes as quickly as possible"
+      },
+      {
+        "id": "c",
+        "text": "Disable all communication until after the outage"
+      },
+      {
+        "id": "d",
+        "text": "Rotate AWS account aliases to identify the commander"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "A single coordination role and channel reduce conflicting actions and maintain a controlled response timeline. This is the correct answer.",
+      "b": "Uncoordinated changes can worsen impact and obscure root cause.",
+      "c": "Communication is needed during response to coordinate actions.",
+      "d": "Account aliases do not coordinate incident decisions."
+    }
+  },
+  {
+    "id": 424,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Incident severity, ownership, escalation, and communication",
+    "keyword": "incident severity and escalation",
+    "difficulty": "medium",
+    "text": "An alert message says only 'ALARM' with no service, Region, owner, or runbook. What should be improved?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Remove the alarm name as well"
+      },
+      {
+        "id": "b",
+        "text": "Notification context and escalation metadata"
+      },
+      {
+        "id": "c",
+        "text": "Send the same empty message to more channels"
+      },
+      {
+        "id": "d",
+        "text": "Add credentials to the message body"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Less context makes response slower.",
+      "b": "Responders need affected service, scope, severity, owner, and runbook details to take timely action. This is the correct answer.",
+      "c": "More channels do not compensate for missing action context.",
+      "d": "Secrets should not be included in notifications."
+    }
+  },
+  {
+    "id": 425,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Incident severity, ownership, escalation, and communication",
+    "keyword": "incident severity and escalation",
+    "difficulty": "medium-hard",
+    "text": "A security finding affects one development account, but production is not exposed. How should the event be handled?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Suppress all development security findings permanently"
+      },
+      {
+        "id": "b",
+        "text": "Escalate as a full production outage without considering scope"
+      },
+      {
+        "id": "c",
+        "text": "Route to the security owner with severity based on impact and exposure"
+      },
+      {
+        "id": "d",
+        "text": "Send only to application customers"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Development findings can still indicate risk and should be tracked appropriately.",
+      "b": "Incorrect severity can waste response capacity and reduce alert credibility.",
+      "c": "Severity and escalation should reflect environment, exposure, and risk while still ensuring security ownership. This is the correct answer.",
+      "d": "Customers usually do not need notification for an isolated development-account finding."
+    }
+  },
+  {
+    "id": 426,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Incident severity, ownership, escalation, and communication",
+    "keyword": "incident severity and escalation",
+    "difficulty": "hard",
+    "text": "A team needs to notify executives during major incidents but not for every technical alarm. What should determine executive communication?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Every CloudWatch datapoint breach regardless of impact"
+      },
+      {
+        "id": "b",
+        "text": "Only whether the alarm name is alphabetically first"
+      },
+      {
+        "id": "c",
+        "text": "Only the size of the deployment artifact"
+      },
+      {
+        "id": "d",
+        "text": "Severity, customer impact, and incident communication policy"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Raw datapoint breaches can be noisy and do not always require executive notification.",
+      "b": "Alphabetical order has no relationship to business impact.",
+      "c": "Artifact size does not determine executive escalation.",
+      "d": "Executive updates should be tied to meaningful business impact and defined communication thresholds. This is the correct answer."
+    }
+  },
+  {
+    "id": 427,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Automated remediation and runbook orchestration",
+    "keyword": "automated remediation orchestration",
+    "difficulty": "easy",
+    "text": "A memory leak causes ECS tasks to fail after several hours. The team wants an automated response that restarts tasks only after a verified alarm. Which pattern should be used?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "CloudWatch alarm routed to EventBridge or service automation with scoped remediation"
+      },
+      {
+        "id": "b",
+        "text": "A script that restarts every service every minute"
+      },
+      {
+        "id": "c",
+        "text": "Manual restarts with no runbook or evidence"
+      },
+      {
+        "id": "d",
+        "text": "A public endpoint that lets anyone restart tasks"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Alarm-driven automation can invoke a controlled action when telemetry confirms the unhealthy condition. This is the correct answer.",
+      "b": "Unbounded restarts can create instability and hide the real problem.",
+      "c": "Manual undocumented restarts are slower and harder to audit.",
+      "d": "Unauthenticated restart capability creates operational and security risk."
+    }
+  },
+  {
+    "id": 428,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Automated remediation and runbook orchestration",
+    "keyword": "automated remediation orchestration",
+    "difficulty": "medium",
+    "text": "A runbook stops and starts instances to remediate a known kernel issue. What should be included to make it production-safe?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Wildcard target selection with no preview"
+      },
+      {
+        "id": "b",
+        "text": "Approvals, target validation, error handling, and execution logging"
+      },
+      {
+        "id": "c",
+        "text": "Suppressed logs for every execution"
+      },
+      {
+        "id": "d",
+        "text": "Permanent administrator credentials embedded in the script"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unvalidated wildcard targeting can affect unintended instances.",
+      "b": "Production remediation needs guardrails that confirm scope, handle failures, and preserve an audit record. This is the correct answer.",
+      "c": "Missing logs make it harder to prove what happened during remediation.",
+      "d": "Embedded broad credentials increase exposure and complicate rotation."
+    }
+  },
+  {
+    "id": 429,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Automated remediation and runbook orchestration",
+    "keyword": "automated remediation orchestration",
+    "difficulty": "medium-hard",
+    "text": "An automated remediation repeatedly triggers for the same symptom without resolving it. What control should be added?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Infinite retries with no delay"
+      },
+      {
+        "id": "b",
+        "text": "Deletion of the alarm after the first attempt"
+      },
+      {
+        "id": "c",
+        "text": "Cooldowns, maximum attempts, and escalation to humans"
+      },
+      {
+        "id": "d",
+        "text": "Randomly changing unrelated settings on each retry"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Infinite retries can amplify instability and waste resources.",
+      "b": "Deleting detection hides the continuing incident.",
+      "c": "Automation should stop repeated ineffective actions and escalate when the condition persists. This is the correct answer.",
+      "d": "Unrelated changes make the system less predictable and harder to diagnose."
+    }
+  },
+  {
+    "id": 430,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Automated remediation and runbook orchestration",
+    "keyword": "automated remediation orchestration",
+    "difficulty": "hard",
+    "text": "A remediation workflow must isolate an EC2 instance suspected of compromise while preserving evidence. Which action is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Terminate the instance immediately with no snapshot or logs"
+      },
+      {
+        "id": "b",
+        "text": "Open inbound SSH to the internet for faster access"
+      },
+      {
+        "id": "c",
+        "text": "Delete CloudTrail events related to the instance"
+      },
+      {
+        "id": "d",
+        "text": "Apply a restrictive security group and snapshot relevant volumes before deeper analysis"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Immediate termination can destroy evidence needed for root cause and forensic analysis.",
+      "b": "Opening access increases risk during a suspected compromise.",
+      "c": "Audit evidence should be preserved, not deleted.",
+      "d": "Network containment limits exposure while snapshots preserve data for investigation. This is the correct answer."
+    }
+  },
+  {
+    "id": 431,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Automated remediation and runbook orchestration",
+    "keyword": "automated remediation orchestration",
+    "difficulty": "easy",
+    "text": "A team wants automated remediation to run across accounts. What is the safest access model?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Assume least-privilege remediation roles in target accounts"
+      },
+      {
+        "id": "b",
+        "text": "Store every account root password in the automation document"
+      },
+      {
+        "id": "c",
+        "text": "Use one developer's long-term access key everywhere"
+      },
+      {
+        "id": "d",
+        "text": "Make target resources public during remediation"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Cross-account response should use scoped roles that grant only the actions needed for the runbook. This is the correct answer.",
+      "b": "Root passwords should not be stored or used for routine automation.",
+      "c": "Shared long-term keys weaken accountability and increase blast radius.",
+      "d": "Public exposure is not an access model for safe remediation."
+    }
+  },
+  {
+    "id": 432,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Knowledge: Automated remediation and runbook orchestration",
+    "keyword": "automated remediation orchestration",
+    "difficulty": "medium",
+    "text": "A runbook remediates public S3 bucket policies. What should it do before changing policies automatically?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Overwrite every bucket policy in the account without checking the finding"
+      },
+      {
+        "id": "b",
+        "text": "Capture current policy, verify the bucket matches the finding, and log the intended change"
+      },
+      {
+        "id": "c",
+        "text": "Skip logging so the remediation is faster"
+      },
+      {
+        "id": "d",
+        "text": "Delete the bucket first to remove the finding"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Broad overwrites can break unrelated workloads.",
+      "b": "Safe remediation confirms target scope and preserves before-state evidence for review and rollback. This is the correct answer.",
+      "c": "Missing logs reduce accountability and complicate post-incident analysis.",
+      "d": "Deleting data is a destructive response and may violate retention requirements."
+    }
+  },
+  {
+    "id": 433,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Creating EventBridge rules for operational and security events",
+    "keyword": "EventBridge incident routing",
+    "difficulty": "medium-hard",
+    "text": "A team wants to detect IAM policy changes that grant AdministratorAccess outside the identity pipeline. Which EventBridge pattern is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Match only EC2 instance state-change events"
+      },
+      {
+        "id": "b",
+        "text": "Match only S3 object-created events in artifact buckets"
+      },
+      {
+        "id": "c",
+        "text": "Match CloudTrail IAM policy attachment or policy version events and filter for high-risk changes"
+      },
+      {
+        "id": "d",
+        "text": "Match only CodeBuild phase-change events"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Instance state changes do not identify IAM policy changes.",
+      "b": "Object-created events do not show IAM authorization changes.",
+      "c": "IAM management events from CloudTrail can be routed through EventBridge for near-real-time detection of permission changes. This is the correct answer.",
+      "d": "Build phase events do not detect out-of-band IAM policy changes."
+    }
+  },
+  {
+    "id": 434,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Creating EventBridge rules for operational and security events",
+    "keyword": "EventBridge incident routing",
+    "difficulty": "hard",
+    "text": "An Auto Scaling group emits an EC2 instance launch failure event. The platform team wants a ticket created with the group name. What should be configured?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A static ticket created once per quarter"
+      },
+      {
+        "id": "b",
+        "text": "An unrelated Route 53 health check"
+      },
+      {
+        "id": "c",
+        "text": "A manual search of console notifications at the end of the day"
+      },
+      {
+        "id": "d",
+        "text": "EventBridge rule matching Auto Scaling events and a target that maps event details into the ticket"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "A static ticket does not capture live launch failures.",
+      "b": "DNS health checks do not include Auto Scaling failure details.",
+      "c": "Manual end-of-day review delays response to capacity issues.",
+      "d": "Auto Scaling lifecycle and failure events contain context that can be routed into incident systems. This is the correct answer."
+    }
+  },
+  {
+    "id": 435,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Creating EventBridge rules for operational and security events",
+    "keyword": "EventBridge incident routing",
+    "difficulty": "easy",
+    "text": "A CloudTrail event shows StopLogging was called for a trail. Which EventBridge response is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Notify security responders and invoke a controlled runbook to re-enable or investigate logging"
+      },
+      {
+        "id": "b",
+        "text": "Ignore the event because CloudTrail records only old activity"
+      },
+      {
+        "id": "c",
+        "text": "Delete the log archive bucket to prevent confusion"
+      },
+      {
+        "id": "d",
+        "text": "Treat it only as a normal application performance alert"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Stopping audit logging is high risk and should trigger both notification and controlled response. This is the correct answer.",
+      "b": "CloudTrail events can represent recent account activity and logging tampering matters.",
+      "c": "Deleting log storage destroys evidence.",
+      "d": "Audit logging tampering has security and compliance implications."
+    }
+  },
+  {
+    "id": 436,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Creating EventBridge rules for operational and security events",
+    "keyword": "EventBridge incident routing",
+    "difficulty": "medium",
+    "text": "A deployment pipeline should emit a custom event when production rollback starts. What should the event include?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only a vague message saying something changed"
+      },
+      {
+        "id": "b",
+        "text": "Service, environment, version, rollback reason, and execution ID"
+      },
+      {
+        "id": "c",
+        "text": "Production database passwords for rapid debugging"
+      },
+      {
+        "id": "d",
+        "text": "Only the developer's local machine name"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Vague events slow correlation and ownership decisions.",
+      "b": "Structured rollback events let responders correlate release impact and track remediation progress. This is the correct answer.",
+      "c": "Secrets must not be included in event payloads.",
+      "d": "Local machine names do not identify release scope or rollback cause."
+    }
+  },
+  {
+    "id": 437,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Creating EventBridge rules for operational and security events",
+    "keyword": "EventBridge incident routing",
+    "difficulty": "medium-hard",
+    "text": "An organization wants to route AWS Health events for affected services to different application teams. What should the EventBridge workflow use?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The alphabetical order of team names"
+      },
+      {
+        "id": "b",
+        "text": "Only a single catch-all mailbox with no routing"
+      },
+      {
+        "id": "c",
+        "text": "Event detail fields such as service, event type, account, and Region to route ownership"
+      },
+      {
+        "id": "d",
+        "text": "The number of log groups in the account"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Alphabetical routing is not tied to service ownership or event scope.",
+      "b": "Catch-all routing can delay the team responsible for the affected service.",
+      "c": "AWS Health event details can be used to determine which team and runbook should receive the notification. This is the correct answer.",
+      "d": "Log group count does not identify which service is affected by the Health event."
+    }
+  },
+  {
+    "id": 438,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Creating EventBridge rules for operational and security events",
+    "keyword": "EventBridge incident routing",
+    "difficulty": "hard",
+    "text": "A security remediation should run only when a Config rule reports NON_COMPLIANT for a specific resource type. What should the event rule match?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "All Config events regardless of rule and status"
+      },
+      {
+        "id": "b",
+        "text": "Only successful deployment events"
+      },
+      {
+        "id": "c",
+        "text": "Only daily billing alerts"
+      },
+      {
+        "id": "d",
+        "text": "Config compliance change events with the target rule name, resource type, and NON_COMPLIANT status"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Matching all events can trigger remediation for unrelated or compliant resources.",
+      "b": "Deployment success does not identify the Config noncompliance condition.",
+      "c": "Billing alerts do not describe resource compliance changes.",
+      "d": "Specific Config event patterns prevent remediation from acting on unrelated compliance changes. This is the correct answer."
+    }
+  },
+  {
+    "id": 439,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Configuring notifications, ticketing, and chat integrations",
+    "keyword": "incident notification integration",
+    "difficulty": "easy",
+    "text": "A production alarm should create a ticket, page on-call, and post context to a chat channel. Which integration model is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Route the alarm through SNS or EventBridge to incident management and chat targets"
+      },
+      {
+        "id": "b",
+        "text": "Place the alarm ARN only in a wiki page"
+      },
+      {
+        "id": "c",
+        "text": "Ask users to report outages through support before notifying on-call"
+      },
+      {
+        "id": "d",
+        "text": "Send the alarm only to an unmonitored email alias"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Alarm events can fan out to notification, ticketing, and collaboration tools to start coordinated response. This is the correct answer.",
+      "b": "A wiki page does not actively notify responders or create incidents.",
+      "c": "User reports are a delayed and incomplete detection path.",
+      "d": "Unmonitored aliases do not provide reliable incident response."
+    }
+  },
+  {
+    "id": 440,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Configuring notifications, ticketing, and chat integrations",
+    "keyword": "incident notification integration",
+    "difficulty": "medium",
+    "text": "An incident notification lacks Region, account, and runbook link. What should be added?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Remove the metric name to shorten the alert"
+      },
+      {
+        "id": "b",
+        "text": "Message enrichment with affected resource, scope, severity, owner, and runbook"
+      },
+      {
+        "id": "c",
+        "text": "Add secrets so responders can copy them faster"
+      },
+      {
+        "id": "d",
+        "text": "Send only a screenshot with no text fields"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Removing key context makes the alert less actionable.",
+      "b": "Enriched notifications help responders triage quickly and choose the correct response procedure. This is the correct answer.",
+      "c": "Secrets should not be included in notifications.",
+      "d": "Screenshots are hard to search and automate compared with structured fields."
+    }
+  },
+  {
+    "id": 441,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Configuring notifications, ticketing, and chat integrations",
+    "keyword": "incident notification integration",
+    "difficulty": "medium-hard",
+    "text": "A chat integration receives repeated messages for the same alarm every minute during an outage. What should be implemented?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Create a separate high-priority ticket for every datapoint"
+      },
+      {
+        "id": "b",
+        "text": "Disable the alarm forever after the first message"
+      },
+      {
+        "id": "c",
+        "text": "Deduplication or incident aggregation based on alarm and resource identity"
+      },
+      {
+        "id": "d",
+        "text": "Route repeated messages to random teams"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Per-datapoint tickets flood responders and obscure the incident.",
+      "b": "Permanent alarm deletion removes future detection.",
+      "c": "Grouping repeated signals reduces alert fatigue and keeps responders focused on one incident thread. This is the correct answer.",
+      "d": "Random routing increases confusion and delays ownership."
+    }
+  },
+  {
+    "id": 442,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Configuring notifications, ticketing, and chat integrations",
+    "keyword": "incident notification integration",
+    "difficulty": "hard",
+    "text": "A low-severity event should create a ticket but not page the primary on-call engineer. What should control this behavior?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "One paging policy for every informational event"
+      },
+      {
+        "id": "b",
+        "text": "No ticket creation for low-severity operational drift"
+      },
+      {
+        "id": "c",
+        "text": "Routing based only on resource name length"
+      },
+      {
+        "id": "d",
+        "text": "Severity-based notification routing"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Paging for all informational events creates noise.",
+      "b": "Low-severity drift can still require trackable follow-up.",
+      "c": "Name length does not represent impact or urgency.",
+      "d": "Severity routing maps events to the right urgency and channel. This is the correct answer."
+    }
+  },
+  {
+    "id": 443,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Configuring notifications, ticketing, and chat integrations",
+    "keyword": "incident notification integration",
+    "difficulty": "easy",
+    "text": "A team wants ticket updates when an automated runbook succeeds or fails. What should the automation emit?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Structured status events or API updates containing execution ID and outcome"
+      },
+      {
+        "id": "b",
+        "text": "Only local console output from the runbook"
+      },
+      {
+        "id": "c",
+        "text": "Only a changed dashboard color"
+      },
+      {
+        "id": "d",
+        "text": "Only a new IAM role name"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Execution status updates let ticketing systems track remediation progress and final state. This is the correct answer.",
+      "b": "Local output may not reach the incident record.",
+      "c": "Dashboard color changes do not update the ticket history.",
+      "d": "Role names do not communicate runbook outcome."
+    }
+  },
+  {
+    "id": 444,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Configuring notifications, ticketing, and chat integrations",
+    "keyword": "incident notification integration",
+    "difficulty": "medium",
+    "text": "A security incident requires a private response channel with restricted membership. What should the notification design support?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Posting all sensitive findings in a public company channel"
+      },
+      {
+        "id": "b",
+        "text": "Routing sensitive incidents to restricted security channels or ticket queues"
+      },
+      {
+        "id": "c",
+        "text": "Sending findings to application customers by default"
+      },
+      {
+        "id": "d",
+        "text": "Embedding full access keys in chat for convenience"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Public channels can expose security-sensitive details to unnecessary audiences.",
+      "b": "Sensitive findings should be visible only to authorized responders while preserving response tracking. This is the correct answer.",
+      "c": "Customers should not receive raw internal security findings by default.",
+      "d": "Access keys should never be posted in incident channels."
+    }
+  },
+  {
+    "id": 445,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Implementing Systems Manager Automation runbooks for response",
+    "keyword": "Systems Manager response runbooks",
+    "difficulty": "medium-hard",
+    "text": "A Systems Manager Automation document restarts a service on EC2 instances. What should the runbook use to target the correct instances safely?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Wildcard all instances in all accounts by default"
+      },
+      {
+        "id": "b",
+        "text": "Manual instance IDs copied from memory"
+      },
+      {
+        "id": "c",
+        "text": "Tags or resource groups with validation of the intended environment"
+      },
+      {
+        "id": "d",
+        "text": "A public list of private IP addresses"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "A broad wildcard target can restart unrelated or production-critical systems.",
+      "b": "Memory-based selection is error-prone and not repeatable.",
+      "c": "Tag-based targeting with validation reduces the chance of running remediation against the wrong fleet. This is the correct answer.",
+      "d": "Public lists can expose infrastructure details and are not a safe targeting control."
+    }
+  },
+  {
+    "id": 446,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Implementing Systems Manager Automation runbooks for response",
+    "keyword": "Systems Manager response runbooks",
+    "difficulty": "hard",
+    "text": "A runbook must approve a disruptive database failover step before execution. Which Systems Manager Automation feature is relevant?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Unconditional execution of every step"
+      },
+      {
+        "id": "b",
+        "text": "Hidden execution logs"
+      },
+      {
+        "id": "c",
+        "text": "Randomized step ordering"
+      },
+      {
+        "id": "d",
+        "text": "Approval step"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Unconditional disruptive actions can cause avoidable impact.",
+      "b": "Hidden logs reduce auditability and do not provide approval.",
+      "c": "Random step ordering makes runbook behavior unsafe and unpredictable.",
+      "d": "Approval steps allow controlled human authorization before a high-impact action proceeds. This is the correct answer."
+    }
+  },
+  {
+    "id": 447,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Implementing Systems Manager Automation runbooks for response",
+    "keyword": "Systems Manager response runbooks",
+    "difficulty": "easy",
+    "text": "An automation runbook should be reusable across accounts and Regions. What should be parameterized?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Target account, Region, resource IDs, and environment-specific values"
+      },
+      {
+        "id": "b",
+        "text": "The runbook should hardcode the first production resource it ever remediated"
+      },
+      {
+        "id": "c",
+        "text": "The runbook should infer targets from the operator's laptop name"
+      },
+      {
+        "id": "d",
+        "text": "The runbook should require editing source code for every execution"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Parameterization avoids hardcoded targets and supports controlled reuse across environments. This is the correct answer.",
+      "b": "Hardcoded production targets can affect the wrong resource during later executions.",
+      "c": "Laptop names are not reliable resource selectors.",
+      "d": "Editing runbook code for each execution increases risk and reduces repeatability."
+    }
+  },
+  {
+    "id": 448,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Implementing Systems Manager Automation runbooks for response",
+    "keyword": "Systems Manager response runbooks",
+    "difficulty": "medium",
+    "text": "A remediation document needs permissions to stop and start EC2 instances but not modify IAM. What role design is best?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "AdministratorAccess because remediation is urgent"
+      },
+      {
+        "id": "b",
+        "text": "Automation assume role with only the required EC2 actions on approved resources"
+      },
+      {
+        "id": "c",
+        "text": "No role and embedded access keys in the document"
+      },
+      {
+        "id": "d",
+        "text": "A role that allows IAM policy deletion for every resource"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Broad permissions increase blast radius beyond the runbook's purpose.",
+      "b": "A least-privilege automation role limits what the runbook can do if invoked incorrectly. This is the correct answer.",
+      "c": "Embedded keys are difficult to protect and rotate.",
+      "d": "IAM deletion rights are unrelated to stopping and starting EC2 instances."
+    }
+  },
+  {
+    "id": 449,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Implementing Systems Manager Automation runbooks for response",
+    "keyword": "Systems Manager response runbooks",
+    "difficulty": "medium-hard",
+    "text": "A runbook fails halfway through and leaves a resource in maintenance mode. What should the runbook include?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "No error handling because automation should be perfect"
+      },
+      {
+        "id": "b",
+        "text": "Delete execution history after failure"
+      },
+      {
+        "id": "c",
+        "text": "Failure handling, rollback or cleanup steps, and final status reporting"
+      },
+      {
+        "id": "d",
+        "text": "Continue with destructive steps even when prerequisites fail"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Automation can fail and must handle partial execution safely.",
+      "b": "Execution history is needed to diagnose and audit the partial failure.",
+      "c": "Runbooks need predictable cleanup and status reporting so partial failure does not leave services impaired. This is the correct answer.",
+      "d": "Proceeding after failed prerequisites can worsen the incident."
+    }
+  },
+  {
+    "id": 450,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.1 Skill: Implementing Systems Manager Automation runbooks for response",
+    "keyword": "Systems Manager response runbooks",
+    "difficulty": "hard",
+    "text": "A team wants to trigger the same Systems Manager runbook from alarms and from manual incident response. What should they ensure?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The runbook produces different random changes each time"
+      },
+      {
+        "id": "b",
+        "text": "The runbook has no execution logging"
+      },
+      {
+        "id": "c",
+        "text": "The runbook ignores current resource state"
+      },
+      {
+        "id": "d",
+        "text": "The runbook is idempotent and records who or what invoked each execution"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Random outcomes are unsafe for repeatable response.",
+      "b": "Without logging, manual and automated invocations cannot be audited.",
+      "c": "Ignoring state can cause unnecessary or unsafe actions.",
+      "d": "Idempotency supports safe repeated execution, and invocation context preserves accountability. This is the correct answer."
+    }
+  },
+  {
+    "id": 451,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Root cause analysis, timelines, and evidence preservation",
+    "keyword": "root cause evidence preservation",
+    "difficulty": "easy",
+    "text": "A production incident is resolved, but the team needs a reliable root-cause timeline. What evidence should be preserved?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Alarm state changes, deployment events, logs, traces, CloudTrail events, and remediation actions"
+      },
+      {
+        "id": "b",
+        "text": "Only the final incident summary with no timestamps"
+      },
+      {
+        "id": "c",
+        "text": "Only screenshots stored on one responder's laptop"
+      },
+      {
+        "id": "d",
+        "text": "Only the cost report for the month"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "A complete timeline requires operational signals, release context, audit events, and response actions. This is the correct answer.",
+      "b": "A summary without timestamps cannot reconstruct sequence or causality.",
+      "c": "Personal screenshots are incomplete and fragile as incident evidence.",
+      "d": "Cost data alone does not explain incident sequence or technical cause."
+    }
+  },
+  {
+    "id": 452,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Root cause analysis, timelines, and evidence preservation",
+    "keyword": "root cause evidence preservation",
+    "difficulty": "medium",
+    "text": "A suspected compromise is detected on an EC2 instance. What evidence-preserving action should happen before rebuilding when feasible?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Terminate the instance immediately with no records"
+      },
+      {
+        "id": "b",
+        "text": "Snapshot affected volumes and preserve relevant logs and CloudTrail events"
+      },
+      {
+        "id": "c",
+        "text": "Delete CloudTrail events to prevent confusion"
+      },
+      {
+        "id": "d",
+        "text": "Open the instance to the internet for easier investigation"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Immediate destruction can remove evidence needed to determine scope and cause.",
+      "b": "Snapshots and logs provide evidence for analysis while allowing containment and recovery to proceed. This is the correct answer.",
+      "c": "Audit events should be preserved, not deleted.",
+      "d": "Opening access increases risk during a security investigation."
+    }
+  },
+  {
+    "id": 453,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Root cause analysis, timelines, and evidence preservation",
+    "keyword": "root cause evidence preservation",
+    "difficulty": "medium-hard",
+    "text": "A team wants to know whether a bad deployment or a dependency outage caused errors. What timeline evidence is most useful?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only the number of developers online"
+      },
+      {
+        "id": "b",
+        "text": "Only the size of the deployment artifact"
+      },
+      {
+        "id": "c",
+        "text": "Deployment timestamps correlated with service metrics, logs, traces, and dependency health events"
+      },
+      {
+        "id": "d",
+        "text": "Only the length of the incident title"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Responder availability does not establish technical root cause.",
+      "b": "Artifact size alone rarely explains user-facing errors.",
+      "c": "Time correlation helps distinguish release-induced failures from external dependency problems. This is the correct answer.",
+      "d": "Title length has no causal diagnostic value."
+    }
+  },
+  {
+    "id": 454,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Root cause analysis, timelines, and evidence preservation",
+    "keyword": "root cause evidence preservation",
+    "difficulty": "hard",
+    "text": "An incident response automation changes security groups to contain a host. What evidence should be captured?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only the name of the chat channel"
+      },
+      {
+        "id": "b",
+        "text": "Only a note that something was fixed"
+      },
+      {
+        "id": "c",
+        "text": "Only the unrelated application version list"
+      },
+      {
+        "id": "d",
+        "text": "Before-and-after security group rules, target resource IDs, execution ID, and actor"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Channel name does not prove which resources were changed.",
+      "b": "A vague note lacks the technical details needed for review.",
+      "c": "Application versions do not document the containment change.",
+      "d": "Capturing the change details preserves accountability and supports later review of containment actions. This is the correct answer."
+    }
+  },
+  {
+    "id": 455,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Root cause analysis, timelines, and evidence preservation",
+    "keyword": "root cause evidence preservation",
+    "difficulty": "easy",
+    "text": "Logs needed for an incident were expired after one day. What process improvement follows?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Align log retention with incident investigation and compliance requirements"
+      },
+      {
+        "id": "b",
+        "text": "Reduce retention further to lower evidence volume"
+      },
+      {
+        "id": "c",
+        "text": "Rely only on memory during post-incident review"
+      },
+      {
+        "id": "d",
+        "text": "Disable logging so missing logs are expected"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Retention windows should preserve evidence long enough for realistic detection, response, and review timelines. This is the correct answer.",
+      "b": "Shorter retention worsens the evidence gap.",
+      "c": "Human memory is incomplete and not auditable.",
+      "d": "No logging removes evidence needed for operations and compliance."
+    }
+  },
+  {
+    "id": 456,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Root cause analysis, timelines, and evidence preservation",
+    "keyword": "root cause evidence preservation",
+    "difficulty": "medium",
+    "text": "A root-cause review should avoid blaming individuals and focus on systemic fixes. What should the analysis emphasize?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The first person who touched the keyboard"
+      },
+      {
+        "id": "b",
+        "text": "Contributing factors, detection gaps, control gaps, and corrective actions"
+      },
+      {
+        "id": "c",
+        "text": "A list of unrelated services not involved in the incident"
+      },
+      {
+        "id": "d",
+        "text": "Removing all automation because one runbook failed"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Focusing on blame hides systemic causes and reduces learning.",
+      "b": "Blameless analysis identifies system improvements that reduce repeat incidents. This is the correct answer.",
+      "c": "Unrelated services do not help explain or prevent the incident.",
+      "d": "A failed runbook should be improved with evidence, not automatically abandoned."
+    }
+  },
+  {
+    "id": 457,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Incident metrics, post-incident review, and continuous improvement",
+    "keyword": "post-incident improvement",
+    "difficulty": "medium-hard",
+    "text": "A post-incident review finds that detection took 45 minutes for a customer-facing outage. Which metric should be tracked and improved?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Artifact file size"
+      },
+      {
+        "id": "b",
+        "text": "Number of source branches"
+      },
+      {
+        "id": "c",
+        "text": "Mean time to detect"
+      },
+      {
+        "id": "d",
+        "text": "DNS record name length"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Artifact size does not measure detection speed.",
+      "b": "Branch count does not measure incident detection.",
+      "c": "Mean time to detect measures how long it takes to identify an incident after it begins. This is the correct answer.",
+      "d": "Record name length has no incident response timing meaning."
+    }
+  },
+  {
+    "id": 458,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Incident metrics, post-incident review, and continuous improvement",
+    "keyword": "post-incident improvement",
+    "difficulty": "hard",
+    "text": "A service recovered two hours after the first page. Which incident metric describes this recovery duration?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Code coverage percentage"
+      },
+      {
+        "id": "b",
+        "text": "Queue message retention"
+      },
+      {
+        "id": "c",
+        "text": "AMI creation date"
+      },
+      {
+        "id": "d",
+        "text": "Mean time to recover"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Code coverage measures test extent and not incident recovery duration.",
+      "b": "Message retention controls storage of queue messages and not incident recovery time.",
+      "c": "AMI creation date does not describe service restoration time.",
+      "d": "Mean time to recover measures how long it takes to restore service after an incident is detected or begins, depending on the organization's definition. This is the correct answer."
+    }
+  },
+  {
+    "id": 459,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Incident metrics, post-incident review, and continuous improvement",
+    "keyword": "post-incident improvement",
+    "difficulty": "easy",
+    "text": "A post-incident action item says 'improve monitoring' with no owner or deadline. What is wrong with it?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The action item is not specific, owned, or time-bound"
+      },
+      {
+        "id": "b",
+        "text": "It has too much technical detail"
+      },
+      {
+        "id": "c",
+        "text": "It should avoid all ownership to stay blameless"
+      },
+      {
+        "id": "d",
+        "text": "It should be stored only in a private notebook"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Corrective actions should define the change, owner, due date, and verification method. This is the correct answer.",
+      "b": "The issue is the lack of detail and accountability.",
+      "c": "Blameless reviews still need accountable owners for improvements.",
+      "d": "Private notes do not provide trackable organizational follow-up."
+    }
+  },
+  {
+    "id": 460,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Incident metrics, post-incident review, and continuous improvement",
+    "keyword": "post-incident improvement",
+    "difficulty": "medium",
+    "text": "A team wants to reduce repeated incidents caused by the same deployment failure. What should the review produce?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A request to ignore similar alarms next time"
+      },
+      {
+        "id": "b",
+        "text": "A pipeline or control improvement that prevents or detects the failure earlier"
+      },
+      {
+        "id": "c",
+        "text": "A larger incident bridge with no technical change"
+      },
+      {
+        "id": "d",
+        "text": "A manual reminder to be careful with no enforcement"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Ignoring alarms does not eliminate the underlying repeated failure.",
+      "b": "Post-incident learning should feed changes into automation, tests, alarms, or release gates. This is the correct answer.",
+      "c": "More meeting capacity does not prevent the deployment defect.",
+      "d": "Reminders are weaker than improved controls or automation."
+    }
+  },
+  {
+    "id": 461,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Incident metrics, post-incident review, and continuous improvement",
+    "keyword": "post-incident improvement",
+    "difficulty": "medium-hard",
+    "text": "A monthly report should show whether incident response is improving. Which measurements are useful?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only the number of dashboards created"
+      },
+      {
+        "id": "b",
+        "text": "Only the longest log message length"
+      },
+      {
+        "id": "c",
+        "text": "Incident count, severity distribution, MTTD, MTTR, recurrence, and action-item completion"
+      },
+      {
+        "id": "d",
+        "text": "Only the count of unused IAM roles"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Dashboard count does not prove response outcomes improved.",
+      "b": "Log message length does not measure incident response performance.",
+      "c": "These metrics show reliability trends, response speed, repeat problems, and whether improvements are being delivered. This is the correct answer.",
+      "d": "Unused role count may matter for security hygiene but not incident response trend by itself."
+    }
+  },
+  {
+    "id": 462,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Knowledge: Incident metrics, post-incident review, and continuous improvement",
+    "keyword": "post-incident improvement",
+    "difficulty": "hard",
+    "text": "A post-incident review identifies alert fatigue as a contributing factor. What improvement is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Page more people for every low-value alert"
+      },
+      {
+        "id": "b",
+        "text": "Disable all alerts including customer-impacting ones"
+      },
+      {
+        "id": "c",
+        "text": "Hide alarm history after each incident"
+      },
+      {
+        "id": "d",
+        "text": "Tune alarms, add severity routing, and remove or aggregate nonactionable notifications"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "More paging increases fatigue rather than reducing it.",
+      "b": "Removing all alerts delays detection of real incidents.",
+      "c": "Alarm history is needed to understand and improve alert quality.",
+      "d": "Reducing nonactionable noise helps responders notice and act on important signals. This is the correct answer."
+    }
+  },
+  {
+    "id": 463,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Investigating incidents with logs, metrics, traces, and audit events",
+    "keyword": "incident investigation telemetry",
+    "difficulty": "easy",
+    "text": "An API incident shows high 5XX errors after a release. Which investigation path is best?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Correlate deployment events with error metrics, application logs, and traces for affected requests"
+      },
+      {
+        "id": "b",
+        "text": "Only review the billing dashboard"
+      },
+      {
+        "id": "c",
+        "text": "Only count the number of pull requests open"
+      },
+      {
+        "id": "d",
+        "text": "Only check whether the domain name is short"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Release timing, metrics, logs, and traces together help determine whether the deployment introduced the failure. This is the correct answer.",
+      "b": "Cost data alone does not explain API 5XX behavior.",
+      "c": "Open pull requests do not show runtime error causes.",
+      "d": "Domain length has no diagnostic value for 5XX errors."
+    }
+  },
+  {
+    "id": 464,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Investigating incidents with logs, metrics, traces, and audit events",
+    "keyword": "incident investigation telemetry",
+    "difficulty": "medium",
+    "text": "A database latency alarm fires. Application traces show slow queries from one endpoint. What should the DevOps engineer inspect?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only CloudFront cache invalidations"
+      },
+      {
+        "id": "b",
+        "text": "Database performance metrics, query patterns, and logs for that endpoint"
+      },
+      {
+        "id": "c",
+        "text": "Only IAM group names"
+      },
+      {
+        "id": "d",
+        "text": "Only the latest container image scan result"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Cache invalidations do not explain direct database query latency.",
+      "b": "The trace identifies the affected path, and database metrics and query evidence explain the latency source. This is the correct answer.",
+      "c": "IAM group names do not show query performance.",
+      "d": "Image scanning does not diagnose database query latency."
+    }
+  },
+  {
+    "id": 465,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Investigating incidents with logs, metrics, traces, and audit events",
+    "keyword": "incident investigation telemetry",
+    "difficulty": "medium-hard",
+    "text": "A security incident involves an unexpected IAM role assumption. Which telemetry should be reviewed?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only application CPU metrics"
+      },
+      {
+        "id": "b",
+        "text": "Only ALB access logs"
+      },
+      {
+        "id": "c",
+        "text": "CloudTrail AssumeRole events, source principal, session context, and subsequent API calls"
+      },
+      {
+        "id": "d",
+        "text": "Only ECR image layer sizes"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "CPU metrics do not identify who assumed an IAM role.",
+      "b": "ALB logs show web traffic and not IAM role assumption details.",
+      "c": "CloudTrail records role assumption and follow-on activity needed to determine scope and actor. This is the correct answer.",
+      "d": "Image layer size does not show identity activity."
+    }
+  },
+  {
+    "id": 466,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Investigating incidents with logs, metrics, traces, and audit events",
+    "keyword": "incident investigation telemetry",
+    "difficulty": "hard",
+    "text": "A queue-based system has rising message age. What telemetry should be examined?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only the number of hosted zones"
+      },
+      {
+        "id": "b",
+        "text": "Only the latest S3 lifecycle transition"
+      },
+      {
+        "id": "c",
+        "text": "Only the account contact phone number"
+      },
+      {
+        "id": "d",
+        "text": "Queue metrics, consumer logs, consumer error rates, and downstream dependency metrics"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Hosted zone count does not explain queue backlog.",
+      "b": "Object lifecycle transitions do not show consumer progress.",
+      "c": "Contact metadata does not diagnose message processing delay.",
+      "d": "Message age can grow from insufficient consumers, processing errors, or slow downstream dependencies. This is the correct answer."
+    }
+  },
+  {
+    "id": 467,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Investigating incidents with logs, metrics, traces, and audit events",
+    "keyword": "incident investigation telemetry",
+    "difficulty": "easy",
+    "text": "A Lambda function error rate increases only for one alias during a canary deployment. What should be compared?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Alias or version-specific metrics, logs, and deployment traffic weights"
+      },
+      {
+        "id": "b",
+        "text": "Only account-wide EC2 CPU utilization"
+      },
+      {
+        "id": "c",
+        "text": "Only the size of unrelated EBS volumes"
+      },
+      {
+        "id": "d",
+        "text": "Only DNS query logs for static content"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Canary diagnosis requires isolating the new version's telemetry from stable version traffic. This is the correct answer.",
+      "b": "EC2 CPU does not isolate Lambda canary version behavior.",
+      "c": "EBS volume size does not explain Lambda alias errors.",
+      "d": "Static DNS query logs do not identify Lambda version-specific failures."
+    }
+  },
+  {
+    "id": 468,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Investigating incidents with logs, metrics, traces, and audit events",
+    "keyword": "incident investigation telemetry",
+    "difficulty": "medium",
+    "text": "An intermittent user issue has a correlation ID. The logs are spread across services and accounts. What should the investigation use?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Unfiltered searches across all years of logs"
+      },
+      {
+        "id": "b",
+        "text": "Centralized log queries filtered by correlation ID and time range"
+      },
+      {
+        "id": "c",
+        "text": "Only the final service's success logs"
+      },
+      {
+        "id": "d",
+        "text": "Only a count of deployed stacks"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unfiltered broad searches are slow and noisy.",
+      "b": "Correlation ID filtering narrows a distributed search to the relevant request path and time window. This is the correct answer.",
+      "c": "A distributed issue may originate in an earlier service.",
+      "d": "Stack count does not show request-specific behavior."
+    }
+  },
+  {
+    "id": 469,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Capturing incident timelines and remediation evidence",
+    "keyword": "incident timeline evidence",
+    "difficulty": "medium-hard",
+    "text": "An incident commander wants an accurate timeline of response actions. What should be recorded automatically where possible?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only a final message that the incident ended"
+      },
+      {
+        "id": "b",
+        "text": "Only the number of people in the chat channel"
+      },
+      {
+        "id": "c",
+        "text": "Alarm times, acknowledgments, runbook executions, deployment changes, and status updates"
+      },
+      {
+        "id": "d",
+        "text": "Only the length of the incident call"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "A final message does not show sequence or decision points.",
+      "b": "Participant count does not capture technical actions.",
+      "c": "A timeline built from system events and response actions supports review and accountability. This is the correct answer.",
+      "d": "Call length does not document remediation steps or cause."
+    }
+  },
+  {
+    "id": 470,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Capturing incident timelines and remediation evidence",
+    "keyword": "incident timeline evidence",
+    "difficulty": "hard",
+    "text": "A runbook made a production change during an incident. What evidence should be attached to the incident record?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only the runbook title with no execution data"
+      },
+      {
+        "id": "b",
+        "text": "Only the responder's opinion that it worked"
+      },
+      {
+        "id": "c",
+        "text": "Only unrelated service dashboards"
+      },
+      {
+        "id": "d",
+        "text": "Runbook execution ID, parameters, actor, target resources, and outcome"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "A title does not prove what occurred in a specific execution.",
+      "b": "Subjective statements should be supported by execution and validation evidence.",
+      "c": "Unrelated dashboards do not document the runbook action.",
+      "d": "Execution metadata shows what automation did, where it acted, and whether it succeeded. This is the correct answer."
+    }
+  },
+  {
+    "id": 471,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Capturing incident timelines and remediation evidence",
+    "keyword": "incident timeline evidence",
+    "difficulty": "easy",
+    "text": "A manual console change is made to restore service. What should the responder do for evidence and follow-up?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Record the change, capture related CloudTrail events, and create an action item to codify it if needed"
+      },
+      {
+        "id": "b",
+        "text": "Leave the change undocumented because the service recovered"
+      },
+      {
+        "id": "c",
+        "text": "Delete the CloudTrail records to keep the timeline simple"
+      },
+      {
+        "id": "d",
+        "text": "Repeat the manual change in every environment without review"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Manual emergency changes should be documented and later reconciled into controlled automation or IaC. This is the correct answer.",
+      "b": "Undocumented changes create drift and weaken post-incident learning.",
+      "c": "Audit records should be preserved, not removed.",
+      "d": "Emergency action should be reviewed before broad replication."
+    }
+  },
+  {
+    "id": 472,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Capturing incident timelines and remediation evidence",
+    "keyword": "incident timeline evidence",
+    "difficulty": "medium",
+    "text": "An incident timeline has conflicting timestamps from different tools. What should the team standardize?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Random local time formats for each responder"
+      },
+      {
+        "id": "b",
+        "text": "Time source, timezone, and timestamp format in incident records"
+      },
+      {
+        "id": "c",
+        "text": "No timestamps to avoid disagreement"
+      },
+      {
+        "id": "d",
+        "text": "Only relative terms such as earlier and later"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Uncoordinated time formats make timelines harder to interpret.",
+      "b": "Consistent timestamp handling prevents confusion when reconstructing sequence across systems. This is the correct answer.",
+      "c": "Removing timestamps makes root-cause analysis much weaker.",
+      "d": "Relative terms are less precise than standardized timestamps."
+    }
+  },
+  {
+    "id": 473,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Capturing incident timelines and remediation evidence",
+    "keyword": "incident timeline evidence",
+    "difficulty": "medium-hard",
+    "text": "A remediation automation should prove that service health recovered. What should it capture after the action?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only that the automation started"
+      },
+      {
+        "id": "b",
+        "text": "Only the original alarm state with no recheck"
+      },
+      {
+        "id": "c",
+        "text": "Validation metrics or checks showing the affected service returned to an acceptable state"
+      },
+      {
+        "id": "d",
+        "text": "Only the source repository URL"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Start status does not prove successful remediation.",
+      "b": "The original alarm does not show recovery after action.",
+      "c": "Evidence of post-action health confirms whether remediation resolved the incident. This is the correct answer.",
+      "d": "Repository location does not validate service recovery."
+    }
+  },
+  {
+    "id": 474,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Capturing incident timelines and remediation evidence",
+    "keyword": "incident timeline evidence",
+    "difficulty": "hard",
+    "text": "A team needs incident records to support compliance review. What should be included?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only an informal chat reaction emoji"
+      },
+      {
+        "id": "b",
+        "text": "Only screenshots with no linked events or actions"
+      },
+      {
+        "id": "c",
+        "text": "Only the name of the AWS account"
+      },
+      {
+        "id": "d",
+        "text": "Severity, impact, timeline, responders, evidence, corrective actions, and approvals for risky steps"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Informal reactions are not sufficient evidence of response and approval.",
+      "b": "Screenshots alone are incomplete and difficult to audit.",
+      "c": "Account name alone does not describe impact, timeline, or response.",
+      "d": "Compliance-oriented incident records need enough context to show what happened, who acted, and how controls were followed. This is the correct answer."
+    }
+  },
+  {
+    "id": 475,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Updating runbooks and controls after incidents",
+    "keyword": "runbook and control improvement",
+    "difficulty": "easy",
+    "text": "A post-incident review finds the runbook told responders to check the wrong log group. What should be done?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Update the runbook and validate it in a game day or test execution"
+      },
+      {
+        "id": "b",
+        "text": "Leave the runbook unchanged and rely on memory"
+      },
+      {
+        "id": "c",
+        "text": "Delete the runbook because it had one error"
+      },
+      {
+        "id": "d",
+        "text": "Move the correct log group name into a private note only"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Runbook corrections should be tested so responders can trust the procedure during the next incident. This is the correct answer.",
+      "b": "Memory-based fixes do not help future responders.",
+      "c": "A flawed runbook should be improved rather than discarded automatically.",
+      "d": "Private notes do not update the shared operational procedure."
+    }
+  },
+  {
+    "id": 476,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Updating runbooks and controls after incidents",
+    "keyword": "runbook and control improvement",
+    "difficulty": "medium",
+    "text": "An incident occurred because a deployment alarm watched the old target group only. What control should be improved?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Remove deployment alarms after every release"
+      },
+      {
+        "id": "b",
+        "text": "Deployment monitoring should automatically track the active target group or new version"
+      },
+      {
+        "id": "c",
+        "text": "Make target group names secret"
+      },
+      {
+        "id": "d",
+        "text": "Use only manual user complaints for release health"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Removing alarms reduces safety for future releases.",
+      "b": "Release alarms must follow the traffic target so health signals cover the code receiving users. This is the correct answer.",
+      "c": "Secret names do not ensure alarms watch the right resource.",
+      "d": "User complaints are delayed and incomplete monitoring signals."
+    }
+  },
+  {
+    "id": 477,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Updating runbooks and controls after incidents",
+    "keyword": "runbook and control improvement",
+    "difficulty": "medium-hard",
+    "text": "A recurring incident is caused by missing database connection limits in Lambda functions. What should the corrective action include?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Ask developers to remember the issue during future incidents"
+      },
+      {
+        "id": "b",
+        "text": "Increase alert volume without fixing the connection pattern"
+      },
+      {
+        "id": "c",
+        "text": "Add concurrency controls, connection management, and tests or alarms for connection saturation"
+      },
+      {
+        "id": "d",
+        "text": "Delete the database metrics to reduce noise"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "A reminder is weaker than enforceable controls and tests.",
+      "b": "More alerts do not remove the failure mechanism.",
+      "c": "Corrective actions should prevent recurrence through configuration, validation, and monitoring. This is the correct answer.",
+      "d": "Removing metrics makes future detection harder."
+    }
+  },
+  {
+    "id": 478,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Updating runbooks and controls after incidents",
+    "keyword": "runbook and control improvement",
+    "difficulty": "hard",
+    "text": "A team updates a runbook after an incident. How should the change be governed?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Edit the only copy during a call with no history"
+      },
+      {
+        "id": "b",
+        "text": "Store the new version only in one person's downloads folder"
+      },
+      {
+        "id": "c",
+        "text": "Avoid review because runbooks are not software"
+      },
+      {
+        "id": "d",
+        "text": "Version-control the runbook and review changes through the same operational change process"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Untracked edits can introduce new errors and provide no audit trail.",
+      "b": "Personal storage is not a durable shared source of truth.",
+      "c": "Runbooks directly affect production response and deserve review.",
+      "d": "Runbooks are operational code and should have traceability, review, and rollback for changes. This is the correct answer."
+    }
+  },
+  {
+    "id": 479,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Updating runbooks and controls after incidents",
+    "keyword": "runbook and control improvement",
+    "difficulty": "easy",
+    "text": "A post-incident action item adds a new alarm. What should be validated before closing the item?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The alarm is deployed, actionable, routed correctly, and tested with expected sample conditions"
+      },
+      {
+        "id": "b",
+        "text": "The alarm name was mentioned in a meeting"
+      },
+      {
+        "id": "c",
+        "text": "The dashboard has extra whitespace"
+      },
+      {
+        "id": "d",
+        "text": "The owning team promised to check manually"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "An alarm improvement is complete only when it detects the intended condition and reaches the correct responders. This is the correct answer.",
+      "b": "Mentioning a name does not deploy or test the alarm.",
+      "c": "Dashboard layout polish does not prove alarm actionability.",
+      "d": "Manual checking does not validate automated alerting."
+    }
+  },
+  {
+    "id": 480,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.2 Skill: Updating runbooks and controls after incidents",
+    "keyword": "runbook and control improvement",
+    "difficulty": "medium",
+    "text": "A post-incident review identifies an IAM policy that allowed a risky manual fix. What control improvement is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Grant broader access to everyone to make future fixes faster"
+      },
+      {
+        "id": "b",
+        "text": "Constrain permissions and create a safer approved remediation path"
+      },
+      {
+        "id": "c",
+        "text": "Remove all remediation ability from responders"
+      },
+      {
+        "id": "d",
+        "text": "Hide the policy from audit reports"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Broader access increases the chance of accidental or unauthorized changes.",
+      "b": "Reducing broad permissions while providing controlled automation prevents unsafe emergency changes. This is the correct answer.",
+      "c": "Responders still need a safe path to restore service.",
+      "d": "Hiding the policy prevents governance rather than improving it."
+    }
+  },
+  {
+    "id": 481,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Knowledge: Event-driven operational controls for deployments and infrastructure changes",
+    "keyword": "change event response controls",
+    "difficulty": "medium-hard",
+    "text": "A production pipeline fails during deployment and leaves a service partially updated. What event-driven control should detect this quickly?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A monthly report of all repositories"
+      },
+      {
+        "id": "b",
+        "text": "A manual chat message after users complain"
+      },
+      {
+        "id": "c",
+        "text": "Deployment state-change events routed to alarms or incident workflows"
+      },
+      {
+        "id": "d",
+        "text": "An S3 lifecycle transition on old artifacts"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Monthly reporting is too slow for a failed production deployment.",
+      "b": "User complaints should not be the primary detection path.",
+      "c": "Deployment events provide timely signals that a release failed and needs response. This is the correct answer.",
+      "d": "Artifact lifecycle does not detect partial deployment failure."
+    }
+  },
+  {
+    "id": 482,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Knowledge: Event-driven operational controls for deployments and infrastructure changes",
+    "keyword": "change event response controls",
+    "difficulty": "hard",
+    "text": "A CloudFormation stack enters UPDATE_ROLLBACK_FAILED. What response control is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Ignore the state because rollback failed only after deployment ended"
+      },
+      {
+        "id": "b",
+        "text": "Delete the stack immediately without reviewing failed resources"
+      },
+      {
+        "id": "c",
+        "text": "Route the event only to a marketing mailing list"
+      },
+      {
+        "id": "d",
+        "text": "EventBridge detection with notification to infrastructure owners and a stack recovery runbook"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "UPDATE_ROLLBACK_FAILED can block future stack updates and requires action.",
+      "b": "Immediate deletion can cause data loss and remove diagnostic context.",
+      "c": "Infrastructure failure events should go to technical owners.",
+      "d": "Stack failure states need targeted infrastructure ownership and recovery steps, not generic application alerts only. This is the correct answer."
+    }
+  },
+  {
+    "id": 483,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Knowledge: Event-driven operational controls for deployments and infrastructure changes",
+    "keyword": "change event response controls",
+    "difficulty": "easy",
+    "text": "A change to an Auto Scaling launch template causes new instances to fail bootstrap. What operational control should limit impact?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Progressive rollout with health checks and rollback to the previous launch template version"
+      },
+      {
+        "id": "b",
+        "text": "Replace every instance immediately before checking health"
+      },
+      {
+        "id": "c",
+        "text": "Disable user data logs during rollout"
+      },
+      {
+        "id": "d",
+        "text": "Delete previous launch template versions"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Progressive validation and rollback prevent a bad infrastructure change from replacing the entire fleet. This is the correct answer.",
+      "b": "Full replacement before validation can cause widespread outage.",
+      "c": "Logs are needed to diagnose bootstrap failures.",
+      "d": "Removing previous versions reduces rollback options."
+    }
+  },
+  {
+    "id": 484,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Knowledge: Event-driven operational controls for deployments and infrastructure changes",
+    "keyword": "change event response controls",
+    "difficulty": "medium",
+    "text": "A database parameter group change requires a reboot and might affect production. What control should manage the event?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Apply immediately with no stakeholder notification"
+      },
+      {
+        "id": "b",
+        "text": "Change window, approval, pre-checks, monitoring, and rollback plan"
+      },
+      {
+        "id": "c",
+        "text": "Hide the change from monitoring to avoid false alarms"
+      },
+      {
+        "id": "d",
+        "text": "Store the plan only in the parameter group description"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Unannounced disruptive changes can cause avoidable production impact.",
+      "b": "Risky infrastructure changes should be coordinated with readiness checks and recovery steps. This is the correct answer.",
+      "c": "Monitoring is needed to detect real impact from the change.",
+      "d": "Descriptions are not sufficient change coordination or rollback control."
+    }
+  },
+  {
+    "id": 485,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Knowledge: Event-driven operational controls for deployments and infrastructure changes",
+    "keyword": "change event response controls",
+    "difficulty": "medium-hard",
+    "text": "A service deployment succeeds technically but triggers a business KPI drop. What response control helps catch this?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only checking that the artifact uploaded"
+      },
+      {
+        "id": "b",
+        "text": "Only counting the number of instances"
+      },
+      {
+        "id": "c",
+        "text": "Post-deployment business and service health checks tied to release monitoring"
+      },
+      {
+        "id": "d",
+        "text": "Only checking that source code compiled"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Artifact upload success does not prove user outcomes remained healthy.",
+      "b": "Instance count does not show business KPI impact.",
+      "c": "Release controls should include signals that reflect user and business impact, not only deployment API success. This is the correct answer.",
+      "d": "Compile success does not validate production business behavior."
+    }
+  },
+  {
+    "id": 486,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Knowledge: Event-driven operational controls for deployments and infrastructure changes",
+    "keyword": "change event response controls",
+    "difficulty": "hard",
+    "text": "A pipeline change modifies security group rules. What event response should be in place?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Ignore network changes when made by a pipeline"
+      },
+      {
+        "id": "b",
+        "text": "Send every security group event only to the billing team"
+      },
+      {
+        "id": "c",
+        "text": "Disable audit logs during network deployments"
+      },
+      {
+        "id": "d",
+        "text": "Detect and review network-control changes through CloudTrail or Config events"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Automated changes can still be misconfigured and require controls.",
+      "b": "Billing owners are not usually responsible for network exposure response.",
+      "c": "Audit logs are especially important during infrastructure changes.",
+      "d": "Security group changes can alter exposure and should be monitored or remediated according to policy. This is the correct answer."
+    }
+  },
+  {
+    "id": 487,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Responding to failed deployments and infrastructure events",
+    "keyword": "deployment incident response",
+    "difficulty": "easy",
+    "text": "A CodeDeploy deployment fails on the BeforeInstall hook across half the fleet. What should responders inspect first?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "CodeDeploy events and agent logs on affected instances"
+      },
+      {
+        "id": "b",
+        "text": "Only monthly cost allocation tags"
+      },
+      {
+        "id": "c",
+        "text": "Only the public DNS registration date"
+      },
+      {
+        "id": "d",
+        "text": "Only ECR image scan findings for an unrelated service"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Deployment events and agent logs identify hook failures, scripts, and instance-specific errors. This is the correct answer.",
+      "b": "Cost tags do not diagnose lifecycle hook failures.",
+      "c": "Domain registration does not explain CodeDeploy hook execution.",
+      "d": "Unrelated image findings do not explain EC2 hook failures."
+    }
+  },
+  {
+    "id": 488,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Responding to failed deployments and infrastructure events",
+    "keyword": "deployment incident response",
+    "difficulty": "medium",
+    "text": "A CloudFormation stack update fails because a resource limit was exceeded. What should the incident response include?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Retry continuously without checking rollback state"
+      },
+      {
+        "id": "b",
+        "text": "Review stack events, quota usage, and rollback status before retrying"
+      },
+      {
+        "id": "c",
+        "text": "Delete unrelated resources randomly"
+      },
+      {
+        "id": "d",
+        "text": "Change the stack name only"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Blind retries can worsen stack state and increase noise.",
+      "b": "Quota-related failures require understanding the failed resource, account limits, and whether rollback completed safely. This is the correct answer.",
+      "c": "Random deletion can cause additional outages.",
+      "d": "Renaming does not address the quota or rollback state."
+    }
+  },
+  {
+    "id": 489,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Responding to failed deployments and infrastructure events",
+    "keyword": "deployment incident response",
+    "difficulty": "medium-hard",
+    "text": "An ECS deployment rolls back because new tasks fail health checks. What evidence should be collected?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only the list of IAM users"
+      },
+      {
+        "id": "b",
+        "text": "Only the source repository description"
+      },
+      {
+        "id": "c",
+        "text": "Task logs, stopped task reasons, target group health descriptions, and deployment events"
+      },
+      {
+        "id": "d",
+        "text": "Only S3 lifecycle transition history"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "IAM user list usually does not explain task health check failures.",
+      "b": "Repository descriptions do not show runtime task failure details.",
+      "c": "These sources show container startup errors, scheduler decisions, load balancer health failures, and release state. This is the correct answer.",
+      "d": "Object lifecycle history does not diagnose ECS task health."
+    }
+  },
+  {
+    "id": 490,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Responding to failed deployments and infrastructure events",
+    "keyword": "deployment incident response",
+    "difficulty": "hard",
+    "text": "A pipeline is blocked by a failed manual approval that expired. What should the DevOps engineer do?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Bypass the pipeline and deploy from a laptop"
+      },
+      {
+        "id": "b",
+        "text": "Share production credentials in chat for speed"
+      },
+      {
+        "id": "c",
+        "text": "Delete the approval stage permanently"
+      },
+      {
+        "id": "d",
+        "text": "Confirm release intent, restart or supersede the approval through the controlled pipeline process"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Bypassing the pipeline removes approval evidence and repeatability.",
+      "b": "Credential sharing creates security risk and weakens auditability.",
+      "c": "Removing approvals can violate release governance instead of resolving one expired approval.",
+      "d": "Expired approvals should be handled through the pipeline's governance path to preserve release control. This is the correct answer."
+    }
+  },
+  {
+    "id": 491,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Responding to failed deployments and infrastructure events",
+    "keyword": "deployment incident response",
+    "difficulty": "easy",
+    "text": "A Lambda deployment fails because the package exceeds the supported size. What response should be taken?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Adjust packaging, dependencies, layers, or artifact storage pattern and redeploy through the pipeline"
+      },
+      {
+        "id": "b",
+        "text": "Increase function timeout to bypass package limits"
+      },
+      {
+        "id": "c",
+        "text": "Ignore the failure and shift traffic to the new version"
+      },
+      {
+        "id": "d",
+        "text": "Store dependencies in CloudWatch alarm descriptions"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Package-size failures require changing the deployable artifact or dependency layout rather than forcing the deployment. This is the correct answer.",
+      "b": "Timeout affects execution duration, not deployment package size.",
+      "c": "A failed deployment has no valid new version to receive traffic.",
+      "d": "Alarm descriptions are not a runtime dependency packaging mechanism."
+    }
+  },
+  {
+    "id": 492,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Responding to failed deployments and infrastructure events",
+    "keyword": "deployment incident response",
+    "difficulty": "medium",
+    "text": "A deployment incident is resolved by rolling back. What should happen before closing the incident?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Delete the failed artifact and all logs immediately"
+      },
+      {
+        "id": "b",
+        "text": "Verify service health, preserve evidence, and create follow-up actions for the failed release"
+      },
+      {
+        "id": "c",
+        "text": "Close the incident without checking user-facing metrics"
+      },
+      {
+        "id": "d",
+        "text": "Promote the same failed version again without changes"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Removing evidence prevents root-cause analysis.",
+      "b": "Rollback restores service, but closure requires validation, documentation, and prevention work. This is the correct answer.",
+      "c": "Service recovery must be verified with relevant health signals.",
+      "d": "Re-promoting the failed version can recreate the incident."
+    }
+  },
+  {
+    "id": 493,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Automating safe rollback and containment actions",
+    "keyword": "automated rollback and containment",
+    "difficulty": "medium-hard",
+    "text": "A canary deployment causes elevated errors during the first 10% traffic shift. What should automated rollback do?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Increase traffic to 100% to gather more data"
+      },
+      {
+        "id": "b",
+        "text": "Delete the previous version before analysis"
+      },
+      {
+        "id": "c",
+        "text": "Stop the rollout and shift traffic back to the previous healthy version"
+      },
+      {
+        "id": "d",
+        "text": "Disable alarms until the deployment finishes"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Expanding traffic during elevated errors increases customer impact.",
+      "b": "Deleting the previous version removes the rollback target.",
+      "c": "Canary rollback limits impact by returning traffic to the known-good version when health signals fail. This is the correct answer.",
+      "d": "Disabling alarms defeats canary safety controls."
+    }
+  },
+  {
+    "id": 494,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Automating safe rollback and containment actions",
+    "keyword": "automated rollback and containment",
+    "difficulty": "hard",
+    "text": "A suspected compromised instance must be contained without destroying evidence. What containment action is safest?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Terminate immediately with no snapshot"
+      },
+      {
+        "id": "b",
+        "text": "Open all inbound ports for investigators"
+      },
+      {
+        "id": "c",
+        "text": "Delete audit logs to prevent attacker access"
+      },
+      {
+        "id": "d",
+        "text": "Move it to an isolation security group and snapshot volumes for analysis"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Termination can destroy volatile and disk evidence needed for investigation.",
+      "b": "Opening ports increases exposure during a suspected compromise.",
+      "c": "Audit logs should be preserved and protected.",
+      "d": "Isolation reduces network risk while preserving disk evidence for investigation. This is the correct answer."
+    }
+  },
+  {
+    "id": 495,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Automating safe rollback and containment actions",
+    "keyword": "automated rollback and containment",
+    "difficulty": "easy",
+    "text": "A CloudFormation change introduces an invalid network route and breaks a service. What automated response can help?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Rollback the stack to the previous known-good template and validate connectivity"
+      },
+      {
+        "id": "b",
+        "text": "Manually edit random routes without recording changes"
+      },
+      {
+        "id": "c",
+        "text": "Keep applying the failed template until it succeeds"
+      },
+      {
+        "id": "d",
+        "text": "Delete the VPC to remove the bad route"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Stack rollback restores the prior infrastructure definition, and validation confirms service recovery. This is the correct answer.",
+      "b": "Unrecorded manual edits create drift and complicate root cause.",
+      "c": "Repeatedly applying an invalid route can prolong the outage.",
+      "d": "Deleting the VPC is destructive and unnecessary for route rollback."
+    }
+  },
+  {
+    "id": 496,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Automating safe rollback and containment actions",
+    "keyword": "automated rollback and containment",
+    "difficulty": "medium",
+    "text": "A queue consumer release creates poison messages. How should containment protect the rest of the system?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Purge the queue immediately without evidence"
+      },
+      {
+        "id": "b",
+        "text": "Pause or roll back the consumer and route failed messages to a DLQ for inspection"
+      },
+      {
+        "id": "c",
+        "text": "Increase consumer concurrency dramatically"
+      },
+      {
+        "id": "d",
+        "text": "Disable the DLQ to keep the main queue clean"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Purging can lose valid business events and remove diagnostic data.",
+      "b": "Stopping the bad processor and isolating failed messages prevents further damage while preserving payloads. This is the correct answer.",
+      "c": "More consumers can amplify the bad processing behavior.",
+      "d": "Removing the DLQ reduces failure isolation."
+    }
+  },
+  {
+    "id": 497,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Automating safe rollback and containment actions",
+    "keyword": "automated rollback and containment",
+    "difficulty": "medium-hard",
+    "text": "A bad feature flag rollout affects only 20% of users. What automated response is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Rebuild every AMI before changing the flag"
+      },
+      {
+        "id": "b",
+        "text": "Expand the rollout to all users for consistency"
+      },
+      {
+        "id": "c",
+        "text": "Roll back or disable the feature flag through the configuration deployment system"
+      },
+      {
+        "id": "d",
+        "text": "Delete all configuration history"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "A feature flag incident can often be contained faster through configuration rollback.",
+      "b": "Expanding a bad flag increases impact.",
+      "c": "Feature-flag rollback can contain the incident quickly without rebuilding application artifacts. This is the correct answer.",
+      "d": "History is needed to understand and audit the rollback."
+    }
+  },
+  {
+    "id": 498,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "5.0",
+    "name": "Incident and Event Response",
+    "objective": "Task 5.3 Skill: Automating safe rollback and containment actions",
+    "keyword": "automated rollback and containment",
+    "difficulty": "hard",
+    "text": "A rollback automation should not proceed if the previous version is also unhealthy. What safety check is required?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Always roll back blindly regardless of target state"
+      },
+      {
+        "id": "b",
+        "text": "Use the oldest artifact in the repository by default"
+      },
+      {
+        "id": "c",
+        "text": "Choose rollback targets based on file name length"
+      },
+      {
+        "id": "d",
+        "text": "Pre-rollback validation of rollback target health and availability"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Blind rollback can move users to another broken version.",
+      "b": "The oldest artifact may be incompatible or insecure.",
+      "c": "File name length does not indicate health or compatibility.",
+      "d": "Rollback should move traffic only to a version or environment that is known to be healthy enough to serve. This is the correct answer."
+    }
+  }
+
+]}

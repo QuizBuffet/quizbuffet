@@ -45,7 +45,9 @@
       "Bash(node scripts/build-seo.mjs)",
       "Bash(node /Users/gradikayamba/quizbuffet/scripts/build-seo.mjs)",
       "Bash(node /Users/gradikayamba/quizbuffet/scripts/check-weights.mjs)",
-      "Bash(node /Users/gradikayamba/quizbuffet/scripts/check-salaries.mjs)"
+      "Bash(node /Users/gradikayamba/quizbuffet/scripts/check-salaries.mjs)",
+      "Bash(node scripts/check-weights.mjs)",
+      "Bash(node -e \"const d=require\\('./data/counts.json'\\); console.log\\('total:', d.total\\); console.log\\('DOP-C02:', d.perCert['aws-devops-engineer-professional']\\);\")"
     ]
   }
 }

@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AWS Certified DevOps Engineer – Professional (DOP-C02) Free Practice Test | QuizBuffet</title>
-  <meta name="description" content="Free AWS Certified DevOps Engineer – Professional (DOP-C02) practice test — 0+ exam questions across 6 domains with instant feedback. Provision, operate, and manage distributed systems on AWS at scale">
+  <meta name="description" content="Free AWS Certified DevOps Engineer – Professional (DOP-C02) practice test — 600+ exam questions across 6 domains with instant feedback. Provision, operate, and manage distributed systems on AWS at scale">
   <link rel="canonical" href="https://quizbuffet.com/aws-devops-engineer-professional/">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
   <meta property="og:title"       content="AWS Certified DevOps Engineer – Professional (DOP-C02) Free Practice Test | QuizBuffet">
-  <meta property="og:description" content="Free AWS Certified DevOps Engineer – Professional (DOP-C02) practice test — 0+ exam questions across 6 domains with instant feedback. Provision, operate, and manage distributed systems on AWS at scale">
+  <meta property="og:description" content="Free AWS Certified DevOps Engineer – Professional (DOP-C02) practice test — 600+ exam questions across 6 domains with instant feedback. Provision, operate, and manage distributed systems on AWS at scale">
   <meta property="og:image"       content="https://quizbuffet.com/icons/og/aws-devops-engineer-professional.svg">
   <meta property="og:url"         content="https://quizbuffet.com/aws-devops-engineer-professional/">
 
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="AWS Certified DevOps Engineer – Professional (DOP-C02) Free Practice Test | QuizBuffet">
-  <meta name="twitter:description" content="Free AWS Certified DevOps Engineer – Professional (DOP-C02) practice test — 0+ exam questions across 6 domains with instant feedback. Provision, operate, and manage distributed systems on AWS at scale">
+  <meta name="twitter:description" content="Free AWS Certified DevOps Engineer – Professional (DOP-C02) practice test — 600+ exam questions across 6 domains with instant feedback. Provision, operate, and manage distributed systems on AWS at scale">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/aws-devops-engineer-professional.svg">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -96,7 +96,7 @@
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
-        "courseWorkload": "PT1H"
+        "courseWorkload": "PT10H"
       },
       "about": [
         {
@@ -135,6 +135,107 @@
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "A DevOps team is redesigning a release process for a regulated application. The team wants every change to move from commit, to build, to automated validation, to approval, and then to deployment with clear evidence. Which pipeline design best matches the SDLC objective?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A staged CI/CD pipeline with source, build, test, approval, and deploy actions"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A company is moving from waterfall-style releases to DevOps practices. What pipeline behavior best reflects the desired SDLC change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Automate build, test, and deployment feedback loops around version-controlled changes"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A platform team wants every application stack to define resources, dependencies, parameters, and exported values in a repeatable way. Which CloudFormation design should be used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A version-controlled template with Resources, Parameters, Outputs, and explicit dependencies where needed"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A CloudFormation template must expose a database endpoint to a dependent application stack. What template section supports this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Outputs with an export or a consumed stack output pattern"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A production web application runs in one Availability Zone behind an Application Load Balancer. The business requires the service to remain available during an Availability Zone impairment. What should the DevOps engineer implement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deploy the application across multiple Availability Zones with the load balancer enabled in each zone"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A company wants the lowest downtime regional failover and is willing to operate full capacity in two Regions. Which pattern fits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multi-Region active-active architecture"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A microservices checkout request passes through API Gateway, Lambda, SQS, and a payment service. The team needs to understand where latency is introduced for one request. Which observability signal is most useful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Distributed trace with correlated logs"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A workload emits detailed debug logs for every request and costs are rising sharply. What should the DevOps engineer adjust?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Log levels, sampling, and retention based on operational value"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A production account emits a GuardDuty finding for credential exfiltration. The security team wants the event to start an incident workflow without polling. Which event-driven design should be used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use an EventBridge rule that matches GuardDuty finding events and targets an incident workflow"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An operations team receives too many EventBridge notifications because a rule matches all AWS API calls. What should be adjusted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Narrow the event pattern to specific sources, detail types, resources, or event names"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A CI/CD pipeline needs to deploy CloudFormation stacks into a workload account. The current design stores a long-term IAM user's access key in the build project. What should replace this design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An IAM role assumed by the pipeline with scoped deployment permissions"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A third-party SaaS platform needs to read selected metrics from one AWS account. What is the preferred access model?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cross-account IAM role with an external ID and least-privilege permissions"
+          }
+        }
+      ]
     }
   ]
 }
@@ -147,17 +248,17 @@
     <section id="seo-static">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; AWS Certified DevOps Engineer – Professional</nav>
       <h1>AWS Certified DevOps Engineer – Professional (DOP-C02) Free Practice Test</h1>
-      <p><strong>0+ exam-style questions</strong> across 6 domains, organized exactly like the real DOP-C02 exam. Instant feedback on every question, progress tracking, and no account required.</p>
+      <p><strong>600+ exam-style questions</strong> across 6 domains, organized exactly like the real DOP-C02 exam. Instant feedback on every question, progress tracking, and no account required.</p>
       <p>AWS Certified DevOps Engineer – Professional (DOP-C02) validates the ability to provision, operate, and manage distributed systems on AWS. It covers SDLC automation with CI/CD (CodePipeline, CodeBuild, CodeDeploy), configuration management and IaC (CloudFormation, CDK, SAM, Systems Manager), resilient cloud solutions and DR, monitoring and logging with CloudWatch and X-Ray, incident and event response, and security and compliance automation at scale.</p>
       <p><em>75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000</em></p>
       <h2>Exam Domains</h2>
       <ul>
-          <li><a href="/aws-devops-engineer-professional/sdlc-automation/"><strong>1.0 SDLC Automation</strong> (22% of exam)</a></li>
-          <li><a href="/aws-devops-engineer-professional/configuration-management-and-iac/"><strong>2.0 Configuration Management and IaC</strong> (17% of exam)</a></li>
-          <li><a href="/aws-devops-engineer-professional/resilient-cloud-solutions/"><strong>3.0 Resilient Cloud Solutions</strong> (15% of exam)</a></li>
-          <li><a href="/aws-devops-engineer-professional/monitoring-and-logging/"><strong>4.0 Monitoring and Logging</strong> (15% of exam)</a></li>
-          <li><a href="/aws-devops-engineer-professional/incident-and-event-response/"><strong>5.0 Incident and Event Response</strong> (14% of exam)</a></li>
-          <li><a href="/aws-devops-engineer-professional/security-and-compliance/"><strong>6.0 Security and Compliance</strong> (17% of exam)</a></li>
+          <li><a href="/aws-devops-engineer-professional/sdlc-automation/"><strong>1.0 SDLC Automation</strong> — 132 questions (22% of exam)</a></li>
+          <li><a href="/aws-devops-engineer-professional/configuration-management-and-iac/"><strong>2.0 Configuration Management and IaC</strong> — 102 questions (17% of exam)</a></li>
+          <li><a href="/aws-devops-engineer-professional/resilient-cloud-solutions/"><strong>3.0 Resilient Cloud Solutions</strong> — 90 questions (15% of exam)</a></li>
+          <li><a href="/aws-devops-engineer-professional/monitoring-and-logging/"><strong>4.0 Monitoring and Logging</strong> — 90 questions (15% of exam)</a></li>
+          <li><a href="/aws-devops-engineer-professional/incident-and-event-response/"><strong>5.0 Incident and Event Response</strong> — 84 questions (14% of exam)</a></li>
+          <li><a href="/aws-devops-engineer-professional/security-and-compliance/"><strong>6.0 Security and Compliance</strong> — 102 questions (17% of exam)</a></li>
       </ul>
       <h2>Study Resources</h2>
       <ul>

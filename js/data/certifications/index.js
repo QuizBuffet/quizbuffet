@@ -23,6 +23,7 @@ import { cert as awsSolutionsArchitectProfessional } from './aws-solutions-archi
 import { cert as microsoftAz900 } from './microsoft-az-900.js';
 import { cert as microsoftAz104 } from './microsoft-az-104.js';
 import { cert as isc2Cissp } from './isc2-cissp.js';
+import { cert as itilFoundation } from './itil-foundation.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -50,4 +51,5 @@ export const certifications = [
   microsoftAz900,
   microsoftAz104,
   isc2Cissp,
+  itilFoundation,
 ];

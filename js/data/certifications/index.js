@@ -17,6 +17,9 @@ import { cert as awsCloudopsEngineerAssociate } from './aws-cloudops-engineer-as
 import { cert as awsDataEngineerAssociate } from './aws-data-engineer-associate.js';
 import { cert as awsDeveloperAssociate } from './aws-developer-associate.js';
 import { cert as awsDevopsEngineerProfessional } from './aws-devops-engineer-professional.js';
+import { cert as awsSecuritySpecialty } from './aws-security-specialty.js';
+import { cert as awsAdvancedNetworkingSpecialty } from './aws-advanced-networking-specialty.js';
+import { cert as awsSolutionsArchitectProfessional } from './aws-solutions-architect-professional.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -38,4 +41,7 @@ export const certifications = [
   awsDataEngineerAssociate,
   awsDeveloperAssociate,
   awsDevopsEngineerProfessional,
+  awsSecuritySpecialty,
+  awsAdvancedNetworkingSpecialty,
+  awsSolutionsArchitectProfessional,
 ];

@@ -22,6 +22,9 @@
 - [AWS Certified Data Engineer – Associate (DEA-C01)](https://quizbuffet.com/aws-data-engineer-associate/): Implement, monitor, and optimize data pipelines on AWS 500+ questions.
 - [AWS Certified Developer – Associate (DVA-C02)](https://quizbuffet.com/aws-developer-associate/): Develop, deploy, and debug cloud-based applications on AWS 500+ questions.
 - [AWS Certified DevOps Engineer – Professional (DOP-C02)](https://quizbuffet.com/aws-devops-engineer-professional/): Provision, operate, and manage distributed systems on AWS at scale 600+ questions.
+- [AWS Certified Security – Specialty (SCS-C03)](https://quizbuffet.com/aws-security-specialty/): Secure AWS workloads end-to-end: detection, identity, data protection, and governance 600+ questions.
+- [AWS Certified Advanced Networking – Specialty (ANS-C01)](https://quizbuffet.com/aws-advanced-networking-specialty/): Design, implement, manage, and secure AWS and hybrid networks at scale 480+ questions.
+- [AWS Certified Solutions Architect – Professional (SAP-C02)](https://quizbuffet.com/aws-solutions-architect-professional/): Design optimized AWS solutions across organizations using the Well-Architected Framework 600+ questions.
 
 ## Coming soon
 - [Microsoft Azure Fundamentals (AZ-900) (AZ-900)](https://quizbuffet.com/microsoft-az-900/) — coming soon (priority #1)

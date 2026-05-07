@@ -47,7 +47,10 @@
       "Bash(node /Users/gradikayamba/quizbuffet/scripts/check-weights.mjs)",
       "Bash(node /Users/gradikayamba/quizbuffet/scripts/check-salaries.mjs)",
       "Bash(node scripts/check-weights.mjs)",
-      "Bash(node -e \"const d=require\\('./data/counts.json'\\); console.log\\('total:', d.total\\); console.log\\('DOP-C02:', d.perCert['aws-devops-engineer-professional']\\);\")"
+      "Bash(node -e \"const d=require\\('./data/counts.json'\\); console.log\\('total:', d.total\\); console.log\\('DOP-C02:', d.perCert['aws-devops-engineer-professional']\\);\")",
+      "Bash(node -e \"const d=require\\('./data/coming-soon.json'\\); console.log\\(d.map\\(c=>c.slug\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./data/salaries.json'\\); const has=Object.entries\\(d.certifications||d\\).filter\\(\\([k,v]\\)=>v && v.salary && v.salary.mid\\).slice\\(0,3\\); console.log\\(has.map\\(\\([k,v]\\)=>k+': '+JSON.stringify\\(v\\).slice\\(0,200\\)\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(node -e \"console.log\\(require\\('./data/counts.json'\\).perCert['aws-security-specialty']\\)\")"
     ]
   }
 }

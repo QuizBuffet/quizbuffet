@@ -1073,24 +1073,23 @@ a:is(:hover, :active) { text-decoration: underline; }
 .cert-radar-dot { cursor: help; }
 .cert-radar-help { font-size: 14px; line-height: 1.55; color: var(--text-muted); max-width: 70ch; margin: 0 0 14px; padding: 10px 12px; background: var(--surface, rgba(0,0,0,0.03)); border-left: 3px solid var(--accent); border-radius: 4px; }
 
-/* CSS Grid (not multi-column) so every category in a row starts at the same Y.
-   Tradeoff: shorter categories leave dead space below them in a row, but every
-   visible column starts at the top — which is the desired alignment. */
+/* Multi-column flow so categories pack into columns without leaving empty
+   space below shorter ones. break-inside: avoid keeps each category whole. */
 .cert-categories {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-  align-items: start;
+  column-count: 1;
+  column-gap: 22px;
 }
 .cert-category {
   display: block;
-  margin: 0;
-  align-self: start;
+  margin: 0 0 18px;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
   min-width: 0;
 }
 
-@media (min-width: 720px)  { .cert-categories { grid-template-columns: 1fr 1fr;        gap: 18px 22px; } }
-@media (min-width: 1500px) { .cert-categories { grid-template-columns: repeat(3, 1fr); gap: 22px 24px; } }
+@media (min-width: 720px)  { .cert-categories { column-count: 2; column-gap: 22px; } }
+@media (min-width: 1500px) { .cert-categories { column-count: 3; column-gap: 24px; } }
 .cert-category-heading {
   display: flex;
   align-items: center;

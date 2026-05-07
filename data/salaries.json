@@ -256,6 +256,27 @@
     "lastUpdated": null,
     "notes": "Data engineer / analytics engineer (AWS-focused)"
   },
+  "aws-security-specialty": {
+    "collar": "white-collar",
+    "salary": null,
+    "sources": [],
+    "lastUpdated": null,
+    "notes": "Cloud security engineer / cloud security architect (AWS-focused)"
+  },
+  "aws-advanced-networking-specialty": {
+    "collar": "white-collar",
+    "salary": null,
+    "sources": [],
+    "lastUpdated": null,
+    "notes": "Cloud network engineer / network architect (AWS-focused)"
+  },
+  "aws-solutions-architect-professional": {
+    "collar": "white-collar",
+    "salary": null,
+    "sources": [],
+    "lastUpdated": null,
+    "notes": "Senior cloud / solutions architect (AWS-focused)"
+  },
   "comptia-data-plus": {
     "collar": "white-collar",
     "salary": {

@@ -629,6 +629,104 @@ A: Use an EventBridge rule that matches GuardDuty finding events and targets an 
 **Q: A CI/CD pipeline needs to deploy CloudFormation stacks into a workload account. The current design stores a long-term IAM user's access key in the build project. What should replace this design?**
 A: An IAM role assumed by the pipeline with scoped deployment permissions
 
+## AWS Certified Security – Specialty (SCS-C03)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-security-specialty/
+Total questions: 600
+
+AWS Certified Security – Specialty (SCS-C03) validates expertise securing cloud solutions on AWS. It covers detection (GuardDuty, Security Hub, Macie, Security Lake, CloudTrail, CloudWatch), incident response, infrastructure security across edge and compute (WAF, Shield, Network Firewall, Inspector), identity and access management at scale (IAM, IAM Identity Center, Cognito, Verified Permissions), data protection in transit and at rest (KMS, CloudHSM, ACM, Secrets Manager), and multi-account security governance (Organizations, Control Tower, Config, Audit Manager).
+
+### Domains
+- 1.0 Detection (16% of exam) — 96 questions
+- 2.0 Incident Response (14% of exam) — 84 questions
+- 3.0 Infrastructure Security (18% of exam) — 108 questions
+- 4.0 Identity and Access Management (20% of exam) — 120 questions
+- 5.0 Data Protection (18% of exam) — 108 questions
+- 6.0 Security Foundations and Governance (14% of exam) — 84 questions
+
+### Sample questions
+**Q: A payment API handles cardholder-adjacent metadata and is exposed through API Gateway and Lambda. The security team needs near-real-time detection of suspicious access patterns and failed authorization. Which monitoring requirement should be prioritized?**
+A: Capture API access logs, Lambda application errors, authentication outcomes, and security findings with alerting on abnormal patterns
+
+**Q: A GuardDuty finding indicates possible EC2 credential exfiltration. The security team wants a repeatable plan that analysts can execute consistently. What should the runbook define first?**
+A: Triage steps, severity criteria, affected-resource identification, containment actions, and evidence preservation
+
+**Q: A retail site expects credential stuffing against its login endpoint during a sale. Which edge strategy should the security architect select?**
+A: Use AWS WAF rate-based and bot-control protections at CloudFront with authentication failure monitoring
+
+**Q: A security team is replacing per-user IAM policies with a model that can scale across hundreds of engineers and workloads. What design should be used?**
+A: Define job-function roles and group assignments, then attach managed policies that represent approved permission sets
+
+**Q: A public ALB must reject clients that use obsolete TLS versions while preserving HTTPS for modern browsers. What should the security engineer configure?**
+A: An ELB security policy that permits only approved TLS versions and ciphers
+
+**Q: A company is moving from independent AWS accounts to a governed multi-account environment. What should be established first?**
+A: Create an AWS Organizations structure with OUs aligned to security, production, development, and sandbox governance needs
+
+## AWS Certified Advanced Networking – Specialty (ANS-C01)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-advanced-networking-specialty/
+Total questions: 480
+
+AWS Certified Advanced Networking – Specialty (ANS-C01) validates expertise designing and operating complex AWS networking solutions. It covers edge services and global traffic management (CloudFront, Global Accelerator, Route 53), hybrid connectivity with Direct Connect and Site-to-Site VPN, BGP routing, multi-VPC and multi-account designs (Transit Gateway, PrivateLink, VPC peering, RAM), DNS architectures including DNSSEC, network monitoring (VPC Flow Logs, Traffic Mirroring, Reachability Analyzer, Transit Gateway Network Manager), and network security with WAF, Shield, Network Firewall, and Firewall Manager.
+
+### Domains
+- 1.0 Network Design (30% of exam) — 180 questions
+- 2.0 Network Implementation (26% of exam) — 156 questions
+- 3.0 Network Management and Operation (20% of exam)
+- 4.0 Network Security, Compliance, and Governance (24% of exam) — 144 questions
+
+### Sample questions
+**Q: A company is designing global inbound content distribution design. The requirement is low latency, high availability, and clear operational ownership. Which design should the network specialist recommend?**
+A: CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements
+
+**Q: A hybrid and cloud networking team is choosing a pattern for global inbound content distribution design. The constraint is overly broad network reachability between unrelated environments. Which recommendation is most appropriate?**
+A: CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements
+
+**Q: A Direct Connect dedicated connection has been ordered and the colocation provider is ready to patch the circuit. What must be supplied to complete the physical handoff?**
+A: Provide the LOA-CFA and confirm the port location, cross-connect details, optics, and speed settings
+
+**Q: A replication workload will use jumbo frames over Direct Connect. What must be validated before production traffic is moved?**
+A: End-to-end MTU compatibility across routers, VIFs, AWS paths, and instances
+
+**Q: A public application behind an ALB receives HTTP floods and SQL injection attempts. Which control should be placed at the edge or load balancer path?**
+A: AWS WAF with managed rules, rate-based rules, and logging for the web ACL
+
+**Q: A public API needs throttling and request validation before traffic reaches private services. Which service combination is appropriate?**
+A: Amazon API Gateway with authorizers, throttling, AWS WAF, and private integration as needed
+
+## AWS Certified Solutions Architect – Professional (SAP-C02)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-solutions-architect-professional/
+Total questions: 600
+
+AWS Certified Solutions Architect – Professional (SAP-C02) validates expertise designing complex AWS solutions across multiple accounts and Regions. It covers organizational complexity (Organizations, Control Tower, multi-account governance, hybrid networking), designing new solutions for reliability, performance, security, and cost, continuously improving existing solutions, and accelerating workload migration and modernization (7Rs, AWS Migration Hub, DMS, Application Migration Service, modernization to serverless and containers).
+
+### Domains
+- 1.0 Design Solutions for Organizational Complexity (26% of exam) — 156 questions
+- 2.0 Design for New Solutions (29% of exam) — 174 questions
+- 3.0 Continuous Improvement for Existing Solutions (25% of exam) — 150 questions
+- 4.0 Accelerate Workload Migration and Modernization (20% of exam) — 120 questions
+
+### Sample questions
+**Q: A regulated financial services company has an existing AWS environment that must be redesigned for AWS Global Infrastructure. What should the solutions architect recommend?**
+A: Use multiple AWS Regions with Regional service endpoints, data replication, and Route 53 or Global Accelerator routing based on latency and recovery requirements
+
+**Q: A steering committee asks for a recommendation for AWS Global Infrastructure after a failed proof of concept exposed governance and operational risks. Which design should the solutions architect choose?**
+A: Model Regional dependencies, service availability, and data residency before committing to the target Regions
+
+**Q: A gaming studio is launching a latency-sensitive multiplayer backend. The proposed design creates risk around Infrastructure as code. Which change should be made before production approval?**
+A: Use AWS CodePipeline with staged deployments, automated tests, approvals, and rollback paths such as blue/green or canary release patterns
+
+**Q: A healthcare analytics provider is designing a new multi-Region service for regulated data. A design review identifies CI/CD deployment strategy as the unresolved architectural decision. Which option is the best recommendation?**
+A: Delegate specialized deployment complexity to AWS services such as AWS Proton, AWS Service Catalog, or managed container services when platform teams need standardized self-service
+
+**Q: A healthcare SaaS provider has passed initial launch and is remediating findings from a Well-Architected review. A post-incident review identifies alerting and automatic remediation strategies as the highest-value improvement area. Which recommendation is most appropriate?**
+A: Centralize application, infrastructure, and audit logs in CloudWatch Logs or Amazon S3 with retention, query, and ownership standards
+
+**Q: A public sector agency is improving a citizen-services application after a recent incident. A post-incident review identifies disaster recovery planning as the highest-value improvement area. Which recommendation is most appropriate?**
+A: Create CloudWatch alarms with EventBridge rules and Systems Manager Automation runbooks for well-understood failure modes
+
 
 ## Coming soon (in priority order)
 - Microsoft Azure Fundamentals (AZ-900) (AZ-900) — https://quizbuffet.com/microsoft-az-900/ — priority #1

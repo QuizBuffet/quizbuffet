@@ -93,7 +93,32 @@ function fillSalaries(rootEl) {
         <span class="cert-card-salary-mid">${mid} median</span>
         <span class="cert-card-salary-collar" title="${collar.label}">${collar.icon}</span>`;
     });
+    scheduleCollarShakes();
   });
+}
+
+// Pick a random visible collar icon every few seconds and shake it briefly.
+// Sparse: only one at a time, with random gaps between 1.8s and 5s.
+let shakeScheduled = false;
+function scheduleCollarShakes() {
+  if (shakeScheduled) return;
+  shakeScheduled = true;
+  const tick = () => {
+    if (document.hidden || !document.hasFocus()) {
+      setTimeout(tick, 4000);
+      return;
+    }
+    const icons = [...document.querySelectorAll('.cert-card-salary-collar, .salary-collar-icon')]
+      .filter(el => el.offsetParent !== null);
+    if (icons.length) {
+      const pick = icons[Math.floor(Math.random() * icons.length)];
+      pick.classList.add('shake');
+      pick.addEventListener('animationend', () => pick.classList.remove('shake'), { once: true });
+    }
+    const delay = 500 + Math.random() * 1300;
+    setTimeout(tick, delay);
+  };
+  setTimeout(tick, 400);
 }
 
 function renderCategorizedSection(label, dotClass, total, groups, cardFn) {

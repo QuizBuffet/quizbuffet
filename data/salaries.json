@@ -3,8 +3,8 @@
     "purpose": "Hand-curated salary and job-classification data per cert. Refresh annually.",
     "schema": {
       "collar": "white-collar | blue-collar | service | healthcare",
-      "salary": "object with currency, low (entry), mid (median), high (senior) \u2014 null if not yet curated",
-      "sources": "array of source names \u2014 Payscale, Glassdoor, BLS, Indeed, AWS Salary Survey, ITjobsWatch, etc.",
+      "salary": "object with currency, low (entry), mid (median), high (senior) — null if not yet curated",
+      "sources": "array of source names — Payscale, Glassdoor, BLS, Indeed, AWS Salary Survey, ITjobsWatch, etc.",
       "lastUpdated": "ISO date YYYY-MM-DD when the salary numbers were last verified",
       "notes": "optional: caveats, region scope, role type"
     },
@@ -237,44 +237,92 @@
   },
   "aws-devops-engineer-professional": {
     "collar": "white-collar",
-    "salary": null,
-    "sources": [],
-    "lastUpdated": null,
+    "salary": {
+      "currency": "USD",
+      "low": 135000,
+      "mid": 165000,
+      "high": 210000
+    },
+    "sources": [
+      "Glassdoor",
+      "AWS Salary Survey"
+    ],
+    "lastUpdated": "2026-05-06",
     "notes": "Senior DevOps engineer / SRE (AWS-focused)"
   },
   "aws-developer-associate": {
     "collar": "white-collar",
-    "salary": null,
-    "sources": [],
-    "lastUpdated": null,
+    "salary": {
+      "currency": "USD",
+      "low": 92000,
+      "mid": 130000,
+      "high": 172000
+    },
+    "sources": [
+      "Payscale",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-06",
     "notes": "Cloud / backend developer (AWS-focused)"
   },
   "aws-data-engineer-associate": {
     "collar": "white-collar",
-    "salary": null,
-    "sources": [],
-    "lastUpdated": null,
+    "salary": {
+      "currency": "USD",
+      "low": 105000,
+      "mid": 142000,
+      "high": 185000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Glassdoor"
+    ],
+    "lastUpdated": "2026-05-06",
     "notes": "Data engineer / analytics engineer (AWS-focused)"
   },
   "aws-security-specialty": {
     "collar": "white-collar",
-    "salary": null,
-    "sources": [],
-    "lastUpdated": null,
+    "salary": {
+      "currency": "USD",
+      "low": 128000,
+      "mid": 158000,
+      "high": 198000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "CBT Nuggets"
+    ],
+    "lastUpdated": "2026-05-06",
     "notes": "Cloud security engineer / cloud security architect (AWS-focused)"
   },
   "aws-advanced-networking-specialty": {
     "collar": "white-collar",
-    "salary": null,
-    "sources": [],
-    "lastUpdated": null,
+    "salary": {
+      "currency": "USD",
+      "low": 130000,
+      "mid": 168000,
+      "high": 215000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Glassdoor"
+    ],
+    "lastUpdated": "2026-05-06",
     "notes": "Cloud network engineer / network architect (AWS-focused)"
   },
   "aws-solutions-architect-professional": {
     "collar": "white-collar",
-    "salary": null,
-    "sources": [],
-    "lastUpdated": null,
+    "salary": {
+      "currency": "USD",
+      "low": 145000,
+      "mid": 175000,
+      "high": 235000
+    },
+    "sources": [
+      "Payscale",
+      "AWS Salary Survey"
+    ],
+    "lastUpdated": "2026-05-06",
     "notes": "Senior cloud / solutions architect (AWS-focused)"
   },
   "comptia-data-plus": {
@@ -665,7 +713,7 @@
       "ZipRecruiter"
     ],
     "lastUpdated": "2026-05-06",
-    "notes": "Electrician (apprentice \u2192 master tier)"
+    "notes": "Electrician (apprentice → master tier)"
   },
   "plumbing-license": {
     "collar": "blue-collar",
@@ -680,7 +728,7 @@
       "ZipRecruiter"
     ],
     "lastUpdated": "2026-05-06",
-    "notes": "Plumber (apprentice \u2192 master tier)"
+    "notes": "Plumber (apprentice → master tier)"
   },
   "ase-automotive": {
     "collar": "blue-collar",
@@ -710,7 +758,7 @@
       "ZipRecruiter"
     ],
     "lastUpdated": "2026-05-06",
-    "notes": "Production welder (American Welding Society \u2014 different from Amazon AWS)"
+    "notes": "Production welder (American Welding Society — different from Amazon AWS)"
   },
   "cosmetology-license": {
     "collar": "service",

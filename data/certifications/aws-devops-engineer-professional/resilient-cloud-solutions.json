@@ -1,0 +1,3244 @@
+{"slug":"resilient-cloud-solutions","name":"Resilient Cloud Solutions","cert":"aws-devops-engineer-professional","version":1,"questions":[
+    
+  {
+    "id": 235,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Multi-AZ and multi-Region architectures",
+    "keyword": "multi-AZ and multi-Region resilience",
+    "difficulty": "easy",
+    "text": "A production web application runs in one Availability Zone behind an Application Load Balancer. The business requires the service to remain available during an Availability Zone impairment. What should the DevOps engineer implement?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Deploy the application across multiple Availability Zones with the load balancer enabled in each zone"
+      },
+      {
+        "id": "b",
+        "text": "Increase the size of the single EC2 instance in the current Availability Zone"
+      },
+      {
+        "id": "c",
+        "text": "Create daily AMIs without changing the live placement"
+      },
+      {
+        "id": "d",
+        "text": "Put the existing instances behind a private hosted zone only"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Multi-AZ placement reduces dependency on a single zone, and the load balancer can route requests to healthy targets in remaining zones. This is the correct answer.",
+      "b": "A larger instance can add capacity but does not remove the single-zone failure domain.",
+      "c": "AMIs help recovery but do not keep the service available during an Availability Zone impairment.",
+      "d": "DNS naming alone does not provide alternate healthy compute capacity."
+    }
+  },
+  {
+    "id": 236,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Multi-AZ and multi-Region architectures",
+    "keyword": "multi-AZ and multi-Region resilience",
+    "difficulty": "medium",
+    "text": "A company wants regional disaster recovery for a customer-facing application. The current architecture is Multi-AZ in one Region. What gap remains?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The application cannot survive a single instance failure"
+      },
+      {
+        "id": "b",
+        "text": "A Regional outage could still affect the whole application"
+      },
+      {
+        "id": "c",
+        "text": "The application has no possible way to use load balancing"
+      },
+      {
+        "id": "d",
+        "text": "The application must remove all backups to become multi-Region"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Multi-AZ designs usually address individual instance failures when implemented with replacement and load balancing.",
+      "b": "Multi-AZ architecture improves resilience inside one Region, but regional disaster recovery requires a strategy for another Region. This is the correct answer.",
+      "c": "Load balancing can be used in a Multi-AZ architecture.",
+      "d": "Backups remain important in both single-Region and multi-Region resilience designs."
+    }
+  },
+  {
+    "id": 237,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Multi-AZ and multi-Region architectures",
+    "keyword": "multi-AZ and multi-Region resilience",
+    "difficulty": "medium-hard",
+    "text": "A workload uses Amazon RDS in Multi-AZ mode. What resilience behavior should the DevOps engineer expect?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Read scaling from the standby in every engine mode"
+      },
+      {
+        "id": "b",
+        "text": "Zero data loss across all possible disasters"
+      },
+      {
+        "id": "c",
+        "text": "Automatic failover to a standby or alternate database instance when supported conditions occur"
+      },
+      {
+        "id": "d",
+        "text": "Automatic active-active writes in every AWS Region"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Multi-AZ standby capacity is primarily for failover unless the selected RDS architecture explicitly supports readable instances.",
+      "b": "Multi-AZ improves availability but does not eliminate every failure or logical data-loss scenario.",
+      "c": "RDS Multi-AZ deployments are designed to improve database availability through managed failover within a Region. This is the correct answer.",
+      "d": "Standard RDS Multi-AZ is not a global active-active write architecture."
+    }
+  },
+  {
+    "id": 238,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Multi-AZ and multi-Region architectures",
+    "keyword": "multi-AZ and multi-Region resilience",
+    "difficulty": "hard",
+    "text": "An application stores user uploads on an EC2 instance's local volume while compute runs across two Availability Zones. What resilience issue remains?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The load balancer cannot route HTTP requests"
+      },
+      {
+        "id": "b",
+        "text": "Security groups automatically copy local files"
+      },
+      {
+        "id": "c",
+        "text": "Multi-AZ compute always converts local volumes into shared storage"
+      },
+      {
+        "id": "d",
+        "text": "Uploaded files are still tied to one instance or zone-local storage path"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "The described storage issue does not prevent a load balancer from routing HTTP requests.",
+      "b": "Security groups control traffic and do not replicate files.",
+      "c": "Availability Zone distribution does not change the behavior of local instance storage.",
+      "d": "Multi-AZ compute does not make instance-local data durable or shared across replacement instances. This is the correct answer."
+    }
+  },
+  {
+    "id": 239,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Multi-AZ and multi-Region architectures",
+    "keyword": "multi-AZ and multi-Region resilience",
+    "difficulty": "easy",
+    "text": "A company wants the lowest downtime regional failover and is willing to operate full capacity in two Regions. Which pattern fits?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Multi-Region active-active architecture"
+      },
+      {
+        "id": "b",
+        "text": "Backup and restore only"
+      },
+      {
+        "id": "c",
+        "text": "Single-AZ vertical scaling"
+      },
+      {
+        "id": "d",
+        "text": "Manual rebuild from source repositories after failure"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Active-active operation keeps multiple Regions ready to serve live traffic, reducing failover time at the cost of complexity. This is the correct answer.",
+      "b": "Backup and restore has lower cost but normally has longer recovery time.",
+      "c": "Vertical scaling in one zone does not provide regional failover.",
+      "d": "Manual rebuilds usually cannot meet the lowest downtime requirement."
+    }
+  },
+  {
+    "id": 240,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Multi-AZ and multi-Region architectures",
+    "keyword": "multi-AZ and multi-Region resilience",
+    "difficulty": "medium",
+    "text": "A pilot light DR design is proposed. What should remain running or ready in the recovery Region?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Full production capacity serving all traffic continuously"
+      },
+      {
+        "id": "b",
+        "text": "Core infrastructure and replicated data needed to scale the application during recovery"
+      },
+      {
+        "id": "c",
+        "text": "Only a document describing how to rebuild everything"
+      },
+      {
+        "id": "d",
+        "text": "No replicated data until after a disaster starts"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Full active capacity in both Regions describes active-active or hot standby rather than pilot light.",
+      "b": "Pilot light keeps essential components available while most compute capacity can be scaled out when a disaster is declared. This is the correct answer.",
+      "c": "Documentation alone does not keep core recovery components ready.",
+      "d": "Waiting to replicate data after the disaster increases recovery time and data-loss risk."
+    }
+  },
+  {
+    "id": 241,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Scalability and elasticity concepts",
+    "keyword": "scalability and elasticity design",
+    "difficulty": "medium-hard",
+    "text": "An ECS service experiences predictable traffic peaks every weekday morning. Which scaling approach helps capacity be ready before the peak?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Scale only after users report errors"
+      },
+      {
+        "id": "b",
+        "text": "Disable service scaling during peak hours"
+      },
+      {
+        "id": "c",
+        "text": "Scheduled scaling combined with metric-based scaling"
+      },
+      {
+        "id": "d",
+        "text": "Increase the container image tag length"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "User reports are a lagging signal and create avoidable impact.",
+      "b": "Disabling scaling reduces elasticity when demand increases.",
+      "c": "Scheduled scaling can add capacity before known demand, while metric-based scaling handles unexpected variation. This is the correct answer.",
+      "d": "Image tag length does not affect capacity readiness."
+    }
+  },
+  {
+    "id": 242,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Scalability and elasticity concepts",
+    "keyword": "scalability and elasticity design",
+    "difficulty": "hard",
+    "text": "A Lambda function receives bursty traffic but a downstream relational database supports only limited concurrent connections. What should be controlled?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "CloudWatch log retention only"
+      },
+      {
+        "id": "b",
+        "text": "S3 object key naming only"
+      },
+      {
+        "id": "c",
+        "text": "Application version label length"
+      },
+      {
+        "id": "d",
+        "text": "Function concurrency and database connection management"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Log retention does not limit concurrent database connections.",
+      "b": "Object key naming does not protect a relational database from connection storms.",
+      "c": "Version label length does not control runtime concurrency.",
+      "d": "Lambda can scale quickly, so concurrency controls and connection pooling protect a limited downstream database. This is the correct answer."
+    }
+  },
+  {
+    "id": 243,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Scalability and elasticity concepts",
+    "keyword": "scalability and elasticity design",
+    "difficulty": "easy",
+    "text": "A web tier has stateless instances and a shared session store. Why does this improve elasticity?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Any instance can serve a user request, so instances can be added or removed without losing session state"
+      },
+      {
+        "id": "b",
+        "text": "Each instance must keep all sessions in local memory"
+      },
+      {
+        "id": "c",
+        "text": "The load balancer no longer needs health checks"
+      },
+      {
+        "id": "d",
+        "text": "The database automatically becomes multi-Region"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "External session storage decouples user state from individual instances and supports horizontal scaling. This is the correct answer.",
+      "b": "Local sessions make scale-in and replacement risky because user state follows one instance.",
+      "c": "Elastic stateless design still needs health checks for safe routing.",
+      "d": "Externalizing sessions does not by itself create regional database replication."
+    }
+  },
+  {
+    "id": 244,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Scalability and elasticity concepts",
+    "keyword": "scalability and elasticity design",
+    "difficulty": "medium",
+    "text": "An Auto Scaling group should scale on the amount of work waiting in a queue. Which metric is usually most relevant?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The number of IAM policies in the account"
+      },
+      {
+        "id": "b",
+        "text": "Queue depth or age of oldest message"
+      },
+      {
+        "id": "c",
+        "text": "The current DNS TTL of the application"
+      },
+      {
+        "id": "d",
+        "text": "The size of the latest build artifact only"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "IAM policy count does not measure work waiting for workers.",
+      "b": "Backlog metrics represent unprocessed work and align worker capacity with demand. This is the correct answer.",
+      "c": "DNS TTL does not represent queue backlog.",
+      "d": "Artifact size does not measure runtime worker demand."
+    }
+  },
+  {
+    "id": 245,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Scalability and elasticity concepts",
+    "keyword": "scalability and elasticity design",
+    "difficulty": "medium-hard",
+    "text": "A container service is overprovisioned at night and underprovisioned during the day. What design improves elasticity?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A fixed task count chosen for peak traffic"
+      },
+      {
+        "id": "b",
+        "text": "Manual task count changes performed weekly"
+      },
+      {
+        "id": "c",
+        "text": "Service Auto Scaling using workload metrics and minimum and maximum capacity limits"
+      },
+      {
+        "id": "d",
+        "text": "A deployment approval comment for every task"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Peak-only fixed sizing wastes capacity during low demand and may still be wrong as traffic changes.",
+      "b": "Weekly manual changes cannot respond to daily demand variation.",
+      "c": "Service Auto Scaling adjusts task count within safe boundaries as demand changes. This is the correct answer.",
+      "d": "Approval comments do not change service capacity."
+    }
+  },
+  {
+    "id": 246,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Scalability and elasticity concepts",
+    "keyword": "scalability and elasticity design",
+    "difficulty": "hard",
+    "text": "A professional DevOps team is tuning scaling policies. What should they avoid?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Using request count per target for an HTTP service"
+      },
+      {
+        "id": "b",
+        "text": "Using CPU for CPU-bound workers"
+      },
+      {
+        "id": "c",
+        "text": "Using queue age for asynchronous workers"
+      },
+      {
+        "id": "d",
+        "text": "Scaling on a metric that does not correlate with user demand or resource saturation"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Request count per target can be an appropriate scaling signal for many load-balanced services.",
+      "b": "CPU can be a valid signal when it correlates with the bottleneck.",
+      "c": "Queue age can reflect whether workers are keeping up with queued demand.",
+      "d": "Scaling signals should reflect real capacity pressure or backlog; unrelated metrics can cause unstable or ineffective scaling. This is the correct answer."
+    }
+  },
+  {
+    "id": 247,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Loosely coupled and distributed application design",
+    "keyword": "loosely coupled resilience",
+    "difficulty": "easy",
+    "text": "A checkout service fails whenever the notification service is unavailable. Notifications are not required for the order to be accepted. Which design improves resilience?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Publish an order event and process notifications asynchronously"
+      },
+      {
+        "id": "b",
+        "text": "Add more synchronous notification retries before accepting checkout"
+      },
+      {
+        "id": "c",
+        "text": "Move notification code into the checkout transaction"
+      },
+      {
+        "id": "d",
+        "text": "Require customers to retry checkout until notifications succeed"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Asynchronous processing decouples checkout success from noncritical notification availability. This is the correct answer.",
+      "b": "More synchronous retries keep checkout dependent on notification availability.",
+      "c": "Combining notification and checkout increases coupling and failure impact.",
+      "d": "Customer retries expose a noncritical downstream dependency as a user-facing failure."
+    }
+  },
+  {
+    "id": 248,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Loosely coupled and distributed application design",
+    "keyword": "loosely coupled resilience",
+    "difficulty": "medium",
+    "text": "A distributed workflow performs payment, inventory reservation, and shipping label creation. It needs retries and compensating actions. Which service is suitable?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A single untracked shell script run from an operator laptop"
+      },
+      {
+        "id": "b",
+        "text": "AWS Step Functions"
+      },
+      {
+        "id": "c",
+        "text": "A shared database table that every service updates without coordination"
+      },
+      {
+        "id": "d",
+        "text": "A load balancer listener rule"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A laptop script lacks durable workflow state and auditable execution history.",
+      "b": "Step Functions can model state transitions, retries, catches, and compensation paths across distributed services. This is the correct answer.",
+      "c": "A shared table alone does not orchestrate retries or compensation logic.",
+      "d": "Listener rules route requests and do not coordinate multi-step business workflows."
+    }
+  },
+  {
+    "id": 249,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Loosely coupled and distributed application design",
+    "keyword": "loosely coupled resilience",
+    "difficulty": "medium-hard",
+    "text": "A consumer processes messages from SQS and sometimes receives the same message twice. What design requirement follows?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Assume every SQS standard message is exactly-once"
+      },
+      {
+        "id": "b",
+        "text": "Disable all retries to avoid duplicates"
+      },
+      {
+        "id": "c",
+        "text": "Make message processing idempotent"
+      },
+      {
+        "id": "d",
+        "text": "Store processing state only in local process memory"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Standard queues can deliver duplicates, so exact-once assumptions are unsafe.",
+      "b": "Removing retries can lose work during transient failures.",
+      "c": "At-least-once delivery means consumers must safely handle duplicate deliveries without repeated side effects. This is the correct answer.",
+      "d": "Local memory is lost across restarts and does not reliably prevent duplicate side effects."
+    }
+  },
+  {
+    "id": 250,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Loosely coupled and distributed application design",
+    "keyword": "loosely coupled resilience",
+    "difficulty": "hard",
+    "text": "A service directly reads another service's database schema and breaks after the owner adds a new table structure. What resilience principle was violated?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Use more EC2 instance capacity for the reader service"
+      },
+      {
+        "id": "b",
+        "text": "Increase database backup retention only"
+      },
+      {
+        "id": "c",
+        "text": "Disable schema changes across all teams permanently"
+      },
+      {
+        "id": "d",
+        "text": "Use stable service contracts instead of depending on another service's internal schema"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "More capacity does not fix coupling to another service's private schema.",
+      "b": "Backups do not create a stable service boundary.",
+      "c": "Blocking all schema evolution is not a practical distributed design strategy.",
+      "d": "Direct schema coupling makes independent changes risky and weakens resilience of distributed services. This is the correct answer."
+    }
+  },
+  {
+    "id": 251,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Loosely coupled and distributed application design",
+    "keyword": "loosely coupled resilience",
+    "difficulty": "easy",
+    "text": "A payment provider is slow and causes request threads to pile up. Which resilience pattern should be implemented?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Timeouts, exponential backoff with jitter, and circuit breaker behavior"
+      },
+      {
+        "id": "b",
+        "text": "Unlimited immediate retries from every request"
+      },
+      {
+        "id": "c",
+        "text": "No timeout because payment is important"
+      },
+      {
+        "id": "d",
+        "text": "Hardcode successful payment responses"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Bounded calls and controlled retries prevent one slow dependency from exhausting application resources. This is the correct answer.",
+      "b": "Immediate synchronized retries can amplify provider throttling and resource exhaustion.",
+      "c": "Unbounded waits can consume threads and make the whole service unavailable.",
+      "d": "Fake success breaks business correctness and does not create a resilient integration."
+    }
+  },
+  {
+    "id": 252,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Knowledge: Loosely coupled and distributed application design",
+    "keyword": "loosely coupled resilience",
+    "difficulty": "medium",
+    "text": "A monolithic batch job fails halfway and must restart from the beginning. What distributed design improvement reduces repeated work?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Increase the job log verbosity and keep one giant transaction"
+      },
+      {
+        "id": "b",
+        "text": "Checkpoint progress and split work into retryable independent units"
+      },
+      {
+        "id": "c",
+        "text": "Run the job only on the largest instance available"
+      },
+      {
+        "id": "d",
+        "text": "Delete intermediate state after every step"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "More logs can help diagnosis but do not reduce repeated work after failure.",
+      "b": "Checkpointed, smaller work units allow recovery from partial failure without rerunning all completed work. This is the correct answer.",
+      "c": "A larger instance does not remove the all-or-nothing failure pattern.",
+      "d": "Removing progress state makes partial recovery harder."
+    }
+  },
+  {
+    "id": 253,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing highly available compute and load balancing",
+    "keyword": "highly available compute and load balancing",
+    "difficulty": "medium-hard",
+    "text": "An Auto Scaling group behind an ALB replaces unhealthy EC2 instances. What must be configured so traffic avoids bad instances?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "S3 bucket versioning for access logs only"
+      },
+      {
+        "id": "b",
+        "text": "A static desired capacity of one instance"
+      },
+      {
+        "id": "c",
+        "text": "ALB target group health checks and Auto Scaling health replacement behavior"
+      },
+      {
+        "id": "d",
+        "text": "A larger IAM role session name"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Versioning logs does not direct traffic away from unhealthy targets.",
+      "b": "A single fixed instance does not provide highly available replacement capacity.",
+      "c": "Health checks and replacement automation let the fleet remove unhealthy capacity and launch replacements. This is the correct answer.",
+      "d": "Role session names do not affect target health routing."
+    }
+  },
+  {
+    "id": 254,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing highly available compute and load balancing",
+    "keyword": "highly available compute and load balancing",
+    "difficulty": "hard",
+    "text": "An ECS service should remain available while new tasks replace old tasks. Which deployment setting matters?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Container image repository description"
+      },
+      {
+        "id": "b",
+        "text": "A single task with no load balancer"
+      },
+      {
+        "id": "c",
+        "text": "CloudTrail event history retention"
+      },
+      {
+        "id": "d",
+        "text": "Minimum healthy percentage and load balancer health checks"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Repository descriptions do not maintain service capacity during deployment.",
+      "b": "One task provides little resilience during replacement.",
+      "c": "Audit retention does not preserve serving capacity during ECS deployment.",
+      "d": "Deployment configuration and health checks keep enough healthy tasks serving while replacement tasks start. This is the correct answer."
+    }
+  },
+  {
+    "id": 255,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing highly available compute and load balancing",
+    "keyword": "highly available compute and load balancing",
+    "difficulty": "easy",
+    "text": "A Kubernetes workload on Amazon EKS restarts repeatedly before it finishes initialization. What should be reviewed?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Liveness and readiness probe timing and thresholds"
+      },
+      {
+        "id": "b",
+        "text": "The ECR repository name length"
+      },
+      {
+        "id": "c",
+        "text": "The S3 bucket lifecycle policy"
+      },
+      {
+        "id": "d",
+        "text": "The Route 53 hosted zone comment"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Aggressive liveness probes can restart a container before startup completes, while readiness controls traffic eligibility. This is the correct answer.",
+      "b": "Repository naming does not cause probe-driven restart loops.",
+      "c": "Object lifecycle rules do not control Kubernetes probes.",
+      "d": "DNS metadata does not control pod health probing."
+    }
+  },
+  {
+    "id": 256,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing highly available compute and load balancing",
+    "keyword": "highly available compute and load balancing",
+    "difficulty": "medium",
+    "text": "A web service is running in private subnets across two Availability Zones. The public ALB is enabled in only one zone. What should be fixed?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Move all private instances to the one enabled zone"
+      },
+      {
+        "id": "b",
+        "text": "Enable the load balancer in subnets across the required Availability Zones"
+      },
+      {
+        "id": "c",
+        "text": "Disable target group health checks"
+      },
+      {
+        "id": "d",
+        "text": "Replace the ALB with a single public EC2 instance"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Consolidating targets into one zone increases zonal dependency.",
+      "b": "A highly available load balancer path requires the load balancer to be present in multiple zones with healthy targets. This is the correct answer.",
+      "c": "Health checks are needed to route traffic safely.",
+      "d": "One public instance is a single request entry point and reduces availability."
+    }
+  },
+  {
+    "id": 257,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing highly available compute and load balancing",
+    "keyword": "highly available compute and load balancing",
+    "difficulty": "medium-hard",
+    "text": "A compute fleet uses one NAT gateway in a single Availability Zone for all private subnets. Why is this a resilience risk?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "NAT gateways cannot provide outbound internet access"
+      },
+      {
+        "id": "b",
+        "text": "NAT gateways automatically load balance inbound web traffic"
+      },
+      {
+        "id": "c",
+        "text": "Private subnet egress can depend on one zonal NAT gateway"
+      },
+      {
+        "id": "d",
+        "text": "NAT gateways replace Auto Scaling groups"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "NAT gateways are designed for outbound internet access from private subnets.",
+      "b": "NAT gateways are not inbound application load balancers.",
+      "c": "If all private subnets route through one zonal NAT gateway, an issue in that zone can affect egress for other zones. This is the correct answer.",
+      "d": "NAT gateways provide network translation and do not launch application compute."
+    }
+  },
+  {
+    "id": 258,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing highly available compute and load balancing",
+    "keyword": "highly available compute and load balancing",
+    "difficulty": "hard",
+    "text": "An application has two independent tiers with different scaling needs. What compute architecture improves availability and performance?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "One shared fixed instance fleet running every tier"
+      },
+      {
+        "id": "b",
+        "text": "One manual deployment script that changes both tiers at once"
+      },
+      {
+        "id": "c",
+        "text": "A single health check that ignores tier-specific behavior"
+      },
+      {
+        "id": "d",
+        "text": "Separate Auto Scaling groups or services for each tier"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "A shared fixed fleet couples scaling and failure between tiers.",
+      "b": "Manual combined deployment does not provide independent capacity control.",
+      "c": "Tier-specific health is needed to make safe routing and replacement decisions.",
+      "d": "Independent scaling units prevent one tier's capacity profile or failure mode from controlling the other tier. This is the correct answer."
+    }
+  },
+  {
+    "id": 259,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing resilient data stores and replication",
+    "keyword": "resilient data store replication",
+    "difficulty": "easy",
+    "text": "A production RDS database must fail over automatically within the Region when an Availability Zone fails. Which configuration should be used?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "RDS Multi-AZ deployment"
+      },
+      {
+        "id": "b",
+        "text": "Daily manual snapshots only"
+      },
+      {
+        "id": "c",
+        "text": "A single larger database instance"
+      },
+      {
+        "id": "d",
+        "text": "An ALB target group in front of the database"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "RDS Multi-AZ provides managed standby or multi-zone capacity and automated failover for supported database engines. This is the correct answer.",
+      "b": "Snapshots support restore but do not provide automatic in-Region failover.",
+      "c": "Larger size does not remove the single-zone database dependency.",
+      "d": "ALBs are not the native RDS failover mechanism."
+    }
+  },
+  {
+    "id": 260,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing resilient data stores and replication",
+    "keyword": "resilient data store replication",
+    "difficulty": "medium",
+    "text": "A DynamoDB table supports a multi-Region application with local reads and writes in two Regions. What should be configured?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "DynamoDB TTL only"
+      },
+      {
+        "id": "b",
+        "text": "DynamoDB global tables"
+      },
+      {
+        "id": "c",
+        "text": "One local secondary index per Region"
+      },
+      {
+        "id": "d",
+        "text": "S3 Cross-Region Replication for table items"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "TTL expires items and does not provide multi-Region replication.",
+      "b": "Global tables replicate DynamoDB data across Regions for multi-Region access patterns. This is the correct answer.",
+      "c": "Local secondary indexes do not create Region replicas.",
+      "d": "S3 replication does not replicate DynamoDB table writes."
+    }
+  },
+  {
+    "id": 261,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing resilient data stores and replication",
+    "keyword": "resilient data store replication",
+    "difficulty": "medium-hard",
+    "text": "An Amazon Aurora workload needs read scaling and fast failover inside a Region. Which design should be used?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Use the writer endpoint for all reporting queries"
+      },
+      {
+        "id": "b",
+        "text": "Export snapshots to S3 as the read path"
+      },
+      {
+        "id": "c",
+        "text": "Aurora Replicas in multiple Availability Zones with the reader endpoint for reads"
+      },
+      {
+        "id": "d",
+        "text": "Disable replicas to simplify failover"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Sending all reads to the writer increases primary load and weakens read scaling.",
+      "b": "Snapshots are not a live low-latency database read endpoint.",
+      "c": "Aurora Replicas can serve reads and provide failover candidates when placed across Availability Zones. This is the correct answer.",
+      "d": "Removing replicas reduces read capacity and failover options."
+    }
+  },
+  {
+    "id": 262,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing resilient data stores and replication",
+    "keyword": "resilient data store replication",
+    "difficulty": "hard",
+    "text": "A file-based workload on EC2 requires shared storage that remains available across instance replacement. Which service is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Instance store on the first application instance"
+      },
+      {
+        "id": "b",
+        "text": "A single EBS volume attached to one instance"
+      },
+      {
+        "id": "c",
+        "text": "CodeDeploy deployment logs as the file store"
+      },
+      {
+        "id": "d",
+        "text": "Amazon EFS with mount targets in the used Availability Zones"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Instance store is tied to one instance and does not survive replacement reliably.",
+      "b": "A single EBS volume is zonal and not a shared multi-instance file service for the fleet.",
+      "c": "Deployment logs are not application shared storage.",
+      "d": "EFS provides managed shared file storage decoupled from EC2 instance lifecycle. This is the correct answer."
+    }
+  },
+  {
+    "id": 263,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing resilient data stores and replication",
+    "keyword": "resilient data store replication",
+    "difficulty": "easy",
+    "text": "A relational database has a cross-Region read replica for disaster recovery. What should the DevOps engineer include in runbooks?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Promotion steps, DNS or endpoint updates, and expected replication lag considerations"
+      },
+      {
+        "id": "b",
+        "text": "Assume replica promotion is unnecessary during regional failure"
+      },
+      {
+        "id": "c",
+        "text": "Delete backups because the replica exists"
+      },
+      {
+        "id": "d",
+        "text": "Use the same writer endpoint in both Regions with no updates"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Cross-Region replicas can aid recovery, but failover procedures and lag impact must be understood and tested. This is the correct answer.",
+      "b": "A read replica usually needs promotion or application endpoint changes to become the new primary.",
+      "c": "Replicas can copy logical mistakes, so backups still matter.",
+      "d": "Traditional single-writer databases need endpoint and role changes during regional recovery."
+    }
+  },
+  {
+    "id": 264,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing resilient data stores and replication",
+    "keyword": "resilient data store replication",
+    "difficulty": "medium",
+    "text": "A storage design replicates S3 objects to another Region. What should be monitored?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only the number of IAM users in the account"
+      },
+      {
+        "id": "b",
+        "text": "Replication status and replication latency"
+      },
+      {
+        "id": "c",
+        "text": "Only ALB target response time"
+      },
+      {
+        "id": "d",
+        "text": "Only CodeBuild queued duration"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "IAM user count does not reveal replication progress.",
+      "b": "S3 replication is asynchronous, so operations must monitor whether objects are replicated within required recovery objectives. This is the correct answer.",
+      "c": "Load balancer target latency does not show object replication state.",
+      "d": "Build queue duration is unrelated to S3 replication health."
+    }
+  },
+  {
+    "id": 265,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing scalable and fault-tolerant messaging",
+    "keyword": "fault-tolerant messaging",
+    "difficulty": "medium-hard",
+    "text": "A queue consumer fails on a malformed message and blocks useful work through repeated retries. What should be configured?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "An infinite visibility timeout"
+      },
+      {
+        "id": "b",
+        "text": "A public queue policy for all senders"
+      },
+      {
+        "id": "c",
+        "text": "Dead-letter queue with an appropriate maximum receive count"
+      },
+      {
+        "id": "d",
+        "text": "A longer queue name"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Hiding a failed message indefinitely can stall diagnosis and does not preserve normal retry behavior.",
+      "b": "Public send access does not handle poison messages and creates security risk.",
+      "c": "A DLQ isolates poison messages after repeated failures so healthy messages can continue processing. This is the correct answer.",
+      "d": "Queue naming does not isolate repeated processing failures."
+    }
+  },
+  {
+    "id": 266,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing scalable and fault-tolerant messaging",
+    "keyword": "fault-tolerant messaging",
+    "difficulty": "hard",
+    "text": "A high-throughput asynchronous workload does not require strict ordering. Which queue type is usually appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "SQS FIFO queue for every workload regardless of throughput needs"
+      },
+      {
+        "id": "b",
+        "text": "A local in-memory queue on one worker"
+      },
+      {
+        "id": "c",
+        "text": "An ALB target group as the message store"
+      },
+      {
+        "id": "d",
+        "text": "SQS standard queue"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "FIFO queues are useful for ordering, but strict ordering is unnecessary for this scenario.",
+      "b": "Local memory is not durable and fails with the worker.",
+      "c": "A target group routes live requests and does not store asynchronous work.",
+      "d": "SQS standard queues support high throughput and at-least-once delivery for workloads that do not require strict ordering. This is the correct answer."
+    }
+  },
+  {
+    "id": 267,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing scalable and fault-tolerant messaging",
+    "keyword": "fault-tolerant messaging",
+    "difficulty": "easy",
+    "text": "A workflow requires ordered processing per customer while allowing different customers to process in parallel. Which design fits?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "SQS FIFO queue with customer-based message group IDs"
+      },
+      {
+        "id": "b",
+        "text": "SQS standard queue with no idempotency"
+      },
+      {
+        "id": "c",
+        "text": "One global message group for all customers"
+      },
+      {
+        "id": "d",
+        "text": "SNS email subscription for ordering"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "FIFO message groups preserve order within each customer group while allowing parallelism across groups. This is the correct answer.",
+      "b": "Standard queues do not guarantee strict per-customer ordering.",
+      "c": "One group preserves global order but limits parallel processing across customers.",
+      "d": "Email delivery is not an ordered workload-processing mechanism."
+    }
+  },
+  {
+    "id": 268,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing scalable and fault-tolerant messaging",
+    "keyword": "fault-tolerant messaging",
+    "difficulty": "medium",
+    "text": "An order event must be delivered independently to billing, fulfillment, and analytics. What architecture supports this?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "One shared SQS queue consumed by all services"
+      },
+      {
+        "id": "b",
+        "text": "SNS topic fanout to separate SQS queues for each consumer"
+      },
+      {
+        "id": "c",
+        "text": "Synchronous calls from billing to every other service"
+      },
+      {
+        "id": "d",
+        "text": "A single application log stream as the event bus"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "A shared queue distributes messages among consumers rather than giving every service a copy.",
+      "b": "Fanout gives each consumer its own durable queue, retry behavior, and scaling path. This is the correct answer.",
+      "c": "Synchronous chaining increases coupling and failure propagation.",
+      "d": "Logs are not a reliable fanout event delivery mechanism."
+    }
+  },
+  {
+    "id": 269,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing scalable and fault-tolerant messaging",
+    "keyword": "fault-tolerant messaging",
+    "difficulty": "medium-hard",
+    "text": "An EventBridge target occasionally fails. What target configuration improves resilience?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Disable all retries so failures complete faster"
+      },
+      {
+        "id": "b",
+        "text": "Increase event payload size with unrelated data"
+      },
+      {
+        "id": "c",
+        "text": "Retry policy and dead-letter queue where supported"
+      },
+      {
+        "id": "d",
+        "text": "Send failed events to a developer laptop"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Removing retries can lose transiently failed events.",
+      "b": "Larger payloads do not improve delivery reliability.",
+      "c": "Retries and DLQs preserve failed delivery attempts for later inspection or replay. This is the correct answer.",
+      "d": "Laptop destinations are not durable managed failure handling."
+    }
+  },
+  {
+    "id": 270,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.1 Skill: Implementing scalable and fault-tolerant messaging",
+    "keyword": "fault-tolerant messaging",
+    "difficulty": "hard",
+    "text": "A stream-processing application must replay events from the last 24 hours after a bad deployment. Which design is relevant?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Set the Lambda timeout to 24 hours"
+      },
+      {
+        "id": "b",
+        "text": "Rely only on container image tags"
+      },
+      {
+        "id": "c",
+        "text": "Disable checkpoints permanently"
+      },
+      {
+        "id": "d",
+        "text": "Configure stream retention to cover the replay window"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Lambda timeout does not preserve stream records for replay.",
+      "b": "Image tags do not retain event records.",
+      "c": "Checkpoint strategy must be managed carefully, but disabling it does not by itself preserve records beyond retention.",
+      "d": "Retention determines how long stream records remain available for consumers to reprocess. This is the correct answer."
+    }
+  },
+  {
+    "id": 271,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Recovery objectives, failover, and self-healing",
+    "keyword": "RTO RPO and self-healing",
+    "difficulty": "easy",
+    "text": "A business states that a workload can be unavailable for no more than 30 minutes after a regional disruption. What does this define?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "RTO"
+      },
+      {
+        "id": "b",
+        "text": "RPO"
+      },
+      {
+        "id": "c",
+        "text": "MTU"
+      },
+      {
+        "id": "d",
+        "text": "TTL"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Recovery Time Objective defines the maximum acceptable time to restore service after disruption. This is the correct answer.",
+      "b": "Recovery Point Objective defines acceptable data loss measured in time, not outage duration.",
+      "c": "Maximum Transmission Unit is a networking packet size concept.",
+      "d": "Time to live controls caching or retention behavior and is not the service restoration objective."
+    }
+  },
+  {
+    "id": 272,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Recovery objectives, failover, and self-healing",
+    "keyword": "RTO RPO and self-healing",
+    "difficulty": "medium",
+    "text": "A business states that no more than five minutes of data can be lost. What does this define?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "RTO"
+      },
+      {
+        "id": "b",
+        "text": "RPO"
+      },
+      {
+        "id": "c",
+        "text": "Desired capacity"
+      },
+      {
+        "id": "d",
+        "text": "Health check interval"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Recovery Time Objective describes outage duration, not data-loss tolerance.",
+      "b": "Recovery Point Objective defines the maximum acceptable amount of data loss measured as time. This is the correct answer.",
+      "c": "Desired capacity defines target compute count and not data recovery point.",
+      "d": "Health check interval controls detection frequency and not acceptable data loss."
+    }
+  },
+  {
+    "id": 273,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Recovery objectives, failover, and self-healing",
+    "keyword": "RTO RPO and self-healing",
+    "difficulty": "medium-hard",
+    "text": "An Auto Scaling group replaces failed instances automatically. Which resilience concept does this demonstrate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Manual disaster declaration"
+      },
+      {
+        "id": "b",
+        "text": "Immutable backup retention"
+      },
+      {
+        "id": "c",
+        "text": "Self-healing compute"
+      },
+      {
+        "id": "d",
+        "text": "Schema migration rollback"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Manual declaration is not automatic instance replacement.",
+      "b": "Backup retention protects recovery points but does not replace live compute automatically.",
+      "c": "Self-healing uses health detection and replacement automation to restore desired capacity without manual intervention. This is the correct answer.",
+      "d": "Schema rollback is a data change strategy and not compute self-healing."
+    }
+  },
+  {
+    "id": 274,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Recovery objectives, failover, and self-healing",
+    "keyword": "RTO RPO and self-healing",
+    "difficulty": "hard",
+    "text": "A workload requires RTO of minutes and RPO of seconds across Regions. Which DR pattern is most likely required?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Monthly backup and manual restore"
+      },
+      {
+        "id": "b",
+        "text": "No DR because the application is Multi-AZ"
+      },
+      {
+        "id": "c",
+        "text": "Source code stored in a repository only"
+      },
+      {
+        "id": "d",
+        "text": "Warm standby or active-active with continuous replication, depending on exact requirements"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Monthly restore cannot meet seconds of data loss or minutes of recovery time.",
+      "b": "Multi-AZ does not by itself meet cross-Region recovery objectives.",
+      "c": "Source code helps rebuild, but it does not provide data replication or live recovery capacity.",
+      "d": "Short RTO and RPO generally require pre-provisioned recovery capacity and frequent or continuous data replication. This is the correct answer."
+    }
+  },
+  {
+    "id": 275,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Recovery objectives, failover, and self-healing",
+    "keyword": "RTO RPO and self-healing",
+    "difficulty": "easy",
+    "text": "A failover process depends on manually finding runbooks, changing DNS, and promoting databases. What is the main risk?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Human delay and error can cause RTO targets to be missed"
+      },
+      {
+        "id": "b",
+        "text": "The recovery Region will always be cheaper"
+      },
+      {
+        "id": "c",
+        "text": "The primary Region automatically deletes all backups"
+      },
+      {
+        "id": "d",
+        "text": "The application cannot use health checks"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Manual, complex recovery steps are difficult to execute consistently under incident pressure. This is the correct answer.",
+      "b": "Cost may differ, but the stated risk is operational recovery reliability.",
+      "c": "Manual failover steps do not imply primary backups are deleted.",
+      "d": "Manual processes can coexist with health checks, but the concern is recovery delay and mistakes."
+    }
+  },
+  {
+    "id": 276,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Recovery objectives, failover, and self-healing",
+    "keyword": "RTO RPO and self-healing",
+    "difficulty": "medium",
+    "text": "A service should recover from a failed deployment automatically when error rates increase. What design is needed?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "More verbose release notes"
+      },
+      {
+        "id": "b",
+        "text": "Health-based rollback using alarms tied to the deployment system"
+      },
+      {
+        "id": "c",
+        "text": "A larger artifact bucket"
+      },
+      {
+        "id": "d",
+        "text": "Manual rollback only after weekly review"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Release notes do not trigger automatic recovery.",
+      "b": "Deployment automation can use health signals to stop or roll back bad releases before impact expands. This is the correct answer.",
+      "c": "More storage does not detect or reverse unhealthy releases.",
+      "d": "Weekly review is too slow for automated recovery from a bad release."
+    }
+  },
+  {
+    "id": 277,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Health checks, alarms, and automated remediation",
+    "keyword": "health checks alarms and remediation",
+    "difficulty": "medium-hard",
+    "text": "An ALB target group marks targets unhealthy even though the application is starting slowly. What should be tuned?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "IAM password policy length"
+      },
+      {
+        "id": "b",
+        "text": "S3 bucket object lock mode"
+      },
+      {
+        "id": "c",
+        "text": "Health check path, thresholds, timeout, and startup readiness behavior"
+      },
+      {
+        "id": "d",
+        "text": "ECR tag immutability"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Password policy settings do not affect ALB health check timing.",
+      "b": "Object Lock does not influence target health.",
+      "c": "Health checks must reflect real readiness without removing targets that are still initializing within expected time. This is the correct answer.",
+      "d": "Image tag immutability does not tune health check thresholds."
+    }
+  },
+  {
+    "id": 278,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Health checks, alarms, and automated remediation",
+    "keyword": "health checks alarms and remediation",
+    "difficulty": "hard",
+    "text": "A CloudWatch alarm should trigger automated remediation only after a metric is bad for several minutes. Which configuration matters?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The alarm name alphabetical order"
+      },
+      {
+        "id": "b",
+        "text": "The dashboard widget color"
+      },
+      {
+        "id": "c",
+        "text": "The deployment artifact extension"
+      },
+      {
+        "id": "d",
+        "text": "Evaluation periods and datapoints to alarm"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Alarm name sorting does not control when remediation starts.",
+      "b": "Widget color does not affect alarm evaluation.",
+      "c": "Artifact extension does not determine alarm state.",
+      "d": "Evaluation settings control how many breaching datapoints are required before an alarm changes state. This is the correct answer."
+    }
+  },
+  {
+    "id": 279,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Health checks, alarms, and automated remediation",
+    "keyword": "health checks alarms and remediation",
+    "difficulty": "easy",
+    "text": "A team uses Route 53 failover routing for a regional application. What must health checks accurately represent?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Whether the endpoint can serve the critical application path"
+      },
+      {
+        "id": "b",
+        "text": "Only whether the domain name string is short"
+      },
+      {
+        "id": "c",
+        "text": "Only whether the primary account has many users"
+      },
+      {
+        "id": "d",
+        "text": "Only whether backups are encrypted"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Failover routing is only as reliable as the health check's ability to detect real application availability. This is the correct answer.",
+      "b": "Record length does not prove application health.",
+      "c": "Account user count does not indicate endpoint health.",
+      "d": "Backup encryption is important but does not prove the live endpoint can serve traffic."
+    }
+  },
+  {
+    "id": 280,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Health checks, alarms, and automated remediation",
+    "keyword": "health checks alarms and remediation",
+    "difficulty": "medium",
+    "text": "A recurring disk-full condition on EC2 instances should be remediated automatically after an alarm. Which design is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Silently terminate every instance without replacement"
+      },
+      {
+        "id": "b",
+        "text": "CloudWatch alarm to EventBridge or Systems Manager Automation with approved cleanup steps"
+      },
+      {
+        "id": "c",
+        "text": "Ignore the alarm because disk space is local"
+      },
+      {
+        "id": "d",
+        "text": "Publish the disk path in a public SNS topic"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Uncontrolled termination can worsen availability and data loss.",
+      "b": "Alarm-driven automation can run a controlled runbook to clean or expand storage when the condition is detected. This is the correct answer.",
+      "c": "Local disk exhaustion can break applications and should be addressed.",
+      "d": "Publicly sharing operational paths does not remediate the condition and can expose information."
+    }
+  },
+  {
+    "id": 281,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Health checks, alarms, and automated remediation",
+    "keyword": "health checks alarms and remediation",
+    "difficulty": "medium-hard",
+    "text": "A container service health check succeeds even when a required downstream dependency is unavailable. What should be reconsidered?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Whether the container image tag is long enough"
+      },
+      {
+        "id": "b",
+        "text": "Whether all alarms use the same description"
+      },
+      {
+        "id": "c",
+        "text": "Whether readiness checks cover the dependencies required to serve traffic"
+      },
+      {
+        "id": "d",
+        "text": "Whether the service has no logs"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Image tag length does not validate service readiness.",
+      "b": "Alarm descriptions do not determine dependency readiness.",
+      "c": "Readiness checks should represent whether the task can actually serve requests, including critical dependencies. This is the correct answer.",
+      "d": "Logging can help diagnose issues, but the question concerns health check scope."
+    }
+  },
+  {
+    "id": 282,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Knowledge: Health checks, alarms, and automated remediation",
+    "keyword": "health checks alarms and remediation",
+    "difficulty": "hard",
+    "text": "A remediation runbook can restart a service. The team wants to avoid restart loops during a widespread outage. What should be added?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Unbounded retries until the alarm disappears"
+      },
+      {
+        "id": "b",
+        "text": "Removal of all alarm history"
+      },
+      {
+        "id": "c",
+        "text": "Public write access to the runbook"
+      },
+      {
+        "id": "d",
+        "text": "Guardrails such as maximum attempts, cooldowns, and escalation"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Unlimited retries can amplify instability and hide the need for human escalation.",
+      "b": "Alarm history helps understand repeated failures and should not be removed.",
+      "c": "Public modification of remediation logic is unsafe.",
+      "d": "Remediation automation needs limits so it does not repeatedly act without improving the condition. This is the correct answer."
+    }
+  },
+  {
+    "id": 283,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating recovery for compute and container workloads",
+    "keyword": "automated compute recovery",
+    "difficulty": "easy",
+    "text": "An EC2 instance fails status checks in an Auto Scaling group. What should happen when health checks are configured correctly?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Auto Scaling terminates and replaces the unhealthy instance"
+      },
+      {
+        "id": "b",
+        "text": "The instance remains permanently because desired capacity is already met"
+      },
+      {
+        "id": "c",
+        "text": "The load balancer sends more traffic to test it"
+      },
+      {
+        "id": "d",
+        "text": "The AMI is automatically rewritten from the failed instance"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Auto Scaling can maintain desired capacity by replacing instances that fail health checks. This is the correct answer.",
+      "b": "Desired capacity should be met with healthy instances, not failed ones.",
+      "c": "Traffic should be reduced or stopped for unhealthy targets.",
+      "d": "Auto Scaling replacement does not rewrite the source AMI."
+    }
+  },
+  {
+    "id": 284,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating recovery for compute and container workloads",
+    "keyword": "automated compute recovery",
+    "difficulty": "medium",
+    "text": "An ECS task exits unexpectedly and the service desired count is three. What should ECS service scheduling do?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Leave the service at two tasks until the next deployment"
+      },
+      {
+        "id": "b",
+        "text": "Start a replacement task to return to desired count"
+      },
+      {
+        "id": "c",
+        "text": "Convert the task definition into a database snapshot"
+      },
+      {
+        "id": "d",
+        "text": "Disable the load balancer health check automatically"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Service scheduling should restore desired count when capacity and configuration allow.",
+      "b": "The ECS service scheduler maintains desired count by launching replacement tasks when tasks stop. This is the correct answer.",
+      "c": "Task definitions are compute configuration and are not database snapshots.",
+      "d": "Task exit does not require disabling health checks."
+    }
+  },
+  {
+    "id": 285,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating recovery for compute and container workloads",
+    "keyword": "automated compute recovery",
+    "difficulty": "medium-hard",
+    "text": "An EKS deployment should recover automatically when a pod crashes. Which Kubernetes mechanism helps?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A manually created pod with no controller"
+      },
+      {
+        "id": "b",
+        "text": "A CloudFormation output only"
+      },
+      {
+        "id": "c",
+        "text": "ReplicaSet controlled by a Deployment"
+      },
+      {
+        "id": "d",
+        "text": "An EBS snapshot lifecycle policy"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "A standalone pod is not automatically replaced by a Deployment controller.",
+      "b": "An output exposes values and does not reconcile Kubernetes pods.",
+      "c": "A Deployment maintains desired replicas through ReplicaSets and replaces failed pods. This is the correct answer.",
+      "d": "Snapshot policy does not replace failed pods."
+    }
+  },
+  {
+    "id": 286,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating recovery for compute and container workloads",
+    "keyword": "automated compute recovery",
+    "difficulty": "hard",
+    "text": "A Lambda function fails because of transient downstream throttling. What should be configured for asynchronous invocation recovery?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A larger function description"
+      },
+      {
+        "id": "b",
+        "text": "A public function URL"
+      },
+      {
+        "id": "c",
+        "text": "Removal of all error handling"
+      },
+      {
+        "id": "d",
+        "text": "Retry behavior and a destination or dead-letter queue for failed events"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "The description does not preserve or reroute failed events.",
+      "b": "A public URL changes invocation access and does not handle asynchronous failures.",
+      "c": "Removing error handling makes recovery harder.",
+      "d": "Asynchronous Lambda processing can retry and then send failed events to a configured failure destination for recovery. This is the correct answer."
+    }
+  },
+  {
+    "id": 287,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating recovery for compute and container workloads",
+    "keyword": "automated compute recovery",
+    "difficulty": "easy",
+    "text": "A CodeDeploy deployment to EC2 fails health validation. What automated recovery behavior should be enabled?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Rollback to the last known-good revision"
+      },
+      {
+        "id": "b",
+        "text": "Continue deployment to all remaining instances"
+      },
+      {
+        "id": "c",
+        "text": "Delete the last known-good revision"
+      },
+      {
+        "id": "d",
+        "text": "Disable lifecycle hooks for future deployments"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "CodeDeploy rollback can restore a previous revision when deployment validation fails. This is the correct answer.",
+      "b": "Continuing a failed deployment can expand impact.",
+      "c": "Deleting the rollback target removes recovery capability.",
+      "d": "Removing hooks reduces validation rather than improving recovery."
+    }
+  },
+  {
+    "id": 288,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating recovery for compute and container workloads",
+    "keyword": "automated compute recovery",
+    "difficulty": "medium",
+    "text": "A self-healing EC2 remediation runbook restarts a service after detecting a failed process. How should it be triggered?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "An operator remembering to log in every hour"
+      },
+      {
+        "id": "b",
+        "text": "CloudWatch alarm or EventBridge rule targeting Systems Manager Automation"
+      },
+      {
+        "id": "c",
+        "text": "A deployment artifact lifecycle expiration"
+      },
+      {
+        "id": "d",
+        "text": "A Route 53 TXT record update"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Manual polling is slow and inconsistent.",
+      "b": "Event-driven remediation can start the approved runbook when telemetry indicates a process failure. This is the correct answer.",
+      "c": "Artifact cleanup does not trigger service recovery.",
+      "d": "DNS text records are not a reliable operational remediation trigger."
+    }
+  },
+  {
+    "id": 289,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating failover and recovery for serverless and event-driven workloads",
+    "keyword": "serverless event recovery",
+    "difficulty": "medium-hard",
+    "text": "An SQS-triggered Lambda repeatedly fails on one message. What should preserve the failed event for investigation?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A longer Lambda function name"
+      },
+      {
+        "id": "b",
+        "text": "A public S3 website endpoint"
+      },
+      {
+        "id": "c",
+        "text": "An SQS dead-letter queue"
+      },
+      {
+        "id": "d",
+        "text": "A CloudFront origin request policy"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Function naming does not preserve failed messages.",
+      "b": "Website endpoints do not handle failed queue events.",
+      "c": "A DLQ moves repeatedly failing messages out of the main queue so they can be inspected and reprocessed safely. This is the correct answer.",
+      "d": "Origin request policy does not capture SQS processing failures."
+    }
+  },
+  {
+    "id": 290,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating failover and recovery for serverless and event-driven workloads",
+    "keyword": "serverless event recovery",
+    "difficulty": "hard",
+    "text": "A Step Functions workflow calls several Lambda functions. A transient Lambda error should be retried before the workflow fails. What should be configured?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A manual retry instruction in a README only"
+      },
+      {
+        "id": "b",
+        "text": "An ALB target group health check"
+      },
+      {
+        "id": "c",
+        "text": "An ECR lifecycle rule"
+      },
+      {
+        "id": "d",
+        "text": "Retry rules in the state machine definition"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Documentation alone does not automate workflow retry behavior.",
+      "b": "ALB health checks do not control Step Functions state retries.",
+      "c": "Image cleanup does not retry workflow states.",
+      "d": "Step Functions retry rules provide controlled retry behavior for matching errors in workflow states. This is the correct answer."
+    }
+  },
+  {
+    "id": 291,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating failover and recovery for serverless and event-driven workloads",
+    "keyword": "serverless event recovery",
+    "difficulty": "easy",
+    "text": "An EventBridge rule target fails because the target service is temporarily unavailable. What can improve recovery?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Configure target retry policy and a dead-letter queue"
+      },
+      {
+        "id": "b",
+        "text": "Remove the event pattern entirely"
+      },
+      {
+        "id": "c",
+        "text": "Store events only in CloudWatch metric dimensions"
+      },
+      {
+        "id": "d",
+        "text": "Increase API Gateway cache TTL"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "EventBridge can retry delivery and route failed events to a DLQ when supported by target configuration. This is the correct answer.",
+      "b": "Removing the event pattern stops routing rather than improving recovery.",
+      "c": "Metric dimensions are not event payload recovery storage.",
+      "d": "API cache TTL does not retry failed EventBridge target delivery."
+    }
+  },
+  {
+    "id": 292,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating failover and recovery for serverless and event-driven workloads",
+    "keyword": "serverless event recovery",
+    "difficulty": "medium",
+    "text": "A Kinesis consumer deployed a bad version and checkpoints advanced incorrectly. What recovery practice should be available?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Assume records are retained forever by default"
+      },
+      {
+        "id": "b",
+        "text": "Replay from retained stream records or a preserved backup source when within retention"
+      },
+      {
+        "id": "c",
+        "text": "Delete the stream to force replay"
+      },
+      {
+        "id": "d",
+        "text": "Rename the Lambda consumer only"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Kinesis records are retained only for the configured retention period.",
+      "b": "Stream retention and checkpoint management determine whether events can be reprocessed after a consumer defect. This is the correct answer.",
+      "c": "Deleting the stream removes records instead of replaying them.",
+      "d": "Renaming the consumer does not restore lost checkpoint position or data."
+    }
+  },
+  {
+    "id": 293,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating failover and recovery for serverless and event-driven workloads",
+    "keyword": "serverless event recovery",
+    "difficulty": "medium-hard",
+    "text": "A Lambda event source mapping processes batches from DynamoDB Streams and one bad record blocks progress. Which feature can reduce impact?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Increase batch size indefinitely"
+      },
+      {
+        "id": "b",
+        "text": "Disable all retries and drop every failed batch"
+      },
+      {
+        "id": "c",
+        "text": "Bisect batch on function error and failure destinations where supported"
+      },
+      {
+        "id": "d",
+        "text": "Use an API Gateway stage variable"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Larger batches can make isolating the bad record harder.",
+      "b": "Dropping batches loses valid records along with the bad one.",
+      "c": "Batch bisection helps isolate problematic records so valid records can continue processing. This is the correct answer.",
+      "d": "Stage variables do not control stream batch failure handling."
+    }
+  },
+  {
+    "id": 294,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Automating failover and recovery for serverless and event-driven workloads",
+    "keyword": "serverless event recovery",
+    "difficulty": "hard",
+    "text": "A serverless application needs to recover failed business events after code is fixed. What should the architecture include?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only a console screenshot of the error"
+      },
+      {
+        "id": "b",
+        "text": "Immediate deletion of failed events after logging"
+      },
+      {
+        "id": "c",
+        "text": "A hardcoded success response for all events"
+      },
+      {
+        "id": "d",
+        "text": "Durable failed-event storage and a controlled replay mechanism"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "A screenshot does not contain a durable event payload for reprocessing.",
+      "b": "Deleting failed events removes the ability to replay them.",
+      "c": "Hardcoded success hides failures and loses business correctness.",
+      "d": "Recovery depends on retaining failed events and replaying them after the defect or dependency issue is resolved. This is the correct answer."
+    }
+  },
+  {
+    "id": 295,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Implementing disaster recovery automation and testing",
+    "keyword": "disaster recovery automation",
+    "difficulty": "easy",
+    "text": "A company has a documented DR plan but has never executed it. What should the DevOps engineer implement?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Scheduled DR tests that measure actual RTO and RPO"
+      },
+      {
+        "id": "b",
+        "text": "Assume the plan works because the diagram is complete"
+      },
+      {
+        "id": "c",
+        "text": "Test only by reading the runbook aloud"
+      },
+      {
+        "id": "d",
+        "text": "Disable recovery resources to reduce test complexity"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "DR testing verifies that automation, data replication, runbooks, and people can meet the stated recovery objectives. This is the correct answer.",
+      "b": "A diagram does not prove recovery steps work under real conditions.",
+      "c": "Reviewing a runbook is useful but does not validate technical recovery behavior.",
+      "d": "Removing recovery resources undermines the ability to test recovery."
+    }
+  },
+  {
+    "id": 296,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Implementing disaster recovery automation and testing",
+    "keyword": "disaster recovery automation",
+    "difficulty": "medium",
+    "text": "A warm standby environment must scale up automatically during regional failover. What should the automation include?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only a notification that tells users to wait"
+      },
+      {
+        "id": "b",
+        "text": "Capacity scaling, database promotion or endpoint changes, and traffic routing updates"
+      },
+      {
+        "id": "c",
+        "text": "Only source code checkout in the recovery Region"
+      },
+      {
+        "id": "d",
+        "text": "Only manual resizing after every incident call"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Notification alone does not restore application service.",
+      "b": "Warm standby recovery requires compute capacity increase, data-tier readiness, and user traffic redirection. This is the correct answer.",
+      "c": "Source code checkout does not prepare database and traffic-routing recovery.",
+      "d": "Manual resizing adds delay and can miss RTO targets."
+    }
+  },
+  {
+    "id": 297,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Implementing disaster recovery automation and testing",
+    "keyword": "disaster recovery automation",
+    "difficulty": "medium-hard",
+    "text": "A DR test should not corrupt production data. What environment control is important?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Point test clients at production payment endpoints without safeguards"
+      },
+      {
+        "id": "b",
+        "text": "Disable all authentication during DR testing"
+      },
+      {
+        "id": "c",
+        "text": "Use isolated test traffic and controlled recovery datasets or snapshots"
+      },
+      {
+        "id": "d",
+        "text": "Use random production records and delete them afterward"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Uncontrolled production calls can create real customer or financial effects.",
+      "b": "Removing authentication can create security risk and unrealistic results.",
+      "c": "DR exercises should validate recovery while avoiding unintended writes to live production systems. This is the correct answer.",
+      "d": "Random production data manipulation can cause data integrity and compliance issues."
+    }
+  },
+  {
+    "id": 298,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Implementing disaster recovery automation and testing",
+    "keyword": "disaster recovery automation",
+    "difficulty": "hard",
+    "text": "A pipeline should deploy DR infrastructure changes whenever production infrastructure changes. What principle does this support?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Keeping recovery templates intentionally outdated"
+      },
+      {
+        "id": "b",
+        "text": "Requiring manual recreation of every DR resource"
+      },
+      {
+        "id": "c",
+        "text": "Deleting DR infrastructure after every successful production deploy"
+      },
+      {
+        "id": "d",
+        "text": "Keeping recovery environments aligned with primary environments"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Outdated recovery templates can fail during an actual disaster.",
+      "b": "Manual recreation slows recovery and increases error risk.",
+      "c": "Deleting recovery infrastructure can prevent meeting recovery objectives.",
+      "d": "DR automation must evolve with production so failover does not break because of configuration drift. This is the correct answer."
+    }
+  },
+  {
+    "id": 299,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Implementing disaster recovery automation and testing",
+    "keyword": "disaster recovery automation",
+    "difficulty": "easy",
+    "text": "A Route 53 failover record points to a recovery endpoint. What should DR automation verify?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Health check state, DNS behavior, and recovery endpoint readiness"
+      },
+      {
+        "id": "b",
+        "text": "Only the hosted zone's tag count"
+      },
+      {
+        "id": "c",
+        "text": "Only the build project's badge status"
+      },
+      {
+        "id": "d",
+        "text": "Only the KMS alias display name"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Traffic failover depends on health checks and a recovery endpoint that can serve the application. This is the correct answer.",
+      "b": "Tag count does not prove DNS failover works.",
+      "c": "Build status does not prove recovery endpoint readiness.",
+      "d": "Alias display names do not verify traffic failover."
+    }
+  },
+  {
+    "id": 300,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.2 Skill: Implementing disaster recovery automation and testing",
+    "keyword": "disaster recovery automation",
+    "difficulty": "medium",
+    "text": "A company wants automated evidence after each DR exercise. What should the workflow record?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only the name of the person who scheduled the test"
+      },
+      {
+        "id": "b",
+        "text": "Start time, recovery steps, validation results, achieved RTO and RPO, and issues found"
+      },
+      {
+        "id": "c",
+        "text": "Only screenshots with no timestamps or metrics"
+      },
+      {
+        "id": "d",
+        "text": "Only the number of resources in the primary Region"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Scheduler identity alone does not prove recovery performance.",
+      "b": "Structured evidence shows whether the exercise met objectives and what must improve before the next event. This is the correct answer.",
+      "c": "Screenshots without measurements are weak recovery evidence.",
+      "d": "Primary resource count does not show recovery success."
+    }
+  },
+  {
+    "id": 301,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Backup, restore, and retention strategies",
+    "keyword": "backup restore and retention strategy",
+    "difficulty": "medium-hard",
+    "text": "A database must be restorable to any point within the last 24 hours. Which backup feature is required?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A single monthly manual snapshot"
+      },
+      {
+        "id": "b",
+        "text": "Multi-AZ deployment only"
+      },
+      {
+        "id": "c",
+        "text": "Point-in-time recovery or automated backups with sufficient retention"
+      },
+      {
+        "id": "d",
+        "text": "A read replica only"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Monthly snapshots cannot restore to arbitrary points within the last 24 hours.",
+      "b": "Multi-AZ improves availability but does not replace point-in-time recovery.",
+      "c": "PITR or automated backups preserve transaction history needed to restore to a selected point in the retention window. This is the correct answer.",
+      "d": "Read replicas can copy logical mistakes and are not a PITR substitute."
+    }
+  },
+  {
+    "id": 302,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Backup, restore, and retention strategies",
+    "keyword": "backup restore and retention strategy",
+    "difficulty": "hard",
+    "text": "A backup plan retains daily backups for 35 days and monthly backups for seven years. What does this implement?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "A no-retention strategy"
+      },
+      {
+        "id": "b",
+        "text": "A load balancing strategy"
+      },
+      {
+        "id": "c",
+        "text": "A deployment traffic shifting strategy"
+      },
+      {
+        "id": "d",
+        "text": "A tiered retention strategy"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "The described plan explicitly retains backups for defined periods.",
+      "b": "Retention schedules protect recovery points and do not distribute traffic.",
+      "c": "Traffic shifting controls releases, not backup retention.",
+      "d": "Different retention periods align backup storage with operational recovery and long-term compliance needs. This is the correct answer."
+    }
+  },
+  {
+    "id": 303,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Backup, restore, and retention strategies",
+    "keyword": "backup restore and retention strategy",
+    "difficulty": "easy",
+    "text": "A team wants centralized backup scheduling and compliance reporting for supported services. Which service should be used?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "AWS Backup"
+      },
+      {
+        "id": "b",
+        "text": "AWS CodeDeploy"
+      },
+      {
+        "id": "c",
+        "text": "Amazon CloudFront"
+      },
+      {
+        "id": "d",
+        "text": "AWS WAF"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "AWS Backup centralizes backup plans, retention, and compliance visibility for supported AWS resources. This is the correct answer.",
+      "b": "CodeDeploy manages application deployments and not centralized resource backups.",
+      "c": "CloudFront caches content and does not create recovery points for databases or volumes.",
+      "d": "WAF filters web requests and does not schedule backups."
+    }
+  },
+  {
+    "id": 304,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Backup, restore, and retention strategies",
+    "keyword": "backup restore and retention strategy",
+    "difficulty": "medium",
+    "text": "A restore procedure requires a KMS-encrypted backup. What must be verified?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The restore role has a longer session name"
+      },
+      {
+        "id": "b",
+        "text": "The restore role has permission to use the required KMS key"
+      },
+      {
+        "id": "c",
+        "text": "The backup file extension is correct"
+      },
+      {
+        "id": "d",
+        "text": "The load balancer has cross-zone balancing"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Session name length does not grant cryptographic permission.",
+      "b": "Encrypted recovery points cannot be restored unless the principal can decrypt with the protecting key. This is the correct answer.",
+      "c": "File extension does not authorize KMS decryption.",
+      "d": "Load balancer configuration does not decrypt backups."
+    }
+  },
+  {
+    "id": 305,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Backup, restore, and retention strategies",
+    "keyword": "backup restore and retention strategy",
+    "difficulty": "medium-hard",
+    "text": "A company stores backups but never validates application-level recovery. What is the risk?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Backups automatically guarantee zero RTO"
+      },
+      {
+        "id": "b",
+        "text": "Validation removes the need for retention"
+      },
+      {
+        "id": "c",
+        "text": "Backups may exist but fail to restore a usable application within objectives"
+      },
+      {
+        "id": "d",
+        "text": "Application recovery is unrelated to data backups"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Recovery time depends on restore process and validation, not backup existence alone.",
+      "b": "Restore testing complements retention; it does not replace keeping required recovery points.",
+      "c": "Backup job success does not prove that dependencies, data consistency, and runbooks can restore service. This is the correct answer.",
+      "d": "Many applications depend on consistent restored data to function."
+    }
+  },
+  {
+    "id": 306,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Backup, restore, and retention strategies",
+    "keyword": "backup restore and retention strategy",
+    "difficulty": "hard",
+    "text": "A workload requires backups before any destructive schema migration. What should the pipeline enforce?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Delete old backups before migration to reduce confusion"
+      },
+      {
+        "id": "b",
+        "text": "Skip backups when the migration is automated"
+      },
+      {
+        "id": "c",
+        "text": "Store only the migration script name as the backup"
+      },
+      {
+        "id": "d",
+        "text": "Create and verify a recovery point before executing the migration"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Deleting backups reduces recovery options before a risky change.",
+      "b": "Automation does not eliminate the need for recovery points.",
+      "c": "A script name does not preserve pre-migration data.",
+      "d": "A pre-migration recovery point provides a rollback option if the destructive change fails. This is the correct answer."
+    }
+  },
+  {
+    "id": 307,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Data protection across accounts and Regions",
+    "keyword": "cross-account and cross-Region data protection",
+    "difficulty": "easy",
+    "text": "A company wants backups protected from accidental deletion in the workload account. Which architecture helps?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Copy backups to a dedicated backup account with restricted access"
+      },
+      {
+        "id": "b",
+        "text": "Keep all backups only in the same application account with broad admin access"
+      },
+      {
+        "id": "c",
+        "text": "Store backup metadata in an unencrypted public bucket"
+      },
+      {
+        "id": "d",
+        "text": "Use only instance-local copies"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Cross-account backup copies reduce the risk that workload account administrators or incidents delete all recovery points. This is the correct answer.",
+      "b": "Same-account broad access increases blast radius for backup deletion.",
+      "c": "Public metadata storage weakens confidentiality and does not protect recovery points.",
+      "d": "Local copies can be lost with the instance and do not provide account isolation."
+    }
+  },
+  {
+    "id": 308,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Data protection across accounts and Regions",
+    "keyword": "cross-account and cross-Region data protection",
+    "difficulty": "medium",
+    "text": "A regional outage must not make all recovery points unavailable. What should be configured?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Backups only in one Availability Zone"
+      },
+      {
+        "id": "b",
+        "text": "Cross-Region backup copy or replication"
+      },
+      {
+        "id": "c",
+        "text": "A longer primary Region DNS TTL"
+      },
+      {
+        "id": "d",
+        "text": "A bigger primary database instance"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Single-zone backups do not address regional outage requirements.",
+      "b": "Regional backup copies keep recovery data available when the primary Region is impaired. This is the correct answer.",
+      "c": "DNS TTL does not make recovery points available in another Region.",
+      "d": "Instance size does not protect backup availability during a regional outage."
+    }
+  },
+  {
+    "id": 309,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Data protection across accounts and Regions",
+    "keyword": "cross-account and cross-Region data protection",
+    "difficulty": "medium-hard",
+    "text": "An organization uses AWS Backup across accounts. What service capability supports centralized management?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Per-developer manual snapshots"
+      },
+      {
+        "id": "b",
+        "text": "A public AMI catalog with every backup"
+      },
+      {
+        "id": "c",
+        "text": "AWS Backup policies through AWS Organizations"
+      },
+      {
+        "id": "d",
+        "text": "Route 53 resolver rules"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Manual snapshots do not provide central policy enforcement.",
+      "b": "Public backup publication can expose sensitive data and does not centralize protection.",
+      "c": "Organization backup policies can centrally apply backup requirements across accounts. This is the correct answer.",
+      "d": "Resolver rules manage DNS resolution and not backup policy enforcement."
+    }
+  },
+  {
+    "id": 310,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Data protection across accounts and Regions",
+    "keyword": "cross-account and cross-Region data protection",
+    "difficulty": "hard",
+    "text": "A cross-account backup copy is encrypted with a customer managed KMS key. What policy concern matters?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "The backup vault name must match the source Region exactly"
+      },
+      {
+        "id": "b",
+        "text": "The ALB listener must trust the KMS key"
+      },
+      {
+        "id": "c",
+        "text": "The source EC2 key pair must be copied"
+      },
+      {
+        "id": "d",
+        "text": "The destination account restore role must be allowed to use the destination KMS key"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Naming can help organization, but KMS authorization controls encrypted restore.",
+      "b": "ALB listeners are unrelated to backup vault decryption.",
+      "c": "EC2 key pairs do not authorize KMS-protected backup restore.",
+      "d": "Cross-account and cross-Region encrypted backup workflows depend on correct key policies for copy and restore. This is the correct answer."
+    }
+  },
+  {
+    "id": 311,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Data protection across accounts and Regions",
+    "keyword": "cross-account and cross-Region data protection",
+    "difficulty": "easy",
+    "text": "A team needs to protect S3 objects from accidental deletion and also keep a copy in another Region. Which combination fits?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "S3 Versioning with Cross-Region Replication and appropriate retention controls"
+      },
+      {
+        "id": "b",
+        "text": "S3 lifecycle expiration with no versioning"
+      },
+      {
+        "id": "c",
+        "text": "One public bucket in the primary Region"
+      },
+      {
+        "id": "d",
+        "text": "An EC2 instance store cache"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Versioning protects object history, and replication provides a regional copy for recovery objectives. This is the correct answer.",
+      "b": "Expiration alone can delete data rather than protect object history.",
+      "c": "Public access increases exposure and does not provide regional recovery.",
+      "d": "Instance store is ephemeral and not cross-Region object protection."
+    }
+  },
+  {
+    "id": 312,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Knowledge: Data protection across accounts and Regions",
+    "keyword": "cross-account and cross-Region data protection",
+    "difficulty": "medium",
+    "text": "A security team requires backup administration to be separated from application administration. What design supports this?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Give application administrators full backup vault deletion rights"
+      },
+      {
+        "id": "b",
+        "text": "Use separate backup accounts or roles with least-privilege access boundaries"
+      },
+      {
+        "id": "c",
+        "text": "Store all backup credentials in the application repository"
+      },
+      {
+        "id": "d",
+        "text": "Use one shared administrator user for all backup and application tasks"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Broad backup deletion rights defeat separation of duties.",
+      "b": "Separation of duties limits who can modify or delete recovery points independent of application operators. This is the correct answer.",
+      "c": "Repository-stored credentials can expose backup administration paths.",
+      "d": "Shared administration reduces accountability and increases blast radius."
+    }
+  },
+  {
+    "id": 313,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Automating backups and validating restores",
+    "keyword": "backup automation and restore validation",
+    "difficulty": "medium-hard",
+    "text": "A company uses AWS Backup plans. What should be added to prove backups are usable?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Backup job completion status only"
+      },
+      {
+        "id": "b",
+        "text": "A weekly reminder to trust the backup service"
+      },
+      {
+        "id": "c",
+        "text": "Automated restore tests in an isolated environment"
+      },
+      {
+        "id": "d",
+        "text": "Deleting restored resources before validation"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "A completed backup job does not prove application recovery works.",
+      "b": "Trust without restore testing does not produce recovery evidence.",
+      "c": "Restore validation confirms that recovery points can recreate usable resources within requirements. This is the correct answer.",
+      "d": "Deleting resources before validation prevents proving the restore worked."
+    }
+  },
+  {
+    "id": 314,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Automating backups and validating restores",
+    "keyword": "backup automation and restore validation",
+    "difficulty": "hard",
+    "text": "A pipeline performs a destructive database migration. How can backup validation be automated?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Proceed if the snapshot name is short"
+      },
+      {
+        "id": "b",
+        "text": "Skip validation because snapshots are managed"
+      },
+      {
+        "id": "c",
+        "text": "Use production traffic as the restore test"
+      },
+      {
+        "id": "d",
+        "text": "Create a snapshot, run a test restore or verification step, then continue if validation succeeds"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Name length does not prove backup usability.",
+      "b": "Managed snapshots can still fail to meet application recovery expectations if not tested.",
+      "c": "Restore testing should avoid risking live production data or users.",
+      "d": "Automated validation ensures the recovery point exists and can be used before the risky change proceeds. This is the correct answer."
+    }
+  },
+  {
+    "id": 315,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Automating backups and validating restores",
+    "keyword": "backup automation and restore validation",
+    "difficulty": "easy",
+    "text": "A backup restore test should verify more than resource creation. What should it include?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Application-level checks that validate data consistency and service behavior"
+      },
+      {
+        "id": "b",
+        "text": "Only whether an instance ID was created"
+      },
+      {
+        "id": "c",
+        "text": "Only whether the restore job has a long description"
+      },
+      {
+        "id": "d",
+        "text": "Only whether the test subnet has unused IP addresses"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Restored infrastructure must support the application workflow, not merely exist as resources. This is the correct answer.",
+      "b": "An instance ID proves resource creation but not application correctness.",
+      "c": "Descriptions do not validate data or service behavior.",
+      "d": "Address capacity does not prove restored application function."
+    }
+  },
+  {
+    "id": 316,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Automating backups and validating restores",
+    "keyword": "backup automation and restore validation",
+    "difficulty": "medium",
+    "text": "A DevOps team wants restore testing to run monthly without human execution. What should orchestrate it?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Manual console clicks by the last person on call"
+      },
+      {
+        "id": "b",
+        "text": "EventBridge schedule invoking Step Functions or Systems Manager Automation"
+      },
+      {
+        "id": "c",
+        "text": "A local cron job on a developer laptop"
+      },
+      {
+        "id": "d",
+        "text": "A public SNS topic that asks anyone to test"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Manual execution is less reliable and harder to audit.",
+      "b": "Scheduled orchestration can create, validate, report, and clean up restore tests repeatably. This is the correct answer.",
+      "c": "Laptop-based scheduling depends on an unmanaged personal machine.",
+      "d": "Public requests are not controlled automation."
+    }
+  },
+  {
+    "id": 317,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Automating backups and validating restores",
+    "keyword": "backup automation and restore validation",
+    "difficulty": "medium-hard",
+    "text": "A restored RDS database test must not connect to production applications. What environment control is important?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Reuse the production endpoint name immediately"
+      },
+      {
+        "id": "b",
+        "text": "Disable all security groups during testing"
+      },
+      {
+        "id": "c",
+        "text": "Restore into isolated subnets or accounts with separate endpoints"
+      },
+      {
+        "id": "d",
+        "text": "Share the restored database password in build logs"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Using the production endpoint can redirect live traffic to the test restore.",
+      "b": "Removing network controls increases risk and makes the test unrealistic.",
+      "c": "Isolation prevents test restores from accidentally receiving production traffic or affecting live systems. This is the correct answer.",
+      "d": "Exposing credentials in logs creates a security issue."
+    }
+  },
+  {
+    "id": 318,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Automating backups and validating restores",
+    "keyword": "backup automation and restore validation",
+    "difficulty": "hard",
+    "text": "A restore test completes successfully. What evidence should the automation store?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Only the name of the engineer who wrote the test"
+      },
+      {
+        "id": "b",
+        "text": "Only screenshots with no resource IDs or timestamps"
+      },
+      {
+        "id": "c",
+        "text": "Only the number of files in the source repository"
+      },
+      {
+        "id": "d",
+        "text": "Restore time, validation results, recovery point ID, and cleanup status"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Author identity does not prove restore success.",
+      "b": "Screenshots alone are weak evidence for automated recovery validation.",
+      "c": "Repository file count does not describe restore results.",
+      "d": "Structured evidence supports audit requirements and helps determine whether recovery objectives were achieved. This is the correct answer."
+    }
+  },
+  {
+    "id": 319,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Implementing immutable and compliant backup controls",
+    "keyword": "immutable compliant backup controls",
+    "difficulty": "easy",
+    "text": "A company requires backup retention that administrators cannot shorten after backups are written. Which AWS Backup feature should be used?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "AWS Backup Vault Lock"
+      },
+      {
+        "id": "b",
+        "text": "A backup vault name that includes immutable"
+      },
+      {
+        "id": "c",
+        "text": "A manual approval in chat before deletion"
+      },
+      {
+        "id": "d",
+        "text": "A load balancer deletion protection setting"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Vault Lock can enforce retention controls that help prevent early deletion or retention changes. This is the correct answer.",
+      "b": "Naming does not enforce immutability.",
+      "c": "Chat approval does not technically prevent deletion or retention changes.",
+      "d": "Load balancer deletion protection does not protect backup recovery points."
+    }
+  },
+  {
+    "id": 320,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Implementing immutable and compliant backup controls",
+    "keyword": "immutable compliant backup controls",
+    "difficulty": "medium",
+    "text": "An S3 archive must prevent object deletion for a compliance retention period. Which feature is appropriate?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "S3 Transfer Acceleration"
+      },
+      {
+        "id": "b",
+        "text": "S3 Object Lock in compliance mode where required"
+      },
+      {
+        "id": "c",
+        "text": "S3 event notifications only"
+      },
+      {
+        "id": "d",
+        "text": "CloudFront signed URLs"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Transfer Acceleration improves transfer performance and does not enforce object retention.",
+      "b": "Object Lock compliance mode can enforce write-once-read-many retention for objects. This is the correct answer.",
+      "c": "Notifications can start workflows but do not prevent deletion.",
+      "d": "Signed URLs control viewer access and do not enforce archival retention."
+    }
+  },
+  {
+    "id": 321,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Implementing immutable and compliant backup controls",
+    "keyword": "immutable compliant backup controls",
+    "difficulty": "medium-hard",
+    "text": "A backup vault policy allows application administrators to delete recovery points. Why is this risky?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Application administrators can always improve RTO by deleting backups"
+      },
+      {
+        "id": "b",
+        "text": "Recovery points become faster when delete permissions are broad"
+      },
+      {
+        "id": "c",
+        "text": "Compromised or mistaken application administration could destroy recovery points"
+      },
+      {
+        "id": "d",
+        "text": "Backup encryption is disabled automatically by delete permission"
+      }
+    ],
+    "correct": "c",
+    "explanations": {
+      "a": "Deleting backups usually reduces recovery capability rather than improving it.",
+      "b": "Delete permissions do not improve restore performance.",
+      "c": "Backup controls should limit deletion authority so the recovery path survives workload account compromise or human error. This is the correct answer.",
+      "d": "Delete permission does not directly disable encryption, but it does expose recovery points to removal."
+    }
+  },
+  {
+    "id": 322,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Implementing immutable and compliant backup controls",
+    "keyword": "immutable compliant backup controls",
+    "difficulty": "hard",
+    "text": "A legal hold is placed on specific S3 backups. What should the automation ensure?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Delete held objects first to simplify lifecycle rules"
+      },
+      {
+        "id": "b",
+        "text": "Make held backups public for easier review"
+      },
+      {
+        "id": "c",
+        "text": "Move held objects to instance store"
+      },
+      {
+        "id": "d",
+        "text": "Lifecycle expiration does not remove objects protected by the hold"
+      }
+    ],
+    "correct": "d",
+    "explanations": {
+      "a": "Deleting held objects violates the purpose of the legal hold.",
+      "b": "Public access can expose sensitive backup data.",
+      "c": "Instance store is ephemeral and not appropriate for legal retention.",
+      "d": "Legal hold or retention requirements must override normal expiration so protected records remain available. This is the correct answer."
+    }
+  },
+  {
+    "id": 323,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Implementing immutable and compliant backup controls",
+    "keyword": "immutable compliant backup controls",
+    "difficulty": "easy",
+    "text": "A compliance auditor asks how backup deletion attempts are tracked. What should be enabled and reviewed?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "CloudTrail and AWS Backup audit or compliance reporting"
+      },
+      {
+        "id": "b",
+        "text": "Only local shell history on an operator workstation"
+      },
+      {
+        "id": "c",
+        "text": "Only the application access logs"
+      },
+      {
+        "id": "d",
+        "text": "Only DNS query logs"
+      }
+    ],
+    "correct": "a",
+    "explanations": {
+      "a": "Audit logs and backup compliance reports provide evidence of backup operations and attempted policy changes. This is the correct answer.",
+      "b": "Local shell history is incomplete and can be altered or unavailable.",
+      "c": "Application logs do not necessarily record backup vault deletion attempts.",
+      "d": "DNS logs do not show backup management API activity."
+    }
+  },
+  {
+    "id": 324,
+    "certification": "AWS Certified DevOps Engineer - Professional",
+    "exam_code": "DOP-C02",
+    "domain": "3.0",
+    "name": "Resilient Cloud Solutions",
+    "objective": "Task 3.3 Skill: Implementing immutable and compliant backup controls",
+    "keyword": "immutable compliant backup controls",
+    "difficulty": "medium",
+    "text": "A retention policy should keep backups for seven years but not forever. Why should expiration still be defined?",
+    "answers": [
+      {
+        "id": "a",
+        "text": "Expiration means backups are never protected"
+      },
+      {
+        "id": "b",
+        "text": "Controlled expiration reduces cost and data retention risk after the required period"
+      },
+      {
+        "id": "c",
+        "text": "Indefinite retention is always required for every workload"
+      },
+      {
+        "id": "d",
+        "text": "Expiration replaces the need for encryption"
+      }
+    ],
+    "correct": "b",
+    "explanations": {
+      "a": "Retention controls can protect backups until the defined expiration point.",
+      "b": "Compliance retention should be long enough to meet requirements while avoiding unnecessary indefinite data retention. This is the correct answer.",
+      "c": "Different workloads have different legal, business, and cost requirements.",
+      "d": "Encryption remains necessary while backups are retained."
+    }
+  }
+
+]}

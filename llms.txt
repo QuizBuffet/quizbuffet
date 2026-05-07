@@ -21,6 +21,7 @@
 - [AWS Certified CloudOps Engineer – Associate (SOA-C03)](https://quizbuffet.com/aws-cloudops-engineer-associate/): Deploy, manage, and operate workloads on AWS 500+ questions.
 - [AWS Certified Data Engineer – Associate (DEA-C01)](https://quizbuffet.com/aws-data-engineer-associate/): Implement, monitor, and optimize data pipelines on AWS 500+ questions.
 - [AWS Certified Developer – Associate (DVA-C02)](https://quizbuffet.com/aws-developer-associate/): Develop, deploy, and debug cloud-based applications on AWS 500+ questions.
+- [AWS Certified DevOps Engineer – Professional (DOP-C02)](https://quizbuffet.com/aws-devops-engineer-professional/): Provision, operate, and manage distributed systems on AWS at scale
 
 ## Coming soon
 - [Microsoft Azure Fundamentals (AZ-900) (AZ-900)](https://quizbuffet.com/microsoft-az-900/) — coming soon (priority #1)

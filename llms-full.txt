@@ -595,6 +595,22 @@ A: The required runtime dependency or a referenced Lambda layer
 **Q: A Lambda function needs a shared observability extension across multiple functions. Which packaging option fits?**
 A: A Lambda layer or extension included with the functions
 
+## AWS Certified DevOps Engineer – Professional (DOP-C02)
+Vendor: AWS
+URL: https://quizbuffet.com/aws-devops-engineer-professional/
+Total questions: 0
+
+AWS Certified DevOps Engineer – Professional (DOP-C02) validates the ability to provision, operate, and manage distributed systems on AWS. It covers SDLC automation with CI/CD (CodePipeline, CodeBuild, CodeDeploy), configuration management and IaC (CloudFormation, CDK, SAM, Systems Manager), resilient cloud solutions and DR, monitoring and logging with CloudWatch and X-Ray, incident and event response, and security and compliance automation at scale.
+
+### Domains
+- 1.0 SDLC Automation (22% of exam)
+- 2.0 Configuration Management and IaC (17% of exam)
+- 3.0 Resilient Cloud Solutions (15% of exam)
+- 4.0 Monitoring and Logging (15% of exam)
+- 5.0 Incident and Event Response (14% of exam)
+- 6.0 Security and Compliance (17% of exam)
+
+
 
 ## Coming soon (in priority order)
 - Microsoft Azure Fundamentals (AZ-900) (AZ-900) — https://quizbuffet.com/microsoft-az-900/ — priority #1

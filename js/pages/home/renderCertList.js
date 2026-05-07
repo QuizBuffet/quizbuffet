@@ -1,5 +1,6 @@
 import { loadDomain } from '../../loader/loadDomain.js';
 import { loadSalaries, getSalaryEntry, formatCompactUSD, collarLabel } from '../../data/salaries/loadSalaries.js';
+import { attachCertPreview } from '../../components/certPreview/certPreview.js';
 
 // Live cert categories — coming-soon entries already carry their own `category` field.
 const LIVE_CATEGORY = {
@@ -16,6 +17,7 @@ const LIVE_CATEGORY = {
   'aws-solutions-architect-associate':  'Cloud',
   'aws-cloudops-engineer-associate':    'Cloud',
   'aws-developer-associate':            'Cloud',
+  'aws-devops-engineer-professional':   'Cloud',
   'aws-ai-practitioner':                'Data & AI',
   'aws-ml-engineer-associate':          'Data & AI',
   'aws-genai-developer-professional':   'Data & AI',
@@ -133,6 +135,7 @@ export function renderCertList(live, comingSoon = [], filter = '') {
   `;
 
   fillSalaries(el);
+  attachCertPreview(el, live);
 
   liveFiltered.forEach(cert => {
     Promise.all(

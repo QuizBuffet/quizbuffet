@@ -235,6 +235,13 @@
     "lastUpdated": "2026-05-06",
     "notes": "GenAI developer / FM integrator"
   },
+  "aws-devops-engineer-professional": {
+    "collar": "white-collar",
+    "salary": null,
+    "sources": [],
+    "lastUpdated": null,
+    "notes": "Senior DevOps engineer / SRE (AWS-focused)"
+  },
   "aws-developer-associate": {
     "collar": "white-collar",
     "salary": null,

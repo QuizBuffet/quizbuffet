@@ -40,4 +40,30 @@ export function renderCertDomainList(cert) {
         : `${questions.length} questions`;
     });
   });
+
+  fillEmptyGridCells(el);
+  let raf;
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => fillEmptyGridCells(el));
+  });
+}
+
+// Fills the trailing empty cells in the last row of an auto-fill grid with
+// subtle placeholder cards so the layout doesn't end with awkward white space.
+function fillEmptyGridCells(el) {
+  el.querySelectorAll('.domain-item-placeholder').forEach(p => p.remove());
+  const cards = el.querySelectorAll('.domain-item');
+  if (!cards.length) return;
+  const containerW = el.clientWidth;
+  const cardW = cards[0].offsetWidth;
+  const gap = parseFloat(getComputedStyle(el).columnGap) || parseFloat(getComputedStyle(el).gap) || 10;
+  const cols = Math.max(1, Math.floor((containerW + gap) / (cardW + gap)));
+  const extra = (cols - (cards.length % cols)) % cols;
+  for (let i = 0; i < extra; i++) {
+    const ph = document.createElement('div');
+    ph.className = 'domain-item-placeholder';
+    ph.setAttribute('aria-hidden', 'true');
+    el.appendChild(ph);
+  }
 }

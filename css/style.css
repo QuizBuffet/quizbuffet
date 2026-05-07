@@ -1049,6 +1049,14 @@ a:is(:hover, :active) { text-decoration: underline; }
   text-decoration: none;
 }
 .domain-item.is-completed { background: var(--accent-soft-2); border-color: var(--accent); }
+.domain-item-placeholder {
+  border: 1px dashed var(--border-sub);
+  border-radius: 10px;
+  background: var(--accent-soft-2);
+  min-height: 90px;
+  opacity: 0.55;
+  pointer-events: none;
+}
 .domain-number-badge {
   flex: 0 0 auto;
   width: 36px;

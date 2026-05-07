@@ -25,29 +25,30 @@
 - [AWS Certified Security – Specialty (SCS-C03)](https://quizbuffet.com/aws-security-specialty/): Secure AWS workloads end-to-end: detection, identity, data protection, and governance 600+ questions.
 - [AWS Certified Advanced Networking – Specialty (ANS-C01)](https://quizbuffet.com/aws-advanced-networking-specialty/): Design, implement, manage, and secure AWS and hybrid networks at scale 480+ questions.
 - [AWS Certified Solutions Architect – Professional (SAP-C02)](https://quizbuffet.com/aws-solutions-architect-professional/): Design optimized AWS solutions across organizations using the Well-Architected Framework 600+ questions.
-- [Microsoft Azure Fundamentals (AZ-900)](https://quizbuffet.com/microsoft-az-900/): Foundational Azure knowledge for cloud beginners and decision-makers
+- [Microsoft Azure Fundamentals (AZ-900)](https://quizbuffet.com/microsoft-az-900/): Foundational Azure knowledge for cloud beginners and decision-makers 312+ questions.
+- [Microsoft Azure Administrator (AZ-104)](https://quizbuffet.com/microsoft-az-104/): Day-to-day administration of Azure infrastructure at the associate level 500+ questions.
 
 ## Coming soon
-- [Microsoft Azure Administrator Associate (AZ-104) (AZ-104)](https://quizbuffet.com/microsoft-az-104/) — coming soon (priority #1)
-- [ISC2 CISSP (CISSP)](https://quizbuffet.com/isc2-cissp/) — coming soon (priority #2)
-- [ITIL 4 Foundation (ITIL 4)](https://quizbuffet.com/itil-foundation/) — coming soon (priority #3)
-- [OSHA 10-Hour Construction (OSHA 10)](https://quizbuffet.com/osha-10-construction/) — coming soon (priority #4)
-- [OSHA 30-Hour Construction (OSHA 30)](https://quizbuffet.com/osha-30-construction/) — coming soon (priority #5)
-- [Forklift Operator Certification (OSHA 1910.178)](https://quizbuffet.com/forklift-certification/) — coming soon (priority #6)
-- [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/) — coming soon (priority #7)
-- [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/) — coming soon (priority #8)
-- [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #9)
-- [Certified Nursing Assistant (CNA) (CNA)](https://quizbuffet.com/cna/) — coming soon (priority #10)
-- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #11)
-- [Certified Phlebotomy Technician (CPT) (CPT)](https://quizbuffet.com/phlebotomy-technician/) — coming soon (priority #12)
-- [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #13)
-- [CDL Class A (CDL-A)](https://quizbuffet.com/cdl-class-a/) — coming soon (priority #14)
-- [FAA Part 107 (Remote Pilot) (Part 107)](https://quizbuffet.com/faa-part-107/) — coming soon (priority #15)
-- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #16)
-- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #17)
-- [Real Estate Salesperson License (Real Estate License)](https://quizbuffet.com/real-estate-license/) — coming soon (priority #18)
-- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #19)
-- [NMLS Mortgage Loan Originator (MLO) (SAFE MLO)](https://quizbuffet.com/nmls-mlo/) — coming soon (priority #20)
+- [ISC2 CISSP (CISSP)](https://quizbuffet.com/isc2-cissp/) — coming soon (priority #1)
+- [ITIL 4 Foundation (ITIL 4)](https://quizbuffet.com/itil-foundation/) — coming soon (priority #2)
+- [OSHA 10-Hour Construction (OSHA 10)](https://quizbuffet.com/osha-10-construction/) — coming soon (priority #3)
+- [OSHA 30-Hour Construction (OSHA 30)](https://quizbuffet.com/osha-30-construction/) — coming soon (priority #4)
+- [Forklift Operator Certification (OSHA 1910.178)](https://quizbuffet.com/forklift-certification/) — coming soon (priority #5)
+- [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/) — coming soon (priority #6)
+- [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/) — coming soon (priority #7)
+- [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #8)
+- [Certified Nursing Assistant (CNA) (CNA)](https://quizbuffet.com/cna/) — coming soon (priority #9)
+- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #10)
+- [Certified Phlebotomy Technician (CPT) (CPT)](https://quizbuffet.com/phlebotomy-technician/) — coming soon (priority #11)
+- [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #12)
+- [CDL Class A (CDL-A)](https://quizbuffet.com/cdl-class-a/) — coming soon (priority #13)
+- [FAA Part 107 (Remote Pilot) (Part 107)](https://quizbuffet.com/faa-part-107/) — coming soon (priority #14)
+- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #15)
+- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #16)
+- [Real Estate Salesperson License (Real Estate License)](https://quizbuffet.com/real-estate-license/) — coming soon (priority #17)
+- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #18)
+- [NMLS Mortgage Loan Originator (MLO) (SAFE MLO)](https://quizbuffet.com/nmls-mlo/) — coming soon (priority #19)
+- [ServSafe Food Handler (ServSafe FH)](https://quizbuffet.com/servsafe-food-handler/) — coming soon (priority #20)
 
 ## Resources
 - [Sitemap](https://quizbuffet.com/sitemap.xml)

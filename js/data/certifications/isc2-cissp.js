@@ -1,0 +1,29 @@
+import { acronyms } from '../acronyms/isc2-cissp.js';
+import { services } from '../services/isc2-cissp.js';
+
+export const cert = {
+  slug: 'isc2-cissp',
+  name: 'Certified Information Systems Security Professional',
+  code: 'CISSP',
+  vendor: 'ISC2',
+  tagline: 'The gold-standard senior cybersecurity certification',
+  about: 'CISSP (Certified Information Systems Security Professional) validates deep technical and managerial knowledge across eight domains: security and risk management (governance, risk, BCP, ethics), asset security (classification, handling, data lifecycle), security architecture and engineering (security models, cryptography, site/facility design), communication and network security (OSI, secure protocols, segmentation), identity and access management (AAA, federation, RBAC/ABAC), security assessment and testing (vulnerability, pen testing, audits), security operations (logging, incident management, DR/BC), and software development security (SDLC, SAST/DAST, secure coding).',
+  details: '125–150 adaptive items · 3 hours · Multiple-choice and advanced innovative items · Pass score 700/1000',
+  acronyms,
+  services,
+  affiliates: [
+    { provider: 'udemy',   label: 'Video Course',     url: '' },
+    { provider: 'amazon',  label: 'Shop CISSP Study Guides on Amazon', url: 'https://www.amazon.com/s?k=cissp+official+study+guide&tag=0003aa-20' },
+    { provider: 'comptia', label: 'ISC2 Official Training (CBK)',  url: '' },
+  ],
+  domains: [
+    { slug: 'security-and-risk-management',         name: 'Security and Risk Management',         number: '1.0', weight: 16 },
+    { slug: 'asset-security',                        name: 'Asset Security',                        number: '2.0', weight: 10 },
+    { slug: 'security-architecture-and-engineering', name: 'Security Architecture and Engineering', number: '3.0', weight: 13 },
+    { slug: 'communication-and-network-security',    name: 'Communication and Network Security',    number: '4.0', weight: 13 },
+    { slug: 'identity-and-access-management',        name: 'Identity and Access Management (IAM)',  number: '5.0', weight: 13 },
+    { slug: 'security-assessment-and-testing',       name: 'Security Assessment and Testing',       number: '6.0', weight: 12 },
+    { slug: 'security-operations',                   name: 'Security Operations',                   number: '7.0', weight: 13 },
+    { slug: 'software-development-security',         name: 'Software Development Security',         number: '8.0', weight: 10 },
+  ],
+};

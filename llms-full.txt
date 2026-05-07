@@ -730,48 +730,98 @@ A: Create CloudWatch alarms with EventBridge rules and Systems Manager Automatio
 ## Microsoft Azure Fundamentals (AZ-900)
 Vendor: Microsoft
 URL: https://quizbuffet.com/microsoft-az-900/
-Total questions: 0
+Total questions: 312
 
 Microsoft Azure Fundamentals (AZ-900) is the entry-level Azure certification. It covers cloud concepts (IaaS/PaaS/SaaS, public/private/hybrid, shared responsibility, consumption-based pricing), core Azure architecture and services (regions, availability zones, compute, networking, storage, databases, identity), and Azure management and governance (cost management, Microsoft Entra, role-based access control, Azure Policy, monitoring, support).
 
 ### Domains
-- 1.0 Describe cloud concepts (27% of exam)
-- 2.0 Describe Azure architecture and services (37% of exam)
-- 3.0 Describe Azure management and governance (36% of exam)
+- 1.0 Describe cloud concepts (27% of exam) — 84 questions
+- 2.0 Describe Azure architecture and services (37% of exam) — 114 questions
+- 3.0 Describe Azure management and governance (36% of exam) — 114 questions
 
+### Sample questions
+**Q: A new Azure user needs to identify the right concept for cloud computing definition. Which answer should they choose?**
+A: Delivery of computing services over the internet, including compute, storage, networking, and applications
+
+**Q: An IT manager asks how cloud computing definition applies to Azure. Which explanation is most accurate?**
+A: A way to use scalable IT services without building and operating every physical datacenter component
+
+**Q: An administrator is learning Azure fundamentals. Which explanation of Azure regions region pairs and sovereign regions is most accurate?**
+A: An Azure region is a geographic area that contains one or more datacenters connected by a low-latency network
+
+**Q: A cloud adoption team is comparing Azure options. Which statement about Azure regions region pairs and sovereign regions is accurate?**
+A: Deploying near users can reduce latency for applications
+
+**Q: A business team is reviewing Azure operations. Which option correctly describes factors that affect Azure costs?**
+A: Resource type, usage amount, region, purchasing options, and data transfer can all affect Azure costs
+
+**Q: A company is learning Azure management and governance. Which statement best describes factors that affect Azure costs?**
+A: Service tiers and performance levels can change the price of Azure resources
+
+## Microsoft Azure Administrator (AZ-104)
+Vendor: Microsoft
+URL: https://quizbuffet.com/microsoft-az-104/
+Total questions: 500
+
+Microsoft Azure Administrator (AZ-104) validates skills for managing Azure subscriptions, identities and governance (Microsoft Entra ID, RBAC, Azure Policy, management groups), storage (storage accounts, Azure Files, Blob Storage, redundancy, lifecycle), compute (virtual machines, Container Instances, Container Apps, App Service, scale sets, ARM/Bicep), virtual networking (VNets, NSGs, Bastion, peering, private endpoints, load balancing, DNS), and monitoring with Azure Monitor and backup with Recovery Services and Site Recovery.
+
+### Domains
+- 1.0 Manage Azure identities and governance (23% of exam) — 110 questions
+- 2.0 Implement and manage storage (18% of exam) — 85 questions
+- 3.0 Deploy and manage Azure compute resources (22% of exam) — 110 questions
+- 4.0 Implement and manage virtual networking (18% of exam) — 85 questions
+- 5.0 Monitor and maintain Azure resources (19% of exam) — 110 questions
+
+### Sample questions
+**Q: A new Azure environment requires an administrator to implement create Microsoft Entra users and groups. Which option should be selected?**
+A: Create the user in Microsoft Entra ID, assign required group memberships, and verify the account sign-in settings
+
+**Q: An organization is standardizing Azure administration. Which implementation best addresses create Microsoft Entra users and groups?**
+A: Create a dynamic group when membership should be based on user or device attributes
+
+**Q: A production storage account must be updated for configure Azure Storage firewalls and virtual networks. Which administrative action best fits the requirement?**
+A: Set the storage account network access to selected networks and add the required virtual network subnet or trusted public IP range
+
+**Q: A storage-related support ticket requires action for configure Azure Storage firewalls and virtual networks. Which implementation is most appropriate?**
+A: Verify DNS resolution to the private endpoint when clients cannot reach a storage account after public access is disabled
+
+**Q: A production support ticket involves interpret ARM templates and Bicep files. Which action is most appropriate?**
+A: Review the parameters, variables, resources, dependencies, and outputs to understand what the deployment will create
+
+**Q: A new application environment requires interpret ARM templates and Bicep files. Which Azure administrator action is correct?**
+A: Use what-if or validation before deployment to preview resource changes
 
 
 ## Coming soon (in priority order)
-- Microsoft Azure Administrator Associate (AZ-104) (AZ-104) — https://quizbuffet.com/microsoft-az-104/ — priority #1
-- ISC2 CISSP (CISSP) — https://quizbuffet.com/isc2-cissp/ — priority #2
-- ITIL 4 Foundation (ITIL 4) — https://quizbuffet.com/itil-foundation/ — priority #3
-- OSHA 10-Hour Construction (OSHA 10) — https://quizbuffet.com/osha-10-construction/ — priority #4
-- OSHA 30-Hour Construction (OSHA 30) — https://quizbuffet.com/osha-30-construction/ — priority #5
-- Forklift Operator Certification (OSHA 1910.178) — https://quizbuffet.com/forklift-certification/ — priority #6
-- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #7
-- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #8
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #9
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #10
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #11
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #12
-- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #13
-- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #14
-- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #15
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #16
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #17
-- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #18
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #19
-- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #20
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #21
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #22
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #23
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #24
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #25
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #26
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #27
-- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #28
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #29
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #30
-- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #31
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #32
-- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #33
+- ISC2 CISSP (CISSP) — https://quizbuffet.com/isc2-cissp/ — priority #1
+- ITIL 4 Foundation (ITIL 4) — https://quizbuffet.com/itil-foundation/ — priority #2
+- OSHA 10-Hour Construction (OSHA 10) — https://quizbuffet.com/osha-10-construction/ — priority #3
+- OSHA 30-Hour Construction (OSHA 30) — https://quizbuffet.com/osha-30-construction/ — priority #4
+- Forklift Operator Certification (OSHA 1910.178) — https://quizbuffet.com/forklift-certification/ — priority #5
+- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #6
+- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #7
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #8
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #9
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #10
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #11
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #12
+- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #13
+- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #14
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #15
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #16
+- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #17
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #18
+- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #19
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #20
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #21
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #22
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #23
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #24
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #25
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #26
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #27
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #28
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #29
+- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #30
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #31
+- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #32

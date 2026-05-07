@@ -21,6 +21,8 @@ import { cert as awsSecuritySpecialty } from './aws-security-specialty.js';
 import { cert as awsAdvancedNetworkingSpecialty } from './aws-advanced-networking-specialty.js';
 import { cert as awsSolutionsArchitectProfessional } from './aws-solutions-architect-professional.js';
 import { cert as microsoftAz900 } from './microsoft-az-900.js';
+import { cert as microsoftAz104 } from './microsoft-az-104.js';
+import { cert as isc2Cissp } from './isc2-cissp.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -46,4 +48,6 @@ export const certifications = [
   awsAdvancedNetworkingSpecialty,
   awsSolutionsArchitectProfessional,
   microsoftAz900,
+  microsoftAz104,
+  isc2Cissp,
 ];

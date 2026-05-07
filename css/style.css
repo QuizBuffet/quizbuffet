@@ -987,27 +987,24 @@ a:is(:hover, :active) { text-decoration: underline; }
 .cert-radar-dot { cursor: help; }
 .cert-radar-help { font-size: 14px; line-height: 1.55; color: var(--text-muted); max-width: 70ch; margin: 0 0 14px; padding: 10px 12px; background: var(--surface, rgba(0,0,0,0.03)); border-left: 3px solid #2e9b4a; border-radius: 4px; }
 
-/* Small/medium screens: stack categories, cards flow in a grid inside each.
-   Desktop+: switch to multi-column flow so small categories tile side-by-side. */
-.cert-categories { display: block; }
-
+/* CSS Grid (not multi-column) so every category in a row starts at the same Y.
+   Tradeoff: shorter categories leave dead space below them in a row, but every
+   visible column starts at the top — which is the desired alignment. */
+.cert-categories {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+}
 .cert-category {
   display: block;
-  margin: 0 0 18px;
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
+  margin: 0;
+  align-self: start;
+  min-width: 0;
 }
 
-@media (min-width: 1100px) {
-  .cert-categories { column-count: 2; column-gap: 22px; }
-}
-@media (min-width: 1500px) {
-  .cert-categories { column-count: 3; column-gap: 26px; }
-}
-@media (min-width: 1900px) {
-  .cert-categories { column-count: 4; }
-}
+@media (min-width: 720px)  { .cert-categories { grid-template-columns: 1fr 1fr;        gap: 18px 22px; } }
+@media (min-width: 1500px) { .cert-categories { grid-template-columns: repeat(3, 1fr); gap: 22px 24px; } }
 .cert-category-heading {
   display: flex;
   align-items: center;
@@ -1023,17 +1020,14 @@ a:is(:hover, :active) { text-decoration: underline; }
 }
 .cert-category-heading .cert-list-count { font-size: 10px; padding: 1px 5px; }
 
-/* Cards inside a category — multi-col on small screens, single-col once
-   the outer container itself goes multi-column on desktop+. */
+/* Cards inside a category. Outer is a CSS Grid of categories (1 → 2 → 3 cols),
+   so any breakpoint with 2+ outer columns stacks cards single-up inside each cell. */
 .cert-category-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
-@media (min-width: 720px) and (max-width: 1099px) {
-  .cert-category-cards { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-}
-@media (min-width: 1100px) {
+@media (min-width: 720px) {
   .cert-category-cards { grid-template-columns: 1fr; gap: 8px; }
 }
 

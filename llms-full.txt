@@ -791,37 +791,141 @@ A: Review the parameters, variables, resources, dependencies, and outputs to und
 **Q: A new application environment requires interpret ARM templates and Bicep files. Which Azure administrator action is correct?**
 A: Use what-if or validation before deployment to preview resource changes
 
+## Certified Information Systems Security Professional (CISSP)
+Vendor: ISC2
+URL: https://quizbuffet.com/isc2-cissp/
+Total questions: 800
+
+CISSP (Certified Information Systems Security Professional) validates deep technical and managerial knowledge across eight domains: security and risk management (governance, risk, BCP, ethics), asset security (classification, handling, data lifecycle), security architecture and engineering (security models, cryptography, site/facility design), communication and network security (OSI, secure protocols, segmentation), identity and access management (AAA, federation, RBAC/ABAC), security assessment and testing (vulnerability, pen testing, audits), security operations (logging, incident management, DR/BC), and software development security (SDLC, SAST/DAST, secure coding).
+
+### Domains
+- 1.0 Security and Risk Management (16% of exam) — 128 questions
+- 2.0 Asset Security (10% of exam) — 80 questions
+- 3.0 Security Architecture and Engineering (13% of exam) — 104 questions
+- 4.0 Communication and Network Security (13% of exam) — 104 questions
+- 5.0 Identity and Access Management (IAM) (13% of exam) — 104 questions
+- 6.0 Security Assessment and Testing (12% of exam) — 96 questions
+- 7.0 Security Operations (13% of exam) — 104 questions
+- 8.0 Software Development Security (10% of exam) — 80 questions
+
+### Sample questions
+**Q: A regional bank's risk committee is rebuilding its information security program after a regulator's MRA letter. The CISO asks for guidance on professional ethics that balances business objectives, compliance, and security. What should be recommended?**
+A: Escalate the issue through appropriate channels while protecting affected parties and preserving professional integrity
+
+**Q: A regional health system is updating its data classification scheme ahead of an HHS audit. A new control baseline must address information and asset classification. What should be included?**
+A: Define classification levels based on business value, sensitivity, legal obligations, and potential impact of disclosure or alteration
+
+**Q: A regional bank's architecture review board is finalizing the security model for a new core banking platform. Executives need a risk-based explanation for secure design principles. Which response best aligns with secure engineering practice?**
+A: Use threat modeling during requirements and architecture to identify assets, trust boundaries, misuse cases, and likely attack paths
+
+**Q: Network engineering at a regional bank is finalizing the segmentation design for a new core banking refresh. The engineering team asks for CISSP-level guidance on secure design principles in network architectures. Which approach is most appropriate?**
+A: Segment the architecture by trust boundary, business function, and data sensitivity, then enforce traffic flows with routed controls and policy points
+
+**Q: A regional bank is consolidating workforce identity after a merger and migrating users to a unified directory. A proposed access design creates risk around physical and logical access to assets. Which design change best addresses the concern?**
+A: Align physical and logical access controls with asset classification, business need, and risk tolerance
+
+**Q: A regional bank's internal audit team is planning the annual security assessment program. Executives need a risk-based explanation for assessment test and audit strategies. Which response best aligns with security assessment practice?**
+A: Define assessment scope, objectives, criteria, independence, timing, and evidence requirements before testing begins
+
+## ITIL 4 Foundation (ITIL 4)
+Vendor: PeopleCert
+URL: https://quizbuffet.com/itil-foundation/
+Total questions: 400
+
+ITIL 4 Foundation introduces the ITIL service value system (SVS), the four dimensions of service management (organizations and people, information and technology, partners and suppliers, value streams and processes), the seven ITIL guiding principles, the six service value chain activities, and the purpose and key terms of 15 ITIL management practices, with seven of those practices covered in depth (continual improvement, change enablement, incident management, problem management, service request management, service desk, and service level management). It is the most commonly listed ITSM credential on enterprise IT job postings and a prerequisite for higher-level ITIL 4 qualifications.
+
+### Domains
+- 1.0 Key Concepts of Service Management (13% of exam) — 50 questions
+- 2.0 ITIL Guiding Principles (15% of exam) — 60 questions
+- 3.0 Four Dimensions of Service Management (5% of exam) — 20 questions
+- 4.0 ITIL Service Value System (2% of exam) — 10 questions
+- 5.0 Service Value Chain Activities (5% of exam) — 20 questions
+- 6.0 Purpose and Key Terms of 15 ITIL Practices (18% of exam) — 70 questions
+- 7.0 Seven ITIL Practices in Detail (42% of exam) — 170 questions
+
+### Sample questions
+**Q: Which statement best describes a service in ITIL 4?**
+A: A means of enabling value co-creation by facilitating outcomes that customers want to achieve without customers managing specific costs and risks
+
+**Q: Which statement best describes the ITIL guiding principles?**
+A: Recommendations that can guide an organization in all circumstances, regardless of changes in goals, strategies, work, or management structure
+
+**Q: Which are the four dimensions of service management in ITIL 4?**
+A: Organizations and people; information and technology; partners and suppliers; value streams and processes
+
+**Q: Which statement best describes the purpose of the ITIL service value system?**
+A: It describes how all components and activities of the organization work together as a system to enable value creation
+
+**Q: Which statement best describes the service value chain?**
+A: An operating model for the creation, delivery, and continual improvement of services
+
+**Q: What is the purpose of the information security management practice?**
+A: To protect the information needed by the organization to conduct its business
+
+## OSHA 10-Hour Construction (OSHA 10)
+Vendor: OSHA
+URL: https://quizbuffet.com/osha-10-construction/
+Total questions: 400
+
+OSHA 10-Hour Construction is a voluntary outreach training program covering worker rights and employer responsibilities, the OSHA Focus Four hazards (falls, electrocution, struck-by, caught-in or between), personal protective equipment, and health hazards in construction. Many states and contractors require it before allowing workers on a construction site, and it is the most common entry credential in the U.S. construction industry.
+
+### Domains
+- 1.0 Introduction to OSHA (10% of exam) — 40 questions
+- 2.0 Falls (Focus Four) (18% of exam) — 70 questions
+- 3.0 Electrocution (Focus Four) (11% of exam) — 45 questions
+- 4.0 Struck-By Hazards (Focus Four) (11% of exam) — 45 questions
+- 5.0 Caught-In or Between (Focus Four) (11% of exam) — 45 questions
+- 6.0 Personal Protective Equipment (9% of exam) — 35 questions
+- 7.0 Health Hazards in Construction (9% of exam) — 35 questions
+- 8.0 Site Safety and Elective Topics (21% of exam) — 85 questions
+
+### Sample questions
+**Q: What is OSHA's main mission?**
+A: To assure safe and healthful working conditions for workers by setting and enforcing standards and by providing training, outreach, education, and assistance
+
+**Q: Which condition is a fall hazard on a construction site?**
+A: An unprotected floor opening where a worker could step through
+
+**Q: Which condition is an electrical hazard on a construction site?**
+A: An exposed energized conductor that workers could contact
+
+**Q: Which condition is a struck-by hazard on a construction site?**
+A: A worker standing in the path of a backing dump truck
+
+**Q: Which condition is a caught-in or between hazard?**
+A: A worker reaching into moving machinery without guarding or lockout protection
+
+**Q: What is the main purpose of PPE on a construction site?**
+A: To reduce exposure when hazards cannot be eliminated or controlled another way
+
 
 ## Coming soon (in priority order)
-- ISC2 CISSP (CISSP) — https://quizbuffet.com/isc2-cissp/ — priority #1
-- ITIL 4 Foundation (ITIL 4) — https://quizbuffet.com/itil-foundation/ — priority #2
-- OSHA 10-Hour Construction (OSHA 10) — https://quizbuffet.com/osha-10-construction/ — priority #3
-- OSHA 30-Hour Construction (OSHA 30) — https://quizbuffet.com/osha-30-construction/ — priority #4
-- Forklift Operator Certification (OSHA 1910.178) — https://quizbuffet.com/forklift-certification/ — priority #5
-- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #6
-- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #7
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #8
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #9
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #10
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #11
-- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #12
-- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #13
-- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #14
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #15
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #16
-- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #17
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #18
-- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #19
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #20
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #21
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #22
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #23
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #24
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #25
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #26
-- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #27
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #28
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #29
-- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #30
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #31
-- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #32
+- OSHA 30-Hour Construction (OSHA 30) — https://quizbuffet.com/osha-30-construction/ — priority #1
+- Forklift Operator Certification (OSHA 1910.178) — https://quizbuffet.com/forklift-certification/ — priority #2
+- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #3
+- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #4
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #5
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #6
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #7
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #8
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #9
+- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #10
+- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #11
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #12
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #13
+- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #14
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #15
+- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #16
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #17
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #18
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #19
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #20
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #21
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #22
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #23
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #24
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #25
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #26
+- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #27
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #28
+- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #29

@@ -13,6 +13,16 @@ function htmlEscape(s) {
   return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
+// Trim a string to <= maxLen, breaking at the last whitespace before the cut.
+// Drops a trailing ellipsis only if we actually trimmed mid-content.
+function clipText(s, maxLen) {
+  s = String(s).trim();
+  if (s.length <= maxLen) return s;
+  const cut = s.slice(0, maxLen);
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > maxLen * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[.,;:\-—]+$/, '').trim();
+}
+
 function loadDomainQuestions(certSlug, domainSlug) {
   const p = path.join(ROOT, 'data', 'certifications', certSlug, `${domainSlug}.json`);
   if (!fs.existsSync(p)) return [];
@@ -105,8 +115,9 @@ function buildCertHtml(cert) {
   const faq = pickFaqQuestions(cert);
   const url = `${SITE}/${cert.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
-  const fullTitle = `${cert.name} (${cert.code}) Free Practice Test | QuizBuffet`;
-  const desc = `Free ${cert.name} (${cert.code}) practice test — ${total}+ exam questions across ${cert.domains.length} domains with instant feedback. ${cert.tagline || ''}`.trim().replace(/\s+/g, ' ');
+  const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
+  const fullTitle = clipText(`${cert.code} Practice Test — ${shortName} | QuizBuffet`, 65);
+  const desc = clipText(`Free ${cert.code} practice test — ${total}+ questions across ${cert.domains.length} domains. Instant feedback, no signup. ${cert.tagline || ''}`.trim().replace(/\s+/g, ' '), 158);
 
   // JSON-LD: WebPage + Course + FAQPage + Breadcrumb
   const jsonLd = {
@@ -278,8 +289,9 @@ function buildComingSoonOgSvg(cert) {
 function buildComingSoonHtml(cert, priority) {
   const url = `${SITE}/${cert.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
-  const fullTitle = `${cert.name} (${cert.code}) Free Practice Test — Coming Soon | QuizBuffet`;
-  const desc = `${cert.name} (${cert.code}) free practice test is coming soon to QuizBuffet. ${cert.tagline || ''} Domain-by-domain quizzes with instant feedback. No account needed.`.trim().replace(/\s+/g, ' ');
+  const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
+  const fullTitle = clipText(`${cert.code} Practice Test (Coming Soon) — ${shortName} | QuizBuffet`, 65);
+  const desc = clipText(`${cert.code} practice test coming soon to QuizBuffet. ${cert.tagline || ''} Domain quizzes with instant feedback, no signup.`.trim().replace(/\s+/g, ' '), 158);
 
   const jsonLd = {
     '@context': 'https://schema.org',

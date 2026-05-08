@@ -33,6 +33,7 @@ const LIVE_CATEGORY = {
   'osha-30-construction':               'Safety',
   'forklift-certification':             'Safety',
   'cdl-class-a':                        'Transportation',
+  'real-estate-license':                'Real Estate',
 };
 
 const CATEGORY_ORDER = [

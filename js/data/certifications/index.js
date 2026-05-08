@@ -28,6 +28,7 @@ import { cert as osha10Construction } from './osha-10-construction.js';
 import { cert as osha30Construction } from './osha-30-construction.js';
 import { cert as forkliftCertification } from './forklift-certification.js';
 import { cert as cdlClassA } from './cdl-class-a.js';
+import { cert as realEstateLicense } from './real-estate-license.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -60,4 +61,5 @@ export const certifications = [
   osha30Construction,
   forkliftCertification,
   cdlClassA,
+  realEstateLicense,
 ];

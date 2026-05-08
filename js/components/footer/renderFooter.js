@@ -31,7 +31,7 @@ export async function renderFooter() {
 
   const liveSorted = [...certifications].sort((a, b) => a.name.localeCompare(b.name));
   const certLinks = liveSorted.map(c =>
-    `<a href="/${c.slug}/" class="footer-cert-link" title="${c.name} (${c.code})">${c.name} <span class="footer-cert-code">${c.code}</span></a>`
+    `<a href="/${c.slug}/" class="footer-cert-link" title="${c.name} (${c.code})"><span class="footer-cert-code">${c.code}</span></a>`
   ).join('');
 
   // Coming-soon chips in footer: compact (rank + code only) so they fit in a single column

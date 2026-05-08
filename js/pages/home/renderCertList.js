@@ -32,7 +32,7 @@ const LIVE_CATEGORY = {
   'osha-10-construction':               'Safety',
   'osha-30-construction':               'Safety',
   'forklift-certification':             'Safety',
-  'cpr-aed':                            'Healthcare',
+  'cdl-class-a':                        'Transportation',
 };
 
 const CATEGORY_ORDER = [

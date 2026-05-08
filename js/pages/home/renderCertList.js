@@ -34,6 +34,7 @@ const LIVE_CATEGORY = {
   'forklift-certification':             'Safety',
   'cdl-class-a':                        'Transportation',
   'real-estate-license':                'Real Estate',
+  'nmls-mlo':                           'Mortgage',
 };
 
 const CATEGORY_ORDER = [

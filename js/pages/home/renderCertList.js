@@ -29,6 +29,10 @@ const LIVE_CATEGORY = {
   'aws-genai-developer-professional':   'Data & AI',
   'aws-data-engineer-associate':        'Data & AI',
   'comptia-data-plus':                  'Data & AI',
+  'osha-10-construction':               'Safety',
+  'osha-30-construction':               'Safety',
+  'forklift-certification':             'Safety',
+  'cpr-aed':                            'Healthcare',
 };
 
 const CATEGORY_ORDER = [

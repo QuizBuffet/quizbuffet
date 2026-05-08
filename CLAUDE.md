@@ -88,7 +88,19 @@ Run every check below. Do not say "done" until all pass.
 - **Answer text must be unique.** No answer string (correct or distractor) may appear in more than one question in the same domain.
 - Spot-check that correct-answer texts are not duplicated either — duplicates here usually mean the underlying meaning collapsed.
 
-### 4. Minification
+### 4. Question, answer, and explanation hygiene (mandatory)
+
+Auto-generated questions consistently carry generator artifacts. Scan and fix every one of these before reporting a domain done:
+
+- **No templated topic-tag prefixes in explanations.** Match and strip patterns like `"<Word>(-<Word>)*\s(?:review|check|note|clue|logic|tip):\s+"` (e.g., `"Scene-safety review: "`, `"Adult-CPR logic: "`, `"Hand-placement clue: "`). Strip the prefix and capitalize the first letter of what remains.
+- **No broken acronyms** from lowercase-first-letter scripts: `aED → AED`, `cPR → CPR`, `pPE → PPE`, `oSHA → OSHA`, `gFCI → GFCI`, `aHA → AHA`, etc. Apply word-boundary find/replace across question text, answer text, and all four explanations.
+- **No stem-stitching** in question text. Generators sometimes glue two prompts together (e.g., `"Which action best fits X? <real question>"`). Collapse to just the real question. Pattern: `^(?:Which\s+(?:action|statement|approach|option)\s+best\s+(?:fits|matches|describes|supports)[^?]+?\?)\s+(?=[A-Z])`.
+- **No mid-sentence capitalized question words** after a comma intro. Lowercase `, Which/What/How/Why/When/Where/Who` after a setup phrase like `"During X, Which Y"` → `"During X, which Y"`.
+- **No empty or very short explanations** (< 15 chars) after cleanup — those usually mean a prefix strip removed everything substantive.
+- **Spot-check medical/technical accuracy** of correct answers and the substantive content of distractor explanations. Cross-reference the official guideline (AHA Guidelines, OSHA CFR, NEC, etc.) for the canonical fact. The cleanup pass cannot fix factual errors — those need human review.
+- **Watch for scope drift.** If a question references content that belongs to a different cert (e.g., healthcare-provider pulse checks in a lay-rescuer CPR cert), flag it for the user; do not silently keep or remove.
+
+### 5. Minification
 
 - After validation passes, write the file back minified: `json.dumps(d, separators=(',',':'), ensure_ascii=False)`.
 - No pretty-printing on disk. Pretty-print during inspection only.
@@ -112,9 +124,10 @@ Leave `data/counts.json` alone until the cert has enough questions to flip live.
 ## Workflow: filling questions for a domain
 
 1. Generate or hand-author questions into the domain JSON.
-2. Run all four checks above.
-3. If question openings or distractors recycle, rewrite them in place. Preserve `id`, `correct`, `explanations`, `objective`, `difficulty`, `keyword`, and metadata exactly. Only the first sentence of `text` and recycled answer strings should change.
-4. Minify and save.
+2. Run all five checks above.
+3. **Cleanup pass for auto-generated content** — strip templated prefixes, fix broken acronyms, collapse stem-stitching, lowercase capitalized question words after commas. Run this before the dedupe pass: collapsing redundant openers can create new duplicate stems that the dedupe pass then resolves.
+4. If question openings or distractors recycle after cleanup, rewrite them in place. Preserve `id`, `correct`, `explanations`, `objective`, `difficulty`, `keyword`, and metadata exactly. Only the first sentence of `text` and recycled answer strings should change.
+5. Minify and save.
 
 ---
 
@@ -124,16 +137,17 @@ Run every step. Do not say "ready to deploy" until all of them pass.
 
 ### Pre-flight: re-validate every domain file
 
-Before touching counts or SEO, programmatically run the four [Required checks](#required-checks-before-reporting-a-domain-json-done) across **all** domain files for the cert at once — not one file at a time. The script must report, per file:
+Before touching counts or SEO, programmatically run the five [Required checks](#required-checks-before-reporting-a-domain-json-done) across **all** domain files for the cert at once — not one file at a time. The script must report, per file:
 
 - Schema validity (top-level keys, all 12 question fields, 4 answers with `a/b/c/d`, valid `correct`, complete `explanations`, consistent cert metadata).
 - Difficulty distribution and correct-answer position distribution (both should be roughly even across `a/b/c/d` and `easy/medium/medium-hard/hard`).
 - Sub-objective coverage count.
 - Duplicate first-10-word stems (must be 0).
 - Duplicate answer strings (must be 0).
+- Explanation hygiene: zero remaining templated topic-tag prefixes, zero broken acronyms, zero stem-stitching artifacts, zero empty/short explanations.
 - Minification (file is a single line; raw text equals `json.dumps(d, separators=(',',':'), ensure_ascii=False)`).
 
-If duplicates exist, fix in place: rewrite duplicate stems by varying only the first sentence, and rewrite duplicate answer strings to preserve meaning (correct stays correct, distractor stays wrong). Preserve `id`, `correct`, `explanations`, `objective`, `difficulty`, `keyword`, and metadata exactly. Re-minify.
+If hygiene issues or duplicates exist, fix in place: cleanup pass first (strip prefixes, fix acronyms, collapse stitching), then dedupe pass (rewrite duplicate stems by varying only the first sentence; rewrite duplicate answer strings preserving meaning so correct stays correct and distractors stay wrong). Preserve `id`, `correct`, `explanations`, `objective`, `difficulty`, `keyword`, and metadata exactly. Re-minify.
 
 ### Flip-live steps
 

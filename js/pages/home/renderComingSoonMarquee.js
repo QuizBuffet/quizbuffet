@@ -1,5 +1,7 @@
-// Infinite-scroll banner of coming-soon certs in priority order.
+// Infinite-scroll banner of the top-priority coming-soon certs.
 // Content list is duplicated so the CSS animation loops seamlessly.
+const MARQUEE_LIMIT = 10;
+
 export function renderComingSoonMarquee(comingSoon = []) {
   const el = document.getElementById('cs-marquee');
   if (!el || !comingSoon.length) {
@@ -7,7 +9,7 @@ export function renderComingSoonMarquee(comingSoon = []) {
     return;
   }
 
-  const items = comingSoon.map((c, i) => `
+  const items = comingSoon.slice(0, MARQUEE_LIMIT).map((c, i) => `
     <a href="/${c.slug}/" class="cs-marquee-item" title="${c.name} (${c.code})">
       <span class="cs-marquee-rank">#${i + 1}</span>
       <span class="cs-marquee-name">${c.name}</span>

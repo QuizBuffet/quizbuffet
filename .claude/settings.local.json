@@ -60,7 +60,8 @@
       "Bash(rm pre-operation-and-seat-belt-safety.json)",
       "Bash(rm load-handling-and-traveling.json)",
       "Bash(rm operating-around-pedestrians.json)",
-      "Bash(rm lifting-people-on-work-platforms.json)"
+      "Bash(rm lifting-people-on-work-platforms.json)",
+      "Bash(node --input-type=module -e \"import\\('./js/data/certifications/cpr-aed.js'\\).then\\(m=>{const c=m.cert; console.log\\('cert:', c.slug\\); console.log\\('domains:', c.domains.length, '| weights sum =', c.domains.reduce\\(\\(s,d\\)=>s+d.weight,0\\)\\); console.log\\('acronyms:', c.acronyms.length, '| concepts:', c.services.length\\); c.domains.forEach\\(\\(d,i\\)=>console.log\\(' ',\\(i+1\\)+'.', d.name, '\\('+d.weight+'%\\)'\\)\\);}\\)\")"
     ]
   }
 }

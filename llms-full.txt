@@ -1,6 +1,6 @@
 # QuizBuffet — Full Cert Reference
 
-Last updated: 2026-05-07
+Last updated: 2026-05-08
 Site: https://quizbuffet.com
 
 QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
@@ -971,32 +971,57 @@ A: The load is within rated capacity, balanced, secure, and suitable for the for
 **Q: Why are forklifts around pedestrians a serious concern?**
 A: Pedestrians can be struck, crushed, or pinned by moving forklifts or loads
 
+## CPR / AED Certification (CPR/AED)
+Vendor: American Red Cross / AHA
+URL: https://quizbuffet.com/cpr-aed/
+Total questions: 156
+
+CPR / AED Certification is the lay-rescuer credential for responding to sudden cardiac arrest, choking, and other breathing emergencies. The knowledge component is standardized across the American Heart Association and American Red Cross and is built on the AHA Guidelines for CPR & ECC: scene safety, the Chain of Survival, recognition of cardiac arrest, high-quality compressions and ventilations for adults, children, and infants, AED operation, choking response, and special situations such as opioid overdose, drowning, and pregnancy. Required for many healthcare, education, fitness, lifeguard, and child-care roles, and broadly recommended for any responsible adult.
+
+### Domains
+- 1.0 Introduction and Chain of Survival (8% of exam)
+- 2.0 Assessment and Recognition (12% of exam) — 36 questions
+- 3.0 Adult CPR (22% of exam) — 66 questions
+- 4.0 Child and Infant CPR (18% of exam)
+- 5.0 AED Operation (18% of exam) — 54 questions
+- 6.0 Choking and Airway Obstruction (12% of exam)
+- 7.0 Special Situations and Recovery (10% of exam)
+
+### Sample questions
+**Q: What is the first action before assessing an adult who may need CPR?**
+A: Verify that the scene is safe
+
+**Q: Where should an adult receiving CPR be positioned?**
+A: Faceup on a firm, flat surface
+
+**Q: What is the main purpose of an AED during cardiac arrest?**
+A: To analyze the heart rhythm and deliver a shock when a shockable rhythm is detected
+
 
 ## Coming soon (in priority order)
-- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #1
-- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #2
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #3
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #4
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #5
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #6
-- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #7
-- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #8
-- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #9
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #10
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #11
-- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #12
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #13
-- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #14
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #15
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #16
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #17
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #18
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #19
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #20
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #21
-- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #22
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #23
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #24
-- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #25
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #26
-- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #27
+- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #1
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #2
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #3
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #4
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #5
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #6
+- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #7
+- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #8
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #9
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #10
+- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #11
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #12
+- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #13
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #14
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #15
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #16
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #17
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #18
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #19
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #20
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #21
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #22
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #23
+- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #24
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #25
+- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #26

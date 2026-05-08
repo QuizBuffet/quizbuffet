@@ -1006,6 +1006,77 @@ A: Keep the cargo as close to the ground as possible, and drive slowly around tu
 **Q: The CDL manual opens the inspection chapter by stating a single most important reason for inspecting a vehicle before every trip. Which reason matches the manual?**
 A: Safety — for the driver and for other road users
 
+## Georgia Real Estate Salesperson License (Real Estate License)
+Vendor: Georgia Real Estate Commission / AMP
+URL: https://quizbuffet.com/real-estate-license/
+Total questions: 300
+
+The Georgia Real Estate Salesperson Examination is administered by AMP for the Georgia Real Estate Commission (GREC). The full exam is 152 multiple-choice items combining the National Real Estate portion (100 items across seven content areas: agency relationships and contracts, real property ownership and interest, finance, real property and valuation, marketing regulations, property management, and real estate calculations) with the Georgia Salesperson Supplement (52 items covering state laws and rules, real estate practice in Georgia, and finance and closing). Candidates must complete a 75-hour Georgia-approved prelicense course, pass the exam at 75%, secure a sponsoring broker for active licensure, and complete a 25-hour postlicense course in their first year.
+
+### Domains
+- 1.0 Agency Relationships and Contracts (19% of exam) — 56 questions
+- 2.0 Real Property Ownership and Interest (9% of exam) — 28 questions
+- 3.0 Finance (10% of exam) — 30 questions
+- 4.0 Real Property (9% of exam) — 28 questions
+- 5.0 Marketing Regulations (5% of exam) — 16 questions
+- 6.0 Property Management (5% of exam) — 16 questions
+- 7.0 Real Estate Calculations (9% of exam) — 26 questions
+- 8.0 State Laws & Rules (Georgia) (11% of exam) — 32 questions
+- 9.0 Real Estate Practice in Georgia (14% of exam) — 42 questions
+- 10.0 Finance & Closing (Georgia) (9% of exam) — 26 questions
+
+### Sample questions
+**Q: Which of the following actions most clearly creates an express agency relationship between a seller and a real estate broker?**
+A: The seller and broker signing a written listing agreement
+
+**Q: A freehold estate in real property is characterized by:**
+A: an ownership interest of indefinite or potentially perpetual duration
+
+**Q: A homeowner's property is valued at $400,000 and has an outstanding mortgage balance of $250,000. The owner's equity is:**
+A: $150,000
+
+**Q: The metes and bounds method of legal description defines a parcel of land by:**
+A: courses and distances starting and ending at a designated point of beginning
+
+**Q: Federal law requires sellers of residential housing built before 1978 to disclose the possible presence of:**
+A: lead-based paint and provide an EPA-approved information pamphlet
+
+**Q: A property manager who is hired to oversee a rental property on behalf of the owner serves primarily as:**
+A: the owner's agent, owing fiduciary duties to the owner
+
+## NMLS Mortgage Loan Originator (MLO) (SAFE MLO)
+Vendor: NMLS
+URL: https://quizbuffet.com/nmls-mlo/
+Total questions: 300
+
+The SAFE MLO National Test with Uniform State Content is required by the federal SAFE Act for any individual originating residential mortgage loans. The test consists of 120 multiple-choice items (115 scored, 5 unscored) across five content areas: Federal Mortgage-Related Laws (24%), Uniform State Content (11%), General Mortgage Knowledge (20%), Mortgage Loan Origination Activities (27%), and Ethics (18%). Federal coverage is anchored on 12 CFR Parts 1024, 1002, 1026, 1003, 1022, 1016, 1014, and 1008 — RESPA (Reg X), ECOA (Reg B), TILA (Reg Z), HMDA (Reg C), FCRA (Reg V), Privacy (Reg P), MAP advertising (Reg N), and SAFE Act compliance (Reg H).
+
+### Domains
+- 1.0 Federal Mortgage-Related Laws (24% of exam) — 72 questions
+- 2.0 Uniform State Content (11% of exam) — 33 questions
+- 3.0 General Mortgage Knowledge (20% of exam) — 60 questions
+- 4.0 Mortgage Loan Origination Activities (27% of exam) — 81 questions
+- 5.0 Ethics (18% of exam) — 54 questions
+
+### Sample questions
+**Q: RESPA was enacted by Congress in 1974 to address rising costs in real estate transactions. Lenders, brokers, and servicers must comply with its disclosure and anti-kickback provisions. What is the primary purpose of RESPA?**
+A: To provide consumers disclosures about settlement costs and to prohibit kickbacks that increase those costs
+
+**Q: Under Regulation X, classification as a mortgage broker matters because RESPA's anti-kickback rules attach to settlement service providers. The definition draws a line around persons who arrange but do not fund the loan. Under RESPA, a 'mortgage broker' is best defined as:**
+A: A person, other than an employee of a lender, who renders origination services and serves as an intermediary between a borrower and a lender
+
+**Q: The SAFE Act was enacted in 2008 as part of the Housing and Economic Recovery Act. It created a national framework for individual MLO licensing and registration. The primary goals of the SAFE Act are to:**
+A: Increase accountability and reduce fraud by requiring minimum licensing standards, fingerprinting, background checks, and education for MLOs
+
+**Q: The SAFE Act defines who is an MLO for licensing purposes. The definition captures both loan origination and solicitation activities. Under the SAFE Act, an individual is a mortgage loan originator if they:**
+A: Take a residential mortgage loan application OR offer or negotiate terms of a residential mortgage loan for compensation or gain
+
+**Q: A conventional mortgage is not insured or guaranteed by a federal government agency. This distinguishes it from FHA, VA, and USDA loans. A conventional mortgage is best described as:**
+A: A residential mortgage loan that is not insured or guaranteed by a federal government agency
+
+**Q: Fannie Mae operates in the secondary mortgage market and purchases loans from approved lenders. Its purchase of eligible loans provides liquidity that enables new origination. Fannie Mae's primary function is to:**
+A: Purchase eligible mortgage loans from approved lenders to provide liquidity to the secondary mortgage market
+
 
 ## Coming soon (in priority order)
 - CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #1
@@ -1018,19 +1089,17 @@ A: Safety — for the driver and for other road users
 - FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #8
 - FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #9
 - A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #10
-- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #11
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #12
-- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #13
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #14
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #15
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #16
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #17
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #18
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #19
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #20
-- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #21
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #22
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #23
-- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #24
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #25
-- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #26
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #11
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #12
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #13
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #14
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #15
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #16
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #17
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #18
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #19
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #20
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #21
+- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #22
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #23
+- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #24

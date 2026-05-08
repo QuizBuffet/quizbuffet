@@ -61,7 +61,9 @@
       "Bash(rm load-handling-and-traveling.json)",
       "Bash(rm operating-around-pedestrians.json)",
       "Bash(rm lifting-people-on-work-platforms.json)",
-      "Bash(node --input-type=module -e \"import\\('./js/data/certifications/cpr-aed.js'\\).then\\(m=>{const c=m.cert; console.log\\('cert:', c.slug\\); console.log\\('domains:', c.domains.length, '| weights sum =', c.domains.reduce\\(\\(s,d\\)=>s+d.weight,0\\)\\); console.log\\('acronyms:', c.acronyms.length, '| concepts:', c.services.length\\); c.domains.forEach\\(\\(d,i\\)=>console.log\\(' ',\\(i+1\\)+'.', d.name, '\\('+d.weight+'%\\)'\\)\\);}\\)\")"
+      "Bash(node --input-type=module -e \"import\\('./js/data/certifications/cpr-aed.js'\\).then\\(m=>{const c=m.cert; console.log\\('cert:', c.slug\\); console.log\\('domains:', c.domains.length, '| weights sum =', c.domains.reduce\\(\\(s,d\\)=>s+d.weight,0\\)\\); console.log\\('acronyms:', c.acronyms.length, '| concepts:', c.services.length\\); c.domains.forEach\\(\\(d,i\\)=>console.log\\(' ',\\(i+1\\)+'.', d.name, '\\('+d.weight+'%\\)'\\)\\);}\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/certifications/nmls-mlo/ethics.json'\\)\\); print\\(list\\(d.keys\\(\\)\\)\\); print\\('q count:', len\\(d.get\\('questions',[]\\)\\)\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/coming-soon.json'\\)\\); slugs=[c['slug'] for c in d]; print\\('coming-soon count:', len\\(slugs\\)\\); print\\('faa-part-107 in coming-soon:', 'faa-part-107' in slugs\\)\")"
     ]
   }
 }

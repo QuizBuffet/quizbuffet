@@ -35,6 +35,7 @@ const LIVE_CATEGORY = {
   'cdl-class-a':                        'Transportation',
   'real-estate-license':                'Real Estate',
   'nmls-mlo':                           'Mortgage',
+  'faa-part-107':                       'Aviation',
 };
 
 const CATEGORY_ORDER = [

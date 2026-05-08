@@ -33,6 +33,8 @@
 - [OSHA 30-Hour Construction (OSHA 30)](https://quizbuffet.com/osha-30-construction/): Supervisor-level construction safety certification 600+ questions.
 - [Forklift Operator Certification (OSHA 1910.178)](https://quizbuffet.com/forklift-certification/): Required certification for operating powered industrial trucks 300+ questions.
 - [CDL Class A (CDL-A)](https://quizbuffet.com/cdl-class-a/): Federal license required to drive tractor-trailers and large combination vehicles 300+ questions.
+- [Georgia Real Estate Salesperson License (Real Estate License)](https://quizbuffet.com/real-estate-license/): Georgia license to represent real estate buyers and sellers 300+ questions.
+- [NMLS Mortgage Loan Originator (MLO) (SAFE MLO)](https://quizbuffet.com/nmls-mlo/): Federal SAFE Act licensing exam for mortgage loan originators 300+ questions.
 
 ## Coming soon
 - [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/) — coming soon (priority #1)
@@ -45,16 +47,16 @@
 - [FAA Part 107 (Remote Pilot) (Part 107)](https://quizbuffet.com/faa-part-107/) — coming soon (priority #8)
 - [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #9)
 - [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #10)
-- [Real Estate Salesperson License (Real Estate License)](https://quizbuffet.com/real-estate-license/) — coming soon (priority #11)
-- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #12)
-- [NMLS Mortgage Loan Originator (MLO) (SAFE MLO)](https://quizbuffet.com/nmls-mlo/) — coming soon (priority #13)
-- [ServSafe Food Handler (ServSafe FH)](https://quizbuffet.com/servsafe-food-handler/) — coming soon (priority #14)
-- [ServSafe Food Protection Manager (ServSafe Manager)](https://quizbuffet.com/servsafe-manager/) — coming soon (priority #15)
-- [EPA 608 Refrigerant Handling Certification (EPA 608)](https://quizbuffet.com/epa-608/) — coming soon (priority #16)
-- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #17)
-- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #18)
-- [ASE Automotive Certification (ASE A1–A9 / G1)](https://quizbuffet.com/ase-automotive/) — coming soon (priority #19)
-- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #20)
+- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #11)
+- [ServSafe Food Handler (ServSafe FH)](https://quizbuffet.com/servsafe-food-handler/) — coming soon (priority #12)
+- [ServSafe Food Protection Manager (ServSafe Manager)](https://quizbuffet.com/servsafe-manager/) — coming soon (priority #13)
+- [EPA 608 Refrigerant Handling Certification (EPA 608)](https://quizbuffet.com/epa-608/) — coming soon (priority #14)
+- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #15)
+- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #16)
+- [ASE Automotive Certification (ASE A1–A9 / G1)](https://quizbuffet.com/ase-automotive/) — coming soon (priority #17)
+- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #18)
+- [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/) — coming soon (priority #19)
+- [Barber License (Barber)](https://quizbuffet.com/barber-license/) — coming soon (priority #20)
 
 ## Resources
 - [Sitemap](https://quizbuffet.com/sitemap.xml)

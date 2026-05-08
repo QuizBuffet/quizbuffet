@@ -9,6 +9,7 @@ import { renderTotalBadge } from '../../components/totalBadge/renderTotalBadge.j
 import { certifications } from '../../data/certifications/index.js';
 import { setMeta } from '../../components/meta/setMeta.js';
 import { setJsonLd } from '../../components/meta/setJsonLd.js';
+import { initFloatingEmoji } from '../../components/floatingEmoji/floatingEmoji.js';
 
 export async function init() {
   setMeta(
@@ -42,4 +43,5 @@ export async function init() {
   renderTotalBadge('total-badge');
   renderCertList(certifications, comingSoon);
   renderAd('ad-bottom');
+  initFloatingEmoji();
 }

@@ -56,7 +56,11 @@
       "Bash(node --input-type=module -e \"import\\('./js/data/certifications/osha-10-construction.js'\\).then\\(m=>console.log\\('cert OK:', m.cert.slug, '|', m.cert.domains.length, 'domains | weights sum =', m.cert.domains.reduce\\(\\(s,d\\)=>s+d.weight,0\\), '| acronyms =', m.cert.acronyms.length, '| concepts =', m.cert.services.length\\)\\)\")",
       "Bash(npm run *)",
       "Bash(node --input-type=module -e \"import\\('./js/data/certifications/osha-30-construction.js'\\).then\\(m=>console.log\\('cert OK:', m.cert.slug, '|', m.cert.domains.length, 'domains | weights sum =', m.cert.domains.reduce\\(\\(s,d\\)=>s+d.weight,0\\), '| acronyms =', m.cert.acronyms.length, '| concepts =', m.cert.services.length\\)\\)\")",
-      "Bash(rm foundations-for-safety-leadership.json)"
+      "Bash(rm foundations-for-safety-leadership.json)",
+      "Bash(rm pre-operation-and-seat-belt-safety.json)",
+      "Bash(rm load-handling-and-traveling.json)",
+      "Bash(rm operating-around-pedestrians.json)",
+      "Bash(rm lifting-people-on-work-platforms.json)"
     ]
   }
 }

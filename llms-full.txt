@@ -901,51 +901,102 @@ A: To reduce exposure when hazards cannot be eliminated or controlled another wa
 ## OSHA 30-Hour Construction (OSHA 30)
 Vendor: OSHA
 URL: https://quizbuffet.com/osha-30-construction/
-Total questions: 0
+Total questions: 600
 
 OSHA 30-Hour Construction is a voluntary outreach training program for supervisors and workers with safety responsibilities. It covers everything in OSHA 10 plus managing safety and health, the OSHA Focus Four hazards in greater depth, expanded electives, and Foundations for Safety Leadership. Many states, contractors, and project labor agreements require OSHA 30 for foremen, superintendents, and site safety personnel.
 
 ### Domains
-- 1.0 Introduction to OSHA (4% of exam)
-- 2.0 Managing Safety and Health (7% of exam)
-- 3.0 Falls (Focus Four) (8% of exam)
-- 4.0 Electrocution (Focus Four) (4% of exam)
-- 5.0 Struck-By Hazards (Focus Four) (5% of exam)
-- 6.0 Caught-In or Between (Focus Four) (4% of exam)
-- 7.0 Personal Protective Equipment (7% of exam)
-- 8.0 Health Hazards in Construction (7% of exam)
-- 9.0 Stairways and Ladders (4% of exam)
-- 10.0 Foundations for Safety Leadership (8% of exam)
-- 11.0 Site Safety and Elective Topics (42% of exam)
+- 1.0 Introduction to OSHA (7% of exam) — 40 questions
+- 2.0 Managing Safety and Health (8% of exam) — 50 questions
+- 3.0 Focus Four: Falls (12% of exam) — 70 questions
+- 4.0 Focus Four: Electrocution (8% of exam) — 45 questions
+- 5.0 Focus Four: Struck-By (7% of exam) — 45 questions
+- 6.0 Focus Four: Caught-In or Between (8% of exam) — 45 questions
+- 7.0 Personal Protective Equipment (7% of exam) — 40 questions
+- 8.0 Health Hazards in Construction (7% of exam) — 45 questions
+- 9.0 Stairways and Ladders (6% of exam) — 35 questions
+- 10.0 Elective Construction Topics (30% of exam) — 185 questions
 
+### Sample questions
+**Q: Why was OSHA established?**
+A: To help assure safe and healthful working conditions for workers
+
+**Q: What is the main purpose of an effective construction safety and health program?**
+A: To prevent injuries, illnesses, and fatalities by systematically finding and controlling hazards
+
+**Q: Which condition is a common fall hazard on a construction site?**
+A: An unprotected floor opening in an active work area
+
+**Q: Which condition is a common electrocution hazard on a construction site?**
+A: A damaged extension cord with exposed conductors
+
+**Q: Which condition is a common struck-by hazard on a construction site?**
+A: Workers walking beneath an active overhead lift
+
+**Q: Which condition is a common caught-in or between hazard on a construction site?**
+A: A worker standing between a backing vehicle and a fixed wall
+
+## Forklift Operator Certification (OSHA 1910.178)
+Vendor: OSHA
+URL: https://quizbuffet.com/forklift-certification/
+Total questions: 300
+
+Forklift Operator Certification is mandated by 29 CFR 1910.178 for any worker operating a powered industrial truck on the job. Training covers truck types and capacities, the physics of stability (fulcrum, center of gravity, stability triangle, load center), pre-operation inspection, safe load handling, operating around pedestrians, lifting personnel on work platforms, and the employer’s duty to evaluate and certify each operator at least every three years.
+
+### Domains
+- 1.0 Forklift Fundamentals and Markings (12% of exam) — 35 questions
+- 2.0 Components and Protective Features (10% of exam) — 30 questions
+- 3.0 Stability and Load Center (20% of exam) — 60 questions
+- 4.0 Seat Belt Safety and Operating Conditions (10% of exam) — 30 questions
+- 5.0 Safe Operation: Loads, Travel, and Shutdown (20% of exam) — 60 questions
+- 6.0 Pedestrian Safety and Work Platforms (11% of exam) — 35 questions
+- 7.0 Training, Evaluation, and Certification (17% of exam) — 50 questions
+
+### Sample questions
+**Q: What is a forklift as described in powered industrial truck safety training?**
+A: A mobile, power-driven vehicle used to carry, push, pull, lift, stack, or tier material
+
+**Q: When is an overhead guard needed on a forklift?**
+A: When the operator is exposed to hoisted or stacked objects that might fall
+
+**Q: Forklift stability is based on what basic principle?**
+A: Two weights balanced on opposite sides of a fulcrum point
+
+**Q: What is the purpose of a forklift seat belt or operator restraint system?**
+A: To help keep the operator in the seat during a tip-over or when thrown-from-truck hazards exist
+
+**Q: Before picking up a load, what should the operator verify?**
+A: The load is within rated capacity, balanced, secure, and suitable for the forklift
+
+**Q: Why are forklifts around pedestrians a serious concern?**
+A: Pedestrians can be struck, crushed, or pinned by moving forklifts or loads
 
 
 ## Coming soon (in priority order)
-- Forklift Operator Certification (OSHA 1910.178) — https://quizbuffet.com/forklift-certification/ — priority #1
-- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #2
-- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #3
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #4
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #5
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #6
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #7
-- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #8
-- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #9
-- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #10
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #11
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #12
-- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #13
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #14
-- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #15
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #16
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #17
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #18
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #19
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #20
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #21
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #22
-- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #23
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #24
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #25
-- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #26
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #27
-- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #28
+- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #1
+- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #2
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #3
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #4
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #5
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #6
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #7
+- CDL Class A (CDL-A) — https://quizbuffet.com/cdl-class-a/ — priority #8
+- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #9
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #10
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #11
+- Real Estate Salesperson License (Real Estate License) — https://quizbuffet.com/real-estate-license/ — priority #12
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #13
+- NMLS Mortgage Loan Originator (MLO) (SAFE MLO) — https://quizbuffet.com/nmls-mlo/ — priority #14
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #15
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #16
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #17
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #18
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #19
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #20
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #21
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #22
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #23
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #24
+- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #25
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #26
+- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #27

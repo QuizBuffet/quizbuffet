@@ -30,29 +30,30 @@
 - [Certified Information Systems Security Professional (CISSP)](https://quizbuffet.com/isc2-cissp/): The gold-standard senior cybersecurity certification 800+ questions.
 - [ITIL 4 Foundation (ITIL 4)](https://quizbuffet.com/itil-foundation/): The most widely adopted IT service management framework 400+ questions.
 - [OSHA 10-Hour Construction (OSHA 10)](https://quizbuffet.com/osha-10-construction/): Required entry-level safety training for construction workers 400+ questions.
-- [OSHA 30-Hour Construction (OSHA 30)](https://quizbuffet.com/osha-30-construction/): Supervisor-level construction safety certification
+- [OSHA 30-Hour Construction (OSHA 30)](https://quizbuffet.com/osha-30-construction/): Supervisor-level construction safety certification 600+ questions.
+- [Forklift Operator Certification (OSHA 1910.178)](https://quizbuffet.com/forklift-certification/): Required certification for operating powered industrial trucks 300+ questions.
 
 ## Coming soon
-- [Forklift Operator Certification (OSHA 1910.178)](https://quizbuffet.com/forklift-certification/) — coming soon (priority #1)
-- [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/) — coming soon (priority #2)
-- [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/) — coming soon (priority #3)
-- [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #4)
-- [Certified Nursing Assistant (CNA) (CNA)](https://quizbuffet.com/cna/) — coming soon (priority #5)
-- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #6)
-- [Certified Phlebotomy Technician (CPT) (CPT)](https://quizbuffet.com/phlebotomy-technician/) — coming soon (priority #7)
-- [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #8)
-- [CDL Class A (CDL-A)](https://quizbuffet.com/cdl-class-a/) — coming soon (priority #9)
-- [FAA Part 107 (Remote Pilot) (Part 107)](https://quizbuffet.com/faa-part-107/) — coming soon (priority #10)
-- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #11)
-- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #12)
-- [Real Estate Salesperson License (Real Estate License)](https://quizbuffet.com/real-estate-license/) — coming soon (priority #13)
-- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #14)
-- [NMLS Mortgage Loan Originator (MLO) (SAFE MLO)](https://quizbuffet.com/nmls-mlo/) — coming soon (priority #15)
-- [ServSafe Food Handler (ServSafe FH)](https://quizbuffet.com/servsafe-food-handler/) — coming soon (priority #16)
-- [ServSafe Food Protection Manager (ServSafe Manager)](https://quizbuffet.com/servsafe-manager/) — coming soon (priority #17)
-- [EPA 608 Refrigerant Handling Certification (EPA 608)](https://quizbuffet.com/epa-608/) — coming soon (priority #18)
-- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #19)
-- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #20)
+- [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/) — coming soon (priority #1)
+- [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/) — coming soon (priority #2)
+- [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #3)
+- [Certified Nursing Assistant (CNA) (CNA)](https://quizbuffet.com/cna/) — coming soon (priority #4)
+- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #5)
+- [Certified Phlebotomy Technician (CPT) (CPT)](https://quizbuffet.com/phlebotomy-technician/) — coming soon (priority #6)
+- [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #7)
+- [CDL Class A (CDL-A)](https://quizbuffet.com/cdl-class-a/) — coming soon (priority #8)
+- [FAA Part 107 (Remote Pilot) (Part 107)](https://quizbuffet.com/faa-part-107/) — coming soon (priority #9)
+- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #10)
+- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #11)
+- [Real Estate Salesperson License (Real Estate License)](https://quizbuffet.com/real-estate-license/) — coming soon (priority #12)
+- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #13)
+- [NMLS Mortgage Loan Originator (MLO) (SAFE MLO)](https://quizbuffet.com/nmls-mlo/) — coming soon (priority #14)
+- [ServSafe Food Handler (ServSafe FH)](https://quizbuffet.com/servsafe-food-handler/) — coming soon (priority #15)
+- [ServSafe Food Protection Manager (ServSafe Manager)](https://quizbuffet.com/servsafe-manager/) — coming soon (priority #16)
+- [EPA 608 Refrigerant Handling Certification (EPA 608)](https://quizbuffet.com/epa-608/) — coming soon (priority #17)
+- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #18)
+- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #19)
+- [ASE Automotive Certification (ASE A1–A9 / G1)](https://quizbuffet.com/ase-automotive/) — coming soon (priority #20)
 
 ## Resources
 - [Sitemap](https://quizbuffet.com/sitemap.xml)

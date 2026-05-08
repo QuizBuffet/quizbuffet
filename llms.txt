@@ -32,16 +32,16 @@
 - [OSHA 10-Hour Construction (OSHA 10)](https://quizbuffet.com/osha-10-construction/): Required entry-level safety training for construction workers 400+ questions.
 - [OSHA 30-Hour Construction (OSHA 30)](https://quizbuffet.com/osha-30-construction/): Supervisor-level construction safety certification 600+ questions.
 - [Forklift Operator Certification (OSHA 1910.178)](https://quizbuffet.com/forklift-certification/): Required certification for operating powered industrial trucks 300+ questions.
-- [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/): Lifesaving cardiac and breathing emergency skills 156+ questions.
+- [CDL Class A (CDL-A)](https://quizbuffet.com/cdl-class-a/): Federal license required to drive tractor-trailers and large combination vehicles 300+ questions.
 
 ## Coming soon
-- [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/) — coming soon (priority #1)
-- [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #2)
-- [Certified Nursing Assistant (CNA) (CNA)](https://quizbuffet.com/cna/) — coming soon (priority #3)
-- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #4)
-- [Certified Phlebotomy Technician (CPT) (CPT)](https://quizbuffet.com/phlebotomy-technician/) — coming soon (priority #5)
-- [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #6)
-- [CDL Class A (CDL-A)](https://quizbuffet.com/cdl-class-a/) — coming soon (priority #7)
+- [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/) — coming soon (priority #1)
+- [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/) — coming soon (priority #2)
+- [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #3)
+- [Certified Nursing Assistant (CNA) (CNA)](https://quizbuffet.com/cna/) — coming soon (priority #4)
+- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #5)
+- [Certified Phlebotomy Technician (CPT) (CPT)](https://quizbuffet.com/phlebotomy-technician/) — coming soon (priority #6)
+- [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #7)
 - [FAA Part 107 (Remote Pilot) (Part 107)](https://quizbuffet.com/faa-part-107/) — coming soon (priority #8)
 - [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #9)
 - [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #10)

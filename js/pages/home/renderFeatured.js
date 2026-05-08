@@ -1,4 +1,16 @@
-// Featured carousel — rotates through live certs with auto-advance, dots, arrows, pause-on-hover
+// Featured carousel — rotates through a curated set of headline certs.
+// Cap is a hand-picked list (not the entire registry) to keep dot count tight on mobile.
+const FEATURED_SLUGS = [
+  'comptia-security-plus',
+  'aws-solutions-architect-associate',
+  'aws-cloud-practitioner',
+  'comptia-a-plus-core-1',
+  'comptia-network-plus',
+  'isc2-cissp',
+  'cisco-ccna',
+  'microsoft-az-900',
+];
+
 const PALETTE = {
   'comptia-security-plus':   ['#0b6e4f', '#15a96f'],
   'comptia-network-plus':    ['#1f4287', '#3a6ed1'],
@@ -54,7 +66,12 @@ export function renderFeatured(_legacy, allCerts) {
   const el = document.getElementById('featured');
   if (!el) return;
   // Backward-compat: when called with just one cert object (old signature), wrap it
-  const certs = Array.isArray(allCerts) ? allCerts : (_legacy && _legacy.slug ? [_legacy] : []);
+  const allList = Array.isArray(allCerts) ? allCerts : (_legacy && _legacy.slug ? [_legacy] : []);
+  // Curated featured list — preserves FEATURED_SLUGS order, drops any not in the registry.
+  const bySlug = new Map(allList.map(c => [c.slug, c]));
+  const featured = FEATURED_SLUGS.map(slug => bySlug.get(slug)).filter(Boolean);
+  // Fallback to first N of registry if the curated list lands empty (e.g., during a rebuild).
+  const certs = featured.length ? featured : allList.slice(0, 8);
   if (!certs.length) { el.innerHTML = ''; return; }
 
   el.innerHTML = `

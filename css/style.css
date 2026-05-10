@@ -3856,3 +3856,55 @@ a:is(:hover, :active) { text-decoration: underline; }
   animation: buffet-smoke-rise-2 6s ease-out infinite;
   animation-delay: -3s;
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CAROUSEL — kill the white flash on slide change
+   1) Give the stage the same gradient bg as the slide, so during the swap the
+      background never goes white.
+   2) Fade the new slide in over 350ms so it doesn't pop.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.container-home .featured-stage {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--accent, #2e9b4a) 88%, #1a1a1a),
+    color-mix(in srgb, var(--accent, #2e9b4a) 65%, #ffffff));
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      transparent 1px,
+      transparent 14px
+    ),
+    radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1.2px),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #2e9b4a) 88%, #1a1a1a),
+      color-mix(in srgb, var(--accent, #2e9b4a) 65%, #ffffff));
+  background-size: auto, 14px 14px, auto;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+[data-theme='dark'] .container-home .featured-stage {
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px,
+      transparent 1px, transparent 14px),
+    radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1.2px),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #4cc168) 30%, #0e0e0e),
+      color-mix(in srgb, var(--accent, #4cc168) 18%, #1c1c1c));
+  background-size: auto, 14px 14px, auto;
+}
+
+/* Each new slide fades in (animation runs once per innerHTML replacement) */
+.container-home .featured-slide {
+  animation: slide-fade-in 0.35s ease-out;
+}
+@keyframes slide-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .container-home .featured-slide { animation: none; }
+}

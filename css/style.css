@@ -4236,3 +4236,20 @@ html, body {
 @media (max-width: 720px) {
   .container-home .featured-dots { display: none; }
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   MOBILE CARDS — keep all rows left-aligned so they don't shuffle on resize
+   ──────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .container-home .cert-card-col-r {
+    flex-direction: column;          /* stack instead of horizontal wrap */
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+  .container-home .cert-card-col-r .cert-card-cat { order: -1; align-self: flex-start; }
+  .container-home .cert-card-col-r .cert-card-price { align-items: flex-start; text-align: left; flex-direction: row; gap: 8px; flex-wrap: wrap; }
+  .container-home .cert-card-col-r .cert-card-footer { text-align: left; flex: none; }
+}

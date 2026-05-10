@@ -3739,3 +3739,120 @@ a:is(:hover, :active) { text-decoration: underline; }
   box-shadow: none;
   animation: none;
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   BUFFET SMOKE v2 — synced to carousel (6s) + thinner wisps
+   ──────────────────────────────────────────────────────────────────────────── */
+
+[data-color="buffet"] #featured::before {
+  /* lighter, smaller, wispier brown puffs */
+  background:
+    radial-gradient(ellipse  90px 50px at 12% 88%, rgba(82, 51, 26, 0.55), rgba(82, 51, 26, 0.15) 50%, transparent 75%),
+    radial-gradient(ellipse 110px 60px at 30% 75%, rgba(110, 70, 38, 0.48), rgba(110, 70, 38, 0.12) 55%, transparent 80%),
+    radial-gradient(ellipse 100px 55px at 50% 86%, rgba(95, 60, 30, 0.52), rgba(95, 60, 30, 0.14) 50%, transparent 78%),
+    radial-gradient(ellipse 110px 60px at 70% 74%, rgba(110, 70, 38, 0.48), rgba(110, 70, 38, 0.12) 55%, transparent 80%),
+    radial-gradient(ellipse 100px 55px at 88% 86%, rgba(82, 51, 26, 0.55), rgba(82, 51, 26, 0.16) 50%, transparent 78%);
+  filter: blur(22px);                 /* up from 14 → wispier */
+  animation: buffet-smoke-rise-1 6s ease-out infinite;   /* synced to carousel */
+}
+
+[data-color="buffet"] #featured::after {
+  background:
+    radial-gradient(ellipse 70px 40px at 18% 82%, rgba(140, 90, 50, 0.40), transparent 75%),
+    radial-gradient(ellipse 85px 45px at 38% 65%, rgba(160, 110, 70, 0.32), transparent 78%),
+    radial-gradient(ellipse 75px 40px at 58% 80%, rgba(140, 90, 50, 0.38), transparent 75%),
+    radial-gradient(ellipse 90px 50px at 78% 60%, rgba(160, 110, 70, 0.32), transparent 78%),
+    radial-gradient(ellipse 75px 40px at 92% 80%, rgba(140, 90, 50, 0.40), transparent 75%);
+  filter: blur(28px);                 /* extra wispy on the upper layer */
+  animation: buffet-smoke-rise-2 6s ease-out infinite;
+  animation-delay: -3s;               /* offset by half the cycle so it overlaps */
+}
+
+@keyframes buffet-smoke-rise-1 {
+  0%   { transform: translate(-50%,  50px) scale(0.95); opacity: 0; }
+  18%  {                                                opacity: 0.55; }
+  60%  { transform: translate(calc(-50% + 10px), -36px) scale(1.06); opacity: 0.4; }
+  100% { transform: translate(calc(-50% - 14px), -110px) scale(1.18); opacity: 0; }
+}
+@keyframes buffet-smoke-rise-2 {
+  0%   { transform: translate(-50%,  35px) scale(0.95); opacity: 0; }
+  22%  {                                                opacity: 0.42; }
+  65%  { transform: translate(calc(-50% - 12px), -46px) scale(1.10); opacity: 0.28; }
+  100% { transform: translate(calc(-50% + 18px), -135px) scale(1.22); opacity: 0; }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   BUFFET SMOKE v3 — tall vertical wisps + SVG turbulence for smokey edges
+   ──────────────────────────────────────────────────────────────────────────── */
+
+[data-color="buffet"] #featured::before {
+  background:
+    /* tall narrow wisps (40w × 180h) — read as vertical smoke columns */
+    radial-gradient(ellipse  40px 180px at  10% 80%, rgba(82, 51, 26, 0.85), rgba(82, 51, 26, 0.20) 45%, transparent 75%),
+    radial-gradient(ellipse  35px 200px at  22% 75%, rgba(110, 70, 38, 0.70), rgba(110, 70, 38, 0.15) 50%, transparent 80%),
+    radial-gradient(ellipse  45px 170px at  36% 80%, rgba(95, 60, 30, 0.78), rgba(95, 60, 30, 0.18) 45%, transparent 78%),
+    radial-gradient(ellipse  35px 200px at  50% 72%, rgba(110, 70, 38, 0.70), rgba(110, 70, 38, 0.15) 50%, transparent 80%),
+    radial-gradient(ellipse  45px 180px at  64% 78%, rgba(82, 51, 26, 0.80), rgba(82, 51, 26, 0.20) 45%, transparent 78%),
+    radial-gradient(ellipse  35px 200px at  78% 74%, rgba(110, 70, 38, 0.72), rgba(110, 70, 38, 0.15) 50%, transparent 80%),
+    radial-gradient(ellipse  40px 180px at  90% 80%, rgba(95, 60, 30, 0.78), rgba(95, 60, 30, 0.18) 45%, transparent 78%);
+  filter:
+    blur(8px)
+    /* SVG turbulence displaces the wisps to give actual smoke-edge irregularity */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='s'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.025' numOctaves='2' seed='3' stitchTiles='stitch'/><feDisplacementMap in='SourceGraphic' scale='42'/></filter></svg>#s");
+}
+
+[data-color="buffet"] #featured::after {
+  background:
+    radial-gradient(ellipse 30px 160px at  16% 78%, rgba(140, 90, 50, 0.55), transparent 75%),
+    radial-gradient(ellipse 28px 180px at  32% 68%, rgba(160, 110, 70, 0.45), transparent 78%),
+    radial-gradient(ellipse 32px 160px at  48% 76%, rgba(140, 90, 50, 0.52), transparent 75%),
+    radial-gradient(ellipse 28px 180px at  64% 64%, rgba(160, 110, 70, 0.48), transparent 78%),
+    radial-gradient(ellipse 30px 160px at  82% 76%, rgba(140, 90, 50, 0.55), transparent 75%);
+  filter:
+    blur(10px)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='s2'><feTurbulence type='fractalNoise' baseFrequency='0.018 0.030' numOctaves='2' seed='7' stitchTiles='stitch'/><feDisplacementMap in='SourceGraphic' scale='36'/></filter></svg>#s2");
+}
+
+/* Tighter rise so the smoke streaks read as columns, not balloons */
+@keyframes buffet-smoke-rise-1 {
+  0%   { transform: translate(-50%,  60px) scaleY(0.85); opacity: 0; }
+  20%  {                                                  opacity: 0.95; }
+  60%  { transform: translate(calc(-50% + 14px), -50px) scaleY(1.10); opacity: 0.7; }
+  100% { transform: translate(calc(-50% - 22px), -150px) scaleY(1.30); opacity: 0; }
+}
+@keyframes buffet-smoke-rise-2 {
+  0%   { transform: translate(-50%,  40px) scaleY(0.85); opacity: 0; }
+  25%  {                                                  opacity: 0.85; }
+  65%  { transform: translate(calc(-50% - 16px), -60px) scaleY(1.15); opacity: 0.55; }
+  100% { transform: translate(calc(-50% + 24px), -180px) scaleY(1.35); opacity: 0; }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   BUFFET SMOKE v4 — back to original wide-ellipse shape, brown + visible
+   ──────────────────────────────────────────────────────────────────────────── */
+
+[data-color="buffet"] #featured::before {
+  background:
+    radial-gradient(ellipse 180px 70px at  8%  60%, rgba(110, 70, 38, 0.55), transparent 70%),
+    radial-gradient(ellipse 220px 80px at 25%  35%, rgba(95, 60, 30, 0.45), transparent 70%),
+    radial-gradient(ellipse 200px 70px at 45%  55%, rgba(110, 70, 38, 0.50), transparent 70%),
+    radial-gradient(ellipse 240px 90px at 65%  30%, rgba(95, 60, 30, 0.45), transparent 70%),
+    radial-gradient(ellipse 200px 70px at 85%  55%, rgba(110, 70, 38, 0.50), transparent 70%),
+    radial-gradient(ellipse 180px 60px at 98%  40%, rgba(95, 60, 30, 0.40), transparent 70%);
+  filter: blur(20px);
+  mix-blend-mode: normal;
+  animation: buffet-smoke-rise-1 6s ease-out infinite;
+}
+
+[data-color="buffet"] #featured::after {
+  background:
+    radial-gradient(ellipse 140px 50px at 15% 60%, rgba(140, 90, 50, 0.45), transparent 70%),
+    radial-gradient(ellipse 160px 55px at 38% 40%, rgba(160, 110, 70, 0.35), transparent 70%),
+    radial-gradient(ellipse 120px 45px at 58% 65%, rgba(140, 90, 50, 0.42), transparent 70%),
+    radial-gradient(ellipse 150px 55px at 78% 38%, rgba(160, 110, 70, 0.35), transparent 70%),
+    radial-gradient(ellipse 130px 45px at 92% 60%, rgba(140, 90, 50, 0.45), transparent 70%);
+  filter: blur(18px);
+  mix-blend-mode: normal;
+  animation: buffet-smoke-rise-2 6s ease-out infinite;
+  animation-delay: -3s;
+}

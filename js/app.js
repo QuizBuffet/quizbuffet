@@ -8,14 +8,13 @@ checkInactivityReset();
 
 const SHELLS = {
   home: `
+    <div id="cs-marquee"></div>
     <main class="container container-home">
+      <div id="hero"></div>
       <div id="featured"></div>
-      <div id="cs-marquee"></div>
       <div id="ad-top" class="ad-slot">Advertisement</div>
-      <div id="random-btn"></div>
-      <div id="search"></div>
+      <h2 class="section-title">All certifications</h2>
       <div id="total-badge"></div>
-      <h2 class="section-title">Certifications</h2>
       <div id="cert-list"></div>
       <div id="ad-bottom" class="ad-slot">Advertisement</div>
     </main>`,

@@ -1,8 +1,7 @@
 // Entry point for the home route — wires search input to cert list filter
+import { renderHero } from './renderHero.js';
 import { renderFeatured } from './renderFeatured.js';
 import { renderComingSoonMarquee } from './renderComingSoonMarquee.js';
-import { renderRandomBtn } from './renderRandomBtn.js';
-import { renderSearch } from './renderSearch.js';
 import { renderCertList } from './renderCertList.js';
 import { renderAd } from '../../components/ad/renderAd.js';
 import { renderTotalBadge } from '../../components/totalBadge/renderTotalBadge.js';
@@ -35,11 +34,10 @@ export async function init() {
     if (res.ok) comingSoon = await res.json();
   } catch (_) {}
 
-  renderFeatured(null, certifications);
   renderComingSoonMarquee(comingSoon);
+  renderHero(comingSoon, filter => renderCertList(certifications, comingSoon, filter));
+  renderFeatured(null, certifications);
   renderAd('ad-top');
-  renderRandomBtn();
-  renderSearch(filter => renderCertList(certifications, comingSoon, filter));
   renderTotalBadge('total-badge');
   renderCertList(certifications, comingSoon);
   renderAd('ad-bottom');

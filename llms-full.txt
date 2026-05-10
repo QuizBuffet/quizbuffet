@@ -1114,28 +1114,95 @@ A: Wind from 270 degrees (west) at 15 knots, with no gusts reported
 **Q: A remote pilot normally operates a quadcopter with a 1-pound camera payload, achieving 22-minute flight times. For a new job, the pilot replaces the camera with a 2.5-pound thermal imaging unit. Assuming all other conditions are equal, how will this increased payload weight most likely affect sUAS performance?**
 A: Flight time will decrease and battery consumption will increase because the motors must produce more thrust to support the greater total weight
 
+## Certified Personal Trainer (NASM-CPT) (NASM-CPT)
+Vendor: NASM
+URL: https://quizbuffet.com/personal-trainer-nasm/
+Total questions: 900
+
+The NASM Certified Personal Trainer (NASM-CPT) credential is an NCCA-accredited certification administered by the National Academy of Sports Medicine. The certification exam consists of 120 multiple-choice questions delivered over a 2-hour window through PSI testing centers, with a passing score of 70%. Content is anchored on the NASM CPT Exam Content Outline (current 7th edition), organized into six domains: Basic and Applied Sciences and Nutritional Concepts, Client Relations and Behavioral Coaching, Assessment, Program Design, Exercise Technique and Training Instruction, and Professional Development and Responsibility. NASM's programming framework is the Optimum Performance Training (OPT) model, which sequences clients through stabilization endurance, strength endurance, hypertrophy, maximal strength, and power phases. This QuizBuffet bank weights its 900 questions toward foundational sciences (anatomy, physiology, kinesiology, energy systems, nutrition) so candidates have generous drill volume on the material that everything else builds on.
+
+### Domains
+- 1.0 Basic and Applied Sciences and Nutritional Concepts (46% of exam) — 408 questions
+- 2.0 Client Relations and Behavioral Coaching (11% of exam) — 100 questions
+- 3.0 Assessment (11% of exam) — 100 questions
+- 4.0 Program Design (7% of exam) — 64 questions
+- 5.0 Exercise Technique and Training Instruction (14% of exam) — 128 questions
+- 6.0 Professional Development and Responsibility (11% of exam) — 100 questions
+
+### Sample questions
+**Q: A personal trainer is explaining to a client how the body coordinates movement during exercise. According to NASM, which system is responsible for collecting, processing, and responding to information from the environment?**
+A: The nervous system
+
+**Q: A personal trainer is studying the field that focuses on understanding why people participate in sports and exercise. According to NASM, what is this subtopic of psychology called?**
+A: Sport and exercise psychology
+
+**Q: A personal trainer performs a standing postural observation of a new client before beginning exercise programming. According to NASM, what is the purpose of a static postural assessment?**
+A: To identify deviations from ideal joint alignment at rest — revealing potential muscular imbalances before movement is introduced
+
+**Q: A personal trainer explains program design principles to a new colleague. According to NASM, which factors are essential when designing a comprehensive fitness program?**
+A: Client goals, health history, assessment findings, fitness level, available equipment, time constraints, and movement pattern balance — together forming the foundation of individualized program design
+
+**Q: A personal trainer introduces a new client to the NASM training philosophy. According to NASM, what does the OPT model stand for and what is its primary purpose?**
+A: Optimum Performance Training — a systematic, evidence-based framework for progressing clients through phases of training to develop all biomotor abilities safely and effectively
+
+**Q: NASM recommends that all fitness professionals maintain a focus on evidence-based practice. Which statement best defines evidence-based practice according to NASM?**
+A: The conscientious use of current best evidence in making decisions about client care
+
+## CPR / AED Certification (CPR/AED)
+Vendor: American Red Cross / AHA
+URL: https://quizbuffet.com/cpr-aed/
+Total questions: 300
+
+CPR / AED Certification is the lay-rescuer credential for responding to sudden cardiac arrest, choking, and other breathing emergencies. The knowledge component is standardized across the American Heart Association and American Red Cross and is built on the AHA Guidelines for CPR & ECC: scene safety, the Chain of Survival, recognition of cardiac arrest, high-quality compressions and ventilations for adults, children, and infants, AED operation, choking response, and special situations such as opioid overdose, drowning, and pregnancy. Required for many healthcare, education, fitness, lifeguard, and child-care roles, and broadly recommended for any responsible adult.
+
+### Domains
+- 1.0 Introduction and Chain of Survival (8% of exam) — 24 questions
+- 2.0 Assessment and Recognition (12% of exam) — 36 questions
+- 3.0 Adult CPR (22% of exam) — 65 questions
+- 4.0 Child and Infant CPR (18% of exam) — 54 questions
+- 5.0 AED Operation (18% of exam) — 55 questions
+- 6.0 Choking and Airway Obstruction (12% of exam) — 36 questions
+- 7.0 Special Situations and Recovery (10% of exam) — 30 questions
+
+### Sample questions
+**Q: A coworker asks why bystander CPR matters when EMS will arrive in a few minutes anyway. Which statement best summarizes the impact of immediate high-quality CPR combined with early defibrillation on survival from cardiac arrest?**
+A: It can double or triple the chances of survival
+
+**Q: What is the first action before assessing an adult who may need CPR?**
+A: Verify that the scene is safe
+
+**Q: Where should an adult receiving CPR be positioned?**
+A: Faceup on a firm, flat surface
+
+**Q: An instructor reviews the AHA age definitions used in the BLS pediatric section. Which range correctly describes an 'infant' for BLS purposes, excluding the newly born?**
+A: Younger than 1 year
+
+**Q: What is the main purpose of an AED during cardiac arrest?**
+A: To analyze the heart rhythm and deliver a shock when a shockable rhythm is detected
+
+**Q: An adult at a restaurant suddenly stops eating, clutches the front of the neck with both hands, and looks panicked. AHA Part 11 calls this gesture by what name?**
+A: The universal choking sign
+
 
 ## Coming soon (in priority order)
-- CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #1
-- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #2
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #3
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #4
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #5
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #6
-- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #7
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #8
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #9
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #10
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #11
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #12
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #13
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #14
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #15
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #16
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #17
-- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #18
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #19
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #20
-- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #21
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #22
-- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #23
+- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #1
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #2
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #3
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #4
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #5
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #6
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #7
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #8
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #9
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #10
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #11
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #12
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #13
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #14
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #15
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #16
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #17
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #18
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #19
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #20
+- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #21

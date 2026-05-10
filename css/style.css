@@ -2093,3 +2093,1649 @@ a:is(:hover, :active) { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) {
   .floating-emoji { display: none; }
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   HOME REFRESH — minimalist hero, refined cert list
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Hero */
+.hero {
+  padding: clamp(48px, 9vw, 96px) 0 clamp(32px, 5vw, 56px);
+  text-align: center;
+}
+.hero-inner { max-width: 760px; margin: 0 auto; padding: 0 8px; }
+.hero-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(34px, 6.4vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 18px;
+  color: var(--text, #1a1a1a);
+}
+.hero-em {
+  font-style: italic;
+  background: linear-gradient(180deg, transparent 60%, var(--accent-soft, #fde68a) 60%);
+  padding: 0 4px;
+}
+.hero-sub {
+  font-size: clamp(15px, 2.4vw, 18px);
+  color: var(--text-muted, #555);
+  line-height: 1.55;
+  max-width: 620px;
+  margin: 0 auto 32px;
+}
+
+/* Hero search */
+.hero-search {
+  display: flex;
+  gap: 8px;
+  max-width: 620px;
+  margin: 0 auto 28px;
+  padding: 0 8px;
+}
+.hero-search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--text, #1a1a1a);
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e5e5e5);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.hero-search-input:focus {
+  border-color: var(--link, #06c);
+  box-shadow: 0 0 0 3px var(--accent-soft, rgba(6,102,204,0.12));
+}
+.hero-search-input::placeholder { color: var(--text-muted, #888); }
+.hero-random {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--text, #1a1a1a);
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e5e5e5);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.08s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+.hero-random:hover, .hero-random:focus {
+  border-color: var(--text, #333);
+  background: var(--bg, #fafafa);
+}
+.hero-random:active { transform: translateY(1px); }
+.hero-random-arrow { transition: transform 0.15s ease; }
+.hero-random:hover .hero-random-arrow { transform: translateX(2px); }
+@media (max-width: 540px) {
+  .hero-search { flex-direction: column; }
+  .hero-random { width: 100%; justify-content: center; }
+  .hero-random-text::before { content: '🎲 '; }
+}
+
+/* Hero stats */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(24px, 6vw, 56px);
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 600;
+  color: var(--text, #1a1a1a);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 12px;
+  color: var(--text-muted, #888);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* Section title refresh on home */
+.container-home .section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  font-size: clamp(22px, 3.6vw, 28px);
+  font-weight: 600;
+  color: var(--text, #1a1a1a);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: clamp(40px, 6vw, 64px) 0 18px;
+}
+
+/* Cert card refinement — subtler borders, more breathing room, hover lift */
+.container-home .cert-card {
+  padding: 18px 18px 16px;
+  border-radius: 12px;
+  border-color: var(--border-sub, #ececec);
+  transition: border-color 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.container-home .cert-card:not(.cert-coming-soon):hover {
+  border-color: var(--text, #333);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,0.12), 0 2px 6px -2px rgba(0,0,0,0.06);
+}
+
+/* Category headings — softer divider */
+.container-home .cert-category-heading {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted, #888);
+  font-weight: 700;
+  margin: 24px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-sub, #ececec);
+}
+
+/* Cert list section divider tightening */
+.container-home .cert-list-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  text-transform: none;
+  letter-spacing: -0.005em;
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 600;
+  color: var(--text, #1a1a1a);
+  margin: 32px 0 8px;
+}
+
+/* Featured carousel — softer, less aggressive */
+.container-home .featured-slide {
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--c1, #2a2a2a), var(--c2, #4a4a4a));
+  padding: clamp(28px, 5vw, 44px);
+  filter: saturate(0.92);
+}
+.container-home .featured-tag {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  opacity: 0.75;
+}
+.container-home .featured-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Coming-soon marquee — more subtle */
+.container-home #cs-marquee {
+  margin-top: clamp(40px, 6vw, 56px);
+  opacity: 0.92;
+}
+
+/* Dark theme adjustments for hero */
+[data-theme='dark'] .hero-headline { color: var(--text, #f0f0f0); }
+[data-theme='dark'] .hero-search-input { background: var(--surface, #1f1f1f); border-color: var(--border, #2f2f2f); color: var(--text, #f0f0f0); }
+[data-theme='dark'] .hero-random { background: var(--surface, #1f1f1f); border-color: var(--border, #2f2f2f); color: var(--text, #f0f0f0); }
+[data-theme='dark'] .hero-random:hover { background: var(--bg, #181818); }
+[data-theme='dark'] .hero-em { background: linear-gradient(180deg, transparent 60%, rgba(253, 230, 138, 0.25) 60%); }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   FEATURED CAROUSEL — richer 2-column layout (laptop) / stacked on mobile
+   ──────────────────────────────────────────────────────────────────────────── */
+.container-home .featured-carousel { margin-top: 0; }
+.container-home .featured-slide {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(20px, 3vw, 44px);
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--c1, #2a2a2a), var(--c2, #4a4a4a));
+  padding: clamp(28px, 4vw, 44px) clamp(28px, 4vw, 48px);
+  min-height: 320px;
+  filter: saturate(0.95);
+  position: relative;
+  overflow: hidden;
+}
+.container-home .featured-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,0.12), transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(0,0,0,0.18), transparent 60%);
+  pointer-events: none;
+}
+.container-home .featured-left,
+.container-home .featured-right { position: relative; z-index: 1; }
+.container-home .featured-left { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+
+.container-home .featured-tag {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.78;
+  margin: 0;
+}
+.container-home .featured-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(26px, 3.6vw, 40px);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  margin: 0;
+  color: #fff;
+}
+.container-home .featured-sub {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  opacity: 0.92;
+  flex-wrap: wrap;
+}
+.container-home .featured-vendor { font-weight: 600; }
+.container-home .featured-code {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.22);
+}
+.container-home .featured-desc {
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.55;
+  margin: 4px 0 4px;
+  opacity: 0.92;
+  max-width: 38ch;
+}
+
+.container-home .featured-statline {
+  display: flex;
+  gap: 28px;
+  margin-top: auto;
+  padding-top: 6px;
+  flex-wrap: wrap;
+}
+.container-home .featured-statbox {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.container-home .featured-statbox-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(20px, 2.6vw, 26px);
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.container-home .featured-statbox-lbl {
+  font-size: 11px;
+  opacity: 0.78;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.container-home .featured-cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--c1, #2a2a2a);
+  background: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 14px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 14px -4px rgba(0,0,0,0.25);
+}
+.container-home .featured-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 18px -4px rgba(0,0,0,0.3); }
+
+/* Right column: poster + domain bars */
+.container-home .featured-right {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 16px;
+  min-width: 0;
+}
+.container-home .featured-poster {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-align: left;
+  backdrop-filter: blur(2px);
+}
+.container-home .featured-poster-code {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.container-home .featured-poster-vendor {
+  font-size: 12px;
+  margin-top: 6px;
+  opacity: 0.78;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+.container-home .featured-domains {
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+.container-home .featured-domains-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.container-home .featured-bar { margin-bottom: 8px; }
+.container-home .featured-bar:last-child { margin-bottom: 0; }
+.container-home .featured-bar-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 4px;
+  gap: 8px;
+}
+.container-home .featured-bar-name {
+  font-weight: 600;
+  opacity: 0.95;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+.container-home .featured-bar-pct {
+  opacity: 0.78;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.container-home .featured-bar-track {
+  height: 4px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.container-home .featured-bar-fill {
+  height: 100%;
+  background: rgba(255,255,255,0.55);
+  border-radius: 2px;
+}
+.container-home .featured-domains-more {
+  font-size: 11px;
+  margin-top: 6px;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Stack on small screens */
+@media (max-width: 720px) {
+  .container-home .featured-slide { grid-template-columns: 1fr; min-height: 0; padding: 24px; }
+  .container-home .featured-right { display: none; }
+  .container-home .featured-statline { gap: 20px; }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CERT CARD REFRESH — head row with "mark", category chip, hover accent
+   ──────────────────────────────────────────────────────────────────────────── */
+.container-home .cert-card { padding: 16px 18px 14px; gap: 10px; }
+.container-home .cert-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.container-home .cert-card-mark {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  background: var(--accent-soft-2, #f5f0e6);
+  color: var(--accent-text, #6a4a17);
+  border: 1px solid var(--border-sub, #ececec);
+}
+.container-home .cert-card-headinfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.container-home .cert-card-name { margin: 0; font-size: clamp(15px, 1.3vw, 16px); }
+.container-home .cert-card-meta { margin: 0; }
+
+/* Tag/chip row */
+.container-home .cert-card-tags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+.container-home .cert-card-cat {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-sub, #ececec);
+  color: var(--text-muted, #666);
+  background: var(--surface, #fff);
+}
+.container-home .cert-card-domains-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft-2, #f5f0e6);
+  color: var(--accent-text, #6a4a17);
+}
+
+/* Category-color accent on hover */
+.container-home .cert-card[data-cat="Cloud"]                { --cat-accent: #2b6cb0; }
+.container-home .cert-card[data-cat="Cybersecurity"]        { --cat-accent: #9c1d1d; }
+.container-home .cert-card[data-cat="Networking"]           { --cat-accent: #1f4287; }
+.container-home .cert-card[data-cat="IT Foundations"]       { --cat-accent: #5b3a8c; }
+.container-home .cert-card[data-cat="Data & AI"]            { --cat-accent: #b76e0c; }
+.container-home .cert-card[data-cat="Healthcare"]           { --cat-accent: #b03434; }
+.container-home .cert-card[data-cat="Safety"]               { --cat-accent: #b65d00; }
+.container-home .cert-card[data-cat="Trades"]               { --cat-accent: #2f6b3e; }
+.container-home .cert-card[data-cat="HVAC"]                 { --cat-accent: #1f6f8b; }
+.container-home .cert-card[data-cat="Automotive"]           { --cat-accent: #4a3214; }
+.container-home .cert-card[data-cat="Transportation"]       { --cat-accent: #2a4d8b; }
+.container-home .cert-card[data-cat="Aviation"]             { --cat-accent: #0f5b8a; }
+.container-home .cert-card[data-cat="Real Estate"]          { --cat-accent: #5e3b1c; }
+.container-home .cert-card[data-cat="Insurance"]            { --cat-accent: #4f3a8c; }
+.container-home .cert-card[data-cat="Mortgage"]             { --cat-accent: #5e2b8c; }
+.container-home .cert-card[data-cat="Food Service"]         { --cat-accent: #b03a2e; }
+.container-home .cert-card[data-cat="Beauty"]               { --cat-accent: #a02a6a; }
+.container-home .cert-card[data-cat="Fitness"]              { --cat-accent: #1a7a3c; }
+.container-home .cert-card[data-cat="IT Service Management"]{ --cat-accent: #2a6a8a; }
+.container-home .cert-card[data-cat="Project Management"]   { --cat-accent: #3a5a8a; }
+.container-home .cert-card[data-cat="Accounting"]           { --cat-accent: #1f5c4f; }
+
+.container-home .cert-card[data-cat] .cert-card-mark {
+  background: color-mix(in srgb, var(--cat-accent, #888) 12%, transparent);
+  color: var(--cat-accent, #444);
+  border-color: color-mix(in srgb, var(--cat-accent, #888) 20%, transparent);
+}
+.container-home .cert-card[data-cat] .cert-card-cat {
+  color: var(--cat-accent, #666);
+  border-color: color-mix(in srgb, var(--cat-accent, #888) 30%, transparent);
+}
+.container-home .cert-card[data-cat]:not(.cert-coming-soon):hover {
+  border-color: var(--cat-accent, #333);
+  box-shadow:
+    0 8px 24px -12px color-mix(in srgb, var(--cat-accent, #000) 35%, transparent),
+    0 2px 6px -2px rgba(0,0,0,0.06);
+}
+.container-home .cert-card.cert-coming-soon[data-cat] .cert-card-mark {
+  background: color-mix(in srgb, var(--cat-accent, #888) 8%, transparent);
+  opacity: 0.75;
+}
+
+/* Dark theme tweaks */
+[data-theme='dark'] .container-home .cert-card-mark { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.10); }
+[data-theme='dark'] .container-home .cert-card-cat { background: transparent; border-color: rgba(255,255,255,0.14); color: var(--text-muted, #aaa); }
+[data-theme='dark'] .container-home .cert-card-domains-pill { background: rgba(255,255,255,0.08); color: var(--text, #ddd); }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   HOME REFRESH v2 — fix carousel jumping, arrows, theme colors, tighter cards
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Carousel — use theme accent instead of per-cert palette */
+.container-home .featured-slide {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--accent, #2e9b4a) 88%, #1a1a1a),
+    color-mix(in srgb, var(--accent, #2e9b4a) 65%, #ffffff));
+  /* Lock the slide height so swap doesn't shift the page */
+  min-height: clamp(360px, 32vw, 420px);
+  align-items: stretch;
+}
+.container-home .featured-slide::before {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255,255,255,0.18), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(0,0,0,0.22), transparent 60%);
+}
+[data-theme='dark'] .container-home .featured-slide {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--accent, #4cc168) 30%, #0e0e0e),
+    color-mix(in srgb, var(--accent, #4cc168) 18%, #1c1c1c));
+}
+
+/* Carousel CTA — uses theme accent for the text color */
+.container-home .featured-cta {
+  color: var(--accent-strong, #258a3e);
+  background: #fff;
+}
+[data-theme='dark'] .container-home .featured-cta {
+  color: #1a1a1a;
+}
+
+/* Move carousel arrows OUTSIDE the slide content so they don't overlap text */
+.container-home .featured-carousel {
+  position: relative;
+  padding: 0 56px;          /* room for arrows on each side */
+}
+.container-home .featured-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--border, #e5e5e5);
+  background: var(--surface, #fff);
+  color: var(--text, #333);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 2px 8px -2px rgba(0,0,0,0.10);
+}
+.container-home .featured-nav:hover { border-color: var(--text, #333); }
+.container-home .featured-nav:active { transform: translateY(-50%) scale(0.95); }
+.container-home .featured-prev { left: 6px; }
+.container-home .featured-next { right: 6px; }
+@media (max-width: 720px) {
+  .container-home .featured-carousel { padding: 0; }
+  .container-home .featured-prev { left: 8px; }
+  .container-home .featured-next { right: 8px; }
+}
+
+/* Smaller breakpoint: stop showing the right column earlier so headline doesn't crush */
+@media (max-width: 920px) {
+  .container-home .featured-slide { grid-template-columns: 1fr; min-height: 0; padding: 28px; }
+  .container-home .featured-right { display: none; }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CERT CARDS — tighter, no wasted space, no letter mark
+   ──────────────────────────────────────────────────────────────────────────── */
+.container-home .cert-card {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto;
+  gap: 6px;
+  padding: 14px 16px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-sub, #ececec);
+  position: relative;
+  min-height: 0;
+}
+.container-home .cert-card-cat {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-sub, #ececec);
+  color: var(--text-muted, #777);
+  background: transparent;
+  margin: 0 0 2px;
+  width: max-content;
+  max-width: 100%;
+}
+.container-home .cert-card-name {
+  font-size: 15px;
+  line-height: 1.25;
+  margin: 0;
+  font-weight: 700;
+  color: var(--link, #06c);
+}
+.container-home .cert-card-meta {
+  font-size: 12.5px;
+  color: var(--text-muted, #888);
+  margin: 0 0 2px;
+}
+.container-home .cert-card-salary { margin: 0; padding: 3px 8px; font-size: 11.5px; }
+.container-home .cert-card-price  { margin: 0; font-size: 11.5px; }
+.container-home .cert-card-footer { margin: 4px 0 0; padding-top: 6px; font-size: 12.5px; }
+
+/* Category-color accent on hover — applied via data-cat */
+.container-home .cert-card[data-cat] .cert-card-cat {
+  color: var(--cat-accent, #777);
+  border-color: color-mix(in srgb, var(--cat-accent, #888) 30%, transparent);
+}
+
+/* Remove the heavy old .cert-card-tags / mark / head styling that no longer exists */
+.container-home .cert-card-head,
+.container-home .cert-card-mark,
+.container-home .cert-card-headinfo,
+.container-home .cert-card-tags,
+.container-home .cert-card-domains-pill { display: none !important; }
+
+/* Coming soon priority chip — keep but shrink */
+.container-home .cert-card-priority {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted, #888);
+  letter-spacing: 0.05em;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   HOME REFRESH v3 — patterns on carousel + cards, 2-column card layout
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* CAROUSEL pattern overlay — diagonal stripes + dot grid on top of accent gradient */
+.container-home .featured-slide {
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      transparent 1px,
+      transparent 14px
+    ),
+    radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1.2px),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #2e9b4a) 88%, #1a1a1a),
+      color-mix(in srgb, var(--accent, #2e9b4a) 65%, #ffffff));
+  background-size: auto, 14px 14px, auto;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+/* Soft inner highlight ring around the slide for extra polish */
+.container-home .featured-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.18);
+}
+
+/* Featured poster + domain blocks pick up a subtle pattern of their own */
+.container-home .featured-poster {
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 12px),
+    linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+  background-color: transparent;
+}
+.container-home .featured-domains {
+  background-image:
+    radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1.2px),
+    linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.12));
+  background-size: 10px 10px, auto;
+  background-color: transparent;
+}
+
+/* Dark theme: tone the patterns down */
+[data-theme='dark'] .container-home .featured-slide {
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px,
+      transparent 1px, transparent 14px),
+    radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1.2px),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #4cc168) 30%, #0e0e0e),
+      color-mix(in srgb, var(--accent, #4cc168) 18%, #1c1c1c));
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CARDS — 2-column grid, subtle pattern, accent stripe
+   ──────────────────────────────────────────────────────────────────────────── */
+.container-home .cert-card {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  grid-template-rows: auto;
+  gap: 4px 14px;
+  padding: 14px 16px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-sub, #ececec);
+  background-color: var(--surface, #fff);
+  background-image:
+    radial-gradient(
+      color-mix(in srgb, var(--cat-accent, #888) 9%, transparent) 1px,
+      transparent 1.4px
+    );
+  background-size: 12px 12px;
+  background-position: -1px -1px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left accent stripe in category color */
+.container-home .cert-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--cat-accent, #888);
+  opacity: 0.6;
+  transition: opacity 0.18s ease, width 0.18s ease;
+}
+.container-home .cert-card:not(.cert-coming-soon):hover::before { opacity: 1; width: 4px; }
+
+/* Two columns inside the card */
+.container-home .cert-card-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.container-home .cert-card-col-l { padding-left: 6px; }
+.container-home .cert-card-col-r { align-items: flex-end; text-align: right; }
+
+/* Re-style elements that now live inside columns */
+.container-home .cert-card-name {
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--link, #06c);
+  margin: 0;
+}
+.container-home .cert-card-meta {
+  font-size: 12.5px;
+  color: var(--text-muted, #888);
+  margin: 0;
+}
+.container-home .cert-card-salary {
+  margin: 0;
+  padding: 3px 8px;
+  font-size: 11.5px;
+  width: max-content;
+  max-width: 100%;
+}
+.container-home .cert-card-cat {
+  display: inline-flex;
+  align-self: flex-end;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--cat-accent, #888) 30%, transparent);
+  color: var(--cat-accent, #777);
+  background: transparent;
+  margin: 0;
+  width: max-content;
+  max-width: 100%;
+}
+.container-home .cert-card-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.3;
+}
+.container-home .cert-card-footer {
+  margin: 0;
+  padding-top: 0;
+  border-top: none;
+  font-size: 12.5px;
+  text-align: right;
+}
+
+/* Coming-soon priority chip */
+.container-home .cert-card-priority {
+  position: absolute;
+  top: 8px;
+  left: 14px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted, #888);
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+/* Dark theme — soften pattern */
+[data-theme='dark'] .container-home .cert-card {
+  background-color: var(--surface, #1f1f1f);
+  background-image:
+    radial-gradient(
+      color-mix(in srgb, var(--cat-accent, #888) 12%, transparent) 1px,
+      transparent 1.4px
+    );
+}
+
+/* Make sure tighter v2 rules can no longer reset the new grid layout */
+.container-home .cert-card[data-cert-item],
+.container-home .cert-card.cert-coming-soon {
+  grid-template-rows: auto;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   HOME REFRESH v4 — bigger card fonts, patterns on nav/footer/CTA/arrows
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Bump card font sizes */
+.container-home .cert-card-name {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.25;
+}
+.container-home .cert-card-meta {
+  font-size: 14px;
+}
+.container-home .cert-card-cat {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+}
+.container-home .cert-card-salary {
+  font-size: 13px;
+  padding: 4px 10px;
+}
+.container-home .cert-card-price {
+  font-size: 13px;
+}
+.container-home .cert-card-price-other {
+  font-size: 13px;
+}
+.container-home .cert-card-price-us {
+  font-size: 13px;
+}
+.container-home .cert-card-footer {
+  font-size: 13.5px;
+  font-weight: 500;
+}
+.container-home .cert-card-footer strong {
+  font-size: 14.5px;
+}
+.container-home .cert-card-domains {
+  font-size: 13px;
+}
+.container-home .cert-card {
+  padding: 16px 18px 14px;
+  gap: 6px 16px;
+}
+
+/* Carousel CTA — patterned (not solid white) */
+.container-home .featured-cta {
+  background-image:
+    repeating-linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #2e9b4a) 18%, transparent) 0 1px,
+      transparent 1px 12px),
+    radial-gradient(color-mix(in srgb, var(--accent, #2e9b4a) 14%, transparent) 1px, transparent 1.4px),
+    linear-gradient(180deg, #ffffff 0%, color-mix(in srgb, var(--accent, #2e9b4a) 6%, #ffffff) 100%);
+  background-size: auto, 10px 10px, auto;
+  color: var(--accent-strong, #1a6);
+  font-weight: 700;
+  border: 1px solid color-mix(in srgb, var(--accent, #2e9b4a) 20%, transparent);
+}
+.container-home .featured-cta:hover {
+  background-image:
+    repeating-linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #2e9b4a) 22%, transparent) 0 1px,
+      transparent 1px 12px),
+    radial-gradient(color-mix(in srgb, var(--accent, #2e9b4a) 18%, transparent) 1px, transparent 1.4px),
+    linear-gradient(180deg, #ffffff 0%, color-mix(in srgb, var(--accent, #2e9b4a) 12%, #ffffff) 100%);
+}
+
+/* Carousel arrows — patterned (not solid white) */
+.container-home .featured-nav {
+  background-image:
+    repeating-linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #2e9b4a) 14%, transparent) 0 1px,
+      transparent 1px 8px),
+    radial-gradient(color-mix(in srgb, var(--accent, #2e9b4a) 12%, transparent) 1px, transparent 1.3px),
+    linear-gradient(180deg, var(--surface, #fff), color-mix(in srgb, var(--accent, #2e9b4a) 5%, var(--surface, #fff)));
+  background-size: auto, 8px 8px, auto;
+  border-color: color-mix(in srgb, var(--accent, #2e9b4a) 28%, var(--border, #e5e5e5));
+  color: var(--accent-strong, var(--text, #333));
+}
+.container-home .featured-nav:hover {
+  border-color: var(--accent, #2e9b4a);
+}
+[data-theme='dark'] .container-home .featured-cta {
+  background-image:
+    repeating-linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #4cc168) 24%, transparent) 0 1px,
+      transparent 1px 12px),
+    radial-gradient(color-mix(in srgb, var(--accent, #4cc168) 18%, transparent) 1px, transparent 1.4px),
+    linear-gradient(180deg, #f5f5f5 0%, color-mix(in srgb, var(--accent, #4cc168) 8%, #f0f0f0) 100%);
+  color: #1a1a1a;
+  border-color: color-mix(in srgb, var(--accent, #4cc168) 26%, transparent);
+}
+[data-theme='dark'] .container-home .featured-nav {
+  background-image:
+    repeating-linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #4cc168) 18%, transparent) 0 1px,
+      transparent 1px 8px),
+    radial-gradient(color-mix(in srgb, var(--accent, #4cc168) 14%, transparent) 1px, transparent 1.3px),
+    linear-gradient(180deg, var(--surface, #222), color-mix(in srgb, var(--accent, #4cc168) 6%, var(--surface, #222)));
+  color: var(--text, #ddd);
+}
+
+/* NAV bar — subtle diagonal stripe + dot grid overlay */
+.nav {
+  position: relative;
+}
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(135deg,
+      rgba(255,255,255,0.06) 0 1px,
+      transparent 1px 14px),
+    radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1.4px);
+  background-size: auto, 12px 12px;
+  mix-blend-mode: overlay;
+}
+.nav > * { position: relative; z-index: 1; }
+
+/* FOOTER — subtle pattern */
+.footer {
+  position: relative;
+  background-image:
+    repeating-linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #2e9b4a) 5%, transparent) 0 1px,
+      transparent 1px 14px),
+    radial-gradient(color-mix(in srgb, var(--accent, #2e9b4a) 6%, transparent) 1px, transparent 1.4px);
+  background-size: auto, 12px 12px;
+}
+[data-theme='dark'] .footer {
+  background-image:
+    repeating-linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #4cc168) 5%, transparent) 0 1px,
+      transparent 1px 14px),
+    radial-gradient(color-mix(in srgb, var(--accent, #4cc168) 7%, transparent) 1px, transparent 1.4px);
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   HOME REFRESH v5 — fix carousel jump, ghost button + arrows that blend pattern
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Lock the carousel stage to a fixed height so changing slides doesn't push the page */
+.container-home .featured-stage {
+  height: clamp(380px, 36vw, 440px);
+  position: relative;
+}
+.container-home .featured-slide {
+  height: 100%;
+  min-height: 0;
+}
+
+/* Constrain description so a long one doesn't overflow */
+.container-home .featured-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 4px 0;
+}
+
+/* Arrows back ON the slide (ghost style) with content padded away from edges */
+.container-home .featured-carousel { padding: 0; }
+.container-home .featured-slide {
+  padding-left: clamp(60px, 7vw, 92px);
+  padding-right: clamp(60px, 7vw, 92px);
+}
+
+.container-home .featured-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  z-index: 5;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  /* Ghost / blend-with-pattern */
+  background: transparent;
+  background-image: none;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  box-shadow: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.container-home .featured-prev { left: 12px; }
+.container-home .featured-next { right: 12px; }
+.container-home .featured-nav:hover,
+.container-home .featured-nav:focus-visible {
+  background: #fff;
+  color: var(--accent-strong, #1a6);
+  border-color: #fff;
+}
+.container-home .featured-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* CTA — ghost on the pattern, solid white on hover */
+.container-home .featured-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 14px;
+  align-self: flex-start;
+  background: transparent;
+  background-image: none;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  box-shadow: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.1s ease;
+}
+.container-home .featured-cta:hover,
+.container-home .featured-cta:focus-visible {
+  background: #fff;
+  color: var(--accent-strong, #1a6);
+  border-color: #fff;
+  text-shadow: none;
+  transform: translateY(-1px);
+}
+.container-home .featured-cta:active {
+  transform: translateY(0);
+}
+
+/* Re-show the right column on the wider breakpoint we previously hid at 920 — the
+   slide is now a fixed height regardless of the right column's content */
+@media (max-width: 720px) {
+  .container-home .featured-stage { height: clamp(420px, 88vw, 520px); }
+  .container-home .featured-slide {
+    grid-template-columns: 1fr;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+  .container-home .featured-right { display: none; }
+  .container-home .featured-prev { left: 8px; }
+  .container-home .featured-next { right: 8px; }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   STICKY NAV
+   ──────────────────────────────────────────────────────────────────────────── */
+#nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   COMING SOON cards — compact, secondary visual weight
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Tighter padding and grid; the right column doesn't need as much room */
+.container-home .cert-card.cert-coming-soon {
+  grid-template-columns: 1.7fr 1fr;
+  gap: 4px 12px;
+  padding: 12px 14px 10px;
+  opacity: 0.88;
+}
+
+/* Smaller, two-line-clamped cert name */
+.container-home .cert-card.cert-coming-soon .cert-card-name {
+  font-size: 14.5px;
+  line-height: 1.22;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.container-home .cert-card.cert-coming-soon .cert-card-meta {
+  font-size: 12.5px;
+}
+
+/* Hide the salary on coming-soon cards — it shows in the hover/preview popup */
+.container-home .cert-card.cert-coming-soon .cert-card-salary { display: none; }
+
+/* Shrink the category chip so long labels (PROJECT MANAGEMENT) don't dominate */
+.container-home .cert-card.cert-coming-soon .cert-card-cat {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 2px 7px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Compact price + footer */
+.container-home .cert-card.cert-coming-soon .cert-card-price { font-size: 11.5px; }
+.container-home .cert-card.cert-coming-soon .cert-card-footer { font-size: 12px; }
+
+/* Smaller priority chip and pull it out of the content flow */
+.container-home .cert-card.cert-coming-soon .cert-card-priority {
+  top: 6px;
+  left: 10px;
+  font-size: 9px;
+}
+
+/* Lighter accent stripe (less attention) */
+.container-home .cert-card.cert-coming-soon::before {
+  opacity: 0.35;
+  width: 2px;
+}
+.container-home .cert-card.cert-coming-soon:hover::before {
+  opacity: 0.55;
+  width: 3px;
+}
+
+/* Hover state: still indicate it's interactive but understated */
+.container-home .cert-card.cert-coming-soon:hover {
+  opacity: 1;
+  border-color: var(--border-mid, #ccc);
+}
+
+/* Push coming-soon card content down so the priority # chip doesn't overlap the name */
+.container-home .cert-card.cert-coming-soon { padding-top: 22px; }
+.container-home .cert-card.cert-coming-soon .cert-card-priority {
+  top: 8px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted, #888);
+  background: transparent;
+  padding: 0;
+  letter-spacing: 0.04em;
+}
+
+/* Tighten the gap between the coming-soon banner and the hero */
+.container-home .hero {
+  padding-top: clamp(20px, 3vw, 36px);
+}
+
+/* Bump hero stat fonts */
+.container-home .hero-stat-num {
+  font-size: clamp(36px, 5.5vw, 56px);
+  line-height: 1;
+}
+.container-home .hero-stat-label {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  margin-top: 6px;
+}
+.container-home .hero-stat { gap: 4px; }
+.container-home .hero-stats { gap: clamp(40px, 8vw, 80px); margin-top: 18px; }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   BUFFET THEME — CSS smoke wafting up from behind the top carousel
+   ──────────────────────────────────────────────────────────────────────────── */
+[data-color="buffet"] #featured {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Two stacked smoke layers with different speeds for parallax depth */
+[data-color="buffet"] #featured::before,
+[data-color="buffet"] #featured::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -160px;
+  width: 100vw;
+  height: 220px;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(28px);
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+
+/* Layer 1 — slower, broader wisps */
+[data-color="buffet"] #featured::before {
+  background:
+    radial-gradient(ellipse 180px 70px at  8%  60%, rgba(214, 188, 144, 0.65), transparent 70%),
+    radial-gradient(ellipse 220px 80px at 25%  35%, rgba(196, 158, 110, 0.55), transparent 70%),
+    radial-gradient(ellipse 200px 70px at 45%  55%, rgba(214, 188, 144, 0.60), transparent 70%),
+    radial-gradient(ellipse 240px 90px at 65%  30%, rgba(196, 158, 110, 0.55), transparent 70%),
+    radial-gradient(ellipse 200px 70px at 85%  55%, rgba(214, 188, 144, 0.60), transparent 70%),
+    radial-gradient(ellipse 180px 60px at 98%  40%, rgba(196, 158, 110, 0.50), transparent 70%);
+  animation: buffet-smoke-1 18s ease-in-out infinite alternate;
+}
+
+/* Layer 2 — faster, lighter highlights */
+[data-color="buffet"] #featured::after {
+  top: -180px;
+  height: 200px;
+  background:
+    radial-gradient(ellipse 140px 50px at 15% 60%, rgba(248, 234, 207, 0.70), transparent 70%),
+    radial-gradient(ellipse 160px 55px at 38% 40%, rgba(248, 234, 207, 0.55), transparent 70%),
+    radial-gradient(ellipse 120px 45px at 58% 65%, rgba(248, 234, 207, 0.65), transparent 70%),
+    radial-gradient(ellipse 150px 55px at 78% 38%, rgba(248, 234, 207, 0.55), transparent 70%),
+    radial-gradient(ellipse 130px 45px at 92% 60%, rgba(248, 234, 207, 0.70), transparent 70%);
+  animation: buffet-smoke-2 11s ease-in-out infinite alternate;
+  opacity: 0.7;
+  filter: blur(20px);
+  mix-blend-mode: screen;
+}
+
+@keyframes buffet-smoke-1 {
+  0%   { transform: translate(-50%, 0) scale(1); }
+  50%  { transform: translate(calc(-50% + 30px), -10px) scale(1.04); }
+  100% { transform: translate(calc(-50% - 20px), -18px) scale(1.06); }
+}
+@keyframes buffet-smoke-2 {
+  0%   { transform: translate(-50%, 0) scale(1); opacity: 0.55; }
+  50%  { transform: translate(calc(-50% - 24px), -14px) scale(1.05); opacity: 0.75; }
+  100% { transform: translate(calc(-50% + 36px), -22px) scale(1.08); opacity: 0.6; }
+}
+
+/* Respect users who don't want motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-color="buffet"] #featured::before,
+  [data-color="buffet"] #featured::after { animation: none; }
+}
+
+/* Dark buffet — tone the smoke down */
+[data-color="buffet"][data-theme="dark"] #featured::before {
+  background:
+    radial-gradient(ellipse 180px 70px at  8%  60%, rgba(120, 90, 60, 0.50), transparent 70%),
+    radial-gradient(ellipse 220px 80px at 25%  35%, rgba(110, 80, 55, 0.45), transparent 70%),
+    radial-gradient(ellipse 200px 70px at 45%  55%, rgba(120, 90, 60, 0.45), transparent 70%),
+    radial-gradient(ellipse 240px 90px at 65%  30%, rgba(110, 80, 55, 0.45), transparent 70%),
+    radial-gradient(ellipse 200px 70px at 85%  55%, rgba(120, 90, 60, 0.45), transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0.4;
+}
+[data-color="buffet"][data-theme="dark"] #featured::after {
+  background:
+    radial-gradient(ellipse 140px 50px at 15% 60%, rgba(255, 230, 180, 0.30), transparent 70%),
+    radial-gradient(ellipse 160px 55px at 38% 40%, rgba(255, 230, 180, 0.20), transparent 70%),
+    radial-gradient(ellipse 120px 45px at 58% 65%, rgba(255, 230, 180, 0.30), transparent 70%),
+    radial-gradient(ellipse 150px 55px at 78% 38%, rgba(255, 230, 180, 0.20), transparent 70%),
+    radial-gradient(ellipse 130px 45px at 92% 60%, rgba(255, 230, 180, 0.30), transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   BUFFET THEME — visible brown smoke rising from top of carousel
+   (overrides the earlier subtle version)
+   ──────────────────────────────────────────────────────────────────────────── */
+
+[data-color="buffet"] #featured::before,
+[data-color="buffet"] #featured::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  pointer-events: none;
+  mix-blend-mode: normal;            /* let the brown actually show */
+  filter: blur(14px);
+}
+
+/* Layer 1 — bigger, slower, lower-altitude puffs */
+[data-color="buffet"] #featured::before {
+  bottom: calc(100% - 40px);          /* anchors at top edge of carousel, extends UP */
+  height: 220px;
+  z-index: 0;                          /* above the page bg, below the slide */
+  background:
+    radial-gradient(ellipse 120px 70px at 12% 88%, rgba(82, 51, 26, 0.85), rgba(82, 51, 26, 0.30) 50%, transparent 75%),
+    radial-gradient(ellipse 150px 80px at 28% 72%, rgba(110, 70, 38, 0.70), rgba(110, 70, 38, 0.20) 55%, transparent 80%),
+    radial-gradient(ellipse 130px 70px at 46% 86%, rgba(95, 60, 30, 0.78), rgba(95, 60, 30, 0.25) 50%, transparent 78%),
+    radial-gradient(ellipse 160px 85px at 64% 70%, rgba(110, 70, 38, 0.70), rgba(110, 70, 38, 0.20) 55%, transparent 80%),
+    radial-gradient(ellipse 140px 75px at 82% 86%, rgba(82, 51, 26, 0.82), rgba(82, 51, 26, 0.28) 50%, transparent 78%),
+    radial-gradient(ellipse 130px 70px at 96% 76%, rgba(95, 60, 30, 0.72), rgba(95, 60, 30, 0.22) 55%, transparent 80%);
+  transform: translateX(-50%);
+  animation: buffet-smoke-rise-1 9s ease-out infinite;
+  opacity: 0;                          /* keyframes fade in/out */
+}
+
+/* Layer 2 — smaller, faster, higher-altitude wisps */
+[data-color="buffet"] #featured::after {
+  bottom: calc(100% - 30px);
+  height: 260px;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse  90px 50px at 18% 82%, rgba(140, 90, 50, 0.65), transparent 75%),
+    radial-gradient(ellipse 110px 60px at 36% 65%, rgba(160, 110, 70, 0.55), transparent 78%),
+    radial-gradient(ellipse  95px 55px at 56% 80%, rgba(140, 90, 50, 0.62), transparent 75%),
+    radial-gradient(ellipse 120px 65px at 76% 60%, rgba(160, 110, 70, 0.55), transparent 78%),
+    radial-gradient(ellipse  95px 55px at 92% 80%, rgba(140, 90, 50, 0.65), transparent 75%);
+  transform: translateX(-50%);
+  animation: buffet-smoke-rise-2 7s ease-out infinite;
+  animation-delay: 1.5s;
+  filter: blur(20px);
+  opacity: 0;
+}
+
+@keyframes buffet-smoke-rise-1 {
+  0%   { transform: translate(-50%,  60px) scale(0.92); opacity: 0; }
+  20%  {                                                opacity: 0.85; }
+  60%  { transform: translate(calc(-50% + 12px), -30px) scale(1.04); opacity: 0.65; }
+  100% { transform: translate(calc(-50% - 18px), -100px) scale(1.18); opacity: 0; }
+}
+@keyframes buffet-smoke-rise-2 {
+  0%   { transform: translate(-50%,  40px) scale(0.95); opacity: 0; }
+  25%  {                                                opacity: 0.7; }
+  70%  { transform: translate(calc(-50% - 14px), -40px) scale(1.08); opacity: 0.45; }
+  100% { transform: translate(calc(-50% + 22px), -130px) scale(1.22); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-color="buffet"] #featured::before,
+  [data-color="buffet"] #featured::after { animation: none; opacity: 0.5; }
+}
+
+/* Make sure the smoke sits BEHIND the slide content */
+[data-color="buffet"] .container-home .featured-slide { position: relative; z-index: 2; }
+[data-color="buffet"] .container-home .featured-carousel { position: relative; z-index: 1; }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   SEARCH HINT + ANIMATED LIGHT BORDER ON RANDOM BUTTON
+   ──────────────────────────────────────────────────────────────────────────── */
+
+.container-home .hero-search-hint {
+  font-size: 12px;
+  color: var(--text-muted, #888);
+  margin: -16px auto 24px;          /* tucks just under the search row */
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Random domain button — animated light traveling around the border */
+.container-home .hero-random {
+  position: relative;
+  isolation: isolate;
+  border: 1.5px solid transparent;
+  background-clip: padding-box;
+  overflow: visible;
+}
+
+/* The conic gradient sits behind the button, slightly larger, and rotates.
+   The button's solid background-color masks the center, leaving only a thin
+   "light running around" border visible. */
+.container-home .hero-random::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  z-index: -1;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 40deg,
+    var(--accent, #2e9b4a) 90deg,
+    color-mix(in srgb, var(--accent, #2e9b4a) 60%, #ffffff) 110deg,
+    var(--accent, #2e9b4a) 130deg,
+    transparent 180deg,
+    transparent 360deg
+  );
+  animation: hero-random-glow 3.5s linear infinite;
+  filter: blur(0.5px);
+}
+
+/* Faint outer halo for a "light spilling out" effect */
+.container-home .hero-random::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 14px;
+  z-index: -2;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 50deg,
+    color-mix(in srgb, var(--accent, #2e9b4a) 45%, transparent) 100deg,
+    transparent 160deg,
+    transparent 360deg
+  );
+  filter: blur(8px);
+  opacity: 0.7;
+  animation: hero-random-glow 3.5s linear infinite;
+}
+
+@keyframes hero-random-glow {
+  to { transform: rotate(360deg); }
+}
+
+/* Hover: button fills with theme accent, animation stays */
+.container-home .hero-random:hover {
+  background: color-mix(in srgb, var(--accent, #2e9b4a) 8%, var(--surface, #fff));
+  border-color: transparent;
+  color: var(--text, #1a1a1a);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container-home .hero-random::before,
+  .container-home .hero-random::after { animation: none; }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   ANIMATED LIGHT BORDER — fix: only the border shows the rotating light,
+   not a blurred blob bleeding out of the button
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Reset the previous attempts */
+.container-home .hero-random {
+  position: relative;
+  isolation: isolate;
+  border: 0;                                 /* remove border; the gradient ring IS the border */
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  overflow: visible;
+}
+.container-home .hero-random::before,
+.container-home .hero-random::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 270deg,
+    color-mix(in srgb, var(--accent, #2e9b4a) 70%, transparent) 305deg,
+    var(--accent, #2e9b4a) 325deg,
+    color-mix(in srgb, var(--accent, #2e9b4a) 80%, white) 335deg,
+    var(--accent, #2e9b4a) 345deg,
+    color-mix(in srgb, var(--accent, #2e9b4a) 70%, transparent) 360deg
+  );
+  animation: hero-random-spin 3.5s linear infinite;
+}
+
+/* The inner ::before is masked so only a 2px ring is visible — that's the border */
+.container-home .hero-random::before {
+  padding: 2px;                              /* ring thickness */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  filter: none;
+  z-index: 1;
+}
+
+/* The outer ::after is a soft glow OUTSIDE the button (subtle, won't blob) */
+.container-home .hero-random::after {
+  inset: -3px;
+  filter: blur(6px);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+@keyframes hero-random-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Hover — keep the spinning border, give the button a faint accent fill */
+.container-home .hero-random:hover {
+  background: color-mix(in srgb, var(--accent, #2e9b4a) 8%, var(--surface, #fff));
+  color: var(--text, #1a1a1a);
+}
+.container-home .hero-random:hover::after { opacity: 0.55; }
+
+@media (prefers-reduced-motion: reduce) {
+  .container-home .hero-random::before,
+  .container-home .hero-random::after { animation: none; }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   ANIMATED LIGHT BORDER v2 — solid theme border + dot traveling the perimeter
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Reset earlier attempts */
+.container-home .hero-random {
+  position: relative;
+  isolation: isolate;
+  border: 1.5px solid var(--accent, #2e9b4a);
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent, #2e9b4a) 40%, transparent);
+  transition: box-shadow 0.25s ease, background 0.18s ease;
+}
+.container-home .hero-random:hover {
+  background: color-mix(in srgb, var(--accent, #2e9b4a) 8%, var(--surface, #fff));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, #2e9b4a) 18%, transparent);
+}
+
+/* Kill the previous pseudo-elements */
+.container-home .hero-random::before,
+.container-home .hero-random::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+
+/* The traveling light: a small bright dot following the button's rounded border path */
+.container-home .hero-random::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 6px 2px color-mix(in srgb, var(--accent, #2e9b4a) 90%, white),
+    0 0 14px 4px var(--accent, #2e9b4a);
+  /* Inset 0 means the path follows the button's outer edge precisely */
+  inset: 0;
+  offset-path: inset(0 round 10px);
+  offset-rotate: 0deg;
+  animation: hero-random-travel 4s linear infinite;
+  z-index: 2;
+  /* Fallback for browsers without offset-path: keep it tucked at the start */
+  top: -5px;
+  left: -5px;
+}
+
+/* A second dot opposite the first for symmetry (visible on both sides at once) */
+.container-home .hero-random::after {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 5px 2px color-mix(in srgb, var(--accent, #2e9b4a) 80%, white),
+    0 0 12px 3px var(--accent, #2e9b4a);
+  inset: 0;
+  offset-path: inset(0 round 10px);
+  offset-rotate: 0deg;
+  animation: hero-random-travel 4s linear infinite;
+  animation-delay: -2s;     /* half a cycle behind */
+  z-index: 2;
+  top: -4px;
+  left: -4px;
+  opacity: 0.85;
+}
+
+@keyframes hero-random-travel {
+  to { offset-distance: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container-home .hero-random::before,
+  .container-home .hero-random::after { animation: none; opacity: 0; }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   RANDOM BUTTON — simple press animation (kill the rotating-border experiments)
+   ──────────────────────────────────────────────────────────────────────────── */
+.container-home .hero-random {
+  position: relative;
+  isolation: auto;
+  border: 1px solid var(--border, #e5e5e5);
+  background: var(--surface, #fff);
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: none;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.08s ease, box-shadow 0.15s ease;
+}
+.container-home .hero-random:hover,
+.container-home .hero-random:focus-visible {
+  border-color: var(--text, #333);
+  background: var(--bg, #fafafa);
+}
+.container-home .hero-random:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* Remove the traveling dots / glowing border attempts */
+.container-home .hero-random::before,
+.container-home .hero-random::after {
+  content: none;
+  display: none;
+  background: none;
+  box-shadow: none;
+  animation: none;
+}

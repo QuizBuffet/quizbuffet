@@ -36,6 +36,8 @@ const LIVE_CATEGORY = {
   'real-estate-license':                'Real Estate',
   'nmls-mlo':                           'Mortgage',
   'faa-part-107':                       'Aviation',
+  'personal-trainer-nasm':              'Fitness',
+  'cpr-aed':                            'Healthcare',
 };
 
 const CATEGORY_ORDER = [
@@ -70,26 +72,38 @@ function groupByCategory(certs, isLive) {
 }
 
 function renderLiveCard(c) {
+  const cat = LIVE_CATEGORY[c.slug] || c.category || 'Other';
   return `
-    <a href="/${c.slug}/" class="cert-card" data-cert-item="${c.slug}">
-      <div class="cert-card-name">${c.name}</div>
-      <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
-      <div class="cert-card-salary" data-salary="${c.slug}"></div>
-      <div class="cert-card-price" data-price="${c.slug}"></div>
-      <div class="cert-card-footer" data-cert-count="${c.slug}">…</div>
+    <a href="/${c.slug}/" class="cert-card" data-cert-item="${c.slug}" data-cat="${cat}">
+      <div class="cert-card-col cert-card-col-l">
+        <div class="cert-card-name">${c.name}</div>
+        <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
+        <div class="cert-card-salary" data-salary="${c.slug}"></div>
+      </div>
+      <div class="cert-card-col cert-card-col-r">
+        <span class="cert-card-cat">${cat}</span>
+        <div class="cert-card-price" data-price="${c.slug}"></div>
+        <div class="cert-card-footer" data-cert-count="${c.slug}">…</div>
+      </div>
     </a>`;
 }
 
 function renderCsCard(c, comingSoon) {
   const priority = comingSoon.indexOf(c) + 1;
+  const cat = c.category || 'Other';
   return `
-    <a href="/${c.slug}/" class="cert-card cert-coming-soon">
+    <a href="/${c.slug}/" class="cert-card cert-coming-soon" data-cat="${cat}">
       <span class="cert-card-priority" title="Build priority">#${priority}</span>
-      <div class="cert-card-name">${c.name}</div>
-      <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
-      <div class="cert-card-salary" data-salary="${c.slug}"></div>
-      <div class="cert-card-price" data-price="${c.slug}"></div>
-      <div class="cert-card-footer">Coming soon</div>
+      <div class="cert-card-col cert-card-col-l">
+        <div class="cert-card-name">${c.name}</div>
+        <div class="cert-card-meta">${c.code}${c.vendor ? ` · ${c.vendor}` : ''}</div>
+        <div class="cert-card-salary" data-salary="${c.slug}"></div>
+      </div>
+      <div class="cert-card-col cert-card-col-r">
+        <span class="cert-card-cat">${cat}</span>
+        <div class="cert-card-price" data-price="${c.slug}"></div>
+        <div class="cert-card-footer">Coming soon</div>
+      </div>
     </a>`;
 }
 

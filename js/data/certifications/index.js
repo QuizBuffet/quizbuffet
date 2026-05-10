@@ -31,6 +31,8 @@ import { cert as cdlClassA } from './cdl-class-a.js';
 import { cert as realEstateLicense } from './real-estate-license.js';
 import { cert as nmlsMlo } from './nmls-mlo.js';
 import { cert as faaPart107 } from './faa-part-107.js';
+import { cert as personalTrainerNasm } from './personal-trainer-nasm.js';
+import { cert as cprAed } from './cpr-aed.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -66,4 +68,6 @@ export const certifications = [
   realEstateLicense,
   nmlsMlo,
   faaPart107,
+  personalTrainerNasm,
+  cprAed,
 ];

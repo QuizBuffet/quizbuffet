@@ -1,15 +1,17 @@
-// Featured carousel — rotates through a curated set of headline certs.
-// Cap is a hand-picked list (not the entire registry) to keep dot count tight on mobile.
-const FEATURED_SLUGS = [
-  'comptia-security-plus',
-  'aws-solutions-architect-associate',
-  'aws-cloud-practitioner',
-  'comptia-a-plus-core-1',
-  'comptia-network-plus',
-  'isc2-cissp',
-  'cisco-ccna',
-  'microsoft-az-900',
-];
+// Featured carousel — pulls a random sample of live certs each visit so every
+// cert gets a chance to be shown over time. Cap keeps the dot count tight on mobile.
+const FEATURED_COUNT = 8;
+
+function pickRandom(certs, n) {
+  // Fisher-Yates partial shuffle for an unbiased random sample.
+  const a = certs.slice();
+  const k = Math.min(n, a.length);
+  for (let i = 0; i < k; i++) {
+    const j = i + Math.floor(Math.random() * (a.length - i));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a.slice(0, k);
+}
 
 const PALETTE = {
   'comptia-security-plus':   ['#0b6e4f', '#15a96f'],
@@ -25,17 +27,72 @@ const PALETTE = {
 
 let timer = null;
 let currentIdx = 0;
+let countsCache = null;
+
+function fillCount(certs, idx) {
+  const cert = certs[idx];
+  const slot = document.querySelector(`.featured-slide [data-count="${cert.slug}"]`);
+  if (!slot) return;
+  const apply = (counts) => {
+    const n = (counts && counts.perCert && counts.perCert[cert.slug]) || 0;
+    slot.textContent = n ? n.toLocaleString() : '…';
+  };
+  if (countsCache) { apply(countsCache); return; }
+  fetch('/data/counts.json').then(r => r.json()).then(c => { countsCache = c; apply(c); }).catch(() => {});
+}
 
 function renderSlide(certs, idx) {
   const cert = certs[idx];
-  const [c1, c2] = PALETTE[cert.slug] || ['#333', '#666'];
+  const totalDomains = (cert.domains || []).length;
+  const topDomains = (cert.domains || []).slice(0, 4);
+  const domainBars = topDomains.map(d => {
+    const pct = Math.max(4, d.weight || 0);
+    return `<div class="featured-bar">
+      <div class="featured-bar-row">
+        <span class="featured-bar-name" title="${d.name}">${d.name}</span>
+        <span class="featured-bar-pct">${d.weight || 0}%</span>
+      </div>
+      <div class="featured-bar-track"><div class="featured-bar-fill" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join('');
+
   return `
-    <article class="featured-slide" style="--c1:${c1};--c2:${c2}" data-slide="${idx}">
-      <div class="featured-tag">Featured</div>
-      <h2 class="featured-headline">${cert.name}</h2>
-      <div class="featured-sub">${cert.code} · ${cert.vendor || ''}</div>
-      ${cert.tagline ? `<p class="featured-desc">${cert.tagline}</p>` : ''}
-      <a href="/${cert.slug}/" class="featured-cta">Start practicing →</a>
+    <article class="featured-slide" data-slide="${idx}">
+      <div class="featured-left">
+        <div class="featured-tag">Featured certification · #${idx + 1}</div>
+        <h2 class="featured-headline">${cert.name}</h2>
+        <div class="featured-sub">
+          <span class="featured-vendor">${cert.vendor || ''}</span>
+          ${cert.code ? `<span class="featured-code">${cert.code}</span>` : ''}
+        </div>
+        ${cert.tagline ? `<p class="featured-desc">${cert.tagline}</p>` : ''}
+        <div class="featured-statline">
+          <div class="featured-statbox">
+            <span class="featured-statbox-num" data-count="${cert.slug}">…</span>
+            <span class="featured-statbox-lbl">questions</span>
+          </div>
+          <div class="featured-statbox">
+            <span class="featured-statbox-num">${totalDomains}</span>
+            <span class="featured-statbox-lbl">domains</span>
+          </div>
+          <div class="featured-statbox">
+            <span class="featured-statbox-num">$0</span>
+            <span class="featured-statbox-lbl">forever</span>
+          </div>
+        </div>
+        <a href="/${cert.slug}/" class="featured-cta">Start practicing<span aria-hidden="true">  →</span></a>
+      </div>
+      <div class="featured-right" aria-hidden="true">
+        <div class="featured-poster">
+          <div class="featured-poster-code">${cert.code || cert.name.split(/\s+/)[0]}</div>
+          <div class="featured-poster-vendor">${cert.vendor || ''}</div>
+        </div>
+        <div class="featured-domains">
+          <div class="featured-domains-title">Top exam domains</div>
+          ${domainBars}
+          ${totalDomains > 4 ? `<div class="featured-domains-more">+${totalDomains - 4} more</div>` : ''}
+        </div>
+      </div>
     </article>`;
 }
 
@@ -55,6 +112,7 @@ function setSlide(certs, idx) {
   dots.querySelectorAll('.featured-dot').forEach(b =>
     b.addEventListener('click', () => { resetTimer(certs); setSlide(certs, +b.dataset.go); })
   );
+  fillCount(certs, currentIdx);
 }
 
 function resetTimer(certs) {
@@ -67,12 +125,9 @@ export function renderFeatured(_legacy, allCerts) {
   if (!el) return;
   // Backward-compat: when called with just one cert object (old signature), wrap it
   const allList = Array.isArray(allCerts) ? allCerts : (_legacy && _legacy.slug ? [_legacy] : []);
-  // Curated featured list — preserves FEATURED_SLUGS order, drops any not in the registry.
-  const bySlug = new Map(allList.map(c => [c.slug, c]));
-  const featured = FEATURED_SLUGS.map(slug => bySlug.get(slug)).filter(Boolean);
-  // Fallback to first N of registry if the curated list lands empty (e.g., during a rebuild).
-  const certs = featured.length ? featured : allList.slice(0, 8);
-  if (!certs.length) { el.innerHTML = ''; return; }
+  if (!allList.length) { el.innerHTML = ''; return; }
+  // Random sample so every cert gets airtime across visits.
+  const certs = pickRandom(allList, FEATURED_COUNT);
 
   el.innerHTML = `
     <section class="featured-carousel" aria-roledescription="carousel" aria-label="Featured certifications">
@@ -91,5 +146,6 @@ export function renderFeatured(_legacy, allCerts) {
   el.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
   el.addEventListener('mouseleave', () => resetTimer(certs));
 
+  fillCount(certs, 0);
   resetTimer(certs);
 }

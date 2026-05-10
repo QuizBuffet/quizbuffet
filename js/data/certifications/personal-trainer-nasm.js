@@ -1,0 +1,27 @@
+import { acronyms } from '../acronyms/personal-trainer-nasm.js';
+import { services } from '../services/personal-trainer-nasm.js';
+
+export const cert = {
+  slug: 'personal-trainer-nasm',
+  name: 'Certified Personal Trainer (NASM-CPT)',
+  code: 'NASM-CPT',
+  vendor: 'NASM',
+  tagline: 'NCCA-accredited personal training certification',
+  about: 'The NASM Certified Personal Trainer (NASM-CPT) credential is an NCCA-accredited certification administered by the National Academy of Sports Medicine. The certification exam consists of 120 multiple-choice questions delivered over a 2-hour window through PSI testing centers, with a passing score of 70%. Content is anchored on the NASM CPT Exam Content Outline (current 7th edition), organized into six domains: Basic and Applied Sciences and Nutritional Concepts, Client Relations and Behavioral Coaching, Assessment, Program Design, Exercise Technique and Training Instruction, and Professional Development and Responsibility. NASM\'s programming framework is the Optimum Performance Training (OPT) model, which sequences clients through stabilization endurance, strength endurance, hypertrophy, maximal strength, and power phases. This QuizBuffet bank weights its 900 questions toward foundational sciences (anatomy, physiology, kinesiology, energy systems, nutrition) so candidates have generous drill volume on the material that everything else builds on.',
+  details: '120 multiple-choice items · 2 hours · Pass score 70% · 6 domains · OPT model · Anchored on the NASM CPT Exam Content Outline (7th ed.)',
+  acronyms,
+  services,
+  affiliates: [
+    { provider: 'amazon', label: 'Shop NASM-CPT Study Guides on Amazon', url: 'https://www.amazon.com/s?k=nasm+cpt+study+guide&tag=0003aa-20' },
+    { provider: 'nasm',   label: 'NASM — Certified Personal Trainer Program', url: 'https://www.nasm.org/become-a-personal-trainer' },
+    { provider: 'nasm',   label: 'NASM CPT Exam Content Outline', url: 'https://www.nasm.org/resources/free-content' },
+  ],
+  domains: [
+    { slug: 'basic-and-applied-sciences-and-nutritional-concepts', name: 'Basic and Applied Sciences and Nutritional Concepts', number: '1.0', weight: 46 },
+    { slug: 'client-relations-and-behavioral-coaching',            name: 'Client Relations and Behavioral Coaching',            number: '2.0', weight: 11 },
+    { slug: 'assessment',                                          name: 'Assessment',                                          number: '3.0', weight: 11 },
+    { slug: 'program-design',                                      name: 'Program Design',                                      number: '4.0', weight: 7  },
+    { slug: 'exercise-technique-and-training-instruction',         name: 'Exercise Technique and Training Instruction',         number: '5.0', weight: 14 },
+    { slug: 'professional-development-and-responsibility',         name: 'Professional Development and Responsibility',         number: '6.0', weight: 11 },
+  ],
+};

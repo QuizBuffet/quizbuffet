@@ -38,6 +38,7 @@ const LIVE_CATEGORY = {
   'faa-part-107':                       'Aviation',
   'personal-trainer-nasm':              'Fitness',
   'cpr-aed':                            'Healthcare',
+  'quickbooks-proadvisor':              'Accounting',
 };
 
 const CATEGORY_ORDER = [

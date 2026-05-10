@@ -33,6 +33,7 @@ import { cert as nmlsMlo } from './nmls-mlo.js';
 import { cert as faaPart107 } from './faa-part-107.js';
 import { cert as personalTrainerNasm } from './personal-trainer-nasm.js';
 import { cert as cprAed } from './cpr-aed.js';
+import { cert as quickbooksProAdvisor } from './quickbooks-proadvisor.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -70,4 +71,5 @@ export const certifications = [
   faaPart107,
   personalTrainerNasm,
   cprAed,
+  quickbooksProAdvisor,
 ];

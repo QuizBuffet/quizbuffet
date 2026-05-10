@@ -3908,3 +3908,152 @@ a:is(:hover, :active) { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) {
   .container-home .featured-slide { animation: none; }
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   FIX BUNDLE — carousel CTA text, footer corners, patterned buttons, 3D push
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* 1. Carousel CTA — keep text VISIBLE on hover (was white-on-white in some themes) */
+.container-home .featured-cta:hover,
+.container-home .featured-cta:focus-visible {
+  background: #fff;
+  color: #1a1a1a !important;          /* always-dark text on white bg */
+  border-color: #fff;
+  text-shadow: none;
+}
+[data-theme='dark'] .container-home .featured-cta:hover,
+[data-theme='dark'] .container-home .featured-cta:focus-visible {
+  background: #f5f5f5;
+  color: #1a1a1a !important;
+}
+
+/* 2. Footer — rounded bottom corners so the color doesn't end at a sharp edge */
+.footer {
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  margin-bottom: 0;
+}
+
+/* 3. Contact Us button — same diagonal-stripe + dot pattern overlay */
+.footer-contact-btn {
+  position: relative;
+  background-image:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.10) 0 1px, transparent 1px 10px),
+    radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1.3px),
+    linear-gradient(180deg, var(--footer-accent), color-mix(in srgb, var(--footer-accent) 80%, #000));
+  background-size: auto, 9px 9px, auto;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.18);
+  transition: transform 0.08s ease, box-shadow 0.1s ease, filter 0.15s ease;
+}
+.footer-contact-btn:hover,
+.footer-contact-btn:focus-visible {
+  filter: brightness(1.10);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 0 rgba(0,0,0,0.22);
+}
+.footer-contact-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.18), inset 0 2px 4px rgba(0,0,0,0.18);
+}
+
+/* 4. Back-to-top button — pattern + true 3D push button */
+.back-to-top {
+  background-image:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.16) 0 1px, transparent 1px 9px),
+    radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1.3px),
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--accent, #2e9b4a) 95%, white),
+      color-mix(in srgb, var(--accent, #2e9b4a) 75%, black));
+  background-size: auto, 9px 9px, auto;
+  border: 1px solid color-mix(in srgb, var(--accent, #2e9b4a) 60%, black);
+  /* 3D depth — bottom shadow simulates a button standing proud */
+  box-shadow:
+    0 4px 0 0 color-mix(in srgb, var(--accent, #2e9b4a) 50%, black),
+    0 6px 14px -4px rgba(0,0,0,0.35);
+  transition: transform 0.08s ease, box-shadow 0.1s ease, filter 0.15s ease;
+}
+.back-to-top:hover, .back-to-top:focus-visible {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow:
+    0 5px 0 0 color-mix(in srgb, var(--accent, #2e9b4a) 50%, black),
+    0 8px 18px -4px rgba(0,0,0,0.4);
+}
+.back-to-top:active {
+  /* Press: shadow collapses, button moves down 4px (matches the depth) */
+  transform: translateY(4px);
+  box-shadow:
+    0 0 0 0 color-mix(in srgb, var(--accent, #2e9b4a) 50%, black),
+    0 2px 4px -1px rgba(0,0,0,0.25),
+    inset 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* 5. RSS feed button — diagonal-stripe + dot pattern overlay */
+.footer-rss-btn {
+  background-image:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.18) 0 1px, transparent 1px 9px),
+    radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1.3px),
+    linear-gradient(180deg, #ee802f, #c45a18);
+  background-size: auto, 9px 9px, auto;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.22);
+}
+.footer-rss-btn:hover, .footer-rss-btn:focus-visible {
+  background-image:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.22) 0 1px, transparent 1px 9px),
+    radial-gradient(rgba(255,255,255,0.16) 1px, transparent 1.3px),
+    linear-gradient(180deg, #f08d3d, #cd6722);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 0 rgba(0,0,0,0.25);
+}
+.footer-rss-btn:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.20);
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   FIX BUNDLE — pointer cursor everywhere it should be, kill contact-btn underline
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Ensure all links and buttons (and their inner spans/imgs) show pointer */
+a, a *, button, button *, [role="button"], [role="button"] *,
+.nav-logo, .nav-logo *, .nav-menu a, .nav-settings-btn,
+.hero-random, .hero-random *, .hero-search-input,
+.featured-cta, .featured-cta *, .featured-nav, .featured-dot,
+.cert-card, .cert-card *, .footer-cert-link, .footer-cert-link *,
+.footer-contact-btn, .footer-contact-btn *, .footer-rss-btn, .footer-rss-btn *,
+.back-to-top, .back-to-top * {
+  cursor: pointer;
+}
+
+/* Inputs keep their text cursor */
+input[type="text"], input[type="search"], input[type="email"], textarea,
+.hero-search-input, .search-box {
+  cursor: text;
+}
+
+/* Disabled buttons keep their default look */
+button:disabled, [aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* Contact Us button — kill the underline in every state */
+.footer-contact-btn,
+.footer-contact-btn:hover,
+.footer-contact-btn:focus,
+.footer-contact-btn:focus-visible,
+.footer-contact-btn:active,
+.footer-contact-btn:visited {
+  text-decoration: none !important;
+}
+
+/* Site name (logo) — kill underline in all states */
+.nav-logo,
+.nav-logo:hover,
+.nav-logo:focus,
+.nav-logo:focus-visible,
+.nav-logo:active,
+.nav-logo:visited {
+  text-decoration: none !important;
+}

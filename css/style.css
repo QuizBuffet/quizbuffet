@@ -4057,3 +4057,121 @@ button:disabled, [aria-disabled="true"] {
 .nav-logo:visited {
   text-decoration: none !important;
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   MOBILE FIXES — kill horizontal scroll, single-column cards, carousel polish
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Stop the page from being shiftable left/right on mobile (smoke + 100vw
+   pseudo-elements were leaking past the viewport edge) */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Mobile breakpoint: collapse the 2-col card layout into a single readable column */
+@media (max-width: 720px) {
+
+  /* Card layout — single column, full-width, larger text */
+  .container-home .cert-card {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 14px 14px 12px;
+  }
+  .container-home .cert-card-col {
+    width: 100%;
+    align-items: stretch;
+    text-align: left;
+  }
+  .container-home .cert-card-col-l { padding-left: 4px; }
+  .container-home .cert-card-col-r {
+    align-items: flex-start;        /* override desktop right-align */
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-top: 4px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-sub, #ececec);
+  }
+  .container-home .cert-card-cat {
+    align-self: flex-start;
+    order: -1;                      /* category chip first on mobile */
+  }
+  .container-home .cert-card-name {
+    font-size: 15.5px;
+    line-height: 1.3;
+    /* Allow up to 2 lines, then ellipsis on the third */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .container-home .cert-card-price { align-items: flex-start; text-align: left; }
+  .container-home .cert-card-footer { text-align: left; flex: 1; }
+
+  /* Coming soon mobile — same single-column treatment */
+  .container-home .cert-card.cert-coming-soon {
+    grid-template-columns: 1fr;
+    padding-top: 24px;              /* keep room for the # priority chip */
+  }
+
+  /* CAROUSEL — smaller, better-fitted on mobile */
+  .container-home .featured-stage { height: clamp(440px, 110vw, 560px); }
+  .container-home .featured-slide {
+    padding: 24px 50px;
+    grid-template-columns: 1fr;
+  }
+  .container-home .featured-right { display: none; }
+  .container-home .featured-headline { font-size: clamp(22px, 6vw, 28px); }
+  .container-home .featured-desc { font-size: 14px; -webkit-line-clamp: 4; }
+  .container-home .featured-statline { gap: 16px; }
+  .container-home .featured-statbox-num { font-size: 20px; }
+  .container-home .featured-statbox-lbl { font-size: 10px; }
+
+  /* Arrows — smaller, tucked at slide edges */
+  .container-home .featured-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+  .container-home .featured-prev { left: 8px; }
+  .container-home .featured-next { right: 8px; }
+
+  /* Dots — bigger and easier to tap */
+  .container-home .featured-dots {
+    margin-top: 14px;
+    gap: 8px;
+  }
+  .container-home .featured-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* HERO — tighter on mobile */
+  .container-home .hero { padding-top: 16px; padding-bottom: 24px; }
+  .container-home .hero-headline { font-size: clamp(28px, 8vw, 40px); }
+  .container-home .hero-sub { font-size: 14px; margin-bottom: 20px; }
+  .container-home .hero-stats { gap: 24px; margin-top: 8px; }
+  .container-home .hero-stat-num { font-size: clamp(28px, 9vw, 40px); }
+  .container-home .hero-stat-label { font-size: 11px; }
+  .container-home .hero-search-hint { font-size: 11px; margin: -8px auto 16px; }
+
+  /* Make sure none of these break the viewport */
+  .container-home .featured-slide,
+  .container-home .featured-carousel,
+  .container-home .cert-card,
+  .container-home .hero {
+    max-width: 100%;
+  }
+}
+
+/* Extra-small (≤ 380px) — even tighter */
+@media (max-width: 380px) {
+  .container-home .featured-slide { padding: 20px 42px; }
+  .container-home .featured-nav { width: 28px; height: 28px; font-size: 16px; }
+  .container-home .featured-prev { left: 6px; }
+  .container-home .featured-next { right: 6px; }
+  .container-home .hero-stats { gap: 16px; }
+}

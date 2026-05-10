@@ -4204,3 +4204,35 @@ html, body {
   .container-home .featured-headline { line-height: 1.1; }
   .container-home .featured-desc { -webkit-line-clamp: 2; }
 }
+
+/* Stage uses flex so the slide always fills the available height —
+   no gradient bleed below the slide content */
+.container-home .featured-stage {
+  display: flex;
+  align-items: stretch;
+}
+.container-home .featured-slide {
+  flex: 1;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 920px) {
+  .container-home .featured-stage {
+    display: flex;
+    height: auto;
+    min-height: 360px;
+  }
+  .container-home .featured-slide {
+    flex: 1;
+    min-height: inherit;
+  }
+}
+@media (max-width: 720px) {
+  .container-home .featured-stage { min-height: 380px; }
+}
+
+/* Hide the carousel pagination dots on mobile — arrows are enough */
+@media (max-width: 720px) {
+  .container-home .featured-dots { display: none; }
+}

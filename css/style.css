@@ -4175,3 +4175,32 @@ html, body {
   .container-home .featured-next { right: 6px; }
   .container-home .hero-stats { gap: 16px; }
 }
+
+/* ────────────────────────────────────────────────────────────────────────────
+   CAROUSEL — reduce wasted vertical space when right column is hidden
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Distribute left-column content top-to-bottom so the middle never goes empty */
+.container-home .featured-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.container-home .featured-left > .featured-statline { margin-top: auto; }
+
+/* Below 920px the right column is hidden — shrink the stage so single-column
+   content doesn't sit in a tall, half-empty box */
+@media (max-width: 920px) {
+  .container-home .featured-stage { height: auto; min-height: 360px; }
+  .container-home .featured-slide { padding: 24px clamp(46px, 7vw, 72px); }
+}
+
+/* Mobile (≤720px) — even tighter, content-driven height */
+@media (max-width: 720px) {
+  .container-home .featured-stage { height: auto; min-height: 360px; }
+  .container-home .featured-slide { padding: 22px 50px; }
+  .container-home .featured-left { gap: 10px; }
+  .container-home .featured-headline { line-height: 1.1; }
+  .container-home .featured-desc { -webkit-line-clamp: 2; }
+}

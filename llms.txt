@@ -1,6 +1,6 @@
 # QuizBuffet
 
-> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated 2026-05-08.
+> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated 2026-05-10.
 
 ## Available certifications
 - [CompTIA Cloud+ (CV0-004)](https://quizbuffet.com/comptia-cloud-plus/): Cloud infrastructure skills for engineers and sysadmins 1200+ questions.
@@ -35,6 +35,7 @@
 - [CDL Class A (CDL-A)](https://quizbuffet.com/cdl-class-a/): Federal license required to drive tractor-trailers and large combination vehicles 300+ questions.
 - [Georgia Real Estate Salesperson License (Real Estate License)](https://quizbuffet.com/real-estate-license/): Georgia license to represent real estate buyers and sellers 300+ questions.
 - [NMLS Mortgage Loan Originator (MLO) (SAFE MLO)](https://quizbuffet.com/nmls-mlo/): Federal SAFE Act licensing exam for mortgage loan originators 300+ questions.
+- [FAA Part 107 (Remote Pilot — Small UAS) (Part 107)](https://quizbuffet.com/faa-part-107/): Required certificate for commercial drone operations in the U.S. 300+ questions.
 
 ## Coming soon
 - [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/) — coming soon (priority #1)
@@ -44,19 +45,19 @@
 - [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #5)
 - [Certified Phlebotomy Technician (CPT) (CPT)](https://quizbuffet.com/phlebotomy-technician/) — coming soon (priority #6)
 - [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #7)
-- [FAA Part 107 (Remote Pilot) (Part 107)](https://quizbuffet.com/faa-part-107/) — coming soon (priority #8)
-- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #9)
-- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #10)
-- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #11)
-- [ServSafe Food Handler (ServSafe FH)](https://quizbuffet.com/servsafe-food-handler/) — coming soon (priority #12)
-- [ServSafe Food Protection Manager (ServSafe Manager)](https://quizbuffet.com/servsafe-manager/) — coming soon (priority #13)
-- [EPA 608 Refrigerant Handling Certification (EPA 608)](https://quizbuffet.com/epa-608/) — coming soon (priority #14)
-- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #15)
-- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #16)
-- [ASE Automotive Certification (ASE A1–A9 / G1)](https://quizbuffet.com/ase-automotive/) — coming soon (priority #17)
-- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #18)
-- [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/) — coming soon (priority #19)
-- [Barber License (Barber)](https://quizbuffet.com/barber-license/) — coming soon (priority #20)
+- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #8)
+- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #9)
+- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #10)
+- [ServSafe Food Handler (ServSafe FH)](https://quizbuffet.com/servsafe-food-handler/) — coming soon (priority #11)
+- [ServSafe Food Protection Manager (ServSafe Manager)](https://quizbuffet.com/servsafe-manager/) — coming soon (priority #12)
+- [EPA 608 Refrigerant Handling Certification (EPA 608)](https://quizbuffet.com/epa-608/) — coming soon (priority #13)
+- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #14)
+- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #15)
+- [ASE Automotive Certification (ASE A1–A9 / G1)](https://quizbuffet.com/ase-automotive/) — coming soon (priority #16)
+- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #17)
+- [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/) — coming soon (priority #18)
+- [Barber License (Barber)](https://quizbuffet.com/barber-license/) — coming soon (priority #19)
+- [Esthetician License (Esthetician)](https://quizbuffet.com/esthetician-license/) — coming soon (priority #20)
 
 ## Resources
 - [Sitemap](https://quizbuffet.com/sitemap.xml)

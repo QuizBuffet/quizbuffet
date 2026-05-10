@@ -1,6 +1,6 @@
 # QuizBuffet — Full Cert Reference
 
-Last updated: 2026-05-08
+Last updated: 2026-05-10
 Site: https://quizbuffet.com
 
 QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
@@ -1077,6 +1077,43 @@ A: A residential mortgage loan that is not insured or guaranteed by a federal go
 **Q: Fannie Mae operates in the secondary mortgage market and purchases loans from approved lenders. Its purchase of eligible loans provides liquidity that enables new origination. Fannie Mae's primary function is to:**
 A: Purchase eligible mortgage loans from approved lenders to provide liquidity to the secondary mortgage market
 
+## FAA Part 107 (Remote Pilot — Small UAS) (Part 107)
+Vendor: FAA
+URL: https://quizbuffet.com/faa-part-107/
+Total questions: 300
+
+FAA Part 107 is the Remote Pilot Certificate with a small Unmanned Aircraft Systems (sUAS) rating, required by 14 CFR Part 107 for any commercial drone operation in the United States. The initial knowledge test (UAG) is administered by PSI at FAA-approved testing centers and consists of 60 multiple-choice questions covering five Areas of Operation from the FAA Airman Certification Standards (FAA-S-ACS-10B): Regulations, Airspace and Operating Requirements, Weather, Loading and Performance, and Operations. Candidates pass with 70% (42 of 60). After August 2024, recurrent currency is satisfied through the free online ALC-677 training every 24 months instead of a recurrent knowledge test.
+
+### Domains
+- 1.0 Regulations — Core (14% of exam) — 42 questions
+- 2.0 Operations Over People (5% of exam) — 15 questions
+- 3.0 Remote Identification (3% of exam) — 9 questions
+- 4.0 Airspace Classification and Operational Requirements (20% of exam) — 60 questions
+- 5.0 Weather (13% of exam) — 39 questions
+- 6.0 Loading and Performance (9% of exam) — 27 questions
+- 7.0 Radio Communications and Airport Operations (11% of exam) — 33 questions
+- 8.0 Emergency Procedures and Aeronautical Decision-Making (14% of exam) — 42 questions
+- 9.0 Physiology and Maintenance (11% of exam) — 33 questions
+
+### Sample questions
+**Q: A manufacturer is assessing whether its new aircraft falls under 14 CFR Part 107. The finished aircraft weighs 54.9 pounds including all installed components and payload at the time of operation. Under Part 107, does this aircraft qualify as a small unmanned aircraft?**
+A: Yes, because it weighs less than 55 pounds including payload, meeting the Part 107 definition
+
+**Q: A remote pilot wants to fly an sUAS over a group of non-participant bystanders at an outdoor event without obtaining a waiver. The pilot believes the aircraft may qualify as Category 1. Under 14 CFR Part 107, what maximum weight must the sUAS meet to qualify for a Category 1 operation over people?**
+A: The sUAS must weigh 0.55 pounds or less, including everything onboard at the time of operation
+
+**Q: A remote pilot is reviewing the broadcast requirements under 14 CFR Part 89 to ensure their Standard Remote ID sUAS is transmitting the correct information during flight. Which set of data elements must a Standard Remote ID sUAS broadcast throughout its operation?**
+A: The UAS identity (serial number or session ID), latitude and longitude of the UA and control station, altitude of both, velocity, and a timestamp
+
+**Q: A remote pilot is reviewing the U.S. airspace classification system and wants to understand Class A airspace. Under 14 CFR Part 71, Class A airspace begins at what altitude and continues upward, and how does it affect standard Part 107 sUAS operations?**
+A: Class A begins at 18,000 ft MSL; standard Part 107 sUAS operations are already constrained well below this altitude and would never reach Class A
+
+**Q: A remote pilot is reviewing a METAR report before a commercial sUAS flight. The report contains the group '27015KT.' What information does this group convey?**
+A: Wind from 270 degrees (west) at 15 knots, with no gusts reported
+
+**Q: A remote pilot normally operates a quadcopter with a 1-pound camera payload, achieving 22-minute flight times. For a new job, the pilot replaces the camera with a 2.5-pound thermal imaging unit. Assuming all other conditions are equal, how will this increased payload weight most likely affect sUAS performance?**
+A: Flight time will decrease and battery consumption will increase because the motors must produce more thrust to support the greater total weight
+
 
 ## Coming soon (in priority order)
 - CPR / AED Certification (CPR/AED) — https://quizbuffet.com/cpr-aed/ — priority #1
@@ -1086,20 +1123,19 @@ A: Purchase eligible mortgage loans from approved lenders to provide liquidity t
 - Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #5
 - Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #6
 - Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #7
-- FAA Part 107 (Remote Pilot) (Part 107) — https://quizbuffet.com/faa-part-107/ — priority #8
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #9
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #10
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #11
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #12
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #13
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #14
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #15
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #16
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #17
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #18
-- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #19
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #20
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #21
-- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #22
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #23
-- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #24
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #8
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #9
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #10
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #11
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #12
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #13
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #14
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #15
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #16
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #17
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #18
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #19
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #20
+- Certified Personal Trainer (NASM-CPT) (NASM-CPT) — https://quizbuffet.com/personal-trainer-nasm/ — priority #21
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #22
+- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #23

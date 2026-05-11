@@ -9,6 +9,7 @@ export const cert = {
   tagline: 'Foundational AI, ML, and generative-AI knowledge for the AWS Cloud',
   about: 'AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of AI, machine learning, and generative AI on AWS — including foundation models, prompt engineering, responsible AI, and security for AI workloads. It is designed for professionals who use, evaluate, or work alongside AI/ML systems but are not necessarily building them.',
   details: '65 questions · 90 minutes · Multiple-choice and multiple-response · Pass score 700/1000',
+  udemyCourseUrl: 'https://www.udemy.com/course/aws-ai-practitioner-certified/',
   acronyms,
   services,
   affiliates: [

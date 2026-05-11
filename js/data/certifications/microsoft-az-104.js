@@ -9,6 +9,7 @@ export const cert = {
   tagline: 'Day-to-day administration of Azure infrastructure at the associate level',
   about: 'Microsoft Azure Administrator (AZ-104) validates skills for managing Azure subscriptions, identities and governance (Microsoft Entra ID, RBAC, Azure Policy, management groups), storage (storage accounts, Azure Files, Blob Storage, redundancy, lifecycle), compute (virtual machines, Container Instances, Container Apps, App Service, scale sets, ARM/Bicep), virtual networking (VNets, NSGs, Bastion, peering, private endpoints, load balancing, DNS), and monitoring with Azure Monitor and backup with Recovery Services and Site Recovery.',
   details: '40–60 questions · 120 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
+  udemyCourseUrl: 'https://www.udemy.com/course/70533-azure/',
   acronyms,
   services,
   affiliates: [

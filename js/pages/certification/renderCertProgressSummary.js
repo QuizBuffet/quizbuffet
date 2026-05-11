@@ -1,30 +1,42 @@
-// Renders overall cert progress bar — reads wrong counts from sessionStorage for in-progress domains since they aren't in localStorage yet
+// Weak Spots strip — shows up to 3 domains with lowest accuracy.
+// Only renders if the user has answered at least one question on this cert.
 import { getDomainProgress } from '../../storage/getDomainProgress.js';
 
 export function renderCertProgressSummary(cert) {
   const el = document.getElementById('progress-summary');
   if (!el) return;
 
-  let totalCorrect = 0, totalWrong = 0, completed = 0;
-  const totalDomains = cert.domains.length;
-
-  cert.domains.forEach(d => {
+  const stats = cert.domains.map(d => {
     const key = `${cert.slug}--${d.slug}`;
     const prog = getDomainProgress(key);
-    if (prog.completed) {
-      completed++;
-      totalWrong   += prog.failed.length;
-      totalCorrect += d.count - prog.failed.length;
-    } else {
-      totalCorrect += prog.correct.length;
-      totalWrong   += JSON.parse(sessionStorage.getItem(`qbs_${key}_failed`) || '[]').length;
-    }
+    const attempted = prog.correct.length + prog.failed.length;
+    const accuracy = attempted ? prog.correct.length / attempted : null;
+    return { domain: d, key, attempted, accuracy, correct: prog.correct.length, failed: prog.failed.length };
   });
 
-  const pct = Math.round((completed / totalDomains) * 100);
+  const attemptedStats = stats.filter(s => s.attempted >= 3 && s.accuracy !== null);
+  if (!attemptedStats.length) { el.innerHTML = ''; return; }
+
+  // Lowest accuracy first; tiebreak by highest attempted (more confident the weakness is real)
+  attemptedStats.sort((a, b) => a.accuracy - b.accuracy || b.attempted - a.attempted);
+  const weak = attemptedStats.slice(0, 3);
+
   el.innerHTML = `
-    <div class="progress-summary">
-      <strong>Your Progress:</strong> ${completed} of ${totalDomains} domains complete &middot; ${totalCorrect} correct &middot; ${totalWrong} wrong
-      <div class="progress-bar-track"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
-    </div>`;
+    <section class="cert-weak">
+      <div class="cert-weak-head">
+        <span class="cert-weak-label">Weak spots</span>
+        <span class="cert-weak-hint">Drill these first</span>
+      </div>
+      <div class="cert-weak-list">
+        ${weak.map(s => {
+          const pct = Math.round(s.accuracy * 100);
+          const tone = pct < 50 ? 'low' : pct < 70 ? 'mid' : 'ok';
+          return `
+            <a class="cert-weak-card cert-weak-${tone}" href="/${cert.slug}/${s.domain.slug}/">
+              <div class="cert-weak-name">${s.domain.name}</div>
+              <div class="cert-weak-meta"><strong>${pct}%</strong> accuracy · ${s.failed} wrong of ${s.attempted}</div>
+            </a>`;
+        }).join('')}
+      </div>
+    </section>`;
 }

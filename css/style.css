@@ -1040,8 +1040,209 @@ a:is(:hover, :active) { text-decoration: underline; }
 #domain-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 10px;
+  gap: 12px;
 }
+
+/* === Cert page dashboard hero === */
+.cert-hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(20px, 4vw, 36px);
+  align-items: start;
+  padding: clamp(20px, 4vw, 36px) 0 clamp(16px, 3vw, 24px);
+  border-bottom: 1px solid var(--border-sub, #ececec);
+  margin-bottom: clamp(20px, 3vw, 28px);
+}
+.cert-hero-vendor {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #c47828; background: rgba(196,120,40,0.10);
+  padding: 4px 10px; border-radius: 999px; margin-bottom: 12px;
+}
+.cert-hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(26px, 4.6vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 0 0 10px;
+  color: var(--text, #1a1a1a);
+}
+.cert-hero-meta {
+  display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; margin-bottom: 18px;
+}
+.cert-hero-code {
+  font-weight: 700; font-size: 14px; padding: 3px 10px;
+  background: var(--surface, #f4f4f4); border: 1px solid var(--border-sub);
+  border-radius: 6px; color: var(--text);
+}
+.cert-hero-tagline { color: var(--text-muted, #666); font-size: 15px; line-height: 1.5; }
+.cert-hero-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0, auto)); gap: 20px 28px;
+  margin: 0 0 22px;
+}
+.cert-stat-value { font-size: clamp(20px, 3vw, 26px); font-weight: 700; color: var(--text); line-height: 1.1; }
+.cert-stat-label { font-size: 12px; color: var(--text-muted, #888); letter-spacing: 0.04em; margin-top: 2px; }
+.cert-hero-cta-row { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; }
+.cert-hero-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; font-size: 15px; font-weight: 700;
+  background: var(--text, #1a1a1a); color: var(--bg, #fff) !important;
+  border-radius: 8px; text-decoration: none !important;
+  transition: background 0.15s, transform 0.08s;
+}
+.cert-hero-cta:hover { background: #000; }
+.cert-hero-cta:active { transform: translateY(1px); }
+.cert-hero-price { font-size: 14px; margin: 0; color: var(--text-muted); }
+
+.cert-hero-ring { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.cert-ring { display: block; }
+.cert-ring-track { fill: none; stroke: var(--border-sub, #ececec); stroke-width: 10; }
+.cert-ring-fill {
+  fill: none; stroke: #c47828; stroke-width: 10; stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+.cert-ring-pct { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; font-weight: 600; fill: var(--text); }
+.cert-ring-caption { font-size: 12px; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+
+.cert-hero-about {
+  margin: 0 0 clamp(20px, 3vw, 28px); padding: 12px 0;
+  border-top: 1px dashed var(--border-sub); border-bottom: 1px dashed var(--border-sub);
+}
+.cert-hero-about > summary {
+  cursor: pointer; font-weight: 600; font-size: 14px; color: var(--text-muted);
+  list-style: none; padding: 4px 0; user-select: none;
+}
+.cert-hero-about > summary::before { content: '+ '; color: #c47828; font-weight: 700; }
+.cert-hero-about[open] > summary::before { content: '− '; }
+.cert-hero-about p { margin: 10px 0 0; line-height: 1.6; color: var(--text); font-size: 15px; }
+.cert-hero-about .cert-hero-details { color: var(--text-muted); font-size: 14px; }
+
+@media (max-width: 720px) {
+  .cert-hero { grid-template-columns: 1fr; }
+  .cert-hero-ring { order: -1; align-self: center; }
+  .cert-hero-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+}
+
+/* === Weak spots strip === */
+.cert-weak { margin: 0 0 clamp(20px, 3vw, 28px); }
+.cert-weak-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.cert-weak-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #9c1d1d;
+}
+.cert-weak-hint { font-size: 13px; color: var(--text-muted); }
+.cert-weak-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.cert-weak-card {
+  display: block; padding: 12px 14px;
+  border: 1px solid var(--border-sub); border-left: 4px solid #9c1d1d;
+  border-radius: 8px; background: var(--surface, rgba(156,29,29,0.03));
+  text-decoration: none !important; color: var(--text);
+  transition: background 0.15s, border-color 0.15s;
+}
+.cert-weak-card:hover { background: rgba(156,29,29,0.06); border-left-color: #7a1f1f; }
+.cert-weak-low  { border-left-color: #9c1d1d; }
+.cert-weak-mid  { border-left-color: #c47828; }
+.cert-weak-ok   { border-left-color: #5a8a4a; }
+.cert-weak-name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.cert-weak-meta { font-size: 13px; color: var(--text-muted); }
+.cert-weak-meta strong { color: var(--text); }
+
+/* === Dashboard domain cards === */
+.dcard {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 16px 18px;
+  border: 1px solid var(--border-sub, #ececec); border-radius: 10px;
+  background: var(--surface, #fafafa);
+  color: var(--text); text-decoration: none !important;
+  transition: border-color 0.15s, transform 0.08s, box-shadow 0.15s;
+}
+.dcard:hover {
+  border-color: #c47828;
+  box-shadow: 0 2px 10px -4px rgba(196,120,40,0.25);
+}
+.dcard:active { transform: translateY(1px); }
+.dcard-head { display: flex; justify-content: space-between; align-items: center; }
+.dcard-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--text, #1a1a1a); color: var(--bg, #fff);
+  font-weight: 700; font-size: 13px;
+}
+.dcard-weight { font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; }
+.dcard-title { font-weight: 600; font-size: 16px; line-height: 1.3; }
+.dcard-progress { display: flex; flex-direction: column; gap: 6px; }
+.dcard-bar { height: 6px; background: var(--border-sub, #ececec); border-radius: 3px; overflow: hidden; }
+.dcard-bar-fill { height: 100%; background: #c47828; border-radius: 3px; transition: width 0.4s ease; }
+.dcard-meta { font-size: 12px; color: var(--text-muted); }
+.dcard-cta { font-size: 14px; font-weight: 700; color: #c47828; margin-top: auto; }
+
+.dcard-done { background: linear-gradient(180deg, rgba(90,138,74,0.06), transparent); border-color: #5a8a4a; }
+.dcard-done .dcard-num { background: #5a8a4a; }
+.dcard-done .dcard-bar-fill { background: #5a8a4a; }
+.dcard-done .dcard-cta { color: #5a8a4a; }
+
+.dcard-busy { background: linear-gradient(180deg, rgba(196,120,40,0.05), transparent); }
+
+.dcard-placeholder {
+  border: 1px dashed var(--border-sub); border-radius: 10px;
+  background: transparent; opacity: 0.4;
+}
+
+/* === Shared section titles on the cert page === */
+.cert-section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(22px, 3.4vw, 28px);
+  letter-spacing: -0.005em;
+  margin: clamp(28px, 4vw, 40px) 0 14px;
+  color: var(--text);
+}
+
+/* === About === */
+.cert-about { margin-bottom: clamp(20px, 3vw, 28px); }
+.cert-about-lead { font-size: clamp(15px, 2.3vw, 17px); line-height: 1.65; color: var(--text); margin: 0 0 10px; }
+.cert-about-details { font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0; padding: 10px 14px; background: var(--surface, rgba(0,0,0,0.03)); border-left: 3px solid var(--border-sub); border-radius: 4px; }
+
+/* === What you'll learn === */
+.cert-learn { margin: clamp(28px, 4vw, 40px) 0; }
+.cert-learn-lead { font-size: clamp(15px, 2.2vw, 16px); line-height: 1.6; color: var(--text-mid, #555); margin: 0 0 18px; max-width: 70ch; }
+.cert-learn-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.cert-learn-item { padding: 14px 16px; border: 1px solid var(--border-sub); border-radius: 8px; background: var(--surface, #fafafa); }
+.cert-learn-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.cert-learn-num { font-weight: 700; font-size: 13px; color: #c47828; background: rgba(196,120,40,0.12); padding: 2px 8px; border-radius: 4px; }
+.cert-learn-name { font-size: 17px; font-weight: 600; margin: 0; flex: 1; }
+.cert-learn-weight { font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; }
+.cert-learn-desc { font-size: 14px; line-height: 1.55; color: var(--text-mid, #555); margin: 0; }
+.cert-learn-desc a { font-weight: 600; color: #c47828; text-decoration: none !important; }
+.cert-learn-desc a:hover { color: #a85e1b; }
+
+/* === FAQ === */
+.cert-faq { margin: clamp(28px, 4vw, 40px) 0; }
+.cert-faq-list { display: flex; flex-direction: column; gap: 8px; }
+.cert-faq-item { border: 1px solid var(--border-sub); border-radius: 8px; background: var(--surface, #fafafa); overflow: hidden; }
+.cert-faq-item > summary {
+  cursor: pointer; list-style: none; padding: 14px 16px;
+  font-weight: 600; font-size: 15px; color: var(--text);
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  user-select: none;
+}
+.cert-faq-item > summary::after { content: '+'; color: #c47828; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+.cert-faq-item[open] > summary::after { content: '−'; }
+.cert-faq-item p { margin: 0; padding: 0 16px 16px; line-height: 1.6; color: var(--text-mid, #555); font-size: 14px; }
+
+/* === Related certs === */
+.cert-related { margin: clamp(28px, 4vw, 40px) 0; }
+.cert-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.cert-related-card {
+  display: block; padding: 16px 18px; border: 1px solid var(--border-sub); border-radius: 10px;
+  background: var(--surface, #fafafa); color: var(--text); text-decoration: none !important;
+  transition: border-color 0.15s, transform 0.08s;
+}
+.cert-related-card:hover { border-color: #c47828; transform: translateY(-1px); }
+.cert-related-vendor { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #c47828; margin-bottom: 8px; }
+.cert-related-name { font-weight: 600; font-size: 16px; line-height: 1.3; margin-bottom: 4px; }
+.cert-related-code { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.cert-related-tag { font-size: 13px; color: var(--text-mid, #555); line-height: 1.45; }
 .domain-item {
   display: flex;
   align-items: stretch;

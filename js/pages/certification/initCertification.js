@@ -4,6 +4,9 @@ import { certifications } from '../../data/certifications/index.js';
 import { renderCertHeader } from './renderCertHeader.js';
 import { renderCertDomainList } from './renderCertDomainList.js';
 import { renderCertProgressSummary } from './renderCertProgressSummary.js';
+import { renderCertWhatYouLearn } from './renderCertWhatYouLearn.js';
+import { renderCertFAQ } from './renderCertFAQ.js';
+import { renderRelatedCerts } from './renderRelatedCerts.js';
 import { renderAcronymDrill, renderServiceDrill } from './renderAcronymDrill.js';
 import { renderSessionSizePicker } from './renderSessionSizePicker.js';
 import { renderMixQuizBtn } from './renderMixQuizBtn.js';
@@ -65,11 +68,14 @@ export async function init() {
     renderSessionSizePicker(() => {});
     renderMixQuizBtn(cert);
     renderCertDomainList(cert);
+    renderCertWhatYouLearn(cert);
     renderAcronymDrill(cert);
     renderServiceDrill(cert);
+    renderCertFAQ(cert, null);
+    renderRelatedCerts(cert);
 
     const affiliatesEl = document.getElementById('affiliates');
-    if (affiliatesEl) affiliatesEl.innerHTML = affiliateLinksHTML(cert.affiliates);
+    if (affiliatesEl) affiliatesEl.innerHTML = affiliateLinksHTML(cert);
 
     // Fetch all domain counts in parallel — loadDomain caches results for the quiz
     const counts = await Promise.all(
@@ -78,6 +84,7 @@ export async function init() {
     const totalQ = counts.reduce((s, n) => s + n, 0);
 
     renderCertHeader(cert, totalQ);
+    renderCertFAQ(cert, totalQ);
     setMeta(
       `${cert.name} (${cert.code}) Free Practice Test`,
       `Free ${cert.name} (${cert.code}) practice test — ${totalQ}+ exam questions across ${cert.domains.length} domains. No account needed. Track progress domain-by-domain until you're ready to pass.`

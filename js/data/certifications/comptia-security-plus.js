@@ -8,6 +8,7 @@ export const cert = {
   tagline: 'Core security skills for IT professionals defending enterprise environments',
   about: 'Security+ certifies professionals who can assess enterprise security posture, monitor hybrid environments, operate within governance and compliance frameworks, and identify and respond to security incidents.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 2 years IT administration with security focus',
+  udemyCourseUrl: 'https://www.udemy.com/course/securityplus/',
   acronyms,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },

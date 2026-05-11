@@ -9,6 +9,7 @@ export const cert = {
   tagline: 'The most popular cloud certification for designing AWS workloads',
   about: 'AWS Certified Solutions Architect – Associate (SAA-C03) validates the ability to design solutions on AWS that are secure, resilient, high-performing, and cost-optimized — based on the AWS Well-Architected Framework. Aimed at candidates with at least 1 year of hands-on experience designing cloud solutions on AWS.',
   details: '50 scored questions + 15 unscored · Multiple-choice and multiple-response · Pass score 720/1000',
+  udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/',
   acronyms,
   services,
   affiliates: [

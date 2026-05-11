@@ -72,7 +72,8 @@
       "Bash(npx --yes serve -s . -l 3001)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3001/)",
       "Bash(curl -s http://localhost:3001/)",
-      "Bash(cp /Users/gradikayamba/quizbuffet/data/certifications/quickbooks-proadvisor/list-management.json /tmp/qbpa-list-management-misplaced.json *)"
+      "Bash(cp /Users/gradikayamba/quizbuffet/data/certifications/quickbooks-proadvisor/list-management.json /tmp/qbpa-list-management-misplaced.json *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('liveCerts:', d['liveCerts']\\); print\\('comingSoonCerts:', d['comingSoonCerts']\\); print\\('total:', d['total']\\); print\\('bls in perCert:', 'bls' in d['perCert']\\); print\\('bls count:', d['perCert'].get\\('bls', 'not present'\\)\\)\")"
     ],
     "additionalDirectories": [
       "/tmp"

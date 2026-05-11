@@ -1077,7 +1077,7 @@ A: A residential mortgage loan that is not insured or guaranteed by a federal go
 **Q: Fannie Mae operates in the secondary mortgage market and purchases loans from approved lenders. Its purchase of eligible loans provides liquidity that enables new origination. Fannie Mae's primary function is to:**
 A: Purchase eligible mortgage loans from approved lenders to provide liquidity to the secondary mortgage market
 
-## FAA Part 107 (Remote Pilot — Small UAS) (Part 107)
+## FAA Part 107 / 14 CFR Part 107 (Part 107)
 Vendor: FAA
 URL: https://quizbuffet.com/faa-part-107/
 Total questions: 300
@@ -1220,25 +1220,53 @@ A: Invoices
 **Q: A bookkeeper needs to create a new vendor record in QuickBooks Online. Which path leads directly to the New Vendor form?**
 A: Left navigation bar → Expenses → Vendors sub-tab → New Vendor button at the top right.
 
+## Basic Life Support (BLS) (BLS)
+Vendor: American Heart Association
+URL: https://quizbuffet.com/bls/
+Total questions: 0
+
+BLS (Basic Life Support) certifies healthcare professionals to deliver high-quality CPR, use an AED, provide ventilation with barrier devices and bag-mask, relieve choking, and work as part of a high-performance resuscitation team for adults, children, and infants. Required for nurses, physicians, EMTs, paramedics, dental and respiratory professionals, and most clinical roles. Built around the AHA Chain of Survival, 2020 BLS Guidelines (with 2023 focused updates), and the AHA BLS Provider course; renewal is typically every two years.
+
+### Domains
+- 1.0 Course Concepts & Chain of Survival (6% of exam)
+- 2.0 Assessment & High-Performance Teams (12% of exam)
+- 3.0 Adult BLS (1- and 2-Rescuer) (22% of exam)
+- 4.0 Pediatric BLS (Children and Infants) (18% of exam)
+- 5.0 AED for All Ages (16% of exam)
+- 6.0 Alternate Ventilation & Advanced Airways (8% of exam)
+- 7.0 Choking Relief Across Ages (10% of exam)
+- 8.0 Special Emergencies & Recovery (8% of exam)
+
+
 
 ## Coming soon (in priority order)
-- Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #1
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #2
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #3
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #4
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #5
-- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #6
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #7
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #8
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #9
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #10
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #11
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #12
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #13
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #14
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #15
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #16
-- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #17
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #18
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #19
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #20
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #1
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #2
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #3
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #4
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #5
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #6
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #7
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #8
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #9
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #10
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #11
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #12
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #13
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #14
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #15
+- Cosmetology License (Cosmetology) — https://quizbuffet.com/cosmetology-license/ — priority #16
+- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #17
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #18
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #19
+- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #20
+- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #21
+- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #22
+- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #23
+- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #24
+- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #25
+- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #26
+- Google Cybersecurity Professional Certificate (Google Cybersecurity) — https://quizbuffet.com/google-cybersecurity-certificate/ — priority #27
+- Certified Public Accountant (CPA) (CPA) — https://quizbuffet.com/cpa/ — priority #28
+- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #29
+- Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #30

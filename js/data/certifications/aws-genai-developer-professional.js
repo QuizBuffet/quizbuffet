@@ -9,6 +9,7 @@ export const cert = {
   tagline: 'Build, integrate, and operate production GenAI solutions on AWS',
   about: 'AWS Certified Generative AI Developer – Professional (AIP-C01) validates the ability to integrate foundation models into applications and business workflows, including RAG and vector store design, agentic AI, prompt engineering and management, FM API integration, model deployment strategies, AI safety and governance, performance and cost optimization, and evaluation, monitoring, and troubleshooting of GenAI applications.',
   details: '75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000',
+  udemyCourseUrl: 'https://www.udemy.com/course/ultimate-aws-certified-generative-ai-developer-professional/',
   acronyms,
   services,
   affiliates: [

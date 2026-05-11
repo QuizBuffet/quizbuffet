@@ -2,11 +2,47 @@ const BADGES = {
   udemy:   'Udemy',
   amazon:  'Amazon',
   comptia: 'CompTIA',
+  intuit:  'Intuit',
 };
 
-export function affiliateLinksHTML(affiliates) {
-  if (!affiliates?.length) return '';
-  const links = affiliates.filter(a => a.url);
+const UDEMY_TRACKING_BASE = 'https://trk.udemy.com/c/7254431/3193860/39854';
+
+function udemyDeepLink(destUrl) {
+  return `${UDEMY_TRACKING_BASE}?u=${encodeURIComponent(destUrl)}`;
+}
+
+// Build the Udemy affiliate entries for a cert:
+// - cert.udemyCourseUrl (string): primary "Top-rated" course.
+// - cert.extraUdemyCourses (array of { label, url }): additional courses (e.g. domain-specific).
+// - If neither is set, falls back to a Udemy search filtered by cert code + name.
+function udemyAffiliates(cert) {
+  if (!cert) return [];
+  const out = [];
+  if (cert.udemyCourseUrl) {
+    out.push({
+      provider: 'udemy',
+      label: `Top-rated ${cert.code} course on Udemy`,
+      url: udemyDeepLink(cert.udemyCourseUrl),
+    });
+  } else {
+    const search = `https://www.udemy.com/courses/search/?q=${encodeURIComponent(`${cert.code} ${cert.name}`)}`;
+    out.push({
+      provider: 'udemy',
+      label: `${cert.code} courses on Udemy`,
+      url: udemyDeepLink(search),
+    });
+  }
+  (cert.extraUdemyCourses || []).filter(c => c && c.url && c.label).forEach(c => {
+    out.push({ provider: 'udemy', label: c.label, url: udemyDeepLink(c.url) });
+  });
+  return out;
+}
+
+export function affiliateLinksHTML(cert) {
+  if (!cert) return '';
+  const fromMetadata = (cert.affiliates || []).filter(a => a.url);
+  const udemy = udemyAffiliates(cert);
+  const links = [...udemy, ...fromMetadata];
   if (!links.length) return '';
 
   return `

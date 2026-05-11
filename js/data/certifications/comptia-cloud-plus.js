@@ -8,6 +8,7 @@ export const cert = {
   tagline: 'Cloud infrastructure skills for engineers and sysadmins',
   about: 'Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2–3 years of hands-on cloud or systems experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 750/900 · Multiple-choice and performance-based',
+  udemyCourseUrl: 'https://www.udemy.com/course/total-cloud-computing-comptia-cloud-cert-cv0-002/',
   acronyms,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },

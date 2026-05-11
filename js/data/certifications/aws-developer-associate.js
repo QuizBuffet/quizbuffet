@@ -9,6 +9,7 @@ export const cert = {
   tagline: 'Develop, deploy, and debug cloud-based applications on AWS',
   about: 'AWS Certified Developer – Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.',
   details: '65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
+  udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-developer-associate-practice-tests-dva-c01/',
   acronyms,
   services,
   affiliates: [

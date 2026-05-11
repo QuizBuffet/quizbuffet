@@ -177,15 +177,19 @@ function buildCertHtml(cert) {
     return `<li><a href="/${cert.slug}/${d.slug}/"><strong>${htmlEscape(num + d.name)}</strong>${d.count ? ` — ${d.count} questions` : ''}${d.weight ? ` (${d.weight}% of exam)` : ''}</a></li>`;
   }).join('\n          ');
 
-  // Inject Udemy as a global affiliate alongside whatever each cert defines in its metadata.
-  // If cert.udemyCourseUrl is set, deep-link to that specific bestseller; otherwise fall back to search.
-  const udemyAff = {
+  // Inject Udemy affiliates alongside whatever each cert defines in its metadata.
+  // cert.udemyCourseUrl → primary "Top-rated" course.
+  // cert.extraUdemyCourses → additional courses (e.g. domain-specific). Both auto-wrapped in trk link.
+  const udemyAffs = [{
     label: cert.udemyCourseUrl
       ? `Top-rated ${cert.code} course on Udemy`
       : `${cert.code} courses on Udemy`,
     url: udemyForCert(cert),
-  };
-  const affiliateHtml = [udemyAff, ...(cert.affiliates || []).filter(a => a.url)].map(a =>
+  }];
+  (cert.extraUdemyCourses || []).filter(c => c && c.url && c.label).forEach(c => {
+    udemyAffs.push({ label: c.label, url: udemyDeepLink(c.url) });
+  });
+  const affiliateHtml = [...udemyAffs, ...(cert.affiliates || []).filter(a => a.url)].map(a =>
     `<li><a href="${htmlEscape(a.url)}" rel="nofollow sponsored">${htmlEscape(a.label)}</a></li>`
   ).join('\n          ');
 

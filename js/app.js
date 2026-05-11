@@ -24,15 +24,18 @@ const SHELLS = {
     <main class="container container-wide">
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <div id="cert-header"></div>
-      <div id="salary-panel"></div>
       <div id="progress-summary"></div>
       <h2 class="section-title" id="domains-label">Exam Domains</h2>
       <div id="session-size-picker"></div>
       <div id="mix-quiz"></div>
       <div id="domain-list"></div>
+      <div id="cert-what-you-learn"></div>
+      <div id="salary-panel"></div>
       <div id="acronym-drill"></div>
       <div id="service-drill"></div>
+      <div id="cert-faq"></div>
       <div id="affiliates"></div>
+      <div id="cert-related"></div>
       <div id="ad-bottom" class="ad-slot">Advertisement</div>
     </main>`,
 

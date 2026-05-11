@@ -8,6 +8,7 @@ export const cert = {
   tagline: 'Data acquisition, analysis, and governance for data-driven decision making',
   about: 'Data+ certifies professionals who can translate business requirements into data-driven decisions by acquiring, preparing, and transforming data, applying statistical methods, creating visualizations, and adhering to governance and quality standards throughout the data life cycle.',
   details: 'Multiple-choice and performance-based · Recommended 1.5–2 years of experience with databases, analytical tools, statistics, and data visualization',
+  udemyCourseUrl: 'https://www.udemy.com/course/comptia-data-da0-001-comptia-data-certification-course/',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop CompTIA Data+ Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+data%2B&tag=0003aa-20' },

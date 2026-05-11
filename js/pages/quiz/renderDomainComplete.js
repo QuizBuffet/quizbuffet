@@ -32,7 +32,7 @@ export function renderDomainComplete(questions, failedIds, domainSlug, backLink 
     ${retakePassedBtn}
     <button class="next-btn" id="start-fresh" style="margin-top:8px">Start Fresh</button>
     <a href="${backLink}" class="next-btn" style="text-align:center;text-decoration:none;display:block;margin-top:8px">← Back</a>
-    ${affiliateLinksHTML(certMeta?.affiliates)}`;
+    ${affiliateLinksHTML(certMeta)}`;
   document.getElementById('answers').innerHTML = '';
   document.getElementById('explanation').innerHTML = '';
 

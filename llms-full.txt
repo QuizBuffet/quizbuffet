@@ -1,6 +1,6 @@
 # QuizBuffet — Full Cert Reference
 
-Last updated: 2026-05-10
+Last updated: 2026-05-11
 Site: https://quizbuffet.com
 
 QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
@@ -1183,6 +1183,43 @@ A: To analyze the heart rhythm and deliver a shock when a shockable rhythm is de
 **Q: An adult at a restaurant suddenly stops eating, clutches the front of the neck with both hands, and looks panicked. AHA Part 11 calls this gesture by what name?**
 A: The universal choking sign
 
+## QuickBooks ProAdvisor (Online Certification) (QuickBooks ProAdvisor)
+Vendor: Intuit
+URL: https://quizbuffet.com/quickbooks-proadvisor/
+Total questions: 200
+
+The QuickBooks ProAdvisor program is Intuit's free certification for accounting and bookkeeping professionals. The QuickBooks Online (QBO) Certification exam tests practical knowledge of subscription selection, navigation and company settings, list and product/service management, the chart of accounts, customer and sales workflows, vendor and purchase workflows, banking and bank-feed reconciliation, reports, and payroll basics. Certification is delivered through training courses on QuickBooks Online Accountant; candidates pass each module quiz at 80% and the final exam at 80%, with three attempts per module. The Advanced ProAdvisor Certification builds on the basic certification with deeper QBO functionality and advisory workflows.
+
+### Domains
+- 1.0 QBO Setup & Subscriptions (8% of exam) — 16 questions
+- 2.0 Navigation & Settings (12% of exam) — 24 questions
+- 3.0 List Management (10% of exam) — 20 questions
+- 4.0 Chart of Accounts & Products/Services (10% of exam) — 20 questions
+- 5.0 Customers & Sales Transactions (20% of exam) — 40 questions
+- 6.0 Vendors & Purchase Transactions (15% of exam) — 30 questions
+- 7.0 Banking, Feeds & Reconciliation (15% of exam) — 30 questions
+- 8.0 Reports (7% of exam) — 14 questions
+- 9.0 Payroll (3% of exam) — 6 questions
+
+### Sample questions
+**Q: The QuickBooks Online test drive lets users explore a sample company called Craig's Design and Landscaping Services without creating an account or signing in. The guide specifies a direct URL to access this environment. Which URL opens the QBO test drive file?**
+A: https://qbo.intuit.com/redir/testdrive
+
+**Q: The gear icon located in the upper right-hand corner of QuickBooks Online provides access to key management areas of the software. It is organized into four named sections for easy navigation. Which of the following correctly lists the four sections found under the QBO gear icon?**
+A: Your Company, Lists, Tools, and Profile
+
+**Q: A bookkeeper wants to see all the available lists in QuickBooks Online from a single menu. According to the Student Guide, which navigation path opens the All Lists screen?**
+A: Click the Gear icon → All Lists
+
+**Q: A new bookkeeper needs to find the Chart of Accounts in QuickBooks Online. They are not sure where to access it. Which of the following is a valid navigation path to the Chart of Accounts in QBO?**
+A: Gear icon > Your Company > Chart of Accounts
+
+**Q: The Sales section in QuickBooks Online has five sub-tabs. Which sub-tab shows a list focused on invoice transactions specifically?**
+A: Invoices
+
+**Q: A bookkeeper needs to create a new vendor record in QuickBooks Online. Which path leads directly to the New Vendor form?**
+A: Left navigation bar → Expenses → Vendors sub-tab → New Vendor button at the top right.
+
 
 ## Coming soon (in priority order)
 - Basic Life Support (BLS) (BLS) — https://quizbuffet.com/bls/ — priority #1
@@ -1205,4 +1242,3 @@ A: The universal choking sign
 - Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #18
 - Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #19
 - Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #20
-- QuickBooks ProAdvisor (QuickBooks ProAdvisor) — https://quizbuffet.com/quickbooks-proadvisor/ — priority #21

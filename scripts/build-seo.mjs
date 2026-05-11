@@ -273,6 +273,191 @@ ${JSON.stringify(jsonLd, null, 2)}
 `;
 }
 
+function buildDomainOgSvg(cert, domain) {
+  const palette = {
+    'comptia-security-plus':   '#0b6e4f',
+    'comptia-network-plus':    '#1f4287',
+    'comptia-cloud-plus':      '#2b6cb0',
+    'comptia-cysa-plus':       '#9c1d1d',
+    'comptia-pentest-plus':    '#7a1f1f',
+    'comptia-a-plus-core-1':   '#5b3a8c',
+    'comptia-a-plus-core-2':   '#5b3a8c',
+    'comptia-itf-plus':        '#8a4a00',
+    'comptia-data-plus':       '#a83b5b',
+  };
+  const bg = palette[cert.slug] || '#333333';
+  const domName = htmlEscape(clipText(domain.name, 60));
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="${bg}"/>
+  <text x="60" y="160" font-family="Nunito, system-ui, sans-serif" font-size="44" fill="#ffffff" font-weight="600" opacity="0.85">QuizBuffet · ${htmlEscape(cert.code)}</text>
+  <text x="60" y="300" font-family="Nunito, system-ui, sans-serif" font-size="80" fill="#ffffff" font-weight="700">${domName}</text>
+  <text x="60" y="380" font-family="Nunito, system-ui, sans-serif" font-size="36" fill="#ffffff" opacity="0.85">${htmlEscape(cert.name)}</text>
+  <text x="60" y="540" font-family="Nunito, system-ui, sans-serif" font-size="40" fill="#ffffff" opacity="0.95" font-weight="600">Free Domain Practice Quiz</text>
+  <text x="60" y="590" font-family="Nunito, system-ui, sans-serif" font-size="28" fill="#ffffff" opacity="0.8">Instant feedback · No signup</text>
+</svg>`;
+}
+
+function buildDomainHtml(cert, domain, questions) {
+  const count = questions.length;
+  const url = `${SITE}/${cert.slug}/${domain.slug}/`;
+  const ogImage = `${SITE}/icons/og/${cert.slug}-${domain.slug}.svg`;
+  const domNum = domain.number ? `${domain.number} ` : '';
+  const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
+  const fullTitle = clipText(`${domain.name} — ${cert.code} Practice Quiz | QuizBuffet`, 65);
+  const desc = clipText(`Free ${cert.code} ${domain.name} practice quiz — ${count} exam-style questions${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Instant feedback, no signup. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 158);
+
+  // Pick up to 3 sample questions (easy first) for static content
+  const easy = questions.filter(q => q.difficulty === 'easy');
+  const sample = (easy.length >= 3 ? easy : questions).slice(0, 3);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${SITE}/` },
+          { '@type': 'ListItem', 'position': 2, 'name': `${cert.name} Practice Test`, 'item': `${SITE}/${cert.slug}/` },
+          { '@type': 'ListItem', 'position': 3, 'name': domain.name, 'item': url },
+        ],
+      },
+      {
+        '@type': 'Quiz',
+        'name': `${domain.name} — ${cert.code} Practice Quiz`,
+        'description': desc,
+        'url': url,
+        'inLanguage': 'en-US',
+        'dateModified': TODAY,
+        'about': { '@type': 'Thing', 'name': domain.name },
+        'educationalLevel': 'Professional certification',
+        'numberOfItems': count,
+        'isPartOf': {
+          '@type': 'Course',
+          'name': `${cert.name} (${cert.code}) Free Practice Test`,
+          'url': `${SITE}/${cert.slug}/`,
+        },
+      },
+      ...(sample.length ? [{
+        '@type': 'FAQPage',
+        'mainEntity': sample.map(q => {
+          const correct = (q.answers || []).find(a => a.id === q.correct);
+          const correctText = correct?.text || '';
+          const explanation = q.explanations?.[q.correct] || '';
+          return {
+            '@type': 'Question',
+            'name': q.text,
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': trimToFirstSentence(correctText ? `${correctText}. ${explanation}` : explanation),
+            },
+          };
+        }),
+      }] : []),
+    ],
+  };
+
+  const otherDomainsHtml = cert.domains.filter(d => d.slug !== domain.slug).map(d => {
+    const num = d.number ? `${d.number} ` : '';
+    return `<li><a href="/${cert.slug}/${d.slug}/">${htmlEscape(num + d.name)}</a></li>`;
+  }).join('\n          ');
+
+  const sampleHtml = sample.map(q => {
+    const correct = (q.answers || []).find(a => a.id === q.correct);
+    const correctText = correct?.text || '';
+    const explanation = q.explanations?.[q.correct] || '';
+    return `<article class="seo-sample-q">
+        <h3>${htmlEscape(q.text)}</h3>
+        ${correctText ? `<p><strong>Answer:</strong> ${htmlEscape(correctText)}</p>` : ''}
+        ${explanation ? `<p>${htmlEscape(explanation)}</p>` : ''}
+      </article>`;
+  }).join('\n      ');
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${htmlEscape(fullTitle)}</title>
+  <meta name="description" content="${htmlEscape(desc)}">
+  <link rel="canonical" href="${url}">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="QuizBuffet">
+  <meta property="og:title"       content="${htmlEscape(fullTitle)}">
+  <meta property="og:description" content="${htmlEscape(desc)}">
+  <meta property="og:image"       content="${ogImage}">
+  <meta property="og:url"         content="${url}">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="${htmlEscape(fullTitle)}">
+  <meta name="twitter:description" content="${htmlEscape(desc)}">
+  <meta name="twitter:image"       content="${ogImage}">
+
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
+  <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=20260428" />
+  <meta name="apple-mobile-web-app-title" content="QuizBuffet" />
+  <link rel="manifest" href="/icons/site.webmanifest?v=20260428" />
+  <meta name="theme-color" content="#333333">
+
+  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YRKFB3WT9C');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/bg-dots.css">
+
+  <script type="application/ld+json">
+${JSON.stringify(jsonLd, null, 2)}
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="nav" role="navigation" aria-label="Main navigation"></div>
+  <main id="main-content">
+    <section id="seo-static">
+      <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/${cert.slug}/">${htmlEscape(cert.name)}</a> &rsaquo; ${htmlEscape(domain.name)}</nav>
+      <h1>${htmlEscape(domNum + domain.name)} — ${htmlEscape(cert.code)} Practice Quiz</h1>
+      <p><strong>${count} exam-style questions</strong>${domain.weight ? ` covering <strong>${domain.weight}% of the ${htmlEscape(cert.code)} exam</strong>` : ''}. Instant feedback on every answer, progress tracking, no signup required.</p>
+      <p>This domain is part of the <a href="/${cert.slug}/">${htmlEscape(cert.name)} practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
+      ${sampleHtml ? `<h2>Sample Questions</h2>
+      ${sampleHtml}` : ''}
+      ${otherDomainsHtml ? `<h2>Other ${htmlEscape(cert.code)} Domains</h2>
+      <ul>
+          ${otherDomainsHtml}
+      </ul>` : ''}
+      <p><a href="/${cert.slug}/">&larr; Back to ${htmlEscape(cert.code)} practice test overview</a></p>
+    </section>
+    <div id="app"></div>
+  </main>
+  <div id="footer" role="contentinfo"></div>
+  <script type="module" src="/js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+</html>
+`;
+}
+
 function buildComingSoonOgSvg(cert) {
   const bg = '#444444';
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
@@ -286,7 +471,63 @@ function buildComingSoonOgSvg(cert) {
 </svg>`;
 }
 
-function buildComingSoonHtml(cert, priority) {
+// Curated category mapping for live certs — used to find "related" recommendations on coming-soon pages
+const LIVE_CATEGORY_MAP = {
+  'comptia-a-plus-core-1':              'IT Foundations',
+  'comptia-a-plus-core-2':              'IT Foundations',
+  'comptia-itf-plus':                   'IT Foundations',
+  'comptia-network-plus':               'Networking',
+  'cisco-ccna':                         'Networking',
+  'comptia-security-plus':              'Cybersecurity',
+  'comptia-cysa-plus':                  'Cybersecurity',
+  'comptia-pentest-plus':               'Cybersecurity',
+  'isc2-cissp':                         'Cybersecurity',
+  'aws-security-specialty':             'Cybersecurity',
+  'comptia-cloud-plus':                 'Cloud',
+  'aws-cloud-practitioner':             'Cloud',
+  'aws-solutions-architect-associate':  'Cloud',
+  'aws-cloudops-engineer-associate':    'Cloud',
+  'aws-developer-associate':            'Cloud',
+  'aws-devops-engineer-professional':   'Cloud',
+  'aws-solutions-architect-professional': 'Cloud',
+  'aws-advanced-networking-specialty':  'Networking',
+  'microsoft-az-900':                   'Cloud',
+  'microsoft-az-104':                   'Cloud',
+  'aws-ai-practitioner':                'Data & AI',
+  'aws-ml-engineer-associate':          'Data & AI',
+  'aws-genai-developer-professional':   'Data & AI',
+  'aws-data-engineer-associate':        'Data & AI',
+  'comptia-data-plus':                  'Data & AI',
+  'itil-foundation':                    'IT Service Management',
+  'osha-10-construction':               'Safety',
+  'osha-30-construction':               'Safety',
+  'forklift-certification':             'Safety',
+  'cdl-class-a':                        'Transportation',
+  'real-estate-license':                'Real Estate',
+  'nmls-mlo':                           'Mortgage',
+  'faa-part-107':                       'Aviation',
+  'personal-trainer-nasm':              'Fitness',
+  'cpr-aed':                            'Healthcare',
+  'quickbooks-proadvisor':              'Accounting',
+};
+
+// Pick up to N live certs in the same category as the coming-soon cert
+function pickRelatedLive(comingCert, liveCerts, n = 3) {
+  const cat = comingCert.category || 'Other';
+  const sameCategory = liveCerts.filter(c => (LIVE_CATEGORY_MAP[c.slug] || c.category || 'Other') === cat);
+  if (sameCategory.length >= n) return sameCategory.slice(0, n);
+  // Fallback: pad with assorted live certs from other categories
+  const others = liveCerts.filter(c => !sameCategory.includes(c)).slice(0, n - sameCategory.length);
+  return [...sameCategory, ...others].slice(0, n);
+}
+
+// Generate Amazon search URL with the site's affiliate tag
+function amazonSearch(query) {
+  const q = encodeURIComponent(query);
+  return `https://www.amazon.com/s?k=${q}&tag=0003aa-20`;
+}
+
+function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   const url = `${SITE}/${cert.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
@@ -373,35 +614,121 @@ ${JSON.stringify(jsonLd, null, 2)}
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <div id="nav" role="navigation" aria-label="Main navigation"></div>
-  <main id="main-content">
-    <section id="seo-static">
-      <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; ${htmlEscape(cert.name)}</nav>
-      <h1>${htmlEscape(cert.name)} (${htmlEscape(cert.code)}) Free Practice Test</h1>
-      <p><strong>Coming soon to QuizBuffet.</strong> ${htmlEscape(cert.tagline || '')}</p>
-      ${cert.about ? `<p>${htmlEscape(cert.about)}</p>` : ''}
-      <p>Vendor: <strong>${htmlEscape(cert.vendor)}</strong>${cert.category ? ` · Category: <strong>${htmlEscape(cert.category)}</strong>` : ''}${priority ? ` · Launch priority: <strong>#${priority}</strong>` : ''}</p>
-      <h2>What's coming</h2>
-      <ul>
-        <li>Hundreds of practice questions organized by exam objective</li>
-        <li>Easy / medium / medium-hard / hard difficulty filtering</li>
-        <li>Instant explanations on every wrong answer</li>
-        <li>Local progress tracking — no account, no signup</li>
-        <li>Free, with no daily limits</li>
-      </ul>
-      <p><a href="/">← Back to all certifications</a></p>
+  <main id="main-content" class="container container-cs">
+    ${(() => {
+      const related = pickRelatedLive(cert, allLiveCerts, 3);
+      const amazonUrl = amazonSearch(`${cert.code} ${cert.name} study guide exam prep`);
+      const vendorSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(cert.vendor + ' ' + cert.code + ' official exam guide')}`;
+      const escSubj = encodeURIComponent(`Notify me: ${cert.name} (${cert.code})`);
+      const escMail = `mailto:artivicolab@gmail.com?subject=${escSubj}`;
+
+      return `
+    <nav class="cs-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> ${htmlEscape(cert.name)}</nav>
+
+    <section class="cs-hero">
+      <div class="cs-hero-tag">COMING SOON · PRIORITY #${priority}</div>
+      <h1 class="cs-hero-title">${htmlEscape(cert.name)}</h1>
+      <p class="cs-hero-meta"><strong>${htmlEscape(cert.code)}</strong> · ${htmlEscape(cert.vendor)}${cert.category ? ` · ${htmlEscape(cert.category)}` : ''}</p>
+      ${cert.tagline ? `<p class="cs-hero-tagline">${htmlEscape(cert.tagline)}</p>` : ''}
     </section>
-    <div id="app">
-      <main class="container">
-        <h1 style="text-align:center;margin:2rem 0 0.5rem;">${htmlEscape(cert.name)}</h1>
-        <p style="text-align:center;color:var(--muted,#666);margin:0 0 1.5rem;">${htmlEscape(cert.code)} · ${htmlEscape(cert.vendor)}</p>
-        <div style="background:var(--surface,#f9f9f9);border:1px solid var(--border,#ddd);padding:1.5rem;border-radius:8px;max-width:40rem;margin:0 auto;text-align:center;">
-          <div style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;">📚 Coming Soon</div>
-          <p style="margin:0 0 1rem;">This practice test is in development. ${htmlEscape(cert.tagline || '')}</p>
-          ${cert.about ? `<p style="text-align:left;font-size:0.95rem;color:var(--muted,#555);">${htmlEscape(cert.about)}</p>` : ''}
-          <p style="margin:1.5rem 0 0;"><a href="/" style="display:inline-block;padding:0.6rem 1.2rem;background:var(--btn-bg,#333);color:#fff;text-decoration:none;border-radius:6px;">← Back to all certifications</a></p>
-        </div>
-      </main>
-    </div>
+
+    <section class="cs-notify" aria-labelledby="cs-notify-h">
+      <h2 id="cs-notify-h">Get notified when this launches</h2>
+      <p class="cs-notify-pitch">Be first to know when free <strong>${htmlEscape(cert.code)}</strong> practice questions go live. One email when it ships — no spam.</p>
+      <form class="cs-notify-form" id="cs-notify-form" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST" data-cert="${htmlEscape(cert.slug)}">
+        <input type="hidden" name="_subject" value="QuizBuffet notify: ${htmlEscape(cert.name)} (${htmlEscape(cert.code)})">
+        <input type="hidden" name="cert_slug" value="${htmlEscape(cert.slug)}">
+        <input type="hidden" name="cert_name" value="${htmlEscape(cert.name)}">
+        <input type="email" name="email" id="cs-notify-email" required placeholder="you@example.com" aria-label="Email address" autocomplete="email">
+        <button type="submit" class="cs-notify-btn">Notify me <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="cs-notify-fallback">Or email us directly: <a href="${escMail}">artivicolab@gmail.com</a></p>
+      <p class="cs-notify-status" id="cs-notify-status" role="status" aria-live="polite"></p>
+    </section>
+
+    ${cert.about ? `
+    <section class="cs-about">
+      <h2>About this certification</h2>
+      <p>${htmlEscape(cert.about)}</p>
+    </section>
+    ` : ''}
+
+    <section class="cs-resources">
+      <h2>Free study resources</h2>
+      <ul class="cs-resource-list">
+        <li><a href="${vendorSearchUrl}" rel="noopener" target="_blank" data-cs-out="vendor">Official ${htmlEscape(cert.vendor)} exam guide</a> <span class="cs-resource-meta">(search)</span></li>
+        <li><a href="${amazonUrl}" rel="sponsored noopener" target="_blank" data-cs-out="amazon">${htmlEscape(cert.code)} study guides on Amazon</a> <span class="cs-resource-meta">(affiliate)</span></li>
+        <li><a href="https://www.youtube.com/results?search_query=${encodeURIComponent(cert.code + ' exam prep')}" rel="noopener" target="_blank" data-cs-out="youtube">Free YouTube exam-prep playlists</a></li>
+      </ul>
+    </section>
+
+    ${related.length ? `
+    <section class="cs-related">
+      <h2>While you wait, practice these</h2>
+      <p class="cs-related-pitch">Live certs in the same category — start drilling now while ${htmlEscape(cert.code)} is built out.</p>
+      <div class="cs-related-grid">
+        ${related.map(r => `
+          <a class="cs-related-card" href="/${r.slug}/" data-cs-out="related">
+            <div class="cs-related-name">${htmlEscape(r.name)}</div>
+            <div class="cs-related-meta">${htmlEscape(r.code)}${r.vendor ? ` · ${htmlEscape(r.vendor)}` : ''}</div>
+          </a>
+        `).join('')}
+      </div>
+    </section>
+    ` : ''}
+
+    <p class="cs-back"><a href="/">← Back to all certifications</a></p>
+
+    <script>
+      (function () {
+        var slug = ${JSON.stringify(cert.slug)};
+        var code = ${JSON.stringify(cert.code)};
+        function track(name, params) {
+          try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+        }
+        track('cs_view', { cert_slug: slug, cert_code: code });
+
+        var form = document.getElementById('cs-notify-form');
+        var status = document.getElementById('cs-notify-status');
+        if (form) {
+          form.addEventListener('submit', function (e) {
+            track('cs_notify_signup', { cert_slug: slug, cert_code: code });
+            // If the Formspree ID hasn't been set, fall back to mailto so the user still gets through.
+            if (form.action.indexOf('REPLACE_WITH_FORMSPREE_ID') !== -1) {
+              e.preventDefault();
+              var email = document.getElementById('cs-notify-email').value;
+              window.location.href = 'mailto:artivicolab@gmail.com?subject=' + encodeURIComponent('Notify me: ' + ${JSON.stringify(cert.name)} + ' (' + code + ')') + '&body=' + encodeURIComponent('Please notify me when this launches.\\n\\nEmail: ' + email + '\\nCert: ' + slug);
+              if (status) status.textContent = 'Opening your email app — send the message and we\\'ll add you to the list.';
+              return;
+            }
+            // Async submit to Formspree so we can show inline confirmation
+            e.preventDefault();
+            var data = new FormData(form);
+            fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+              .then(function (r) {
+                if (r.ok) {
+                  if (status) status.textContent = '✓ Thanks — we\\'ll email you when this launches.';
+                  form.reset();
+                } else {
+                  if (status) status.textContent = 'Couldn\\'t submit. Email us directly at artivicolab@gmail.com.';
+                }
+              })
+              .catch(function () {
+                if (status) status.textContent = 'Network error. Email us directly at artivicolab@gmail.com.';
+              });
+          });
+        }
+
+        // Track outbound resource and related-cert clicks
+        document.querySelectorAll('[data-cs-out]').forEach(function (a) {
+          a.addEventListener('click', function () {
+            track('cs_outbound_click', { cert_slug: slug, dest: a.getAttribute('data-cs-out'), href: a.href });
+          });
+        });
+      })();
+    </script>
+      `;
+    })()}
   </main>
   <div id="footer" role="contentinfo"></div>
   <script type="module" src="/js/app.js"></script>
@@ -563,19 +890,29 @@ ${body}
 let generated = 0;
 const perCertCounts = {};
 let grandTotal = 0;
+let domainGenerated = 0;
 for (const cert of certifications) {
   const dir = path.join(ROOT, cert.slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'index.html'), buildCertHtml(cert));
   fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildOgSvg(cert));
-  // Tally questions for the global counts file
+  // Tally questions and generate a static page per domain (fixes 404s on domain quiz URLs)
   let n = 0;
-  for (const dom of cert.domains) n += loadDomainQuestions(cert.slug, dom.slug).length;
+  for (const dom of cert.domains) {
+    const qs = loadDomainQuestions(cert.slug, dom.slug);
+    n += qs.length;
+    const domDir = path.join(dir, dom.slug);
+    fs.mkdirSync(domDir, { recursive: true });
+    fs.writeFileSync(path.join(domDir, 'index.html'), buildDomainHtml(cert, dom, qs));
+    fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}-${dom.slug}.svg`), buildDomainOgSvg(cert, dom));
+    domainGenerated++;
+  }
   perCertCounts[cert.slug] = n;
   grandTotal += n;
-  console.log(`  ✓ ${cert.slug}/index.html + og`);
+  console.log(`  ✓ ${cert.slug}/index.html + ${cert.domains.length} domain pages + og`);
   generated++;
 }
+console.log(`  ✓ ${domainGenerated} domain pages generated`);
 
 const comingSoon = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'coming-soon.json'), 'utf8'));
 let csGenerated = 0;
@@ -583,7 +920,7 @@ for (let i = 0; i < comingSoon.length; i++) {
   const cert = comingSoon[i];
   const dir = path.join(ROOT, cert.slug);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), buildComingSoonHtml(cert, i + 1));
+  fs.writeFileSync(path.join(dir, 'index.html'), buildComingSoonHtml(cert, i + 1, certifications));
   fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildComingSoonOgSvg(cert));
   console.log(`  ⏳ ${cert.slug}/ (coming soon #${i + 1})`);
   csGenerated++;

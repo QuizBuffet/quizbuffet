@@ -1,6 +1,6 @@
 # QuizBuffet
 
-> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated 2026-05-10.
+> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated 2026-05-11.
 
 ## Available certifications
 - [CompTIA Cloud+ (CV0-004)](https://quizbuffet.com/comptia-cloud-plus/): Cloud infrastructure skills for engineers and sysadmins 1200+ questions.
@@ -38,6 +38,7 @@
 - [FAA Part 107 (Remote Pilot — Small UAS) (Part 107)](https://quizbuffet.com/faa-part-107/): Required certificate for commercial drone operations in the U.S. 300+ questions.
 - [Certified Personal Trainer (NASM-CPT) (NASM-CPT)](https://quizbuffet.com/personal-trainer-nasm/): NCCA-accredited personal training certification 900+ questions.
 - [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/): Lifesaving cardiac and breathing emergency skills 300+ questions.
+- [QuickBooks ProAdvisor (Online Certification) (QuickBooks ProAdvisor)](https://quizbuffet.com/quickbooks-proadvisor/): Intuit-certified credential for QuickBooks Online and Desktop 200+ questions.
 
 ## Coming soon
 - [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/) — coming soon (priority #1)

@@ -11,6 +11,7 @@ const SHELLS = {
     <div id="cs-marquee"></div>
     <main class="container container-home">
       <div id="hero"></div>
+      <div id="home-sponsor"></div>
       <div id="featured"></div>
       <div id="ad-top" class="ad-slot">Advertisement</div>
       <h2 class="section-title">All certifications</h2>

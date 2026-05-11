@@ -105,6 +105,14 @@ function getPage() {
 
 async function route() {
   const page = getPage();
+  const isComingSoon = document.documentElement.dataset.comingSoon === '1';
+
+  // Coming-soon pages render their landing in #seo-static and leave #app empty;
+  // render the nav and skip the page-specific init.
+  if (isComingSoon) {
+    renderNav(NAV_ACTIVE[page]);
+    return;
+  }
 
   document.getElementById('app').innerHTML = SHELLS[page] ||
     `<main class="container">
@@ -163,6 +171,8 @@ route();
 
 // Intercept internal link clicks so navigation stays in-app (no full page reloads)
 document.addEventListener('click', e => {
+  // Coming-soon pages have no SPA state to preserve; let the browser do a real navigation.
+  if (document.documentElement.dataset.comingSoon === '1') return;
   const a = e.target.closest('a');
   if (!a) return;
 

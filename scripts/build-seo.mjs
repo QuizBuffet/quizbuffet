@@ -177,7 +177,15 @@ function buildCertHtml(cert) {
     return `<li><a href="/${cert.slug}/${d.slug}/"><strong>${htmlEscape(num + d.name)}</strong>${d.count ? ` — ${d.count} questions` : ''}${d.weight ? ` (${d.weight}% of exam)` : ''}</a></li>`;
   }).join('\n          ');
 
-  const affiliateHtml = (cert.affiliates || []).filter(a => a.url).map(a =>
+  // Inject Udemy as a global affiliate alongside whatever each cert defines in its metadata.
+  // If cert.udemyCourseUrl is set, deep-link to that specific bestseller; otherwise fall back to search.
+  const udemyAff = {
+    label: cert.udemyCourseUrl
+      ? `Top-rated ${cert.code} course on Udemy`
+      : `${cert.code} courses on Udemy`,
+    url: udemyForCert(cert),
+  };
+  const affiliateHtml = [udemyAff, ...(cert.affiliates || []).filter(a => a.url)].map(a =>
     `<li><a href="${htmlEscape(a.url)}" rel="nofollow sponsored">${htmlEscape(a.label)}</a></li>`
   ).join('\n          ');
 
@@ -522,6 +530,22 @@ function pickRelatedLive(comingCert, liveCerts, n = 3) {
 }
 
 // Generate Amazon search URL with the site's affiliate tag
+function udemyDeepLink(destUrl) {
+  // Impact Radius deep link — `u` param is the URL-encoded destination on udemy.com
+  return `https://trk.udemy.com/c/7254431/3193860/39854?u=${encodeURIComponent(destUrl)}`;
+}
+
+function udemySearch(query) {
+  return udemyDeepLink(`https://www.udemy.com/courses/search/?q=${encodeURIComponent(query)}`);
+}
+
+// Use cert.udemyCourseUrl if set (deep-link to the specific bestseller course for that cert),
+// otherwise fall back to a Udemy search filtered by cert code + name.
+function udemyForCert(cert) {
+  if (cert.udemyCourseUrl) return udemyDeepLink(cert.udemyCourseUrl);
+  return udemySearch(`${cert.code} ${cert.name}`);
+}
+
 function amazonSearch(query) {
   const q = encodeURIComponent(query);
   return `https://www.amazon.com/s?k=${q}&tag=0003aa-20`;
@@ -561,7 +585,7 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   };
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-coming-soon="1">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -583,6 +607,9 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <meta name="twitter:image"       content="${ogImage}">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
@@ -614,10 +641,15 @@ ${JSON.stringify(jsonLd, null, 2)}
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <div id="nav" role="navigation" aria-label="Main navigation"></div>
-  <main id="main-content" class="container container-cs">
+  <main id="main-content">
+    <section id="seo-static" class="container container-cs">
     ${(() => {
       const related = pickRelatedLive(cert, allLiveCerts, 3);
       const amazonUrl = amazonSearch(`${cert.code} ${cert.name} study guide exam prep`);
+      const udemyUrl = udemyForCert(cert);
+      const udemyLabel = cert.udemyCourseUrl
+        ? `Top-rated ${cert.code} course on Udemy`
+        : `${cert.code} courses on Udemy`;
       const vendorSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(cert.vendor + ' ' + cert.code + ' official exam guide')}`;
       const escSubj = encodeURIComponent(`Notify me: ${cert.name} (${cert.code})`);
       const escMail = `mailto:artivicolab@gmail.com?subject=${escSubj}`;
@@ -657,6 +689,7 @@ ${JSON.stringify(jsonLd, null, 2)}
       <h2>Free study resources</h2>
       <ul class="cs-resource-list">
         <li><a href="${vendorSearchUrl}" rel="noopener" target="_blank" data-cs-out="vendor">Official ${htmlEscape(cert.vendor)} exam guide</a> <span class="cs-resource-meta">(search)</span></li>
+        <li><a href="${udemyUrl}" rel="sponsored noopener" target="_blank" data-cs-out="udemy">${htmlEscape(udemyLabel)}</a> <span class="cs-resource-meta">(affiliate)</span></li>
         <li><a href="${amazonUrl}" rel="sponsored noopener" target="_blank" data-cs-out="amazon">${htmlEscape(cert.code)} study guides on Amazon</a> <span class="cs-resource-meta">(affiliate)</span></li>
         <li><a href="https://www.youtube.com/results?search_query=${encodeURIComponent(cert.code + ' exam prep')}" rel="noopener" target="_blank" data-cs-out="youtube">Free YouTube exam-prep playlists</a></li>
       </ul>
@@ -729,6 +762,8 @@ ${JSON.stringify(jsonLd, null, 2)}
     </script>
       `;
     })()}
+    </section>
+    <div id="app"></div>
   </main>
   <div id="footer" role="contentinfo"></div>
   <script type="module" src="/js/app.js"></script>

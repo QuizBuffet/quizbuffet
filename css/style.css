@@ -9,6 +9,7 @@
 #seo-static ul { margin: 0.5rem 0 0.5rem 1.25rem; }
 #seo-static a { color: #06c; }
 html.js #seo-static { display: none; }
+html.js[data-coming-soon] #seo-static { display: block; }
 a, button, [role="button"] { cursor: pointer; }
 a:active, button:active { opacity: 0.75; }
 
@@ -892,7 +893,7 @@ a:active, button:active { opacity: 0.75; }
 }
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
-html, body { background-color: var(--nav-bg); }
+html, body { background-color: var(--bg); }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: clamp(15px, 4vw, 18px); color: var(--text); line-height: 1.6; }
 #main-content { background: var(--bg); display: flow-root; }
 

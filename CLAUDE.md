@@ -20,11 +20,16 @@ js/data/
   services/<slug>.js                         # in-scope concepts/terms list
 
 <slug>/index.html                            # the cert's static landing page
+<slug>/<domain-slug>/index.html             # static per-domain quiz page (pre-rendered by build-seo)
+icons/og/<slug>.svg                          # OG image for the cert landing page
+icons/og/<slug>-<domain-slug>.svg            # OG image for each domain page
 scripts/
-  build-seo.mjs       # regenerates per-cert HTML, OG images, sitemap
+  build-seo.mjs       # regenerates per-cert HTML, per-domain HTML, OG images, sitemap, llms.txt, feed.xml
   check-weights.mjs   # flags domains under-weighted vs. exam-guide target
   check-salaries.mjs  # validates salaries.json coverage and freshness
 ```
+
+**Why per-domain HTML exists:** GitHub Pages serves `404.html` with HTTP status 404 for any path that has no static file. Without pre-rendered domain pages, every `/cert/domain/` URL in the sitemap 404s, and Google Search Console reports hundreds of "Not found (404)" and "Soft 404" errors — even though the SPA renders the quiz fine in a browser. `build:seo` solves this by generating a real static HTML file at `<slug>/<domain-slug>/index.html` for every domain of every live cert. Each page has its own title/description/canonical, BreadcrumbList + Quiz + FAQPage JSON-LD, 3 sample questions, and an `#app` mount so the SPA hydrates on click. **Never remove domain URLs from the sitemap to "fix" 404s** — re-run `build:seo` instead.
 
 Every cert has the same set of files. The `slug` (kebab-case) is the link between them.
 
@@ -154,7 +159,7 @@ If hygiene issues or duplicates exist, fix in place: cleanup pass first (strip p
 1. The cert should already be out of [data/coming-soon.json](data/coming-soon.json) (removed when work began). Confirm it's not there.
 2. Add `"<slug>": <total-question-count>` to [data/counts.json](data/counts.json) and update `total`, `liveCerts`, `comingSoonCerts`, `generatedAt`. (`build:seo` will also rewrite this file, but updating it first is a useful sanity check.)
 3. Run `npm run check:weights`. The script will flag any domain whose declared weight in the cert metadata doesn't match the actual share of questions on disk. The usual fix is to align the declared weights in [js/data/certifications/<slug>.js](js/data/certifications/) to the actual distribution. Re-run until it passes.
-4. Run `npm run build:seo` to regenerate per-cert HTML, OG images, sitemap, llms.txt, feed.xml, and `data/counts.json`. Note: `build:seo` also picks up any other cert that was registered but not in counts — surface this in your report so the user knows what else flipped.
+4. Run `npm run build:seo` to regenerate per-cert HTML, **per-domain HTML** (one file per `<slug>/<domain-slug>/index.html`), per-cert and per-domain OG images, sitemap, llms.txt, feed.xml, and `data/counts.json`. The console output reports both per-cert and total domain-page counts — confirm the new cert's domains all generated. Note: `build:seo` also picks up any other cert that was registered but not in counts — surface this in your report so the user knows what else flipped.
 5. Bump the service worker cache version in [sw.js](sw.js) (e.g. `qb-v106` → `qb-v107`).
 
 ### Post-flight verification
@@ -163,7 +168,8 @@ After the steps above, programmatically confirm:
 
 - [data/counts.json](data/counts.json): `total === sum(perCert)` and `liveCerts === Object.keys(perCert).length`.
 - The cert appears in [sitemap.xml](sitemap.xml) (one entry for the landing page plus one per domain quiz).
-- The OG image exists at `icons/og/<slug>.svg`.
+- The cert OG image exists at `icons/og/<slug>.svg`.
+- **Every domain has a static HTML file** at `<slug>/<domain-slug>/index.html` and a matching OG image at `icons/og/<slug>-<domain-slug>.svg`. A missing domain HTML file means that URL will 404 on Google and tank SEO — re-run `build:seo` if any are missing.
 - The cert is listed in [llms.txt](llms.txt).
 - The cert's slug no longer appears in [data/coming-soon.json](data/coming-soon.json).
 - [sw.js](sw.js) cache version was bumped.

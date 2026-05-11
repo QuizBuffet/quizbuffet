@@ -8,6 +8,7 @@ export const cert = {
   tagline: 'Hardware, networking, and troubleshooting for IT support technicians',
   about: 'A+ Core 1 (220-1101) is the first of two exams required for the CompTIA A+ certification. It covers mobile devices, networking, hardware, virtualization, cloud computing, and hardware troubleshooting.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 12 months hands-on experience · Passing score 675/900',
+  udemyCourseUrl: 'https://www.udemy.com/course/comptia-a-core-1/?couponCode=KEEPLEARNING',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop CompTIA A+ 220-1101 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+a%2B+220-1101&tag=0003aa-20' },

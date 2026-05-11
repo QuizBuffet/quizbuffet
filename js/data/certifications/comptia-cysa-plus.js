@@ -8,6 +8,7 @@ export const cert = {
   tagline: 'Threat detection and incident response for security analysts',
   about: 'CySA+ (Cybersecurity Analyst+) certifies analysts who detect and respond to threats, perform vulnerability management, and conduct incident response. It covers security operations, threat hunting, vulnerability scanning and prioritization, incident handling, and communicating findings to stakeholders. Aimed at professionals with 4 years of hands-on SOC or incident response experience.',
   details: 'Multiple-choice and performance-based · Recommended 4 years SOC/IR experience · Passing score 750/900',
+  udemyCourseUrl: 'https://www.udemy.com/course/comptia-cysa-003/?couponCode=KEEPLEARNING',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop CompTIA CySA+ Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+cysa%2B&tag=0003aa-20' },

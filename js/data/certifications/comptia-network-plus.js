@@ -8,6 +8,7 @@ export const cert = {
   tagline: 'Core networking skills for IT infrastructure professionals',
   about: 'Network+ certifies professionals who can deploy wired and wireless networks, configure network services, implement security hardening, and troubleshoot performance and availability issues. It covers networking concepts, IP addressing, routing, switching, wireless, cloud connectivity, and network troubleshooting. Recommended for professionals with 9–12 months of networking experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 720/900 · Multiple-choice and performance-based',
+  udemyCourseUrl: 'https://www.udemy.com/course/comptia-network-009/?couponCode=KEEPLEARNING',
   acronyms,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },

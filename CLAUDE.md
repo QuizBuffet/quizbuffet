@@ -128,11 +128,30 @@ Leave `data/counts.json` alone until the cert has enough questions to flip live.
 
 ## Workflow: filling questions for a domain
 
+**For generating fresh batches in a separate Claude session**, paste the hardened prompt from [docs/QUESTION-PROMPT.md](docs/QUESTION-PROMPT.md) into a new chat. The prompt is preconfigured to:
+
+- Emit ONE domain at a time and STOP, so each batch is small enough to validate before the next one is written (avoids the 300-question single-shot dumps that caused recurring schema bugs).
+- Explicitly forbid the **double-wrap envelope** (`questions[0]` containing another full schema object).
+- Force byte-identical `name`, `certification`, `exam_code`, and `domain` across every question in a file.
+- Whitelist legitimate medical/technical lowercase-then-uppercase tokens (`pVT`, `mGy`, `kPa`, `pH`, `mRNA`, etc.) so they aren't "fixed" into broken uppercase.
+- List the templated-prefix patterns and stem-stitching shapes to avoid up front.
+
+After each domain JSON is written, run:
+
+```bash
+python3 docs/validate-domain.py data/certifications/<cert-slug>/<domain-slug>.json
+```
+
+The validator (see [docs/validate-domain.py](docs/validate-domain.py)) runs every CLAUDE.md flip-live check on the file: schema, distribution balance, sub-objective coverage, duplicate stems, duplicate answer strings, templated prefixes, broken acronyms (with the whitelist applied), stem-stitching, short explanations, and minification.
+
+**Manual fix workflow when a batch fails validation:**
+
 1. Generate or hand-author questions into the domain JSON.
-2. Run all five checks above.
-3. **Cleanup pass for auto-generated content** — strip templated prefixes, fix broken acronyms, collapse stem-stitching, lowercase capitalized question words after commas. Run this before the dedupe pass: collapsing redundant openers can create new duplicate stems that the dedupe pass then resolves.
+2. Run `docs/validate-domain.py` against the file.
+3. **Cleanup pass for auto-generated content** — strip templated prefixes, fix broken acronyms (skipping whitelist), collapse stem-stitching, lowercase capitalized question words after commas. Run this before the dedupe pass: collapsing redundant openers can create new duplicate stems that the dedupe pass then resolves.
 4. If question openings or distractors recycle after cleanup, rewrite them in place. Preserve `id`, `correct`, `explanations`, `objective`, `difficulty`, `keyword`, and metadata exactly. Only the first sentence of `text` and recycled answer strings should change.
-5. Minify and save.
+5. Minify and save (`json.dumps(d, separators=(',',':'), ensure_ascii=False)`).
+6. Re-run the validator until it reports 0 issues.
 
 ---
 

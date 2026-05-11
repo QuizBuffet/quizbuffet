@@ -16,13 +16,13 @@ export const cert = {
     { provider: 'amazon', label: 'Shop AHA BLS Provider Manuals on Amazon', url: 'https://www.amazon.com/s?k=aha+bls+provider+manual&tag=0003aa-20' },
   ],
   domains: [
-    { slug: 'course-concepts-and-chain-of-survival',     name: 'Course Concepts & Chain of Survival',       number: '1.0', weight: 6  },
-    { slug: 'assessment-and-high-performance-teams',     name: 'Assessment & High-Performance Teams',       number: '2.0', weight: 12 },
+    { slug: 'course-concepts-and-chain-of-survival',     name: 'Course Concepts and Chain of Survival',     number: '1.0', weight: 6  },
+    { slug: 'assessment-and-high-performance-teams',     name: 'Assessment and High-Performance Teams',     number: '2.0', weight: 12 },
     { slug: 'adult-bls-1-and-2-rescuer',                 name: 'Adult BLS (1- and 2-Rescuer)',              number: '3.0', weight: 22 },
     { slug: 'pediatric-bls-children-and-infants',        name: 'Pediatric BLS (Children and Infants)',      number: '4.0', weight: 18 },
     { slug: 'aed-for-all-ages',                          name: 'AED for All Ages',                          number: '5.0', weight: 16 },
-    { slug: 'alternate-ventilation-and-advanced-airways',name: 'Alternate Ventilation & Advanced Airways',  number: '6.0', weight: 8  },
+    { slug: 'alternate-ventilation-and-advanced-airways',name: 'Alternate Ventilation and Advanced Airways',number: '6.0', weight: 8  },
     { slug: 'choking-relief-across-ages',                name: 'Choking Relief Across Ages',                number: '7.0', weight: 10 },
-    { slug: 'special-emergencies-and-recovery',          name: 'Special Emergencies & Recovery',            number: '8.0', weight: 8  },
+    { slug: 'special-emergencies-and-recovery',          name: 'Special Emergencies and Recovery',          number: '8.0', weight: 8  },
   ],
 };

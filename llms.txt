@@ -39,7 +39,7 @@
 - [Certified Personal Trainer (NASM-CPT) (NASM-CPT)](https://quizbuffet.com/personal-trainer-nasm/): NCCA-accredited personal training certification 900+ questions.
 - [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/): Lifesaving cardiac and breathing emergency skills 300+ questions.
 - [QuickBooks ProAdvisor (Online Certification) (QuickBooks ProAdvisor)](https://quizbuffet.com/quickbooks-proadvisor/): Intuit-certified credential for QuickBooks Online and Desktop 200+ questions.
-- [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/): Required CPR-level credential for healthcare professionals
+- [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/): Required CPR-level credential for healthcare professionals 300+ questions.
 
 ## Coming soon
 - [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #1)

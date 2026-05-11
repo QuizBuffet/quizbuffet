@@ -1223,20 +1223,38 @@ A: Left navigation bar → Expenses → Vendors sub-tab → New Vendor button at
 ## Basic Life Support (BLS) (BLS)
 Vendor: American Heart Association
 URL: https://quizbuffet.com/bls/
-Total questions: 0
+Total questions: 300
 
 BLS (Basic Life Support) certifies healthcare professionals to deliver high-quality CPR, use an AED, provide ventilation with barrier devices and bag-mask, relieve choking, and work as part of a high-performance resuscitation team for adults, children, and infants. Required for nurses, physicians, EMTs, paramedics, dental and respiratory professionals, and most clinical roles. Built around the AHA Chain of Survival, 2020 BLS Guidelines (with 2023 focused updates), and the AHA BLS Provider course; renewal is typically every two years.
 
 ### Domains
-- 1.0 Course Concepts & Chain of Survival (6% of exam)
-- 2.0 Assessment & High-Performance Teams (12% of exam)
-- 3.0 Adult BLS (1- and 2-Rescuer) (22% of exam)
-- 4.0 Pediatric BLS (Children and Infants) (18% of exam)
-- 5.0 AED for All Ages (16% of exam)
-- 6.0 Alternate Ventilation & Advanced Airways (8% of exam)
-- 7.0 Choking Relief Across Ages (10% of exam)
-- 8.0 Special Emergencies & Recovery (8% of exam)
+- 1.0 Course Concepts and Chain of Survival (6% of exam) — 18 questions
+- 2.0 Assessment and High-Performance Teams (12% of exam) — 36 questions
+- 3.0 Adult BLS (1- and 2-Rescuer) (22% of exam) — 66 questions
+- 4.0 Pediatric BLS (Children and Infants) (18% of exam) — 54 questions
+- 5.0 AED for All Ages (16% of exam) — 48 questions
+- 6.0 Alternate Ventilation and Advanced Airways (8% of exam) — 24 questions
+- 7.0 Choking Relief Across Ages (10% of exam) — 30 questions
+- 8.0 Special Emergencies and Recovery (8% of exam) — 24 questions
 
+### Sample questions
+**Q: AHA Part 1 lists the skills tests a student must pass to earn a BLS course completion card. Which two tests are required?**
+A: The Adult CPR and AED Skills Test and the Infant CPR Skills Test
+
+**Q: You round a corner in a parking garage and see an adult slumped beside an idling car. Which action must you complete before kneeling next to the person?**
+A: Scan the scene for hazards such as traffic, fumes, or fire
+
+**Q: You arrive at the side of an unresponsive-appearing adult on the floor. According to the AHA Adult 1-Rescuer BLS Sequence, what is your very first step?**
+A: Verify that the scene is safe before approaching
+
+**Q: AHA Part 1 defines an 'infant' for BLS purposes. Which definition matches?**
+A: Younger than 1 year, excluding newly born infants in the delivery room
+
+**Q: According to AHA Part 4, what does the AED do after it analyzes the heart rhythm?**
+A: It identifies the rhythm as shockable or nonshockable and advises accordingly
+
+**Q: AHA Part 8 notes a key requirement for placing advanced airways during resuscitation. What is it?**
+A: Advanced airways require advanced training and are placed by trained providers
 
 
 ## Coming soon (in priority order)

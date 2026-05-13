@@ -8,6 +8,12 @@ import { certifications } from '../js/data/certifications/index.js';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SITE = 'https://quizbuffet.com';
 const TODAY = new Date().toISOString().slice(0, 10);
+// Human-readable display version of TODAY (e.g. "May 13, 2026"). Must
+// represent the SAME calendar date as TODAY so Google's byline pipeline
+// can match the visible byline to the JSON-LD `dateModified`.
+const TODAY_DISPLAY = new Date().toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
 
 function htmlEscape(s) {
   return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -270,6 +276,7 @@ ${JSON.stringify(jsonLd, null, 2)}
       <h2>About This Practice Test</h2>
       <p>QuizBuffet's ${htmlEscape(cert.name)} practice test is built for exam preparation. Every question is tagged by exam objective and difficulty (easy, medium, medium-hard, hard) so you can drill the areas you need most. Sessions are short by default — pick 10, 25, 50, or all questions per domain — so you can study in any spare moment.</p>
       <p>Wrong answers come with a contrastive explanation showing why your choice was wrong and what the correct concept actually is. Your progress is saved locally in your browser; nothing is uploaded and there's no signup.</p>
+      <p class="cert-byline"><time datetime="${TODAY}">Last updated: ${TODAY_DISPLAY}</time></p>
     </section>
     <div id="app"></div>
   </main>
@@ -455,6 +462,7 @@ ${JSON.stringify(jsonLd, null, 2)}
           ${otherDomainsHtml}
       </ul>` : ''}
       <p><a href="/${cert.slug}/">&larr; Back to ${htmlEscape(cert.code)} practice test overview</a></p>
+      <p class="cert-byline"><time datetime="${TODAY}">Last updated: ${TODAY_DISPLAY}</time></p>
     </section>
     <div id="app"></div>
   </main>

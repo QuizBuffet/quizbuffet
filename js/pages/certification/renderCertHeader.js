@@ -3,6 +3,16 @@
 import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
 import { getDomainProgress } from '../../storage/getDomainProgress.js';
 
+// "Last updated" byline — emits ISO date for <time datetime> attribute and a
+// human-readable display version. Both represent the same day so Google's byline
+// pipeline can match the visible byline to JSON-LD `dateModified`.
+function buildIsoToday() {
+  return new Date().toISOString().slice(0, 10);
+}
+function buildDisplayToday() {
+  return new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
 function computeOverallProgress(cert) {
   let domainsDone = 0;
   let totalCorrect = 0;
@@ -82,6 +92,7 @@ export function renderCertHeader(cert, totalQ) {
       <h2 class="cert-section-title">About this certification</h2>
       <p class="cert-about-lead">${cert.about}</p>
       ${cert.details ? `<p class="cert-about-details"><strong>Exam format:</strong> ${cert.details}</p>` : ''}
+      <p class="cert-byline"><time datetime="${buildIsoToday()}">Last updated: ${buildDisplayToday()}</time></p>
     </section>`;
 
   loadPricing().then(pricing => {

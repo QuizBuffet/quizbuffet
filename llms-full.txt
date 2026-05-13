@@ -1270,6 +1270,19 @@ A Cosmetology License is required in every U.S. state to perform haircutting, ch
 - 4.0 Nail Care and Services (15% of exam)
 
 
+## Advanced Practice Micropigmentation (Micropigmentation)
+Vendor: NIC
+URL: https://quizbuffet.com/micropigmentation/
+Total questions: 0
+
+The NIC National Advanced Practice Micropigmentation Theory Examination is the licensure theory exam for advanced cosmetic tattoo procedures (permanent makeup, paramedical micropigmentation, scalp pigmentation, areola restoration, scar repigmentation) authored by the National-Interstate Council of State Boards of Cosmetology (NIC) and adopted by participating state boards. The blueprint covers three domains: Scientific Concepts (infection control, skin and tissue structure, human anatomy and physiology, skin disorders, equipment and pigment storage), Micropigmentation Procedures (client communication and documentation, skin preparation, color theory, pre-application design, and application technique), and Side Effects and Possible Complications. Candidates are expected to anchor their knowledge in the Society of Permanent Cosmetic Professionals (SPCP) standards, NIC Infection Control and Safety Standards, and Milady's Aesthetician Series Permanent Makeup: Tips and Techniques.
+
+### Domains
+- 1.0 Scientific Concepts (40% of exam)
+- 2.0 Micropigmentation Procedures (55% of exam)
+- 3.0 Side Effects and Possible Complications (5% of exam)
+
+
 
 ## Coming soon (in priority order)
 - EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #1
@@ -1301,3 +1314,20 @@ A Cosmetology License is required in every U.S. state to perform haircutting, ch
 - Certified Public Accountant (CPA) (CPA) — https://quizbuffet.com/cpa/ — priority #27
 - SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #28
 - Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #29
+- Barber 1 (No Chemical) License (Barber 1) — https://quizbuffet.com/barber-no-chemical/ — priority #30
+- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #31
+- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #32
+- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #33
+- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #34
+- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #35
+- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #36
+- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #37
+- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #38
+- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #39
+- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #40
+- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #41
+- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #42
+- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #43
+- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #44
+- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #45
+- Tattoo Artist License (Tattoo) — https://quizbuffet.com/tattoo-license/ — priority #46

@@ -207,7 +207,7 @@ function buildCertHtml(cert) {
   <title>${htmlEscape(fullTitle)}</title>
   <meta name="description" content="${htmlEscape(desc)}">
   <link rel="canonical" href="${url}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
@@ -399,7 +399,7 @@ function buildDomainHtml(cert, domain, questions) {
   <title>${htmlEscape(fullTitle)}</title>
   <meta name="description" content="${htmlEscape(desc)}">
   <link rel="canonical" href="${url}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
@@ -604,7 +604,7 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <title>${htmlEscape(fullTitle)}</title>
   <meta name="description" content="${htmlEscape(desc)}">
   <link rel="canonical" href="${url}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">

@@ -75,7 +75,8 @@
       "Bash(cp /Users/gradikayamba/quizbuffet/data/certifications/quickbooks-proadvisor/list-management.json /tmp/qbpa-list-management-misplaced.json *)",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('liveCerts:', d['liveCerts']\\); print\\('comingSoonCerts:', d['comingSoonCerts']\\); print\\('total:', d['total']\\); print\\('bls in perCert:', 'bls' in d['perCert']\\); print\\('bls count:', d['perCert'].get\\('bls', 'not present'\\)\\)\")",
       "Bash(chmod +x /Users/gradikayamba/quizbuffet/docs/validate-domain.py)",
-      "Bash(python3 /Users/gradikayamba/quizbuffet/docs/validate-domain.py /Users/gradikayamba/quizbuffet/data/certifications/bls/)"
+      "Bash(python3 /Users/gradikayamba/quizbuffet/docs/validate-domain.py /Users/gradikayamba/quizbuffet/data/certifications/bls/)",
+      "Bash(awk \"{print \\\\$5, \\\\$9}\")"
     ],
     "additionalDirectories": [
       "/tmp"

@@ -76,5 +76,38 @@
 
   "personal-trainer-nasm":                 { "practice_usd": 50 },
   "pmp":                                   { "practice_usd": 79, "exam_usd": 555 },
-  "quickbooks-proadvisor":                 { "practice_usd": 25 }
+  "quickbooks-proadvisor":                 { "practice_usd": 25 },
+
+  "barber-no-chemical":                    { "practice_usd": 35 },
+  "barber-styling":                        { "practice_usd": 35 },
+  "blow-dry-styling":                      { "practice_usd": 38 },
+  "hair-design":                           { "practice_usd": 38 },
+  "hair-removal-license":                  { "practice_usd": 39 },
+  "natural-hair-styling":                  { "practice_usd": 38 },
+  "eyelash-eyebrow-technician":            { "practice_usd": 32 },
+  "nail-technology":                       { "practice_usd": 32 },
+  "electrology":                           { "practice_usd": 39 },
+  "esthetics-advanced-practice":           { "practice_usd": 39 },
+  "esthetics-combined-practice":           { "practice_usd": 39 },
+  "cosmetology-instructor-license":        { "practice_usd": 45 },
+  "cosmetology-salon-manager":             { "practice_usd": 45 },
+  "body-piercing-license":                 { "practice_usd": 20 },
+  "ear-piercing-license":                  { "practice_usd": 20 },
+  "permanent-makeup-license":              { "practice_usd": 20 },
+  "tattoo-license":                        { "practice_usd": 20 },
+  "micropigmentation":                     { "practice_usd": 20 },
+
+  "google-project-management-certificate": { "practice_usd": 49 },
+  "capm":                                  { "practice_usd": 49 },
+  "scrum-master-psm":                      { "practice_usd": 30 },
+  "comptia-project-plus":                  { "practice_usd": 30 },
+
+  "google-it-support-certificate":         { "practice_usd": 49 },
+  "google-data-analytics-certificate":     { "practice_usd": 49 },
+  "google-ux-design-certificate":          { "practice_usd": 49 },
+  "google-cybersecurity-certificate":      { "practice_usd": 49 },
+
+  "cpa":                                   { "practice_usd": 450 },
+  "shrm-cp":                               { "practice_usd": 50 },
+  "six-sigma-green-belt":                  { "practice_usd": 99 }
 }

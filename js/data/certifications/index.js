@@ -37,6 +37,7 @@ import { cert as quickbooksProAdvisor } from './quickbooks-proadvisor.js';
 import { cert as bls } from './bls.js';
 import { cert as cosmetologyLicense } from './cosmetology-license.js';
 import { cert as micropigmentation } from './micropigmentation.js';
+import { cert as estheticianLicense } from './esthetician-license.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -78,4 +79,5 @@ export const certifications = [
   bls,
   cosmetologyLicense,
   micropigmentation,
+  estheticianLicense,
 ];

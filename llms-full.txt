@@ -1259,16 +1259,34 @@ A: Advanced airways require advanced training and are placed by trained provider
 ## Cosmetology License (Cosmetology)
 Vendor: State Boards
 URL: https://quizbuffet.com/cosmetology-license/
-Total questions: 0
+Total questions: 300
 
 A Cosmetology License is required in every U.S. state to perform haircutting, chemical services, skin care, and nail care for compensation. State exams typically follow the NIC (National-Interstate Council of State Boards of Cosmetology) National Theory blueprint, administered by PSI or a similar testing vendor as a written exam plus a hands-on practical. The written exam covers four areas: scientific concepts (infection control, anatomy and physiology, chemistry, electricity), hair care and services (cutting, styling, color, chemical texture, hair structure), skin care and services (facials, hair removal, skin analysis), and nail care and services (manicures, pedicures, enhancements, nail disorders).
 
 ### Domains
-- 1.0 Scientific Concepts (31% of exam)
-- 2.0 Hair Care and Services (37% of exam)
-- 3.0 Skin Care and Services (17% of exam)
-- 4.0 Nail Care and Services (15% of exam)
+- 1.0 Scientific Concepts (31% of exam) — 92 questions
+- 2.0 Hair Care and Services (37% of exam) — 118 questions
+- 3.0 Skin Care and Services (17% of exam) — 49 questions
+- 4.0 Nail Care and Services (15% of exam) — 41 questions
 
+### Sample questions
+**Q: A new cosmetology student is studying how illness spreads in the salon environment. Which of the following is the most common way pathogens are transmitted from one client to another?**
+A: Through direct contact with contaminated tools or surfaces
+
+**Q: Before beginning a client's service, a cosmetologist washes their hands thoroughly with soap and water. This practice is an example of which level of infection control?**
+A: Sanitation
+
+**Q: Before recommending any hair service, a cosmetologist performs a thorough hair and scalp analysis. Which observation method is used to assess the hair's porosity?**
+A: Sliding the fingers along a dry strand from tip toward the scalp and feeling for resistance or roughness indicating open cuticle scales
+
+**Q: A client arrives for a scalp treatment and the cosmetologist notices small red pustules scattered across the scalp with visible redness and tenderness. The cosmetologist should:**
+A: Decline the service, document the observation, and refer the client to a physician before providing any scalp service
+
+**Q: During a skin analysis before a facial service, a cosmetologist identifies a client's skin type. Which characteristic most clearly indicates normal skin type?**
+A: A balanced moisture and oil content, small pores, smooth texture, and even tone with no significant dry patches or oily zones
+
+**Q: During a pre-facial consultation, a cosmetologist observes areas of darker pigmentation on a client's cheeks and forehead that are flat, non-raised, and symmetrically distributed. The client reports using no new products but has been spending more time outdoors. This presentation is consistent with which skin condition?**
+A: Hyperpigmentation — specifically solar lentigines or melasma — where melanocytes produce excess melanin in response to UV exposure, creating flat, darker-than-surrounding-skin patches
 
 ## Advanced Practice Micropigmentation (Micropigmentation)
 Vendor: NIC
@@ -1281,6 +1299,19 @@ The NIC National Advanced Practice Micropigmentation Theory Examination is the l
 - 1.0 Scientific Concepts (40% of exam)
 - 2.0 Micropigmentation Procedures (55% of exam)
 - 3.0 Side Effects and Possible Complications (5% of exam)
+
+
+## Esthetician License (Esthetician)
+Vendor: NIC
+URL: https://quizbuffet.com/esthetician-license/
+Total questions: 0
+
+The Esthetician License is required in every U.S. state to perform professional skin care services for compensation — facials, hair removal, makeup application, skin analysis, chemical exfoliation, and body treatments. State exams typically follow the NIC (National-Interstate Council of State Boards of Cosmetology) National Esthetics Theory blueprint, administered by PSI or similar testing vendors as a written exam plus a hands-on practical. The theory exam covers three domains: scientific concepts (infection control, anatomy and physiology, skin analysis and disorders, chemistry, electricity basics), esthetic services (client consultation, facials, facial massage, hair removal, makeup, body treatments), and the implements, tools, and equipment used in the modern skin care studio.
+
+### Domains
+- 1.0 Scientific Concepts (45% of exam)
+- 2.0 Esthetic Services (50% of exam)
+- 3.0 Implements, Tools, and Equipment (5% of exam)
 
 
 
@@ -1301,33 +1332,32 @@ The NIC National Advanced Practice Micropigmentation Theory Examination is the l
 - ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #14
 - AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #15
 - Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #16
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #17
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #18
-- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #19
-- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #20
-- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #21
-- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #22
-- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #23
-- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #24
-- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #25
-- Google Cybersecurity Professional Certificate (Google Cybersecurity) — https://quizbuffet.com/google-cybersecurity-certificate/ — priority #26
-- Certified Public Accountant (CPA) (CPA) — https://quizbuffet.com/cpa/ — priority #27
-- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #28
-- Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #29
-- Barber 1 (No Chemical) License (Barber 1) — https://quizbuffet.com/barber-no-chemical/ — priority #30
-- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #31
-- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #32
-- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #33
-- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #34
-- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #35
-- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #36
-- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #37
-- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #38
-- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #39
-- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #40
-- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #41
-- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #42
-- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #43
-- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #44
-- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #45
-- Tattoo Artist License (Tattoo) — https://quizbuffet.com/tattoo-license/ — priority #46
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #17
+- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #18
+- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #19
+- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #20
+- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #21
+- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #22
+- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #23
+- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #24
+- Google Cybersecurity Professional Certificate (Google Cybersecurity) — https://quizbuffet.com/google-cybersecurity-certificate/ — priority #25
+- Certified Public Accountant (CPA) (CPA) — https://quizbuffet.com/cpa/ — priority #26
+- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #27
+- Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #28
+- Barber 1 (No Chemical) License (Barber 1) — https://quizbuffet.com/barber-no-chemical/ — priority #29
+- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #30
+- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #31
+- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #32
+- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #33
+- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #34
+- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #35
+- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #36
+- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #37
+- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #38
+- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #39
+- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #40
+- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #41
+- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #42
+- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #43
+- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #44
+- Tattoo Artist License (Tattoo) — https://quizbuffet.com/tattoo-license/ — priority #45

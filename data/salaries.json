@@ -849,5 +849,440 @@
     ],
     "lastUpdated": "2026-05-06",
     "notes": "Bookkeeper / accountant; remote-friendly"
+  },
+  "barber-no-chemical": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 31500,
+      "mid": 48800,
+      "high": 68000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "BLS"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Entry barber, cuts/shaves only"
+  },
+  "barber-styling": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 35500,
+      "mid": 52123,
+      "high": 75000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "BLS"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Hybrid barber + chemical services"
+  },
+  "blow-dry-styling": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 26000,
+      "mid": 37500,
+      "high": 55000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "BLS"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Blow-dry-bar stylist; tip-supplemented"
+  },
+  "hair-design": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 30000,
+      "mid": 44200,
+      "high": 68500
+    },
+    "sources": [
+      "ZipRecruiter",
+      "BLS"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Cut/style specialty, no chemicals"
+  },
+  "hair-removal-license": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 32000,
+      "mid": 46500,
+      "high": 74000
+    },
+    "sources": [
+      "BLS",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Waxing/sugaring/threading specialist"
+  },
+  "natural-hair-styling": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 28500,
+      "mid": 41000,
+      "high": 62000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "BLS"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Braider/natural-hair specialist"
+  },
+  "eyelash-eyebrow-technician": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 33000,
+      "mid": 48000,
+      "high": 76500
+    },
+    "sources": [
+      "BLS",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Lash tech; high per-service rates"
+  },
+  "nail-technology": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 27000,
+      "mid": 38500,
+      "high": 58000
+    },
+    "sources": [
+      "BLS",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Nail tech; tip-supplemented"
+  },
+  "electrology": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 36000,
+      "mid": 54000,
+      "high": 88000
+    },
+    "sources": [
+      "BLS",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Permanent hair removal specialist"
+  },
+  "esthetics-advanced-practice": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 42500,
+      "mid": 61000,
+      "high": 92000
+    },
+    "sources": [
+      "BLS",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Med-spa / advanced esthetician"
+  },
+  "esthetics-combined-practice": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 35000,
+      "mid": 49500,
+      "high": 78000
+    },
+    "sources": [
+      "BLS",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Esthetics + nail tech combined scope"
+  },
+  "cosmetology-instructor-license": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 39000,
+      "mid": 55852,
+      "high": 82000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Payscale"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Beauty school instructor"
+  },
+  "cosmetology-salon-manager": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 44000,
+      "mid": 62500,
+      "high": 95000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "BLS"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Salon manager / shop operator"
+  },
+  "body-piercing-license": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 31000,
+      "mid": 52000,
+      "high": 89000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "BLS"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Body piercer; commission-based"
+  },
+  "ear-piercing-license": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 24000,
+      "mid": 34000,
+      "high": 46000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "BLS"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Ear-only piercer; retail/kiosk"
+  },
+  "permanent-makeup-license": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 38500,
+      "mid": 59432,
+      "high": 115000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Glassdoor"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "PMU artist; per-session pricing"
+  },
+  "tattoo-license": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 35000,
+      "mid": 65000,
+      "high": 130000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Glassdoor"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Tattoo artist; commission-based"
+  },
+  "google-project-management-certificate": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 54000,
+      "mid": 85300,
+      "high": 119000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Coursera"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Entry-level project coordinator"
+  },
+  "capm": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 56000,
+      "mid": 86400,
+      "high": 123000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Payscale"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Entry-level PMI credential"
+  },
+  "scrum-master-psm": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 72000,
+      "mid": 104500,
+      "high": 148000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Glassdoor"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Scrum Master role"
+  },
+  "comptia-project-plus": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 55000,
+      "mid": 78500,
+      "high": 112000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Payscale"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "IT-leaning project manager"
+  },
+  "google-it-support-certificate": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 41000,
+      "mid": 58500,
+      "high": 79000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Coursera"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Help desk / IT support specialist"
+  },
+  "google-data-analytics-certificate": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 48000,
+      "mid": 74000,
+      "high": 105000
+    },
+    "sources": [
+      "Glassdoor",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Junior data / BI analyst"
+  },
+  "google-ux-design-certificate": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 52000,
+      "mid": 81000,
+      "high": 122000
+    },
+    "sources": [
+      "Glassdoor",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Junior UX/UI designer"
+  },
+  "google-cybersecurity-certificate": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 65000,
+      "mid": 92000,
+      "high": 133500
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Coursera"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Entry-level SOC / cybersecurity analyst"
+  },
+  "cpa": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 68000,
+      "mid": 98000,
+      "high": 165000
+    },
+    "sources": [
+      "BLS",
+      "ZipRecruiter"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Certified Public Accountant"
+  },
+  "shrm-cp": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 58000,
+      "mid": 84500,
+      "high": 120000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "BLS"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "HR generalist / specialist"
+  },
+  "six-sigma-green-belt": {
+    "collar": "white-collar",
+    "salary": {
+      "currency": "USD",
+      "low": 68500,
+      "mid": 96000,
+      "high": 135000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Payscale"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Process improvement analyst"
+  },
+  "micropigmentation": {
+    "collar": "service",
+    "salary": {
+      "currency": "USD",
+      "low": 31000,
+      "mid": 59432,
+      "high": 115000
+    },
+    "sources": [
+      "ZipRecruiter",
+      "Glassdoor"
+    ],
+    "lastUpdated": "2026-05-13",
+    "notes": "Advanced practice micropigmentation artist"
   }
 }

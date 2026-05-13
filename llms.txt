@@ -40,8 +40,9 @@
 - [CPR / AED Certification (CPR/AED)](https://quizbuffet.com/cpr-aed/): Lifesaving cardiac and breathing emergency skills 300+ questions.
 - [QuickBooks ProAdvisor (Online Certification) (QuickBooks ProAdvisor)](https://quizbuffet.com/quickbooks-proadvisor/): Intuit-certified credential for QuickBooks Online and Desktop 200+ questions.
 - [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/): Required CPR-level credential for healthcare professionals 300+ questions.
-- [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/): State-licensed credential for hair, skin, and nail services
+- [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/): State-licensed credential for hair, skin, and nail services 300+ questions.
 - [Advanced Practice Micropigmentation (Micropigmentation)](https://quizbuffet.com/micropigmentation/): NIC national theory exam for permanent makeup, paramedical, and cosmetic tattoo procedures
+- [Esthetician License (Esthetician)](https://quizbuffet.com/esthetician-license/): State-licensed credential for professional skin care services
 
 ## Coming soon
 - [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #1)
@@ -60,10 +61,10 @@
 - [ASE Automotive Certification (ASE A1–A9 / G1)](https://quizbuffet.com/ase-automotive/) — coming soon (priority #14)
 - [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #15)
 - [Barber License (Barber)](https://quizbuffet.com/barber-license/) — coming soon (priority #16)
-- [Esthetician License (Esthetician)](https://quizbuffet.com/esthetician-license/) — coming soon (priority #17)
-- [Project Management Professional (PMP) (PMP)](https://quizbuffet.com/pmp/) — coming soon (priority #18)
-- [Google Project Management Certificate (Google PM Cert)](https://quizbuffet.com/google-project-management-certificate/) — coming soon (priority #19)
-- [Certified Associate in Project Management (CAPM) (CAPM)](https://quizbuffet.com/capm/) — coming soon (priority #20)
+- [Project Management Professional (PMP) (PMP)](https://quizbuffet.com/pmp/) — coming soon (priority #17)
+- [Google Project Management Certificate (Google PM Cert)](https://quizbuffet.com/google-project-management-certificate/) — coming soon (priority #18)
+- [Certified Associate in Project Management (CAPM) (CAPM)](https://quizbuffet.com/capm/) — coming soon (priority #19)
+- [Professional Scrum Master I (PSM I) (PSM I)](https://quizbuffet.com/scrum-master-psm/) — coming soon (priority #20)
 
 ## Resources
 - [Sitemap](https://quizbuffet.com/sitemap.xml)

@@ -174,6 +174,15 @@ renderBackToTop();
 window.addEventListener('popstate', route);
 route();
 
+// Set of coming-soon slugs — loaded once. Clicks to these URLs do a NATIVE
+// navigation, not a pushState, so the static rich coming-soon HTML loads
+// directly (it has its own SPA-bypass logic via <html data-coming-soon="1">).
+const COMING_SOON_SLUGS = new Set();
+fetch('/data/coming-soon.json')
+  .then(r => r.ok ? r.json() : [])
+  .then(list => { (list || []).forEach(c => COMING_SOON_SLUGS.add(c.slug)); })
+  .catch(() => {});
+
 // Intercept internal link clicks so navigation stays in-app (no full page reloads)
 document.addEventListener('click', e => {
   // Coming-soon pages have no SPA state to preserve; let the browser do a real navigation.
@@ -191,6 +200,11 @@ document.addEventListener('click', e => {
 
   // Let the browser handle non-HTML resources (RSS, sitemap, robots, llms, etc.) with a real navigation
   if (/\.(xml|txt|json|pdf|svg|png|jpe?g|gif|webp|ico|zip|md|csv)$/i.test(url.pathname)) return;
+
+  // Coming-soon cert URLs are served as static rich HTML — let the browser
+  // navigate natively so the new rich page is shown, not the SPA placeholder.
+  const firstSeg = url.pathname.split('/').filter(Boolean)[0];
+  if (firstSeg && COMING_SOON_SLUGS.has(firstSeg)) return;
 
   const dest = url.pathname + url.search;
   if (dest === location.pathname + location.search) return;

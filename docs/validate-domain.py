@@ -28,7 +28,7 @@ DIFFS = {'easy', 'medium', 'medium-hard', 'hard'}
 ABCD = {'a', 'b', 'c', 'd'}
 
 # Correct medical/technical lowercase-then-uppercase tokens. Do not flag.
-ACRONYM_WHITELIST = {'pVT', 'mGy', 'kPa', 'pH', 'mRNA', 'tRNA', 'rRNA', 'kWh', 'mAh', 'dBA'}
+ACRONYM_WHITELIST = {'pVT', 'mGy', 'mIU', 'kPa', 'pH', 'mL', 'mRNA', 'tRNA', 'rRNA', 'kWh', 'mAh', 'dBA'}
 
 TAG_PREFIX = re.compile(r'^(?:[A-Z][a-z]+(?:-[A-Z]?[a-z]+)*)\s(?:review|check|note|clue|logic|tip):\s+')
 BROKEN_ACR = re.compile(r'\b([a-z][A-Z]{2,})\b')

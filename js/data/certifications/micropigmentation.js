@@ -14,10 +14,14 @@ export const cert = {
   affiliates: [
     { provider: 'amazon', label: 'Shop Micropigmentation and Permanent Makeup Textbooks on Amazon', url: 'https://www.amazon.com/s?k=permanent+makeup+micropigmentation+training&tag=0003aa-20' },
   ],
+  officialSources: [
+    { label: 'NIC (nictesting.org)',     url: 'https://www.nictesting.org/' },
+    { label: 'Prov CIB Selection App',   url: 'https://apps.provexam.online/sample-apps/cib_selection_app/' },
+  ],
   domains: [
-    { slug: 'scientific-concepts',                 name: 'Scientific Concepts',                          number: '1.0', weight: 40 },
-    { slug: 'micropigmentation-procedures',         name: 'Micropigmentation Procedures',                 number: '2.0', weight: 55 },
-    { slug: 'side-effects-and-complications',       name: 'Side Effects and Possible Complications',      number: '3.0', weight:  5 },
+    { slug: 'scientific-concepts',                 name: 'Scientific Concepts',                          number: '1.0', weight: 46 },
+    { slug: 'micropigmentation-procedures',         name: 'Micropigmentation Procedures',                 number: '2.0', weight: 50 },
+    { slug: 'side-effects-and-complications',       name: 'Side Effects and Possible Complications',      number: '3.0', weight:  4 },
   ],
 
   // Hand-written long-form sections from the NIC CIB. Overrides the auto-template

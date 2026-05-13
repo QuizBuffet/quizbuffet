@@ -45,6 +45,7 @@ const LIVE_CATEGORY = {
   'cosmetology-license':                'Beauty',
   'esthetician-license':                'Beauty',
   'micropigmentation':                  'Beauty',
+  'barber-license':                     'Beauty',
 };
 
 const CATEGORY_ORDER = [

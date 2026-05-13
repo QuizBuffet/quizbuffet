@@ -41,30 +41,31 @@
 - [QuickBooks ProAdvisor (Online Certification) (QuickBooks ProAdvisor)](https://quizbuffet.com/quickbooks-proadvisor/): Intuit-certified credential for QuickBooks Online and Desktop 200+ questions.
 - [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/): Required CPR-level credential for healthcare professionals 300+ questions.
 - [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/): State-licensed credential for hair, skin, and nail services 300+ questions.
-- [Advanced Practice Micropigmentation (Micropigmentation)](https://quizbuffet.com/micropigmentation/): NIC national theory exam for permanent makeup, paramedical, and cosmetic tattoo procedures
+- [Advanced Practice Micropigmentation (Micropigmentation)](https://quizbuffet.com/micropigmentation/): NIC national theory exam for permanent makeup, paramedical, and cosmetic tattoo procedures 210+ questions.
 - [Esthetician License (Esthetician)](https://quizbuffet.com/esthetician-license/): State-licensed credential for professional skin care services
+- [Barber License (Barber)](https://quizbuffet.com/barber-license/): State-licensed credential for haircutting, shaving, and chemical hair services
 
 ## Coming soon
-- [EMT (Emergency Medical Technician) (NREMT)](https://quizbuffet.com/emt/) — coming soon (priority #1)
-- [Certified Nursing Assistant (CNA) (CNA)](https://quizbuffet.com/cna/) — coming soon (priority #2)
-- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #3)
-- [Certified Phlebotomy Technician (CPT) (CPT)](https://quizbuffet.com/phlebotomy-technician/) — coming soon (priority #4)
+- [Certified Public Accountant (CPA) (CPA)](https://quizbuffet.com/cpa/) — coming soon (priority #1)
+- [Six Sigma Green Belt (SSGB)](https://quizbuffet.com/six-sigma-green-belt/) — coming soon (priority #2)
+- [Project Management Professional (PMP) (PMP)](https://quizbuffet.com/pmp/) — coming soon (priority #3)
+- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #4)
 - [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #5)
-- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #6)
-- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #7)
-- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #8)
-- [ServSafe Food Handler (ServSafe FH)](https://quizbuffet.com/servsafe-food-handler/) — coming soon (priority #9)
-- [ServSafe Food Protection Manager (ServSafe Manager)](https://quizbuffet.com/servsafe-manager/) — coming soon (priority #10)
-- [EPA 608 Refrigerant Handling Certification (EPA 608)](https://quizbuffet.com/epa-608/) — coming soon (priority #11)
-- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #12)
-- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #13)
-- [ASE Automotive Certification (ASE A1–A9 / G1)](https://quizbuffet.com/ase-automotive/) — coming soon (priority #14)
-- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #15)
-- [Barber License (Barber)](https://quizbuffet.com/barber-license/) — coming soon (priority #16)
-- [Project Management Professional (PMP) (PMP)](https://quizbuffet.com/pmp/) — coming soon (priority #17)
-- [Google Project Management Certificate (Google PM Cert)](https://quizbuffet.com/google-project-management-certificate/) — coming soon (priority #18)
-- [Certified Associate in Project Management (CAPM) (CAPM)](https://quizbuffet.com/capm/) — coming soon (priority #19)
-- [Professional Scrum Master I (PSM I) (PSM I)](https://quizbuffet.com/scrum-master-psm/) — coming soon (priority #20)
+- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #6)
+- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #7)
+- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #8)
+- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #9)
+- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #10)
+- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #11)
+- [SHRM Certified Professional (SHRM-CP) (SHRM-CP)](https://quizbuffet.com/shrm-cp/) — coming soon (priority #12)
+- [Certified Associate in Project Management (CAPM) (CAPM)](https://quizbuffet.com/capm/) — coming soon (priority #13)
+- [Google Cybersecurity Professional Certificate (Google Cybersecurity)](https://quizbuffet.com/google-cybersecurity-certificate/) — coming soon (priority #14)
+- [Google Project Management Certificate (Google PM Cert)](https://quizbuffet.com/google-project-management-certificate/) — coming soon (priority #15)
+- [Google IT Support Professional Certificate (Google IT Support)](https://quizbuffet.com/google-it-support-certificate/) — coming soon (priority #16)
+- [Google Data Analytics Professional Certificate (Google Data Analytics)](https://quizbuffet.com/google-data-analytics-certificate/) — coming soon (priority #17)
+- [Google UX Design Professional Certificate (Google UX Design)](https://quizbuffet.com/google-ux-design-certificate/) — coming soon (priority #18)
+- [Cosmetology Instructor License (Instructor)](https://quizbuffet.com/cosmetology-instructor-license/) — coming soon (priority #19)
+- [Salon and Shop Manager License (Salon Manager)](https://quizbuffet.com/cosmetology-salon-manager/) — coming soon (priority #20)
 
 ## Resources
 - [Sitemap](https://quizbuffet.com/sitemap.xml)

@@ -1291,15 +1291,33 @@ A: Hyperpigmentation — specifically solar lentigines or melasma — where mela
 ## Advanced Practice Micropigmentation (Micropigmentation)
 Vendor: NIC
 URL: https://quizbuffet.com/micropigmentation/
-Total questions: 0
+Total questions: 210
 
 The NIC National Advanced Practice Micropigmentation Theory Examination is the licensure theory exam for advanced cosmetic tattoo procedures (permanent makeup, paramedical micropigmentation, scalp pigmentation, areola restoration, scar repigmentation) authored by the National-Interstate Council of State Boards of Cosmetology (NIC) and adopted by participating state boards. The blueprint covers three domains: Scientific Concepts (infection control, skin and tissue structure, human anatomy and physiology, skin disorders, equipment and pigment storage), Micropigmentation Procedures (client communication and documentation, skin preparation, color theory, pre-application design, and application technique), and Side Effects and Possible Complications. Candidates are expected to anchor their knowledge in the Society of Permanent Cosmetic Professionals (SPCP) standards, NIC Infection Control and Safety Standards, and Milady's Aesthetician Series Permanent Makeup: Tips and Techniques.
 
 ### Domains
-- 1.0 Scientific Concepts (40% of exam)
-- 2.0 Micropigmentation Procedures (55% of exam)
-- 3.0 Side Effects and Possible Complications (5% of exam)
+- 1.0 Scientific Concepts (46% of exam) — 96 questions
+- 2.0 Micropigmentation Procedures (50% of exam) — 104 questions
+- 3.0 Side Effects and Possible Complications (4% of exam) — 10 questions
 
+### Sample questions
+**Q: Bacteria that require oxygen to survive are classified as**
+A: aerobic
+
+**Q: The virus of greatest bloodborne transmission concern during micropigmentation procedures is**
+A: hepatitis B
+
+**Q: A client history record for micropigmentation must include**
+A: current medications, allergies, medical conditions, previous cosmetic procedures, and skin conditions
+
+**Q: Informed consent for a micropigmentation procedure must be obtained**
+A: in writing before the procedure begins, after the technician has explained the procedure, risks, expected outcomes, and alternatives
+
+**Q: The most common expected side effect immediately following a micropigmentation procedure is**
+A: redness, mild swelling, and tenderness at the procedure site lasting 24–72 hours
+
+**Q: A client who had brow micropigmentation performed two years ago is scheduled for an MRI of the head and neck. The most important safety step is**
+A: inform the MRI technologist and radiologist about the presence of iron oxide-based micropigmentation pigments at the brow site so the imaging team can assess artifact risk, any potential local heating, and any sensation reported by the client during the scan
 
 ## Esthetician License (Esthetician)
 Vendor: NIC
@@ -1314,50 +1332,63 @@ The Esthetician License is required in every U.S. state to perform professional 
 - 3.0 Implements, Tools, and Equipment (5% of exam)
 
 
+## Barber License (Barber)
+Vendor: State Boards
+URL: https://quizbuffet.com/barber-license/
+Total questions: 0
+
+A Barber License is required in every U.S. state to perform haircutting, shaving, beard design, chemical hair services, and basic skin and scalp care for compensation. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber Theory Examination — a 60-item, 90-minute written exam — paired with a hands-on practical, both typically administered by PSI. The theory blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, product chemistry), implements and equipment (razors, shears, clippers, sanitation), hair care services (consultation, draping, shampoo, cutting, styling, chemical services), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy).
+
+### Domains
+- 1.0 Scientific Concepts (35% of exam)
+- 2.0 Implements and Equipment (10% of exam)
+- 3.0 Hair Care Services (40% of exam)
+- 4.0 Facial Hair and Skin Care Services (15% of exam)
+
+
 
 ## Coming soon (in priority order)
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #1
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #2
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #3
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #4
+- Certified Public Accountant (CPA) (CPA) — https://quizbuffet.com/cpa/ — priority #1
+- Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #2
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #3
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #4
 - Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #5
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #6
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #7
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #8
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #9
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #10
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #11
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #12
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #13
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #14
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #15
-- Barber License (Barber) — https://quizbuffet.com/barber-license/ — priority #16
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #17
-- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #18
-- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #19
-- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #20
-- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #21
-- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #22
-- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #23
-- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #24
-- Google Cybersecurity Professional Certificate (Google Cybersecurity) — https://quizbuffet.com/google-cybersecurity-certificate/ — priority #25
-- Certified Public Accountant (CPA) (CPA) — https://quizbuffet.com/cpa/ — priority #26
-- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #27
-- Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #28
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #6
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #7
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #8
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #9
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #10
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #11
+- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #12
+- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #13
+- Google Cybersecurity Professional Certificate (Google Cybersecurity) — https://quizbuffet.com/google-cybersecurity-certificate/ — priority #14
+- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #15
+- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #16
+- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #17
+- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #18
+- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #19
+- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #20
+- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #21
+- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #22
+- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #23
+- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #24
+- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #25
+- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #26
+- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #27
+- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #28
 - Barber 1 (No Chemical) License (Barber 1) — https://quizbuffet.com/barber-no-chemical/ — priority #29
-- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #30
-- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #31
-- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #32
-- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #33
-- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #34
-- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #35
-- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #36
-- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #37
-- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #38
-- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #39
-- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #40
-- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #41
-- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #42
-- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #43
-- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #44
-- Tattoo Artist License (Tattoo) — https://quizbuffet.com/tattoo-license/ — priority #45
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #30
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #31
+- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #32
+- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #33
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #34
+- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #35
+- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #36
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #37
+- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #38
+- Tattoo Artist License (Tattoo) — https://quizbuffet.com/tattoo-license/ — priority #39
+- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #40
+- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #41
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #42
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #43
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #44

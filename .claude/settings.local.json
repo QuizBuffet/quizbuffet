@@ -79,7 +79,16 @@
       "Bash(awk \"{print \\\\$5, \\\\$9}\")",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)[:3]\\); first=list\\(d.items\\(\\)\\)[0]; print\\('sample:', first[0], '→', first[1]\\)\")",
       "Bash(python3 -c \"import json; d=json.load\\(open\\('data/salaries.json'\\)\\); print\\('keys:', list\\(d.keys\\(\\)\\)[:5]\\); print\\('sample:', d.get\\('bls'\\)\\)\")",
-      "Bash(python3 -c \"import json; d=json.load\\(open\\('data/counts.json'\\)\\); print\\(f'liveCerts: {d[\\\\\"liveCerts\\\\\"]} · comingSoonCerts: {d[\\\\\"comingSoonCerts\\\\\"]} · total questions: {d[\\\\\"total\\\\\"]:,}'\\)\")"
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('data/counts.json'\\)\\); print\\(f'liveCerts: {d[\\\\\"liveCerts\\\\\"]} · comingSoonCerts: {d[\\\\\"comingSoonCerts\\\\\"]} · total questions: {d[\\\\\"total\\\\\"]:,}'\\)\")",
+      "Bash(node -e \"console.log\\(JSON.stringify\\(require\\('./data/coming-soon.json'\\).find\\(c=>c.slug==='barber-license'\\), null, 2\\)\\)\")",
+      "Bash(node)",
+      "Bash(python3 /Users/gradikayamba/quizbuffet/docs/validate-domain.py /Users/gradikayamba/quizbuffet/data/certifications/micropigmentation/scientific-concepts.json)",
+      "Bash(python3 /Users/gradikayamba/quizbuffet/docs/validate-domain.py /Users/gradikayamba/quizbuffet/data/certifications/micropigmentation/micropigmentation-procedures.json)",
+      "Bash(python3 /Users/gradikayamba/quizbuffet/docs/validate-domain.py /Users/gradikayamba/quizbuffet/data/certifications/micropigmentation/side-effects-and-complications.json)",
+      "Read(//Applications/**)",
+      "Bash(open -a \"Visual Studio Code\" ~/animal-database)",
+      "Bash(python3 docs/validate-domain.py data/certifications/micropigmentation/side-effects-and-complications.json)",
+      "Bash(python3 docs/validate-domain.py data/certifications/micropigmentation/)"
     ],
     "additionalDirectories": [
       "/tmp"

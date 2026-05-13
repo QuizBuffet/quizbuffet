@@ -14,6 +14,10 @@ export const cert = {
   affiliates: [
     { provider: 'amazon', label: 'Shop Milady Standard Esthetics Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+esthetics+fundamentals&tag=0003aa-20' },
   ],
+  officialSources: [
+    { label: 'NIC (nictesting.org)',     url: 'https://www.nictesting.org/' },
+    { label: 'Prov CIB Selection App',   url: 'https://apps.provexam.online/sample-apps/cib_selection_app/' },
+  ],
   domains: [
     { slug: 'scientific-concepts',           name: 'Scientific Concepts',                number: '1.0', weight: 45 },
     { slug: 'esthetic-services',             name: 'Esthetic Services',                  number: '2.0', weight: 50 },

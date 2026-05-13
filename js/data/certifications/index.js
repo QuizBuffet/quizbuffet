@@ -38,6 +38,7 @@ import { cert as bls } from './bls.js';
 import { cert as cosmetologyLicense } from './cosmetology-license.js';
 import { cert as micropigmentation } from './micropigmentation.js';
 import { cert as estheticianLicense } from './esthetician-license.js';
+import { cert as barberLicense } from './barber-license.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -80,4 +81,5 @@ export const certifications = [
   cosmetologyLicense,
   micropigmentation,
   estheticianLicense,
+  barberLicense,
 ];

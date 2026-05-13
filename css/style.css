@@ -1894,23 +1894,23 @@ a:is(:hover, :active) { text-decoration: underline; }
 .cert-radar-dot { cursor: help; }
 .cert-radar-help { font-size: 14px; line-height: 1.55; color: var(--text-muted); max-width: 70ch; margin: 0 0 14px; padding: 10px 12px; background: var(--surface, rgba(0,0,0,0.03)); border-left: 3px solid var(--accent); border-radius: 4px; }
 
-/* Multi-column flow so categories pack into columns without leaving empty
-   space below shorter ones. break-inside: avoid keeps each category whole. */
+/* CSS grid of explicit columns; JS packs categories into those columns using
+   LPT bin-packing so heights stay balanced regardless of how many certs land
+   in any given category. Column count matches getColumnCount() in JS. */
 .cert-categories {
-  column-count: 1;
-  column-gap: 22px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  align-items: start;
 }
+.cert-column { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
 .cert-category {
   display: block;
-  margin: 0 0 18px;
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
   min-width: 0;
 }
 
-@media (min-width: 720px)  { .cert-categories { column-count: 2; column-gap: 22px; } }
-@media (min-width: 1500px) { .cert-categories { column-count: 3; column-gap: 24px; } }
+@media (min-width: 720px)  { .cert-categories { grid-template-columns: repeat(2, 1fr); gap: 22px; } }
+@media (min-width: 1500px) { .cert-categories { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
 .cert-category-heading {
   display: flex;
   align-items: center;

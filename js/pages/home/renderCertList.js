@@ -38,7 +38,13 @@ const LIVE_CATEGORY = {
   'faa-part-107':                       'Aviation',
   'personal-trainer-nasm':              'Fitness',
   'cpr-aed':                            'Healthcare',
+  'bls':                                'Healthcare',
   'quickbooks-proadvisor':              'Accounting',
+  'isc2-cissp':                         'Cybersecurity',
+  'itil-foundation':                    'IT Service Management',
+  'cosmetology-license':                'Beauty',
+  'esthetician-license':                'Beauty',
+  'micropigmentation':                  'Beauty',
 };
 
 const CATEGORY_ORDER = [
@@ -162,21 +168,75 @@ function scheduleCollarShakes() {
   setTimeout(tick, 400);
 }
 
+// Pick column count from viewport so JS packing matches the CSS grid breakpoints.
+function getColumnCount() {
+  if (typeof window === 'undefined') return 3;
+  const w = window.innerWidth;
+  if (w >= 1500) return 3;
+  if (w >= 720)  return 2;
+  return 1;
+}
+
+// Bin-pack categories into N columns using LPT (Longest Processing Time first):
+// sort by weight desc, then drop each category into the currently-shortest column.
+// Within each column, restore the original CATEGORY_ORDER so reading order stays stable.
+// Each heading is ~1.5 cards tall, so headingWeight=1.5 makes 1-item categories feel real.
+function packIntoColumns(groups, columnCount, headingWeight = 1.5) {
+  if (columnCount <= 1 || groups.length <= 1) return [{ groups: [...groups] }];
+  const orderIndex = new Map(groups.map((g, i) => [g[0], i]));
+  const sorted = [...groups].sort((a, b) => b[1].length - a[1].length);
+  const columns = Array.from({ length: columnCount }, () => ({ groups: [], weight: 0 }));
+  for (const g of sorted) {
+    const w = g[1].length + headingWeight;
+    let target = columns[0];
+    for (const col of columns) if (col.weight < target.weight) target = col;
+    target.groups.push(g);
+    target.weight += w;
+  }
+  for (const col of columns) col.groups.sort(([a], [b]) => orderIndex.get(a) - orderIndex.get(b));
+  return columns;
+}
+
 function renderCategorizedSection(label, dotClass, total, groups, cardFn) {
   if (!total) return '';
-  const inner = groups.map(([cat, items]) => `
+  const columns = packIntoColumns(groups, getColumnCount());
+  const renderCat = ([cat, items]) => `
     <div class="cert-category">
       <h4 class="cert-category-heading">${cat} <span class="cert-list-count">${items.length}</span></h4>
       <div class="cert-category-cards">${items.map(cardFn).join('')}</div>
-    </div>`).join('');
+    </div>`;
+  const inner = columns.map(col => `
+    <div class="cert-column">${col.groups.map(renderCat).join('')}</div>`).join('');
   return `
     <section class="cert-list-section">
       <h3 class="cert-list-heading"><span class="dot ${dotClass}"></span> ${label} <span class="cert-list-count">${total}</span></h3>
-      <div class="cert-categories">${inner}</div>
+      <div class="cert-categories" data-cols="${columns.length}">${inner}</div>
     </section>`;
 }
 
+let lastCall = null;
+let lastCols = typeof window !== 'undefined' ? getColumnCount() : 3;
+let resizeTimer = null;
+let resizeAttached = false;
+
+function attachResizeRepacker() {
+  if (resizeAttached || typeof window === 'undefined') return;
+  resizeAttached = true;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const cols = getColumnCount();
+      if (cols !== lastCols && lastCall) {
+        lastCols = cols;
+        renderCertList(lastCall.live, lastCall.comingSoon, lastCall.filter);
+      }
+    }, 120);
+  });
+}
+
 export function renderCertList(live, comingSoon = [], filter = '') {
+  lastCall = { live, comingSoon, filter };
+  attachResizeRepacker();
   const el = document.getElementById('cert-list');
   if (!el) return;
 

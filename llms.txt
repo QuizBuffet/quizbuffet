@@ -43,7 +43,7 @@
 - [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/): State-licensed credential for hair, skin, and nail services 300+ questions.
 - [Advanced Practice Micropigmentation (Micropigmentation)](https://quizbuffet.com/micropigmentation/): NIC national theory exam for permanent makeup, paramedical, and cosmetic tattoo procedures 210+ questions.
 - [Esthetician License (Esthetician)](https://quizbuffet.com/esthetician-license/): State-licensed credential for professional skin care services
-- [Barber License (Barber)](https://quizbuffet.com/barber-license/): State-licensed credential for haircutting, shaving, and chemical hair services
+- [Barber License (Barber)](https://quizbuffet.com/barber-license/): State-licensed credential for haircutting, shaving, and chemical hair services 260+ questions.
 
 ## Coming soon
 - [Certified Public Accountant (CPA) (CPA)](https://quizbuffet.com/cpa/) — coming soon (priority #1)

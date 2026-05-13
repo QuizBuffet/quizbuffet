@@ -88,7 +88,8 @@
       "Read(//Applications/**)",
       "Bash(open -a \"Visual Studio Code\" ~/animal-database)",
       "Bash(python3 docs/validate-domain.py data/certifications/micropigmentation/side-effects-and-complications.json)",
-      "Bash(python3 docs/validate-domain.py data/certifications/micropigmentation/)"
+      "Bash(python3 docs/validate-domain.py data/certifications/micropigmentation/)",
+      "Bash(python3 docs/validate-domain.py data/certifications/barber-license/)"
     ],
     "additionalDirectories": [
       "/tmp"

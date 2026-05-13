@@ -19,9 +19,9 @@ export const cert = {
     { label: 'Prov CIB Selection App',   url: 'https://apps.provexam.online/sample-apps/cib_selection_app/' },
   ],
   domains: [
-    { slug: 'scientific-concepts',                name: 'Scientific Concepts',                       number: '1.0', weight: 35 },
-    { slug: 'implements-and-equipment',           name: 'Implements and Equipment',                  number: '2.0', weight: 10 },
+    { slug: 'scientific-concepts',                name: 'Scientific Concepts',                       number: '1.0', weight: 38 },
+    { slug: 'implements-and-equipment',           name: 'Implements and Equipment',                  number: '2.0', weight:  8 },
     { slug: 'hair-care-services',                 name: 'Hair Care Services',                        number: '3.0', weight: 40 },
-    { slug: 'facial-hair-and-skin-care-services', name: 'Facial Hair and Skin Care Services',        number: '4.0', weight: 15 },
+    { slug: 'facial-hair-and-skin-care-services', name: 'Facial Hair and Skin Care Services',        number: '4.0', weight: 14 },
   ],
 };

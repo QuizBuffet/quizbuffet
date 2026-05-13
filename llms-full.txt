@@ -1335,16 +1335,34 @@ The Esthetician License is required in every U.S. state to perform professional 
 ## Barber License (Barber)
 Vendor: State Boards
 URL: https://quizbuffet.com/barber-license/
-Total questions: 0
+Total questions: 260
 
 A Barber License is required in every U.S. state to perform haircutting, shaving, beard design, chemical hair services, and basic skin and scalp care for compensation. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber Theory Examination — a 60-item, 90-minute written exam — paired with a hands-on practical, both typically administered by PSI. The theory blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, product chemistry), implements and equipment (razors, shears, clippers, sanitation), hair care services (consultation, draping, shampoo, cutting, styling, chemical services), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy).
 
 ### Domains
-- 1.0 Scientific Concepts (35% of exam)
-- 2.0 Implements and Equipment (10% of exam)
-- 3.0 Hair Care Services (40% of exam)
-- 4.0 Facial Hair and Skin Care Services (15% of exam)
+- 1.0 Scientific Concepts (38% of exam) — 100 questions
+- 2.0 Implements and Equipment (8% of exam) — 20 questions
+- 3.0 Hair Care Services (40% of exam) — 104 questions
+- 4.0 Facial Hair and Skin Care Services (14% of exam) — 36 questions
 
+### Sample questions
+**Q: Anthrax and tetanus bacilli form which type of spores?**
+A: Endospores
+
+**Q: Sanitation is defined as the process of**
+A: significantly reducing microorganisms on a surface to a safe level
+
+**Q: The barber chair's headrest MUST be disinfected and covered before each client because**
+A: it directly contacts the client's neck and head, making it a surface that must be prepared to prevent cross-contamination
+
+**Q: The straight razor used in a barbershop must be**
+A: a single-use disposable blade or, if reusable, must be properly cleaned and disinfected between each client
+
+**Q: Hair porosity refers to the hair's ability to**
+A: absorb and retain moisture
+
+**Q: Tinea capitis on a child's scalp is a contraindication for barbershop services because**
+A: it is a highly contagious fungal infection that can spread to other clients through contaminated implements and surfaces
 
 
 ## Coming soon (in priority order)

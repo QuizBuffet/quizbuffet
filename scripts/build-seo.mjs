@@ -925,6 +925,97 @@ ${body}
 `;
 }
 
+// Rewrite the drift-prone parts of the root index.html so the home page stays in
+// sync as certs are added/removed: title + meta description count, og/twitter
+// equivalents, the WebApplication.offers.offerCount, the FAQ "which certifications"
+// answer, and the ItemList entries in the JSON-LD @graph.
+function updateHomeIndex(certs) {
+  const homePath = path.join(ROOT, 'index.html');
+  if (!fs.existsSync(homePath)) return;
+  let html = fs.readFileSync(homePath, 'utf8');
+  const n = certs.length;
+
+  // Sort alphabetically by cert.name so the order is stable and predictable
+  const sorted = [...certs].sort((a, b) => a.name.localeCompare(b.name));
+
+  // 1. Title + meta description + og/twitter strings that include the cert count
+  html = html.replace(/Free Practice Tests for \d+ Certifications/g, `Free Practice Tests for ${n} Certifications`);
+  html = html.replace(/Free practice tests for \d+ certifications:/g, `Free practice tests for ${n} certifications:`);
+
+  // 2. Patch the JSON-LD block by parsing it, updating the drift-prone nodes, and re-stringifying
+  const ldRegex = /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/;
+  const m = html.match(ldRegex);
+  if (!m) return;
+
+  let data;
+  try {
+    data = JSON.parse(m[2]);
+  } catch (e) {
+    console.warn('  ! index.html JSON-LD did not parse — skipping home auto-update');
+    return;
+  }
+
+  for (const node of (data['@graph'] || [])) {
+    // WebApplication.offers.offerCount
+    if (node['@type'] === 'WebApplication' && node.offers) {
+      node.offers.offerCount = String(n);
+    }
+    // FAQ "Which certifications does QuizBuffet cover?" answer
+    if (node['@type'] === 'FAQPage') {
+      for (const q of (node.mainEntity || [])) {
+        if (q.name === 'Which certifications does QuizBuffet cover?') {
+          q.acceptedAnswer.text = buildCertCoverageText(sorted);
+        }
+      }
+    }
+    // Full ItemList
+    if (node['@type'] === 'ItemList') {
+      node.itemListElement = sorted.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: `${c.code} Practice Test — ${shortCertNameForListing(c)}`,
+        url: `${SITE}/${c.slug}/`,
+      }));
+    }
+  }
+
+  const newLd = JSON.stringify(data, null, 2);
+  html = html.replace(ldRegex, `$1\n  ${newLd}\n  $3`);
+
+  fs.writeFileSync(homePath, html);
+}
+
+function shortCertNameForListing(cert) {
+  return cert.name
+    .replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '')
+    .replace(/\s*\([^)]+\)\s*$/, '')   // strip trailing parenthetical, e.g. " (BLS)"
+    .replace(/–|—/g, '-')
+    .trim();
+}
+
+function buildCertCoverageText(sortedCerts) {
+  // Group by vendor for readability
+  const byVendor = {};
+  for (const c of sortedCerts) {
+    (byVendor[c.vendor] ||= []).push(c);
+  }
+  const vendorOrder = ['AWS', 'CompTIA', 'Cisco', 'Microsoft', 'ISC2', 'PeopleCert', 'FAA', 'NASM', 'American Heart Association', 'OSHA', 'AWS / OSHA', 'PMI', 'Intuit'];
+  const segments = [];
+  for (const v of vendorOrder) {
+    if (!byVendor[v]) continue;
+    const list = byVendor[v];
+    const codes = list.map(c => c.code).join(', ');
+    segments.push(`${v} (${codes})`);
+    delete byVendor[v];
+  }
+  // Anything left (state boards, EPA, etc.)
+  for (const [v, list] of Object.entries(byVendor)) {
+    const codes = list.map(c => c.code).join(', ');
+    segments.push(`${v} (${codes})`);
+  }
+  return `QuizBuffet covers ${sortedCerts.length} live certifications: ${segments.join('; ')}. More certifications across cybersecurity, healthcare, trades, project management, and other industries are coming soon.`;
+}
+
 // Main
 let generated = 0;
 const perCertCounts = {};
@@ -986,5 +1077,8 @@ const counts = {
 };
 fs.writeFileSync(path.join(ROOT, 'data', 'counts.json'), JSON.stringify(counts));
 console.log(`  ✓ data/counts.json (${grandTotal.toLocaleString()} questions across ${certifications.length} certs)`);
+
+updateHomeIndex(certifications);
+console.log(`  ✓ index.html (cert count + ItemList + FAQ + offerCount synced to ${certifications.length} live certs)`);
 
 console.log(`\nGenerated ${generated} live cert pages + ${csGenerated} coming-soon stubs.`);

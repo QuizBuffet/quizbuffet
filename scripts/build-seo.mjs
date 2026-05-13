@@ -109,6 +109,119 @@ function buildOgSvg(cert) {
 </svg>`;
 }
 
+// Salary data per cert: { collar, salary: { low, mid, high, currency }, notes, lastUpdated, sources }
+const SALARIES = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'salaries.json'), 'utf8')); }
+  catch { return {}; }
+})();
+
+function fmtUsd(n) { return '$' + Math.round(n / 1000) + 'k'; }
+
+// First-draft long-form prose for a cert. Author can override any field by
+// setting cert.guide.<field> on the cert metadata. Otherwise we auto-generate
+// from cert metadata + salary data so every cert page has unique substantive
+// long-form content (article-style — eligible for informational queries and
+// the byline-date pipeline).
+function buildCertGuideSections(cert) {
+  const g = cert.guide || {};
+  const year = new Date().getFullYear();
+  const sortedDomains = [...cert.domains].sort((a, b) => (b.weight || 0) - (a.weight || 0));
+  const heaviest = sortedDomains[0];
+  const lightest = sortedDomains[sortedDomains.length - 1];
+  const sal = SALARIES[cert.slug];
+
+  const whyItMatters = g.whyItMatters || (
+    `${cert.name} is one of the most recognized credentials issued by ${cert.vendor}, ` +
+    `and ${year} hiring data continues to show ${cert.code} on job postings as either required ` +
+    `or strongly preferred for the roles it targets. The certification validates that you can ` +
+    `apply real working knowledge — not just recall facts — across ${cert.domains.length} distinct ` +
+    `exam domains${heaviest ? `, with the largest weight on ${heaviest.name}` : ''}. For candidates competing in the ${cert.vendor} ecosystem, ${cert.code} is a ` +
+    `clear signal to a hiring manager that you have invested in measurable, third-party-verified competence.`
+  );
+
+  const whoShouldTake = g.whoShouldTake || (
+    `${cert.code} is most useful for professionals working in or moving toward the ${cert.vendor} ecosystem. ` +
+    `${cert.tagline ? `In short: ${cert.tagline.replace(/\.$/, '')}. ` : ''}` +
+    `If you are early in your career, ${cert.code} is one of the fastest credentials to add to a résumé that recruiters actively screen for. ` +
+    `If you are mid-career, it formalizes the skills you already use day-to-day and unlocks roles that gate on it. ` +
+    `If you are switching tracks, it gives you a structured curriculum — exactly what to study, in what order, weighted by what the real exam tests.`
+  );
+
+  const examStructure = g.examStructure || (
+    `The ${cert.name} exam is organized into ${cert.domains.length} domains, each weighted by the official ${cert.vendor} ` +
+    `exam guide. The heaviest weighting is ${heaviest.name} at <strong>${heaviest.weight}% of the exam</strong> — that is where you ` +
+    `should spend the most preparation time. ${lightest && lightest !== heaviest ? `The lightest is ${lightest.name} at ${lightest.weight}%, ` +
+    `meaning you can dedicate roughly proportional review time without over-investing. ` : ''}` +
+    `${cert.details ? `<br><br>Format details: ${cert.details}. ` : ''}` +
+    `Following the domain weights is the single biggest leverage point candidates miss — many over-study lower-weighted material because it feels comfortable.`
+  );
+
+  const studyPlan = g.studyPlan || (
+    `A practical four-step plan for ${cert.code}:`
+  );
+  const studyPlanSteps = g.studyPlanSteps || [
+    `Read the official ${cert.vendor} exam guide for ${cert.code} and write down every sub-objective. This becomes your study checklist.`,
+    `Use the domain practice quizzes on this page in weight order (heaviest first). Aim for 80% on each domain before moving on.`,
+    `When you miss a question, read the explanation for every wrong answer — that contrastive learning is where understanding compounds.`,
+    `Once every domain is at 80%+, take the Mix Quiz repeatedly to simulate real exam conditions across all topics.`,
+  ];
+
+  const career = g.career || (sal ? (
+    `Holders of ${cert.code} in the US currently see compensation in the range of ` +
+    `<strong>${fmtUsd(sal.salary.low)}–${fmtUsd(sal.salary.high)}</strong> per year, with median around <strong>${fmtUsd(sal.salary.mid)}</strong>. ` +
+    `${sal.notes ? sal.notes + ' ' : ''}` +
+    `Salary varies by region, employer size, and complementary skills, but the ${cert.code} credential consistently lifts the floor of what you can negotiate against.`
+  ) : (
+    `${cert.code} opens doors to roles in the ${cert.vendor} ecosystem where the certification appears as a hiring filter. ` +
+    `Compensation varies by region and employer, but the credential consistently lifts the floor of what you can negotiate against.`
+  ));
+
+  const pitfalls = g.pitfalls || (
+    `The three traps that kill ${cert.code} candidates: (1) over-memorizing acronyms instead of practicing the application of concepts in scenarios — ` +
+    `the exam is scenario-driven, not a vocab quiz. (2) Skipping the heaviest-weighted domain because it feels less interesting — you can fail the whole exam ` +
+    `by neglecting ${heaviest.name}. (3) Not timing practice sessions — the exam has a real clock, and pacing is its own skill. Build timing into your last two weeks of prep.`
+  );
+
+  return {
+    whyItMatters, whoShouldTake, examStructure,
+    studyPlan, studyPlanSteps,
+    career, pitfalls,
+  };
+}
+
+function buildCertGuideHtml(cert) {
+  const s = buildCertGuideSections(cert);
+  const slug = cert.slug;
+  return `
+    <section class="cert-guide">
+      <header class="cert-guide-header">
+        <h2 class="cert-section-title">The ${htmlEscape(cert.code)} Guide</h2>
+        <p class="cert-guide-subtitle">Everything you need to know before sitting for ${htmlEscape(cert.name)}</p>
+      </header>
+
+      <h3 id="${slug}-why-it-matters">Why ${htmlEscape(cert.code)} matters in ${new Date().getFullYear()}</h3>
+      <p>${s.whyItMatters}</p>
+
+      <h3 id="${slug}-who-should-take">Who should take ${htmlEscape(cert.code)}</h3>
+      <p>${s.whoShouldTake}</p>
+
+      <h3 id="${slug}-exam-structure">Exam structure and difficulty</h3>
+      <p>${s.examStructure}</p>
+
+      <h3 id="${slug}-study-plan">How to prepare</h3>
+      <p>${s.studyPlan}</p>
+      <ol class="cert-guide-steps">
+        ${s.studyPlanSteps.map(step => `<li>${step}</li>`).join('\n        ')}
+      </ol>
+
+      <h3 id="${slug}-career">Career outcomes and salary</h3>
+      <p>${s.career}</p>
+
+      <h3 id="${slug}-pitfalls">Common pitfalls</h3>
+      <p>${s.pitfalls}</p>
+    </section>`;
+}
+
 function buildCertHtml(cert) {
   // Count questions per domain
   let total = 0;
@@ -174,6 +287,24 @@ function buildCertHtml(cert) {
           'acceptedAnswer': { '@type': 'Answer', 'text': item.answer },
         })),
       }] : []),
+      {
+        '@type': 'Article',
+        'headline': `The ${cert.code} Guide — ${shortName}`,
+        'description': desc,
+        'url': url,
+        'datePublished': TODAY,
+        'dateModified': TODAY,
+        'inLanguage': 'en-US',
+        'image': ogImage,
+        'author': { '@type': 'Organization', 'name': 'QuizBuffet', 'url': SITE },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'QuizBuffet',
+          'url': SITE,
+          'logo': { '@type': 'ImageObject', 'url': `${SITE}/icons/favicon.svg` },
+        },
+        'mainEntityOfPage': { '@type': 'WebPage', '@id': url },
+      },
     ],
   };
 
@@ -279,6 +410,13 @@ ${JSON.stringify(jsonLd, null, 2)}
       <p class="cert-byline"><time datetime="${TODAY}">Last updated: ${TODAY_DISPLAY}</time></p>
     </section>
     <div id="app"></div>
+    <article class="cert-guide-content">
+      ${buildCertGuideHtml(cert)}
+      <p class="cert-byline cert-guide-byline">
+        <time datetime="${TODAY}">Published and last updated: ${TODAY_DISPLAY}</time>
+        · By <span>QuizBuffet Editorial</span>
+      </p>
+    </article>
   </main>
   <div id="footer" role="contentinfo"></div>
   <script type="module" src="/js/app.js"></script>

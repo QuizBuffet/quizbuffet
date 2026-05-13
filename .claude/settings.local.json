@@ -76,7 +76,9 @@
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('liveCerts:', d['liveCerts']\\); print\\('comingSoonCerts:', d['comingSoonCerts']\\); print\\('total:', d['total']\\); print\\('bls in perCert:', 'bls' in d['perCert']\\); print\\('bls count:', d['perCert'].get\\('bls', 'not present'\\)\\)\")",
       "Bash(chmod +x /Users/gradikayamba/quizbuffet/docs/validate-domain.py)",
       "Bash(python3 /Users/gradikayamba/quizbuffet/docs/validate-domain.py /Users/gradikayamba/quizbuffet/data/certifications/bls/)",
-      "Bash(awk \"{print \\\\$5, \\\\$9}\")"
+      "Bash(awk \"{print \\\\$5, \\\\$9}\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(list\\(d.keys\\(\\)\\)[:3]\\); first=list\\(d.items\\(\\)\\)[0]; print\\('sample:', first[0], '→', first[1]\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('data/salaries.json'\\)\\); print\\('keys:', list\\(d.keys\\(\\)\\)[:5]\\); print\\('sample:', d.get\\('bls'\\)\\)\")"
     ],
     "additionalDirectories": [
       "/tmp"

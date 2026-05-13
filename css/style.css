@@ -1724,6 +1724,56 @@ a:is(:hover, :active) { text-decoration: underline; }
 .cert-byline { font-size: 13px; color: var(--text-muted, #888); margin: 14px 0 0; letter-spacing: 0.02em; }
 .cert-byline time { font-variant-numeric: tabular-nums; }
 
+/* Long-form cert guide — article-style content below the practice-test dashboard.
+   Visible to both crawlers (in static HTML) and users (always rendered, not hidden by JS). */
+.cert-guide-content {
+  max-width: 760px;
+  margin: clamp(40px, 6vw, 64px) auto clamp(24px, 4vw, 40px);
+  padding: clamp(20px, 3vw, 28px) clamp(16px, 2vw, 24px) 0;
+  border-top: 1px solid var(--border-sub);
+}
+.cert-guide {
+  font-size: clamp(15px, 2.1vw, 16px);
+  line-height: 1.7;
+  color: var(--text);
+}
+.cert-guide-header { margin: 0 0 clamp(20px, 3vw, 28px); }
+.cert-guide-header .cert-section-title {
+  margin: 0 0 6px;
+}
+.cert-guide-subtitle {
+  font-size: clamp(14px, 1.9vw, 15px);
+  color: var(--text-muted);
+  margin: 0;
+  font-style: italic;
+}
+.cert-guide h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(18px, 2.6vw, 22px);
+  letter-spacing: -0.005em;
+  margin: clamp(24px, 3.5vw, 32px) 0 10px;
+  color: var(--text);
+}
+.cert-guide p {
+  margin: 0 0 14px;
+  line-height: 1.7;
+}
+.cert-guide-steps {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+.cert-guide-steps li {
+  margin: 0 0 10px;
+  line-height: 1.65;
+}
+.cert-guide-byline {
+  margin-top: clamp(28px, 4vw, 40px);
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-sub);
+  text-align: center;
+}
+
 /* === What you'll learn === */
 .cert-learn { margin: clamp(28px, 4vw, 40px) 0; }
 .cert-learn-lead { font-size: clamp(15px, 2.2vw, 16px); line-height: 1.6; color: var(--text-mid, #555); margin: 0 0 18px; max-width: 70ch; }

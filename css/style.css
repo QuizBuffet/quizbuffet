@@ -1282,6 +1282,7 @@ a:active, button:active { opacity: 0.75; }
   background-size: 100% 100%;
   animation: aurora-a 18s ease-in-out infinite;
   opacity: 1;
+  will-change: transform;
 }
 [data-color="navy"] body::after {
   background:
@@ -1290,6 +1291,7 @@ a:active, button:active { opacity: 0.75; }
   background-size: 100% 100%;
   animation: aurora-b 22s ease-in-out infinite;
   opacity: 1;
+  will-change: transform;
 }
 
 /* Terminal — Graph Paper */
@@ -1338,83 +1340,77 @@ a:active, button:active { opacity: 0.75; }
   opacity: 1;
 }
 
-/* Pink — Animated Mesh Gradient */
+/* Pink — Animated Mesh Gradient.
+   Switched from background-position (CPU paint per frame) to transform (GPU
+   composite). Pseudo-element is oversized so the slide motion stays within
+   the visible viewport. */
 @keyframes mesh-a {
-  0%, 100% { background-position: 0% 50%; }
-  50%       { background-position: 100% 50%; }
+  0%, 100% { transform: translate3d(-4%, 0, 0); }
+  50%      { transform: translate3d( 4%, 0, 0); }
 }
 @keyframes mesh-b {
-  0%, 100% { background-position: 100% 0%; }
-  50%       { background-position: 0% 100%; }
+  0%, 100% { transform: translate3d( 4%, -4%, 0); }
+  50%      { transform: translate3d(-4%,  4%, 0); }
 }
 [data-color="pink"] body::before {
   background:
     radial-gradient(ellipse 65% 48% at 18% 28%, rgba(236,72,153,0.22) 0%, transparent 60%),
     radial-gradient(ellipse 58% 42% at 82% 72%, rgba(190,24,93,0.18) 0%, transparent 55%),
     radial-gradient(ellipse 48% 58% at 52% 8%, rgba(244,114,182,0.14) 0%, transparent 65%);
-  background-size: 200% 200%;
+  background-size: 100% 100%;
   animation: mesh-a 14s ease-in-out infinite;
   opacity: 1;
+  will-change: transform;
 }
 [data-color="pink"] body::after {
   background:
     radial-gradient(ellipse 52% 44% at 72% 18%, rgba(249,168,212,0.12) 0%, transparent 60%),
     radial-gradient(ellipse 44% 52% at 28% 82%, rgba(131,24,67,0.16) 0%, transparent 55%);
-  background-size: 200% 200%;
+  background-size: 100% 100%;
   animation: mesh-b 18s ease-in-out infinite;
   opacity: 1;
+  will-change: transform;
 }
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
 html, body { background-color: var(--bg); }
 
 /* Aged-parchment coffee stains — home page on buffet light theme only.
-   Pure CSS radial gradients (no SVG) for reliable cross-browser rendering. */
+   Painted to a GPU-promoted fixed pseudo-element. The layer is composited
+   (no repaint) on scroll, eliminating the scroll-jank we'd get from
+   `background-attachment: fixed` on body. */
 [data-color="buffet"]:not([data-theme="dark"]) body[data-page="home"] {
+  position: relative;
+}
+[data-color="buffet"]:not([data-theme="dark"]) body[data-page="home"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  /* Force GPU layer — paint once, composite on every scroll */
+  transform: translateZ(0);
+  will-change: transform;
   background-color: var(--bg);
   background-image:
-    /* Top-left: coffee cup ring */
     radial-gradient(ellipse 130px 120px at 12% 18%, transparent 55%, rgba(92, 58, 31, 0.55) 65%, rgba(92, 58, 31, 0.25) 78%, transparent 92%),
     radial-gradient(ellipse 100px 90px  at 12% 18%, rgba(92, 58, 31, 0.30), transparent 70%),
-    /* Top-center smudge */
     radial-gradient(ellipse 180px 80px  at 38%  7%, rgba(61, 36, 16, 0.42), transparent 75%),
-    radial-gradient(ellipse 110px 50px  at 52%  4%, rgba(107, 66, 38, 0.36), transparent 80%),
-    /* Upper-right big splash */
     radial-gradient(ellipse 220px 140px at 88% 14%, rgba(92, 58, 31, 0.48), transparent 72%),
-    radial-gradient(ellipse 70px  40px  at 96% 22%, rgba(61, 36, 16, 0.50), transparent 75%),
-    /* Mid-left drip */
     radial-gradient(ellipse 110px 180px at 3%  48%, rgba(61, 36, 16, 0.40), transparent 75%),
-    /* Center blob */
     radial-gradient(ellipse 180px 110px at 48% 50%, rgba(107, 66, 38, 0.35), transparent 75%),
-    radial-gradient(ellipse 90px  60px  at 55% 42%, rgba(92, 58, 31, 0.32), transparent 80%),
-    /* Mid-right drip */
     radial-gradient(ellipse 80px  170px at 97% 54%, rgba(92, 58, 31, 0.46), transparent 75%),
-    /* Lower-left big coffee blot */
     radial-gradient(ellipse 200px 140px at 10% 82%, rgba(107, 66, 38, 0.46), transparent 72%),
-    radial-gradient(ellipse 75px  55px  at 4%  92%, rgba(92, 58, 31, 0.42), transparent 75%),
-    /* Lower-center fade */
     radial-gradient(ellipse 180px 100px at 56% 92%, rgba(61, 36, 16, 0.42), transparent 72%),
-    radial-gradient(ellipse 110px 60px  at 40% 87%, rgba(107, 66, 38, 0.32), transparent 78%),
-    /* Lower-right ring */
     radial-gradient(ellipse 130px 124px at 89% 84%, transparent 55%, rgba(92, 58, 31, 0.52) 64%, rgba(92, 58, 31, 0.22) 78%, transparent 92%),
-    /* Small splatter drops scattered */
     radial-gradient(ellipse 34px 22px  at 22% 28%, rgba(92, 58, 31, 0.42), transparent 75%),
-    radial-gradient(ellipse 18px 14px  at 29% 39%, rgba(61, 36, 16, 0.55), transparent 75%),
     radial-gradient(ellipse 26px 20px  at 20% 61%, rgba(92, 58, 31, 0.38), transparent 75%),
-    radial-gradient(ellipse 22px 16px  at 33% 72%, rgba(61, 36, 16, 0.48), transparent 75%),
     radial-gradient(ellipse 30px 22px  at 62% 20%, rgba(107, 66, 38, 0.45), transparent 75%),
-    radial-gradient(ellipse 20px 16px  at 70% 35%, rgba(92, 58, 31, 0.55), transparent 75%),
     radial-gradient(ellipse 38px 28px  at 77% 61%, rgba(61, 36, 16, 0.40), transparent 75%),
-    radial-gradient(ellipse 24px 18px  at 65% 76%, rgba(92, 58, 31, 0.50), transparent 75%),
     radial-gradient(ellipse 40px 24px  at 26%  6%, rgba(107, 66, 38, 0.42), transparent 75%),
-    radial-gradient(ellipse 28px 18px  at 78%  4%, rgba(92, 58, 31, 0.50), transparent 75%),
-    radial-gradient(ellipse 22px 16px  at 98% 74%, rgba(61, 36, 16, 0.50), transparent 75%),
-    radial-gradient(ellipse 26px 18px  at 2%  30%, rgba(107, 66, 38, 0.48), transparent 75%),
-    radial-gradient(ellipse 16px 11px  at 45% 26%, rgba(61, 36, 16, 0.55), transparent 75%),
-    radial-gradient(ellipse 14px 10px  at 56% 59%, rgba(92, 58, 31, 0.55), transparent 75%);
+    radial-gradient(ellipse 22px 16px  at 98% 74%, rgba(61, 36, 16, 0.50), transparent 75%);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: clamp(15px, 4vw, 18px); color: var(--text); line-height: 1.6; }
 #main-content { background: var(--bg); display: flow-root; }
@@ -2640,7 +2636,15 @@ a:is(:hover, :active) { text-decoration: underline; }
 }
 
 .footer-orbs { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
-.footer-orb  { position: absolute; border-radius: 50%; filter: blur(60px); }
+/* Orbs: blur reduced 60→32px, GPU-promoted so the scale+opacity animation
+   composites a cached blurred texture instead of re-rasterizing per frame. */
+.footer-orb  {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(32px);
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
 .footer-orb:nth-child(1) { width: 420px; height: 420px; top: -80px;  left: -60px;  background: var(--footer-orb-a); animation: orb-a 9s ease-in-out infinite; }
 .footer-orb:nth-child(2) { width: 260px; height: 260px; bottom: -40px; right: 5%;  background: var(--footer-orb-b); animation: orb-b 6s ease-in-out infinite; }
 .footer-orb:nth-child(3) { width: 180px; height: 180px; top: 30%;    right: 25%;   background: var(--footer-orb-c); animation: orb-c 4s ease-in-out infinite; }

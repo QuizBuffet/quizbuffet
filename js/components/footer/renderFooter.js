@@ -20,6 +20,7 @@ const SWATCHES = [
   { id: 'amber',    label: 'Indigo Amber'   },
   { id: 'classic',  label: 'Classic'        },
   { id: 'pink',     label: 'Plush Pink'     },
+  { id: 'neon',     label: 'Neon'           },
 ];
 
 export async function renderFooter() {

@@ -67,6 +67,7 @@ export async function renderNav(active) {
     { id: 'amber',    label: 'Indigo Amber'   },
     { id: 'classic',  label: 'Classic'        },
     { id: 'pink',     label: 'Plush Pink'     },
+    { id: 'neon',     label: 'Neon'           },
   ];
 
   const swatches = SWATCHES.map(({ id, label }) =>

@@ -555,90 +555,90 @@ a:active, button:active { opacity: 0.75; }
 
 /* ── Buffet Restaurant — light ─────────────────────────────────────────────── */
 [data-color="buffet"] {
-  --bg:              #fdf6e8;
-  --surface:         #f5e8cc;
-  --subtle:          #ecdfc0;
-  --text:            #2c1810;
-  --text-mid:        #5c3a28;
-  --text-muted:      #8b6348;
-  --text-dim:        #b8967a;
-  --border:          #dfc99a;
-  --border-mid:      #c49050;
-  --border-sub:      #ecdfc0;
+  --bg:              #ece0c2;
+  --surface:         #e0cfa9;
+  --subtle:          #d4c195;
+  --text:            #1f2a4e;
+  --text-mid:        #3d4970;
+  --text-muted:      #5f6a8a;
+  --text-dim:        #8a92a8;
+  --border:          #c5b58c;
+  --border-mid:      #b09870;
+  --border-sub:      #d8c9a3;
   --link:            #8b1a1a;
-  --link-hover-bg:   #f5e8cc;
-  --nav-bg:          #2c1810;
-  --nav-gradient:    linear-gradient(135deg, #1a0d06 0%, #2c1810 55%, #3d2518 100%);
-  --nav-sub:         #1a0d06;
-  --nav-text:        #d4a96a;
-  --nav-track:       #4d2e18;
-  --track:           #e8d4a0;
-  --btn-bg:          #8b1a1a;
-  --btn-hover:       #6d1414;
-  --featured-bg:     #f5e8cc;
-  --featured-border: #c49050;
-  --correct-bg:      #f0f8ec;
-  --wrong-bg:        #fdf0f0;
-  --accent:          #b45309;
-  --accent-strong:   #92400e;
-  --accent-text:     #92400e;
-  --accent-soft:     rgba(180, 83, 9, 0.10);
-  --accent-soft-2:   rgba(180, 83, 9, 0.07);
-  --accent-glow:     rgba(180, 83, 9, 0.55);
-  --footer-bg:       #1a0d06;
-  --footer-border:   #3d2518;
-  --footer-accent:   #c8972a;
-  --footer-cert-color: #d4a96a;
-  --footer-cert-bd:  #3d2518;
-  --footer-cert-bg:  rgba(200,151,42,0.08);
+  --link-hover-bg:   #e0cfa9;
+  --nav-bg:          #1f2a4e;
+  --nav-gradient:    linear-gradient(135deg, #16203b 0%, #1f2a4e 55%, #2a3a66 100%);
+  --nav-sub:         #16203b;
+  --nav-text:        #d4b15a;
+  --nav-track:       #2a3a66;
+  --track:           #d4c195;
+  --btn-bg:          #1f2a4e;
+  --btn-hover:       #2a3a66;
+  --featured-bg:     #e0cfa9;
+  --featured-border: #b09870;
+  --correct-bg:      #f0f5e8;
+  --wrong-bg:        #fdf0ee;
+  --accent:          #c89a3d;
+  --accent-strong:   #a87f2c;
+  --accent-text:     #8a6722;
+  --accent-soft:     rgba(200, 154, 61, 0.12);
+  --accent-soft-2:   rgba(200, 154, 61, 0.07);
+  --accent-glow:     rgba(200, 154, 61, 0.55);
+  --footer-bg:       #16203b;
+  --footer-border:   #2a3a66;
+  --footer-accent:   #d4b15a;
+  --footer-cert-color: #d4b15a;
+  --footer-cert-bd:  #2a3a66;
+  --footer-cert-bg:  rgba(212, 177, 90, 0.10);
   --footer-line-a:   #8b1a1a;
-  --footer-line-b:   #c8972a;
-  --footer-line-c:   #5c3a28;
-  --footer-orb-a:    #3d1808;
-  --footer-orb-b:    #4d2e18;
-  --footer-orb-c:    #6d3810;
-  --footer-orb-d:    #2c1810;
-  --footer-text:     #e0e0e0;
-  --footer-text-sub: #c0c0c0;
-  --footer-text-dim: #888888;
+  --footer-line-b:   #d4b15a;
+  --footer-line-c:   #3d4970;
+  --footer-orb-a:    #1f2a4e;
+  --footer-orb-b:    #2a3a66;
+  --footer-orb-c:    #3d4970;
+  --footer-orb-d:    #16203b;
+  --footer-text:     #ece0c2;
+  --footer-text-sub: #c5b58c;
+  --footer-text-dim: #8a92a8;
 }
-/* Buffet — dark */
+/* Buffet — dark (deep navy-black with warm gold + cream type) */
 [data-color="buffet"][data-theme="dark"] {
-  --bg:              #1a0f08;
-  --surface:         #251508;
-  --subtle:          #2c1a0c;
-  --text:            #f0e0c8;
-  --text-mid:        #d4b890;
-  --text-muted:      #a87850;
-  --text-dim:        #7a5838;
-  --border:          #3d2518;
-  --border-mid:      #5c3820;
-  --border-sub:      #2c1a0c;
-  --link:            #e09050;
-  --link-hover-bg:   #2c1a0c;
-  --nav-bg:          #100806;
-  --nav-sub:         #0a0503;
-  --nav-text:        #c8972a;
-  --nav-track:       #2c1810;
-  --track:           #3d2518;
-  --btn-bg:          #8b1a1a;
-  --btn-hover:       #a02020;
-  --featured-bg:     #251508;
-  --featured-border: #5c3820;
-  --correct-bg:      #0a180a;
-  --wrong-bg:        #180a0a;
-  --accent:          #d97706;
-  --accent-strong:   #f59e0b;
-  --accent-text:     #fbbf24;
-  --accent-soft:     rgba(217, 119, 6, 0.16);
-  --accent-soft-2:   rgba(217, 119, 6, 0.10);
-  --accent-glow:     rgba(217, 119, 6, 0.55);
-  --footer-bg:       #0a0503;
-  --footer-border:   #2c1810;
-  --footer-orb-a:    #2c1810;
-  --footer-orb-b:    #3d2518;
-  --footer-orb-c:    #4d3020;
-  --footer-orb-d:    #1a0d06;
+  --bg:              #131a2d;
+  --surface:         #1a2440;
+  --subtle:          #1f2a4e;
+  --text:            #ece0c2;
+  --text-mid:        #c5b58c;
+  --text-muted:      #9aa4ba;
+  --text-dim:        #6b7590;
+  --border:          #2a3a66;
+  --border-mid:      #3d4970;
+  --border-sub:      #1f2a4e;
+  --link:            #e09060;
+  --link-hover-bg:   #1f2a4e;
+  --nav-bg:          #0c1322;
+  --nav-sub:         #060b18;
+  --nav-text:        #d4b15a;
+  --nav-track:       #1f2a4e;
+  --track:           #2a3a66;
+  --btn-bg:          #c89a3d;
+  --btn-hover:       #d4b15a;
+  --featured-bg:     #1a2440;
+  --featured-border: #3d4970;
+  --correct-bg:      #0d1a14;
+  --wrong-bg:        #1a0d10;
+  --accent:          #d4b15a;
+  --accent-strong:   #e6c476;
+  --accent-text:     #f1d68a;
+  --accent-soft:     rgba(212, 177, 90, 0.18);
+  --accent-soft-2:   rgba(212, 177, 90, 0.10);
+  --accent-glow:     rgba(212, 177, 90, 0.55);
+  --footer-bg:       #060b18;
+  --footer-border:   #1f2a4e;
+  --footer-orb-a:    #131a2d;
+  --footer-orb-b:    #1a2440;
+  --footer-orb-c:    #2a3a66;
+  --footer-orb-d:    #0c1322;
 }
 
 /* ── Buffet — restaurant menu personality ──────────────────────────────────── */
@@ -894,6 +894,16 @@ a:active, button:active { opacity: 0.75; }
 
 /* ── Base ──────────────────────────────────────────────────────────────────── */
 html, body { background-color: var(--bg); }
+
+/* Aged-parchment coffee stains — home page on buffet light theme only */
+[data-color="buffet"]:not([data-theme="dark"]) body[data-page="home"] {
+  background-image: url('/assets/home-stains.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--bg);
+}
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; font-size: clamp(15px, 4vw, 18px); color: var(--text); line-height: 1.6; }
 #main-content { background: var(--bg); display: flow-root; }
 
@@ -1797,6 +1807,7 @@ a:is(:hover, :active) { text-decoration: underline; }
 @keyframes featured-fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ── Coming-soon marquee ──────────────────────────────────────────────────── */
+
 .home-sponsor { display: flex; align-items: center; gap: 12px; padding: 12px 16px; margin: 0 0 20px; border: 1px solid var(--border-sub); border-left: 4px solid #c47828; border-radius: 8px; background: var(--surface, rgba(196,120,40,0.04)); text-decoration: none !important; color: var(--text); transition: background 0.15s, border-color 0.15s; flex-wrap: wrap; }
 .home-sponsor:hover { background: rgba(196,120,40,0.08); border-left-color: #a85e1b; }
 .home-sponsor-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #c47828; flex-shrink: 0; }

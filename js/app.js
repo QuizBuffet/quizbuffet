@@ -109,6 +109,7 @@ function getPage() {
 
 async function route() {
   const page = getPage();
+  document.body.dataset.page = page;
   const isComingSoon = document.documentElement.dataset.comingSoon === '1';
 
   // Coming-soon pages render their landing in #seo-static and leave #app empty;

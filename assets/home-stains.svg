@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="rough" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" seed="11"/>
+      <feDisplacementMap in="SourceGraphic" scale="48"/>
+    </filter>
+    <filter id="splatter" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="22"/>
+    </filter>
+
+    <radialGradient id="A" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#5c3a1f" stop-opacity="0.62"/>
+      <stop offset="40%"  stop-color="#5c3a1f" stop-opacity="0.36"/>
+      <stop offset="75%"  stop-color="#5c3a1f" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#5c3a1f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="B" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#3d2410" stop-opacity="0.58"/>
+      <stop offset="45%"  stop-color="#3d2410" stop-opacity="0.30"/>
+      <stop offset="80%"  stop-color="#3d2410" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#3d2410" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="C" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#6b4226" stop-opacity="0.55"/>
+      <stop offset="50%"  stop-color="#6b4226" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#6b4226" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ring" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#5c3a1f" stop-opacity="0"/>
+      <stop offset="60%"  stop-color="#5c3a1f" stop-opacity="0"/>
+      <stop offset="70%"  stop-color="#5c3a1f" stop-opacity="0.55"/>
+      <stop offset="82%"  stop-color="#5c3a1f" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#5c3a1f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Big blots and rings, organic edges -->
+  <g filter="url(#rough)">
+    <!-- Top-left coffee cup ring + body -->
+    <ellipse cx="220"  cy="220" rx="160" ry="148" fill="url(#ring)"/>
+    <ellipse cx="220"  cy="220" rx="120" ry="110" fill="url(#A)"/>
+
+    <!-- Top-center smudge -->
+    <ellipse cx="700"  cy="120" rx="180" ry="80"  fill="url(#B)"/>
+    <ellipse cx="950"  cy="60"  rx="120" ry="50"  fill="url(#C)"/>
+
+    <!-- Upper-right big splash -->
+    <ellipse cx="1620" cy="180" rx="220" ry="140" fill="url(#A)"/>
+    <ellipse cx="1820" cy="240" rx="80"  ry="50"  fill="url(#B)"/>
+
+    <!-- Mid-left -->
+    <ellipse cx="60"   cy="540" rx="130" ry="180" fill="url(#B)"/>
+
+    <!-- Center -->
+    <ellipse cx="900"  cy="520" rx="170" ry="110" fill="url(#C)" opacity="0.85"/>
+    <ellipse cx="1050" cy="450" rx="90"  ry="60"  fill="url(#A)" opacity="0.7"/>
+
+    <!-- Mid-right drip -->
+    <ellipse cx="1880" cy="580" rx="80"  ry="160" fill="url(#A)"/>
+
+    <!-- Lower-left big blot -->
+    <ellipse cx="180"  cy="880" rx="200" ry="140" fill="url(#C)"/>
+    <ellipse cx="80"   cy="980" rx="80"  ry="55"  fill="url(#A)"/>
+
+    <!-- Lower-center large faded -->
+    <ellipse cx="1080" cy="970" rx="180" ry="100" fill="url(#B)"/>
+    <ellipse cx="780"  cy="930" rx="110" ry="60"  fill="url(#C)" opacity="0.7"/>
+
+    <!-- Lower-right ring -->
+    <ellipse cx="1700" cy="900" rx="130" ry="124" fill="url(#ring)"/>
+    <ellipse cx="1700" cy="900" rx="90"  ry="80"  fill="url(#A)" opacity="0.5"/>
+  </g>
+
+  <!-- Smaller splatters with chunkier displacement, scattered everywhere -->
+  <g filter="url(#splatter)">
+    <ellipse cx="430"  cy="300" rx="34" ry="22" fill="#5c3a1f" opacity="0.42"/>
+    <ellipse cx="560"  cy="420" rx="18" ry="14" fill="#3d2410" opacity="0.55"/>
+    <ellipse cx="380"  cy="660" rx="26" ry="20" fill="#5c3a1f" opacity="0.38"/>
+    <ellipse cx="640"  cy="780" rx="22" ry="16" fill="#3d2410" opacity="0.48"/>
+    <ellipse cx="1200" cy="220" rx="30" ry="22" fill="#6b4226" opacity="0.45"/>
+    <ellipse cx="1340" cy="380" rx="20" ry="16" fill="#5c3a1f" opacity="0.55"/>
+    <ellipse cx="1480" cy="660" rx="38" ry="28" fill="#3d2410" opacity="0.40"/>
+    <ellipse cx="1240" cy="820" rx="24" ry="18" fill="#5c3a1f" opacity="0.50"/>
+    <ellipse cx="500"  cy="60"  rx="40" ry="24" fill="#6b4226" opacity="0.42"/>
+    <ellipse cx="1500" cy="40"  rx="28" ry="18" fill="#5c3a1f" opacity="0.50"/>
+    <ellipse cx="320"  cy="1030" rx="32" ry="20" fill="#3d2410" opacity="0.45"/>
+    <ellipse cx="1380" cy="1020" rx="36" ry="22" fill="#5c3a1f" opacity="0.42"/>
+    <ellipse cx="1880" cy="800" rx="22" ry="16" fill="#3d2410" opacity="0.55"/>
+    <ellipse cx="40"   cy="320" rx="26" ry="18" fill="#6b4226" opacity="0.48"/>
+    <ellipse cx="860"  cy="280" rx="16" ry="11" fill="#3d2410" opacity="0.60"/>
+    <ellipse cx="1080" cy="640" rx="14" ry="10" fill="#5c3a1f" opacity="0.58"/>
+    <ellipse cx="720"  cy="640" rx="20" ry="14" fill="#3d2410" opacity="0.45"/>
+    <ellipse cx="1440" cy="500" rx="18" ry="12" fill="#5c3a1f" opacity="0.52"/>
+  </g>
+</svg>

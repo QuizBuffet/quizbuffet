@@ -35,6 +35,7 @@ import { cert as personalTrainerNasm } from './personal-trainer-nasm.js';
 import { cert as cprAed } from './cpr-aed.js';
 import { cert as quickbooksProAdvisor } from './quickbooks-proadvisor.js';
 import { cert as bls } from './bls.js';
+import { cert as cosmetologyLicense } from './cosmetology-license.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -74,4 +75,5 @@ export const certifications = [
   cprAed,
   quickbooksProAdvisor,
   bls,
+  cosmetologyLicense,
 ];

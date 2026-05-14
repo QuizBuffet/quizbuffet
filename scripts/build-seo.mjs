@@ -265,6 +265,8 @@ function buildCertHtml(cert) {
         'inLanguage': 'en-US',
         'dateModified': TODAY,
         'educationalCredentialAwarded': cert.name,
+        'learningResourceType': 'Practice Test',
+        'isAccessibleForFree': true,
         'teaches': cert.domains.map(d => d.name),
         'provider': {
           '@type': 'Organization',
@@ -284,6 +286,15 @@ function buildCertHtml(cert) {
           }] : []),
           ...cert.domains.map(d => ({ '@type': 'Thing', 'name': d.name })),
         ],
+        // hasPart links each domain quiz as a component of this Course — explicit
+        // hierarchy that helps Google decide which sub-pages to surface as sitelinks.
+        'hasPart': domainData.filter(d => d.count > 0).map(d => ({
+          '@type': 'Quiz',
+          'name': `${d.name} — ${cert.code} Practice Quiz`,
+          'url': `${SITE}/${cert.slug}/${d.slug}/`,
+          'numberOfItems': d.count,
+          'isAccessibleForFree': true,
+        })),
         'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
       },
       ...(faq.length ? [{
@@ -494,11 +505,21 @@ function buildDomainHtml(cert, domain, questions) {
         'name': `${domain.name} — ${cert.code} Practice Quiz`,
         'description': desc,
         'url': url,
+        'image': ogImage,
         'inLanguage': 'en-US',
         'dateModified': TODAY,
         'about': { '@type': 'Thing', 'name': domain.name },
         'educationalLevel': 'Professional certification',
+        'learningResourceType': 'Practice Quiz',
+        'isAccessibleForFree': true,
         'numberOfItems': count,
+        // Names the parent certification so Google can connect the quiz to the credential
+        'assesses': {
+          '@type': 'DefinedTerm',
+          'name': `${cert.name} — ${domain.name}`,
+          'inDefinedTermSet': cert.name,
+        },
+        'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
         'isPartOf': {
           '@type': 'Course',
           'name': `${cert.name} (${cert.code}) Free Practice Test`,

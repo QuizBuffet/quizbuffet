@@ -50,4 +50,5 @@ export const order = [
   'cpa-bar',
   'cpa-isc',
   'cpa-tcp',
+  'ceh',
 ];

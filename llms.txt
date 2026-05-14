@@ -51,6 +51,7 @@
 - [CPA — Business Analysis and Reporting (BAR) (BAR)](https://quizbuffet.com/cpa-bar/): Discipline section of the Uniform CPA Examination — business analysis, technical accounting, and state and local governments
 - [CPA — Information Systems and Controls (ISC) (ISC)](https://quizbuffet.com/cpa-isc/): Discipline section of the Uniform CPA Examination — IT audit, security, and SOC engagements
 - [CPA — Tax Compliance and Planning (TCP) (TCP)](https://quizbuffet.com/cpa-tcp/): Discipline section of the Uniform CPA Examination — advanced individual and entity tax compliance and planning
+- [Certified Ethical Hacker (CEH) (CEH)](https://quizbuffet.com/ceh/): EC-Council's ethical hacking certification — penetration testing, vulnerability assessment, and offensive security
 
 ## Coming soon
 - [Six Sigma Green Belt (SSGB)](https://quizbuffet.com/six-sigma-green-belt/) — coming soon (priority #1)
@@ -58,21 +59,21 @@
 - [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #3)
 - [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #4)
 - [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #5)
-- [Certified Ethical Hacker (CEH) (CEH v13)](https://quizbuffet.com/ceh/) — coming soon (priority #6)
-- [Systems Security Certified Practitioner (SSCP) (SSCP)](https://quizbuffet.com/sscp/) — coming soon (priority #7)
-- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #8)
-- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #9)
-- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #10)
-- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #11)
-- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #12)
-- [SHRM Certified Professional (SHRM-CP) (SHRM-CP)](https://quizbuffet.com/shrm-cp/) — coming soon (priority #13)
-- [Certified Associate in Project Management (CAPM) (CAPM)](https://quizbuffet.com/capm/) — coming soon (priority #14)
-- [Google Cybersecurity Professional Certificate (Google Cybersecurity)](https://quizbuffet.com/google-cybersecurity-certificate/) — coming soon (priority #15)
-- [Google Project Management Certificate (Google PM Cert)](https://quizbuffet.com/google-project-management-certificate/) — coming soon (priority #16)
-- [Google IT Support Professional Certificate (Google IT Support)](https://quizbuffet.com/google-it-support-certificate/) — coming soon (priority #17)
-- [Google Data Analytics Professional Certificate (Google Data Analytics)](https://quizbuffet.com/google-data-analytics-certificate/) — coming soon (priority #18)
-- [Google UX Design Professional Certificate (Google UX Design)](https://quizbuffet.com/google-ux-design-certificate/) — coming soon (priority #19)
-- [Cosmetology Instructor License (Instructor)](https://quizbuffet.com/cosmetology-instructor-license/) — coming soon (priority #20)
+- [Systems Security Certified Practitioner (SSCP) (SSCP)](https://quizbuffet.com/sscp/) — coming soon (priority #6)
+- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #7)
+- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #8)
+- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #9)
+- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #10)
+- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #11)
+- [SHRM Certified Professional (SHRM-CP) (SHRM-CP)](https://quizbuffet.com/shrm-cp/) — coming soon (priority #12)
+- [Certified Associate in Project Management (CAPM) (CAPM)](https://quizbuffet.com/capm/) — coming soon (priority #13)
+- [Google Cybersecurity Professional Certificate (Google Cybersecurity)](https://quizbuffet.com/google-cybersecurity-certificate/) — coming soon (priority #14)
+- [Google Project Management Certificate (Google PM Cert)](https://quizbuffet.com/google-project-management-certificate/) — coming soon (priority #15)
+- [Google IT Support Professional Certificate (Google IT Support)](https://quizbuffet.com/google-it-support-certificate/) — coming soon (priority #16)
+- [Google Data Analytics Professional Certificate (Google Data Analytics)](https://quizbuffet.com/google-data-analytics-certificate/) — coming soon (priority #17)
+- [Google UX Design Professional Certificate (Google UX Design)](https://quizbuffet.com/google-ux-design-certificate/) — coming soon (priority #18)
+- [Cosmetology Instructor License (Instructor)](https://quizbuffet.com/cosmetology-instructor-license/) — coming soon (priority #19)
+- [Salon and Shop Manager License (Salon Manager)](https://quizbuffet.com/cosmetology-salon-manager/) — coming soon (priority #20)
 
 ## Resources
 - [Sitemap](https://quizbuffet.com/sitemap.xml)

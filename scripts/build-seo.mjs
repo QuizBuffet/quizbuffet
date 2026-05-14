@@ -242,8 +242,14 @@ function buildCertHtml(cert) {
   const url = `${SITE}/${cert.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
-  const fullTitle = clipText(`${cert.code} Practice Test — ${shortName} | QuizBuffet`, 65);
-  const desc = clipText(`Free ${cert.code} practice test — ${total}+ questions across ${cert.domains.length} domains. Instant feedback, no signup. ${cert.tagline || ''}`.trim().replace(/\s+/g, ' '), 158);
+  // SEO leads with the question count — the strongest single signal we own for this query.
+  // Scaffolded certs with 0 questions fall back to the old "Practice Test" framing.
+  const fullTitle = total > 0
+    ? clipText(`${total}+ Free ${cert.code} Practice Questions — ${shortName} | QuizBuffet`, 65)
+    : clipText(`${cert.code} Practice Test — ${shortName} | QuizBuffet`, 65);
+  const desc = total > 0
+    ? clipText(`${total}+ free ${cert.code} practice questions across ${cert.domains.length} domains. Instant feedback, no signup. ${cert.tagline || ''}`.trim().replace(/\s+/g, ' '), 158)
+    : clipText(`Free ${cert.code} practice test — ${cert.domains.length} exam domains. ${cert.tagline || ''} Instant feedback, no signup.`.trim().replace(/\s+/g, ' '), 158);
 
   // JSON-LD: WebPage + Course + FAQPage + Breadcrumb
   const jsonLd = {
@@ -502,8 +508,13 @@ function buildDomainHtml(cert, domain, questions) {
   const ogImage = `${SITE}/icons/og/${cert.slug}-${domain.slug}.svg`;
   const domNum = domain.number ? `${domain.number} ` : '';
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
-  const fullTitle = clipText(`${domain.name} — ${cert.code} Practice Quiz | QuizBuffet`, 65);
-  const desc = clipText(`Free ${cert.code} ${domain.name} practice quiz — ${count} exam-style questions${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Instant feedback, no signup. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 158);
+  // Domain-page SEO also leads with the count. Empty domains fall back to the older framing.
+  const fullTitle = count > 0
+    ? clipText(`${count} Free ${cert.code} ${domain.name} Questions | QuizBuffet`, 65)
+    : clipText(`${domain.name} — ${cert.code} Practice Quiz | QuizBuffet`, 65);
+  const desc = count > 0
+    ? clipText(`${count} free ${cert.code} ${domain.name} practice questions${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Instant feedback, no signup. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 158)
+    : clipText(`${cert.code} ${domain.name} practice quiz coming soon${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 158);
 
   // Pick up to 3 sample questions (easy first) for static content
   const easy = questions.filter(q => q.difficulty === 'easy');

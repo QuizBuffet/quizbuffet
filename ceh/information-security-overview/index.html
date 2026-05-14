@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information Security and Ethical Hacking Overview — CEH Practice</title>
+  <meta name="description" content="CEH Information Security and Ethical Hacking Overview practice quiz coming soon (6% of the exam). Part of the Certified Ethical Hacker (CEH) practice test.">
+  <link rel="canonical" href="https://quizbuffet.com/ceh/information-security-overview/">
+  <meta name="robots" content="noindex, follow">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="QuizBuffet">
+  <meta property="og:title"       content="Information Security and Ethical Hacking Overview — CEH Practice">
+  <meta property="og:description" content="CEH Information Security and Ethical Hacking Overview practice quiz coming soon (6% of the exam). Part of the Certified Ethical Hacker (CEH) practice test.">
+  <meta property="og:image"       content="https://quizbuffet.com/icons/og/ceh-information-security-overview.svg">
+  <meta property="og:url"         content="https://quizbuffet.com/ceh/information-security-overview/">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Information Security and Ethical Hacking Overview — CEH Practice">
+  <meta name="twitter:description" content="CEH Information Security and Ethical Hacking Overview practice quiz coming soon (6% of the exam). Part of the Certified Ethical Hacker (CEH) practice test.">
+  <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/ceh-information-security-overview.svg">
+
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
+  <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
+  <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=20260428" />
+  <meta name="apple-mobile-web-app-title" content="QuizBuffet" />
+  <link rel="manifest" href="/icons/site.webmanifest?v=20260428" />
+  <meta name="theme-color" content="#333333">
+
+  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YRKFB3WT9C');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
+  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional"></noscript>
+  <link rel="preload" as="style" href="/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
+  <style>
+    #app{min-height:100vh}
+    #nav{min-height:88px}
+    #cs-marquee{min-height:62px}
+    #hero{min-height:360px}
+    #home-sponsor{min-height:64px}
+    #featured{min-height:240px}
+    #total-badge{min-height:120px}
+    @media (max-width:720px){#nav{min-height:140px}#hero{min-height:440px}#home-sponsor{min-height:88px}#total-badge{min-height:140px}}
+    body::before,body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1}
+    body::before{background-image:radial-gradient(circle,rgba(0,0,0,0.09) 1px,transparent 1px);background-size:44px 44px;animation:bg-pulse-a 5s ease-in-out infinite}
+    body::after{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:66px 66px;background-position:22px 22px;animation:bg-pulse-b 7s ease-in-out infinite}
+    @keyframes bg-pulse-a{0%,100%{opacity:.4}50%{opacity:1}}
+    @keyframes bg-pulse-b{0%,100%{opacity:1}50%{opacity:.2}}
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://quizbuffet.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Certified Ethical Hacker (CEH) Practice Test",
+          "item": "https://quizbuffet.com/ceh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Information Security and Ethical Hacking Overview",
+          "item": "https://quizbuffet.com/ceh/information-security-overview/"
+        }
+      ]
+    },
+    {
+      "@type": "Quiz",
+      "name": "Information Security and Ethical Hacking Overview — CEH Practice Quiz",
+      "description": "CEH Information Security and Ethical Hacking Overview practice quiz coming soon (6% of the exam). Part of the Certified Ethical Hacker (CEH) practice test.",
+      "url": "https://quizbuffet.com/ceh/information-security-overview/",
+      "image": "https://quizbuffet.com/icons/og/ceh-information-security-overview.svg",
+      "inLanguage": "en-US",
+      "dateModified": "2026-05-14",
+      "about": {
+        "@type": "Thing",
+        "name": "Information Security and Ethical Hacking Overview"
+      },
+      "educationalLevel": "Professional certification",
+      "learningResourceType": "Practice Quiz",
+      "isAccessibleForFree": true,
+      "numberOfItems": 0,
+      "assesses": {
+        "@type": "DefinedTerm",
+        "name": "Certified Ethical Hacker (CEH) — Information Security and Ethical Hacking Overview",
+        "inDefinedTermSet": "Certified Ethical Hacker (CEH)"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "isPartOf": {
+        "@type": "Course",
+        "name": "Certified Ethical Hacker (CEH) (CEH) Free Practice Test",
+        "url": "https://quizbuffet.com/ceh/"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="nav" role="navigation" aria-label="Main navigation"></div>
+  <main id="main-content">
+    <section id="seo-static">
+      <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/ceh/">Certified Ethical Hacker (CEH)</a> &rsaquo; Information Security and Ethical Hacking Overview</nav>
+      <h1>1.0 Information Security and Ethical Hacking Overview — CEH Practice Quiz</h1>
+      <p><strong>0 exam-style questions</strong> covering <strong>6% of the CEH exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
+      <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
+      
+      <h2>Other CEH Domains</h2>
+      <ul>
+          <li><a href="/ceh/reconnaissance-techniques/">2.0 Reconnaissance Techniques</a></li>
+          <li><a href="/ceh/system-hacking/">3.0 System Hacking Phases and Attack Techniques</a></li>
+          <li><a href="/ceh/network-and-perimeter-hacking/">4.0 Network and Perimeter Hacking</a></li>
+          <li><a href="/ceh/web-application-hacking/">5.0 Web Application Hacking</a></li>
+          <li><a href="/ceh/wireless-network-hacking/">6.0 Wireless Network Hacking</a></li>
+          <li><a href="/ceh/mobile-iot-and-ot-hacking/">7.0 Mobile Platform, IoT, and OT Hacking</a></li>
+          <li><a href="/ceh/cloud-computing/">8.0 Cloud Computing</a></li>
+          <li><a href="/ceh/cryptography/">9.0 Cryptography</a></li>
+      </ul>
+      <p><a href="/ceh/">&larr; Back to CEH practice test overview</a></p>
+      <p class="cert-byline"><time datetime="2026-05-14">Last updated: May 14, 2026</time></p>
+    </section>
+    <div id="app"></div>
+  </main>
+  <div id="footer" role="contentinfo"></div>
+  <script type="module" src="/js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+</html>

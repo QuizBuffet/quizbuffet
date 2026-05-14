@@ -1364,6 +1364,40 @@ A: absorb and retain moisture
 **Q: Tinea capitis on a child's scalp is a contraindication for barbershop services because**
 A: it is a highly contagious fungal infection that can spread to other clients through contaminated implements and surfaces
 
+## Tattoo Artist License (Tattoo)
+Vendor: NIC
+URL: https://quizbuffet.com/tattoo-license/
+Total questions: 88
+
+A Tattoo Artist License is required in most U.S. states to perform tattooing for compensation. Many states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Tattooing Practical Examination — a six-section, timed performance evaluation administered on a live model. The exam covers six core domains based on the national job analysis: Work Area Set Up (infection control, EPA-registered disinfection, OSHA-mandated disposal containers, supply preparation), Client Preparation and Stencil Application (skin prep, simulated shave, stencil transfer to the forearm), Machine Assembly (presenting sterile packaged tubes and needles, building the machine, power on/off testing), Demonstration of Simulated Tattoo Procedure and Conclusion (pigment dispersal, simulated application, mid-procedure ink-cap addition, conclusion), Breakdown and Conclusion of Tattoo Service (decontaminating the procedural area, completing personal protection procedures), and Work Area Set Up for New Client (re-preparing supplies, demonstrating foot-switch disinfection and transport, completing personal protection). References are anchored on Milady Standard Esthetics Fundamentals + Foundations (12th Edition) and the APP Procedure Manual.
+
+### Domains
+- 1.0 Work Area Set Up (18% of exam) — 16 questions
+- 2.0 Client Preparation and Stencil Application (14% of exam) — 12 questions
+- 3.0 Machine Assembly (14% of exam) — 12 questions
+- 4.0 Simulated Tattoo Procedure and Conclusion (23% of exam) — 20 questions
+- 5.0 Breakdown and Conclusion of Tattoo Service (18% of exam) — 16 questions
+- 6.0 Work Area Set Up for New Client (13% of exam) — 12 questions
+
+### Sample questions
+**Q: Before beginning any tattoo procedure, the artist must don which personal protective equipment at minimum?**
+A: Medical-grade disposable gloves
+
+**Q: During the NIC Tattooing Practical Examination, the razor used for the simulated shave must be**
+A: capped throughout the simulated shaving demonstration
+
+**Q: Before beginning machine assembly, the candidate must present the packaged tube and needle to the examiner to**
+A: demonstrate that the tube and needle are sterile by showing intact, uncompromised original packaging before opening
+
+**Q: Pigment must be dispensed from the source bottle into a**
+A: single-use ink cap placed on the procedure tray — never directly into the tube or machine
+
+**Q: When breaking down the procedural work area after a tattoo service, barriers must be**
+A: removed carefully to avoid touching the contaminated outer surface, then discarded in the 'Trash' container before the underlying surface is disinfected
+
+**Q: When setting up supplies for a new client after breakdown, the candidate should**
+A: begin with freshly disinfected or newly barriered surfaces and new sterile packaged implements from the supply kit — never reusing single-session items from the previous client's procedure
+
 
 ## Coming soon (in priority order)
 - Certified Public Accountant (CPA) (CPA) — https://quizbuffet.com/cpa/ — priority #1
@@ -1404,9 +1438,8 @@ A: it is a highly contagious fungal infection that can spread to other clients t
 - Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #36
 - ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #37
 - Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #38
-- Tattoo Artist License (Tattoo) — https://quizbuffet.com/tattoo-license/ — priority #39
-- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #40
-- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #41
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #42
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #43
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #44
+- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #39
+- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #40
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #41
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #42
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #43

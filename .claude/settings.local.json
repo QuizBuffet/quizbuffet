@@ -89,7 +89,14 @@
       "Bash(open -a \"Visual Studio Code\" ~/animal-database)",
       "Bash(python3 docs/validate-domain.py data/certifications/micropigmentation/side-effects-and-complications.json)",
       "Bash(python3 docs/validate-domain.py data/certifications/micropigmentation/)",
-      "Bash(python3 docs/validate-domain.py data/certifications/barber-license/)"
+      "Bash(python3 docs/validate-domain.py data/certifications/barber-license/)",
+      "Bash(ls -la /Users/gradikayamba/ | head -30 && echo \"---\" && ls /Users/gradikayamba/invoicemaster 2>&1 | head -5)",
+      "Read(//Users/gradikayamba/**)",
+      "Bash(python3 docs/validate-domain.py data/certifications/tattoo-license/)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('data/coming-soon.json'\\)\\); print\\('tattoo-license in coming-soon:', any\\(c['slug']=='tattoo-license' for c in d\\)\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('data/counts.json'\\)\\); print\\('tattoo-license count:', d['perCert'].get\\('tattoo-license'\\)\\); print\\('total:', d['total']\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('data/coming-soon.json'\\)\\); print\\('in coming-soon:', any\\(c['slug']=='tattoo-license' for c in d\\)\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('data/coming-soon.json'\\)\\); entry=[c for c in d if c['slug']=='cpa']; print\\(json.dumps\\(entry, indent=2\\)\\)\")"
     ],
     "additionalDirectories": [
       "/tmp"

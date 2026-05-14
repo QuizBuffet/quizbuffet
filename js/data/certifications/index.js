@@ -39,6 +39,13 @@ import { cert as cosmetologyLicense } from './cosmetology-license.js';
 import { cert as micropigmentation } from './micropigmentation.js';
 import { cert as estheticianLicense } from './esthetician-license.js';
 import { cert as barberLicense } from './barber-license.js';
+import { cert as tattooLicense } from './tattoo-license.js';
+import { cert as cpaAud } from './cpa-aud.js';
+import { cert as cpaFar } from './cpa-far.js';
+import { cert as cpaReg } from './cpa-reg.js';
+import { cert as cpaBar } from './cpa-bar.js';
+import { cert as cpaIsc } from './cpa-isc.js';
+import { cert as cpaTcp } from './cpa-tcp.js';
 
 export const certifications = [
   comptiaCloudPlus,
@@ -82,4 +89,11 @@ export const certifications = [
   micropigmentation,
   estheticianLicense,
   barberLicense,
+  tattooLicense,
+  cpaAud,
+  cpaFar,
+  cpaReg,
+  cpaBar,
+  cpaIsc,
+  cpaTcp,
 ];

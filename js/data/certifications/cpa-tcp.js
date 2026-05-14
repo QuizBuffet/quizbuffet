@@ -1,0 +1,28 @@
+import { acronyms } from '../acronyms/cpa-tcp.js';
+import { services } from '../services/cpa-tcp.js';
+
+export const cert = {
+  slug: 'cpa-tcp',
+  name: 'CPA — Tax Compliance and Planning (TCP)',
+  code: 'TCP',
+  vendor: 'AICPA',
+  tagline: 'Discipline section of the Uniform CPA Examination — advanced individual and entity tax compliance and planning',
+  about: 'The Tax Compliance and Planning (TCP) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — TCP is most often selected by candidates planning a career in tax compliance, tax advisory, or personal financial planning. The 4-hour exam consists of 68 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Tax Compliance and Planning for Individuals and Personal Financial Planning (30–40%) — incentive compensation, AMT, at-risk and passive activity loss limitations, gifting and unified transfer tax, retirement plan selection (IRA, Roth, 401(k), annuities), investment risk, education funding, life and long-term care insurance, beneficiary designations, return on investment net of tax; Entity Tax Compliance (30–40%) — C corporation NOL and capital loss carryforwards, shareholder contributions and distributions, consolidated 1120 returns, international tax (CFC, FDII, BEAT, GILTI, IC-DISC, permanent establishment), S corporation shareholder basis and AAA, partnership partner basis and elections, trusts (simple, complex, grantor), distributable net income, tax-exempt organizations and unrelated business income; Entity Tax Planning (10–20%) — entity selection and formation, tax planning for C corps, S corps, and partnerships, built-in gains tax, terminating S elections; and Property Transactions (10–20%) — like-kind exchanges, involuntary conversions, Section 1231 capital gains and ordinary losses, Section 1245 and 1250 depreciation recapture, unrecaptured Section 1250 gain, Section 1244 small business stock, installment sales, related-party transactions, imputed interest. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, and case law on federal taxation.',
+  details: 'AICPA Uniform CPA Examination · Discipline section · 4 hours · 68 MCQs + 7 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 5–15% Remembering & Understanding, 55–65% Application, 25–35% Analysis · Most aligned with tax compliance, tax planning, and personal financial planning career tracks · Effective January 2025 blueprint',
+  acronyms,
+  services,
+  affiliates: [
+    { provider: 'amazon', label: 'Shop Wiley CPAexcel and Becker TCP Discipline Review Books on Amazon', url: 'https://www.amazon.com/s?k=wiley+cpa+excel+tax+compliance+planning&tag=0003aa-20' },
+  ],
+  officialSources: [
+    { label: 'AICPA Uniform CPA Examination',   url: 'https://www.aicpa-cima.com/resources/landing/uniform-cpa-examination' },
+    { label: 'NASBA (cpacentral.nasba.org)',    url: 'https://nasba.org/exams/cpaexam/' },
+    { label: 'Prometric Test Centers',          url: 'https://www.prometric.com/test-takers/search/cpa' },
+  ],
+  domains: [
+    { slug: 'individuals-and-personal-financial-planning', name: 'Tax Compliance and Planning for Individuals and Personal Financial Planning', number: '1.0', weight: 35 },
+    { slug: 'entity-tax-compliance',                       name: 'Entity Tax Compliance',                                                     number: '2.0', weight: 35 },
+    { slug: 'entity-tax-planning',                         name: 'Entity Tax Planning',                                                       number: '3.0', weight: 15 },
+    { slug: 'property-transactions',                       name: 'Property Transactions (Disposition of Assets)',                             number: '4.0', weight: 15 },
+  ],
+};

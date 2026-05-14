@@ -119,7 +119,8 @@ function fillSalaries(rootEl) {
   loadSalaries().then(salaries => {
     rootEl.querySelectorAll('[data-salary]').forEach(slot => {
       const entry = getSalaryEntry(salaries, slot.dataset.salary);
-      if (!entry) { slot.remove(); return; }
+      // Leave slot empty (CSS reserves min-height to prevent CLS) when no entry.
+      if (!entry) return;
       const collar = collarLabel(entry.collar);
       const mid = formatCompactUSD(entry.salary.mid);
       slot.innerHTML = `
@@ -134,7 +135,7 @@ function fillPricing(rootEl) {
   loadPricing().then(pricing => {
     rootEl.querySelectorAll('[data-price]').forEach(slot => {
       const entry = getPricingEntry(pricing, slot.dataset.price);
-      if (!entry) { slot.remove(); return; }
+      if (!entry) return;
       slot.innerHTML = `
         <span class="cert-card-price-other">${formatPrice(entry.practice_usd)} elsewhere</span>
         <span class="cert-card-price-us">free here</span>`;

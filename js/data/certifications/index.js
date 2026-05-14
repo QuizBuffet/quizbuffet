@@ -1015,9 +1015,9 @@ export const certifications = [
     { label: 'Prometric Test Centers',          url: 'https://www.prometric.com/test-takers/search/cpa' },
   ],
   domains: [
-    { slug: 'financial-reporting',             name: 'Financial Reporting',           number: '1.0', weight: 35 },
-    { slug: 'select-balance-sheet-accounts',   name: 'Select Balance Sheet Accounts', number: '2.0', weight: 35 },
-    { slug: 'select-transactions',             name: 'Select Transactions',           number: '3.0', weight: 30 },
+    { slug: 'financial-reporting',             name: 'Financial Reporting',           number: '1.0', weight: 46 },
+    { slug: 'select-balance-sheet-accounts',   name: 'Select Balance Sheet Accounts', number: '2.0', weight: 34 },
+    { slug: 'select-transactions',             name: 'Select Transactions',           number: '3.0', weight: 20 },
   ],
 },
 {

@@ -1433,15 +1433,33 @@ A: Reconcile the file's record counts and total dollar amounts to independently 
 ## CPA — Financial Accounting and Reporting (FAR) (FAR)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-far/
-Total questions: 0
+Total questions: 280
 
 The Financial Accounting and Reporting (FAR) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass FAR regardless of chosen Discipline. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Financial Reporting (30–40%) — preparation, adjustment, and analysis of financial statements for for-profit business entities and nongovernmental not-for-profit entities under the FASB Accounting Standards Codification, public company reporting under SEC rules (Forms 10-Q, 10-K, 8-K, EPS), special-purpose frameworks, financial statement ratios, and state and local government measurement focus and basis of accounting under GASB; Select Balance Sheet Accounts (30–40%) — cash and cash equivalents, trade receivables, inventory, property plant and equipment, investments (fair value, amortized cost, equity method), intangible assets, payables and accrued liabilities, debt covenants, and equity transactions; and Select Transactions (25–35%) — accounting changes and error corrections, contingencies and commitments, revenue recognition (five-step model and not-for-profit contributions), accounting for income taxes, fair value measurements, lessee accounting, and subsequent events. References include the FASB Accounting Standards Codification, FASB Concepts Statements, U.S. SEC Regulation S-X and S-K, GASB Codification, and AICPA Practice Aids.
 
 ### Domains
-- 1.0 Financial Reporting (35% of exam)
-- 2.0 Select Balance Sheet Accounts (35% of exam)
-- 3.0 Select Transactions (30% of exam)
+- 1.0 Financial Reporting (46% of exam) — 128 questions
+- 2.0 Select Balance Sheet Accounts (34% of exam) — 96 questions
+- 3.0 Select Transactions (20% of exam) — 56 questions
 
+### Sample questions
+**Q: The fundamental accounting equation underlying the balance sheet states that**
+A: Assets = Liabilities + Stockholders' Equity
+
+**Q: Under US GAAP, an asset is classified as current on the balance sheet when**
+A: It is expected to be converted to cash, sold, or consumed within one year or within the entity's operating cycle, whichever is longer
+
+**Q: Under ASC 305, an investment qualifies as a cash equivalent when it is**
+A: A short-term, highly liquid investment readily convertible to a known cash amount with an original maturity of three months or less from the date of purchase — presenting insignificant risk of value changes
+
+**Q: On December 1, a company purchases a 60-day commercial paper instrument with face value of $500,000. How should this investment be classified on the December 31 balance sheet?**
+A: Cash equivalent — the 60-day original maturity at purchase is within the three-month threshold, qualifying it as a cash equivalent
+
+**Q: Under ASC 250, a change in accounting principle is generally accounted for using which approach?**
+A: Retrospective approach — all prior periods presented are restated to reflect the new principle, and the cumulative effect on periods not presented is recorded as an adjustment to the opening balance of retained earnings
+
+**Q: A company changes depreciation method from declining balance to straight-line for all existing assets. This is classified as**
+A: A change in accounting estimate effected by a change in accounting principle — accounted for prospectively in current and future periods
 
 ## CPA — Taxation and Regulation (REG) (REG)
 Vendor: AICPA

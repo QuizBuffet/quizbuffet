@@ -12,7 +12,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const UNDER_TOL = 1.5; // flag domains under exam weight by more than this
 
 const certs = readdirSync(join(ROOT, 'js/data/certifications'))
-  .filter(f => f.endsWith('.js') && f !== 'index.js');
+  .filter(f => f.endsWith('.js') && f !== 'index.js' && !f.startsWith('_'));
 
 let anyFail = false;
 

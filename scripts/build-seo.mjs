@@ -401,6 +401,11 @@ function buildCertHtml(cert) {
   <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   <style>
     #app{min-height:100vh}
+    #nav{min-height:88px}
+    #cs-marquee{min-height:62px}
+    #hero{min-height:360px}
+    #featured{min-height:240px}
+    @media (max-width:720px){#nav{min-height:140px}#hero{min-height:440px}}
     body::before,body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1}
     body::before{background-image:radial-gradient(circle,rgba(0,0,0,0.09) 1px,transparent 1px);background-size:44px 44px;animation:bg-pulse-a 5s ease-in-out infinite}
     body::after{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:66px 66px;background-position:22px 22px;animation:bg-pulse-b 7s ease-in-out infinite}
@@ -623,6 +628,11 @@ function buildDomainHtml(cert, domain, questions) {
   <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   <style>
     #app{min-height:100vh}
+    #nav{min-height:88px}
+    #cs-marquee{min-height:62px}
+    #hero{min-height:360px}
+    #featured{min-height:240px}
+    @media (max-width:720px){#nav{min-height:140px}#hero{min-height:440px}}
     body::before,body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1}
     body::before{background-image:radial-gradient(circle,rgba(0,0,0,0.09) 1px,transparent 1px);background-size:44px 44px;animation:bg-pulse-a 5s ease-in-out infinite}
     body::after{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:66px 66px;background-position:22px 22px;animation:bg-pulse-b 7s ease-in-out infinite}
@@ -836,6 +846,11 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   <style>
     #app{min-height:100vh}
+    #nav{min-height:88px}
+    #cs-marquee{min-height:62px}
+    #hero{min-height:360px}
+    #featured{min-height:240px}
+    @media (max-width:720px){#nav{min-height:140px}#hero{min-height:440px}}
     body::before,body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1}
     body::before{background-image:radial-gradient(circle,rgba(0,0,0,0.09) 1px,transparent 1px);background-size:44px 44px;animation:bg-pulse-a 5s ease-in-out infinite}
     body::after{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:66px 66px;background-position:22px 22px;animation:bg-pulse-b 7s ease-in-out infinite}

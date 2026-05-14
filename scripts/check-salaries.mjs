@@ -14,7 +14,7 @@ const comingSoon = JSON.parse(readFileSync(join(ROOT, 'data/coming-soon.json'), 
 
 // Live cert slugs
 const certFiles = readdirSync(join(ROOT, 'js/data/certifications'))
-  .filter(f => f.endsWith('.js') && f !== 'index.js');
+  .filter(f => f.endsWith('.js') && f !== 'index.js' && !f.startsWith('_'));
 const liveSlugs = [];
 for (const file of certFiles.sort()) {
   const mod = await import(join(ROOT, 'js/data/certifications', file));

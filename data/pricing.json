@@ -107,7 +107,12 @@
   "google-ux-design-certificate":          { "practice_usd": 49 },
   "google-cybersecurity-certificate":      { "practice_usd": 49 },
 
-  "cpa":                                   { "practice_usd": 450 },
+  "cpa-aud":                               { "practice_usd": 450 },
+  "cpa-far":                               { "practice_usd": 450 },
+  "cpa-reg":                               { "practice_usd": 450 },
+  "cpa-bar":                               { "practice_usd": 450 },
+  "cpa-isc":                               { "practice_usd": 450 },
+  "cpa-tcp":                               { "practice_usd": 450 },
   "shrm-cp":                               { "practice_usd": 50 },
   "six-sigma-green-belt":                  { "practice_usd": 99 }
 }

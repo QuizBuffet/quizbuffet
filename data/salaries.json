@@ -1225,20 +1225,47 @@
     "lastUpdated": "2026-05-13",
     "notes": "Entry-level SOC / cybersecurity analyst"
   },
-  "cpa": {
+  "cpa-aud": {
     "collar": "white-collar",
-    "salary": {
-      "currency": "USD",
-      "low": 68000,
-      "mid": 98000,
-      "high": 165000
-    },
-    "sources": [
-      "BLS",
-      "ZipRecruiter"
-    ],
+    "salary": { "currency": "USD", "low": 68000, "mid": 98000, "high": 165000 },
+    "sources": ["BLS", "ZipRecruiter"],
     "lastUpdated": "2026-05-13",
-    "notes": "Certified Public Accountant"
+    "notes": "CPA — AUD is one of three Core sections; salary applies to the full CPA credential"
+  },
+  "cpa-far": {
+    "collar": "white-collar",
+    "salary": { "currency": "USD", "low": 68000, "mid": 98000, "high": 165000 },
+    "sources": ["BLS", "ZipRecruiter"],
+    "lastUpdated": "2026-05-13",
+    "notes": "CPA — FAR is one of three Core sections; salary applies to the full CPA credential"
+  },
+  "cpa-reg": {
+    "collar": "white-collar",
+    "salary": { "currency": "USD", "low": 68000, "mid": 98000, "high": 165000 },
+    "sources": ["BLS", "ZipRecruiter"],
+    "lastUpdated": "2026-05-13",
+    "notes": "CPA — REG is one of three Core sections; salary applies to the full CPA credential"
+  },
+  "cpa-bar": {
+    "collar": "white-collar",
+    "salary": { "currency": "USD", "low": 68000, "mid": 98000, "high": 165000 },
+    "sources": ["BLS", "ZipRecruiter"],
+    "lastUpdated": "2026-05-13",
+    "notes": "CPA — BAR is a Discipline section; salary applies to the full CPA credential"
+  },
+  "cpa-isc": {
+    "collar": "white-collar",
+    "salary": { "currency": "USD", "low": 68000, "mid": 98000, "high": 165000 },
+    "sources": ["BLS", "ZipRecruiter"],
+    "lastUpdated": "2026-05-13",
+    "notes": "CPA — ISC is a Discipline section; salary applies to the full CPA credential"
+  },
+  "cpa-tcp": {
+    "collar": "white-collar",
+    "salary": { "currency": "USD", "low": 68000, "mid": 98000, "high": 165000 },
+    "sources": ["BLS", "ZipRecruiter"],
+    "lastUpdated": "2026-05-13",
+    "notes": "CPA — TCP is a Discipline section; salary applies to the full CPA credential"
   },
   "shrm-cp": {
     "collar": "white-collar",

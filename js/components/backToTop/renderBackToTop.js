@@ -1,5 +1,8 @@
 // Floating back-to-top button. Appears after the user scrolls past a threshold,
 // pulses gently to attract attention, and animates the arrow on hover.
+//
+// Uses IntersectionObserver on a sentinel placed at the top of the page so we
+// never read scrollY (which forces synchronous layout on the main thread).
 const SHOW_AT = 600; // px scroll before button appears
 
 export function renderBackToTop() {
@@ -24,15 +27,17 @@ export function renderBackToTop() {
 
   document.body.appendChild(btn);
 
-  let visible = false;
-  const onScroll = () => {
-    const shouldShow = window.scrollY > SHOW_AT;
-    if (shouldShow !== visible) {
-      visible = shouldShow;
-      btn.classList.toggle('btt-visible', visible);
-    }
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  // Defer the initial read so we don't force a layout right after appendChild.
-  requestAnimationFrame(onScroll);
+  // Sentinel sits at the top of the page; when it scrolls out of view (past
+  // SHOW_AT pixels of scroll), the button reveals. No scroll listener, no
+  // scrollY reads → zero forced reflow.
+  const sentinel = document.createElement('div');
+  sentinel.setAttribute('aria-hidden', 'true');
+  sentinel.style.cssText = `position:absolute;top:${SHOW_AT}px;left:0;width:1px;height:1px;pointer-events:none`;
+  document.body.appendChild(sentinel);
+
+  const io = new IntersectionObserver(
+    ([entry]) => btn.classList.toggle('btt-visible', !entry.isIntersecting),
+    { rootMargin: '0px', threshold: 0 }
+  );
+  io.observe(sentinel);
 }

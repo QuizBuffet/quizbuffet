@@ -33,5 +33,6 @@ export function renderBackToTop() {
     }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  // Defer the initial read so we don't force a layout right after appendChild.
+  requestAnimationFrame(onScroll);
 }

@@ -1,30 +1,29 @@
-// Counts all questions across certs and caches in sessionStorage — also populates nonempty domain list used by the random button
+// Returns total live questions across all certs by reading the pre-built counts.json.
+// Also populates the non-empty domain list used by the "Random domain" button.
+// Cached in sessionStorage per page session.
 import { certifications } from '../data/certifications/index.js';
-
-const GITHUB_BASE = 'https://raw.githubusercontent.com/YOUR_USERNAME/quizbuffet-data/main/certifications';
 
 export async function getTotalQuestionCount() {
   const cached = sessionStorage.getItem('qb_meta_total_questions');
   if (cached !== null) return parseInt(cached, 10);
 
-  const entries = certifications.flatMap(cert =>
-    cert.domains.map(domain => ({ cert, domain }))
-  );
-
-  const fetches = entries.map(({ cert, domain }) => {
-    return fetch(`data/certifications/${cert.slug}/${domain.slug}.json`)
-      .then(r => r.ok ? r.json() : Promise.reject())
-      .catch(() => fetch(`${GITHUB_BASE}/${cert.slug}/${domain.slug}.json`)
-        .then(r => r.ok ? r.json() : { questions: [] })
-        .catch(() => ({ questions: [] }))
-      )
-      .then(data => ({ cert, domain, count: (data.questions || []).length }));
-  });
-
-  const results = await Promise.all(fetches);
-  const total = results.reduce((sum, r) => sum + r.count, 0);
-  const nonempty = results.filter(r => r.count > 0).map(r => `${r.cert.slug}/${r.domain.slug}`);
-  sessionStorage.setItem('qb_meta_total_questions', String(total));
-  sessionStorage.setItem('qb_meta_nonempty_domains', JSON.stringify(nonempty));
-  return total;
+  try {
+    const r = await fetch('/data/counts.json');
+    if (!r.ok) throw new Error('counts.json fetch failed');
+    const counts = await r.json();
+    const total = counts.total || 0;
+    const nonempty = [];
+    const perDomain = counts.perDomain || {};
+    for (const cert of certifications) {
+      const dmap = perDomain[cert.slug] || {};
+      for (const d of cert.domains) {
+        if ((dmap[d.slug] || 0) > 0) nonempty.push(`${cert.slug}/${d.slug}`);
+      }
+    }
+    sessionStorage.setItem('qb_meta_total_questions', String(total));
+    sessionStorage.setItem('qb_meta_nonempty_domains', JSON.stringify(nonempty));
+    return total;
+  } catch {
+    return 0;
+  }
 }

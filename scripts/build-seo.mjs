@@ -395,9 +395,16 @@ function buildCertHtml(cert) {
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/bg-dots.css">
+  <style>
+    #app{min-height:100vh}
+    body::before,body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1}
+    body::before{background-image:radial-gradient(circle,rgba(0,0,0,0.09) 1px,transparent 1px);background-size:44px 44px;animation:bg-pulse-a 5s ease-in-out infinite}
+    body::after{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:66px 66px;background-position:22px 22px;animation:bg-pulse-b 7s ease-in-out infinite}
+    @keyframes bg-pulse-a{0%,100%{opacity:.4}50%{opacity:1}}
+    @keyframes bg-pulse-b{0%,100%{opacity:1}50%{opacity:.2}}
+  </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 
   <script type="application/ld+json">
@@ -608,9 +615,16 @@ function buildDomainHtml(cert, domain, questions) {
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/bg-dots.css">
+  <style>
+    #app{min-height:100vh}
+    body::before,body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1}
+    body::before{background-image:radial-gradient(circle,rgba(0,0,0,0.09) 1px,transparent 1px);background-size:44px 44px;animation:bg-pulse-a 5s ease-in-out infinite}
+    body::after{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:66px 66px;background-position:22px 22px;animation:bg-pulse-b 7s ease-in-out infinite}
+    @keyframes bg-pulse-a{0%,100%{opacity:.4}50%{opacity:1}}
+    @keyframes bg-pulse-b{0%,100%{opacity:1}50%{opacity:.2}}
+  </style>
 
   <script type="application/ld+json">
 ${JSON.stringify(jsonLd, null, 2)}
@@ -812,9 +826,16 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/bg-dots.css">
+  <style>
+    #app{min-height:100vh}
+    body::before,body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1}
+    body::before{background-image:radial-gradient(circle,rgba(0,0,0,0.09) 1px,transparent 1px);background-size:44px 44px;animation:bg-pulse-a 5s ease-in-out infinite}
+    body::after{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:66px 66px;background-position:22px 22px;animation:bg-pulse-b 7s ease-in-out infinite}
+    @keyframes bg-pulse-a{0%,100%{opacity:.4}50%{opacity:1}}
+    @keyframes bg-pulse-b{0%,100%{opacity:1}50%{opacity:.2}}
+  </style>
 
   <script type="application/ld+json">
 ${JSON.stringify(jsonLd, null, 2)}
@@ -1205,6 +1226,7 @@ function buildCertCoverageText(sortedCerts) {
 // Main
 let generated = 0;
 const perCertCounts = {};
+const perDomainCounts = {};
 let grandTotal = 0;
 let domainGenerated = 0;
 for (const cert of certifications) {
@@ -1214,9 +1236,11 @@ for (const cert of certifications) {
   fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildOgSvg(cert));
   // Tally questions and generate a static page per domain (fixes 404s on domain quiz URLs)
   let n = 0;
+  const domMap = {};
   for (const dom of cert.domains) {
     const qs = loadDomainQuestions(cert.slug, dom.slug);
     n += qs.length;
+    domMap[dom.slug] = qs.length;
     const domDir = path.join(dir, dom.slug);
     fs.mkdirSync(domDir, { recursive: true });
     fs.writeFileSync(path.join(domDir, 'index.html'), buildDomainHtml(cert, dom, qs));
@@ -1224,6 +1248,7 @@ for (const cert of certifications) {
     domainGenerated++;
   }
   perCertCounts[cert.slug] = n;
+  perDomainCounts[cert.slug] = domMap;
   grandTotal += n;
   console.log(`  ✓ ${cert.slug}/index.html + ${cert.domains.length} domain pages + og`);
   generated++;
@@ -1260,6 +1285,7 @@ const counts = {
   comingSoonCerts: comingSoon.length,
   generatedAt: TODAY,
   perCert: perCertCounts,
+  perDomain: perDomainCounts,
 };
 fs.writeFileSync(path.join(ROOT, 'data', 'counts.json'), JSON.stringify(counts));
 console.log(`  ✓ data/counts.json (${grandTotal.toLocaleString()} questions across ${certifications.length} certs)`);

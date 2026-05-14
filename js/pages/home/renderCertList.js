@@ -1,7 +1,16 @@
-import { loadDomain } from '../../loader/loadDomain.js';
 import { loadSalaries, getSalaryEntry, formatCompactUSD, collarLabel } from '../../data/salaries/loadSalaries.js';
 import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
 import { attachCertPreview } from '../../components/certPreview/certPreview.js';
+
+let countsPromise = null;
+function loadCounts() {
+  if (!countsPromise) {
+    countsPromise = fetch('/data/counts.json')
+      .then(r => r.ok ? r.json() : { perCert: {} })
+      .catch(() => ({ perCert: {} }));
+  }
+  return countsPromise;
+}
 
 // Live cert categories — coming-soon entries already carry their own `category` field.
 const LIVE_CATEGORY = {
@@ -153,15 +162,15 @@ function scheduleCollarShakes() {
       setTimeout(tick, 4000);
       return;
     }
-    const icons = [...document.querySelectorAll('.cert-card-salary-collar, .salary-collar-icon')]
-      .filter(el => el.offsetParent !== null);
+    const icons = document.querySelectorAll('.cert-card-salary-collar, .salary-collar-icon');
     if (icons.length) {
       const pick = icons[Math.floor(Math.random() * icons.length)];
+      // Restart the CSS animation without a synchronous layout flush
       pick.classList.remove('shake');
-      // Force reflow so re-adding the class restarts the animation
-      void pick.offsetWidth;
-      pick.classList.add('shake');
-      pick.addEventListener('animationend', () => pick.classList.remove('shake'), { once: true });
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        pick.classList.add('shake');
+        pick.addEventListener('animationend', () => pick.classList.remove('shake'), { once: true });
+      }));
     }
     const delay = icons.length ? (500 + Math.random() * 1300) : 800;
     setTimeout(tick, delay);
@@ -269,15 +278,13 @@ export function renderCertList(live, comingSoon = [], filter = '') {
   fillPricing(el);
   attachCertPreview(el, live);
 
-  liveFiltered.forEach(cert => {
-    Promise.all(
-      cert.domains.map(d => loadDomain(cert.slug, d.slug, cert).then(qs => qs.length))
-    ).then(counts => {
-      const total = counts.reduce((s, n) => s + n, 0);
+  loadCounts().then(counts => {
+    const perCert = counts.perCert || {};
+    liveFiltered.forEach(cert => {
       const countEl = el.querySelector(`[data-cert-count="${cert.slug}"]`);
       const item = el.querySelector(`[data-cert-item="${cert.slug}"]`);
       if (!countEl || !item) return;
-
+      const total = perCert[cert.slug] || 0;
       if (total === 0) {
         countEl.textContent = 'No questions yet';
         item.classList.add('cert-empty');

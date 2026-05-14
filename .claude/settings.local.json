@@ -96,7 +96,9 @@
       "Bash(python3 -c \"import json; d=json.load\\(open\\('data/coming-soon.json'\\)\\); print\\('tattoo-license in coming-soon:', any\\(c['slug']=='tattoo-license' for c in d\\)\\)\")",
       "Bash(python3 -c \"import json; d=json.load\\(open\\('data/counts.json'\\)\\); print\\('tattoo-license count:', d['perCert'].get\\('tattoo-license'\\)\\); print\\('total:', d['total']\\)\")",
       "Bash(python3 -c \"import json; d=json.load\\(open\\('data/coming-soon.json'\\)\\); print\\('in coming-soon:', any\\(c['slug']=='tattoo-license' for c in d\\)\\)\")",
-      "Bash(python3 -c \"import json; d=json.load\\(open\\('data/coming-soon.json'\\)\\); entry=[c for c in d if c['slug']=='cpa']; print\\(json.dumps\\(entry, indent=2\\)\\)\")"
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('data/coming-soon.json'\\)\\); entry=[c for c in d if c['slug']=='cpa']; print\\(json.dumps\\(entry, indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/counts.json'\\)\\); print\\('keys:', list\\(d.keys\\(\\)\\)\\); print\\('sample perCert:', list\\(d.get\\('perCert', {}\\).items\\(\\)\\)[:3] if 'perCert' in d else 'NO perCert'\\); print\\('sample perDomain:', list\\(d.get\\('perDomain', {}\\).items\\(\\)\\)[:1] if 'perDomain' in d else 'NO perDomain key'\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('/Users/gradikayamba/quizbuffet/data/counts.json'\\)\\); print\\('keys:', list\\(d.keys\\(\\)\\)\\); pd=d['perDomain']; print\\('certs in perDomain:', len\\(pd\\)\\); k=list\\(pd.keys\\(\\)\\)[0]; print\\('sample:', k, '->', pd[k]\\)\")"
     ],
     "additionalDirectories": [
       "/tmp"

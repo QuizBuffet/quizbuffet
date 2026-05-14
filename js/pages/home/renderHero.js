@@ -74,6 +74,20 @@ export function renderHero(comingSoon, onSearch) {
       const cEl = root.querySelector('[data-stat="certs"]');
       if (qEl) qEl.textContent = (c.total || 0).toLocaleString();
       if (cEl) cEl.textContent = (c.liveCerts || 0).toString();
+
+      // Populate nonempty-domain list for the random button without fetching every JSON
+      try {
+        const nonempty = [];
+        const perDomain = c.perDomain || {};
+        for (const cert of certifications) {
+          const dmap = perDomain[cert.slug] || {};
+          for (const d of cert.domains) {
+            if ((dmap[d.slug] || 0) > 0) nonempty.push(`${cert.slug}/${d.slug}`);
+          }
+        }
+        sessionStorage.setItem('qb_meta_total_questions', String(c.total || 0));
+        sessionStorage.setItem('qb_meta_nonempty_domains', JSON.stringify(nonempty));
+      } catch {}
     })
     .catch(() => {});
 }

@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/aws-solutions-architect-associate.js';
-import { services } from '../services/aws-solutions-architect-associate.js';
-
 export const cert = {
   slug: 'aws-solutions-architect-associate',
   name: 'AWS Certified Solutions Architect – Associate',
@@ -10,8 +7,6 @@ export const cert = {
   about: 'AWS Certified Solutions Architect – Associate (SAA-C03) validates the ability to design solutions on AWS that are secure, resilient, high-performing, and cost-optimized — based on the AWS Well-Architected Framework. Aimed at candidates with at least 1 year of hands-on experience designing cloud solutions on AWS.',
   details: '50 scored questions + 15 unscored · Multiple-choice and multiple-response · Pass score 720/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop AWS Solutions Architect SAA-C03 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=aws+solutions+architect+saa-c03&tag=0003aa-20' },

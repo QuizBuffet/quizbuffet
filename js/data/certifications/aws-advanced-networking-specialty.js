@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/aws-advanced-networking-specialty.js';
-import { services } from '../services/aws-advanced-networking-specialty.js';
-
 export const cert = {
   slug: 'aws-advanced-networking-specialty',
   name: 'AWS Certified Advanced Networking – Specialty',
@@ -10,8 +7,6 @@ export const cert = {
   about: 'AWS Certified Advanced Networking – Specialty (ANS-C01) validates expertise designing and operating complex AWS networking solutions. It covers edge services and global traffic management (CloudFront, Global Accelerator, Route 53), hybrid connectivity with Direct Connect and Site-to-Site VPN, BGP routing, multi-VPC and multi-account designs (Transit Gateway, PrivateLink, VPC peering, RAM), DNS architectures including DNSSEC, network monitoring (VPC Flow Logs, Traffic Mirroring, Reachability Analyzer, Transit Gateway Network Manager), and network security with WAF, Shield, Network Firewall, and Firewall Manager.',
   details: '65 questions (50 scored + 15 unscored) · 170 minutes · Multiple-response and matching · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-advanced-networking-specialty-ans/',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop AWS Advanced Networking ANS-C01 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=aws+advanced+networking+ans-c01&tag=0003aa-20' },

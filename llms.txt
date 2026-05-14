@@ -45,7 +45,7 @@
 - [Esthetician License (Esthetician)](https://quizbuffet.com/esthetician-license/): State-licensed credential for professional skin care services
 - [Barber License (Barber)](https://quizbuffet.com/barber-license/): State-licensed credential for haircutting, shaving, and chemical hair services 260+ questions.
 - [Tattoo Artist License (Tattoo)](https://quizbuffet.com/tattoo-license/): State license for professional tattooing and body art services 88+ questions.
-- [CPA — Auditing and Attestation (AUD) (AUD)](https://quizbuffet.com/cpa-aud/): Core section of the Uniform CPA Examination — every candidate must pass AUD
+- [CPA — Auditing and Attestation (AUD) (AUD)](https://quizbuffet.com/cpa-aud/): Core section of the Uniform CPA Examination — every candidate must pass AUD 286+ questions.
 - [CPA — Financial Accounting and Reporting (FAR) (FAR)](https://quizbuffet.com/cpa-far/): Core section of the Uniform CPA Examination — financial reporting under U.S. GAAP and GASB
 - [CPA — Taxation and Regulation (REG) (REG)](https://quizbuffet.com/cpa-reg/): Core section of the Uniform CPA Examination — U.S. federal taxation, ethics, and business law
 - [CPA — Business Analysis and Reporting (BAR) (BAR)](https://quizbuffet.com/cpa-bar/): Discipline section of the Uniform CPA Examination — business analysis, technical accounting, and state and local governments

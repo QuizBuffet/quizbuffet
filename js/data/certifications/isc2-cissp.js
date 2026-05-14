@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/isc2-cissp.js';
-import { services } from '../services/isc2-cissp.js';
-
 export const cert = {
   slug: 'isc2-cissp',
   name: 'Certified Information Systems Security Professional',
@@ -16,8 +13,6 @@ export const cert = {
     { label: 'CISSP Domains 7-8 (Security Ops & Software Dev)',     url: 'https://www.udemy.com/course/cissp-domain-7-8/' },
     { label: 'CISSP Practice Exam 1 (full-length)',                  url: 'https://www.udemy.com/course/cissp-certification-practice-exam-1/' },
   ],
-  acronyms,
-  services,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop CISSP Study Guides on Amazon', url: 'https://www.amazon.com/s?k=cissp+official+study+guide&tag=0003aa-20' },

@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/cpr-aed.js';
-import { services } from '../services/cpr-aed.js';
-
 export const cert = {
   slug: 'cpr-aed',
   name: 'CPR / AED Certification',
@@ -9,8 +6,6 @@ export const cert = {
   tagline: 'Lifesaving cardiac and breathing emergency skills',
   about: 'CPR / AED Certification is the lay-rescuer credential for responding to sudden cardiac arrest, choking, and other breathing emergencies. The knowledge component is standardized across the American Heart Association and American Red Cross and is built on the AHA Guidelines for CPR & ECC: scene safety, the Chain of Survival, recognition of cardiac arrest, high-quality compressions and ventilations for adults, children, and infants, AED operation, choking response, and special situations such as opioid overdose, drowning, and pregnancy. Required for many healthcare, education, fitness, lifeguard, and child-care roles, and broadly recommended for any responsible adult.',
   details: 'Hands-only and full-CPR pathways · AED skill check required · 2-year certification cycle (AHA / ARC)',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'amazon', label: 'Shop CPR/AED Study Guides on Amazon', url: 'https://www.amazon.com/s?k=cpr+aed+certification+study+guide&tag=0003aa-20' },
     { provider: 'aha',    label: 'AHA CPR & ECC Guidelines (free)',     url: 'https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines' },

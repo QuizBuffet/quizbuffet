@@ -1401,16 +1401,34 @@ A: begin with freshly disinfected or newly barriered surfaces and new sterile pa
 ## CPA — Auditing and Attestation (AUD) (AUD)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-aud/
-Total questions: 0
+Total questions: 286
 
 The Auditing and Attestation (AUD) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass AUD regardless of their chosen Discipline. The 4-hour exam consists of 78 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Ethics, Professional Responsibilities and General Principles (15–25%) — AICPA Code of Conduct, SEC/PCAOB/GAO/DOL independence, professional skepticism, engagement preconditions, documentation; Assessing Risk and Developing a Planned Response (25–35%) — engagement strategy, the COSO Internal Control – Integrated Framework, IT general controls, SOC 1® reports, materiality and tolerable misstatement, fraud risk, related parties, single audits; Performing Further Procedures and Obtaining Evidence (30–40%) — sampling, tests of controls and details, analytical procedures, external confirmations, audit data analytics, accounting estimates, going concern, subsequent events; and Forming Conclusions and Reporting (10–20%) — audit and attestation reports, opinion types, emphasis-of-matter paragraphs, compilation and review engagements, compliance reporting, special-purpose frameworks, and additional GAO reporting requirements. References include AICPA Statements on Auditing Standards, PCAOB Auditing Standards, GAO Government Auditing Standards, Single Audit Act, OMB 2 CFR 200, and the AICPA Code of Professional Conduct.
 
 ### Domains
-- 1.0 Ethics, Professional Responsibilities and General Principles (20% of exam)
-- 2.0 Assessing Risk and Developing a Planned Response (30% of exam)
-- 3.0 Performing Further Procedures and Obtaining Evidence (35% of exam)
-- 4.0 Forming Conclusions and Reporting (15% of exam)
+- 1.0 Ethics, Professional Responsibilities and General Principles (20% of exam) — 56 questions
+- 2.0 Assessing Risk and Developing a Planned Response (30% of exam) — 86 questions
+- 3.0 Performing Further Procedures and Obtaining Evidence (28% of exam) — 80 questions
+- 4.0 Forming Conclusions and Reporting (22% of exam) — 64 questions
 
+### Sample questions
+**Q: IRC §6694(b) imposes a penalty on a tax return preparer for willful or reckless conduct. What conduct triggers this penalty, and what is the penalty amount?**
+A: Willful attempt to understate tax liability; reckless or intentional disregard of rules or regulations; penalty = the greater of $5,000 or 75% of the income derived from the return
+
+**Q: Under IRC §6695, which of the following is a penalty imposed on a tax return preparer?**
+A: Failure to include the preparer's Preparer Tax Identification Number (PTIN) on the return — $50 per failure, up to a maximum of $27,000 per year
+
+**Q: Establishing an overall audit strategy at the beginning of an engagement serves to**
+A: Set the scope, timing, and direction of the audit and guide the development of the more detailed engagement plan
+
+**Q: Which of the following decisions is BEST characterized as part of the overall audit strategy rather than the more detailed engagement plan?**
+A: The determination that the audit will rely primarily on substantive analytical procedures rather than tests of controls in areas where the assessed control environment is weak
+
+**Q: In performing audit procedures, auditors commonly use data from which two primary sources?**
+A: Entity-produced data (accounting records, transaction files, master files) and external data (market prices, third-party records, industry benchmarks)
+
+**Q: Before using an entity-provided transaction data file to perform audit sampling, an auditor should verify the completeness and accuracy of the file. Which procedure is MOST appropriate for this purpose?**
+A: Reconcile the file's record counts and total dollar amounts to independently prepared control totals — such as summary reports from the entity's accounting system or the trial balance
 
 ## CPA — Financial Accounting and Reporting (FAR) (FAR)
 Vendor: AICPA

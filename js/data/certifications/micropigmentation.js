@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/micropigmentation.js';
-import { services } from '../services/micropigmentation.js';
-
 export const cert = {
   slug: 'micropigmentation',
   name: 'Advanced Practice Micropigmentation',
@@ -9,8 +6,6 @@ export const cert = {
   tagline: 'NIC national theory exam for permanent makeup, paramedical, and cosmetic tattoo procedures',
   about: 'The NIC National Advanced Practice Micropigmentation Theory Examination is the licensure theory exam for advanced cosmetic tattoo procedures (permanent makeup, paramedical micropigmentation, scalp pigmentation, areola restoration, scar repigmentation) authored by the National-Interstate Council of State Boards of Cosmetology (NIC) and adopted by participating state boards. The blueprint covers three domains: Scientific Concepts (infection control, skin and tissue structure, human anatomy and physiology, skin disorders, equipment and pigment storage), Micropigmentation Procedures (client communication and documentation, skin preparation, color theory, pre-application design, and application technique), and Side Effects and Possible Complications. Candidates are expected to anchor their knowledge in the Society of Permanent Cosmetic Professionals (SPCP) standards, NIC Infection Control and Safety Standards, and Milady\'s Aesthetician Series Permanent Makeup: Tips and Techniques.',
   details: '110 items (100 weighted) · 90 minutes · Multiple-choice · Adopted by participating state boards under NIC',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'amazon', label: 'Shop Micropigmentation and Permanent Makeup Textbooks on Amazon', url: 'https://www.amazon.com/s?k=permanent+makeup+micropigmentation+training&tag=0003aa-20' },
   ],

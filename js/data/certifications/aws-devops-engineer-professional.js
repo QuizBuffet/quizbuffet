@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/aws-devops-engineer-professional.js';
-import { services } from '../services/aws-devops-engineer-professional.js';
-
 export const cert = {
   slug: 'aws-devops-engineer-professional',
   name: 'AWS Certified DevOps Engineer – Professional',
@@ -10,8 +7,6 @@ export const cert = {
   about: 'AWS Certified DevOps Engineer – Professional (DOP-C02) validates the ability to provision, operate, and manage distributed systems on AWS. It covers SDLC automation with CI/CD (CodePipeline, CodeBuild, CodeDeploy), configuration management and IaC (CloudFormation, CDK, SAM, Systems Manager), resilient cloud solutions and DR, monitoring and logging with CloudWatch and X-Ray, incident and event response, and security and compliance automation at scale.',
   details: '75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on/',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop AWS DevOps Engineer DOP-C02 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=aws+devops+engineer+dop-c02&tag=0003aa-20' },

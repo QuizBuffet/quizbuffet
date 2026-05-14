@@ -69,8 +69,12 @@ export async function init() {
     renderMixQuizBtn(cert);
     renderCertDomainList(cert);
     renderCertWhatYouLearn(cert);
-    renderAcronymDrill(cert);
-    renderServiceDrill(cert);
+    import(`../../data/acronyms/${cert.slug}.js`)
+      .then(m => renderAcronymDrill(m.acronyms))
+      .catch(() => {});
+    import(`../../data/services/${cert.slug}.js`)
+      .then(m => renderServiceDrill(m.services))
+      .catch(() => {});
     renderCertFAQ(cert, null);
     renderRelatedCerts(cert);
 

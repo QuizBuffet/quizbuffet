@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/itil-foundation.js';
-import { services } from '../services/itil-foundation.js';
-
 export const cert = {
   slug: 'itil-foundation',
   name: 'ITIL 4 Foundation',
@@ -10,8 +7,6 @@ export const cert = {
   about: 'ITIL 4 Foundation introduces the ITIL service value system (SVS), the four dimensions of service management (organizations and people, information and technology, partners and suppliers, value streams and processes), the seven ITIL guiding principles, the six service value chain activities, and the purpose and key terms of 15 ITIL management practices, with seven of those practices covered in depth (continual improvement, change enablement, incident management, problem management, service request management, service desk, and service level management). It is the most commonly listed ITSM credential on enterprise IT job postings and a prerequisite for higher-level ITIL 4 qualifications.',
   details: '40 questions · 60 minutes · Multiple-choice · Pass score 26/40 (65%)',
   udemyCourseUrl: 'https://www.udemy.com/course/itil-4-foundation-practice-certification-exams-6-exams-q/?couponCode=KEEPLEARNING',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop ITIL 4 Foundation Study Guides on Amazon', url: 'https://www.amazon.com/s?k=itil+4+foundation+study+guide&tag=0003aa-20' },

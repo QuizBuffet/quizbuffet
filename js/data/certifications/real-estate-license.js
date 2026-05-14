@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/real-estate-license.js';
-import { services } from '../services/real-estate-license.js';
-
 export const cert = {
   slug: 'real-estate-license',
   name: 'Georgia Real Estate Salesperson License',
@@ -9,8 +6,6 @@ export const cert = {
   tagline: 'Georgia license to represent real estate buyers and sellers',
   about: 'The Georgia Real Estate Salesperson Examination is administered by AMP for the Georgia Real Estate Commission (GREC). The full exam is 152 multiple-choice items combining the National Real Estate portion (100 items across seven content areas: agency relationships and contracts, real property ownership and interest, finance, real property and valuation, marketing regulations, property management, and real estate calculations) with the Georgia Salesperson Supplement (52 items covering state laws and rules, real estate practice in Georgia, and finance and closing). Candidates must complete a 75-hour Georgia-approved prelicense course, pass the exam at 75%, secure a sponsoring broker for active licensure, and complete a 25-hour postlicense course in their first year.',
   details: '152 multiple-choice items · National + Georgia Supplement · 75-hour prelicense + 25-hour postlicense · Pass score 75% · Administered by AMP',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'amazon', label: 'Shop Georgia Real Estate License Study Guides on Amazon', url: 'https://www.amazon.com/s?k=georgia+real+estate+license+exam+prep&tag=0003aa-20' },
     { provider: 'grec',   label: 'Georgia Real Estate Commission (GREC)', url: 'https://grec.state.ga.us/' },

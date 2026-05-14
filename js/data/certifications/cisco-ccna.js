@@ -1,5 +1,3 @@
-import { acronyms } from '../acronyms/cisco-ccna.js';
-
 export const cert = {
   slug: 'cisco-ccna',
   name: 'Cisco CCNA',
@@ -9,7 +7,6 @@ export const cert = {
   about: 'CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability — including AI/ML in network operations and REST APIs.',
   details: '120 minutes · Multiple-choice and performance-based · Recommended prep: Implementing and Administering Cisco Solutions (CCNA) course',
   udemyCourseUrl: 'https://www.udemy.com/course/ccna-complete/',
-  acronyms,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop CCNA 200-301 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=ccna+200-301&tag=0003aa-20' },

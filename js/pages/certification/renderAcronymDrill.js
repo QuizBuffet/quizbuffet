@@ -1,20 +1,20 @@
 import { renderMatchDrill } from '../../components/matchDrill/renderMatchDrill.js';
 
-export function renderAcronymDrill(cert) {
+export function renderAcronymDrill(items) {
   renderMatchDrill({
     mountId: 'acronym-drill',
     heading: 'Acronym Match',
-    items: cert.acronyms,
+    items,
     hintNoun: 'acronym',
     soundProfile: 'acronym',
   });
 }
 
-export function renderServiceDrill(cert) {
+export function renderServiceDrill(items) {
   renderMatchDrill({
     mountId: 'service-drill',
     heading: 'Service Match',
-    items: cert.services,
+    items,
     hintNoun: 'service',
     soundProfile: 'service',
   });

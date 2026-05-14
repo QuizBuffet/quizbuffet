@@ -1,5 +1,3 @@
-import { acronyms } from '../acronyms/comptia-cloud-plus.js';
-
 export const cert = {
   slug: 'comptia-cloud-plus',
   name: 'CompTIA Cloud+',
@@ -9,7 +7,6 @@ export const cert = {
   about: 'Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2–3 years of hands-on cloud or systems experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 750/900 · Multiple-choice and performance-based',
   udemyCourseUrl: 'https://www.udemy.com/course/total-cloud-computing-comptia-cloud-cert-cv0-002/',
-  acronyms,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop CompTIA Cloud+ CV0-004 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+cloud%2B+cv0-004&tag=0003aa-20' },

@@ -1,5 +1,3 @@
-import { acronyms } from '../acronyms/comptia-cysa-plus.js';
-
 export const cert = {
   slug: 'comptia-cysa-plus',
   name: 'CompTIA CySA+',
@@ -14,7 +12,6 @@ export const cert = {
     { provider: 'amazon',  label: 'Shop CompTIA CySA+ Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+cysa%2B&tag=0003aa-20' },
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
-  acronyms,
   domains: [
     { slug: 'security-operations',          name: 'Security Operations',          weight: 33 },
     { slug: 'vulnerability-management',     name: 'Vulnerability Management',     weight: 30 },

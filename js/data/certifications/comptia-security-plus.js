@@ -1,5 +1,3 @@
-import { acronyms } from '../acronyms/comptia-security-plus.js';
-
 export const cert = {
   slug: 'comptia-security-plus',
   name: 'CompTIA Security+',
@@ -9,7 +7,6 @@ export const cert = {
   about: 'Security+ certifies professionals who can assess enterprise security posture, monitor hybrid environments, operate within governance and compliance frameworks, and identify and respond to security incidents.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 2 years IT administration with security focus',
   udemyCourseUrl: 'https://www.udemy.com/course/securityplus/',
-  acronyms,
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
     { provider: 'amazon',  label: 'Shop CompTIA Security+ SY0-701 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+security%2B+sy0-701&tag=0003aa-20' },

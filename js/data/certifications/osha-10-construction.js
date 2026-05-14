@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/osha-10-construction.js';
-import { services } from '../services/osha-10-construction.js';
-
 export const cert = {
   slug: 'osha-10-construction',
   name: 'OSHA 10-Hour Construction',
@@ -9,8 +6,6 @@ export const cert = {
   tagline: 'Required entry-level safety training for construction workers',
   about: 'OSHA 10-Hour Construction is a voluntary outreach training program covering worker rights and employer responsibilities, the OSHA Focus Four hazards (falls, electrocution, struck-by, caught-in or between), personal protective equipment, and health hazards in construction. Many states and contractors require it before allowing workers on a construction site, and it is the most common entry credential in the U.S. construction industry.',
   details: 'Voluntary 10-hour outreach training · No formal exam · Required by many states and contractors',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'udemy',  label: 'Video Course', url: '' },
     { provider: 'amazon', label: 'Shop OSHA 10 Construction Study Guides on Amazon', url: 'https://www.amazon.com/s?k=osha+10+construction+study+guide&tag=0003aa-20' },

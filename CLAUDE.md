@@ -114,13 +114,14 @@ Auto-generated questions consistently carry generator artifacts. Scan and fix ev
 
 ## Workflow: scaffolding a new cert
 
-1. **Add cert metadata** at [js/data/certifications/<slug>.js](js/data/certifications/) — slug, name, code, vendor, tagline, about, details, domains (with weights from the official exam guide), affiliates.
-2. **Add acronyms** at [js/data/acronyms/<slug>.js](js/data/acronyms/) — `export const acronyms = [{a, d}, ...]`.
-3. **Add concepts** at [js/data/services/<slug>.js](js/data/services/) — `export const services = [{a, d}, ...]`.
+1. **Add cert metadata** at [js/data/certifications/<slug>.js](js/data/certifications/) — slug, name, code, vendor, tagline, about, details, domains (with weights from the official exam guide), affiliates. File must be pure data: `export const cert = { ... };` and **no imports** — the bundler relies on a regex match against that exact shape.
+2. **Add acronyms** at [js/data/acronyms/<slug>.js](js/data/acronyms/) — `export const acronyms = [{a, d}, ...]`. Lazy-loaded by [initCertification.js](js/pages/certification/initCertification.js) via `import(\`../../data/acronyms/${cert.slug}.js\`)` — do NOT import it from the cert metadata file (would put it on the critical path).
+3. **Add concepts** at [js/data/services/<slug>.js](js/data/services/) — `export const services = [{a, d}, ...]`. Same lazy-load contract as acronyms — never imported eagerly from the cert metadata file.
 4. **Create empty domain JSON stubs** at `data/certifications/<slug>/<domain-slug>.json` — one per domain, minified, `questions: []`.
-5. **Wire into the registry**: import and push the cert in [js/data/certifications/index.js](js/data/certifications/index.js).
-6. **Confirm the page** at `<slug>/index.html` exists.
-7. **Remove the cert from [data/coming-soon.json](data/coming-soon.json)** — as soon as work begins, it is no longer "coming soon."
+5. **Append the slug to [_manifest.js](js/data/certifications/_manifest.js)** in the position you want it to appear in the home cert list.
+6. **Run `npm run build:certs`** (or `npm run build:seo`, which calls it first) to regenerate the bundled [js/data/certifications/index.js](js/data/certifications/index.js). `index.js` is GENERATED — never hand-edit it. Per-cert files are still the authoring source; the bundle just inlines them so the browser sees one request instead of 49.
+7. **Confirm the page** at `<slug>/index.html` exists.
+8. **Remove the cert from [data/coming-soon.json](data/coming-soon.json)** — as soon as work begins, it is no longer "coming soon."
 
 Leave `data/counts.json` alone until the cert has enough questions to flip live.
 
@@ -202,7 +203,8 @@ Only after every check passes is the cert deploy-ready.
 | Command | What it does |
 |---|---|
 | `npm start` | Local static server |
-| `npm run build:seo` | Regenerates per-cert HTML, OG images, sitemap, feed |
+| `npm run build:certs` | Bundles all per-cert metadata files into `js/data/certifications/index.js` |
+| `npm run build:seo` | Runs `build:certs`, then regenerates per-cert HTML, OG images, sitemap, feed |
 | `npm run check:weights` | Flags domains under-weighted vs. official exam targets |
 | `npm run check:salaries` | Validates `data/salaries.json` coverage and freshness |
 

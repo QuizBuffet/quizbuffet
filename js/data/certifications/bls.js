@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/bls.js';
-import { services } from '../services/bls.js';
-
 export const cert = {
   slug: 'bls',
   name: 'Basic Life Support (BLS)',
@@ -10,8 +7,6 @@ export const cert = {
   about: 'BLS (Basic Life Support) certifies healthcare professionals to deliver high-quality CPR, use an AED, provide ventilation with barrier devices and bag-mask, relieve choking, and work as part of a high-performance resuscitation team for adults, children, and infants. Required for nurses, physicians, EMTs, paramedics, dental and respiratory professionals, and most clinical roles. Built around the AHA Chain of Survival, 2020 BLS Guidelines (with 2023 focused updates), and the AHA BLS Provider course; renewal is typically every two years.',
   details: '25-question multiple-choice exam · Pass score 84% (21 of 25) · 2-year certification · Hands-on skills test required for in-person card',
   udemyCourseUrl: 'https://www.udemy.com/course/cpr-aed/?couponCode=KEEPLEARNING',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'amazon', label: 'Shop AHA BLS Provider Manuals on Amazon', url: 'https://www.amazon.com/s?k=aha+bls+provider+manual&tag=0003aa-20' },
   ],

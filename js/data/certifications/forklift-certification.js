@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/forklift-certification.js';
-import { services } from '../services/forklift-certification.js';
-
 export const cert = {
   slug: 'forklift-certification',
   name: 'Forklift Operator Certification',
@@ -9,8 +6,6 @@ export const cert = {
   tagline: 'Required certification for operating powered industrial trucks',
   about: 'Forklift Operator Certification is mandated by 29 CFR 1910.178 for any worker operating a powered industrial truck on the job. Training covers truck types and capacities, the physics of stability (fulcrum, center of gravity, stability triangle, load center), pre-operation inspection, safe load handling, operating around pedestrians, lifting personnel on work platforms, and the employer’s duty to evaluate and certify each operator at least every three years.',
   details: 'Employer-administered certification · Required by 29 CFR 1910.178 · Re-evaluation every 3 years',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'udemy',  label: 'Video Course', url: '' },
     { provider: 'amazon', label: 'Shop Forklift Operator Study Guides on Amazon', url: 'https://www.amazon.com/s?k=forklift+operator+certification+study+guide&tag=0003aa-20' },

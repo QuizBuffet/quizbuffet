@@ -1,5 +1,3 @@
-import { acronyms } from '../acronyms/comptia-data-plus.js';
-
 export const cert = {
   slug: 'comptia-data-plus',
   name: 'CompTIA Data+',
@@ -14,7 +12,6 @@ export const cert = {
     { provider: 'amazon',  label: 'Shop CompTIA Data+ Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+data%2B&tag=0003aa-20' },
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
-  acronyms,
   domains: [
     { slug: 'data-concepts-and-environments',  name: 'Data Concepts and Environments',  weight: 20 },
     { slug: 'data-acquisition-and-preparation', name: 'Data Acquisition and Preparation', weight: 22 },

@@ -1,6 +1,3 @@
-import { acronyms } from '../acronyms/osha-30-construction.js';
-import { services } from '../services/osha-30-construction.js';
-
 export const cert = {
   slug: 'osha-30-construction',
   name: 'OSHA 30-Hour Construction',
@@ -9,8 +6,6 @@ export const cert = {
   tagline: 'Supervisor-level construction safety certification',
   about: 'OSHA 30-Hour Construction is a voluntary outreach training program for supervisors and workers with safety responsibilities. It covers everything in OSHA 10 plus managing safety and health, the OSHA Focus Four hazards in greater depth, expanded electives, and Foundations for Safety Leadership. Many states, contractors, and project labor agreements require OSHA 30 for foremen, superintendents, and site safety personnel.',
   details: 'Voluntary 30-hour outreach training · No formal exam · Required by many states, GCs, and PLAs for supervisors',
-  acronyms,
-  services,
   affiliates: [
     { provider: 'udemy',  label: 'Video Course', url: '' },
     { provider: 'amazon', label: 'Shop OSHA 30 Construction Study Guides on Amazon', url: 'https://www.amazon.com/s?k=osha+30+construction+study+guide&tag=0003aa-20' },

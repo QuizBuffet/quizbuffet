@@ -325,7 +325,7 @@ function buildCertHtml(cert) {
           '@type': 'Organization',
           'name': 'QuizBuffet',
           'url': SITE,
-          'logo': { '@type': 'ImageObject', 'url': `${SITE}/icons/favicon-96x96.png` },
+          'logo': { '@type': 'ImageObject', 'url': `${SITE}/favicon-96x96.png` },
         },
         'mainEntityOfPage': { '@type': 'WebPage', '@id': url },
       },
@@ -380,11 +380,17 @@ function buildCertHtml(cert) {
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
-  <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
-  <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=20260428" />
-  <meta name="apple-mobile-web-app-title" content="QuizBuffet" />
-  <link rel="manifest" href="/icons/site.webmanifest?v=20260428" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-title" content="QuizBuffet">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="theme-color" content="#333333">
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
@@ -618,11 +624,17 @@ function buildDomainHtml(cert, domain, questions) {
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
-  <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
-  <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=20260428" />
-  <meta name="apple-mobile-web-app-title" content="QuizBuffet" />
-  <link rel="manifest" href="/icons/site.webmanifest?v=20260428" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-title" content="QuizBuffet">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="theme-color" content="#333333">
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
@@ -843,11 +855,17 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
-  <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
-  <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=20260428" />
-  <meta name="apple-mobile-web-app-title" content="QuizBuffet" />
-  <link rel="manifest" href="/icons/site.webmanifest?v=20260428" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-title" content="QuizBuffet">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="theme-color" content="#333333">
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>

@@ -67,7 +67,7 @@ export async function renderFooter() {
         <div class="footer-grid">
 
           <div class="footer-col">
-            <div class="footer-brand"><img src="/icons/favicon-48x48.png" width="24" height="24" alt="" class="footer-brand-img">QuizBuffet</div>
+            <div class="footer-brand"><img src="/favicon-32x32.png" width="24" height="24" alt="" class="footer-brand-img">QuizBuffet</div>
             <p class="footer-tagline">Built with love for anyone grinding toward a cert.</p>
             <p class="footer-body">
               This is a personal, private study tool — not a commercial platform.

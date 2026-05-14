@@ -33,7 +33,7 @@ function getNavStats() {
   return { totalDomains, domainsComplete, domainsStarted, totalCorrect, totalWrong };
 }
 
-export async function renderNav(active) {
+export function renderNav(active) {
   const el = document.getElementById('nav');
   if (!el) return;
 
@@ -42,18 +42,12 @@ export async function renderNav(active) {
     { href: '/progress', label: 'Progress' },
   ];
 
-  const { totalDomains, domainsComplete, domainsStarted, totalCorrect, totalWrong } = getNavStats();
-  const domainLabel = domainsComplete > 0
-    ? `${domainsComplete} done · ${domainsStarted} started`
-    : `${domainsStarted} / ${totalDomains} started`;
-
-  const totalQuestions = await getTotalQuestionCount();
-  const correctPct = totalQuestions ? (totalCorrect / totalQuestions) * 100 : 0;
-  const wrongPct   = totalQuestions ? (totalWrong   / totalQuestions) * 100 : 0;
-
-  const rightLabel = (totalCorrect + totalWrong) > 0
-    ? `<span class="nav-stat-correct">${totalCorrect} correct</span><span class="nav-stat-wrong">${totalWrong} wrong</span>`
-    : `<span class="nav-stat-text">no answers yet</span>`;
+  // Stats need a localStorage scan + counts.json fetch — defer to keep nav painting fast.
+  // Initial render uses neutral placeholders; an idle callback below fills the real values.
+  const domainLabel = ' ';
+  const correctPct = 0;
+  const wrongPct   = 0;
+  const rightLabel = '<span class="nav-stat-text">&nbsp;</span>';
 
   const isDark       = getTheme() === 'dark';
   const soundOn      = getSoundEnabled();
@@ -169,5 +163,34 @@ export async function renderNav(active) {
         b.classList.toggle('active', b.dataset.cur === btn.dataset.cur)
       );
     });
+  });
+
+  // Stats updates happen after first paint so the localStorage scan + counts.json
+  // fetch don't block the nav from appearing.
+  const idle = window.requestIdleCallback || (cb => setTimeout(cb, 100));
+  idle(async () => {
+    const { totalDomains, domainsComplete, domainsStarted, totalCorrect, totalWrong } = getNavStats();
+    const totalQuestions = await getTotalQuestionCount();
+
+    const textEl = el.querySelector('.nav-stats .nav-stat-text');
+    if (textEl) {
+      textEl.textContent = domainsComplete > 0
+        ? `${domainsComplete} done · ${domainsStarted} started`
+        : `${domainsStarted} / ${totalDomains} started`;
+    }
+    const correctFill = el.querySelector('.nav-stat-correct-fill');
+    const wrongFill   = el.querySelector('.nav-stat-wrong-fill');
+    if (correctFill) correctFill.style.width = (totalQuestions ? (totalCorrect / totalQuestions) * 100 : 0) + '%';
+    if (wrongFill)   wrongFill.style.width   = (totalQuestions ? (totalWrong   / totalQuestions) * 100 : 0) + '%';
+
+    const rightHTML = (totalCorrect + totalWrong) > 0
+      ? `<span class="nav-stat-correct">${totalCorrect} correct</span><span class="nav-stat-wrong">${totalWrong} wrong</span>`
+      : `<span class="nav-stat-text">no answers yet</span>`;
+    const stats = el.querySelector('.nav-stats');
+    if (stats) {
+      // Replace the trailing placeholder span (last child) with the real labels
+      const placeholder = stats.lastElementChild;
+      if (placeholder) placeholder.outerHTML = rightHTML;
+    }
   });
 }

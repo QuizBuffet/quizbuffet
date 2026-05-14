@@ -14,16 +14,16 @@ const SHELLS = {
       <div id="hero"></div>
       <div id="home-sponsor"></div>
       <div id="featured"></div>
-      <div id="ad-top" class="ad-slot">Advertisement</div>
+      <div id="ad-top" class="ad-slot"></div>
       <h2 class="section-title">All certifications</h2>
       <div id="total-badge"></div>
       <div id="cert-list"></div>
-      <div id="ad-bottom" class="ad-slot">Advertisement</div>
+      <div id="ad-bottom" class="ad-slot"></div>
     </main>`,
 
   cert: `
     <main class="container container-wide">
-      <div id="ad-top" class="ad-slot">Advertisement</div>
+      <div id="ad-top" class="ad-slot"></div>
       <div id="cert-header"></div>
       <div id="progress-summary"></div>
       <h2 class="section-title" id="domains-label">Exam Domains</h2>
@@ -37,12 +37,12 @@ const SHELLS = {
       <div id="cert-faq"></div>
       <div id="affiliates"></div>
       <div id="cert-related"></div>
-      <div id="ad-bottom" class="ad-slot">Advertisement</div>
+      <div id="ad-bottom" class="ad-slot"></div>
     </main>`,
 
   domain: `
     <main class="container">
-      <div id="ad-top" class="ad-slot">Advertisement</div>
+      <div id="ad-top" class="ad-slot"></div>
       <div id="domain-header"></div>
       <div id="domain-progress"></div>
       <div id="session-size-picker"></div>
@@ -50,12 +50,12 @@ const SHELLS = {
       <div id="domain-actions"></div>
       <div id="session-history"></div>
       <div id="weak-spots"></div>
-      <div id="ad-bottom" class="ad-slot">Advertisement</div>
+      <div id="ad-bottom" class="ad-slot"></div>
     </main>`,
 
   quiz: `
     <main class="container">
-      <div id="ad-top" class="ad-slot">Advertisement</div>
+      <div id="ad-top" class="ad-slot"></div>
       <div id="quiz-meta" class="quiz-meta" role="status" aria-live="polite"></div>
       <div id="question" aria-live="polite" aria-atomic="true"></div>
       <div id="question-timer" class="question-timer" aria-hidden="true"></div>
@@ -170,10 +170,13 @@ async function route() {
   }
 }
 
-renderFooter();
-renderBackToTop();
 window.addEventListener('popstate', route);
 route();
+
+// Footer + back-to-top are below the fold — defer to idle so they don't compete
+// with the initial render and break up the main-thread task budget.
+const idle = window.requestIdleCallback || (cb => setTimeout(cb, 200));
+idle(() => { renderFooter(); renderBackToTop(); });
 
 // Set of coming-soon slugs — loaded once. Clicks to these URLs do a NATIVE
 // navigation, not a pushState, so the static rich coming-soon HTML loads

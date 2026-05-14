@@ -260,14 +260,18 @@ export function renderCertList(live, comingSoon = [], filter = '') {
   const liveGroups = groupByCategory(liveFiltered, true);
   const csGroups = groupByCategory(csFiltered, false);
 
-  el.innerHTML = `
-    ${renderCategorizedSection('Available now', 'dot-live', liveFiltered.length, liveGroups, renderLiveCard)}
-    ${renderCategorizedSection('Coming soon', 'dot-soon', csFiltered.length, csGroups, c => renderCsCard(c, comingSoon))}
-  `;
+  // Render the live section first — it's above the fold. The coming-soon
+  // section + post-processing get pushed to subsequent frames so the initial
+  // paint doesn't run as one long main-thread task.
+  el.innerHTML = renderCategorizedSection('Available now', 'dot-live', liveFiltered.length, liveGroups, renderLiveCard);
 
-  fillSalaries(el);
-  fillPricing(el);
-  attachCertPreview(el, live);
+  const idle = window.requestIdleCallback || (cb => setTimeout(cb, 50));
+  idle(() => {
+    el.insertAdjacentHTML('beforeend', renderCategorizedSection('Coming soon', 'dot-soon', csFiltered.length, csGroups, c => renderCsCard(c, comingSoon)));
+    idle(() => fillSalaries(el));
+    idle(() => fillPricing(el));
+    idle(() => attachCertPreview(el, live));
+  });
 
   loadCounts().then(counts => {
     const perCert = (counts && counts.perCert) || {};

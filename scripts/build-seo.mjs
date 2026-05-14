@@ -416,7 +416,7 @@ function buildCertHtml(cert) {
     @keyframes bg-pulse-a{0%,100%{opacity:.4}50%{opacity:1}}
     @keyframes bg-pulse-b{0%,100%{opacity:1}50%{opacity:.2}}
   </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <!-- AdSense disabled until a real ca-pub client is wired up. To re-enable: restore the script tag here AND in index.html, uncomment the push() in js/components/ad/renderAd.js. -->
 
   <script type="application/ld+json">
 ${JSON.stringify(jsonLd, null, 2)}

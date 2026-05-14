@@ -4,14 +4,7 @@ import { getTheme, applyTheme } from '../../utils/applyTheme.js';
 import { getColorTheme, applyColorTheme } from '../../utils/applyColorTheme.js';
 import { getSoundEnabled, toggleSound } from '../../utils/soundPref.js';
 import { getCursor, setCursor, CURSORS } from '../../utils/cursorPref.js';
-
-async function loadComingSoon() {
-  try {
-    const res = await fetch('/data/coming-soon.json');
-    if (res.ok) return await res.json();
-  } catch (_) {}
-  return [];
-}
+import { loadComingSoon } from '../../data/comingSoon/loadComingSoon.js';
 
 async function loadBuild() {
   try {

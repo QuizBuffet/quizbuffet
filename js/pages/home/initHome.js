@@ -10,6 +10,7 @@ import { certifications } from '../../data/certifications/index.js';
 import { setMeta } from '../../components/meta/setMeta.js';
 import { setJsonLd } from '../../components/meta/setJsonLd.js';
 import { initFloatingEmoji } from '../../components/floatingEmoji/floatingEmoji.js';
+import { loadComingSoon } from '../../data/comingSoon/loadComingSoon.js';
 
 export async function init() {
   setMeta(
@@ -29,11 +30,7 @@ export async function init() {
     'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
   });
 
-  let comingSoon = [];
-  try {
-    const res = await fetch('/data/coming-soon.json');
-    if (res.ok) comingSoon = await res.json();
-  } catch (_) {}
+  const comingSoon = await loadComingSoon();
 
   renderComingSoonMarquee(comingSoon);
   renderHero(comingSoon, filter => renderCertList(certifications, comingSoon, filter));

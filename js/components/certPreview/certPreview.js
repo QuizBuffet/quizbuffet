@@ -4,6 +4,8 @@
 // Keyboard: shows on focus-visible.
 import { loadSalaries, getSalaryEntry, formatFullUSD, collarLabel } from '../../data/salaries/loadSalaries.js';
 import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
+import { loadCounts } from '../../data/counts/loadCounts.js';
+import { loadComingSoon } from '../../data/comingSoon/loadComingSoon.js';
 
 const SHOW_DELAY = 250;
 const HIDE_DELAY = 120;     // grace period after mouseleave (covers card-to-card transitions)
@@ -16,10 +18,7 @@ let hideTimer = null;
 let pressTimer = null;
 let lastCard = null;
 let touchSuppressClick = false;
-let salariesP = null;
-let countsP = null;
-let comingSoonP = null;
-let pricingP = null;
+// Shared loaders (loadCounts/loadComingSoon/loadSalaries/loadPricing) memoize internally.
 
 function ensureTip() {
   if (tip) return tip;
@@ -51,12 +50,13 @@ function firstSentence(s) {
 }
 
 async function fetchData() {
-  if (!salariesP) salariesP = loadSalaries();
-  if (!countsP)   countsP = fetch('/data/counts.json').then(r => r.ok ? r.json() : { perCert: {} }).catch(() => ({ perCert: {} }));
-  if (!comingSoonP) comingSoonP = fetch('/data/coming-soon.json').then(r => r.ok ? r.json() : []).catch(() => []);
-  if (!pricingP) pricingP = loadPricing();
-  const [salaries, counts, comingSoon, pricing] = await Promise.all([salariesP, countsP, comingSoonP, pricingP]);
-  return { salaries, counts, comingSoon, pricing };
+  const [salaries, counts, comingSoon, pricing] = await Promise.all([
+    loadSalaries(),
+    loadCounts(),
+    loadComingSoon(),
+    loadPricing(),
+  ]);
+  return { salaries, counts: counts || { perCert: {} }, comingSoon, pricing };
 }
 
 async function buildContent(slug, certs) {

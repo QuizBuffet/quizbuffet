@@ -1,5 +1,7 @@
 // Featured carousel — pulls a random sample of live certs each visit so every
 // cert gets a chance to be shown over time. Cap keeps the dot count tight on mobile.
+import { loadCounts } from '../../data/counts/loadCounts.js';
+
 const FEATURED_COUNT = 8;
 
 function pickRandom(certs, n) {
@@ -27,18 +29,15 @@ const PALETTE = {
 
 let timer = null;
 let currentIdx = 0;
-let countsCache = null;
 
 function fillCount(certs, idx) {
   const cert = certs[idx];
   const slot = document.querySelector(`.featured-slide [data-count="${cert.slug}"]`);
   if (!slot) return;
-  const apply = (counts) => {
-    const n = (counts && counts.perCert && counts.perCert[cert.slug]) || 0;
+  loadCounts().then(c => {
+    const n = (c && c.perCert && c.perCert[cert.slug]) || 0;
     slot.textContent = n ? n.toLocaleString() : '…';
-  };
-  if (countsCache) { apply(countsCache); return; }
-  fetch('/data/counts.json').then(r => r.json()).then(c => { countsCache = c; apply(c); }).catch(() => {});
+  });
 }
 
 function renderSlide(certs, idx) {

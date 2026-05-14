@@ -17,6 +17,7 @@ import { setJsonLd } from '../../components/meta/setJsonLd.js';
 import { affiliateLinksHTML } from '../../components/affiliates/affiliateLinksHTML.js';
 import { renderSalaryPanel } from '../../components/salary/renderSalaryPanel.js';
 import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
+import { loadComingSoon } from '../../data/comingSoon/loadComingSoon.js';
 
 export async function init() {
   renderAd('ad-top');
@@ -25,14 +26,8 @@ export async function init() {
 
   if (!cert) {
     // Maybe it's a coming-soon cert — render a placeholder card
-    let comingSoon = null;
-    try {
-      const res = await fetch('/data/coming-soon.json');
-      if (res.ok) {
-        const list = await res.json();
-        comingSoon = list.find(c => c.slug === certSlug) || null;
-      }
-    } catch (_) {}
+    const list = await loadComingSoon();
+    const comingSoon = list.find(c => c.slug === certSlug) || null;
 
     if (comingSoon) {
       setMeta(

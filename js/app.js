@@ -3,6 +3,7 @@ import { renderNav } from './components/nav/renderNav.js';
 import { renderFooter } from './components/footer/renderFooter.js';
 import { renderBackToTop } from './components/backToTop/renderBackToTop.js';
 import { checkInactivityReset } from './storage/checkInactivityReset.js';
+import { loadComingSoon } from './data/comingSoon/loadComingSoon.js';
 
 checkInactivityReset();
 
@@ -178,10 +179,7 @@ route();
 // navigation, not a pushState, so the static rich coming-soon HTML loads
 // directly (it has its own SPA-bypass logic via <html data-coming-soon="1">).
 const COMING_SOON_SLUGS = new Set();
-fetch('/data/coming-soon.json')
-  .then(r => r.ok ? r.json() : [])
-  .then(list => { (list || []).forEach(c => COMING_SOON_SLUGS.add(c.slug)); })
-  .catch(() => {});
+loadComingSoon().then(list => { list.forEach(c => COMING_SOON_SLUGS.add(c.slug)); });
 
 // Intercept internal link clicks so navigation stays in-app (no full page reloads)
 document.addEventListener('click', e => {

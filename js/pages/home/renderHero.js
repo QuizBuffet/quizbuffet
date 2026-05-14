@@ -1,6 +1,7 @@
 // Refined home hero — minimalist headline + stat strip + search bar.
 // Absorbs the random-domain button as a secondary action and the search input.
 import { certifications } from '../../data/certifications/index.js';
+import { loadCounts } from '../../data/counts/loadCounts.js';
 
 export function renderHero(comingSoon, onSearch) {
   const el = document.getElementById('hero');
@@ -65,29 +66,27 @@ export function renderHero(comingSoon, onSearch) {
   }
 
   // Populate stats from counts.json — keep static fallback if fetch fails
-  fetch('/data/counts.json')
-    .then(r => r.json())
-    .then(c => {
-      const root = document.getElementById('hero-stats');
-      if (!root) return;
-      const qEl = root.querySelector('[data-stat="questions"]');
-      const cEl = root.querySelector('[data-stat="certs"]');
-      if (qEl) qEl.textContent = (c.total || 0).toLocaleString();
-      if (cEl) cEl.textContent = (c.liveCerts || 0).toString();
+  loadCounts().then(c => {
+    if (!c) return;
+    const root = document.getElementById('hero-stats');
+    if (!root) return;
+    const qEl = root.querySelector('[data-stat="questions"]');
+    const cEl = root.querySelector('[data-stat="certs"]');
+    if (qEl) qEl.textContent = (c.total || 0).toLocaleString();
+    if (cEl) cEl.textContent = (c.liveCerts || 0).toString();
 
-      // Populate nonempty-domain list for the random button without fetching every JSON
-      try {
-        const nonempty = [];
-        const perDomain = c.perDomain || {};
-        for (const cert of certifications) {
-          const dmap = perDomain[cert.slug] || {};
-          for (const d of cert.domains) {
-            if ((dmap[d.slug] || 0) > 0) nonempty.push(`${cert.slug}/${d.slug}`);
-          }
+    // Populate nonempty-domain list for the random button without fetching every JSON
+    try {
+      const nonempty = [];
+      const perDomain = c.perDomain || {};
+      for (const cert of certifications) {
+        const dmap = perDomain[cert.slug] || {};
+        for (const d of cert.domains) {
+          if ((dmap[d.slug] || 0) > 0) nonempty.push(`${cert.slug}/${d.slug}`);
         }
-        sessionStorage.setItem('qb_meta_total_questions', String(c.total || 0));
-        sessionStorage.setItem('qb_meta_nonempty_domains', JSON.stringify(nonempty));
-      } catch {}
-    })
-    .catch(() => {});
+      }
+      sessionStorage.setItem('qb_meta_total_questions', String(c.total || 0));
+      sessionStorage.setItem('qb_meta_nonempty_domains', JSON.stringify(nonempty));
+    } catch {}
+  });
 }

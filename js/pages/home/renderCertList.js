@@ -1,16 +1,7 @@
 import { loadSalaries, getSalaryEntry, formatCompactUSD, collarLabel } from '../../data/salaries/loadSalaries.js';
 import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
 import { attachCertPreview } from '../../components/certPreview/certPreview.js';
-
-let countsPromise = null;
-function loadCounts() {
-  if (!countsPromise) {
-    countsPromise = fetch('/data/counts.json')
-      .then(r => r.ok ? r.json() : { perCert: {} })
-      .catch(() => ({ perCert: {} }));
-  }
-  return countsPromise;
-}
+import { loadCounts } from '../../data/counts/loadCounts.js';
 
 // Live cert categories — coming-soon entries already carry their own `category` field.
 const LIVE_CATEGORY = {
@@ -279,7 +270,7 @@ export function renderCertList(live, comingSoon = [], filter = '') {
   attachCertPreview(el, live);
 
   loadCounts().then(counts => {
-    const perCert = counts.perCert || {};
+    const perCert = (counts && counts.perCert) || {};
     liveFiltered.forEach(cert => {
       const countEl = el.querySelector(`[data-cert-count="${cert.slug}"]`);
       const item = el.querySelector(`[data-cert-item="${cert.slug}"]`);

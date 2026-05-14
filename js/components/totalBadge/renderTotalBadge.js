@@ -1,16 +1,14 @@
 // Badge of honor — animated count-up showing total practice questions across the entire site.
 // Reads /data/counts.json (written by scripts/build-seo.mjs).
+import { loadCounts } from '../../data/counts/loadCounts.js';
+
 const COUNT_UP_MS = 1200;
 
 export async function renderTotalBadge(mountId) {
   const el = document.getElementById(mountId);
   if (!el) return;
-  let counts;
-  try {
-    const r = await fetch('/data/counts.json');
-    if (!r.ok) return;
-    counts = await r.json();
-  } catch (_) { return; }
+  const counts = await loadCounts();
+  if (!counts) return;
 
   const total = counts.total || 0;
   const live = counts.liveCerts || 0;

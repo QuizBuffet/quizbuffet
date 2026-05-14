@@ -74,7 +74,7 @@ export function renderNav(active) {
 
   el.innerHTML = `
     <nav class="nav">
-      <a href="/" class="nav-logo"><img src="/icons/favicon-96x96.png" width="28" height="28" alt="" class="nav-logo-img">QuizBuffet</a>
+      <a href="/" class="nav-logo"><img src="/icons/favicon-48x48.png" width="28" height="28" alt="" class="nav-logo-img">QuizBuffet</a>
       <div class="nav-menu">
         ${links.map(l => `<a href="${l.href}" ${active === l.label ? 'class="active"' : ''}>${l.label}</a>`).join('')}
         <button class="nav-settings-btn" id="settings-btn" aria-label="Settings" aria-expanded="false">⚙</button>

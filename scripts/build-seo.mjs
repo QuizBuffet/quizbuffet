@@ -1182,6 +1182,18 @@ function updateHomeIndex(certs) {
   html = html.replace(/Free Practice Tests for \d+ Certifications/g, `Free Practice Tests for ${n} Certifications`);
   html = html.replace(/Free practice tests for \d+ certifications:/g, `Free practice tests for ${n} certifications:`);
 
+  // 1b. Pre-rendered hero stats (LCP optimization — see <div id="app"> in index.html).
+  // Keep the static numbers in sync with the live count so they don't bounce when
+  // counts.json arrives at runtime.
+  html = html.replace(
+    /(data-stat="questions">)[\d,]+(<\/span>)/,
+    `$1${grandTotal.toLocaleString()}$2`
+  );
+  html = html.replace(
+    /(data-stat="certs">)\d+(<\/span>)/,
+    `$1${n}$2`
+  );
+
   // 2. Patch the JSON-LD block by parsing it, updating the drift-prone nodes, and re-stringifying
   const ldRegex = /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/;
   const m = html.match(ldRegex);

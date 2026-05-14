@@ -565,7 +565,39 @@
   <div id="nav" role="navigation" aria-label="Main navigation"></div>
   <main id="main-content">
     <h1 class="seo-h1">Free Certification Practice Tests</h1>
-    <div id="app"></div>
+    <div id="app"><!-- Pre-rendered home shell + hero so LCP fires on the static markup, not after JS hydrates. build-seo.mjs keeps hero-stat counts in sync. -->
+      <div id="cs-marquee"></div>
+      <main class="container container-home">
+        <div id="hero">
+          <section class="hero">
+            <div class="hero-inner">
+              <h1 class="hero-headline">Free practice tests for <span class="hero-em">professional certifications</span>.</h1>
+              <p class="hero-sub">Domain-by-domain quizzes with instant feedback and detailed explanations. No account, no paywall.</p>
+              <form class="hero-search" id="hero-search-form" role="search">
+                <input class="hero-search-input" type="text" id="domain-search" placeholder="Search certifications, vendors, categories…" aria-label="Search certifications" autocomplete="off">
+                <button class="hero-random" id="pick-random" type="button" title="Pick a random domain to study">
+                  <span class="hero-random-text">Random domain</span>
+                  <span class="hero-random-arrow" aria-hidden="true">→</span>
+                </button>
+              </form>
+              <div class="hero-search-hint" aria-hidden="true">Filters as you type · press Enter to open the first match</div>
+              <div class="hero-stats" id="hero-stats">
+                <div class="hero-stat"><span class="hero-stat-num" data-stat="questions">30,803</span><span class="hero-stat-label">questions</span></div>
+                <div class="hero-stat"><span class="hero-stat-num" data-stat="certs">48</span><span class="hero-stat-label">certifications</span></div>
+                <div class="hero-stat"><span class="hero-stat-num">$0</span><span class="hero-stat-label">to use, forever</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div id="home-sponsor"></div>
+        <div id="featured"></div>
+        <div id="ad-top" class="ad-slot"></div>
+        <h2 class="section-title">All certifications</h2>
+        <div id="total-badge"></div>
+        <div id="cert-list"></div>
+        <div id="ad-bottom" class="ad-slot"></div>
+      </main>
+    </div>
   </main>
   <div id="footer" role="contentinfo"></div>
   <script type="module" src="/js/app.js"></script>

@@ -7,30 +7,35 @@ export function renderHero(comingSoon, onSearch) {
   const el = document.getElementById('hero');
   if (!el) return;
 
-  el.innerHTML = `
-    <section class="hero">
-      <div class="hero-inner">
-        <h1 class="hero-headline">Free practice tests for <span class="hero-em">professional certifications</span>.</h1>
-        <p class="hero-sub">Domain-by-domain quizzes with instant feedback and detailed explanations. No account, no paywall.</p>
+  // index.html ships with the hero pre-rendered (for LCP). Skip the innerHTML
+  // overwrite when the static markup is already there; otherwise (SPA-navigated
+  // home from another page) render it now.
+  if (!el.querySelector('.hero-inner')) {
+    el.innerHTML = `
+      <section class="hero">
+        <div class="hero-inner">
+          <h1 class="hero-headline">Free practice tests for <span class="hero-em">professional certifications</span>.</h1>
+          <p class="hero-sub">Domain-by-domain quizzes with instant feedback and detailed explanations. No account, no paywall.</p>
 
-        <form class="hero-search" id="hero-search-form" role="search">
-          <input class="hero-search-input" type="text" id="domain-search"
-                 placeholder="Search certifications, vendors, categories…"
-                 aria-label="Search certifications" autocomplete="off">
-          <button class="hero-random" id="pick-random" type="button" title="Pick a random domain to study">
-            <span class="hero-random-text">Random domain</span>
-            <span class="hero-random-arrow" aria-hidden="true">→</span>
-          </button>
-        </form>
-        <div class="hero-search-hint" aria-hidden="true">Filters as you type · press Enter to open the first match</div>
+          <form class="hero-search" id="hero-search-form" role="search">
+            <input class="hero-search-input" type="text" id="domain-search"
+                   placeholder="Search certifications, vendors, categories…"
+                   aria-label="Search certifications" autocomplete="off">
+            <button class="hero-random" id="pick-random" type="button" title="Pick a random domain to study">
+              <span class="hero-random-text">Random domain</span>
+              <span class="hero-random-arrow" aria-hidden="true">→</span>
+            </button>
+          </form>
+          <div class="hero-search-hint" aria-hidden="true">Filters as you type · press Enter to open the first match</div>
 
-        <div class="hero-stats" id="hero-stats">
-          <div class="hero-stat"><span class="hero-stat-num" data-stat="questions">—</span><span class="hero-stat-label">questions</span></div>
-          <div class="hero-stat"><span class="hero-stat-num" data-stat="certs">—</span><span class="hero-stat-label">certifications</span></div>
-          <div class="hero-stat"><span class="hero-stat-num">$0</span><span class="hero-stat-label">to use, forever</span></div>
+          <div class="hero-stats" id="hero-stats">
+            <div class="hero-stat"><span class="hero-stat-num" data-stat="questions">—</span><span class="hero-stat-label">questions</span></div>
+            <div class="hero-stat"><span class="hero-stat-num" data-stat="certs">—</span><span class="hero-stat-label">certifications</span></div>
+            <div class="hero-stat"><span class="hero-stat-num">$0</span><span class="hero-stat-label">to use, forever</span></div>
+          </div>
         </div>
-      </div>
-    </section>`;
+      </section>`;
+  }
 
   // Wire search — type to filter, Enter to open first match
   const input = document.getElementById('domain-search');

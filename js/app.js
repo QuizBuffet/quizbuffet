@@ -120,16 +120,23 @@ async function route() {
     return;
   }
 
-  document.getElementById('app').innerHTML = SHELLS[page] ||
-    `<main class="container">
-      <div class="not-found">
-        <div class="not-found-code">404</div>
-        <h1 class="not-found-title">Page not found</h1>
-        <p class="not-found-body">This page doesn't exist or the link is broken.</p>
-        <a href="/" class="not-found-btn">← Back to Home</a>
-        <a href="mailto:artivicolab@gmail.com?subject=QuizBuffet%20-%20Broken%20link: ${encodeURIComponent(location.pathname + location.search)}" class="not-found-report">Report broken link</a>
-      </div>
-    </main>`;
+  // On the home page, index.html ships with the SHELL + hero already in #app so
+  // LCP fires on static markup. Only inject SHELL when it's missing (SPA-navigated
+  // to home from another route, or non-home pages).
+  const app = document.getElementById('app');
+  const hasStaticHero = page === 'home' && app.querySelector('.hero-inner');
+  if (!hasStaticHero) {
+    app.innerHTML = SHELLS[page] ||
+      `<main class="container">
+        <div class="not-found">
+          <div class="not-found-code">404</div>
+          <h1 class="not-found-title">Page not found</h1>
+          <p class="not-found-body">This page doesn't exist or the link is broken.</p>
+          <a href="/" class="not-found-btn">← Back to Home</a>
+          <a href="mailto:artivicolab@gmail.com?subject=QuizBuffet%20-%20Broken%20link: ${encodeURIComponent(location.pathname + location.search)}" class="not-found-report">Report broken link</a>
+        </div>
+      </main>`;
+  }
 
   window.scrollTo(0, 0);
   renderNav(NAV_ACTIVE[page]);

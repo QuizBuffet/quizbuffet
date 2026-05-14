@@ -13,6 +13,22 @@ async function loadComingSoon() {
   return [];
 }
 
+async function loadBuild() {
+  try {
+    const res = await fetch('/data/build.json');
+    if (res.ok) return await res.json();
+  } catch (_) {}
+  return { version: '', builtAt: '' };
+}
+
+function formatBuildDate(iso) {
+  if (!iso) return '';
+  // iso is YYYY-MM-DD; render as "May 14, 2026" in the user's locale-leaning shape.
+  const d = new Date(iso + 'T00:00:00');
+  if (isNaN(d)) return iso;
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
 const SWATCHES = [
   { id: 'buffet',   label: 'Buffet'         },
   { id: 'navy',     label: 'Midnight Navy'  },
@@ -28,7 +44,10 @@ export async function renderFooter() {
   if (!el) return;
 
   const year = new Date().getFullYear();
-  const comingSoon = await loadComingSoon();
+  const [comingSoon, build] = await Promise.all([loadComingSoon(), loadBuild()]);
+  const buildStamp = build.version
+    ? `${build.version} · updated ${formatBuildDate(build.builtAt)}`
+    : '';
 
   const liveSorted = [...certifications].sort((a, b) => a.name.localeCompare(b.name));
   const certLinks = liveSorted.map(c =>
@@ -55,7 +74,7 @@ export async function renderFooter() {
         <div class="footer-grid">
 
           <div class="footer-col">
-            <div class="footer-brand"><img src="/icons/favicon.svg" alt="" class="footer-brand-img">QuizBuffet</div>
+            <div class="footer-brand"><img src="/icons/favicon-96x96.png" width="24" height="24" alt="" class="footer-brand-img">QuizBuffet</div>
             <p class="footer-tagline">Built with love for anyone grinding toward a cert.</p>
             <p class="footer-body">
               This is a personal, private study tool — not a commercial platform.
@@ -123,6 +142,7 @@ export async function renderFooter() {
         <div class="footer-bottom">
           <span>&copy; ${year} QuizBuffet &mdash; a personal project, made with care.</span>
           <span class="footer-disclaimer">Not affiliated with CompTIA or any certification body. All trademarks belong to their respective owners.</span>
+          ${buildStamp ? `<span class="footer-build" title="Service worker cache version and last build date">${buildStamp}</span>` : ''}
         </div>
 
       </div>

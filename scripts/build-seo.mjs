@@ -319,7 +319,7 @@ function buildCertHtml(cert) {
           '@type': 'Organization',
           'name': 'QuizBuffet',
           'url': SITE,
-          'logo': { '@type': 'ImageObject', 'url': `${SITE}/icons/favicon.svg` },
+          'logo': { '@type': 'ImageObject', 'url': `${SITE}/icons/favicon-96x96.png` },
         },
         'mainEntityOfPage': { '@type': 'WebPage', '@id': url },
       },
@@ -375,7 +375,6 @@ function buildCertHtml(cert) {
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=20260428" />
   <meta name="apple-mobile-web-app-title" content="QuizBuffet" />
@@ -397,8 +396,8 @@ function buildCertHtml(cert) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional"></noscript>
-  <link rel="preload" as="style" href="/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  <link rel="preload" as="style" href="/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
   <style>
     #app{min-height:100vh}
     #nav{min-height:88px}
@@ -602,7 +601,6 @@ function buildDomainHtml(cert, domain, questions) {
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=20260428" />
   <meta name="apple-mobile-web-app-title" content="QuizBuffet" />
@@ -624,8 +622,8 @@ function buildDomainHtml(cert, domain, questions) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional"></noscript>
-  <link rel="preload" as="style" href="/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  <link rel="preload" as="style" href="/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
   <style>
     #app{min-height:100vh}
     #nav{min-height:88px}
@@ -821,7 +819,6 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
   <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
   <link rel="icon" type="image/png" href="/icons/favicon-96x96.png?v=20260428" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg?v=20260428" />
   <link rel="shortcut icon" href="/icons/favicon.ico?v=20260428" />
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=20260428" />
   <meta name="apple-mobile-web-app-title" content="QuizBuffet" />
@@ -842,8 +839,8 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional"></noscript>
-  <link rel="preload" as="style" href="/css/style.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  <link rel="preload" as="style" href="/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
   <style>
     #app{min-height:100vh}
     #nav{min-height:88px}
@@ -1310,6 +1307,13 @@ const counts = {
 };
 fs.writeFileSync(path.join(ROOT, 'data', 'counts.json'), JSON.stringify(counts));
 console.log(`  ✓ data/counts.json (${grandTotal.toLocaleString()} questions across ${certifications.length} certs)`);
+
+// Surface the SW cache version + this build's date so the footer can show "what's live"
+// without hand-edits. Version comes from sw.js (the cache string is the deploy marker).
+const swSrc = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
+const version = (swSrc.match(/CACHE\s*=\s*['"]([^'"]+)['"]/) || [, 'unknown'])[1];
+fs.writeFileSync(path.join(ROOT, 'data', 'build.json'), JSON.stringify({ version, builtAt: TODAY }));
+console.log(`  ✓ data/build.json (${version}, ${TODAY})`);
 
 updateHomeIndex(certifications);
 console.log(`  ✓ index.html (cert count + ItemList + FAQ + offerCount synced to ${certifications.length} live certs)`);

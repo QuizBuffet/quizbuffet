@@ -204,7 +204,8 @@ Only after every check passes is the cert deploy-ready.
 |---|---|
 | `npm start` | Local static server |
 | `npm run build:certs` | Bundles all per-cert metadata files into `js/data/certifications/index.js` |
-| `npm run build:seo` | Runs `build:certs`, then regenerates per-cert HTML, OG images, sitemap, feed |
+| `npm run build:css` | Minifies `css/style.css` → `css/style.min.css` (the file the site actually serves) |
+| `npm run build:seo` | Runs `build:certs` + `build:css`, then regenerates per-cert HTML, OG images, sitemap, feed, `data/build.json` (SW version + build date for the footer stamp), and `data/counts.json` |
 | `npm run check:weights` | Flags domains under-weighted vs. official exam targets |
 | `npm run check:salaries` | Validates `data/salaries.json` coverage and freshness |
 

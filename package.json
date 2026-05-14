@@ -4,7 +4,8 @@
     "start": "npx serve -s .",
     "sync": "node sync-counts.js",
     "build:certs": "node scripts/build-certs.mjs",
-    "build:seo": "node scripts/build-certs.mjs && node scripts/build-seo.mjs",
+    "build:css": "node scripts/build-css.mjs",
+    "build:seo": "node scripts/build-certs.mjs && node scripts/build-css.mjs && node scripts/build-seo.mjs",
     "check:weights": "node scripts/check-weights.mjs",
     "check:salaries": "node scripts/check-salaries.mjs"
   }

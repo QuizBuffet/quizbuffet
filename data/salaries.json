@@ -1267,6 +1267,20 @@
     "lastUpdated": "2026-05-13",
     "notes": "CPA — TCP is a Discipline section; salary applies to the full CPA credential"
   },
+  "ceh": {
+    "collar": "white-collar",
+    "salary": { "currency": "USD", "low": 72000, "mid": 105000, "high": 165000 },
+    "sources": ["ZipRecruiter", "Payscale"],
+    "lastUpdated": "2026-05-14",
+    "notes": "Certified Ethical Hacker — penetration tester / offensive security analyst"
+  },
+  "sscp": {
+    "collar": "white-collar",
+    "salary": { "currency": "USD", "low": 65000, "mid": 92000, "high": 140000 },
+    "sources": ["ZipRecruiter", "ISC2 workforce report"],
+    "lastUpdated": "2026-05-14",
+    "notes": "ISC2 SSCP — security analyst / SOC analyst / security administrator"
+  },
   "shrm-cp": {
     "collar": "white-collar",
     "salary": {

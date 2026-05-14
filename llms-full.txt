@@ -1523,40 +1523,42 @@ The Tax Compliance and Planning (TCP) section is one of three Discipline section
 - A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #3
 - Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #4
 - Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #5
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #6
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #7
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #8
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #9
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #10
-- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #11
-- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #12
-- Google Cybersecurity Professional Certificate (Google Cybersecurity) — https://quizbuffet.com/google-cybersecurity-certificate/ — priority #13
-- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #14
-- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #15
-- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #16
-- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #17
-- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #18
-- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #19
-- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #20
-- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #21
-- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #22
-- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #23
-- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #24
-- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #25
-- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #26
-- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #27
-- Barber 1 (No Chemical) License (Barber 1) — https://quizbuffet.com/barber-no-chemical/ — priority #28
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #29
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #30
-- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #31
-- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #32
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #33
-- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #34
-- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #35
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #36
-- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #37
-- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #38
-- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #39
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #40
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #41
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #42
+- Certified Ethical Hacker (CEH) (CEH v13) — https://quizbuffet.com/ceh/ — priority #6
+- Systems Security Certified Practitioner (SSCP) (SSCP) — https://quizbuffet.com/sscp/ — priority #7
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #8
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #9
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #10
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #11
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #12
+- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #13
+- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #14
+- Google Cybersecurity Professional Certificate (Google Cybersecurity) — https://quizbuffet.com/google-cybersecurity-certificate/ — priority #15
+- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #16
+- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #17
+- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #18
+- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #19
+- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #20
+- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #21
+- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #22
+- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #23
+- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #24
+- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #25
+- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #26
+- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #27
+- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #28
+- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #29
+- Barber 1 (No Chemical) License (Barber 1) — https://quizbuffet.com/barber-no-chemical/ — priority #30
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #31
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #32
+- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #33
+- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #34
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #35
+- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #36
+- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #37
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #38
+- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #39
+- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #40
+- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #41
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #42
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #43
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #44

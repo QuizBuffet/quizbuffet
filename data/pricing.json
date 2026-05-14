@@ -113,6 +113,8 @@
   "cpa-bar":                               { "practice_usd": 450 },
   "cpa-isc":                               { "practice_usd": 450 },
   "cpa-tcp":                               { "practice_usd": 450 },
+  "ceh":                                   { "practice_usd": 99 },
+  "sscp":                                  { "practice_usd": 75 },
   "shrm-cp":                               { "practice_usd": 50 },
   "six-sigma-green-belt":                  { "practice_usd": 99 }
 }

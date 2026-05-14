@@ -231,6 +231,13 @@ function buildCertHtml(cert) {
     return { ...dom, count: qs.length };
   });
 
+  // Registered certs with zero questions are scaffolds, not real pages — noindex so
+  // Google doesn't flag them as "Crawled - currently not indexed". noindex clears
+  // automatically once any domain ships with questions.
+  const robotsMeta = total === 0
+    ? 'noindex, follow'
+    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
   const faq = pickFaqQuestions(cert);
   const url = `${SITE}/${cert.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
@@ -338,7 +345,7 @@ function buildCertHtml(cert) {
   <title>${htmlEscape(fullTitle)}</title>
   <meta name="description" content="${htmlEscape(desc)}">
   <link rel="canonical" href="${url}">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="${robotsMeta}">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
@@ -456,6 +463,10 @@ function buildDomainOgSvg(cert, domain) {
 
 function buildDomainHtml(cert, domain, questions) {
   const count = questions.length;
+  // Domain pages with zero questions get noindex — clears automatically when questions ship.
+  const robotsMeta = count === 0
+    ? 'noindex, follow'
+    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
   const url = `${SITE}/${cert.slug}/${domain.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}-${domain.slug}.svg`;
   const domNum = domain.number ? `${domain.number} ` : '';
@@ -537,7 +548,7 @@ function buildDomainHtml(cert, domain, questions) {
   <title>${htmlEscape(fullTitle)}</title>
   <meta name="description" content="${htmlEscape(desc)}">
   <link rel="canonical" href="${url}">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="${robotsMeta}">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
@@ -742,7 +753,7 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <title>${htmlEscape(fullTitle)}</title>
   <meta name="description" content="${htmlEscape(desc)}">
   <link rel="canonical" href="${url}">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="noindex, follow">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
@@ -1050,17 +1061,25 @@ ${items}
 function buildSitemap(comingSoon) {
   const urls = [{ loc: `${SITE}/`, priority: '1.0', changefreq: 'weekly' }];
   for (const cert of certifications) {
+    // Tally questions across all domains. Certs with zero questions are scaffolds —
+    // the page carries noindex (see buildCertHtml) so don't advertise them in the sitemap.
+    let certTotal = 0;
+    const domainCounts = cert.domains.map(d => {
+      const n = loadDomainQuestions(cert.slug, d.slug).length;
+      certTotal += n;
+      return { slug: d.slug, n };
+    });
+    if (certTotal === 0) continue;
     urls.push({ loc: `${SITE}/${cert.slug}/`, priority: '0.9', changefreq: 'monthly' });
-    for (const d of cert.domains) {
-      const qs = loadDomainQuestions(cert.slug, d.slug);
-      if (qs.length > 0) {
+    for (const d of domainCounts) {
+      if (d.n > 0) {
         urls.push({ loc: `${SITE}/${cert.slug}/${d.slug}/`, priority: '0.8', changefreq: 'monthly' });
       }
     }
   }
-  for (const cert of comingSoon) {
-    urls.push({ loc: `${SITE}/${cert.slug}/`, priority: '0.5', changefreq: 'monthly' });
-  }
+  // Coming-soon pages carry <meta robots="noindex"> — exclude from sitemap to avoid
+  // mixed signals to Google (sitemap inclusion = "index me", noindex = "don't").
+  // When a cert flips live, its sitemap entry comes back through the live-cert loop above.
   const body = urls.map(u =>
     `  <url><loc>${u.loc}</loc><lastmod>${TODAY}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`
   ).join('\n');

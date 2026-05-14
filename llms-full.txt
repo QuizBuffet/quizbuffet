@@ -1,6 +1,6 @@
 # QuizBuffet — Full Cert Reference
 
-Last updated: 2026-05-13
+Last updated: 2026-05-14
 Site: https://quizbuffet.com
 
 QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
@@ -1398,48 +1398,129 @@ A: removed carefully to avoid touching the contaminated outer surface, then disc
 **Q: When setting up supplies for a new client after breakdown, the candidate should**
 A: begin with freshly disinfected or newly barriered surfaces and new sterile packaged implements from the supply kit — never reusing single-session items from the previous client's procedure
 
+## CPA — Auditing and Attestation (AUD) (AUD)
+Vendor: AICPA
+URL: https://quizbuffet.com/cpa-aud/
+Total questions: 0
+
+The Auditing and Attestation (AUD) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass AUD regardless of their chosen Discipline. The 4-hour exam consists of 78 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Ethics, Professional Responsibilities and General Principles (15–25%) — AICPA Code of Conduct, SEC/PCAOB/GAO/DOL independence, professional skepticism, engagement preconditions, documentation; Assessing Risk and Developing a Planned Response (25–35%) — engagement strategy, the COSO Internal Control – Integrated Framework, IT general controls, SOC 1® reports, materiality and tolerable misstatement, fraud risk, related parties, single audits; Performing Further Procedures and Obtaining Evidence (30–40%) — sampling, tests of controls and details, analytical procedures, external confirmations, audit data analytics, accounting estimates, going concern, subsequent events; and Forming Conclusions and Reporting (10–20%) — audit and attestation reports, opinion types, emphasis-of-matter paragraphs, compilation and review engagements, compliance reporting, special-purpose frameworks, and additional GAO reporting requirements. References include AICPA Statements on Auditing Standards, PCAOB Auditing Standards, GAO Government Auditing Standards, Single Audit Act, OMB 2 CFR 200, and the AICPA Code of Professional Conduct.
+
+### Domains
+- 1.0 Ethics, Professional Responsibilities and General Principles (20% of exam)
+- 2.0 Assessing Risk and Developing a Planned Response (30% of exam)
+- 3.0 Performing Further Procedures and Obtaining Evidence (35% of exam)
+- 4.0 Forming Conclusions and Reporting (15% of exam)
+
+
+## CPA — Financial Accounting and Reporting (FAR) (FAR)
+Vendor: AICPA
+URL: https://quizbuffet.com/cpa-far/
+Total questions: 0
+
+The Financial Accounting and Reporting (FAR) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass FAR regardless of chosen Discipline. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Financial Reporting (30–40%) — preparation, adjustment, and analysis of financial statements for for-profit business entities and nongovernmental not-for-profit entities under the FASB Accounting Standards Codification, public company reporting under SEC rules (Forms 10-Q, 10-K, 8-K, EPS), special-purpose frameworks, financial statement ratios, and state and local government measurement focus and basis of accounting under GASB; Select Balance Sheet Accounts (30–40%) — cash and cash equivalents, trade receivables, inventory, property plant and equipment, investments (fair value, amortized cost, equity method), intangible assets, payables and accrued liabilities, debt covenants, and equity transactions; and Select Transactions (25–35%) — accounting changes and error corrections, contingencies and commitments, revenue recognition (five-step model and not-for-profit contributions), accounting for income taxes, fair value measurements, lessee accounting, and subsequent events. References include the FASB Accounting Standards Codification, FASB Concepts Statements, U.S. SEC Regulation S-X and S-K, GASB Codification, and AICPA Practice Aids.
+
+### Domains
+- 1.0 Financial Reporting (35% of exam)
+- 2.0 Select Balance Sheet Accounts (35% of exam)
+- 3.0 Select Transactions (30% of exam)
+
+
+## CPA — Taxation and Regulation (REG) (REG)
+Vendor: AICPA
+URL: https://quizbuffet.com/cpa-reg/
+Total questions: 0
+
+The Taxation and Regulation (REG) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass REG regardless of chosen Discipline. The 4-hour exam consists of 72 multiple-choice questions and 8 task-based simulations, weighted 50/50 in scoring. Content covers five areas: Ethics, Professional Responsibilities and Federal Tax Procedures (10–20%) — Treasury Department Circular 230, tax return preparer rules and penalties, state board licensing, IRS audits and appeals, tax authoritative hierarchy, privileged communications; Business Law (15–25%) — agency, contracts (UCC), debtor-creditor relationships, bankruptcy under BAPCPA 2005, employment taxes, qualified health plans, worker classifications, anti-bribery under FCPA 1977, business entity formation and termination; Federal Taxation of Property Transactions (5–15%) — tax basis of purchased and converted assets, gifted and inherited property, wash sales, intangible assets, MACRS depreciation, Section 179, amortization; Federal Taxation of Individuals (22–32%) — Form 1040 gross income inclusions and exclusions, pass-through income, AGI adjustments, itemized deductions, QBI deduction, loss limitations, filing status, tax credits, estimated tax safe harbor; and Federal Taxation of Entities (23–33%) — Schedule M-1/M-3 book-tax differences, C corporation taxable income and state nexus, S corporation eligibility and ordinary business income, partnership separately stated items and partner basis, LLCs, tax-exempt organizations. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, Uniform Commercial Code, Revised Model Business Corporation Act, FCPA, and ACA.
+
+### Domains
+- 1.0 Ethics, Professional Responsibilities and Federal Tax Procedures (15% of exam)
+- 2.0 Business Law (20% of exam)
+- 3.0 Federal Taxation of Property Transactions (10% of exam)
+- 4.0 Federal Taxation of Individuals (27% of exam)
+- 5.0 Federal Taxation of Entities (28% of exam)
+
+
+## CPA — Business Analysis and Reporting (BAR) (BAR)
+Vendor: AICPA
+URL: https://quizbuffet.com/cpa-bar/
+Total questions: 0
+
+The Business Analysis and Reporting (BAR) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — BAR is most often selected by candidates planning a career in audit, advisory, financial reporting, or work with state and local governments. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Business Analysis (40–50%) — current-period financial statement analysis, non-financial and non-GAAP performance measures (balanced scorecard, EBITDA, customer retention, free cash flow), managerial and cost accounting, variance analysis, budgeting and forecasting, capital structure, cost of capital, investment valuation (NPV, IRR, payback), COSO Enterprise Risk Management framework and ESG-related risks, and the impact of economic and market influences on business; Technical Accounting and Reporting (35–45%) — indefinite-lived intangible assets and goodwill, internally developed software, advanced revenue recognition, stock compensation, research and development costs, business combinations, consolidated financial statements (variable interest entities, noncontrolling interests, foreign currency translation), derivatives and hedge accounting, lessor accounting, SEC public company reporting (Regulation S-X, S-K, segments), and financial statements of employee benefit plans; and State and Local Governments (10–20%) — government-wide, governmental fund, proprietary fund, and fiduciary fund financial statements under the GASB Codification, including capital assets, long-term liabilities, interfund activity, nonexchange revenue, and budgetary accounting. References include the FASB Accounting Standards Codification, GASB Statements, U.S. SEC Regulations, and the COSO ERM framework.
+
+### Domains
+- 1.0 Business Analysis (45% of exam)
+- 2.0 Technical Accounting and Reporting (40% of exam)
+- 3.0 State and Local Governments (15% of exam)
+
+
+## CPA — Information Systems and Controls (ISC) (ISC)
+Vendor: AICPA
+URL: https://quizbuffet.com/cpa-isc/
+Total questions: 0
+
+The Information Systems and Controls (ISC) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — ISC is most often selected by candidates planning a career in IT audit, cybersecurity, or System and Organization Controls (SOC) attestation. The 4-hour exam consists of 82 multiple-choice questions and 6 task-based simulations, weighted 60% MCQ / 40% TBS in scoring (the only section without 50/50 split). Content covers three areas: Information Systems and Data Management (35–45%) — IT infrastructure components, cloud computing models (IaaS, PaaS, SaaS), enterprise and accounting information systems, system availability, business continuity and disaster recovery, IT change management, data management, relational databases, SQL queries, data warehouses and lakes, and business process modeling; Security, Confidentiality and Privacy (35–45%) — HIPAA Security and Privacy Rules, GDPR Articles 4–34, PCI DSS, NIST CSF and Privacy Framework, NIST SP 800-53, CIS Controls v8.1, COBIT 2019, threat types and cyber-attack stages, identification/authentication/authorization controls, encryption, Data Loss Prevention, security testing, and incident response; and Considerations for SOC Engagements (15–25%) — purpose and intended users of SOC 1®, SOC 2®, SOC 3®, and SOC for Cybersecurity reports, Trust Services Criteria, system description criteria, complementary user entity controls (CUECs) and complementary subservice organization controls (CSOCs), report opinions and modifications. References include the AICPA Trust Services Criteria, NIST frameworks, HIPAA 45 CFR Part 164, GDPR, PCI DSS, COSO ERM, and COBIT 2019.
+
+### Domains
+- 1.0 Information Systems and Data Management (40% of exam)
+- 2.0 Security, Confidentiality and Privacy (40% of exam)
+- 3.0 Considerations for System and Organization Controls (SOC) Engagements (20% of exam)
+
+
+## CPA — Tax Compliance and Planning (TCP) (TCP)
+Vendor: AICPA
+URL: https://quizbuffet.com/cpa-tcp/
+Total questions: 0
+
+The Tax Compliance and Planning (TCP) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — TCP is most often selected by candidates planning a career in tax compliance, tax advisory, or personal financial planning. The 4-hour exam consists of 68 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Tax Compliance and Planning for Individuals and Personal Financial Planning (30–40%) — incentive compensation, AMT, at-risk and passive activity loss limitations, gifting and unified transfer tax, retirement plan selection (IRA, Roth, 401(k), annuities), investment risk, education funding, life and long-term care insurance, beneficiary designations, return on investment net of tax; Entity Tax Compliance (30–40%) — C corporation NOL and capital loss carryforwards, shareholder contributions and distributions, consolidated 1120 returns, international tax (CFC, FDII, BEAT, GILTI, IC-DISC, permanent establishment), S corporation shareholder basis and AAA, partnership partner basis and elections, trusts (simple, complex, grantor), distributable net income, tax-exempt organizations and unrelated business income; Entity Tax Planning (10–20%) — entity selection and formation, tax planning for C corps, S corps, and partnerships, built-in gains tax, terminating S elections; and Property Transactions (10–20%) — like-kind exchanges, involuntary conversions, Section 1231 capital gains and ordinary losses, Section 1245 and 1250 depreciation recapture, unrecaptured Section 1250 gain, Section 1244 small business stock, installment sales, related-party transactions, imputed interest. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, and case law on federal taxation.
+
+### Domains
+- 1.0 Tax Compliance and Planning for Individuals and Personal Financial Planning (35% of exam)
+- 2.0 Entity Tax Compliance (35% of exam)
+- 3.0 Entity Tax Planning (15% of exam)
+- 4.0 Property Transactions (Disposition of Assets) (15% of exam)
+
+
 
 ## Coming soon (in priority order)
-- Certified Public Accountant (CPA) (CPA) — https://quizbuffet.com/cpa/ — priority #1
-- Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #2
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #3
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #4
-- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #5
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #6
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #7
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #8
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #9
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #10
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #11
-- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #12
-- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #13
-- Google Cybersecurity Professional Certificate (Google Cybersecurity) — https://quizbuffet.com/google-cybersecurity-certificate/ — priority #14
-- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #15
-- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #16
-- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #17
-- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #18
-- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #19
-- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #20
-- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #21
-- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #22
-- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #23
-- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #24
-- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #25
-- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #26
-- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #27
-- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #28
-- Barber 1 (No Chemical) License (Barber 1) — https://quizbuffet.com/barber-no-chemical/ — priority #29
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #30
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #31
-- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #32
-- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #33
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #34
-- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #35
-- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #36
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #37
-- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #38
-- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #39
-- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #40
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #41
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #42
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #43
+- Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #1
+- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #2
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #3
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #4
+- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #5
+- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #6
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #7
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #8
+- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #9
+- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #10
+- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #11
+- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #12
+- Google Cybersecurity Professional Certificate (Google Cybersecurity) — https://quizbuffet.com/google-cybersecurity-certificate/ — priority #13
+- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #14
+- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #15
+- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #16
+- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #17
+- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #18
+- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #19
+- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #20
+- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #21
+- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #22
+- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #23
+- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #24
+- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #25
+- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #26
+- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #27
+- Barber 1 (No Chemical) License (Barber 1) — https://quizbuffet.com/barber-no-chemical/ — priority #28
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #29
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #30
+- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #31
+- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #32
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #33
+- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #34
+- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #35
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #36
+- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #37
+- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #38
+- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #39
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #40
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #41
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #42

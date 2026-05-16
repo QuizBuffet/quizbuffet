@@ -8,7 +8,7 @@ export async function loadDomain(certSlug, domainSlug, cert) {
   const domainName = cert?.domains.find(d => d.slug === domainSlug)?.name || domainSlug;
 
   try {
-    const res = await fetch(`data/certifications/${certSlug}/${domainSlug}.json`);
+    const res = await fetch(`/data/certifications/${certSlug}/${domainSlug}.json`);
     if (!res.ok) throw new Error('not found');
     const data = await res.json();
     cache[key] = (data.questions || []).map(q => ({ ...q, _domainName: domainName }));

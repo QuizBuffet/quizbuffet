@@ -49,8 +49,8 @@
 - [CPA — Financial Accounting and Reporting (FAR) (FAR)](https://quizbuffet.com/cpa-far/): Core section of the Uniform CPA Examination — financial reporting under U.S. GAAP and GASB 280+ questions.
 - [CPA — Taxation and Regulation (REG) (REG)](https://quizbuffet.com/cpa-reg/): Core section of the Uniform CPA Examination — U.S. federal taxation, ethics, and business law
 - [CPA — Business Analysis and Reporting (BAR) (BAR)](https://quizbuffet.com/cpa-bar/): Discipline section of the Uniform CPA Examination — business analysis, technical accounting, and state and local governments
-- [CPA — Information Systems and Controls (ISC) (ISC)](https://quizbuffet.com/cpa-isc/): Discipline section of the Uniform CPA Examination — IT audit, security, and SOC engagements
-- [CPA — Tax Compliance and Planning (TCP) (TCP)](https://quizbuffet.com/cpa-tcp/): Discipline section of the Uniform CPA Examination — advanced individual and entity tax compliance and planning
+- [CPA — Information Systems and Controls (ISC) (ISC)](https://quizbuffet.com/cpa-isc/): Discipline section of the Uniform CPA Examination — IT audit, security, and SOC engagements 300+ questions.
+- [CPA — Tax Compliance and Planning (TCP) (TCP)](https://quizbuffet.com/cpa-tcp/): Discipline section of the Uniform CPA Examination — advanced individual and entity tax compliance and planning 4+ questions.
 - [Certified Ethical Hacker (CEH) (CEH)](https://quizbuffet.com/ceh/): EC-Council's ethical hacking certification — penetration testing, vulnerability assessment, and offensive security 700+ questions.
 
 ## Coming soon

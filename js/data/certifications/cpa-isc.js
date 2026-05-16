@@ -15,8 +15,8 @@ export const cert = {
     { label: 'Prometric Test Centers',          url: 'https://www.prometric.com/test-takers/search/cpa' },
   ],
   domains: [
-    { slug: 'information-systems-and-data-management',  name: 'Information Systems and Data Management',                  number: '1.0', weight: 40 },
-    { slug: 'security-confidentiality-and-privacy',     name: 'Security, Confidentiality and Privacy',                    number: '2.0', weight: 40 },
-    { slug: 'soc-engagements',                          name: 'Considerations for System and Organization Controls (SOC) Engagements', number: '3.0', weight: 20 },
+    { slug: 'information-systems-and-data-management',  name: 'Information Systems and Data Management',                  number: '1.0', weight: 37 },
+    { slug: 'security-confidentiality-and-privacy',     name: 'Security, Confidentiality and Privacy',                    number: '2.0', weight: 37 },
+    { slug: 'soc-engagements',                          name: 'Considerations for System and Organization Controls (SOC) Engagements', number: '3.0', weight: 26 },
   ],
 };

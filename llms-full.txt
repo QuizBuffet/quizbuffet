@@ -1492,28 +1492,46 @@ The Business Analysis and Reporting (BAR) section is one of three Discipline sec
 ## CPA — Information Systems and Controls (ISC) (ISC)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-isc/
-Total questions: 0
+Total questions: 300
 
 The Information Systems and Controls (ISC) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — ISC is most often selected by candidates planning a career in IT audit, cybersecurity, or System and Organization Controls (SOC) attestation. The 4-hour exam consists of 82 multiple-choice questions and 6 task-based simulations, weighted 60% MCQ / 40% TBS in scoring (the only section without 50/50 split). Content covers three areas: Information Systems and Data Management (35–45%) — IT infrastructure components, cloud computing models (IaaS, PaaS, SaaS), enterprise and accounting information systems, system availability, business continuity and disaster recovery, IT change management, data management, relational databases, SQL queries, data warehouses and lakes, and business process modeling; Security, Confidentiality and Privacy (35–45%) — HIPAA Security and Privacy Rules, GDPR Articles 4–34, PCI DSS, NIST CSF and Privacy Framework, NIST SP 800-53, CIS Controls v8.1, COBIT 2019, threat types and cyber-attack stages, identification/authentication/authorization controls, encryption, Data Loss Prevention, security testing, and incident response; and Considerations for SOC Engagements (15–25%) — purpose and intended users of SOC 1®, SOC 2®, SOC 3®, and SOC for Cybersecurity reports, Trust Services Criteria, system description criteria, complementary user entity controls (CUECs) and complementary subservice organization controls (CSOCs), report opinions and modifications. References include the AICPA Trust Services Criteria, NIST frameworks, HIPAA 45 CFR Part 164, GDPR, PCI DSS, COSO ERM, and COBIT 2019.
 
 ### Domains
-- 1.0 Information Systems and Data Management (40% of exam)
-- 2.0 Security, Confidentiality and Privacy (40% of exam)
-- 3.0 Considerations for System and Organization Controls (SOC) Engagements (20% of exam)
+- 1.0 Information Systems and Data Management (37% of exam) — 112 questions
+- 2.0 Security, Confidentiality and Privacy (37% of exam) — 112 questions
+- 3.0 Considerations for System and Organization Controls (SOC) Engagements (26% of exam) — 76 questions
 
+### Sample questions
+**Q: Which of the following BEST describes the role of network infrastructure within an organization's IT architecture?**
+A: Network infrastructure encompasses the hardware and software components — including routers, switches, firewalls, and cabling — that enable communication and data transfer between devices and systems within the organization
+
+**Q: A company contracts with a cloud vendor to use the vendor's servers, storage, and networking equipment, but the company installs and manages its own operating systems, middleware, and applications. Which cloud computing service model does this arrangement BEST describe?**
+A: Infrastructure as a Service (IaaS), because the vendor provides the underlying hardware infrastructure while the company manages the software stack above it
+
+**Q: Under HIPAA, which entities are classified as 'covered entities' and are directly subject to the HIPAA Privacy and Security Rules?**
+A: Health plans, health care clearinghouses, and health care providers that transmit health information electronically — these three categories directly handle protected health information as part of their core functions
+
+**Q: The GDPR (General Data Protection Regulation) establishes six principles relating to the processing of personal data. Which principle requires that personal data be collected only for specified, explicit, and legitimate purposes and not further processed in a manner incompatible with those purposes?**
+A: Purpose limitation — personal data shall be collected for specified, explicit, and legitimate purposes and not further processed in a way incompatible with those purposes
+
+**Q: The AICPA Trust Services Criteria (TSC) are organized into five categories. Which option correctly lists all five Trust Services categories?**
+A: Security, Availability, Processing Integrity, Confidentiality, Privacy
+
+**Q: A payroll processing service organization's clients are public companies subject to Sarbanes-Oxley. The clients' external auditors need assurance about the payroll processor's controls relevant to the clients' internal control over financial reporting. Which SOC report BEST meets this need?**
+A: SOC 1 — a report specifically designed to address controls at a service organization that are relevant to user entities' internal control over financial reporting (ICFR), used by user entities and their auditors for financial statement audit purposes
 
 ## CPA — Tax Compliance and Planning (TCP) (TCP)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-tcp/
-Total questions: 0
+Total questions: 4
 
 The Tax Compliance and Planning (TCP) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — TCP is most often selected by candidates planning a career in tax compliance, tax advisory, or personal financial planning. The 4-hour exam consists of 68 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Tax Compliance and Planning for Individuals and Personal Financial Planning (30–40%) — incentive compensation, AMT, at-risk and passive activity loss limitations, gifting and unified transfer tax, retirement plan selection (IRA, Roth, 401(k), annuities), investment risk, education funding, life and long-term care insurance, beneficiary designations, return on investment net of tax; Entity Tax Compliance (30–40%) — C corporation NOL and capital loss carryforwards, shareholder contributions and distributions, consolidated 1120 returns, international tax (CFC, FDII, BEAT, GILTI, IC-DISC, permanent establishment), S corporation shareholder basis and AAA, partnership partner basis and elections, trusts (simple, complex, grantor), distributable net income, tax-exempt organizations and unrelated business income; Entity Tax Planning (10–20%) — entity selection and formation, tax planning for C corps, S corps, and partnerships, built-in gains tax, terminating S elections; and Property Transactions (10–20%) — like-kind exchanges, involuntary conversions, Section 1231 capital gains and ordinary losses, Section 1245 and 1250 depreciation recapture, unrecaptured Section 1250 gain, Section 1244 small business stock, installment sales, related-party transactions, imputed interest. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, and case law on federal taxation.
 
 ### Domains
-- 1.0 Tax Compliance and Planning for Individuals and Personal Financial Planning (35% of exam)
-- 2.0 Entity Tax Compliance (35% of exam)
-- 3.0 Entity Tax Planning (15% of exam)
-- 4.0 Property Transactions (Disposition of Assets) (15% of exam)
+- 1.0 Tax Compliance and Planning for Individuals and Personal Financial Planning (35% of exam) — 1 questions
+- 2.0 Entity Tax Compliance (35% of exam) — 1 questions
+- 3.0 Entity Tax Planning (15% of exam) — 1 questions
+- 4.0 Property Transactions (Disposition of Assets) (15% of exam) — 1 questions
 
 
 ## Certified Ethical Hacker (CEH) (CEH)

@@ -1,6 +1,6 @@
 # QuizBuffet — Full Cert Reference
 
-Last updated: 2026-05-14
+Last updated: 2026-05-16
 Site: https://quizbuffet.com
 
 QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
@@ -1519,21 +1519,39 @@ The Tax Compliance and Planning (TCP) section is one of three Discipline section
 ## Certified Ethical Hacker (CEH) (CEH)
 Vendor: EC-Council
 URL: https://quizbuffet.com/ceh/
-Total questions: 0
+Total questions: 700
 
 Certified Ethical Hacker (CEH) from EC-Council validates offensive security skills for penetration testers, SOC analysts, and security engineers. The current blueprint (v5.0) covers nine domains: Information Security and Ethical Hacking Overview (6%) — methodologies, frameworks, controls, laws; Reconnaissance Techniques (17%) — footprinting, network scanning, enumeration; System Hacking Phases and Attack Techniques (15%) — vulnerability analysis, system hacking, malware threats; Network and Perimeter Hacking (24%) — sniffing, social engineering, denial-of-service, session hijacking, evading IDS/firewalls/honeypots; Web Application Hacking (14%) — web servers, web applications, SQL injection; Wireless Network Hacking (5%); Mobile Platform, IoT, and OT Hacking (10%); Cloud Computing (5%) — container, serverless, cloud security; and Cryptography (5%). CEH is ANSI/ISO 17024 accredited and DoD 8570/8140 baseline approved for several cybersecurity roles. Often compared with OSCP (more hands-on offensive) and CompTIA PenTest+ (vendor-neutral).
 
 ### Domains
-- 1.0 Information Security and Ethical Hacking Overview (6% of exam)
-- 2.0 Reconnaissance Techniques (17% of exam)
-- 3.0 System Hacking Phases and Attack Techniques (15% of exam)
-- 4.0 Network and Perimeter Hacking (23% of exam)
-- 5.0 Web Application Hacking (14% of exam)
-- 6.0 Wireless Network Hacking (5% of exam)
-- 7.0 Mobile Platform, IoT, and OT Hacking (10% of exam)
-- 8.0 Cloud Computing (5% of exam)
-- 9.0 Cryptography (5% of exam)
+- 1.0 Information Security and Ethical Hacking Overview (4% of exam) — 28 questions
+- 2.0 Reconnaissance Techniques (18% of exam) — 128 questions
+- 3.0 System Hacking Phases and Attack Techniques (14% of exam) — 100 questions
+- 4.0 Network and Perimeter Hacking (22% of exam) — 156 questions
+- 5.0 Web Application Hacking (19% of exam) — 128 questions
+- 6.0 Wireless Network Hacking (5% of exam) — 36 questions
+- 7.0 Mobile Platform, IoT, and OT Hacking (9% of exam) — 60 questions
+- 8.0 Cloud Computing (4% of exam) — 28 questions
+- 9.0 Cryptography (5% of exam) — 36 questions
 
+### Sample questions
+**Q: Which three properties form the CIA triad that serves as the foundational framework for all information security programs?**
+A: Confidentiality, Integrity, and Availability
+
+**Q: What is the PRIMARY distinction between passive and active reconnaissance in the context of ethical hacking?**
+A: Passive reconnaissance gathers intelligence without directly interacting with the target system; active reconnaissance directly probes or interacts with the target, risking detection
+
+**Q: Which type of vulnerability assessment tests a system from the perspective of an unauthenticated external attacker with no prior knowledge of or credentials for the target environment?**
+A: External black-box assessment — simulates an outside attacker with no credentials or internal knowledge
+
+**Q: What is 'promiscuous mode' on a network interface, and why is it necessary for passive network sniffing?**
+A: Promiscuous mode configures the NIC to accept and pass ALL frames on the wire to the OS — regardless of whether the destination MAC address matches the interface's own MAC — enabling packet capture of traffic destined for other hosts
+
+**Q: Which web server component handles incoming HTTP requests, routes them to the appropriate application logic, and returns the resulting HTTP responses to clients?**
+A: Web server software (Apache, nginx, IIS) — the HTTP server process that receives connections, parses requests, and delivers responses
+
+**Q: In wireless networking, what does the term SSID (Service Set Identifier) refer to?**
+A: The human-readable name that identifies a wireless network, broadcast in AP beacon frames
 
 
 ## Coming soon (in priority order)

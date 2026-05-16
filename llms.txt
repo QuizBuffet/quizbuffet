@@ -75,6 +75,9 @@
 - [Salon and Shop Manager License (Salon Manager)](https://quizbuffet.com/cosmetology-salon-manager/) — coming soon (priority #19)
 - [Combined Esthetics and Nail Technology License (Combined Esthetics)](https://quizbuffet.com/esthetics-combined-practice/) — coming soon (priority #20)
 
+## Study hubs
+- [CPA Exam — all 6 sections](https://quizbuffet.com/cpa/): hub linking the 3 Core (AUD, FAR, REG) and 3 Discipline (BAR, ISC, TCP) CPA section practice tests.
+
 ## Resources
 - [Sitemap](https://quizbuffet.com/sitemap.xml)
 - [RSS feed](https://quizbuffet.com/feed.xml) — new cert launches and updates

@@ -1069,6 +1069,9 @@ ${liveLines}
 ## Coming soon
 ${comingLines}
 
+## Study hubs
+- [CPA Exam — all 6 sections](${SITE}/cpa/): hub linking the 3 Core (AUD, FAR, REG) and 3 Discipline (BAR, ISC, TCP) CPA section practice tests.
+
 ## Resources
 - [Sitemap](${SITE}/sitemap.xml)
 - [RSS feed](${SITE}/feed.xml) — new cert launches and updates
@@ -1170,6 +1173,10 @@ ${items}
 
 function buildSitemap(comingSoon) {
   const urls = [{ loc: `${SITE}/`, priority: '1.0', changefreq: 'weekly' }];
+  // CPA hub: a hand-built static landing at /cpa/ that links the 6 CPA section
+  // certs (3 Core + 1 Discipline). Not a cert in the data model, so register its
+  // sitemap entry here so it survives every build:seo run.
+  urls.push({ loc: `${SITE}/cpa/`, priority: '0.9', changefreq: 'monthly' });
   for (const cert of certifications) {
     // Tally questions across all domains. Certs with zero questions are scaffolds —
     // the page carries noindex (see buildCertHtml) so don't advertise them in the sitemap.

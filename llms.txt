@@ -42,7 +42,6 @@
 - [Basic Life Support (BLS) (BLS)](https://quizbuffet.com/bls/): Required CPR-level credential for healthcare professionals 300+ questions.
 - [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/): State-licensed credential for hair, skin, and nail services 300+ questions.
 - [Advanced Practice Micropigmentation (Micropigmentation)](https://quizbuffet.com/micropigmentation/): NIC national theory exam for permanent makeup, paramedical, and cosmetic tattoo procedures 210+ questions.
-- [Esthetician License (Esthetician)](https://quizbuffet.com/esthetician-license/): State-licensed credential for professional skin care services
 - [Barber License (Barber)](https://quizbuffet.com/barber-license/): State-licensed credential for haircutting, shaving, and chemical hair services 260+ questions.
 - [Tattoo Artist License (Tattoo)](https://quizbuffet.com/tattoo-license/): State license for professional tattooing and body art services 88+ questions.
 - [CPA — Auditing and Attestation (AUD) (AUD)](https://quizbuffet.com/cpa-aud/): Core section of the Uniform CPA Examination — every candidate must pass AUD 286+ questions.
@@ -52,6 +51,7 @@
 - [CPA — Information Systems and Controls (ISC) (ISC)](https://quizbuffet.com/cpa-isc/): Discipline section of the Uniform CPA Examination — IT audit, security, and SOC engagements 300+ questions.
 - [CPA — Tax Compliance and Planning (TCP) (TCP)](https://quizbuffet.com/cpa-tcp/): Discipline section of the Uniform CPA Examination — advanced individual and entity tax compliance and planning 124+ questions.
 - [Certified Ethical Hacker (CEH) (CEH)](https://quizbuffet.com/ceh/): EC-Council's ethical hacking certification — penetration testing, vulnerability assessment, and offensive security 700+ questions.
+- [CompTIA Project+ (PK0-005)](https://quizbuffet.com/comptia-project-plus/): Project life cycle, communication, resource and stakeholder management for IT projects
 
 ## Coming soon
 - [Six Sigma Green Belt (SSGB)](https://quizbuffet.com/six-sigma-green-belt/) — coming soon (priority #1)

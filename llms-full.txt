@@ -1319,19 +1319,6 @@ A: redness, mild swelling, and tenderness at the procedure site lasting 24–72 
 **Q: A client who had brow micropigmentation performed two years ago is scheduled for an MRI of the head and neck. The most important safety step is**
 A: inform the MRI technologist and radiologist about the presence of iron oxide-based micropigmentation pigments at the brow site so the imaging team can assess artifact risk, any potential local heating, and any sensation reported by the client during the scan
 
-## Esthetician License (Esthetician)
-Vendor: NIC
-URL: https://quizbuffet.com/esthetician-license/
-Total questions: 0
-
-The Esthetician License is required in every U.S. state to perform professional skin care services for compensation — facials, hair removal, makeup application, skin analysis, chemical exfoliation, and body treatments. State exams typically follow the NIC (National-Interstate Council of State Boards of Cosmetology) National Esthetics Theory blueprint, administered by PSI or similar testing vendors as a written exam plus a hands-on practical. The theory exam covers three domains: scientific concepts (infection control, anatomy and physiology, skin analysis and disorders, chemistry, electricity basics), esthetic services (client consultation, facials, facial massage, hair removal, makeup, body treatments), and the implements, tools, and equipment used in the modern skin care studio.
-
-### Domains
-- 1.0 Scientific Concepts (45% of exam)
-- 2.0 Esthetic Services (50% of exam)
-- 3.0 Implements, Tools, and Equipment (5% of exam)
-
-
 ## Barber License (Barber)
 Vendor: State Boards
 URL: https://quizbuffet.com/barber-license/
@@ -1625,6 +1612,20 @@ A: Web server software (Apache, nginx, IIS) — the HTTP server process that rec
 **Q: In wireless networking, what does the term SSID (Service Set Identifier) refer to?**
 A: The human-readable name that identifies a wireless network, broadcast in AP beacon frames
 
+## CompTIA Project+ (PK0-005)
+Vendor: CompTIA
+URL: https://quizbuffet.com/comptia-project-plus/
+Total questions: 0
+
+CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6–12 months of hands-on IT project management experience.
+
+### Domains
+- Project Management Concepts (33% of exam)
+- Project Life Cycle Phases (30% of exam)
+- Tools and Documentation (19% of exam)
+- Basics of IT and Governance (18% of exam)
+
+
 
 ## Coming soon (in priority order)
 - Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #1
@@ -1660,12 +1661,12 @@ A: The human-readable name that identifies a wireless network, broadcast in AP b
 - Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #31
 - Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #32
 - Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #33
-- CompTIA Project+ (PK0-005) — https://quizbuffet.com/comptia-project-plus/ — priority #34
-- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #35
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #36
-- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #37
-- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #38
-- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #39
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #40
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #41
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #42
+- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #34
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #35
+- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #36
+- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #37
+- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #38
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #39
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #40
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #41
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #42

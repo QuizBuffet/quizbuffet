@@ -41,7 +41,6 @@ export const order = [
   'bls',
   'cosmetology-license',
   'micropigmentation',
-  'esthetician-license',
   'barber-license',
   'tattoo-license',
   'cpa-aud',
@@ -51,4 +50,5 @@ export const order = [
   'cpa-isc',
   'cpa-tcp',
   'ceh',
+  'comptia-project-plus',
 ];

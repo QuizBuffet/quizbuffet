@@ -909,27 +909,6 @@ export const certifications = [
   },
 },
 {
-  slug: 'esthetician-license',
-  name: 'Esthetician License',
-  code: 'Esthetician',
-  vendor: 'NIC',
-  tagline: 'State-licensed credential for professional skin care services',
-  about: 'The Esthetician License is required in every U.S. state to perform professional skin care services for compensation — facials, hair removal, makeup application, skin analysis, chemical exfoliation, and body treatments. State exams typically follow the NIC (National-Interstate Council of State Boards of Cosmetology) National Esthetics Theory blueprint, administered by PSI or similar testing vendors as a written exam plus a hands-on practical. The theory exam covers three domains: scientific concepts (infection control, anatomy and physiology, skin analysis and disorders, chemistry, electricity basics), esthetic services (client consultation, facials, facial massage, hair removal, makeup, body treatments), and the implements, tools, and equipment used in the modern skin care studio.',
-  details: 'NIC National Esthetics Theory exam · ~100 weighted items · 90 minutes · State-specific passing score (typically 70–75%) · State-administered hands-on practical exam also required',
-  affiliates: [
-    { provider: 'amazon', label: 'Shop Milady Standard Esthetics Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+esthetics+fundamentals&tag=0003aa-20' },
-  ],
-  officialSources: [
-    { label: 'NIC (nictesting.org)',     url: 'https://www.nictesting.org/' },
-    { label: 'Prov CIB Selection App',   url: 'https://apps.provexam.online/sample-apps/cib_selection_app/' },
-  ],
-  domains: [
-    { slug: 'scientific-concepts',           name: 'Scientific Concepts',                number: '1.0', weight: 45 },
-    { slug: 'esthetic-services',             name: 'Esthetic Services',                  number: '2.0', weight: 50 },
-    { slug: 'implements-tools-and-equipment', name: 'Implements, Tools, and Equipment',   number: '3.0', weight:  5 },
-  ],
-},
-{
   slug: 'barber-license',
   name: 'Barber License',
   code: 'Barber',
@@ -1138,6 +1117,27 @@ export const certifications = [
     { slug: 'mobile-iot-and-ot-hacking',      name: 'Mobile Platform, IoT, and OT Hacking',               number: '7.0', weight: 9  },
     { slug: 'cloud-computing',                name: 'Cloud Computing',                                    number: '8.0', weight: 4  },
     { slug: 'cryptography',                   name: 'Cryptography',                                       number: '9.0', weight: 5  },
+  ],
+},
+{
+  slug: 'comptia-project-plus',
+  name: 'CompTIA Project+',
+  code: 'PK0-005',
+  vendor: 'CompTIA',
+  tagline: 'Project life cycle, communication, resource and stakeholder management for IT projects',
+  about: 'CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6–12 months of hands-on IT project management experience.',
+  details: 'Maximum of 90 multiple-choice and performance-based questions · 90 minutes · Recommended 6–12 months of hands-on experience managing projects in an IT environment',
+  udemyCourseUrl: 'https://www.udemy.com/courses/search/?q=CompTIA%20Project%2B%20PK0-005',
+  affiliates: [
+    { provider: 'udemy',   label: 'Video Course',     url: '' },
+    { provider: 'amazon',  label: 'Shop CompTIA Project+ PK0-005 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=comptia+project%2B+pk0-005&tag=0003aa-20' },
+    { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
+  ],
+  domains: [
+    { slug: 'project-management-concepts',  name: 'Project Management Concepts',  weight: 33 },
+    { slug: 'project-life-cycle-phases',    name: 'Project Life Cycle Phases',    weight: 30 },
+    { slug: 'tools-and-documentation',      name: 'Tools and Documentation',      weight: 19 },
+    { slug: 'basics-of-it-and-governance',  name: 'Basics of IT and Governance',  weight: 18 },
   ],
 },
 ];

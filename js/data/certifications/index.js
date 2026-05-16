@@ -1037,11 +1037,11 @@ export const certifications = [
     { label: 'Prometric Test Centers',          url: 'https://www.prometric.com/test-takers/search/cpa' },
   ],
   domains: [
-    { slug: 'ethics-and-federal-tax-procedures',  name: 'Ethics, Professional Responsibilities and Federal Tax Procedures', number: '1.0', weight: 15 },
-    { slug: 'business-law',                       name: 'Business Law',                                                    number: '2.0', weight: 20 },
-    { slug: 'taxation-of-property-transactions',  name: 'Federal Taxation of Property Transactions',                       number: '3.0', weight: 10 },
-    { slug: 'taxation-of-individuals',            name: 'Federal Taxation of Individuals',                                 number: '4.0', weight: 27 },
-    { slug: 'taxation-of-entities',               name: 'Federal Taxation of Entities',                                    number: '5.0', weight: 28 },
+    { slug: 'ethics-and-federal-tax-procedures',  name: 'Ethics, Professional Responsibilities and Federal Tax Procedures', number: '1.0', weight: 14 },
+    { slug: 'business-law',                       name: 'Business Law',                                                    number: '2.0', weight: 25 },
+    { slug: 'taxation-of-property-transactions',  name: 'Federal Taxation of Property Transactions',                       number: '3.0', weight: 14 },
+    { slug: 'taxation-of-individuals',            name: 'Federal Taxation of Individuals',                                 number: '4.0', weight: 22 },
+    { slug: 'taxation-of-entities',               name: 'Federal Taxation of Entities',                                    number: '5.0', weight: 25 },
   ],
 },
 {
@@ -1061,9 +1061,9 @@ export const certifications = [
     { label: 'Prometric Test Centers',          url: 'https://www.prometric.com/test-takers/search/cpa' },
   ],
   domains: [
-    { slug: 'business-analysis',               name: 'Business Analysis',               number: '1.0', weight: 45 },
-    { slug: 'technical-accounting-reporting',  name: 'Technical Accounting and Reporting', number: '2.0', weight: 40 },
-    { slug: 'state-and-local-governments',     name: 'State and Local Governments',     number: '3.0', weight: 15 },
+    { slug: 'business-analysis',               name: 'Business Analysis',               number: '1.0', weight: 32 },
+    { slug: 'technical-accounting-reporting',  name: 'Technical Accounting and Reporting', number: '2.0', weight: 44 },
+    { slug: 'state-and-local-governments',     name: 'State and Local Governments',     number: '3.0', weight: 24 },
   ],
 },
 {
@@ -1105,10 +1105,10 @@ export const certifications = [
     { label: 'Prometric Test Centers',          url: 'https://www.prometric.com/test-takers/search/cpa' },
   ],
   domains: [
-    { slug: 'individuals-and-personal-financial-planning', name: 'Tax Compliance and Planning for Individuals and Personal Financial Planning', number: '1.0', weight: 35 },
-    { slug: 'entity-tax-compliance',                       name: 'Entity Tax Compliance',                                                     number: '2.0', weight: 35 },
-    { slug: 'entity-tax-planning',                         name: 'Entity Tax Planning',                                                       number: '3.0', weight: 15 },
-    { slug: 'property-transactions',                       name: 'Property Transactions (Disposition of Assets)',                             number: '4.0', weight: 15 },
+    { slug: 'individuals-and-personal-financial-planning', name: 'Tax Compliance and Planning for Individuals and Personal Financial Planning', number: '1.0', weight: 32 },
+    { slug: 'entity-tax-compliance',                       name: 'Entity Tax Compliance',                                                     number: '2.0', weight: 42 },
+    { slug: 'entity-tax-planning',                         name: 'Entity Tax Planning',                                                       number: '3.0', weight: 16 },
+    { slug: 'property-transactions',                       name: 'Property Transactions (Disposition of Assets)',                             number: '4.0', weight: 10 },
   ],
 },
 {

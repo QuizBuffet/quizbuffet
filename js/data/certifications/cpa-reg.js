@@ -15,10 +15,10 @@ export const cert = {
     { label: 'Prometric Test Centers',          url: 'https://www.prometric.com/test-takers/search/cpa' },
   ],
   domains: [
-    { slug: 'ethics-and-federal-tax-procedures',  name: 'Ethics, Professional Responsibilities and Federal Tax Procedures', number: '1.0', weight: 15 },
-    { slug: 'business-law',                       name: 'Business Law',                                                    number: '2.0', weight: 20 },
-    { slug: 'taxation-of-property-transactions',  name: 'Federal Taxation of Property Transactions',                       number: '3.0', weight: 10 },
-    { slug: 'taxation-of-individuals',            name: 'Federal Taxation of Individuals',                                 number: '4.0', weight: 27 },
-    { slug: 'taxation-of-entities',               name: 'Federal Taxation of Entities',                                    number: '5.0', weight: 28 },
+    { slug: 'ethics-and-federal-tax-procedures',  name: 'Ethics, Professional Responsibilities and Federal Tax Procedures', number: '1.0', weight: 14 },
+    { slug: 'business-law',                       name: 'Business Law',                                                    number: '2.0', weight: 25 },
+    { slug: 'taxation-of-property-transactions',  name: 'Federal Taxation of Property Transactions',                       number: '3.0', weight: 14 },
+    { slug: 'taxation-of-individuals',            name: 'Federal Taxation of Individuals',                                 number: '4.0', weight: 22 },
+    { slug: 'taxation-of-entities',               name: 'Federal Taxation of Entities',                                    number: '5.0', weight: 25 },
   ],
 };

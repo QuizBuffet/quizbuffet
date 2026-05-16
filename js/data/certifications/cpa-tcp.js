@@ -15,9 +15,9 @@ export const cert = {
     { label: 'Prometric Test Centers',          url: 'https://www.prometric.com/test-takers/search/cpa' },
   ],
   domains: [
-    { slug: 'individuals-and-personal-financial-planning', name: 'Tax Compliance and Planning for Individuals and Personal Financial Planning', number: '1.0', weight: 35 },
-    { slug: 'entity-tax-compliance',                       name: 'Entity Tax Compliance',                                                     number: '2.0', weight: 35 },
-    { slug: 'entity-tax-planning',                         name: 'Entity Tax Planning',                                                       number: '3.0', weight: 15 },
-    { slug: 'property-transactions',                       name: 'Property Transactions (Disposition of Assets)',                             number: '4.0', weight: 15 },
+    { slug: 'individuals-and-personal-financial-planning', name: 'Tax Compliance and Planning for Individuals and Personal Financial Planning', number: '1.0', weight: 32 },
+    { slug: 'entity-tax-compliance',                       name: 'Entity Tax Compliance',                                                     number: '2.0', weight: 42 },
+    { slug: 'entity-tax-planning',                         name: 'Entity Tax Planning',                                                       number: '3.0', weight: 16 },
+    { slug: 'property-transactions',                       name: 'Property Transactions (Disposition of Assets)',                             number: '4.0', weight: 10 },
   ],
 };

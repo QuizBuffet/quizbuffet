@@ -15,8 +15,8 @@ export const cert = {
     { label: 'Prometric Test Centers',          url: 'https://www.prometric.com/test-takers/search/cpa' },
   ],
   domains: [
-    { slug: 'business-analysis',               name: 'Business Analysis',               number: '1.0', weight: 45 },
-    { slug: 'technical-accounting-reporting',  name: 'Technical Accounting and Reporting', number: '2.0', weight: 40 },
-    { slug: 'state-and-local-governments',     name: 'State and Local Governments',     number: '3.0', weight: 15 },
+    { slug: 'business-analysis',               name: 'Business Analysis',               number: '1.0', weight: 32 },
+    { slug: 'technical-accounting-reporting',  name: 'Technical Accounting and Reporting', number: '2.0', weight: 44 },
+    { slug: 'state-and-local-governments',     name: 'State and Local Governments',     number: '3.0', weight: 24 },
   ],
 };

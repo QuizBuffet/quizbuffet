@@ -148,18 +148,18 @@
         },
         {
           "@type": "Question",
-          "name": "What is the fundamental architectural difference between a container and a traditional virtual machine?",
+          "name": "Which cloud deployment model connects on-premises infrastructure with public cloud resources via dedicated network links or VPN, allowing workloads to move between environments based on capacity or compliance requirements?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Containers share the host OS kernel and isolate at the process level; VMs run separate guest OS instances on a hypervisor."
+            "text": "Hybrid cloud — on-premises and public cloud resources connected and orchestrated together."
           }
         },
         {
           "@type": "Question",
-          "name": "Which characteristic of serverless functions MOST significantly expands the application attack surface compared to a traditional monolithic web server deployment?",
+          "name": "A Docker container is running as root and has been started with a bind mount that exposes the host's root filesystem (/) into the container at /hostfs. Which attack does this configuration MOST directly enable?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Multiple event trigger sources (HTTP, queues, storage events, streams) introduce injection and input validation risks at every integration point."
+            "text": "Container escape to read, modify, or execute files on the host system."
           }
         }
       ]
@@ -184,14 +184,14 @@
         <p>NIST SP 800-145 defines three cloud service models: IaaS (provider manages physical infrastructure and virtualization; customer manages OS, middleware, and applications), PaaS (provider manages OS and runtime; customer manages applications and data), and SaaS (provider manages the entire stack; customer manages only user-level configuration and data).</p>
       </article>
       <article class="seo-sample-q">
-        <h3>What is the fundamental architectural difference between a container and a traditional virtual machine?</h3>
-        <p><strong>Answer:</strong> Containers share the host OS kernel and isolate at the process level; VMs run separate guest OS instances on a hypervisor</p>
-        <p>Containers (e.g., Docker) share the host operating system&#39;s kernel and use Linux namespaces and cgroups to isolate processes, filesystems, and network stacks at the OS level. Virtual machines run a complete separate guest OS on top of a hypervisor (Type-1 or Type-2), with no kernel sharing. This makes containers lighter and faster to start, but means a kernel vulnerability can potentially affect all containers on the host.</p>
+        <h3>Which cloud deployment model connects on-premises infrastructure with public cloud resources via dedicated network links or VPN, allowing workloads to move between environments based on capacity or compliance requirements?</h3>
+        <p><strong>Answer:</strong> Hybrid cloud — on-premises and public cloud resources connected and orchestrated together</p>
+        <p>A hybrid cloud integrates on-premises (or private cloud) infrastructure with public cloud resources, connected via dedicated links (such as AWS Direct Connect or Azure ExpressRoute) or VPN. This allows organizations to keep sensitive workloads on-premises while leveraging public cloud capacity for scalability, or to burst to the cloud during peak demand.</p>
       </article>
       <article class="seo-sample-q">
-        <h3>Which characteristic of serverless functions MOST significantly expands the application attack surface compared to a traditional monolithic web server deployment?</h3>
-        <p><strong>Answer:</strong> Multiple event trigger sources (HTTP, queues, storage events, streams) introduce injection and input validation risks at every integration point</p>
-        <p>Serverless functions can be triggered by a wide variety of event sources: API Gateway HTTP requests, SQS queues, S3 object events, DynamoDB streams, SNS notifications, scheduled events, and more. Each trigger type represents a separate input channel that must be validated and sanitized. Attackers can inject malicious payloads through any of these sources — a single function might process input from five different untrusted sources, each requiring its own validation logic.</p>
+        <h3>A Docker container is running as root and has been started with a bind mount that exposes the host&#39;s root filesystem (/) into the container at /hostfs. Which attack does this configuration MOST directly enable?</h3>
+        <p><strong>Answer:</strong> Container escape to read, modify, or execute files on the host system</p>
+        <p>When a container runs as root AND has a bind mount exposing the host root filesystem, an attacker who compromises the container effectively has root access to the host filesystem through /hostfs. They can read sensitive files (SSH keys, /etc/shadow), modify system configurations, write cron jobs or init scripts for persistence, or overwrite host binaries — achieving a complete container escape to host compromise.</p>
       </article>
       <h2>Other CEH Domains</h2>
       <ul>

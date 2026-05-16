@@ -284,18 +284,10 @@
         },
         {
           "@type": "Question",
-          "name": "The Common Vulnerability Scoring System (CVSS) v3.1 Base Score ranges from 0.0 to 10.0. Which CVSS Base Score range corresponds to a 'Critical' severity rating?",
+          "name": "A compliance team needs continuous monitoring of all 2,000 servers in their datacenter for new vulnerabilities as patches are released and CVEs are published daily. Which vulnerability assessment deployment model BEST supports this ongoing requirement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "9.0–10.0"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is 'promiscuous mode' on a network interface, and why is it necessary for passive network sniffing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Promiscuous mode configures the NIC to accept and pass ALL frames on the wire to the OS — regardless of whether the destination MAC address matches the interface's own MAC — enabling packet capture of traffic destined for other hosts"
+            "text": "Continuous automated scanning — a vulnerability management platform (e.g., Tenable.sc, Rapid7 InsightVM) scans assets on a scheduled or agent-based basis and correlates results with the live NVD CVE feed"
           }
         },
         {
@@ -308,6 +300,14 @@
         },
         {
           "@type": "Question",
+          "name": "A network engineer wants to prevent MAC flooding attacks on access layer switches. Which Cisco switch security feature directly limits the number of MAC addresses learned on each port?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Port Security — configures a maximum number of MAC addresses per port and defines violation actions (protect, restrict, shutdown) when the limit is exceeded"
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Which web server component handles incoming HTTP requests, routes them to the appropriate application logic, and returns the resulting HTTP responses to clients?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -316,10 +316,10 @@
         },
         {
           "@type": "Question",
-          "name": "What is a 'misconfiguration attack' against a web server, and which common web server misconfiguration MOST frequently leads to sensitive data exposure?",
+          "name": "Which security control specifically limits what a web server process can access on the host operating system — preventing a compromised web server from reading sensitive system files, writing to system directories, or accessing other processes' memory?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A misconfiguration attack targets insecure default settings, unnecessary enabled features, or improper access controls — the most common example being directory listing (directory browsing) enabled, allowing anyone to browse the web server's file structure like a file explorer"
+            "text": "Running the web server process with minimal OS privileges (non-root user account) combined with OS-level access controls (AppArmor, SELinux, chroot jail) — limiting the blast radius if the web server process is compromised"
           }
         },
         {

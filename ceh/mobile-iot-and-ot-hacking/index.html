@@ -148,18 +148,18 @@
         },
         {
           "@type": "Question",
-          "name": "What is Android Debug Bridge (ADB), and why is it a security risk when enabled on a mobile device?",
+          "name": "A mobile banking app relies exclusively on OS-level certificate validation for TLS and does not implement certificate pinning. Which specific attack does this omission enable that certificate pinning would prevent?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ADB is a command-line communication tool for Android devices; when USB debugging is enabled, it allows anyone with physical USB access to install apps, extract data, and run shell commands without the device passcode."
+            "text": "Man-in-the-middle interception of TLS traffic using a proxy with a CA certificate trusted by the device OS."
           }
         },
         {
           "@type": "Question",
-          "name": "What is iOS jailbreaking, and which primary security boundary does it remove?",
+          "name": "What is Android Debug Bridge (ADB), and why is it a security risk when enabled on a mobile device?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Jailbreaking exploits iOS kernel vulnerabilities to disable Apple's code-signing enforcement and app sandbox restrictions, enabling installation of unsigned apps and unrestricted system-level access outside Apple's controls."
+            "text": "ADB is a command-line communication tool for Android devices; when USB debugging is enabled, it allows anyone with physical USB access to install apps, extract data, and run shell commands without the device passcode."
           }
         }
       ]
@@ -184,14 +184,14 @@
         <p>OWASP Mobile Top 10 M2 (Insecure Data Storage) covers vulnerabilities where apps store sensitive data in insecure locations — including Android&#39;s SharedPreferences (XML files readable by any root process), NSUserDefaults (iOS plist files), SQLite databases without encryption, device logs, and external storage. Attackers who root/jailbreak the device or use forensic tools can extract this data trivially.</p>
       </article>
       <article class="seo-sample-q">
+        <h3>A mobile banking app relies exclusively on OS-level certificate validation for TLS and does not implement certificate pinning. Which specific attack does this omission enable that certificate pinning would prevent?</h3>
+        <p><strong>Answer:</strong> Man-in-the-middle interception of TLS traffic using a proxy with a CA certificate trusted by the device OS</p>
+        <p>Without certificate pinning, the app accepts any TLS certificate that chains to a trusted CA. If an attacker or tester installs a custom CA on the test device (e.g., Burp Suite&#39;s CA) and runs a proxy, the app trusts the proxy&#39;s certificate. The proxy decrypts, inspects, and re-encrypts all HTTPS traffic. Certificate pinning prevents this by requiring the server&#39;s certificate to match a specific hardcoded value, rejecting any certificate — even one from a trusted CA — that doesn&#39;t match.</p>
+      </article>
+      <article class="seo-sample-q">
         <h3>What is Android Debug Bridge (ADB), and why is it a security risk when enabled on a mobile device?</h3>
         <p><strong>Answer:</strong> ADB is a command-line communication tool for Android devices; when USB debugging is enabled, it allows anyone with physical USB access to install apps, extract data, and run shell commands without the device passcode</p>
         <p>Android Debug Bridge (ADB) is a developer tool included in the Android SDK that provides a command-line interface to communicate with connected Android devices via USB or TCP/IP. When USB debugging is enabled (Developer Options), an attacker with physical access can use ADB to install APKs, extract files, execute shell commands, capture screenshots, dump memory, and create full device backups — all without needing the device&#39;s PIN, pattern, or password. This is a significant risk for unlocked devices or devices that are left unattended.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is iOS jailbreaking, and which primary security boundary does it remove?</h3>
-        <p><strong>Answer:</strong> Jailbreaking exploits iOS kernel vulnerabilities to disable Apple&#39;s code-signing enforcement and app sandbox restrictions, enabling installation of unsigned apps and unrestricted system-level access outside Apple&#39;s controls</p>
-        <p>iOS jailbreaking exploits vulnerabilities in the iOS kernel (and sometimes the bootchain) to: (1) remove Apple&#39;s code-signing enforcement (allowing unsigned and modified apps to run), (2) disable sandbox restrictions (allowing apps to access other apps&#39; data and system files), (3) grant users root access, and (4) enable installation of apps from outside the App Store (via Cydia or Sileo). From a security perspective, jailbreaking eliminates the foundational iOS security model — attackers who jailbreak a device (or target an already-jailbroken device) have full control over all app data and system functions.</p>
       </article>
       <h2>Other CEH Domains</h2>
       <ul>

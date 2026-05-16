@@ -156,10 +156,10 @@
         },
         {
           "@type": "Question",
-          "name": "What is an evil twin access point in the context of wireless network attacks?",
+          "name": "WPA3-Personal replaces the WPA2 4-way PSK handshake with SAE (Simultaneous Authentication of Equals). Which specific attack class does SAE eliminate that was feasible against WPA2-Personal networks?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A rogue AP that clones a legitimate network's SSID (and optionally BSSID) to deceive clients into connecting to an attacker-controlled network."
+            "text": "Offline dictionary and brute-force attacks against captured handshakes, due to SAE's forward secrecy property."
           }
         }
       ]
@@ -189,9 +189,9 @@
         <p>WEP (Wired Equivalent Privacy, IEEE 802.11 1997) is completely broken. Its 24-bit IV space means IVs repeat frequently in busy networks, and the weak RC4 key scheduling algorithm (discovered by Fluhrer, Mantin, and Shamir in 2001) allows statistical analysis of IV-key pairs to recover the full WEP key. Tools like aircrack-ng can crack WEP keys in under 60 seconds with as few as 20,000–40,000 captured packets. WEP should never be used.</p>
       </article>
       <article class="seo-sample-q">
-        <h3>What is an evil twin access point in the context of wireless network attacks?</h3>
-        <p><strong>Answer:</strong> A rogue AP that clones a legitimate network&#39;s SSID (and optionally BSSID) to deceive clients into connecting to an attacker-controlled network</p>
-        <p>An evil twin is a malicious access point configured with the same SSID as a legitimate target network, and optionally the same BSSID (spoofed MAC address). It may also be set up with a stronger signal than the legitimate AP to ensure victim devices prefer it. Clients that connect to the evil twin have their traffic routed through the attacker&#39;s system, enabling man-in-the-middle attacks, credential harvesting, and session hijacking. Tools like hostapd-wpe or the Airbase-ng suite are commonly used to create evil twins.</p>
+        <h3>WPA3-Personal replaces the WPA2 4-way PSK handshake with SAE (Simultaneous Authentication of Equals). Which specific attack class does SAE eliminate that was feasible against WPA2-Personal networks?</h3>
+        <p><strong>Answer:</strong> Offline dictionary and brute-force attacks against captured handshakes, due to SAE&#39;s forward secrecy property</p>
+        <p>WPA3-SAE (Dragonfly handshake) uses a zero-knowledge proof where each side proves knowledge of the password without transmitting anything that can be used for offline verification. Critically, SAE provides forward secrecy — each session generates a unique PMK from an ephemeral Diffie-Hellman exchange. Even if an attacker captures the SAE handshake, they cannot perform an offline dictionary attack because there is no MIC equivalent to test password candidates against. If the password is later compromised, past sessions remain secure.</p>
       </article>
       <h2>Other CEH Domains</h2>
       <ul>

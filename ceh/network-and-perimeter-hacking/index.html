@@ -140,18 +140,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is 'promiscuous mode' on a network interface, and why is it necessary for passive network sniffing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Promiscuous mode configures the NIC to accept and pass ALL frames on the wire to the OS — regardless of whether the destination MAC address matches the interface's own MAC — enabling packet capture of traffic destined for other hosts."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "How does a MAC flooding attack work against a network switch, and what is the result when the CAM table is exhausted?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch's Content Addressable Memory (CAM) table — when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A network engineer wants to prevent MAC flooding attacks on access layer switches. Which Cisco switch security feature directly limits the number of MAC addresses learned on each port?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Port Security — configures a maximum number of MAC addresses per port and defines violation actions (protect, restrict, shutdown) when the limit is exceeded."
           }
         },
         {
@@ -179,14 +179,14 @@
       <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
       <article class="seo-sample-q">
-        <h3>What is &#39;promiscuous mode&#39; on a network interface, and why is it necessary for passive network sniffing?</h3>
-        <p><strong>Answer:</strong> Promiscuous mode configures the NIC to accept and pass ALL frames on the wire to the OS — regardless of whether the destination MAC address matches the interface&#39;s own MAC — enabling packet capture of traffic destined for other hosts</p>
-        <p>By default, a NIC in normal mode silently discards frames where the destination MAC address does not match its own MAC or the broadcast address (FF:FF:FF:FF:FF:FF). This prevents the host&#39;s CPU from processing traffic destined for other devices. In promiscuous mode, the NIC passes ALL frames seen on the wire/switch port to the operating system — including unicast frames destined for other hosts. Packet capture tools (Wireshark, tcpdump) require promiscuous mode to capture traffic not addressed to the local machine. Setting promiscuous mode: &#39;ip link set eth0 promisc on&#39; (Linux) or programmatically via libpcap/WinPcap. Note: on switched networks, promiscuous mode only captures traffic on the same switch port without additional techniques (ARP poisoning, port mirroring).</p>
-      </article>
-      <article class="seo-sample-q">
         <h3>How does a MAC flooding attack work against a network switch, and what is the result when the CAM table is exhausted?</h3>
         <p><strong>Answer:</strong> MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch&#39;s Content Addressable Memory (CAM) table — when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing</p>
         <p>A MAC flooding attack (using tools like macof from the dsniff suite) sends frames with randomly generated fake source MAC addresses at high volume. The switch learns each new source MAC, adding it to the CAM table. When the CAM table reaches capacity, the switch can no longer learn new legitimate MAC-to-port mappings. Many switches (particularly older models) respond by &#39;failing open&#39; — flooding frames for unknown destination MACs out all ports, converting from unicast switching to hub-like broadcasting. An attacker connected to any switch port can now capture all traffic in the VLAN using promiscuous mode.</p>
+      </article>
+      <article class="seo-sample-q">
+        <h3>A network engineer wants to prevent MAC flooding attacks on access layer switches. Which Cisco switch security feature directly limits the number of MAC addresses learned on each port?</h3>
+        <p><strong>Answer:</strong> Port Security — configures a maximum number of MAC addresses per port and defines violation actions (protect, restrict, shutdown) when the limit is exceeded</p>
+        <p>Cisco Port Security is specifically designed to prevent MAC flooding by limiting MAC address learning per port: (1) &#39;switchport port-security maximum 1&#39; limits the port to 1 MAC address (for end-user access ports). (2) &#39;switchport port-security violation shutdown&#39; disables the port if the limit is exceeded (most secure). (3) Alternative violations: &#39;restrict&#39; (drops violating frames, sends SNMP trap) and &#39;protect&#39; (silently drops violating frames). (4) &#39;switchport port-security mac-address sticky&#39; dynamically learns and persists the first MAC seen. When macof generates thousands of fake MACs on a port with port-security maximum 1, the first fake MAC triggers a violation and the port shuts down — protecting other ports from the overflow attack.</p>
       </article>
       <article class="seo-sample-q">
         <h3>ARP (Address Resolution Protocol) has a fundamental design weakness that enables ARP poisoning attacks. What is this weakness?</h3>

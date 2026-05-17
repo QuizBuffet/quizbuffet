@@ -451,6 +451,11 @@ ${JSON.stringify(jsonLd, null, 2)}
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
+  <noscript>
+    <div style="background:#1c1c1c;color:#fff;padding:12px 18px;text-align:center;font:14px/1.5 Nunito,system-ui,sans-serif">
+      JavaScript is disabled. You can still read this page, but QuizBuffet's interactive practice quizzes, navigation, and settings require JavaScript.
+    </div>
+  </noscript>
   <div id="nav" role="navigation" aria-label="Main navigation"></div>
   <main id="main-content">
     <section id="seo-static">
@@ -707,6 +712,11 @@ ${JSON.stringify(jsonLd, null, 2)}
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
+  <noscript>
+    <div style="background:#1c1c1c;color:#fff;padding:12px 18px;text-align:center;font:14px/1.5 Nunito,system-ui,sans-serif">
+      JavaScript is disabled. You can still read this page, but QuizBuffet's interactive practice quizzes, navigation, and settings require JavaScript.
+    </div>
+  </noscript>
   <div id="nav" role="navigation" aria-label="Main navigation"></div>
   <main id="main-content">
     <section id="seo-static">
@@ -951,6 +961,11 @@ ${JSON.stringify(jsonLd, null, 2)}
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
+  <noscript>
+    <div style="background:#1c1c1c;color:#fff;padding:12px 18px;text-align:center;font:14px/1.5 Nunito,system-ui,sans-serif">
+      JavaScript is disabled. You can still read this page, but QuizBuffet's interactive practice quizzes, navigation, and settings require JavaScript.
+    </div>
+  </noscript>
   <div id="nav" role="navigation" aria-label="Main navigation"></div>
   <main id="main-content">
     <section id="seo-static" class="container container-cs">

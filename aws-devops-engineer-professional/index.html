@@ -39,11 +39,24 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
+  <!-- Google tag (gtag.js) with Consent Mode v2 — default denied (GDPR/EEA), restored from prior choice. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    try{ if(localStorage.getItem('qb_consent')==='granted'){ gtag('consent','update',{analytics_storage:'granted'}); } }catch(e){}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-YRKFB3WT9C');
   </script>
@@ -104,7 +117,7 @@
       "description": "AWS Certified DevOps Engineer – Professional (DOP-C02) validates the ability to provision, operate, and manage distributed systems on AWS. It covers SDLC automation with CI/CD (CodePipeline, CodeBuild, CodeDeploy), configuration management and IaC (CloudFormation, CDK, SAM, Systems Manager), resilient cloud solutions and DR, monitoring and logging with CloudWatch and X-Ray, incident and event response, and security and compliance automation at scale.",
       "url": "https://quizbuffet.com/aws-devops-engineer-professional/",
       "inLanguage": "en-US",
-      "dateModified": "2026-05-16",
+      "dateModified": "2026-05-17",
       "educationalCredentialAwarded": "AWS Certified DevOps Engineer – Professional",
       "learningResourceType": "Practice Test",
       "isAccessibleForFree": true,
@@ -314,8 +327,8 @@
       "headline": "The DOP-C02 Guide — DevOps Engineer - Professional",
       "description": "600+ free DOP-C02 practice questions across 6 domains. Instant feedback, no signup. Provision, operate, and manage distributed systems on AWS at scale",
       "url": "https://quizbuffet.com/aws-devops-engineer-professional/",
-      "datePublished": "2026-05-16",
-      "dateModified": "2026-05-16",
+      "datePublished": "2026-05-17",
+      "dateModified": "2026-05-17",
       "inLanguage": "en-US",
       "image": "https://quizbuffet.com/icons/og/aws-devops-engineer-professional.svg",
       "author": {
@@ -368,7 +381,7 @@
       <h2>About This Practice Test</h2>
       <p>QuizBuffet's AWS Certified DevOps Engineer – Professional practice test is built for exam preparation. Every question is tagged by exam objective and difficulty (easy, medium, medium-hard, hard) so you can drill the areas you need most. Sessions are short by default — pick 10, 25, 50, or all questions per domain — so you can study in any spare moment.</p>
       <p>Wrong answers come with a contrastive explanation showing why your choice was wrong and what the correct concept actually is. Your progress is saved locally in your browser; nothing is uploaded and there's no signup.</p>
-      <p class="cert-byline"><time datetime="2026-05-16">Last updated: May 16, 2026</time></p>
+      <p class="cert-byline"><time datetime="2026-05-17">Last updated: May 16, 2026</time></p>
     </section>
     <div id="app"></div>
     <article class="cert-guide-content">
@@ -404,7 +417,7 @@
       <p>The three traps that kill DOP-C02 candidates: (1) over-memorizing acronyms instead of practicing the application of concepts in scenarios — the exam is scenario-driven, not a vocab quiz. (2) Skipping the heaviest-weighted domain because it feels less interesting — you can fail the whole exam by neglecting SDLC Automation. (3) Not timing practice sessions — the exam has a real clock, and pacing is its own skill. Build timing into your last two weeks of prep.</p>
     </section>
       <p class="cert-byline cert-guide-byline">
-        <time datetime="2026-05-16">Published and last updated: May 16, 2026</time>
+        <time datetime="2026-05-17">Published and last updated: May 16, 2026</time>
         · By <span>QuizBuffet Editorial</span>
       </p>
     </article>

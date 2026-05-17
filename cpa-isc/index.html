@@ -39,11 +39,24 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
+  <!-- Google tag (gtag.js) with Consent Mode v2 — default denied (GDPR/EEA), restored from prior choice. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    try{ if(localStorage.getItem('qb_consent')==='granted'){ gtag('consent','update',{analytics_storage:'granted'}); } }catch(e){}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-YRKFB3WT9C');
   </script>
@@ -104,7 +117,7 @@
       "description": "The Information Systems and Controls (ISC) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — ISC is most often selected by candidates planning a career in IT audit, cybersecurity, or System and Organization Controls (SOC) attestation. The 4-hour exam consists of 82 multiple-choice questions and 6 task-based simulations, weighted 60% MCQ / 40% TBS in scoring (the only section without 50/50 split). Content covers three areas: Information Systems and Data Management (35–45%) — IT infrastructure components, cloud computing models (IaaS, PaaS, SaaS), enterprise and accounting information systems, system availability, business continuity and disaster recovery, IT change management, data management, relational databases, SQL queries, data warehouses and lakes, and business process modeling; Security, Confidentiality and Privacy (35–45%) — HIPAA Security and Privacy Rules, GDPR Articles 4–34, PCI DSS, NIST CSF and Privacy Framework, NIST SP 800-53, CIS Controls v8.1, COBIT 2019, threat types and cyber-attack stages, identification/authentication/authorization controls, encryption, Data Loss Prevention, security testing, and incident response; and Considerations for SOC Engagements (15–25%) — purpose and intended users of SOC 1®, SOC 2®, SOC 3®, and SOC for Cybersecurity reports, Trust Services Criteria, system description criteria, complementary user entity controls (CUECs) and complementary subservice organization controls (CSOCs), report opinions and modifications. References include the AICPA Trust Services Criteria, NIST frameworks, HIPAA 45 CFR Part 164, GDPR, PCI DSS, COSO ERM, and COBIT 2019.",
       "url": "https://quizbuffet.com/cpa-isc/",
       "inLanguage": "en-US",
-      "dateModified": "2026-05-16",
+      "dateModified": "2026-05-17",
       "educationalCredentialAwarded": "CPA — Information Systems and Controls (ISC)",
       "learningResourceType": "Practice Test",
       "isAccessibleForFree": true,
@@ -273,8 +286,8 @@
       "headline": "The ISC Guide — CPA - Information Systems and Controls (ISC)",
       "description": "300+ free ISC practice questions across 3 domains. Instant feedback, no signup. Discipline section of the Uniform CPA Examination — IT audit, security, and",
       "url": "https://quizbuffet.com/cpa-isc/",
-      "datePublished": "2026-05-16",
-      "dateModified": "2026-05-16",
+      "datePublished": "2026-05-17",
+      "dateModified": "2026-05-17",
       "inLanguage": "en-US",
       "image": "https://quizbuffet.com/icons/og/cpa-isc.svg",
       "author": {
@@ -324,7 +337,7 @@
       <h2>About This Practice Test</h2>
       <p>QuizBuffet's CPA — Information Systems and Controls (ISC) practice test is built for exam preparation. Every question is tagged by exam objective and difficulty (easy, medium, medium-hard, hard) so you can drill the areas you need most. Sessions are short by default — pick 10, 25, 50, or all questions per domain — so you can study in any spare moment.</p>
       <p>Wrong answers come with a contrastive explanation showing why your choice was wrong and what the correct concept actually is. Your progress is saved locally in your browser; nothing is uploaded and there's no signup.</p>
-      <p class="cert-byline"><time datetime="2026-05-16">Last updated: May 16, 2026</time></p>
+      <p class="cert-byline"><time datetime="2026-05-17">Last updated: May 16, 2026</time></p>
     </section>
     <div id="app"></div>
     <article class="cert-guide-content">
@@ -360,7 +373,7 @@
       <p>The three traps that kill ISC candidates: (1) over-memorizing acronyms instead of practicing the application of concepts in scenarios — the exam is scenario-driven, not a vocab quiz. (2) Skipping the heaviest-weighted domain because it feels less interesting — you can fail the whole exam by neglecting Information Systems and Data Management. (3) Not timing practice sessions — the exam has a real clock, and pacing is its own skill. Build timing into your last two weeks of prep.</p>
     </section>
       <p class="cert-byline cert-guide-byline">
-        <time datetime="2026-05-16">Published and last updated: May 16, 2026</time>
+        <time datetime="2026-05-17">Published and last updated: May 16, 2026</time>
         · By <span>QuizBuffet Editorial</span>
       </p>
     </article>

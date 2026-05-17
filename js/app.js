@@ -2,6 +2,7 @@
 import { renderNav } from './components/nav/renderNav.js';
 import { renderFooter } from './components/footer/renderFooter.js';
 import { renderBackToTop } from './components/backToTop/renderBackToTop.js';
+import { renderConsent } from './components/consent/renderConsent.js';
 import { checkInactivityReset } from './storage/checkInactivityReset.js';
 import { loadComingSoon } from './data/comingSoon/loadComingSoon.js';
 
@@ -183,7 +184,7 @@ route();
 // Footer + back-to-top are below the fold — defer to idle so they don't compete
 // with the initial render and break up the main-thread task budget.
 const idle = window.requestIdleCallback || (cb => setTimeout(cb, 200));
-idle(() => { renderFooter(); renderBackToTop(); });
+idle(() => { renderFooter(); renderBackToTop(); renderConsent(); });
 
 // Set of coming-soon slugs — loaded once. Clicks to these URLs do a NATIVE
 // navigation, not a pushState, so the static rich coming-soon HTML loads

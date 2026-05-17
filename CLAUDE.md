@@ -211,6 +211,21 @@ Only after every check passes is the cert deploy-ready.
 
 ---
 
+## Analytics consent (GDPR/EEA — do not regress)
+
+Google Analytics (gtag, `G-YRKFB3WT9C`) is gated by **Consent Mode v2**. The `<head>` gtag block defines `dataLayer`/`gtag`, calls `gtag('consent','default', {... all 'denied' except security_storage, wait_for_update:500})`, restores a prior `qb_consent==='granted'` choice, *then* loads `gtag.js` and `gtag('config')`. This satisfies the EEA/UK/GDPR consent requirement and Google's EU User Consent Policy. **Never replace it with a bare `gtag('config')`** — that ships GA cookies before consent and is non-compliant.
+
+The consent block lives in **five** places, all of which must stay in sync:
+
+1. `scripts/build-seo.mjs` — **three** templated copies (cert, coming-soon, domain/home heads); regenerates all ~360 generated pages on `build:seo`.
+2. Root `index.html` (hand-maintained — `build:seo` does not rewrite its gtag block).
+3. `cpa/index.html` (hand-built hub).
+4. `privacy/index.html` (hand-built policy page).
+
+The banner UI is `js/components/consent/renderConsent.js`, rendered from `js/app.js`'s idle callback. Accept → `gtag('consent','update',{analytics_storage:'granted'})` + `localStorage.qb_consent='granted'`; Decline → stays denied. The site is analytics-only — never grant `ad_storage`/`ad_user_data`/`ad_personalization`. `/privacy/` is the policy page (footer-linked; registered in `buildSitemap()` so it survives `build:seo`) and has a "reset cookie choice" control. If you add a new hand-built top-level page that loads gtag, copy the Consent Mode block verbatim.
+
+---
+
 ## Style rules
 
 - **No emojis** in code, content, or commit messages unless explicitly asked.

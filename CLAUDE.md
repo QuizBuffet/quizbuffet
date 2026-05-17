@@ -233,3 +233,4 @@ The banner UI is `js/components/consent/renderConsent.js`, rendered from `js/app
 - One function per file in `js/`; keep files short.
 - The user prefers craigslist-simple UI — no decorative additions.
 - When validating, run checks programmatically (Python or Node), not by hand.
+- **Never expose the contact email as visible text.** Use a `mailto:` link labeled "Contact us" / "Contact Us →" (the address may live in the `href`, never in the rendered text). Applies to new pages, the footer, and any generated/static template.

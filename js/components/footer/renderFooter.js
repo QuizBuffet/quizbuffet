@@ -98,6 +98,7 @@ export async function renderFooter() {
               <li><strong>Nothing shared.</strong> Your answers, scores, and progress never leave your device. Period.</li>
               <li><strong>Open to inspect.</strong> Every line of code runs in your browser. Open DevTools and see for yourself.</li>
             </ul>
+            <p class="footer-body"><a href="/privacy/" class="footer-privacy-link"><strong>Read our Privacy &amp; Cookie Policy →</strong></a></p>
 
             <div class="footer-col-title footer-col-title-inline">Stay Updated</div>
             <p class="footer-body">Get notified when new certs go live.</p>
@@ -135,7 +136,7 @@ export async function renderFooter() {
         <div class="footer-bottom">
           <span>&copy; ${year} QuizBuffet &mdash; a personal project, made with care.</span>
           <span class="footer-disclaimer">Not affiliated with CompTIA or any certification body. All trademarks belong to their respective owners.</span>
-          <span class="footer-disclaimer"><a href="/privacy/">Privacy &amp; Cookie Policy</a></span>
+          <span><a href="/privacy/">Privacy &amp; Cookie Policy</a></span>
           ${buildStamp ? `<span class="footer-build" title="Service worker cache version and last build date">${buildStamp}</span>` : ''}
         </div>
 

@@ -42,6 +42,7 @@ export const order = [
   'cosmetology-license',
   'micropigmentation',
   'barber-license',
+  'barber-no-chemical',
   'tattoo-license',
   'cpa-aud',
   'cpa-far',

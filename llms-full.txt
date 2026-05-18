@@ -1615,16 +1615,34 @@ A: The human-readable name that identifies a wireless network, broadcast in AP b
 ## CompTIA Project+ (PK0-005)
 Vendor: CompTIA
 URL: https://quizbuffet.com/comptia-project-plus/
-Total questions: 0
+Total questions: 812
 
 CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6–12 months of hands-on IT project management experience.
 
 ### Domains
-- Project Management Concepts (33% of exam)
-- Project Life Cycle Phases (30% of exam)
-- Tools and Documentation (19% of exam)
-- Basics of IT and Governance (18% of exam)
+- Project Management Concepts (38% of exam) — 308 questions
+- Project Life Cycle Phases (31% of exam) — 252 questions
+- Tools and Documentation (10% of exam) — 84 questions
+- Basics of IT and Governance (21% of exam) — 168 questions
 
+### Sample questions
+**Q: Which characteristic BEST distinguishes a project from ongoing operational work?**
+A: Projects are temporary endeavors with a defined start and finish, producing a unique deliverable
+
+**Q: A company is simultaneously running a website redesign project, a mobile app project, and a CRM integration project — all supporting a single strategic initiative to improve customer digital experience. These three projects are BEST described as belonging to a:**
+A: Program, because they are related projects managed in a coordinated way to obtain benefits not available from managing them individually
+
+**Q: What is the PRIMARY purpose of the business case in the discovery/concept phase of a project?**
+A: To provide the justification for undertaking the project — documenting the business need, expected benefits, estimated costs, risks, and the decision criteria that authorize the investment of organizational resources
+
+**Q: A business case shows a project investment of $200,000 that will generate net benefits of $50,000 per year. The ROI formula is (Net Benefits / Investment) × 100%. What is the ROI, and what does this indicate?**
+A: ROI = 25% — for every $1 invested, the project returns $0.25 in net benefit annually; the payback period is 4 years ($200K ÷ $50K/year)
+
+**Q: A project manager uses a Gantt chart to communicate schedule status to the team. What does a Gantt chart show?**
+A: A horizontal bar chart that plots project activities against a timeline — each bar's length represents the activity's duration; bars are arranged vertically by activity name; the chart shows planned start/end dates, actual progress (percentage complete bars), and relationships…
+
+**Q: A project manager creates a milestone chart for the steering committee. What does a milestone chart show and why is it appropriate for executive audiences?**
+A: A milestone chart shows only significant project events (milestones) against a timeline — no task-level detail; milestones are key completion events such as phase completions, deliverable approvals, and major go/no-go decision points; executives need the high-level status…
 
 
 ## Coming soon (in priority order)

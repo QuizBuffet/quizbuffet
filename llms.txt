@@ -51,7 +51,7 @@
 - [CPA — Information Systems and Controls (ISC) (ISC)](https://quizbuffet.com/cpa-isc/): Discipline section of the Uniform CPA Examination — IT audit, security, and SOC engagements 300+ questions.
 - [CPA — Tax Compliance and Planning (TCP) (TCP)](https://quizbuffet.com/cpa-tcp/): Discipline section of the Uniform CPA Examination — advanced individual and entity tax compliance and planning 124+ questions.
 - [Certified Ethical Hacker (CEH) (CEH)](https://quizbuffet.com/ceh/): EC-Council's ethical hacking certification — penetration testing, vulnerability assessment, and offensive security 700+ questions.
-- [CompTIA Project+ (PK0-005)](https://quizbuffet.com/comptia-project-plus/): Project life cycle, communication, resource and stakeholder management for IT projects
+- [CompTIA Project+ (PK0-005)](https://quizbuffet.com/comptia-project-plus/): Project life cycle, communication, resource and stakeholder management for IT projects 812+ questions.
 
 ## Coming soon
 - [Six Sigma Green Belt (SSGB)](https://quizbuffet.com/six-sigma-green-belt/) — coming soon (priority #1)

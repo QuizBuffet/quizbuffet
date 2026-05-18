@@ -1134,10 +1134,10 @@ export const certifications = [
     { provider: 'comptia', label: 'CertMaster Learn',  url: '' },
   ],
   domains: [
-    { slug: 'project-management-concepts',  name: 'Project Management Concepts',  weight: 33 },
-    { slug: 'project-life-cycle-phases',    name: 'Project Life Cycle Phases',    weight: 30 },
-    { slug: 'tools-and-documentation',      name: 'Tools and Documentation',      weight: 19 },
-    { slug: 'basics-of-it-and-governance',  name: 'Basics of IT and Governance',  weight: 18 },
+    { slug: 'project-management-concepts',  name: 'Project Management Concepts',  weight: 38 },
+    { slug: 'project-life-cycle-phases',    name: 'Project Life Cycle Phases',    weight: 31 },
+    { slug: 'tools-and-documentation',      name: 'Tools and Documentation',      weight: 10 },
+    { slug: 'basics-of-it-and-governance',  name: 'Basics of IT and Governance',  weight: 21 },
   ],
 },
 ];

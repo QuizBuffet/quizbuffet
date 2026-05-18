@@ -445,7 +445,7 @@ function buildCertHtml(cert) {
   </style>
   <!-- AdSense disabled until a real ca-pub client is wired up. To re-enable: restore the script tag here AND in index.html, uncomment the push() in js/components/ad/renderAd.js. -->
 
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="json-ld">
 ${JSON.stringify(jsonLd, null, 2)}
   </script>
 </head>
@@ -706,7 +706,7 @@ function buildDomainHtml(cert, domain, questions) {
     @keyframes bg-pulse-b{0%,100%{opacity:1}50%{opacity:.2}}
   </style>
 
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="json-ld">
 ${JSON.stringify(jsonLd, null, 2)}
   </script>
 </head>
@@ -955,7 +955,7 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
     @keyframes bg-pulse-b{0%,100%{opacity:1}50%{opacity:.2}}
   </style>
 
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="json-ld">
 ${JSON.stringify(jsonLd, null, 2)}
   </script>
 </head>

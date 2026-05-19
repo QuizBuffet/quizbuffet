@@ -1,6 +1,6 @@
 # QuizBuffet — Full Cert Reference
 
-Last updated: 2026-05-18
+Last updated: 2026-05-19
 Site: https://quizbuffet.com
 
 QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
@@ -1351,6 +1351,38 @@ A: absorb and retain moisture
 **Q: Tinea capitis on a child's scalp is a contraindication for barbershop services because**
 A: it is a highly contagious fungal infection that can spread to other clients through contaminated implements and surfaces
 
+## Barber 1 (No Chemical) License (Barber 1)
+Vendor: State Boards
+URL: https://quizbuffet.com/barber-no-chemical/
+Total questions: 220
+
+Barber 1 (No Chemical) is an entry-level barber license that authorizes haircutting, shaving, beard and facial-hair design, and basic styling — but NOT chemical services such as color, perms, or relaxers. It requires fewer training hours than a full Barber License and is a common stepping stone toward chemical-services certification. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber 1 (No Chemical) Theory Examination — a 60-item (50 weighted), 90-minute written exam. The blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, basic product chemistry — 40%), implements and equipment (razors, shears, clippers, sanitation — 10%), hair care services (consultation, draping, shampoo, cutting, styling — 30%), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy — 20%).
+
+### Domains
+- 1.0 Scientific Concepts (40% of exam) — 88 questions
+- 2.0 Implements and Equipment (11% of exam) — 24 questions
+- 3.0 Hair Care Services (31% of exam) — 68 questions
+- 4.0 Facial Hair and Skin Care Services (18% of exam) — 40 questions
+
+### Sample questions
+**Q: Direct contact transmission of pathogens occurs primarily through which of the following?**
+A: Physical touch with an infected person or their blood and body fluids
+
+**Q: Which bacterial shape classification is known for producing resistant spores that can survive standard disinfection procedures?**
+A: Bacilli
+
+**Q: Which of the following is considered a major piece of equipment in a barbershop rather than an implement or supply?**
+A: The barber chair, which supports and positions the client during services
+
+**Q: A hydraulic barber chair is considered essential equipment primarily because it accomplishes which of the following?**
+A: It allows the barber to adjust the client's height and position for ergonomic and effective service delivery
+
+**Q: Scalp analysis is performed before a service primarily to accomplish which of the following?**
+A: To identify scalp and hair conditions that may affect service selection and product choices
+
+**Q: A contraindication in barbering is BEST defined as which of the following?**
+A: A condition or circumstance that prohibits a service or requires significant service modification
+
 ## Tattoo Artist License (Tattoo)
 Vendor: NIC
 URL: https://quizbuffet.com/tattoo-license/
@@ -1673,18 +1705,17 @@ A: A milestone chart shows only significant project events (milestones) against 
 - Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #25
 - Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #26
 - Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #27
-- Barber 1 (No Chemical) License (Barber 1) — https://quizbuffet.com/barber-no-chemical/ — priority #28
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #29
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #30
-- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #31
-- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #32
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #33
-- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #34
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #35
-- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #36
-- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #37
-- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #38
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #39
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #40
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #41
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #42
+- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #28
+- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #29
+- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #30
+- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #31
+- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #32
+- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #33
+- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #34
+- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #35
+- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #36
+- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #37
+- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #38
+- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #39
+- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #40
+- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #41

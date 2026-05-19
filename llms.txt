@@ -1,6 +1,6 @@
 # QuizBuffet
 
-> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated 2026-05-18.
+> Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. Domain-by-domain quizzes with instant feedback and progress tracking saved locally in the browser. Last updated 2026-05-19.
 
 ## Available certifications
 - [CompTIA Cloud+ (CV0-004)](https://quizbuffet.com/comptia-cloud-plus/): Cloud infrastructure skills for engineers and sysadmins 1200+ questions.
@@ -43,6 +43,7 @@
 - [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/): State-licensed credential for hair, skin, and nail services 300+ questions.
 - [Advanced Practice Micropigmentation (Micropigmentation)](https://quizbuffet.com/micropigmentation/): NIC national theory exam for permanent makeup, paramedical, and cosmetic tattoo procedures 210+ questions.
 - [Barber License (Barber)](https://quizbuffet.com/barber-license/): State-licensed credential for haircutting, shaving, and chemical hair services 260+ questions.
+- [Barber 1 (No Chemical) License (Barber 1)](https://quizbuffet.com/barber-no-chemical/): Entry-level barber license — haircutting, shaving, and styling with no chemical services 220+ questions.
 - [Tattoo Artist License (Tattoo)](https://quizbuffet.com/tattoo-license/): State license for professional tattooing and body art services 88+ questions.
 - [CPA — Auditing and Attestation (AUD) (AUD)](https://quizbuffet.com/cpa-aud/): Core section of the Uniform CPA Examination — every candidate must pass AUD 286+ questions.
 - [CPA — Financial Accounting and Reporting (FAR) (FAR)](https://quizbuffet.com/cpa-far/): Core section of the Uniform CPA Examination — financial reporting under U.S. GAAP and GASB 280+ questions.

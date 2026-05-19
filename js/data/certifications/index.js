@@ -947,9 +947,9 @@ export const certifications = [
   ],
   domains: [
     { slug: 'scientific-concepts',                name: 'Scientific Concepts',                 number: '1.0', weight: 40 },
-    { slug: 'implements-and-equipment',           name: 'Implements and Equipment',            number: '2.0', weight: 10 },
-    { slug: 'hair-care-services',                 name: 'Hair Care Services',                  number: '3.0', weight: 30 },
-    { slug: 'facial-hair-and-skin-care-services', name: 'Facial Hair and Skin Care Services',  number: '4.0', weight: 20 },
+    { slug: 'implements-and-equipment',           name: 'Implements and Equipment',            number: '2.0', weight: 11 },
+    { slug: 'hair-care-services',                 name: 'Hair Care Services',                  number: '3.0', weight: 31 },
+    { slug: 'facial-hair-and-skin-care-services', name: 'Facial Hair and Skin Care Services',  number: '4.0', weight: 18 },
   ],
 },
 {

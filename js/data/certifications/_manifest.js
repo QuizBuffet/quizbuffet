@@ -44,6 +44,7 @@ export const order = [
   'barber-license',
   'barber-no-chemical',
   'tattoo-license',
+  'body-piercing-license',
   'cpa-aud',
   'cpa-far',
   'cpa-reg',

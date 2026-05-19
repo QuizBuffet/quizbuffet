@@ -317,15 +317,6 @@
     "about": "Permanent Makeup is cosmetic tattooing of brows (microblading, powder, ombr\u00e9), eyeliner, lip color, and beauty-mark restoration. In some states this is a distinct license from Micropigmentation; in others they're combined. Requires bloodborne pathogen, sterilization, and infection-control training."
   },
   {
-    "slug": "body-piercing-license",
-    "name": "Body Piercing License",
-    "code": "Body Piercing",
-    "vendor": "State Boards",
-    "category": "Body Art",
-    "tagline": "State license for non-ear piercing services",
-    "about": "Body Piercing licenses cover piercing of the lip, nose, navel, tongue, ear cartilage, nipples, and other body parts. Requires bloodborne pathogen training, sterilization (autoclave) competency, anatomy, and aftercare counseling. Distinct from Ear Piercing in most states."
-  },
-  {
     "slug": "ear-piercing-license",
     "name": "Ear Piercing Specialty License",
     "code": "Ear Piercing",

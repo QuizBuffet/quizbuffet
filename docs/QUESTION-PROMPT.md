@@ -21,6 +21,39 @@ You are writing exam practice questions for the {CERT_NAME} certification
 Source of truth: anchor every fact in {OFFICIAL_SOURCE}. Do not author from
 memory. If a claim is ambiguous in the source, omit it.
 
+## READ THIS FIRST — the last 2 batches failed on these exact points
+
+Every recent generation passed content but FAILED structure in the same three
+ways. Your output will be rejected and hand-repaired if you repeat any of them.
+Do not acknowledge this section; just comply.
+
+1. DOUBLE-WRAP ENVELOPE (happened every time). You wrapped the real question
+   array inside questions[0] as a second object carrying keys like
+   "domain_name", "weight", "question_count", "correct_distribution",
+   "terms_covered", "section", "skill_level". This is WRONG. The file is
+   exactly ONE object; "questions" holds question objects DIRECTLY. There is
+   no inner object and no summary/metadata keys anywhere. The ONLY top-level
+   keys are: slug, name, cert, version, questions. Nothing else, at any level.
+
+2. WRONG FIELD NAMES. You emitted "section", "domain_name", "skill_level" and
+   put the sub-objective code (e.g. "1.A.1") into "domain". The schema has NO
+   such fields. Map correctly: the domain NUMBER (e.g. "1.0") goes in "domain";
+   the canonical domain title goes in "name"; the sub-objective code+label
+   goes in "objective". Never emit section / domain_name / skill_level /
+   terms_covered / weight / question_count — they are forbidden keys.
+
+3. DIFFICULTY SKEW. Every batch came back ~25% easy / 50% medium /
+   25% medium-hard / 0% hard. That is an automatic fail. Assign difficulty so
+   the four buckets are as equal as possible (n/4 each, within ±1) and "hard"
+   is used as much as the others. Vary it by genuine cognitive load (recall
+   vs. multi-step application), not by a fixed ratio. Before writing, count
+   your own buckets and rebalance until even — including a full quarter "hard".
+
+Also: do NOT reuse any answer string (correct or distractor) across two
+questions — vary distractors per item. And confirm the exact per-domain
+question count and the term basis with me BEFORE generating; do not infer your
+own count from sub-objectives.
+
 Write ONE DOMAIN AT A TIME. After you finish a domain, save the file, then
 STOP and wait for my confirmation. Do not produce all domains in a single
 response.
@@ -35,6 +68,10 @@ The file is ONE JSON object with these top-level keys exactly:
 
 "questions" is the array of question objects directly. There is NO nested
 envelope inside questions[]. The structure is exactly one level deep.
+questions[0] is a QUESTION (has id/text/answers), never a wrapper object.
+If you ever write "domain_name", "section", "skill_level", "terms_covered",
+"weight", "question_count", or "correct_distribution" anywhere, you have
+produced the rejected double-wrap shape — delete it and flatten.
 
 Each question has EXACTLY these 12 fields:
   id, certification, exam_code, domain, name, objective, keyword,
@@ -71,7 +108,9 @@ Shape (write minified — single line — on disk):
 
 1. Schema-valid: 12 fields per question, 4 answers (a/b/c/d), valid "correct",
    all 4 explanations non-empty (≥ 15 chars).
-2. Difficulty distribution even across easy/medium/medium-hard/hard (within ±1).
+2. Difficulty distribution even across easy/medium/medium-hard/hard (within ±1)
+   — this means a FULL quarter of "hard". A batch with zero "hard" or with
+   "medium" ≥ 40% is an automatic fail. Tally the four counts before saving.
 3. Correct-answer position even across a/b/c/d (within ±1).
 4. Every sub-objective I list has at least one question.
 5. Zero duplicate first-10-word stems within the domain (lowercased compare).

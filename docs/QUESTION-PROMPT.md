@@ -50,9 +50,28 @@ Do not acknowledge this section; just comply.
    your own buckets and rebalance until even — including a full quarter "hard".
 
 Also: do NOT reuse any answer string (correct or distractor) across two
-questions — vary distractors per item. And confirm the exact per-domain
-question count and the term basis with me BEFORE generating; do not infer your
-own count from sub-objectives.
+questions — vary distractors per item.
+
+## Handshake before you write (SYN / SYN-ACK / ACK)
+
+We are not paste-relaying — we are connected over WebRTC and both edit the
+same files. Before you write a single byte of JSON, complete a three-way
+handshake with me. No file is created until ACK lands.
+
+- **SYN** comes from me: I send the batch parameters — cert-slug, domain-slug,
+  canonical domain name and number, weight, target question count, term basis
+  (concept terms vs. CIB sub-objectives), starting id, and the path to write.
+- **SYN-ACK** comes from you: echo every parameter back verbatim and add your
+  plan — the term list you will cover, your planned per-bucket difficulty
+  split (must include a full quarter "hard"), and your a/b/c/d position plan.
+  Raise any disagreement here, not after writing.
+- **ACK** comes from me: I confirm the echo bit-for-bit, or reject and re-SYN
+  with corrections. ONLY after ACK do you write the file.
+
+After write: I run docs/validate-domain.py. The validator is the arbiter —
+either side can edit the file in place to drive issues to 0, then re-validate.
+Handshake repeats per domain. Do not infer your own count from sub-objectives;
+use what was ACKed.
 
 Write ONE DOMAIN AT A TIME. After you finish a domain, save the file, then
 STOP and wait for my confirmation. Do not produce all domains in a single

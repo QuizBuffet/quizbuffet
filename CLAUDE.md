@@ -145,6 +145,24 @@ python3 docs/validate-domain.py data/certifications/<cert-slug>/<domain-slug>.js
 
 The validator (see [docs/validate-domain.py](docs/validate-domain.py)) runs every CLAUDE.md flip-live check on the file: schema, distribution balance, sub-objective coverage, duplicate stems, duplicate answer strings, templated prefixes, broken acronyms (with the whitelist applied), stem-stitching, short explanations, and minification.
 
+**Instructions to give the question-generating session.** These are the standing rules the generator must follow — paste them with the prompt, and refuse a batch that violates any of them. They mirror the "READ THIS FIRST" block at the top of [docs/QUESTION-PROMPT.md](docs/QUESTION-PROMPT.md); both must stay in sync. Recent batches (comptia-project-plus, barber-no-chemical) violated points 1–3 even though the prompt forbade them, so reinforce explicitly:
+
+1. **No double-wrap envelope.** The file is exactly ONE object with top-level keys `slug`, `name`, `cert`, `version`, `questions` — and nothing else, at any level. `questions[0]` is a QUESTION (has `id`/`text`/`answers`), never a wrapper. Forbidden keys anywhere in the file: `domain_name`, `section`, `skill_level`, `terms_covered`, `weight`, `question_count`, `correct_distribution`. Writing any of them is the rejected double-wrap shape.
+2. **Exact field names per question** — `id`, `certification`, `exam_code`, `domain`, `name`, `objective`, `keyword`, `difficulty`, `text`, `answers`, `correct`, `explanations`. The domain NUMBER (e.g. `1.0`) goes in `domain`; the canonical domain TITLE goes in `name` (byte-identical to the file's top-level `name`); the sub-objective code+label goes in `objective`. Never put the sub-objective code in `domain`.
+3. **Even difficulty including a full quarter `hard`.** Assign `easy`/`medium`/`medium-hard`/`hard` so the four buckets are equal (n/4 each, within ±1). A batch with zero `hard` or with `medium` ≥ 40% is an automatic fail — observed pattern is ~25/50/25/0, which is the failure shape to avoid. Vary difficulty by genuine cognitive load, not a fixed ratio. Tally the four counts before saving.
+4. **No reused answer strings.** No answer text (correct or distractor) may appear in more than one question in the same domain.
+5. **Confirm count and term basis before generating.** Do not infer the question count from sub-objectives. Use the per-domain count and term basis (concept terms vs. CIB sub-objectives) given up front; if it isn't given, ask.
+
+Plus the existing rules already in the prompt: unique first-10-word stems, no templated explanation prefixes, no stem-stitching, no broken acronyms (respect the whitelist), correct-answer position even across `a/b/c/d`, every sub-objective covered, minified output, one domain at a time then STOP.
+
+**Session-to-session handshake (SYN / SYN-ACK / ACK).** The in-repo session and the generation session are connected over WebRTC and both edit the same files — this is collaborative editing, not a paste relay. Before either side writes a single byte of JSON, lock parameters with a three-way handshake. No JSON is written until ACK lands.
+
+- **SYN** (in-repo → generator) — proposes the batch parameters: `cert-slug`, `domain-slug`, canonical domain `name` and number, `weight`, target question count, term basis (concepts vs. CIB sub-objectives), starting `id`, and the path to write. Quote the schema's exact top-level keys to pre-empt the double-wrap.
+- **SYN-ACK** (generator → in-repo) — echoes every proposed parameter verbatim and adds its plan: the term list it will cover, its planned per-bucket difficulty split (must include a full quarter `hard`), and its `a/b/c/d` position plan. Any disagreement is raised here, not after writing.
+- **ACK** (in-repo → generator) — confirms the echoed parameters bit-for-bit (or rejects and re-SYNs with corrections). Only after ACK does the generator write the file.
+
+After write: run `docs/validate-domain.py`. The validator is the arbiter — either side can edit in place to drive issues to 0, then re-validate. The handshake repeats per domain.
+
 **Manual fix workflow when a batch fails validation:**
 
 1. Generate or hand-author questions into the domain JSON.

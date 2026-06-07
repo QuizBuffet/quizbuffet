@@ -134,7 +134,7 @@ function buildCertGuideSections(cert) {
     `${cert.name} is one of the most recognized credentials issued by ${cert.vendor}, ` +
     `and ${year} hiring data continues to show ${cert.code} on job postings as either required ` +
     `or strongly preferred for the roles it targets. The certification validates that you can ` +
-    `apply real working knowledge — not just recall facts — across ${cert.domains.length} distinct ` +
+    `apply real working knowledge, not just recall facts, across ${cert.domains.length} distinct ` +
     `exam domains${heaviest ? `, with the largest weight on ${heaviest.name}` : ''}. For candidates competing in the ${cert.vendor} ecosystem, ${cert.code} is a ` +
     `clear signal to a hiring manager that you have invested in measurable, third-party-verified competence.`
   );
@@ -144,16 +144,16 @@ function buildCertGuideSections(cert) {
     `${cert.tagline ? `In short: ${cert.tagline.replace(/\.$/, '')}. ` : ''}` +
     `If you are early in your career, ${cert.code} is one of the fastest credentials to add to a résumé that recruiters actively screen for. ` +
     `If you are mid-career, it formalizes the skills you already use day-to-day and unlocks roles that gate on it. ` +
-    `If you are switching tracks, it gives you a structured curriculum — exactly what to study, in what order, weighted by what the real exam tests.`
+    `If you are switching tracks, it gives you a structured curriculum that tells you exactly what to study, in what order, weighted by what the real exam tests.`
   );
 
   const examStructure = g.examStructure || (
     `The ${cert.name} exam is organized into ${cert.domains.length} domains, each weighted by the official ${cert.vendor} ` +
-    `exam guide. The heaviest weighting is ${heaviest.name} at <strong>${heaviest.weight}% of the exam</strong> — that is where you ` +
+    `exam guide. The heaviest weighting is ${heaviest.name} at <strong>${heaviest.weight}% of the exam</strong>, so that is where you ` +
     `should spend the most preparation time. ${lightest && lightest !== heaviest ? `The lightest is ${lightest.name} at ${lightest.weight}%, ` +
     `meaning you can dedicate roughly proportional review time without over-investing. ` : ''}` +
     `${cert.details ? `<br><br>Format details: ${cert.details}. ` : ''}` +
-    `Following the domain weights is the single biggest leverage point candidates miss — many over-study lower-weighted material because it feels comfortable.`
+    `Following the domain weights is the single biggest leverage point candidates miss, because many over-study lower-weighted material that feels comfortable.`
   );
 
   const studyPlan = g.studyPlan || (
@@ -162,13 +162,13 @@ function buildCertGuideSections(cert) {
   const studyPlanSteps = g.studyPlanSteps || [
     `Read the official ${cert.vendor} exam guide for ${cert.code} and write down every sub-objective. This becomes your study checklist.`,
     `Use the domain practice quizzes on this page in weight order (heaviest first). Aim for 80% on each domain before moving on.`,
-    `When you miss a question, read the explanation for every wrong answer — that contrastive learning is where understanding compounds.`,
+    `When you miss a question, read the explanation for every wrong answer, because that contrastive learning is where understanding compounds.`,
     `Once every domain is at 80%+, take the Mix Quiz repeatedly to simulate real exam conditions across all topics.`,
   ];
 
   const career = g.career || (sal ? (
     `Holders of ${cert.code} in the US currently see compensation in the range of ` +
-    `<strong>${fmtUsd(sal.salary.low)}–${fmtUsd(sal.salary.high)}</strong> per year, with median around <strong>${fmtUsd(sal.salary.mid)}</strong>. ` +
+    `<strong>${fmtUsd(sal.salary.low)} to ${fmtUsd(sal.salary.high)}</strong> per year, with median around <strong>${fmtUsd(sal.salary.mid)}</strong>. ` +
     `${sal.notes ? sal.notes + ' ' : ''}` +
     `Salary varies by region, employer size, and complementary skills, but the ${cert.code} credential consistently lifts the floor of what you can negotiate against.`
   ) : (
@@ -177,9 +177,9 @@ function buildCertGuideSections(cert) {
   ));
 
   const pitfalls = g.pitfalls || (
-    `The three traps that kill ${cert.code} candidates: (1) over-memorizing acronyms instead of practicing the application of concepts in scenarios — ` +
-    `the exam is scenario-driven, not a vocab quiz. (2) Skipping the heaviest-weighted domain because it feels less interesting — you can fail the whole exam ` +
-    `by neglecting ${heaviest.name}. (3) Not timing practice sessions — the exam has a real clock, and pacing is its own skill. Build timing into your last two weeks of prep.`
+    `The three traps that kill ${cert.code} candidates: (1) over-memorizing acronyms instead of practicing the application of concepts in scenarios, when ` +
+    `the exam is scenario-driven, not a vocab quiz. (2) Skipping the heaviest-weighted domain because it feels less interesting, which can fail the whole exam ` +
+    `by neglecting ${heaviest.name}. (3) Not timing practice sessions, when the exam has a real clock and pacing is its own skill. Build timing into your last two weeks of prep.`
   );
 
   return {
@@ -242,14 +242,17 @@ function buildCertHtml(cert) {
   const url = `${SITE}/${cert.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
+  // Drop the "(code)" parenthetical when it just repeats the name (e.g. CPR / AED Certification (CPR/AED)).
+  const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const codeTag = norm(cert.name).includes(norm(cert.code)) ? '' : ` (${htmlEscape(cert.code)})`;
   // SEO leads with the question count — the strongest single signal we own for this query.
   // Scaffolded certs with 0 questions fall back to the old "Practice Test" framing.
   const fullTitle = total > 0
-    ? clipText(`${total}+ Free ${cert.code} Practice Questions — ${shortName}`, 60)
-    : clipText(`${cert.code} Practice Test — ${shortName}`, 60);
+    ? clipText(`${total}+ Free ${cert.code} Practice Questions, No Signup`, 60)
+    : clipText(`Free ${cert.code} Practice Test, No Signup`, 60);
   const desc = total > 0
-    ? clipText(`${total}+ free ${cert.code} practice questions across ${cert.domains.length} domains. Instant feedback, no signup. ${cert.tagline || ''}`.trim().replace(/\s+/g, ' '), 155)
-    : clipText(`Free ${cert.code} practice test — ${cert.domains.length} exam domains. ${cert.tagline || ''} Instant feedback, no signup.`.trim().replace(/\s+/g, ' '), 155);
+    ? clipText(`Test yourself on every ${cert.code} exam domain for free. ${total} questions with instant feedback and explanations so you walk in ready. No account, no email.`.trim().replace(/\s+/g, ' '), 155)
+    : clipText(`${cert.code} practice test, coming soon. Test yourself across ${cert.domains.length} exam domains with instant feedback and explanations. No signup, no email.`.trim().replace(/\s+/g, ' '), 155);
 
   // JSON-LD: WebPage + Course + FAQPage + Breadcrumb
   const jsonLd = {
@@ -264,7 +267,7 @@ function buildCertHtml(cert) {
       },
       {
         '@type': 'Course',
-        'name': `${cert.name} (${cert.code}) Free Practice Test`,
+        'name': fullTitle,
         'courseCode': cert.code,
         'description': cert.about || desc,
         'url': url,
@@ -296,7 +299,7 @@ function buildCertHtml(cert) {
         // hierarchy that helps Google decide which sub-pages to surface as sitelinks.
         'hasPart': domainData.filter(d => d.count > 0).map(d => ({
           '@type': 'Quiz',
-          'name': `${d.name} — ${cert.code} Practice Quiz`,
+          'name': `Free ${cert.code} ${d.name} Questions`,
           'url': `${SITE}/${cert.slug}/${d.slug}/`,
           'numberOfItems': d.count,
           'isAccessibleForFree': true,
@@ -313,7 +316,7 @@ function buildCertHtml(cert) {
       }] : []),
       {
         '@type': 'Article',
-        'headline': `The ${cert.code} Guide — ${shortName}`,
+        'headline': `The ${cert.code} Study Guide`,
         'description': desc,
         'url': url,
         'datePublished': TODAY,
@@ -335,7 +338,7 @@ function buildCertHtml(cert) {
   // Static SEO content (visible to crawlers; hidden by CSS once JS loads)
   const domainListHtml = domainData.map(d => {
     const num = d.number ? `${d.number} ` : '';
-    return `<li><a href="/${cert.slug}/${d.slug}/"><strong>${htmlEscape(num + d.name)}</strong>${d.count ? ` — ${d.count} questions` : ''}${d.weight ? ` (${d.weight}% of exam)` : ''}</a></li>`;
+    return `<li><a href="/${cert.slug}/${d.slug}/"><strong>${htmlEscape(num + d.name)}</strong>${d.count ? `, ${d.count} questions` : ''}${d.weight ? ` (${d.weight}% of exam)` : ''}</a></li>`;
   }).join('\n          ');
 
   // Inject Udemy affiliates alongside whatever each cert defines in its metadata.
@@ -379,7 +382,7 @@ function buildCertHtml(cert) {
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
-  <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet, new certs and updates" href="/feed.xml">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -460,7 +463,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   <main id="main-content">
     <section id="seo-static">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; ${htmlEscape(cert.name)}</nav>
-      <h1>${htmlEscape(cert.name)} (${htmlEscape(cert.code)}) Free Practice Test</h1>
+      <h1>${htmlEscape(cert.name)}${codeTag} Free Practice Test</h1>
       <p><strong>${total}+ exam-style questions</strong> across ${cert.domains.length} domains, organized exactly like the real ${htmlEscape(cert.code)} exam. Instant feedback on every question, progress tracking, and no account required.</p>
       ${cert.about ? `<p>${htmlEscape(cert.about)}</p>` : ''}
       ${cert.details ? `<p><em>${htmlEscape(cert.details)}</em></p>` : ''}
@@ -473,7 +476,7 @@ ${JSON.stringify(jsonLd, null, 2)}
           ${affiliateHtml}
       </ul>` : ''}
       <h2>About This Practice Test</h2>
-      <p>QuizBuffet's ${htmlEscape(cert.name)} practice test is built for exam preparation. Every question is tagged by exam objective and difficulty (easy, medium, medium-hard, hard) so you can drill the areas you need most. Sessions are short by default — pick 10, 25, 50, or all questions per domain — so you can study in any spare moment.</p>
+      <p>QuizBuffet's ${htmlEscape(cert.name)} practice test is built for exam preparation. Every question is tagged by exam objective and difficulty (easy, medium, medium-hard, hard) so you can drill the areas you need most. Sessions are short by default (pick 10, 25, 50, or all questions per domain), so you can study in any spare moment.</p>
       <p>Wrong answers come with a contrastive explanation showing why your choice was wrong and what the correct concept actually is. Your progress is saved locally in your browser; nothing is uploaded and there's no signup.</p>
       <p class="cert-byline"><time datetime="${TODAY}">Last updated: ${TODAY_DISPLAY}</time></p>
     </section>
@@ -535,10 +538,10 @@ function buildDomainHtml(cert, domain, questions) {
   // Domain-page SEO also leads with the count. Empty domains fall back to the older framing.
   const fullTitle = count > 0
     ? clipText(`${count} Free ${cert.code} ${domain.name} Questions`, 60)
-    : clipText(`${domain.name} — ${cert.code} Practice Quiz`, 60);
+    : clipText(`Free ${cert.code} ${domain.name} Practice Quiz`, 60);
   const desc = count > 0
-    ? clipText(`${count} free ${cert.code} ${domain.name} practice questions${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Instant feedback, no signup. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 155)
-    : clipText(`${cert.code} ${domain.name} practice quiz coming soon${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 155);
+    ? clipText(`Test yourself on ${cert.code} ${domain.name}${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. ${count} free questions with instant feedback and explanations. No signup, no email needed.`.trim().replace(/\s+/g, ' '), 155)
+    : clipText(`${cert.code} ${domain.name} practice quiz, coming soon${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Test yourself with instant feedback once it's live. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 155);
 
   // Pick up to 3 sample questions (easy first) for static content
   const easy = questions.filter(q => q.difficulty === 'easy');
@@ -557,7 +560,7 @@ function buildDomainHtml(cert, domain, questions) {
       },
       {
         '@type': 'Quiz',
-        'name': `${domain.name} — ${cert.code} Practice Quiz`,
+        'name': fullTitle,
         'description': desc,
         'url': url,
         'image': ogImage,
@@ -571,13 +574,13 @@ function buildDomainHtml(cert, domain, questions) {
         // Names the parent certification so Google can connect the quiz to the credential
         'assesses': {
           '@type': 'DefinedTerm',
-          'name': `${cert.name} — ${domain.name}`,
+          'name': `${cert.name}: ${domain.name}`,
           'inDefinedTermSet': cert.name,
         },
         'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
         'isPartOf': {
           '@type': 'Course',
-          'name': `${cert.name} (${cert.code}) Free Practice Test`,
+          'name': `Free ${cert.code} Practice Test`,
           'url': `${SITE}/${cert.slug}/`,
         },
       },
@@ -641,7 +644,7 @@ function buildDomainHtml(cert, domain, questions) {
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
-  <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet, new certs and updates" href="/feed.xml">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -721,7 +724,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   <main id="main-content">
     <section id="seo-static">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/${cert.slug}/">${htmlEscape(cert.name)}</a> &rsaquo; ${htmlEscape(domain.name)}</nav>
-      <h1>${htmlEscape(domNum + domain.name)} — ${htmlEscape(cert.code)} Practice Quiz</h1>
+      <h1>${htmlEscape(domNum + domain.name)} ${htmlEscape(cert.code)} Practice Quiz</h1>
       <p><strong>${count} exam-style questions</strong>${domain.weight ? ` covering <strong>${domain.weight}% of the ${htmlEscape(cert.code)} exam</strong>` : ''}. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/${cert.slug}/">${htmlEscape(cert.name)} practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       ${sampleHtml ? `<h2>Sample Questions</h2>
@@ -836,8 +839,8 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   const url = `${SITE}/${cert.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
-  const fullTitle = clipText(`${cert.code} Practice Test (Coming Soon) — ${shortName}`, 60);
-  const desc = clipText(`${cert.code} practice test coming soon to QuizBuffet. ${cert.tagline || ''} Domain quizzes with instant feedback, no signup.`.trim().replace(/\s+/g, ' '), 155);
+  const fullTitle = clipText(`${cert.code} Practice Test (Coming Soon)`, 60);
+  const desc = clipText(`${cert.code} practice test, coming soon to QuizBuffet. Soon you'll be able to test yourself on every exam domain with instant feedback and explanations. No signup, no email.`.trim().replace(/\s+/g, ' '), 155);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -851,7 +854,7 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
       },
       {
         '@type': 'Course',
-        'name': `${cert.name} (${cert.code}) Free Practice Test`,
+        'name': fullTitle,
         'courseCode': cert.code,
         'description': cert.about || desc,
         'url': url,
@@ -890,7 +893,7 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
-  <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet, new certs and updates" href="/feed.xml">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -992,7 +995,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     <section class="cs-notify" aria-labelledby="cs-notify-h">
       <h2 id="cs-notify-h">Get notified when this launches</h2>
-      <p class="cs-notify-pitch">Be first to know when free <strong>${htmlEscape(cert.code)}</strong> practice questions go live. One email when it ships — no spam.</p>
+      <p class="cs-notify-pitch">Be first to know when free <strong>${htmlEscape(cert.code)}</strong> practice questions go live. One email when it ships, no spam.</p>
       <form class="cs-notify-form" id="cs-notify-form" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST" data-cert="${htmlEscape(cert.slug)}">
         <input type="hidden" name="_subject" value="QuizBuffet notify: ${htmlEscape(cert.name)} (${htmlEscape(cert.code)})">
         <input type="hidden" name="cert_slug" value="${htmlEscape(cert.slug)}">
@@ -1024,7 +1027,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     ${related.length ? `
     <section class="cs-related">
       <h2>While you wait, practice these</h2>
-      <p class="cs-related-pitch">Live certs in the same category — start drilling now while ${htmlEscape(cert.code)} is built out.</p>
+      <p class="cs-related-pitch">Live certs in the same category. Start drilling now while ${htmlEscape(cert.code)} is built out.</p>
       <div class="cs-related-grid">
         ${related.map(r => `
           <a class="cs-related-card" href="/${r.slug}/" data-cs-out="related">
@@ -1057,7 +1060,7 @@ ${JSON.stringify(jsonLd, null, 2)}
               e.preventDefault();
               var email = document.getElementById('cs-notify-email').value;
               window.location.href = 'mailto:artivicolab@gmail.com?subject=' + encodeURIComponent('Notify me: ' + ${JSON.stringify(cert.name)} + ' (' + code + ')') + '&body=' + encodeURIComponent('Please notify me when this launches.\\n\\nEmail: ' + email + '\\nCert: ' + slug);
-              if (status) status.textContent = 'Opening your email app — send the message and we\\'ll add you to the list.';
+              if (status) status.textContent = 'Opening your email app. Send the message and we\\'ll add you to the list.';
               return;
             }
             // Async submit to Formspree so we can show inline confirmation
@@ -1066,7 +1069,7 @@ ${JSON.stringify(jsonLd, null, 2)}
             fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
               .then(function (r) {
                 if (r.ok) {
-                  if (status) status.textContent = '✓ Thanks — we\\'ll email you when this launches.';
+                  if (status) status.textContent = '✓ Thanks, we\\'ll email you when this launches.';
                   form.reset();
                 } else {
                   if (status) status.textContent = 'Couldn\\'t submit. Email us directly at artivicolab@gmail.com.';
@@ -1194,8 +1197,8 @@ function buildRssFeed(comingSoon) {
   const items = [...liveItems, ...csItems].map(({ cert, total, soon, rank }) => {
     const url = `${SITE}/${cert.slug}/`;
     const title = soon
-      ? `${cert.name} (${cert.code}) — coming soon`
-      : `${cert.name} (${cert.code}) — ${total} free practice questions`;
+      ? `${cert.name} (${cert.code}), coming soon`
+      : `${cert.name} (${cert.code}): ${total} free practice questions`;
     const desc = soon
       ? `${cert.tagline || ''} Free practice test in development${rank ? ` (priority #${rank})` : ''}.`.trim()
       : `${cert.tagline || ''} ${total} questions across ${cert.domains.length} domains. Free, no account needed.`.trim();
@@ -1213,7 +1216,7 @@ function buildRssFeed(comingSoon) {
 <?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>QuizBuffet — Free Certification Practice Tests</title>
+    <title>QuizBuffet, Free Certification Practice Tests</title>
     <link>${SITE}/</link>
     <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml" />
     <description>Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. New cert content and exam-prep updates as they go live.</description>
@@ -1325,7 +1328,7 @@ function updateHomeIndex(certs) {
       node.itemListElement = sorted.map((c, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        name: `${c.code} Practice Test — ${shortCertNameForListing(c)}`,
+        name: `Free ${c.code} Practice Test`,
         url: `${SITE}/${c.slug}/`,
       }));
     }

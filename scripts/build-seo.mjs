@@ -26,7 +26,11 @@ function clipText(s, maxLen) {
   if (s.length <= maxLen) return s;
   const cut = s.slice(0, maxLen);
   const lastSpace = cut.lastIndexOf(' ');
-  return (lastSpace > maxLen * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[.,;:\-—]+$/, '').trim();
+  let out = (lastSpace > maxLen * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[.,;:\-—]+$/, '').trim();
+  // Drop a dangling trailing conjunction/preposition/article so the snippet
+  // doesn't read as cut off (e.g. "...instant feedback and").
+  out = out.replace(/\s+(?:and|or|but|with|the|a|an|of|to|for|in|on|at|by|so)$/i, '').trim();
+  return out;
 }
 
 function loadDomainQuestions(certSlug, domainSlug) {

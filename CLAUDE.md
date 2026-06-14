@@ -114,7 +114,7 @@ Auto-generated questions consistently carry generator artifacts. Scan and fix ev
 
 ## Workflow: scaffolding a new cert
 
-1. **Add cert metadata** at [js/data/certifications/<slug>.js](js/data/certifications/) — slug, name, code, vendor, tagline, about, details, domains (with weights from the official exam guide), affiliates. File must be pure data: `export const cert = { ... };` and **no imports** — the bundler relies on a regex match against that exact shape.
+1. **Add cert metadata** at [js/data/certifications/<slug>.js](js/data/certifications/) — slug, name, code, vendor, tagline, about, details, domains (with weights from the official exam guide), affiliates, and optionally `faq` (see "FAQ field" below). File must be pure data: `export const cert = { ... };` and **no imports** — the bundler relies on a regex match against that exact shape.
 2. **Add acronyms** at [js/data/acronyms/<slug>.js](js/data/acronyms/) — `export const acronyms = [{a, d}, ...]`. Lazy-loaded by [initCertification.js](js/pages/certification/initCertification.js) via `import(\`../../data/acronyms/${cert.slug}.js\`)` — do NOT import it from the cert metadata file (would put it on the critical path).
 3. **Add concepts** at [js/data/services/<slug>.js](js/data/services/) — `export const services = [{a, d}, ...]`. Same lazy-load contract as acronyms — never imported eagerly from the cert metadata file.
 4. **Create empty domain JSON stubs** at `data/certifications/<slug>/<domain-slug>.json` — one per domain, minified, `questions: []`.
@@ -124,6 +124,29 @@ Auto-generated questions consistently carry generator artifacts. Scan and fix ev
 8. **Remove the cert from [data/coming-soon.json](data/coming-soon.json)** — as soon as work begins, it is no longer "coming soon."
 
 Leave `data/counts.json` alone until the cert has enough questions to flip live.
+
+### FAQ field (search-intent Q&A for SEO)
+
+A cert may optionally define a `faq` array on its metadata. This is the lever for winning Google "People also ask" placements and informational queries — author the **real questions people search** (check the cert's "People also ask" box in a Google SERP and the Search Console query list), not exam-bank questions.
+
+```js
+faq: [
+  { q: 'How hard is the <exam> exam?', a: 'Plain-English answer, 1-3 sentences.' },
+  // ...
+],
+```
+
+How it's wired in [scripts/build-seo.mjs](scripts/build-seo.mjs):
+
+- `pickFaqQuestions(cert)` **prefers `cert.faq`** when present (maps `{q,a}` → `{question,answer}`); otherwise it falls back to seeding the `FAQPage` JSON-LD from easy exam questions (schema only, not rendered).
+- When `cert.faq` exists, `buildFaqHtml` renders a **visible** FAQ section inside `.cert-guide-content`, and the same Q&A seeds the `FAQPage` JSON-LD — so the visible text matches the schema (Google's requirement for FAQ/PAA eligibility). Certs without `cert.faq` render no visible FAQ block.
+
+Authoring rules:
+
+- **Answers must be accurate.** Cross-reference passing scores, question counts, validity periods, and prerequisites against the official source. Spot-check medical/technical facts (same bar as question content).
+- **Speak to the reader** (second person) and **no em-dashes** (see [[feedback_no_em_dashes]] in style rules — use commas/periods/parens).
+- 6-8 questions is a good range. Lead with the highest-intent queries (difficulty, question count, passing score, "is it worth it", validity).
+- After editing, run `npm run build:seo` and confirm the visible `<section class="cert-faq">` and the `FAQPage` JSON-LD both carry the authored questions.
 
 ---
 

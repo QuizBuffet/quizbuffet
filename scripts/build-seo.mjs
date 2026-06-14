@@ -66,7 +66,12 @@ function trimToFirstSentence(text, maxLen = 280) {
 }
 
 function pickFaqQuestions(cert, max = 12) {
-  // Pick a few easy questions per domain to seed the FAQ schema
+  // Prefer hand-written, search-intent FAQs (real "People also ask" style questions)
+  // when the cert defines them. These render visibly AND seed the FAQPage schema.
+  if (Array.isArray(cert.faq) && cert.faq.length) {
+    return cert.faq.filter(f => f && f.q && f.a).slice(0, max).map(f => ({ question: f.q, answer: f.a }));
+  }
+  // Fallback: seed a few easy exam questions per domain (schema only, not rendered).
   const faq = [];
   const perDomain = Math.max(1, Math.ceil(max / cert.domains.length));
   for (const dom of cert.domains) {
@@ -220,6 +225,22 @@ function buildCertGuideHtml(cert) {
       <h3 id="${slug}-pitfalls">Common pitfalls</h3>
       <p>${s.pitfalls}</p>
     </section>`;
+}
+
+// Visible FAQ block. Only rendered for certs that hand-author real search-intent
+// questions (cert.faq); seeds the same content shown in the FAQPage JSON-LD so the
+// page can earn "People also ask" placements. `faq` is the [{question, answer}] list.
+function buildFaqHtml(cert, faq) {
+  if (!faq.length) return '';
+  const items = faq.map(item => `
+        <div class="cert-faq-item">
+          <h3>${htmlEscape(item.question)}</h3>
+          <p>${htmlEscape(item.answer)}</p>
+        </div>`).join('');
+  return `
+      <section class="cert-faq">
+        <h2 class="cert-section-title">${htmlEscape(cert.code)} questions, answered</h2>${items}
+      </section>`;
 }
 
 function buildCertHtml(cert) {
@@ -483,6 +504,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     <div id="app"></div>
     <article class="cert-guide-content">
       ${buildCertGuideHtml(cert)}
+      ${cert.faq ? buildFaqHtml(cert, faq) : ''}
       <p class="cert-byline cert-guide-byline">
         <time datetime="${TODAY}">Published and last updated: ${TODAY_DISPLAY}</time>
         · By <span>QuizBuffet Editorial</span>

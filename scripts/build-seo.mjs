@@ -561,9 +561,11 @@ function buildDomainHtml(cert, domain, questions) {
   const ogImage = `${SITE}/icons/og/${cert.slug}-${domain.slug}.svg`;
   const domNum = domain.number ? `${domain.number} ` : '';
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
-  // Domain-page SEO also leads with the count. Empty domains fall back to the older framing.
+  // Cert-wide total drives the title's lead so every domain page advertises scale + free.
+  const certTotal = cert.domains.reduce((s, d) => s + loadDomainQuestions(cert.slug, d.slug).length, 0);
+  // Domain-page SEO leads with the cert total and "Free"; domain name trails for uniqueness.
   const fullTitle = count > 0
-    ? clipText(`${count} Free ${cert.code} ${domain.name} Questions`, 60)
+    ? clipText(`${certTotal}+ Free ${cert.code} Questions: ${domain.name}`, 60)
     : clipText(`Free ${cert.code} ${domain.name} Practice Quiz`, 60);
   const desc = count > 0
     ? clipText(`Test yourself on ${cert.code} ${domain.name}${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. ${count} free questions with instant feedback and explanations. No signup, no email needed.`.trim().replace(/\s+/g, ' '), 155)

@@ -18,6 +18,12 @@ export const cert = {
       a: 'Since August 2024, you renew by completing the free FAA online recurrent training course (ALC-677) every 24 months, no in-person retest required.' },
     { q: 'Is the Part 107 test hard?',
       a: 'Most people find the airspace classification and weather sections the hardest, since they require reading sectional charts and METARs rather than pure memorization. With focused study, most candidates pass on the first attempt.' },
+    { q: 'How much does the Part 107 test cost?',
+      a: 'The knowledge test fee is $175, paid to PSI when you schedule at an FAA-approved testing center. It is non-refundable, and a retake costs the same again. The IACRA application, TSA vetting, and the certificate itself are free.' },
+    { q: 'What happens if you fail the Part 107 test?',
+      a: 'You must wait 14 calendar days before retaking it and pay the $175 fee again. Your score report shows which knowledge areas you missed, so drill those domains here before rescheduling.' },
+    { q: 'Is this Part 107 practice test free?',
+      a: 'Yes. All 300+ Part 107 practice questions on QuizBuffet are free, organized by the same study areas as the FAA test, with an explanation for every answer and no signup.' },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop FAA Part 107 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=faa+part+107+remote+pilot+study+guide&tag=0003aa-20' },

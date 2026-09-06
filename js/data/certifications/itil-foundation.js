@@ -2,7 +2,7 @@ export const cert = {
   slug: 'itil-foundation',
   name: 'ITIL 4 Foundation',
   seoName: 'ITIL 4 Foundation',
-  seoTitle: 'ITIL 4 Foundation Practice Test: 400+ Mock Exam Questions',
+  seoTitle: 'ITIL 4 Foundation Practice Test: Free Mock Exam Questions',
   code: 'ITIL 4',
   vendor: 'PeopleCert',
   tagline: 'The most widely adopted IT service management framework',

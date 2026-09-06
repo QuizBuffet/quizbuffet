@@ -2,7 +2,7 @@ export const cert = {
   slug: 'forklift-certification',
   name: 'Forklift Operator Certification',
   seoName: 'OSHA Forklift Certification',
-  seoH1: 'Forklift Operator Certification Test Practice (OSHA 29 CFR 1910.178)',
+  seoH1: 'Forklift Operator Certification Practice Test and Practice Exam (OSHA 29 CFR 1910.178)',
   code: 'OSHA 1910.178',
   vendor: 'OSHA',
   tagline: 'Required certification for operating powered industrial trucks',

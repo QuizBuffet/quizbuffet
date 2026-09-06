@@ -2,7 +2,7 @@ export const cert = {
   slug: 'nmls-mlo',
   name: 'NMLS Mortgage Loan Originator (MLO)',
   seoName: 'NMLS SAFE MLO',
-  seoH1: 'SAFE MLO National Test Practice: NMLS Mortgage Loan Originator Exam',
+  seoH1: 'NMLS SAFE MLO Practice Test and Practice Exam: National Test Questions',
   code: 'SAFE MLO',
   vendor: 'NMLS',
   tagline: 'Federal SAFE Act licensing exam for mortgage loan originators',

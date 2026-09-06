@@ -15,7 +15,7 @@ export const cert = {
     { q: 'What is the passing score for the Georgia real estate exam?',
       a: 'You need 75% correct.' },
     { q: 'How much does the Georgia real estate exam cost?',
-      a: 'The PSI testing fee is $175, in addition to whatever your prelicense course itself costs.' },
+      a: 'PSI charges a testing fee of about $121 per attempt, paid when you schedule; check the current PSI Georgia candidate bulletin because the fee changes. That is separate from your prelicense course cost and the $170 GREC license application fee.' },
     { q: 'Is the Georgia real estate exam hard?',
       a: 'It covers a lot of ground across national real estate principles and Georgia-specific law in one sitting, and the calculations section trips up many candidates. Most people who complete the full 75-hour prelicense course and drill practice questions pass on the first attempt.' },
     { q: 'What happens if you fail the Georgia real estate exam?',

@@ -2,7 +2,7 @@ export const cert = {
   slug: 'cdl-class-a',
   name: 'CDL Class A',
   seoName: 'CDL Class A',
-  seoDescription: 'Free CDL Class A pretest and permit test practice: 300+ questions on general knowledge, air brakes, and combination vehicles. Instant feedback, no signup.',
+  seoDescription: 'Free CDL Class A pretest and permit test practice online: 300+ questions on general knowledge, air brakes, and combination vehicles. Instant feedback, no signup.',
   code: 'CDL-A',
   vendor: 'FMCSA / State DMV',
   tagline: 'Federal license required to drive tractor-trailers and large combination vehicles',

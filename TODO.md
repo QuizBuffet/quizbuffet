@@ -197,7 +197,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### E2. Done (removed, number kept)
 
-### E3. "Most practiced" section
+### E3. [DONE — swapped ServSafe Manager for CompTIA Network+ since ServSafe isn't a live cert yet] "Most practiced" section
 Hand-pick 10 certs with the highest impressions or volume: Security+, A+ Core 1, CCNA, AWS Cloud Practitioner, AWS Developer Associate, CISSP, CDL Class A, CPR/AED, ServSafe Manager, NASM CPT. Static HTML links above the full grid.
 
 ### E4. Category landing pages
@@ -214,7 +214,7 @@ Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certific
 
 ### E9. Done (removed, number kept)
 
-### F1. `faq` for every live cert
+### F1. [PARTIAL: done for the 8 CompTIA/Cisco majors (A+ Core 1&2, Network+, Cloud+, CySA+, Data+, ITF+, CCNA) plus everything already covered in C — while doing A+ Core 1, found and fixed a real bug: cert.code was '220-1101', an exam retired 2025-09-25; current code is 220-1201 (Core 2's 220-1202 was already correct). Fixed cert.code, about text, and the affiliate link/label on both A+ files. ~20 certs (AWS family, remaining CPA sections, remaining beauty/trade certs) still need faq] `faq` for every live cert
 Only 4 of 51 have one (`grep -l "faq:" js/data/certifications/*.js`). Order of work: the 16 certs in section C, then the remaining 35. Each FAQ: 6 to 8 items, second person, no em-dashes, facts verified against the official source. Standard set: how hard, how many questions and time, passing score, cost, prerequisites, validity and renewal, is it worth it, how long to study. Add one "Is this practice test free?" item per cert because "free" is in most queries.
 
 ### F2. Exam logistics table

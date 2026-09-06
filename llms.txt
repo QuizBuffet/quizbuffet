@@ -7,7 +7,7 @@
 - [CompTIA ITF+ (FC0-U61)](https://quizbuffet.com/comptia-itf-plus/): IT fundamentals for beginners and career changers 1900+ questions.
 - [CompTIA CySA+ (CS0-003)](https://quizbuffet.com/comptia-cysa-plus/): Threat detection and incident response for security analysts 1600+ questions.
 - [CompTIA PenTest+ (PT0-003)](https://quizbuffet.com/comptia-pentest-plus/): Penetration testing and vulnerability management for security professionals 2160+ questions.
-- [CompTIA A+ Core 1 (220-1101)](https://quizbuffet.com/comptia-a-plus-core-1/): Hardware, networking, and troubleshooting for IT support technicians 2100+ questions.
+- [CompTIA A+ Core 1 (220-1201)](https://quizbuffet.com/comptia-a-plus-core-1/): Hardware, networking, and troubleshooting for IT support technicians 2100+ questions.
 - [CompTIA A+ Core 2 (220-1202)](https://quizbuffet.com/comptia-a-plus-core-2/): Operating systems, security, and troubleshooting for IT support technicians 3200+ questions.
 - [CompTIA Network+ (N10-009)](https://quizbuffet.com/comptia-network-plus/): Core networking skills for IT infrastructure professionals 1119+ questions.
 - [CompTIA Security+ (SY0-701)](https://quizbuffet.com/comptia-security-plus/): Core security skills for IT professionals defending enterprise environments 1900+ questions.

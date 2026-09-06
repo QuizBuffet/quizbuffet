@@ -21,23 +21,23 @@ Cloud+ validates your ability to deploy, secure, and manage cloud environments a
 - 6.0 Troubleshooting (12% of exam): 100 questions
 
 ### Sample questions
-**Q: Which of the following BEST describes Infrastructure as a Service (IaaS)?**
-A: A model that provides virtualized computing resources such as VMs, storage, and networking over the internet
+**Q: How many questions are on the Cloud+ exam?**
+A: Up to 90 questions, multiple-choice and performance-based, in 90 minutes.
 
-**Q: Which of the following BEST describes a public cloud deployment model?**
-A: Cloud infrastructure owned and operated by a third-party provider, shared among multiple customers over the internet, with resources provisioned on demand
+**Q: What is the passing score for Cloud+?**
+A: You need 750 out of 900.
 
-**Q: What is the PRIMARY purpose of logging in a cloud environment?**
-A: To record events, errors, transactions, and system activities over time, providing an audit trail and data source for troubleshooting, security analysis, and compliance
+**Q: How much does CompTIA Cloud+ cost?**
+A: CompTIA's standard exam price is currently around $400 USD. Check CompTIA's official store for the current rate.
 
-**Q: What does scanning scope define in a cloud vulnerability management program?**
-A: The boundaries of what is included in vulnerability scans, which cloud resources, networks, applications, and environments are assessed for vulnerabilities
+**Q: Is Cloud+ vendor-neutral?**
+A: Yes. Unlike AWS, Azure, or Google Cloud certifications, Cloud+ tests cloud concepts, security, and operations that apply across providers rather than one specific platform.
 
-**Q: What is version management in the context of cloud DevOps source control?**
-A: Tracking all changes to code, configuration, and infrastructure over time using a version control system, enabling teams to see the full history of changes, who made them, why they were made, and the ability to revert to any previous state
+**Q: Cloud+ vs AWS Solutions Architect, which should I get first?**
+A: Cloud+ is a good vendor-neutral foundation if you are not yet committed to one cloud platform or need to work across multiple. If your job or target role is specifically AWS, an AWS certification will carry more direct weight with hiring managers.
 
-**Q: A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show 'SSL handshake failed, unsupported protocol version'. What type of deployment issue is this?**
-A: A compatibility issue, the new application version requires a TLS version that the database server does not support, or vice versa.
+**Q: How long is Cloud+ certification valid?**
+A: Cloud+ is valid for 3 years and renews through CompTIA's Continuing Education program.
 
 ## CompTIA ITF+ (FC0-U61)
 Vendor: CompTIA
@@ -55,23 +55,23 @@ ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT con
 - Security (20% of exam): 444 questions
 
 ### Sample questions
-**Q: Which statement best describes Binary in Objective 1.1 (Compare and contrast notational systems)?**
-A: The term Binary refers to a base-2 notational system that uses only 0 and 1; it maps naturally to off/on electrical states in computing.
+**Q: How many questions are on the ITF+ exam?**
+A: A maximum of 75 multiple-choice questions in 60 minutes.
 
-**Q: Which statement best describes Networking interfaces in the context of CompTIA ITF+ Objective 2.1?**
-A: Networking interfaces refers to connection types used to attach a computer or device to a network, including wired ports such as RJ-45 and wireless technologies such as Bluetooth, NFC, or Wi-Fi-related radio links.
+**Q: What is the passing score for ITF+?**
+A: You need 650 out of 900.
 
-**Q: What is the purpose of Interface between applications and hardware in applications and operating systems?**
-A: Interface between applications and hardware is best described this way: The operating system provides the layer that lets applications request CPU, memory, storage, display, input, and device access without controlling hardware directly.
+**Q: How much does CompTIA ITF+ cost?**
+A: CompTIA's standard exam price is currently around $130 to $150 USD, notably cheaper than CompTIA's professional-level certifications since ITF+ is a pre-professional exam. Check CompTIA's official store for the current rate.
 
-**Q: Which statement best defines Interpreted programming languages?**
-A: Interpreted programming languages are executed by an interpreter at run time rather than being fully converted into a standalone machine-code executable before execution.
+**Q: Do I need ITF+ before A+?**
+A: No, it is not a prerequisite for A+ or any other CompTIA certification. It exists as an optional on-ramp for complete beginners or students deciding whether IT is the right career path.
 
-**Q: In database fundamentals, what does Database purpose mean?**
-A: A database organizes data so it can be stored, searched, updated, and reported in a controlled way.
+**Q: Does ITF+ expire?**
+A: No. ITF+ does not expire and requires no renewal, unlike CompTIA's professional-level certifications (A+, Network+, Security+, and others), which are valid for 3 years.
 
-**Q: What best describes Confidentiality concerns in CompTIA ITF+ security terminology?**
-A: The concept of Confidentiality concerns refers to risks that expose information to people or systems that are not authorized to see it; operationally, the task is to focus on preventing unauthorized viewing or disclosure.
+**Q: Is this ITF+ practice test free?**
+A: Yes. Every ITF+ practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## CompTIA CySA+ (CS0-003)
 Vendor: CompTIA
@@ -87,23 +87,23 @@ CySA+ (Cybersecurity Analyst+) certifies analysts who detect and respond to thre
 - Reporting and Communication (17% of exam): 212 questions
 
 ### Sample questions
-**Q: Which description best matches Security operations architecture concepts in CySA+ Objective 1.0 Security Operations?**
-A: Security operations architecture concepts describe the systems, networks, identities, logging, encryption, and data protections analysts must understand to detect and respond to threats.
+**Q: What is the passing score for CySA+?**
+A: You need 750 out of 900.
 
-**Q: Which option correctly defines Log ingestion?**
-A: Log ingestion is the collection and intake of event data from systems, applications, network devices, cloud services, and security tools into an analysis platform.
+**Q: How much does CompTIA CySA+ cost?**
+A: CompTIA's standard exam price is currently around $400 USD. Check CompTIA's official store for the current rate.
 
-**Q: Which description best matches Asset discovery in CySA+ Objective 2.0 Vulnerability Management?**
-A: Asset discovery identifies systems, services, devices, cloud resources, applications, and other assets that may need vulnerability assessment.
+**Q: Do you need Security+ before CySA+?**
+A: Not required, but CompTIA recommends Network+ and Security+ or equivalent knowledge plus about 4 years of hands-on SOC or incident-response experience. Most candidates take Security+ first.
 
-**Q: Which option correctly defines Map scans?**
-A: Map scans discover reachable hosts, ports, services, and network layout so analysts understand what exists in the environment.
+**Q: Is CySA+ harder than Security+?**
+A: Yes. Security+ is foundational; CySA+ assumes that foundation and tests hands-on threat detection, analysis, and incident response with performance-based simulations, not just definitions.
 
-**Q: Which description best matches Cyber kill chain in CySA+ Objective 3.0 Incident Response and Management?**
-A: The cyber kill chain is a phased model that describes common stages of an attack from reconnaissance through actions on objectives.
+**Q: CySA+ vs PenTest+, what is the difference?**
+A: CySA+ focuses on the defensive side, monitoring, detecting, and responding to threats. PenTest+ focuses on the offensive side, planning and executing authorized penetration tests. Some security analysts pursue both.
 
-**Q: Which option correctly defines Reconnaissance?**
-A: Reconnaissance is the attack phase where an adversary gathers information about targets, technologies, people, and weaknesses before attempting compromise.
+**Q: How long is CySA+ certification valid?**
+A: CySA+ is valid for 3 years and renews through CompTIA's Continuing Education program.
 
 ## CompTIA PenTest+ (PT0-003)
 Vendor: CompTIA
@@ -138,12 +138,12 @@ A: You need 750 out of 900 on CompTIA’s scaled score.
 **Q: Does PenTest+ expire?**
 A: Yes, PenTest+ certification is valid for 3 years and renews through CompTIA’s Continuing Education program or by earning a qualifying higher-level certification.
 
-## CompTIA A+ Core 1 (220-1101)
+## CompTIA A+ Core 1 (220-1201)
 Vendor: CompTIA
 URL: https://quizbuffet.com/comptia-a-plus-core-1/
 Total questions: 2100
 
-A+ Core 1 (220-1101) is the first of two exams required for the CompTIA A+ certification. It covers mobile devices, networking, hardware, virtualization, cloud computing, and hardware troubleshooting.
+A+ Core 1 (220-1201) is the first of two exams required for the CompTIA A+ certification. It covers mobile devices, networking, hardware, virtualization, cloud computing, and hardware troubleshooting.
 
 ### Domains
 - Mobile Devices (15% of exam): 264 questions
@@ -153,23 +153,23 @@ A+ Core 1 (220-1101) is the first of two exams required for the CompTIA A+ certi
 - Hardware and Network Troubleshooting (29% of exam): 380 questions
 
 ### Sample questions
-**Q: In mobile device support, what is the primary purpose of Laptop hardware/device replacement?**
-A: Laptop hardware/device replacement refers to planning replacement of field-serviceable laptop components such as batteries, RAM, storage, keyboards, keys, and wireless cards while checking model compatibility, service documentation, and ESD safety.
+**Q: How many questions are on the A+ Core 1 exam?**
+A: Up to 90 questions, multiple-choice and performance-based, in 90 minutes.
 
-**Q: In mobile device support, what is the primary purpose of Battery?**
-A: Battery refers to a removable or internal power pack that stores energy for mobile operation; replacement requires the correct form factor, connector, capacity rating, and safe handling of swollen or damaged cells.
+**Q: What is the passing score for A+ Core 1?**
+A: You need 675 out of 900.
 
-**Q: What is the primary purpose of Protocol ports in Objective 2.0 networking?**
-A: Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services.
+**Q: How much does CompTIA A+ cost?**
+A: Each exam (Core 1 and Core 2) costs $274 as of 2026, so budget around $548 total since you need to pass both to earn the certification.
 
-**Q: What is the primary purpose of FTP ports 20/21 in Objective 2.0 networking?**
-A: FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer.
+**Q: Do I need both Core 1 and Core 2 to get A+?**
+A: Yes. Passing only one exam does not earn any certification on its own; you need to pass both 220-1201 (Core 1) and 220-1202 (Core 2) within CompTIA's eligibility window.
 
-**Q: What is the primary purpose of Network cables in Objective 3.0 Hardware?**
-A: Network cables carry data between network devices and endpoints, commonly using copper twisted pair, coaxial, or fiber media.
+**Q: Is A+ Core 1 or Core 2 harder?**
+A: Most candidates find Core 1 more hands-on and hardware-heavy (mobile devices, networking, hardware, virtualization and cloud, troubleshooting), while Core 2 leans more into operating systems, security, and procedures. Neither is universally harder; it depends on your background.
 
-**Q: What is the primary purpose of Copper network cable in Objective 3.0 Hardware?**
-A: Copper network cable carries electrical signals over conductive wire and is commonly used for Ethernet runs inside buildings.
+**Q: Is CompTIA A+ worth it for beginners?**
+A: Yes, it is the standard entry credential for help desk and desktop support roles and does not require any prior certification or work experience, just the recommended 12 months of hands-on exposure.
 
 ## CompTIA A+ Core 2 (220-1202)
 Vendor: CompTIA
@@ -185,23 +185,23 @@ A+ Core 2 (220-1202) is the second of two exams required for the CompTIA A+ cert
 - Operational Procedures (21% of exam): 740 questions
 
 ### Sample questions
-**Q: What does Operating system mean in Core 2 Objective 1.0 Operating Systems?**
-A: Operating system is software that manages hardware resources, provides services to applications, and gives users a way to interact with a device.
+**Q: How many questions are on the A+ Core 2 exam?**
+A: Up to 90 questions, multiple-choice and performance-based, in 90 minutes.
 
-**Q: Which option correctly defines Workstation operating system?**
-A: Workstation operating system is an operating system designed for desktop or laptop productivity, application use, peripheral support, and end-user interaction.
+**Q: What is the passing score for A+ Core 2?**
+A: You need 700 out of 900.
 
-**Q: What does Security measures mean in Core 2 Objective 2.0 Security?**
-A: Security measures are controls used to protect people, devices, data, facilities, networks, and accounts from unauthorized access or harm.
+**Q: How much does A+ Core 2 cost?**
+A: The exam costs $274 as of 2026. You also need to pass Core 1 (220-1201), also $274, so the full A+ certification runs about $548 total.
 
-**Q: Which option correctly defines Physical security?**
-A: Physical security protects buildings, rooms, equipment, and people from unauthorized physical access or physical damage.
+**Q: What is on the A+ Core 2 exam?**
+A: Operating systems (installing, configuring, and troubleshooting Windows, macOS, Linux, and mobile OSes), security (physical security, malware, social engineering, wireless security), software troubleshooting, and operational procedures (documentation, change management, safety, professionalism).
 
-**Q: What does Blue screen of death mean in Core 2 Objective 3.0 Software Troubleshooting?**
-A: A blue screen of death is a Windows stop error that occurs when the operating system encounters a serious fault it cannot safely recover from.
+**Q: Should I take Core 1 or Core 2 first?**
+A: CompTIA does not require a specific order, but most study plans go Core 1 (hardware and networking) first since Core 2 builds on some of that foundation, especially in troubleshooting.
 
-**Q: Which option correctly defines Degraded performance?**
-A: Degraded performance means Windows responds slowly or inefficiently because of resource pressure, background activity, malware, driver problems, storage issues, or configuration problems.
+**Q: How long is A+ certification valid?**
+A: CompTIA A+ is valid for 3 years and renews through CompTIA's Continuing Education program or by earning a qualifying higher-level certification.
 
 ## CompTIA Network+ (N10-009)
 Vendor: CompTIA
@@ -218,23 +218,23 @@ Network+ certifies professionals who can deploy wired and wireless networks, con
 - 5.0 Network Troubleshooting (24% of exam): 388 questions
 
 ### Sample questions
-**Q: What is the primary purpose of the OSI (Open Systems Interconnection) reference model in networking?**
-A: The OSI model is a conceptual framework that standardizes how different network systems communicate by dividing the communication process into seven distinct layers, each with specific functions, enabling interoperability between products from different vendors
+**Q: How many questions are on the Network+ exam?**
+A: Up to 90 questions, multiple-choice and performance-based, in 90 minutes.
 
-**Q: Which of the following best describes the function of Layer 1 (Physical) of the OSI model?**
-A: Layer 1 is responsible for the transmission and reception of raw bit streams over a physical medium, defining electrical signals, light pulses, or radio frequencies, as well as connector types, cable specifications, and signaling standards
+**Q: What is the passing score for Network+?**
+A: You need 720 out of 900 on CompTIA's scaled score.
 
-**Q: What is a static route and when is it most appropriate to use?**
-A: A static route is a manually configured route that tells the router how to reach a specific destination network, it does not change unless an administrator modifies it; static routes are most appropriate for small stable networks with few routes, stub networks with only one…
+**Q: How much does CompTIA Network+ cost?**
+A: CompTIA's standard exam price is currently around $400 USD. Check CompTIA's official store for the current rate.
 
-**Q: What is the primary distinction between OSPF, EIGRP, and BGP in terms of their use cases?**
-A: OSPF and EIGRP are Interior Gateway Protocols (IGPs) used for routing within a single organization's network (autonomous system); BGP is an Exterior Gateway Protocol (EGP) used for routing between autonomous systems, BGP is the protocol of the internet backbone exchanging…
+**Q: Is Network+ harder than A+?**
+A: Yes, it goes deeper into networking concepts, protocols, and troubleshooting than A+'s broader IT support coverage, but it does not require A+ first. Many candidates take A+ then Network+ then Security+ in that order.
 
-**Q: What is the difference between a physical network diagram and a logical network diagram?**
-A: A physical diagram shows the actual physical layout of hardware including device locations, rack positions, cable runs, and physical connections between equipment; a logical diagram shows how the network functions including IP addressing, VLANs, routing protocols, and traffic…
+**Q: How long is Network+ certification valid?**
+A: Network+ is valid for 3 years and renews through CompTIA's Continuing Education program or by earning a qualifying higher-level certification.
 
-**Q: What information does a rack diagram document and why is it important for data center operations?**
-A: A rack diagram documents the physical layout of equipment within a rack including which devices occupy which rack units (U positions), device models and serial numbers, cable connections between devices, power draw per device, and patch panel port assignments; it is important…
+**Q: Is this Network+ practice test free?**
+A: Yes. Every Network+ practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## CompTIA Security+ (SY0-701)
 Vendor: CompTIA
@@ -284,23 +284,23 @@ Data+ certifies professionals who can translate business requirements into data-
 - Data Governance (14% of exam): 184 questions
 
 ### Sample questions
-**Q: What does Database types mean in Data+ Objective 1.0 Data Concepts and Environments?**
-A: Database types describe how data is organized, stored, related, and queried in a database system.
+**Q: How many questions are on the Data+ exam?**
+A: Up to 90 questions, multiple-choice and performance-based, in 90 minutes.
 
-**Q: Which option correctly defines Relational database?**
-A: A relational database stores data in tables with rows and columns and uses relationships, keys, and SQL-style querying to connect data.
+**Q: What is the passing score for Data+?**
+A: You need 720 out of 900.
 
-**Q: What does Data integration mean in Data+ Objective 2.0 Data Acquisition and Preparation?**
-A: Data integration combines data from different sources into a unified view or target environment for analysis, reporting, or processing.
+**Q: How much does CompTIA Data+ cost?**
+A: CompTIA's standard exam price is currently around $400 USD. Check CompTIA's official store for the current rate.
 
-**Q: Which option correctly defines Join?**
-A: A join combines rows from two or more tables based on related columns or matching keys.
+**Q: Is Data+ a good certification for beginners?**
+A: It works well for people with some hands-on exposure to spreadsheets, basic SQL, or BI tools who want a vendor-neutral credential proving data literacy, but CompTIA recommends 1.5 to 2 years of relevant experience rather than treating it as a complete beginner exam.
 
-**Q: What does Mock-up mean in Data+ Objective 3.0 Data Analysis?**
-A: A mock-up is a preliminary visual or layout draft used to confirm design, content, and expectations before building the final analysis output.
+**Q: Data+ vs a data analytics bootcamp certificate, which is better?**
+A: Data+ is a proctored, third-party-validated exam that carries more weight as a resume credential; a bootcamp certificate usually goes deeper into a specific tool stack (like Python or Tableau) but is self-graded and vendor-specific to that program.
 
-**Q: Which option correctly defines Accessibility?**
-A: Accessibility means designing analysis outputs so users with different visual, motor, cognitive, or technical needs can understand and use them.
+**Q: How long is Data+ certification valid?**
+A: Data+ is valid for 3 years and renews through CompTIA's Continuing Education program.
 
 ## Cisco CCNA (200-301)
 Vendor: Cisco
@@ -318,23 +318,23 @@ CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies profession
 - 6.0 Automation and Programmability (10% of exam): 80 questions
 
 ### Sample questions
-**Q: Which description best matches Routers in CCNA Objective 1.0 Network Fundamentals?**
-A: Routers forward packets between IP networks, choose paths using routing information, and separate broadcast domains.
+**Q: How many questions are on the CCNA exam?**
+A: Cisco does not publish a fixed count since question types and length vary by exam form, but most candidates report roughly 100 to 120 items (multiple-choice, drag-and-drop, and simulation) in the 120-minute window.
 
-**Q: Which description best matches VLANs in CCNA Objective 2.0 Network Access?**
-A: VLANs logically segment a Layer 2 network into separate broadcast domains on switches.
+**Q: What is the passing score for CCNA?**
+A: Cisco does not publish one fixed passing score; it is set per exam form using a scaled scoring model, commonly discussed as being in the 800 to 850 range out of 1000. Your score report shows pass or fail plus a section-by-section breakdown.
 
-**Q: Which description best matches Routing table in CCNA Objective 3.0 IP Connectivity?**
-A: A routing table lists known routes and the information a router uses to choose where to forward packets.
+**Q: How much does the CCNA exam cost?**
+A: The CCNA 200-301 exam costs $300 USD, though pricing can vary by country.
 
-**Q: Which description best matches Inside source NAT in CCNA Objective 4.0 IP Services?**
-A: Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network.
+**Q: How hard is the CCNA exam?**
+A: It has a reputation as a tough associate-level exam because it packs networking fundamentals, IP connectivity, security, automation, and hands-on simulations into one 120-minute test. Most candidates study for two to four months, longer without prior networking experience.
 
-**Q: Which description best matches Threats in CCNA Objective 5.0 Security Fundamentals?**
-A: Threats are potential events or actors that can exploit weaknesses and harm systems, data, or operations.
+**Q: How long is CCNA certification valid?**
+A: CCNA certification is valid for 3 years, renewed through Cisco Continuing Education credits or by passing a qualifying exam.
 
-**Q: Which description best matches Automation impact on network management in CCNA Objective 6.0 Automation and Programmability?**
-A: Automation changes network management by making configuration, monitoring, deployment, and troubleshooting more repeatable, scalable, and less manual.
+**Q: Is this CCNA practice test free?**
+A: Yes. Every CCNA practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## AWS Certified Cloud Practitioner (CLF-C02)
 Vendor: AWS

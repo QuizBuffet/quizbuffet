@@ -88,7 +88,7 @@ CySA+ (Cybersecurity Analyst+) certifies analysts who detect and respond to thre
 
 ### Sample questions
 **Q: Is CompTIA CySA+ CS0-003 being retired?**
-A: Yes. CompTIA launched CySA+ v4 (CS0-004) on June 23, 2026, and CS0-003 is scheduled to retire on December 22, 2026. If you have not scheduled your exam yet, check CompTIA's site for which version you'll actually sit, since this practice bank is built around CS0-003's objectives and CS0-004 adds updated cloud/hybrid and AI-related security content.
+A: Yes. CompTIA launched CySA+ v4 (CS0-004) on June 23, 2026. Providers report CS0-003 retiring around December 22, 2026, though some report a same-day switchover, so confirm the date on CompTIA's site before you schedule. If you have not scheduled your exam yet, check CompTIA's site for which version you'll actually sit, since this practice bank is built around CS0-003's objectives and CS0-004 adds updated cloud/hybrid and AI-related security content.
 
 **Q: What is the passing score for CySA+?**
 A: You need 750 out of 900.
@@ -681,7 +681,7 @@ AWS Certified Advanced Networking Specialty (ANS-C01) validates expertise design
 A: 65 questions total (50 scored, 15 unscored), multiple-response and matching formats, in 170 minutes.
 
 **Q: What is the passing score for Advanced Networking Specialty?**
-A: You need 700 out of 1000.
+A: You need 750 out of 1000, the same cut score AWS uses for its other specialty and professional exams.
 
 **Q: How much does AWS Advanced Networking Specialty cost?**
 A: It's AWS's specialty-tier exam, $300 USD.
@@ -1315,6 +1315,9 @@ A: They overlap heavily. "Micropigmentation" is the broader technical term for d
 
 **Q: Is this micropigmentation practice test free?**
 A: Yes. All micropigmentation practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.
+
+**Q: How many questions are on the micropigmentation exam?**
+A: The NIC Advanced Practice Micropigmentation theory exam has 110 items, of which 100 are scored, with 90 minutes to finish. Your state may use its own version, so check the candidate bulletin.
 
 ## Barber License (Barber)
 Vendor: State Boards

@@ -2,7 +2,7 @@ export const cert = {
   slug: 'cpr-aed',
   name: 'CPR / AED Certification',
   seoName: 'CPR and AED',
-  seoH1: 'CPR and AED Practice Test: Free CPR Exam and AED Quiz Questions',
+  seoH1: 'CPR and AED Practice Test and Practice Exam: Free AED Quiz Questions',
   seoDescription: 'Free CPR and AED practice test and AED quiz. 300 AHA-style questions on compressions, breaths, choking, and AED use. Take the CPR test online, no signup.',
   code: 'CPR/AED',
   vendor: 'American Red Cross / AHA',

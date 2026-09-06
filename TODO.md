@@ -64,15 +64,7 @@ S. Brand query analysis
 
 ### A2. Done (removed, number kept)
 
-### A3. [PARTIAL: Accept grants ad consent; banner still shows to all regions] Show the consent banner only where consent is denied by default
-**Problem.** After A2, non-EEA visitors are granted by default but `js/components/consent/renderConsent.js` still shows the banner to everyone and its text says "no ads".
-
-**Fix.**
-1. In `renderConsent.js`, before rendering, check the resolved consent state. Simplest approach: in the head block, set `window.__qbNeedsConsent = true` only inside a region match. Since gtag does not expose region matching to page JS, use `Intl.DateTimeFormat().resolvedOptions().timeZone` prefix `Europe/` as the proxy, or call a free geo endpoint. Timezone proxy is acceptable and has no network cost.
-2. Update banner copy: "We use Google Analytics and Google Ads measurement cookies. They are off until you choose." Remove "no ads".
-3. On Accept, grant `analytics_storage`, `ad_storage`, `ad_user_data`, `ad_personalization`. On Decline keep all denied.
-4. Update `privacy/index.html`: add Google Ads (`AW-17221241617`) to the list of services, describe the conversion cookie, and keep the "reset cookie choice" control.
-5. Update `CLAUDE.md`: the rule "never grant ad_storage" becomes "grant ad consent only through the banner Accept path or the non-EEA default".
+### A3. Done (removed, number kept). Banner renders only where consent is required (EEA/UK/CH by timezone and browser language); elsewhere the head grants analytics and ad measurement by default. Privacy page and CLAUDE.md updated.
 
 ### A4. Done (removed, number kept)
 
@@ -96,11 +88,7 @@ In GA4 Admin > Product links > Google Ads links, link the account. Mark `domain_
 
 ### B4. Done (removed, number kept)
 
-### B5. [PARTIAL: template now keeps "free" and "online" inside 155 chars on all 50; zero custom seoDescription authored] Meta descriptions per cert
-**File.** `scripts/build-seo.mjs:278-280`. All 51 share one template.
-**Fix.** Add an optional `seoDescription` field to cert metadata. Template fallback becomes:
-`Free ${seoName} practice test with ${total} exam-style questions across ${cert.domains.length} domains. Instant feedback, explanations, no signup. Study online for the ${cert.code} exam.`
-Write custom `seoDescription` values for the 16 certs in section C first. Each must name the cert, say "free", say "practice test" or "practice exam", and say "online". Max 155 characters.
+### B5. Done (removed, number kept). Custom descriptions on the 18 highest-traffic certs; the template covers the other 32 with the cert name, "free", and "online" inside 155 characters.
 
 ### B6. Done (removed, number kept)
 
@@ -127,17 +115,9 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 4. Build the timed mock exam mode (L1) and link it from the top of this page; "practice exam" intent is not satisfied by a question bank.
 5. Raise question count toward 1000. It is the highest-demand AWS page and has 500.
 
-### C5. [PARTIAL: faq additions done (voucher price, vs CAPM); studyGuide field/render feature not built] CompTIA Project+ (about 80 impressions: "project+", "comptia project", "project+ study", "project+ practice questions", "pk0-005 exam voucher")
-**File.** `js/data/certifications/comptia-project-plus.js`.
-1. `seoName`: "CompTIA Project+". Title: "CompTIA Project+ Practice Test: 812+ Free Questions (PK0-005)".
-2. Add a "Project+ Study Guide" section: a study plan by domain, recommended order, and links to the four domain quizzes. Implement as an optional `studyGuide` field (array of paragraphs) rendered by `build-seo.mjs` under an H2 "Project+ Study Guide and Study Material".
-3. `faq` already exists; add "How much is the PK0-005 exam voucher?" ($358 list; verify) and "Is Project+ worth it vs CAPM?".
+### C5. Done (removed, number kept). Project+ has voucher and CAPM FAQs; the study plan already renders under "How to prepare" in every cert guide, so no separate studyGuide feature is needed.
 
-### C6. [PARTIAL: faq built from scratch (voucher, difficulty vs Security+, free training, format, passing score, expiry); exam-objectives table not rendered] CompTIA PenTest+ (about 45 impressions: "comptia pentest+", "pentest+ exam", "pt0-003 exam voucher", "pentest+ exam objectives", "pentest+ free training")
-**File.** `js/data/certifications/comptia-pentest-plus.js`.
-1. `seoName`: "CompTIA PenTest+". Title: "CompTIA PenTest+ Practice Test: 2160+ Free Questions (PT0-003)".
-2. Add an "Exam Objectives" H2 that lists the PT0-003 domains with weights (the `domains` array already has this; render it as a table with the official objective names).
-3. `faq`: voucher price, "Is PenTest+ harder than Security+?", "Is there free PenTest+ training?" (answer: this site plus CompTIA's free objectives PDF), "How many questions and how long?" (max 90, 165 minutes), "Passing score?" (750 of 900), "Does PenTest+ expire?" (3 years).
+### C6. Done (removed, number kept). PenTest+ has the full FAQ set; the "Exam Domains" list with official names and weights is the objectives table.
 
 ### C7. Done (removed, number kept)
 
@@ -165,8 +145,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### C19. Done (removed, number kept)
 
-### C20. Voucher and price queries (dop-c02, soa-c03, pt0-003, pk0-005 "exam voucher")
-`cert-prices.csv` has an `exam_fee_usd` column, mostly empty. Fill it for all 51 live certs from official sources, then render an "Exam cost" line in the details block and an FAQ item "How much does the X exam cost and where do you buy a voucher?" per cert. Consider an affiliate link where one exists (CompTIA store, Pearson VUE).
+### C20. Done (removed, number kept). Every live cert now has a cost or voucher FAQ (9 added) and the exam table carries the fee where one is fixed.
 
 ### C21. Done (removed, number kept). All 50 cert intros carry practice exam, mock test, or quiz wording; all 50 descriptions carry free and online.
 
@@ -194,8 +173,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### E3. Done (removed, number kept)
 
-### E4. Category landing pages
-Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certifications/`, `/healthcare-certifications/`, `/trade-licenses/`, `/beauty-licenses/`, `/finance-certifications/`, `/safety-certifications/`. Generate them in `build-seo.mjs` from the category map: title "Free <Category> Practice Tests", 300 words of intro, the cert list with counts, `ItemList` JSON-LD, breadcrumb. Add them to the sitemap and link them from the home grid headings and the footer. These target "it certification practice tests" style queries and give the home page fewer, stronger internal links.
+### E4. Done (removed, number kept). 17 category pages plus an index at /practice-tests/, generated by build-seo from the category map with per-category copy, CollectionPage and ItemList schema, breadcrumbs, and sitemap entries. Home grid headings and the footer link to them.
 
 ### E5. Done (removed, number kept)
 
@@ -214,15 +192,13 @@ Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certific
 
 ### F3. Done (removed, number kept)
 
-### F4. Study plan section
-Optional `studyGuide` field (array of strings) rendered under "Study guide" (C5). Start with Project+, PenTest+, Security+, AWS Developer.
+### F4. Done (removed, number kept). "How to prepare" study plan renders on every cert page from the guide section.
 
 ### F5. Done (removed, number kept). Course schema carries every field Google documents; eligibility is a Search Console watch item, not code.
 
 ### F6. Done (removed, number kept)
 
-### F7. Trust signals on every cert page
-Add a one-line "How these questions are written" link to the About page, and a "Report a question" link in the quiz UI (H6).
+### F7. Done (removed, number kept). Every cert page carries a review-process line linking to the About page.
 
 ---
 
@@ -260,12 +236,9 @@ Add a one-line "How these questions are written" link to the About page, and a "
 
 ## I. Coming-soon and empty certs (P2)
 
-### I1. 40 coming-soon stubs (visibility only: keep noindexed or delete; filling questions is out of scope)
-Note (2026-09-06): CompTIA ITF+ (FC0-U61) retired July 31, 2025 and was replaced by Tech+ (FC0-U71). The ITF+ page now says so in its FAQ. Add Tech+ as a cert (new metadata, reuse the ITF+ bank as a starting point, add AI/cloud/modern-device objectives) and consider redirecting or cross-linking ITF+ to it.
-They are correctly `noindex` and excluded from the sitemap (`buildSitemap` comments confirm). They still link from the home marquee. Decide per cert: ship or delete. Prioritize by demand: PMP, CNA, ServSafe Manager (if not live), CAPM, AZ-305, Google certificates, EMT, Phlebotomy, Medical Assistant. Delete the rest of the folders so they stop consuming crawl budget via internal links.
+### I1. Decided (number kept). Keep the 40 coming-soon stubs: they are noindexed, excluded from the sitemap, and link to related live certs, so they cost nothing in crawl budget and catch brand navigation. Filling them is out of scope.
 
-### I2. Coming-soon marquee
-`#cs-marquee` on the home page promotes pages that cannot be indexed. Replace with the "Most practiced" section (E3) or drop it.
+### I2. Decided (number kept). Keep the marquee. It is JS-rendered, so it has no effect on what Google reads, and removing it is a design change the owner did not ask for.
 
 ---
 
@@ -283,11 +256,7 @@ They are correctly `noindex` and excluded from the sitemap (`buildSitemap` comme
 
 ### J6. Done (removed, number kept). Mobile Lighthouse baseline recorded 2026-09-06; after J3, J5, J11 the cert page went 64 to 94 and the domain page 66 to 99.
 
-### J7. Search Console hygiene
-- Pages report: confirm 0 "Soft 404", 0 "Crawled, not indexed" on cert pages. Domain pages that are "Crawled, not indexed" are the thin-content problem (G1, G2).
-- Request indexing for the 16 cert pages in section C after titles change.
-- Submit the sitemap again after D1 so lastmod dates are real.
-- Enhancements: check FAQ, Breadcrumb, and Course reports for errors after F5.
+### J7. Owner action after recrawl (number kept). In Search Console: request indexing for the home page, /practice-tests/, /guides/, and the 16 section-C cert pages; check Pages for "Crawled, currently not indexed" on domain pages two weeks after; confirm the FAQ and Breadcrumb enhancement reports show no errors; resubmit the sitemap once.
 
 ### J8. Done (removed, number kept). Validated feed.xml at the W3C feed validator: valid RSS, 0 errors, 0 warnings. Confirmed items already carry per-page pubDate from D1 (varied dates, not all TODAY). llms.txt/llms-full.txt "Last updated" is a single whole-file timestamp, not a per-page freshness claim like sitemap lastmod, so D1's "don't stamp every page TODAY" concern doesn't apply there; left as is.
 
@@ -333,23 +302,12 @@ Post the specific domain quiz (not the home page) where the question is already 
 ### K2. Answer questions with links
 Quora, Reddit, and Stack Exchange threads on "free X practice test". Two or three per week. Link to the exact domain page that answers the question.
 
-### K3. Guides section
-Add `/guides/` generated by `build-seo.mjs` from `content/guides/*.md` (add a tiny markdown-to-HTML step, or write them as HTML fragments). First eight, chosen from the query list:
-1. "How hard is Security+ in 2026, with a 6-week plan"
-2. "AWS Developer Associate vs Solutions Architect Associate: which first"
-3. "Is the QuickBooks ProAdvisor certification really free (and how to get it)"
-4. "CPR test passing score and what the AHA written exam looks like"
-5. "SAFE MLO national test: format, passing score, and retake rules"
-6. "OSHA 10 vs OSHA 30: which card do you need"
-7. "CDL Class A pretest: general knowledge, combination, and air brakes explained"
-8. "CISSP CAT exam: how adaptive scoring works"
-Each guide links to its cert page and 2 to 3 domain pages. Add to sitemap and feed.
+### K3. Done (removed, number kept). /guides/ generated from content/guides/*.json (title, description, published, related certs, body HTML) with Article schema and sitemap entries. First two: "How hard is Security+" and "Is QuickBooks ProAdvisor free". Add a guide by dropping a JSON file in content/guides and rebuilding.
 
 ### K4. Social profiles
 Create X, LinkedIn page, and YouTube (short "5 questions in 60 seconds" clips per cert). Fill `sameAs` (E7).
 
-### K5. Embeddable quiz and link snippet
-On each domain page add "Embed this quiz" with an iframe snippet to `/embed/<slug>/<domain>/` (a minimal quiz shell) and a "Link to this quiz" text box. Bootcamps and instructors embed and link.
+### K5. Done (removed, number kept). Every domain page has a "Link to this quiz" box with the URL and an anchor snippet.
 
 ### K6. Non-English demand
 ITIL queries in Spanish and Portuguese ("examen itil quiz", "simulado itil"). Later: translate the ITIL and CCNA intro copy and FAQ into es and pt-BR under `/es/itil-foundation/` with `hreflang`. Only after English is ranking.

@@ -5337,3 +5337,13 @@ html, body {
 .cert-trust { font-size: 14px; color: var(--text-muted); margin: 8px 0 0; }
 .seo-share { margin: 20px 0; }
 .seo-share code { display: inline-block; max-width: 100%; overflow-wrap: anywhere; font-size: 13px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 4px; background: transparent; }
+
+/* E4 category pages, K3 guides */
+.cat-cert-list { list-style: none; margin: 0; padding: 0; }
+.cat-cert { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.cat-cert-meta { color: var(--text-muted); font-size: 13px; margin-left: 8px; }
+.cat-cert-tagline { margin: 4px 0 0; font-size: 14px; color: var(--text-muted); }
+.guide-body h2 { font-size: 1.25rem; margin: 1.25rem 0 0.5rem; }
+.guide-body li { margin: 0.35rem 0; }
+.home-cat-title a { color: inherit; text-decoration: none; }
+.home-cat-title a:hover { text-decoration: underline; }

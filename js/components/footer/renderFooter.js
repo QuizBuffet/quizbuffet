@@ -98,6 +98,8 @@ export async function renderFooter() {
               <li><strong>Nothing shared.</strong> Your answers, scores, and progress never leave your device. Period.</li>
               <li><strong>Open to inspect.</strong> Every line of code runs in your browser. Open DevTools and see for yourself.</li>
             </ul>
+            <p class="footer-body"><a href="/practice-tests/" class="footer-privacy-link"><strong>Practice tests by category →</strong></a></p>
+            <p class="footer-body"><a href="/guides/" class="footer-privacy-link"><strong>Study guides →</strong></a></p>
             <p class="footer-body"><a href="/about/" class="footer-privacy-link"><strong>About QuizBuffet →</strong></a></p>
             <p class="footer-body"><a href="/privacy/" class="footer-privacy-link"><strong>Read our Privacy &amp; Cookie Policy →</strong></a></p>
 
@@ -137,7 +139,7 @@ export async function renderFooter() {
         <div class="footer-bottom">
           <span>&copy; ${year} QuizBuffet (Quiz Buffet), an <a href="https://artivicolab.com/" rel="noopener">Artivico Lab</a> project, made with care.</span>
           <span class="footer-disclaimer">Not affiliated with CompTIA or any certification body. All trademarks belong to their respective owners.</span>
-          <span><a href="/">QuizBuffet home</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy &amp; Cookie Policy</a></span>
+          <span><a href="/">QuizBuffet home</a> · <a href="/practice-tests/">Categories</a> · <a href="/guides/">Guides</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy &amp; Cookie Policy</a></span>
           ${buildStamp ? `<span class="footer-build" title="Service worker cache version and last build date">${buildStamp}</span>` : ''}
         </div>
 

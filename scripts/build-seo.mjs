@@ -1654,6 +1654,226 @@ ${items}
 `;
 }
 
+
+// ---------------------------------------------------------------------------
+// Static pages that are neither cert nor domain: category hubs (E4) and guides (K3).
+// They render like coming-soon pages (data-coming-soon="1" keeps #seo-static visible
+// and bypasses the SPA router); the nav and footer still hydrate from app.js.
+// ---------------------------------------------------------------------------
+function buildStaticPageHtml({ url, title, desc, jsonLd, breadcrumbHtml, h1, tagline, bodyHtml, robots = 'index, follow, max-image-preview:large, max-snippet:-1' }) {
+  const ogImage = `${SITE}/icons/og/site.png`;
+  return `<!DOCTYPE html>
+<html lang="en" data-coming-soon="1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${htmlEscape(title)}</title>
+  <meta name="description" content="${htmlEscape(desc)}">
+  <link rel="canonical" href="${url}">
+  <meta name="robots" content="${robots}">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="QuizBuffet">
+  <meta property="og:title"       content="${htmlEscape(title)}">
+  <meta property="og:description" content="${htmlEscape(desc)}">
+  <meta property="og:image"       content="${ogImage}">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type"   content="image/png">
+  <meta property="og:url"         content="${url}">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="${htmlEscape(title)}">
+  <meta name="twitter:description" content="${htmlEscape(desc)}">
+  <meta name="twitter:image"       content="${ogImage}">
+
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet, new certs and updates" href="/feed.xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#333333">
+
+  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
+
+  ${buildConsentGtagBlock()}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=optional"></noscript>
+  <link rel="preload" as="style" href="/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
+  <style>#app{min-height:100vh}#nav{min-height:88px}@media (max-width:720px){#nav{min-height:140px}}</style>
+
+  <script type="application/ld+json" id="json-ld">
+${JSON.stringify(jsonLd, null, 2)}
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div id="nav" role="navigation" aria-label="Main navigation"></div>
+  <main id="main-content">
+    <section id="seo-static" class="container container-cs">
+    ${breadcrumbHtml}
+    <section class="cs-hero">
+      <h1 class="cs-hero-title">${htmlEscape(h1)}</h1>
+      ${tagline ? `<p class="cs-hero-tagline">${htmlEscape(tagline)}</p>` : ''}
+    </section>
+    ${bodyHtml}
+    </section>
+  </main>
+  <div id="footer" role="contentinfo"></div>
+  <script type="module" src="/js/app.js"></script>
+  <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js'); }</script>
+</body>
+</html>
+`;
+}
+
+// E4: category hub pages at /practice-tests/<category-slug>/
+const CATEGORY_COPY = {
+  'Cybersecurity': { slug: 'cybersecurity', intro: 'Security certifications are the most requested credentials in IT job postings, and they build on each other: Security+ for the foundation, CySA+ and PenTest+ for defensive and offensive specialties, CISSP for senior roles, and the AWS Security Specialty for cloud. Every question here is exam-style, organized by the official domains and weights, with an explanation for each answer.' },
+  'Cloud': { slug: 'cloud', intro: 'AWS and Microsoft Azure certifications are tiered: foundational exams that test concepts, associate exams that test hands-on design and operations, and professional and specialty exams that test judgment across services. Pick your tier, drill the domains in weight order, and use the mixed quiz to simulate the real exam.' },
+  'Networking': { slug: 'networking', intro: 'Network+, CCNA, and the AWS Advanced Networking Specialty share a core of subnetting, routing, switching, and troubleshooting, then diverge into vendor specifics. These practice tests follow each exam\'s published objectives so you can see exactly where your gaps are.' },
+  'IT Foundations': { slug: 'it-foundations', intro: 'A+ Core 1 and Core 2 and the entry-level fundamentals exam are where most IT careers start. The questions cover hardware, operating systems, networking basics, security basics, and troubleshooting, in the same proportions as the real exams.' },
+  'Data & AI': { slug: 'data-and-ai', intro: 'Data and AI certifications from AWS and CompTIA test whether you can prepare data, build and deploy models, and govern them responsibly. These practice tests are organized by each exam\'s domains so the time you spend matches the exam\'s weighting.' },
+  'IT Service Management': { slug: 'it-service-management', intro: 'ITIL 4 Foundation tests vocabulary and concepts more than hands-on skill: the service value system, the four dimensions, guiding principles, and the practices. The questions here are written in the same style as the 40-question Foundation exam.' },
+  'Project Management': { slug: 'project-management', intro: 'CompTIA Project+ covers the project life cycle, tools, documentation, and governance without the experience requirements of PMP. Use these questions to learn the vocabulary and the phase-by-phase logic the exam expects.' },
+  'Healthcare': { slug: 'healthcare', intro: 'CPR and AED for lay rescuers and BLS for healthcare providers follow the American Heart Association guidelines: compressions, ventilations, AED use, choking relief, and team resuscitation. These practice tests cover the written portion of each course.' },
+  'Safety': { slug: 'safety', intro: 'OSHA 10 and OSHA 30 for construction and the OSHA forklift standard test hazard recognition: the Focus Four, PPE, health hazards, and safe equipment operation. The questions follow the course outlines and the regulation text.' },
+  'Transportation': { slug: 'transportation', intro: 'The CDL Class A written tests cover general knowledge, air brakes, and combination vehicles. These practice questions follow the FMCSA-based state manuals so the wording matches what you will see at the DMV.' },
+  'Aviation': { slug: 'aviation', intro: 'The FAA Part 107 remote pilot test covers regulations, airspace, weather, loading and performance, operations, and decision-making. These questions follow the FAA airman certification standards for the exam.' },
+  'Real Estate': { slug: 'real-estate', intro: 'The real estate salesperson exam combines a national portion on principles, contracts, finance, and agency with a state portion on law and practice. These practice tests cover both, currently for Georgia.' },
+  'Mortgage': { slug: 'mortgage', intro: 'The NMLS SAFE MLO national test covers federal mortgage law, general mortgage knowledge, origination activities, ethics, and the Uniform State Content. These questions follow the NMLS content outline.' },
+  'Accounting': { slug: 'accounting', intro: 'The QuickBooks Online ProAdvisor certification tests hands-on knowledge of the software: setup, lists, sales, purchases, banking, reports, and payroll. These practice questions are organized by the certification modules.' },
+  'Finance': { slug: 'finance', intro: 'The CPA Exam has three core sections, AUD, FAR, and REG, and a discipline section you choose: BAR, ISC, or TCP. Each is four hours with multiple-choice questions and task-based simulations. These practice tests follow the AICPA blueprints.' },
+  'Fitness': { slug: 'fitness', intro: 'The NASM CPT exam covers the applied sciences, assessment, program design, exercise technique, client relations, and professional responsibility. These questions follow NASM\'s six domains and their weights.' },
+  'Beauty': { slug: 'beauty', intro: 'State board exams for cosmetology, barbering, tattooing, and micropigmentation follow the NIC national theory blueprints: infection control, anatomy and chemistry, and the services themselves. These practice tests cover the written portion; the practical is separate.' },
+};
+function categorySlug(cat) { return (CATEGORY_COPY[cat] || {}).slug || cat.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+
+function buildCategoryPages(certs, perCert) {
+  const groups = new Map();
+  for (const c of certs) {
+    const cat = LIVE_CATEGORY_MAP[c.slug] || c.category || 'Other';
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat).push(c);
+  }
+  const written = [];
+  for (const [cat, list] of groups) {
+    const slug = categorySlug(cat);
+    const url = `${SITE}/practice-tests/${slug}/`;
+    const total = list.reduce((n, c) => n + (perCert[c.slug] || 0), 0);
+    const copy = (CATEGORY_COPY[cat] || {}).intro || `Free practice tests for ${cat} certifications, organized by exam domain with an explanation for every answer.`;
+    const title = clipText(`Free ${cat} Practice Tests: ${list.length} Certification${list.length === 1 ? '' : 's'}`, 60);
+    const desc = clipText(`Free ${cat.toLowerCase()} certification practice tests online: ${total.toLocaleString()} exam-style questions across ${list.length} certification${list.length === 1 ? '' : 's'}, organized by exam domain, with explanations. No signup.`, 155);
+    const items = list.map(c => `
+      <li class="cat-cert">
+        <a href="/${c.slug}/"><strong>${htmlEscape(c.seoName || c.name)}</strong> practice test</a>
+        <span class="cat-cert-meta">${htmlEscape(c.code)} · ${(perCert[c.slug] || 0).toLocaleString()} questions · ${c.domains.length} domains</span>
+        ${c.tagline ? `<p class="cat-cert-tagline">${htmlEscape(c.tagline)}</p>` : ''}
+      </li>`).join('');
+    const jsonLd = { '@context': 'https://schema.org', '@graph': [
+      { '@type': 'BreadcrumbList', 'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${SITE}/` },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Practice Tests by Category', 'item': `${SITE}/practice-tests/` },
+        { '@type': 'ListItem', 'position': 3, 'name': `${cat} Practice Tests`, 'item': url } ] },
+      { '@type': 'CollectionPage', 'name': title, 'description': desc, 'url': url, 'isPartOf': { '@type': 'WebSite', 'name': 'QuizBuffet', 'url': `${SITE}/` }, 'publisher': ORG,
+        'mainEntity': { '@type': 'ItemList', 'itemListElement': list.map((c, i) => ({ '@type': 'ListItem', 'position': i + 1, 'name': `${c.seoName || c.name} Practice Test`, 'url': `${SITE}/${c.slug}/` })) } } ] };
+    const body = `
+    <section class="cs-about">
+      <p>${htmlEscape(copy)}</p>
+      <p>${list.length} certification${list.length === 1 ? '' : 's'}, ${total.toLocaleString()} free questions. Every practice test is free, needs no account, and saves your progress in your own browser.</p>
+    </section>
+    <section class="cs-about">
+      <h2>${htmlEscape(cat)} practice tests</h2>
+      <ul class="cat-cert-list">${items}
+      </ul>
+    </section>
+    <section class="cs-about">
+      <p class="cs-back"><a href="/practice-tests/">All categories</a> · <a href="/">All certifications</a></p>
+    </section>`;
+    const html = buildStaticPageHtml({ url, title, desc, jsonLd, h1: `Free ${cat} Practice Tests`, tagline: `${list.length} certification${list.length === 1 ? '' : 's'}, ${total.toLocaleString()} questions, organized by exam domain. No account, no paywall.`, bodyHtml: body,
+      breadcrumbHtml: `<nav class="cs-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/practice-tests/">Practice Tests</a> <span aria-hidden="true">›</span> ${htmlEscape(cat)}</nav>` });
+    const dir = path.join(ROOT, 'practice-tests', slug); fs.mkdirSync(dir, { recursive: true });
+    writeClean(path.join(dir, 'index.html'), html);
+    written.push({ cat, slug, url, count: list.length, total });
+  }
+  // index page
+  const idxUrl = `${SITE}/practice-tests/`;
+  const idxTitle = 'Free Certification Practice Tests by Category';
+  const idxDesc = clipText(`Browse ${certs.length} free certification practice tests by category: cybersecurity, cloud, networking, healthcare, safety, trades, finance, and more. No signup.`, 155);
+  const idxBody = `
+    <section class="cs-about">
+      <p>Every practice test on QuizBuffet is free, organized by the official exam domains, and explains every answer. Pick a category to see the certifications it covers.</p>
+      <ul class="cat-cert-list">${written.sort((a, b) => b.count - a.count || a.cat.localeCompare(b.cat)).map(w => `
+        <li class="cat-cert"><a href="/practice-tests/${w.slug}/"><strong>${htmlEscape(w.cat)}</strong> practice tests</a> <span class="cat-cert-meta">${w.count} certification${w.count === 1 ? '' : 's'} · ${w.total.toLocaleString()} questions</span></li>`).join('')}
+      </ul>
+    </section>`;
+  const idxLd = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'BreadcrumbList', 'itemListElement': [ { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${SITE}/` }, { '@type': 'ListItem', 'position': 2, 'name': 'Practice Tests by Category', 'item': idxUrl } ] },
+    { '@type': 'CollectionPage', 'name': idxTitle, 'description': idxDesc, 'url': idxUrl, 'publisher': ORG,
+      'mainEntity': { '@type': 'ItemList', 'itemListElement': written.map((w, i) => ({ '@type': 'ListItem', 'position': i + 1, 'name': `${w.cat} Practice Tests`, 'url': w.url })) } } ] };
+  fs.mkdirSync(path.join(ROOT, 'practice-tests'), { recursive: true });
+  writeClean(path.join(ROOT, 'practice-tests', 'index.html'), buildStaticPageHtml({ url: idxUrl, title: idxTitle, desc: idxDesc, jsonLd: idxLd, h1: 'Practice Tests by Category', tagline: `${certs.length} certifications across ${written.length} categories.`, bodyHtml: idxBody,
+    breadcrumbHtml: `<nav class="cs-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> Practice Tests</nav>` }));
+  return written;
+}
+
+// K3: guides at /guides/<slug>/ from content/guides/*.json
+function loadGuides() {
+  const dir = path.join(ROOT, 'content', 'guides');
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir).filter(f => f.endsWith('.json')).map(f => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')))
+    .sort((a, b) => (b.published || '').localeCompare(a.published || ''));
+}
+function buildGuidePages(guides, certs) {
+  const bySlug = new Map(certs.map(c => [c.slug, c]));
+  for (const g of guides) {
+    const url = `${SITE}/guides/${g.slug}/`;
+    const modified = lastCommitDate(`content/guides/${g.slug}.json`);
+    const related = (g.related || []).map(slug => bySlug.get(slug)).filter(Boolean);
+    const relatedHtml = related.length ? `
+    <section class="cs-about">
+      <h2>Practice for this exam</h2>
+      <ul class="cat-cert-list">${related.map(c => `
+        <li class="cat-cert"><a href="/${c.slug}/"><strong>${htmlEscape(c.seoName || c.name)}</strong> practice test</a> <span class="cat-cert-meta">${htmlEscape(c.code)} · ${c.domains.length} domains</span></li>`).join('')}
+      </ul>
+    </section>` : '';
+    const jsonLd = { '@context': 'https://schema.org', '@graph': [
+      { '@type': 'BreadcrumbList', 'itemListElement': [ { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${SITE}/` }, { '@type': 'ListItem', 'position': 2, 'name': 'Guides', 'item': `${SITE}/guides/` }, { '@type': 'ListItem', 'position': 3, 'name': g.title, 'item': url } ] },
+      { '@type': 'Article', 'headline': g.title, 'description': g.description, 'url': url, 'datePublished': g.published, 'dateModified': modified, 'inLanguage': 'en-US', 'image': `${SITE}/icons/og/site.png`, 'author': ORG, 'publisher': { ...ORG, 'logo': { '@type': 'ImageObject', 'url': `${SITE}/favicon-96x96.png` } }, 'mainEntityOfPage': { '@type': 'WebPage', '@id': url } } ] };
+    const body = `
+    <article class="cs-about guide-body">
+      <p class="cert-byline">${bylineHtml(modified, g.published)}</p>
+      ${g.body}
+    </article>
+    ${relatedHtml}
+    <section class="cs-about"><p class="cs-back"><a href="/guides/">All guides</a> · <a href="/">All certifications</a></p></section>`;
+    const dir = path.join(ROOT, 'guides', g.slug); fs.mkdirSync(dir, { recursive: true });
+    writeClean(path.join(dir, 'index.html'), buildStaticPageHtml({ url, title: clipText(g.title, 60), desc: clipText(g.description, 155), jsonLd, h1: g.title, tagline: g.description, bodyHtml: body,
+      breadcrumbHtml: `<nav class="cs-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/guides/">Guides</a> <span aria-hidden="true">›</span> ${htmlEscape(g.title)}</nav>` }));
+  }
+  const idxUrl = `${SITE}/guides/`;
+  const idxTitle = 'Certification Study Guides';
+  const idxDesc = 'Plain-English guides to certification exams: how hard they are, what they cost, how to get certified, and how to study with free practice tests.';
+  const idxBody = `
+    <section class="cs-about">
+      <ul class="cat-cert-list">${guides.map(g => `
+        <li class="cat-cert"><a href="/guides/${g.slug}/"><strong>${htmlEscape(g.title)}</strong></a><p class="cat-cert-tagline">${htmlEscape(g.description)}</p></li>`).join('')}
+      </ul>
+    </section>`;
+  const idxLd = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'BreadcrumbList', 'itemListElement': [ { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${SITE}/` }, { '@type': 'ListItem', 'position': 2, 'name': 'Guides', 'item': idxUrl } ] },
+    { '@type': 'CollectionPage', 'name': idxTitle, 'description': idxDesc, 'url': idxUrl, 'publisher': ORG } ] };
+  fs.mkdirSync(path.join(ROOT, 'guides'), { recursive: true });
+  writeClean(path.join(ROOT, 'guides', 'index.html'), buildStaticPageHtml({ url: idxUrl, title: idxTitle, desc: idxDesc, jsonLd: idxLd, h1: 'Study Guides', tagline: 'How hard each exam is, what it costs, and how to prepare.', bodyHtml: idxBody,
+    breadcrumbHtml: `<nav class="cs-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> Guides</nav>` }));
+}
+
 function buildSitemap(comingSoon) {
   const urls = [{ loc: `${SITE}/`, priority: '1.0', changefreq: 'weekly', lastmod: lastCommitDate('index.html') }];
   // CPA hub: a hand-built static landing at /cpa/ that links the 6 CPA section
@@ -1664,6 +1884,13 @@ function buildSitemap(comingSoon) {
   // so it survives every build:seo run and stays in the sitemap.
   urls.push({ loc: `${SITE}/privacy/`, priority: '0.1', changefreq: 'yearly', lastmod: lastCommitDate('privacy/index.html') });
   urls.push({ loc: `${SITE}/about/`, priority: '0.5', changefreq: 'yearly', lastmod: lastCommitDate('about/index.html') });
+  urls.push({ loc: `${SITE}/practice-tests/`, priority: '0.7', changefreq: 'monthly', lastmod: lastCommitDate('scripts/build-seo.mjs') });
+  for (const cat of new Set(certifications.map(c => LIVE_CATEGORY_MAP[c.slug] || c.category || 'Other'))) {
+    urls.push({ loc: `${SITE}/practice-tests/${categorySlug(cat)}/`, priority: '0.7', changefreq: 'monthly', lastmod: lastCommitDate('scripts/build-seo.mjs') });
+  }
+  const guideList = loadGuides();
+  if (guideList.length) urls.push({ loc: `${SITE}/guides/`, priority: '0.6', changefreq: 'weekly', lastmod: lastCommitDate('content/guides') });
+  for (const g of guideList) urls.push({ loc: `${SITE}/guides/${g.slug}/`, priority: '0.6', changefreq: 'monthly', lastmod: lastCommitDate(`content/guides/${g.slug}.json`) });
   for (const cert of certifications) {
     // Tally questions across all domains. Certs with zero questions are scaffolds,
     // the page carries noindex (see buildCertHtml) so don't advertise them in the sitemap.
@@ -1812,7 +2039,7 @@ function buildHomeCertGrid(certs) {
     return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
   });
   return cats.map(cat => `        <section class="home-cat">
-          <h3 class="home-cat-title">${htmlEscape(cat)} practice tests</h3>
+          <h3 class="home-cat-title"><a href="/practice-tests/${categorySlug(cat)}/">${htmlEscape(cat)} practice tests</a></h3>
           <ul class="home-cert-links">
 ${groups.get(cat).map(c => {
     const n = perCert[c.slug];
@@ -1898,6 +2125,17 @@ for (let i = 0; i < comingSoon.length; i++) {
   csGenerated++;
 }
 
+{
+  let perCertCounts = {};
+  try { perCertCounts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'counts.json'), 'utf8')).perCert || {}; } catch {}
+  const cats = buildCategoryPages(certifications, perCertCounts);
+  const guidesBuilt = loadGuides();
+  buildGuidePages(guidesBuilt, certifications);
+  console.log(`  ✓ practice-tests/ (${cats.length} category pages) + guides/ (${guidesBuilt.length} guides)`);
+  // Router bypass list for hand-built and generated static pages (imported by js/app.js).
+  fs.writeFileSync(path.join(ROOT, 'js', 'data', 'staticPages.js'),
+    `// GENERATED by scripts/build-seo.mjs. First URL segments that are real static pages, not SPA routes.\nexport const STATIC_PAGES = ${JSON.stringify(['about', 'privacy', 'cpa', 'practice-tests', 'guides'])};\n`);
+}
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), buildSitemap(comingSoon));
 console.log(`  ✓ sitemap.xml`);
 

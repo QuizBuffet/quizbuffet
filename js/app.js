@@ -101,7 +101,17 @@ function getPage() {
   return '404';
 }
 
+// Hand-built static pages (own HTML, bypass the SPA router the same way coming-soon pages do).
+const STATIC_PAGES = new Set(['about', 'privacy', 'cpa']);
+
 async function route() {
+  // If the SPA was pushed onto a static page URL (stale app.js, in-app link, back button),
+  // load the real page instead of rendering a cert shell that says "not found".
+  const firstSeg = location.pathname.split('/').filter(Boolean)[0];
+  if (firstSeg && STATIC_PAGES.has(firstSeg) && document.documentElement.dataset.comingSoon !== '1') {
+    location.replace(location.pathname + location.search);
+    return;
+  }
   const page = getPage();
   document.body.dataset.page = page;
   const isComingSoon = document.documentElement.dataset.comingSoon === '1';
@@ -182,8 +192,6 @@ idle(() => { renderFooter(); renderBackToTop(); renderConsent(); });
 // navigation, not a pushState, so the static rich coming-soon HTML loads
 // directly (it has its own SPA-bypass logic via <html data-coming-soon="1">).
 const COMING_SOON_SLUGS = new Set();
-// Hand-built static pages (own HTML, bypass the SPA router the same way coming-soon pages do).
-const STATIC_PAGES = new Set(['about', 'privacy', 'cpa']);
 loadComingSoon().then(list => { list.forEach(c => COMING_SOON_SLUGS.add(c.slug)); });
 
 // Intercept internal link clicks so navigation stays in-app (no full page reloads)

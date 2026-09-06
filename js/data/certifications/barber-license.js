@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'barber-license',
   name: 'Barber License',
+  seoTitle: 'Barber Practice Test and Quiz: 260+ Questions',
   code: 'Barber',
   vendor: 'State Boards',
   tagline: 'State-licensed credential for haircutting, shaving, and chemical hair services',

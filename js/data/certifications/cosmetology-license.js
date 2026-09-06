@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'cosmetology-license',
   name: 'Cosmetology License',
+  seoTitle: 'Cosmetology Practice Test and Quiz: 300+ Questions',
   code: 'Cosmetology',
   vendor: 'State Boards',
   tagline: 'State-licensed credential for hair, skin, and nail services',

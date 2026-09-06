@@ -7,7 +7,7 @@
     <atom:link href="https://quizbuffet.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Free, no-account practice tests for IT, cybersecurity, cloud, healthcare, trades, and finance certifications. New cert content and exam-prep updates as they go live.</description>
     <language>en-US</language>
-    <lastBuildDate>Sun, 06 Sep 2026 16:39:37 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 16:44:05 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <item>
       <title>CompTIA Project+ (PK0-005): 812 free practice questions</title>
@@ -165,7 +165,7 @@
       <title>Georgia Real Estate Salesperson License (Real Estate License): 300 free practice questions</title>
       <link>https://quizbuffet.com/real-estate-license/</link>
       <description>Georgia license to represent real estate buyers and sellers 300 questions across 10 domains. Free, no account needed.</description>
-      <category>Georgia Real Estate Commission / AMP</category>
+      <category>Georgia Real Estate Commission / PSI</category>
       <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://quizbuffet.com/real-estate-license/</guid>
     </item>

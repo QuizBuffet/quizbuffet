@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'barber-no-chemical',
   name: 'Barber 1 (No Chemical) License',
+  seoTitle: 'Barber 1 No Chemical Practice Test and Quiz: 220+',
   code: 'Barber 1',
   vendor: 'State Boards',
   tagline: 'Entry-level barber license: haircutting, shaving, and styling with no chemical services',

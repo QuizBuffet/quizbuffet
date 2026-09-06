@@ -144,40 +144,40 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### C9. Done (removed, number kept)
 
-### C10. Forklift (about 25 impressions: "osha forklift test", "forklift operator certification test", "free forklift certification test online", "29 cfr 1910.178")
+### C10. [DONE] Forklift (about 25 impressions: "osha forklift test", "forklift operator certification test", "free forklift certification test online", "29 cfr 1910.178")
 **File.** `js/data/certifications/forklift-certification.js`.
 1. `seoName`: "OSHA Forklift Certification". Title: "OSHA Forklift Certification Practice Test: 300+ Free Questions". The current title leads with "OSHA 1910.178", which nobody searches except one query.
 2. H1: "Forklift Operator Certification Test Practice (OSHA 29 CFR 1910.178)".
 3. `faq`: "Is the OSHA forklift test free?", "Can you get forklift certified online?" (written part yes, hands-on evaluation must be in person per 1910.178(l)), "How many questions on the forklift test?", "What does 29 CFR 1910.178 require?", "How often do you need forklift recertification?" (every 3 years), "What is a passing score?".
 
-### C11. NMLS / SAFE MLO (about 35 impressions across "safe mlo", "nmls", "mlo", "loan originator", "safe mlo national test practice")
+### C11. [DONE] NMLS / SAFE MLO (about 35 impressions across "safe mlo", "nmls", "mlo", "loan originator", "safe mlo national test practice")
 **File.** `js/data/certifications/nmls-mlo.js`.
 1. `seoName`: "NMLS SAFE MLO". Title: "NMLS SAFE MLO Practice Test: 300+ Free Questions".
 2. H1 currently "NMLS Mortgage Loan Originator (MLO) (SAFE MLO) Free Practice Test", with a doubled parenthetical. Change to "SAFE MLO National Test Practice: NMLS Mortgage Loan Originator Exam".
 3. `faq`: "What is on the SAFE MLO national test?" (120 scored questions, 190 minutes), "Passing score?" (75 percent), "Cost?" ($110), "How many times can you take the SAFE test?", "Is there a free NMLS practice test?", "What is the UST (Uniform State Test)?", "How hard is the SAFE MLO exam?", "How long do I have to wait to retake?" (30 days, then 180 after 3 fails).
 
-### C12. NASM CPT (about 20 impressions: "nasm certification test", "nasm cpt practice test", "nasm personal trainer test", "nasm practice questions")
+### C12. [DONE] NASM CPT (about 20 impressions: "nasm certification test", "nasm cpt practice test", "nasm personal trainer test", "nasm practice questions")
 `seoName`: "NASM CPT Personal Trainer". Title: "NASM CPT Personal Trainer Practice Test: 900+ Free Questions". `faq`: question count (120, 2 hours), passing score (70 percent scaled), cost, retake policy, "Is NASM CPT hard?", "NASM vs ACE", validity (2 years), "Are these NASM practice questions free?".
 
-### C13. ITIL 4 Foundation (about 25 impressions: "itil 4 practice exam", "itil mock exam", "itil 4 foundation practice test", "examen itil quiz", "simulado itil")
+### C13. [DONE] ITIL 4 Foundation (about 25 impressions: "itil 4 practice exam", "itil mock exam", "itil 4 foundation practice test", "examen itil quiz", "simulado itil")
 `seoName`: "ITIL 4 Foundation". Title: "ITIL 4 Foundation Practice Test: 400+ Free Mock Exam Questions". Put "mock exam" in the title; three queries use it. `faq`: 40 questions, 60 minutes, 26 to pass (65 percent), cost, "ITIL 4 vs ITIL v3", "Is there a free ITIL mock exam?", validity (3 years since 2023 scheme), "Is ITIL Foundation hard?". Spanish and Portuguese queries exist; note for later (K6).
 
-### C14. CDL Class A (about 6 impressions: "class a cdl pretest", "class a combination practice test")
+### C14. [DONE] CDL Class A (about 6 impressions: "class a cdl pretest", "class a combination practice test")
 `seoName`: "CDL Class A". Title: "CDL Class A Practice Test: 300+ Free Pretest Questions". Add "pretest" and "permit test" to the description. Confirm a Combination Vehicles domain exists; if not, create one. `faq`: general knowledge question count (50), combination test (20), air brakes (25), passing (80 percent), "Is the CDL pretest the same as the permit test?", "Can I take the CDL test online?".
 
-### C15. Georgia Real Estate (queries: "amp real estate exam georgia", "georgia real estate practice test free")
+### C15. [DONE — also corrected the administrator name (PSI, not AMP) and exam fee ($175, not $121) after verifying against current sources; the draft numbers were stale] Georgia Real Estate (queries: "amp real estate exam georgia", "georgia real estate practice test free")
 `seoName`: "Georgia Real Estate". Title: "Georgia Real Estate Practice Test: 300+ Free Questions". The H1 already says Georgia; the title does not. `faq`: "Who administers the Georgia real estate exam?" (PSI, formerly AMP), question count (152: 100 national, 52 state), passing (75 percent), cost ($121), "Is the Georgia exam hard?", retake rules. Later: per-state pages (K7).
 
 ### C16. CPA AUD (queries: "aud exam", "aud cpa", "cpa audit exam", "aud cpa exam format", "aicpa aud blueprint")
 `seoName`: "CPA AUD (Auditing and Attestation)". H1 currently has an em-dash. Add an "AUD Exam Format" section: 78 MCQs and 7 TBSs, 4 hours, scoring 75, and a link to the AICPA Blueprint PDF. Fill AUD to 300+ questions (286 now) and REG, BAR, TCP to 300+ (100 to 124 now).
 
-### C17. Cosmetology, Barber (queries: "barber quiz", "barber test", "cosmetology quiz", "cosmetology practice test free", "questions about cosmetology")
+### C17. [DONE] Cosmetology, Barber (queries: "barber quiz", "barber test", "cosmetology quiz", "cosmetology practice test free", "questions about cosmetology")
 Put "Quiz" in the titles: "Cosmetology State Board Practice Test and Quiz: 300+ Free Questions". Low competition; the vocabulary fix alone should move these.
 
-### C18. FAA Part 107 (query: "is the part 107 test multiple choice")
+### C18. [DONE] FAA Part 107 (query: "is the part 107 test multiple choice")
 `faq` item: "Is the Part 107 test multiple choice?" (yes, 60 questions, 2 hours, 70 percent). `seoName`: "FAA Part 107 Drone".
 
-### C19. Security+ (queries: "comptia security+ quiz", "security+ quiz", "sy0-701 practice test", "comptia security plus practice test free", "security plus 701 practice test")
+### C19. [DONE] Security+ (queries: "comptia security+ quiz", "security+ quiz", "sy0-701 practice test", "comptia security plus practice test free", "security plus 701 practice test")
 Title from B1: "CompTIA Security+ Practice Test: 1900+ Free Questions". Add the word "quiz" in the intro. Already has an FAQ. Add "Is this Security+ practice test free?" and "Are these real SY0-701 exam questions?" (no, exam-style, not dumps; say so, it builds trust and avoids "actual test" dump-seeker traffic).
 
 ### C20. Voucher and price queries (dop-c02, soa-c03, pt0-003, pk0-005 "exam voucher")

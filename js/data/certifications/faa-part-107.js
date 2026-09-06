@@ -7,6 +7,18 @@ export const cert = {
   tagline: 'The 14 CFR Part 107 Remote Pilot Certificate for commercial drone operations',
   about: 'FAA Part 107 is the Remote Pilot Certificate with a small Unmanned Aircraft Systems (sUAS) rating, required by 14 CFR Part 107 for any commercial drone operation in the United States. The initial knowledge test (UAG) is administered by PSI at FAA-approved testing centers and consists of 60 multiple-choice questions covering five Areas of Operation from the FAA Airman Certification Standards (FAA-S-ACS-10B): Regulations, Airspace and Operating Requirements, Weather, Loading and Performance, and Operations. Candidates pass with 70% (42 of 60). After August 2024, recurrent currency is satisfied through the free online ALC-677 training every 24 months instead of a recurrent knowledge test.',
   details: '60 multiple-choice items · 2 hours · Pass score 70% · 9 study domains anchored on FAA-S-ACS-10B · Recurrency via free ALC-677 every 24 months',
+  faq: [
+    { q: 'Is the Part 107 test multiple choice?',
+      a: 'Yes. All 60 questions on the FAA Part 107 UAG knowledge test are multiple choice, with 3 answer options each.' },
+    { q: 'How many questions are on the Part 107 exam?',
+      a: '60 multiple-choice questions in a 2-hour window.' },
+    { q: 'What is the passing score for Part 107?',
+      a: 'You need 70%, or 42 of 60 questions correct.' },
+    { q: 'How do you renew a Part 107 certificate?',
+      a: 'Since August 2024, you renew by completing the free FAA online recurrent training course (ALC-677) every 24 months, no in-person retest required.' },
+    { q: 'Is the Part 107 test hard?',
+      a: 'Most people find the airspace classification and weather sections the hardest, since they require reading sectional charts and METARs rather than pure memorization. With focused study, most candidates pass on the first attempt.' },
+  ],
   affiliates: [
     { provider: 'amazon', label: 'Shop FAA Part 107 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=faa+part+107+remote+pilot+study+guide&tag=0003aa-20' },
     { provider: 'faa',    label: 'FAA: Become a Drone Pilot (Part 107)', url: 'https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot' },

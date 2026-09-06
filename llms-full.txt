@@ -844,23 +844,23 @@ ITIL 4 Foundation introduces the ITIL service value system (SVS), the four dimen
 - 7.0 Seven ITIL Practices in Detail (42% of exam): 170 questions
 
 ### Sample questions
-**Q: Which statement best describes a service in ITIL 4?**
-A: A means of enabling value co-creation by facilitating outcomes that customers want to achieve without customers managing specific costs and risks
+**Q: How many questions are on the ITIL 4 Foundation exam?**
+A: 40 multiple-choice questions in 60 minutes.
 
-**Q: Which statement best describes the ITIL guiding principles?**
-A: Recommendations that can guide an organization in all circumstances, regardless of changes in goals, strategies, work, or management structure
+**Q: What is the ITIL 4 Foundation passing score?**
+A: You need 26 out of 40, or 65%.
 
-**Q: Which are the four dimensions of service management in ITIL 4?**
-A: Organizations and people; information and technology; partners and suppliers; value streams and processes
+**Q: How much does ITIL 4 Foundation cost?**
+A: PeopleCert’s exam fee is typically in the $300 to $450 range depending on region and whether you buy it standalone or bundled with training, and pricing is set by PeopleCert and its accredited training organizations rather than one fixed global price.
 
-**Q: Which statement best describes the purpose of the ITIL service value system?**
-A: It describes how all components and activities of the organization work together as a system to enable value creation
+**Q: ITIL 4 vs ITIL v3, what changed?**
+A: ITIL 4 replaced the old process-based lifecycle with the Service Value System and 34 management practices, added the 7 guiding principles, and put more emphasis on agile, DevOps, and Lean ways of working. If you hold ITIL v3 Foundation, PeopleCert offers a bridge module instead of retaking the full exam.
 
-**Q: Which statement best describes the service value chain?**
-A: An operating model for the creation, delivery, and continual improvement of services
+**Q: Is there a free ITIL mock exam?**
+A: Yes, QuizBuffet’s ITIL 4 Foundation practice test is 400+ free mock exam questions across all seven exam areas, with instant feedback, no signup.
 
-**Q: What is the purpose of the information security management practice?**
-A: To protect the information needed by the organization to conduct its business
+**Q: How long is ITIL 4 Foundation valid?**
+A: Since the 2023 ITIL 4 scheme update, Foundation certification is valid for 3 years; before that update it did not expire. Check your certificate date against PeopleCert’s current policy.
 
 ## OSHA 10-Hour Construction (OSHA 10)
 Vendor: OSHA
@@ -988,30 +988,30 @@ CDL Class A licensing is governed by 49 CFR Part 383 and administered by state D
 - 7.0 Basic Vehicle Control and Maneuvering (9% of exam): 27 questions
 
 ### Sample questions
-**Q: A driver wants to operate a tractor pulling a 53-foot semitrailer with a gross combination weight rating of 80,000 pounds, where the trailer alone is rated at 30,000 pounds. Which CDL class is required to legally drive this combination?**
-A: Class A (combination-vehicle license)
+**Q: How many questions are on the CDL general knowledge test?**
+A: Most states use a 50-question general knowledge test as the core written exam every CDL applicant must pass.
 
-**Q: A driver is leaving a stop sign in a fully loaded tractor-trailer on a flat road. According to the CDL manual, what is the correct way to apply power for a smooth, controlled start?**
-A: Apply power smoothly so the vehicle moves forward without jerking
+**Q: How many questions are on the CDL combination vehicles test?**
+A: Most states use a 20-question combination vehicles test, required for a Class A license since it covers coupling, uncoupling, and handling articulated vehicles.
 
-**Q: After loading a flatbed and beginning a trip, the CDL manual gives a specific early-trip mileage at which the driver must inspect the cargo and securing devices. About how far into the trip is that first re-inspection required?**
-A: Within the first 50 miles after beginning the trip
+**Q: How many questions are on the CDL air brakes test?**
+A: Most states use a 25-question air brakes test. If you skip it or fail it, you can still get a CDL but with an air brake restriction that prevents you from driving vehicles equipped with air brakes.
 
-**Q: Air brake systems use a specific component to generate the compressed air that operates the brakes. According to the CDL manual, what is the basic function of the air compressor in an air brake system?**
-A: It pumps air into the air storage tanks (reservoirs)
+**Q: What is the passing score for the CDL written test?**
+A: Most states require 80% correct on each section (general knowledge, air brakes, combination vehicles) to pass.
 
-**Q: Rollover is the leading cause of truck-driver deaths in crashes involving heavy combinations. According to the CDL manual, what two practices most directly help prevent rollovers in a combination vehicle?**
-A: Keep the cargo as close to the ground as possible, and drive slowly around turns
+**Q: Is the CDL pretest the same as the permit test?**
+A: Yes, in most usage "CDL pretest" and "CDL permit test" refer to the same thing: the written knowledge test you pass to get your commercial learner's permit (CLP) before scheduling the behind-the-wheel skills test.
 
-**Q: The CDL manual opens the inspection chapter by stating a single most important reason for inspecting a vehicle before every trip. Which reason matches the manual?**
-A: Safety, for the driver and for other road users
+**Q: Can I take the CDL test online?**
+A: The written knowledge test is administered at a state DMV or approved testing location, not taken independently online, though some states now offer computer-based testing on-site. QuizBuffet's free practice test is online and lets you study before you go in.
 
 ## Georgia Real Estate Salesperson License (Real Estate License)
-Vendor: Georgia Real Estate Commission / AMP
+Vendor: Georgia Real Estate Commission / PSI
 URL: https://quizbuffet.com/real-estate-license/
 Total questions: 300
 
-The Georgia Real Estate Salesperson Examination is administered by AMP for the Georgia Real Estate Commission (GREC). The full exam is 152 multiple-choice items combining the National Real Estate portion (100 items across seven content areas: agency relationships and contracts, real property ownership and interest, finance, real property and valuation, marketing regulations, property management, and real estate calculations) with the Georgia Salesperson Supplement (52 items covering state laws and rules, real estate practice in Georgia, and finance and closing). Candidates must complete a 75-hour Georgia-approved prelicense course, pass the exam at 75%, secure a sponsoring broker for active licensure, and complete a 25-hour postlicense course in their first year.
+The Georgia Real Estate Salesperson Examination is administered by PSI (which acquired the former AMP testing program) for the Georgia Real Estate Commission (GREC). The full exam is 152 multiple-choice items combining the National Real Estate portion (100 items across seven content areas: agency relationships and contracts, real property ownership and interest, finance, real property and valuation, marketing regulations, property management, and real estate calculations) with the Georgia Salesperson Supplement (52 items covering state laws and rules, real estate practice in Georgia, and finance and closing). Candidates must complete a 75-hour Georgia-approved prelicense course, pass the exam at 75%, secure a sponsoring broker for active licensure, and complete a 25-hour postlicense course in their first year.
 
 ### Domains
 - 1.0 Agency Relationships and Contracts (19% of exam): 56 questions
@@ -1026,23 +1026,23 @@ The Georgia Real Estate Salesperson Examination is administered by AMP for the G
 - 10.0 Finance & Closing (Georgia) (9% of exam): 26 questions
 
 ### Sample questions
-**Q: Which of the following actions most clearly creates an express agency relationship between a seller and a real estate broker?**
-A: The seller and broker signing a written listing agreement
+**Q: Who administers the Georgia real estate exam?**
+A: PSI administers the exam for the Georgia Real Estate Commission (GREC). PSI acquired the AMP testing program, so older materials may still reference AMP, but exams are now scheduled and delivered through PSI test centers.
 
-**Q: A freehold estate in real property is characterized by:**
-A: an ownership interest of indefinite or potentially perpetual duration
+**Q: How many questions are on the Georgia real estate exam?**
+A: 152 scored multiple-choice questions: 100 on the National Real Estate portion and 52 on the Georgia Salesperson Supplement.
 
-**Q: A homeowner's property is valued at $400,000 and has an outstanding mortgage balance of $250,000. The owner's equity is:**
-A: $150,000
+**Q: What is the passing score for the Georgia real estate exam?**
+A: You need 75% correct.
 
-**Q: The metes and bounds method of legal description defines a parcel of land by:**
-A: courses and distances starting and ending at a designated point of beginning
+**Q: How much does the Georgia real estate exam cost?**
+A: The PSI testing fee is $175, in addition to whatever your prelicense course itself costs.
 
-**Q: Federal law requires sellers of residential housing built before 1978 to disclose the possible presence of:**
-A: lead-based paint and provide an EPA-approved information pamphlet
+**Q: Is the Georgia real estate exam hard?**
+A: It covers a lot of ground across national real estate principles and Georgia-specific law in one sitting, and the calculations section trips up many candidates. Most people who complete the full 75-hour prelicense course and drill practice questions pass on the first attempt.
 
-**Q: A property manager who is hired to oversee a rental property on behalf of the owner serves primarily as:**
-A: the owner's agent, owing fiduciary duties to the owner
+**Q: What happens if you fail the Georgia real estate exam?**
+A: You can retake it; GREC and PSI allow retakes for a new testing fee each time, with no long mandatory waiting period, though you should use the time to review whichever section (national or state) you missed.
 
 ## NMLS Mortgage Loan Originator (MLO) (SAFE MLO)
 Vendor: NMLS
@@ -1096,23 +1096,20 @@ FAA Part 107 is the Remote Pilot Certificate with a small Unmanned Aircraft Syst
 - 9.0 Physiology and Maintenance (11% of exam): 33 questions
 
 ### Sample questions
-**Q: A manufacturer is assessing whether its new aircraft falls under 14 CFR Part 107. The finished aircraft weighs 54.9 pounds including all installed components and payload at the time of operation. Under Part 107, does this aircraft qualify as a small unmanned aircraft?**
-A: Yes, because it weighs less than 55 pounds including payload, meeting the Part 107 definition
+**Q: Is the Part 107 test multiple choice?**
+A: Yes. All 60 questions on the FAA Part 107 UAG knowledge test are multiple choice, with 3 answer options each.
 
-**Q: A remote pilot wants to fly an sUAS over a group of non-participant bystanders at an outdoor event without obtaining a waiver. The pilot believes the aircraft may qualify as Category 1. Under 14 CFR Part 107, what maximum weight must the sUAS meet to qualify for a Category 1 operation over people?**
-A: The sUAS must weigh 0.55 pounds or less, including everything onboard at the time of operation
+**Q: How many questions are on the Part 107 exam?**
+A: 60 multiple-choice questions in a 2-hour window.
 
-**Q: A remote pilot is reviewing the broadcast requirements under 14 CFR Part 89 to ensure their Standard Remote ID sUAS is transmitting the correct information during flight. Which set of data elements must a Standard Remote ID sUAS broadcast throughout its operation?**
-A: The UAS identity (serial number or session ID), latitude and longitude of the UA and control station, altitude of both, velocity, and a timestamp
+**Q: What is the passing score for Part 107?**
+A: You need 70%, or 42 of 60 questions correct.
 
-**Q: A remote pilot is reviewing the U.S. airspace classification system and wants to understand Class A airspace. Under 14 CFR Part 71, Class A airspace begins at what altitude and continues upward, and how does it affect standard Part 107 sUAS operations?**
-A: Class A begins at 18,000 ft MSL; standard Part 107 sUAS operations are already constrained well below this altitude and would never reach Class A
+**Q: How do you renew a Part 107 certificate?**
+A: Since August 2024, you renew by completing the free FAA online recurrent training course (ALC-677) every 24 months, no in-person retest required.
 
-**Q: A remote pilot is reviewing a METAR report before a commercial sUAS flight. The report contains the group '27015KT.' What information does this group convey?**
-A: Wind from 270 degrees (west) at 15 knots, with no gusts reported
-
-**Q: A remote pilot normally operates a quadcopter with a 1-pound camera payload, achieving 22-minute flight times. For a new job, the pilot replaces the camera with a 2.5-pound thermal imaging unit. Assuming all other conditions are equal, how will this increased payload weight most likely affect sUAS performance?**
-A: Flight time will decrease and battery consumption will increase because the motors must produce more thrust to support the greater total weight
+**Q: Is the Part 107 test hard?**
+A: Most people find the airspace classification and weather sections the hardest, since they require reading sectional charts and METARs rather than pure memorization. With focused study, most candidates pass on the first attempt.
 
 ## Certified Personal Trainer (NASM-CPT) (NASM-CPT)
 Vendor: NASM
@@ -1130,23 +1127,23 @@ The NASM Certified Personal Trainer (NASM-CPT) credential is an NCCA-accredited 
 - 6.0 Professional Development and Responsibility (11% of exam): 100 questions
 
 ### Sample questions
-**Q: A personal trainer is explaining to a client how the body coordinates movement during exercise. According to NASM, which system is responsible for collecting, processing, and responding to information from the environment?**
-A: The nervous system
+**Q: How many questions are on the NASM CPT exam?**
+A: 120 multiple-choice questions in a 2-hour window at a PSI testing center.
 
-**Q: A personal trainer is studying the field that focuses on understanding why people participate in sports and exercise. According to NASM, what is this subtopic of psychology called?**
-A: Sport and exercise psychology
+**Q: What is the passing score for NASM CPT?**
+A: 70% on NASM’s scaled score.
 
-**Q: A personal trainer performs a standing postural observation of a new client before beginning exercise programming. According to NASM, what is the purpose of a static postural assessment?**
-A: To identify deviations from ideal joint alignment at rest, revealing potential muscular imbalances before movement is introduced
+**Q: How much does NASM CPT cost?**
+A: NASM sells the exam bundled into study packages rather than as a standalone fee, typically ranging from around $600 for a self-study package to well over $1,000 for packages with live mentoring and continuing education included. Check NASM’s official site for current package pricing.
 
-**Q: A personal trainer explains program design principles to a new colleague. According to NASM, which factors are essential when designing a comprehensive fitness program?**
-A: Client goals, health history, assessment findings, fitness level, available equipment, time constraints, and movement pattern balance, together forming the foundation of individualized program design
+**Q: Can you retake the NASM CPT exam?**
+A: Yes. If you do not pass, NASM allows a retake after a waiting period, generally for an additional retake fee, and gives you a second attempt within your exam eligibility window.
 
-**Q: A personal trainer introduces a new client to the NASM training philosophy. According to NASM, what does the OPT model stand for and what is its primary purpose?**
-A: Optimum Performance Training, a systematic, evidence-based framework for progressing clients through phases of training to develop all biomotor abilities safely and effectively
+**Q: Is NASM CPT hard?**
+A: Most candidates find the foundational sciences domain (anatomy, physiology, kinesiology, and the OPT model) the hardest part since it carries the most weight and everything else builds on it. With steady study, most candidates pass; NASM reports pass rates in the 60 to 70 percent range on the first attempt.
 
-**Q: NASM recommends that all fitness professionals maintain a focus on evidence-based practice. Which statement best defines evidence-based practice according to NASM?**
-A: The conscientious use of current best evidence in making decisions about client care
+**Q: NASM vs ACE, which certification is better?**
+A: Both are NCCA-accredited and widely accepted by gyms. NASM leans heavily on its Optimum Performance Training (OPT) model and corrective exercise, which many trainers find gives more structured programming guidance; ACE is often described as slightly more accessible for newcomers. Employers rarely require one over the other.
 
 ## CPR / AED Certification (CPR/AED)
 Vendor: American Red Cross / AHA

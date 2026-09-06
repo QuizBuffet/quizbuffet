@@ -23,6 +23,10 @@ export const cert = {
       a: 'It maps to roles like security analyst, SOC analyst, systems administrator, security administrator, and junior penetration tester. It is most useful as the credential that gets you past the first hiring filter.' },
     { q: 'How long should you study for Security+?',
       a: 'Most candidates need about six to eight weeks of consistent study. Working the domains in weight order and reviewing every missed question is the fastest path to a passing score.' },
+    { q: 'Is this Security+ practice test free?',
+      a: 'Yes. Every Security+ practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no account or email required.' },
+    { q: 'Are these real SY0-701 exam questions?',
+      a: 'No, and be wary of any site that claims otherwise. These are original, exam-style questions written to match the SY0-701 objectives and difficulty, not leaked or memorized real exam content ("exam dumps"), which violates CompTIA\'s candidate agreement and can get your certification revoked.' },
   ],
   udemyCourseUrl: 'https://www.udemy.com/course/securityplus/',
   affiliates: [

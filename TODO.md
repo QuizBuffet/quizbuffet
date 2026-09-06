@@ -216,13 +216,7 @@ Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certific
 
 ### F1. Done (removed, number kept)
 
-### F2. [DONE — populated for every live cert where a logistics table adds value (46 of 50; OSHA 10/30 deliberately skipped since they genuinely have no formal standardized exam, confirmed via search, so a table would just repeat the FAQ's caveats). Added exam.source on all 46 using real, verified vendor URLs, reusing an already-vetted URL from that cert's own affiliates/officialSources array where one existed, otherwise a stable top-level vendor cert-hub page (never a guessed deep link). cert-prices.csv (C20) still not started] Exam logistics table
-Verification 2026-09-06: 32 tables render with consistent values (passing scores and costs match the FAQ answers; CPA MCQ/TBS counts match the AICPA blueprints). Gap: no cert sets `exam.source`, so the "Source: official exam page" line never renders. Add the vendor exam page URL to each `exam` object when filling the remaining certs.
-Add an optional `exam` object to cert metadata:
-```js
-exam: { questions: 90, minutes: 90, passing: '750 of 900', cost: '$404', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; Network+ and 2 years recommended', retake: 'No wait for first retake, 14 days after second', source: 'https://www.comptia.org/...' }
-```
-Render as a two-column table under an H2 "Exam at a glance" in `buildCertHtml`. This replaces the free-text `details` string over time. Also feeds `cert-prices.csv` (C20).
+### F2. Done (removed, number kept). 47 certs render the table with an official source link; OSHA 10/30 and micropigmentation skipped by design.
 
 ### F3. Done (removed, number kept)
 

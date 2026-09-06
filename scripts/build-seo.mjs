@@ -724,9 +724,19 @@ function buildCertHtml(cert) {
   <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
-  <!-- IM Fell English SC styles .section-title ("Exam Domains", sibling and sample headings) under the default theme on every page type, so it stays in the stylesheet request. display=optional keeps it non-blocking. -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional"></noscript>
+  <!-- IM Fell English SC is styled ONLY by .section-title and .featured-label::after
+       (css/style.css, [data-color="buffet"] rules), both classes that exist ONLY on the
+       home page. Verified 2026-09-06: `grep -rl 'class="section-title"' */index.html`
+       across all 363 generated pages matches only the repo root index.html; the "Exam
+       Domains" h2 on a cert page is a bare, unclassed <h2> inside #seo-static (itself
+       hidden by `html.js #seo-static{display:none}` once JS runs), and the domain page's
+       sibling-nav/sample-question markup uses seo-domain-pills/seo-sample-* classes, not
+       section-title. A prior pass restored this family here on the (unverified) belief
+       that section-title appears on these page types; if you can find a real occurrence,
+       re-revert with the file/line, but re-verify against the actual generated HTML this
+       specific way first, not just the class's existence somewhere in css/style.css. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=optional"></noscript>
   <link rel="preload" as="style" href="/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
   <style>
@@ -1052,9 +1062,19 @@ async function buildDomainHtml(cert, domain, questions) {
   <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
-  <!-- IM Fell English SC styles .section-title ("Exam Domains", sibling and sample headings) under the default theme on every page type, so it stays in the stylesheet request. display=optional keeps it non-blocking. -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional"></noscript>
+  <!-- IM Fell English SC is styled ONLY by .section-title and .featured-label::after
+       (css/style.css, [data-color="buffet"] rules), both classes that exist ONLY on the
+       home page. Verified 2026-09-06: `grep -rl 'class="section-title"' */index.html`
+       across all 363 generated pages matches only the repo root index.html; the "Exam
+       Domains" h2 on a cert page is a bare, unclassed <h2> inside #seo-static (itself
+       hidden by `html.js #seo-static{display:none}` once JS runs), and the domain page's
+       sibling-nav/sample-question markup uses seo-domain-pills/seo-sample-* classes, not
+       section-title. A prior pass restored this family here on the (unverified) belief
+       that section-title appears on these page types; if you can find a real occurrence,
+       re-revert with the file/line, but re-verify against the actual generated HTML this
+       specific way first, not just the class's existence somewhere in css/style.css. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=optional"></noscript>
   <link rel="preload" as="style" href="/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
   <style>
@@ -1315,9 +1335,19 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
-  <!-- IM Fell English SC styles .section-title ("Exam Domains", sibling and sample headings) under the default theme on every page type, so it stays in the stylesheet request. display=optional keeps it non-blocking. -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&family=IM+Fell+English+SC&display=optional"></noscript>
+  <!-- IM Fell English SC is styled ONLY by .section-title and .featured-label::after
+       (css/style.css, [data-color="buffet"] rules), both classes that exist ONLY on the
+       home page. Verified 2026-09-06: `grep -rl 'class="section-title"' */index.html`
+       across all 363 generated pages matches only the repo root index.html; the "Exam
+       Domains" h2 on a cert page is a bare, unclassed <h2> inside #seo-static (itself
+       hidden by `html.js #seo-static{display:none}` once JS runs), and the domain page's
+       sibling-nav/sample-question markup uses seo-domain-pills/seo-sample-* classes, not
+       section-title. A prior pass restored this family here on the (unverified) belief
+       that section-title appears on these page types; if you can find a real occurrence,
+       re-revert with the file/line, but re-verify against the actual generated HTML this
+       specific way first, not just the class's existence somewhere in css/style.css. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=optional"></noscript>
   <link rel="preload" as="style" href="/css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/css/style.min.css"></noscript>
   <style>

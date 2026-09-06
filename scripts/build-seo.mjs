@@ -455,6 +455,15 @@ function buildCertHtml(cert) {
     gtag('config', 'AW-17221241617');
   </script>
 
+  <!-- Event snippet for Page view conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
+        'value': 1.0,
+        'currency': 'USD'
+    });
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
@@ -730,6 +739,15 @@ function buildDomainHtml(cert, domain, questions) {
     gtag('config', 'AW-17221241617');
   </script>
 
+  <!-- Event snippet for Page view conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
+        'value': 1.0,
+        'currency': 'USD'
+    });
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
@@ -987,6 +1005,15 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
     gtag('js', new Date());
 
     gtag('config', 'AW-17221241617');
+  </script>
+
+  <!-- Event snippet for Page view conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
+        'value': 1.0,
+        'currency': 'USD'
+    });
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">

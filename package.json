@@ -7,6 +7,7 @@
     "build:css": "node scripts/build-css.mjs",
     "build:seo": "node scripts/build-certs.mjs && node scripts/build-css.mjs && node scripts/build-seo.mjs",
     "check:weights": "node scripts/check-weights.mjs",
-    "check:salaries": "node scripts/check-salaries.mjs"
+    "check:salaries": "node scripts/check-salaries.mjs",
+    "check:seo-duplicates": "node scripts/check-seo-duplicates.mjs"
   }
 }

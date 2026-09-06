@@ -27,7 +27,7 @@ export async function init() {
     'operatingSystem': 'Any',
     'featureList': 'Domain-by-domain quizzes, progress tracking, instant feedback, explanations, no account required',
     'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD', 'availability': 'https://schema.org/InStock' },
-    'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
+    'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com', 'parentOrganization': { '@type': 'Organization', 'name': 'Artivico Lab', 'url': 'https://artivicolab.com/' } },
   });
 
   const comingSoon = await loadComingSoon();

@@ -10,6 +10,10 @@ import { certifications } from '../js/data/certifications/index.js';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SITE = 'https://quizbuffet.com';
 const TODAY = new Date().toISOString().slice(0, 10);
+// QuizBuffet is an Artivico Lab project. Declaring the parent on every Organization node
+// ties the two entities together for Google (see TODO S2).
+const PARENT_ORG = { '@type': 'Organization', 'name': 'Artivico Lab', 'alternateName': 'ArtivicoLab', 'url': 'https://artivicolab.com/' };
+const ORG = { '@type': 'Organization', 'name': 'QuizBuffet', 'url': SITE, 'parentOrganization': PARENT_ORG };
 
 // Human-readable display version of an ISO date (e.g. "May 13, 2026"). Must represent the
 // SAME calendar date as its input so Google's byline pipeline can match the visible byline
@@ -521,11 +525,7 @@ function buildCertHtml(cert) {
         'learningResourceType': 'Practice Test',
         'isAccessibleForFree': true,
         'teaches': cert.domains.map(d => d.name),
-        'provider': {
-          '@type': 'Organization',
-          'name': 'QuizBuffet',
-          'url': SITE,
-        },
+        'provider': ORG,
         'hasCourseInstance': {
           '@type': 'CourseInstance',
           'courseMode': 'online',
@@ -567,13 +567,8 @@ function buildCertHtml(cert) {
         'dateModified': modified,
         'inLanguage': 'en-US',
         'image': ogImage,
-        'author': { '@type': 'Organization', 'name': 'QuizBuffet', 'url': SITE },
-        'publisher': {
-          '@type': 'Organization',
-          'name': 'QuizBuffet',
-          'url': SITE,
-          'logo': { '@type': 'ImageObject', 'url': `${SITE}/favicon-96x96.png` },
-        },
+        'author': ORG,
+        'publisher': { ...ORG, 'logo': { '@type': 'ImageObject', 'url': `${SITE}/favicon-96x96.png` } },
         'mainEntityOfPage': { '@type': 'WebPage', '@id': url },
       },
     ],
@@ -1139,11 +1134,7 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
         'courseCode': cert.code,
         'description': cert.about || desc,
         'url': url,
-        'provider': {
-          '@type': 'Organization',
-          'name': 'QuizBuffet',
-          'url': SITE,
-        },
+        'provider': ORG,
         'educationalCredentialAwarded': cert.name,
       },
     ],

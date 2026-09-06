@@ -215,7 +215,7 @@ Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certific
 
 ### F1. Done (removed, number kept)
 
-### F2. [PARTIAL: table feature built and rendering (optional cert.exam, "Exam at a Glance" H2, graceful when absent); populated for 30 certs (CompTIA majors, CCNA, AZ-900/104, CISSP, all 11 AWS certs, all 6 CPA sections) using facts verified via search this session, not guessed, caught and corrected 3 wrong guesses along the way (Cisco's retake policy is a flat 5-day wait, not CompTIA-style escalation; Microsoft is 24hr-then-14-day; ISC2 escalates 30/60/90 days). Remaining ~20 certs (trades/beauty/healthcare/aviation/finance singles) still need it; cert-prices.csv (C20) not started] Exam logistics table
+### F2. [DONE — populated for every live cert where a logistics table adds value (46 of 50; OSHA 10/30 deliberately skipped since they genuinely have no formal standardized exam, confirmed via search, so a table would just repeat the FAQ's caveats). Added exam.source on all 46 using real, verified vendor URLs, reusing an already-vetted URL from that cert's own affiliates/officialSources array where one existed, otherwise a stable top-level vendor cert-hub page (never a guessed deep link). cert-prices.csv (C20) still not started] Exam logistics table
 Verification 2026-09-06: 32 tables render with consistent values (passing scores and costs match the FAQ answers; CPA MCQ/TBS counts match the AICPA blueprints). Gap: no cert sets `exam.source`, so the "Source: official exam page" line never renders. Add the vendor exam page URL to each `exam` object when filling the remaining certs.
 Add an optional `exam` object to cert metadata:
 ```js

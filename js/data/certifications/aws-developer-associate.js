@@ -9,6 +9,7 @@ export const cert = {
   tagline: 'Develop, deploy, and debug cloud-based applications on AWS',
   about: 'AWS Certified Developer Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.',
   details: '65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
+  exam: { questions: '65 (50 scored + 15 unscored)', minutes: 130, passing: '720 of 1000', cost: '$150', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; ~1 year hands-on AWS development experience recommended', retake: '14-day wait after each failed attempt; no attempt limit', source: 'https://aws.amazon.com/certification/certified-developer-associate/' },
   faq: [
     { q: 'How hard is the AWS Certified Developer Associate exam?',
       a: 'It is a moderate associate-level exam. The questions are scenario-based and expect you to know how core services like Lambda, DynamoDB, API Gateway, and the CI/CD tools behave in practice, not just their definitions. With steady study and plenty of practice questions, most developers pass on the first try.' },

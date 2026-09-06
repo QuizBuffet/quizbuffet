@@ -7,7 +7,7 @@ export const cert = {
   tagline: 'Foundational Azure knowledge for cloud beginners and decision-makers',
   about: 'Microsoft Azure Fundamentals (AZ-900) is the entry-level Azure certification. It covers cloud concepts (IaaS/PaaS/SaaS, public/private/hybrid, shared responsibility, consumption-based pricing), core Azure architecture and services (regions, availability zones, compute, networking, storage, databases, identity), and Azure management and governance (cost management, Microsoft Entra, role-based access control, Azure Policy, monitoring, support).',
   details: '40-60 questions · 60 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
-  exam: { questions: '40-60', minutes: 60, passing: '700 of 1000', cost: '$99', delivery: 'Pearson VUE, online or test center', validity: 'Does not expire', prerequisites: 'None', retake: '24-hour wait after 1st attempt; 14-day wait between later attempts; max 5 attempts per 12 months' },
+  exam: { questions: '40-60', minutes: 60, passing: '700 of 1000', cost: '$99', delivery: 'Pearson VUE, online or test center', validity: 'Does not expire', prerequisites: 'None', retake: '24-hour wait after 1st attempt; 14-day wait between later attempts; max 5 attempts per 12 months', source: 'https://learn.microsoft.com/en-us/credentials/certifications/' },
   faq: [
     { q: 'How many questions are on the AZ-900 exam?',
       a: '40 to 60 questions, multiple-choice and case-study formats, in 60 minutes.' },

@@ -6,7 +6,7 @@ export const cert = {
   tagline: 'Cloud infrastructure skills for engineers and sysadmins',
   about: 'Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2-3 years of hands-on cloud or systems experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 750/900 · Multiple-choice and performance-based',
-  exam: { questions: 90, minutes: 90, passing: '750 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; Network+, Security+, and 2-3 years systems/network administration experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
+  exam: { questions: 90, minutes: 90, passing: '750 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; Network+, Security+, and 2-3 years systems/network administration experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt', source: 'https://www.comptia.org/en-us/certifications/' },
   faq: [
     { q: 'How many questions are on the Cloud+ exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },

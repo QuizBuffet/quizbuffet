@@ -7,7 +7,7 @@ export const cert = {
   tagline: 'Foundational AWS knowledge for technical and non-technical professionals',
   about: 'AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud, value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.',
   details: '50 scored questions + 15 unscored · Multiple-choice and multiple-response · Pass score 700/1000',
-  exam: { questions: '65 (50 scored + 15 unscored)', minutes: 90, passing: '700 of 1000', cost: '$100', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; up to 6 months AWS exposure recommended', retake: '14-day wait after each failed attempt; no attempt limit' },
+  exam: { questions: '65 (50 scored + 15 unscored)', minutes: 90, passing: '700 of 1000', cost: '$100', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; up to 6 months AWS exposure recommended', retake: '14-day wait after each failed attempt; no attempt limit', source: 'https://aws.amazon.com/certification/certified-cloud-practitioner/' },
   faq: [
     { q: 'How many questions are on the Cloud Practitioner exam?',
       a: '65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 90 minutes.' },

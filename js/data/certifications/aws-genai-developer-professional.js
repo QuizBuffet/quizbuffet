@@ -7,7 +7,7 @@ export const cert = {
   tagline: 'Build, integrate, and operate production GenAI solutions on AWS',
   about: 'AWS Certified Generative AI Developer Professional (AIP-C01) validates the ability to integrate foundation models into applications and business workflows, including RAG and vector store design, agentic AI, prompt engineering and management, FM API integration, model deployment strategies, AI safety and governance, performance and cost optimization, and evaluation, monitoring, and troubleshooting of GenAI applications.',
   details: '75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000',
-  exam: { questions: '75 (65 scored + 10 unscored)', minutes: 180, passing: '750 of 1000', cost: '$300', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; hands-on GenAI application development experience recommended', retake: '14-day wait after each failed attempt; no attempt limit' },
+  exam: { questions: '75 (65 scored + 10 unscored)', minutes: 180, passing: '750 of 1000', cost: '$300', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; hands-on GenAI application development experience recommended', retake: '14-day wait after each failed attempt; no attempt limit', source: 'https://aws.amazon.com/certification/' },
   faq: [
     { q: 'How many questions are on the AIP-C01 exam?',
       a: '75 questions total (65 scored, 10 unscored), multiple-choice and multiple-response, in 180 minutes.' },

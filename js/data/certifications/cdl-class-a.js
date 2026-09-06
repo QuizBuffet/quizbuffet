@@ -8,6 +8,7 @@ export const cert = {
   tagline: 'Federal license required to drive tractor-trailers and large combination vehicles',
   about: 'CDL Class A licensing is governed by 49 CFR Part 383 and administered by state DMVs under the Federal Motor Carrier Safety Administration (FMCSA). The knowledge component covers driver qualifications and disqualifications, hours of service, safe driving and hazard recognition, cargo securement, the air brake system and 7-step inspection, combination vehicles and coupling/uncoupling, the pre-trip vehicle inspection, and basic vehicle control maneuvers. A Class A CDL is required to operate any combination vehicle with a gross combination weight rating (GCWR) over 26,001 pounds when the towed unit exceeds 10,000 pounds.',
   details: 'State-administered written tests + skills test · Federal CDL standard · Endorsements: H, N, P, S, T, X · 49 CFR Parts 383, 391, 392, 393, 395, 396',
+  exam: { questions: 'General knowledge 50 + Air Brakes 25 + Combination Vehicles 20 (state-dependent)', passing: '80% per section (most states)', cost: 'Varies by state DMV', delivery: 'State DMV or approved testing location', validity: 'Set by state (CLP valid up to 1 year; CDL renews with license)', prerequisites: 'Valid driver\'s license; DOT medical certification', retake: 'Set by state DMV' },
   faq: [
     { q: 'How many questions are on the CDL general knowledge test?',
       a: 'Most states use a 50-question general knowledge test as the core written exam every CDL applicant must pass.' },

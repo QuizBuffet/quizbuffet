@@ -6,7 +6,7 @@ export const cert = {
   tagline: 'Data acquisition, analysis, and governance for data-driven decision making',
   about: 'Data+ certifies professionals who can translate business requirements into data-driven decisions by acquiring, preparing, and transforming data, applying statistical methods, creating visualizations, and adhering to governance and quality standards throughout the data life cycle.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 720/900 · Multiple-choice and performance-based · Recommended 1.5-2 years of experience with databases, analytical tools, statistics, and data visualization',
-  exam: { questions: 90, minutes: 90, passing: '720 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 1.5-2 years of database/analytics experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
+  exam: { questions: 90, minutes: 90, passing: '720 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 1.5-2 years of database/analytics experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt', source: 'https://www.comptia.org/en-us/certifications/' },
   faq: [
     { q: 'How many questions are on the Data+ exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },

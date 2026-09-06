@@ -7,7 +7,7 @@ export const cert = {
   tagline: 'The most popular cloud certification for designing AWS workloads',
   about: 'AWS Certified Solutions Architect Associate (SAA-C03) validates the ability to design solutions on AWS that are secure, resilient, high-performing, and cost-optimized, based on the AWS Well-Architected Framework. Aimed at candidates with at least 1 year of hands-on experience designing cloud solutions on AWS.',
   details: '50 scored questions + 15 unscored · Multiple-choice and multiple-response · Pass score 720/1000',
-  exam: { questions: '65 (50 scored + 15 unscored)', minutes: 130, passing: '720 of 1000', cost: '$150', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 1 year hands-on AWS experience recommended', retake: '14-day wait after each failed attempt; no attempt limit' },
+  exam: { questions: '65 (50 scored + 15 unscored)', minutes: 130, passing: '720 of 1000', cost: '$150', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 1 year hands-on AWS experience recommended', retake: '14-day wait after each failed attempt; no attempt limit', source: 'https://aws.amazon.com/certification/certified-solutions-architect-associate/' },
   faq: [
     { q: 'How many questions are on the SAA-C03 exam?',
       a: '65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 130 minutes.' },

@@ -7,7 +7,7 @@ export const cert = {
   tagline: 'Deploy, manage, and operate workloads on AWS',
   about: 'AWS Certified CloudOps Engineer Associate (SOA-C03) validates the ability to deploy, manage, and operate workloads on AWS. It covers monitoring and logging, performance optimization, reliability and business continuity, deployment and automation, security and compliance, and networking and content delivery, including hands-on use of CloudWatch, CloudFormation, Systems Manager, IAM, VPC, and the AWS CLI.',
   details: '65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
-  exam: { questions: '65 (50 scored + 15 unscored)', minutes: 130, passing: '720 of 1000', cost: '$150', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 1 year hands-on AWS operations experience recommended', retake: '14-day wait after each failed attempt; no attempt limit' },
+  exam: { questions: '65 (50 scored + 15 unscored)', minutes: 130, passing: '720 of 1000', cost: '$150', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 1 year hands-on AWS operations experience recommended', retake: '14-day wait after each failed attempt; no attempt limit', source: 'https://aws.amazon.com/certification/certified-cloudops-engineer-associate/' },
   faq: [
     { q: 'How many questions are on the SOA-C03 exam?',
       a: '65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 130 minutes.' },

@@ -6,7 +6,7 @@ export const cert = {
   tagline: 'Core networking skills for IT infrastructure professionals',
   about: 'Network+ certifies professionals who can deploy wired and wireless networks, configure network services, implement security hardening, and troubleshoot performance and availability issues. It covers networking concepts, IP addressing, routing, switching, wireless, cloud connectivity, and network troubleshooting. Recommended for professionals with 9-12 months of networking experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 720/900 · Multiple-choice and performance-based',
-  exam: { questions: 90, minutes: 90, passing: '720 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; A+ and 9-12 months networking experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
+  exam: { questions: 90, minutes: 90, passing: '720 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; A+ and 9-12 months networking experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt', source: 'https://www.comptia.org/en-us/certifications/network/' },
   faq: [
     { q: 'How many questions are on the Network+ exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },

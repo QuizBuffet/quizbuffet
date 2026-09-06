@@ -8,6 +8,7 @@ export const cert = {
   tagline: 'Required certification for operating powered industrial trucks',
   about: 'Forklift Operator Certification is mandated by 29 CFR 1910.178 for any worker operating a powered industrial truck on the job. Training covers truck types and capacities, the physics of stability (fulcrum, center of gravity, stability triangle, load center), pre-operation inspection, safe load handling, operating around pedestrians, lifting personnel on work platforms, and the employer’s duty to evaluate and certify each operator at least every three years.',
   details: 'Employer-administered certification · Required by 29 CFR 1910.178 · Re-evaluation every 3 years',
+  exam: { questions: '~25-40 (varies by employer/provider)', passing: 'Set by employer/training provider', cost: 'Varies by training provider', delivery: 'Employer or third-party trainer; written portion can be online, hands-on evaluation must be in person', validity: '3 years (1910.178 re-evaluation)', prerequisites: 'None', retake: 'Set by employer/training provider', source: 'https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.178' },
   faq: [
     { q: 'Is the OSHA forklift test free?',
       a: 'QuizBuffet’s forklift practice test is free, 300+ questions with instant feedback, no signup. The official employer-administered evaluation itself is not run by OSHA directly and is typically arranged (and paid for) through your employer or a training provider.' },

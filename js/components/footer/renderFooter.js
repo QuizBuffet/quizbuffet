@@ -98,6 +98,7 @@ export async function renderFooter() {
               <li><strong>Nothing shared.</strong> Your answers, scores, and progress never leave your device. Period.</li>
               <li><strong>Open to inspect.</strong> Every line of code runs in your browser. Open DevTools and see for yourself.</li>
             </ul>
+            <p class="footer-body"><a href="/about/" class="footer-privacy-link"><strong>About QuizBuffet →</strong></a></p>
             <p class="footer-body"><a href="/privacy/" class="footer-privacy-link"><strong>Read our Privacy &amp; Cookie Policy →</strong></a></p>
 
             <div class="footer-col-title footer-col-title-inline">Stay Updated</div>

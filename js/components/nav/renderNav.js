@@ -40,6 +40,7 @@ export function renderNav(active) {
   const links = [
     { href: '/', label: 'Home' },
     { href: '/progress', label: 'Progress' },
+    { href: '/about/', label: 'About' },
   ];
 
   // Stats need a localStorage scan + counts.json fetch, defer to keep nav painting fast.

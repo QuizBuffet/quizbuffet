@@ -7,6 +7,7 @@ export const cert = {
   tagline: 'Build, deploy, and operate ML solutions on AWS',
   about: 'AWS Certified Machine Learning Engineer Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.',
   details: '65 questions · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
+  exam: { questions: 65, minutes: 130, passing: '720 of 1000', cost: '$150', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; hands-on experience building/deploying ML on AWS recommended', retake: '14-day wait after each failed attempt; no attempt limit' },
   faq: [
     { q: 'How many questions are on the MLA-C01 exam?',
       a: '65 questions, multiple-choice and multiple-response, in 130 minutes.' },

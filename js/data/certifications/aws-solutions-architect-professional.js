@@ -7,6 +7,7 @@ export const cert = {
   tagline: 'Design optimized AWS solutions across organizations using the Well-Architected Framework',
   about: 'AWS Certified Solutions Architect Professional (SAP-C02) validates expertise designing complex AWS solutions across multiple accounts and Regions. It covers organizational complexity (Organizations, Control Tower, multi-account governance, hybrid networking), designing new solutions for reliability, performance, security, and cost, continuously improving existing solutions, and accelerating workload migration and modernization (7Rs, AWS Migration Hub, DMS, Application Migration Service, modernization to serverless and containers).',
   details: '75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000',
+  exam: { questions: '75 (65 scored + 10 unscored)', minutes: 180, passing: '750 of 1000', cost: '$300', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 2+ years designing AWS solutions recommended', retake: '14-day wait after each failed attempt; no attempt limit' },
   faq: [
     { q: 'How many questions are on the SAP-C02 exam?',
       a: '75 questions total (65 scored, 10 unscored), multiple-choice and multiple-response, in 180 minutes.' },

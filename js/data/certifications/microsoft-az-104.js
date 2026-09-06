@@ -7,6 +7,7 @@ export const cert = {
   tagline: 'Day-to-day administration of Azure infrastructure at the associate level',
   about: 'Microsoft Azure Administrator (AZ-104) validates skills for managing Azure subscriptions, identities and governance (Microsoft Entra ID, RBAC, Azure Policy, management groups), storage (storage accounts, Azure Files, Blob Storage, redundancy, lifecycle), compute (virtual machines, Container Instances, Container Apps, App Service, scale sets, ARM/Bicep), virtual networking (VNets, NSGs, Bastion, peering, private endpoints, load balancing, DNS), and monitoring with Azure Monitor and backup with Recovery Services and Site Recovery.',
   details: '40-60 questions · 120 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
+  exam: { questions: '40-60', minutes: 120, passing: '700 of 1000', cost: '$165', delivery: 'Pearson VUE, online or test center', validity: '1 year (free online renewal assessment)', prerequisites: 'None required; 6 months hands-on Azure administration recommended', retake: '24-hour wait after 1st attempt; 14-day wait between later attempts; max 5 attempts per 12 months' },
   faq: [
     { q: 'How much does the AZ-104 exam cost?',
       a: 'The AZ-104 exam costs $165 USD, though Microsoft sometimes offers discount vouchers through partner programs and events.' },

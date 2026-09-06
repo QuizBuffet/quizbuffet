@@ -7,6 +7,7 @@ export const cert = {
   tagline: 'Implement, monitor, and optimize data pipelines on AWS',
   about: 'AWS Certified Data Engineer Associate (DEA-C01) validates the ability to implement data pipelines and to monitor, troubleshoot, and optimize cost and performance issues. It covers data ingestion and transformation, data store choice and management, data cataloging and schema evolution, pipeline orchestration and automation, programming concepts, data quality and analysis, and data security, governance, and privacy on AWS.',
   details: '65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
+  exam: { questions: '65 (50 scored + 15 unscored)', minutes: 130, passing: '720 of 1000', cost: '$150', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; hands-on experience with AWS data services recommended', retake: '14-day wait after each failed attempt; no attempt limit' },
   faq: [
     { q: 'How many questions are on the DEA-C01 exam?',
       a: '65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 130 minutes.' },

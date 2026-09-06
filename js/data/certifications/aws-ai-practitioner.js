@@ -7,6 +7,7 @@ export const cert = {
   tagline: 'Foundational AI, ML, and generative-AI knowledge for the AWS Cloud',
   about: 'AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of AI, machine learning, and generative AI on AWS, including foundation models, prompt engineering, responsible AI, and security for AI workloads. It is designed for professionals who use, evaluate, or work alongside AI/ML systems but are not necessarily building them.',
   details: '65 questions · 90 minutes · Multiple-choice and multiple-response · Pass score 700/1000',
+  exam: { questions: 65, minutes: 90, passing: '700 of 1000', cost: '$100', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required', retake: '14-day wait after each failed attempt; no attempt limit' },
   faq: [
     { q: 'How many questions are on the AI Practitioner exam?',
       a: '65 questions, multiple-choice and multiple-response, in 90 minutes.' },

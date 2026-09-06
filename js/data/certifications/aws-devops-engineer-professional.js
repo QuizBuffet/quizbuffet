@@ -7,6 +7,7 @@ export const cert = {
   tagline: 'Provision, operate, and manage distributed systems on AWS at scale',
   about: 'AWS Certified DevOps Engineer Professional (DOP-C02) validates the ability to provision, operate, and manage distributed systems on AWS. It covers SDLC automation with CI/CD (CodePipeline, CodeBuild, CodeDeploy), configuration management and IaC (CloudFormation, CDK, SAM, Systems Manager), resilient cloud solutions and DR, monitoring and logging with CloudWatch and X-Ray, incident and event response, and security and compliance automation at scale.',
   details: '75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000',
+  exam: { questions: '75 (65 scored + 10 unscored)', minutes: 180, passing: '750 of 1000', cost: '$300', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 2+ years provisioning/managing AWS environments recommended', retake: '14-day wait after each failed attempt; no attempt limit' },
   faq: [
     { q: 'How many questions are on the DOP-C02 exam?',
       a: '75 questions total (65 scored, 10 unscored), multiple-choice and multiple-response, in 180 minutes.' },

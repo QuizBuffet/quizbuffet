@@ -9,7 +9,7 @@
   <meta property="og:site_name"   content="QuizBuffet">
   <meta property="og:title"       content="QuizBuffet — Free Practice Tests for 51 Certifications">
   <meta property="og:description" content="Free practice tests for 51 certifications: AWS, CompTIA, Cisco, Azure, CISSP, ITIL, CDL, BLS and more. Domain quizzes, instant feedback, no signup.">
-  <meta property="og:image"       content="https://quizbuffet.com/icons/og.svg">
+  <meta property="og:image"       content="https://quizbuffet.com/icons/web-app-manifest-512x512.png">
   <meta property="og:url"         content="https://quizbuffet.com/">
   <meta name='impact-site-verification' value='ffca9410-d881-4219-a547-b96ca3f72a19'>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -21,7 +21,7 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="QuizBuffet — Free Practice Tests for 51 Certifications">
   <meta name="twitter:description" content="Free practice tests for 51 certifications: AWS, CompTIA, Cisco, Azure, CISSP, ITIL, CDL, BLS and more. Domain quizzes, instant feedback, no signup.">
-  <meta name="twitter:image"       content="https://quizbuffet.com/icons/og.svg">
+  <meta name="twitter:image"       content="https://quizbuffet.com/icons/web-app-manifest-512x512.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -36,7 +36,7 @@
   <meta name="theme-color" content="#333333">
   <script>try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
   <script>(function(){var p=sessionStorage.getItem('gh_spa_path');if(p){sessionStorage.removeItem('gh_spa_path');history.replaceState(null,null,p);}}());</script>
-  <!-- Google tag (gtag.js) with Consent Mode v2 — default denied (GDPR/EEA), restored from prior choice. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -48,23 +48,29 @@
       functionality_storage: 'denied',
       personalization_storage: 'denied',
       security_storage: 'granted',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB'],
       wait_for_update: 500
     });
-    try{ if(localStorage.getItem('qb_consent')==='granted'){ gtag('consent','update',{analytics_storage:'granted'}); } }catch(e){}
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    try{
+      if(localStorage.getItem('qb_consent')==='granted'){
+        gtag('consent','update',{analytics_storage:'granted', ad_storage:'granted', ad_user_data:'granted'});
+      }
+    }catch(e){}
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
   <script>
     gtag('js', new Date());
     gtag('config', 'G-YRKFB3WT9C');
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17221241617"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
     gtag('config', 'AW-17221241617');
   </script>
 

@@ -1,15 +1,18 @@
-// GDPR/EEA consent banner for Google Analytics (Consent Mode v2).
-// The <head> sets all consent signals to 'denied' by default and restores a
-// prior 'granted' choice before gtag.js loads. This banner is only the UI that
-// lets a first-time visitor grant/decline; it calls gtag('consent','update').
-// If a choice was already made, the banner never renders.
+// GDPR/EEA consent banner for Google Analytics + Google Ads conversion measurement
+// (Consent Mode v2). The <head> denies analytics by default everywhere, denies ad
+// consent by default only for EEA/UK visitors (granted by default elsewhere), and
+// restores a prior 'granted' choice before gtag.js loads. This banner is only the
+// UI that lets a first-time visitor grant/decline; it calls gtag('consent','update').
+// Accept grants analytics_storage + ad_storage + ad_user_data — never ad_personalization,
+// so nothing here is used for personalized ads or remarketing. If a choice was already
+// made, the banner never renders.
 
 const KEY = 'qb_consent';
 
 function setConsent(granted) {
   try { localStorage.setItem(KEY, granted ? 'granted' : 'denied'); } catch (_) {}
   if (granted && typeof window.gtag === 'function') {
-    window.gtag('consent', 'update', { analytics_storage: 'granted' });
+    window.gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted', ad_user_data: 'granted' });
   }
 }
 
@@ -32,8 +35,11 @@ export function renderConsent() {
       padding:9px 16px;cursor:pointer}
     #qb-consent .qb-accept{background:#ffd24a;color:#222}
     #qb-consent .qb-decline{background:transparent;color:#fff;border:1px solid #777}
-    @media(max-width:600px){#qb-consent{flex-direction:column;align-items:stretch;text-align:center}
-      #qb-consent .qb-consent-btns{justify-content:center}}
+    @media(max-width:600px){#qb-consent{flex-direction:column;align-items:stretch;text-align:center;
+      padding:10px 14px;gap:8px;font-size:13px}
+      #qb-consent p{flex:0 0 auto;max-width:none}
+      #qb-consent .qb-consent-btns{justify-content:center}
+      #qb-consent button{padding:7px 14px}}
   `;
   document.head.appendChild(style);
 
@@ -42,8 +48,9 @@ export function renderConsent() {
   bar.setAttribute('role', 'dialog');
   bar.setAttribute('aria-label', 'Cookie consent');
   bar.innerHTML = `
-    <p>We use Google Analytics to count anonymous page visits. It is off until you choose.
-       No accounts, no personal tracking, no ads. See our
+    <p>We use Google Analytics to count anonymous page visits and Google Ads to measure
+       conversions. Both are off until you choose. No accounts, no personal tracking, no
+       personalized ads. See our
        <a href="/privacy/">Privacy &amp; Cookie Policy</a>.</p>
     <div class="qb-consent-btns">
       <button type="button" class="qb-decline">Decline</button>

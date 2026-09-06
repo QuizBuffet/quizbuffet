@@ -1515,9 +1515,6 @@ a:is(:hover, :active) { text-decoration: underline; }
 .nav-stat-correct-fill { height: 4px; background: #4c9; border-radius: 2px 0 0 2px; transition: width 0.3s; }
 .nav-stat-wrong-fill   { height: 4px; background: #e55; border-radius: 0 2px 2px 0; transition: width 0.3s; }
 
-/* ── Ad slot ───────────────────────────────────────────────────────────────── */
-.ad-slot { background: var(--subtle); border: 1px dashed var(--border-mid); min-height: 90px; margin: 14px 0; display: flex; align-items: center; justify-content: center; color: var(--text-dim); font-size: 15px; }
-.ad-slot:empty { display: none; }
 
 /* ── Section labels ────────────────────────────────────────────────────────── */
 .section-title { font-size: clamp(15px, 4.0vw, 17px); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0 10px; border-bottom: 1px solid var(--border); padding-bottom: 4px; }

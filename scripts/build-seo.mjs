@@ -33,6 +33,64 @@ function clipText(s, maxLen) {
   return out;
 }
 
+// EEA (EU27 + Iceland/Liechtenstein/Norway) + UK — the region set that gets a denied-by-default
+// ad-consent posture. Everyone else gets ad consent granted by default (opt-in isn't required
+// there); analytics stays denied by default everywhere until Accept.
+const EEA_UK_REGIONS = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB'];
+
+// Consent Mode v2 + gtag head block shared by every generated page (cert/domain/coming-soon).
+// index.html, privacy/index.html, and cpa/index.html carry their own hand-maintained copy of
+// this same block (build:seo does not touch those files) — keep them in sync by hand. See
+// CLAUDE.md "Analytics consent" before changing this.
+function buildConsentGtagBlock() {
+  return `<!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      region: ${JSON.stringify(EEA_UK_REGIONS)},
+      wait_for_update: 500
+    });
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    try{
+      if(localStorage.getItem('qb_consent')==='granted'){
+        gtag('consent','update',{analytics_storage:'granted', ad_storage:'granted', ad_user_data:'granted'});
+      }
+    }catch(e){}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-YRKFB3WT9C');
+    gtag('config', 'AW-17221241617');
+  </script>
+
+  <!-- Event snippet for Page view conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
+        'value': 1.0,
+        'currency': 'USD'
+    });
+  </script>`;
+}
+
 function loadDomainQuestions(certSlug, domainSlug) {
   const p = path.join(ROOT, 'data', 'certifications', certSlug, `${domainSlug}.json`);
   if (!fs.existsSync(p)) return [];
@@ -423,46 +481,7 @@ function buildCertHtml(cert) {
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — default denied (GDPR/EEA), restored from prior choice. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      functionality_storage: 'denied',
-      personalization_storage: 'denied',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    try{ if(localStorage.getItem('qb_consent')==='granted'){ gtag('consent','update',{analytics_storage:'granted'}); } }catch(e){}
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
-  <script>
-    gtag('js', new Date());
-    gtag('config', 'G-YRKFB3WT9C');
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17221241617"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-17221241617');
-  </script>
-
-  <!-- Event snippet for Page view conversion page -->
-  <script>
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
-    });
-  </script>
+  ${buildConsentGtagBlock()}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -707,46 +726,7 @@ function buildDomainHtml(cert, domain, questions) {
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — default denied (GDPR/EEA), restored from prior choice. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      functionality_storage: 'denied',
-      personalization_storage: 'denied',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    try{ if(localStorage.getItem('qb_consent')==='granted'){ gtag('consent','update',{analytics_storage:'granted'}); } }catch(e){}
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
-  <script>
-    gtag('js', new Date());
-    gtag('config', 'G-YRKFB3WT9C');
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17221241617"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-17221241617');
-  </script>
-
-  <!-- Event snippet for Page view conversion page -->
-  <script>
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
-    });
-  </script>
+  ${buildConsentGtagBlock()}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -975,46 +955,7 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — default denied (GDPR/EEA), restored from prior choice. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      functionality_storage: 'denied',
-      personalization_storage: 'denied',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
-    try{ if(localStorage.getItem('qb_consent')==='granted'){ gtag('consent','update',{analytics_storage:'granted'}); } }catch(e){}
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
-  <script>
-    gtag('js', new Date());
-    gtag('config', 'G-YRKFB3WT9C');
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17221241617"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-17221241617');
-  </script>
-
-  <!-- Event snippet for Page view conversion page -->
-  <script>
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
-    });
-  </script>
+  ${buildConsentGtagBlock()}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -12,13 +12,13 @@
   <meta property="og:site_name"   content="QuizBuffet">
   <meta property="og:title"       content="Privacy &amp; Cookie Policy — QuizBuffet">
   <meta property="og:description" content="No accounts, study data stored locally, analytics off until you consent (Consent Mode v2, default denied for EEA/GDPR).">
-  <meta property="og:image"       content="https://quizbuffet.com/icons/og.svg">
+  <meta property="og:image"       content="https://quizbuffet.com/icons/web-app-manifest-512x512.png">
   <meta property="og:url"         content="https://quizbuffet.com/privacy/">
 
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Privacy &amp; Cookie Policy — QuizBuffet">
   <meta name="twitter:description" content="No accounts, study data stored locally, analytics off until you consent (default denied for EEA/GDPR).">
-  <meta name="twitter:image"       content="https://quizbuffet.com/icons/og.svg">
+  <meta name="twitter:image"       content="https://quizbuffet.com/icons/web-app-manifest-512x512.png">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
@@ -30,7 +30,7 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — default denied (GDPR/EEA), restored from prior choice. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -42,23 +42,29 @@
       functionality_storage: 'denied',
       personalization_storage: 'denied',
       security_storage: 'granted',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB'],
       wait_for_update: 500
     });
-    try{ if(localStorage.getItem('qb_consent')==='granted'){ gtag('consent','update',{analytics_storage:'granted'}); } }catch(e){}
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'denied',
+      functionality_storage: 'denied',
+      personalization_storage: 'denied',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    try{
+      if(localStorage.getItem('qb_consent')==='granted'){
+        gtag('consent','update',{analytics_storage:'granted', ad_storage:'granted', ad_user_data:'granted'});
+      }
+    }catch(e){}
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
   <script>
     gtag('js', new Date());
     gtag('config', 'G-YRKFB3WT9C');
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17221241617"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
     gtag('config', 'AW-17221241617');
   </script>
 
@@ -108,12 +114,14 @@
     </section>
 
     <section class="cs-about">
-      <h2>Analytics and cookies</h2>
-      <p>We use Google Analytics 4 (measurement ID G-YRKFB3WT9C) to understand aggregate, anonymous traffic — which pages are visited and how often. We implement <strong>Google Consent Mode v2 with all storage signals defaulted to "denied"</strong>, which satisfies the consent requirement for visitors in the EEA, UK, and other GDPR/ePrivacy jurisdictions.</p>
+      <h2>Analytics, ads, and cookies</h2>
+      <p>We use Google Analytics 4 (measurement ID G-YRKFB3WT9C) to understand aggregate, anonymous traffic, and Google Ads (AW-17221241617) to measure how many visits lead to a conversion (for example, starting a quiz). We implement <strong>Google Consent Mode v2</strong>, which satisfies the consent requirement for visitors in the EEA, UK, and other GDPR/ePrivacy jurisdictions.</p>
       <ul>
-        <li><strong>Before you consent:</strong> no analytics cookies are written and no analytics identifiers are stored. Google receives only cookieless, aggregated pings (no personal data, no cross-site identifiers).</li>
-        <li><strong>If you click "Accept":</strong> Google Analytics sets its standard first-party cookies (e.g., <code>_ga</code>, <code>_ga_*</code>) to measure repeat visits. IP addresses are not stored by GA4. We do not enable Google Ads, ad personalization, or ad-data sharing — those signals remain denied.</li>
-        <li><strong>If you click "Decline" (or do nothing):</strong> analytics stays off; no analytics cookies are set.</li>
+        <li><strong>Analytics storage</strong> defaults to "denied" for every visitor, everywhere, until you choose.</li>
+        <li><strong>Ad storage</strong> (used only for conversion measurement, never for personalized ads or remarketing) defaults to "denied" for visitors in the EEA and UK until you Accept, and defaults to "granted" for visitors elsewhere, where opt-in consent for basic ad measurement is not legally required. Ad personalization is never enabled for anyone.</li>
+        <li><strong>Before you consent (EEA/UK):</strong> no analytics or ad cookies are written, and no identifiers are stored. Google receives only cookieless, aggregated pings (no personal data, no cross-site identifiers).</li>
+        <li><strong>If you click "Accept":</strong> Google Analytics sets its standard first-party cookies (e.g., <code>_ga</code>, <code>_ga_*</code>) to measure repeat visits, and Google Ads is allowed to measure conversions for you. IP addresses are not stored by GA4. Ad personalization stays denied either way — nothing here is used to build remarketing or personalized-ad audiences.</li>
+        <li><strong>If you click "Decline" (or do nothing):</strong> analytics stays off, and (for EEA/UK visitors) ad measurement stays off too; no analytics or ad cookies are set.</li>
       </ul>
     </section>
 
@@ -143,7 +151,7 @@
         btn.addEventListener('click', function () {
           try { localStorage.removeItem('qb_consent'); } catch (e) {}
           if (typeof window.gtag === 'function') {
-            window.gtag('consent', 'update', { analytics_storage: 'denied' });
+            window.gtag('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied' });
           }
           if (status) status.textContent = 'Done — analytics is off and the banner will reappear.';
         });

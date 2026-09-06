@@ -3,8 +3,10 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { execSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
+import sharp from 'sharp';
 import { certifications } from '../js/data/certifications/index.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
@@ -57,6 +59,24 @@ function firstPublishDate(key, relPath) {
   published[key] = d || TODAY;
   publishedDirty = true;
   return published[key];
+}
+
+// J1: Facebook, X, LinkedIn, Slack, iMessage, and Discord do not render SVG og:image, so every
+// share of an SVG-only OG image shows a blank card. Every OG image is rendered to a same-name
+// PNG alongside its SVG source; data/og-png-cache.json maps each SVG's content hash to the PNG
+// already rendered from it, so an unchanged image is not re-encoded on every build.
+const OG_PNG_CACHE_PATH = path.join(ROOT, 'data', 'og-png-cache.json');
+const ogPngCache = fs.existsSync(OG_PNG_CACHE_PATH) ? JSON.parse(fs.readFileSync(OG_PNG_CACHE_PATH, 'utf8')) : {};
+let ogPngCacheDirty = false;
+async function writeOgImage(svgPath, svg) {
+  fs.writeFileSync(svgPath, svg);
+  const pngPath = svgPath.replace(/\.svg$/, '.png');
+  const key = path.relative(ROOT, svgPath);
+  const hash = crypto.createHash('sha256').update(svg).digest('hex');
+  if (ogPngCache[key] === hash && fs.existsSync(pngPath)) return;
+  await sharp(Buffer.from(svg)).resize(1200, 630).png().toFile(pngPath);
+  ogPngCache[key] = hash;
+  ogPngCacheDirty = true;
 }
 
 // D4: only claim "Last updated" when that is still true within a normal recrawl window;
@@ -288,6 +308,28 @@ function pickFaqQuestions(cert, max = 12) {
   return faq;
 }
 
+// Real glyph widths aren't available in this pipeline (no DOM, no font metrics), so line
+// length is approximated by character count: bold Nunito at these sizes averages close to
+// 0.55em per character. Greedy-fills each line up to maxCharsPerLine, wrapping to as many
+// lines as the text needs (there is no hardcoded 2-line ceiling, so an unusually long name
+// degrades to 3+ short lines instead of silently overflowing the canvas).
+function wrapOgTitle(text, maxCharsPerLine) {
+  const words = text.split(' ');
+  const lines = [];
+  let current = '';
+  for (const word of words) {
+    const test = current ? `${current} ${word}` : word;
+    if (test.length > maxCharsPerLine && current) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = test;
+    }
+  }
+  if (current) lines.push(current);
+  return lines;
+}
+
 function buildOgSvg(cert) {
   // Simple text-on-color OG image, 1200x630
   const palette = {
@@ -302,11 +344,23 @@ function buildOgSvg(cert) {
     'comptia-data-plus':       '#a83b5b',
   };
   const bg = palette[cert.slug] || '#333333';
+  // Long cert names ("Certified Information Systems Security Professional") overflow the
+  // canvas at the full 92px size, so anything past a one-line budget drops to a smaller
+  // size and wraps. Layout below it (code, "Free Practice Test") shifts down to match.
+  const fitsBig = cert.name.length <= 22;
+  const fontSize = fitsBig ? 92 : 64;
+  const titleLines = fitsBig ? [cert.name] : wrapOgTitle(cert.name, 31);
+  const lineGap = Math.round(fontSize * 0.83);
+  const titleStartY = titleLines.length > 1 ? 270 : 320;
+  const titleSvg = titleLines.map((line, i) =>
+    `<text x="60" y="${titleStartY + i * lineGap}" font-family="Nunito, system-ui, sans-serif" font-size="${fontSize}" fill="#ffffff" font-weight="700">${htmlEscape(line)}</text>`
+  ).join('\n  ');
+  const codeY = titleStartY + (titleLines.length - 1) * lineGap + 80;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="${bg}"/>
   <text x="60" y="180" font-family="Nunito, system-ui, sans-serif" font-size="48" fill="#ffffff" font-weight="600" opacity="0.85">QuizBuffet</text>
-  <text x="60" y="320" font-family="Nunito, system-ui, sans-serif" font-size="92" fill="#ffffff" font-weight="700">${htmlEscape(cert.name)}</text>
-  <text x="60" y="400" font-family="Nunito, system-ui, sans-serif" font-size="48" fill="#ffffff" opacity="0.85">${htmlEscape(cert.code)}</text>
+  ${titleSvg}
+  <text x="60" y="${codeY}" font-family="Nunito, system-ui, sans-serif" font-size="48" fill="#ffffff" opacity="0.85">${htmlEscape(cert.code)}</text>
   <text x="60" y="540" font-family="Nunito, system-ui, sans-serif" font-size="40" fill="#ffffff" opacity="0.95" font-weight="600">Free Practice Test</text>
   <text x="60" y="590" font-family="Nunito, system-ui, sans-serif" font-size="28" fill="#ffffff" opacity="0.8">Domain-by-domain quizzes · No account needed</text>
 </svg>`;
@@ -472,7 +526,7 @@ function buildCertHtml(cert) {
   // cert pages cross-link to 3 other live certs in the same category (cheap internal authority).
   const related = pickRelatedLive(cert, certifications.filter(c => c.slug !== cert.slug), 3);
   const url = `${SITE}/${cert.slug}/`;
-  const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
+  const ogImage = `${SITE}/icons/og/${cert.slug}.png`;
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
   // Search Console: searchers use the cert name plus "practice test"/"practice exam", almost
   // never the raw exam code (under 5% of queries), leading titles with the code was rejected
@@ -611,6 +665,9 @@ function buildCertHtml(cert) {
   <meta property="og:title"       content="${htmlEscape(fullTitle)}">
   <meta property="og:description" content="${htmlEscape(desc)}">
   <meta property="og:image"       content="${ogImage}">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type"   content="image/png">
   <meta property="og:url"         content="${url}">
 
   <meta name="twitter:card"        content="summary_large_image">
@@ -763,12 +820,23 @@ function buildDomainOgSvg(cert, domain) {
     'comptia-data-plus':       '#a83b5b',
   };
   const bg = palette[cert.slug] || '#333333';
-  const domName = htmlEscape(clipText(domain.name, 60));
+  // Domain names run much longer than cert names (CPA and AWS domains hit 60-75 chars), so
+  // the same overflow the cert OG image has at full size is worse here without wrapping.
+  const domName = clipText(domain.name, 60);
+  const fitsBig = domName.length <= 25;
+  const fontSize = fitsBig ? 80 : 54;
+  const titleLines = fitsBig ? [domName] : wrapOgTitle(domName, 34);
+  const lineGap = Math.round(fontSize * 0.83);
+  const titleStartY = titleLines.length > 1 ? 260 : 300;
+  const titleSvg = titleLines.map((line, i) =>
+    `<text x="60" y="${titleStartY + i * lineGap}" font-family="Nunito, system-ui, sans-serif" font-size="${fontSize}" fill="#ffffff" font-weight="700">${htmlEscape(line)}</text>`
+  ).join('\n  ');
+  const certNameY = titleStartY + (titleLines.length - 1) * lineGap + 80;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="${bg}"/>
   <text x="60" y="160" font-family="Nunito, system-ui, sans-serif" font-size="44" fill="#ffffff" font-weight="600" opacity="0.85">QuizBuffet · ${htmlEscape(cert.code)}</text>
-  <text x="60" y="300" font-family="Nunito, system-ui, sans-serif" font-size="80" fill="#ffffff" font-weight="700">${domName}</text>
-  <text x="60" y="380" font-family="Nunito, system-ui, sans-serif" font-size="36" fill="#ffffff" opacity="0.85">${htmlEscape(cert.name)}</text>
+  ${titleSvg}
+  <text x="60" y="${certNameY}" font-family="Nunito, system-ui, sans-serif" font-size="36" fill="#ffffff" opacity="0.85">${htmlEscape(clipText(cert.name, 58))}</text>
   <text x="60" y="540" font-family="Nunito, system-ui, sans-serif" font-size="40" fill="#ffffff" opacity="0.95" font-weight="600">Free Domain Practice Quiz</text>
   <text x="60" y="590" font-family="Nunito, system-ui, sans-serif" font-size="28" fill="#ffffff" opacity="0.8">Instant feedback · No signup</text>
 </svg>`;
@@ -786,7 +854,7 @@ async function buildDomainHtml(cert, domain, questions) {
   const modified = lastCommitDate(domainRelPath);
   const publishedDate = firstPublishDate(`${cert.slug}/${domain.slug}`, domainRelPath);
   const url = `${SITE}/${cert.slug}/${domain.slug}/`;
-  const ogImage = `${SITE}/icons/og/${cert.slug}-${domain.slug}.svg`;
+  const ogImage = `${SITE}/icons/og/${cert.slug}-${domain.slug}.png`;
   const domNum = domain.number ? `${domain.number} ` : '';
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
   const seoName = cert.seoName || cert.name;
@@ -925,6 +993,9 @@ async function buildDomainHtml(cert, domain, questions) {
   <meta property="og:title"       content="${htmlEscape(fullTitle)}">
   <meta property="og:description" content="${htmlEscape(desc)}">
   <meta property="og:image"       content="${ogImage}">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type"   content="image/png">
   <meta property="og:url"         content="${url}">
 
   <meta name="twitter:card"        content="summary_large_image">
@@ -1030,11 +1101,22 @@ ${JSON.stringify(jsonLd, null, 2)}
 
 function buildComingSoonOgSvg(cert) {
   const bg = '#444444';
+  // Several coming-soon names run long ("Electrician License (Apprentice / Journeyman /
+  // Master)"), same overflow risk as the live-cert OG image, so wrap the same way.
+  const fitsBig = cert.name.length <= 24;
+  const fontSize = fitsBig ? 76 : 54;
+  const titleLines = fitsBig ? [cert.name] : wrapOgTitle(cert.name, 32);
+  const lineGap = Math.round(fontSize * 0.83);
+  const titleStartY = titleLines.length > 1 ? 270 : 320;
+  const titleSvg = titleLines.map((line, i) =>
+    `<text x="60" y="${titleStartY + i * lineGap}" font-family="Nunito, system-ui, sans-serif" font-size="${fontSize}" fill="#ffffff" font-weight="700">${htmlEscape(line)}</text>`
+  ).join('\n  ');
+  const codeY = titleStartY + (titleLines.length - 1) * lineGap + 70;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="${bg}"/>
   <text x="60" y="180" font-family="Nunito, system-ui, sans-serif" font-size="48" fill="#ffffff" font-weight="600" opacity="0.85">QuizBuffet</text>
-  <text x="60" y="320" font-family="Nunito, system-ui, sans-serif" font-size="76" fill="#ffffff" font-weight="700">${htmlEscape(cert.name)}</text>
-  <text x="60" y="390" font-family="Nunito, system-ui, sans-serif" font-size="40" fill="#ffffff" opacity="0.85">${htmlEscape(cert.code)}</text>
+  ${titleSvg}
+  <text x="60" y="${codeY}" font-family="Nunito, system-ui, sans-serif" font-size="40" fill="#ffffff" opacity="0.85">${htmlEscape(cert.code)}</text>
   <rect x="60" y="450" width="380" height="80" rx="12" fill="#ffd24a"/>
   <text x="80" y="505" font-family="Nunito, system-ui, sans-serif" font-size="42" fill="#222222" font-weight="700">Coming Soon</text>
   <text x="60" y="585" font-family="Nunito, system-ui, sans-serif" font-size="26" fill="#ffffff" opacity="0.8">Practice test in development · Free when launched</text>
@@ -1132,7 +1214,7 @@ function amazonSearch(query) {
 
 function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   const url = `${SITE}/${cert.slug}/`;
-  const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
+  const ogImage = `${SITE}/icons/og/${cert.slug}.png`;
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
   const fullTitle = clipText(`${cert.code} Practice Test (Coming Soon)`, 60);
   const desc = clipText(`${cert.code} practice test, coming soon to QuizBuffet. Soon you'll be able to test yourself on every exam domain with instant feedback and explanations. No signup, no email.`.trim().replace(/\s+/g, ' '), 155);
@@ -1174,6 +1256,9 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <meta property="og:title"       content="${htmlEscape(fullTitle)}">
   <meta property="og:description" content="${htmlEscape(desc)}">
   <meta property="og:image"       content="${ogImage}">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type"   content="image/png">
   <meta property="og:url"         content="${url}">
 
   <meta name="twitter:card"        content="summary_large_image">
@@ -1706,7 +1791,7 @@ for (const cert of certifications) {
   const dir = path.join(ROOT, cert.slug);
   fs.mkdirSync(dir, { recursive: true });
   writeClean(path.join(dir, 'index.html'), buildCertHtml(cert));
-  fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildOgSvg(cert));
+  await writeOgImage(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildOgSvg(cert));
   // Tally questions and generate a static page per domain (fixes 404s on domain quiz URLs)
   let n = 0;
   const domMap = {};
@@ -1717,7 +1802,7 @@ for (const cert of certifications) {
     const domDir = path.join(dir, dom.slug);
     fs.mkdirSync(domDir, { recursive: true });
     writeClean(path.join(domDir, 'index.html'), await buildDomainHtml(cert, dom, qs));
-    fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}-${dom.slug}.svg`), buildDomainOgSvg(cert, dom));
+    await writeOgImage(path.join(ROOT, 'icons', 'og', `${cert.slug}-${dom.slug}.svg`), buildDomainOgSvg(cert, dom));
     domainGenerated++;
   }
   perCertCounts[cert.slug] = n;
@@ -1735,7 +1820,7 @@ for (let i = 0; i < comingSoon.length; i++) {
   const dir = path.join(ROOT, cert.slug);
   fs.mkdirSync(dir, { recursive: true });
   writeClean(path.join(dir, 'index.html'), buildComingSoonHtml(cert, i + 1, certifications));
-  fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildComingSoonOgSvg(cert));
+  await writeOgImage(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildComingSoonOgSvg(cert));
   console.log(`  ⏳ ${cert.slug}/ (coming soon #${i + 1})`);
   csGenerated++;
 }
@@ -1775,6 +1860,12 @@ console.log(`  ✓ data/build.json (${version}, ${TODAY})`);
 if (publishedDirty) {
   fs.writeFileSync(PUBLISHED_PATH, JSON.stringify(published, Object.keys(published).sort(), 2) + '\n');
   console.log(`  ✓ data/published.json (${Object.keys(published).length} pages)`);
+}
+
+// J1: persist SVG content hashes so unchanged OG images are not re-rendered to PNG on every build.
+if (ogPngCacheDirty) {
+  fs.writeFileSync(OG_PNG_CACHE_PATH, JSON.stringify(ogPngCache, Object.keys(ogPngCache).sort(), 2) + '\n');
+  console.log(`  ✓ data/og-png-cache.json (${Object.keys(ogPngCache).length} images)`);
 }
 
 updateHomeIndex(certifications);

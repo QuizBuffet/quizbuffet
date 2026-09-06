@@ -10,5 +10,8 @@
     "check:salaries": "node scripts/check-salaries.mjs",
     "check:seo-duplicates": "node scripts/check-seo-duplicates.mjs",
     "check:canonicals": "node scripts/check-canonicals.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
   }
 }

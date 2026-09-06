@@ -285,12 +285,7 @@ They are correctly `noindex` and excluded from the sitemap (`buildSitemap` comme
 
 ## J. Technical SEO and performance (P2)
 
-### J1. OG images: SVG to PNG
-All 368 files in `icons/og/` are SVG. Facebook, X, LinkedIn, Slack, iMessage, and Discord do not render SVG `og:image`. Every share shows a blank card.
-1. `npm i -D @resvg/resvg-js` (or `sharp`).
-2. In `build-seo.mjs`, after writing each SVG, render it to `icons/og/<name>.png` at 1200x630. Cache by content hash so unchanged images are not re-rendered on every build.
-3. Point `og:image` and `twitter:image` at the `.png`. Add `og:image:width` 1200, `og:image:height` 630, `og:image:type` image/png.
-4. Keep the SVGs as source but do not link them. Add `*.png` in `icons/og/` to git (they are needed on Pages).
+### J1. Done (removed, number kept). Also fixed a pre-existing overflow bug uncovered along the way: long cert/domain names (CISSP's full name, CPA/AWS domain titles up to 75 chars) ran off the right edge of the 1200x630 canvas at fixed font sizes. Added a shared greedy word-wrap so long titles drop to a smaller size and wrap instead of clipping off-canvas, in all three OG builders (live cert, domain, coming-soon).
 
 ### J2. Done (removed, number kept)
 

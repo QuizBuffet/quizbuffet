@@ -246,7 +246,7 @@ If hygiene issues or duplicates exist, fix in place: cleanup pass first (strip p
 2. Add `"<slug>": <total-question-count>` to [data/counts.json](data/counts.json) and update `total`, `liveCerts`, `comingSoonCerts`, `generatedAt`. (`build:seo` will also rewrite this file, but updating it first is a useful sanity check.)
 3. Run `npm run check:weights`. The script will flag any domain whose declared weight in the cert metadata doesn't match the actual share of questions on disk. The usual fix is to align the declared weights in [js/data/certifications/<slug>.js](js/data/certifications/) to the actual distribution. Re-run until it passes.
 4. Run `npm run build:seo` to regenerate per-cert HTML, **per-domain HTML** (one file per `<slug>/<domain-slug>/index.html`), per-cert and per-domain OG images, sitemap, llms.txt, feed.xml, `data/counts.json`, **and the root [index.html](index.html)** (the script auto-syncs the home page's title cert count, meta description, og/twitter tags, `WebApplication.offers.offerCount`, the FAQ "Which certifications does QuizBuffet cover?" answer, and the `ItemList` of all live certs — so you never have to hand-edit those blocks when adding or removing certs). The console output reports per-cert and total domain-page counts — confirm the new cert's domains all generated. Note: `build:seo` also picks up any other cert that was registered but not in counts — surface this in your report so the user knows what else flipped.
-5. Bump the service worker cache version in [sw.js](sw.js) (e.g. `qb-v106` → `qb-v107`).
+5. Run `npm run audit`. It fails on a broken title, a missing OG PNG, a dash in generated HTML, or a fake-fresh `dateModified`. The service worker cache version needs no manual bump: `.github/workflows/deploy.yml` stamps `sw.js` with the commit hash on every push to `main`.
 
 ### Post-flight verification
 
@@ -258,7 +258,7 @@ After the steps above, programmatically confirm:
 - **Every domain has a static HTML file** at `<slug>/<domain-slug>/index.html` and a matching OG image at `icons/og/<slug>-<domain-slug>.png`. A missing domain HTML file means that URL will 404 on Google and tank SEO — re-run `build:seo` if any are missing.
 - The cert is listed in [llms.txt](llms.txt).
 - The cert's slug no longer appears in [data/coming-soon.json](data/coming-soon.json).
-- [sw.js](sw.js) cache version was bumped.
+- `npm run audit` passes. (Do not hand-bump `sw.js`; the deploy workflow stamps it with the commit hash.)
 
 Only after every check passes is the cert deploy-ready.
 

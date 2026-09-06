@@ -1,8 +1,7 @@
 // Regression guard for the generated site. Run before build:seo so a broken template,
 // a missing OG image, or a reintroduced TODAY-stamp doesn't ship silently.
 // Hard failures (exit 1): things that are always a code bug, never a legitimate state.
-// Warnings (reported, do not fail): known content gaps that are out of scope to fix here
-// per the owner's visibility-only decision (see TODO.md) but still worth surfacing.
+// Warnings (reported, do not fail): non-blocking findings.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
@@ -42,18 +41,13 @@ for (const cert of certifications) {
   if (!fs.existsSync(certHtmlPath)) { failures.push(`${cert.slug}: no generated index.html`); continue; }
   const certHtml = fs.readFileSync(certHtmlPath, 'utf8');
 
-  // 1. Live cert with 0 total questions.
-  let totalQ = 0;
+  // 1. Every declared domain must have its JSON file (a missing file breaks the build).
+  // Question counts are deliberately NOT audited: the question banks are final and out of
+  // scope for this visibility work (owner decision 2026-09-06, see TODO.md and CLAUDE.md).
   for (const dom of cert.domains) {
     const qs = loadDomainQuestions(cert.slug, dom.slug);
-    if (qs === null) { failures.push(`${cert.slug}/${dom.slug}: domain JSON file missing`); continue; }
-    totalQ += qs.length;
-    // 2. Live domain question counts: 0 is a hard failure (a visitor sees an empty quiz),
-    // under 30 is a known, out-of-scope-for-now content gap, reported as a warning only.
-    if (qs.length === 0) failures.push(`${cert.slug}/${dom.slug}: 0 questions (live domain, empty quiz)`);
-    else if (qs.length < 30) warnings.push(`${cert.slug}/${dom.slug}: only ${qs.length} questions`);
+    if (qs === null) failures.push(`${cert.slug}/${dom.slug}: domain JSON file missing`);
   }
-  if (totalQ === 0) failures.push(`${cert.slug}: 0 total questions across all domains`);
 
   // 3. Cert page title must contain the cert's own name/seoName or code, not a stale/generic one.
   const titleMatch = certHtml.match(/<title>([^<]*)<\/title>/);

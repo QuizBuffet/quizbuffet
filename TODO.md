@@ -84,8 +84,7 @@ In GA4 Admin > Product links > Google Ads links, link the account. Mark `domain_
 - For the CPR/AED and BLS ad groups, land on the new AED page from C1 once it exists.
 - Add `?utm_source=google&utm_medium=cpc&utm_campaign=<cert>` in the final URL suffix at the account level.
 
-### A7. Confirm gclid survives the SPA path restore
-`404.html:34` stores `location.pathname + location.search` and `index.html` restores it via `history.replaceState`. gtag runs in `<head>` before the restore and reads `location.search` of the 404 page URL, which still has the gclid. Verify once with a test URL `/comptia-security-plus/?gclid=test` in Tag Assistant. If the conversion cookie `_gcl_aw` is set, nothing to do.
+### A7. Verified correct at the code level; live Tag Assistant confirmation with a real click still worth doing but not expected to find anything. Read the actual line order in index.html rather than assuming: the `gh_spa_path` restore (`history.replaceState`, line 41) runs BEFORE every meaningful gtag call (`gtag('js', ...)`/`gtag('config', ...)` at lines 74-77, the conversion event at lines 81-86) — the opposite of what this item's original wording worried about ("gtag runs in `<head>` before the restore"). By the time gtag reads `location.search` to capture `gclid` for `_gcl_aw`, the URL has already been restored to the real path with the query string intact. If you want to double-check with a live click, `/comptia-security-plus/?gclid=test` in Tag Assistant should show `_gcl_aw` set, but the code path already confirms it should be.
 
 ### A8. Done (removed, number kept)
 

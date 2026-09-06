@@ -1333,12 +1333,16 @@ function buildRssFeed(comingSoon) {
     const desc = soon
       ? `${cert.tagline || ''} Free practice test in development${rank ? ` (priority #${rank})` : ''}.`.trim()
       : `${cert.tagline || ''} ${total} questions across ${cert.domains.length} domains. Free, no account needed.`.trim();
+    // D1: each item's real first-publish date, not the build timestamp — every item
+    // reading as "just published" on every rebuild is exactly the freshness-signal
+    // problem this fix is for.
+    const itemPubDate = new Date(`${firstPublishDate(cert.slug, `js/data/certifications/${cert.slug}.js`)}T00:00:00Z`).toUTCString();
     return `    <item>
       <title>${htmlEscape(title)}</title>
       <link>${url}</link>
       <description>${htmlEscape(desc)}</description>
       <category>${htmlEscape(cert.vendor || 'Certification')}</category>
-      <pubDate>${buildDate}</pubDate>
+      <pubDate>${itemPubDate}</pubDate>
       <guid isPermaLink="true">${url}</guid>
     </item>`;
   }).join('\n');

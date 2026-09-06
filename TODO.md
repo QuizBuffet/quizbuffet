@@ -26,6 +26,7 @@ O. Search Console country analysis
 P. Search Console device analysis
 Q. Search Console daily trend analysis
 R. SERP inspection of the CPR/AED page
+S. Brand query analysis
 
 ---
 
@@ -217,7 +218,7 @@ Title from B1: "CompTIA Security+ Practice Test: 1900+ Free Questions". Add the 
 
 ## D. Freshness and dates (P1)
 
-### D1. Stop stamping every page with today's date
+### D1. [DONE] Stop stamping every page with today's date
 **Problem.** `scripts/build-seo.mjs:10` sets `TODAY` once and writes it into: every sitemap `lastmod` (323 URLs, all `2026-09-06`), every `dateModified` and `datePublished` in JSON-LD, every visible "Last updated" byline, `llms.txt`, and `feed.xml`. Every build makes every page look newly modified. Google learns to ignore the signal and may treat it as manipulation.
 
 **Fix.**
@@ -240,13 +241,13 @@ Title from B1: "CompTIA Security+ Practice Test: 1900+ Free Questions". Add the 
 5. Use that per-page date for `dateModified`, the byline `<time>`, and sitemap `lastmod`. Keep `TODAY` only for `data/build.json` and `counts.json.generatedAt`.
 6. Uncommitted working-tree changes: fall back to `TODAY` only when `git status --porcelain -- <path>` is non-empty.
 
-### D2. Persist `datePublished`
+### D2. [DONE] Persist `datePublished`
 `datePublished` is overwritten every build (`build-seo.mjs:347`). Create `data/published.json` mapping `slug` (and `slug/domain`) to first-publish date. In the build: if the key is missing, write `TODAY` into the map and save it; otherwise read it. Commit the file. Seed it now with `git log --diff-filter=A --format=%cs -- <path> | tail -1` for each existing page.
 
-### D3. Sitemap changefreq and priority
+### D3. [DONE] Sitemap changefreq and priority
 In `buildSitemap` (`build-seo.mjs:1317`): home `weekly/1.0`, cert pages `monthly/0.8`, domain pages `monthly/0.6`, cpa hub `monthly/0.7`, privacy `yearly/0.1`. Google mostly ignores these, but uniform 0.9/0.8 on 300 pages is noise.
 
-### D4. Byline honesty
+### D4. [DONE] Byline honesty
 The visible "Last updated" byline should only appear when the date is within the last 12 months; otherwise show "Published <date>". Google's byline pipeline matches the visible date to JSON-LD; both must agree (they will, after D1).
 
 ---
@@ -667,6 +668,33 @@ The sponsored results are certification sellers (cprcare.com at $9.99 to $14.95,
 
 ### R7. Breadcrumbs and favicon render correctly
 "quizbuffet.com › CPR / AED Certification" shows the BreadcrumbList is working and the favicon is picked up. No action.
+
+---
+
+## S. Brand query: "quiz buffet" does not return the site (2026-09-06)
+
+Searching the domain itself, Google rewrote the query to "quiz buffet" and showed BuzzFeed, Quotev, Sporcle, and ProProfs food-quiz pages. quizbuffet.com was not on page one for its own name. The home page has 19 impressions in Search Console. This is the clearest sign the home page has no authority and the brand is not an entity Google recognizes.
+
+### S1. Why it fails
+- **Name collision.** "Quiz buffet" as two words is a generic food-quiz phrase with a decade of BuzzFeed content behind it. The AI Overview treats the query as food quizzes. Nothing on the site ever spells the name as two words, so Google has no reason to connect the query to the domain.
+- **Brand missing from the home title.** The B7 rewrite made it "Free Certification Practice Tests: CompTIA, AWS, CISSP, CDL, CPR" with no brand. Fixed today: title is now "QuizBuffet: Free Certification Practice Tests" (og and twitter titles too).
+- **No entity signals.** `sameAs` is empty, there is no About page, no social profiles, no listings on Crunchbase, LinkedIn, Product Hunt, or GitHub that name the site. Google builds brand entities from consistent third-party mentions; there are none.
+- **Home page is thin and unlinked.** 72 crawlable words, zero crawlable cert links (E1, E2). Every cert page links to home only through the nav.
+- **Zero external links.** Position 68 site-wide is consistent with no backlink profile at all.
+
+### S2. Fixes, in order
+1. [DONE today] Brand-first home title and `alternateName: ["Quiz Buffet", "quizbuffet.com"]` on the WebSite and EducationalOrganization JSON-LD nodes.
+2. Mention the two-word form once on the home page and About page in natural copy ("QuizBuffet, sometimes written Quiz Buffet, is a free practice-test site..."). Google needs the string on the page, not only in schema.
+3. Create the About page (E5) and fill `sameAs` (E7) with real profiles: X, LinkedIn company page, YouTube, GitHub org, Crunchbase. Use the exact name "QuizBuffet" and the URL on every profile.
+4. Pre-render the home cert grid and expand home copy (E1, E2). A home page with 500 words and 50 links is what Google expects a brand's front door to look like.
+5. Add a "QuizBuffet" text link to home in the footer of every generated page (the logo link alone is a weak anchor).
+6. Add `WebSite.potentialAction` SearchAction (E8) so Google can show a sitelinks search box once the brand ranks.
+7. Get five to ten external mentions that use the brand name: Reddit wiki entries (K1), a Product Hunt launch, a Hacker News "Show HN", and directory listings. Brand search results move fastest on mentions, not on-page work.
+8. Google Business Profile is not applicable (no address). Skip.
+9. Track the brand query in Search Console monthly. Target: quizbuffet.com at position 1 for "quizbuffet" within 30 days, and page one for "quiz buffet" within 90.
+
+### S3. Naming consideration
+If the brand query still loses to BuzzFeed after S2, the name itself is the problem: "buffet" carries food intent Google will not drop. Options are to lean into a distinct one-word brand everywhere ("QuizBuffet" with a tagline that says certifications in the first three words) or to rename. Do not decide this before S2 has had 90 days.
 
 ---
 

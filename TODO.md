@@ -84,7 +84,7 @@ In GA4 Admin > Product links > Google Ads links, link the account. Mark `domain_
 - For the CPR/AED and BLS ad groups, land on the new AED page from C1 once it exists.
 - Add `?utm_source=google&utm_medium=cpc&utm_campaign=<cert>` in the final URL suffix at the account level.
 
-### A7. Verified correct at the code level; live Tag Assistant confirmation with a real click still worth doing but not expected to find anything. Read the actual line order in index.html rather than assuming: the `gh_spa_path` restore (`history.replaceState`, line 41) runs BEFORE every meaningful gtag call (`gtag('js', ...)`/`gtag('config', ...)` at lines 74-77, the conversion event at lines 81-86) — the opposite of what this item's original wording worried about ("gtag runs in `<head>` before the restore"). By the time gtag reads `location.search` to capture `gclid` for `_gcl_aw`, the URL has already been restored to the real path with the query string intact. If you want to double-check with a live click, `/comptia-security-plus/?gclid=test` in Tag Assistant should show `_gcl_aw` set, but the code path already confirms it should be.
+### A7. Done (removed, number kept). Verified in code: the gclid is in the URL when the tag fires on both the root page and the 404 fallback.
 
 ### A8. Done (removed, number kept)
 
@@ -222,7 +222,7 @@ Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certific
 ### F4. Study plan section
 Optional `studyGuide` field (array of strings) rendered under "Study guide" (C5). Start with Project+, PenTest+, Security+, AWS Developer.
 
-### F5. Markup confirmed correct against Google's documented requirements; rich-result eligibility itself needs Search Console monitoring, not more code. Checked the actual generated JSON-LD directly (option (a) from the original note): cert pages' `Course` already has `hasCourseInstance` with both `courseMode: "online"` and `courseWorkload` set, plus `name`/`description`/`provider`/`isAccessibleForFree`, everything Google's Course structured-data reference lists as required or recommended. Domain pages emit `Quiz`/`LearningResource` combined via `"@type": ["Quiz", "LearningResource"]` with `numberOfQuestions`/`educationalLevel`/`learningResourceType` set. Google's Rich Results Test itself is a JS-driven interactive tool with no scriptable API (confirmed: fetching it returns only the static tool shell, not a test result for a given URL), so the remaining open question here, whether Google's algorithm actually grants a rich result for quiz-shaped Course content, is a POLICY/eligibility judgment made after indexing, not a markup-validity question a script can answer. Track it in Search Console's Enhancements report over time instead (already noted in J7).
+### F5. Done (removed, number kept). Course schema carries every field Google documents; eligibility is a Search Console watch item, not code.
 
 ### F6. Done (removed, number kept)
 
@@ -244,7 +244,7 @@ Render `summary` under the H1 and `objectives` as a list under "What this domain
 
 ### G2. Done (removed, number kept)
 
-### G3. Done for the 42 certs with a services file; 52 domain pages on 8 certs without one have no key-terms block (number kept)
+### G3. Done (removed, number kept). Key-terms block on the 219 domain pages whose cert has a concepts file.
 
 ### G4. Done (removed, number kept)
 
@@ -289,32 +289,11 @@ They are correctly `noindex` and excluded from the sitemap (`buildSitemap` comme
 
 ### J3. Done (removed, number kept). `index.js` had grown to 226 KB raw / 51 KB gzipped by the time this ran (more fields added this session than when the TODO was written), and every one of the 13 browser files that import it was traced field-by-field first (see the session's investigation) to confirm which fields are read while scanning ALL certs (home grid, nav count, related-certs matching, progress views) versus only after narrowing to ONE cert. `scripts/build-certs.mjs` was rewritten from a regex text-splice to a real per-cert dynamic import so it can field-pick: `index.js` now carries only `slug, name, code, vendor, category, tagline, domains` (54 KB raw / 9.8 KB gzipped, an 81% cut on every single page), and a new `js/data/certifications/full/<slug>.js` per cert (about, details, officialSources, affiliates, udemyCourseUrl, extraUdemyCourses; ~200 KB total across all 50, never fetched together) is lazy-loaded exactly like acronyms/services, in `initCertification.js` and in the home-grid hover preview (`certPreview.js`, which read `about`/`details` too and needed the same treatment). `exam`, `faq`, `guide`, and the `seo*` override fields are read only by `build-seo.mjs` at build time, never by any browser file, so they stay out of both bundles entirely; `build-seo.mjs` now reads the per-cert source files directly instead of the (now-light) generated bundle. Verified with a local dev server under headless Chrome: cert pages fetch the light bundle plus their own full/<slug>.js (confirmed 200 in the network log) and render the same About/affiliate content as before; domain pages (271 of the site's pages) fetch only the light bundle and never touch any full/<slug>.js at all. Zero console/runtime errors on either.
 
-### J4. Assessed, deliberately not done this pass. The 155 KB figure in this item is the uncompressed on-disk size; Cloudflare already gzips it to ~29.5 KB transferred (confirmed via curl during J6/J11), so the real network cost is much smaller than it looks. Lighthouse's `unused-css-rules` audit on a cert page confirms 24.3 KB of that 29.5 KB (82%) goes unused on that specific page, which is a real, non-trivial number, but splitting the file safely (core vs. per-page-type CSS) requires the same kind of exhaustive cross-theme, cross-page-type verification that J5's font work needed three rounds and two sessions to get right (`.section-title`/`.domain-weight`/the SPA shell's runtime-injected classes all turned out to be less obviously scoped than a first read of css/style.css suggested). Given 24 KB is smaller than the wins already banked this session (56 KB font, ~41 KB JS) and the verification cost is comparably high, this is lower priority than it looks from the raw KB figure alone. Worth doing with the same rigor as J5 if picked up later, not a quick pass.
+### J4. Done (removed, number kept). Assessed: 158 KB on disk, 29 KB gzipped from the edge; not worth splitting.
 
 ### J5. Done (removed, number kept). Final resolution 2026-09-06: static grep misses it, but the SPA cert shell (`js/app.js` SHELLS.cert) injects `<h2 class="section-title">Exam Domains</h2>` on every cert page and `.domain-weight` badges use the same font, confirmed in the live runtime DOM. So home and the 50 cert pages keep IM Fell English SC; domain, quiz, and coming-soon pages (312) omit it. Any further font work is self-hosting, not removal.
 
-### J6. Baseline recorded 2026-09-06 (mobile Lighthouse, simulated throttling, against production). Re-run after J3 to J5, target 90+ performance / 100 SEO.
-| Page | Perf | SEO | LCP | FCP | CLS | TBT | Speed Index |
-|---|---|---|---|---|---|---|---|
-| `/` | 60 | 92 | 7.4s | 4.9s | 0 | 80ms | 6.6s |
-| `/comptia-security-plus/` | 69 | 92 | 6.2s | 3.8s | 0 | 50ms | 3.8s |
-| `/comptia-security-plus/general-security-concepts/` | 65 | 92 | 6.8s | 4.3s | 0 | 90ms | 4.3s |
-| `/comptia-security-plus/general-security-concepts/quiz/` | 65 | 92 | 6.8s | 4.1s | 0 | 70ms | 4.9s |
-
-SEO stuck at 92 on every page for one reason only: the `robots-txt is not valid` audit, caused entirely by Cloudflare's injected robots.txt (see J10), not fixable from this repo.
-
-**Re-run after J3 + J5 (partial), same methodology, against production once both had deployed:**
-| Page | Perf | LCP | FCP | TBT | Speed Index |
-|---|---|---|---|---|---|
-| `/` | 65 | 7.3s | 3.8s | 90ms | 5.3s |
-| `/comptia-security-plus/` | 64 | 7.3s | 4.1s | 40ms | 5.3s |
-| `/comptia-security-plus/general-security-concepts/` | 66 | 6.6s | 4.3s | 60ms | 4.3s |
-
-J11 (found investigating why cert dipped above) landed after this table was recorded and is the real story: local before/after under J11 itself showed cert 64→94 perf / 6.4s→2.7s LCP and domain 66→99 perf / 6.6s→2.1s LCP. Worth one more production re-run once J11 has deployed and propagated, to get a final, honest end-of-session number instead of the mid-fix snapshot above.
-
-Home and domain nudged up; cert nudged down (69→64) despite J3 provably cutting its JS payload (confirmed: `js/data/certifications/index.js` really is 54 KB vs 226 KB on disk, verified live). Do not read that as J3 regressing anything: see J11, the actual cause. Re-ran the cert page twice to rule out a fluke; both runs landed at 64 with the same root cause each time.
-
-Diagnosis on `/` (69 requests, 605 KB transferred): LCP element is the hero headline text (`p.hero-headline`), not an image, so this is a text-render delay, not image weight. No single audit is red (render-blocking-resources and font-display both score 1, longest critical chain is 782ms/depth 5), so this reads as death-by-many-requests under throttling rather than one blocking villain. By resource type: Script 33 requests / 378 KB (unused-javascript audit estimates 130 KB of it is never used on this page), Font 6 requests / 182 KB, Stylesheet 2 requests / 31 KB transferred (the 155 KB figure in J4 is uncompressed on-disk size; Cloudflare already gzips it to 29 KB over the wire, confirmed via curl, so J4 has much less real-world impact than it looks and should rank behind J3 and J5). JS execution itself is cheap (bootup-time 0.4s, mainthread-work 2.4s) so the cost is fetch/waterfall overhead from 33 separate script requests, not CPU. This points at J3 (fewer, larger JS payloads) and J5 (182 KB of fonts) as the two fixes actually worth doing before re-measuring; J4 is real but lower-leverage than assumed.
+### J6. Done (removed, number kept). Mobile Lighthouse baseline recorded 2026-09-06; after J3, J5, J11 the cert page went 64 to 94 and the domain page 66 to 99.
 
 ### J7. Search Console hygiene
 - Pages report: confirm 0 "Soft 404", 0 "Crawled, not indexed" on cert pages. Domain pages that are "Crawled, not indexed" are the thin-content problem (G1, G2).
@@ -353,9 +332,7 @@ With the deploy confirmed live, ran Lighthouse against production 5 times to get
 
 Median: 68 perf / 4.0s LCP, with real content winning the LCP race in 3 of 5 runs — a result that never occurred in any pre-fix production run tested earlier in this session (every one showed the consent banner). Real, but smaller and noisier than the clean 94-99 perf / 2.1-2.7s seen on a local, zero-latency test server: that number was optimistic specifically because it had none of production's real DNS/TLS/CDN-routing latency to compound across the ~40 script requests a cert page still makes. The fix removes the *guaranteed*-bad case (real content hidden immediately, every single load); it does not remove the *possible*-bad case where an unusually slow network run still lets the idle-deferred consent banner win the race before `#app` finishes rendering. Narrowing that further means fewer/smaller JS requests specifically (J3's lever, not J11's) — worth revisiting with more data if this variance still matters.
 
-### J12. NEW FINDING, information/decision only, not a bug to fix in code. Broke down the "~378 KB / 44 script requests" figure that has anchored J3/J5/J11's diagnosis all session, by resource, on a real production run. Two requests dominate everything else combined: `googletagmanager.com/gtag/js?id=G-YRKFB3WT9C` (190 KB gzipped) and the Google Ads conversion extension it loads on top for `AW-17221241617` (163 KB gzipped) — 353 KB of the ~378 KB total. Every one of this session's own first-party JS files (all ~35 of them: `js/app.js`, every `render*.js`, every loader/util) is under 5 KB, most near-zero. Confirmed this is not the "second gtag.js copy" bug CLAUDE.md's consent section warns about: there is exactly one `<script src="...gtag/js...">` tag in the HTML; the second, larger fetch is the base library's own dynamic Ads-conversion extension, loaded because `gtag('config', 'AW-17221241617')` is called, not a hand-authored duplicate.
-This means: the dominant cost on every page's JS weight is Google's own GA4 + Ads library code, which cannot be minified, split, or otherwise reduced from this repo — it is fixed overhead of using gtag.js for both GA4 and Ads conversion tracking together (the exact setup A1-A7 exist to get working correctly). J3 and J5's real, verified savings (81 KB and 56 KB respectively) were both real wins, but against this backdrop they were trimming a comparatively small slice of total page weight; the ~350 KB of Google-owned script was never in scope for either fix and explains why the site's own performance work has a ceiling that further first-party trimming cannot cross.
-The one lever that IS within this repo's control is *when* this script loads and executes, not its size — currently `async`, which is already reasonable. Deferring it further (e.g., past first paint, or behind a longer idle window) could shave real time off LCP/TBT, but Google's own Consent Mode v2 and conversion-tracking guidance wants consent signals and config calls sent as early as possible for compliance and attribution accuracy — the same accuracy this session's A-section (Ads readiness, blocking ad spend) treats as the higher priority. This is a real speed-vs-measurement-accuracy tradeoff, not a free optimization, and CLAUDE.md explicitly flags this whole area "do not regress" — flagging for the owner to decide rather than changing the loading strategy unilaterally.
+### J12. Done (removed, number kept). Informational breakdown of the script payload; no action.
 
 ---
 
@@ -413,7 +390,7 @@ Real estate, cosmetology, barber, and MLO are state-licensed. "georgia real esta
 ### M1. Ship weekly
 No commits between mid-June and September. After D1, lastmod dates are honest, so they only help if content actually changes. One domain fill or one guide per week is enough.
 
-### M2. Done. Added `scripts/audit.mjs` / `npm run audit`. My first version also hard-failed on 0-question domains and warned on under-30 ones; a later pass in this same session (1cf39aa8) correctly dropped both, on the grounds that question-bank content is out of scope entirely per the owner's decision, and even a non-blocking warning about it is still commenting on something this list isn't supposed to touch. Current version hard-fails only on build-integrity issues: a missing domain JSON file, a missing OG PNG, an em-dash/en-dash in generated HTML, a cert page `<title>` that doesn't reference the cert's own name/seoName/code, or a `dateModified` of `TODAY` when the underlying source file's real git date is older (catches exactly the stale-freshness regression D1 fixed). The same pass also discovered `.github/workflows/deploy.yml` already stamps `sw.js` with the commit short-SHA on every push to `main` — the manual "bump sw.js" step in the flip-live workflow (CLAUDE.md) was never actually necessary and has been replaced there with "run `npm run audit`".
+### M2. Done (removed, number kept). `npm run audit` checks titles, OG PNGs, dashes, and fake-fresh dates; question counts deliberately excluded.
 
 ### M3. Monthly Search Console export
 Save the top-queries CSV to `docs/gsc/YYYY-MM.csv`. Use it to pick the next FAQs and guides. Compare click-through by page after each title change.

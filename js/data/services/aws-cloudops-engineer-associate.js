@@ -1,4 +1,4 @@
-// AWS Certified CloudOps Engineer – Associate (SOA-C03) — in-scope services and supporting infrastructure with one-line purposes.
+// AWS Certified CloudOps Engineer Associate (SOA-C03): in-scope services and supporting infrastructure with one-line purposes.
 export const services = [
   // Monitoring, logging, observability
   { a: 'Amazon CloudWatch',                 d: 'Metrics, logs, dashboards, and alarms for AWS resources' },

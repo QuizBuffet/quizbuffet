@@ -1,4 +1,4 @@
-// Single-page app entry point — owns the path router, page shells, and lazy-loads each page's init module
+// Single-page app entry point: owns the path router, page shells, and lazy-loads each page's init module
 import { renderNav } from './components/nav/renderNav.js';
 import { renderFooter } from './components/footer/renderFooter.js';
 import { renderBackToTop } from './components/backToTop/renderBackToTop.js';
@@ -173,12 +173,12 @@ async function route() {
 window.addEventListener('popstate', route);
 route();
 
-// Footer + back-to-top are below the fold — defer to idle so they don't compete
+// Footer + back-to-top are below the fold, defer to idle so they don't compete
 // with the initial render and break up the main-thread task budget.
 const idle = window.requestIdleCallback || (cb => setTimeout(cb, 200));
 idle(() => { renderFooter(); renderBackToTop(); renderConsent(); });
 
-// Set of coming-soon slugs — loaded once. Clicks to these URLs do a NATIVE
+// Set of coming-soon slugs: loaded once. Clicks to these URLs do a NATIVE
 // navigation, not a pushState, so the static rich coming-soon HTML loads
 // directly (it has its own SPA-bypass logic via <html data-coming-soon="1">).
 const COMING_SOON_SLUGS = new Set();
@@ -202,7 +202,7 @@ document.addEventListener('click', e => {
   // Let the browser handle non-HTML resources (RSS, sitemap, robots, llms, etc.) with a real navigation
   if (/\.(xml|txt|json|pdf|svg|png|jpe?g|gif|webp|ico|zip|md|csv)$/i.test(url.pathname)) return;
 
-  // Coming-soon cert URLs are served as static rich HTML — let the browser
+  // Coming-soon cert URLs are served as static rich HTML, let the browser
   // navigate natively so the new rich page is shown, not the SPA placeholder.
   const firstSeg = url.pathname.split('/').filter(Boolean)[0];
   if (firstSeg && COMING_SOON_SLUGS.has(firstSeg)) return;

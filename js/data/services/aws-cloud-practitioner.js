@@ -1,8 +1,8 @@
-// AWS Cloud Practitioner (CLF-C02) — every in-scope AWS service paired with a one-line purpose.
+// AWS Cloud Practitioner (CLF-C02): every in-scope AWS service paired with a one-line purpose.
 // Used by the Service Match drill on the cert page.
 export const services = [
   // Analytics
-  { a: 'Amazon Athena',          d: 'Query data in S3 with standard SQL — serverless' },
+  { a: 'Amazon Athena',          d: 'Query data in S3 with standard SQL, serverless' },
   { a: 'Amazon EMR',             d: 'Big data processing with Hadoop, Spark, Hive, and Presto' },
   { a: 'AWS Glue',               d: 'Serverless ETL service for discovering, cataloging, and transforming data' },
   { a: 'Amazon Kinesis',         d: 'Real-time streaming data ingestion and processing' },
@@ -12,7 +12,7 @@ export const services = [
 
   // Application Integration
   { a: 'Amazon EventBridge',     d: 'Serverless event bus connecting AWS, SaaS, and custom apps' },
-  { a: 'Amazon SNS',             d: 'Pub/sub messaging — push notifications to email, SMS, mobile, and SQS' },
+  { a: 'Amazon SNS',             d: 'Pub/sub messaging: push notifications to email, SMS, mobile, and SQS' },
   { a: 'Amazon SQS',             d: 'Fully managed message queues to decouple distributed components' },
   { a: 'AWS Step Functions',     d: 'Serverless workflow orchestration with visual state machines' },
 
@@ -22,7 +22,7 @@ export const services = [
 
   // Cloud Financial Management
   { a: 'AWS Budgets',            d: 'Set custom cost or usage budgets and alert on overruns' },
-  { a: 'AWS Cost and Usage Reports', d: 'Most detailed cost data — granular line-item billing exports' },
+  { a: 'AWS Cost and Usage Reports', d: 'Most detailed cost data: granular line-item billing exports' },
   { a: 'AWS Cost Explorer',      d: 'Visualize and forecast AWS spend by service, account, or tag' },
   { a: 'AWS Marketplace',        d: 'Curated catalog of third-party software and SaaS purchasable through AWS billing' },
 
@@ -68,12 +68,12 @@ export const services = [
   { a: 'AWS IoT Core',           d: 'Connect, manage, and ingest data from IoT devices at scale' },
 
   // Machine Learning
-  { a: 'Amazon Comprehend',      d: 'Natural-language processing — extract sentiment, entities, key phrases' },
+  { a: 'Amazon Comprehend',      d: 'Natural-language processing: extract sentiment, entities, key phrases' },
   { a: 'Amazon Kendra',          d: 'Intelligent enterprise search powered by ML' },
   { a: 'Amazon Lex',             d: 'Build conversational chatbots and voice interfaces' },
   { a: 'Amazon Polly',           d: 'Text-to-speech with lifelike voices' },
   { a: 'Amazon Q',               d: 'Generative-AI assistant for business and developers' },
-  { a: 'Amazon Rekognition',     d: 'Image and video analysis — face detection, labels, content moderation' },
+  { a: 'Amazon Rekognition',     d: 'Image and video analysis: face detection, labels, content moderation' },
   { a: 'Amazon SageMaker AI',    d: 'End-to-end platform to build, train, and deploy ML models' },
   { a: 'Amazon Textract',        d: 'Extract text, forms, and tables from scanned documents' },
   { a: 'Amazon Transcribe',      d: 'Automatic speech-to-text transcription' },
@@ -81,7 +81,7 @@ export const services = [
 
   // Management and Governance
   { a: 'AWS Auto Scaling',       d: 'Automatically scale resources up and down to match demand' },
-  { a: 'AWS CloudFormation',     d: 'Infrastructure-as-code — provision AWS resources from templates' },
+  { a: 'AWS CloudFormation',     d: 'Infrastructure-as-code: provision AWS resources from templates' },
   { a: 'AWS CloudTrail',         d: 'Audit log of all API calls and account activity' },
   { a: 'Amazon CloudWatch',      d: 'Monitoring, metrics, logs, and alarms across AWS resources' },
   { a: 'AWS Compute Optimizer',  d: 'Recommend optimal AWS resource sizes based on workload patterns' },
@@ -93,17 +93,17 @@ export const services = [
   { a: 'AWS Organizations',      d: 'Centrally manage and govern multiple AWS accounts with consolidated billing' },
   { a: 'AWS Service Catalog',    d: 'Curate and distribute approved IT services for use within the org' },
   { a: 'Service Quotas',         d: 'View and manage AWS service limits/quotas centrally' },
-  { a: 'AWS Systems Manager',    d: 'Operational hub — patch, automate, and configure AWS and on-prem resources' },
+  { a: 'AWS Systems Manager',    d: 'Operational hub: patch, automate, and configure AWS and on-prem resources' },
   { a: 'AWS Trusted Advisor',    d: 'Best-practice checks for cost, performance, security, fault tolerance, service limits' },
   { a: 'AWS Well-Architected Tool', d: 'Self-assessment against the AWS Well-Architected Framework pillars' },
 
   // Migration and Transfer
   { a: 'AWS Application Discovery Service', d: 'Discover on-premises servers and dependencies for migration planning' },
   { a: 'AWS Application Migration Service', d: 'Lift-and-shift migrate servers to AWS with minimal downtime' },
-  { a: 'AWS DMS',                d: 'Database Migration Service — migrate databases to AWS with minimal downtime' },
+  { a: 'AWS DMS',                d: 'Database Migration Service: migrate databases to AWS with minimal downtime' },
   { a: 'Migration Evaluator',    d: 'Build a data-driven business case for AWS migration' },
   { a: 'AWS Migration Hub',      d: 'Single place to track progress of application migrations across AWS tools' },
-  { a: 'AWS SCT',                d: 'Schema Conversion Tool — convert database schemas between engines' },
+  { a: 'AWS SCT',                d: 'Schema Conversion Tool: convert database schemas between engines' },
   { a: 'AWS Snow Family',        d: 'Physical devices for moving large amounts of data into and out of AWS' },
 
   // Networking and Content Delivery
@@ -127,17 +127,17 @@ export const services = [
   { a: 'Amazon Detective',       d: 'Investigate and analyze security findings using ML and graph analysis' },
   { a: 'AWS Directory Service',  d: 'Managed Microsoft Active Directory in the cloud' },
   { a: 'AWS Firewall Manager',   d: 'Centrally configure and manage firewall rules across accounts' },
-  { a: 'Amazon GuardDuty',       d: 'Threat detection — continuously monitors for malicious activity' },
-  { a: 'AWS IAM',                d: 'Identity and Access Management — users, groups, roles, and permissions' },
+  { a: 'Amazon GuardDuty',       d: 'Threat detection: continuously monitors for malicious activity' },
+  { a: 'AWS IAM',                d: 'Identity and Access Management: users, groups, roles, and permissions' },
   { a: 'AWS IAM Identity Center', d: 'Single sign-on (SSO) and central permission management across AWS accounts' },
   { a: 'Amazon Inspector',       d: 'Automated vulnerability scanning for EC2, ECR, and Lambda' },
   { a: 'AWS KMS',                d: 'Create and manage cryptographic keys used to encrypt data' },
   { a: 'Amazon Macie',           d: 'Discover and protect sensitive data (e.g., PII) in S3 using ML' },
-  { a: 'AWS RAM',                d: 'Resource Access Manager — share AWS resources across accounts' },
+  { a: 'AWS RAM',                d: 'Resource Access Manager: share AWS resources across accounts' },
   { a: 'AWS Secrets Manager',    d: 'Store, rotate, and retrieve secrets like database credentials and API keys' },
   { a: 'AWS Security Hub',       d: 'Single dashboard aggregating security alerts and compliance status' },
-  { a: 'AWS Shield',             d: 'DDoS protection — Standard is free; Advanced adds higher-tier mitigation' },
-  { a: 'AWS WAF',                d: 'Web Application Firewall — protect web apps from common exploits' },
+  { a: 'AWS Shield',             d: 'DDoS protection: Standard is free; Advanced adds higher-tier mitigation' },
+  { a: 'AWS WAF',                d: 'Web Application Firewall: protect web apps from common exploits' },
 
   // Serverless
   { a: 'AWS Fargate',            d: 'Serverless compute engine for containers (ECS/EKS)' },
@@ -151,5 +151,5 @@ export const services = [
   { a: 'Amazon FSx',             d: 'Managed file systems (Windows, Lustre, NetApp ONTAP, OpenZFS)' },
   { a: 'Amazon S3',              d: 'Object storage with virtually unlimited capacity and 11 nines durability' },
   { a: 'Amazon S3 Glacier',      d: 'Low-cost archival object storage for long-term retention' },
-  { a: 'AWS Storage Gateway',    d: 'Hybrid cloud storage — give on-prem apps access to AWS storage' },
+  { a: 'AWS Storage Gateway',    d: 'Hybrid cloud storage: give on-prem apps access to AWS storage' },
 ];

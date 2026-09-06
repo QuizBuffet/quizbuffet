@@ -1,4 +1,4 @@
-// Microsoft Azure Administrator (AZ-104) — in-scope services and admin concepts.
+// Microsoft Azure Administrator (AZ-104): in-scope services and admin concepts.
 export const services = [
   // Identity & governance
   { a: 'Microsoft Entra ID',                d: 'Cloud-based identity and access management (formerly Azure AD)' },
@@ -31,7 +31,7 @@ export const services = [
   { a: 'Azure Files',                       d: 'Managed SMB and NFS file shares in the cloud' },
   { a: 'Azure file share',                  d: 'SMB or NFS share within an Azure Files account' },
   { a: 'Azure Disk Storage',                d: 'Managed disks attached to Azure VMs (gp/premium/ultra SSD options)' },
-  { a: 'Storage redundancy: LRS',           d: '3 copies in one datacenter — protects against drive failure only' },
+  { a: 'Storage redundancy: LRS',           d: '3 copies in one datacenter: protects against drive failure only' },
   { a: 'Storage redundancy: ZRS',           d: '3 copies across Availability Zones in one region' },
   { a: 'Storage redundancy: GRS',           d: 'LRS + async copy to a paired secondary region' },
   { a: 'Storage redundancy: GZRS',          d: 'ZRS + async copy to a paired secondary region' },
@@ -96,7 +96,7 @@ export const services = [
   { a: 'Action group',                      d: 'Set of receivers (email, SMS, webhook, runbook) for alerts' },
   { a: 'Alert processing rule',             d: 'Filters and routes existing alerts (suppress, enrich, route)' },
   { a: 'Log Analytics workspace',           d: 'Log storage and KQL query engine for Azure Monitor' },
-  { a: 'Application Insights',              d: 'APM for live applications — performance, exceptions, dependencies' },
+  { a: 'Application Insights',              d: 'APM for live applications: performance, exceptions, dependencies' },
   { a: 'VM Insights',                       d: 'Pre-built health/perf views for Azure VMs' },
   { a: 'Storage Insights',                  d: 'Pre-built monitoring view for storage accounts' },
   { a: 'Network Insights',                  d: 'Pre-built monitoring view for networking resources' },

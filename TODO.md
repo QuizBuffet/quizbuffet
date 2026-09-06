@@ -189,7 +189,7 @@ The intro sentence (`${total}+ exam-style questions across N domains...`) should
 - H1: keep "Free Certification Practice Tests". Second H1 in the hero ("Free practice tests for professional certifications.") must become a `<p>`. One H1 per page.
 - Update the `build-seo.mjs` home title sync so it does not reintroduce the em-dash.
 
-### B8. Remove em-dashes and en-dashes from templates
+### B8. [DONE, uncommitted] Remove em-dashes and en-dashes from templates
 Grep `scripts/build-seo.mjs`, `index.html`, `feed.xml` generation, and cert metadata for `—` and `–`. Replace with ", " or " - " or parentheses. Style rule already forbids them. Regenerate.
 
 ---
@@ -753,7 +753,7 @@ Snippet bylines read "Jun 17, 2026" and "Jul 2, 2026". Those are the visible "La
 ### R3. Doubled code parentheticals in indexed copies
 "Certified Personal Trainer (NASM-CPT) (NASM-CPT) practice test" and "CPR / AED Certification (CPR/AED)" appear in indexed descriptions. The current build has a `codeTag` dedupe, so this is fixed on disk but not in the index. Confirm after recrawl. Also confirm `cert.name` values never embed the code themselves.
 
-### R4. Em-dashes are visible in the SERP
+### R4. [DONE on disk, pending recrawl] Em-dashes are visible in the SERP
 "CPA — Auditing and Attestation (AUD)" comes from `cert.name` in `js/data/certifications/cpa-aud.js`. Descriptions end with "explanations — no account needed". These read as machine-written in a results list. B8 covers templates; also fix `cert.name` for the six CPA files and any other name containing an em-dash or en-dash (`grep -l "—\|–" js/data/certifications/*.js`).
 
 ### R5. "People also ask" for this query, verbatim

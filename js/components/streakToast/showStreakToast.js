@@ -17,7 +17,7 @@ function wrongMessage(n) {
   if (n === 10) return "Take a breath. Re-read the explanations.";
   if (n === 15) return "Hard ones now = easy ones on exam day.";
   if (n === 20) return "These are making you stronger. Stay in it.";
-  if (n === 25) return "Step back — understanding beats memorization.";
+  if (n === 25) return "Step back: understanding beats memorization.";
   if (n % 10 === 0) return `${n} wrong in a row. Every wrong answer is information. Use it.`;
   return `${n} wrong in a row. Don't rush. The answer is in there.`;
 }

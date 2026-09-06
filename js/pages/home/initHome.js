@@ -1,4 +1,4 @@
-// Entry point for the home route — wires search input to cert list filter
+// Entry point for the home route: wires search input to cert list filter
 import { renderHero } from './renderHero.js';
 import { renderFeatured } from './renderFeatured.js';
 import { renderHomeSponsor } from './renderHomeSponsor.js';

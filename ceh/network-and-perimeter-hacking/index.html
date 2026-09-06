@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>700+ Free CEH Questions: Network and Perimeter Hacking</title>
+  <title>CEH Network and Perimeter Hacking Practice Quiz (156</title>
   <meta name="description" content="Test yourself on CEH Network and Perimeter Hacking (22% of the exam). 156 free questions with instant feedback and explanations. No signup, no email">
   <link rel="canonical" href="https://quizbuffet.com/ceh/network-and-perimeter-hacking/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
-  <meta property="og:title"       content="700+ Free CEH Questions: Network and Perimeter Hacking">
+  <meta property="og:title"       content="CEH Network and Perimeter Hacking Practice Quiz (156">
   <meta property="og:description" content="Test yourself on CEH Network and Perimeter Hacking (22% of the exam). 156 free questions with instant feedback and explanations. No signup, no email">
   <meta property="og:image"       content="https://quizbuffet.com/icons/og/ceh-network-and-perimeter-hacking.svg">
   <meta property="og:url"         content="https://quizbuffet.com/ceh/network-and-perimeter-hacking/">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="700+ Free CEH Questions: Network and Perimeter Hacking">
+  <meta name="twitter:title"       content="CEH Network and Perimeter Hacking Practice Quiz (156">
   <meta name="twitter:description" content="Test yourself on CEH Network and Perimeter Hacking (22% of the exam). 156 free questions with instant feedback and explanations. No signup, no email">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/ceh-network-and-perimeter-hacking.svg">
 
@@ -39,7 +39,7 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -79,17 +79,19 @@
 
   <!-- Event snippet for Page view conversion page -->
   <script>
+    // Secondary conversion only: every page view fires this. Set its Google Ads
+    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
+    // so it never competes with the real primary conversion (see trackConversion.js /
+    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
     gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
     });
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
-  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
@@ -142,7 +144,7 @@
     },
     {
       "@type": "Quiz",
-      "name": "700+ Free CEH Questions: Network and Perimeter Hacking",
+      "name": "CEH Network and Perimeter Hacking Practice Quiz (156",
       "description": "Test yourself on CEH Network and Perimeter Hacking (22% of the exam). 156 free questions with instant feedback and explanations. No signup, no email",
       "url": "https://quizbuffet.com/ceh/network-and-perimeter-hacking/",
       "image": "https://quizbuffet.com/icons/og/ceh-network-and-perimeter-hacking.svg",
@@ -181,7 +183,7 @@
           "name": "How does a MAC flooding attack work against a network switch, and what is the result when the CAM table is exhausted?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch's Content Addressable Memory (CAM) table — when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing."
+            "text": "MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch's Content Addressable Memory (CAM) table, when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing."
           }
         },
         {
@@ -189,7 +191,7 @@
           "name": "A network engineer wants to prevent MAC flooding attacks on access layer switches. Which Cisco switch security feature directly limits the number of MAC addresses learned on each port?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Port Security — configures a maximum number of MAC addresses per port and defines violation actions (protect, restrict, shutdown) when the limit is exceeded."
+            "text": "Port Security, configures a maximum number of MAC addresses per port and defines violation actions (protect, restrict, shutdown) when the limit is exceeded."
           }
         },
         {
@@ -197,7 +199,7 @@
           "name": "ARP (Address Resolution Protocol) has a fundamental design weakness that enables ARP poisoning attacks. What is this weakness?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ARP has no authentication mechanism — any host can send an ARP reply claiming any IP-to-MAC mapping, and receiving hosts accept and cache these replies without verifying their authenticity."
+            "text": "ARP has no authentication mechanism, any host can send an ARP reply claiming any IP-to-MAC mapping, and receiving hosts accept and cache these replies without verifying their authenticity."
           }
         }
       ]
@@ -223,18 +225,18 @@
       <h2>Sample Questions</h2>
       <article class="seo-sample-q">
         <h3>How does a MAC flooding attack work against a network switch, and what is the result when the CAM table is exhausted?</h3>
-        <p><strong>Answer:</strong> MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch&#39;s Content Addressable Memory (CAM) table — when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing</p>
-        <p>A MAC flooding attack (using tools like macof from the dsniff suite) sends frames with randomly generated fake source MAC addresses at high volume. The switch learns each new source MAC, adding it to the CAM table. When the CAM table reaches capacity, the switch can no longer learn new legitimate MAC-to-port mappings. Many switches (particularly older models) respond by &#39;failing open&#39; — flooding frames for unknown destination MACs out all ports, converting from unicast switching to hub-like broadcasting. An attacker connected to any switch port can now capture all traffic in the VLAN using promiscuous mode.</p>
+        <p><strong>Answer:</strong> MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch&#39;s Content Addressable Memory (CAM) table, when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing</p>
+        <p>A MAC flooding attack (using tools like macof from the dsniff suite) sends frames with randomly generated fake source MAC addresses at high volume. The switch learns each new source MAC, adding it to the CAM table. When the CAM table reaches capacity, the switch can no longer learn new legitimate MAC-to-port mappings. Many switches (particularly older models) respond by &#39;failing open&#39;, flooding frames for unknown destination MACs out all ports, converting from unicast switching to hub-like broadcasting. An attacker connected to any switch port can now capture all traffic in the VLAN using promiscuous mode.</p>
       </article>
       <article class="seo-sample-q">
         <h3>A network engineer wants to prevent MAC flooding attacks on access layer switches. Which Cisco switch security feature directly limits the number of MAC addresses learned on each port?</h3>
-        <p><strong>Answer:</strong> Port Security — configures a maximum number of MAC addresses per port and defines violation actions (protect, restrict, shutdown) when the limit is exceeded</p>
-        <p>Cisco Port Security is specifically designed to prevent MAC flooding by limiting MAC address learning per port: (1) &#39;switchport port-security maximum 1&#39; limits the port to 1 MAC address (for end-user access ports). (2) &#39;switchport port-security violation shutdown&#39; disables the port if the limit is exceeded (most secure). (3) Alternative violations: &#39;restrict&#39; (drops violating frames, sends SNMP trap) and &#39;protect&#39; (silently drops violating frames). (4) &#39;switchport port-security mac-address sticky&#39; dynamically learns and persists the first MAC seen. When macof generates thousands of fake MACs on a port with port-security maximum 1, the first fake MAC triggers a violation and the port shuts down — protecting other ports from the overflow attack.</p>
+        <p><strong>Answer:</strong> Port Security, configures a maximum number of MAC addresses per port and defines violation actions (protect, restrict, shutdown) when the limit is exceeded</p>
+        <p>Cisco Port Security is specifically designed to prevent MAC flooding by limiting MAC address learning per port: (1) &#39;switchport port-security maximum 1&#39; limits the port to 1 MAC address (for end-user access ports). (2) &#39;switchport port-security violation shutdown&#39; disables the port if the limit is exceeded (most secure). (3) Alternative violations: &#39;restrict&#39; (drops violating frames, sends SNMP trap) and &#39;protect&#39; (silently drops violating frames). (4) &#39;switchport port-security mac-address sticky&#39; dynamically learns and persists the first MAC seen. When macof generates thousands of fake MACs on a port with port-security maximum 1, the first fake MAC triggers a violation and the port shuts down, protecting other ports from the overflow attack.</p>
       </article>
       <article class="seo-sample-q">
         <h3>ARP (Address Resolution Protocol) has a fundamental design weakness that enables ARP poisoning attacks. What is this weakness?</h3>
-        <p><strong>Answer:</strong> ARP has no authentication mechanism — any host can send an ARP reply claiming any IP-to-MAC mapping, and receiving hosts accept and cache these replies without verifying their authenticity</p>
-        <p>ARP (RFC 826, 1982) was designed for trusted network environments with no authentication requirement. ARP has no mechanism to verify that the sender of an ARP reply is the legitimate owner of the claimed IP address. When a host receives an ARP reply — whether solicited or unsolicited (gratuitous) — it simply updates its ARP cache with the MAC-IP mapping in the reply without any validation. This allows any host on the local segment to: (1) Send an unsolicited ARP reply claiming &#39;IP 192.168.1.1 is at MAC aa:bb:cc:dd:ee:ff&#39; (the attacker&#39;s MAC). (2) All receiving hosts update their ARP caches. (3) Traffic for 192.168.1.1 is sent to the attacker&#39;s MAC. The design assumption was that all hosts on the local network were trusted — a false assumption in modern environments.</p>
+        <p><strong>Answer:</strong> ARP has no authentication mechanism, any host can send an ARP reply claiming any IP-to-MAC mapping, and receiving hosts accept and cache these replies without verifying their authenticity</p>
+        <p>ARP (RFC 826, 1982) was designed for trusted network environments with no authentication requirement. ARP has no mechanism to verify that the sender of an ARP reply is the legitimate owner of the claimed IP address. When a host receives an ARP reply, whether solicited or unsolicited (gratuitous), it simply updates its ARP cache with the MAC-IP mapping in the reply without any validation. This allows any host on the local segment to: (1) Send an unsolicited ARP reply claiming &#39;IP 192.168.1.1 is at MAC aa:bb:cc:dd:ee:ff&#39; (the attacker&#39;s MAC). (2) All receiving hosts update their ARP caches. (3) Traffic for 192.168.1.1 is sent to the attacker&#39;s MAC. The design assumption was that all hosts on the local network were trusted, a false assumption in modern environments.</p>
       </article>
       <h2>Other CEH Domains</h2>
       <ul>

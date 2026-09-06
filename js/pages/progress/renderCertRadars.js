@@ -1,4 +1,4 @@
-// Per-cert radar charts — one polygon per cert showing accuracy across its domains.
+// Per-cert radar charts: one polygon per cert showing accuracy across its domains.
 // Uses d3 (loaded as an ES module from a CDN) so we don't bloat the main bundle for users
 // who never visit /progress.
 import { certifications } from '../../data/certifications/index.js';
@@ -57,7 +57,7 @@ function renderOneRadar(d3, container, certData) {
       .attr('class', 'cert-radar-axis');
   });
 
-  // Data polygon — accuracy per domain
+  // Data polygon: accuracy per domain
   const dataPts = domains.map((d, i) => {
     const r = R * d.accuracy;
     return [cx + r * Math.cos(angle(i)), cy + r * Math.sin(angle(i))].join(',');
@@ -77,7 +77,7 @@ function renderOneRadar(d3, container, certData) {
     dot.append('title').text(`${d.name}: ${Math.round(d.accuracy * 100)}% (${d.answered} answered)`);
   });
 
-  // Labels — show truncated text on chart, full name + accuracy in <title> tooltip
+  // Labels: show truncated text on chart, full name + accuracy in <title> tooltip
   domains.forEach((d, i) => {
     const labelR = R + 18;
     const x = cx + labelR * Math.cos(angle(i));
@@ -87,7 +87,7 @@ function renderOneRadar(d3, container, certData) {
     if (Math.cos(ang) > 0.3) anchor = 'start';
     else if (Math.cos(ang) < -0.3) anchor = 'end';
     const display = d.name.length > 20 ? d.name.slice(0, 18) + '…' : d.name;
-    const tooltip = `${d.name} — ${Math.round(d.accuracy * 100)}% correct (${d.answered} answered${d.weight ? `, ${d.weight}% of exam` : ''})`;
+    const tooltip = `${d.name}: ${Math.round(d.accuracy * 100)}% correct (${d.answered} answered${d.weight ? `, ${d.weight}% of exam` : ''})`;
     const text = svg.append('text')
       .attr('x', x).attr('y', y)
       .attr('text-anchor', anchor)
@@ -112,7 +112,7 @@ export async function renderCertRadars() {
   el.innerHTML = `
     <h2 class="section-title">Domain accuracy by cert</h2>
     <p class="cert-radar-help">
-      Each chart is one cert. Each spoke is one of its domains. The further the green polygon stretches toward the outer ring, the higher your accuracy on that domain — outer ring = 100% correct, center = 0%. The 4 grey rings are 25 / 50 / 75 / 100% guides. Hover any label or dot for the full name and your numbers.
+      Each chart is one cert. Each spoke is one of its domains. The further the green polygon stretches toward the outer ring, the higher your accuracy on that domain, outer ring = 100% correct, center = 0%. The 4 grey rings are 25 / 50 / 75 / 100% guides. Hover any label or dot for the full name and your numbers.
     </p>
     <div class="cert-radar-grid-layout">
       ${datasets.map(({ cert, totalAnswered }) => `

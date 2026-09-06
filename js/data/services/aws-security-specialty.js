@@ -1,4 +1,4 @@
-// AWS Certified Security – Specialty (SCS-C03) — in-scope services and security concepts.
+// AWS Certified Security Specialty (SCS-C03): in-scope services and security concepts.
 export const services = [
   // Detection / monitoring
   { a: 'Amazon GuardDuty',                  d: 'Threat detection from CloudTrail, VPC Flow Logs, DNS, EKS, S3, and runtime telemetry' },
@@ -65,7 +65,7 @@ export const services = [
   { a: 'Network ACL',                       d: 'Stateless subnet-level firewall, allow and deny rules' },
   { a: 'AWS Network Firewall',              d: 'Managed stateful firewall, IDS/IPS, and traffic filtering for VPCs' },
   { a: 'AWS WAF',                           d: 'Web application firewall protecting CloudFront, ALB, API Gateway, AppSync' },
-  { a: 'AWS Shield',                        d: 'DDoS protection — Standard included, Advanced for additional mitigation/SRT' },
+  { a: 'AWS Shield',                        d: 'DDoS protection: Standard included, Advanced for additional mitigation/SRT' },
   { a: 'AWS Shield Advanced',               d: 'Higher-tier DDoS protection with cost protection and SRT engagement' },
   { a: 'AWS Firewall Manager',              d: 'Centrally configure WAF, Shield Advanced, security groups, Network Firewall across accounts' },
   { a: 'Amazon CloudFront',                 d: 'CDN with TLS, WAF, signed URLs/cookies, OAC for S3 origins' },

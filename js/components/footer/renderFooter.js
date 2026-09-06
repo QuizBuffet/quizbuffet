@@ -1,4 +1,4 @@
-// Renders site footer with cert links — internal links help AdSense content signals and SEO
+// Renders site footer with cert links: internal links help AdSense content signals and SEO
 import { certifications } from '../../data/certifications/index.js';
 import { getTheme, applyTheme } from '../../utils/applyTheme.js';
 import { getColorTheme, applyColorTheme } from '../../utils/applyColorTheme.js';
@@ -70,7 +70,7 @@ export async function renderFooter() {
             <div class="footer-brand"><img src="/favicon-32x32.png" width="24" height="24" alt="" class="footer-brand-img">QuizBuffet</div>
             <p class="footer-tagline">Built with love for anyone grinding toward a cert.</p>
             <p class="footer-body">
-              This is a personal, private study tool — not a commercial platform.
+              This is a personal, private study tool, not a commercial platform.
               No accounts. No sign-ups. No emails collected. Just you and your questions.
             </p>
 
@@ -92,9 +92,9 @@ export async function renderFooter() {
           <div class="footer-col">
             <div class="footer-col-title">Your Privacy &amp; Security</div>
             <ul class="footer-privacy-list">
-              <li><strong>100% local storage.</strong> All your progress lives in your browser's localStorage — nothing is ever sent to a server.</li>
+              <li><strong>100% local storage.</strong> All your progress lives in your browser's localStorage: nothing is ever sent to a server.</li>
               <li><strong>No backend.</strong> There is no database, no API, no user account, and no login. Zero attack surface on your data.</li>
-              <li><strong>No personal tracking.</strong> Google Analytics counts anonymous page visits only, and only with your consent — it stays off until you accept (Consent Mode v2, default denied for EEA/GDPR). No fingerprinting, no ads. Your quiz answers and study habits are yours alone.</li>
+              <li><strong>No personal tracking.</strong> Google Analytics counts anonymous page visits only, and only with your consent, it stays off until you accept (Consent Mode v2, default denied for EEA/GDPR). No fingerprinting, no ads. Your quiz answers and study habits are yours alone.</li>
               <li><strong>Nothing shared.</strong> Your answers, scores, and progress never leave your device. Period.</li>
               <li><strong>Open to inspect.</strong> Every line of code runs in your browser. Open DevTools and see for yourself.</li>
             </ul>

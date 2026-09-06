@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>700+ Free CEH Questions: Cryptography</title>
+  <title>Certified Ethical Hacker (CEH) Cryptography Practice Quiz</title>
   <meta name="description" content="Test yourself on CEH Cryptography (5% of the exam). 36 free questions with instant feedback and explanations. No signup, no email needed.">
   <link rel="canonical" href="https://quizbuffet.com/ceh/cryptography/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
-  <meta property="og:title"       content="700+ Free CEH Questions: Cryptography">
+  <meta property="og:title"       content="Certified Ethical Hacker (CEH) Cryptography Practice Quiz">
   <meta property="og:description" content="Test yourself on CEH Cryptography (5% of the exam). 36 free questions with instant feedback and explanations. No signup, no email needed.">
   <meta property="og:image"       content="https://quizbuffet.com/icons/og/ceh-cryptography.svg">
   <meta property="og:url"         content="https://quizbuffet.com/ceh/cryptography/">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="700+ Free CEH Questions: Cryptography">
+  <meta name="twitter:title"       content="Certified Ethical Hacker (CEH) Cryptography Practice Quiz">
   <meta name="twitter:description" content="Test yourself on CEH Cryptography (5% of the exam). 36 free questions with instant feedback and explanations. No signup, no email needed.">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/ceh-cryptography.svg">
 
@@ -39,7 +39,7 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -79,17 +79,19 @@
 
   <!-- Event snippet for Page view conversion page -->
   <script>
+    // Secondary conversion only: every page view fires this. Set its Google Ads
+    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
+    // so it never competes with the real primary conversion (see trackConversion.js /
+    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
     gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
     });
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
-  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
@@ -142,7 +144,7 @@
     },
     {
       "@type": "Quiz",
-      "name": "700+ Free CEH Questions: Cryptography",
+      "name": "Certified Ethical Hacker (CEH) Cryptography Practice Quiz",
       "description": "Test yourself on CEH Cryptography (5% of the exam). 36 free questions with instant feedback and explanations. No signup, no email needed.",
       "url": "https://quizbuffet.com/ceh/cryptography/",
       "image": "https://quizbuffet.com/icons/og/ceh-cryptography.svg",
@@ -197,7 +199,7 @@
           "name": "In a Public Key Infrastructure (PKI), which entity is specifically responsible for digitally signing and issuing certificates that cryptographically bind a public key to an identity?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Certificate Authority (CA) — signs and issues certificates binding public keys to verified identities."
+            "text": "Certificate Authority (CA), signs and issues certificates binding public keys to verified identities."
           }
         }
       ]
@@ -224,7 +226,7 @@
       <article class="seo-sample-q">
         <h3>Which type of cryptography uses a single shared secret key for both the encryption and decryption of data?</h3>
         <p><strong>Answer:</strong> Symmetric encryption</p>
-        <p>Symmetric encryption uses one shared secret key for both encrypting plaintext and decrypting ciphertext. Both the sender and receiver must securely exchange and protect this single key. Common symmetric algorithms include AES, 3DES, Blowfish, and ChaCha20. The primary challenge is secure key distribution — if the key is intercepted, all encrypted communications are compromised.</p>
+        <p>Symmetric encryption uses one shared secret key for both encrypting plaintext and decrypting ciphertext. Both the sender and receiver must securely exchange and protect this single key. Common symmetric algorithms include AES, 3DES, Blowfish, and ChaCha20. The primary challenge is secure key distribution, if the key is intercepted, all encrypted communications are compromised.</p>
       </article>
       <article class="seo-sample-q">
         <h3>Which widely deployed open-source cryptographic toolkit provides a full implementation of the SSL and TLS protocols and includes command-line utilities for key generation, certificate management, hashing, and encryption?</h3>
@@ -233,7 +235,7 @@
       </article>
       <article class="seo-sample-q">
         <h3>In a Public Key Infrastructure (PKI), which entity is specifically responsible for digitally signing and issuing certificates that cryptographically bind a public key to an identity?</h3>
-        <p><strong>Answer:</strong> Certificate Authority (CA) — signs and issues certificates binding public keys to verified identities</p>
+        <p><strong>Answer:</strong> Certificate Authority (CA), signs and issues certificates binding public keys to verified identities</p>
         <p>The Certificate Authority (CA) is the trusted third party at the heart of PKI. The CA uses its own private key to digitally sign X.509 certificates, cryptographically binding a subject&#39;s public key to their identity (name, organization, domain). This signature allows relying parties (browsers, TLS clients) to verify that the certificate was issued by a trusted CA without directly contacting the CA for each transaction.</p>
       </article>
       <h2>Other CEH Domains</h2>

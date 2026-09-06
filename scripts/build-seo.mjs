@@ -15,8 +15,23 @@ const TODAY_DISPLAY = new Date().toLocaleDateString('en-US', {
   year: 'numeric', month: 'long', day: 'numeric',
 });
 
+// Site style rule (CLAUDE.md): no em-dashes or en-dashes anywhere in rendered pages.
+// Sources are kept clean, but question data and FAQ text can still carry them, so every
+// generated file passes through this before it is written.
+function noDash(s) {
+  return String(s)
+    .replace(/(?<=\d)[\u2013\u2014](?=\d)/g, '-')
+    .replace(/\s*[\u2013\u2014]\s+(?=[A-Z][a-z])/g, '. ')
+    .replace(/\s*[\u2013\u2014]\s+/g, ', ')
+    .replace(/[\u2013\u2014]/g, ', ');
+}
+
 function htmlEscape(s) {
-  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  return noDash(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function writeClean(file, text) {
+  fs.writeFileSync(file, noDash(text));
 }
 
 // Trim a string to <= maxLen, breaking at the last whitespace before the cut.
@@ -33,17 +48,17 @@ function clipText(s, maxLen) {
   return out;
 }
 
-// EEA (EU27 + Iceland/Liechtenstein/Norway) + UK — the region set that gets a denied-by-default
+// EEA (EU27 + Iceland/Liechtenstein/Norway) + UK: the region set that gets a denied-by-default
 // ad-consent posture. Everyone else gets ad consent granted by default (opt-in isn't required
 // there); analytics stays denied by default everywhere until Accept.
 const EEA_UK_REGIONS = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB'];
 
 // Consent Mode v2 + gtag head block shared by every generated page (cert/domain/coming-soon).
 // index.html, privacy/index.html, and cpa/index.html carry their own hand-maintained copy of
-// this same block (build:seo does not touch those files) — keep them in sync by hand. See
+// this same block (build:seo does not touch those files), keep them in sync by hand. See
 // CLAUDE.md "Analytics consent" before changing this.
 function buildConsentGtagBlock() {
-  return `<!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  return `<!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -83,10 +98,12 @@ function buildConsentGtagBlock() {
 
   <!-- Event snippet for Page view conversion page -->
   <script>
+    // Secondary conversion only: every page view fires this. Set its Google Ads
+    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
+    // so it never competes with the real primary conversion (see trackConversion.js /
+    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
     gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
     });
   </script>`;
 }
@@ -100,7 +117,7 @@ function loadDomainQuestions(certSlug, domainSlug) {
   } catch { return []; }
 }
 
-// Wikipedia entity URLs for known vendors — lets AI link your pages to canonical entities
+// Wikipedia entity URLs for known vendors: lets AI link your pages to canonical entities
 const VENDOR_ENTITIES = {
   'CompTIA': 'https://en.wikipedia.org/wiki/CompTIA',
   'Cisco':   'https://en.wikipedia.org/wiki/Cisco',
@@ -118,7 +135,7 @@ const VENDOR_ENTITIES = {
   'American Heart Association': 'https://en.wikipedia.org/wiki/American_Heart_Association',
 };
 
-// Trim a verbose explanation down to the first sentence — what AI prefers to quote
+// Trim a verbose explanation down to the first sentence, what AI prefers to quote
 function trimToFirstSentence(text, maxLen = 280) {
   const t = String(text).trim();
   const m = t.match(/^([^.!?]+[.!?])\s/);
@@ -187,7 +204,7 @@ function fmtUsd(n) { return '$' + Math.round(n / 1000) + 'k'; }
 // First-draft long-form prose for a cert. Author can override any field by
 // setting cert.guide.<field> on the cert metadata. Otherwise we auto-generate
 // from cert metadata + salary data so every cert page has unique substantive
-// long-form content (article-style — eligible for informational queries and
+// long-form content (article-style: eligible for informational queries and
 // the byline-date pipeline).
 function buildCertGuideSections(cert) {
   const g = cert.guide || {};
@@ -314,7 +331,7 @@ function buildCertHtml(cert) {
     return { ...dom, count: qs.length };
   });
 
-  // Registered certs with zero questions are scaffolds, not real pages — noindex so
+  // Registered certs with zero questions are scaffolds, not real pages, noindex so
   // Google doesn't flag them as "Crawled - currently not indexed". noindex clears
   // automatically once any domain ships with questions.
   const robotsMeta = total === 0
@@ -328,14 +345,17 @@ function buildCertHtml(cert) {
   // Drop the "(code)" parenthetical when it just repeats the name (e.g. CPR / AED Certification (CPR/AED)).
   const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
   const codeTag = norm(cert.name).includes(norm(cert.code)) ? '' : ` (${htmlEscape(cert.code)})`;
-  // SEO leads with the question count — the strongest single signal we own for this query.
-  // Scaffolded certs with 0 questions fall back to the old "Practice Test" framing.
+  // Search Console: searchers use the cert name plus "practice test"/"practice exam", almost
+  // never the raw exam code (under 5% of queries), leading titles with the code was rejected
+  // by Google on most pages (it substitutes its own title from the H1 instead). seoName lets a
+  // cert override cert.name when it's long or reads unnaturally as a title lead.
+  const seoName = cert.seoName || cert.name;
   const fullTitle = total > 0
-    ? clipText(`${total}+ Free ${cert.code} Practice Questions, No Signup`, 60)
-    : clipText(`Free ${cert.code} Practice Test, No Signup`, 60);
+    ? clipText(`${seoName} Practice Test: ${total}+ Free Questions${codeTag}`, 60)
+    : clipText(`${seoName} Practice Test (Coming Soon)`, 60);
   const desc = total > 0
-    ? clipText(`Test yourself on every ${cert.code} exam domain for free. ${total} questions with instant feedback and explanations so you walk in ready. No account, no email.`.trim().replace(/\s+/g, ' '), 155)
-    : clipText(`${cert.code} practice test, coming soon. Test yourself across ${cert.domains.length} exam domains with instant feedback and explanations. No signup, no email.`.trim().replace(/\s+/g, ' '), 155);
+    ? clipText((cert.seoDescription || `Free ${seoName} practice test with ${total} exam-style questions across ${cert.domains.length} domains. Instant feedback, explanations, no signup. Study online for the ${cert.code} exam.`).trim().replace(/\s+/g, ' '), 155)
+    : clipText(`${seoName} practice test, coming soon. Test yourself across ${cert.domains.length} exam domains with instant feedback and explanations. No signup, no email.`.trim().replace(/\s+/g, ' '), 155);
 
   // JSON-LD: WebPage + Course + FAQPage + Breadcrumb
   const jsonLd = {
@@ -378,7 +398,7 @@ function buildCertHtml(cert) {
           }] : []),
           ...cert.domains.map(d => ({ '@type': 'Thing', 'name': d.name })),
         ],
-        // hasPart links each domain quiz as a component of this Course — explicit
+        // hasPart links each domain quiz as a component of this Course, explicit
         // hierarchy that helps Google decide which sub-pages to surface as sitelinks.
         'hasPart': domainData.filter(d => d.count > 0).map(d => ({
           '@type': 'Quiz',
@@ -486,7 +506,7 @@ function buildCertHtml(cert) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
-  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
@@ -526,8 +546,8 @@ ${JSON.stringify(jsonLd, null, 2)}
   <main id="main-content">
     <section id="seo-static">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; ${htmlEscape(cert.name)}</nav>
-      <h1>${htmlEscape(cert.name)}${codeTag} Free Practice Test</h1>
-      <p><strong>${total}+ exam-style questions</strong> across ${cert.domains.length} domains, organized exactly like the real ${htmlEscape(cert.code)} exam. Instant feedback on every question, progress tracking, and no account required.</p>
+      <h1>${htmlEscape(seoName)} Practice Test and Practice Exam Questions${codeTag}</h1>
+      <p>Free ${htmlEscape(seoName)} practice test with <strong>${total}+ exam-style questions</strong> across ${cert.domains.length} domains, organized like the real ${htmlEscape(cert.code)} exam. Use it as a practice exam, a mock test, or a quick quiz. Instant feedback, no account.</p>
       ${cert.about ? `<p>${htmlEscape(cert.about)}</p>` : ''}
       ${cert.details ? `<p><em>${htmlEscape(cert.details)}</em></p>` : ''}
       <h2>Exam Domains</h2>
@@ -591,7 +611,7 @@ function buildDomainOgSvg(cert, domain) {
 
 function buildDomainHtml(cert, domain, questions) {
   const count = questions.length;
-  // Domain pages with zero questions get noindex — clears automatically when questions ship.
+  // Domain pages with zero questions get noindex, clears automatically when questions ship.
   const robotsMeta = count === 0
     ? 'noindex, follow'
     : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
@@ -599,18 +619,18 @@ function buildDomainHtml(cert, domain, questions) {
   const ogImage = `${SITE}/icons/og/${cert.slug}-${domain.slug}.svg`;
   const domNum = domain.number ? `${domain.number} ` : '';
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
-  // Cert-wide total drives the title's lead so every domain page advertises scale + free.
-  const certTotal = cert.domains.reduce((s, d) => s + loadDomainQuestions(cert.slug, d.slug).length, 0);
-  // Domain-page SEO leads with the cert total and "Free"; domain name trails for uniqueness.
-  // A long, word-based cert.code (e.g. "Real Estate License") can push the domain name past
-  // clipText's cutoff, and two different domain names can then truncate down to the same
-  // string. If the full-lead title would need truncating, fall back to a shorter lead that
-  // keeps the domain name intact instead of risking a collision.
-  const leadLiveTitle = `${certTotal}+ Free ${cert.code} Questions: ${domain.name}`;
-  const leadSoonTitle = `Free ${cert.code} ${domain.name} Practice Quiz`;
-  const fullTitle = count > 0
-    ? clipText(leadLiveTitle.length <= 60 ? leadLiveTitle : `${cert.code}: ${domain.name}`, 60)
-    : clipText(leadSoonTitle.length <= 60 ? leadSoonTitle : `${cert.code}: ${domain.name} (Coming Soon)`, 60);
+  const seoName = cert.seoName || cert.name;
+  // Search Console: domain titles should read like the cert titles (B1), lead with the
+  // recognizable cert name and keep "Practice Quiz", not the raw exam code. Domain names can
+  // be long: if seoName + domain.name would run past a safe budget, drop to the shorter
+  // cert.code instead of truncating the domain name itself (that previously produced
+  // duplicate/mid-word-cut titles: see real-estate-license).
+  const titleLead = (seoName.length + domain.name.length > 52) ? cert.code : seoName;
+  const fullTitle = domain.seoTitle
+    ? clipText(domain.seoTitle, 60)
+    : count > 0
+      ? clipText(`${titleLead} ${domain.name} Practice Quiz (${count} Questions)`, 60)
+      : clipText(`${titleLead} ${domain.name} Practice Quiz`, 60);
   const desc = count > 0
     ? clipText(`Test yourself on ${cert.code} ${domain.name}${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. ${count} free questions with instant feedback and explanations. No signup, no email needed.`.trim().replace(/\s+/g, ' '), 155)
     : clipText(`${cert.code} ${domain.name} practice quiz, coming soon${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Test yourself with instant feedback once it's live. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 155);
@@ -737,7 +757,7 @@ function buildDomainHtml(cert, domain, questions) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
-  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
@@ -776,7 +796,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   <main id="main-content">
     <section id="seo-static">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/${cert.slug}/">${htmlEscape(cert.name)}</a> &rsaquo; ${htmlEscape(domain.name)}</nav>
-      <h1>${htmlEscape(domNum + domain.name)} ${htmlEscape(cert.code)} Practice Quiz</h1>
+      <h1>${domain.seoH1 ? htmlEscape(domain.seoH1) : `${htmlEscape(domNum + domain.name)} ${htmlEscape(cert.code)} Practice Quiz`}</h1>
       <p><strong>${count} exam-style questions</strong>${domain.weight ? ` covering <strong>${domain.weight}% of the ${htmlEscape(cert.code)} exam</strong>` : ''}. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/${cert.slug}/">${htmlEscape(cert.name)} practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       ${sampleHtml ? `<h2>Sample Questions</h2>
@@ -815,7 +835,7 @@ function buildComingSoonOgSvg(cert) {
 </svg>`;
 }
 
-// Curated category mapping for live certs — used to find "related" recommendations on coming-soon pages
+// Curated category mapping for live certs: used to find "related" recommendations on coming-soon pages
 const LIVE_CATEGORY_MAP = {
   'comptia-a-plus-core-1':              'IT Foundations',
   'comptia-a-plus-core-2':              'IT Foundations',
@@ -867,7 +887,7 @@ function pickRelatedLive(comingCert, liveCerts, n = 3) {
 
 // Generate Amazon search URL with the site's affiliate tag
 function udemyDeepLink(destUrl) {
-  // Impact Radius deep link — `u` param is the URL-encoded destination on udemy.com
+  // Impact Radius deep link: `u` param is the URL-encoded destination on udemy.com
   return `https://trk.udemy.com/c/7254431/3193860/39854?u=${encodeURIComponent(destUrl)}`;
 }
 
@@ -966,7 +986,7 @@ function buildComingSoonHtml(cert, priority, allLiveCerts = []) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
-  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
@@ -1138,7 +1158,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 `;
 }
 
-// llms.txt — concise, top-level index for AI crawlers (emerging spec, mirrors robots.txt's role for AI).
+// llms.txt: concise, top-level index for AI crawlers (emerging spec, mirrors robots.txt's role for AI).
 function buildLlmsTxt(comingSoon) {
   const liveLines = certifications.map(c => {
     const total = c.domains.reduce((s, d) => s + loadDomainQuestions(c.slug, d.slug).length, 0);
@@ -1146,7 +1166,7 @@ function buildLlmsTxt(comingSoon) {
   }).join('\n');
 
   const comingLines = comingSoon.slice(0, 20).map((c, i) =>
-    `- [${c.name} (${c.code})](${SITE}/${c.slug}/) — coming soon (priority #${i + 1})`
+    `- [${c.name} (${c.code})](${SITE}/${c.slug}/): coming soon (priority #${i + 1})`
   ).join('\n');
 
   return `# QuizBuffet
@@ -1160,11 +1180,11 @@ ${liveLines}
 ${comingLines}
 
 ## Study hubs
-- [CPA Exam — all 6 sections](${SITE}/cpa/): hub linking the 3 Core (AUD, FAR, REG) and 3 Discipline (BAR, ISC, TCP) CPA section practice tests.
+- [CPA Exam: all 6 sections](${SITE}/cpa/): hub linking the 3 Core (AUD, FAR, REG) and 3 Discipline (BAR, ISC, TCP) CPA section practice tests.
 
 ## Resources
 - [Sitemap](${SITE}/sitemap.xml)
-- [RSS feed](${SITE}/feed.xml) — new cert launches and updates
+- [RSS feed](${SITE}/feed.xml): new cert launches and updates
 - [Full content for AI ingestion](${SITE}/llms-full.txt)
 
 ## License and citation
@@ -1172,13 +1192,13 @@ QuizBuffet content is free to read and reference. Practice questions are authore
 `;
 }
 
-// llms-full.txt — long-form dump of cert metadata + sample FAQ entries for AI ingestion.
+// llms-full.txt: long-form dump of cert metadata + sample FAQ entries for AI ingestion.
 function buildLlmsFullTxt(comingSoon) {
   const sections = certifications.map(c => {
     const total = c.domains.reduce((s, d) => s + loadDomainQuestions(c.slug, d.slug).length, 0);
     const domainLines = c.domains.map(d => {
       const count = loadDomainQuestions(c.slug, d.slug).length;
-      return `- ${d.number ? d.number + ' ' : ''}${d.name}${d.weight ? ` (${d.weight}% of exam)` : ''}${count ? ` — ${count} questions` : ''}`;
+      return `- ${d.number ? d.number + ' ' : ''}${d.name}${d.weight ? ` (${d.weight}% of exam)` : ''}${count ? `: ${count} questions` : ''}`;
     }).join('\n');
     const faq = pickFaqQuestions(c, 6);
     const faqLines = faq.map(f => `**Q: ${f.question}**\nA: ${f.answer}`).join('\n\n');
@@ -1195,14 +1215,14 @@ ${domainLines}
 ${faqLines ? `### Sample questions\n${faqLines}\n` : ''}`;
   }).join('\n');
 
-  const csList = comingSoon.map((c, i) => `- ${c.name} (${c.code}) — ${SITE}/${c.slug}/ — priority #${i + 1}`).join('\n');
+  const csList = comingSoon.map((c, i) => `- ${c.name} (${c.code}): ${SITE}/${c.slug}/: priority #${i + 1}`).join('\n');
 
-  return `# QuizBuffet — Full Cert Reference
+  return `# QuizBuffet: Full Cert Reference
 
 Last updated: ${TODAY}
 Site: ${SITE}
 
-QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
+QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based: no signup, no tracking of personal data. Progress is stored in localStorage.
 
 ${sections}
 
@@ -1211,7 +1231,7 @@ ${csList}
 `;
 }
 
-// RSS 2.0 feed — one item per live cert + top coming-soon entries.
+// RSS 2.0 feed: one item per live cert + top coming-soon entries.
 // Stable <guid> per cert URL so RSS readers don't re-fire on every rebuild.
 function buildRssFeed(comingSoon) {
   const buildDate = new Date().toUTCString();
@@ -1271,7 +1291,7 @@ function buildSitemap(comingSoon) {
   // so it survives every build:seo run and stays in the sitemap.
   urls.push({ loc: `${SITE}/privacy/`, priority: '0.3', changefreq: 'yearly' });
   for (const cert of certifications) {
-    // Tally questions across all domains. Certs with zero questions are scaffolds —
+    // Tally questions across all domains. Certs with zero questions are scaffolds,
     // the page carries noindex (see buildCertHtml) so don't advertise them in the sitemap.
     let certTotal = 0;
     const domainCounts = cert.domains.map(d => {
@@ -1287,7 +1307,7 @@ function buildSitemap(comingSoon) {
       }
     }
   }
-  // Coming-soon pages carry <meta robots="noindex"> — exclude from sitemap to avoid
+  // Coming-soon pages carry <meta robots="noindex">: exclude from sitemap to avoid
   // mixed signals to Google (sitemap inclusion = "index me", noindex = "don't").
   // When a cert flips live, its sitemap entry comes back through the live-cert loop above.
   const body = urls.map(u =>
@@ -1317,7 +1337,7 @@ function updateHomeIndex(certs) {
   html = html.replace(/Free Practice Tests for \d+ Certifications/g, `Free Practice Tests for ${n} Certifications`);
   html = html.replace(/Free practice tests for \d+ certifications:/g, `Free practice tests for ${n} certifications:`);
 
-  // 1b. Pre-rendered hero stats (LCP optimization — see <div id="app"> in index.html).
+  // 1b. Pre-rendered hero stats (LCP optimization: see <div id="app"> in index.html).
   // Keep the static numbers in sync with the live count so they don't bounce when
   // counts.json arrives at runtime.
   html = html.replace(
@@ -1338,7 +1358,7 @@ function updateHomeIndex(certs) {
   try {
     data = JSON.parse(m[2]);
   } catch (e) {
-    console.warn('  ! index.html JSON-LD did not parse — skipping home auto-update');
+    console.warn('  ! index.html JSON-LD did not parse: skipping home auto-update');
     return;
   }
 
@@ -1369,7 +1389,7 @@ function updateHomeIndex(certs) {
   const newLd = JSON.stringify(data, null, 2);
   html = html.replace(ldRegex, `$1\n  ${newLd}\n  $3`);
 
-  fs.writeFileSync(homePath, html);
+  writeClean(homePath, html);
 }
 
 function shortCertNameForListing(cert) {
@@ -1412,7 +1432,7 @@ let domainGenerated = 0;
 for (const cert of certifications) {
   const dir = path.join(ROOT, cert.slug);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), buildCertHtml(cert));
+  writeClean(path.join(dir, 'index.html'), buildCertHtml(cert));
   fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildOgSvg(cert));
   // Tally questions and generate a static page per domain (fixes 404s on domain quiz URLs)
   let n = 0;
@@ -1423,7 +1443,7 @@ for (const cert of certifications) {
     domMap[dom.slug] = qs.length;
     const domDir = path.join(dir, dom.slug);
     fs.mkdirSync(domDir, { recursive: true });
-    fs.writeFileSync(path.join(domDir, 'index.html'), buildDomainHtml(cert, dom, qs));
+    writeClean(path.join(domDir, 'index.html'), buildDomainHtml(cert, dom, qs));
     fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}-${dom.slug}.svg`), buildDomainOgSvg(cert, dom));
     domainGenerated++;
   }
@@ -1441,7 +1461,7 @@ for (let i = 0; i < comingSoon.length; i++) {
   const cert = comingSoon[i];
   const dir = path.join(ROOT, cert.slug);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), buildComingSoonHtml(cert, i + 1, certifications));
+  writeClean(path.join(dir, 'index.html'), buildComingSoonHtml(cert, i + 1, certifications));
   fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}.svg`), buildComingSoonOgSvg(cert));
   console.log(`  ⏳ ${cert.slug}/ (coming soon #${i + 1})`);
   csGenerated++;
@@ -1450,13 +1470,13 @@ for (let i = 0; i < comingSoon.length; i++) {
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), buildSitemap(comingSoon));
 console.log(`  ✓ sitemap.xml`);
 
-fs.writeFileSync(path.join(ROOT, 'llms.txt'), buildLlmsTxt(comingSoon));
+writeClean(path.join(ROOT, 'llms.txt'), buildLlmsTxt(comingSoon));
 console.log(`  ✓ llms.txt`);
 
-fs.writeFileSync(path.join(ROOT, 'llms-full.txt'), buildLlmsFullTxt(comingSoon));
+writeClean(path.join(ROOT, 'llms-full.txt'), buildLlmsFullTxt(comingSoon));
 console.log(`  ✓ llms-full.txt`);
 
-fs.writeFileSync(path.join(ROOT, 'feed.xml'), buildRssFeed(comingSoon));
+writeClean(path.join(ROOT, 'feed.xml'), buildRssFeed(comingSoon));
 console.log(`  ✓ feed.xml (RSS)`);
 
 const counts = {

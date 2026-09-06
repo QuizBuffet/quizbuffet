@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'real-estate-license',
   name: 'Georgia Real Estate Salesperson License',
+  seoName: 'Georgia Real Estate',
   code: 'Real Estate License',
   vendor: 'Georgia Real Estate Commission / AMP',
   tagline: 'Georgia license to represent real estate buyers and sellers',
@@ -9,7 +10,7 @@ export const cert = {
   affiliates: [
     { provider: 'amazon', label: 'Shop Georgia Real Estate License Study Guides on Amazon', url: 'https://www.amazon.com/s?k=georgia+real+estate+license+exam+prep&tag=0003aa-20' },
     { provider: 'grec',   label: 'Georgia Real Estate Commission (GREC)', url: 'https://grec.state.ga.us/' },
-    { provider: 'amp',    label: 'AMP — Real Estate Examination Program', url: 'https://www.goamp.com/' },
+    { provider: 'amp',    label: 'AMP: Real Estate Examination Program', url: 'https://www.goamp.com/' },
   ],
   domains: [
     { slug: 'agency-relationships-and-contracts',     name: 'Agency Relationships and Contracts',     number: '1.0',  weight: 19 },

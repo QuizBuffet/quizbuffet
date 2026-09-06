@@ -1,4 +1,4 @@
-// URL param helpers — reads cert and domain slugs from clean path segments
+// URL param helpers: reads cert and domain slugs from clean path segments
 export function getRouteParams() {
   const raw = location.pathname.replace('/index.html', '') || '/';
   const path = raw === '/' ? '/' : raw.replace(/\/$/, '');

@@ -1,24 +1,24 @@
-# QuizBuffet — Full Cert Reference
+# QuizBuffet: Full Cert Reference
 
 Last updated: 2026-09-06
 Site: https://quizbuffet.com
 
-QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based — no signup, no tracking of personal data. Progress is stored in localStorage.
+QuizBuffet provides free practice tests for high-demand certifications across IT, cybersecurity, cloud, healthcare, trades, transportation, and finance. All content is browser-based: no signup, no tracking of personal data. Progress is stored in localStorage.
 
 ## CompTIA Cloud+ (CV0-004)
 Vendor: CompTIA
 URL: https://quizbuffet.com/comptia-cloud-plus/
 Total questions: 1200
 
-Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2–3 years of hands-on cloud or systems experience.
+Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2-3 years of hands-on cloud or systems experience.
 
 ### Domains
-- 1.0 Cloud Architecture (23% of exam) — 384 questions
-- 2.0 Deployment (19% of exam) — 208 questions
-- 3.0 Operations (17% of exam) — 164 questions
-- 4.0 Security (19% of exam) — 232 questions
-- 5.0 DevOps Fundamentals (10% of exam) — 112 questions
-- 6.0 Troubleshooting (12% of exam) — 100 questions
+- 1.0 Cloud Architecture (23% of exam): 384 questions
+- 2.0 Deployment (19% of exam): 208 questions
+- 3.0 Operations (17% of exam): 164 questions
+- 4.0 Security (19% of exam): 232 questions
+- 5.0 DevOps Fundamentals (10% of exam): 112 questions
+- 6.0 Troubleshooting (12% of exam): 100 questions
 
 ### Sample questions
 **Q: Which of the following BEST describes Infrastructure as a Service (IaaS)?**
@@ -28,31 +28,31 @@ A: A model that provides virtualized computing resources such as VMs, storage, a
 A: Cloud infrastructure owned and operated by a third-party provider, shared among multiple customers over the internet, with resources provisioned on demand
 
 **Q: What is the PRIMARY purpose of logging in a cloud environment?**
-A: To record events, errors, transactions, and system activities over time — providing an audit trail and data source for troubleshooting, security analysis, and compliance
+A: To record events, errors, transactions, and system activities over time, providing an audit trail and data source for troubleshooting, security analysis, and compliance
 
 **Q: What does scanning scope define in a cloud vulnerability management program?**
-A: The boundaries of what is included in vulnerability scans — which cloud resources, networks, applications, and environments are assessed for vulnerabilities
+A: The boundaries of what is included in vulnerability scans, which cloud resources, networks, applications, and environments are assessed for vulnerabilities
 
 **Q: What is version management in the context of cloud DevOps source control?**
-A: Tracking all changes to code, configuration, and infrastructure over time using a version control system — enabling teams to see the full history of changes, who made them, why they were made, and the ability to revert to any previous state
+A: Tracking all changes to code, configuration, and infrastructure over time using a version control system, enabling teams to see the full history of changes, who made them, why they were made, and the ability to revert to any previous state
 
-**Q: A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show 'SSL handshake failed — unsupported protocol version'. What type of deployment issue is this?**
-A: A compatibility issue — the new application version requires a TLS version that the database server does not support, or vice versa.
+**Q: A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show 'SSL handshake failed, unsupported protocol version'. What type of deployment issue is this?**
+A: A compatibility issue, the new application version requires a TLS version that the database server does not support, or vice versa.
 
 ## CompTIA ITF+ (FC0-U61)
 Vendor: CompTIA
 URL: https://quizbuffet.com/comptia-itf-plus/
 Total questions: 1900
 
-ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT concepts for people exploring a career in technology. It covers computing basics, hardware, networking, operating systems, software, databases, and security fundamentals. No prior experience required — ideal for advanced end users and those considering CompTIA A+.
+ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT concepts for people exploring a career in technology. It covers computing basics, hardware, networking, operating systems, software, databases, and security fundamentals. No prior experience required: ideal for advanced end users and those considering CompTIA A+.
 
 ### Domains
-- IT Concepts and Terminology (17% of exam) — 256 questions
-- Infrastructure (22% of exam) — 464 questions
-- Applications and Software (18% of exam) — 408 questions
-- Software Development (12% of exam) — 144 questions
-- Database Fundamentals (11% of exam) — 184 questions
-- Security (20% of exam) — 444 questions
+- IT Concepts and Terminology (17% of exam): 256 questions
+- Infrastructure (22% of exam): 464 questions
+- Applications and Software (18% of exam): 408 questions
+- Software Development (12% of exam): 144 questions
+- Database Fundamentals (11% of exam): 184 questions
+- Security (20% of exam): 444 questions
 
 ### Sample questions
 **Q: Which statement best describes Binary in Objective 1.1 (Compare and contrast notational systems)?**
@@ -81,10 +81,10 @@ Total questions: 1600
 CySA+ (Cybersecurity Analyst+) certifies analysts who detect and respond to threats, perform vulnerability management, and conduct incident response. It covers security operations, threat hunting, vulnerability scanning and prioritization, incident handling, and communicating findings to stakeholders. Aimed at professionals with 4 years of hands-on SOC or incident response experience.
 
 ### Domains
-- Security Operations (33% of exam) — 688 questions
-- Vulnerability Management (30% of exam) — 528 questions
-- Incident Response Management (20% of exam) — 172 questions
-- Reporting and Communication (17% of exam) — 212 questions
+- Security Operations (33% of exam): 688 questions
+- Vulnerability Management (30% of exam): 528 questions
+- Incident Response Management (20% of exam): 172 questions
+- Reporting and Communication (17% of exam): 212 questions
 
 ### Sample questions
 **Q: Which description best matches Security operations architecture concepts in CySA+ Objective 1.0 Security Operations?**
@@ -113,11 +113,11 @@ Total questions: 2160
 PenTest+ certifies professionals who can plan, scope, and execute penetration tests across networks, applications, and cloud environments, and communicate findings to stakeholders.
 
 ### Domains
-- Engagement Management (13% of exam) — 416 questions
-- Reconnaissance and Enumeration (21% of exam) — 324 questions
-- Vulnerability Discovery and Analysis (17% of exam) — 196 questions
-- Attacks and Exploits (35% of exam) — 884 questions
-- Post-exploitation and Lateral Movement (14% of exam) — 340 questions
+- Engagement Management (13% of exam): 416 questions
+- Reconnaissance and Enumeration (21% of exam): 324 questions
+- Vulnerability Discovery and Analysis (17% of exam): 196 questions
+- Attacks and Exploits (35% of exam): 884 questions
+- Post-exploitation and Lateral Movement (14% of exam): 340 questions
 
 ### Sample questions
 **Q: Which description best matches Scope definition in PenTest+ Objective 1.0 Engagement Management?**
@@ -146,11 +146,11 @@ Total questions: 2100
 A+ Core 1 (220-1101) is the first of two exams required for the CompTIA A+ certification. It covers mobile devices, networking, hardware, virtualization, cloud computing, and hardware troubleshooting.
 
 ### Domains
-- Mobile Devices (15% of exam) — 264 questions
-- Networking (20% of exam) — 500 questions
-- Hardware (25% of exam) — 856 questions
-- Virtualization and Cloud Computing (11% of exam) — 100 questions
-- Hardware and Network Troubleshooting (29% of exam) — 380 questions
+- Mobile Devices (15% of exam): 264 questions
+- Networking (20% of exam): 500 questions
+- Hardware (25% of exam): 856 questions
+- Virtualization and Cloud Computing (11% of exam): 100 questions
+- Hardware and Network Troubleshooting (29% of exam): 380 questions
 
 ### Sample questions
 **Q: In mobile device support, what is the primary purpose of Laptop hardware/device replacement?**
@@ -179,10 +179,10 @@ Total questions: 3200
 A+ Core 2 (220-1202) is the second of two exams required for the CompTIA A+ certification. It covers operating systems, security, software troubleshooting, and operational procedures for IT support specialists.
 
 ### Domains
-- Operating Systems (28% of exam) — 1200 questions
-- Security (28% of exam) — 1040 questions
-- Software Troubleshooting (23% of exam) — 220 questions
-- Operational Procedures (21% of exam) — 740 questions
+- Operating Systems (28% of exam): 1200 questions
+- Security (28% of exam): 1040 questions
+- Software Troubleshooting (23% of exam): 220 questions
+- Operational Procedures (21% of exam): 740 questions
 
 ### Sample questions
 **Q: What does Operating system mean in Core 2 Objective 1.0 Operating Systems?**
@@ -208,27 +208,27 @@ Vendor: CompTIA
 URL: https://quizbuffet.com/comptia-network-plus/
 Total questions: 1119
 
-Network+ certifies professionals who can deploy wired and wireless networks, configure network services, implement security hardening, and troubleshoot performance and availability issues. It covers networking concepts, IP addressing, routing, switching, wireless, cloud connectivity, and network troubleshooting. Recommended for professionals with 9–12 months of networking experience.
+Network+ certifies professionals who can deploy wired and wireless networks, configure network services, implement security hardening, and troubleshoot performance and availability issues. It covers networking concepts, IP addressing, routing, switching, wireless, cloud connectivity, and network troubleshooting. Recommended for professionals with 9-12 months of networking experience.
 
 ### Domains
-- 1.0 Networking Concepts (23% of exam) — 318 questions
-- 2.0 Network Implementation (20% of exam) — 112 questions
-- 3.0 Network Operations (19% of exam) — 201 questions
-- 4.0 Network Security (14% of exam) — 100 questions
-- 5.0 Network Troubleshooting (24% of exam) — 388 questions
+- 1.0 Networking Concepts (23% of exam): 318 questions
+- 2.0 Network Implementation (20% of exam): 112 questions
+- 3.0 Network Operations (19% of exam): 201 questions
+- 4.0 Network Security (14% of exam): 100 questions
+- 5.0 Network Troubleshooting (24% of exam): 388 questions
 
 ### Sample questions
 **Q: What is the primary purpose of the OSI (Open Systems Interconnection) reference model in networking?**
-A: The OSI model is a conceptual framework that standardizes how different network systems communicate by dividing the communication process into seven distinct layers, each with specific functions — enabling interoperability between products from different vendors
+A: The OSI model is a conceptual framework that standardizes how different network systems communicate by dividing the communication process into seven distinct layers, each with specific functions, enabling interoperability between products from different vendors
 
 **Q: Which of the following best describes the function of Layer 1 (Physical) of the OSI model?**
 A: Layer 1 is responsible for the transmission and reception of raw bit streams over a physical medium, defining electrical signals, light pulses, or radio frequencies, as well as connector types, cable specifications, and signaling standards
 
 **Q: What is a static route and when is it most appropriate to use?**
-A: A static route is a manually configured route that tells the router how to reach a specific destination network — it does not change unless an administrator modifies it; static routes are most appropriate for small stable networks with few routes, stub networks with only one…
+A: A static route is a manually configured route that tells the router how to reach a specific destination network, it does not change unless an administrator modifies it; static routes are most appropriate for small stable networks with few routes, stub networks with only one…
 
 **Q: What is the primary distinction between OSPF, EIGRP, and BGP in terms of their use cases?**
-A: OSPF and EIGRP are Interior Gateway Protocols (IGPs) used for routing within a single organization's network (autonomous system); BGP is an Exterior Gateway Protocol (EGP) used for routing between autonomous systems — BGP is the protocol of the internet backbone exchanging…
+A: OSPF and EIGRP are Interior Gateway Protocols (IGPs) used for routing within a single organization's network (autonomous system); BGP is an Exterior Gateway Protocol (EGP) used for routing between autonomous systems, BGP is the protocol of the internet backbone exchanging…
 
 **Q: What is the difference between a physical network diagram and a logical network diagram?**
 A: A physical diagram shows the actual physical layout of hardware including device locations, rack positions, cable runs, and physical connections between equipment; a logical diagram shows how the network functions including IP addressing, VLANs, routing protocols, and traffic…
@@ -244,11 +244,11 @@ Total questions: 1900
 Security+ certifies professionals who can assess enterprise security posture, monitor hybrid environments, operate within governance and compliance frameworks, and identify and respond to security incidents.
 
 ### Domains
-- 1.0 General Security Concepts (12% of exam) — 164 questions
-- 2.0 Threats, Vulnerabilities, and Mitigations (22% of exam) — 446 questions
-- 3.0 Security Architecture (18% of exam) — 199 questions
-- 4.0 Security Operations (28% of exam) — 644 questions
-- 5.0 Security Program Management and Oversight (20% of exam) — 447 questions
+- 1.0 General Security Concepts (12% of exam): 164 questions
+- 2.0 Threats, Vulnerabilities, and Mitigations (22% of exam): 446 questions
+- 3.0 Security Architecture (18% of exam): 199 questions
+- 4.0 Security Operations (28% of exam): 644 questions
+- 5.0 Security Program Management and Oversight (20% of exam): 447 questions
 
 ### Sample questions
 **Q: How hard is the Security+ SY0-701 exam?**
@@ -277,11 +277,11 @@ Total questions: 1000
 Data+ certifies professionals who can translate business requirements into data-driven decisions by acquiring, preparing, and transforming data, applying statistical methods, creating visualizations, and adhering to governance and quality standards throughout the data life cycle.
 
 ### Domains
-- Data Concepts and Environments (20% of exam) — 392 questions
-- Data Acquisition and Preparation (22% of exam) — 160 questions
-- Data Analysis (24% of exam) — 120 questions
-- Visualization and Reporting (20% of exam) — 144 questions
-- Data Governance (14% of exam) — 184 questions
+- Data Concepts and Environments (20% of exam): 392 questions
+- Data Acquisition and Preparation (22% of exam): 160 questions
+- Data Analysis (24% of exam): 120 questions
+- Visualization and Reporting (20% of exam): 144 questions
+- Data Governance (14% of exam): 184 questions
 
 ### Sample questions
 **Q: What does Database types mean in Data+ Objective 1.0 Data Concepts and Environments?**
@@ -307,15 +307,15 @@ Vendor: Cisco
 URL: https://quizbuffet.com/cisco-ccna/
 Total questions: 800
 
-CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability — including AI/ML in network operations and REST APIs.
+CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability, including AI/ML in network operations and REST APIs.
 
 ### Domains
-- 1.0 Network Fundamentals (20% of exam) — 160 questions
-- 2.0 Network Access (20% of exam) — 160 questions
-- 3.0 IP Connectivity (25% of exam) — 200 questions
-- 4.0 IP Services (10% of exam) — 80 questions
-- 5.0 Security Fundamentals (15% of exam) — 120 questions
-- 6.0 Automation and Programmability (10% of exam) — 80 questions
+- 1.0 Network Fundamentals (20% of exam): 160 questions
+- 2.0 Network Access (20% of exam): 160 questions
+- 3.0 IP Connectivity (25% of exam): 200 questions
+- 4.0 IP Services (10% of exam): 80 questions
+- 5.0 Security Fundamentals (15% of exam): 120 questions
+- 6.0 Automation and Programmability (10% of exam): 80 questions
 
 ### Sample questions
 **Q: Which description best matches Routers in CCNA Objective 1.0 Network Fundamentals?**
@@ -341,13 +341,13 @@ Vendor: AWS
 URL: https://quizbuffet.com/aws-cloud-practitioner/
 Total questions: 400
 
-AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud — value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.
+AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud, value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.
 
 ### Domains
-- 1.0 Cloud Concepts (24% of exam) — 96 questions
-- 2.0 Security and Compliance (30% of exam) — 120 questions
-- 3.0 Cloud Technology and Services (34% of exam) — 136 questions
-- 4.0 Billing, Pricing, and Support (12% of exam) — 48 questions
+- 1.0 Cloud Concepts (24% of exam): 96 questions
+- 2.0 Security and Compliance (30% of exam): 120 questions
+- 3.0 Cloud Technology and Services (34% of exam): 136 questions
+- 4.0 Billing, Pricing, and Support (12% of exam): 48 questions
 
 ### Sample questions
 **Q: Which description best matches AWS Cloud value proposition in AWS Cloud Practitioner Domain 1.0 Cloud Concepts?**
@@ -368,18 +368,18 @@ A: The AWS Management Console is a web-based interface for accessing and managin
 **Q: Which option correctly defines AWS CLI?**
 A: The AWS Command Line Interface lets users manage AWS services from a command-line shell.
 
-## AWS Certified Solutions Architect – Associate (SAA-C03)
+## AWS Certified Solutions Architect Associate (SAA-C03)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-solutions-architect-associate/
 Total questions: 600
 
-AWS Certified Solutions Architect – Associate (SAA-C03) validates the ability to design solutions on AWS that are secure, resilient, high-performing, and cost-optimized — based on the AWS Well-Architected Framework. Aimed at candidates with at least 1 year of hands-on experience designing cloud solutions on AWS.
+AWS Certified Solutions Architect Associate (SAA-C03) validates the ability to design solutions on AWS that are secure, resilient, high-performing, and cost-optimized, based on the AWS Well-Architected Framework. Aimed at candidates with at least 1 year of hands-on experience designing cloud solutions on AWS.
 
 ### Domains
-- 1.0 Design Secure Architectures (30% of exam) — 180 questions
-- 2.0 Design Resilient Architectures (26% of exam) — 156 questions
-- 3.0 Design High-Performing Architectures (24% of exam) — 144 questions
-- 4.0 Design Cost-Optimized Architectures (20% of exam) — 120 questions
+- 1.0 Design Secure Architectures (30% of exam): 180 questions
+- 2.0 Design Resilient Architectures (26% of exam): 156 questions
+- 3.0 Design High-Performing Architectures (24% of exam): 144 questions
+- 4.0 Design Cost-Optimized Architectures (20% of exam): 120 questions
 
 ### Sample questions
 **Q: Which description best matches Secure access to AWS resources in AWS Solutions Architect Associate Domain 1.0 Design Secure Architectures?**
@@ -405,14 +405,14 @@ Vendor: AWS
 URL: https://quizbuffet.com/aws-ai-practitioner/
 Total questions: 500
 
-AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of AI, machine learning, and generative AI on AWS — including foundation models, prompt engineering, responsible AI, and security for AI workloads. It is designed for professionals who use, evaluate, or work alongside AI/ML systems but are not necessarily building them.
+AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of AI, machine learning, and generative AI on AWS, including foundation models, prompt engineering, responsible AI, and security for AI workloads. It is designed for professionals who use, evaluate, or work alongside AI/ML systems but are not necessarily building them.
 
 ### Domains
-- 1.0 Fundamentals of AI and ML (20% of exam) — 100 questions
-- 2.0 Fundamentals of Generative AI (24% of exam) — 120 questions
-- 3.0 Applications of Foundation Models (28% of exam) — 140 questions
-- 4.0 Guidelines for Responsible AI (14% of exam) — 70 questions
-- 5.0 Security, Compliance, and Governance for AI Solutions (14% of exam) — 70 questions
+- 1.0 Fundamentals of AI and ML (20% of exam): 100 questions
+- 2.0 Fundamentals of Generative AI (24% of exam): 120 questions
+- 3.0 Applications of Foundation Models (28% of exam): 140 questions
+- 4.0 Guidelines for Responsible AI (14% of exam): 70 questions
+- 5.0 Security, Compliance, and Governance for AI Solutions (14% of exam): 70 questions
 
 ### Sample questions
 **Q: Which description best matches Artificial intelligence in AWS Certified AI Practitioner Domain 1.0 Fundamentals of AI and ML?**
@@ -433,18 +433,18 @@ A: Foundation model selection chooses an FM based on cost, modality, latency, la
 **Q: Which description best matches Model modality in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?**
 A: Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.
 
-## AWS Certified Machine Learning Engineer – Associate (MLA-C01)
+## AWS Certified Machine Learning Engineer Associate (MLA-C01)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-ml-engineer-associate/
 Total questions: 500
 
-AWS Certified Machine Learning Engineer – Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.
+AWS Certified Machine Learning Engineer Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.
 
 ### Domains
-- 1.0 Data Preparation for Machine Learning (28% of exam) — 140 questions
-- 2.0 ML Model Development (26% of exam) — 130 questions
-- 3.0 Deployment and Orchestration of ML Workflows (22% of exam) — 110 questions
-- 4.0 ML Solution Monitoring, Maintenance, and Security (24% of exam) — 120 questions
+- 1.0 Data Preparation for Machine Learning (28% of exam): 140 questions
+- 2.0 ML Model Development (26% of exam): 130 questions
+- 3.0 Deployment and Orchestration of ML Workflows (22% of exam): 110 questions
+- 4.0 ML Solution Monitoring, Maintenance, and Security (24% of exam): 120 questions
 
 ### Sample questions
 **Q: Which description best matches Apache Parquet in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?**
@@ -465,19 +465,19 @@ A: SageMaker real-time endpoint involves hosting a model for low-latency predict
 **Q: Which description best matches SageMaker batch transform in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?**
 A: SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required.
 
-## AWS Certified Generative AI Developer – Professional (AIP-C01)
+## AWS Certified Generative AI Developer Professional (AIP-C01)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-genai-developer-professional/
 Total questions: 688
 
-AWS Certified Generative AI Developer – Professional (AIP-C01) validates the ability to integrate foundation models into applications and business workflows, including RAG and vector store design, agentic AI, prompt engineering and management, FM API integration, model deployment strategies, AI safety and governance, performance and cost optimization, and evaluation, monitoring, and troubleshooting of GenAI applications.
+AWS Certified Generative AI Developer Professional (AIP-C01) validates the ability to integrate foundation models into applications and business workflows, including RAG and vector store design, agentic AI, prompt engineering and management, FM API integration, model deployment strategies, AI safety and governance, performance and cost optimization, and evaluation, monitoring, and troubleshooting of GenAI applications.
 
 ### Domains
-- 1.0 Foundation Model Integration, Data Management, and Compliance (31% of exam) — 210 questions
-- 2.0 Implementation and Integration (26% of exam) — 188 questions
-- 3.0 AI Safety, Security, and Governance (20% of exam) — 136 questions
-- 4.0 Operational Efficiency and Optimization for GenAI Applications (12% of exam) — 80 questions
-- 5.0 Testing, Validation, and Troubleshooting (11% of exam) — 74 questions
+- 1.0 Foundation Model Integration, Data Management, and Compliance (31% of exam): 210 questions
+- 2.0 Implementation and Integration (26% of exam): 188 questions
+- 3.0 AI Safety, Security, and Governance (20% of exam): 136 questions
+- 4.0 Operational Efficiency and Optimization for GenAI Applications (12% of exam): 80 questions
+- 5.0 Testing, Validation, and Troubleshooting (11% of exam): 74 questions
 
 ### Sample questions
 **Q: Which description best matches GenAI solution architecture in AWS AIP-C01 Domain 1.0 Foundation Model Integration, Data Management, and Compliance?**
@@ -498,19 +498,19 @@ A: Bedrock guardrails for input filtering involves filtering harmful, unsafe, or
 **Q: Which description best matches Custom moderation workflow in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?**
 A: Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction.
 
-## AWS Certified CloudOps Engineer – Associate (SOA-C03)
+## AWS Certified CloudOps Engineer Associate (SOA-C03)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-cloudops-engineer-associate/
 Total questions: 500
 
-AWS Certified CloudOps Engineer – Associate (SOA-C03) validates the ability to deploy, manage, and operate workloads on AWS. It covers monitoring and logging, performance optimization, reliability and business continuity, deployment and automation, security and compliance, and networking and content delivery — including hands-on use of CloudWatch, CloudFormation, Systems Manager, IAM, VPC, and the AWS CLI.
+AWS Certified CloudOps Engineer Associate (SOA-C03) validates the ability to deploy, manage, and operate workloads on AWS. It covers monitoring and logging, performance optimization, reliability and business continuity, deployment and automation, security and compliance, and networking and content delivery, including hands-on use of CloudWatch, CloudFormation, Systems Manager, IAM, VPC, and the AWS CLI.
 
 ### Domains
-- 1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization (22% of exam) — 110 questions
-- 2.0 Reliability and Business Continuity (22% of exam) — 110 questions
-- 3.0 Deployment, Provisioning, and Automation (22% of exam) — 110 questions
-- 4.0 Security and Compliance (16% of exam) — 80 questions
-- 5.0 Networking and Content Delivery (18% of exam) — 90 questions
+- 1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization (22% of exam): 110 questions
+- 2.0 Reliability and Business Continuity (22% of exam): 110 questions
+- 3.0 Deployment, Provisioning, and Automation (22% of exam): 110 questions
+- 4.0 Security and Compliance (16% of exam): 80 questions
+- 5.0 Networking and Content Delivery (18% of exam): 90 questions
 
 ### Sample questions
 **Q: A CloudOps engineer must collect application latency metrics from an EC2-hosted service and retain API activity history for incident investigations. Which combination should the engineer configure?**
@@ -531,18 +531,18 @@ A: Amazon EC2 Image Builder
 **Q: A CloudOps team wants every new EC2 instance to launch from the latest approved image without manual image lookup. Which approach helps?**
 A: Publish the approved AMI ID to Systems Manager Parameter Store and reference it during launch
 
-## AWS Certified Data Engineer – Associate (DEA-C01)
+## AWS Certified Data Engineer Associate (DEA-C01)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-data-engineer-associate/
 Total questions: 500
 
-AWS Certified Data Engineer – Associate (DEA-C01) validates the ability to implement data pipelines and to monitor, troubleshoot, and optimize cost and performance issues. It covers data ingestion and transformation, data store choice and management, data cataloging and schema evolution, pipeline orchestration and automation, programming concepts, data quality and analysis, and data security, governance, and privacy on AWS.
+AWS Certified Data Engineer Associate (DEA-C01) validates the ability to implement data pipelines and to monitor, troubleshoot, and optimize cost and performance issues. It covers data ingestion and transformation, data store choice and management, data cataloging and schema evolution, pipeline orchestration and automation, programming concepts, data quality and analysis, and data security, governance, and privacy on AWS.
 
 ### Domains
-- 1.0 Data Ingestion and Transformation (34% of exam) — 170 questions
-- 2.0 Data Store Management (26% of exam) — 130 questions
-- 3.0 Data Operations and Support (22% of exam) — 110 questions
-- 4.0 Data Security and Governance (18% of exam) — 90 questions
+- 1.0 Data Ingestion and Transformation (34% of exam): 170 questions
+- 2.0 Data Store Management (26% of exam): 130 questions
+- 3.0 Data Operations and Support (22% of exam): 110 questions
+- 4.0 Data Security and Governance (18% of exam): 90 questions
 
 ### Sample questions
 **Q: A data engineering team must ingest clickstream events continuously from thousands of clients and allow multiple consumers to process the stream independently. Which AWS service should be used for the streaming source?**
@@ -563,18 +563,18 @@ A: AWS Step Functions
 **Q: An MWAA DAG stays queued and never starts after a deployment. What should be checked first?**
 A: DAG syntax, scheduler health, worker capacity, and environment logs
 
-## AWS Certified Developer – Associate (DVA-C02)
+## AWS Certified Developer Associate (DVA-C02)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-developer-associate/
 Total questions: 500
 
-AWS Certified Developer – Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.
+AWS Certified Developer Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.
 
 ### Domains
-- 1.0 Development with AWS Services (32% of exam) — 160 questions
-- 2.0 Security (26% of exam) — 130 questions
-- 3.0 Deployment (24% of exam) — 120 questions
-- 4.0 Troubleshooting and Optimization (18% of exam) — 90 questions
+- 1.0 Development with AWS Services (32% of exam): 160 questions
+- 2.0 Security (26% of exam): 130 questions
+- 3.0 Deployment (24% of exam): 120 questions
+- 4.0 Troubleshooting and Optimization (18% of exam): 90 questions
 
 ### Sample questions
 **Q: How hard is the AWS Certified Developer Associate exam?**
@@ -595,20 +595,20 @@ A: For developers working with AWS, yes. It is one of the most requested cloud c
 **Q: How long is the AWS Developer Associate certification valid?**
 A: AWS associate certifications are valid for three years. You renew by recertifying before it expires, which also keeps your knowledge current with service changes.
 
-## AWS Certified DevOps Engineer – Professional (DOP-C02)
+## AWS Certified DevOps Engineer Professional (DOP-C02)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-devops-engineer-professional/
 Total questions: 600
 
-AWS Certified DevOps Engineer – Professional (DOP-C02) validates the ability to provision, operate, and manage distributed systems on AWS. It covers SDLC automation with CI/CD (CodePipeline, CodeBuild, CodeDeploy), configuration management and IaC (CloudFormation, CDK, SAM, Systems Manager), resilient cloud solutions and DR, monitoring and logging with CloudWatch and X-Ray, incident and event response, and security and compliance automation at scale.
+AWS Certified DevOps Engineer Professional (DOP-C02) validates the ability to provision, operate, and manage distributed systems on AWS. It covers SDLC automation with CI/CD (CodePipeline, CodeBuild, CodeDeploy), configuration management and IaC (CloudFormation, CDK, SAM, Systems Manager), resilient cloud solutions and DR, monitoring and logging with CloudWatch and X-Ray, incident and event response, and security and compliance automation at scale.
 
 ### Domains
-- 1.0 SDLC Automation (22% of exam) — 132 questions
-- 2.0 Configuration Management and IaC (17% of exam) — 102 questions
-- 3.0 Resilient Cloud Solutions (15% of exam) — 90 questions
-- 4.0 Monitoring and Logging (15% of exam) — 90 questions
-- 5.0 Incident and Event Response (14% of exam) — 84 questions
-- 6.0 Security and Compliance (17% of exam) — 102 questions
+- 1.0 SDLC Automation (22% of exam): 132 questions
+- 2.0 Configuration Management and IaC (17% of exam): 102 questions
+- 3.0 Resilient Cloud Solutions (15% of exam): 90 questions
+- 4.0 Monitoring and Logging (15% of exam): 90 questions
+- 5.0 Incident and Event Response (14% of exam): 84 questions
+- 6.0 Security and Compliance (17% of exam): 102 questions
 
 ### Sample questions
 **Q: A DevOps team is redesigning a release process for a regulated application. The team wants every change to move from commit, to build, to automated validation, to approval, and then to deployment with clear evidence. Which pipeline design best matches the SDLC objective?**
@@ -629,20 +629,20 @@ A: Use an EventBridge rule that matches GuardDuty finding events and targets an 
 **Q: A CI/CD pipeline needs to deploy CloudFormation stacks into a workload account. The current design stores a long-term IAM user's access key in the build project. What should replace this design?**
 A: An IAM role assumed by the pipeline with scoped deployment permissions
 
-## AWS Certified Security – Specialty (SCS-C03)
+## AWS Certified Security Specialty (SCS-C03)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-security-specialty/
 Total questions: 600
 
-AWS Certified Security – Specialty (SCS-C03) validates expertise securing cloud solutions on AWS. It covers detection (GuardDuty, Security Hub, Macie, Security Lake, CloudTrail, CloudWatch), incident response, infrastructure security across edge and compute (WAF, Shield, Network Firewall, Inspector), identity and access management at scale (IAM, IAM Identity Center, Cognito, Verified Permissions), data protection in transit and at rest (KMS, CloudHSM, ACM, Secrets Manager), and multi-account security governance (Organizations, Control Tower, Config, Audit Manager).
+AWS Certified Security Specialty (SCS-C03) validates expertise securing cloud solutions on AWS. It covers detection (GuardDuty, Security Hub, Macie, Security Lake, CloudTrail, CloudWatch), incident response, infrastructure security across edge and compute (WAF, Shield, Network Firewall, Inspector), identity and access management at scale (IAM, IAM Identity Center, Cognito, Verified Permissions), data protection in transit and at rest (KMS, CloudHSM, ACM, Secrets Manager), and multi-account security governance (Organizations, Control Tower, Config, Audit Manager).
 
 ### Domains
-- 1.0 Detection (16% of exam) — 96 questions
-- 2.0 Incident Response (14% of exam) — 84 questions
-- 3.0 Infrastructure Security (18% of exam) — 108 questions
-- 4.0 Identity and Access Management (20% of exam) — 120 questions
-- 5.0 Data Protection (18% of exam) — 108 questions
-- 6.0 Security Foundations and Governance (14% of exam) — 84 questions
+- 1.0 Detection (16% of exam): 96 questions
+- 2.0 Incident Response (14% of exam): 84 questions
+- 3.0 Infrastructure Security (18% of exam): 108 questions
+- 4.0 Identity and Access Management (20% of exam): 120 questions
+- 5.0 Data Protection (18% of exam): 108 questions
+- 6.0 Security Foundations and Governance (14% of exam): 84 questions
 
 ### Sample questions
 **Q: A payment API handles cardholder-adjacent metadata and is exposed through API Gateway and Lambda. The security team needs near-real-time detection of suspicious access patterns and failed authorization. Which monitoring requirement should be prioritized?**
@@ -663,18 +663,18 @@ A: An ELB security policy that permits only approved TLS versions and ciphers
 **Q: A company is moving from independent AWS accounts to a governed multi-account environment. What should be established first?**
 A: Create an AWS Organizations structure with OUs aligned to security, production, development, and sandbox governance needs
 
-## AWS Certified Advanced Networking – Specialty (ANS-C01)
+## AWS Certified Advanced Networking Specialty (ANS-C01)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-advanced-networking-specialty/
 Total questions: 480
 
-AWS Certified Advanced Networking – Specialty (ANS-C01) validates expertise designing and operating complex AWS networking solutions. It covers edge services and global traffic management (CloudFront, Global Accelerator, Route 53), hybrid connectivity with Direct Connect and Site-to-Site VPN, BGP routing, multi-VPC and multi-account designs (Transit Gateway, PrivateLink, VPC peering, RAM), DNS architectures including DNSSEC, network monitoring (VPC Flow Logs, Traffic Mirroring, Reachability Analyzer, Transit Gateway Network Manager), and network security with WAF, Shield, Network Firewall, and Firewall Manager.
+AWS Certified Advanced Networking Specialty (ANS-C01) validates expertise designing and operating complex AWS networking solutions. It covers edge services and global traffic management (CloudFront, Global Accelerator, Route 53), hybrid connectivity with Direct Connect and Site-to-Site VPN, BGP routing, multi-VPC and multi-account designs (Transit Gateway, PrivateLink, VPC peering, RAM), DNS architectures including DNSSEC, network monitoring (VPC Flow Logs, Traffic Mirroring, Reachability Analyzer, Transit Gateway Network Manager), and network security with WAF, Shield, Network Firewall, and Firewall Manager.
 
 ### Domains
-- 1.0 Network Design (30% of exam) — 180 questions
-- 2.0 Network Implementation (26% of exam) — 156 questions
+- 1.0 Network Design (30% of exam): 180 questions
+- 2.0 Network Implementation (26% of exam): 156 questions
 - 3.0 Network Management and Operation (20% of exam)
-- 4.0 Network Security, Compliance, and Governance (24% of exam) — 144 questions
+- 4.0 Network Security, Compliance, and Governance (24% of exam): 144 questions
 
 ### Sample questions
 **Q: A company is designing global inbound content distribution design. The requirement is low latency, high availability, and clear operational ownership. Which design should the network specialist recommend?**
@@ -695,18 +695,18 @@ A: AWS WAF with managed rules, rate-based rules, and logging for the web ACL
 **Q: A public API needs throttling and request validation before traffic reaches private services. Which service combination is appropriate?**
 A: Amazon API Gateway with authorizers, throttling, AWS WAF, and private integration as needed
 
-## AWS Certified Solutions Architect – Professional (SAP-C02)
+## AWS Certified Solutions Architect Professional (SAP-C02)
 Vendor: AWS
 URL: https://quizbuffet.com/aws-solutions-architect-professional/
 Total questions: 600
 
-AWS Certified Solutions Architect – Professional (SAP-C02) validates expertise designing complex AWS solutions across multiple accounts and Regions. It covers organizational complexity (Organizations, Control Tower, multi-account governance, hybrid networking), designing new solutions for reliability, performance, security, and cost, continuously improving existing solutions, and accelerating workload migration and modernization (7Rs, AWS Migration Hub, DMS, Application Migration Service, modernization to serverless and containers).
+AWS Certified Solutions Architect Professional (SAP-C02) validates expertise designing complex AWS solutions across multiple accounts and Regions. It covers organizational complexity (Organizations, Control Tower, multi-account governance, hybrid networking), designing new solutions for reliability, performance, security, and cost, continuously improving existing solutions, and accelerating workload migration and modernization (7Rs, AWS Migration Hub, DMS, Application Migration Service, modernization to serverless and containers).
 
 ### Domains
-- 1.0 Design Solutions for Organizational Complexity (26% of exam) — 156 questions
-- 2.0 Design for New Solutions (29% of exam) — 174 questions
-- 3.0 Continuous Improvement for Existing Solutions (25% of exam) — 150 questions
-- 4.0 Accelerate Workload Migration and Modernization (20% of exam) — 120 questions
+- 1.0 Design Solutions for Organizational Complexity (26% of exam): 156 questions
+- 2.0 Design for New Solutions (29% of exam): 174 questions
+- 3.0 Continuous Improvement for Existing Solutions (25% of exam): 150 questions
+- 4.0 Accelerate Workload Migration and Modernization (20% of exam): 120 questions
 
 ### Sample questions
 **Q: A regulated financial services company has an existing AWS environment that must be redesigned for AWS Global Infrastructure. What should the solutions architect recommend?**
@@ -735,9 +735,9 @@ Total questions: 312
 Microsoft Azure Fundamentals (AZ-900) is the entry-level Azure certification. It covers cloud concepts (IaaS/PaaS/SaaS, public/private/hybrid, shared responsibility, consumption-based pricing), core Azure architecture and services (regions, availability zones, compute, networking, storage, databases, identity), and Azure management and governance (cost management, Microsoft Entra, role-based access control, Azure Policy, monitoring, support).
 
 ### Domains
-- 1.0 Describe cloud concepts (27% of exam) — 84 questions
-- 2.0 Describe Azure architecture and services (37% of exam) — 114 questions
-- 3.0 Describe Azure management and governance (36% of exam) — 114 questions
+- 1.0 Describe cloud concepts (27% of exam): 84 questions
+- 2.0 Describe Azure architecture and services (37% of exam): 114 questions
+- 3.0 Describe Azure management and governance (36% of exam): 114 questions
 
 ### Sample questions
 **Q: A new Azure user needs to identify the right concept for cloud computing definition. Which answer should they choose?**
@@ -766,11 +766,11 @@ Total questions: 500
 Microsoft Azure Administrator (AZ-104) validates skills for managing Azure subscriptions, identities and governance (Microsoft Entra ID, RBAC, Azure Policy, management groups), storage (storage accounts, Azure Files, Blob Storage, redundancy, lifecycle), compute (virtual machines, Container Instances, Container Apps, App Service, scale sets, ARM/Bicep), virtual networking (VNets, NSGs, Bastion, peering, private endpoints, load balancing, DNS), and monitoring with Azure Monitor and backup with Recovery Services and Site Recovery.
 
 ### Domains
-- 1.0 Manage Azure identities and governance (23% of exam) — 110 questions
-- 2.0 Implement and manage storage (18% of exam) — 85 questions
-- 3.0 Deploy and manage Azure compute resources (22% of exam) — 110 questions
-- 4.0 Implement and manage virtual networking (18% of exam) — 85 questions
-- 5.0 Monitor and maintain Azure resources (19% of exam) — 110 questions
+- 1.0 Manage Azure identities and governance (23% of exam): 110 questions
+- 2.0 Implement and manage storage (18% of exam): 85 questions
+- 3.0 Deploy and manage Azure compute resources (22% of exam): 110 questions
+- 4.0 Implement and manage virtual networking (18% of exam): 85 questions
+- 5.0 Monitor and maintain Azure resources (19% of exam): 110 questions
 
 ### Sample questions
 **Q: A new Azure environment requires an administrator to implement create Microsoft Entra users and groups. Which option should be selected?**
@@ -799,14 +799,14 @@ Total questions: 800
 CISSP (Certified Information Systems Security Professional) validates deep technical and managerial knowledge across eight domains: security and risk management (governance, risk, BCP, ethics), asset security (classification, handling, data lifecycle), security architecture and engineering (security models, cryptography, site/facility design), communication and network security (OSI, secure protocols, segmentation), identity and access management (AAA, federation, RBAC/ABAC), security assessment and testing (vulnerability, pen testing, audits), security operations (logging, incident management, DR/BC), and software development security (SDLC, SAST/DAST, secure coding).
 
 ### Domains
-- 1.0 Security and Risk Management (16% of exam) — 128 questions
-- 2.0 Asset Security (10% of exam) — 80 questions
-- 3.0 Security Architecture and Engineering (13% of exam) — 104 questions
-- 4.0 Communication and Network Security (13% of exam) — 104 questions
-- 5.0 Identity and Access Management (IAM) (13% of exam) — 104 questions
-- 6.0 Security Assessment and Testing (12% of exam) — 96 questions
-- 7.0 Security Operations (13% of exam) — 104 questions
-- 8.0 Software Development Security (10% of exam) — 80 questions
+- 1.0 Security and Risk Management (16% of exam): 128 questions
+- 2.0 Asset Security (10% of exam): 80 questions
+- 3.0 Security Architecture and Engineering (13% of exam): 104 questions
+- 4.0 Communication and Network Security (13% of exam): 104 questions
+- 5.0 Identity and Access Management (IAM) (13% of exam): 104 questions
+- 6.0 Security Assessment and Testing (12% of exam): 96 questions
+- 7.0 Security Operations (13% of exam): 104 questions
+- 8.0 Software Development Security (10% of exam): 80 questions
 
 ### Sample questions
 **Q: A regional bank's risk committee is rebuilding its information security program after a regulator's MRA letter. The CISO asks for guidance on professional ethics that balances business objectives, compliance, and security. What should be recommended?**
@@ -835,13 +835,13 @@ Total questions: 400
 ITIL 4 Foundation introduces the ITIL service value system (SVS), the four dimensions of service management (organizations and people, information and technology, partners and suppliers, value streams and processes), the seven ITIL guiding principles, the six service value chain activities, and the purpose and key terms of 15 ITIL management practices, with seven of those practices covered in depth (continual improvement, change enablement, incident management, problem management, service request management, service desk, and service level management). It is the most commonly listed ITSM credential on enterprise IT job postings and a prerequisite for higher-level ITIL 4 qualifications.
 
 ### Domains
-- 1.0 Key Concepts of Service Management (13% of exam) — 50 questions
-- 2.0 ITIL Guiding Principles (15% of exam) — 60 questions
-- 3.0 Four Dimensions of Service Management (5% of exam) — 20 questions
-- 4.0 ITIL Service Value System (2% of exam) — 10 questions
-- 5.0 Service Value Chain Activities (5% of exam) — 20 questions
-- 6.0 Purpose and Key Terms of 15 ITIL Practices (18% of exam) — 70 questions
-- 7.0 Seven ITIL Practices in Detail (42% of exam) — 170 questions
+- 1.0 Key Concepts of Service Management (13% of exam): 50 questions
+- 2.0 ITIL Guiding Principles (15% of exam): 60 questions
+- 3.0 Four Dimensions of Service Management (5% of exam): 20 questions
+- 4.0 ITIL Service Value System (2% of exam): 10 questions
+- 5.0 Service Value Chain Activities (5% of exam): 20 questions
+- 6.0 Purpose and Key Terms of 15 ITIL Practices (18% of exam): 70 questions
+- 7.0 Seven ITIL Practices in Detail (42% of exam): 170 questions
 
 ### Sample questions
 **Q: Which statement best describes a service in ITIL 4?**
@@ -870,14 +870,14 @@ Total questions: 400
 OSHA 10-Hour Construction is a voluntary outreach training program covering worker rights and employer responsibilities, the OSHA Focus Four hazards (falls, electrocution, struck-by, caught-in or between), personal protective equipment, and health hazards in construction. Many states and contractors require it before allowing workers on a construction site, and it is the most common entry credential in the U.S. construction industry.
 
 ### Domains
-- 1.0 Introduction to OSHA (10% of exam) — 40 questions
-- 2.0 Falls (Focus Four) (18% of exam) — 70 questions
-- 3.0 Electrocution (Focus Four) (11% of exam) — 45 questions
-- 4.0 Struck-By Hazards (Focus Four) (11% of exam) — 45 questions
-- 5.0 Caught-In or Between (Focus Four) (11% of exam) — 45 questions
-- 6.0 Personal Protective Equipment (9% of exam) — 35 questions
-- 7.0 Health Hazards in Construction (9% of exam) — 35 questions
-- 8.0 Site Safety and Elective Topics (21% of exam) — 85 questions
+- 1.0 Introduction to OSHA (10% of exam): 40 questions
+- 2.0 Falls (Focus Four) (18% of exam): 70 questions
+- 3.0 Electrocution (Focus Four) (11% of exam): 45 questions
+- 4.0 Struck-By Hazards (Focus Four) (11% of exam): 45 questions
+- 5.0 Caught-In or Between (Focus Four) (11% of exam): 45 questions
+- 6.0 Personal Protective Equipment (9% of exam): 35 questions
+- 7.0 Health Hazards in Construction (9% of exam): 35 questions
+- 8.0 Site Safety and Elective Topics (21% of exam): 85 questions
 
 ### Sample questions
 **Q: What is OSHA's main mission?**
@@ -906,16 +906,16 @@ Total questions: 600
 OSHA 30-Hour Construction is a voluntary outreach training program for supervisors and workers with safety responsibilities. It covers everything in OSHA 10 plus managing safety and health, the OSHA Focus Four hazards in greater depth, expanded electives, and Foundations for Safety Leadership. Many states, contractors, and project labor agreements require OSHA 30 for foremen, superintendents, and site safety personnel.
 
 ### Domains
-- 1.0 Introduction to OSHA (7% of exam) — 40 questions
-- 2.0 Managing Safety and Health (8% of exam) — 50 questions
-- 3.0 Focus Four: Falls (12% of exam) — 70 questions
-- 4.0 Focus Four: Electrocution (8% of exam) — 45 questions
-- 5.0 Focus Four: Struck-By (7% of exam) — 45 questions
-- 6.0 Focus Four: Caught-In or Between (8% of exam) — 45 questions
-- 7.0 Personal Protective Equipment (7% of exam) — 40 questions
-- 8.0 Health Hazards in Construction (7% of exam) — 45 questions
-- 9.0 Stairways and Ladders (6% of exam) — 35 questions
-- 10.0 Elective Construction Topics (30% of exam) — 185 questions
+- 1.0 Introduction to OSHA (7% of exam): 40 questions
+- 2.0 Managing Safety and Health (8% of exam): 50 questions
+- 3.0 Focus Four: Falls (12% of exam): 70 questions
+- 4.0 Focus Four: Electrocution (8% of exam): 45 questions
+- 5.0 Focus Four: Struck-By (7% of exam): 45 questions
+- 6.0 Focus Four: Caught-In or Between (8% of exam): 45 questions
+- 7.0 Personal Protective Equipment (7% of exam): 40 questions
+- 8.0 Health Hazards in Construction (7% of exam): 45 questions
+- 9.0 Stairways and Ladders (6% of exam): 35 questions
+- 10.0 Elective Construction Topics (30% of exam): 185 questions
 
 ### Sample questions
 **Q: Why was OSHA established?**
@@ -944,13 +944,13 @@ Total questions: 300
 Forklift Operator Certification is mandated by 29 CFR 1910.178 for any worker operating a powered industrial truck on the job. Training covers truck types and capacities, the physics of stability (fulcrum, center of gravity, stability triangle, load center), pre-operation inspection, safe load handling, operating around pedestrians, lifting personnel on work platforms, and the employer’s duty to evaluate and certify each operator at least every three years.
 
 ### Domains
-- 1.0 Forklift Fundamentals and Markings (12% of exam) — 35 questions
-- 2.0 Components and Protective Features (10% of exam) — 30 questions
-- 3.0 Stability and Load Center (20% of exam) — 60 questions
-- 4.0 Seat Belt Safety and Operating Conditions (10% of exam) — 30 questions
-- 5.0 Safe Operation: Loads, Travel, and Shutdown (20% of exam) — 60 questions
-- 6.0 Pedestrian Safety and Work Platforms (11% of exam) — 35 questions
-- 7.0 Training, Evaluation, and Certification (17% of exam) — 50 questions
+- 1.0 Forklift Fundamentals and Markings (12% of exam): 35 questions
+- 2.0 Components and Protective Features (10% of exam): 30 questions
+- 3.0 Stability and Load Center (20% of exam): 60 questions
+- 4.0 Seat Belt Safety and Operating Conditions (10% of exam): 30 questions
+- 5.0 Safe Operation: Loads, Travel, and Shutdown (20% of exam): 60 questions
+- 6.0 Pedestrian Safety and Work Platforms (11% of exam): 35 questions
+- 7.0 Training, Evaluation, and Certification (17% of exam): 50 questions
 
 ### Sample questions
 **Q: What is a forklift as described in powered industrial truck safety training?**
@@ -979,13 +979,13 @@ Total questions: 300
 CDL Class A licensing is governed by 49 CFR Part 383 and administered by state DMVs under the Federal Motor Carrier Safety Administration (FMCSA). The knowledge component covers driver qualifications and disqualifications, hours of service, safe driving and hazard recognition, cargo securement, the air brake system and 7-step inspection, combination vehicles and coupling/uncoupling, the pre-trip vehicle inspection, and basic vehicle control maneuvers. A Class A CDL is required to operate any combination vehicle with a gross combination weight rating (GCWR) over 26,001 pounds when the towed unit exceeds 10,000 pounds.
 
 ### Domains
-- 1.0 Driver Qualifications and CDL Fundamentals (6% of exam) — 18 questions
-- 2.0 Driving Safely and On-Road Operation (25% of exam) — 75 questions
-- 3.0 Transporting Cargo Safely (10% of exam) — 30 questions
-- 4.0 Air Brakes (20% of exam) — 60 questions
-- 5.0 Combination Vehicles (15% of exam) — 45 questions
-- 6.0 Pre-Trip Vehicle Inspection (15% of exam) — 45 questions
-- 7.0 Basic Vehicle Control and Maneuvering (9% of exam) — 27 questions
+- 1.0 Driver Qualifications and CDL Fundamentals (6% of exam): 18 questions
+- 2.0 Driving Safely and On-Road Operation (25% of exam): 75 questions
+- 3.0 Transporting Cargo Safely (10% of exam): 30 questions
+- 4.0 Air Brakes (20% of exam): 60 questions
+- 5.0 Combination Vehicles (15% of exam): 45 questions
+- 6.0 Pre-Trip Vehicle Inspection (15% of exam): 45 questions
+- 7.0 Basic Vehicle Control and Maneuvering (9% of exam): 27 questions
 
 ### Sample questions
 **Q: A driver wants to operate a tractor pulling a 53-foot semitrailer with a gross combination weight rating of 80,000 pounds, where the trailer alone is rated at 30,000 pounds. Which CDL class is required to legally drive this combination?**
@@ -1004,7 +1004,7 @@ A: It pumps air into the air storage tanks (reservoirs)
 A: Keep the cargo as close to the ground as possible, and drive slowly around turns
 
 **Q: The CDL manual opens the inspection chapter by stating a single most important reason for inspecting a vehicle before every trip. Which reason matches the manual?**
-A: Safety — for the driver and for other road users
+A: Safety, for the driver and for other road users
 
 ## Georgia Real Estate Salesperson License (Real Estate License)
 Vendor: Georgia Real Estate Commission / AMP
@@ -1014,16 +1014,16 @@ Total questions: 300
 The Georgia Real Estate Salesperson Examination is administered by AMP for the Georgia Real Estate Commission (GREC). The full exam is 152 multiple-choice items combining the National Real Estate portion (100 items across seven content areas: agency relationships and contracts, real property ownership and interest, finance, real property and valuation, marketing regulations, property management, and real estate calculations) with the Georgia Salesperson Supplement (52 items covering state laws and rules, real estate practice in Georgia, and finance and closing). Candidates must complete a 75-hour Georgia-approved prelicense course, pass the exam at 75%, secure a sponsoring broker for active licensure, and complete a 25-hour postlicense course in their first year.
 
 ### Domains
-- 1.0 Agency Relationships and Contracts (19% of exam) — 56 questions
-- 2.0 Real Property Ownership and Interest (9% of exam) — 28 questions
-- 3.0 Finance (10% of exam) — 30 questions
-- 4.0 Real Property (9% of exam) — 28 questions
-- 5.0 Marketing Regulations (5% of exam) — 16 questions
-- 6.0 Property Management (5% of exam) — 16 questions
-- 7.0 Real Estate Calculations (9% of exam) — 26 questions
-- 8.0 State Laws & Rules (Georgia) (11% of exam) — 32 questions
-- 9.0 Real Estate Practice in Georgia (14% of exam) — 42 questions
-- 10.0 Finance & Closing (Georgia) (9% of exam) — 26 questions
+- 1.0 Agency Relationships and Contracts (19% of exam): 56 questions
+- 2.0 Real Property Ownership and Interest (9% of exam): 28 questions
+- 3.0 Finance (10% of exam): 30 questions
+- 4.0 Real Property (9% of exam): 28 questions
+- 5.0 Marketing Regulations (5% of exam): 16 questions
+- 6.0 Property Management (5% of exam): 16 questions
+- 7.0 Real Estate Calculations (9% of exam): 26 questions
+- 8.0 State Laws & Rules (Georgia) (11% of exam): 32 questions
+- 9.0 Real Estate Practice in Georgia (14% of exam): 42 questions
+- 10.0 Finance & Closing (Georgia) (9% of exam): 26 questions
 
 ### Sample questions
 **Q: Which of the following actions most clearly creates an express agency relationship between a seller and a real estate broker?**
@@ -1049,14 +1049,14 @@ Vendor: NMLS
 URL: https://quizbuffet.com/nmls-mlo/
 Total questions: 300
 
-The SAFE MLO National Test with Uniform State Content is required by the federal SAFE Act for any individual originating residential mortgage loans. The test consists of 120 multiple-choice items (115 scored, 5 unscored) across five content areas: Federal Mortgage-Related Laws (24%), Uniform State Content (11%), General Mortgage Knowledge (20%), Mortgage Loan Origination Activities (27%), and Ethics (18%). Federal coverage is anchored on 12 CFR Parts 1024, 1002, 1026, 1003, 1022, 1016, 1014, and 1008 — RESPA (Reg X), ECOA (Reg B), TILA (Reg Z), HMDA (Reg C), FCRA (Reg V), Privacy (Reg P), MAP advertising (Reg N), and SAFE Act compliance (Reg H).
+The SAFE MLO National Test with Uniform State Content is required by the federal SAFE Act for any individual originating residential mortgage loans. The test consists of 120 multiple-choice items (115 scored, 5 unscored) across five content areas: Federal Mortgage-Related Laws (24%), Uniform State Content (11%), General Mortgage Knowledge (20%), Mortgage Loan Origination Activities (27%), and Ethics (18%). Federal coverage is anchored on 12 CFR Parts 1024, 1002, 1026, 1003, 1022, 1016, 1014, and 1008, RESPA (Reg X), ECOA (Reg B), TILA (Reg Z), HMDA (Reg C), FCRA (Reg V), Privacy (Reg P), MAP advertising (Reg N), and SAFE Act compliance (Reg H).
 
 ### Domains
-- 1.0 Federal Mortgage-Related Laws (24% of exam) — 72 questions
-- 2.0 Uniform State Content (11% of exam) — 33 questions
-- 3.0 General Mortgage Knowledge (20% of exam) — 60 questions
-- 4.0 Mortgage Loan Origination Activities (27% of exam) — 81 questions
-- 5.0 Ethics (18% of exam) — 54 questions
+- 1.0 Federal Mortgage-Related Laws (24% of exam): 72 questions
+- 2.0 Uniform State Content (11% of exam): 33 questions
+- 3.0 General Mortgage Knowledge (20% of exam): 60 questions
+- 4.0 Mortgage Loan Origination Activities (27% of exam): 81 questions
+- 5.0 Ethics (18% of exam): 54 questions
 
 ### Sample questions
 **Q: RESPA was enacted by Congress in 1974 to address rising costs in real estate transactions. Lenders, brokers, and servicers must comply with its disclosure and anti-kickback provisions. What is the primary purpose of RESPA?**
@@ -1085,15 +1085,15 @@ Total questions: 300
 FAA Part 107 is the Remote Pilot Certificate with a small Unmanned Aircraft Systems (sUAS) rating, required by 14 CFR Part 107 for any commercial drone operation in the United States. The initial knowledge test (UAG) is administered by PSI at FAA-approved testing centers and consists of 60 multiple-choice questions covering five Areas of Operation from the FAA Airman Certification Standards (FAA-S-ACS-10B): Regulations, Airspace and Operating Requirements, Weather, Loading and Performance, and Operations. Candidates pass with 70% (42 of 60). After August 2024, recurrent currency is satisfied through the free online ALC-677 training every 24 months instead of a recurrent knowledge test.
 
 ### Domains
-- 1.0 Regulations — Core (14% of exam) — 42 questions
-- 2.0 Operations Over People (5% of exam) — 15 questions
-- 3.0 Remote Identification (3% of exam) — 9 questions
-- 4.0 Airspace Classification and Operational Requirements (20% of exam) — 60 questions
-- 5.0 Weather (13% of exam) — 39 questions
-- 6.0 Loading and Performance (9% of exam) — 27 questions
-- 7.0 Radio Communications and Airport Operations (11% of exam) — 33 questions
-- 8.0 Emergency Procedures and Aeronautical Decision-Making (14% of exam) — 42 questions
-- 9.0 Physiology and Maintenance (11% of exam) — 33 questions
+- 1.0 Regulations: Core (14% of exam): 42 questions
+- 2.0 Operations Over People (5% of exam): 15 questions
+- 3.0 Remote Identification (3% of exam): 9 questions
+- 4.0 Airspace Classification and Operational Requirements (20% of exam): 60 questions
+- 5.0 Weather (13% of exam): 39 questions
+- 6.0 Loading and Performance (9% of exam): 27 questions
+- 7.0 Radio Communications and Airport Operations (11% of exam): 33 questions
+- 8.0 Emergency Procedures and Aeronautical Decision-Making (14% of exam): 42 questions
+- 9.0 Physiology and Maintenance (11% of exam): 33 questions
 
 ### Sample questions
 **Q: A manufacturer is assessing whether its new aircraft falls under 14 CFR Part 107. The finished aircraft weighs 54.9 pounds including all installed components and payload at the time of operation. Under Part 107, does this aircraft qualify as a small unmanned aircraft?**
@@ -1122,12 +1122,12 @@ Total questions: 900
 The NASM Certified Personal Trainer (NASM-CPT) credential is an NCCA-accredited certification administered by the National Academy of Sports Medicine. The certification exam consists of 120 multiple-choice questions delivered over a 2-hour window through PSI testing centers, with a passing score of 70%. Content is anchored on the NASM CPT Exam Content Outline (current 7th edition), organized into six domains: Basic and Applied Sciences and Nutritional Concepts, Client Relations and Behavioral Coaching, Assessment, Program Design, Exercise Technique and Training Instruction, and Professional Development and Responsibility. NASM's programming framework is the Optimum Performance Training (OPT) model, which sequences clients through stabilization endurance, strength endurance, hypertrophy, maximal strength, and power phases. This QuizBuffet bank weights its 900 questions toward foundational sciences (anatomy, physiology, kinesiology, energy systems, nutrition) so candidates have generous drill volume on the material that everything else builds on.
 
 ### Domains
-- 1.0 Basic and Applied Sciences and Nutritional Concepts (46% of exam) — 408 questions
-- 2.0 Client Relations and Behavioral Coaching (11% of exam) — 100 questions
-- 3.0 Assessment (11% of exam) — 100 questions
-- 4.0 Program Design (7% of exam) — 64 questions
-- 5.0 Exercise Technique and Training Instruction (14% of exam) — 128 questions
-- 6.0 Professional Development and Responsibility (11% of exam) — 100 questions
+- 1.0 Basic and Applied Sciences and Nutritional Concepts (46% of exam): 408 questions
+- 2.0 Client Relations and Behavioral Coaching (11% of exam): 100 questions
+- 3.0 Assessment (11% of exam): 100 questions
+- 4.0 Program Design (7% of exam): 64 questions
+- 5.0 Exercise Technique and Training Instruction (14% of exam): 128 questions
+- 6.0 Professional Development and Responsibility (11% of exam): 100 questions
 
 ### Sample questions
 **Q: A personal trainer is explaining to a client how the body coordinates movement during exercise. According to NASM, which system is responsible for collecting, processing, and responding to information from the environment?**
@@ -1137,13 +1137,13 @@ A: The nervous system
 A: Sport and exercise psychology
 
 **Q: A personal trainer performs a standing postural observation of a new client before beginning exercise programming. According to NASM, what is the purpose of a static postural assessment?**
-A: To identify deviations from ideal joint alignment at rest — revealing potential muscular imbalances before movement is introduced
+A: To identify deviations from ideal joint alignment at rest, revealing potential muscular imbalances before movement is introduced
 
 **Q: A personal trainer explains program design principles to a new colleague. According to NASM, which factors are essential when designing a comprehensive fitness program?**
-A: Client goals, health history, assessment findings, fitness level, available equipment, time constraints, and movement pattern balance — together forming the foundation of individualized program design
+A: Client goals, health history, assessment findings, fitness level, available equipment, time constraints, and movement pattern balance, together forming the foundation of individualized program design
 
 **Q: A personal trainer introduces a new client to the NASM training philosophy. According to NASM, what does the OPT model stand for and what is its primary purpose?**
-A: Optimum Performance Training — a systematic, evidence-based framework for progressing clients through phases of training to develop all biomotor abilities safely and effectively
+A: Optimum Performance Training, a systematic, evidence-based framework for progressing clients through phases of training to develop all biomotor abilities safely and effectively
 
 **Q: NASM recommends that all fitness professionals maintain a focus on evidence-based practice. Which statement best defines evidence-based practice according to NASM?**
 A: The conscientious use of current best evidence in making decisions about client care
@@ -1156,13 +1156,13 @@ Total questions: 300
 CPR / AED Certification is the lay-rescuer credential for responding to sudden cardiac arrest, choking, and other breathing emergencies. The knowledge component is standardized across the American Heart Association and American Red Cross and is built on the AHA Guidelines for CPR & ECC: scene safety, the Chain of Survival, recognition of cardiac arrest, high-quality compressions and ventilations for adults, children, and infants, AED operation, choking response, and special situations such as opioid overdose, drowning, and pregnancy. Required for many healthcare, education, fitness, lifeguard, and child-care roles, and broadly recommended for any responsible adult.
 
 ### Domains
-- 1.0 Introduction and Chain of Survival (8% of exam) — 24 questions
-- 2.0 Assessment and Recognition (12% of exam) — 36 questions
-- 3.0 Adult CPR (22% of exam) — 65 questions
-- 4.0 Child and Infant CPR (18% of exam) — 54 questions
-- 5.0 AED Operation (18% of exam) — 55 questions
-- 6.0 Choking and Airway Obstruction (12% of exam) — 36 questions
-- 7.0 Special Situations and Recovery (10% of exam) — 30 questions
+- 1.0 Introduction and Chain of Survival (8% of exam): 24 questions
+- 2.0 Assessment and Recognition (12% of exam): 36 questions
+- 3.0 Adult CPR (22% of exam): 65 questions
+- 4.0 Child and Infant CPR (18% of exam): 54 questions
+- 5.0 AED Operation (18% of exam): 55 questions
+- 6.0 Choking and Airway Obstruction (12% of exam): 36 questions
+- 7.0 Special Situations and Recovery (10% of exam): 30 questions
 
 ### Sample questions
 **Q: What kind of questions are on the CPR test?**
@@ -1191,15 +1191,15 @@ Total questions: 200
 The QuickBooks ProAdvisor program is Intuit's free certification for accounting and bookkeeping professionals. The QuickBooks Online (QBO) Certification exam tests practical knowledge of subscription selection, navigation and company settings, list and product/service management, the chart of accounts, customer and sales workflows, vendor and purchase workflows, banking and bank-feed reconciliation, reports, and payroll basics. Certification is delivered through training courses on QuickBooks Online Accountant; candidates pass each module quiz at 80% and the final exam at 80%, with three attempts per module. The Advanced ProAdvisor Certification builds on the basic certification with deeper QBO functionality and advisory workflows.
 
 ### Domains
-- 1.0 QBO Setup & Subscriptions (8% of exam) — 16 questions
-- 2.0 Navigation & Settings (12% of exam) — 24 questions
-- 3.0 List Management (10% of exam) — 20 questions
-- 4.0 Chart of Accounts & Products/Services (10% of exam) — 20 questions
-- 5.0 Customers & Sales Transactions (20% of exam) — 40 questions
-- 6.0 Vendors & Purchase Transactions (15% of exam) — 30 questions
-- 7.0 Banking, Feeds & Reconciliation (15% of exam) — 30 questions
-- 8.0 Reports (7% of exam) — 14 questions
-- 9.0 Payroll (3% of exam) — 6 questions
+- 1.0 QBO Setup & Subscriptions (8% of exam): 16 questions
+- 2.0 Navigation & Settings (12% of exam): 24 questions
+- 3.0 List Management (10% of exam): 20 questions
+- 4.0 Chart of Accounts & Products/Services (10% of exam): 20 questions
+- 5.0 Customers & Sales Transactions (20% of exam): 40 questions
+- 6.0 Vendors & Purchase Transactions (15% of exam): 30 questions
+- 7.0 Banking, Feeds & Reconciliation (15% of exam): 30 questions
+- 8.0 Reports (7% of exam): 14 questions
+- 9.0 Payroll (3% of exam): 6 questions
 
 ### Sample questions
 **Q: The QuickBooks Online test drive lets users explore a sample company called Craig's Design and Landscaping Services without creating an account or signing in. The guide specifies a direct URL to access this environment. Which URL opens the QBO test drive file?**
@@ -1228,14 +1228,14 @@ Total questions: 300
 BLS (Basic Life Support) certifies healthcare professionals to deliver high-quality CPR, use an AED, provide ventilation with barrier devices and bag-mask, relieve choking, and work as part of a high-performance resuscitation team for adults, children, and infants. Required for nurses, physicians, EMTs, paramedics, dental and respiratory professionals, and most clinical roles. Built around the AHA Chain of Survival, 2020 BLS Guidelines (with 2023 focused updates), and the AHA BLS Provider course; renewal is typically every two years.
 
 ### Domains
-- 1.0 Course Concepts and Chain of Survival (6% of exam) — 18 questions
-- 2.0 Assessment and High-Performance Teams (12% of exam) — 36 questions
-- 3.0 Adult BLS (1- and 2-Rescuer) (22% of exam) — 66 questions
-- 4.0 Pediatric BLS (Children and Infants) (18% of exam) — 54 questions
-- 5.0 AED for All Ages (16% of exam) — 48 questions
-- 6.0 Alternate Ventilation and Advanced Airways (8% of exam) — 24 questions
-- 7.0 Choking Relief Across Ages (10% of exam) — 30 questions
-- 8.0 Special Emergencies and Recovery (8% of exam) — 24 questions
+- 1.0 Course Concepts and Chain of Survival (6% of exam): 18 questions
+- 2.0 Assessment and High-Performance Teams (12% of exam): 36 questions
+- 3.0 Adult BLS (1- and 2-Rescuer) (22% of exam): 66 questions
+- 4.0 Pediatric BLS (Children and Infants) (18% of exam): 54 questions
+- 5.0 AED for All Ages (16% of exam): 48 questions
+- 6.0 Alternate Ventilation and Advanced Airways (8% of exam): 24 questions
+- 7.0 Choking Relief Across Ages (10% of exam): 30 questions
+- 8.0 Special Emergencies and Recovery (8% of exam): 24 questions
 
 ### Sample questions
 **Q: AHA Part 1 lists the skills tests a student must pass to earn a BLS course completion card. Which two tests are required?**
@@ -1264,10 +1264,10 @@ Total questions: 300
 A Cosmetology License is required in every U.S. state to perform haircutting, chemical services, skin care, and nail care for compensation. State exams typically follow the NIC (National-Interstate Council of State Boards of Cosmetology) National Theory blueprint, administered by PSI or a similar testing vendor as a written exam plus a hands-on practical. The written exam covers four areas: scientific concepts (infection control, anatomy and physiology, chemistry, electricity), hair care and services (cutting, styling, color, chemical texture, hair structure), skin care and services (facials, hair removal, skin analysis), and nail care and services (manicures, pedicures, enhancements, nail disorders).
 
 ### Domains
-- 1.0 Scientific Concepts (31% of exam) — 92 questions
-- 2.0 Hair Care and Services (37% of exam) — 118 questions
-- 3.0 Skin Care and Services (17% of exam) — 49 questions
-- 4.0 Nail Care and Services (15% of exam) — 41 questions
+- 1.0 Scientific Concepts (31% of exam): 92 questions
+- 2.0 Hair Care and Services (37% of exam): 118 questions
+- 3.0 Skin Care and Services (17% of exam): 49 questions
+- 4.0 Nail Care and Services (15% of exam): 41 questions
 
 ### Sample questions
 **Q: A new cosmetology student is studying how illness spreads in the salon environment. Which of the following is the most common way pathogens are transmitted from one client to another?**
@@ -1286,7 +1286,7 @@ A: Decline the service, document the observation, and refer the client to a phys
 A: A balanced moisture and oil content, small pores, smooth texture, and even tone with no significant dry patches or oily zones
 
 **Q: During a pre-facial consultation, a cosmetologist observes areas of darker pigmentation on a client's cheeks and forehead that are flat, non-raised, and symmetrically distributed. The client reports using no new products but has been spending more time outdoors. This presentation is consistent with which skin condition?**
-A: Hyperpigmentation — specifically solar lentigines or melasma — where melanocytes produce excess melanin in response to UV exposure, creating flat, darker-than-surrounding-skin patches
+A: Hyperpigmentation, specifically solar lentigines or melasma, where melanocytes produce excess melanin in response to UV exposure, creating flat, darker-than-surrounding-skin patches
 
 ## Advanced Practice Micropigmentation (Micropigmentation)
 Vendor: NIC
@@ -1296,9 +1296,9 @@ Total questions: 210
 The NIC National Advanced Practice Micropigmentation Theory Examination is the licensure theory exam for advanced cosmetic tattoo procedures (permanent makeup, paramedical micropigmentation, scalp pigmentation, areola restoration, scar repigmentation) authored by the National-Interstate Council of State Boards of Cosmetology (NIC) and adopted by participating state boards. The blueprint covers three domains: Scientific Concepts (infection control, skin and tissue structure, human anatomy and physiology, skin disorders, equipment and pigment storage), Micropigmentation Procedures (client communication and documentation, skin preparation, color theory, pre-application design, and application technique), and Side Effects and Possible Complications. Candidates are expected to anchor their knowledge in the Society of Permanent Cosmetic Professionals (SPCP) standards, NIC Infection Control and Safety Standards, and Milady's Aesthetician Series Permanent Makeup: Tips and Techniques.
 
 ### Domains
-- 1.0 Scientific Concepts (46% of exam) — 96 questions
-- 2.0 Micropigmentation Procedures (50% of exam) — 104 questions
-- 3.0 Side Effects and Possible Complications (4% of exam) — 10 questions
+- 1.0 Scientific Concepts (46% of exam): 96 questions
+- 2.0 Micropigmentation Procedures (50% of exam): 104 questions
+- 3.0 Side Effects and Possible Complications (4% of exam): 10 questions
 
 ### Sample questions
 **Q: Bacteria that require oxygen to survive are classified as**
@@ -1314,7 +1314,7 @@ A: current medications, allergies, medical conditions, previous cosmetic procedu
 A: in writing before the procedure begins, after the technician has explained the procedure, risks, expected outcomes, and alternatives
 
 **Q: The most common expected side effect immediately following a micropigmentation procedure is**
-A: redness, mild swelling, and tenderness at the procedure site lasting 24–72 hours
+A: redness, mild swelling, and tenderness at the procedure site lasting 24-72 hours
 
 **Q: A client who had brow micropigmentation performed two years ago is scheduled for an MRI of the head and neck. The most important safety step is**
 A: inform the MRI technologist and radiologist about the presence of iron oxide-based micropigmentation pigments at the brow site so the imaging team can assess artifact risk, any potential local heating, and any sensation reported by the client during the scan
@@ -1324,13 +1324,13 @@ Vendor: State Boards
 URL: https://quizbuffet.com/barber-license/
 Total questions: 260
 
-A Barber License is required in every U.S. state to perform haircutting, shaving, beard design, chemical hair services, and basic skin and scalp care for compensation. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber Theory Examination — a 60-item, 90-minute written exam — paired with a hands-on practical, both typically administered by PSI. The theory blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, product chemistry), implements and equipment (razors, shears, clippers, sanitation), hair care services (consultation, draping, shampoo, cutting, styling, chemical services), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy).
+A Barber License is required in every U.S. state to perform haircutting, shaving, beard design, chemical hair services, and basic skin and scalp care for compensation. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber Theory Examination, a 60-item, 90-minute written exam, paired with a hands-on practical, both typically administered by PSI. The theory blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, product chemistry), implements and equipment (razors, shears, clippers, sanitation), hair care services (consultation, draping, shampoo, cutting, styling, chemical services), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy).
 
 ### Domains
-- 1.0 Scientific Concepts (38% of exam) — 100 questions
-- 2.0 Implements and Equipment (8% of exam) — 20 questions
-- 3.0 Hair Care Services (40% of exam) — 104 questions
-- 4.0 Facial Hair and Skin Care Services (14% of exam) — 36 questions
+- 1.0 Scientific Concepts (38% of exam): 100 questions
+- 2.0 Implements and Equipment (8% of exam): 20 questions
+- 3.0 Hair Care Services (40% of exam): 104 questions
+- 4.0 Facial Hair and Skin Care Services (14% of exam): 36 questions
 
 ### Sample questions
 **Q: Anthrax and tetanus bacilli form which type of spores?**
@@ -1356,13 +1356,13 @@ Vendor: State Boards
 URL: https://quizbuffet.com/barber-no-chemical/
 Total questions: 220
 
-Barber 1 (No Chemical) is an entry-level barber license that authorizes haircutting, shaving, beard and facial-hair design, and basic styling — but NOT chemical services such as color, perms, or relaxers. It requires fewer training hours than a full Barber License and is a common stepping stone toward chemical-services certification. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber 1 (No Chemical) Theory Examination — a 60-item (50 weighted), 90-minute written exam. The blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, basic product chemistry — 40%), implements and equipment (razors, shears, clippers, sanitation — 10%), hair care services (consultation, draping, shampoo, cutting, styling — 30%), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy — 20%).
+Barber 1 (No Chemical) is an entry-level barber license that authorizes haircutting, shaving, beard and facial-hair design, and basic styling, but NOT chemical services such as color, perms, or relaxers. It requires fewer training hours than a full Barber License and is a common stepping stone toward chemical-services certification. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber 1 (No Chemical) Theory Examination, a 60-item (50 weighted), 90-minute written exam. The blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, basic product chemistry, 40%), implements and equipment (razors, shears, clippers, sanitation, 10%), hair care services (consultation, draping, shampoo, cutting, styling, 30%), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy, 20%).
 
 ### Domains
-- 1.0 Scientific Concepts (40% of exam) — 88 questions
-- 2.0 Implements and Equipment (11% of exam) — 24 questions
-- 3.0 Hair Care Services (31% of exam) — 68 questions
-- 4.0 Facial Hair and Skin Care Services (18% of exam) — 40 questions
+- 1.0 Scientific Concepts (40% of exam): 88 questions
+- 2.0 Implements and Equipment (11% of exam): 24 questions
+- 3.0 Hair Care Services (31% of exam): 68 questions
+- 4.0 Facial Hair and Skin Care Services (18% of exam): 40 questions
 
 ### Sample questions
 **Q: Direct contact transmission of pathogens occurs primarily through which of the following?**
@@ -1388,15 +1388,15 @@ Vendor: NIC
 URL: https://quizbuffet.com/tattoo-license/
 Total questions: 88
 
-A Tattoo Artist License is required in most U.S. states to perform tattooing for compensation. Many states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Tattooing Practical Examination — a six-section, timed performance evaluation administered on a live model. The exam covers six core domains based on the national job analysis: Work Area Set Up (infection control, EPA-registered disinfection, OSHA-mandated disposal containers, supply preparation), Client Preparation and Stencil Application (skin prep, simulated shave, stencil transfer to the forearm), Machine Assembly (presenting sterile packaged tubes and needles, building the machine, power on/off testing), Demonstration of Simulated Tattoo Procedure and Conclusion (pigment dispersal, simulated application, mid-procedure ink-cap addition, conclusion), Breakdown and Conclusion of Tattoo Service (decontaminating the procedural area, completing personal protection procedures), and Work Area Set Up for New Client (re-preparing supplies, demonstrating foot-switch disinfection and transport, completing personal protection). References are anchored on Milady Standard Esthetics Fundamentals + Foundations (12th Edition) and the APP Procedure Manual.
+A Tattoo Artist License is required in most U.S. states to perform tattooing for compensation. Many states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Tattooing Practical Examination, a six-section, timed performance evaluation administered on a live model. The exam covers six core domains based on the national job analysis: Work Area Set Up (infection control, EPA-registered disinfection, OSHA-mandated disposal containers, supply preparation), Client Preparation and Stencil Application (skin prep, simulated shave, stencil transfer to the forearm), Machine Assembly (presenting sterile packaged tubes and needles, building the machine, power on/off testing), Demonstration of Simulated Tattoo Procedure and Conclusion (pigment dispersal, simulated application, mid-procedure ink-cap addition, conclusion), Breakdown and Conclusion of Tattoo Service (decontaminating the procedural area, completing personal protection procedures), and Work Area Set Up for New Client (re-preparing supplies, demonstrating foot-switch disinfection and transport, completing personal protection). References are anchored on Milady Standard Esthetics Fundamentals + Foundations (12th Edition) and the APP Procedure Manual.
 
 ### Domains
-- 1.0 Work Area Set Up (18% of exam) — 16 questions
-- 2.0 Client Preparation and Stencil Application (14% of exam) — 12 questions
-- 3.0 Machine Assembly (14% of exam) — 12 questions
-- 4.0 Simulated Tattoo Procedure and Conclusion (23% of exam) — 20 questions
-- 5.0 Breakdown and Conclusion of Tattoo Service (18% of exam) — 16 questions
-- 6.0 Work Area Set Up for New Client (13% of exam) — 12 questions
+- 1.0 Work Area Set Up (18% of exam): 16 questions
+- 2.0 Client Preparation and Stencil Application (14% of exam): 12 questions
+- 3.0 Machine Assembly (14% of exam): 12 questions
+- 4.0 Simulated Tattoo Procedure and Conclusion (23% of exam): 20 questions
+- 5.0 Breakdown and Conclusion of Tattoo Service (18% of exam): 16 questions
+- 6.0 Work Area Set Up for New Client (13% of exam): 12 questions
 
 ### Sample questions
 **Q: Before beginning any tattoo procedure, the artist must don which personal protective equipment at minimum?**
@@ -1409,33 +1409,33 @@ A: capped throughout the simulated shaving demonstration
 A: demonstrate that the tube and needle are sterile by showing intact, uncompromised original packaging before opening
 
 **Q: Pigment must be dispensed from the source bottle into a**
-A: single-use ink cap placed on the procedure tray — never directly into the tube or machine
+A: single-use ink cap placed on the procedure tray, never directly into the tube or machine
 
 **Q: When breaking down the procedural work area after a tattoo service, barriers must be**
 A: removed carefully to avoid touching the contaminated outer surface, then discarded in the 'Trash' container before the underlying surface is disinfected
 
 **Q: When setting up supplies for a new client after breakdown, the candidate should**
-A: begin with freshly disinfected or newly barriered surfaces and new sterile packaged implements from the supply kit — never reusing single-session items from the previous client's procedure
+A: begin with freshly disinfected or newly barriered surfaces and new sterile packaged implements from the supply kit, never reusing single-session items from the previous client's procedure
 
-## CPA — Auditing and Attestation (AUD) (AUD)
+## CPA Auditing and Attestation (AUD) (AUD)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-aud/
 Total questions: 286
 
-The Auditing and Attestation (AUD) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass AUD regardless of their chosen Discipline. The 4-hour exam consists of 78 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Ethics, Professional Responsibilities and General Principles (15–25%) — AICPA Code of Conduct, SEC/PCAOB/GAO/DOL independence, professional skepticism, engagement preconditions, documentation; Assessing Risk and Developing a Planned Response (25–35%) — engagement strategy, the COSO Internal Control – Integrated Framework, IT general controls, SOC 1® reports, materiality and tolerable misstatement, fraud risk, related parties, single audits; Performing Further Procedures and Obtaining Evidence (30–40%) — sampling, tests of controls and details, analytical procedures, external confirmations, audit data analytics, accounting estimates, going concern, subsequent events; and Forming Conclusions and Reporting (10–20%) — audit and attestation reports, opinion types, emphasis-of-matter paragraphs, compilation and review engagements, compliance reporting, special-purpose frameworks, and additional GAO reporting requirements. References include AICPA Statements on Auditing Standards, PCAOB Auditing Standards, GAO Government Auditing Standards, Single Audit Act, OMB 2 CFR 200, and the AICPA Code of Professional Conduct.
+The Auditing and Attestation (AUD) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass AUD regardless of their chosen Discipline. The 4-hour exam consists of 78 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Ethics, Professional Responsibilities and General Principles (15-25%), AICPA Code of Conduct, SEC/PCAOB/GAO/DOL independence, professional skepticism, engagement preconditions, documentation; Assessing Risk and Developing a Planned Response (25-35%), engagement strategy, the COSO Internal Control. Integrated Framework, IT general controls, SOC 1® reports, materiality and tolerable misstatement, fraud risk, related parties, single audits; Performing Further Procedures and Obtaining Evidence (30-40%), sampling, tests of controls and details, analytical procedures, external confirmations, audit data analytics, accounting estimates, going concern, subsequent events; and Forming Conclusions and Reporting (10-20%): audit and attestation reports, opinion types, emphasis-of-matter paragraphs, compilation and review engagements, compliance reporting, special-purpose frameworks, and additional GAO reporting requirements. References include AICPA Statements on Auditing Standards, PCAOB Auditing Standards, GAO Government Auditing Standards, Single Audit Act, OMB 2 CFR 200, and the AICPA Code of Professional Conduct.
 
 ### Domains
-- 1.0 Ethics, Professional Responsibilities and General Principles (20% of exam) — 56 questions
-- 2.0 Assessing Risk and Developing a Planned Response (30% of exam) — 86 questions
-- 3.0 Performing Further Procedures and Obtaining Evidence (28% of exam) — 80 questions
-- 4.0 Forming Conclusions and Reporting (22% of exam) — 64 questions
+- 1.0 Ethics, Professional Responsibilities and General Principles (20% of exam): 56 questions
+- 2.0 Assessing Risk and Developing a Planned Response (30% of exam): 86 questions
+- 3.0 Performing Further Procedures and Obtaining Evidence (28% of exam): 80 questions
+- 4.0 Forming Conclusions and Reporting (22% of exam): 64 questions
 
 ### Sample questions
 **Q: IRC §6694(b) imposes a penalty on a tax return preparer for willful or reckless conduct. What conduct triggers this penalty, and what is the penalty amount?**
 A: Willful attempt to understate tax liability; reckless or intentional disregard of rules or regulations; penalty = the greater of $5,000 or 75% of the income derived from the return
 
 **Q: Under IRC §6695, which of the following is a penalty imposed on a tax return preparer?**
-A: Failure to include the preparer's Preparer Tax Identification Number (PTIN) on the return — $50 per failure, up to a maximum of $27,000 per year
+A: Failure to include the preparer's Preparer Tax Identification Number (PTIN) on the return, $50 per failure, up to a maximum of $27,000 per year
 
 **Q: Establishing an overall audit strategy at the beginning of an engagement serves to**
 A: Set the scope, timing, and direction of the audit and guide the development of the more detailed engagement plan
@@ -1447,19 +1447,19 @@ A: The determination that the audit will rely primarily on substantive analytica
 A: Entity-produced data (accounting records, transaction files, master files) and external data (market prices, third-party records, industry benchmarks)
 
 **Q: Before using an entity-provided transaction data file to perform audit sampling, an auditor should verify the completeness and accuracy of the file. Which procedure is MOST appropriate for this purpose?**
-A: Reconcile the file's record counts and total dollar amounts to independently prepared control totals — such as summary reports from the entity's accounting system or the trial balance
+A: Reconcile the file's record counts and total dollar amounts to independently prepared control totals, such as summary reports from the entity's accounting system or the trial balance
 
-## CPA — Financial Accounting and Reporting (FAR) (FAR)
+## CPA Financial Accounting and Reporting (FAR) (FAR)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-far/
 Total questions: 280
 
-The Financial Accounting and Reporting (FAR) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass FAR regardless of chosen Discipline. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Financial Reporting (30–40%) — preparation, adjustment, and analysis of financial statements for for-profit business entities and nongovernmental not-for-profit entities under the FASB Accounting Standards Codification, public company reporting under SEC rules (Forms 10-Q, 10-K, 8-K, EPS), special-purpose frameworks, financial statement ratios, and state and local government measurement focus and basis of accounting under GASB; Select Balance Sheet Accounts (30–40%) — cash and cash equivalents, trade receivables, inventory, property plant and equipment, investments (fair value, amortized cost, equity method), intangible assets, payables and accrued liabilities, debt covenants, and equity transactions; and Select Transactions (25–35%) — accounting changes and error corrections, contingencies and commitments, revenue recognition (five-step model and not-for-profit contributions), accounting for income taxes, fair value measurements, lessee accounting, and subsequent events. References include the FASB Accounting Standards Codification, FASB Concepts Statements, U.S. SEC Regulation S-X and S-K, GASB Codification, and AICPA Practice Aids.
+The Financial Accounting and Reporting (FAR) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass FAR regardless of chosen Discipline. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Financial Reporting (30-40%): preparation, adjustment, and analysis of financial statements for for-profit business entities and nongovernmental not-for-profit entities under the FASB Accounting Standards Codification, public company reporting under SEC rules (Forms 10-Q, 10-K, 8-K, EPS), special-purpose frameworks, financial statement ratios, and state and local government measurement focus and basis of accounting under GASB; Select Balance Sheet Accounts (30-40%): cash and cash equivalents, trade receivables, inventory, property plant and equipment, investments (fair value, amortized cost, equity method), intangible assets, payables and accrued liabilities, debt covenants, and equity transactions; and Select Transactions (25-35%): accounting changes and error corrections, contingencies and commitments, revenue recognition (five-step model and not-for-profit contributions), accounting for income taxes, fair value measurements, lessee accounting, and subsequent events. References include the FASB Accounting Standards Codification, FASB Concepts Statements, U.S. SEC Regulation S-X and S-K, GASB Codification, and AICPA Practice Aids.
 
 ### Domains
-- 1.0 Financial Reporting (46% of exam) — 128 questions
-- 2.0 Select Balance Sheet Accounts (34% of exam) — 96 questions
-- 3.0 Select Transactions (20% of exam) — 56 questions
+- 1.0 Financial Reporting (46% of exam): 128 questions
+- 2.0 Select Balance Sheet Accounts (34% of exam): 96 questions
+- 3.0 Select Transactions (20% of exam): 56 questions
 
 ### Sample questions
 **Q: The fundamental accounting equation underlying the balance sheet states that**
@@ -1469,68 +1469,68 @@ A: Assets = Liabilities + Stockholders' Equity
 A: It is expected to be converted to cash, sold, or consumed within one year or within the entity's operating cycle, whichever is longer
 
 **Q: Under ASC 305, an investment qualifies as a cash equivalent when it is**
-A: A short-term, highly liquid investment readily convertible to a known cash amount with an original maturity of three months or less from the date of purchase — presenting insignificant risk of value changes
+A: A short-term, highly liquid investment readily convertible to a known cash amount with an original maturity of three months or less from the date of purchase, presenting insignificant risk of value changes
 
 **Q: On December 1, a company purchases a 60-day commercial paper instrument with face value of $500,000. How should this investment be classified on the December 31 balance sheet?**
-A: Cash equivalent — the 60-day original maturity at purchase is within the three-month threshold, qualifying it as a cash equivalent
+A: Cash equivalent, the 60-day original maturity at purchase is within the three-month threshold, qualifying it as a cash equivalent
 
 **Q: Under ASC 250, a change in accounting principle is generally accounted for using which approach?**
-A: Retrospective approach — all prior periods presented are restated to reflect the new principle, and the cumulative effect on periods not presented is recorded as an adjustment to the opening balance of retained earnings
+A: Retrospective approach, all prior periods presented are restated to reflect the new principle, and the cumulative effect on periods not presented is recorded as an adjustment to the opening balance of retained earnings
 
 **Q: A company changes depreciation method from declining balance to straight-line for all existing assets. This is classified as**
-A: A change in accounting estimate effected by a change in accounting principle — accounted for prospectively in current and future periods
+A: A change in accounting estimate effected by a change in accounting principle, accounted for prospectively in current and future periods
 
-## CPA — Taxation and Regulation (REG) (REG)
+## CPA Taxation and Regulation (REG) (REG)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-reg/
 Total questions: 112
 
-The Taxation and Regulation (REG) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass REG regardless of chosen Discipline. The 4-hour exam consists of 72 multiple-choice questions and 8 task-based simulations, weighted 50/50 in scoring. Content covers five areas: Ethics, Professional Responsibilities and Federal Tax Procedures (10–20%) — Treasury Department Circular 230, tax return preparer rules and penalties, state board licensing, IRS audits and appeals, tax authoritative hierarchy, privileged communications; Business Law (15–25%) — agency, contracts (UCC), debtor-creditor relationships, bankruptcy under BAPCPA 2005, employment taxes, qualified health plans, worker classifications, anti-bribery under FCPA 1977, business entity formation and termination; Federal Taxation of Property Transactions (5–15%) — tax basis of purchased and converted assets, gifted and inherited property, wash sales, intangible assets, MACRS depreciation, Section 179, amortization; Federal Taxation of Individuals (22–32%) — Form 1040 gross income inclusions and exclusions, pass-through income, AGI adjustments, itemized deductions, QBI deduction, loss limitations, filing status, tax credits, estimated tax safe harbor; and Federal Taxation of Entities (23–33%) — Schedule M-1/M-3 book-tax differences, C corporation taxable income and state nexus, S corporation eligibility and ordinary business income, partnership separately stated items and partner basis, LLCs, tax-exempt organizations. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, Uniform Commercial Code, Revised Model Business Corporation Act, FCPA, and ACA.
+The Taxation and Regulation (REG) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass REG regardless of chosen Discipline. The 4-hour exam consists of 72 multiple-choice questions and 8 task-based simulations, weighted 50/50 in scoring. Content covers five areas: Ethics, Professional Responsibilities and Federal Tax Procedures (10-20%). Treasury Department Circular 230, tax return preparer rules and penalties, state board licensing, IRS audits and appeals, tax authoritative hierarchy, privileged communications; Business Law (15-25%): agency, contracts (UCC), debtor-creditor relationships, bankruptcy under BAPCPA 2005, employment taxes, qualified health plans, worker classifications, anti-bribery under FCPA 1977, business entity formation and termination; Federal Taxation of Property Transactions (5-15%): tax basis of purchased and converted assets, gifted and inherited property, wash sales, intangible assets, MACRS depreciation, Section 179, amortization; Federal Taxation of Individuals (22-32%): Form 1040 gross income inclusions and exclusions, pass-through income, AGI adjustments, itemized deductions, QBI deduction, loss limitations, filing status, tax credits, estimated tax safe harbor; and Federal Taxation of Entities (23-33%): Schedule M-1/M-3 book-tax differences, C corporation taxable income and state nexus, S corporation eligibility and ordinary business income, partnership separately stated items and partner basis, LLCs, tax-exempt organizations. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, Uniform Commercial Code, Revised Model Business Corporation Act, FCPA, and ACA.
 
 ### Domains
-- 1.0 Ethics, Professional Responsibilities and Federal Tax Procedures (14% of exam) — 16 questions
-- 2.0 Business Law (25% of exam) — 28 questions
-- 3.0 Federal Taxation of Property Transactions (14% of exam) — 16 questions
-- 4.0 Federal Taxation of Individuals (22% of exam) — 24 questions
-- 5.0 Federal Taxation of Entities (25% of exam) — 28 questions
+- 1.0 Ethics, Professional Responsibilities and Federal Tax Procedures (14% of exam): 16 questions
+- 2.0 Business Law (25% of exam): 28 questions
+- 3.0 Federal Taxation of Property Transactions (14% of exam): 16 questions
+- 4.0 Federal Taxation of Individuals (22% of exam): 24 questions
+- 5.0 Federal Taxation of Entities (25% of exam): 28 questions
 
 ### Sample questions
 **Q: Under Treasury Circular 230, which individuals are generally authorized to represent taxpayers before all levels of the Internal Revenue Service, including appeals and collections?**
-A: Attorneys, certified public accountants (CPAs), and enrolled agents — all three hold unlimited practice rights before the IRS
+A: Attorneys, certified public accountants (CPAs), and enrolled agents, all three hold unlimited practice rights before the IRS
 
 **Q: In the hierarchy of federal tax authority, which source ranks HIGHEST and is therefore binding on both the IRS and taxpayers?**
-A: The Internal Revenue Code (IRC), as enacted by Congress under its constitutional taxing authority — the IRC is the primary statutory source of federal tax law
+A: The Internal Revenue Code (IRC), as enacted by Congress under its constitutional taxing authority, the IRC is the primary statutory source of federal tax law
 
 **Q: Which type of agency authority arises when a third party reasonably believes an agent has authority because the principal's words or conduct created that impression, even though the agent has no actual authority?**
-A: Apparent authority — authority that exists because the principal's conduct led the third party to reasonably believe the agent was authorized
+A: Apparent authority, authority that exists because the principal's conduct led the third party to reasonably believe the agent was authorized
 
 **Q: Under common law contract principles, which of the following must be present for a valid contract to be formed?**
-A: An offer, acceptance, consideration, contractual capacity, and legality of subject matter — all five elements must be present
+A: An offer, acceptance, consideration, contractual capacity, and legality of subject matter, all five elements must be present
 
 **Q: A taxpayer inherits stock from a deceased relative who paid $10,000 for the stock. At the date of death, the stock's fair market value is $85,000. The taxpayer sells the stock for $90,000 nine months after inheriting it. What is the taxpayer's basis in the stock and the character of the gain?**
-A: Basis = $85,000 (FMV at date of death — §1014 stepped-up basis); gain = $5,000 long-term capital gain (inherited property is always long-term)
+A: Basis = $85,000 (FMV at date of death, §1014 stepped-up basis); gain = $5,000 long-term capital gain (inherited property is always long-term)
 
 **Q: A calendar-year taxpayer places a $50,000 piece of 5-year MACRS property into service on July 1. Assuming the half-year convention applies and the MACRS first-year rate for 5-year property is 20%, what is the first-year depreciation deduction?**
-A: $10,000 — the full 20% applies to the $50,000 cost because the asset was placed in service on July 1
+A: $10,000, the full 20% applies to the $50,000 cost because the asset was placed in service on July 1
 
-## CPA — Business Analysis and Reporting (BAR) (BAR)
+## CPA Business Analysis and Reporting (BAR) (BAR)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-bar/
 Total questions: 100
 
-The Business Analysis and Reporting (BAR) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — BAR is most often selected by candidates planning a career in audit, advisory, financial reporting, or work with state and local governments. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Business Analysis (40–50%) — current-period financial statement analysis, non-financial and non-GAAP performance measures (balanced scorecard, EBITDA, customer retention, free cash flow), managerial and cost accounting, variance analysis, budgeting and forecasting, capital structure, cost of capital, investment valuation (NPV, IRR, payback), COSO Enterprise Risk Management framework and ESG-related risks, and the impact of economic and market influences on business; Technical Accounting and Reporting (35–45%) — indefinite-lived intangible assets and goodwill, internally developed software, advanced revenue recognition, stock compensation, research and development costs, business combinations, consolidated financial statements (variable interest entities, noncontrolling interests, foreign currency translation), derivatives and hedge accounting, lessor accounting, SEC public company reporting (Regulation S-X, S-K, segments), and financial statements of employee benefit plans; and State and Local Governments (10–20%) — government-wide, governmental fund, proprietary fund, and fiduciary fund financial statements under the GASB Codification, including capital assets, long-term liabilities, interfund activity, nonexchange revenue, and budgetary accounting. References include the FASB Accounting Standards Codification, GASB Statements, U.S. SEC Regulations, and the COSO ERM framework.
+The Business Analysis and Reporting (BAR) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice, BAR is most often selected by candidates planning a career in audit, advisory, financial reporting, or work with state and local governments. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Business Analysis (40-50%): current-period financial statement analysis, non-financial and non-GAAP performance measures (balanced scorecard, EBITDA, customer retention, free cash flow), managerial and cost accounting, variance analysis, budgeting and forecasting, capital structure, cost of capital, investment valuation (NPV, IRR, payback), COSO Enterprise Risk Management framework and ESG-related risks, and the impact of economic and market influences on business; Technical Accounting and Reporting (35-45%): indefinite-lived intangible assets and goodwill, internally developed software, advanced revenue recognition, stock compensation, research and development costs, business combinations, consolidated financial statements (variable interest entities, noncontrolling interests, foreign currency translation), derivatives and hedge accounting, lessor accounting, SEC public company reporting (Regulation S-X, S-K, segments), and financial statements of employee benefit plans; and State and Local Governments (10-20%): government-wide, governmental fund, proprietary fund, and fiduciary fund financial statements under the GASB Codification, including capital assets, long-term liabilities, interfund activity, nonexchange revenue, and budgetary accounting. References include the FASB Accounting Standards Codification, GASB Statements, U.S. SEC Regulations, and the COSO ERM framework.
 
 ### Domains
-- 1.0 Business Analysis (32% of exam) — 32 questions
-- 2.0 Technical Accounting and Reporting (44% of exam) — 44 questions
-- 3.0 State and Local Governments (24% of exam) — 24 questions
+- 1.0 Business Analysis (32% of exam): 32 questions
+- 2.0 Technical Accounting and Reporting (44% of exam): 44 questions
+- 3.0 State and Local Governments (24% of exam): 24 questions
 
 ### Sample questions
 **Q: An analyst computes an entity's current ratio of 1.8x and quick ratio of 0.9x. Which interpretation of these ratios is MOST accurate?**
-A: The current ratio indicates adequate overall liquidity, but the quick ratio below 1.0x suggests the entity relies heavily on inventory to meet current obligations — raising a concern about near-term liquidity if inventory cannot be converted quickly
+A: The current ratio indicates adequate overall liquidity, but the quick ratio below 1.0x suggests the entity relies heavily on inventory to meet current obligations, raising a concern about near-term liquidity if inventory cannot be converted quickly
 
 **Q: An entity reports net income of $4,200,000, interest expense of $800,000, income tax expense of $1,200,000, depreciation of $900,000, and amortization of $300,000. Calculate EBITDA.**
-A: $7,400,000 — EBITDA adds back interest expense, income tax expense, depreciation, and amortization to net income
+A: $7,400,000, EBITDA adds back interest expense, income tax expense, depreciation, and amortization to net income
 
 **Q: Under ASC 350, which event or circumstance is MOST likely to be an indicator that a reporting unit's goodwill may be impaired, triggering a quantitative goodwill impairment test?**
 A: A significant adverse change in the business climate such as a substantial loss of key customers representing 30% of the reporting unit's revenue, or a regulatory action that restricts a major product line
@@ -1539,58 +1539,58 @@ A: A significant adverse change in the business climate such as a substantial lo
 A: Cost A: expense (preliminary project stage); Cost B: capitalize (application development stage); Cost C: expense (post-implementation/operation stage)
 
 **Q: Under GASB Statement No. 34, what is the measurement focus and basis of accounting used in government-wide financial statements?**
-A: Full accrual basis with an economic resources measurement focus — recognizing all assets, deferred outflows, liabilities, and deferred inflows regardless of when cash flows occur
+A: Full accrual basis with an economic resources measurement focus, recognizing all assets, deferred outflows, liabilities, and deferred inflows regardless of when cash flows occur
 
 **Q: Which type of governmental fund is used to account for the accumulation of resources for, and the payment of, long-term debt principal and interest?**
-A: Debt service fund — accounts for the accumulation of resources for and the payment of general long-term debt principal and interest
+A: Debt service fund, accounts for the accumulation of resources for and the payment of general long-term debt principal and interest
 
-## CPA — Information Systems and Controls (ISC) (ISC)
+## CPA Information Systems and Controls (ISC) (ISC)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-isc/
 Total questions: 300
 
-The Information Systems and Controls (ISC) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — ISC is most often selected by candidates planning a career in IT audit, cybersecurity, or System and Organization Controls (SOC) attestation. The 4-hour exam consists of 82 multiple-choice questions and 6 task-based simulations, weighted 60% MCQ / 40% TBS in scoring (the only section without 50/50 split). Content covers three areas: Information Systems and Data Management (35–45%) — IT infrastructure components, cloud computing models (IaaS, PaaS, SaaS), enterprise and accounting information systems, system availability, business continuity and disaster recovery, IT change management, data management, relational databases, SQL queries, data warehouses and lakes, and business process modeling; Security, Confidentiality and Privacy (35–45%) — HIPAA Security and Privacy Rules, GDPR Articles 4–34, PCI DSS, NIST CSF and Privacy Framework, NIST SP 800-53, CIS Controls v8.1, COBIT 2019, threat types and cyber-attack stages, identification/authentication/authorization controls, encryption, Data Loss Prevention, security testing, and incident response; and Considerations for SOC Engagements (15–25%) — purpose and intended users of SOC 1®, SOC 2®, SOC 3®, and SOC for Cybersecurity reports, Trust Services Criteria, system description criteria, complementary user entity controls (CUECs) and complementary subservice organization controls (CSOCs), report opinions and modifications. References include the AICPA Trust Services Criteria, NIST frameworks, HIPAA 45 CFR Part 164, GDPR, PCI DSS, COSO ERM, and COBIT 2019.
+The Information Systems and Controls (ISC) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice, ISC is most often selected by candidates planning a career in IT audit, cybersecurity, or System and Organization Controls (SOC) attestation. The 4-hour exam consists of 82 multiple-choice questions and 6 task-based simulations, weighted 60% MCQ / 40% TBS in scoring (the only section without 50/50 split). Content covers three areas: Information Systems and Data Management (35-45%): IT infrastructure components, cloud computing models (IaaS, PaaS, SaaS), enterprise and accounting information systems, system availability, business continuity and disaster recovery, IT change management, data management, relational databases, SQL queries, data warehouses and lakes, and business process modeling; Security, Confidentiality and Privacy (35-45%): HIPAA Security and Privacy Rules, GDPR Articles 4-34, PCI DSS, NIST CSF and Privacy Framework, NIST SP 800-53, CIS Controls v8.1, COBIT 2019, threat types and cyber-attack stages, identification/authentication/authorization controls, encryption, Data Loss Prevention, security testing, and incident response; and Considerations for SOC Engagements (15-25%): purpose and intended users of SOC 1®, SOC 2®, SOC 3®, and SOC for Cybersecurity reports, Trust Services Criteria, system description criteria, complementary user entity controls (CUECs) and complementary subservice organization controls (CSOCs), report opinions and modifications. References include the AICPA Trust Services Criteria, NIST frameworks, HIPAA 45 CFR Part 164, GDPR, PCI DSS, COSO ERM, and COBIT 2019.
 
 ### Domains
-- 1.0 Information Systems and Data Management (37% of exam) — 112 questions
-- 2.0 Security, Confidentiality and Privacy (37% of exam) — 112 questions
-- 3.0 Considerations for System and Organization Controls (SOC) Engagements (26% of exam) — 76 questions
+- 1.0 Information Systems and Data Management (37% of exam): 112 questions
+- 2.0 Security, Confidentiality and Privacy (37% of exam): 112 questions
+- 3.0 Considerations for System and Organization Controls (SOC) Engagements (26% of exam): 76 questions
 
 ### Sample questions
 **Q: Which of the following BEST describes the role of network infrastructure within an organization's IT architecture?**
-A: Network infrastructure encompasses the hardware and software components — including routers, switches, firewalls, and cabling — that enable communication and data transfer between devices and systems within the organization
+A: Network infrastructure encompasses the hardware and software components, including routers, switches, firewalls, and cabling, that enable communication and data transfer between devices and systems within the organization
 
 **Q: A company contracts with a cloud vendor to use the vendor's servers, storage, and networking equipment, but the company installs and manages its own operating systems, middleware, and applications. Which cloud computing service model does this arrangement BEST describe?**
 A: Infrastructure as a Service (IaaS), because the vendor provides the underlying hardware infrastructure while the company manages the software stack above it
 
 **Q: Under HIPAA, which entities are classified as 'covered entities' and are directly subject to the HIPAA Privacy and Security Rules?**
-A: Health plans, health care clearinghouses, and health care providers that transmit health information electronically — these three categories directly handle protected health information as part of their core functions
+A: Health plans, health care clearinghouses, and health care providers that transmit health information electronically, these three categories directly handle protected health information as part of their core functions
 
 **Q: The GDPR (General Data Protection Regulation) establishes six principles relating to the processing of personal data. Which principle requires that personal data be collected only for specified, explicit, and legitimate purposes and not further processed in a manner incompatible with those purposes?**
-A: Purpose limitation — personal data shall be collected for specified, explicit, and legitimate purposes and not further processed in a way incompatible with those purposes
+A: Purpose limitation, personal data shall be collected for specified, explicit, and legitimate purposes and not further processed in a way incompatible with those purposes
 
 **Q: The AICPA Trust Services Criteria (TSC) are organized into five categories. Which option correctly lists all five Trust Services categories?**
 A: Security, Availability, Processing Integrity, Confidentiality, Privacy
 
 **Q: A payroll processing service organization's clients are public companies subject to Sarbanes-Oxley. The clients' external auditors need assurance about the payroll processor's controls relevant to the clients' internal control over financial reporting. Which SOC report BEST meets this need?**
-A: SOC 1 — a report specifically designed to address controls at a service organization that are relevant to user entities' internal control over financial reporting (ICFR), used by user entities and their auditors for financial statement audit purposes
+A: SOC 1, a report specifically designed to address controls at a service organization that are relevant to user entities' internal control over financial reporting (ICFR), used by user entities and their auditors for financial statement audit purposes
 
-## CPA — Tax Compliance and Planning (TCP) (TCP)
+## CPA Tax Compliance and Planning (TCP) (TCP)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-tcp/
 Total questions: 124
 
-The Tax Compliance and Planning (TCP) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — TCP is most often selected by candidates planning a career in tax compliance, tax advisory, or personal financial planning. The 4-hour exam consists of 68 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Tax Compliance and Planning for Individuals and Personal Financial Planning (30–40%) — incentive compensation, AMT, at-risk and passive activity loss limitations, gifting and unified transfer tax, retirement plan selection (IRA, Roth, 401(k), annuities), investment risk, education funding, life and long-term care insurance, beneficiary designations, return on investment net of tax; Entity Tax Compliance (30–40%) — C corporation NOL and capital loss carryforwards, shareholder contributions and distributions, consolidated 1120 returns, international tax (CFC, FDII, BEAT, GILTI, IC-DISC, permanent establishment), S corporation shareholder basis and AAA, partnership partner basis and elections, trusts (simple, complex, grantor), distributable net income, tax-exempt organizations and unrelated business income; Entity Tax Planning (10–20%) — entity selection and formation, tax planning for C corps, S corps, and partnerships, built-in gains tax, terminating S elections; and Property Transactions (10–20%) — like-kind exchanges, involuntary conversions, Section 1231 capital gains and ordinary losses, Section 1245 and 1250 depreciation recapture, unrecaptured Section 1250 gain, Section 1244 small business stock, installment sales, related-party transactions, imputed interest. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, and case law on federal taxation.
+The Tax Compliance and Planning (TCP) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice, TCP is most often selected by candidates planning a career in tax compliance, tax advisory, or personal financial planning. The 4-hour exam consists of 68 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Tax Compliance and Planning for Individuals and Personal Financial Planning (30-40%), incentive compensation, AMT, at-risk and passive activity loss limitations, gifting and unified transfer tax, retirement plan selection (IRA, Roth, 401(k), annuities), investment risk, education funding, life and long-term care insurance, beneficiary designations, return on investment net of tax; Entity Tax Compliance (30-40%): C corporation NOL and capital loss carryforwards, shareholder contributions and distributions, consolidated 1120 returns, international tax (CFC, FDII, BEAT, GILTI, IC-DISC, permanent establishment), S corporation shareholder basis and AAA, partnership partner basis and elections, trusts (simple, complex, grantor), distributable net income, tax-exempt organizations and unrelated business income; Entity Tax Planning (10-20%): entity selection and formation, tax planning for C corps, S corps, and partnerships, built-in gains tax, terminating S elections; and Property Transactions (10-20%): like-kind exchanges, involuntary conversions, Section 1231 capital gains and ordinary losses, Section 1245 and 1250 depreciation recapture, unrecaptured Section 1250 gain, Section 1244 small business stock, installment sales, related-party transactions, imputed interest. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, and case law on federal taxation.
 
 ### Domains
-- 1.0 Tax Compliance and Planning for Individuals and Personal Financial Planning (32% of exam) — 40 questions
-- 2.0 Entity Tax Compliance (42% of exam) — 52 questions
-- 3.0 Entity Tax Planning (16% of exam) — 20 questions
-- 4.0 Property Transactions (Disposition of Assets) (10% of exam) — 12 questions
+- 1.0 Tax Compliance and Planning for Individuals and Personal Financial Planning (32% of exam): 40 questions
+- 2.0 Entity Tax Compliance (42% of exam): 52 questions
+- 3.0 Entity Tax Planning (16% of exam): 20 questions
+- 4.0 Property Transactions (Disposition of Assets) (10% of exam): 12 questions
 
 ### Sample questions
 **Q: An employee exercises an incentive stock option (ISO) and purchases 1,000 shares of employer stock at the option price of $10 per share when the fair market value is $35 per share. The employee holds all shares and does not sell them during the current year. What is the tax consequence for regular federal income tax purposes in the year of exercise?**
-A: No regular income tax consequence occurs in the year of exercise — ISOs are not taxable for regular tax purposes when exercised if no same-year sale occurs
+A: No regular income tax consequence occurs in the year of exercise, ISOs are not taxable for regular tax purposes when exercised if no same-year sale occurs
 
 **Q: The Kiddie Tax rules under IRC §1(g) tax a child's net unearned income at the parent's marginal tax rate. Which taxpayer situation is MOST likely subject to the Kiddie Tax?**
 A: A 17-year-old who has $4,800 of dividend income and $500 of earned income from babysitting, and can be claimed as a dependent by her parents
@@ -1605,25 +1605,25 @@ A: The taxpayer recognizes no gain or loss; the taxpayer's basis in the stock re
 A: S corporations are limited to 100 shareholders, may only issue one class of stock, and cannot have nonresident alien shareholders or most entity shareholders (with limited exceptions)
 
 **Q: A C corporation expects taxable income of $500,000 in the current year and has $300,000 of NOL carryforwards from prior years (all post-2017). The corporation wants to minimize its current-year federal income tax. What is the maximum NOL deduction the corporation may claim?**
-A: $400,000 — the corporation may deduct 80% of the $500,000 taxable income, which is more than the available $300,000 NOL carryforward, so the full $300,000 is deductible
+A: $400,000, the corporation may deduct 80% of the $500,000 taxable income, which is more than the available $300,000 NOL carryforward, so the full $300,000 is deductible
 
 ## Certified Ethical Hacker (CEH) (CEH)
 Vendor: EC-Council
 URL: https://quizbuffet.com/ceh/
 Total questions: 700
 
-Certified Ethical Hacker (CEH) from EC-Council validates offensive security skills for penetration testers, SOC analysts, and security engineers. The current blueprint (v5.0) covers nine domains: Information Security and Ethical Hacking Overview (6%) — methodologies, frameworks, controls, laws; Reconnaissance Techniques (17%) — footprinting, network scanning, enumeration; System Hacking Phases and Attack Techniques (15%) — vulnerability analysis, system hacking, malware threats; Network and Perimeter Hacking (24%) — sniffing, social engineering, denial-of-service, session hijacking, evading IDS/firewalls/honeypots; Web Application Hacking (14%) — web servers, web applications, SQL injection; Wireless Network Hacking (5%); Mobile Platform, IoT, and OT Hacking (10%); Cloud Computing (5%) — container, serverless, cloud security; and Cryptography (5%). CEH is ANSI/ISO 17024 accredited and DoD 8570/8140 baseline approved for several cybersecurity roles. Often compared with OSCP (more hands-on offensive) and CompTIA PenTest+ (vendor-neutral).
+Certified Ethical Hacker (CEH) from EC-Council validates offensive security skills for penetration testers, SOC analysts, and security engineers. The current blueprint (v5.0) covers nine domains: Information Security and Ethical Hacking Overview (6%), methodologies, frameworks, controls, laws; Reconnaissance Techniques (17%): footprinting, network scanning, enumeration; System Hacking Phases and Attack Techniques (15%), vulnerability analysis, system hacking, malware threats; Network and Perimeter Hacking (24%): sniffing, social engineering, denial-of-service, session hijacking, evading IDS/firewalls/honeypots; Web Application Hacking (14%): web servers, web applications, SQL injection; Wireless Network Hacking (5%); Mobile Platform, IoT, and OT Hacking (10%); Cloud Computing (5%): container, serverless, cloud security; and Cryptography (5%). CEH is ANSI/ISO 17024 accredited and DoD 8570/8140 baseline approved for several cybersecurity roles. Often compared with OSCP (more hands-on offensive) and CompTIA PenTest+ (vendor-neutral).
 
 ### Domains
-- 1.0 Information Security and Ethical Hacking Overview (4% of exam) — 28 questions
-- 2.0 Reconnaissance Techniques (18% of exam) — 128 questions
-- 3.0 System Hacking Phases and Attack Techniques (14% of exam) — 100 questions
-- 4.0 Network and Perimeter Hacking (22% of exam) — 156 questions
-- 5.0 Web Application Hacking (19% of exam) — 128 questions
-- 6.0 Wireless Network Hacking (5% of exam) — 36 questions
-- 7.0 Mobile Platform, IoT, and OT Hacking (9% of exam) — 60 questions
-- 8.0 Cloud Computing (4% of exam) — 28 questions
-- 9.0 Cryptography (5% of exam) — 36 questions
+- 1.0 Information Security and Ethical Hacking Overview (4% of exam): 28 questions
+- 2.0 Reconnaissance Techniques (18% of exam): 128 questions
+- 3.0 System Hacking Phases and Attack Techniques (14% of exam): 100 questions
+- 4.0 Network and Perimeter Hacking (22% of exam): 156 questions
+- 5.0 Web Application Hacking (19% of exam): 128 questions
+- 6.0 Wireless Network Hacking (5% of exam): 36 questions
+- 7.0 Mobile Platform, IoT, and OT Hacking (9% of exam): 60 questions
+- 8.0 Cloud Computing (4% of exam): 28 questions
+- 9.0 Cryptography (5% of exam): 36 questions
 
 ### Sample questions
 **Q: Which three properties form the CIA triad that serves as the foundational framework for all information security programs?**
@@ -1633,13 +1633,13 @@ A: Confidentiality, Integrity, and Availability
 A: Passive reconnaissance gathers intelligence without directly interacting with the target system; active reconnaissance directly probes or interacts with the target, risking detection
 
 **Q: Which type of vulnerability assessment tests a system from the perspective of an unauthenticated external attacker with no prior knowledge of or credentials for the target environment?**
-A: External black-box assessment — simulates an outside attacker with no credentials or internal knowledge
+A: External black-box assessment, simulates an outside attacker with no credentials or internal knowledge
 
 **Q: How does a MAC flooding attack work against a network switch, and what is the result when the CAM table is exhausted?**
-A: MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch's Content Addressable Memory (CAM) table — when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing
+A: MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch's Content Addressable Memory (CAM) table, when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing
 
 **Q: Which web server component handles incoming HTTP requests, routes them to the appropriate application logic, and returns the resulting HTTP responses to clients?**
-A: Web server software (Apache, nginx, IIS) — the HTTP server process that receives connections, parses requests, and delivers responses
+A: Web server software (Apache, nginx, IIS), the HTTP server process that receives connections, parses requests, and delivers responses
 
 **Q: In wireless networking, what does the term SSID (Service Set Identifier) refer to?**
 A: The human-readable name that identifies a wireless network, broadcast in AP beacon frames
@@ -1649,13 +1649,13 @@ Vendor: CompTIA
 URL: https://quizbuffet.com/comptia-project-plus/
 Total questions: 812
 
-CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6–12 months of hands-on IT project management experience.
+CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6-12 months of hands-on IT project management experience.
 
 ### Domains
-- Project Management Concepts (38% of exam) — 308 questions
-- Project Life Cycle Phases (31% of exam) — 252 questions
-- Tools and Documentation (10% of exam) — 84 questions
-- Basics of IT and Governance (21% of exam) — 168 questions
+- Project Management Concepts (38% of exam): 308 questions
+- Project Life Cycle Phases (31% of exam): 252 questions
+- Tools and Documentation (10% of exam): 84 questions
+- Basics of IT and Governance (21% of exam): 168 questions
 
 ### Sample questions
 **Q: How hard is the CompTIA Project+ exam?**
@@ -1678,44 +1678,44 @@ A: Yes, if you are moving into project coordination or IT project management. It
 
 
 ## Coming soon (in priority order)
-- Six Sigma Green Belt (SSGB) — https://quizbuffet.com/six-sigma-green-belt/ — priority #1
-- Project Management Professional (PMP) (PMP) — https://quizbuffet.com/pmp/ — priority #2
-- A&P (Airframe and Powerplant) Mechanic (FAA A&P) — https://quizbuffet.com/faa-airframe-powerplant/ — priority #3
-- Medical Billing and Coding (CPC / CCS) (CPC / CCS) — https://quizbuffet.com/medical-billing-coding/ — priority #4
-- Insurance Producer License (Life / Health / P&C) — https://quizbuffet.com/insurance-license/ — priority #5
-- Systems Security Certified Practitioner (SSCP) (SSCP) — https://quizbuffet.com/sscp/ — priority #6
-- FAA Private Pilot Certificate (PPL) — https://quizbuffet.com/faa-private-pilot/ — priority #7
-- Electrician License (Apprentice / Journeyman / Master) (NEC / State License) — https://quizbuffet.com/electrician-license/ — priority #8
-- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State) — https://quizbuffet.com/plumbing-license/ — priority #9
-- Certified Medical Assistant (CMA) (CMA) — https://quizbuffet.com/medical-assistant/ — priority #10
-- AWS Certified Welder (AWS QC7) — https://quizbuffet.com/aws-certified-welder/ — priority #11
-- SHRM Certified Professional (SHRM-CP) (SHRM-CP) — https://quizbuffet.com/shrm-cp/ — priority #12
-- Certified Associate in Project Management (CAPM) (CAPM) — https://quizbuffet.com/capm/ — priority #13
-- Google Project Management Certificate (Google PM Cert) — https://quizbuffet.com/google-project-management-certificate/ — priority #14
-- Google IT Support Professional Certificate (Google IT Support) — https://quizbuffet.com/google-it-support-certificate/ — priority #15
-- Google Data Analytics Professional Certificate (Google Data Analytics) — https://quizbuffet.com/google-data-analytics-certificate/ — priority #16
-- Google UX Design Professional Certificate (Google UX Design) — https://quizbuffet.com/google-ux-design-certificate/ — priority #17
-- Cosmetology Instructor License (Instructor) — https://quizbuffet.com/cosmetology-instructor-license/ — priority #18
-- Salon and Shop Manager License (Salon Manager) — https://quizbuffet.com/cosmetology-salon-manager/ — priority #19
-- Combined Esthetics and Nail Technology License (Combined Esthetics) — https://quizbuffet.com/esthetics-combined-practice/ — priority #20
-- Advanced Esthetics License (Advanced Esthetics) — https://quizbuffet.com/esthetics-advanced-practice/ — priority #21
-- Electrology License (Permanent Hair Removal) (Electrology) — https://quizbuffet.com/electrology/ — priority #22
-- Hair Removal Specialty License (Hair Removal) — https://quizbuffet.com/hair-removal-license/ — priority #23
-- Hair Designer License (Hair Designer) — https://quizbuffet.com/hair-design/ — priority #24
-- Natural Hair Styling and Braiding License (Natural Hair) — https://quizbuffet.com/natural-hair-styling/ — priority #25
-- Blow Dry Styling License (Blow Dry) — https://quizbuffet.com/blow-dry-styling/ — priority #26
-- Barber Styling License (Barber Styling) — https://quizbuffet.com/barber-styling/ — priority #27
-- EMT (Emergency Medical Technician) (NREMT) — https://quizbuffet.com/emt/ — priority #28
-- Certified Phlebotomy Technician (CPT) (CPT) — https://quizbuffet.com/phlebotomy-technician/ — priority #29
-- Nail Technology License (Nail Tech) — https://quizbuffet.com/nail-technology/ — priority #30
-- Eyelash and Eyebrow Technician License (Lash Tech) — https://quizbuffet.com/eyelash-eyebrow-technician/ — priority #31
-- Certified Nursing Assistant (CNA) (CNA) — https://quizbuffet.com/cna/ — priority #32
-- Professional Scrum Master I (PSM I) (PSM I) — https://quizbuffet.com/scrum-master-psm/ — priority #33
-- ServSafe Food Protection Manager (ServSafe Manager) — https://quizbuffet.com/servsafe-manager/ — priority #34
-- Permanent Makeup License (Permanent Makeup) — https://quizbuffet.com/permanent-makeup-license/ — priority #35
-- Ear Piercing Specialty License (Ear Piercing) — https://quizbuffet.com/ear-piercing-license/ — priority #36
-- ASE Automotive Certification (ASE A1–A9 / G1) — https://quizbuffet.com/ase-automotive/ — priority #37
-- EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #38
-- ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #39
-- Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #40
-- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #41
+- Six Sigma Green Belt (SSGB): https://quizbuffet.com/six-sigma-green-belt/: priority #1
+- Project Management Professional (PMP) (PMP): https://quizbuffet.com/pmp/: priority #2
+- A&P (Airframe and Powerplant) Mechanic (FAA A&P): https://quizbuffet.com/faa-airframe-powerplant/: priority #3
+- Medical Billing and Coding (CPC / CCS) (CPC / CCS): https://quizbuffet.com/medical-billing-coding/: priority #4
+- Insurance Producer License (Life / Health / P&C): https://quizbuffet.com/insurance-license/: priority #5
+- Systems Security Certified Practitioner (SSCP) (SSCP): https://quizbuffet.com/sscp/: priority #6
+- FAA Private Pilot Certificate (PPL): https://quizbuffet.com/faa-private-pilot/: priority #7
+- Electrician License (Apprentice / Journeyman / Master) (NEC / State License): https://quizbuffet.com/electrician-license/: priority #8
+- Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State): https://quizbuffet.com/plumbing-license/: priority #9
+- Certified Medical Assistant (CMA) (CMA): https://quizbuffet.com/medical-assistant/: priority #10
+- AWS Certified Welder (AWS QC7): https://quizbuffet.com/aws-certified-welder/: priority #11
+- SHRM Certified Professional (SHRM-CP) (SHRM-CP): https://quizbuffet.com/shrm-cp/: priority #12
+- Certified Associate in Project Management (CAPM) (CAPM): https://quizbuffet.com/capm/: priority #13
+- Google Project Management Certificate (Google PM Cert): https://quizbuffet.com/google-project-management-certificate/: priority #14
+- Google IT Support Professional Certificate (Google IT Support): https://quizbuffet.com/google-it-support-certificate/: priority #15
+- Google Data Analytics Professional Certificate (Google Data Analytics): https://quizbuffet.com/google-data-analytics-certificate/: priority #16
+- Google UX Design Professional Certificate (Google UX Design): https://quizbuffet.com/google-ux-design-certificate/: priority #17
+- Cosmetology Instructor License (Instructor): https://quizbuffet.com/cosmetology-instructor-license/: priority #18
+- Salon and Shop Manager License (Salon Manager): https://quizbuffet.com/cosmetology-salon-manager/: priority #19
+- Combined Esthetics and Nail Technology License (Combined Esthetics): https://quizbuffet.com/esthetics-combined-practice/: priority #20
+- Advanced Esthetics License (Advanced Esthetics): https://quizbuffet.com/esthetics-advanced-practice/: priority #21
+- Electrology License (Permanent Hair Removal) (Electrology): https://quizbuffet.com/electrology/: priority #22
+- Hair Removal Specialty License (Hair Removal): https://quizbuffet.com/hair-removal-license/: priority #23
+- Hair Designer License (Hair Designer): https://quizbuffet.com/hair-design/: priority #24
+- Natural Hair Styling and Braiding License (Natural Hair): https://quizbuffet.com/natural-hair-styling/: priority #25
+- Blow Dry Styling License (Blow Dry): https://quizbuffet.com/blow-dry-styling/: priority #26
+- Barber Styling License (Barber Styling): https://quizbuffet.com/barber-styling/: priority #27
+- EMT (Emergency Medical Technician) (NREMT): https://quizbuffet.com/emt/: priority #28
+- Certified Phlebotomy Technician (CPT) (CPT): https://quizbuffet.com/phlebotomy-technician/: priority #29
+- Nail Technology License (Nail Tech): https://quizbuffet.com/nail-technology/: priority #30
+- Eyelash and Eyebrow Technician License (Lash Tech): https://quizbuffet.com/eyelash-eyebrow-technician/: priority #31
+- Certified Nursing Assistant (CNA) (CNA): https://quizbuffet.com/cna/: priority #32
+- Professional Scrum Master I (PSM I) (PSM I): https://quizbuffet.com/scrum-master-psm/: priority #33
+- ServSafe Food Protection Manager (ServSafe Manager): https://quizbuffet.com/servsafe-manager/: priority #34
+- Permanent Makeup License (Permanent Makeup): https://quizbuffet.com/permanent-makeup-license/: priority #35
+- Ear Piercing Specialty License (Ear Piercing): https://quizbuffet.com/ear-piercing-license/: priority #36
+- ASE Automotive Certification (ASE A1, A9 / G1): https://quizbuffet.com/ase-automotive/: priority #37
+- EPA 608 Refrigerant Handling Certification (EPA 608): https://quizbuffet.com/epa-608/: priority #38
+- ServSafe Food Handler (ServSafe FH): https://quizbuffet.com/servsafe-food-handler/: priority #39
+- Esthetician License (Esthetician): https://quizbuffet.com/esthetician-license/: priority #40
+- Body Piercing License (Body Piercing): https://quizbuffet.com/body-piercing-license/: priority #41

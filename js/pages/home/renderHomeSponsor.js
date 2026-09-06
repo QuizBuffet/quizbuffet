@@ -17,7 +17,7 @@ export function renderHomeSponsor() {
   el.innerHTML = `
     <a class="home-sponsor" href="${href}" rel="sponsored noopener" target="_blank" data-sponsor="udemy">
       <span class="home-sponsor-tag">Sponsored · Udemy</span>
-      <span class="home-sponsor-title">Better Testing — sharpen your exam technique</span>
+      <span class="home-sponsor-title">Better Testing: sharpen your exam technique</span>
       <span class="home-sponsor-cta">View course →</span>
     </a>
   `;

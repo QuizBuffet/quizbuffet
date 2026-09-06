@@ -21,7 +21,7 @@ export async function renderSalaryPanel(mountId, slug) {
         </div>
         <div class="salary-range">
           <div class="salary-range-label">Range</div>
-          <div class="salary-range-vals">${formatFullUSD(low)} <span class="salary-dash">—</span> ${formatFullUSD(high)}</div>
+          <div class="salary-range-vals">${formatFullUSD(low)} to ${formatFullUSD(high)}</div>
         </div>
         <div class="salary-collar">
           <span class="salary-collar-icon">${collar.icon}</span>

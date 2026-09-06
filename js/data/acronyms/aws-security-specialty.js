@@ -52,7 +52,7 @@ export const acronyms = [
   { a: 'RAM',         d: 'AWS Resource Access Manager' },
   { a: 'RBAC',        d: 'Role-Based Access Control' },
   { a: 'RCP',         d: 'Resource Control Policy' },
-  { a: 'RSA',         d: 'Rivest–Shamir–Adleman (asymmetric algorithm)' },
+  { a: 'RSA',         d: 'Rivest, Shamir, Adleman (asymmetric algorithm)' },
   { a: 'SAML',        d: 'Security Assertion Markup Language' },
   { a: 'SCP',         d: 'Service Control Policy' },
   { a: 'SDK',         d: 'Software Development Kit' },

@@ -1,11 +1,12 @@
 export const cert = {
   slug: 'comptia-project-plus',
   name: 'CompTIA Project+',
+  seoName: 'CompTIA Project+',
   code: 'PK0-005',
   vendor: 'CompTIA',
   tagline: 'Project life cycle, communication, resource and stakeholder management for IT projects',
-  about: 'CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6–12 months of hands-on IT project management experience.',
-  details: 'Maximum of 90 multiple-choice and performance-based questions · 90 minutes · Recommended 6–12 months of hands-on experience managing projects in an IT environment',
+  about: 'CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6-12 months of hands-on IT project management experience.',
+  details: 'Maximum of 90 multiple-choice and performance-based questions · 90 minutes · Recommended 6-12 months of hands-on experience managing projects in an IT environment',
   faq: [
     { q: 'How hard is the CompTIA Project+ exam?',
       a: 'It is one of the more approachable project management exams. It tests practical knowledge of the project life cycle, communication, and basic agile and waterfall concepts rather than deep formulas. With focused study, most people pass without prior certification.' },

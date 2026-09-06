@@ -150,7 +150,7 @@ export function attachCertPreview(rootEl, certs) {
     }
 
     // Desktop hover. Cancel any pending hide so card-to-card transitions are
-    // instant — no flash of "no popup" while the user moves between cards.
+    // instant: no flash of "no popup" while the user moves between cards.
     card.addEventListener('mouseenter', () => {
       clearTimeout(showTimer); clearTimeout(hideTimer);
       // If a popup is already visible, swap to the new card almost immediately

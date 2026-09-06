@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'osha-10-construction',
   name: 'OSHA 10-Hour Construction',
+  seoName: 'OSHA 10 Construction',
   code: 'OSHA 10',
   vendor: 'OSHA',
   tagline: 'Required entry-level safety training for construction workers',

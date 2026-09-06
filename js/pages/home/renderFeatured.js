@@ -1,4 +1,4 @@
-// Featured carousel — pulls a random sample of live certs each visit so every
+// Featured carousel: pulls a random sample of live certs each visit so every
 // cert gets a chance to be shown over time. Cap keeps the dot count tight on mobile.
 import { loadCounts } from '../../data/counts/loadCounts.js';
 

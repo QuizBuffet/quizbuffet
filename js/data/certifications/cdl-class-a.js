@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'cdl-class-a',
   name: 'CDL Class A',
+  seoName: 'CDL Class A',
   code: 'CDL-A',
   vendor: 'FMCSA / State DMV',
   tagline: 'Federal license required to drive tractor-trailers and large combination vehicles',

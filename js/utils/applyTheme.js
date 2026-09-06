@@ -1,4 +1,4 @@
-// Theme helpers — applyTheme sets data-theme on <html> and persists the choice
+// Theme helpers: applyTheme sets data-theme on <html> and persists the choice
 export function getTheme() {
   return localStorage.getItem('qb_theme') || 'light';
 }

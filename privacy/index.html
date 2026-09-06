@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy &amp; Cookie Policy — QuizBuffet</title>
+  <title>Privacy &amp; Cookie Policy: QuizBuffet</title>
   <meta name="description" content="QuizBuffet privacy and cookie policy: no accounts, study data stays local in your browser, Google Analytics stays off until you consent.">
   <link rel="canonical" href="https://quizbuffet.com/privacy/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
-  <meta property="og:title"       content="Privacy &amp; Cookie Policy — QuizBuffet">
+  <meta property="og:title"       content="Privacy &amp; Cookie Policy: QuizBuffet">
   <meta property="og:description" content="No accounts, study data stored locally, analytics off until you consent (Consent Mode v2, default denied for EEA/GDPR).">
   <meta property="og:image"       content="https://quizbuffet.com/icons/web-app-manifest-512x512.png">
   <meta property="og:url"         content="https://quizbuffet.com/privacy/">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Privacy &amp; Cookie Policy — QuizBuffet">
+  <meta name="twitter:title"       content="Privacy &amp; Cookie Policy: QuizBuffet">
   <meta name="twitter:description" content="No accounts, study data stored locally, analytics off until you consent (default denied for EEA/GDPR).">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/web-app-manifest-512x512.png">
 
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
-  <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet: new certs and updates" href="/feed.xml">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="manifest" href="/manifest.json">
@@ -30,7 +30,7 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -70,10 +70,12 @@
 
   <!-- Event snippet for Page view conversion page -->
   <script>
+    // Secondary conversion only: every page view fires this. Set its Google Ads
+    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
+    // so it never competes with the real primary conversion (see trackConversion.js /
+    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
     gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
     });
   </script>
 
@@ -105,12 +107,12 @@
 
     <section class="cs-about">
       <h2>The short version</h2>
-      <p>QuizBuffet is a free, personal study tool. There are no user accounts, no logins, and no backend database. We do not collect, sell, or share personal information. The only third-party service is Google Analytics, used to count anonymous page visits — and it stays off until you explicitly consent.</p>
+      <p>QuizBuffet is a free, personal study tool. There are no user accounts, no logins, and no backend database. We do not collect, sell, or share personal information. The only third-party service is Google Analytics, used to count anonymous page visits, and it stays off until you explicitly consent.</p>
     </section>
 
     <section class="cs-about">
       <h2>Data stored on your device</h2>
-      <p>Your quiz progress, scores, and preferences (theme, sound, color, cursor) are stored in your browser's <strong>localStorage</strong> on your own device. This data is never transmitted to us or anyone else — there is no server to send it to. Clearing your browser site data erases it.</p>
+      <p>Your quiz progress, scores, and preferences (theme, sound, color, cursor) are stored in your browser's <strong>localStorage</strong> on your own device. This data is never transmitted to us or anyone else, there is no server to send it to. Clearing your browser site data erases it.</p>
     </section>
 
     <section class="cs-about">
@@ -120,7 +122,7 @@
         <li><strong>Analytics storage</strong> defaults to "denied" for every visitor, everywhere, until you choose.</li>
         <li><strong>Ad storage</strong> (used only for conversion measurement, never for personalized ads or remarketing) defaults to "denied" for visitors in the EEA and UK until you Accept, and defaults to "granted" for visitors elsewhere, where opt-in consent for basic ad measurement is not legally required. Ad personalization is never enabled for anyone.</li>
         <li><strong>Before you consent (EEA/UK):</strong> no analytics or ad cookies are written, and no identifiers are stored. Google receives only cookieless, aggregated pings (no personal data, no cross-site identifiers).</li>
-        <li><strong>If you click "Accept":</strong> Google Analytics sets its standard first-party cookies (e.g., <code>_ga</code>, <code>_ga_*</code>) to measure repeat visits, and Google Ads is allowed to measure conversions for you. IP addresses are not stored by GA4. Ad personalization stays denied either way — nothing here is used to build remarketing or personalized-ad audiences.</li>
+        <li><strong>If you click "Accept":</strong> Google Analytics sets its standard first-party cookies (e.g., <code>_ga</code>, <code>_ga_*</code>) to measure repeat visits, and Google Ads is allowed to measure conversions for you. IP addresses are not stored by GA4. Ad personalization stays denied either way: nothing here is used to build remarketing or personalized-ad audiences.</li>
         <li><strong>If you click "Decline" (or do nothing):</strong> analytics stays off, and (for EEA/UK visitors) ad measurement stays off too; no analytics or ad cookies are set.</li>
       </ul>
     </section>
@@ -153,7 +155,7 @@
           if (typeof window.gtag === 'function') {
             window.gtag('consent', 'update', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied' });
           }
-          if (status) status.textContent = 'Done — analytics is off and the banner will reappear.';
+          if (status) status.textContent = 'Done: analytics is off and the banner will reappear.';
         });
       })();
     </script>

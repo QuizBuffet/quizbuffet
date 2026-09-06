@@ -24,7 +24,7 @@ export function renderCertFAQ(cert, totalQ) {
     },
     {
       q: `Does my progress save between sessions?`,
-      a: `Yes — your domain progress, missed questions, and completion state are stored in your browser's localStorage. Nothing is uploaded. Clearing your browser data will reset progress.`,
+      a: `Yes: your domain progress, missed questions, and completion state are stored in your browser's localStorage. Nothing is uploaded. Clearing your browser data will reset progress.`,
     },
     {
       q: `What should I do after I finish a domain?`,

@@ -22,7 +22,7 @@ export function renderStorageView(onReset) {
 
       if (!prog.completed && c === 0 && f === 0) {
         return `<div class="prog-domain-row prog-domain-empty">
-          <span class="prog-status">–</span>
+          <span class="prog-status">, </span>
           <a class="prog-domain-name" href="/${cert.slug}/${domain.slug}/">${domain.name}</a>
           <span class="prog-domain-stats">Not started</span>
         </div>`;

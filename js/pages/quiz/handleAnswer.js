@@ -13,6 +13,21 @@ import { recordCorrect, recordWrong } from '../../storage/streak.js';
 import { showStreakToast } from '../../components/streakToast/showStreakToast.js';
 import { playCorrect, playWrong } from '../../utils/playSound.js';
 import { stopTimer } from '../../utils/questionTimer.js';
+import { trackConversion } from '../../analytics/trackConversion.js';
+
+// Fires the answered_10 conversion once per browser session, the first time the visitor
+// crosses 10 total answered questions (any domain, correct or wrong).
+function trackAnsweredMilestone() {
+  try {
+    if (sessionStorage.getItem('qb_conv_answered10')) return;
+    const n = parseInt(sessionStorage.getItem('qb_answered') || '0', 10) + 1;
+    sessionStorage.setItem('qb_answered', String(n));
+    if (n >= 10) {
+      sessionStorage.setItem('qb_conv_answered10', '1');
+      trackConversion('answered_10');
+    }
+  } catch (_) {}
+}
 
 // domainSlug = session key (sessionStorage); questionStorageKey = per-question domain key (localStorage)
 // In mixed-domain mode these differ: session key is certSlug--__mix__, save key is the question's actual domain
@@ -24,11 +39,12 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
     btn.disabled = true;
     const isCorrect = btn.dataset.id === question.correct;
     const isChosen  = btn.dataset.id === chosen;
-    if (isCorrect) { btn.classList.add('correct'); btn.setAttribute('aria-label', `${btn.dataset.id.toUpperCase()} — Correct answer`); }
-    else if (isChosen) { btn.classList.add('wrong'); btn.setAttribute('aria-label', `${btn.dataset.id.toUpperCase()} — Incorrect`); }
+    if (isCorrect) { btn.classList.add('correct'); btn.setAttribute('aria-label', `${btn.dataset.id.toUpperCase()}: Correct answer`); }
+    else if (isChosen) { btn.classList.add('wrong'); btn.setAttribute('aria-label', `${btn.dataset.id.toUpperCase()}: Incorrect`); }
   });
 
   saveWrongAnswer(domainSlug, question.id, chosen);
+  trackAnsweredMilestone();
 
   if (chosen === question.correct) {
     playCorrect();
@@ -40,6 +56,7 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
         if (typeof gtag === 'function') {
           gtag('event', 'domain_complete', { domain: questionStorageKey, total: totalCount });
         }
+        trackConversion('domain_complete');
       }
     }
     const streak = recordCorrect();

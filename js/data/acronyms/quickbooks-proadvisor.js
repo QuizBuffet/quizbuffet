@@ -1,7 +1,7 @@
 export const acronyms = [
   // Intuit / QuickBooks products
   { a: 'QBO',       d: 'QuickBooks Online' },
-  { a: 'QBOA',      d: 'QuickBooks Online Accountant — the free firm portal for ProAdvisors' },
+  { a: 'QBOA',      d: 'QuickBooks Online Accountant: the free firm portal for ProAdvisors' },
   { a: 'QBDT',      d: 'QuickBooks Desktop' },
   { a: 'QB Time',   d: 'Intuit time-tracking add-on (formerly TSheets)' },
   { a: 'QB Bills',  d: 'QuickBooks Bill Pay (powered by Melio integration)' },
@@ -16,8 +16,8 @@ export const acronyms = [
   { a: 'Self-Employed',    d: 'QuickBooks Self-Employed (Schedule C / 1099 contractors)' },
 
   // Core accounting acronyms
-  { a: 'A/R',       d: 'Accounts Receivable — money owed by customers' },
-  { a: 'A/P',       d: 'Accounts Payable — money owed to vendors' },
+  { a: 'A/R',       d: 'Accounts Receivable: money owed by customers' },
+  { a: 'A/P',       d: 'Accounts Payable: money owed to vendors' },
   { a: 'GL',        d: 'General Ledger' },
   { a: 'COA',       d: 'Chart of Accounts' },
   { a: 'JE',        d: 'Journal Entry' },
@@ -32,13 +32,13 @@ export const acronyms = [
   { a: 'PO',        d: 'Purchase Order' },
 
   // Methods & cycles
-  { a: 'Accrual',   d: 'Accrual basis — income/expenses recorded when earned/incurred' },
-  { a: 'Cash',      d: 'Cash basis — income/expenses recorded when money moves' },
+  { a: 'Accrual',   d: 'Accrual basis: income/expenses recorded when earned/incurred' },
+  { a: 'Cash',      d: 'Cash basis: income/expenses recorded when money moves' },
   { a: 'FIFO',      d: 'First-In, First-Out (inventory valuation; QBO uses FIFO)' },
   { a: 'LIFO',      d: 'Last-In, First-Out (NOT supported by QBO)' },
 
   // Banking / Payments
-  { a: 'ACH',       d: 'Automated Clearing House — electronic bank transfer' },
+  { a: 'ACH',       d: 'Automated Clearing House: electronic bank transfer' },
   { a: 'EFT',       d: 'Electronic Funds Transfer' },
   { a: 'NSF',       d: 'Non-Sufficient Funds (bounced check)' },
   { a: 'Bank feed', d: 'Real-time connection from a bank/credit-card account into QBO' },
@@ -49,9 +49,9 @@ export const acronyms = [
   { a: 'Invoice',   d: 'A/R transaction billed to a customer' },
   { a: 'Sales Receipt', d: 'Records sale + payment in one transaction (cash sale)' },
   { a: 'Credit Memo', d: 'Reduces A/R; can be applied to invoices or refunded' },
-  { a: 'RA',        d: 'Refund Receipt — gives money back to a customer' },
+  { a: 'RA',        d: 'Refund Receipt: gives money back to a customer' },
   { a: 'Delayed Charge', d: 'Non-posting placeholder; converts to invoice later' },
-  { a: 'NPO',       d: 'Non-posting transaction (Estimate, PO, Delayed Charge) — does not affect ledger' },
+  { a: 'NPO',       d: 'Non-posting transaction (Estimate, PO, Delayed Charge): does not affect ledger' },
 
   // Vendors / A/P
   { a: 'Bill',      d: 'A/P transaction owed to a vendor (paid later)' },
@@ -76,7 +76,7 @@ export const acronyms = [
   { a: 'I-9',       d: 'Employment Eligibility Verification (USCIS form)' },
   { a: 'FUTA',      d: 'Federal Unemployment Tax Act (employer-only, 6% on first $7,000)' },
   { a: 'SUTA',      d: 'State Unemployment Tax Act (state-specific rate and wage base)' },
-  { a: 'FICA',      d: 'Federal Insurance Contributions Act — Social Security + Medicare' },
+  { a: 'FICA',      d: 'Federal Insurance Contributions Act: Social Security + Medicare' },
   { a: 'OASDI',     d: 'Old-Age, Survivors, and Disability Insurance (Social Security portion of FICA, 6.2% to wage base)' },
   { a: 'HI',        d: 'Hospital Insurance (Medicare portion of FICA, 1.45%)' },
 
@@ -86,9 +86,9 @@ export const acronyms = [
   { a: 'Bundle',    d: 'A group of products sold together (NOT a manufactured assembly)' },
 
   // Reports / Reporting
-  { a: 'A/R Aging', d: 'Report grouping unpaid A/R by 0–30, 31–60, 61–90, >90 days' },
+  { a: 'A/R Aging', d: 'Report grouping unpaid A/R by 0-30, 31-60, 61-90, >90 days' },
   { a: 'A/P Aging', d: 'Report grouping unpaid A/P by aging buckets' },
-  { a: 'TB',        d: 'Trial Balance — debit/credit totals by account' },
+  { a: 'TB',        d: 'Trial Balance: debit/credit totals by account' },
   { a: 'Stmt of Cash Flows', d: 'Operating, investing, and financing cash activity (indirect method in QBO)' },
 
   // Practice management & access
@@ -101,5 +101,5 @@ export const acronyms = [
 
   // Compliance / Privacy
   { a: 'PCI DSS',  d: 'Payment Card Industry Data Security Standard (applies when processing card payments)' },
-  { a: 'IRS Pub 15', d: 'Employer\'s Tax Guide (Circular E) — federal payroll tax tables' },
+  { a: 'IRS Pub 15', d: 'Employer\'s Tax Guide (Circular E): federal payroll tax tables' },
 ];

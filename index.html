@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Free practice tests for 50 certifications: AWS, CompTIA, Cisco, Azure, CISSP, ITIL, CDL, BLS and more. Domain quizzes, instant feedback, no signup.">
-  <title>QuizBuffet — Free Practice Tests for 50 Certifications</title>
+  <title>Free Certification Practice Tests: CompTIA, AWS, CISSP, CDL, CPR</title>
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
-  <meta property="og:title"       content="QuizBuffet — Free Practice Tests for 50 Certifications">
+  <meta property="og:title"       content="Free Certification Practice Tests: CompTIA, AWS, CISSP, CDL, CPR">
   <meta property="og:description" content="Free practice tests for 50 certifications: AWS, CompTIA, Cisco, Azure, CISSP, ITIL, CDL, BLS and more. Domain quizzes, instant feedback, no signup.">
   <meta property="og:image"       content="https://quizbuffet.com/icons/web-app-manifest-512x512.png">
   <meta property="og:url"         content="https://quizbuffet.com/">
@@ -16,10 +16,10 @@
   <link rel="canonical" href="https://quizbuffet.com/">
   <link rel="alternate" type="text/markdown" title="LLM-friendly index" href="/llms.txt">
   <link rel="alternate" type="text/markdown" title="LLM full content" href="/llms-full.txt">
-  <link rel="alternate" type="application/rss+xml" title="QuizBuffet — new certs and updates" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="QuizBuffet: new certs and updates" href="/feed.xml">
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="QuizBuffet — Free Practice Tests for 50 Certifications">
+  <meta name="twitter:title"       content="Free Certification Practice Tests: CompTIA, AWS, CISSP, CDL, CPR">
   <meta name="twitter:description" content="Free practice tests for 50 certifications: AWS, CompTIA, Cisco, Azure, CISSP, ITIL, CDL, BLS and more. Domain quizzes, instant feedback, no signup.">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/web-app-manifest-512x512.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -36,7 +36,7 @@
   <meta name="theme-color" content="#333333">
   <script>try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
   <script>(function(){var p=sessionStorage.getItem('gh_spa_path');if(p){sessionStorage.removeItem('gh_spa_path');history.replaceState(null,null,p);}}());</script>
-  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -76,10 +76,12 @@
 
   <!-- Event snippet for Page view conversion page -->
   <script>
+    // Secondary conversion only: every page view fires this. Set its Google Ads
+    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
+    // so it never competes with the real primary conversion (see trackConversion.js /
+    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
     gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
     });
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,7 +103,7 @@
     #featured{min-height:240px}
     #total-badge{min-height:120px}
     @media (max-width:720px){#nav{min-height:140px}#hero{min-height:440px}#home-sponsor{min-height:88px}#total-badge{min-height:140px}}
-    /* Inlined bg-dots.css — small, render-blocking otherwise. */
+    /* Inlined bg-dots.css: small, render-blocking otherwise. */
     body::before,body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1}
     body::before{background-image:radial-gradient(circle,rgba(0,0,0,0.09) 1px,transparent 1px);background-size:44px 44px;animation:bg-pulse-a 5s ease-in-out infinite}
     body::after{background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:66px 66px;background-position:22px 22px;animation:bg-pulse-b 7s ease-in-out infinite}
@@ -135,7 +137,7 @@
       "name": "QuizBuffet",
       "url": "https://quizbuffet.com",
       "email": "quizbuffetinfo@gmail.com",
-      "description": "QuizBuffet offers free, domain-organized practice tests for AWS, CompTIA, Cisco, Microsoft Azure, and more IT, cybersecurity, cloud, and trade certifications. Tens of thousands of exam-style questions with instant feedback and progress tracking — no account, no cost.",
+      "description": "QuizBuffet offers free, domain-organized practice tests for AWS, CompTIA, Cisco, Microsoft Azure, and more IT, cybersecurity, cloud, and trade certifications. Tens of thousands of exam-style questions with instant feedback and progress tracking, no account, no cost.",
       "knowsAbout": [
         "AWS certifications",
         "CompTIA certifications",
@@ -634,7 +636,7 @@
         <div id="hero">
           <section class="hero">
             <div class="hero-inner">
-              <h1 class="hero-headline">Free practice tests for <span class="hero-em">professional certifications</span>.</h1>
+              <p class="hero-headline">Free practice tests for <span class="hero-em">professional certifications</span>.</p>
               <p class="hero-sub">Domain-by-domain quizzes with instant feedback and detailed explanations. No account, no paywall.</p>
               <form class="hero-search" id="hero-search-form" role="search">
                 <input class="hero-search-input" type="text" id="domain-search" placeholder="Search certifications, vendors, categories…" aria-label="Search certifications" autocomplete="off">

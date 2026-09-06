@@ -1,6 +1,6 @@
 // Memoized fetch of /data/coming-soon.json. Shared by app.js (for the slug set
 // that bypasses the SPA), footer, cert preview, home init, cert init.
-// Returns a Promise<Array> — empty array on failure.
+// Returns a Promise<Array>: empty array on failure.
 
 let _pending = null;
 

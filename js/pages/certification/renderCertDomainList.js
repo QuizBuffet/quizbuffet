@@ -1,4 +1,4 @@
-// Dashboard-style domain cards — number badge, progress bar (real %), state-driven CTA.
+// Dashboard-style domain cards: number badge, progress bar (real %), state-driven CTA.
 import { getDomainProgress } from '../../storage/getDomainProgress.js';
 import { loadDomain } from '../../loader/loadDomain.js';
 

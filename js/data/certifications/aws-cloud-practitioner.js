@@ -4,7 +4,7 @@ export const cert = {
   code: 'CLF-C02',
   vendor: 'AWS',
   tagline: 'Foundational AWS knowledge for technical and non-technical professionals',
-  about: 'AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud — value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.',
+  about: 'AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud, value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.',
   details: '50 scored questions + 15 unscored · Multiple-choice and multiple-response · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-cloud-practitioner-clf-c02-complete-course/?couponCode=KEEPLEARNING',
   affiliates: [

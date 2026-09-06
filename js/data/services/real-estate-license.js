@@ -1,4 +1,4 @@
-// Real Estate Salesperson License — in-scope concepts and definitions across the seven AMP / PSI / Pearson VUE
+// Real Estate Salesperson License: in-scope concepts and definitions across the seven AMP / PSI / Pearson VUE
 // national content domains. State-specific variations exist; defer to the candidate's state real estate commission
 // for jurisdiction-specific rules.
 export const services = [
@@ -55,7 +55,7 @@ export const services = [
   { a: 'Easement by prescription',     d: 'Acquired by open, notorious, continuous, hostile, adverse use for the statutory period' },
   { a: 'License',                      d: 'Revocable permission to use property; not an interest in land' },
   { a: 'Encroachment',                 d: 'A structure or improvement that extends across the property line onto neighboring land' },
-  { a: 'Lien',                         d: 'Charge against property securing a debt — voluntary (mortgage) or involuntary (tax, mechanic\'s, judgment)' },
+  { a: 'Lien',                         d: 'Charge against property securing a debt: voluntary (mortgage) or involuntary (tax, mechanic\'s, judgment)' },
   { a: 'Lien priority',                d: 'Generally first-in-time, first-in-right; property tax liens take priority over all others regardless of date' },
   { a: 'Mechanic\'s lien',             d: 'Statutory lien filed by contractors / suppliers / laborers for unpaid work or materials' },
   { a: 'Judgment lien',                d: 'Court judgment recorded against the debtor\'s real property; general lien on all owned property' },
@@ -69,7 +69,7 @@ export const services = [
 
   // Domain 3: Finance
   { a: 'Mortgage',                     d: 'Two-party security instrument: borrower (mortgagor) pledges property to lender (mortgagee) as collateral' },
-  { a: 'Deed of trust',                d: 'Three-party security instrument used in some states: trustor, trustee, beneficiary — allows non-judicial foreclosure' },
+  { a: 'Deed of trust',                d: 'Three-party security instrument used in some states: trustor, trustee, beneficiary: allows non-judicial foreclosure' },
   { a: 'Promissory note',              d: 'Borrower\'s written promise to repay; the debt instrument secured by the mortgage or deed of trust' },
   { a: 'Conventional loan',            d: 'Loan not insured or guaranteed by the federal government; PMI required if LTV exceeds 80%' },
   { a: 'FHA loan',                     d: 'Federally insured loan with low down-payment and flexible credit; requires up-front and annual MIP' },
@@ -80,7 +80,7 @@ export const services = [
   { a: 'Interest-only loan',           d: 'Payments cover interest only for an initial period; principal balance does not amortize' },
   { a: 'Amortization',                 d: 'Gradual loan repayment through periodic payments of principal and interest' },
   { a: 'Discount points',              d: 'Up-front fee paid to reduce the interest rate; one point = 1% of the loan amount' },
-  { a: 'PITI',                         d: 'Principal, Interest, Taxes, and Insurance — the full monthly housing cost' },
+  { a: 'PITI',                         d: 'Principal, Interest, Taxes, and Insurance: the full monthly housing cost' },
   { a: 'LTV',                          d: 'Loan-to-Value ratio = loan amount / property value; PMI typically required above 80% on conventional loans' },
   { a: 'Equity',                       d: 'Property value minus outstanding liens; the owner\'s ownership stake' },
   { a: 'PMI',                          d: 'Private Mortgage Insurance protecting the lender on conventional loans with LTV > 80%; cancellable at 80% LTV per the HPA' },
@@ -127,7 +127,7 @@ export const services = [
   // Domain 5: Marketing Regulations
   { a: 'Federal Fair Housing Act (1968, amended 1988)', d: 'Prohibits discrimination in housing based on race, color, religion, national origin, sex, familial status, and disability' },
   { a: 'Protected classes (federal)',  d: 'Race, color, religion, national origin, sex (incl. gender identity / sexual orientation per HUD 2021), familial status, disability (the seven federal classes)' },
-  { a: 'State / local protected classes', d: 'Many jurisdictions add classes such as marital status, age, source of income, military status — varies by state' },
+  { a: 'State / local protected classes', d: 'Many jurisdictions add classes such as marital status, age, source of income, military status, varies by state' },
   { a: 'Blockbusting',                 d: 'Inducing owners to sell by representing that protected-class members are entering the neighborhood; prohibited' },
   { a: 'Steering',                     d: 'Directing prospects toward or away from neighborhoods based on protected-class status; prohibited' },
   { a: 'Redlining',                    d: 'Refusing to lend or insure in particular neighborhoods based on protected-class composition; prohibited' },
@@ -145,11 +145,11 @@ export const services = [
 
   // Domain 6: Property Management
   { a: 'Property management agreement', d: 'Contract between owner and property manager; manager owes fiduciary duties to the owner' },
-  { a: 'Gross lease',                  d: 'Tenant pays fixed rent; landlord pays operating expenses (taxes, insurance, maintenance) — common for residential' },
+  { a: 'Gross lease',                  d: 'Tenant pays fixed rent; landlord pays operating expenses (taxes, insurance, maintenance), common for residential' },
   { a: 'Net lease (single, double, triple)', d: 'Tenant pays rent plus some or all operating expenses; triple-net (NNN) = taxes + insurance + maintenance' },
   { a: 'Percentage lease',             d: 'Tenant pays base rent plus a percentage of gross sales; common for retail' },
-  { a: 'Ground lease',                 d: 'Long-term lease (often 50–99 years) of land only; tenant typically builds on the leased land' },
-  { a: 'Tenant screening',             d: 'Application, credit check, references, income verification — must comply with fair housing in the criteria applied' },
+  { a: 'Ground lease',                 d: 'Long-term lease (often 50-99 years) of land only; tenant typically builds on the leased land' },
+  { a: 'Tenant screening',             d: 'Application, credit check, references, income verification: must comply with fair housing in the criteria applied' },
   { a: 'Security deposit',             d: 'Tenant funds held by landlord against damage / unpaid rent; state law sets caps, accounting, and return deadlines' },
   { a: 'Eviction (unlawful detainer)', d: 'Court process to remove a tenant; requires proper notice (pay-or-quit, cure-or-quit, unconditional quit) under state law' },
   { a: 'Notice to vacate',             d: 'Landlord\'s required pre-eviction notice; period varies by state and reason for termination' },
@@ -167,7 +167,7 @@ export const services = [
   { a: 'Net to seller',                d: 'Sale price − payoff of existing loans − seller\'s closing costs − commission = net proceeds to seller' },
   { a: 'Cost to buyer',                d: 'Down payment + closing costs + prepaids = cash to close' },
   { a: 'LTV calculation',              d: 'LTV = Loan amount / Lesser of sale price or appraised value × 100' },
-  { a: 'DTI calculation',              d: 'DTI = Total monthly debt payments / Gross monthly income × 100; lenders typically cap conventional at ~43–50%' },
+  { a: 'DTI calculation',              d: 'DTI = Total monthly debt payments / Gross monthly income × 100; lenders typically cap conventional at ~43-50%' },
   { a: 'Discount point cost',          d: '1 point = 1% of loan amount; each point typically reduces the rate by ~0.25% (varies)' },
   { a: 'Capitalization rate',          d: 'Cap Rate = NOI / Value; or Value = NOI / Cap Rate' },
   { a: 'GRM',                          d: 'GRM = Sale Price / Gross Annual Rent; or Value = Gross Rent × GRM' },

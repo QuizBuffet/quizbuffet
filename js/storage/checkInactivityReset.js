@@ -1,4 +1,4 @@
-// Clears quiz progress after 90 days of inactivity — preserves theme/color/cursor/sound preferences
+// Clears quiz progress after 90 days of inactivity, preserves theme/color/cursor/sound preferences
 const KEY = 'qb_last_active';
 const NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
 const PREFS = new Set(['qb_theme', 'qb_color', 'qb_cursor', 'qb_sound', 'qb_difficulty', KEY]);

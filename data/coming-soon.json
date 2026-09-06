@@ -51,7 +51,7 @@
     "code": "SSCP",
     "vendor": "ISC2",
     "category": "Cybersecurity",
-    "tagline": "ISC2's entry-level cybersecurity certification — the operational counterpart to CISSP",
+    "tagline": "ISC2's entry-level cybersecurity certification: the operational counterpart to CISSP",
     "about": "SSCP from ISC2 is the entry-level technical certification for IT administrators, security operations staff, and analysts who implement and monitor security controls day-to-day. The exam covers seven domains: Security Operations and Administration, Access Controls, Risk Identification & Monitoring & Analysis, Incident Response and Recovery, Cryptography, Network and Communications Security, and Systems and Application Security. Format: 125 multiple-choice questions, 3 hours, $249. Requires 1 year of paid work experience in one or more of the seven domains. Often described as the operational/hands-on counterpart to the more strategic CISSP."
   },
   {
@@ -125,7 +125,7 @@
     "vendor": "Google",
     "category": "Project Management",
     "tagline": "Coursera-based entry-level project management credential",
-    "about": "The Google Project Management Certificate is a self-paced, course-based credential delivered through Coursera. Unlike PMP, it has no single proctored exam — instead, you complete six courses (foundations of project management, agile, capstone, etc.) with module quizzes and applied projects scored inside Coursera. It is designed for career-switchers and entry-level project coordinators, and counts for 100+ contact hours that can later be applied toward the PMP eligibility requirement."
+    "about": "The Google Project Management Certificate is a self-paced, course-based credential delivered through Coursera. Unlike PMP, it has no single proctored exam, instead, you complete six courses (foundations of project management, agile, capstone, etc.) with module quizzes and applied projects scored inside Coursera. It is designed for career-switchers and entry-level project coordinators, and counts for 100+ contact hours that can later be applied toward the PMP eligibility requirement."
   },
   {
     "slug": "google-it-support-certificate",
@@ -134,7 +134,7 @@
     "vendor": "Google",
     "category": "IT Support",
     "tagline": "Coursera-based entry-level IT support credential",
-    "about": "The Google IT Support Professional Certificate is a self-paced, course-based credential delivered through Coursera. It covers technical support fundamentals, computer networking, operating systems, system administration, IT security, and customer-service skills across five courses. Unlike CompTIA A+ or Network+, there is no centralized proctored exam — completion is based on graded assignments and module quizzes inside Coursera. Designed for career-switchers and people targeting help desk, technical support, and IT support specialist roles."
+    "about": "The Google IT Support Professional Certificate is a self-paced, course-based credential delivered through Coursera. It covers technical support fundamentals, computer networking, operating systems, system administration, IT security, and customer-service skills across five courses. Unlike CompTIA A+ or Network+, there is no centralized proctored exam, completion is based on graded assignments and module quizzes inside Coursera. Designed for career-switchers and people targeting help desk, technical support, and IT support specialist roles."
   },
   {
     "slug": "google-data-analytics-certificate",
@@ -143,7 +143,7 @@
     "vendor": "Google",
     "category": "Data Analytics",
     "tagline": "Coursera-based entry-level data analytics credential",
-    "about": "The Google Data Analytics Professional Certificate is a self-paced, course-based credential delivered through Coursera across eight courses. It covers the data analysis process, spreadsheets, SQL, R programming, Tableau, and data visualization. Like other Google career certificates, there is no centralized proctored exam — completion is based on graded assignments and quizzes inside Coursera. Targeted at career-switchers entering junior data analyst and BI analyst roles."
+    "about": "The Google Data Analytics Professional Certificate is a self-paced, course-based credential delivered through Coursera across eight courses. It covers the data analysis process, spreadsheets, SQL, R programming, Tableau, and data visualization. Like other Google career certificates, there is no centralized proctored exam, completion is based on graded assignments and quizzes inside Coursera. Targeted at career-switchers entering junior data analyst and BI analyst roles."
   },
   {
     "slug": "google-ux-design-certificate",
@@ -206,7 +206,7 @@
     "vendor": "State Boards",
     "category": "Beauty",
     "tagline": "State license for waxing, sugaring, and threading",
-    "about": "Hair Removal specialty licenses authorize waxing, sugaring, threading, and basic depilatory services. Excludes electrology and laser hair removal. Lower hour requirement than full Esthetician — popular for waxing-only studios."
+    "about": "Hair Removal specialty licenses authorize waxing, sugaring, threading, and basic depilatory services. Excludes electrology and laser hair removal. Lower hour requirement than full Esthetician: popular for waxing-only studios."
   },
   {
     "slug": "hair-design",
@@ -278,7 +278,7 @@
     "vendor": "State Boards",
     "category": "Beauty",
     "tagline": "Specialty license for lash extensions, lifts, tinting, and brow services",
-    "about": "Eyelash and Eyebrow Technician licenses cover classic and volume lash extensions, lash lifts, tinting, brow waxing and tinting, and brow lamination. Lower hour requirement than full Esthetician — popular as a focused career path."
+    "about": "Eyelash and Eyebrow Technician licenses cover classic and volume lash extensions, lash lifts, tinting, brow waxing and tinting, and brow lamination. Lower hour requirement than full Esthetician: popular as a focused career path."
   },
   {
     "slug": "cna",
@@ -296,7 +296,7 @@
     "vendor": "Scrum.org",
     "category": "Project Management",
     "tagline": "Scrum.org's entry-level Scrum Master certification",
-    "about": "PSM I from Scrum.org validates your understanding of Scrum as defined by the Scrum Guide. The 60-minute, 80-question online exam tests your knowledge of Scrum theory, the Scrum Team, Scrum events, Scrum artifacts, and Done. No mandatory training is required — you can take the exam directly for $200. PSM I does not expire (one-time fee, lifetime credential), which sets it apart from the rival CSM (Certified ScrumMaster) from Scrum Alliance, which requires renewal."
+    "about": "PSM I from Scrum.org validates your understanding of Scrum as defined by the Scrum Guide. The 60-minute, 80-question online exam tests your knowledge of Scrum theory, the Scrum Team, Scrum events, Scrum artifacts, and Done. No mandatory training is required: you can take the exam directly for $200. PSM I does not expire (one-time fee, lifetime credential), which sets it apart from the rival CSM (Certified ScrumMaster) from Scrum Alliance, which requires renewal."
   },
   {
     "slug": "servsafe-manager",
@@ -328,7 +328,7 @@
   {
     "slug": "ase-automotive",
     "name": "ASE Automotive Certification",
-    "code": "ASE A1–A9 / G1",
+    "code": "ASE A1, A9 / G1",
     "vendor": "ASE",
     "category": "Automotive",
     "tagline": "Industry-standard certification for automotive technicians",
@@ -359,7 +359,7 @@
     "vendor": "NIC",
     "category": "Beauty",
     "tagline": "State-licensed credential for professional skin care services",
-    "about": "The Esthetician License is required in every U.S. state to perform professional skin care services for compensation — facials, hair removal, makeup, skin analysis, chemical exfoliation, and body treatments. State exams typically follow the NIC National Esthetics Theory blueprint, covering scientific concepts (infection control, anatomy and physiology, skin analysis, chemistry), esthetic services (consultation, facials, hair removal, makeup, body treatments), and the implements, tools, and equipment used in the skin care studio."
+    "about": "The Esthetician License is required in every U.S. state to perform professional skin care services for compensation, facials, hair removal, makeup, skin analysis, chemical exfoliation, and body treatments. State exams typically follow the NIC National Esthetics Theory blueprint, covering scientific concepts (infection control, anatomy and physiology, skin analysis, chemistry), esthetic services (consultation, facials, hair removal, makeup, body treatments), and the implements, tools, and equipment used in the skin care studio."
   },
   {
     "slug": "body-piercing-license",

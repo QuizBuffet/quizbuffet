@@ -28,10 +28,10 @@ function spawnOne() {
 
   const emoji     = pick(TEST_EMOJIS);
   const direction = Math.random() < 0.5 ? 'rtl' : 'ltr';
-  const topVh     = 10 + Math.random() * 70;            // 10vh – 80vh
-  const sizePx    = 32 + Math.floor(Math.random() * 32); // 32–64 px
+  const topVh     = 10 + Math.random() * 70;            // 10vh: 80vh
+  const sizePx    = 32 + Math.floor(Math.random() * 32); // 32-64 px
   const rotDeg    = (Math.random() - 0.5) * 60;          // -30° to +30°
-  const durationMs = 4000 + Math.random() * 3000;        // 4–7 s
+  const durationMs = 4000 + Math.random() * 3000;        // 4-7 s
 
   const el = document.createElement('div');
   el.className = `floating-emoji floating-emoji-${direction}`;

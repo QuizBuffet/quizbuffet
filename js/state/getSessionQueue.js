@@ -1,4 +1,4 @@
-// Returns remaining questions in a stable order — resumes after the last submitted answer on reload
+// Returns remaining questions in a stable order, resumes after the last submitted answer on reload
 export function getSessionQueue(questions, correctIds, domainSlug, limit) {
   const difficulty = localStorage.getItem('qb_difficulty') || null;
   const orderKey  = `qbs_${domainSlug}`;
@@ -21,7 +21,7 @@ export function getSessionQueue(questions, correctIds, domainSlug, limit) {
 
   const map = Object.fromEntries(questions.map(q => [q.id, q]));
 
-  // correctIds are strings (Object.keys), order IDs are numbers — normalise for comparison
+  // correctIds are strings (Object.keys), order IDs are numbers, normalise for comparison
   const correctSet = new Set(correctIds.map(String));
 
   // Retake mode: show the exact requested questions regardless of saved correct state

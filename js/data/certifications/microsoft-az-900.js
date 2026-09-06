@@ -1,11 +1,12 @@
 export const cert = {
   slug: 'microsoft-az-900',
   name: 'Microsoft Azure Fundamentals',
+  seoName: 'AZ-900 Azure Fundamentals',
   code: 'AZ-900',
   vendor: 'Microsoft',
   tagline: 'Foundational Azure knowledge for cloud beginners and decision-makers',
   about: 'Microsoft Azure Fundamentals (AZ-900) is the entry-level Azure certification. It covers cloud concepts (IaaS/PaaS/SaaS, public/private/hybrid, shared responsibility, consumption-based pricing), core Azure architecture and services (regions, availability zones, compute, networking, storage, databases, identity), and Azure management and governance (cost management, Microsoft Entra, role-based access control, Azure Policy, monitoring, support).',
-  details: '40–60 questions · 60 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
+  details: '40-60 questions · 60 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/microsoft-az-900-fundamentals/?couponCode=KEEPLEARNING',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },

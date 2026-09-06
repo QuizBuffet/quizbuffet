@@ -1,4 +1,4 @@
-// AWS Certified Machine Learning Engineer - Associate (MLA-C01) — services and supporting infrastructure with one-line purposes.
+// AWS Certified Machine Learning Engineer - Associate (MLA-C01), services and supporting infrastructure with one-line purposes.
 export const services = [
   // Core ML platforms
   { a: 'Amazon SageMaker AI',         d: 'End-to-end platform to build, train, and deploy ML models' },
@@ -16,7 +16,7 @@ export const services = [
   { a: 'SageMaker Debugger',          d: 'Inspect training jobs in real time to find issues like vanishing gradients' },
   { a: 'SageMaker Neo',               d: 'Optimize trained models for inference on specific hardware targets' },
   { a: 'SageMaker Edge Manager',      d: 'Deploy and manage ML models on edge devices' },
-  { a: 'SageMaker Autopilot',         d: 'AutoML — automatically train and tune the best model for a dataset' },
+  { a: 'SageMaker Autopilot',         d: 'AutoML: automatically train and tune the best model for a dataset' },
   { a: 'SageMaker Hyperparameter Tuning', d: 'Automated hyperparameter optimization for training jobs' },
   { a: 'SageMaker Training',          d: 'Managed compute for distributed and single-node ML training' },
   { a: 'SageMaker Processing',        d: 'Managed compute for data preprocessing and post-processing jobs' },

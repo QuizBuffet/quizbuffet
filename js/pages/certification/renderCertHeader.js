@@ -1,9 +1,9 @@
-// Cert page dashboard hero — vendor tag, name, code, stats row, progress ring, primary CTA.
+// Cert page dashboard hero: vendor tag, name, code, stats row, progress ring, primary CTA.
 // Reads progress from localStorage so the ring shows real % complete.
 import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/loadPricing.js';
 import { getDomainProgress } from '../../storage/getDomainProgress.js';
 
-// "Last updated" byline — emits ISO date for <time datetime> attribute and a
+// "Last updated" byline: emits ISO date for <time datetime> attribute and a
 // human-readable display version. Both represent the same day so Google's byline
 // pipeline can match the visible byline to JSON-LD `dateModified`.
 function buildIsoToday() {

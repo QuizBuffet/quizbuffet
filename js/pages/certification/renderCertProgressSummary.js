@@ -1,4 +1,4 @@
-// Weak Spots strip — shows up to 3 domains with lowest accuracy.
+// Weak Spots strip: shows up to 3 domains with lowest accuracy.
 // Only renders if the user has answered at least one question on this cert.
 import { getDomainProgress } from '../../storage/getDomainProgress.js';
 

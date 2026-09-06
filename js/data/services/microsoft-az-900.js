@@ -1,12 +1,12 @@
-// Microsoft Azure Fundamentals (AZ-900) — in-scope services and core concepts.
+// Microsoft Azure Fundamentals (AZ-900): in-scope services and core concepts.
 export const services = [
   // Cloud concepts
   { a: 'Public cloud',                d: 'Shared resources delivered over the internet by a cloud provider' },
   { a: 'Private cloud',               d: 'Cloud infrastructure operated solely for a single organization' },
   { a: 'Hybrid cloud',                d: 'Combination of public and private cloud with orchestrated workloads' },
-  { a: 'IaaS',                        d: 'Infrastructure as a Service — VMs, networks, storage' },
-  { a: 'PaaS',                        d: 'Platform as a Service — managed runtimes and services' },
-  { a: 'SaaS',                        d: 'Software as a Service — fully managed applications' },
+  { a: 'IaaS',                        d: 'Infrastructure as a Service: VMs, networks, storage' },
+  { a: 'PaaS',                        d: 'Platform as a Service: managed runtimes and services' },
+  { a: 'SaaS',                        d: 'Software as a Service: fully managed applications' },
   { a: 'Shared responsibility model', d: 'Customer vs cloud provider responsibility split for security and operations' },
   { a: 'Consumption-based pricing',   d: 'Pay only for resources you use, with no upfront capital cost' },
   { a: 'Capital vs operating expenditure', d: 'CapEx (upfront purchase) vs OpEx (ongoing pay-as-you-go) cost models' },
@@ -53,13 +53,13 @@ export const services = [
   { a: 'Azure CDN',                   d: 'Content Delivery Network for static content acceleration' },
 
   // Storage
-  { a: 'Azure Blob Storage',          d: 'Object storage for unstructured data — Hot, Cool, Cold, Archive tiers' },
+  { a: 'Azure Blob Storage',          d: 'Object storage for unstructured data: Hot, Cool, Cold, Archive tiers' },
   { a: 'Blob storage tiers',          d: 'Hot (frequent), Cool (30-day), Cold (90-day), Archive (180+ day) access tiers' },
   { a: 'Azure Files',                 d: 'Managed SMB and NFS file shares in the cloud' },
   { a: 'Azure Disk Storage',          d: 'Managed disks attached to Azure VMs (SSD/HDD options)' },
   { a: 'Azure Queue Storage',         d: 'Simple message queue for async communication' },
   { a: 'Azure Table Storage',         d: 'NoSQL key-value store for structured non-relational data' },
-  { a: 'Storage account redundancy',  d: 'LRS, ZRS, GRS, GZRS — locally to geo-redundant replication' },
+  { a: 'Storage account redundancy',  d: 'LRS, ZRS, GRS, GZRS: locally to geo-redundant replication' },
   { a: 'AzCopy',                      d: 'CLI tool for high-throughput data transfer to and from Azure Storage' },
   { a: 'Azure Storage Explorer',      d: 'Free GUI for managing Azure Storage resources' },
   { a: 'Azure Migrate',               d: 'Hub for assessing and migrating servers, databases, apps, and data to Azure' },
@@ -100,7 +100,7 @@ export const services = [
   { a: 'Azure Service Health',        d: 'Personalized service-incident and maintenance notifications' },
   { a: 'Azure Advisor',               d: 'Personalized best-practice recommendations across cost, security, performance' },
   { a: 'Log Analytics',               d: 'Workspace and KQL query engine for log data in Azure Monitor' },
-  { a: 'Application Insights',        d: 'APM for live applications — performance, exceptions, dependencies' },
+  { a: 'Application Insights',        d: 'APM for live applications: performance, exceptions, dependencies' },
   { a: 'Azure portal',                d: 'Web-based unified console for managing Azure resources' },
   { a: 'Azure CLI',                   d: 'Cross-platform command-line interface for Azure' },
   { a: 'Azure PowerShell',            d: 'PowerShell modules for managing Azure resources' },

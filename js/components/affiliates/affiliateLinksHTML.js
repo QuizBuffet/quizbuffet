@@ -55,6 +55,6 @@ export function affiliateLinksHTML(cert) {
             ${a.label} →
           </a>`).join('')}
       </div>
-      <p class="affiliate-disclosure">Affiliate links — we may earn a small commission at no extra cost to you.</p>
+      <p class="affiliate-disclosure">Affiliate links: we may earn a small commission at no extra cost to you.</p>
     </div>`;
 }

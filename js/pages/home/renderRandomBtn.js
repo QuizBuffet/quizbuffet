@@ -1,4 +1,4 @@
-// Renders random domain button — prefers non-empty domains from the sessionStorage cache to avoid dead-end quiz pages
+// Renders random domain button: prefers non-empty domains from the sessionStorage cache to avoid dead-end quiz pages
 import { certifications } from '../../data/certifications/index.js';
 
 export function renderRandomBtn() {

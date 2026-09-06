@@ -42,7 +42,7 @@ export function renderNav(active) {
     { href: '/progress', label: 'Progress' },
   ];
 
-  // Stats need a localStorage scan + counts.json fetch — defer to keep nav painting fast.
+  // Stats need a localStorage scan + counts.json fetch, defer to keep nav painting fast.
   // Initial render uses neutral placeholders; an idle callback below fills the real values.
   const domainLabel = ' ';
   const correctPct = 0;

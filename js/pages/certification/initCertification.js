@@ -1,4 +1,4 @@
-// Entry point for the cert route — resolves cert from hash param and renders all sections
+// Entry point for the cert route: resolves cert from hash param and renders all sections
 import { renderAd } from '../../components/ad/renderAd.js';
 import { certifications } from '../../data/certifications/index.js';
 import { renderCertHeader } from './renderCertHeader.js';
@@ -25,13 +25,13 @@ export async function init() {
   const cert = certifications.find(c => c.slug === certSlug);
 
   if (!cert) {
-    // Maybe it's a coming-soon cert — render a placeholder card
+    // Maybe it's a coming-soon cert: render a placeholder card
     const list = await loadComingSoon();
     const comingSoon = list.find(c => c.slug === certSlug) || null;
 
     if (comingSoon) {
       setMeta(
-        `${comingSoon.name} (${comingSoon.code}) Free Practice Test — Coming Soon`,
+        `${comingSoon.name} (${comingSoon.code}) Free Practice Test: Coming Soon`,
         `${comingSoon.name} (${comingSoon.code}) free practice test is coming soon. ${comingSoon.tagline || ''}`
       );
       document.getElementById('cert-header').innerHTML = `
@@ -76,7 +76,7 @@ export async function init() {
     const affiliatesEl = document.getElementById('affiliates');
     if (affiliatesEl) affiliatesEl.innerHTML = affiliateLinksHTML(cert);
 
-    // Fetch all domain counts in parallel — loadDomain caches results for the quiz
+    // Fetch all domain counts in parallel: loadDomain caches results for the quiz
     const counts = await Promise.all(
       cert.domains.map(d => loadDomain(cert.slug, d.slug, cert).then(qs => qs.length))
     );
@@ -86,7 +86,7 @@ export async function init() {
     renderCertFAQ(cert, totalQ);
     setMeta(
       `${cert.name} (${cert.code}) Free Practice Test`,
-      `Free ${cert.name} (${cert.code}) practice test — ${totalQ}+ exam questions across ${cert.domains.length} domains. No account needed. Track progress domain-by-domain until you're ready to pass.`
+      `Free ${cert.name} (${cert.code}) practice test: ${totalQ}+ exam questions across ${cert.domains.length} domains. No account needed. Track progress domain-by-domain until you're ready to pass.`
     );
     setJsonLd({
       '@context': 'https://schema.org',

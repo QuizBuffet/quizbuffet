@@ -1,4 +1,4 @@
-// Badge of honor — animated count-up showing total practice questions across the entire site.
+// Badge of honor: animated count-up showing total practice questions across the entire site.
 // Reads /data/counts.json (written by scripts/build-seo.mjs).
 import { loadCounts } from '../../data/counts/loadCounts.js';
 

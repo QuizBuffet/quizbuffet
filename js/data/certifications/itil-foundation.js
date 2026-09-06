@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'itil-foundation',
   name: 'ITIL 4 Foundation',
+  seoName: 'ITIL 4 Foundation',
   code: 'ITIL 4',
   vendor: 'PeopleCert',
   tagline: 'The most widely adopted IT service management framework',

@@ -1,11 +1,12 @@
 export const cert = {
   slug: 'isc2-cissp',
   name: 'Certified Information Systems Security Professional',
+  seoName: 'CISSP (ISC2)',
   code: 'CISSP',
   vendor: 'ISC2',
   tagline: 'The gold-standard senior cybersecurity certification',
   about: 'CISSP (Certified Information Systems Security Professional) validates deep technical and managerial knowledge across eight domains: security and risk management (governance, risk, BCP, ethics), asset security (classification, handling, data lifecycle), security architecture and engineering (security models, cryptography, site/facility design), communication and network security (OSI, secure protocols, segmentation), identity and access management (AAA, federation, RBAC/ABAC), security assessment and testing (vulnerability, pen testing, audits), security operations (logging, incident management, DR/BC), and software development security (SDLC, SAST/DAST, secure coding).',
-  details: '125–150 adaptive items · 3 hours · Multiple-choice and advanced innovative items · Pass score 700/1000',
+  details: '125-150 adaptive items · 3 hours · Multiple-choice and advanced innovative items · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/cissp-domain-1-2/',
   extraUdemyCourses: [
     { label: 'CISSP Domains 3-4 (Architecture & Network Security)', url: 'https://www.udemy.com/course/cissp-domain-3-4/' },

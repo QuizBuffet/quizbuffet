@@ -1,12 +1,12 @@
-// AWS Solutions Architect Associate (SAA-C03) — every in-scope AWS service paired with a one-line purpose.
+// AWS Solutions Architect Associate (SAA-C03): every in-scope AWS service paired with a one-line purpose.
 // Used by the Service Match drill on the cert page.
 export const services = [
   // Analytics
-  { a: 'Amazon Athena',          d: 'Query data in S3 with standard SQL — serverless' },
+  { a: 'Amazon Athena',          d: 'Query data in S3 with standard SQL, serverless' },
   { a: 'AWS Data Exchange',      d: 'Find and subscribe to third-party data products in AWS' },
   { a: 'Amazon Data Firehose',   d: 'Reliably load streaming data into data lakes, warehouses, and analytics services' },
   { a: 'Amazon EMR',             d: 'Big data processing with Hadoop, Spark, Hive, and Presto' },
-  { a: 'AWS Glue',               d: 'Serverless ETL — discover, catalog, and transform data' },
+  { a: 'AWS Glue',               d: 'Serverless ETL: discover, catalog, and transform data' },
   { a: 'Amazon Kinesis',         d: 'Real-time streaming data ingestion and processing' },
   { a: 'AWS Lake Formation',     d: 'Build, secure, and manage data lakes on S3' },
   { a: 'Amazon MSK',             d: 'Managed Streaming for Apache Kafka' },
@@ -19,13 +19,13 @@ export const services = [
   { a: 'AWS AppSync',            d: 'Managed GraphQL API service' },
   { a: 'Amazon EventBridge',     d: 'Serverless event bus connecting AWS, SaaS, and custom apps' },
   { a: 'Amazon MQ',              d: 'Managed message broker for ActiveMQ and RabbitMQ' },
-  { a: 'Amazon SNS',             d: 'Pub/sub messaging — push notifications to email, SMS, mobile, SQS, Lambda' },
+  { a: 'Amazon SNS',             d: 'Pub/sub messaging: push notifications to email, SMS, mobile, SQS, Lambda' },
   { a: 'Amazon SQS',             d: 'Fully managed message queues to decouple distributed components' },
   { a: 'AWS Step Functions',     d: 'Serverless workflow orchestration with visual state machines' },
 
   // AWS Cost Management
   { a: 'AWS Budgets',            d: 'Set custom cost or usage budgets and alert on overruns' },
-  { a: 'AWS Cost and Usage Report', d: 'Most detailed cost data — granular line-item billing exports' },
+  { a: 'AWS Cost and Usage Report', d: 'Most detailed cost data: granular line-item billing exports' },
   { a: 'AWS Cost Explorer',      d: 'Visualize and forecast AWS spend by service, account, or tag' },
   { a: 'Savings Plans',          d: 'Flexible commitment-based discount on EC2, Fargate, and Lambda' },
 
@@ -66,11 +66,11 @@ export const services = [
   { a: 'AWS Device Farm',        d: 'Test mobile and web apps against real devices in the cloud' },
 
   // Machine Learning
-  { a: 'Amazon Comprehend',      d: 'Natural-language processing — sentiment, entities, key phrases' },
+  { a: 'Amazon Comprehend',      d: 'Natural-language processing: sentiment, entities, key phrases' },
   { a: 'Amazon Kendra',          d: 'Intelligent enterprise search powered by ML' },
   { a: 'Amazon Lex',             d: 'Build conversational chatbots and voice interfaces' },
   { a: 'Amazon Polly',           d: 'Text-to-speech with lifelike voices' },
-  { a: 'Amazon Rekognition',     d: 'Image and video analysis — face detection, labels, content moderation' },
+  { a: 'Amazon Rekognition',     d: 'Image and video analysis: face detection, labels, content moderation' },
   { a: 'Amazon SageMaker AI',    d: 'End-to-end platform to build, train, and deploy ML models' },
   { a: 'Amazon Textract',        d: 'Extract text, forms, and tables from scanned documents' },
   { a: 'Amazon Transcribe',      d: 'Automatic speech-to-text transcription' },
@@ -79,7 +79,7 @@ export const services = [
   // Management and Governance
   { a: 'AWS Auto Scaling',       d: 'Unified scaling across EC2, ECS, DynamoDB, Aurora, etc.' },
   { a: 'AWS CLI',                d: 'Command-line tool for managing AWS services' },
-  { a: 'AWS CloudFormation',     d: 'Infrastructure-as-code — provision AWS resources from templates' },
+  { a: 'AWS CloudFormation',     d: 'Infrastructure-as-code: provision AWS resources from templates' },
   { a: 'AWS CloudTrail',         d: 'Audit log of all API calls and account activity' },
   { a: 'Amazon CloudWatch',      d: 'Monitoring, metrics, logs, and alarms across AWS resources' },
   { a: 'AWS Compute Optimizer',  d: 'Recommend optimal AWS resource sizes based on workload patterns' },
@@ -92,7 +92,7 @@ export const services = [
   { a: 'AWS Management Console', d: 'Web-based UI for managing AWS services' },
   { a: 'AWS Organizations',      d: 'Centrally manage multiple AWS accounts with consolidated billing and SCPs' },
   { a: 'AWS Service Catalog',    d: 'Curate and distribute approved IT services within the org' },
-  { a: 'AWS Systems Manager',    d: 'Operational hub — patch, automate, and configure AWS and on-prem resources' },
+  { a: 'AWS Systems Manager',    d: 'Operational hub: patch, automate, and configure AWS and on-prem resources' },
   { a: 'AWS Trusted Advisor',    d: 'Best-practice checks for cost, performance, security, fault tolerance, limits' },
   { a: 'AWS Well-Architected Tool', d: 'Self-assessment against the AWS Well-Architected Framework pillars' },
 
@@ -103,7 +103,7 @@ export const services = [
   // Migration and Transfer
   { a: 'AWS Application Migration Service', d: 'Lift-and-shift migrate servers to AWS with minimal downtime' },
   { a: 'AWS DataSync',           d: 'Fast online data transfer between on-prem storage and AWS' },
-  { a: 'AWS DMS',                d: 'Database Migration Service — migrate databases with minimal downtime' },
+  { a: 'AWS DMS',                d: 'Database Migration Service: migrate databases with minimal downtime' },
   { a: 'AWS Snow Family',        d: 'Physical devices for moving large amounts of data into and out of AWS' },
   { a: 'AWS Transfer Family',    d: 'Managed SFTP, FTPS, and FTP for transferring files into and out of S3 and EFS' },
 
@@ -111,7 +111,7 @@ export const services = [
   { a: 'AWS Client VPN',         d: 'Managed remote-access VPN for individual users' },
   { a: 'Amazon CloudFront',      d: 'Global content delivery network (CDN)' },
   { a: 'AWS Direct Connect',     d: 'Dedicated private network connection from on-premises to AWS' },
-  { a: 'Elastic Load Balancing', d: 'Distribute traffic across targets — Application, Network, and Gateway types' },
+  { a: 'Elastic Load Balancing', d: 'Distribute traffic across targets: Application, Network, and Gateway types' },
   { a: 'AWS Global Accelerator', d: 'Improve global app performance using AWS backbone with static anycast IPs' },
   { a: 'AWS PrivateLink',        d: 'Private connectivity to AWS services and SaaS without public internet' },
   { a: 'Amazon Route 53',        d: 'Scalable DNS, domain registration, and health-checked routing' },
@@ -128,18 +128,18 @@ export const services = [
   { a: 'Amazon Detective',       d: 'Investigate and analyze security findings using ML and graph analysis' },
   { a: 'AWS Directory Service',  d: 'Managed Microsoft Active Directory in the cloud' },
   { a: 'AWS Firewall Manager',   d: 'Centrally configure and manage firewall rules across accounts' },
-  { a: 'Amazon GuardDuty',       d: 'Threat detection — continuously monitors for malicious activity' },
+  { a: 'Amazon GuardDuty',       d: 'Threat detection: continuously monitors for malicious activity' },
   { a: 'AWS IAM Identity Center', d: 'Single sign-on (SSO) and central permission management across AWS accounts' },
   { a: 'Amazon Inspector',       d: 'Automated vulnerability scanning for EC2, ECR, and Lambda' },
   { a: 'AWS KMS',                d: 'Create and manage cryptographic keys used to encrypt data' },
   { a: 'Amazon Macie',           d: 'Discover and protect sensitive data (e.g., PII) in S3 using ML' },
   { a: 'AWS Network Firewall',   d: 'Stateful, managed network firewall and IPS for VPCs' },
-  { a: 'AWS RAM',                d: 'Resource Access Manager — share AWS resources across accounts' },
+  { a: 'AWS RAM',                d: 'Resource Access Manager: share AWS resources across accounts' },
   { a: 'AWS Secrets Manager',    d: 'Store, rotate, and retrieve secrets like database credentials and API keys' },
   { a: 'AWS Security Hub',       d: 'Single dashboard aggregating security alerts and compliance status' },
-  { a: 'AWS Shield',             d: 'DDoS protection — Standard is free; Advanced adds higher-tier mitigation' },
-  { a: 'AWS WAF',                d: 'Web Application Firewall — protect web apps from common exploits' },
-  { a: 'IAM',                    d: 'Identity and Access Management — users, groups, roles, and permissions' },
+  { a: 'AWS Shield',             d: 'DDoS protection: Standard is free; Advanced adds higher-tier mitigation' },
+  { a: 'AWS WAF',                d: 'Web Application Firewall: protect web apps from common exploits' },
+  { a: 'IAM',                    d: 'Identity and Access Management: users, groups, roles, and permissions' },
 
   // Serverless
   { a: 'AWS Fargate',            d: 'Serverless compute engine for containers (ECS/EKS)' },
@@ -152,5 +152,5 @@ export const services = [
   { a: 'Amazon FSx',             d: 'Managed file systems (Windows, Lustre, NetApp ONTAP, OpenZFS)' },
   { a: 'Amazon S3',              d: 'Object storage with virtually unlimited capacity and 11 nines durability' },
   { a: 'Amazon S3 Glacier',      d: 'Low-cost archival object storage for long-term retention' },
-  { a: 'AWS Storage Gateway',    d: 'Hybrid cloud storage — give on-prem apps access to AWS storage' },
+  { a: 'AWS Storage Gateway',    d: 'Hybrid cloud storage: give on-prem apps access to AWS storage' },
 ];

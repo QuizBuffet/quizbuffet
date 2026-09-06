@@ -1,4 +1,4 @@
-// AWS Certified AI Practitioner (AIF-C01) — AI/ML services and supporting infrastructure with one-line purposes.
+// AWS Certified AI Practitioner (AIF-C01): AI/ML services and supporting infrastructure with one-line purposes.
 export const services = [
   // Core AI/ML platforms
   { a: 'Amazon SageMaker AI',    d: 'End-to-end platform to build, train, and deploy ML models' },
@@ -19,16 +19,16 @@ export const services = [
   { a: 'SageMaker Pipelines',    d: 'CI/CD-style ML workflow orchestration' },
 
   // Bedrock features
-  { a: 'Bedrock Knowledge Bases', d: 'RAG made easy — connect FMs to your private data sources' },
+  { a: 'Bedrock Knowledge Bases', d: 'RAG made easy: connect FMs to your private data sources' },
   { a: 'Bedrock Agents',         d: 'Build agents that plan and execute multi-step tasks using FMs' },
   { a: 'Bedrock Guardrails',     d: 'Apply content filters, denied topics, and PII protection to FM outputs' },
 
   // Pre-trained AI services (computer vision)
-  { a: 'Amazon Rekognition',     d: 'Image and video analysis — face detection, labels, content moderation' },
+  { a: 'Amazon Rekognition',     d: 'Image and video analysis: face detection, labels, content moderation' },
   { a: 'Amazon Textract',        d: 'Extract text, forms, and tables from scanned documents' },
 
   // Pre-trained AI services (language)
-  { a: 'Amazon Comprehend',      d: 'Natural-language processing — sentiment, entities, key phrases' },
+  { a: 'Amazon Comprehend',      d: 'Natural-language processing: sentiment, entities, key phrases' },
   { a: 'Amazon Comprehend Medical', d: 'NLP service specialized for clinical and medical text' },
   { a: 'Amazon Translate',       d: 'Neural machine translation between languages' },
   { a: 'Amazon Transcribe',      d: 'Automatic speech-to-text transcription' },
@@ -42,12 +42,12 @@ export const services = [
   { a: 'Amazon Fraud Detector',  d: 'Detect fraudulent activity using ML' },
 
   // Compute & storage commonly paired with ML
-  { a: 'Amazon EC2',             d: 'Virtual servers — used for ML training/inference (incl. GPU instances)' },
-  { a: 'Amazon S3',              d: 'Object storage — primary location for training datasets and model artifacts' },
+  { a: 'Amazon EC2',             d: 'Virtual servers: used for ML training/inference (incl. GPU instances)' },
+  { a: 'Amazon S3',              d: 'Object storage: primary location for training datasets and model artifacts' },
   { a: 'AWS Lambda',             d: 'Run inference code without provisioning or managing servers' },
 
   // Security and governance for AI
-  { a: 'AWS IAM',                d: 'Identity and Access Management — control who can call AI services' },
+  { a: 'AWS IAM',                d: 'Identity and Access Management: control who can call AI services' },
   { a: 'AWS KMS',                d: 'Manage cryptographic keys used to encrypt training data and model artifacts' },
   { a: 'Amazon Macie',           d: 'Discover and protect sensitive data (e.g., PII) in S3 used for AI training' },
   { a: 'AWS Secrets Manager',    d: 'Store and rotate API keys, model credentials, and other secrets' },
@@ -55,10 +55,10 @@ export const services = [
   { a: 'AWS Artifact',           d: 'On-demand access to AWS compliance reports' },
 
   // Monitoring and observability
-  { a: 'Amazon CloudWatch',      d: 'Monitoring, metrics, logs, and alarms — including model performance metrics' },
+  { a: 'Amazon CloudWatch',      d: 'Monitoring, metrics, logs, and alarms: including model performance metrics' },
   { a: 'AWS CloudTrail',         d: 'Audit log of all API calls (including AI service invocations)' },
 
-  // Concepts (core to the AIF-C01 exam — not services but tested as terms)
+  // Concepts (core to the AIF-C01 exam: not services but tested as terms)
   { a: 'Foundation Model',       d: 'Large pre-trained model adaptable to many downstream tasks (the basis of generative AI)' },
   { a: 'Prompt Engineering',     d: 'Crafting input prompts to elicit better, safer, and more useful FM outputs' },
   { a: 'Retrieval-Augmented Generation', d: 'Combine an FM with retrieved context from your data to ground responses' },

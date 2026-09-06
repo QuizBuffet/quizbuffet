@@ -1,4 +1,4 @@
-// Session size picker — persists choice to localStorage so it's remembered across visits
+// Session size picker: persists choice to localStorage so it's remembered across visits
 const SIZES = [5, 10, 20, 50];
 const KEY = 'qb_session_size';
 

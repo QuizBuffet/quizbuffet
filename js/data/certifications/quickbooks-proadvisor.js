@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'quickbooks-proadvisor',
   name: 'QuickBooks ProAdvisor (Online Certification)',
+  seoName: 'QuickBooks Online ProAdvisor',
   code: 'QuickBooks ProAdvisor',
   vendor: 'Intuit',
   tagline: 'Intuit-certified credential for QuickBooks Online and Desktop',
@@ -8,8 +9,8 @@ export const cert = {
   details: 'Free Intuit certification · ~50 questions per module · Pass score 80% · 3 attempts per module · Online via QuickBooks Online Accountant',
   affiliates: [
     { provider: 'amazon', label: 'Shop QuickBooks ProAdvisor Study Guides on Amazon', url: 'https://www.amazon.com/s?k=quickbooks+proadvisor+certification+study+guide&tag=0003aa-20' },
-    { provider: 'intuit', label: 'QuickBooks Online Accountant — ProAdvisor Program', url: 'https://quickbooks.intuit.com/accountants/proadvisor/' },
-    { provider: 'intuit', label: 'Intuit Tax Pro Center — Education Resources', url: 'https://accountants.intuit.com/training-certification/' },
+    { provider: 'intuit', label: 'QuickBooks Online Accountant: ProAdvisor Program', url: 'https://quickbooks.intuit.com/accountants/proadvisor/' },
+    { provider: 'intuit', label: 'Intuit Tax Pro Center: Education Resources', url: 'https://accountants.intuit.com/training-certification/' },
   ],
   domains: [
     { slug: 'setup-and-subscriptions',         name: 'QBO Setup & Subscriptions',                number: '1.0', weight: 8  },

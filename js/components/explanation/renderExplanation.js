@@ -23,7 +23,7 @@ export function renderExplanation(question, onNext) {
 
   document.getElementById('next-btn').addEventListener('click', onNext);
 
-  // Only scroll if the Next button is below the viewport — otherwise the page jumps for no reason
+  // Only scroll if the Next button is below the viewport, otherwise the page jumps for no reason
   const btn = document.getElementById('next-btn');
   if (btn.getBoundingClientRect().bottom > window.innerHeight) {
     btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

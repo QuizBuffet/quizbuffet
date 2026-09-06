@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'osha-30-construction',
   name: 'OSHA 30-Hour Construction',
+  seoName: 'OSHA 30 Construction',
   code: 'OSHA 30',
   vendor: 'OSHA',
   tagline: 'Supervisor-level construction safety certification',

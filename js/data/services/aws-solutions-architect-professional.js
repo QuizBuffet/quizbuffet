@@ -1,4 +1,4 @@
-// AWS Certified Solutions Architect – Professional (SAP-C02) — in-scope services and architecture concepts.
+// AWS Certified Solutions Architect Professional (SAP-C02): in-scope services and architecture concepts.
 export const services = [
   // Multi-account governance
   { a: 'AWS Organizations',                 d: 'Multi-account management with consolidated billing and policies' },
@@ -104,7 +104,7 @@ export const services = [
   { a: 'AWS Certificate Manager (ACM)',     d: 'Provision public/private TLS certificates for AWS resources' },
   { a: 'AWS Private Certificate Authority', d: 'Managed private CA for issuing internal X.509 certificates' },
   { a: 'AWS WAF',                           d: 'Web application firewall protecting CloudFront, ALB, API Gateway' },
-  { a: 'AWS Shield / Shield Advanced',      d: 'DDoS protection — Standard included, Advanced for higher tiers' },
+  { a: 'AWS Shield / Shield Advanced',      d: 'DDoS protection: Standard included, Advanced for higher tiers' },
   { a: 'AWS Network Firewall',              d: 'Managed stateful firewall, IDS/IPS, and traffic filtering for VPCs' },
   { a: 'AWS Firewall Manager',              d: 'Centrally configure WAF, Shield, security groups, and Network Firewall org-wide' },
   { a: 'Amazon GuardDuty',                  d: 'Threat detection from CloudTrail, VPC Flow Logs, DNS, EKS, S3' },

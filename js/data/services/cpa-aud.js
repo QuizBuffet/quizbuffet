@@ -7,7 +7,7 @@ export const services = [
   { a: 'Engagement Preconditions and Letters', d: 'Acceptance and continuance considerations, communication with predecessor auditors, and documented common understanding of engagement terms.' },
   { a: 'Engagement Documentation', d: 'Workpaper requirements: an experienced auditor with no prior connection should be able to understand the nature, timing, extent, and conclusions from documentation alone.' },
   { a: 'Communication with Those Charged with Governance', d: 'Required communications on planned scope and timing, identified deficiencies, material weaknesses, and significant audit findings.' },
-  { a: 'COSO Internal Control – Integrated Framework', d: 'Five components and seventeen principles used to define and evaluate internal control over financial reporting in audit risk assessment.' },
+  { a: 'COSO Internal Control: Integrated Framework', d: 'Five components and seventeen principles used to define and evaluate internal control over financial reporting in audit risk assessment.' },
   { a: 'IT General Controls', d: 'Access management, change management, and IT operations controls that support the reliability of application-level controls.' },
   { a: 'SOC 1® Type 2 Reports', d: 'Used by user-entity auditors to evaluate controls at service organizations relevant to user-entity ICFR; informs nature/timing/extent of testing.' },
   { a: 'Materiality', d: 'Quantitative and qualitative threshold for misstatements; includes performance materiality (tolerable misstatement) applied at the account/disclosure level.' },

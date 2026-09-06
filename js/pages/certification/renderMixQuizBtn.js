@@ -5,7 +5,7 @@ export function renderMixQuizBtn(cert) {
   if (!el) return;
 
   const url = `/${cert.slug}/mix/`;
-  el.innerHTML = `<button class="mix-quiz-btn" id="mix-quiz-btn">⇄ Mixed Quiz — all domains</button>`;
+  el.innerHTML = `<button class="mix-quiz-btn" id="mix-quiz-btn">⇄ Mixed Quiz: all domains</button>`;
 
   document.getElementById('mix-quiz-btn').addEventListener('click', () => {
     // Clear any stale mixed session so a fresh shuffle starts

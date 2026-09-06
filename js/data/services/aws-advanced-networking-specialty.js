@@ -1,4 +1,4 @@
-// AWS Certified Advanced Networking – Specialty (ANS-C01) — in-scope services and networking concepts.
+// AWS Certified Advanced Networking Specialty (ANS-C01): in-scope services and networking concepts.
 export const services = [
   // VPC fundamentals
   { a: 'Amazon VPC',                       d: 'Logically isolated virtual network for AWS resources' },
@@ -13,7 +13,7 @@ export const services = [
   { a: 'Network ACL',                      d: 'Stateless subnet-level firewall with allow and deny rules' },
   { a: 'VPC peering',                      d: 'One-to-one VPC connection without transitive routing' },
   { a: 'VPC sharing',                      d: 'Share subnets to other accounts via AWS RAM' },
-  { a: 'BYOIP',                            d: 'Bring Your Own IP — onboard owned public IPv4/IPv6 ranges into AWS' },
+  { a: 'BYOIP',                            d: 'Bring Your Own IP: onboard owned public IPv4/IPv6 ranges into AWS' },
   { a: 'Amazon VPC IPAM',                  d: 'IP Address Manager for planning, tracking, and monitoring CIDRs' },
   { a: 'Secondary CIDR',                   d: 'Add additional CIDR blocks to a VPC to extend address space' },
   { a: 'Jumbo frames',                     d: 'MTU 9001 within VPC; reduces packet count for high-throughput workloads' },
@@ -29,13 +29,13 @@ export const services = [
   { a: 'AWS Site-to-Site VPN',             d: 'IPsec tunnels between on-premises customer gateways and AWS' },
   { a: 'Accelerated VPN',                  d: 'Site-to-Site VPN over Global Accelerator edge for lower latency' },
   { a: 'AWS Client VPN',                   d: 'Managed OpenVPN-based client VPN for remote workforce' },
-  { a: 'BGP',                              d: 'Border Gateway Protocol — exchanges routes over DX/VPN' },
+  { a: 'BGP',                              d: 'Border Gateway Protocol: exchanges routes over DX/VPN' },
   { a: 'BGP AS_PATH prepending',           d: 'Make a path less preferred by lengthening AS_PATH' },
   { a: 'BGP local preference',             d: 'Outbound preference for one path over another within an AS' },
-  { a: 'BGP MED',                          d: 'Multi-Exit Discriminator — hint to neighbor AS for preferred entry point' },
+  { a: 'BGP MED',                          d: 'Multi-Exit Discriminator: hint to neighbor AS for preferred entry point' },
   { a: 'BGP communities',                  d: 'Tags that influence AWS route advertisement and propagation behavior' },
   { a: 'MACsec',                           d: 'Layer 2 encryption (IEEE 802.1AE) for Direct Connect dedicated links' },
-  { a: 'GRE',                              d: 'Generic Routing Encapsulation — used by Transit Gateway Connect' },
+  { a: 'GRE',                              d: 'Generic Routing Encapsulation: used by Transit Gateway Connect' },
   { a: 'IPsec',                            d: 'Encrypted tunneling protocol used by Site-to-Site VPN' },
 
   // Multi-VPC, multi-account
@@ -103,7 +103,7 @@ export const services = [
 
   // Security and edge protection
   { a: 'AWS WAF',                          d: 'Web application firewall protecting CloudFront, ALB, API Gateway, AppSync' },
-  { a: 'AWS Shield',                       d: 'DDoS protection — Standard included, Advanced for higher tiers' },
+  { a: 'AWS Shield',                       d: 'DDoS protection: Standard included, Advanced for higher tiers' },
   { a: 'AWS Shield Advanced',              d: 'Advanced DDoS protection with cost protection and SRT engagement' },
   { a: 'AWS Network Firewall',             d: 'Managed stateful firewall, IDS/IPS, and traffic filtering for VPCs' },
   { a: 'AWS Firewall Manager',             d: 'Centrally configure WAF, Shield, security groups, and Network Firewall org-wide' },

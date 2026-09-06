@@ -1,4 +1,4 @@
-// Refined home hero — minimalist headline + stat strip + search bar.
+// Refined home hero: minimalist headline + stat strip + search bar.
 // Absorbs the random-domain button as a secondary action and the search input.
 import { certifications } from '../../data/certifications/index.js';
 import { loadCounts } from '../../data/counts/loadCounts.js';
@@ -29,15 +29,15 @@ export function renderHero(comingSoon, onSearch) {
           <div class="hero-search-hint" aria-hidden="true">Filters as you type · press Enter to open the first match</div>
 
           <div class="hero-stats" id="hero-stats">
-            <div class="hero-stat"><span class="hero-stat-num" data-stat="questions">—</span><span class="hero-stat-label">questions</span></div>
-            <div class="hero-stat"><span class="hero-stat-num" data-stat="certs">—</span><span class="hero-stat-label">certifications</span></div>
+            <div class="hero-stat"><span class="hero-stat-num" data-stat="questions">, </span><span class="hero-stat-label">questions</span></div>
+            <div class="hero-stat"><span class="hero-stat-num" data-stat="certs">, </span><span class="hero-stat-label">certifications</span></div>
             <div class="hero-stat"><span class="hero-stat-num">$0</span><span class="hero-stat-label">to use, forever</span></div>
           </div>
         </div>
       </section>`;
   }
 
-  // Wire search — type to filter, Enter to open first match
+  // Wire search: type to filter, Enter to open first match
   const input = document.getElementById('domain-search');
   const form  = document.getElementById('hero-search-form');
   if (input) input.addEventListener('input', e => onSearch(e.target.value));
@@ -51,7 +51,7 @@ export function renderHero(comingSoon, onSearch) {
     }
   });
 
-  // Wire random button — same logic as the old renderRandomBtn
+  // Wire random button: same logic as the old renderRandomBtn
   const randomBtn = document.getElementById('pick-random');
   if (randomBtn) {
     randomBtn.addEventListener('click', () => {
@@ -70,7 +70,7 @@ export function renderHero(comingSoon, onSearch) {
     });
   }
 
-  // Populate stats from counts.json — keep static fallback if fetch fails
+  // Populate stats from counts.json: keep static fallback if fetch fails
   loadCounts().then(c => {
     if (!c) return;
     const root = document.getElementById('hero-stats');

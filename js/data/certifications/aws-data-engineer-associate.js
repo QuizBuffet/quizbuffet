@@ -1,10 +1,10 @@
 export const cert = {
   slug: 'aws-data-engineer-associate',
-  name: 'AWS Certified Data Engineer – Associate',
+  name: 'AWS Certified Data Engineer Associate',
   code: 'DEA-C01',
   vendor: 'AWS',
   tagline: 'Implement, monitor, and optimize data pipelines on AWS',
-  about: 'AWS Certified Data Engineer – Associate (DEA-C01) validates the ability to implement data pipelines and to monitor, troubleshoot, and optimize cost and performance issues. It covers data ingestion and transformation, data store choice and management, data cataloging and schema evolution, pipeline orchestration and automation, programming concepts, data quality and analysis, and data security, governance, and privacy on AWS.',
+  about: 'AWS Certified Data Engineer Associate (DEA-C01) validates the ability to implement data pipelines and to monitor, troubleshoot, and optimize cost and performance issues. It covers data ingestion and transformation, data store choice and management, data cataloging and schema evolution, pipeline orchestration and automation, programming concepts, data quality and analysis, and data security, governance, and privacy on AWS.',
   details: '65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-data-engineer/',
   affiliates: [

@@ -1,4 +1,4 @@
-// Readable rundown of each domain — weight, name, and a one-line tie back to the exam.
+// Readable rundown of each domain: weight, name, and a one-line tie back to the exam.
 // Gives the page substantive body copy beyond the dashboard cards.
 export function renderCertWhatYouLearn(cert) {
   const el = document.getElementById('cert-what-you-learn');

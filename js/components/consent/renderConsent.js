@@ -3,7 +3,7 @@
 // consent by default only for EEA/UK visitors (granted by default elsewhere), and
 // restores a prior 'granted' choice before gtag.js loads. This banner is only the
 // UI that lets a first-time visitor grant/decline; it calls gtag('consent','update').
-// Accept grants analytics_storage + ad_storage + ad_user_data — never ad_personalization,
+// Accept grants analytics_storage + ad_storage + ad_user_data, never ad_personalization,
 // so nothing here is used for personalized ads or remarketing. If a choice was already
 // made, the banner never renders.
 

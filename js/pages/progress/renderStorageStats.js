@@ -19,7 +19,7 @@ export function renderStorageStats() {
   }
 
   if (!domainsStarted) {
-    el.innerHTML = `<p class="prog-empty-top">No progress yet — start a quiz to track your answers.</p>`;
+    el.innerHTML = `<p class="prog-empty-top">No progress yet: start a quiz to track your answers.</p>`;
     return;
   }
 

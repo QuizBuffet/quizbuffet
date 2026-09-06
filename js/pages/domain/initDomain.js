@@ -1,4 +1,4 @@
-// Entry point for the domain route — shows progress, stats, and action buttons for a single domain
+// Entry point for the domain route: shows progress, stats, and action buttons for a single domain
 import { renderAd } from '../../components/ad/renderAd.js';
 import { loadDomain } from '../../loader/loadDomain.js';
 import { certifications } from '../../data/certifications/index.js';
@@ -34,15 +34,15 @@ export async function init() {
   const questions = await loadDomain(certSlug, domainSlug, certMeta);
 
   setMeta(
-    `${domainMeta.name} — ${certMeta.name} (${certMeta.code}) Free Practice Test`,
-    `${questions.length} free ${domainMeta.name} practice questions for ${certMeta.name} (${certMeta.code}). Instant feedback, progress tracking, and explanations — no account needed.`
+    `${domainMeta.name}: ${certMeta.name} (${certMeta.code}) Free Practice Test`,
+    `${questions.length} free ${domainMeta.name} practice questions for ${certMeta.name} (${certMeta.code}). Instant feedback, progress tracking, and explanations: no account needed.`
   );
   setJsonLd({
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': ['Quiz', 'LearningResource'],
-        'name': `${domainMeta.name} — ${certMeta.name} Free Practice Quiz`,
+        'name': `${domainMeta.name}: ${certMeta.name} Free Practice Quiz`,
         'description': `${questions.length} free ${domainMeta.name} practice questions for the ${certMeta.name} (${certMeta.code}) exam. Instant feedback, progress tracking, and explanations.`,
         'url': `https://quizbuffet.com/${certSlug}/${domainSlug}/`,
         'numberOfQuestions': questions.length,

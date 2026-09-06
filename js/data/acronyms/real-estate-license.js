@@ -33,7 +33,7 @@ export const acronyms = [
   { a: 'NOI',     d: 'Net Operating Income (income-property valuation)' },
   { a: 'Cap Rate',d: 'Capitalization Rate = NOI / Value' },
   { a: 'ROI',     d: 'Return on Investment' },
-  { a: '1031',    d: '1031 Exchange — IRC §1031 like-kind exchange (tax deferral)' },
+  { a: '1031',    d: '1031 Exchange: IRC §1031 like-kind exchange (tax deferral)' },
   { a: 'IRS',     d: 'Internal Revenue Service' },
   { a: 'ALTA',    d: 'American Land Title Association' },
   { a: 'ADA',     d: 'Americans with Disabilities Act' },

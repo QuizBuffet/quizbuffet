@@ -11,7 +11,7 @@ export function getDomainProgress(domainSlug) {
   if (d.answers && typeof d.answers === 'object' && !Array.isArray(d.answers)) {
     answers = d.answers;
   } else {
-    // Old array format — derive map on the fly, written in new format on next save
+    // Old array format: derive map on the fly, written in new format on next save
     answers = {};
     (d.correct || []).forEach(id => { answers[id] = true; });
     (d.failed  || []).forEach(id => { if (!(id in answers)) answers[id] = false; });

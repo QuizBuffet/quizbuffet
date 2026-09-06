@@ -1,4 +1,4 @@
-// Shows completed domain summary with retake-failed option — separate from renderResults because completed domains bypass session state
+// Shows completed domain summary with retake-failed option, separate from renderResults because completed domains bypass session state
 import { refresh } from '../../router/hashRouter.js';
 import { resetDomain } from '../../storage/resetDomain.js';
 import { getDomainProgress } from '../../storage/getDomainProgress.js';

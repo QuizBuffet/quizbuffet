@@ -1,4 +1,4 @@
-// Renders start/continue/retake/reset buttons — navigates to quiz route with correct session state set
+// Renders start/continue/retake/reset buttons: navigates to quiz route with correct session state set
 import { navigate, refresh } from '../../router/hashRouter.js';
 import { resetDomain } from '../../storage/resetDomain.js';
 import { getDomainProgress } from '../../storage/getDomainProgress.js';

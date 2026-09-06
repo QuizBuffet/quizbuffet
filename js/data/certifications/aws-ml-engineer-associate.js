@@ -1,10 +1,10 @@
 export const cert = {
   slug: 'aws-ml-engineer-associate',
-  name: 'AWS Certified Machine Learning Engineer – Associate',
+  name: 'AWS Certified Machine Learning Engineer Associate',
   code: 'MLA-C01',
   vendor: 'AWS',
   tagline: 'Build, deploy, and operate ML solutions on AWS',
-  about: 'AWS Certified Machine Learning Engineer – Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.',
+  about: 'AWS Certified Machine Learning Engineer Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.',
   details: '65 questions · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-machine-learning-engineer-associate-mla-c01/',
   affiliates: [

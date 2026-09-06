@@ -1,4 +1,4 @@
-// Generic matching game — pick N items, show N + EXTRA choices (definitions/purposes).
+// Generic matching game: pick N items, show N + EXTRA choices (definitions/purposes).
 // Used by both Acronym Match and Service Match. Each item is {a, d}: term and what to match it to.
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -47,12 +47,12 @@ function playTone(freqs, durMs, type = 'sine') {
 
 // Each drill gets its own sonic identity so a user playing both can tell them apart by ear.
 const SOUND_PROFILES = {
-  // Acronym Match — clean, vocal-feeling sine tones (abstract / linguistic).
+  // Acronym Match: clean, vocal-feeling sine tones (abstract / linguistic).
   acronym: {
     correct: { freqs: [660, 990],   dur: 140, type: 'sine' },     // bright ascending chime
     wrong:   { freqs: [220, 175],   dur: 180, type: 'sawtooth' }, // short low buzz
   },
-  // Service Match — brighter, more "digital" triangle/square (technical / system-y).
+  // Service Match: brighter, more "digital" triangle/square (technical / system-y).
   service: {
     correct: { freqs: [880, 1320],  dur: 130, type: 'triangle' }, // crisp digital ding
     wrong:   { freqs: [180, 130],   dur: 200, type: 'square' },   // dull tech thud
@@ -111,7 +111,7 @@ export function renderMatchDrill({ mountId, heading, items, hintNoun = 'term', s
 
     const remaining = ROUND - matched.size;
     const hint = selected !== null
-      ? `Match <strong>${targets[selected].a}</strong> — choose its match below`
+      ? `Match <strong>${targets[selected].a}</strong>: choose its match below`
       : `${remaining} left · tap a ${hintNoun}, then its match`;
 
     const termBtns = targets.map((t, i) => {
@@ -146,7 +146,7 @@ export function renderMatchDrill({ mountId, heading, items, hintNoun = 'term', s
           b.classList.toggle('selected', parseInt(b.dataset.i) === selected && !matched.has(parseInt(b.dataset.i)));
         });
         el.querySelector('.acr-hint').innerHTML = selected !== null
-          ? `Match <strong>${targets[selected].a}</strong> — choose its match below`
+          ? `Match <strong>${targets[selected].a}</strong>: choose its match below`
           : `${ROUND - matched.size} left · tap a ${hintNoun}, then its match`;
       });
     });

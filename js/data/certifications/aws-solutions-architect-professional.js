@@ -1,10 +1,10 @@
 export const cert = {
   slug: 'aws-solutions-architect-professional',
-  name: 'AWS Certified Solutions Architect – Professional',
+  name: 'AWS Certified Solutions Architect Professional',
   code: 'SAP-C02',
   vendor: 'AWS',
   tagline: 'Design optimized AWS solutions across organizations using the Well-Architected Framework',
-  about: 'AWS Certified Solutions Architect – Professional (SAP-C02) validates expertise designing complex AWS solutions across multiple accounts and Regions. It covers organizational complexity (Organizations, Control Tower, multi-account governance, hybrid networking), designing new solutions for reliability, performance, security, and cost, continuously improving existing solutions, and accelerating workload migration and modernization (7Rs, AWS Migration Hub, DMS, Application Migration Service, modernization to serverless and containers).',
+  about: 'AWS Certified Solutions Architect Professional (SAP-C02) validates expertise designing complex AWS solutions across multiple accounts and Regions. It covers organizational complexity (Organizations, Control Tower, multi-account governance, hybrid networking), designing new solutions for reliability, performance, security, and cost, continuously improving existing solutions, and accelerating workload migration and modernization (7Rs, AWS Migration Hub, DMS, Application Migration Service, modernization to serverless and containers).',
   details: '75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-solutions-architect-professional/',
   affiliates: [

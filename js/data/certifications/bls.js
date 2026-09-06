@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'bls',
   name: 'Basic Life Support (BLS)',
+  seoName: 'BLS (Basic Life Support)',
   code: 'BLS',
   vendor: 'American Heart Association',
   tagline: 'Required CPR-level credential for healthcare professionals',

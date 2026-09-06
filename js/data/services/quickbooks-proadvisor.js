@@ -1,4 +1,4 @@
-// QuickBooks ProAdvisor (Online Certification) — in-scope concepts and definitions
+// QuickBooks ProAdvisor (Online Certification): in-scope concepts and definitions
 // across the 9 study domains. Anchored on the QBO ProAdvisor certification training,
 // QuickBooks Online Accountant workflows, and Intuit's documented best practices.
 export const services = [
@@ -8,7 +8,7 @@ export const services = [
   { a: 'Chart of accounts setup',     d: 'Use industry-default COA at setup or import from CSV; classify accounts by type (Bank, A/R, A/P, Income, Expense, Equity, etc.) and detail type' },
   { a: 'Opening balances',            d: 'Enter as journal entry to Opening Balance Equity at conversion date; reconcile and zero out OBE before closing' },
   { a: 'Customer & vendor lists',     d: 'Import via CSV or batch entry; required fields: name, email; optional: payment terms, tax-exempt status, default income account' },
-  { a: 'Products and services list',  d: 'Three types — Service (no inventory), Non-inventory (track but no qty), Inventory (Plus/Advanced only, FIFO valuation)' },
+  { a: 'Products and services list',  d: 'Three types: Service (no inventory), Non-inventory (track but no qty), Inventory (Plus/Advanced only, FIFO valuation)' },
   { a: 'User permissions',            d: 'QBO user types: Standard (full or limited), Company admin, Reports-only, Time-tracking-only; Advanced adds custom roles' },
   { a: 'Apps & integrations',         d: 'Connect via Intuit App Store (apps.intuit.com); common: Bill.com, Hubdoc, ApprovalMax, Fathom, Method:CRM' },
   { a: 'Year-end close (closing date + password)', d: 'Settings → Advanced → Close the books; sets the closing date and optional password preventing edits to prior periods' },
@@ -34,7 +34,7 @@ export const services = [
   { a: 'Customer statements',         d: 'Three types: Balance Forward, Open Item, Transaction Statement; emailed/printed to remind customers of A/R balance' },
   { a: 'Late fees',                   d: 'Settings → Sales → Late fees; auto-applies % or flat fee to overdue invoices' },
   { a: 'Sales receipts and tips',     d: 'Track tips by adding "Tips" item to sales form; sales receipts can be exported to deposit-grouping report' },
-  { a: 'A/R Aging report',            d: 'Groups unpaid invoices into 0–30, 31–60, 61–90, >90 day buckets; key for collections workflow' },
+  { a: 'A/R Aging report',            d: 'Groups unpaid invoices into 0-30, 31-60, 61-90, >90 day buckets; key for collections workflow' },
 
   // ── Domain 4: Vendors, Expenses, and Accounts Payable
   { a: 'Bill vs Expense vs Check',    d: 'Bill = A/P (pay later); Expense = paid now (credit/debit card); Check = bank-drawn payment (printed/handwritten)' },
@@ -56,7 +56,7 @@ export const services = [
   { a: 'Adjustments',                 d: 'Sales-tax adjustment to record overpayments, underpayments, discounts for early filing; affects sales-tax liability and the offset account chosen' },
 
   // ── Domain 6: Payroll
-  { a: 'Payroll subscription tiers',  d: 'Core, Premium, Elite — differ in direct-deposit speed, HR support, tax-penalty protection, time-tracking inclusion' },
+  { a: 'Payroll subscription tiers',  d: 'Core, Premium, Elite: differ in direct-deposit speed, HR support, tax-penalty protection, time-tracking inclusion' },
   { a: 'Employee setup',              d: 'Personal info, federal/state withholdings (W-4), pay schedule, pay rate (hourly/salary), deductions, direct deposit info' },
   { a: 'Pay schedules',               d: 'Weekly, bi-weekly (most common), semi-monthly, monthly; influences pay-period dates and tax-deposit cadence' },
   { a: 'Direct deposit',              d: 'Funds withdrawn from bank, deposited to employees on pay date; Core = next-day, Premium/Elite = same-day' },
@@ -80,7 +80,7 @@ export const services = [
   { a: 'COGS workflow',               d: 'When inventory item sold, QBO debits COGS (FIFO cost layer) and credits Inventory Asset; income recognized on the sales side' },
   { a: 'Inventory adjustment',        d: 'Use "Inventory Quantity Adjustment" for shrinkage, damage, count differences; adjustment posts to Inventory Asset and an offset (typically Cost of Goods Sold or Inventory Adjustment)' },
   { a: 'Reorder points',              d: 'Set per item; flagged on the Products & Services list with a low-inventory warning' },
-  { a: 'Bundle (group of items)',     d: 'Sells multiple items together at a single line item; NOT a manufactured assembly — components are shipped/billed individually under the bundle' },
+  { a: 'Bundle (group of items)',     d: 'Sells multiple items together at a single line item; NOT a manufactured assembly: components are shipped/billed individually under the bundle' },
   { a: 'Non-inventory product',       d: 'Tracked in P&L but no quantity; useful for items the business doesn\'t want to track on hand' },
   { a: 'Service item',                d: 'Time/expertise sold; default income account; no cost tracking' },
 

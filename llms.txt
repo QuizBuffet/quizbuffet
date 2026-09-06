@@ -14,17 +14,17 @@
 - [CompTIA Data+ (DA0-002)](https://quizbuffet.com/comptia-data-plus/): Data acquisition, analysis, and governance for data-driven decision making 1000+ questions.
 - [Cisco CCNA (200-301)](https://quizbuffet.com/cisco-ccna/): The industry-standard entry into network engineering careers 800+ questions.
 - [AWS Certified Cloud Practitioner (CLF-C02)](https://quizbuffet.com/aws-cloud-practitioner/): Foundational AWS knowledge for technical and non-technical professionals 400+ questions.
-- [AWS Certified Solutions Architect – Associate (SAA-C03)](https://quizbuffet.com/aws-solutions-architect-associate/): The most popular cloud certification for designing AWS workloads 600+ questions.
+- [AWS Certified Solutions Architect Associate (SAA-C03)](https://quizbuffet.com/aws-solutions-architect-associate/): The most popular cloud certification for designing AWS workloads 600+ questions.
 - [AWS Certified AI Practitioner (AIF-C01)](https://quizbuffet.com/aws-ai-practitioner/): Foundational AI, ML, and generative-AI knowledge for the AWS Cloud 500+ questions.
-- [AWS Certified Machine Learning Engineer – Associate (MLA-C01)](https://quizbuffet.com/aws-ml-engineer-associate/): Build, deploy, and operate ML solutions on AWS 500+ questions.
-- [AWS Certified Generative AI Developer – Professional (AIP-C01)](https://quizbuffet.com/aws-genai-developer-professional/): Build, integrate, and operate production GenAI solutions on AWS 688+ questions.
-- [AWS Certified CloudOps Engineer – Associate (SOA-C03)](https://quizbuffet.com/aws-cloudops-engineer-associate/): Deploy, manage, and operate workloads on AWS 500+ questions.
-- [AWS Certified Data Engineer – Associate (DEA-C01)](https://quizbuffet.com/aws-data-engineer-associate/): Implement, monitor, and optimize data pipelines on AWS 500+ questions.
-- [AWS Certified Developer – Associate (DVA-C02)](https://quizbuffet.com/aws-developer-associate/): Develop, deploy, and debug cloud-based applications on AWS 500+ questions.
-- [AWS Certified DevOps Engineer – Professional (DOP-C02)](https://quizbuffet.com/aws-devops-engineer-professional/): Provision, operate, and manage distributed systems on AWS at scale 600+ questions.
-- [AWS Certified Security – Specialty (SCS-C03)](https://quizbuffet.com/aws-security-specialty/): Secure AWS workloads end-to-end: detection, identity, data protection, and governance 600+ questions.
-- [AWS Certified Advanced Networking – Specialty (ANS-C01)](https://quizbuffet.com/aws-advanced-networking-specialty/): Design, implement, manage, and secure AWS and hybrid networks at scale 480+ questions.
-- [AWS Certified Solutions Architect – Professional (SAP-C02)](https://quizbuffet.com/aws-solutions-architect-professional/): Design optimized AWS solutions across organizations using the Well-Architected Framework 600+ questions.
+- [AWS Certified Machine Learning Engineer Associate (MLA-C01)](https://quizbuffet.com/aws-ml-engineer-associate/): Build, deploy, and operate ML solutions on AWS 500+ questions.
+- [AWS Certified Generative AI Developer Professional (AIP-C01)](https://quizbuffet.com/aws-genai-developer-professional/): Build, integrate, and operate production GenAI solutions on AWS 688+ questions.
+- [AWS Certified CloudOps Engineer Associate (SOA-C03)](https://quizbuffet.com/aws-cloudops-engineer-associate/): Deploy, manage, and operate workloads on AWS 500+ questions.
+- [AWS Certified Data Engineer Associate (DEA-C01)](https://quizbuffet.com/aws-data-engineer-associate/): Implement, monitor, and optimize data pipelines on AWS 500+ questions.
+- [AWS Certified Developer Associate (DVA-C02)](https://quizbuffet.com/aws-developer-associate/): Develop, deploy, and debug cloud-based applications on AWS 500+ questions.
+- [AWS Certified DevOps Engineer Professional (DOP-C02)](https://quizbuffet.com/aws-devops-engineer-professional/): Provision, operate, and manage distributed systems on AWS at scale 600+ questions.
+- [AWS Certified Security Specialty (SCS-C03)](https://quizbuffet.com/aws-security-specialty/): Secure AWS workloads end-to-end: detection, identity, data protection, and governance 600+ questions.
+- [AWS Certified Advanced Networking Specialty (ANS-C01)](https://quizbuffet.com/aws-advanced-networking-specialty/): Design, implement, manage, and secure AWS and hybrid networks at scale 480+ questions.
+- [AWS Certified Solutions Architect Professional (SAP-C02)](https://quizbuffet.com/aws-solutions-architect-professional/): Design optimized AWS solutions across organizations using the Well-Architected Framework 600+ questions.
 - [Microsoft Azure Fundamentals (AZ-900)](https://quizbuffet.com/microsoft-az-900/): Foundational Azure knowledge for cloud beginners and decision-makers 312+ questions.
 - [Microsoft Azure Administrator (AZ-104)](https://quizbuffet.com/microsoft-az-104/): Day-to-day administration of Azure infrastructure at the associate level 500+ questions.
 - [Certified Information Systems Security Professional (CISSP)](https://quizbuffet.com/isc2-cissp/): The gold-standard senior cybersecurity certification 800+ questions.
@@ -43,45 +43,45 @@
 - [Cosmetology License (Cosmetology)](https://quizbuffet.com/cosmetology-license/): State-licensed credential for hair, skin, and nail services 300+ questions.
 - [Advanced Practice Micropigmentation (Micropigmentation)](https://quizbuffet.com/micropigmentation/): NIC national theory exam for permanent makeup, paramedical, and cosmetic tattoo procedures 210+ questions.
 - [Barber License (Barber)](https://quizbuffet.com/barber-license/): State-licensed credential for haircutting, shaving, and chemical hair services 260+ questions.
-- [Barber 1 (No Chemical) License (Barber 1)](https://quizbuffet.com/barber-no-chemical/): Entry-level barber license — haircutting, shaving, and styling with no chemical services 220+ questions.
+- [Barber 1 (No Chemical) License (Barber 1)](https://quizbuffet.com/barber-no-chemical/): Entry-level barber license: haircutting, shaving, and styling with no chemical services 220+ questions.
 - [Tattoo Artist License (Tattoo)](https://quizbuffet.com/tattoo-license/): State license for professional tattooing and body art services 88+ questions.
-- [CPA — Auditing and Attestation (AUD) (AUD)](https://quizbuffet.com/cpa-aud/): Core section of the Uniform CPA Examination — every candidate must pass AUD 286+ questions.
-- [CPA — Financial Accounting and Reporting (FAR) (FAR)](https://quizbuffet.com/cpa-far/): Core section of the Uniform CPA Examination — financial reporting under U.S. GAAP and GASB 280+ questions.
-- [CPA — Taxation and Regulation (REG) (REG)](https://quizbuffet.com/cpa-reg/): Core section of the Uniform CPA Examination — U.S. federal taxation, ethics, and business law 112+ questions.
-- [CPA — Business Analysis and Reporting (BAR) (BAR)](https://quizbuffet.com/cpa-bar/): Discipline section of the Uniform CPA Examination — business analysis, technical accounting, and state and local governments 100+ questions.
-- [CPA — Information Systems and Controls (ISC) (ISC)](https://quizbuffet.com/cpa-isc/): Discipline section of the Uniform CPA Examination — IT audit, security, and SOC engagements 300+ questions.
-- [CPA — Tax Compliance and Planning (TCP) (TCP)](https://quizbuffet.com/cpa-tcp/): Discipline section of the Uniform CPA Examination — advanced individual and entity tax compliance and planning 124+ questions.
-- [Certified Ethical Hacker (CEH) (CEH)](https://quizbuffet.com/ceh/): EC-Council's ethical hacking certification — penetration testing, vulnerability assessment, and offensive security 700+ questions.
+- [CPA Auditing and Attestation (AUD) (AUD)](https://quizbuffet.com/cpa-aud/): Core section of the Uniform CPA Examination, every candidate must pass AUD 286+ questions.
+- [CPA Financial Accounting and Reporting (FAR) (FAR)](https://quizbuffet.com/cpa-far/): Core section of the Uniform CPA Examination, financial reporting under U.S. GAAP and GASB 280+ questions.
+- [CPA Taxation and Regulation (REG) (REG)](https://quizbuffet.com/cpa-reg/): Core section of the Uniform CPA Examination, U.S. federal taxation, ethics, and business law 112+ questions.
+- [CPA Business Analysis and Reporting (BAR) (BAR)](https://quizbuffet.com/cpa-bar/): Discipline section of the Uniform CPA Examination, business analysis, technical accounting, and state and local governments 100+ questions.
+- [CPA Information Systems and Controls (ISC) (ISC)](https://quizbuffet.com/cpa-isc/): Discipline section of the Uniform CPA Examination, IT audit, security, and SOC engagements 300+ questions.
+- [CPA Tax Compliance and Planning (TCP) (TCP)](https://quizbuffet.com/cpa-tcp/): Discipline section of the Uniform CPA Examination, advanced individual and entity tax compliance and planning 124+ questions.
+- [Certified Ethical Hacker (CEH) (CEH)](https://quizbuffet.com/ceh/): EC-Council's ethical hacking certification: penetration testing, vulnerability assessment, and offensive security 700+ questions.
 - [CompTIA Project+ (PK0-005)](https://quizbuffet.com/comptia-project-plus/): Project life cycle, communication, resource and stakeholder management for IT projects 812+ questions.
 
 ## Coming soon
-- [Six Sigma Green Belt (SSGB)](https://quizbuffet.com/six-sigma-green-belt/) — coming soon (priority #1)
-- [Project Management Professional (PMP) (PMP)](https://quizbuffet.com/pmp/) — coming soon (priority #2)
-- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/) — coming soon (priority #3)
-- [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/) — coming soon (priority #4)
-- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/) — coming soon (priority #5)
-- [Systems Security Certified Practitioner (SSCP) (SSCP)](https://quizbuffet.com/sscp/) — coming soon (priority #6)
-- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/) — coming soon (priority #7)
-- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/) — coming soon (priority #8)
-- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/) — coming soon (priority #9)
-- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/) — coming soon (priority #10)
-- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/) — coming soon (priority #11)
-- [SHRM Certified Professional (SHRM-CP) (SHRM-CP)](https://quizbuffet.com/shrm-cp/) — coming soon (priority #12)
-- [Certified Associate in Project Management (CAPM) (CAPM)](https://quizbuffet.com/capm/) — coming soon (priority #13)
-- [Google Project Management Certificate (Google PM Cert)](https://quizbuffet.com/google-project-management-certificate/) — coming soon (priority #14)
-- [Google IT Support Professional Certificate (Google IT Support)](https://quizbuffet.com/google-it-support-certificate/) — coming soon (priority #15)
-- [Google Data Analytics Professional Certificate (Google Data Analytics)](https://quizbuffet.com/google-data-analytics-certificate/) — coming soon (priority #16)
-- [Google UX Design Professional Certificate (Google UX Design)](https://quizbuffet.com/google-ux-design-certificate/) — coming soon (priority #17)
-- [Cosmetology Instructor License (Instructor)](https://quizbuffet.com/cosmetology-instructor-license/) — coming soon (priority #18)
-- [Salon and Shop Manager License (Salon Manager)](https://quizbuffet.com/cosmetology-salon-manager/) — coming soon (priority #19)
-- [Combined Esthetics and Nail Technology License (Combined Esthetics)](https://quizbuffet.com/esthetics-combined-practice/) — coming soon (priority #20)
+- [Six Sigma Green Belt (SSGB)](https://quizbuffet.com/six-sigma-green-belt/): coming soon (priority #1)
+- [Project Management Professional (PMP) (PMP)](https://quizbuffet.com/pmp/): coming soon (priority #2)
+- [A&P (Airframe and Powerplant) Mechanic (FAA A&P)](https://quizbuffet.com/faa-airframe-powerplant/): coming soon (priority #3)
+- [Medical Billing and Coding (CPC / CCS) (CPC / CCS)](https://quizbuffet.com/medical-billing-coding/): coming soon (priority #4)
+- [Insurance Producer License (Life / Health / P&C)](https://quizbuffet.com/insurance-license/): coming soon (priority #5)
+- [Systems Security Certified Practitioner (SSCP) (SSCP)](https://quizbuffet.com/sscp/): coming soon (priority #6)
+- [FAA Private Pilot Certificate (PPL)](https://quizbuffet.com/faa-private-pilot/): coming soon (priority #7)
+- [Electrician License (Apprentice / Journeyman / Master) (NEC / State License)](https://quizbuffet.com/electrician-license/): coming soon (priority #8)
+- [Plumbing License (Apprentice / Journeyman / Master) (UPC / IPC / State)](https://quizbuffet.com/plumbing-license/): coming soon (priority #9)
+- [Certified Medical Assistant (CMA) (CMA)](https://quizbuffet.com/medical-assistant/): coming soon (priority #10)
+- [AWS Certified Welder (AWS QC7)](https://quizbuffet.com/aws-certified-welder/): coming soon (priority #11)
+- [SHRM Certified Professional (SHRM-CP) (SHRM-CP)](https://quizbuffet.com/shrm-cp/): coming soon (priority #12)
+- [Certified Associate in Project Management (CAPM) (CAPM)](https://quizbuffet.com/capm/): coming soon (priority #13)
+- [Google Project Management Certificate (Google PM Cert)](https://quizbuffet.com/google-project-management-certificate/): coming soon (priority #14)
+- [Google IT Support Professional Certificate (Google IT Support)](https://quizbuffet.com/google-it-support-certificate/): coming soon (priority #15)
+- [Google Data Analytics Professional Certificate (Google Data Analytics)](https://quizbuffet.com/google-data-analytics-certificate/): coming soon (priority #16)
+- [Google UX Design Professional Certificate (Google UX Design)](https://quizbuffet.com/google-ux-design-certificate/): coming soon (priority #17)
+- [Cosmetology Instructor License (Instructor)](https://quizbuffet.com/cosmetology-instructor-license/): coming soon (priority #18)
+- [Salon and Shop Manager License (Salon Manager)](https://quizbuffet.com/cosmetology-salon-manager/): coming soon (priority #19)
+- [Combined Esthetics and Nail Technology License (Combined Esthetics)](https://quizbuffet.com/esthetics-combined-practice/): coming soon (priority #20)
 
 ## Study hubs
-- [CPA Exam — all 6 sections](https://quizbuffet.com/cpa/): hub linking the 3 Core (AUD, FAR, REG) and 3 Discipline (BAR, ISC, TCP) CPA section practice tests.
+- [CPA Exam: all 6 sections](https://quizbuffet.com/cpa/): hub linking the 3 Core (AUD, FAR, REG) and 3 Discipline (BAR, ISC, TCP) CPA section practice tests.
 
 ## Resources
 - [Sitemap](https://quizbuffet.com/sitemap.xml)
-- [RSS feed](https://quizbuffet.com/feed.xml) — new cert launches and updates
+- [RSS feed](https://quizbuffet.com/feed.xml): new cert launches and updates
 - [Full content for AI ingestion](https://quizbuffet.com/llms-full.txt)
 
 ## License and citation

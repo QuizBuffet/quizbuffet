@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'cpr-aed',
   name: 'CPR / AED Certification',
+  seoName: 'CPR and AED',
   code: 'CPR/AED',
   vendor: 'American Red Cross / AHA',
   tagline: 'Lifesaving cardiac and breathing emergency skills',

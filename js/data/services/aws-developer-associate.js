@@ -1,4 +1,4 @@
-// AWS Certified Developer – Associate (DVA-C02) — in-scope services and developer-focused concepts.
+// AWS Certified Developer Associate (DVA-C02): in-scope services and developer-focused concepts.
 export const services = [
   // Compute
   { a: 'AWS Lambda',                        d: 'Serverless compute for short-running, event-driven code' },
@@ -64,8 +64,8 @@ export const services = [
   { a: 'DynamoDB transactions',             d: 'TransactWriteItems / TransactGetItems for atomic multi-item ops' },
   { a: 'DynamoDB on-demand vs provisioned', d: 'Pay-per-request vs reserved capacity with auto-scaling' },
   { a: 'DynamoDB DAX',                      d: 'In-memory cache for DynamoDB with microsecond read latency' },
-  { a: 'DynamoDB query',                    d: 'Direct lookup by partition (and sort) key — fast and predictable' },
-  { a: 'DynamoDB scan',                     d: 'Full-table read — expensive; avoid for online traffic' },
+  { a: 'DynamoDB query',                    d: 'Direct lookup by partition (and sort) key, fast and predictable' },
+  { a: 'DynamoDB scan',                     d: 'Full-table read: expensive; avoid for online traffic' },
   { a: 'DynamoDB strong consistency',       d: 'Read returns the most recent committed write' },
   { a: 'DynamoDB eventual consistency',     d: 'Read may briefly miss the most recent write; cheaper and faster' },
   { a: 'Amazon Aurora',                     d: 'High-performance MySQL/PostgreSQL-compatible managed database' },

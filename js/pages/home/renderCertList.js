@@ -3,7 +3,7 @@ import { loadPricing, getPricingEntry, formatPrice } from '../../data/pricing/lo
 import { attachCertPreview } from '../../components/certPreview/certPreview.js';
 import { loadCounts } from '../../data/counts/loadCounts.js';
 
-// Live cert categories — coming-soon entries already carry their own `category` field.
+// Live cert categories: coming-soon entries already carry their own `category` field.
 const LIVE_CATEGORY = {
   'comptia-a-plus-core-1':              'IT Foundations',
   'comptia-a-plus-core-2':              'IT Foundations',
@@ -261,7 +261,7 @@ export function renderCertList(live, comingSoon = [], filter = '') {
   const liveGroups = groupByCategory(liveFiltered, true);
   const csGroups = groupByCategory(csFiltered, false);
 
-  // Render the live section first — it's above the fold. The coming-soon
+  // Render the live section first: it's above the fold. The coming-soon
   // section + post-processing get pushed to subsequent frames so the initial
   // paint doesn't run as one long main-thread task.
   el.innerHTML = renderCategorizedSection('Available now', 'dot-live', liveFiltered.length, liveGroups, renderLiveCard);

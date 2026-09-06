@@ -27,14 +27,14 @@ export function getSalaryEntry(salaries, slug) {
   return e;
 }
 
-// Compact: "$64k" or "$160k" — used on home cert cards
+// Compact: "$64k" or "$160k": used on home cert cards
 export function formatCompactUSD(n) {
   if (n == null) return '';
   if (n >= 1000) return `$${Math.round(n / 1000)}k`;
   return `$${n}`;
 }
 
-// Full with comma grouping: "$63,900" — used on cert detail page
+// Full with comma grouping: "$63,900": used on cert detail page
 export function formatFullUSD(n) {
   if (n == null) return '';
   return `$${n.toLocaleString('en-US')}`;

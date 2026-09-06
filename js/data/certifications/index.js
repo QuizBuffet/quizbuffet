@@ -8,7 +8,7 @@ export const certifications = [
   code: 'CV0-004',
   vendor: 'CompTIA',
   tagline: 'Cloud infrastructure skills for engineers and sysadmins',
-  about: 'Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2–3 years of hands-on cloud or systems experience.',
+  about: 'Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2-3 years of hands-on cloud or systems experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 750/900 · Multiple-choice and performance-based',
   udemyCourseUrl: 'https://www.udemy.com/course/total-cloud-computing-comptia-cloud-cert-cv0-002/',
   affiliates: [
@@ -31,7 +31,7 @@ export const certifications = [
   code: 'FC0-U61',
   vendor: 'CompTIA',
   tagline: 'IT fundamentals for beginners and career changers',
-  about: 'ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT concepts for people exploring a career in technology. It covers computing basics, hardware, networking, operating systems, software, databases, and security fundamentals. No prior experience required — ideal for advanced end users and those considering CompTIA A+.',
+  about: 'ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT concepts for people exploring a career in technology. It covers computing basics, hardware, networking, operating systems, software, databases, and security fundamentals. No prior experience required: ideal for advanced end users and those considering CompTIA A+.',
   details: '75 questions · 60 minutes · Passing score 650/900 · Multiple-choice',
   udemyCourseUrl: 'https://www.udemy.com/course/comptia-it-fundamentals-simplified/',
   affiliates: [
@@ -76,7 +76,7 @@ export const certifications = [
   vendor: 'CompTIA',
   tagline: 'Penetration testing and vulnerability management for security professionals',
   about: 'PenTest+ certifies professionals who can plan, scope, and execute penetration tests across networks, applications, and cloud environments, and communicate findings to stakeholders.',
-  details: 'Maximum 90 questions · Multiple-choice and performance-based · Recommended 3–4 years pentesting experience · Passing score 750/900',
+  details: 'Maximum 90 questions · Multiple-choice and performance-based · Recommended 3-4 years pentesting experience · Passing score 750/900',
   udemyCourseUrl: 'https://www.udemy.com/course/pentestplus/?couponCode=KEEPLEARNING',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
@@ -140,7 +140,7 @@ export const certifications = [
   code: 'N10-009',
   vendor: 'CompTIA',
   tagline: 'Core networking skills for IT infrastructure professionals',
-  about: 'Network+ certifies professionals who can deploy wired and wireless networks, configure network services, implement security hardening, and troubleshoot performance and availability issues. It covers networking concepts, IP addressing, routing, switching, wireless, cloud connectivity, and network troubleshooting. Recommended for professionals with 9–12 months of networking experience.',
+  about: 'Network+ certifies professionals who can deploy wired and wireless networks, configure network services, implement security hardening, and troubleshoot performance and availability issues. It covers networking concepts, IP addressing, routing, switching, wireless, cloud connectivity, and network troubleshooting. Recommended for professionals with 9-12 months of networking experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 720/900 · Multiple-choice and performance-based',
   udemyCourseUrl: 'https://www.udemy.com/course/comptia-network-009/?couponCode=KEEPLEARNING',
   affiliates: [
@@ -203,7 +203,7 @@ export const certifications = [
   vendor: 'CompTIA',
   tagline: 'Data acquisition, analysis, and governance for data-driven decision making',
   about: 'Data+ certifies professionals who can translate business requirements into data-driven decisions by acquiring, preparing, and transforming data, applying statistical methods, creating visualizations, and adhering to governance and quality standards throughout the data life cycle.',
-  details: 'Multiple-choice and performance-based · Recommended 1.5–2 years of experience with databases, analytical tools, statistics, and data visualization',
+  details: 'Multiple-choice and performance-based · Recommended 1.5-2 years of experience with databases, analytical tools, statistics, and data visualization',
   udemyCourseUrl: 'https://www.udemy.com/course/comptia-data-da0-001-comptia-data-certification-course/',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
@@ -224,7 +224,7 @@ export const certifications = [
   code: '200-301',
   vendor: 'Cisco',
   tagline: 'The industry-standard entry into network engineering careers',
-  about: 'CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability — including AI/ML in network operations and REST APIs.',
+  about: 'CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability, including AI/ML in network operations and REST APIs.',
   details: '120 minutes · Multiple-choice and performance-based · Recommended prep: Implementing and Administering Cisco Solutions (CCNA) course',
   udemyCourseUrl: 'https://www.udemy.com/course/ccna-complete/',
   affiliates: [
@@ -247,7 +247,7 @@ export const certifications = [
   code: 'CLF-C02',
   vendor: 'AWS',
   tagline: 'Foundational AWS knowledge for technical and non-technical professionals',
-  about: 'AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud — value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.',
+  about: 'AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud, value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.',
   details: '50 scored questions + 15 unscored · Multiple-choice and multiple-response · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-cloud-practitioner-clf-c02-complete-course/?couponCode=KEEPLEARNING',
   affiliates: [
@@ -264,11 +264,11 @@ export const certifications = [
 },
 {
   slug: 'aws-solutions-architect-associate',
-  name: 'AWS Certified Solutions Architect – Associate',
+  name: 'AWS Certified Solutions Architect Associate',
   code: 'SAA-C03',
   vendor: 'AWS',
   tagline: 'The most popular cloud certification for designing AWS workloads',
-  about: 'AWS Certified Solutions Architect – Associate (SAA-C03) validates the ability to design solutions on AWS that are secure, resilient, high-performing, and cost-optimized — based on the AWS Well-Architected Framework. Aimed at candidates with at least 1 year of hands-on experience designing cloud solutions on AWS.',
+  about: 'AWS Certified Solutions Architect Associate (SAA-C03) validates the ability to design solutions on AWS that are secure, resilient, high-performing, and cost-optimized, based on the AWS Well-Architected Framework. Aimed at candidates with at least 1 year of hands-on experience designing cloud solutions on AWS.',
   details: '50 scored questions + 15 unscored · Multiple-choice and multiple-response · Pass score 720/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/',
   affiliates: [
@@ -289,7 +289,7 @@ export const certifications = [
   code: 'AIF-C01',
   vendor: 'AWS',
   tagline: 'Foundational AI, ML, and generative-AI knowledge for the AWS Cloud',
-  about: 'AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of AI, machine learning, and generative AI on AWS — including foundation models, prompt engineering, responsible AI, and security for AI workloads. It is designed for professionals who use, evaluate, or work alongside AI/ML systems but are not necessarily building them.',
+  about: 'AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of AI, machine learning, and generative AI on AWS, including foundation models, prompt engineering, responsible AI, and security for AI workloads. It is designed for professionals who use, evaluate, or work alongside AI/ML systems but are not necessarily building them.',
   details: '65 questions · 90 minutes · Multiple-choice and multiple-response · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-ai-practitioner-certified/',
   affiliates: [
@@ -307,11 +307,11 @@ export const certifications = [
 },
 {
   slug: 'aws-ml-engineer-associate',
-  name: 'AWS Certified Machine Learning Engineer – Associate',
+  name: 'AWS Certified Machine Learning Engineer Associate',
   code: 'MLA-C01',
   vendor: 'AWS',
   tagline: 'Build, deploy, and operate ML solutions on AWS',
-  about: 'AWS Certified Machine Learning Engineer – Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.',
+  about: 'AWS Certified Machine Learning Engineer Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.',
   details: '65 questions · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-machine-learning-engineer-associate-mla-c01/',
   affiliates: [
@@ -328,11 +328,11 @@ export const certifications = [
 },
 {
   slug: 'aws-genai-developer-professional',
-  name: 'AWS Certified Generative AI Developer – Professional',
+  name: 'AWS Certified Generative AI Developer Professional',
   code: 'AIP-C01',
   vendor: 'AWS',
   tagline: 'Build, integrate, and operate production GenAI solutions on AWS',
-  about: 'AWS Certified Generative AI Developer – Professional (AIP-C01) validates the ability to integrate foundation models into applications and business workflows, including RAG and vector store design, agentic AI, prompt engineering and management, FM API integration, model deployment strategies, AI safety and governance, performance and cost optimization, and evaluation, monitoring, and troubleshooting of GenAI applications.',
+  about: 'AWS Certified Generative AI Developer Professional (AIP-C01) validates the ability to integrate foundation models into applications and business workflows, including RAG and vector store design, agentic AI, prompt engineering and management, FM API integration, model deployment strategies, AI safety and governance, performance and cost optimization, and evaluation, monitoring, and troubleshooting of GenAI applications.',
   details: '75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/ultimate-aws-certified-generative-ai-developer-professional/',
   affiliates: [
@@ -350,11 +350,11 @@ export const certifications = [
 },
 {
   slug: 'aws-cloudops-engineer-associate',
-  name: 'AWS Certified CloudOps Engineer – Associate',
+  name: 'AWS Certified CloudOps Engineer Associate',
   code: 'SOA-C03',
   vendor: 'AWS',
   tagline: 'Deploy, manage, and operate workloads on AWS',
-  about: 'AWS Certified CloudOps Engineer – Associate (SOA-C03) validates the ability to deploy, manage, and operate workloads on AWS. It covers monitoring and logging, performance optimization, reliability and business continuity, deployment and automation, security and compliance, and networking and content delivery — including hands-on use of CloudWatch, CloudFormation, Systems Manager, IAM, VPC, and the AWS CLI.',
+  about: 'AWS Certified CloudOps Engineer Associate (SOA-C03) validates the ability to deploy, manage, and operate workloads on AWS. It covers monitoring and logging, performance optimization, reliability and business continuity, deployment and automation, security and compliance, and networking and content delivery, including hands-on use of CloudWatch, CloudFormation, Systems Manager, IAM, VPC, and the AWS CLI.',
   details: '65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-cloudops-associate/',
   affiliates: [
@@ -372,11 +372,11 @@ export const certifications = [
 },
 {
   slug: 'aws-data-engineer-associate',
-  name: 'AWS Certified Data Engineer – Associate',
+  name: 'AWS Certified Data Engineer Associate',
   code: 'DEA-C01',
   vendor: 'AWS',
   tagline: 'Implement, monitor, and optimize data pipelines on AWS',
-  about: 'AWS Certified Data Engineer – Associate (DEA-C01) validates the ability to implement data pipelines and to monitor, troubleshoot, and optimize cost and performance issues. It covers data ingestion and transformation, data store choice and management, data cataloging and schema evolution, pipeline orchestration and automation, programming concepts, data quality and analysis, and data security, governance, and privacy on AWS.',
+  about: 'AWS Certified Data Engineer Associate (DEA-C01) validates the ability to implement data pipelines and to monitor, troubleshoot, and optimize cost and performance issues. It covers data ingestion and transformation, data store choice and management, data cataloging and schema evolution, pipeline orchestration and automation, programming concepts, data quality and analysis, and data security, governance, and privacy on AWS.',
   details: '65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-data-engineer/',
   affiliates: [
@@ -393,11 +393,11 @@ export const certifications = [
 },
 {
   slug: 'aws-developer-associate',
-  name: 'AWS Certified Developer – Associate',
+  name: 'AWS Certified Developer Associate',
   code: 'DVA-C02',
   vendor: 'AWS',
   tagline: 'Develop, deploy, and debug cloud-based applications on AWS',
-  about: 'AWS Certified Developer – Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.',
+  about: 'AWS Certified Developer Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.',
   details: '65 questions (50 scored + 15 unscored) · 130 minutes · Multiple-choice and multiple-response · Pass score 720/1000',
   faq: [
     { q: 'How hard is the AWS Certified Developer Associate exam?',
@@ -432,11 +432,11 @@ export const certifications = [
 },
 {
   slug: 'aws-devops-engineer-professional',
-  name: 'AWS Certified DevOps Engineer – Professional',
+  name: 'AWS Certified DevOps Engineer Professional',
   code: 'DOP-C02',
   vendor: 'AWS',
   tagline: 'Provision, operate, and manage distributed systems on AWS at scale',
-  about: 'AWS Certified DevOps Engineer – Professional (DOP-C02) validates the ability to provision, operate, and manage distributed systems on AWS. It covers SDLC automation with CI/CD (CodePipeline, CodeBuild, CodeDeploy), configuration management and IaC (CloudFormation, CDK, SAM, Systems Manager), resilient cloud solutions and DR, monitoring and logging with CloudWatch and X-Ray, incident and event response, and security and compliance automation at scale.',
+  about: 'AWS Certified DevOps Engineer Professional (DOP-C02) validates the ability to provision, operate, and manage distributed systems on AWS. It covers SDLC automation with CI/CD (CodePipeline, CodeBuild, CodeDeploy), configuration management and IaC (CloudFormation, CDK, SAM, Systems Manager), resilient cloud solutions and DR, monitoring and logging with CloudWatch and X-Ray, incident and event response, and security and compliance automation at scale.',
   details: '75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on/',
   affiliates: [
@@ -455,11 +455,11 @@ export const certifications = [
 },
 {
   slug: 'aws-security-specialty',
-  name: 'AWS Certified Security – Specialty',
+  name: 'AWS Certified Security Specialty',
   code: 'SCS-C03',
   vendor: 'AWS',
   tagline: 'Secure AWS workloads end-to-end: detection, identity, data protection, and governance',
-  about: 'AWS Certified Security – Specialty (SCS-C03) validates expertise securing cloud solutions on AWS. It covers detection (GuardDuty, Security Hub, Macie, Security Lake, CloudTrail, CloudWatch), incident response, infrastructure security across edge and compute (WAF, Shield, Network Firewall, Inspector), identity and access management at scale (IAM, IAM Identity Center, Cognito, Verified Permissions), data protection in transit and at rest (KMS, CloudHSM, ACM, Secrets Manager), and multi-account security governance (Organizations, Control Tower, Config, Audit Manager).',
+  about: 'AWS Certified Security Specialty (SCS-C03) validates expertise securing cloud solutions on AWS. It covers detection (GuardDuty, Security Hub, Macie, Security Lake, CloudTrail, CloudWatch), incident response, infrastructure security across edge and compute (WAF, Shield, Network Firewall, Inspector), identity and access management at scale (IAM, IAM Identity Center, Cognito, Verified Permissions), data protection in transit and at rest (KMS, CloudHSM, ACM, Secrets Manager), and multi-account security governance (Organizations, Control Tower, Config, Audit Manager).',
   details: '65 questions (50 scored + 15 unscored) · 170 minutes · Multiple-choice, multiple-response, ordering, matching · Pass score 750/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/ultimate-aws-certified-security-specialty/',
   affiliates: [
@@ -478,11 +478,11 @@ export const certifications = [
 },
 {
   slug: 'aws-advanced-networking-specialty',
-  name: 'AWS Certified Advanced Networking – Specialty',
+  name: 'AWS Certified Advanced Networking Specialty',
   code: 'ANS-C01',
   vendor: 'AWS',
   tagline: 'Design, implement, manage, and secure AWS and hybrid networks at scale',
-  about: 'AWS Certified Advanced Networking – Specialty (ANS-C01) validates expertise designing and operating complex AWS networking solutions. It covers edge services and global traffic management (CloudFront, Global Accelerator, Route 53), hybrid connectivity with Direct Connect and Site-to-Site VPN, BGP routing, multi-VPC and multi-account designs (Transit Gateway, PrivateLink, VPC peering, RAM), DNS architectures including DNSSEC, network monitoring (VPC Flow Logs, Traffic Mirroring, Reachability Analyzer, Transit Gateway Network Manager), and network security with WAF, Shield, Network Firewall, and Firewall Manager.',
+  about: 'AWS Certified Advanced Networking Specialty (ANS-C01) validates expertise designing and operating complex AWS networking solutions. It covers edge services and global traffic management (CloudFront, Global Accelerator, Route 53), hybrid connectivity with Direct Connect and Site-to-Site VPN, BGP routing, multi-VPC and multi-account designs (Transit Gateway, PrivateLink, VPC peering, RAM), DNS architectures including DNSSEC, network monitoring (VPC Flow Logs, Traffic Mirroring, Reachability Analyzer, Transit Gateway Network Manager), and network security with WAF, Shield, Network Firewall, and Firewall Manager.',
   details: '65 questions (50 scored + 15 unscored) · 170 minutes · Multiple-response and matching · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-advanced-networking-specialty-ans/',
   affiliates: [
@@ -499,11 +499,11 @@ export const certifications = [
 },
 {
   slug: 'aws-solutions-architect-professional',
-  name: 'AWS Certified Solutions Architect – Professional',
+  name: 'AWS Certified Solutions Architect Professional',
   code: 'SAP-C02',
   vendor: 'AWS',
   tagline: 'Design optimized AWS solutions across organizations using the Well-Architected Framework',
-  about: 'AWS Certified Solutions Architect – Professional (SAP-C02) validates expertise designing complex AWS solutions across multiple accounts and Regions. It covers organizational complexity (Organizations, Control Tower, multi-account governance, hybrid networking), designing new solutions for reliability, performance, security, and cost, continuously improving existing solutions, and accelerating workload migration and modernization (7Rs, AWS Migration Hub, DMS, Application Migration Service, modernization to serverless and containers).',
+  about: 'AWS Certified Solutions Architect Professional (SAP-C02) validates expertise designing complex AWS solutions across multiple accounts and Regions. It covers organizational complexity (Organizations, Control Tower, multi-account governance, hybrid networking), designing new solutions for reliability, performance, security, and cost, continuously improving existing solutions, and accelerating workload migration and modernization (7Rs, AWS Migration Hub, DMS, Application Migration Service, modernization to serverless and containers).',
   details: '75 questions (65 scored + 10 unscored) · 180 minutes · Multiple-choice and multiple-response · Pass score 750/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/aws-solutions-architect-professional/',
   affiliates: [
@@ -525,7 +525,7 @@ export const certifications = [
   vendor: 'Microsoft',
   tagline: 'Foundational Azure knowledge for cloud beginners and decision-makers',
   about: 'Microsoft Azure Fundamentals (AZ-900) is the entry-level Azure certification. It covers cloud concepts (IaaS/PaaS/SaaS, public/private/hybrid, shared responsibility, consumption-based pricing), core Azure architecture and services (regions, availability zones, compute, networking, storage, databases, identity), and Azure management and governance (cost management, Microsoft Entra, role-based access control, Azure Policy, monitoring, support).',
-  details: '40–60 questions · 60 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
+  details: '40-60 questions · 60 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/microsoft-az-900-fundamentals/?couponCode=KEEPLEARNING',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
@@ -545,7 +545,7 @@ export const certifications = [
   vendor: 'Microsoft',
   tagline: 'Day-to-day administration of Azure infrastructure at the associate level',
   about: 'Microsoft Azure Administrator (AZ-104) validates skills for managing Azure subscriptions, identities and governance (Microsoft Entra ID, RBAC, Azure Policy, management groups), storage (storage accounts, Azure Files, Blob Storage, redundancy, lifecycle), compute (virtual machines, Container Instances, Container Apps, App Service, scale sets, ARM/Bicep), virtual networking (VNets, NSGs, Bastion, peering, private endpoints, load balancing, DNS), and monitoring with Azure Monitor and backup with Recovery Services and Site Recovery.',
-  details: '40–60 questions · 120 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
+  details: '40-60 questions · 120 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/70533-azure/',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },
@@ -567,7 +567,7 @@ export const certifications = [
   vendor: 'ISC2',
   tagline: 'The gold-standard senior cybersecurity certification',
   about: 'CISSP (Certified Information Systems Security Professional) validates deep technical and managerial knowledge across eight domains: security and risk management (governance, risk, BCP, ethics), asset security (classification, handling, data lifecycle), security architecture and engineering (security models, cryptography, site/facility design), communication and network security (OSI, secure protocols, segmentation), identity and access management (AAA, federation, RBAC/ABAC), security assessment and testing (vulnerability, pen testing, audits), security operations (logging, incident management, DR/BC), and software development security (SDLC, SAST/DAST, secure coding).',
-  details: '125–150 adaptive items · 3 hours · Multiple-choice and advanced innovative items · Pass score 700/1000',
+  details: '125-150 adaptive items · 3 hours · Multiple-choice and advanced innovative items · Pass score 700/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/cissp-domain-1-2/',
   extraUdemyCourses: [
     { label: 'CISSP Domains 3-4 (Architecture & Network Security)', url: 'https://www.udemy.com/course/cissp-domain-3-4/' },
@@ -722,7 +722,7 @@ export const certifications = [
   affiliates: [
     { provider: 'amazon', label: 'Shop Georgia Real Estate License Study Guides on Amazon', url: 'https://www.amazon.com/s?k=georgia+real+estate+license+exam+prep&tag=0003aa-20' },
     { provider: 'grec',   label: 'Georgia Real Estate Commission (GREC)', url: 'https://grec.state.ga.us/' },
-    { provider: 'amp',    label: 'AMP — Real Estate Examination Program', url: 'https://www.goamp.com/' },
+    { provider: 'amp',    label: 'AMP: Real Estate Examination Program', url: 'https://www.goamp.com/' },
   ],
   domains: [
     { slug: 'agency-relationships-and-contracts',     name: 'Agency Relationships and Contracts',     number: '1.0',  weight: 19 },
@@ -743,7 +743,7 @@ export const certifications = [
   code: 'SAFE MLO',
   vendor: 'NMLS',
   tagline: 'Federal SAFE Act licensing exam for mortgage loan originators',
-  about: 'The SAFE MLO National Test with Uniform State Content is required by the federal SAFE Act for any individual originating residential mortgage loans. The test consists of 120 multiple-choice items (115 scored, 5 unscored) across five content areas: Federal Mortgage-Related Laws (24%), Uniform State Content (11%), General Mortgage Knowledge (20%), Mortgage Loan Origination Activities (27%), and Ethics (18%). Federal coverage is anchored on 12 CFR Parts 1024, 1002, 1026, 1003, 1022, 1016, 1014, and 1008 — RESPA (Reg X), ECOA (Reg B), TILA (Reg Z), HMDA (Reg C), FCRA (Reg V), Privacy (Reg P), MAP advertising (Reg N), and SAFE Act compliance (Reg H).',
+  about: 'The SAFE MLO National Test with Uniform State Content is required by the federal SAFE Act for any individual originating residential mortgage loans. The test consists of 120 multiple-choice items (115 scored, 5 unscored) across five content areas: Federal Mortgage-Related Laws (24%), Uniform State Content (11%), General Mortgage Knowledge (20%), Mortgage Loan Origination Activities (27%), and Ethics (18%). Federal coverage is anchored on 12 CFR Parts 1024, 1002, 1026, 1003, 1022, 1016, 1014, and 1008, RESPA (Reg X), ECOA (Reg B), TILA (Reg Z), HMDA (Reg C), FCRA (Reg V), Privacy (Reg P), MAP advertising (Reg N), and SAFE Act compliance (Reg H).',
   details: 'NMLS-administered · 120 multiple-choice items (115 scored + 5 unscored) · 75% passing score · 20-hour pre-license education · 8-hour annual continuing education · CFPB / HUD oversight',
   affiliates: [
     { provider: 'amazon', label: 'Shop SAFE MLO Study Guides on Amazon', url: 'https://www.amazon.com/s?k=safe+mlo+exam+prep&tag=0003aa-20' },
@@ -768,12 +768,12 @@ export const certifications = [
   details: '60 multiple-choice items · 2 hours · Pass score 70% · 9 study domains anchored on FAA-S-ACS-10B · Recurrency via free ALC-677 every 24 months',
   affiliates: [
     { provider: 'amazon', label: 'Shop FAA Part 107 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=faa+part+107+remote+pilot+study+guide&tag=0003aa-20' },
-    { provider: 'faa',    label: 'FAA — Become a Drone Pilot (Part 107)', url: 'https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot' },
+    { provider: 'faa',    label: 'FAA: Become a Drone Pilot (Part 107)', url: 'https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot' },
     { provider: 'faa',    label: 'FAA Airman Certification Standards (FAA-S-ACS-10B)', url: 'https://www.faa.gov/training_testing/testing/acs' },
-    { provider: 'psi',    label: 'PSI Exams — FAA Knowledge Testing', url: 'https://faa.psiexams.com/' },
+    { provider: 'psi',    label: 'PSI Exams: FAA Knowledge Testing', url: 'https://faa.psiexams.com/' },
   ],
   domains: [
-    { slug: 'regulations-core',                                  name: 'Regulations — Core',                                  number: '1.0', weight: 14 },
+    { slug: 'regulations-core',                                  name: 'Regulations: Core',                                  number: '1.0', weight: 14 },
     { slug: 'operations-over-people',                            name: 'Operations Over People',                              number: '2.0', weight: 5  },
     { slug: 'remote-identification',                             name: 'Remote Identification',                               number: '3.0', weight: 3  },
     { slug: 'airspace-classification-and-operational-requirements', name: 'Airspace Classification and Operational Requirements', number: '4.0', weight: 20 },
@@ -794,7 +794,7 @@ export const certifications = [
   details: '120 multiple-choice items · 2 hours · Pass score 70% · 6 domains · OPT model · Anchored on the NASM CPT Exam Content Outline (7th ed.)',
   affiliates: [
     { provider: 'amazon', label: 'Shop NASM-CPT Study Guides on Amazon', url: 'https://www.amazon.com/s?k=nasm+cpt+study+guide&tag=0003aa-20' },
-    { provider: 'nasm',   label: 'NASM — Certified Personal Trainer Program', url: 'https://www.nasm.org/become-a-personal-trainer' },
+    { provider: 'nasm',   label: 'NASM: Certified Personal Trainer Program', url: 'https://www.nasm.org/become-a-personal-trainer' },
     { provider: 'nasm',   label: 'NASM CPT Exam Content Outline', url: 'https://www.nasm.org/resources/free-content' },
   ],
   domains: [
@@ -857,8 +857,8 @@ export const certifications = [
   details: 'Free Intuit certification · ~50 questions per module · Pass score 80% · 3 attempts per module · Online via QuickBooks Online Accountant',
   affiliates: [
     { provider: 'amazon', label: 'Shop QuickBooks ProAdvisor Study Guides on Amazon', url: 'https://www.amazon.com/s?k=quickbooks+proadvisor+certification+study+guide&tag=0003aa-20' },
-    { provider: 'intuit', label: 'QuickBooks Online Accountant — ProAdvisor Program', url: 'https://quickbooks.intuit.com/accountants/proadvisor/' },
-    { provider: 'intuit', label: 'Intuit Tax Pro Center — Education Resources', url: 'https://accountants.intuit.com/training-certification/' },
+    { provider: 'intuit', label: 'QuickBooks Online Accountant: ProAdvisor Program', url: 'https://quickbooks.intuit.com/accountants/proadvisor/' },
+    { provider: 'intuit', label: 'Intuit Tax Pro Center: Education Resources', url: 'https://accountants.intuit.com/training-certification/' },
   ],
   domains: [
     { slug: 'setup-and-subscriptions',         name: 'QBO Setup & Subscriptions',                number: '1.0', weight: 8  },
@@ -902,7 +902,7 @@ export const certifications = [
   vendor: 'State Boards',
   tagline: 'State-licensed credential for hair, skin, and nail services',
   about: 'A Cosmetology License is required in every U.S. state to perform haircutting, chemical services, skin care, and nail care for compensation. State exams typically follow the NIC (National-Interstate Council of State Boards of Cosmetology) National Theory blueprint, administered by PSI or a similar testing vendor as a written exam plus a hands-on practical. The written exam covers four areas: scientific concepts (infection control, anatomy and physiology, chemistry, electricity), hair care and services (cutting, styling, color, chemical texture, hair structure), skin care and services (facials, hair removal, skin analysis), and nail care and services (manicures, pedicures, enhancements, nail disorders).',
-  details: 'NIC National Theory written exam · ~90–110 questions · 1.5–2 hours · State-specific passing score (typically 70–75%) · State-administered hands-on practical exam also required',
+  details: 'NIC National Theory written exam · ~90-110 questions · 1.5-2 hours · State-specific passing score (typically 70-75%) · State-administered hands-on practical exam also required',
   affiliates: [
     { provider: 'amazon', label: 'Shop Milady Standard Cosmetology Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+cosmetology&tag=0003aa-20' },
   ],
@@ -943,23 +943,23 @@ export const certifications = [
   // procedure-specific risks instead of generic boilerplate.
   guide: {
     whyItMatters:
-      'Permanent makeup and paramedical micropigmentation are some of the fastest-growing service categories in the beauty industry, and many states have moved them from generic tattoo licensing into a separate Advanced Practice Micropigmentation credential. The NIC National Advanced Practice Micropigmentation Theory Examination is the standardized theory test that participating boards (Florida, Tennessee, Arizona, Illinois, and others) use to license practitioners. Passing it certifies that you understand bloodborne pathogen control, skin and tissue anatomy, pigment chemistry, color theory for skin undertones, and the complications that can occur weeks or years after the procedure — knowledge that protects both clients and your business.',
+      'Permanent makeup and paramedical micropigmentation are some of the fastest-growing service categories in the beauty industry, and many states have moved them from generic tattoo licensing into a separate Advanced Practice Micropigmentation credential. The NIC National Advanced Practice Micropigmentation Theory Examination is the standardized theory test that participating boards (Florida, Tennessee, Arizona, Illinois, and others) use to license practitioners. Passing it certifies that you understand bloodborne pathogen control, skin and tissue anatomy, pigment chemistry, color theory for skin undertones, and the complications that can occur weeks or years after the procedure, knowledge that protects both clients and your business.',
     whoShouldTake:
       'This exam is for practicing or aspiring permanent makeup artists, paramedical micropigmentation specialists, and cosmetic tattoo artists who serve clients in states that recognize the NIC Advanced Practice Micropigmentation license. Typical procedures within the scope include microblading, powder/ombré brows, lip blush, eyeliner, scalp micropigmentation, areola restoration, scar repigmentation, and vitiligo camouflage. Estheticians and cosmetologists who already hold a primary license often add this credential to expand their service menu and command higher per-session rates than core esthetics work.',
     examStructure:
-      'The exam has 110 items, of which 100 are weighted toward the final score (10 are unscored pilot items). You have 90 minutes. The blueprint splits content across three domains: <strong>Scientific Concepts (40%)</strong> covers infection control, skin and tissue structure, anatomy of the head and eye, skin disorders, and equipment and pigment storage — this is the biggest single category, anchored heavily on the OSHA Bloodborne Pathogen Standard. <strong>Micropigmentation Procedures (55%)</strong> is the heart of the exam: client documentation and consultation, skin preparation, color theory for skin undertones, pre-application design and approval, needle selection, lining, shading, and repigmentation technique. <strong>Side Effects and Possible Complications (5%)</strong> is a small but high-stakes domain covering allergic reactions, granulomas, migration, scarring, and MRI considerations for iron-oxide pigments. References for the test are anchored on Milady\'s Aesthetician Series Permanent Makeup, Milady Standard Esthetics Fundamentals, Society of Permanent Cosmetic Professionals (SPCP) materials, and the NIC Infection Control and Safety Standards.',
+      'The exam has 110 items, of which 100 are weighted toward the final score (10 are unscored pilot items). You have 90 minutes. The blueprint splits content across three domains: <strong>Scientific Concepts (40%)</strong> covers infection control, skin and tissue structure, anatomy of the head and eye, skin disorders, and equipment and pigment storage, this is the biggest single category, anchored heavily on the OSHA Bloodborne Pathogen Standard. <strong>Micropigmentation Procedures (55%)</strong> is the heart of the exam: client documentation and consultation, skin preparation, color theory for skin undertones, pre-application design and approval, needle selection, lining, shading, and repigmentation technique. <strong>Side Effects and Possible Complications (5%)</strong> is a small but high-stakes domain covering allergic reactions, granulomas, migration, scarring, and MRI considerations for iron-oxide pigments. References for the test are anchored on Milady\'s Aesthetician Series Permanent Makeup, Milady Standard Esthetics Fundamentals, Society of Permanent Cosmetic Professionals (SPCP) materials, and the NIC Infection Control and Safety Standards.',
     studyPlan:
       'A four-step plan tuned to the NIC blueprint:',
     studyPlanSteps: [
-      'Master the OSHA Bloodborne Pathogen Standard (29 CFR 1910.1030) cold. Roughly a quarter of the Scientific Concepts domain references infection control, exposure control plans, and Universal Precautions. Memorizing this CFR section single-handedly carries 10–15 questions.',
+      'Master the OSHA Bloodborne Pathogen Standard (29 CFR 1910.1030) cold. Roughly a quarter of the Scientific Concepts domain references infection control, exposure control plans, and Universal Precautions. Memorizing this CFR section single-handedly carries 10-15 questions.',
       'Drill the Scientific Concepts domain using QuizBuffet questions weighted 40% (88 of 220 questions). Get to 80% on infection control, skin layers, mucosal tissue, and pigment storage before moving to procedures.',
       'Work through Micropigmentation Procedures (55% / 121 questions) by sub-section: client documentation → skin prep → color theory → pre-application design → application technique. Color theory and needle/technique items together are roughly half this domain.',
-      'Finish with Side Effects and Possible Complications (11 questions) — small but every miss here is high-stakes because complications questions are scenario-based and often map to actual liability cases. Once every domain is at 80%+, take the Mix Quiz to simulate exam timing under the 90-minute clock.',
+      'Finish with Side Effects and Possible Complications (11 questions), small but every miss here is high-stakes because complications questions are scenario-based and often map to actual liability cases. Once every domain is at 80%+, take the Mix Quiz to simulate exam timing under the 90-minute clock.',
     ],
     career:
-      'Permanent makeup and paramedical micropigmentation are among the highest hourly-rate services in the beauty industry. Practitioners in licensed states typically charge $400–$900 per session for permanent brows and $500–$1,200 for full lip blush or full eyeliner; paramedical procedures (areola restoration, scar repigmentation, vitiligo camouflage) command $600–$1,500 per session. With 4–8 clients per week, a working specialist earns $80,000–$200,000 annually in major metros. The Advanced Practice license is what unlocks the higher-paying medical-spa, dermatology, and oncology-collaboration referrals.',
+      'Permanent makeup and paramedical micropigmentation are among the highest hourly-rate services in the beauty industry. Practitioners in licensed states typically charge $400, $900 per session for permanent brows and $500, $1,200 for full lip blush or full eyeliner; paramedical procedures (areola restoration, scar repigmentation, vitiligo camouflage) command $600, $1,500 per session. With 4-8 clients per week, a working specialist earns $80,000, $200,000 annually in major metros. The Advanced Practice license is what unlocks the higher-paying medical-spa, dermatology, and oncology-collaboration referrals.',
     pitfalls:
-      'Five traps that fail Advanced Practice Micropigmentation candidates: (1) Skipping the OSHA BBP Standard memorization — the infection-control questions are not optional. (2) Confusing organic and inorganic pigments — know that iron oxides are inorganic and can interact with MRI fields, while carbon-based pigments are organic and fade differently. (3) Missing the depth-of-implantation question — pigment in the reticular dermis causes blue/gray shift; pigment in the epidermis fades fast; the papillary dermis is the target. (4) Underestimating Side Effects despite the 5% weight — granuloma, migration, allergic reaction, hypertrophic vs. keloid scarring, and MRI artifact are all examined and each appears on the practical exam too. (5) Not memorizing contraindications (pregnancy, blood thinners, isotretinoin, keloid history, active skin infection) — multiple-choice items here are pure recall.',
+      'Five traps that fail Advanced Practice Micropigmentation candidates: (1) Skipping the OSHA BBP Standard memorization, the infection-control questions are not optional. (2) Confusing organic and inorganic pigments: know that iron oxides are inorganic and can interact with MRI fields, while carbon-based pigments are organic and fade differently. (3) Missing the depth-of-implantation question: pigment in the reticular dermis causes blue/gray shift; pigment in the epidermis fades fast; the papillary dermis is the target. (4) Underestimating Side Effects despite the 5% weight, granuloma, migration, allergic reaction, hypertrophic vs. keloid scarring, and MRI artifact are all examined and each appears on the practical exam too. (5) Not memorizing contraindications (pregnancy, blood thinners, isotretinoin, keloid history, active skin infection), multiple-choice items here are pure recall.',
   },
 },
 {
@@ -968,8 +968,8 @@ export const certifications = [
   code: 'Barber',
   vendor: 'State Boards',
   tagline: 'State-licensed credential for haircutting, shaving, and chemical hair services',
-  about: 'A Barber License is required in every U.S. state to perform haircutting, shaving, beard design, chemical hair services, and basic skin and scalp care for compensation. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber Theory Examination — a 60-item, 90-minute written exam — paired with a hands-on practical, both typically administered by PSI. The theory blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, product chemistry), implements and equipment (razors, shears, clippers, sanitation), hair care services (consultation, draping, shampoo, cutting, styling, chemical services), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy).',
-  details: 'NIC National Barber Theory exam · 60 items (50 weighted) · 90 minutes · Written + hands-on practical · State-specific passing score (typically 70–75%)',
+  about: 'A Barber License is required in every U.S. state to perform haircutting, shaving, beard design, chemical hair services, and basic skin and scalp care for compensation. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber Theory Examination, a 60-item, 90-minute written exam, paired with a hands-on practical, both typically administered by PSI. The theory blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, product chemistry), implements and equipment (razors, shears, clippers, sanitation), hair care services (consultation, draping, shampoo, cutting, styling, chemical services), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy).',
+  details: 'NIC National Barber Theory exam · 60 items (50 weighted) · 90 minutes · Written + hands-on practical · State-specific passing score (typically 70-75%)',
   affiliates: [
     { provider: 'amazon', label: 'Shop Milady Standard Barbering Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+barbering&tag=0003aa-20' },
   ],
@@ -989,9 +989,9 @@ export const certifications = [
   name: 'Barber 1 (No Chemical) License',
   code: 'Barber 1',
   vendor: 'State Boards',
-  tagline: 'Entry-level barber license — haircutting, shaving, and styling with no chemical services',
-  about: 'Barber 1 (No Chemical) is an entry-level barber license that authorizes haircutting, shaving, beard and facial-hair design, and basic styling — but NOT chemical services such as color, perms, or relaxers. It requires fewer training hours than a full Barber License and is a common stepping stone toward chemical-services certification. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber 1 (No Chemical) Theory Examination — a 60-item (50 weighted), 90-minute written exam. The blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, basic product chemistry — 40%), implements and equipment (razors, shears, clippers, sanitation — 10%), hair care services (consultation, draping, shampoo, cutting, styling — 30%), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy — 20%).',
-  details: 'NIC National Barber 1 (No Chemical) Theory exam · 60 items (50 weighted) · 90 minutes · Written + hands-on practical · State-specific passing score (typically 70–75%)',
+  tagline: 'Entry-level barber license: haircutting, shaving, and styling with no chemical services',
+  about: 'Barber 1 (No Chemical) is an entry-level barber license that authorizes haircutting, shaving, beard and facial-hair design, and basic styling, but NOT chemical services such as color, perms, or relaxers. It requires fewer training hours than a full Barber License and is a common stepping stone toward chemical-services certification. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Barber 1 (No Chemical) Theory Examination, a 60-item (50 weighted), 90-minute written exam. The blueprint covers four domains: scientific concepts (infection control, anatomy and physiology, skin and hair disorders, basic product chemistry, 40%), implements and equipment (razors, shears, clippers, sanitation, 10%), hair care services (consultation, draping, shampoo, cutting, styling, 30%), and facial hair and skin care services (shaving, facial hair design, facials, electrotherapy, 20%).',
+  details: 'NIC National Barber 1 (No Chemical) Theory exam · 60 items (50 weighted) · 90 minutes · Written + hands-on practical · State-specific passing score (typically 70-75%)',
   affiliates: [
     { provider: 'amazon', label: 'Shop Milady Standard Barbering Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+barbering&tag=0003aa-20' },
   ],
@@ -1012,7 +1012,7 @@ export const certifications = [
   code: 'Tattoo',
   vendor: 'NIC',
   tagline: 'State license for professional tattooing and body art services',
-  about: 'A Tattoo Artist License is required in most U.S. states to perform tattooing for compensation. Many states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Tattooing Practical Examination — a six-section, timed performance evaluation administered on a live model. The exam covers six core domains based on the national job analysis: Work Area Set Up (infection control, EPA-registered disinfection, OSHA-mandated disposal containers, supply preparation), Client Preparation and Stencil Application (skin prep, simulated shave, stencil transfer to the forearm), Machine Assembly (presenting sterile packaged tubes and needles, building the machine, power on/off testing), Demonstration of Simulated Tattoo Procedure and Conclusion (pigment dispersal, simulated application, mid-procedure ink-cap addition, conclusion), Breakdown and Conclusion of Tattoo Service (decontaminating the procedural area, completing personal protection procedures), and Work Area Set Up for New Client (re-preparing supplies, demonstrating foot-switch disinfection and transport, completing personal protection). References are anchored on Milady Standard Esthetics Fundamentals + Foundations (12th Edition) and the APP Procedure Manual.',
+  about: 'A Tattoo Artist License is required in most U.S. states to perform tattooing for compensation. Many states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Tattooing Practical Examination, a six-section, timed performance evaluation administered on a live model. The exam covers six core domains based on the national job analysis: Work Area Set Up (infection control, EPA-registered disinfection, OSHA-mandated disposal containers, supply preparation), Client Preparation and Stencil Application (skin prep, simulated shave, stencil transfer to the forearm), Machine Assembly (presenting sterile packaged tubes and needles, building the machine, power on/off testing), Demonstration of Simulated Tattoo Procedure and Conclusion (pigment dispersal, simulated application, mid-procedure ink-cap addition, conclusion), Breakdown and Conclusion of Tattoo Service (decontaminating the procedural area, completing personal protection procedures), and Work Area Set Up for New Client (re-preparing supplies, demonstrating foot-switch disinfection and transport, completing personal protection). References are anchored on Milady Standard Esthetics Fundamentals + Foundations (12th Edition) and the APP Procedure Manual.',
   details: 'NIC National Tattooing Practical Examination · 6 core domain sections · ~80 timed minutes plus an untimed simulated-procedure section · Hands-on performance evaluation on a live model · State-specific passing score · Required disposal containers (sharps, trash, to-be-disinfected) and EPA-registered disinfectant wipes throughout',
   affiliates: [
     { provider: 'amazon', label: 'Shop Milady Standard Esthetics and Tattooing Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+esthetics+tattooing&tag=0003aa-20' },
@@ -1032,12 +1032,12 @@ export const certifications = [
 },
 {
   slug: 'cpa-aud',
-  name: 'CPA — Auditing and Attestation (AUD)',
+  name: 'CPA Auditing and Attestation (AUD)',
   code: 'AUD',
   vendor: 'AICPA',
-  tagline: 'Core section of the Uniform CPA Examination — every candidate must pass AUD',
-  about: 'The Auditing and Attestation (AUD) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass AUD regardless of their chosen Discipline. The 4-hour exam consists of 78 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Ethics, Professional Responsibilities and General Principles (15–25%) — AICPA Code of Conduct, SEC/PCAOB/GAO/DOL independence, professional skepticism, engagement preconditions, documentation; Assessing Risk and Developing a Planned Response (25–35%) — engagement strategy, the COSO Internal Control – Integrated Framework, IT general controls, SOC 1® reports, materiality and tolerable misstatement, fraud risk, related parties, single audits; Performing Further Procedures and Obtaining Evidence (30–40%) — sampling, tests of controls and details, analytical procedures, external confirmations, audit data analytics, accounting estimates, going concern, subsequent events; and Forming Conclusions and Reporting (10–20%) — audit and attestation reports, opinion types, emphasis-of-matter paragraphs, compilation and review engagements, compliance reporting, special-purpose frameworks, and additional GAO reporting requirements. References include AICPA Statements on Auditing Standards, PCAOB Auditing Standards, GAO Government Auditing Standards, Single Audit Act, OMB 2 CFR 200, and the AICPA Code of Professional Conduct.',
-  details: 'AICPA Uniform CPA Examination · Core section · 4 hours · 78 MCQs + 7 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 30–40% Remembering & Understanding, 30–40% Application, 15–25% Analysis, 5–15% Evaluation · Effective January 2025 blueprint',
+  tagline: 'Core section of the Uniform CPA Examination, every candidate must pass AUD',
+  about: 'The Auditing and Attestation (AUD) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass AUD regardless of their chosen Discipline. The 4-hour exam consists of 78 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Ethics, Professional Responsibilities and General Principles (15-25%), AICPA Code of Conduct, SEC/PCAOB/GAO/DOL independence, professional skepticism, engagement preconditions, documentation; Assessing Risk and Developing a Planned Response (25-35%), engagement strategy, the COSO Internal Control. Integrated Framework, IT general controls, SOC 1® reports, materiality and tolerable misstatement, fraud risk, related parties, single audits; Performing Further Procedures and Obtaining Evidence (30-40%), sampling, tests of controls and details, analytical procedures, external confirmations, audit data analytics, accounting estimates, going concern, subsequent events; and Forming Conclusions and Reporting (10-20%): audit and attestation reports, opinion types, emphasis-of-matter paragraphs, compilation and review engagements, compliance reporting, special-purpose frameworks, and additional GAO reporting requirements. References include AICPA Statements on Auditing Standards, PCAOB Auditing Standards, GAO Government Auditing Standards, Single Audit Act, OMB 2 CFR 200, and the AICPA Code of Professional Conduct.',
+  details: 'AICPA Uniform CPA Examination · Core section · 4 hours · 78 MCQs + 7 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 30-40% Remembering & Understanding, 30-40% Application, 15-25% Analysis, 5-15% Evaluation · Effective January 2025 blueprint',
   affiliates: [
     { provider: 'amazon', label: 'Shop Wiley CPAexcel and Becker CPA Review Books on Amazon', url: 'https://www.amazon.com/s?k=wiley+cpa+excel+auditing+attestation&tag=0003aa-20' },
   ],
@@ -1055,12 +1055,12 @@ export const certifications = [
 },
 {
   slug: 'cpa-far',
-  name: 'CPA — Financial Accounting and Reporting (FAR)',
+  name: 'CPA Financial Accounting and Reporting (FAR)',
   code: 'FAR',
   vendor: 'AICPA',
-  tagline: 'Core section of the Uniform CPA Examination — financial reporting under U.S. GAAP and GASB',
-  about: 'The Financial Accounting and Reporting (FAR) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass FAR regardless of chosen Discipline. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Financial Reporting (30–40%) — preparation, adjustment, and analysis of financial statements for for-profit business entities and nongovernmental not-for-profit entities under the FASB Accounting Standards Codification, public company reporting under SEC rules (Forms 10-Q, 10-K, 8-K, EPS), special-purpose frameworks, financial statement ratios, and state and local government measurement focus and basis of accounting under GASB; Select Balance Sheet Accounts (30–40%) — cash and cash equivalents, trade receivables, inventory, property plant and equipment, investments (fair value, amortized cost, equity method), intangible assets, payables and accrued liabilities, debt covenants, and equity transactions; and Select Transactions (25–35%) — accounting changes and error corrections, contingencies and commitments, revenue recognition (five-step model and not-for-profit contributions), accounting for income taxes, fair value measurements, lessee accounting, and subsequent events. References include the FASB Accounting Standards Codification, FASB Concepts Statements, U.S. SEC Regulation S-X and S-K, GASB Codification, and AICPA Practice Aids.',
-  details: 'AICPA Uniform CPA Examination · Core section · 4 hours · 50 MCQs + 7 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 5–15% Remembering & Understanding, 45–55% Application, 35–45% Analysis · Effective January 2025 blueprint',
+  tagline: 'Core section of the Uniform CPA Examination, financial reporting under U.S. GAAP and GASB',
+  about: 'The Financial Accounting and Reporting (FAR) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass FAR regardless of chosen Discipline. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Financial Reporting (30-40%): preparation, adjustment, and analysis of financial statements for for-profit business entities and nongovernmental not-for-profit entities under the FASB Accounting Standards Codification, public company reporting under SEC rules (Forms 10-Q, 10-K, 8-K, EPS), special-purpose frameworks, financial statement ratios, and state and local government measurement focus and basis of accounting under GASB; Select Balance Sheet Accounts (30-40%): cash and cash equivalents, trade receivables, inventory, property plant and equipment, investments (fair value, amortized cost, equity method), intangible assets, payables and accrued liabilities, debt covenants, and equity transactions; and Select Transactions (25-35%): accounting changes and error corrections, contingencies and commitments, revenue recognition (five-step model and not-for-profit contributions), accounting for income taxes, fair value measurements, lessee accounting, and subsequent events. References include the FASB Accounting Standards Codification, FASB Concepts Statements, U.S. SEC Regulation S-X and S-K, GASB Codification, and AICPA Practice Aids.',
+  details: 'AICPA Uniform CPA Examination · Core section · 4 hours · 50 MCQs + 7 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 5-15% Remembering & Understanding, 45-55% Application, 35-45% Analysis · Effective January 2025 blueprint',
   affiliates: [
     { provider: 'amazon', label: 'Shop Wiley CPAexcel and Becker FAR Review Books on Amazon', url: 'https://www.amazon.com/s?k=wiley+cpa+excel+financial+accounting+reporting&tag=0003aa-20' },
   ],
@@ -1077,12 +1077,12 @@ export const certifications = [
 },
 {
   slug: 'cpa-reg',
-  name: 'CPA — Taxation and Regulation (REG)',
+  name: 'CPA Taxation and Regulation (REG)',
   code: 'REG',
   vendor: 'AICPA',
-  tagline: 'Core section of the Uniform CPA Examination — U.S. federal taxation, ethics, and business law',
-  about: 'The Taxation and Regulation (REG) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass REG regardless of chosen Discipline. The 4-hour exam consists of 72 multiple-choice questions and 8 task-based simulations, weighted 50/50 in scoring. Content covers five areas: Ethics, Professional Responsibilities and Federal Tax Procedures (10–20%) — Treasury Department Circular 230, tax return preparer rules and penalties, state board licensing, IRS audits and appeals, tax authoritative hierarchy, privileged communications; Business Law (15–25%) — agency, contracts (UCC), debtor-creditor relationships, bankruptcy under BAPCPA 2005, employment taxes, qualified health plans, worker classifications, anti-bribery under FCPA 1977, business entity formation and termination; Federal Taxation of Property Transactions (5–15%) — tax basis of purchased and converted assets, gifted and inherited property, wash sales, intangible assets, MACRS depreciation, Section 179, amortization; Federal Taxation of Individuals (22–32%) — Form 1040 gross income inclusions and exclusions, pass-through income, AGI adjustments, itemized deductions, QBI deduction, loss limitations, filing status, tax credits, estimated tax safe harbor; and Federal Taxation of Entities (23–33%) — Schedule M-1/M-3 book-tax differences, C corporation taxable income and state nexus, S corporation eligibility and ordinary business income, partnership separately stated items and partner basis, LLCs, tax-exempt organizations. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, Uniform Commercial Code, Revised Model Business Corporation Act, FCPA, and ACA.',
-  details: 'AICPA Uniform CPA Examination · Core section · 4 hours · 72 MCQs + 8 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 25–35% Remembering & Understanding, 35–45% Application, 25–35% Analysis · Candidates are not tested on specific tax rate percentages indexed to inflation · Effective January 2025 blueprint',
+  tagline: 'Core section of the Uniform CPA Examination, U.S. federal taxation, ethics, and business law',
+  about: 'The Taxation and Regulation (REG) section is one of three Core sections of the Uniform CPA Examination administered by the AICPA. Every CPA candidate must pass REG regardless of chosen Discipline. The 4-hour exam consists of 72 multiple-choice questions and 8 task-based simulations, weighted 50/50 in scoring. Content covers five areas: Ethics, Professional Responsibilities and Federal Tax Procedures (10-20%). Treasury Department Circular 230, tax return preparer rules and penalties, state board licensing, IRS audits and appeals, tax authoritative hierarchy, privileged communications; Business Law (15-25%): agency, contracts (UCC), debtor-creditor relationships, bankruptcy under BAPCPA 2005, employment taxes, qualified health plans, worker classifications, anti-bribery under FCPA 1977, business entity formation and termination; Federal Taxation of Property Transactions (5-15%): tax basis of purchased and converted assets, gifted and inherited property, wash sales, intangible assets, MACRS depreciation, Section 179, amortization; Federal Taxation of Individuals (22-32%): Form 1040 gross income inclusions and exclusions, pass-through income, AGI adjustments, itemized deductions, QBI deduction, loss limitations, filing status, tax credits, estimated tax safe harbor; and Federal Taxation of Entities (23-33%): Schedule M-1/M-3 book-tax differences, C corporation taxable income and state nexus, S corporation eligibility and ordinary business income, partnership separately stated items and partner basis, LLCs, tax-exempt organizations. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, Uniform Commercial Code, Revised Model Business Corporation Act, FCPA, and ACA.',
+  details: 'AICPA Uniform CPA Examination · Core section · 4 hours · 72 MCQs + 8 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 25-35% Remembering & Understanding, 35-45% Application, 25-35% Analysis · Candidates are not tested on specific tax rate percentages indexed to inflation · Effective January 2025 blueprint',
   affiliates: [
     { provider: 'amazon', label: 'Shop Wiley CPAexcel and Becker REG Review Books on Amazon', url: 'https://www.amazon.com/s?k=wiley+cpa+excel+regulation+tax&tag=0003aa-20' },
   ],
@@ -1101,12 +1101,12 @@ export const certifications = [
 },
 {
   slug: 'cpa-bar',
-  name: 'CPA — Business Analysis and Reporting (BAR)',
+  name: 'CPA Business Analysis and Reporting (BAR)',
   code: 'BAR',
   vendor: 'AICPA',
-  tagline: 'Discipline section of the Uniform CPA Examination — business analysis, technical accounting, and state and local governments',
-  about: 'The Business Analysis and Reporting (BAR) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — BAR is most often selected by candidates planning a career in audit, advisory, financial reporting, or work with state and local governments. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Business Analysis (40–50%) — current-period financial statement analysis, non-financial and non-GAAP performance measures (balanced scorecard, EBITDA, customer retention, free cash flow), managerial and cost accounting, variance analysis, budgeting and forecasting, capital structure, cost of capital, investment valuation (NPV, IRR, payback), COSO Enterprise Risk Management framework and ESG-related risks, and the impact of economic and market influences on business; Technical Accounting and Reporting (35–45%) — indefinite-lived intangible assets and goodwill, internally developed software, advanced revenue recognition, stock compensation, research and development costs, business combinations, consolidated financial statements (variable interest entities, noncontrolling interests, foreign currency translation), derivatives and hedge accounting, lessor accounting, SEC public company reporting (Regulation S-X, S-K, segments), and financial statements of employee benefit plans; and State and Local Governments (10–20%) — government-wide, governmental fund, proprietary fund, and fiduciary fund financial statements under the GASB Codification, including capital assets, long-term liabilities, interfund activity, nonexchange revenue, and budgetary accounting. References include the FASB Accounting Standards Codification, GASB Statements, U.S. SEC Regulations, and the COSO ERM framework.',
-  details: 'AICPA Uniform CPA Examination · Discipline section · 4 hours · 50 MCQs + 7 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 10–20% Remembering & Understanding, 45–55% Application, 30–40% Analysis · Most aligned with audit, advisory, and not-for-profit/government career tracks · Effective January 2025 blueprint',
+  tagline: 'Discipline section of the Uniform CPA Examination, business analysis, technical accounting, and state and local governments',
+  about: 'The Business Analysis and Reporting (BAR) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice, BAR is most often selected by candidates planning a career in audit, advisory, financial reporting, or work with state and local governments. The 4-hour exam consists of 50 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers three areas: Business Analysis (40-50%): current-period financial statement analysis, non-financial and non-GAAP performance measures (balanced scorecard, EBITDA, customer retention, free cash flow), managerial and cost accounting, variance analysis, budgeting and forecasting, capital structure, cost of capital, investment valuation (NPV, IRR, payback), COSO Enterprise Risk Management framework and ESG-related risks, and the impact of economic and market influences on business; Technical Accounting and Reporting (35-45%): indefinite-lived intangible assets and goodwill, internally developed software, advanced revenue recognition, stock compensation, research and development costs, business combinations, consolidated financial statements (variable interest entities, noncontrolling interests, foreign currency translation), derivatives and hedge accounting, lessor accounting, SEC public company reporting (Regulation S-X, S-K, segments), and financial statements of employee benefit plans; and State and Local Governments (10-20%): government-wide, governmental fund, proprietary fund, and fiduciary fund financial statements under the GASB Codification, including capital assets, long-term liabilities, interfund activity, nonexchange revenue, and budgetary accounting. References include the FASB Accounting Standards Codification, GASB Statements, U.S. SEC Regulations, and the COSO ERM framework.',
+  details: 'AICPA Uniform CPA Examination · Discipline section · 4 hours · 50 MCQs + 7 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 10-20% Remembering & Understanding, 45-55% Application, 30-40% Analysis · Most aligned with audit, advisory, and not-for-profit/government career tracks · Effective January 2025 blueprint',
   affiliates: [
     { provider: 'amazon', label: 'Shop Wiley CPAexcel and Becker BAR Discipline Review Books on Amazon', url: 'https://www.amazon.com/s?k=wiley+cpa+excel+business+analysis+reporting&tag=0003aa-20' },
   ],
@@ -1123,12 +1123,12 @@ export const certifications = [
 },
 {
   slug: 'cpa-isc',
-  name: 'CPA — Information Systems and Controls (ISC)',
+  name: 'CPA Information Systems and Controls (ISC)',
   code: 'ISC',
   vendor: 'AICPA',
-  tagline: 'Discipline section of the Uniform CPA Examination — IT audit, security, and SOC engagements',
-  about: 'The Information Systems and Controls (ISC) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — ISC is most often selected by candidates planning a career in IT audit, cybersecurity, or System and Organization Controls (SOC) attestation. The 4-hour exam consists of 82 multiple-choice questions and 6 task-based simulations, weighted 60% MCQ / 40% TBS in scoring (the only section without 50/50 split). Content covers three areas: Information Systems and Data Management (35–45%) — IT infrastructure components, cloud computing models (IaaS, PaaS, SaaS), enterprise and accounting information systems, system availability, business continuity and disaster recovery, IT change management, data management, relational databases, SQL queries, data warehouses and lakes, and business process modeling; Security, Confidentiality and Privacy (35–45%) — HIPAA Security and Privacy Rules, GDPR Articles 4–34, PCI DSS, NIST CSF and Privacy Framework, NIST SP 800-53, CIS Controls v8.1, COBIT 2019, threat types and cyber-attack stages, identification/authentication/authorization controls, encryption, Data Loss Prevention, security testing, and incident response; and Considerations for SOC Engagements (15–25%) — purpose and intended users of SOC 1®, SOC 2®, SOC 3®, and SOC for Cybersecurity reports, Trust Services Criteria, system description criteria, complementary user entity controls (CUECs) and complementary subservice organization controls (CSOCs), report opinions and modifications. References include the AICPA Trust Services Criteria, NIST frameworks, HIPAA 45 CFR Part 164, GDPR, PCI DSS, COSO ERM, and COBIT 2019.',
-  details: 'AICPA Uniform CPA Examination · Discipline section · 4 hours · 82 MCQs + 6 TBSs · 60% MCQ / 40% TBS scoring (only section not 50/50) · Skill mix: 55–65% Remembering & Understanding, 20–30% Application, 10–20% Analysis · Most aligned with IT audit, cybersecurity, and SOC attestation career tracks · Effective January 2025 blueprint',
+  tagline: 'Discipline section of the Uniform CPA Examination, IT audit, security, and SOC engagements',
+  about: 'The Information Systems and Controls (ISC) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice, ISC is most often selected by candidates planning a career in IT audit, cybersecurity, or System and Organization Controls (SOC) attestation. The 4-hour exam consists of 82 multiple-choice questions and 6 task-based simulations, weighted 60% MCQ / 40% TBS in scoring (the only section without 50/50 split). Content covers three areas: Information Systems and Data Management (35-45%): IT infrastructure components, cloud computing models (IaaS, PaaS, SaaS), enterprise and accounting information systems, system availability, business continuity and disaster recovery, IT change management, data management, relational databases, SQL queries, data warehouses and lakes, and business process modeling; Security, Confidentiality and Privacy (35-45%): HIPAA Security and Privacy Rules, GDPR Articles 4-34, PCI DSS, NIST CSF and Privacy Framework, NIST SP 800-53, CIS Controls v8.1, COBIT 2019, threat types and cyber-attack stages, identification/authentication/authorization controls, encryption, Data Loss Prevention, security testing, and incident response; and Considerations for SOC Engagements (15-25%): purpose and intended users of SOC 1®, SOC 2®, SOC 3®, and SOC for Cybersecurity reports, Trust Services Criteria, system description criteria, complementary user entity controls (CUECs) and complementary subservice organization controls (CSOCs), report opinions and modifications. References include the AICPA Trust Services Criteria, NIST frameworks, HIPAA 45 CFR Part 164, GDPR, PCI DSS, COSO ERM, and COBIT 2019.',
+  details: 'AICPA Uniform CPA Examination · Discipline section · 4 hours · 82 MCQs + 6 TBSs · 60% MCQ / 40% TBS scoring (only section not 50/50) · Skill mix: 55-65% Remembering & Understanding, 20-30% Application, 10-20% Analysis · Most aligned with IT audit, cybersecurity, and SOC attestation career tracks · Effective January 2025 blueprint',
   affiliates: [
     { provider: 'amazon', label: 'Shop Wiley CPAexcel and Becker ISC Discipline Review Books on Amazon', url: 'https://www.amazon.com/s?k=wiley+cpa+excel+information+systems+controls&tag=0003aa-20' },
   ],
@@ -1145,12 +1145,12 @@ export const certifications = [
 },
 {
   slug: 'cpa-tcp',
-  name: 'CPA — Tax Compliance and Planning (TCP)',
+  name: 'CPA Tax Compliance and Planning (TCP)',
   code: 'TCP',
   vendor: 'AICPA',
-  tagline: 'Discipline section of the Uniform CPA Examination — advanced individual and entity tax compliance and planning',
-  about: 'The Tax Compliance and Planning (TCP) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice — TCP is most often selected by candidates planning a career in tax compliance, tax advisory, or personal financial planning. The 4-hour exam consists of 68 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Tax Compliance and Planning for Individuals and Personal Financial Planning (30–40%) — incentive compensation, AMT, at-risk and passive activity loss limitations, gifting and unified transfer tax, retirement plan selection (IRA, Roth, 401(k), annuities), investment risk, education funding, life and long-term care insurance, beneficiary designations, return on investment net of tax; Entity Tax Compliance (30–40%) — C corporation NOL and capital loss carryforwards, shareholder contributions and distributions, consolidated 1120 returns, international tax (CFC, FDII, BEAT, GILTI, IC-DISC, permanent establishment), S corporation shareholder basis and AAA, partnership partner basis and elections, trusts (simple, complex, grantor), distributable net income, tax-exempt organizations and unrelated business income; Entity Tax Planning (10–20%) — entity selection and formation, tax planning for C corps, S corps, and partnerships, built-in gains tax, terminating S elections; and Property Transactions (10–20%) — like-kind exchanges, involuntary conversions, Section 1231 capital gains and ordinary losses, Section 1245 and 1250 depreciation recapture, unrecaptured Section 1250 gain, Section 1244 small business stock, installment sales, related-party transactions, imputed interest. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, and case law on federal taxation.',
-  details: 'AICPA Uniform CPA Examination · Discipline section · 4 hours · 68 MCQs + 7 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 5–15% Remembering & Understanding, 55–65% Application, 25–35% Analysis · Most aligned with tax compliance, tax planning, and personal financial planning career tracks · Effective January 2025 blueprint',
+  tagline: 'Discipline section of the Uniform CPA Examination, advanced individual and entity tax compliance and planning',
+  about: 'The Tax Compliance and Planning (TCP) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice, TCP is most often selected by candidates planning a career in tax compliance, tax advisory, or personal financial planning. The 4-hour exam consists of 68 multiple-choice questions and 7 task-based simulations, weighted 50/50 in scoring. Content covers four areas: Tax Compliance and Planning for Individuals and Personal Financial Planning (30-40%), incentive compensation, AMT, at-risk and passive activity loss limitations, gifting and unified transfer tax, retirement plan selection (IRA, Roth, 401(k), annuities), investment risk, education funding, life and long-term care insurance, beneficiary designations, return on investment net of tax; Entity Tax Compliance (30-40%): C corporation NOL and capital loss carryforwards, shareholder contributions and distributions, consolidated 1120 returns, international tax (CFC, FDII, BEAT, GILTI, IC-DISC, permanent establishment), S corporation shareholder basis and AAA, partnership partner basis and elections, trusts (simple, complex, grantor), distributable net income, tax-exempt organizations and unrelated business income; Entity Tax Planning (10-20%): entity selection and formation, tax planning for C corps, S corps, and partnerships, built-in gains tax, terminating S elections; and Property Transactions (10-20%): like-kind exchanges, involuntary conversions, Section 1231 capital gains and ordinary losses, Section 1245 and 1250 depreciation recapture, unrecaptured Section 1250 gain, Section 1244 small business stock, installment sales, related-party transactions, imputed interest. References include the Internal Revenue Code of 1986 as amended, Treasury Regulations, and case law on federal taxation.',
+  details: 'AICPA Uniform CPA Examination · Discipline section · 4 hours · 68 MCQs + 7 TBSs · 50/50 MCQ/TBS scoring · Skill mix: 5-15% Remembering & Understanding, 55-65% Application, 25-35% Analysis · Most aligned with tax compliance, tax planning, and personal financial planning career tracks · Effective January 2025 blueprint',
   affiliates: [
     { provider: 'amazon', label: 'Shop Wiley CPAexcel and Becker TCP Discipline Review Books on Amazon', url: 'https://www.amazon.com/s?k=wiley+cpa+excel+tax+compliance+planning&tag=0003aa-20' },
   ],
@@ -1171,8 +1171,8 @@ export const certifications = [
   name: 'Certified Ethical Hacker (CEH)',
   code: 'CEH',
   vendor: 'EC-Council',
-  tagline: 'EC-Council\'s ethical hacking certification — penetration testing, vulnerability assessment, and offensive security',
-  about: 'Certified Ethical Hacker (CEH) from EC-Council validates offensive security skills for penetration testers, SOC analysts, and security engineers. The current blueprint (v5.0) covers nine domains: Information Security and Ethical Hacking Overview (6%) — methodologies, frameworks, controls, laws; Reconnaissance Techniques (17%) — footprinting, network scanning, enumeration; System Hacking Phases and Attack Techniques (15%) — vulnerability analysis, system hacking, malware threats; Network and Perimeter Hacking (24%) — sniffing, social engineering, denial-of-service, session hijacking, evading IDS/firewalls/honeypots; Web Application Hacking (14%) — web servers, web applications, SQL injection; Wireless Network Hacking (5%); Mobile Platform, IoT, and OT Hacking (10%); Cloud Computing (5%) — container, serverless, cloud security; and Cryptography (5%). CEH is ANSI/ISO 17024 accredited and DoD 8570/8140 baseline approved for several cybersecurity roles. Often compared with OSCP (more hands-on offensive) and CompTIA PenTest+ (vendor-neutral).',
+  tagline: 'EC-Council\'s ethical hacking certification: penetration testing, vulnerability assessment, and offensive security',
+  about: 'Certified Ethical Hacker (CEH) from EC-Council validates offensive security skills for penetration testers, SOC analysts, and security engineers. The current blueprint (v5.0) covers nine domains: Information Security and Ethical Hacking Overview (6%), methodologies, frameworks, controls, laws; Reconnaissance Techniques (17%): footprinting, network scanning, enumeration; System Hacking Phases and Attack Techniques (15%), vulnerability analysis, system hacking, malware threats; Network and Perimeter Hacking (24%): sniffing, social engineering, denial-of-service, session hijacking, evading IDS/firewalls/honeypots; Web Application Hacking (14%): web servers, web applications, SQL injection; Wireless Network Hacking (5%); Mobile Platform, IoT, and OT Hacking (10%); Cloud Computing (5%): container, serverless, cloud security; and Cryptography (5%). CEH is ANSI/ISO 17024 accredited and DoD 8570/8140 baseline approved for several cybersecurity roles. Often compared with OSCP (more hands-on offensive) and CompTIA PenTest+ (vendor-neutral).',
   details: 'EC-Council CEH v13 (Blueprint v5.0) · 125 multiple-choice questions · 4 hours · Computer-based · ANSI/ISO 17024 accredited · DoD 8570/8140 approved · Companion CEH Practical (6-hour hands-on lab)',
   affiliates: [
     { provider: 'amazon', label: 'Certified Ethical Hacker 2025-2026 Guide (Amazon)', url: 'https://www.amazon.com/CERTIFIED-ETHICAL-HACKER-2025-2026-GUIDE-ebook/dp/B0FG82B873?tag=0003aa-20' },
@@ -1201,8 +1201,8 @@ export const certifications = [
   code: 'PK0-005',
   vendor: 'CompTIA',
   tagline: 'Project life cycle, communication, resource and stakeholder management for IT projects',
-  about: 'CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6–12 months of hands-on IT project management experience.',
-  details: 'Maximum of 90 multiple-choice and performance-based questions · 90 minutes · Recommended 6–12 months of hands-on experience managing projects in an IT environment',
+  about: 'CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6-12 months of hands-on IT project management experience.',
+  details: 'Maximum of 90 multiple-choice and performance-based questions · 90 minutes · Recommended 6-12 months of hands-on experience managing projects in an IT environment',
   faq: [
     { q: 'How hard is the CompTIA Project+ exam?',
       a: 'It is one of the more approachable project management exams. It tests practical knowledge of the project life cycle, communication, and basic agile and waterfall concepts rather than deep formulas. With focused study, most people pass without prior certification.' },

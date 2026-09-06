@@ -1,4 +1,4 @@
-// ITIL 4 Foundation — in-scope concepts, practices, and definitions across the 7 learning outcomes.
+// ITIL 4 Foundation: in-scope concepts, practices, and definitions across the 7 learning outcomes.
 export const services = [
   // LO1: Key concepts of service management
   { a: 'Service',                       d: 'A means of enabling value co-creation by facilitating outcomes the customer wants without managing specific costs or risks' },
@@ -26,7 +26,7 @@ export const services = [
   { a: 'Start where you are',           d: 'Guiding principle: assess current state and reuse what already works before adopting new methods' },
   { a: 'Progress iteratively with feedback', d: 'Guiding principle: organize work into smaller, manageable iterations with frequent feedback' },
   { a: 'Collaborate and promote visibility', d: 'Guiding principle: work together across boundaries; transparency builds trust and better decisions' },
-  { a: 'Think and work holistically',   d: 'Guiding principle: no service or component stands alone — coordinate the SVS as a whole' },
+  { a: 'Think and work holistically',   d: 'Guiding principle: no service or component stands alone: coordinate the SVS as a whole' },
   { a: 'Keep it simple and practical',  d: 'Guiding principle: use the minimum steps needed to accomplish an objective; eliminate what does not contribute' },
   { a: 'Optimize and automate',         d: 'Guiding principle: optimize human effort first, then automate where appropriate' },
 
@@ -41,8 +41,8 @@ export const services = [
 
   // LO4 & LO5: Service Value System (SVS) and Service Value Chain (SVC)
   { a: 'Service Value System (SVS)',    d: 'How all components and activities of an organization work together to facilitate value creation through IT-enabled services' },
-  { a: 'Opportunity / demand',          d: 'Inputs to the SVS — opportunities and demand from internal and external stakeholders' },
-  { a: 'Governance (in SVS)',           d: 'The means by which an organization is directed and controlled — assigns authority and ensures alignment' },
+  { a: 'Opportunity / demand',          d: 'Inputs to the SVS: opportunities and demand from internal and external stakeholders' },
+  { a: 'Governance (in SVS)',           d: 'The means by which an organization is directed and controlled, assigns authority and ensures alignment' },
   { a: 'Service Value Chain (SVC)',     d: 'Operating model for service providers describing six key interconnected activities' },
   { a: 'Plan (SVC activity)',           d: 'Ensures shared understanding of vision, current status, and improvement direction across all four dimensions' },
   { a: 'Improve (SVC activity)',        d: 'Ensures continual improvement of products, services, and practices across the value chain' },
@@ -77,7 +77,7 @@ export const services = [
   { a: 'Problem',                       d: 'A cause, or potential cause, of one or more incidents' },
   { a: 'Known error',                   d: 'A problem that has been analyzed but not resolved' },
 
-  // LO7: 7 practices in detail — supporting concepts
+  // LO7: 7 practices in detail: supporting concepts
   { a: 'Continual improvement model',   d: 'Seven-step model: vision, current state, target state, plan, action, did we get there?, keep momentum' },
   { a: 'Standard change',               d: 'Pre-authorized, low-risk, well-understood and well-documented change that can be implemented without additional approval' },
   { a: 'Normal change',                 d: 'Change that follows the full change-enablement process including assessment and authorization' },
@@ -85,5 +85,5 @@ export const services = [
   { a: 'Workaround',                    d: 'Solution that reduces or eliminates the impact of an incident or problem when a full resolution is not yet available' },
   { a: 'Major incident',                d: 'Highest category of incident impact requiring a dedicated procedure with shorter timescales and greater urgency' },
   { a: 'Service request',               d: 'Request from a user or authorized representative that initiates a service action that has been agreed as part of normal service delivery' },
-  { a: 'Service desk channels',         d: 'Phone, web/portal, chat, email, walk-in, social media — multiple ways users contact the service desk' },
+  { a: 'Service desk channels',         d: 'Phone, web/portal, chat, email, walk-in, social media, multiple ways users contact the service desk' },
 ];

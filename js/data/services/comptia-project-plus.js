@@ -1,4 +1,4 @@
-// CompTIA Project+ PK0-005 — in-scope project management concepts, methodologies, artifacts, and roles.
+// CompTIA Project+ PK0-005: in-scope project management concepts, methodologies, artifacts, and roles.
 export const services = [
   // Methodologies and frameworks
   { a: 'Waterfall',                d: 'Sequential, phase-gated delivery with fixed scope up front' },
@@ -7,7 +7,7 @@ export const services = [
   { a: 'Kanban',                   d: 'Flow-based method using a board and work-in-progress limits' },
   { a: 'Extreme Programming (XP)', d: 'Agile method emphasizing engineering practices and short cycles' },
   { a: 'Scaled Agile Framework (SAFe)', d: 'Framework for applying agile across large organizations' },
-  { a: 'PRINCE2',                  d: 'PRojects IN Controlled Environments — process-based PM method' },
+  { a: 'PRINCE2',                  d: 'PRojects IN Controlled Environments: process-based PM method' },
   { a: 'DevOps',                   d: 'Practice uniting development and operations for continuous delivery' },
   { a: 'DevSecOps',                d: 'DevOps with security integrated throughout the pipeline' },
   { a: 'SDLC',                     d: 'Software Development Life Cycle phases for building software' },
@@ -26,10 +26,10 @@ export const services = [
   { a: 'Non-disclosure agreement (NDA)', d: 'Contract protecting confidential project information' },
 
   // Procurement
-  { a: 'RFP',                      d: 'Request for Proposal — solicits detailed vendor solutions' },
-  { a: 'RFB',                      d: 'Request for Bid — solicits price bids for defined work' },
-  { a: 'RFQ',                      d: 'Request for Quote — solicits pricing for specified items' },
-  { a: 'RFI',                      d: 'Request for Information — gathers vendor capabilities' },
+  { a: 'RFP',                      d: 'Request for Proposal: solicits detailed vendor solutions' },
+  { a: 'RFB',                      d: 'Request for Bid: solicits price bids for defined work' },
+  { a: 'RFQ',                      d: 'Request for Quote: solicits pricing for specified items' },
+  { a: 'RFI',                      d: 'Request for Information: gathers vendor capabilities' },
   { a: 'Fixed price contract',     d: 'Set price regardless of seller cost' },
   { a: 'Time and material contract', d: 'Pays for labor hours plus materials' },
   { a: 'Cost plus contract',       d: 'Reimburses costs plus an agreed fee' },
@@ -46,10 +46,10 @@ export const services = [
   { a: 'Change control log',       d: 'Record of change requests and approval status' },
 
   // Risk and change concepts
-  { a: 'Risk response — avoid',    d: 'Eliminate the threat by changing the plan' },
-  { a: 'Risk response — mitigate', d: 'Reduce probability or impact of a threat' },
-  { a: 'Risk response — transfer', d: 'Shift threat impact to a third party (e.g., insurance)' },
-  { a: 'Risk response — accept',   d: 'Acknowledge the risk without proactive action' },
+  { a: 'Risk response: avoid',    d: 'Eliminate the threat by changing the plan' },
+  { a: 'Risk response: mitigate', d: 'Reduce probability or impact of a threat' },
+  { a: 'Risk response: transfer', d: 'Shift threat impact to a third party (e.g., insurance)' },
+  { a: 'Risk response: accept',   d: 'Acknowledge the risk without proactive action' },
   { a: 'Scope creep',              d: 'Uncontrolled expansion of scope without change control' },
   { a: 'Change control board (CCB)', d: 'Body that reviews and approves change requests' },
 

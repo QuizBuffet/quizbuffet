@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>700+ Free CEH Questions: Web Application Hacking</title>
+  <title>CEH Web Application Hacking Practice Quiz (128 Questions)</title>
   <meta name="description" content="Test yourself on CEH Web Application Hacking (19% of the exam). 128 free questions with instant feedback and explanations. No signup, no email needed.">
   <link rel="canonical" href="https://quizbuffet.com/ceh/web-application-hacking/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
-  <meta property="og:title"       content="700+ Free CEH Questions: Web Application Hacking">
+  <meta property="og:title"       content="CEH Web Application Hacking Practice Quiz (128 Questions)">
   <meta property="og:description" content="Test yourself on CEH Web Application Hacking (19% of the exam). 128 free questions with instant feedback and explanations. No signup, no email needed.">
   <meta property="og:image"       content="https://quizbuffet.com/icons/og/ceh-web-application-hacking.svg">
   <meta property="og:url"         content="https://quizbuffet.com/ceh/web-application-hacking/">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="700+ Free CEH Questions: Web Application Hacking">
+  <meta name="twitter:title"       content="CEH Web Application Hacking Practice Quiz (128 Questions)">
   <meta name="twitter:description" content="Test yourself on CEH Web Application Hacking (19% of the exam). 128 free questions with instant feedback and explanations. No signup, no email needed.">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/ceh-web-application-hacking.svg">
 
@@ -39,7 +39,7 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -79,17 +79,19 @@
 
   <!-- Event snippet for Page view conversion page -->
   <script>
+    // Secondary conversion only: every page view fires this. Set its Google Ads
+    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
+    // so it never competes with the real primary conversion (see trackConversion.js /
+    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
     gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
     });
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
-  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
@@ -142,7 +144,7 @@
     },
     {
       "@type": "Quiz",
-      "name": "700+ Free CEH Questions: Web Application Hacking",
+      "name": "CEH Web Application Hacking Practice Quiz (128 Questions)",
       "description": "Test yourself on CEH Web Application Hacking (19% of the exam). 128 free questions with instant feedback and explanations. No signup, no email needed.",
       "url": "https://quizbuffet.com/ceh/web-application-hacking/",
       "image": "https://quizbuffet.com/icons/og/ceh-web-application-hacking.svg",
@@ -181,15 +183,15 @@
           "name": "Which web server component handles incoming HTTP requests, routes them to the appropriate application logic, and returns the resulting HTTP responses to clients?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Web server software (Apache, nginx, IIS) — the HTTP server process that receives connections, parses requests, and delivers responses."
+            "text": "Web server software (Apache, nginx, IIS), the HTTP server process that receives connections, parses requests, and delivers responses."
           }
         },
         {
           "@type": "Question",
-          "name": "Which security control specifically limits what a web server process can access on the host operating system — preventing a compromised web server from reading sensitive system files, writing to system directories, or accessing other processes' memory?",
+          "name": "Which security control specifically limits what a web server process can access on the host operating system, preventing a compromised web server from reading sensitive system files, writing to system directories, or accessing other processes' memory?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Running the web server process with minimal OS privileges (non-root user account) combined with OS-level access controls (AppArmor, SELinux, chroot jail) — limiting the blast radius if the web server process is compromised."
+            "text": "Running the web server process with minimal OS privileges (non-root user account) combined with OS-level access controls (AppArmor, SELinux, chroot jail), limiting the blast radius if the web server process is compromised."
           }
         },
         {
@@ -197,7 +199,7 @@
           "name": "A web server administrator discovers that the organization's Apache installation has 47 Apache modules loaded, including many that are enabled by default but not used by any application. Which security principle does disabling unused modules implement, and which specific security risk does it reduce?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Principle of Least Functionality — reducing the attack surface by disabling modules that are not required eliminates code paths with potential vulnerabilities (mod_status, mod_info, mod_userdir, mod_autoindex) that could be exploited even if the core application is secure."
+            "text": "Principle of Least Functionality, reducing the attack surface by disabling modules that are not required eliminates code paths with potential vulnerabilities (mod_status, mod_info, mod_userdir, mod_autoindex) that could be exploited even if the core application is secure."
           }
         }
       ]
@@ -223,18 +225,18 @@
       <h2>Sample Questions</h2>
       <article class="seo-sample-q">
         <h3>Which web server component handles incoming HTTP requests, routes them to the appropriate application logic, and returns the resulting HTTP responses to clients?</h3>
-        <p><strong>Answer:</strong> Web server software (Apache, nginx, IIS) — the HTTP server process that receives connections, parses requests, and delivers responses</p>
+        <p><strong>Answer:</strong> Web server software (Apache, nginx, IIS), the HTTP server process that receives connections, parses requests, and delivers responses</p>
         <p>Web server software (Apache HTTP Server, nginx, Microsoft IIS, Caddy) is the core component that: listens on TCP ports 80 (HTTP) and 443 (HTTPS), accepts client TCP connections, parses incoming HTTP request headers and body, routes requests to appropriate handlers (static files, CGI scripts, reverse proxy to application servers), and constructs and returns HTTP responses. In a multi-tier architecture, the web server may also function as a reverse proxy forwarding dynamic requests to application servers (Tomcat, Node.js, Gunicorn) while serving static content directly.</p>
       </article>
       <article class="seo-sample-q">
-        <h3>Which security control specifically limits what a web server process can access on the host operating system — preventing a compromised web server from reading sensitive system files, writing to system directories, or accessing other processes&#39; memory?</h3>
-        <p><strong>Answer:</strong> Running the web server process with minimal OS privileges (non-root user account) combined with OS-level access controls (AppArmor, SELinux, chroot jail) — limiting the blast radius if the web server process is compromised</p>
-        <p>OS-level privilege minimization is the principle of least privilege applied to web server processes: (1) Non-root user — Apache runs as &#39;www-data&#39; (Debian/Ubuntu) or &#39;apache&#39; (RHEL/CentOS) with no sudo access and no home directory write access. A compromised web server running as www-data cannot read /etc/shadow, install system services, or access other users&#39; files. (2) AppArmor/SELinux profiles — mandatory access control policies that further restrict exactly which files, directories, and system calls the web server process can use, regardless of Unix permissions. (3) chroot jail — changes the apparent root directory for the web server process, confining it to a limited subtree. Together these limit post-compromise damage.</p>
+        <h3>Which security control specifically limits what a web server process can access on the host operating system, preventing a compromised web server from reading sensitive system files, writing to system directories, or accessing other processes&#39; memory?</h3>
+        <p><strong>Answer:</strong> Running the web server process with minimal OS privileges (non-root user account) combined with OS-level access controls (AppArmor, SELinux, chroot jail), limiting the blast radius if the web server process is compromised</p>
+        <p>OS-level privilege minimization is the principle of least privilege applied to web server processes: (1) Non-root user. Apache runs as &#39;www-data&#39; (Debian/Ubuntu) or &#39;apache&#39; (RHEL/CentOS) with no sudo access and no home directory write access. A compromised web server running as www-data cannot read /etc/shadow, install system services, or access other users&#39; files. (2) AppArmor/SELinux profiles, mandatory access control policies that further restrict exactly which files, directories, and system calls the web server process can use, regardless of Unix permissions. (3) chroot jail, changes the apparent root directory for the web server process, confining it to a limited subtree. Together these limit post-compromise damage.</p>
       </article>
       <article class="seo-sample-q">
         <h3>A web server administrator discovers that the organization&#39;s Apache installation has 47 Apache modules loaded, including many that are enabled by default but not used by any application. Which security principle does disabling unused modules implement, and which specific security risk does it reduce?</h3>
-        <p><strong>Answer:</strong> Principle of Least Functionality — reducing the attack surface by disabling modules that are not required eliminates code paths with potential vulnerabilities (mod_status, mod_info, mod_userdir, mod_autoindex) that could be exploited even if the core application is secure</p>
-        <p>The Principle of Least Functionality (also called attack surface reduction) specifies that systems should only have the capabilities, services, and features required for their intended function. Unnecessary Apache modules add code with potential vulnerabilities that are exploitable even when the core application is completely secure: mod_status (exposes real-time server status at /server-status including request details and client IPs), mod_info (exposes configuration at /server-info), mod_userdir (enables ~/username URL mapping that could expose sensitive files), mod_autoindex (directory listing), mod_cgi/mod_cgid (CGI execution — a significant attack surface if not needed). Each disabled module eliminates a class of vulnerabilities from the attack surface entirely.</p>
+        <p><strong>Answer:</strong> Principle of Least Functionality, reducing the attack surface by disabling modules that are not required eliminates code paths with potential vulnerabilities (mod_status, mod_info, mod_userdir, mod_autoindex) that could be exploited even if the core application is secure</p>
+        <p>The Principle of Least Functionality (also called attack surface reduction) specifies that systems should only have the capabilities, services, and features required for their intended function. Unnecessary Apache modules add code with potential vulnerabilities that are exploitable even when the core application is completely secure: mod_status (exposes real-time server status at /server-status including request details and client IPs), mod_info (exposes configuration at /server-info), mod_userdir (enables ~/username URL mapping that could expose sensitive files), mod_autoindex (directory listing), mod_cgi/mod_cgid (CGI execution, a significant attack surface if not needed). Each disabled module eliminates a class of vulnerabilities from the attack surface entirely.</p>
       </article>
       <h2>Other CEH Domains</h2>
       <ul>

@@ -1,4 +1,4 @@
-// AWS Certified Generative AI Developer – Professional (AIP-C01) — services and supporting infrastructure with one-line purposes.
+// AWS Certified Generative AI Developer Professional (AIP-C01), services and supporting infrastructure with one-line purposes.
 export const services = [
   // Foundation models and managed GenAI
   { a: 'Amazon Bedrock',                  d: 'Fully managed access to foundation models from leading AI companies via API' },
@@ -139,7 +139,7 @@ export const services = [
   { a: 'AWS Service Catalog',             d: 'Manage approved IT service portfolios for organizations' },
   { a: 'AWS Systems Manager',             d: 'Operational hub for managing AWS resources at scale' },
   { a: 'AWS Well-Architected Tool',       d: 'Review workloads against Well-Architected best practices' },
-  { a: 'AWS WA Tool Generative AI Lens',  d: 'Generative AI–specific guidance within the Well-Architected Tool' },
+  { a: 'AWS WA Tool Generative AI Lens',  d: 'Generative AI, specific guidance within the Well-Architected Tool' },
   { a: 'AWS Chatbot',                     d: 'Connect AWS service notifications to Slack and Teams' },
 
   // Developer tools

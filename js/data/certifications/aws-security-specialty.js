@@ -1,10 +1,10 @@
 export const cert = {
   slug: 'aws-security-specialty',
-  name: 'AWS Certified Security – Specialty',
+  name: 'AWS Certified Security Specialty',
   code: 'SCS-C03',
   vendor: 'AWS',
   tagline: 'Secure AWS workloads end-to-end: detection, identity, data protection, and governance',
-  about: 'AWS Certified Security – Specialty (SCS-C03) validates expertise securing cloud solutions on AWS. It covers detection (GuardDuty, Security Hub, Macie, Security Lake, CloudTrail, CloudWatch), incident response, infrastructure security across edge and compute (WAF, Shield, Network Firewall, Inspector), identity and access management at scale (IAM, IAM Identity Center, Cognito, Verified Permissions), data protection in transit and at rest (KMS, CloudHSM, ACM, Secrets Manager), and multi-account security governance (Organizations, Control Tower, Config, Audit Manager).',
+  about: 'AWS Certified Security Specialty (SCS-C03) validates expertise securing cloud solutions on AWS. It covers detection (GuardDuty, Security Hub, Macie, Security Lake, CloudTrail, CloudWatch), incident response, infrastructure security across edge and compute (WAF, Shield, Network Firewall, Inspector), identity and access management at scale (IAM, IAM Identity Center, Cognito, Verified Permissions), data protection in transit and at rest (KMS, CloudHSM, ACM, Secrets Manager), and multi-account security governance (Organizations, Control Tower, Config, Audit Manager).',
   details: '65 questions (50 scored + 15 unscored) · 170 minutes · Multiple-choice, multiple-response, ordering, matching · Pass score 750/1000',
   udemyCourseUrl: 'https://www.udemy.com/course/ultimate-aws-certified-security-specialty/',
   affiliates: [

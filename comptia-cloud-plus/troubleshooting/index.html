@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1200+ Free CV0-004 Questions: Troubleshooting</title>
+  <title>CompTIA Cloud+ Troubleshooting Practice Quiz (100 Questions)</title>
   <meta name="description" content="Test yourself on CV0-004 Troubleshooting (12% of the exam). 100 free questions with instant feedback and explanations. No signup, no email needed.">
   <link rel="canonical" href="https://quizbuffet.com/comptia-cloud-plus/troubleshooting/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
-  <meta property="og:title"       content="1200+ Free CV0-004 Questions: Troubleshooting">
+  <meta property="og:title"       content="CompTIA Cloud+ Troubleshooting Practice Quiz (100 Questions)">
   <meta property="og:description" content="Test yourself on CV0-004 Troubleshooting (12% of the exam). 100 free questions with instant feedback and explanations. No signup, no email needed.">
   <meta property="og:image"       content="https://quizbuffet.com/icons/og/comptia-cloud-plus-troubleshooting.svg">
   <meta property="og:url"         content="https://quizbuffet.com/comptia-cloud-plus/troubleshooting/">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="1200+ Free CV0-004 Questions: Troubleshooting">
+  <meta name="twitter:title"       content="CompTIA Cloud+ Troubleshooting Practice Quiz (100 Questions)">
   <meta name="twitter:description" content="Test yourself on CV0-004 Troubleshooting (12% of the exam). 100 free questions with instant feedback and explanations. No signup, no email needed.">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/comptia-cloud-plus-troubleshooting.svg">
 
@@ -39,7 +39,7 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -79,17 +79,19 @@
 
   <!-- Event snippet for Page view conversion page -->
   <script>
+    // Secondary conversion only: every page view fires this. Set its Google Ads
+    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
+    // so it never competes with the real primary conversion (see trackConversion.js /
+    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
     gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
     });
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
-  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
@@ -142,7 +144,7 @@
     },
     {
       "@type": "Quiz",
-      "name": "1200+ Free CV0-004 Questions: Troubleshooting",
+      "name": "CompTIA Cloud+ Troubleshooting Practice Quiz (100 Questions)",
       "description": "Test yourself on CV0-004 Troubleshooting (12% of the exam). 100 free questions with instant feedback and explanations. No signup, no email needed.",
       "url": "https://quizbuffet.com/comptia-cloud-plus/troubleshooting/",
       "image": "https://quizbuffet.com/icons/og/comptia-cloud-plus-troubleshooting.svg",
@@ -178,10 +180,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show 'SSL handshake failed — unsupported protocol version'. What type of deployment issue is this?",
+          "name": "A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show 'SSL handshake failed, unsupported protocol version'. What type of deployment issue is this?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A compatibility issue — the new application version requires a TLS version that the database server does not support, or vice versa."
+            "text": "A compatibility issue, the new application version requires a TLS version that the database server does not support, or vice versa."
           }
         },
         {
@@ -189,7 +191,7 @@
           "name": "A newly deployed cloud web server is unreachable from the internet. The server is running and the application is listening on port 443. The security group has inbound rule allowing port 80 from 0.0.0.0/0 but no rule for port 443. What is the issue?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A misconfiguration — the security group allows port 80 (HTTP) but not port 443 (HTTPS)."
+            "text": "A misconfiguration, the security group allows port 80 (HTTP) but not port 443 (HTTPS)."
           }
         },
         {
@@ -197,7 +199,7 @@
           "name": "A CI/CD pipeline fails with: 'Error: Resource type `aws_s3_bucket_acl` not found in provider'. The Terraform configuration was written for an older AWS provider version. What type of deployment issue is this?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An outdated component definition — the resource type `aws_s3_bucket_acl` may have been introduced in a newer provider version than the one currently installed, or the configuration references resource types using the old schema that has since been restructured."
+            "text": "An outdated component definition, the resource type `aws_s3_bucket_acl` may have been introduced in a newer provider version than the one currently installed, or the configuration references resource types using the old schema that has since been restructured."
           }
         }
       ]
@@ -222,19 +224,19 @@
       <p>This domain is part of the <a href="/comptia-cloud-plus/">CompTIA Cloud+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
       <article class="seo-sample-q">
-        <h3>A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show &#39;SSL handshake failed — unsupported protocol version&#39;. What type of deployment issue is this?</h3>
-        <p><strong>Answer:</strong> A compatibility issue — the new application version requires a TLS version that the database server does not support, or vice versa. The application and database have incompatible security protocol configurations</p>
-        <p>SSL handshake failure indicates a TLS protocol version mismatch — the client and server cannot agree on a common protocol version. This is a compatibility issue between application and database TLS configurations. This is the correct answer.</p>
+        <h3>A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show &#39;SSL handshake failed, unsupported protocol version&#39;. What type of deployment issue is this?</h3>
+        <p><strong>Answer:</strong> A compatibility issue, the new application version requires a TLS version that the database server does not support, or vice versa. The application and database have incompatible security protocol configurations</p>
+        <p>SSL handshake failure indicates a TLS protocol version mismatch, the client and server cannot agree on a common protocol version. This is a compatibility issue between application and database TLS configurations. This is the correct answer.</p>
       </article>
       <article class="seo-sample-q">
         <h3>A newly deployed cloud web server is unreachable from the internet. The server is running and the application is listening on port 443. The security group has inbound rule allowing port 80 from 0.0.0.0/0 but no rule for port 443. What is the issue?</h3>
-        <p><strong>Answer:</strong> A misconfiguration — the security group allows port 80 (HTTP) but not port 443 (HTTPS). Since the application listens on 443 and there is no security group rule permitting inbound traffic on 443, all HTTPS traffic is blocked at the security group level</p>
-        <p>Security group rules act as stateful firewalls — only explicitly permitted traffic reaches the instance. Port 443 missing from the inbound rules means HTTPS traffic is dropped before reaching the application. This is the correct answer.</p>
+        <p><strong>Answer:</strong> A misconfiguration, the security group allows port 80 (HTTP) but not port 443 (HTTPS). Since the application listens on 443 and there is no security group rule permitting inbound traffic on 443, all HTTPS traffic is blocked at the security group level</p>
+        <p>Security group rules act as stateful firewalls, only explicitly permitted traffic reaches the instance. Port 443 missing from the inbound rules means HTTPS traffic is dropped before reaching the application. This is the correct answer.</p>
       </article>
       <article class="seo-sample-q">
         <h3>A CI/CD pipeline fails with: &#39;Error: Resource type `aws_s3_bucket_acl` not found in provider&#39;. The Terraform configuration was written for an older AWS provider version. What type of deployment issue is this?</h3>
-        <p><strong>Answer:</strong> An outdated component definition — the resource type `aws_s3_bucket_acl` may have been introduced in a newer provider version than the one currently installed, or the configuration references resource types using the old schema that has since been restructured</p>
-        <p>Resource type availability is provider-version-specific — aws_s3_bucket_acl was introduced in AWS provider 4.x. If the lock file pins an older version, the resource type is unknown. This is an outdated component definition issue. This is the correct answer.</p>
+        <p><strong>Answer:</strong> An outdated component definition, the resource type `aws_s3_bucket_acl` may have been introduced in a newer provider version than the one currently installed, or the configuration references resource types using the old schema that has since been restructured</p>
+        <p>Resource type availability is provider-version-specific, aws_s3_bucket_acl was introduced in AWS provider 4.x. If the lock file pins an older version, the resource type is unknown. This is an outdated component definition issue. This is the correct answer.</p>
       </article>
       <h2>Other CV0-004 Domains</h2>
       <ul>

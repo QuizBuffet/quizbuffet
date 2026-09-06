@@ -4,7 +4,7 @@ export const cert = {
   code: '200-301',
   vendor: 'Cisco',
   tagline: 'The industry-standard entry into network engineering careers',
-  about: 'CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability — including AI/ML in network operations and REST APIs.',
+  about: 'CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability, including AI/ML in network operations and REST APIs.',
   details: '120 minutes · Multiple-choice and performance-based · Recommended prep: Implementing and Administering Cisco Solutions (CCNA) course',
   udemyCourseUrl: 'https://www.udemy.com/course/ccna-complete/',
   affiliates: [

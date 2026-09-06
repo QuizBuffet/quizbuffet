@@ -1,4 +1,4 @@
-// "After this, try these" — up to 3 same-vendor or same-category live certs.
+// "After this, try these": up to 3 same-vendor or same-category live certs.
 import { certifications } from '../../data/certifications/index.js';
 
 export function renderRelatedCerts(cert) {

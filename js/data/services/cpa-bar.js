@@ -10,7 +10,7 @@ export const services = [
   { a: 'Investment Valuation', d: 'Payback period, NPV, IRR, economic value added, cash flow analysis; comparison of investment alternatives.' },
   { a: 'COSO ERM Framework', d: 'Enterprise risk management approach integrating strategy and performance; application to ESG-related risks.' },
   { a: 'Working Capital Management', d: 'Strategies for managing receivables, inventory, payables, and short-term financing to balance liquidity and profitability.' },
-  { a: 'SWOT Analysis', d: 'Strengths, weaknesses, opportunities, threats — strategic framework for assessing business options.' },
+  { a: 'SWOT Analysis', d: 'Strengths, weaknesses, opportunities, threats: strategic framework for assessing business options.' },
   { a: 'Economic Indicators', d: 'Supply and demand, elasticity, business cycles (trough, expansion, peak, recession), leading/coincident/lagging indicators.' },
   { a: 'Indefinite-Lived Intangibles and Goodwill', d: 'Annual impairment testing under ASC 350; qualitative assessment and quantitative one-step (or two-step for pre-ASU 2017-04 entities).' },
   { a: 'Internally Developed Software', d: 'Capitalization criteria for internal-use software (preliminary, development, post-implementation stages) and software developed for sale.' },

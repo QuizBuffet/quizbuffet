@@ -1,7 +1,7 @@
 import { loadDomain } from './loadDomain.js';
 
 // Loads every domain for a cert and annotates each question with its origin.
-// Returns all questions shuffled — limit is applied by the caller.
+// Returns all questions shuffled: limit is applied by the caller.
 export async function loadAllDomains(cert) {
   const perDomain = await Promise.all(
     cert.domains.map(async d => {

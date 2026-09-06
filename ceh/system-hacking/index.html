@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CEH: System Hacking Phases and Attack Techniques</title>
+  <title>CEH System Hacking Phases and Attack Techniques Practice</title>
   <meta name="description" content="Test yourself on CEH System Hacking Phases and Attack Techniques (14% of the exam). 100 free questions with instant feedback and explanations. No signup">
   <link rel="canonical" href="https://quizbuffet.com/ceh/system-hacking/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
-  <meta property="og:title"       content="CEH: System Hacking Phases and Attack Techniques">
+  <meta property="og:title"       content="CEH System Hacking Phases and Attack Techniques Practice">
   <meta property="og:description" content="Test yourself on CEH System Hacking Phases and Attack Techniques (14% of the exam). 100 free questions with instant feedback and explanations. No signup">
   <meta property="og:image"       content="https://quizbuffet.com/icons/og/ceh-system-hacking.svg">
   <meta property="og:url"         content="https://quizbuffet.com/ceh/system-hacking/">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="CEH: System Hacking Phases and Attack Techniques">
+  <meta name="twitter:title"       content="CEH System Hacking Phases and Attack Techniques Practice">
   <meta name="twitter:description" content="Test yourself on CEH System Hacking Phases and Attack Techniques (14% of the exam). 100 free questions with instant feedback and explanations. No signup">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/ceh-system-hacking.svg">
 
@@ -39,7 +39,7 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -79,17 +79,19 @@
 
   <!-- Event snippet for Page view conversion page -->
   <script>
+    // Secondary conversion only: every page view fires this. Set its Google Ads
+    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
+    // so it never competes with the real primary conversion (see trackConversion.js /
+    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
     gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
     });
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
-  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
@@ -142,7 +144,7 @@
     },
     {
       "@type": "Quiz",
-      "name": "CEH: System Hacking Phases and Attack Techniques",
+      "name": "CEH System Hacking Phases and Attack Techniques Practice",
       "description": "Test yourself on CEH System Hacking Phases and Attack Techniques (14% of the exam). 100 free questions with instant feedback and explanations. No signup",
       "url": "https://quizbuffet.com/ceh/system-hacking/",
       "image": "https://quizbuffet.com/icons/og/ceh-system-hacking.svg",
@@ -181,7 +183,7 @@
           "name": "Which type of vulnerability assessment tests a system from the perspective of an unauthenticated external attacker with no prior knowledge of or credentials for the target environment?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "External black-box assessment — simulates an outside attacker with no credentials or internal knowledge."
+            "text": "External black-box assessment, simulates an outside attacker with no credentials or internal knowledge."
           }
         },
         {
@@ -189,7 +191,7 @@
           "name": "A compliance team needs continuous monitoring of all 2,000 servers in their datacenter for new vulnerabilities as patches are released and CVEs are published daily. Which vulnerability assessment deployment model BEST supports this ongoing requirement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Continuous automated scanning — a vulnerability management platform (e.g., Tenable.sc, Rapid7 InsightVM) scans assets on a scheduled or agent-based basis and correlates results with the live NVD CVE feed. Enterprise vulnerability management platforms (Tenable.sc, Rapid7…"
+            "text": "Continuous automated scanning, a vulnerability management platform (e.g., Tenable.sc, Rapid7 InsightVM) scans assets on a scheduled or agent-based basis and correlates results with the live NVD CVE feed. Enterprise vulnerability management platforms (Tenable.sc, Rapid7…"
           }
         },
         {
@@ -197,7 +199,7 @@
           "name": "Which commercial vulnerability scanner is the industry-leading enterprise platform developed by Tenable, widely used by security teams for network, web application, and cloud vulnerability assessment?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nessus — Tenable's commercial vulnerability scanner offering the largest plugin library for comprehensive vulnerability detection."
+            "text": "Nessus. Tenable's commercial vulnerability scanner offering the largest plugin library for comprehensive vulnerability detection."
           }
         }
       ]
@@ -223,17 +225,17 @@
       <h2>Sample Questions</h2>
       <article class="seo-sample-q">
         <h3>Which type of vulnerability assessment tests a system from the perspective of an unauthenticated external attacker with no prior knowledge of or credentials for the target environment?</h3>
-        <p><strong>Answer:</strong> External black-box assessment — simulates an outside attacker with no credentials or internal knowledge</p>
-        <p>An external black-box vulnerability assessment simulates an unauthenticated attacker approaching the target from the internet. The assessor has no prior credentials, no network diagrams, and no system knowledge — they discover the attack surface entirely through scanning and enumeration. This approach identifies vulnerabilities that an external attacker could exploit without insider assistance.</p>
+        <p><strong>Answer:</strong> External black-box assessment, simulates an outside attacker with no credentials or internal knowledge</p>
+        <p>An external black-box vulnerability assessment simulates an unauthenticated attacker approaching the target from the internet. The assessor has no prior credentials, no network diagrams, and no system knowledge, they discover the attack surface entirely through scanning and enumeration. This approach identifies vulnerabilities that an external attacker could exploit without insider assistance.</p>
       </article>
       <article class="seo-sample-q">
         <h3>A compliance team needs continuous monitoring of all 2,000 servers in their datacenter for new vulnerabilities as patches are released and CVEs are published daily. Which vulnerability assessment deployment model BEST supports this ongoing requirement?</h3>
-        <p><strong>Answer:</strong> Continuous automated scanning — a vulnerability management platform (e.g., Tenable.sc, Rapid7 InsightVM) scans assets on a scheduled or agent-based basis and correlates results with the live NVD CVE feed</p>
+        <p><strong>Answer:</strong> Continuous automated scanning, a vulnerability management platform (e.g., Tenable.sc, Rapid7 InsightVM) scans assets on a scheduled or agent-based basis and correlates results with the live NVD CVE feed</p>
         <p>Enterprise vulnerability management platforms (Tenable.sc, Rapid7 InsightVM, Qualys, Microsoft Defender Vulnerability Management) are specifically designed for continuous, large-scale monitoring. They integrate with the NIST NVD and vendor security advisories to immediately correlate newly published CVEs against the current asset inventory and patch state, providing daily or real-time visibility into emerging exposures across thousands of assets.</p>
       </article>
       <article class="seo-sample-q">
         <h3>Which commercial vulnerability scanner is the industry-leading enterprise platform developed by Tenable, widely used by security teams for network, web application, and cloud vulnerability assessment?</h3>
-        <p><strong>Answer:</strong> Nessus — Tenable&#39;s commercial vulnerability scanner offering the largest plugin library for comprehensive vulnerability detection</p>
+        <p><strong>Answer:</strong> Nessus. Tenable&#39;s commercial vulnerability scanner offering the largest plugin library for comprehensive vulnerability detection</p>
         <p>Nessus, developed by Tenable, is the most widely deployed commercial vulnerability scanner globally. It offers over 230,000 plugins covering network services, operating systems, web applications, databases, cloud platforms, and compliance configurations. Tenable&#39;s enterprise products (Nessus Professional, Tenable.io, Tenable.sc) are the benchmark against which other scanners are measured.</p>
       </article>
       <h2>Other CEH Domains</h2>

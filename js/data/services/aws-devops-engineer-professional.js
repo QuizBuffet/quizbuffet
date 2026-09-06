@@ -1,4 +1,4 @@
-// AWS Certified DevOps Engineer – Professional (DOP-C02) — in-scope services and DevOps concepts.
+// AWS Certified DevOps Engineer Professional (DOP-C02): in-scope services and DevOps concepts.
 export const services = [
   // Developer tools / CI/CD
   { a: 'AWS CodePipeline',                  d: 'Continuous delivery service for application and infrastructure updates' },

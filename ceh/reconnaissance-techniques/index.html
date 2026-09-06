@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>700+ Free CEH Questions: Reconnaissance Techniques</title>
+  <title>CEH Reconnaissance Techniques Practice Quiz (128 Questions)</title>
   <meta name="description" content="Test yourself on CEH Reconnaissance Techniques (18% of the exam). 128 free questions with instant feedback and explanations. No signup, no email needed.">
   <link rel="canonical" href="https://quizbuffet.com/ceh/reconnaissance-techniques/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="QuizBuffet">
-  <meta property="og:title"       content="700+ Free CEH Questions: Reconnaissance Techniques">
+  <meta property="og:title"       content="CEH Reconnaissance Techniques Practice Quiz (128 Questions)">
   <meta property="og:description" content="Test yourself on CEH Reconnaissance Techniques (18% of the exam). 128 free questions with instant feedback and explanations. No signup, no email needed.">
   <meta property="og:image"       content="https://quizbuffet.com/icons/og/ceh-reconnaissance-techniques.svg">
   <meta property="og:url"         content="https://quizbuffet.com/ceh/reconnaissance-techniques/">
 
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="700+ Free CEH Questions: Reconnaissance Techniques">
+  <meta name="twitter:title"       content="CEH Reconnaissance Techniques Practice Quiz (128 Questions)">
   <meta name="twitter:description" content="Test yourself on CEH Reconnaissance Techniques (18% of the exam). 128 free questions with instant feedback and explanations. No signup, no email needed.">
   <meta name="twitter:image"       content="https://quizbuffet.com/icons/og/ceh-reconnaissance-techniques.svg">
 
@@ -39,7 +39,7 @@
 
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2 — ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -79,17 +79,19 @@
 
   <!-- Event snippet for Page view conversion page -->
   <script>
+    // Secondary conversion only: every page view fires this. Set its Google Ads
+    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
+    // so it never competes with the real primary conversion (see trackConversion.js /
+    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
     gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA',
-        'value': 1.0,
-        'currency': 'USD'
+        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
     });
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Preload the woff2 files we use above the fold so they're ready before paint and don't cause font-swap CLS. -->
-  <!-- URLs come from Google Fonts; they rotate occasionally — update with: curl -A "<chrome UA>" "<the css2 url>" -->
+  <!-- URLs come from Google Fonts; they rotate occasionally: update with: curl -A "<chrome UA>" "<the css2 url>" -->
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-uE0qEEw.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKebunDXbtPK-F2qC0s.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/imfellenglishsc/v16/a8IENpD3CDX-4zrWfr1VY879qFF05pZ7PIIPoUgxzQ.woff2">
@@ -142,7 +144,7 @@
     },
     {
       "@type": "Quiz",
-      "name": "700+ Free CEH Questions: Reconnaissance Techniques",
+      "name": "CEH Reconnaissance Techniques Practice Quiz (128 Questions)",
       "description": "Test yourself on CEH Reconnaissance Techniques (18% of the exam). 128 free questions with instant feedback and explanations. No signup, no email needed.",
       "url": "https://quizbuffet.com/ceh/reconnaissance-techniques/",
       "image": "https://quizbuffet.com/icons/og/ceh-reconnaissance-techniques.svg",
@@ -189,7 +191,7 @@
           "name": "In the CEH footprinting methodology, what is the FIRST step before beginning any active or passive information gathering?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Define the scope and obtain written authorization — confirming what targets are in scope, what techniques are permitted, and having signed permission from the target organization."
+            "text": "Define the scope and obtain written authorization, confirming what targets are in scope, what techniques are permitted, and having signed permission from the target organization."
           }
         },
         {
@@ -197,7 +199,7 @@
           "name": "The Wayback Machine (web.archive.org) is a frequently used OSINT tool during footprinting. Which specific intelligence value does archived web content provide that current website analysis cannot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Wayback Machine reveals historically published content — including pages since removed (employee directories, org charts, technology disclosures, developer comments, old APIs), configuration files accidentally exposed in the past, and old software version disclosures that…"
+            "text": "The Wayback Machine reveals historically published content, including pages since removed (employee directories, org charts, technology disclosures, developer comments, old APIs), configuration files accidentally exposed in the past, and old software version disclosures that…"
           }
         }
       ]
@@ -224,17 +226,17 @@
       <article class="seo-sample-q">
         <h3>What is the PRIMARY distinction between passive and active reconnaissance in the context of ethical hacking?</h3>
         <p><strong>Answer:</strong> Passive reconnaissance gathers intelligence without directly interacting with the target system; active reconnaissance directly probes or interacts with the target, risking detection</p>
-        <p>Passive reconnaissance gathers intelligence about a target using publicly available information sources — search engines, WHOIS databases, social media, DNS records, job postings — without sending any traffic directly to the target&#39;s systems. The target has no awareness of the activity. Active reconnaissance involves direct interaction with the target&#39;s infrastructure — port scanning with Nmap, banner grabbing, network enumeration — which generates traffic that the target&#39;s IDS/SIEM may detect and log.</p>
+        <p>Passive reconnaissance gathers intelligence about a target using publicly available information sources, search engines, WHOIS databases, social media, DNS records, job postings, without sending any traffic directly to the target&#39;s systems. The target has no awareness of the activity. Active reconnaissance involves direct interaction with the target&#39;s infrastructure, port scanning with Nmap, banner grabbing, network enumeration, which generates traffic that the target&#39;s IDS/SIEM may detect and log.</p>
       </article>
       <article class="seo-sample-q">
         <h3>In the CEH footprinting methodology, what is the FIRST step before beginning any active or passive information gathering?</h3>
-        <p><strong>Answer:</strong> Define the scope and obtain written authorization — confirming what targets are in scope, what techniques are permitted, and having signed permission from the target organization</p>
-        <p>Before any footprinting activity — passive or active — an ethical hacker must have clearly defined scope and written authorization. The Rules of Engagement (RoE) and/or Statement of Work must specify: which IP ranges, domains, and systems are in scope; what reconnaissance techniques are permitted (passive only, or including active scanning); testing windows; emergency contacts; and escalation procedures. Without written authorization, all footprinting activities — even passive OSINT — may violate computer fraud laws or professional ethics codes. Scope definition prevents unauthorized reconnaissance of third-party systems adjacent to the target.</p>
+        <p><strong>Answer:</strong> Define the scope and obtain written authorization, confirming what targets are in scope, what techniques are permitted, and having signed permission from the target organization</p>
+        <p>Before any footprinting activity, passive or active, an ethical hacker must have clearly defined scope and written authorization. The Rules of Engagement (RoE) and/or Statement of Work must specify: which IP ranges, domains, and systems are in scope; what reconnaissance techniques are permitted (passive only, or including active scanning); testing windows; emergency contacts; and escalation procedures. Without written authorization, all footprinting activities, even passive OSINT, may violate computer fraud laws or professional ethics codes. Scope definition prevents unauthorized reconnaissance of third-party systems adjacent to the target.</p>
       </article>
       <article class="seo-sample-q">
         <h3>The Wayback Machine (web.archive.org) is a frequently used OSINT tool during footprinting. Which specific intelligence value does archived web content provide that current website analysis cannot?</h3>
-        <p><strong>Answer:</strong> The Wayback Machine reveals historically published content — including pages since removed (employee directories, org charts, technology disclosures, developer comments, old APIs), configuration files accidentally exposed in the past, and old software version disclosures that may indicate current legacy systems</p>
-        <p>This accurately describes the Wayback Machine&#39;s intelligence value. Historical snapshots have revealed: employee email formats from old contact pages (enabling phishing campaign targeting), technology stacks from old &#39;powered by&#39; footers (identifying legacy systems), and developer test pages accidentally indexed before removal — all providing intelligence the current website no longer exposes.</p>
+        <p><strong>Answer:</strong> The Wayback Machine reveals historically published content, including pages since removed (employee directories, org charts, technology disclosures, developer comments, old APIs), configuration files accidentally exposed in the past, and old software version disclosures that may indicate current legacy systems</p>
+        <p>This accurately describes the Wayback Machine&#39;s intelligence value. Historical snapshots have revealed: employee email formats from old contact pages (enabling phishing campaign targeting), technology stacks from old &#39;powered by&#39; footers (identifying legacy systems), and developer test pages accidentally indexed before removal, all providing intelligence the current website no longer exposes.</p>
       </article>
       <h2>Other CEH Domains</h2>
       <ul>

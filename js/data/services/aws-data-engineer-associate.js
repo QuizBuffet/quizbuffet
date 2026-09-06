@@ -1,4 +1,4 @@
-// AWS Certified Data Engineer – Associate (DEA-C01) — in-scope services and core data-engineering concepts.
+// AWS Certified Data Engineer Associate (DEA-C01): in-scope services and core data-engineering concepts.
 export const services = [
   // Analytics
   { a: 'Amazon Athena',                     d: 'Serverless SQL query engine for data in S3 and federated sources' },
@@ -142,5 +142,5 @@ export const services = [
   { a: 'Replayability',                     d: 'Ability of an ingestion pipeline to reprocess historical events without data loss' },
   { a: 'Stateful transaction',              d: 'A processing operation that depends on accumulated context across events' },
   { a: 'Stateless transaction',             d: 'A processing operation whose output depends only on the current event' },
-  { a: 'Volume / velocity / variety',       d: 'Three Vs of data — size, rate of arrival, and structural diversity' },
+  { a: 'Volume / velocity / variety',       d: 'Three Vs of data: size, rate of arrival, and structural diversity' },
 ];

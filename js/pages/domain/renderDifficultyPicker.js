@@ -1,4 +1,4 @@
-// Difficulty filter — persists choice to localStorage so it survives across visits
+// Difficulty filter: persists choice to localStorage so it survives across visits
 const KEY = 'qb_difficulty';
 const LEVELS = ['easy', 'medium', 'hard'];
 

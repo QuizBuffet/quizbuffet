@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'faa-part-107',
   name: 'FAA Part 107 / 14 CFR Part 107',
+  seoName: 'FAA Part 107 Drone',
   code: 'Part 107',
   vendor: 'FAA',
   tagline: 'The 14 CFR Part 107 Remote Pilot Certificate for commercial drone operations',
@@ -8,12 +9,12 @@ export const cert = {
   details: '60 multiple-choice items · 2 hours · Pass score 70% · 9 study domains anchored on FAA-S-ACS-10B · Recurrency via free ALC-677 every 24 months',
   affiliates: [
     { provider: 'amazon', label: 'Shop FAA Part 107 Study Guides on Amazon', url: 'https://www.amazon.com/s?k=faa+part+107+remote+pilot+study+guide&tag=0003aa-20' },
-    { provider: 'faa',    label: 'FAA — Become a Drone Pilot (Part 107)', url: 'https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot' },
+    { provider: 'faa',    label: 'FAA: Become a Drone Pilot (Part 107)', url: 'https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot' },
     { provider: 'faa',    label: 'FAA Airman Certification Standards (FAA-S-ACS-10B)', url: 'https://www.faa.gov/training_testing/testing/acs' },
-    { provider: 'psi',    label: 'PSI Exams — FAA Knowledge Testing', url: 'https://faa.psiexams.com/' },
+    { provider: 'psi',    label: 'PSI Exams: FAA Knowledge Testing', url: 'https://faa.psiexams.com/' },
   ],
   domains: [
-    { slug: 'regulations-core',                                  name: 'Regulations — Core',                                  number: '1.0', weight: 14 },
+    { slug: 'regulations-core',                                  name: 'Regulations: Core',                                  number: '1.0', weight: 14 },
     { slug: 'operations-over-people',                            name: 'Operations Over People',                              number: '2.0', weight: 5  },
     { slug: 'remote-identification',                             name: 'Remote Identification',                               number: '3.0', weight: 3  },
     { slug: 'airspace-classification-and-operational-requirements', name: 'Airspace Classification and Operational Requirements', number: '4.0', weight: 20 },

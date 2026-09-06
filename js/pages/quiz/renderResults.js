@@ -1,4 +1,4 @@
-// Shows end-of-session results screen — saves screen state so re-entering the quiz route lands back here
+// Shows end-of-session results screen: saves screen state so re-entering the quiz route lands back here
 import { refresh } from '../../router/hashRouter.js';
 import { saveScreenState } from '../../state/saveScreenState.js';
 import { getDomainProgress } from '../../storage/getDomainProgress.js';
@@ -28,7 +28,7 @@ export function renderResults(queue, domainSlug, backLink = 'index.html', totalC
   const passedList = queue.filter(q => !failedIds.has(q.id)).map(q => q.id);
 
   const continueBtn = remaining > 0
-    ? `<button class="next-btn" id="continue-btn" style="margin-bottom:8px">Continue — ${remaining} question${remaining !== 1 ? 's' : ''} remaining →</button>`
+    ? `<button class="next-btn" id="continue-btn" style="margin-bottom:8px">Continue: ${remaining} question${remaining !== 1 ? 's' : ''} remaining →</button>`
     : '';
   const retakeFailedBtn = failedList.length
     ? `<button class="next-btn" id="retake-failed-btn" style="margin-bottom:8px">Retake Failed (${failedList.length})</button>`

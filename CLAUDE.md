@@ -269,6 +269,7 @@ The banner UI is `js/components/consent/renderConsent.js`, rendered from `js/app
 
 ## Style rules
 
+- **No em-dashes or en-dashes anywhere in rendered output.** This means every `<p>`, heading, title, meta description, JSON-LD string, FAQ answer, cert metadata field (`name`, `tagline`, `about`, `details`, `faq`), `data/coming-soon.json`, `data/salaries.json`, acronym/service lists, and UI strings in `js/`. Use a comma, period, colon, or parentheses instead; use a plain hyphen for numeric ranges (`40-60 questions`). `scripts/build-seo.mjs` runs every generated file through `noDash()` as a safety net, but fix the source too; the sanitizer is not a license to write them. Verify with `grep -rl '—\|–' --include=index.html .` (must print nothing) before reporting a build done.
 - **No emojis** in code, content, or commit messages unless explicitly asked.
 - **No prose comments** in JSON. Comments belong in `.md` or code files only.
 - One function per file in `js/`; keep files short.

@@ -1,4 +1,4 @@
-// Entry point for the quiz route — resolves cert/domain from hash params, resumes session state
+// Entry point for the quiz route: resolves cert/domain from hash params, resumes session state
 import { initKeyboard } from './initKeyboard.js';
 import { renderAd } from '../../components/ad/renderAd.js';
 import { setMeta } from '../../components/meta/setMeta.js';
@@ -15,6 +15,7 @@ import { renderDomainComplete } from './renderDomainComplete.js';
 import { renderResults } from './renderResults.js';
 import { loadNextQuestion } from './loadNextQuestion.js';
 import { certifications } from '../../data/certifications/index.js';
+import { trackConversion } from '../../analytics/trackConversion.js';
 
 export async function init() {
   renderAd('ad-top');
@@ -30,11 +31,19 @@ export async function init() {
     return;
   }
 
+  const startedKey = `qb_conv_start_${storageKey}`;
+  try {
+    if (!sessionStorage.getItem(startedKey)) {
+      sessionStorage.setItem(startedKey, '1');
+      trackConversion('quiz_start');
+    }
+  } catch (_) {}
+
   // ── Mixed-domain mode ──────────────────────────────────────────────────────
   if (domainSlug === '__mix__') {
     const backLink = certSlug ? `/${certSlug}/` : '/';
     const mixName  = certMeta ? `${certMeta.name} Mix` : 'Mixed Quiz';
-    setMeta(mixName, `Free mixed practice test across all ${certMeta?.name || ''} domains. No account needed — instant feedback on every question.`);
+    setMeta(mixName, `Free mixed practice test across all ${certMeta?.name || ''} domains. No account needed: instant feedback on every question.`);
     const allQ  = await loadAllDomains(certMeta);
     setJsonLd({
       '@context': 'https://schema.org',
@@ -124,15 +133,15 @@ export async function init() {
 
   if (domainMeta) {
     setMeta(
-      `${domainMeta.name} — ${certMeta?.name} (${certMeta?.code}) Practice`,
-      `Free ${certMeta?.name} — ${domainMeta.name} practice quiz. ${questions.length} exam-style questions with instant feedback. No account needed.`
+      `${domainMeta.name}: ${certMeta?.name} (${certMeta?.code}) Practice`,
+      `Free ${certMeta?.name}: ${domainMeta.name} practice quiz. ${questions.length} exam-style questions with instant feedback. No account needed.`
     );
     setJsonLd({
       '@context': 'https://schema.org',
       '@graph': [
         {
           '@type': 'Quiz',
-          'name': `${domainMeta.name} — ${certMeta?.name} Free Practice Quiz`,
+          'name': `${domainMeta.name}: ${certMeta?.name} Free Practice Quiz`,
           'description': `Free ${domainMeta.name} practice quiz for the ${certMeta?.name} (${certMeta?.code}) exam. ${questions.length} questions with instant feedback and explanations.`,
           'url': `https://quizbuffet.com/${certSlug}/${domainSlug}/quiz/`,
           'numberOfQuestions': questions.length,

@@ -1,6 +1,7 @@
 export const cert = {
   slug: 'personal-trainer-nasm',
   name: 'Certified Personal Trainer (NASM-CPT)',
+  seoName: 'NASM CPT Personal Trainer',
   code: 'NASM-CPT',
   vendor: 'NASM',
   tagline: 'NCCA-accredited personal training certification',
@@ -8,7 +9,7 @@ export const cert = {
   details: '120 multiple-choice items · 2 hours · Pass score 70% · 6 domains · OPT model · Anchored on the NASM CPT Exam Content Outline (7th ed.)',
   affiliates: [
     { provider: 'amazon', label: 'Shop NASM-CPT Study Guides on Amazon', url: 'https://www.amazon.com/s?k=nasm+cpt+study+guide&tag=0003aa-20' },
-    { provider: 'nasm',   label: 'NASM — Certified Personal Trainer Program', url: 'https://www.nasm.org/become-a-personal-trainer' },
+    { provider: 'nasm',   label: 'NASM: Certified Personal Trainer Program', url: 'https://www.nasm.org/become-a-personal-trainer' },
     { provider: 'nasm',   label: 'NASM CPT Exam Content Outline', url: 'https://www.nasm.org/resources/free-content' },
   ],
   domains: [

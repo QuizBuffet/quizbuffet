@@ -1,4 +1,4 @@
-// Persists a wrong answer to localStorage — only if the question hasn't been answered correctly yet
+// Persists a wrong answer to localStorage: only if the question hasn't been answered correctly yet
 import { getDomainProgress } from './getDomainProgress.js';
 
 export function saveFailedAnswer(domainSlug, questionId) {

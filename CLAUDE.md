@@ -14,22 +14,33 @@ data/
   salaries.json                              # cert -> salary metadata
 
 js/data/
-  certifications/<slug>.js                   # cert metadata (name, code, domains, weights)
-  certifications/index.js                    # registry: import + push every live cert
+  certifications/<slug>.js                   # cert metadata (name, code, domains, weights, faq, exam, ...) — the authoring source, always full
+  certifications/index.js                    # GENERATED, light: only slug/name/code/vendor/category/tagline/domains, eager on every page
+  certifications/full/<slug>.js              # GENERATED, heavy: about/details/officialSources/affiliates/udemyCourseUrl/extraUdemyCourses, lazy-loaded only on that cert's own page
   acronyms/<slug>.js                         # acronym list rendered on the cert page
   services/<slug>.js                         # in-scope concepts/terms list
 
 <slug>/index.html                            # the cert's static landing page
 <slug>/<domain-slug>/index.html             # static per-domain quiz page (pre-rendered by build-seo)
-icons/og/<slug>.svg                          # OG image for the cert landing page
-icons/og/<slug>-<domain-slug>.svg            # OG image for each domain page
+icons/og/<slug>.svg                          # OG image SOURCE for the cert landing page (not linked from any page)
+icons/og/<slug>.png                          # OG image actually referenced by og:image/twitter:image (SVG isn't rendered by any share-preview crawler)
+icons/og/<slug>-<domain-slug>.svg            # OG image SOURCE for each domain page
+icons/og/<slug>-<domain-slug>.png            # OG image actually referenced for the domain page
+data/og-png-cache.json                       # GENERATED: SVG content hash -> already-rendered, so unchanged OG images skip PNG re-encoding on every build
 scripts/
-  build-seo.mjs       # regenerates per-cert HTML, per-domain HTML, OG images, sitemap, llms.txt, feed.xml
+  build-seo.mjs       # regenerates per-cert HTML, per-domain HTML, OG PNGs, sitemap, llms.txt, feed.xml. Reads cert data from the per-cert SOURCE files directly (js/data/certifications/<slug>.js), not the light index.js, since it needs every field for every cert
+  build-certs.mjs     # regenerates js/data/certifications/index.js (light) and full/<slug>.js (heavy) from the per-cert source files
   check-weights.mjs   # flags domains under-weighted vs. exam-guide target
   check-salaries.mjs  # validates salaries.json coverage and freshness
+  check-seo-duplicates.mjs  # flags exact-duplicate <title>/meta description across generated pages
+  check-canonicals.mjs      # validates every generated page has one self-referential, unique canonical
 ```
 
+**The `certifications/index.js` split (added when the bundle grew to 226 KB / 51 KB gzipped and was loaded eagerly on every page, including the 271 domain pages that never read any of it):** `index.js` only carries the fields every page needs while scanning ALL certs at once (home grid, nav domain count, related-certs matching, progress views). Everything else — `about`, `details`, `officialSources`, `affiliates`, `udemyCourseUrl`, `extraUdemyCourses` — only gets read once a page has narrowed to ONE specific cert, so it lives in `certifications/full/<slug>.js` instead, lazy-loaded exactly like `acronyms/<slug>.js`/`services/<slug>.js` (see `initCertification.js` and `certPreview.js`). `exam`, `faq`, `guide`, and the `seo*` override fields below are read only by `build-seo.mjs` at build time and never by any browser file, so they are never duplicated into either generated bundle at all. **If you add a new field to a cert's `<slug>.js` and a browser-side component needs to read it, add the field name to `LIGHT_FIELDS` or `FULL_FIELDS` in `build-certs.mjs`** — otherwise it silently never reaches the file that component imports, even though it's sitting right there in the source file.
+
 **Why per-domain HTML exists:** GitHub Pages serves `404.html` with HTTP status 404 for any path that has no static file. Without pre-rendered domain pages, every `/cert/domain/` URL in the sitemap 404s, and Google Search Console reports hundreds of "Not found (404)" and "Soft 404" errors — even though the SPA renders the quiz fine in a browser. `build:seo` solves this by generating a real static HTML file at `<slug>/<domain-slug>/index.html` for every domain of every live cert. Each page has its own title/description/canonical, BreadcrumbList + Quiz + FAQPage JSON-LD, 3 sample questions, and an `#app` mount so the SPA hydrates on click. **Never remove domain URLs from the sitemap to "fix" 404s** — re-run `build:seo` instead.
+
+**Never eagerly hide `#seo-static` in a new page template.** Cert and domain pages carry real, crawlable content in `<section id="seo-static">` for SEO and no-JS visitors, hidden by `css/style.css`'s `html.js #seo-static{display:none}` once the SPA has real content of its own to show in the empty `<div id="app">` sibling. The class add (`document.documentElement.classList.add('js')`) happens in `initCertification.js`/`initDomain.js`, right after each page's first real write to `#app` — **not** in the page's `<head>` script. Adding it eagerly in `<head>` (as it used to be, and as `buildComingSoonHtml`'s template still does, where it's a no-op since `html.js[data-coming-soon] #seo-static{display:block}` cancels the hide) hides the fast, real content before the SPA has anything to replace it with, leaving a blank page for as long as the JS bundle takes to boot — confirmed via Lighthouse to cost several seconds of LCP on both page types, since it also means Google's Core Web Vitals field data ends up measuring the site's LCP against the cookie-consent banner instead of any real content. If you add a new page template that reads real page content into `#seo-static`, add the `classList.add('js')` call to that page's own `init()` the same way, right after its own first real `#app` write, not to its `<head>` script.
 
 Every cert has the same set of files. The `slug` (kebab-case) is the link between them.
 
@@ -114,12 +125,12 @@ Auto-generated questions consistently carry generator artifacts. Scan and fix ev
 
 ## Workflow: scaffolding a new cert
 
-1. **Add cert metadata** at [js/data/certifications/<slug>.js](js/data/certifications/) — slug, name, code, vendor, tagline, about, details, domains (with weights from the official exam guide), affiliates, and optionally `faq` (see "FAQ field" below). File must be pure data: `export const cert = { ... };` and **no imports** — the bundler relies on a regex match against that exact shape.
+1. **Add cert metadata** at [js/data/certifications/<slug>.js](js/data/certifications/) — slug, name, code, vendor, tagline, about, details, domains (with weights from the official exam guide), affiliates, and optionally `faq` (see "FAQ field" below), `exam` (see "Exam at a Glance" below), `officialSources`, `udemyCourseUrl`/`extraUdemyCourses`, `guide`, and the `seoName`/`seoTitle`/`seoH1`/`seoDescription` title/H1 overrides (used only by `build-seo.mjs` at build time; see the `codeTag`/title-tiering logic in `buildCertHtml` before assuming a plain string is enough — long names need the tiered-fallback treatment already there). File must be pure data: `export const cert = { ... };` and **no imports** — `build-certs.mjs` dynamically imports it and reads `.cert` directly, so any field you add is visible to that script immediately, but reaching a **browser-side** component still requires listing the field in `LIGHT_FIELDS` or `FULL_FIELDS` in `build-certs.mjs` (see the repo layout section above).
 2. **Add acronyms** at [js/data/acronyms/<slug>.js](js/data/acronyms/) — `export const acronyms = [{a, d}, ...]`. Lazy-loaded by [initCertification.js](js/pages/certification/initCertification.js) via `import(\`../../data/acronyms/${cert.slug}.js\`)` — do NOT import it from the cert metadata file (would put it on the critical path).
 3. **Add concepts** at [js/data/services/<slug>.js](js/data/services/) — `export const services = [{a, d}, ...]`. Same lazy-load contract as acronyms — never imported eagerly from the cert metadata file.
 4. **Create empty domain JSON stubs** at `data/certifications/<slug>/<domain-slug>.json` — one per domain, minified, `questions: []`.
 5. **Append the slug to [_manifest.js](js/data/certifications/_manifest.js)** in the position you want it to appear in the home cert list.
-6. **Run `npm run build:certs`** (or `npm run build:seo`, which calls it first) to regenerate the bundled [js/data/certifications/index.js](js/data/certifications/index.js). `index.js` is GENERATED — never hand-edit it. Per-cert files are still the authoring source; the bundle just inlines them so the browser sees one request instead of 49.
+6. **Run `npm run build:certs`** (or `npm run build:seo`, which calls it first) to regenerate [js/data/certifications/index.js](js/data/certifications/index.js) (light, all certs) and `js/data/certifications/full/<slug>.js` (heavy, this one cert). Both are GENERATED — never hand-edit either. Per-cert files are still the authoring source.
 7. **Confirm the page** at `<slug>/index.html` exists.
 8. **Remove the cert from [data/coming-soon.json](data/coming-soon.json)** — as soon as work begins, it is no longer "coming soon."
 
@@ -147,6 +158,20 @@ Authoring rules:
 - **Speak to the reader** (second person) and **no em-dashes** (see [[feedback_no_em_dashes]] in style rules — use commas/periods/parens).
 - 6-8 questions is a good range. Lead with the highest-intent queries (difficulty, question count, passing score, "is it worth it", validity).
 - After editing, run `npm run build:seo` and confirm the visible `<section class="cert-faq">` and the `FAQPage` JSON-LD both carry the authored questions.
+
+### Exam field ("Exam at a Glance" table)
+
+A cert may optionally define an `exam` object on its metadata. When present, `build-seo.mjs` renders a visible `<table class="cert-exam-table">` on the cert landing page with whichever of these keys are set (any can be omitted; the row is skipped rather than shown empty): `questions`, `minutes` (rendered as "`<minutes>` minutes"), `passing`, `cost`, `delivery`, `validity`, `prerequisites`, `retake`, plus `source` (a URL, rendered separately below the table as "Source: official exam page").
+
+```js
+exam: { questions: 90, minutes: 90, passing: '750 of 900', cost: '~$404',
+  delivery: 'Pearson VUE, online or test center', validity: '3 years',
+  prerequisites: 'None required; Network+ and 2 years of security-focused IT experience recommended',
+  retake: 'No wait for first retake; 14-day wait after each subsequent attempt',
+  source: 'https://www.comptia.org/en-us/certifications/security/' },
+```
+
+Authoring rules: **verify every value against the vendor's own current candidate bulletin or exam page, don't guess or pattern-match from a similar cert** (retake policy especially: vendors differ a lot — flat N-day wait, escalating wait by attempt count, no wait at all, and a naive guess based on another vendor's pattern is a common, real mistake). `exam` (like `faq`) is build-time only — no browser-side component reads it, so it never needs to be listed in `build-certs.mjs`'s `LIGHT_FIELDS`/`FULL_FIELDS`. Certs with no formal standardized exam (e.g. OSHA 10/30-Hour, which end in a certificate of completion, not a pass/fail test) should omit `exam` entirely rather than force-fitting one.
 
 ---
 
@@ -229,8 +254,8 @@ After the steps above, programmatically confirm:
 
 - [data/counts.json](data/counts.json): `total === sum(perCert)` and `liveCerts === Object.keys(perCert).length`.
 - The cert appears in [sitemap.xml](sitemap.xml) (one entry for the landing page plus one per domain quiz).
-- The cert OG image exists at `icons/og/<slug>.svg`.
-- **Every domain has a static HTML file** at `<slug>/<domain-slug>/index.html` and a matching OG image at `icons/og/<slug>-<domain-slug>.svg`. A missing domain HTML file means that URL will 404 on Google and tank SEO — re-run `build:seo` if any are missing.
+- The cert OG image exists at `icons/og/<slug>.png` (the `.svg` is source only; `og:image`/`twitter:image` point at the `.png`, since Facebook, X, Slack, iMessage, and Discord do not render SVG `og:image` — see `writeOgImage()` in `build-seo.mjs`).
+- **Every domain has a static HTML file** at `<slug>/<domain-slug>/index.html` and a matching OG image at `icons/og/<slug>-<domain-slug>.png`. A missing domain HTML file means that URL will 404 on Google and tank SEO — re-run `build:seo` if any are missing.
 - The cert is listed in [llms.txt](llms.txt).
 - The cert's slug no longer appears in [data/coming-soon.json](data/coming-soon.json).
 - [sw.js](sw.js) cache version was bumped.

@@ -235,98 +235,58 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "A data engineering team must ingest clickstream events continuously from thousands of clients and allow multiple consumers to process the stream independently. Which AWS service should be used for the streaming source?",
+          "name": "How many questions are on the DEA-C01 exam?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Amazon Kinesis Data Streams"
+            "text": "65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 130 minutes."
           }
         },
         {
           "@type": "Question",
-          "name": "A streaming pipeline must deliver events into Apache Flink processing with low latency and later archive raw data to S3. Which ingestion source is most appropriate?",
+          "name": "What is the passing score for Data Engineer Associate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kinesis Data Streams feeding stream processing and archival consumers"
+            "text": "You need 720 out of 1000."
           }
         },
         {
           "@type": "Question",
-          "name": "A Lambda function collects small files from an API and writes them to S3 for hourly processing. What is the resulting ingestion style?",
+          "name": "How much does AWS Data Engineer Associate cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Batch ingestion from files accumulated in Amazon S3"
+            "text": "It's AWS's associate-tier exam, $150 USD."
           }
         },
         {
           "@type": "Question",
-          "name": "A data warehouse must support complex analytical SQL over terabytes of curated relational data with predictable query performance. Which service should be selected?",
+          "name": "Data Engineer Associate vs Data Analytics Specialty, what changed?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Amazon Redshift"
+            "text": "Data Engineer Associate (DEA-C01) replaced the retired Data Analytics Specialty exam, moving data pipeline and analytics content into the standard associate tier with expanded coverage of ingestion, orchestration, and data governance."
           }
         },
         {
           "@type": "Question",
-          "name": "A relational application workload needs transactions, SQL, and managed database operations. Which service is suitable?",
+          "name": "Do you need coding experience for Data Engineer Associate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Amazon RDS"
+            "text": "Yes, some. AWS expects familiarity with SQL and at least one general-purpose language (Python is common) plus hands-on experience with core AWS data services like Glue, Redshift, and Kinesis."
           }
         },
         {
           "@type": "Question",
-          "name": "An RDS workload has frequent reads on a non-key column and slow lookups. What storage configuration should be considered?",
+          "name": "How long is Data Engineer Associate valid?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An index that supports the query predicate"
+            "text": "3 years, renewed by retaking the exam or passing a higher-level AWS exam."
           }
         },
         {
           "@type": "Question",
-          "name": "A daily ETL pipeline has extract, validation, transform, and load steps with retries and conditional branches. Which service can coordinate these steps?",
+          "name": "Is this Data Engineer Associate practice test free?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AWS Step Functions"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "An MWAA DAG stays queued and never starts after a deployment. What should be checked first?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "DAG syntax, scheduler health, worker capacity, and environment logs"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "A Python ingestion script must start a Glue job and pass run parameters. What should the script use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AWS SDK for Python boto3 Glue client"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "A Glue job running in a VPC must connect to an Amazon RDS source on port 5432. Which security control should allow the connection?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A security group rule that allows the Glue job security group to reach the RDS security group on port 5432"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "A group of analysts needs the same read-only access to curated datasets. Which IAM structure helps manage the users?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "An IAM group with a read-only policy for the required resources"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "A database password used by a pipeline must rotate automatically every 30 days. Which service should manage it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AWS Secrets Manager with rotation configured"
+            "text": "Yes. Every DEA-C01 practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required."
           }
         }
       ]
@@ -441,6 +401,37 @@
       <p>The three traps that kill DEA-C01 candidates: (1) over-memorizing acronyms instead of practicing the application of concepts in scenarios, when the exam is scenario-driven, not a vocab quiz. (2) Skipping the heaviest-weighted domain because it feels less interesting, which can fail the whole exam by neglecting Data Ingestion and Transformation. (3) Not timing practice sessions, when the exam has a real clock and pacing is its own skill. Build timing into your last two weeks of prep.</p>
     </section>
       
+      <section class="cert-faq">
+        <h2 class="cert-section-title">DEA-C01 questions, answered</h2>
+        <div class="cert-faq-item">
+          <h3>How many questions are on the DEA-C01 exam?</h3>
+          <p>65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 130 minutes.</p>
+        </div>
+        <div class="cert-faq-item">
+          <h3>What is the passing score for Data Engineer Associate?</h3>
+          <p>You need 720 out of 1000.</p>
+        </div>
+        <div class="cert-faq-item">
+          <h3>How much does AWS Data Engineer Associate cost?</h3>
+          <p>It&#39;s AWS&#39;s associate-tier exam, $150 USD.</p>
+        </div>
+        <div class="cert-faq-item">
+          <h3>Data Engineer Associate vs Data Analytics Specialty, what changed?</h3>
+          <p>Data Engineer Associate (DEA-C01) replaced the retired Data Analytics Specialty exam, moving data pipeline and analytics content into the standard associate tier with expanded coverage of ingestion, orchestration, and data governance.</p>
+        </div>
+        <div class="cert-faq-item">
+          <h3>Do you need coding experience for Data Engineer Associate?</h3>
+          <p>Yes, some. AWS expects familiarity with SQL and at least one general-purpose language (Python is common) plus hands-on experience with core AWS data services like Glue, Redshift, and Kinesis.</p>
+        </div>
+        <div class="cert-faq-item">
+          <h3>How long is Data Engineer Associate valid?</h3>
+          <p>3 years, renewed by retaking the exam or passing a higher-level AWS exam.</p>
+        </div>
+        <div class="cert-faq-item">
+          <h3>Is this Data Engineer Associate practice test free?</h3>
+          <p>Yes. Every DEA-C01 practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.</p>
+        </div>
+      </section>
       <section class="cert-related">
         <h2>Related Practice Tests</h2>
         <div class="cert-related-grid">

@@ -87,6 +87,9 @@ CySA+ (Cybersecurity Analyst+) certifies analysts who detect and respond to thre
 - Reporting and Communication (17% of exam): 212 questions
 
 ### Sample questions
+**Q: Is CompTIA CySA+ CS0-003 being retired?**
+A: Yes. CompTIA launched CySA+ v4 (CS0-004) on June 23, 2026, and CS0-003 is scheduled to retire on December 22, 2026. If you have not scheduled your exam yet, check CompTIA's site for which version you'll actually sit, since this practice bank is built around CS0-003's objectives and CS0-004 adds updated cloud/hybrid and AI-related security content.
+
 **Q: What is the passing score for CySA+?**
 A: You need 750 out of 900.
 
@@ -101,9 +104,6 @@ A: Yes. Security+ is foundational; CySA+ assumes that foundation and tests hands
 
 **Q: CySA+ vs PenTest+, what is the difference?**
 A: CySA+ focuses on the defensive side, monitoring, detecting, and responding to threats. PenTest+ focuses on the offensive side, planning and executing authorized penetration tests. Some security analysts pursue both.
-
-**Q: How long is CySA+ certification valid?**
-A: CySA+ is valid for 3 years and renews through CompTIA's Continuing Education program.
 
 ## CompTIA PenTest+ (PT0-003)
 Vendor: CompTIA
@@ -382,23 +382,23 @@ AWS Certified Solutions Architect Associate (SAA-C03) validates the ability to d
 - 4.0 Design Cost-Optimized Architectures (20% of exam): 120 questions
 
 ### Sample questions
-**Q: Which description best matches Secure access to AWS resources in AWS Solutions Architect Associate Domain 1.0 Design Secure Architectures?**
-A: Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure.
+**Q: How many questions are on the SAA-C03 exam?**
+A: 65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 130 minutes.
 
-**Q: Which option correctly defines IAM users?**
-A: IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs.
+**Q: What is the passing score for Solutions Architect Associate?**
+A: You need 720 out of 1000.
 
-**Q: Which description best matches Scalable architecture design in AWS Solutions Architect Associate Domain 2.0 Design Resilient Architectures?**
-A: Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application.
+**Q: How much does AWS Solutions Architect Associate cost?**
+A: It's AWS's associate-tier exam, $150 USD.
 
-**Q: Which option correctly defines Loosely coupled architecture?**
-A: Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others.
+**Q: Is Solutions Architect Associate hard?**
+A: It has a reputation as one of the tougher associate exams because the scenario questions often have 2 or 3 technically-valid answers and you have to pick the one that best fits AWS's Well-Architected priorities (cost, security, performance, resilience). Most candidates study for 6 to 10 weeks with some hands-on AWS time.
 
-**Q: Which description best matches Object storage with Amazon S3 in AWS Solutions Architect Associate Domain 3.0 Design High-Performing Architectures?**
-A: Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data.
+**Q: Solutions Architect vs Developer Associate, which should I get first?**
+A: Solutions Architect Associate is the most commonly recommended first associate cert since it covers the widest range of core AWS services at a design level. Developer Associate goes deeper into building and deploying application code, useful if your role is hands-on development rather than architecture.
 
-**Q: Which option correctly defines Block storage with Amazon EBS?**
-A: Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.
+**Q: How long is Solutions Architect Associate valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## AWS Certified AI Practitioner (AIF-C01)
 Vendor: AWS
@@ -415,23 +415,23 @@ AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of 
 - 5.0 Security, Compliance, and Governance for AI Solutions (14% of exam): 70 questions
 
 ### Sample questions
-**Q: Which description best matches Artificial intelligence in AWS Certified AI Practitioner Domain 1.0 Fundamentals of AI and ML?**
-A: Artificial intelligence is the broad field of creating systems that can perform tasks that normally require human intelligence, such as understanding language, recognizing images, making predictions, or assisting decisions.
+**Q: How many questions are on the AI Practitioner exam?**
+A: 65 questions, multiple-choice and multiple-response, in 90 minutes.
 
-**Q: Which description best matches Machine learning in AWS Certified AI Practitioner Domain 1.0 Fundamentals of AI and ML?**
-A: Machine learning is a subset of AI where systems learn patterns from data to make predictions or decisions without being explicitly programmed for every rule.
+**Q: What is the passing score for AWS AI Practitioner?**
+A: You need 700 out of 1000.
 
-**Q: Which description best matches Generative AI in AWS Certified AI Practitioner Domain 2.0 Fundamentals of GenAI?**
-A: Generative AI creates new content such as text, images, audio, code, summaries, or responses based on learned patterns and prompts.
+**Q: How much does AWS AI Practitioner cost?**
+A: It's AWS's foundational-tier exam, $100 USD. After you pass, AWS gives you a 50% discount voucher good on any other AWS exam for one year.
 
-**Q: Which description best matches Tokens in AWS Certified AI Practitioner Domain 2.0 Fundamentals of GenAI?**
-A: Tokens are units of text or data that a generative AI model processes as input or produces as output.
+**Q: Do you need to know how to code for AI Practitioner?**
+A: No. It is a foundational exam aimed at people who use or work alongside AI/ML systems (product managers, analysts, sales engineers), not the ML Engineer Associate exam's hands-on model-building content.
 
-**Q: Which description best matches Foundation model selection in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?**
-A: Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length.
+**Q: AI Practitioner vs ML Engineer Associate, what is the difference?**
+A: AI Practitioner is foundational and conceptual: understanding AI/ML terms, use cases, and responsible AI. ML Engineer Associate is hands-on: building, training, tuning, and deploying ML models and pipelines on AWS. Most people without an ML engineering background start with AI Practitioner.
 
-**Q: Which description best matches Model modality in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?**
-A: Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.
+**Q: How long is AI Practitioner certification valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## AWS Certified Machine Learning Engineer Associate (MLA-C01)
 Vendor: AWS
@@ -513,23 +513,23 @@ AWS Certified CloudOps Engineer Associate (SOA-C03) validates the ability to dep
 - 5.0 Networking and Content Delivery (18% of exam): 90 questions
 
 ### Sample questions
-**Q: A CloudOps engineer must collect application latency metrics from an EC2-hosted service and retain API activity history for incident investigations. Which combination should the engineer configure?**
-A: Amazon CloudWatch metrics for latency and AWS CloudTrail trails for API activity
+**Q: How many questions are on the SOA-C03 exam?**
+A: 65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 130 minutes.
 
-**Q: A workload owner needs a dashboard that combines Lambda error metrics, ALB target response times, and RDS CPU metrics. Which service should be the primary visualization layer?**
-A: Amazon CloudWatch dashboards
+**Q: What is the passing score for CloudOps Engineer Associate?**
+A: You need 720 out of 1000.
 
-**Q: A web application on EC2 has traffic spikes every weekday morning. The operations team wants capacity to increase automatically based on demand. What should be configured?**
-A: An Auto Scaling group with a target tracking scaling policy
+**Q: How much does AWS CloudOps Engineer Associate cost?**
+A: It's AWS's associate-tier exam, $150 USD.
 
-**Q: An Auto Scaling group scales in too aggressively and terminates instances before requests complete. Which adjustment is most appropriate?**
-A: Tune cooldowns, health checks, and termination policies
+**Q: What was this exam called before?**
+A: SOA-C03 replaced the retired SysOps Administrator Associate (SOA-C02) exam, with expanded coverage of automation, observability, and modern operational tooling.
 
-**Q: A CloudOps engineer needs a repeatable process to build hardened Amazon Machine Images with current patches and validation tests. Which service should be used?**
-A: Amazon EC2 Image Builder
+**Q: CloudOps Engineer vs Solutions Architect Associate, what is the difference?**
+A: Solutions Architect Associate focuses on designing systems; CloudOps Engineer Associate focuses on running and operating them day to day, monitoring, troubleshooting, deployment automation, and incident response. Pick the one that matches whether you design or operate infrastructure in your role.
 
-**Q: A CloudOps team wants every new EC2 instance to launch from the latest approved image without manual image lookup. Which approach helps?**
-A: Publish the approved AMI ID to Systems Manager Parameter Store and reference it during launch
+**Q: How long is CloudOps Engineer Associate valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## AWS Certified Data Engineer Associate (DEA-C01)
 Vendor: AWS
@@ -545,23 +545,23 @@ AWS Certified Data Engineer Associate (DEA-C01) validates the ability to impleme
 - 4.0 Data Security and Governance (18% of exam): 90 questions
 
 ### Sample questions
-**Q: A data engineering team must ingest clickstream events continuously from thousands of clients and allow multiple consumers to process the stream independently. Which AWS service should be used for the streaming source?**
-A: Amazon Kinesis Data Streams
+**Q: How many questions are on the DEA-C01 exam?**
+A: 65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 130 minutes.
 
-**Q: A streaming pipeline must deliver events into Apache Flink processing with low latency and later archive raw data to S3. Which ingestion source is most appropriate?**
-A: Kinesis Data Streams feeding stream processing and archival consumers
+**Q: What is the passing score for Data Engineer Associate?**
+A: You need 720 out of 1000.
 
-**Q: A data warehouse must support complex analytical SQL over terabytes of curated relational data with predictable query performance. Which service should be selected?**
-A: Amazon Redshift
+**Q: How much does AWS Data Engineer Associate cost?**
+A: It's AWS's associate-tier exam, $150 USD.
 
-**Q: A relational application workload needs transactions, SQL, and managed database operations. Which service is suitable?**
-A: Amazon RDS
+**Q: Data Engineer Associate vs Data Analytics Specialty, what changed?**
+A: Data Engineer Associate (DEA-C01) replaced the retired Data Analytics Specialty exam, moving data pipeline and analytics content into the standard associate tier with expanded coverage of ingestion, orchestration, and data governance.
 
-**Q: A daily ETL pipeline has extract, validation, transform, and load steps with retries and conditional branches. Which service can coordinate these steps?**
-A: AWS Step Functions
+**Q: Do you need coding experience for Data Engineer Associate?**
+A: Yes, some. AWS expects familiarity with SQL and at least one general-purpose language (Python is common) plus hands-on experience with core AWS data services like Glue, Redshift, and Kinesis.
 
-**Q: An MWAA DAG stays queued and never starts after a deployment. What should be checked first?**
-A: DAG syntax, scheduler health, worker capacity, and environment logs
+**Q: How long is Data Engineer Associate valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## AWS Certified Developer Associate (DVA-C02)
 Vendor: AWS
@@ -645,23 +645,23 @@ AWS Certified Security Specialty (SCS-C03) validates expertise securing cloud so
 - 6.0 Security Foundations and Governance (14% of exam): 84 questions
 
 ### Sample questions
-**Q: A payment API handles cardholder-adjacent metadata and is exposed through API Gateway and Lambda. The security team needs near-real-time detection of suspicious access patterns and failed authorization. Which monitoring requirement should be prioritized?**
-A: Capture API access logs, Lambda application errors, authentication outcomes, and security findings with alerting on abnormal patterns
+**Q: How many questions are on the SCS-C03 exam?**
+A: 65 questions total (50 scored, 15 unscored), across multiple-choice, multiple-response, ordering, and matching formats, in 170 minutes.
 
-**Q: A GuardDuty finding indicates possible EC2 credential exfiltration. The security team wants a repeatable plan that analysts can execute consistently. What should the runbook define first?**
-A: Triage steps, severity criteria, affected-resource identification, containment actions, and evidence preservation
+**Q: What is the passing score for AWS Security Specialty?**
+A: You need 750 out of 1000.
 
-**Q: A retail site expects credential stuffing against its login endpoint during a sale. Which edge strategy should the security architect select?**
-A: Use AWS WAF rate-based and bot-control protections at CloudFront with authentication failure monitoring
+**Q: How much does AWS Security Specialty cost?**
+A: It's AWS's specialty-tier exam, $300 USD.
 
-**Q: A security team is replacing per-user IAM policies with a model that can scale across hundreds of engineers and workloads. What design should be used?**
-A: Define job-function roles and group assignments, then attach managed policies that represent approved permission sets
+**Q: Do you need Security+ or another security cert first?**
+A: Not required by AWS. It recommends 5 years of general IT security experience plus 2+ years securing AWS workloads specifically. Many candidates hold Solutions Architect Associate or CompTIA Security+ first, but neither is a formal prerequisite.
 
-**Q: A public ALB must reject clients that use obsolete TLS versions while preserving HTTPS for modern browsers. What should the security engineer configure?**
-A: An ELB security policy that permits only approved TLS versions and ciphers
+**Q: Is AWS Security Specialty hard?**
+A: Yes, it goes deep into a narrow domain, IAM edge cases, KMS key policies, incident response runbooks, and multi-account governance, rather than testing broad AWS knowledge. Prior hands-on security work on AWS makes a large difference.
 
-**Q: A company is moving from independent AWS accounts to a governed multi-account environment. What should be established first?**
-A: Create an AWS Organizations structure with OUs aligned to security, production, development, and sandbox governance needs
+**Q: How long is Security Specialty certification valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## AWS Certified Advanced Networking Specialty (ANS-C01)
 Vendor: AWS
@@ -677,23 +677,23 @@ AWS Certified Advanced Networking Specialty (ANS-C01) validates expertise design
 - 4.0 Network Security, Compliance, and Governance (24% of exam): 144 questions
 
 ### Sample questions
-**Q: A company is designing global inbound content distribution design. The requirement is low latency, high availability, and clear operational ownership. Which design should the network specialist recommend?**
-A: CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements
+**Q: How many questions are on the ANS-C01 exam?**
+A: 65 questions total (50 scored, 15 unscored), multiple-response and matching formats, in 170 minutes.
 
-**Q: A hybrid and cloud networking team is choosing a pattern for global inbound content distribution design. The constraint is overly broad network reachability between unrelated environments. Which recommendation is most appropriate?**
-A: CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements
+**Q: What is the passing score for Advanced Networking Specialty?**
+A: You need 700 out of 1000.
 
-**Q: A Direct Connect dedicated connection has been ordered and the colocation provider is ready to patch the circuit. What must be supplied to complete the physical handoff?**
-A: Provide the LOA-CFA and confirm the port location, cross-connect details, optics, and speed settings
+**Q: How much does AWS Advanced Networking Specialty cost?**
+A: It's AWS's specialty-tier exam, $300 USD.
 
-**Q: A replication workload will use jumbo frames over Direct Connect. What must be validated before production traffic is moved?**
-A: End-to-end MTU compatibility across routers, VIFs, AWS paths, and instances
+**Q: Do you need a networking background for this exam?**
+A: Yes, a strong one. AWS recommends 5 years of networking experience (including BGP, DNS, and hybrid connectivity) plus hands-on experience designing and implementing complex AWS network architectures. This is not an entry point into networking.
 
-**Q: A public application behind an ALB receives HTTP floods and SQL injection attempts. Which control should be placed at the edge or load balancer path?**
-A: AWS WAF with managed rules, rate-based rules, and logging for the web ACL
+**Q: Is Advanced Networking Specialty harder than the professional-level exams?**
+A: It is widely considered comparable to or harder than the professional exams, since it goes deep into a single, dense domain (BGP routing, hybrid connectivity, multi-account network design) that most AWS architects only touch occasionally.
 
-**Q: A public API needs throttling and request validation before traffic reaches private services. Which service combination is appropriate?**
-A: Amazon API Gateway with authorizers, throttling, AWS WAF, and private integration as needed
+**Q: How long is Advanced Networking Specialty valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## AWS Certified Solutions Architect Professional (SAP-C02)
 Vendor: AWS
@@ -740,23 +740,23 @@ Microsoft Azure Fundamentals (AZ-900) is the entry-level Azure certification. It
 - 3.0 Describe Azure management and governance (36% of exam): 114 questions
 
 ### Sample questions
-**Q: A new Azure user needs to identify the right concept for cloud computing definition. Which answer should they choose?**
-A: Delivery of computing services over the internet, including compute, storage, networking, and applications
+**Q: How many questions are on the AZ-900 exam?**
+A: 40 to 60 questions, multiple-choice and case-study formats, in 60 minutes.
 
-**Q: An IT manager asks how cloud computing definition applies to Azure. Which explanation is most accurate?**
-A: A way to use scalable IT services without building and operating every physical datacenter component
+**Q: What is the passing score for AZ-900?**
+A: You need 700 out of 1000.
 
-**Q: An administrator is learning Azure fundamentals. Which explanation of Azure regions region pairs and sovereign regions is most accurate?**
-A: An Azure region is a geographic area that contains one or more datacenters connected by a low-latency network
+**Q: How much does AZ-900 cost?**
+A: The exam costs $99 USD, Microsoft's standard fundamentals-tier price.
 
-**Q: A cloud adoption team is comparing Azure options. Which statement about Azure regions region pairs and sovereign regions is accurate?**
-A: Deploying near users can reduce latency for applications
+**Q: Do I need AZ-900 before AZ-104?**
+A: No, it is not a prerequisite for AZ-104 or any other Azure role-based certification. It is an optional foundational exam useful if you are new to cloud concepts.
 
-**Q: A business team is reviewing Azure operations. Which option correctly describes factors that affect Azure costs?**
-A: Resource type, usage amount, region, purchasing options, and data transfer can all affect Azure costs
+**Q: Is AZ-900 hard?**
+A: It is designed as an entry-level exam for both technical and non-technical audiences and does not require hands-on Azure experience. Most candidates prepare in 1 to 3 weeks using Microsoft Learn's free materials plus practice questions.
 
-**Q: A company is learning Azure management and governance. Which statement best describes factors that affect Azure costs?**
-A: Service tiers and performance levels can change the price of Azure resources
+**Q: How long is AZ-900 certification valid?**
+A: It does not expire and requires no renewal, unlike Microsoft's role-based certifications (like AZ-104), which are valid for 1 year with a free online renewal assessment.
 
 ## Microsoft Azure Administrator (AZ-104)
 Vendor: Microsoft
@@ -1301,23 +1301,20 @@ The NIC National Advanced Practice Micropigmentation Theory Examination is the l
 - 3.0 Side Effects and Possible Complications (4% of exam): 10 questions
 
 ### Sample questions
-**Q: Bacteria that require oxygen to survive are classified as**
-A: aerobic
+**Q: What is on the micropigmentation theory exam?**
+A: 110 multiple-choice items (100 weighted for scoring) in 90 minutes, covering infection control, anatomy and physiology, and the procedures and complications specific to permanent makeup, paramedical, and cosmetic tattoo work.
 
-**Q: The virus of greatest bloodborne transmission concern during micropigmentation procedures is**
-A: hepatitis B
+**Q: What is the passing score for the micropigmentation exam?**
+A: Your state board sets the exact cutoff, since NIC exams are adopted state by state; most states require 70 to 75%.
 
-**Q: A client history record for micropigmentation must include**
-A: current medications, allergies, medical conditions, previous cosmetic procedures, and skin conditions
+**Q: Is there a hands-on exam for micropigmentation too?**
+A: Most states require a hands-on practical evaluation in addition to the written theory exam, similar to tattoo and cosmetology licensing.
 
-**Q: Informed consent for a micropigmentation procedure must be obtained**
-A: in writing before the procedure begins, after the technician has explained the procedure, risks, expected outcomes, and alternatives
+**Q: Is micropigmentation the same as permanent makeup?**
+A: They overlap heavily. "Micropigmentation" is the broader technical term for depositing pigment in the skin (covering permanent makeup, paramedical work like areola restoration, and cosmetic tattooing); some states license these separately, others combine them.
 
-**Q: The most common expected side effect immediately following a micropigmentation procedure is**
-A: redness, mild swelling, and tenderness at the procedure site lasting 24-72 hours
-
-**Q: A client who had brow micropigmentation performed two years ago is scheduled for an MRI of the head and neck. The most important safety step is**
-A: inform the MRI technologist and radiologist about the presence of iron oxide-based micropigmentation pigments at the brow site so the imaging team can assess artifact risk, any potential local heating, and any sensation reported by the client during the scan
+**Q: Is this micropigmentation practice test free?**
+A: Yes. All micropigmentation practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.
 
 ## Barber License (Barber)
 Vendor: State Boards
@@ -1365,23 +1362,23 @@ Barber 1 (No Chemical) is an entry-level barber license that authorizes haircutt
 - 4.0 Facial Hair and Skin Care Services (18% of exam): 40 questions
 
 ### Sample questions
-**Q: Direct contact transmission of pathogens occurs primarily through which of the following?**
-A: Physical touch with an infected person or their blood and body fluids
+**Q: What is the difference between Barber 1 (No Chemical) and a full Barber License?**
+A: Barber 1 (No Chemical) authorizes haircutting, shaving, and basic styling but excludes chemical services like hair color, perms, or relaxers. It requires fewer training hours than a full Barber License and is a common stepping stone toward the chemical-services credential.
 
-**Q: Which bacterial shape classification is known for producing resistant spores that can survive standard disinfection procedures?**
-A: Bacilli
+**Q: What is on the Barber 1 written exam?**
+A: 60 items (50 weighted for scoring) in 90 minutes, covering scientific concepts, implements and equipment, hair care services, and facial hair and skin care services.
 
-**Q: Which of the following is considered a major piece of equipment in a barbershop rather than an implement or supply?**
-A: The barber chair, which supports and positions the client during services
+**Q: What is the passing score for Barber 1?**
+A: Your state board sets the exact cutoff; most states require 70 to 75%.
 
-**Q: A hydraulic barber chair is considered essential equipment primarily because it accomplishes which of the following?**
-A: It allows the barber to adjust the client's height and position for ergonomic and effective service delivery
+**Q: Is there a hands-on practical for Barber 1?**
+A: Yes, most states require a hands-on practical exam in addition to the written theory exam.
 
-**Q: Scalp analysis is performed before a service primarily to accomplish which of the following?**
-A: To identify scalp and hair conditions that may affect service selection and product choices
+**Q: Can I upgrade from Barber 1 to a full Barber License later?**
+A: In most states, yes, typically by completing the additional chemical-services training hours and passing the full Barber License exam.
 
-**Q: A contraindication in barbering is BEST defined as which of the following?**
-A: A condition or circumstance that prohibits a service or requires significant service modification
+**Q: Is this Barber 1 practice test free?**
+A: Yes. All Barber 1 (No Chemical) practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.
 
 ## Tattoo Artist License (Tattoo)
 Vendor: NIC
@@ -1399,23 +1396,23 @@ A Tattoo Artist License is required in most U.S. states to perform tattooing for
 - 6.0 Work Area Set Up for New Client (13% of exam): 12 questions
 
 ### Sample questions
-**Q: Before beginning any tattoo procedure, the artist must don which personal protective equipment at minimum?**
-A: Medical-grade disposable gloves
+**Q: Is the tattoo license exam written or hands-on?**
+A: It is primarily a hands-on performance evaluation: you set up your work area, prepare a client and stencil, assemble your machine, and perform a simulated tattoo procedure on a live model under an evaluator's observation, not a multiple-choice knowledge test.
 
-**Q: During the NIC Tattooing Practical Examination, the razor used for the simulated shave must be**
-A: capped throughout the simulated shaving demonstration
+**Q: How long does the tattoo licensing exam take?**
+A: Roughly 80 timed minutes across the core evaluated sections, plus an untimed section for the simulated tattoo procedure itself.
 
-**Q: Before beginning machine assembly, the candidate must present the packaged tube and needle to the examiner to**
-A: demonstrate that the tube and needle are sterile by showing intact, uncompromised original packaging before opening
+**Q: What is the passing score for the tattoo license exam?**
+A: Your state board sets the exact cutoff and grading rubric, since this is a practical skills evaluation rather than a percentage-scored written test.
 
-**Q: Pigment must be dispensed from the source bottle into a**
-A: single-use ink cap placed on the procedure tray, never directly into the tube or machine
+**Q: Why do these practice questions matter if the real exam is hands-on?**
+A: The practical evaluation still checks that you know and correctly apply infection control, sharps disposal, disinfection, and setup procedures step by step; drilling the underlying knowledge here helps you execute those steps correctly and confidently during the timed evaluation.
 
-**Q: When breaking down the procedural work area after a tattoo service, barriers must be**
-A: removed carefully to avoid touching the contaminated outer surface, then discarded in the 'Trash' container before the underlying surface is disinfected
+**Q: What safety equipment does the tattoo exam require?**
+A: Proper sharps, trash, and to-be-disinfected containers, plus EPA-registered disinfectant wipes used correctly throughout the simulated procedure. Missing or misusing these is a common way candidates lose points.
 
-**Q: When setting up supplies for a new client after breakdown, the candidate should**
-A: begin with freshly disinfected or newly barriered surfaces and new sterile packaged implements from the supply kit, never reusing single-session items from the previous client's procedure
+**Q: Is this tattoo license practice test free?**
+A: Yes. All tattoo license practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.
 
 ## CPA Auditing and Attestation (AUD) (AUD)
 Vendor: AICPA
@@ -1431,23 +1428,23 @@ The Auditing and Attestation (AUD) section is one of three Core sections of the 
 - 4.0 Forming Conclusions and Reporting (22% of exam): 64 questions
 
 ### Sample questions
-**Q: IRC §6694(b) imposes a penalty on a tax return preparer for willful or reckless conduct. What conduct triggers this penalty, and what is the penalty amount?**
-A: Willful attempt to understate tax liability; reckless or intentional disregard of rules or regulations; penalty = the greater of $5,000 or 75% of the income derived from the return
+**Q: What is the passing score for AUD?**
+A: Like every CPA Exam section, you need 75 on AICPA's 0-99 scale.
 
-**Q: Under IRC §6695, which of the following is a penalty imposed on a tax return preparer?**
-A: Failure to include the preparer's Preparer Tax Identification Number (PTIN) on the return, $50 per failure, up to a maximum of $27,000 per year
+**Q: How much does the AUD exam cost?**
+A: CPA Exam section fees are set by your state board, typically in the $250 to $350 range per section, plus a separate application/registration fee. Check your specific state board for the exact current fee.
 
-**Q: Establishing an overall audit strategy at the beginning of an engagement serves to**
-A: Set the scope, timing, and direction of the audit and guide the development of the more detailed engagement plan
+**Q: Do I have to pass AUD before the other sections?**
+A: No. AICPA does not require a specific order among the 3 Core sections (AUD, FAR, REG) and 1 Discipline section you choose. Most candidates start with whichever section aligns closest to their recent coursework or work experience.
 
-**Q: Which of the following decisions is BEST characterized as part of the overall audit strategy rather than the more detailed engagement plan?**
-A: The determination that the audit will rely primarily on substantive analytical procedures rather than tests of controls in areas where the assessed control environment is weak
+**Q: How long do I have to pass all 4 CPA sections?**
+A: You have a rolling 30-month window from the date you pass your first section to pass the remaining 3, or your earliest passing score expires and you have to retake that section.
 
-**Q: In performing audit procedures, auditors commonly use data from which two primary sources?**
-A: Entity-produced data (accounting records, transaction files, master files) and external data (market prices, third-party records, industry benchmarks)
+**Q: Is AUD the hardest CPA section?**
+A: Pass rates put it in the middle of the pack, harder than BEC-era sections used to be but generally seen as more approachable than FAR. The professional skepticism and judgment-based questions trip up candidates who only memorize procedures instead of understanding when to apply them.
 
-**Q: Before using an entity-provided transaction data file to perform audit sampling, an auditor should verify the completeness and accuracy of the file. Which procedure is MOST appropriate for this purpose?**
-A: Reconcile the file's record counts and total dollar amounts to independently prepared control totals, such as summary reports from the entity's accounting system or the trial balance
+**Q: Is this AUD practice test free?**
+A: Yes. Every AUD practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## CPA Financial Accounting and Reporting (FAR) (FAR)
 Vendor: AICPA
@@ -1462,23 +1459,23 @@ The Financial Accounting and Reporting (FAR) section is one of three Core sectio
 - 3.0 Select Transactions (20% of exam): 56 questions
 
 ### Sample questions
-**Q: The fundamental accounting equation underlying the balance sheet states that**
-A: Assets = Liabilities + Stockholders' Equity
+**Q: What is the passing score for FAR?**
+A: Like every CPA Exam section, you need 75 on AICPA's 0-99 scale.
 
-**Q: Under US GAAP, an asset is classified as current on the balance sheet when**
-A: It is expected to be converted to cash, sold, or consumed within one year or within the entity's operating cycle, whichever is longer
+**Q: How much does the FAR exam cost?**
+A: CPA Exam section fees are set by your state board, typically $250 to $350 per section, plus a separate application/registration fee. Check your specific state board for the exact current fee.
 
-**Q: Under ASC 305, an investment qualifies as a cash equivalent when it is**
-A: A short-term, highly liquid investment readily convertible to a known cash amount with an original maturity of three months or less from the date of purchase, presenting insignificant risk of value changes
+**Q: Is FAR the hardest CPA section?**
+A: It consistently has one of the lowest pass rates of the 4 sections, since it covers the broadest volume of technical accounting standards (GAAP, governmental accounting, not-for-profit accounting) in one 4-hour sitting. Most candidates schedule the most study time for FAR.
 
-**Q: On December 1, a company purchases a 60-day commercial paper instrument with face value of $500,000. How should this investment be classified on the December 31 balance sheet?**
-A: Cash equivalent, the 60-day original maturity at purchase is within the three-month threshold, qualifying it as a cash equivalent
+**Q: Do I have to pass FAR before the other sections?**
+A: No. AICPA does not require a specific order among the 3 Core sections (AUD, FAR, REG) and your chosen Discipline section.
 
-**Q: Under ASC 250, a change in accounting principle is generally accounted for using which approach?**
-A: Retrospective approach, all prior periods presented are restated to reflect the new principle, and the cumulative effect on periods not presented is recorded as an adjustment to the opening balance of retained earnings
+**Q: How long do I have to pass all 4 CPA sections?**
+A: A rolling 30-month window from the date you pass your first section. If you have not passed the rest within that window, your earliest passing score expires and you retake that section.
 
-**Q: A company changes depreciation method from declining balance to straight-line for all existing assets. This is classified as**
-A: A change in accounting estimate effected by a change in accounting principle, accounted for prospectively in current and future periods
+**Q: Is this FAR practice test free?**
+A: Yes. Every FAR practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## CPA Taxation and Regulation (REG) (REG)
 Vendor: AICPA
@@ -1495,23 +1492,23 @@ The Taxation and Regulation (REG) section is one of three Core sections of the U
 - 5.0 Federal Taxation of Entities (25% of exam): 28 questions
 
 ### Sample questions
-**Q: Under Treasury Circular 230, which individuals are generally authorized to represent taxpayers before all levels of the Internal Revenue Service, including appeals and collections?**
-A: Attorneys, certified public accountants (CPAs), and enrolled agents, all three hold unlimited practice rights before the IRS
+**Q: What is the passing score for REG?**
+A: Like every CPA Exam section, you need 75 on AICPA's 0-99 scale.
 
-**Q: In the hierarchy of federal tax authority, which source ranks HIGHEST and is therefore binding on both the IRS and taxpayers?**
-A: The Internal Revenue Code (IRC), as enacted by Congress under its constitutional taxing authority, the IRC is the primary statutory source of federal tax law
+**Q: How much does the REG exam cost?**
+A: CPA Exam section fees are set by your state board, typically $250 to $350 per section, plus a separate application/registration fee.
 
-**Q: Which type of agency authority arises when a third party reasonably believes an agent has authority because the principal's words or conduct created that impression, even though the agent has no actual authority?**
-A: Apparent authority, authority that exists because the principal's conduct led the third party to reasonably believe the agent was authorized
+**Q: What does REG cover?**
+A: Federal taxation of individuals, entities, and property transactions, business law, and ethics and professional responsibilities in tax practice. You are not tested on specific inflation-indexed tax rate percentages, just the underlying rules and calculations.
 
-**Q: Under common law contract principles, which of the following must be present for a valid contract to be formed?**
-A: An offer, acceptance, consideration, contractual capacity, and legality of subject matter, all five elements must be present
+**Q: Do I have to pass REG before the other sections?**
+A: No. AICPA does not require a specific order among the 3 Core sections (AUD, FAR, REG) and your chosen Discipline section.
 
-**Q: A taxpayer inherits stock from a deceased relative who paid $10,000 for the stock. At the date of death, the stock's fair market value is $85,000. The taxpayer sells the stock for $90,000 nine months after inheriting it. What is the taxpayer's basis in the stock and the character of the gain?**
-A: Basis = $85,000 (FMV at date of death, §1014 stepped-up basis); gain = $5,000 long-term capital gain (inherited property is always long-term)
+**Q: How long do I have to pass all 4 CPA sections?**
+A: A rolling 30-month window from the date you pass your first section, or your earliest passing score expires and you retake that section.
 
-**Q: A calendar-year taxpayer places a $50,000 piece of 5-year MACRS property into service on July 1. Assuming the half-year convention applies and the MACRS first-year rate for 5-year property is 20%, what is the first-year depreciation deduction?**
-A: $10,000, the full 20% applies to the $50,000 cost because the asset was placed in service on July 1
+**Q: Is this REG practice test free?**
+A: Yes. Every REG practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## CPA Business Analysis and Reporting (BAR) (BAR)
 Vendor: AICPA
@@ -1526,23 +1523,23 @@ The Business Analysis and Reporting (BAR) section is one of three Discipline sec
 - 3.0 State and Local Governments (24% of exam): 24 questions
 
 ### Sample questions
-**Q: An analyst computes an entity's current ratio of 1.8x and quick ratio of 0.9x. Which interpretation of these ratios is MOST accurate?**
-A: The current ratio indicates adequate overall liquidity, but the quick ratio below 1.0x suggests the entity relies heavily on inventory to meet current obligations, raising a concern about near-term liquidity if inventory cannot be converted quickly
+**Q: What is the passing score for BAR?**
+A: Like every CPA Exam section, you need 75 on AICPA's 0-99 scale.
 
-**Q: An entity reports net income of $4,200,000, interest expense of $800,000, income tax expense of $1,200,000, depreciation of $900,000, and amortization of $300,000. Calculate EBITDA.**
-A: $7,400,000, EBITDA adds back interest expense, income tax expense, depreciation, and amortization to net income
+**Q: How much does the BAR exam cost?**
+A: CPA Exam section fees are set by your state board, typically $250 to $350 per section, plus a separate application/registration fee.
 
-**Q: Under ASC 350, which event or circumstance is MOST likely to be an indicator that a reporting unit's goodwill may be impaired, triggering a quantitative goodwill impairment test?**
-A: A significant adverse change in the business climate such as a substantial loss of key customers representing 30% of the reporting unit's revenue, or a regulatory action that restricts a major product line
+**Q: How do I choose between BAR, ISC, and TCP?**
+A: You only need to pass 1 of the 3 Discipline sections alongside the 3 required Core sections. BAR fits audit, advisory, and not-for-profit/government career tracks; ISC fits IT audit and cybersecurity; TCP fits tax compliance and planning. Your choice does not restrict what you can practice as a CPA afterward.
 
-**Q: A company is developing internal-use software. During the current period, costs were incurred for: (A) evaluating alternative software vendors; (B) writing application code and unit testing; (C) training end users on the new system. How should each cost be classified under ASC 350-40?**
-A: Cost A: expense (preliminary project stage); Cost B: capitalize (application development stage); Cost C: expense (post-implementation/operation stage)
+**Q: Is BAR harder than the other Discipline sections?**
+A: Pass rates across the 3 Discipline sections have been fairly close. BAR draws heavily on FAR-style technical accounting plus business analysis, so it tends to suit candidates who found FAR manageable rather than a struggle.
 
-**Q: Under GASB Statement No. 34, what is the measurement focus and basis of accounting used in government-wide financial statements?**
-A: Full accrual basis with an economic resources measurement focus, recognizing all assets, deferred outflows, liabilities, and deferred inflows regardless of when cash flows occur
+**Q: How long do I have to pass all 4 CPA sections?**
+A: A rolling 30-month window from the date you pass your first section, or your earliest passing score expires and you retake that section.
 
-**Q: Which type of governmental fund is used to account for the accumulation of resources for, and the payment of, long-term debt principal and interest?**
-A: Debt service fund, accounts for the accumulation of resources for and the payment of general long-term debt principal and interest
+**Q: Is this BAR practice test free?**
+A: Yes. Every BAR practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## CPA Information Systems and Controls (ISC) (ISC)
 Vendor: AICPA
@@ -1557,23 +1554,23 @@ The Information Systems and Controls (ISC) section is one of three Discipline se
 - 3.0 Considerations for System and Organization Controls (SOC) Engagements (26% of exam): 76 questions
 
 ### Sample questions
-**Q: Which of the following BEST describes the role of network infrastructure within an organization's IT architecture?**
-A: Network infrastructure encompasses the hardware and software components, including routers, switches, firewalls, and cabling, that enable communication and data transfer between devices and systems within the organization
+**Q: What is the passing score for ISC?**
+A: Like every CPA Exam section, you need 75 on AICPA's 0-99 scale.
 
-**Q: A company contracts with a cloud vendor to use the vendor's servers, storage, and networking equipment, but the company installs and manages its own operating systems, middleware, and applications. Which cloud computing service model does this arrangement BEST describe?**
-A: Infrastructure as a Service (IaaS), because the vendor provides the underlying hardware infrastructure while the company manages the software stack above it
+**Q: How much does the ISC exam cost?**
+A: CPA Exam section fees are set by your state board, typically $250 to $350 per section, plus a separate application/registration fee.
 
-**Q: Under HIPAA, which entities are classified as 'covered entities' and are directly subject to the HIPAA Privacy and Security Rules?**
-A: Health plans, health care clearinghouses, and health care providers that transmit health information electronically, these three categories directly handle protected health information as part of their core functions
+**Q: Why is ISC scored differently from the other sections?**
+A: ISC is the only CPA Exam section weighted 60% MCQ / 40% TBS instead of the usual 50/50 split, and it leans more heavily on Remembering & Understanding (55-65%) than the other sections, since it covers IT governance, security, and SOC engagement concepts more than deep application scenarios.
 
-**Q: The GDPR (General Data Protection Regulation) establishes six principles relating to the processing of personal data. Which principle requires that personal data be collected only for specified, explicit, and legitimate purposes and not further processed in a manner incompatible with those purposes?**
-A: Purpose limitation, personal data shall be collected for specified, explicit, and legitimate purposes and not further processed in a way incompatible with those purposes
+**Q: Who should choose ISC as their Discipline section?**
+A: Candidates heading toward IT audit, cybersecurity risk assessment, SOC 1/SOC 2 attestation engagements, or data governance work. You only need to pass 1 of the 3 Discipline sections (BAR, ISC, TCP), and your choice does not limit what you can practice as a CPA.
 
-**Q: The AICPA Trust Services Criteria (TSC) are organized into five categories. Which option correctly lists all five Trust Services categories?**
-A: Security, Availability, Processing Integrity, Confidentiality, Privacy
+**Q: How long do I have to pass all 4 CPA sections?**
+A: A rolling 30-month window from the date you pass your first section, or your earliest passing score expires and you retake that section.
 
-**Q: A payroll processing service organization's clients are public companies subject to Sarbanes-Oxley. The clients' external auditors need assurance about the payroll processor's controls relevant to the clients' internal control over financial reporting. Which SOC report BEST meets this need?**
-A: SOC 1, a report specifically designed to address controls at a service organization that are relevant to user entities' internal control over financial reporting (ICFR), used by user entities and their auditors for financial statement audit purposes
+**Q: Is this ISC practice test free?**
+A: Yes. Every ISC practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## CPA Tax Compliance and Planning (TCP) (TCP)
 Vendor: AICPA
@@ -1589,23 +1586,23 @@ The Tax Compliance and Planning (TCP) section is one of three Discipline section
 - 4.0 Property Transactions (Disposition of Assets) (10% of exam): 12 questions
 
 ### Sample questions
-**Q: An employee exercises an incentive stock option (ISO) and purchases 1,000 shares of employer stock at the option price of $10 per share when the fair market value is $35 per share. The employee holds all shares and does not sell them during the current year. What is the tax consequence for regular federal income tax purposes in the year of exercise?**
-A: No regular income tax consequence occurs in the year of exercise, ISOs are not taxable for regular tax purposes when exercised if no same-year sale occurs
+**Q: What is the passing score for TCP?**
+A: Like every CPA Exam section, you need 75 on AICPA's 0-99 scale.
 
-**Q: The Kiddie Tax rules under IRC §1(g) tax a child's net unearned income at the parent's marginal tax rate. Which taxpayer situation is MOST likely subject to the Kiddie Tax?**
-A: A 17-year-old who has $4,800 of dividend income and $500 of earned income from babysitting, and can be claimed as a dependent by her parents
+**Q: How much does the TCP exam cost?**
+A: CPA Exam section fees are set by your state board, typically $250 to $350 per section, plus a separate application/registration fee.
 
-**Q: Under current federal tax law applicable to C corporations, what are the carryover rules for a net operating loss (NOL) generated in a tax year beginning after December 31, 2017?**
-A: NOLs may only be carried forward indefinitely, with the deduction in any carryover year limited to 80% of the corporation's taxable income (computed before the NOL deduction) for that year
+**Q: TCP vs REG, what is the difference?**
+A: REG (a required Core section) covers foundational federal taxation, business law, and ethics that every CPA candidate must pass. TCP (an optional Discipline section) goes deeper into tax planning, entity tax compliance, and personal financial planning for candidates heading toward tax-focused careers.
 
-**Q: Under IRC §351, a taxpayer contributes property with a fair market value of $90,000 and an adjusted basis of $30,000 to a newly formed corporation in exchange for 100% of the stock. No other consideration is received. What is the tax treatment for the contributing taxpayer?**
-A: The taxpayer recognizes no gain or loss; the taxpayer's basis in the stock received equals $30,000 (substituted basis equal to the adjusted basis of the property contributed)
+**Q: Who should choose TCP as their Discipline section?**
+A: Candidates heading toward tax compliance, tax planning, or personal financial planning roles. You only need to pass 1 of the 3 Discipline sections (BAR, ISC, TCP), and your choice does not limit what you can practice as a CPA afterward.
 
-**Q: Three investors are forming a new business and are deciding between organizing as a C corporation, an S corporation, or a partnership. They anticipate losses in the first two years followed by significant profitability. Which characteristic is UNIQUE to S corporations and restricts their use?**
-A: S corporations are limited to 100 shareholders, may only issue one class of stock, and cannot have nonresident alien shareholders or most entity shareholders (with limited exceptions)
+**Q: How long do I have to pass all 4 CPA sections?**
+A: A rolling 30-month window from the date you pass your first section, or your earliest passing score expires and you retake that section.
 
-**Q: A C corporation expects taxable income of $500,000 in the current year and has $300,000 of NOL carryforwards from prior years (all post-2017). The corporation wants to minimize its current-year federal income tax. What is the maximum NOL deduction the corporation may claim?**
-A: $400,000, the corporation may deduct 80% of the $500,000 taxable income, which is more than the available $300,000 NOL carryforward, so the full $300,000 is deductible
+**Q: Is this TCP practice test free?**
+A: Yes. Every TCP practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## Certified Ethical Hacker (CEH) (CEH)
 Vendor: EC-Council
@@ -1626,23 +1623,23 @@ Certified Ethical Hacker (CEH) from EC-Council validates offensive security skil
 - 9.0 Cryptography (5% of exam): 36 questions
 
 ### Sample questions
-**Q: Which three properties form the CIA triad that serves as the foundational framework for all information security programs?**
-A: Confidentiality, Integrity, and Availability
+**Q: How many questions are on the CEH exam?**
+A: 125 multiple-choice questions in 4 hours.
 
-**Q: What is the PRIMARY distinction between passive and active reconnaissance in the context of ethical hacking?**
-A: Passive reconnaissance gathers intelligence without directly interacting with the target system; active reconnaissance directly probes or interacts with the target, risking detection
+**Q: What is the passing score for CEH?**
+A: EC-Council uses a variable cut score per exam form (typically in the 60% to 85% range) rather than one fixed percentage, since question difficulty is weighted and balanced across different exam versions.
 
-**Q: Which type of vulnerability assessment tests a system from the perspective of an unauthenticated external attacker with no prior knowledge of or credentials for the target environment?**
-A: External black-box assessment, simulates an outside attacker with no credentials or internal knowledge
+**Q: How much does CEH cost?**
+A: CEH pricing varies significantly by package. An exam voucher alone typically runs around $1,199 to $1,999 through EC-Council or an authorized training partner, often bundled with official courseware. Check EC-Council's official site for current pricing.
 
-**Q: How does a MAC flooding attack work against a network switch, and what is the result when the CAM table is exhausted?**
-A: MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch's Content Addressable Memory (CAM) table, when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing
+**Q: Is CEH worth it without the practical exam?**
+A: The knowledge-based CEH (the one this practice test covers) is valuable on its own for DoD 8570/8140 compliance and as a resume credential, but many employers and the "CEH Master" designation specifically look for the companion CEH Practical, a 6-hour hands-on lab exam.
 
-**Q: Which web server component handles incoming HTTP requests, routes them to the appropriate application logic, and returns the resulting HTTP responses to clients?**
-A: Web server software (Apache, nginx, IIS), the HTTP server process that receives connections, parses requests, and delivers responses
+**Q: Is CEH harder than PenTest+?**
+A: CEH's knowledge exam leans more on breadth of tool and technique recall across a huge attack surface; CompTIA PenTest+ leans more on applied, scenario-based penetration testing methodology with performance-based questions. Many security professionals hold both.
 
-**Q: In wireless networking, what does the term SSID (Service Set Identifier) refer to?**
-A: The human-readable name that identifies a wireless network, broadcast in AP beacon frames
+**Q: How long is CEH certification valid?**
+A: CEH is valid for 3 years and renews through EC-Council's Continuing Education (ECE) credit program.
 
 ## CompTIA Project+ (PK0-005)
 Vendor: CompTIA

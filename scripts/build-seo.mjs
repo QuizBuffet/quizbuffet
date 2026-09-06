@@ -816,6 +816,7 @@ async function buildDomainHtml(cert, domain, questions) {
       },
       {
         '@type': 'Quiz',
+        'provider': ORG,
         'name': fullTitle,
         'description': desc,
         'url': url,

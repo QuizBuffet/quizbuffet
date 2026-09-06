@@ -1606,7 +1606,7 @@ function updateHomeIndex(certs) {
       node.itemListElement = sorted.map((c, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        name: `Free ${c.code} Practice Test`,
+        name: `${c.seoName || c.name} Practice Test (${c.code})`,
         url: `${SITE}/${c.slug}/`,
       }));
     }
@@ -1614,6 +1614,17 @@ function updateHomeIndex(certs) {
 
   const newLd = JSON.stringify(data, null, 2);
   html = html.replace(ldRegex, `$1\n  ${newLd}\n  $3`);
+
+  // 2b. Visible FAQ rendered from the same FAQPage node, so the on-page text and the
+  // schema never drift (Google requires FAQ schema content to be visible on the page).
+  const faqNode = (data['@graph'] || []).find(n => n['@type'] === 'FAQPage');
+  const faqRegex = /(<!-- BEGIN home-faq -->)[\s\S]*?(<!-- END home-faq -->)/;
+  if (faqNode && faqRegex.test(html)) {
+    const items = (faqNode.mainEntity || []).map(q =>
+      `          <details class="home-faq-item"><summary>${htmlEscape(q.name)}</summary><p>${htmlEscape(q.acceptedAnswer?.text || '')}</p></details>`
+    ).join('\n');
+    html = html.replace(faqRegex, `$1\n${items}\n          $2`);
+  }
 
   // 3. Static, crawlable cert grid inside #cert-list (S2/E1). The SPA replaces it with the
   // richer card grid on hydrate; the static markup is what Googlebot and no-JS readers get.

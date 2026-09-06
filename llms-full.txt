@@ -1316,9 +1316,6 @@ A: They overlap heavily. "Micropigmentation" is the broader technical term for d
 **Q: Is this micropigmentation practice test free?**
 A: Yes. All micropigmentation practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.
 
-**Q: How many questions are on the micropigmentation exam?**
-A: The NIC Advanced Practice Micropigmentation theory exam has 110 items, of which 100 are scored, with 90 minutes to finish. Your state may use its own version, so check the candidate bulletin.
-
 ## Barber License (Barber)
 Vendor: State Boards
 URL: https://quizbuffet.com/barber-license/

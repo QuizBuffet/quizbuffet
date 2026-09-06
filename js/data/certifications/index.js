@@ -10,6 +10,7 @@ export const certifications = [
   tagline: 'Cloud infrastructure skills for engineers and sysadmins',
   about: 'Cloud+ validates your ability to deploy, secure, and manage cloud environments across providers. It covers architecture decisions, automation with IaC, backup and recovery, identity management, DevOps pipelines, and troubleshooting real-world cloud issues. Built for professionals with 2-3 years of hands-on cloud or systems experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 750/900 · Multiple-choice and performance-based',
+  exam: { questions: 90, minutes: 90, passing: '750 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; Network+, Security+, and 2-3 years systems/network administration experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How many questions are on the Cloud+ exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },
@@ -49,6 +50,7 @@ export const certifications = [
   tagline: 'IT fundamentals for beginners and career changers',
   about: 'ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT concepts for people exploring a career in technology. It covers computing basics, hardware, networking, operating systems, software, databases, and security fundamentals. No prior experience required: ideal for advanced end users and those considering CompTIA A+.',
   details: '75 questions · 60 minutes · Passing score 650/900 · Multiple-choice',
+  exam: { questions: 75, minutes: 60, passing: '650 of 900', cost: '~$130-150', delivery: 'Pearson VUE, online or test center', validity: 'Does not expire', prerequisites: 'None', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'Is CompTIA ITF+ retired?',
       a: 'Yes. The ITF+ exam (FC0-U61) retired on July 31, 2025 and was replaced by CompTIA Tech+ (FC0-U71), which launched in August 2024. An ITF+ certification you already hold stays valid for life. The fundamentals tested here (hardware, software, networking, security, databases, and basic development) carry over to Tech+, so these questions still work as a foundation for the newer exam.' },
@@ -90,6 +92,7 @@ export const certifications = [
   tagline: 'Threat detection and incident response for security analysts',
   about: 'CySA+ (Cybersecurity Analyst+) certifies analysts who detect and respond to threats, perform vulnerability management, and conduct incident response. It covers security operations, threat hunting, vulnerability scanning and prioritization, incident handling, and communicating findings to stakeholders. Aimed at professionals with 4 years of hands-on SOC or incident response experience.',
   details: 'Multiple-choice and performance-based · Recommended 4 years SOC/IR experience · Passing score 750/900',
+  exam: { passing: '750 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; Network+, Security+, and 4 years SOC/incident-response experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'Is CompTIA CySA+ CS0-003 being retired?',
       a: 'Yes. CompTIA launched CySA+ v4 (CS0-004) on June 23, 2026. Providers report CS0-003 retiring around December 22, 2026, though some report a same-day switchover, so confirm the date on CompTIA\'s site before you schedule. If you have not scheduled your exam yet, check CompTIA\'s site for which version you\'ll actually sit, since this practice bank is built around CS0-003\'s objectives and CS0-004 adds updated cloud/hybrid and AI-related security content.' },
@@ -130,6 +133,7 @@ export const certifications = [
   tagline: 'Penetration testing and vulnerability management for security professionals',
   about: 'PenTest+ certifies professionals who can plan, scope, and execute penetration tests across networks, applications, and cloud environments, and communicate findings to stakeholders.',
   details: 'Maximum 90 questions · Multiple-choice and performance-based · Recommended 3-4 years pentesting experience · Passing score 750/900',
+  exam: { questions: 90, minutes: 165, passing: '750 of 900', cost: '~$404', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; Network+, Security+, and 3-4 years penetration testing experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How much is the PT0-003 exam voucher?',
       a: 'CompTIA’s standard exam price is currently around $400 USD. Check CompTIA’s official store for the current rate, since it can change and authorized training partners sometimes bundle it differently.' },
@@ -166,6 +170,7 @@ export const certifications = [
   tagline: 'Hardware, networking, and troubleshooting for IT support technicians',
   about: 'A+ Core 1 (220-1201) is the first of two exams required for the CompTIA A+ certification. It covers mobile devices, networking, hardware, virtualization, cloud computing, and hardware troubleshooting.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 12 months hands-on experience · Passing score 675/900',
+  exam: { questions: 90, minutes: 90, passing: '675 of 900', cost: '$274 (must also pass Core 2)', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 12 months hands-on IT support experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How many questions are on the A+ Core 1 exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },
@@ -204,6 +209,7 @@ export const certifications = [
   tagline: 'Operating systems, security, and troubleshooting for IT support technicians',
   about: 'A+ Core 2 (220-1202) is the second of two exams required for the CompTIA A+ certification. It covers operating systems, security, software troubleshooting, and operational procedures for IT support specialists.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 12 months hands-on experience · Passing score 700/900',
+  exam: { questions: 90, minutes: 90, passing: '700 of 900', cost: '$274 (must also pass Core 1)', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 12 months hands-on IT support experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How many questions are on the A+ Core 2 exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },
@@ -241,6 +247,7 @@ export const certifications = [
   tagline: 'Core networking skills for IT infrastructure professionals',
   about: 'Network+ certifies professionals who can deploy wired and wireless networks, configure network services, implement security hardening, and troubleshoot performance and availability issues. It covers networking concepts, IP addressing, routing, switching, wireless, cloud connectivity, and network troubleshooting. Recommended for professionals with 9-12 months of networking experience.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 720/900 · Multiple-choice and performance-based',
+  exam: { questions: 90, minutes: 90, passing: '720 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; A+ and 9-12 months networking experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How many questions are on the Network+ exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },
@@ -277,6 +284,7 @@ export const certifications = [
   tagline: 'Core security skills for IT professionals defending enterprise environments',
   about: 'Security+ certifies professionals who can assess enterprise security posture, monitor hybrid environments, operate within governance and compliance frameworks, and identify and respond to security incidents.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 2 years IT administration with security focus',
+  exam: { questions: 90, minutes: 90, passing: '750 of 900', cost: '~$404', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; Network+ and 2 years of security-focused IT experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How hard is the Security+ SY0-701 exam?',
       a: 'It is a fair entry-level security exam, but it is broad. You face up to 90 multiple-choice and performance-based questions covering threats, cryptography, identity, and incident response. The performance-based questions trip people up most, so practice applying concepts, not just memorizing terms.' },
@@ -321,6 +329,7 @@ export const certifications = [
   tagline: 'Data acquisition, analysis, and governance for data-driven decision making',
   about: 'Data+ certifies professionals who can translate business requirements into data-driven decisions by acquiring, preparing, and transforming data, applying statistical methods, creating visualizations, and adhering to governance and quality standards throughout the data life cycle.',
   details: 'Maximum 90 questions · 90 minutes · Passing score 720/900 · Multiple-choice and performance-based · Recommended 1.5-2 years of experience with databases, analytical tools, statistics, and data visualization',
+  exam: { questions: 90, minutes: 90, passing: '720 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 1.5-2 years of database/analytics experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How many questions are on the Data+ exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },
@@ -359,6 +368,7 @@ export const certifications = [
   tagline: 'The industry-standard entry into network engineering careers',
   about: 'CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability, including AI/ML in network operations and REST APIs.',
   details: '120 minutes · Multiple-choice and performance-based · Recommended prep: Implementing and Administering Cisco Solutions (CCNA) course',
+  exam: { questions: '~100-120', minutes: 120, passing: 'Not published (scaled, roughly 800-850 of 1000)', cost: '$300', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required', retake: '5-day wait for first retake; 30 days after that; 45 days after 3+ attempts' },
   faq: [
     { q: 'How many questions are on the CCNA exam?',
       a: 'Cisco does not publish a fixed count since question types and length vary by exam form, but most candidates report roughly 100 to 120 items (multiple-choice, drag-and-drop, and simulation) in the 120-minute window.' },
@@ -1556,10 +1566,6 @@ export const certifications = [
       a: 'They overlap heavily. "Micropigmentation" is the broader technical term for depositing pigment in the skin (covering permanent makeup, paramedical work like areola restoration, and cosmetic tattooing); some states license these separately, others combine them.' },
     { q: 'Is this micropigmentation practice test free?',
       a: 'Yes. All micropigmentation practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.' },
-    { q: 'How many questions are on the micropigmentation exam?',
-      a: 'The NIC Advanced Practice Micropigmentation theory exam has 110 items, of which 100 are scored, with 90 minutes to finish. Your state may use its own version, so check the candidate bulletin.' },
-    { q: 'Is this micropigmentation practice test free?',
-      a: 'Yes. Every micropigmentation practice question on QuizBuffet is free, organized by the same NIC subject areas, with an explanation for every answer and no signup.' },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop Micropigmentation and Permanent Makeup Textbooks on Amazon', url: 'https://www.amazon.com/s?k=permanent+makeup+micropigmentation+training&tag=0003aa-20' },
@@ -1990,6 +1996,7 @@ export const certifications = [
   tagline: 'Project life cycle, communication, resource and stakeholder management for IT projects',
   about: 'CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6-12 months of hands-on IT project management experience.',
   details: 'Maximum of 90 multiple-choice and performance-based questions · 90 minutes · Recommended 6-12 months of hands-on experience managing projects in an IT environment',
+  exam: { questions: 90, minutes: 90, passing: '710 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: 'Does not expire', prerequisites: 'None required; 6-12 months hands-on project coordination experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How hard is the CompTIA Project+ exam?',
       a: 'It is one of the more approachable project management exams. It tests practical knowledge of the project life cycle, communication, and basic agile and waterfall concepts rather than deep formulas. With focused study, most people pass without prior certification.' },

@@ -6,6 +6,7 @@ export const cert = {
   tagline: 'The industry-standard entry into network engineering careers',
   about: 'CCNA (Cisco Certified Network Associate, exam 200-301 v1.1) certifies professionals who can install, configure, operate, and troubleshoot small- to medium-sized networks. It covers network fundamentals, network access, IP connectivity (routing, OSPF), IP services (NAT, NTP, DHCP, QoS), security fundamentals, and automation and programmability, including AI/ML in network operations and REST APIs.',
   details: '120 minutes · Multiple-choice and performance-based · Recommended prep: Implementing and Administering Cisco Solutions (CCNA) course',
+  exam: { questions: '~100-120', minutes: 120, passing: 'Not published (varies by exam form)', cost: '$300', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required', retake: '5-day wait after each failed attempt (calendar days); no published attempt limit' },
   faq: [
     { q: 'How many questions are on the CCNA exam?',
       a: 'Cisco does not publish a fixed count since question types and length vary by exam form, but most candidates report roughly 100 to 120 items (multiple-choice, drag-and-drop, and simulation) in the 120-minute window.' },

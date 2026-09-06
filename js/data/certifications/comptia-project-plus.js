@@ -7,6 +7,7 @@ export const cert = {
   tagline: 'Project life cycle, communication, resource and stakeholder management for IT projects',
   about: 'CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6-12 months of hands-on IT project management experience.',
   details: 'Maximum of 90 multiple-choice and performance-based questions · 90 minutes · Recommended 6-12 months of hands-on experience managing projects in an IT environment',
+  exam: { questions: 90, minutes: 90, passing: '710 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: 'Does not expire', prerequisites: 'None required; 6-12 months hands-on project coordination experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How hard is the CompTIA Project+ exam?',
       a: 'It is one of the more approachable project management exams. It tests practical knowledge of the project life cycle, communication, and basic agile and waterfall concepts rather than deep formulas. With focused study, most people pass without prior certification.' },

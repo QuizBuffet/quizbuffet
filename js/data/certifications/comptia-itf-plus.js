@@ -6,6 +6,7 @@ export const cert = {
   tagline: 'IT fundamentals for beginners and career changers',
   about: 'ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT concepts for people exploring a career in technology. It covers computing basics, hardware, networking, operating systems, software, databases, and security fundamentals. No prior experience required: ideal for advanced end users and those considering CompTIA A+.',
   details: '75 questions · 60 minutes · Passing score 650/900 · Multiple-choice',
+  exam: { questions: 75, minutes: 60, passing: '650 of 900', cost: '~$130-150', delivery: 'Pearson VUE, online or test center', validity: 'Does not expire', prerequisites: 'None', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'Is CompTIA ITF+ retired?',
       a: 'Yes. The ITF+ exam (FC0-U61) retired on July 31, 2025 and was replaced by CompTIA Tech+ (FC0-U71), which launched in August 2024. An ITF+ certification you already hold stays valid for life. The fundamentals tested here (hardware, software, networking, security, databases, and basic development) carry over to Tech+, so these questions still work as a foundation for the newer exam.' },

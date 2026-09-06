@@ -6,6 +6,7 @@ export const cert = {
   tagline: 'Hardware, networking, and troubleshooting for IT support technicians',
   about: 'A+ Core 1 (220-1201) is the first of two exams required for the CompTIA A+ certification. It covers mobile devices, networking, hardware, virtualization, cloud computing, and hardware troubleshooting.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 12 months hands-on experience · Passing score 675/900',
+  exam: { questions: 90, minutes: 90, passing: '675 of 900', cost: '$274 (must also pass Core 2)', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 12 months hands-on IT support experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How many questions are on the A+ Core 1 exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },

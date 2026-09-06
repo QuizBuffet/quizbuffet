@@ -5330,3 +5330,9 @@ html, body {
 /* Home about block */
 .home-about { margin: 32px 0 8px; max-width: 760px; }
 .home-about p { font-size: 15px; line-height: 1.6; margin: 0 0 12px; }
+
+/* Home FAQ (rendered from the FAQPage schema at build time) */
+.home-faq { margin: 24px 0 8px; max-width: 760px; }
+.home-faq-item { border-bottom: 1px solid var(--border); padding: 8px 0; }
+.home-faq-item summary { cursor: pointer; font-weight: 600; font-size: 15px; }
+.home-faq-item p { margin: 8px 0 4px; font-size: 15px; line-height: 1.6; }

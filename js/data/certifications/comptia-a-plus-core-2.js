@@ -6,6 +6,7 @@ export const cert = {
   tagline: 'Operating systems, security, and troubleshooting for IT support technicians',
   about: 'A+ Core 2 (220-1202) is the second of two exams required for the CompTIA A+ certification. It covers operating systems, security, software troubleshooting, and operational procedures for IT support specialists.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 12 months hands-on experience · Passing score 700/900',
+  exam: { questions: 90, minutes: 90, passing: '700 of 900', cost: '$274 (must also pass Core 1)', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; 12 months hands-on IT support experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How many questions are on the A+ Core 2 exam?',
       a: 'Up to 90 questions, multiple-choice and performance-based, in 90 minutes.' },

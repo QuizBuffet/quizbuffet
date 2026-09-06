@@ -6,6 +6,7 @@ export const cert = {
   tagline: 'Threat detection and incident response for security analysts',
   about: 'CySA+ (Cybersecurity Analyst+) certifies analysts who detect and respond to threats, perform vulnerability management, and conduct incident response. It covers security operations, threat hunting, vulnerability scanning and prioritization, incident handling, and communicating findings to stakeholders. Aimed at professionals with 4 years of hands-on SOC or incident response experience.',
   details: 'Multiple-choice and performance-based · Recommended 4 years SOC/IR experience · Passing score 750/900',
+  exam: { passing: '750 of 900', cost: '~$400', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; Network+, Security+, and 4 years SOC/incident-response experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'Is CompTIA CySA+ CS0-003 being retired?',
       a: 'Yes. CompTIA launched CySA+ v4 (CS0-004) on June 23, 2026. Providers report CS0-003 retiring around December 22, 2026, though some report a same-day switchover, so confirm the date on CompTIA\'s site before you schedule. If you have not scheduled your exam yet, check CompTIA\'s site for which version you\'ll actually sit, since this practice bank is built around CS0-003\'s objectives and CS0-004 adds updated cloud/hybrid and AI-related security content.' },

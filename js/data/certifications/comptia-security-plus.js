@@ -6,6 +6,7 @@ export const cert = {
   tagline: 'Core security skills for IT professionals defending enterprise environments',
   about: 'Security+ certifies professionals who can assess enterprise security posture, monitor hybrid environments, operate within governance and compliance frameworks, and identify and respond to security incidents.',
   details: 'Maximum 90 questions · 90 minutes · Multiple-choice and performance-based · Recommended 2 years IT administration with security focus',
+  exam: { questions: 90, minutes: 90, passing: '750 of 900', cost: '~$404', delivery: 'Pearson VUE, online or test center', validity: '3 years', prerequisites: 'None required; Network+ and 2 years of security-focused IT experience recommended', retake: 'No wait for first retake; 14-day wait after each subsequent attempt' },
   faq: [
     { q: 'How hard is the Security+ SY0-701 exam?',
       a: 'It is a fair entry-level security exam, but it is broad. You face up to 90 multiple-choice and performance-based questions covering threats, cryptography, identity, and incident response. The performance-based questions trip people up most, so practice applying concepts, not just memorizing terms.' },

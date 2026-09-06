@@ -35,7 +35,7 @@ export const cert = {
     { slug: 'assessment-and-recognition',         name: 'Assessment and Recognition',             number: '2.0', weight: 12 },
     { slug: 'adult-cpr',                          name: 'Adult CPR',                              number: '3.0', weight: 22 },
     { slug: 'child-and-infant-cpr',               name: 'Child and Infant CPR',                   number: '4.0', weight: 18 },
-    { slug: 'aed-operation',                      name: 'AED Operation',                          number: '5.0', weight: 18 },
+    { slug: 'aed-operation',                      name: 'AED Operation',                          number: '5.0', weight: 18, seoTitle: 'AED Quiz: Free AED Test Questions', seoH1: 'AED Quiz and AED Test Practice: Defibrillator Operation' },
     { slug: 'choking-and-airway-obstruction',     name: 'Choking and Airway Obstruction',         number: '6.0', weight: 12 },
     { slug: 'special-situations-and-recovery',    name: 'Special Situations and Recovery',        number: '7.0', weight: 10 },
   ],

@@ -29,7 +29,7 @@ R. SERP inspection of the CPR/AED page
 
 ## A. Ads readiness (P1, block spend until done)
 
-### A1. [PARTIAL, see Q4] Add Google Ads conversion events
+### A1. [PARTIAL: trackConversion.js wired at quiz_start/domain_complete/answered_10, labels still REPLACE_ME (inert until set) pending real conversion actions from Google Ads; Q4's value/currency stripped from the page-view snippet, still needs Secondary marked in the Google Ads UI] Add Google Ads conversion events
 **Problem.** `index.html` and every generated page load `AW-17221241617` but only call `gtag('config', 'AW-17221241617')`. No conversion is ever sent. Every click will be unmeasured.
 
 **Fix.**
@@ -57,7 +57,7 @@ R. SERP inspection of the CPR/AED page
    - `js/pages/quiz/handleAnswer.js`: keep a per-session answer counter in `sessionStorage` (`qb_answered`), fire `trackConversion('answered_10')` when it reaches 10, once.
 4. Verify with Google Tag Assistant on a live page: the conversion ping must show `send_to` with the label.
 
-### A2. Scope the consent default to EEA/UK, grant elsewhere
+### A2. [DONE 94bc8bb3] Scope the consent default to EEA/UK, grant elsewhere
 **Problem.** The Consent Mode default block denies `ad_storage`, `ad_user_data`, `ad_personalization`, and `analytics_storage` for every visitor on Earth. US traffic (your ads audience) loses the gclid cookie, so Google Ads only gets modeled conversions and Smart Bidding has almost nothing to learn from.
 
 **Fix.** Replace the single `gtag('consent','default',{...})` call with two calls in this order. Region-specific call second (more specific wins):
@@ -77,7 +77,7 @@ gtag('consent', 'default', {
 ```
 Apply in **all six** copies: the three templates in `scripts/build-seo.mjs` (grep `consent`), root `index.html`, `cpa/index.html`, `privacy/index.html`, and `404.html`. Then update the "Analytics consent" section of `CLAUDE.md` to describe the two-call shape so future sessions do not revert it.
 
-### A3. Show the consent banner only where consent is denied by default
+### A3. [PARTIAL: Accept grants ad consent; banner still shows to all regions] Show the consent banner only where consent is denied by default
 **Problem.** After A2, non-EEA visitors are granted by default but `js/components/consent/renderConsent.js` still shows the banner to everyone and its text says "no ads".
 
 **Fix.**
@@ -87,7 +87,7 @@ Apply in **all six** copies: the three templates in `scripts/build-seo.mjs` (gre
 4. Update `privacy/index.html`: add Google Ads (`AW-17221241617`) to the list of services, describe the conversion cookie, and keep the "reset cookie choice" control.
 5. Update `CLAUDE.md`: the rule "never grant ad_storage" becomes "grant ad consent only through the banner Accept path or the non-EEA default".
 
-### A4. Merge the duplicate gtag bootstrap
+### A4. [DONE 94bc8bb3] Merge the duplicate gtag bootstrap
 **Problem.** `index.html` (and every template) has a second `<script>` that re-declares `window.dataLayer` and `function gtag(){}` for the AW tag. Harmless today but fragile.
 
 **Fix.** Delete the second `dataLayer`/`gtag` declaration and the second `gtag('js', new Date())`. Keep one `<script async src=".../gtag/js?id=G-YRKFB3WT9C">` (one loader serves both IDs) and add `gtag('config', 'AW-17221241617');` directly after `gtag('config', 'G-YRKFB3WT9C');`. Do this in the same six files as A2.
@@ -103,14 +103,14 @@ In GA4 Admin > Product links > Google Ads links, link the account. Mark `domain_
 ### A7. Confirm gclid survives the SPA path restore
 `404.html:34` stores `location.pathname + location.search` and `index.html` restores it via `history.replaceState`. gtag runs in `<head>` before the restore and reads `location.search` of the 404 page URL, which still has the gclid. Verify once with a test URL `/comptia-security-plus/?gclid=test` in Tag Assistant. If the conversion cookie `_gcl_aw` is set, nothing to do.
 
-### A8. Decide on AdSense slots
+### A8. [DONE: slots removed] Decide on AdSense slots
 `js/app.js` shells contain `#ad-top`, `#ad-mid`, `#ad-bottom`. They render empty. Either wire AdSense or remove the divs and the reserved CSS heights (CLS reservation for a slot that never fills is wasted space). If wiring: do not run AdSense on pages you are buying traffic to; the arbitrage looks bad to Google Ads quality review.
 
 ---
 
 ## B. Titles, H1s, descriptions (P1)
 
-### B1. Cert page title template
+### B1. [DONE 21dbe34d] Cert page title template
 **File.** `scripts/build-seo.mjs:275-277`.
 **Now.** `${total}+ Free ${cert.code} Practice Questions, No Signup` gives "1900+ Free SY0-701 Practice Questions, No Signup".
 **Why it fails.** Searchers use the cert name and the words "practice test" or "practice exam". Exam codes appear in under 5 percent of Search Console queries.
@@ -126,7 +126,7 @@ const fullTitle = total > 0
 - "AWS Developer Associate Practice Exam: 500+ Free Questions" (with `seoName`)
 - "CISSP Practice Test: 800+ Free Questions (ISC2)"
 
-### B2. Per-cert `seoName` overrides
+### B2. [DONE for 24 certs, cpr-aed uncommitted] Per-cert `seoName` overrides
 Add `seoName` to these metadata files in `js/data/certifications/`. Names chosen from the actual query phrasing in Search Console:
 
 | slug | seoName |
@@ -158,7 +158,7 @@ Add `seoName` to these metadata files in `js/data/certifications/`. Names chosen
 
 Also strip the en-dash from AWS names in `cert.name` ("AWS Certified Developer – Associate" has a U+2013). Replace with a plain space or hyphen.
 
-### B3. Domain page title template
+### B3. [DONE] Domain page title template
 **File.** `scripts/build-seo.mjs:586-587`.
 **Now.** `${certTotal}+ Free ${cert.code} Questions: ${domain.name}` gives "1900+ Free SY0-701 Questions: General Security Concepts".
 **Fix.**
@@ -170,26 +170,26 @@ const fullTitle = count > 0
 Domain names can be long. If `clipText` cuts the count, that is fine. Do not let it cut the domain name: if `seoName + domain.name` exceeds 52 characters, drop `seoName` to `cert.code`.
 Also support optional `seoTitle` and `seoH1` on each domain entry in cert metadata; when present they replace the template. Use them for domains that match a named query (AED quiz, combination vehicles, pediatric BLS).
 
-### B4. H1 wording
+### B4. [DONE 21dbe34d] H1 wording
 **File.** cert H1 in `buildCertHtml` (grep `<h1`). Now "CompTIA Security+ (SY0-701) Free Practice Test".
 **Fix.** "CompTIA Security+ Practice Test and Practice Exam Questions (SY0-701)". Both "practice test" and "practice exam" are in the H1 and each appears in dozens of queries. Keep the code at the end.
 
-### B5. Meta descriptions per cert
+### B5. [PARTIAL: new template live, zero custom seoDescription authored] Meta descriptions per cert
 **File.** `scripts/build-seo.mjs:278-280`. All 51 share one template.
 **Fix.** Add an optional `seoDescription` field to cert metadata. Template fallback becomes:
 `Free ${seoName} practice test with ${total} exam-style questions across ${cert.domains.length} domains. Instant feedback, explanations, no signup. Study online for the ${cert.code} exam.`
 Write custom `seoDescription` values for the 16 certs in section C first. Each must name the cert, say "free", say "practice test" or "practice exam", and say "online". Max 155 characters.
 
-### B6. First paragraph of every cert page
+### B6. [DONE] First paragraph of every cert page
 The intro sentence (`${total}+ exam-style questions across N domains...`) should read: "Free ${seoName} practice test with ${total}+ exam-style questions across ${n} domains, organized like the real ${code} exam. Use it as a practice exam, a mock test, or a quick quiz. Instant feedback, no account." This puts "practice test", "practice exam", "mock test", and "quiz" in the first 40 words.
 
-### B7. Home page title and H1
+### B7. [DONE] Home page title and H1
 **File.** `index.html` (hand-maintained; `build-seo.mjs` only syncs the count).
 - Title: "Free Certification Practice Tests: CompTIA, AWS, CISSP, CDL, CPR | QuizBuffet" (under 60 with clipping acceptable at "CPR").
 - H1: keep "Free Certification Practice Tests". Second H1 in the hero ("Free practice tests for professional certifications.") must become a `<p>`. One H1 per page.
 - Update the `build-seo.mjs` home title sync so it does not reintroduce the em-dash.
 
-### B8. [DONE, uncommitted] Remove em-dashes and en-dashes from templates
+### B8. [DONE 21dbe34d] Remove em-dashes and en-dashes from templates
 Grep `scripts/build-seo.mjs`, `index.html`, `feed.xml` generation, and cert metadata for `—` and `–`. Replace with ", " or " - " or parentheses. Style rule already forbids them. Regenerate.
 
 ---
@@ -395,7 +395,7 @@ Add to the home `@graph`:
 ```
 Then make `js/pages/home/renderSearch.js` read `?q=` on load and prefill the filter.
 
-### E9. Single H1
+### E9. [DONE] Single H1
 Two `<h1>` elements exist on the home page. Make the hero tagline a `<p class="hero-tagline">`.
 
 ---
@@ -467,7 +467,7 @@ Fill each to 30+ using the QUESTION-PROMPT workflow, or merge two tiny domains i
 3. Collapse doubled punctuation (`,,`, `, ,`, `.,`).
 4. Re-run `docs/validate-domain.py` on every file; re-minify. Commit in batches per cert so diffs are reviewable.
 
-### H2. [IN PROGRESS, uncommitted] body-piercing-license is live with 0 questions
+### H2. [DONE, 50 live certs] body-piercing-license is live with 0 questions
 `data/counts.json` reports 0. Two domain files exist. Either fill both domains to 100+ each and rebuild, or move the slug back into `data/coming-soon.json` and remove it from `_manifest.js` until questions exist. The page currently carries `noindex` (0 questions triggers it), so no urgent harm, but it is in the "51 live certs" count on the home page, which is inaccurate.
 
 ### H3. Fill thin certs
@@ -506,7 +506,7 @@ All 368 files in `icons/og/` are SVG. Facebook, X, LinkedIn, Slack, iMessage, an
 3. Point `og:image` and `twitter:image` at the `.png`. Add `og:image:width` 1200, `og:image:height` 630, `og:image:type` image/png.
 4. Keep the SVGs as source but do not link them. Add `*.png` in `icons/og/` to git (they are needed on Pages).
 
-### J2. `404.html` noindex
+### J2. [DONE] `404.html` noindex
 Add `<meta name="robots" content="noindex">` in `404.html`. It currently has none.
 
 ### J3. Split the cert metadata bundle
@@ -734,7 +734,7 @@ The late-August rebound (week of Aug 24, 110) is seasonal. Certification exam de
 - Ads timing: the seasonal demand window is open now (late August through October). Start campaigns as soon as section A is done rather than waiting for every P2 item.
 - Baseline for measuring the next changes: 9.5 impressions per day (Jul 3 to Aug 24), 16.7 per day in the last full week of August.
 
-### Q4. Conversion snippet committed today needs correcting (updates A1)
+### Q4. [PARTIAL: value/currency removed from the snippet in code; still needs the Google Ads UI step (mark that conversion action Secondary) plus the real primary conversion action created and its label dropped into trackConversion.js] Conversion snippet committed today needs correcting (updates A1)
 Commit `673caed` adds a Google Ads "page view" conversion (`AW-17221241617/yyIzCIPOruQaEJGW3ZNA`, value 1.0 USD) that fires on every page load. Consequences:
 - Every ad click will register as a conversion the moment the page loads, so Google Ads will report near 100 percent conversion rate and Smart Bidding will optimize for clicks, not for people who actually take a quiz.
 - The `value: 1.0` on every page view inflates conversion value reports.

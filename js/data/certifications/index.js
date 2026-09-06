@@ -72,6 +72,7 @@ export const certifications = [
 {
   slug: 'comptia-pentest-plus',
   name: 'CompTIA PenTest+',
+  seoName: 'CompTIA PenTest+',
   code: 'PT0-003',
   vendor: 'CompTIA',
   tagline: 'Penetration testing and vulnerability management for security professionals',
@@ -265,6 +266,7 @@ export const certifications = [
 {
   slug: 'aws-solutions-architect-associate',
   name: 'AWS Certified Solutions Architect Associate',
+  seoName: 'AWS Solutions Architect Associate',
   code: 'SAA-C03',
   vendor: 'AWS',
   tagline: 'The most popular cloud certification for designing AWS workloads',
@@ -351,6 +353,7 @@ export const certifications = [
 {
   slug: 'aws-cloudops-engineer-associate',
   name: 'AWS Certified CloudOps Engineer Associate',
+  seoName: 'AWS CloudOps Engineer Associate',
   code: 'SOA-C03',
   vendor: 'AWS',
   tagline: 'Deploy, manage, and operate workloads on AWS',
@@ -394,6 +397,7 @@ export const certifications = [
 {
   slug: 'aws-developer-associate',
   name: 'AWS Certified Developer Associate',
+  seoName: 'AWS Certified Developer Associate',
   code: 'DVA-C02',
   vendor: 'AWS',
   tagline: 'Develop, deploy, and debug cloud-based applications on AWS',
@@ -433,6 +437,7 @@ export const certifications = [
 {
   slug: 'aws-devops-engineer-professional',
   name: 'AWS Certified DevOps Engineer Professional',
+  seoName: 'AWS DevOps Engineer Professional',
   code: 'DOP-C02',
   vendor: 'AWS',
   tagline: 'Provision, operate, and manage distributed systems on AWS at scale',
@@ -521,6 +526,7 @@ export const certifications = [
 {
   slug: 'microsoft-az-900',
   name: 'Microsoft Azure Fundamentals',
+  seoName: 'AZ-900 Azure Fundamentals',
   code: 'AZ-900',
   vendor: 'Microsoft',
   tagline: 'Foundational Azure knowledge for cloud beginners and decision-makers',
@@ -541,6 +547,7 @@ export const certifications = [
 {
   slug: 'microsoft-az-104',
   name: 'Microsoft Azure Administrator',
+  seoName: 'AZ-104 Azure Administrator',
   code: 'AZ-104',
   vendor: 'Microsoft',
   tagline: 'Day-to-day administration of Azure infrastructure at the associate level',
@@ -563,6 +570,7 @@ export const certifications = [
 {
   slug: 'isc2-cissp',
   name: 'Certified Information Systems Security Professional',
+  seoName: 'CISSP (ISC2)',
   code: 'CISSP',
   vendor: 'ISC2',
   tagline: 'The gold-standard senior cybersecurity certification',
@@ -594,6 +602,7 @@ export const certifications = [
 {
   slug: 'itil-foundation',
   name: 'ITIL 4 Foundation',
+  seoName: 'ITIL 4 Foundation',
   code: 'ITIL 4',
   vendor: 'PeopleCert',
   tagline: 'The most widely adopted IT service management framework',
@@ -618,6 +627,7 @@ export const certifications = [
 {
   slug: 'osha-10-construction',
   name: 'OSHA 10-Hour Construction',
+  seoName: 'OSHA 10 Construction',
   code: 'OSHA 10',
   vendor: 'OSHA',
   tagline: 'Required entry-level safety training for construction workers',
@@ -642,6 +652,7 @@ export const certifications = [
 {
   slug: 'osha-30-construction',
   name: 'OSHA 30-Hour Construction',
+  seoName: 'OSHA 30 Construction',
   code: 'OSHA 30',
   vendor: 'OSHA',
   tagline: 'Supervisor-level construction safety certification',
@@ -668,6 +679,7 @@ export const certifications = [
 {
   slug: 'forklift-certification',
   name: 'Forklift Operator Certification',
+  seoName: 'OSHA Forklift Certification',
   code: 'OSHA 1910.178',
   vendor: 'OSHA',
   tagline: 'Required certification for operating powered industrial trucks',
@@ -691,6 +703,7 @@ export const certifications = [
 {
   slug: 'cdl-class-a',
   name: 'CDL Class A',
+  seoName: 'CDL Class A',
   code: 'CDL-A',
   vendor: 'FMCSA / State DMV',
   tagline: 'Federal license required to drive tractor-trailers and large combination vehicles',
@@ -714,6 +727,7 @@ export const certifications = [
 {
   slug: 'real-estate-license',
   name: 'Georgia Real Estate Salesperson License',
+  seoName: 'Georgia Real Estate',
   code: 'Real Estate License',
   vendor: 'Georgia Real Estate Commission / AMP',
   tagline: 'Georgia license to represent real estate buyers and sellers',
@@ -740,6 +754,7 @@ export const certifications = [
 {
   slug: 'nmls-mlo',
   name: 'NMLS Mortgage Loan Originator (MLO)',
+  seoName: 'NMLS SAFE MLO',
   code: 'SAFE MLO',
   vendor: 'NMLS',
   tagline: 'Federal SAFE Act licensing exam for mortgage loan originators',
@@ -761,6 +776,7 @@ export const certifications = [
 {
   slug: 'faa-part-107',
   name: 'FAA Part 107 / 14 CFR Part 107',
+  seoName: 'FAA Part 107 Drone',
   code: 'Part 107',
   vendor: 'FAA',
   tagline: 'The 14 CFR Part 107 Remote Pilot Certificate for commercial drone operations',
@@ -787,6 +803,7 @@ export const certifications = [
 {
   slug: 'personal-trainer-nasm',
   name: 'Certified Personal Trainer (NASM-CPT)',
+  seoName: 'NASM CPT Personal Trainer',
   code: 'NASM-CPT',
   vendor: 'NASM',
   tagline: 'NCCA-accredited personal training certification',
@@ -809,6 +826,7 @@ export const certifications = [
 {
   slug: 'cpr-aed',
   name: 'CPR / AED Certification',
+  seoName: 'CPR and AED',
   code: 'CPR/AED',
   vendor: 'American Red Cross / AHA',
   tagline: 'Lifesaving cardiac and breathing emergency skills',
@@ -842,7 +860,7 @@ export const certifications = [
     { slug: 'assessment-and-recognition',         name: 'Assessment and Recognition',             number: '2.0', weight: 12 },
     { slug: 'adult-cpr',                          name: 'Adult CPR',                              number: '3.0', weight: 22 },
     { slug: 'child-and-infant-cpr',               name: 'Child and Infant CPR',                   number: '4.0', weight: 18 },
-    { slug: 'aed-operation',                      name: 'AED Operation',                          number: '5.0', weight: 18 },
+    { slug: 'aed-operation',                      name: 'AED Operation',                          number: '5.0', weight: 18, seoTitle: 'AED Quiz: Free AED Test Questions', seoH1: 'AED Quiz and AED Test Practice: Defibrillator Operation' },
     { slug: 'choking-and-airway-obstruction',     name: 'Choking and Airway Obstruction',         number: '6.0', weight: 12 },
     { slug: 'special-situations-and-recovery',    name: 'Special Situations and Recovery',        number: '7.0', weight: 10 },
   ],
@@ -850,6 +868,7 @@ export const certifications = [
 {
   slug: 'quickbooks-proadvisor',
   name: 'QuickBooks ProAdvisor (Online Certification)',
+  seoName: 'QuickBooks Online ProAdvisor',
   code: 'QuickBooks ProAdvisor',
   vendor: 'Intuit',
   tagline: 'Intuit-certified credential for QuickBooks Online and Desktop',
@@ -875,6 +894,7 @@ export const certifications = [
 {
   slug: 'bls',
   name: 'Basic Life Support (BLS)',
+  seoName: 'BLS (Basic Life Support)',
   code: 'BLS',
   vendor: 'American Heart Association',
   tagline: 'Required CPR-level credential for healthcare professionals',
@@ -1033,6 +1053,7 @@ export const certifications = [
 {
   slug: 'cpa-aud',
   name: 'CPA Auditing and Attestation (AUD)',
+  seoName: 'CPA AUD (Auditing and Attestation)',
   code: 'AUD',
   vendor: 'AICPA',
   tagline: 'Core section of the Uniform CPA Examination, every candidate must pass AUD',
@@ -1056,6 +1077,7 @@ export const certifications = [
 {
   slug: 'cpa-far',
   name: 'CPA Financial Accounting and Reporting (FAR)',
+  seoName: 'CPA FAR',
   code: 'FAR',
   vendor: 'AICPA',
   tagline: 'Core section of the Uniform CPA Examination, financial reporting under U.S. GAAP and GASB',
@@ -1078,6 +1100,7 @@ export const certifications = [
 {
   slug: 'cpa-reg',
   name: 'CPA Taxation and Regulation (REG)',
+  seoName: 'CPA REG',
   code: 'REG',
   vendor: 'AICPA',
   tagline: 'Core section of the Uniform CPA Examination, U.S. federal taxation, ethics, and business law',
@@ -1198,6 +1221,7 @@ export const certifications = [
 {
   slug: 'comptia-project-plus',
   name: 'CompTIA Project+',
+  seoName: 'CompTIA Project+',
   code: 'PK0-005',
   vendor: 'CompTIA',
   tagline: 'Project life cycle, communication, resource and stakeholder management for IT projects',

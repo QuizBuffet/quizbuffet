@@ -626,11 +626,20 @@ function buildDomainHtml(cert, domain, questions) {
   // cert.code instead of truncating the domain name itself (that previously produced
   // duplicate/mid-word-cut titles: see real-estate-license).
   const titleLead = (seoName.length + domain.name.length > 52) ? cert.code : seoName;
+  // Drop a word repeated across the lead/domain-name boundary (seoName "CPR and AED" +
+  // domain "AED Operation" would otherwise read "CPR and AED AED Operation").
+  const leadWords = titleLead.trim().split(/\s+/);
+  const domainWords = domain.name.trim().split(/\s+/);
+  const titleBody = leadWords[leadWords.length - 1].toLowerCase() === domainWords[0].toLowerCase()
+    ? `${titleLead} ${domainWords.slice(1).join(' ')}`.trim()
+    : `${titleLead} ${domain.name}`;
+  const titleNoCount = `${titleBody} Practice Quiz`;
+  const titleWithCount = `${titleNoCount} (${count} Questions)`;
   const fullTitle = domain.seoTitle
     ? clipText(domain.seoTitle, 60)
     : count > 0
-      ? clipText(`${titleLead} ${domain.name} Practice Quiz (${count} Questions)`, 60)
-      : clipText(`${titleLead} ${domain.name} Practice Quiz`, 60);
+      ? clipText(titleWithCount.length <= 60 ? titleWithCount : titleNoCount, 60)
+      : clipText(titleNoCount, 60);
   const desc = count > 0
     ? clipText(`Test yourself on ${cert.code} ${domain.name}${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. ${count} free questions with instant feedback and explanations. No signup, no email needed.`.trim().replace(/\s+/g, ' '), 155)
     : clipText(`${cert.code} ${domain.name} practice quiz, coming soon${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Test yourself with instant feedback once it's live. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 155);
@@ -1333,8 +1342,9 @@ function updateHomeIndex(certs) {
   // Sort alphabetically by cert.name so the order is stable and predictable
   const sorted = [...certs].sort((a, b) => a.name.localeCompare(b.name));
 
-  // 1. Title + meta description + og/twitter strings that include the cert count
-  html = html.replace(/Free Practice Tests for \d+ Certifications/g, `Free Practice Tests for ${n} Certifications`);
+  // 1. Meta description + og/twitter description strings that include the cert count.
+  // The <title>/og:title/twitter:title (B7) no longer embed a live count, so there is
+  // nothing to sync there.
   html = html.replace(/Free practice tests for \d+ certifications:/g, `Free practice tests for ${n} certifications:`);
 
   // 1b. Pre-rendered hero stats (LCP optimization: see <div id="app"> in index.html).

@@ -410,8 +410,7 @@ Add `scripts/audit.mjs` that fails on: any live cert with 0 questions; any live 
 ### M3. Monthly Search Console export
 Save the top-queries CSV to `docs/gsc/YYYY-MM.csv`. Use it to pick the next FAQs and guides. Compare click-through by page after each title change.
 
-### M4. Update `CLAUDE.md`
-After A2, A3, B1, D1, and J1: document the consent two-call shape, the `seoName`/`seoDescription`/`exam`/`objectives` metadata fields, the per-page git-date rule, and the PNG OG requirement, so future sessions do not regress them.
+### M4. Done (removed, number kept). Consent two-call shape was already documented from an earlier pass. Added: the `certifications/index.js` light/full split and its `LIGHT_FIELDS`/`FULL_FIELDS` contract (J3), a real "Exam field" subsection for `seoName`/`seoTitle`/`seoH1`/`seoDescription`/`exam` (the cert-scaffolding step 1 already referenced "Exam at a Glance" without it existing anywhere), the PNG OG requirement (J1), the `html.js`/`#seo-static` timing rule so a future page template does not reintroduce the bug J11 just fixed, and a new "Per-page freshness dates" section explaining the `lastCommitDate`/`firstPublishDate` mechanism and why `llms.txt` is a deliberate exception to it. `objectives` was not documented since it does not exist as a real field anywhere in the codebase (G1's proposal, never implemented, and G1 itself is out of scope per the owner's no-new-content decision).
 
 ### M5. Keep this file current
 Check off items with the commit hash that closed them. Delete items that turn out to be wrong rather than leaving them unchecked.

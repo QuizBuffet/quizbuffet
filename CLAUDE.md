@@ -268,12 +268,22 @@ Only after every check passes is the cert deploy-ready.
 
 | Command | What it does |
 |---|---|
-| `npm start` | Local static server |
-| `npm run build:certs` | Bundles all per-cert metadata files into `js/data/certifications/index.js` |
+| `npm start` | Local static server (note: `npx serve -s .` SPA-fallback mode serves `index.html`'s bytes for every path, which is fine for testing client-side routing/rendering but means you cannot verify a specific generated file's own `<head>` tags this way — use `npx serve .` (no `-s`) or `curl` a literal path instead, matching how GitHub Pages actually serves files) |
+| `npm run build:certs` | Regenerates `js/data/certifications/index.js` (light) and `js/data/certifications/full/<slug>.js` (heavy, one per cert) from the per-cert metadata files |
 | `npm run build:css` | Minifies `css/style.css` → `css/style.min.css` (the file the site actually serves) |
-| `npm run build:seo` | Runs `build:certs` + `build:css`, then regenerates per-cert HTML, OG images, sitemap, feed, `data/build.json` (SW version + build date for the footer stamp), and `data/counts.json` |
+| `npm run build:seo` | Runs `build:certs` + `build:css`, then regenerates per-cert HTML, per-domain HTML, OG PNGs, sitemap, feed, llms.txt, `data/build.json` (SW version + build date for the footer stamp), and `data/counts.json` |
 | `npm run check:weights` | Flags domains under-weighted vs. official exam targets |
 | `npm run check:salaries` | Validates `data/salaries.json` coverage and freshness |
+| `npm run check:seo-duplicates` | Flags exact-duplicate `<title>`/meta description across all generated pages |
+| `npm run check:canonicals` | Validates every generated page has exactly one self-referential, unique canonical tag |
+
+---
+
+## Per-page freshness dates (do not regress to a `TODAY` stamp)
+
+Every generated page's visible byline and `dateModified`/`datePublished` JSON-LD come from real git history, not the day the build ran: `lastCommitDate(relPath)` in `build-seo.mjs` runs `git log -1 --format=%cs -- <path>` for the page's underlying source file (falling back to `TODAY` only if the path has uncommitted changes right now, or git has no history for it yet, e.g. a brand-new page), and `firstPublishDate(key, relPath)` does the same with `git log --diff-filter=A` for a stable `datePublished`, cached in `data/published.json` so it is never recomputed once seeded. `bylineHtml()` shows "Last updated" for anything touched within 365 days and falls back to "Published" (with the original date) for anything older, since claiming a page was "just updated" when it has not actually changed in over a year reads as a manipulated freshness signal, not an honest one, both to a human reader and to Google's recrawl-scheduling.
+
+**Why this matters:** a sitemap or RSS feed where every single page shows today's date on every build is a well-known anti-pattern Google's crawler has learned to discount as a recrawl signal, since it carries no real information about what actually changed. Stamping every page with `new Date()` at build time (which is what `data/build.json`'s `builtAt` and `counts.json`'s `generatedAt` legitimately do, since those genuinely describe "when this build ran," not "when this page's content changed") would silently reintroduce that exact problem for every per-page date if applied to cert/domain pages, `sitemap.xml`'s `lastmod`, or `feed.xml`'s per-item `pubDate`. `llms.txt`/`llms-full.txt` are a deliberate exception: their single whole-file "Last updated" line really is a build-time fact (there is no per-item claim being made there for Google to distrust), so a plain `TODAY` stamp is correct and honest for those two files specifically.
 
 ---
 

@@ -15,8 +15,6 @@ export function loadNextQuestion(queue, index, domainSlug, domainName, backLink,
     `<span>${domainName} · ${remaining} question${remaining !== 1 ? 's' : ''} remaining</span>
      <span class="kbd-hint">1-4 or A, D to answer · Enter / Space to advance</span>`;
 
-  const mid = document.getElementById('ad-mid');
-  if (mid) mid.style.display = 'none';
   document.getElementById('explanation').innerHTML = '';
 
   const q = queue[index];

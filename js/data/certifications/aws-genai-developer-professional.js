@@ -2,6 +2,7 @@ export const cert = {
   slug: 'aws-genai-developer-professional',
   name: 'AWS Certified Generative AI Developer Professional',
   code: 'AIP-C01',
+  seoName: 'AWS GenAI Developer Professional',
   vendor: 'AWS',
   tagline: 'Build, integrate, and operate production GenAI solutions on AWS',
   about: 'AWS Certified Generative AI Developer Professional (AIP-C01) validates the ability to integrate foundation models into applications and business workflows, including RAG and vector store design, agentic AI, prompt engineering and management, FM API integration, model deployment strategies, AI safety and governance, performance and cost optimization, and evaluation, monitoring, and troubleshooting of GenAI applications.',

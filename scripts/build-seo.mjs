@@ -3,17 +3,66 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 import { certifications } from '../js/data/certifications/index.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SITE = 'https://quizbuffet.com';
 const TODAY = new Date().toISOString().slice(0, 10);
-// Human-readable display version of TODAY (e.g. "May 13, 2026"). Must
-// represent the SAME calendar date as TODAY so Google's byline pipeline
-// can match the visible byline to the JSON-LD `dateModified`.
-const TODAY_DISPLAY = new Date().toLocaleDateString('en-US', {
-  year: 'numeric', month: 'long', day: 'numeric',
-});
+
+// Human-readable display version of an ISO date (e.g. "May 13, 2026"). Must represent the
+// SAME calendar date as its input so Google's byline pipeline can match the visible byline
+// to the JSON-LD dateModified/datePublished.
+function displayDate(iso) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
+  });
+}
+// Used only where no single page's date applies: data/build.json, counts.json.generatedAt.
+const TODAY_DISPLAY = displayDate(TODAY);
+const maxDate = (a, b) => (a > b ? a : b);
+
+// Real per-page freshness instead of stamping every page with today's date on every build:
+// a sitemap where every lastmod is always today gets ignored by Google as a recrawl signal.
+// Falls back to TODAY for a path with uncommitted working-tree changes (that page really is
+// changing right now) or one git has no history for yet (new page, not committed).
+const dateCache = new Map();
+function lastCommitDate(relPath) {
+  if (dateCache.has(relPath)) return dateCache.get(relPath);
+  let d = '';
+  try {
+    const dirty = execSync(`git status --porcelain -- "${relPath}"`, { cwd: ROOT }).toString().trim();
+    if (!dirty) d = execSync(`git log -1 --format=%cs -- "${relPath}"`, { cwd: ROOT }).toString().trim();
+  } catch { d = ''; }
+  if (!d) d = TODAY;
+  dateCache.set(relPath, d);
+  return d;
+}
+
+// data/published.json: slug (and slug/domain) -> first-publish date, persisted across builds
+// so datePublished stops being overwritten with TODAY on every run. Seeded from git history
+// on the first run after this map gains a new key; read back unchanged after that.
+const PUBLISHED_PATH = path.join(ROOT, 'data', 'published.json');
+const published = fs.existsSync(PUBLISHED_PATH) ? JSON.parse(fs.readFileSync(PUBLISHED_PATH, 'utf8')) : {};
+let publishedDirty = false;
+function firstPublishDate(key, relPath) {
+  if (published[key]) return published[key];
+  let d = '';
+  try { d = execSync(`git log --diff-filter=A --format=%cs -- "${relPath}" | tail -1`, { cwd: ROOT }).toString().trim(); } catch { d = ''; }
+  published[key] = d || TODAY;
+  publishedDirty = true;
+  return published[key];
+}
+
+// D4: only claim "Last updated" when that is still true within a normal recrawl window;
+// an old, untouched page reads as more honest (and less like a manipulated freshness
+// signal) labeled by when it was first published instead.
+function bylineHtml(modified, publishedIso) {
+  const ageDays = (Date.parse(TODAY) - Date.parse(modified)) / 86400000;
+  const label = ageDays <= 365 ? 'Last updated' : 'Published';
+  const shown = ageDays <= 365 ? modified : publishedIso;
+  return `<time datetime="${shown}">${label}: ${displayDate(shown)}</time>`;
+}
 
 // Site style rule (CLAUDE.md): no em-dashes or en-dashes anywhere in rendered pages.
 // Sources are kept clean, but question data and FAQ text can still carry them, so every
@@ -332,6 +381,12 @@ function buildCertHtml(cert) {
     return { ...dom, count: qs.length };
   });
 
+  // D1/D2: real per-page freshness. modified = last commit touching either the question
+  // data or the metadata file; published = first-publish date, persisted in published.json.
+  const metaRelPath = `js/data/certifications/${cert.slug}.js`;
+  const modified = maxDate(lastCommitDate(`data/certifications/${cert.slug}`), lastCommitDate(metaRelPath));
+  const publishedDate = firstPublishDate(cert.slug, metaRelPath);
+
   // Registered certs with zero questions are scaffolds, not real pages, noindex so
   // Google doesn't flag them as "Crawled - currently not indexed". noindex clears
   // automatically once any domain ships with questions.
@@ -351,11 +406,18 @@ function buildCertHtml(cert) {
   // by Google on most pages (it substitutes its own title from the H1 instead). seoName lets a
   // cert override cert.name when it's long or reads unnaturally as a title lead.
   const seoName = cert.seoName || cert.name;
-  const fullTitle = total > 0
-    ? clipText(`${seoName} Practice Test: ${total}+ Free Questions${codeTag}`, 60)
-    : clipText(`${seoName} Practice Test (Coming Soon)`, 60);
+  // Title tiers: never let clipText cut into "Practice Test". Try the full form, then drop
+  // the code, then the count, then fall back to the exam code as the lead.
+  const titleLeadName = `${seoName} Practice Test`.length <= 60 ? seoName : cert.code;
+  const titleTiers = total > 0
+    ? [`${titleLeadName} Practice Test: ${total}+ Free Questions${codeTag}`,
+       `${titleLeadName} Practice Test: ${total}+ Free Questions`,
+       `${titleLeadName} Practice Test: Free Questions`,
+       `${titleLeadName} Practice Test`]
+    : [`${titleLeadName} Practice Test (Coming Soon)`, `${titleLeadName} Practice Test`];
+  const fullTitle = clipText(titleTiers.find(t => t.length <= 60) || titleTiers[titleTiers.length - 1], 60);
   const desc = total > 0
-    ? clipText((cert.seoDescription || `Free ${seoName} practice test with ${total} exam-style questions across ${cert.domains.length} domains. Instant feedback, explanations, no signup. Study online for the ${cert.code} exam.`).trim().replace(/\s+/g, ' '), 155)
+    ? clipText((cert.seoDescription || `Free ${seoName} practice test online: ${total} exam-style questions across ${cert.domains.length} domains with instant feedback and explanations. No signup. Covers the ${cert.code} exam.`).trim().replace(/\s+/g, ' '), 155)
     : clipText(`${seoName} practice test, coming soon. Test yourself across ${cert.domains.length} exam domains with instant feedback and explanations. No signup, no email.`.trim().replace(/\s+/g, ' '), 155);
 
   // JSON-LD: WebPage + Course + FAQPage + Breadcrumb
@@ -376,7 +438,7 @@ function buildCertHtml(cert) {
         'description': cert.about || desc,
         'url': url,
         'inLanguage': 'en-US',
-        'dateModified': TODAY,
+        'dateModified': modified,
         'educationalCredentialAwarded': cert.name,
         'learningResourceType': 'Practice Test',
         'isAccessibleForFree': true,
@@ -423,8 +485,8 @@ function buildCertHtml(cert) {
         'headline': `The ${cert.code} Study Guide`,
         'description': desc,
         'url': url,
-        'datePublished': TODAY,
-        'dateModified': TODAY,
+        'datePublished': publishedDate,
+        'dateModified': modified,
         'inLanguage': 'en-US',
         'image': ogImage,
         'author': { '@type': 'Organization', 'name': 'QuizBuffet', 'url': SITE },
@@ -562,14 +624,14 @@ ${JSON.stringify(jsonLd, null, 2)}
       <h2>About This Practice Test</h2>
       <p>QuizBuffet's ${htmlEscape(cert.name)} practice test is built for exam preparation. Every question is tagged by exam objective and difficulty (easy, medium, medium-hard, hard) so you can drill the areas you need most. Sessions are short by default (pick 10, 25, 50, or all questions per domain), so you can study in any spare moment.</p>
       <p>Wrong answers come with a contrastive explanation showing why your choice was wrong and what the correct concept actually is. Your progress is saved locally in your browser; nothing is uploaded and there's no signup.</p>
-      <p class="cert-byline"><time datetime="${TODAY}">Last updated: ${TODAY_DISPLAY}</time></p>
+      <p class="cert-byline">${bylineHtml(modified, publishedDate)}</p>
     </section>
     <div id="app"></div>
     <article class="cert-guide-content">
       ${buildCertGuideHtml(cert)}
       ${cert.faq ? buildFaqHtml(cert, faq) : ''}
       <p class="cert-byline cert-guide-byline">
-        <time datetime="${TODAY}">Published and last updated: ${TODAY_DISPLAY}</time>
+        <time datetime="${publishedDate}">Published: ${displayDate(publishedDate)}</time>${modified !== publishedDate ? ` · <time datetime="${modified}">Updated: ${displayDate(modified)}</time>` : ''}
         · By <span>QuizBuffet Editorial</span>
       </p>
     </article>
@@ -616,6 +678,9 @@ function buildDomainHtml(cert, domain, questions) {
   const robotsMeta = count === 0
     ? 'noindex, follow'
     : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+  const domainRelPath = `data/certifications/${cert.slug}/${domain.slug}.json`;
+  const modified = lastCommitDate(domainRelPath);
+  const publishedDate = firstPublishDate(`${cert.slug}/${domain.slug}`, domainRelPath);
   const url = `${SITE}/${cert.slug}/${domain.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}-${domain.slug}.svg`;
   const domNum = domain.number ? `${domain.number} ` : '';
@@ -636,11 +701,15 @@ function buildDomainHtml(cert, domain, questions) {
     : `${titleLead} ${domain.name}`;
   const titleNoCount = `${titleBody} Practice Quiz`;
   const titleWithCount = `${titleNoCount} (${count} Questions)`;
+  // Tiers: with count, without count, code as lead, domain name alone. Never cut "Practice Quiz".
+  const codeNoCount = `${cert.code} ${domain.name} Practice Quiz`;
+  const bareNoCount = `${domain.name} Practice Quiz`;
+  const domainTiers = count > 0
+    ? [titleWithCount, titleNoCount, `${codeNoCount} (${count} Questions)`, codeNoCount, bareNoCount]
+    : [titleNoCount, codeNoCount, bareNoCount];
   const fullTitle = domain.seoTitle
     ? clipText(domain.seoTitle, 60)
-    : count > 0
-      ? clipText(titleWithCount.length <= 60 ? titleWithCount : titleNoCount, 60)
-      : clipText(titleNoCount, 60);
+    : (domainTiers.find(t => t.length <= 60) || `${clipText(domain.name, 54).replace(/[,;:]+$/, '')} Quiz`);
   const desc = count > 0
     ? clipText(`Test yourself on ${cert.code} ${domain.name}${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. ${count} free questions with instant feedback and explanations. No signup, no email needed.`.trim().replace(/\s+/g, ' '), 155)
     : clipText(`${cert.code} ${domain.name} practice quiz, coming soon${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Test yourself with instant feedback once it's live. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 155);
@@ -667,7 +736,7 @@ function buildDomainHtml(cert, domain, questions) {
         'url': url,
         'image': ogImage,
         'inLanguage': 'en-US',
-        'dateModified': TODAY,
+        'dateModified': modified,
         'about': { '@type': 'Thing', 'name': domain.name },
         'educationalLevel': 'Professional certification',
         'learningResourceType': 'Practice Quiz',
@@ -816,7 +885,7 @@ ${JSON.stringify(jsonLd, null, 2)}
           ${otherDomainsHtml}
       </ul>` : ''}
       <p><a href="/${cert.slug}/">&larr; Back to ${htmlEscape(cert.code)} practice test overview</a></p>
-      <p class="cert-byline"><time datetime="${TODAY}">Last updated: ${TODAY_DISPLAY}</time></p>
+      <p class="cert-byline">${bylineHtml(modified, publishedDate)}</p>
     </section>
     <div id="app"></div>
   </main>
@@ -1292,14 +1361,14 @@ ${items}
 }
 
 function buildSitemap(comingSoon) {
-  const urls = [{ loc: `${SITE}/`, priority: '1.0', changefreq: 'weekly' }];
+  const urls = [{ loc: `${SITE}/`, priority: '1.0', changefreq: 'weekly', lastmod: lastCommitDate('index.html') }];
   // CPA hub: a hand-built static landing at /cpa/ that links the 6 CPA section
   // certs (3 Core + 1 Discipline). Not a cert in the data model, so register its
   // sitemap entry here so it survives every build:seo run.
-  urls.push({ loc: `${SITE}/cpa/`, priority: '0.9', changefreq: 'monthly' });
+  urls.push({ loc: `${SITE}/cpa/`, priority: '0.7', changefreq: 'monthly', lastmod: lastCommitDate('cpa/index.html') });
   // Privacy & cookie policy: hand-built static page, not a cert. Register here
   // so it survives every build:seo run and stays in the sitemap.
-  urls.push({ loc: `${SITE}/privacy/`, priority: '0.3', changefreq: 'yearly' });
+  urls.push({ loc: `${SITE}/privacy/`, priority: '0.1', changefreq: 'yearly', lastmod: lastCommitDate('privacy/index.html') });
   for (const cert of certifications) {
     // Tally questions across all domains. Certs with zero questions are scaffolds,
     // the page carries noindex (see buildCertHtml) so don't advertise them in the sitemap.
@@ -1310,10 +1379,11 @@ function buildSitemap(comingSoon) {
       return { slug: d.slug, n };
     });
     if (certTotal === 0) continue;
-    urls.push({ loc: `${SITE}/${cert.slug}/`, priority: '0.9', changefreq: 'monthly' });
+    const certModified = maxDate(lastCommitDate(`data/certifications/${cert.slug}`), lastCommitDate(`js/data/certifications/${cert.slug}.js`));
+    urls.push({ loc: `${SITE}/${cert.slug}/`, priority: '0.8', changefreq: 'monthly', lastmod: certModified });
     for (const d of domainCounts) {
       if (d.n > 0) {
-        urls.push({ loc: `${SITE}/${cert.slug}/${d.slug}/`, priority: '0.8', changefreq: 'monthly' });
+        urls.push({ loc: `${SITE}/${cert.slug}/${d.slug}/`, priority: '0.6', changefreq: 'monthly', lastmod: lastCommitDate(`data/certifications/${cert.slug}/${d.slug}.json`) });
       }
     }
   }
@@ -1321,7 +1391,7 @@ function buildSitemap(comingSoon) {
   // mixed signals to Google (sitemap inclusion = "index me", noindex = "don't").
   // When a cert flips live, its sitemap entry comes back through the live-cert loop above.
   const body = urls.map(u =>
-    `  <url><loc>${u.loc}</loc><lastmod>${TODAY}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`
+    `  <url><loc>${u.loc}</loc><lastmod>${u.lastmod}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`
   ).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

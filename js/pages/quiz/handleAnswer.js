@@ -4,7 +4,6 @@ import { saveFailedAnswer } from '../../storage/saveFailedAnswer.js';
 import { markDomainComplete } from '../../storage/markDomainComplete.js';
 import { getDomainProgress } from '../../storage/getDomainProgress.js';
 import { renderExplanation } from '../../components/explanation/renderExplanation.js';
-import { renderAd } from '../../components/ad/renderAd.js';
 import { advanceSessionIndex } from '../../state/advanceSessionIndex.js';
 import { saveWrongAnswer } from '../../state/saveWrongAnswer.js';
 import { trackFailedAnswer } from '../../state/trackFailedAnswer.js';
@@ -74,6 +73,4 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
 
   renderExplanation(question, onNext);
 
-  const mid = document.getElementById('ad-mid');
-  if (mid) { mid.style.display = 'block'; renderAd('ad-mid'); }
 }

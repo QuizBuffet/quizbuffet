@@ -2,6 +2,7 @@ export const cert = {
   slug: 'aws-ai-practitioner',
   name: 'AWS Certified AI Practitioner',
   code: 'AIF-C01',
+  seoName: 'AWS AI Practitioner',
   vendor: 'AWS',
   tagline: 'Foundational AI, ML, and generative-AI knowledge for the AWS Cloud',
   about: 'AWS Certified AI Practitioner (AIF-C01) validates foundational understanding of AI, machine learning, and generative AI on AWS, including foundation models, prompt engineering, responsible AI, and security for AI workloads. It is designed for professionals who use, evaluate, or work alongside AI/ML systems but are not necessarily building them.',

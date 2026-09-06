@@ -103,14 +103,14 @@ In GA4 Admin > Product links > Google Ads links, link the account. Mark `domain_
 ### A7. Confirm gclid survives the SPA path restore
 `404.html:34` stores `location.pathname + location.search` and `index.html` restores it via `history.replaceState`. gtag runs in `<head>` before the restore and reads `location.search` of the 404 page URL, which still has the gclid. Verify once with a test URL `/comptia-security-plus/?gclid=test` in Tag Assistant. If the conversion cookie `_gcl_aw` is set, nothing to do.
 
-### A8. [DONE: slots removed] Decide on AdSense slots
+### A8. [DONE: slots and quiz ad-mid code removed; renderAd() no-op calls remain] Decide on AdSense slots
 `js/app.js` shells contain `#ad-top`, `#ad-mid`, `#ad-bottom`. They render empty. Either wire AdSense or remove the divs and the reserved CSS heights (CLS reservation for a slot that never fills is wasted space). If wiring: do not run AdSense on pages you are buying traffic to; the arbitrage looks bad to Google Ads quality review.
 
 ---
 
 ## B. Titles, H1s, descriptions (P1)
 
-### B1. [DONE 21dbe34d] Cert page title template
+### B1. [DONE, re-verified: 50/50 titles carry "Practice Test", none clipped mid-phrase, tiered fallback added] Cert page title template
 **File.** `scripts/build-seo.mjs:275-277`.
 **Now.** `${total}+ Free ${cert.code} Practice Questions, No Signup` gives "1900+ Free SY0-701 Practice Questions, No Signup".
 **Why it fails.** Searchers use the cert name and the words "practice test" or "practice exam". Exam codes appear in under 5 percent of Search Console queries.
@@ -126,7 +126,7 @@ const fullTitle = total > 0
 - "AWS Developer Associate Practice Exam: 500+ Free Questions" (with `seoName`)
 - "CISSP Practice Test: 800+ Free Questions (ISC2)"
 
-### B2. [DONE for 24 certs, cpr-aed uncommitted] Per-cert `seoName` overrides
+### B2. [DONE for 32 certs incl. all AWS] Per-cert `seoName` overrides
 Add `seoName` to these metadata files in `js/data/certifications/`. Names chosen from the actual query phrasing in Search Console:
 
 | slug | seoName |
@@ -158,7 +158,7 @@ Add `seoName` to these metadata files in `js/data/certifications/`. Names chosen
 
 Also strip the en-dash from AWS names in `cert.name` ("AWS Certified Developer – Associate" has a U+2013). Replace with a plain space or hyphen.
 
-### B3. [DONE] Domain page title template
+### B3. [DONE, re-verified: 271/271 carry "Quiz", 0 over 60 chars, 0 duplicates, tiered fallback added] Domain page title template
 **File.** `scripts/build-seo.mjs:586-587`.
 **Now.** `${certTotal}+ Free ${cert.code} Questions: ${domain.name}` gives "1900+ Free SY0-701 Questions: General Security Concepts".
 **Fix.**
@@ -174,7 +174,7 @@ Also support optional `seoTitle` and `seoH1` on each domain entry in cert metada
 **File.** cert H1 in `buildCertHtml` (grep `<h1`). Now "CompTIA Security+ (SY0-701) Free Practice Test".
 **Fix.** "CompTIA Security+ Practice Test and Practice Exam Questions (SY0-701)". Both "practice test" and "practice exam" are in the H1 and each appears in dozens of queries. Keep the code at the end.
 
-### B5. [PARTIAL: new template live, zero custom seoDescription authored] Meta descriptions per cert
+### B5. [PARTIAL: template now keeps "free" and "online" inside 155 chars on all 50; zero custom seoDescription authored] Meta descriptions per cert
 **File.** `scripts/build-seo.mjs:278-280`. All 51 share one template.
 **Fix.** Add an optional `seoDescription` field to cert metadata. Template fallback becomes:
 `Free ${seoName} practice test with ${total} exam-style questions across ${cert.domains.length} domains. Instant feedback, explanations, no signup. Study online for the ${cert.code} exam.`

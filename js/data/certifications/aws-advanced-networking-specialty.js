@@ -2,6 +2,7 @@ export const cert = {
   slug: 'aws-advanced-networking-specialty',
   name: 'AWS Certified Advanced Networking Specialty',
   code: 'ANS-C01',
+  seoName: 'AWS Advanced Networking Specialty',
   vendor: 'AWS',
   tagline: 'Design, implement, manage, and secure AWS and hybrid networks at scale',
   about: 'AWS Certified Advanced Networking Specialty (ANS-C01) validates expertise designing and operating complex AWS networking solutions. It covers edge services and global traffic management (CloudFront, Global Accelerator, Route 53), hybrid connectivity with Direct Connect and Site-to-Site VPN, BGP routing, multi-VPC and multi-account designs (Transit Gateway, PrivateLink, VPC peering, RAM), DNS architectures including DNSSEC, network monitoring (VPC Flow Logs, Traffic Mirroring, Reachability Analyzer, Transit Gateway Network Manager), and network security with WAF, Shield, Network Firewall, and Firewall Manager.',

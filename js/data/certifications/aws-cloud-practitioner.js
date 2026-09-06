@@ -2,6 +2,7 @@ export const cert = {
   slug: 'aws-cloud-practitioner',
   name: 'AWS Certified Cloud Practitioner',
   code: 'CLF-C02',
+  seoName: 'AWS Cloud Practitioner',
   vendor: 'AWS',
   tagline: 'Foundational AWS knowledge for technical and non-technical professionals',
   about: 'AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding of the AWS Cloud, value proposition and design principles, the shared responsibility model, security and compliance, core services across compute, storage, database, networking, AI/ML and analytics, plus pricing, billing, and support. Designed for individuals with up to 6 months of AWS exposure, it does not expect coding, architecture design, or troubleshooting skills.',

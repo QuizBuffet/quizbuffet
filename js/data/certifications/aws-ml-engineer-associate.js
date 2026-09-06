@@ -2,6 +2,7 @@ export const cert = {
   slug: 'aws-ml-engineer-associate',
   name: 'AWS Certified Machine Learning Engineer Associate',
   code: 'MLA-C01',
+  seoName: 'AWS ML Engineer Associate',
   vendor: 'AWS',
   tagline: 'Build, deploy, and operate ML solutions on AWS',
   about: 'AWS Certified Machine Learning Engineer Associate (MLA-C01) validates the ability to build, deploy, and operationalize ML solutions on AWS. It covers data preparation, model development, deployment and orchestration of ML workflows, and ongoing monitoring, maintenance, and security of ML solutions in production.',

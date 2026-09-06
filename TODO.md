@@ -7,7 +7,7 @@ Scope (owner decision 2026-09-06): this list is about visibility (search, ads, b
 Renumbered 2026-09-06 after removing every completed, decided, and out-of-scope item. Analysis notes are kept at the end for reference.
 
 Priority key: **P1** = do before ads spend. **P2** = next 30 days. **P3** = ongoing.
-After any change to `scripts/build-seo.mjs` or cert metadata: run `npm run build:seo`, bump the cache version in `sw.js`, and spot-check one cert page, one domain page, and the home page.
+After any change to `scripts/build-seo.mjs` or cert metadata: run `npm run build:seo` and `npm run audit`, then spot-check one cert page, one domain page, and the home page. The deploy workflow stamps the service worker version automatically.
 
 ---
 

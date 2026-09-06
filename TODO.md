@@ -294,7 +294,7 @@ They are correctly `noindex` and excluded from the sitemap (`buildSitemap` comme
 ### J4. CSS
 `css/style.min.css` is 155 KB. Run Chrome DevTools Coverage on home, cert, domain, and quiz pages. Remove dead rules. If the file still exceeds 60 KB, split into `core.css` + `quiz.css` and load quiz CSS on the quiz route only. Keep the preload-as-style pattern.
 
-### J5. Reverted 2026-09-06: the "IM Fell only on home" premise was wrong; `.section-title` renders on cert, domain, and coming-soon pages under the default theme, so dropping the font swapped those headings to Georgia. Font restored on every page type (display=optional, non-blocking). Remaining font work, if any: self-host Nunito and Playfair (K/J5 original scope), not removal.
+### J5. Done (removed, number kept). Final resolution 2026-09-06: static grep misses it, but the SPA cert shell (`js/app.js` SHELLS.cert) injects `<h2 class="section-title">Exam Domains</h2>` on every cert page and `.domain-weight` badges use the same font, confirmed in the live runtime DOM. So home and the 50 cert pages keep IM Fell English SC; domain, quiz, and coming-soon pages (312) omit it. Any further font work is self-hosting, not removal.
 
 ### J6. Baseline recorded 2026-09-06 (mobile Lighthouse, simulated throttling, against production). Re-run after J3 to J5, target 90+ performance / 100 SEO.
 | Page | Perf | SEO | LCP | FCP | CLS | TBT | Speed Index |

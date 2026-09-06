@@ -213,8 +213,7 @@ Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certific
 
 ### E9. Done (removed, number kept)
 
-### F1. [DONE — every live cert now has a faq array. While researching, found CompTIA CySA+ has the same problem A+ and ITF+ had: CS0-003 is superseded by CS0-004 (launched 2026-06-23, CS0-003 retires 2026-12-22). Unlike A+ (pure label fix) I did not relabel cert.code, since CS0-004 adds real content (AI/cloud-hybrid coverage) this question bank was not written against — added an honest retirement-transition FAQ item instead, matching the ITF+/Tech+ pattern. Verified PenTest+/Security+/Cloud+/Project+/Network+ are NOT similarly stale. AWS pricing tiers (Foundational $100 / Associate $150 / Professional & Specialty $300) verified via search before writing 11 AWS FAQs] `faq` for every live cert
-Only 4 of 51 have one (`grep -l "faq:" js/data/certifications/*.js`). Order of work: the 16 certs in section C, then the remaining 35. Each FAQ: 6 to 8 items, second person, no em-dashes, facts verified against the official source. Standard set: how hard, how many questions and time, passing score, cost, prerequisites, validity and renewal, is it worth it, how long to study. Add one "Is this practice test free?" item per cert because "free" is in most queries.
+### F1. Done (removed, number kept)
 
 ### F2. Exam logistics table
 Add an optional `exam` object to cert metadata:

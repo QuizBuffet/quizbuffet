@@ -1807,6 +1807,14 @@ a.seo-domain-pill:hover { text-decoration: underline; }
 .seo-key-terms { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .seo-key-terms li { padding: 10px 14px; border: 1px solid var(--border-sub); border-radius: 8px; background: var(--surface, #fafafa); font-size: 14px; line-height: 1.5; }
 
+/* === Exam at a glance table (F2) === */
+.cert-exam-table { width: 100%; max-width: 520px; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+.cert-exam-table tr { border-bottom: 1px solid var(--border-sub); }
+.cert-exam-table tr:last-child { border-bottom: none; }
+.cert-exam-table th, .cert-exam-table td { padding: 8px 12px 8px 0; text-align: left; vertical-align: top; }
+.cert-exam-table th { font-weight: 600; color: var(--text-mid, #555); width: 40%; }
+.cert-exam-source { font-size: 13px; color: var(--text-muted); margin: 4px 0 0; }
+
 /* === Related certs === */
 .cert-related { margin: clamp(28px, 4vw, 40px) 0; }
 .cert-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }

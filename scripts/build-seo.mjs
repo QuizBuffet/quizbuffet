@@ -686,6 +686,24 @@ ${JSON.stringify(jsonLd, null, 2)}
       <p>Free ${htmlEscape(seoName)} practice test with <strong>${total}+ exam-style questions</strong> across ${cert.domains.length} domains, organized like the real ${htmlEscape(cert.code)} exam. Use it as a practice exam, a mock test, or a quick quiz. Instant feedback, no account.</p>
       ${cert.about ? `<p>${htmlEscape(cert.about)}</p>` : ''}
       ${cert.details ? `<p><em>${htmlEscape(cert.details)}</em></p>` : ''}
+      ${cert.exam ? `<h2>Exam at a Glance</h2>
+      <table class="cert-exam-table">
+        <tbody>
+          ${[
+            ['Questions', cert.exam.questions],
+            ['Time limit', cert.exam.minutes ? `${cert.exam.minutes} minutes` : null],
+            ['Passing score', cert.exam.passing],
+            ['Cost', cert.exam.cost],
+            ['Delivery', cert.exam.delivery],
+            ['Validity', cert.exam.validity],
+            ['Prerequisites', cert.exam.prerequisites],
+            ['Retake policy', cert.exam.retake],
+          ].filter(([, v]) => v != null && v !== '').map(([label, value]) =>
+            `<tr><th scope="row">${htmlEscape(label)}</th><td>${htmlEscape(String(value))}</td></tr>`
+          ).join('\n          ')}
+        </tbody>
+      </table>
+      ${cert.exam.source ? `<p class="cert-exam-source">Source: <a href="${htmlEscape(cert.exam.source)}" rel="noopener" target="_blank">official exam page</a></p>` : ''}` : ''}
       <h2>Exam Domains</h2>
       <ul>
           ${domainListHtml}

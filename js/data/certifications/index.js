@@ -92,7 +92,7 @@ export const certifications = [
   details: 'Multiple-choice and performance-based · Recommended 4 years SOC/IR experience · Passing score 750/900',
   faq: [
     { q: 'Is CompTIA CySA+ CS0-003 being retired?',
-      a: 'Yes. CompTIA launched CySA+ v4 (CS0-004) on June 23, 2026, and CS0-003 is scheduled to retire on December 22, 2026. If you have not scheduled your exam yet, check CompTIA\'s site for which version you\'ll actually sit, since this practice bank is built around CS0-003\'s objectives and CS0-004 adds updated cloud/hybrid and AI-related security content.' },
+      a: 'Yes. CompTIA launched CySA+ v4 (CS0-004) on June 23, 2026. Providers report CS0-003 retiring around December 22, 2026, though some report a same-day switchover, so confirm the date on CompTIA's site before you schedule. If you have not scheduled your exam yet, check CompTIA\'s site for which version you\'ll actually sit, since this practice bank is built around CS0-003\'s objectives and CS0-004 adds updated cloud/hybrid and AI-related security content.' },
     { q: 'What is the passing score for CySA+?',
       a: 'You need 750 out of 900.' },
     { q: 'How much does CompTIA CySA+ cost?',
@@ -792,7 +792,7 @@ export const certifications = [
     { q: 'How many questions are on the ANS-C01 exam?',
       a: '65 questions total (50 scored, 15 unscored), multiple-response and matching formats, in 170 minutes.' },
     { q: 'What is the passing score for Advanced Networking Specialty?',
-      a: 'You need 700 out of 1000.' },
+      a: 'You need 750 out of 1000, the same cut score AWS uses for its other specialty and professional exams.' },
     { q: 'How much does AWS Advanced Networking Specialty cost?',
       a: 'It\'s AWS\'s specialty-tier exam, $300 USD.' },
     { q: 'Do you need a networking background for this exam?',
@@ -1556,6 +1556,10 @@ export const certifications = [
       a: 'They overlap heavily. "Micropigmentation" is the broader technical term for depositing pigment in the skin (covering permanent makeup, paramedical work like areola restoration, and cosmetic tattooing); some states license these separately, others combine them.' },
     { q: 'Is this micropigmentation practice test free?',
       a: 'Yes. All micropigmentation practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.' },
+    { q: 'How many questions are on the micropigmentation exam?',
+      a: 'The NIC Advanced Practice Micropigmentation theory exam has 110 items, of which 100 are scored, with 90 minutes to finish. Your state may use its own version, so check the candidate bulletin.' },
+    { q: 'Is this micropigmentation practice test free?',
+      a: 'Yes. Every micropigmentation practice question on QuizBuffet is free, organized by the same NIC subject areas, with an explanation for every answer and no signup.' },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop Micropigmentation and Permanent Makeup Textbooks on Amazon', url: 'https://www.amazon.com/s?k=permanent+makeup+micropigmentation+training&tag=0003aa-20' },

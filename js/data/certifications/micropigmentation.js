@@ -17,6 +17,10 @@ export const cert = {
       a: 'They overlap heavily. "Micropigmentation" is the broader technical term for depositing pigment in the skin (covering permanent makeup, paramedical work like areola restoration, and cosmetic tattooing); some states license these separately, others combine them.' },
     { q: 'Is this micropigmentation practice test free?',
       a: 'Yes. All micropigmentation practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.' },
+    { q: 'How many questions are on the micropigmentation exam?',
+      a: 'The NIC Advanced Practice Micropigmentation theory exam has 110 items, of which 100 are scored, with 90 minutes to finish. Your state may use its own version, so check the candidate bulletin.' },
+    { q: 'Is this micropigmentation practice test free?',
+      a: 'Yes. Every micropigmentation practice question on QuizBuffet is free, organized by the same NIC subject areas, with an explanation for every answer and no signup.' },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop Micropigmentation and Permanent Makeup Textbooks on Amazon', url: 'https://www.amazon.com/s?k=permanent+makeup+micropigmentation+training&tag=0003aa-20' },

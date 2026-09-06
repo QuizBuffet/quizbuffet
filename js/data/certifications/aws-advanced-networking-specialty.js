@@ -11,7 +11,7 @@ export const cert = {
     { q: 'How many questions are on the ANS-C01 exam?',
       a: '65 questions total (50 scored, 15 unscored), multiple-response and matching formats, in 170 minutes.' },
     { q: 'What is the passing score for Advanced Networking Specialty?',
-      a: 'You need 700 out of 1000.' },
+      a: 'You need 750 out of 1000, the same cut score AWS uses for its other specialty and professional exams.' },
     { q: 'How much does AWS Advanced Networking Specialty cost?',
       a: 'It\'s AWS\'s specialty-tier exam, $300 USD.' },
     { q: 'Do you need a networking background for this exam?',

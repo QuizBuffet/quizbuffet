@@ -1698,6 +1698,7 @@ a:is(:hover, :active) { text-decoration: underline; }
 .cert-about-lead { font-size: clamp(15px, 2.3vw, 17px); line-height: 1.65; color: var(--text); margin: 0 0 10px; }
 .cert-about-details { font-size: 14px; line-height: 1.55; color: var(--text-muted); margin: 0; padding: 10px 14px; background: var(--surface, rgba(0,0,0,0.03)); border-left: 3px solid var(--border-sub); border-radius: 4px; }
 .cert-byline { font-size: 13px; color: var(--text-muted, #888); margin: 14px 0 0; letter-spacing: 0.02em; }
+.cert-salary-source { font-size: 13px; color: var(--text-muted, #888); }
 .cert-byline time { font-variant-numeric: tabular-nums; }
 
 /* Long-form cert guide — article-style content below the practice-test dashboard.

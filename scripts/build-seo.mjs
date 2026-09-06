@@ -369,7 +369,8 @@ function buildCertGuideSections(cert) {
     `Holders of ${cert.code} in the US currently see compensation in the range of ` +
     `<strong>${fmtUsd(sal.salary.low)} to ${fmtUsd(sal.salary.high)}</strong> per year, with median around <strong>${fmtUsd(sal.salary.mid)}</strong>. ` +
     `${sal.notes ? sal.notes + ' ' : ''}` +
-    `Salary varies by region, employer size, and complementary skills, but the ${cert.code} credential consistently lifts the floor of what you can negotiate against.`
+    `Salary varies by region, employer size, and complementary skills, but the ${cert.code} credential consistently lifts the floor of what you can negotiate against.` +
+    `${sal.sources?.length ? ` <span class="cert-salary-source">Source: ${htmlEscape(sal.sources.join(', '))}${sal.lastUpdated ? `, ${sal.lastUpdated.slice(0, 4)}` : ''}.</span>` : ''}`
   ) : (
     `${cert.code} opens doors to roles in the ${cert.vendor} ecosystem where the certification appears as a hiring filter. ` +
     `Compensation varies by region and employer, but the credential consistently lifts the floor of what you can negotiate against.`
@@ -460,6 +461,9 @@ function buildCertHtml(cert) {
     : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
   const faq = pickFaqQuestions(cert);
+  // F3: pickRelatedLive was already built for coming-soon pages; wire it up here too so live
+  // cert pages cross-link to 3 other live certs in the same category (cheap internal authority).
+  const related = pickRelatedLive(cert, certifications.filter(c => c.slug !== cert.slug), 3);
   const url = `${SITE}/${cert.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
@@ -700,6 +704,17 @@ ${JSON.stringify(jsonLd, null, 2)}
     <article class="cert-guide-content">
       ${buildCertGuideHtml(cert)}
       ${cert.faq ? buildFaqHtml(cert, faq) : ''}
+      ${related.length ? `<section class="cert-related">
+        <h2>Related Practice Tests</h2>
+        <div class="cert-related-grid">
+          ${related.map(r => `<a class="cert-related-card" href="/${r.slug}/">
+            <div class="cert-related-vendor">${htmlEscape(r.vendor || '')}</div>
+            <div class="cert-related-name">${htmlEscape(r.name)}</div>
+            <div class="cert-related-code">${htmlEscape(r.code)}</div>
+            <div class="cert-related-tag">${htmlEscape(r.tagline || '')}</div>
+          </a>`).join('\n          ')}
+        </div>
+      </section>` : ''}
       <p class="cert-byline cert-guide-byline">
         <time datetime="${publishedDate}">Published: ${displayDate(publishedDate)}</time>${modified !== publishedDate ? ` · <time datetime="${modified}">Updated: ${displayDate(modified)}</time>` : ''}
         · By <span>QuizBuffet Editorial</span>
@@ -1046,11 +1061,28 @@ const LIVE_CATEGORY_MAP = {
   'personal-trainer-nasm':              'Fitness',
   'cpr-aed':                            'Healthcare',
   'quickbooks-proadvisor':              'Accounting',
+  'bls':                                'Healthcare',
+  'ceh':                                'Cybersecurity',
+  'comptia-project-plus':               'Project Management',
+  'cpa-aud':                            'Finance',
+  'cpa-bar':                            'Finance',
+  'cpa-far':                            'Finance',
+  'cpa-isc':                            'Finance',
+  'cpa-reg':                            'Finance',
+  'cpa-tcp':                            'Finance',
+  'barber-license':                     'Beauty',
+  'barber-no-chemical':                 'Beauty',
+  'cosmetology-license':                'Beauty',
+  'micropigmentation':                  'Beauty',
+  'tattoo-license':                     'Beauty',
 };
 
 // Pick up to N live certs in the same category as the coming-soon cert
 function pickRelatedLive(comingCert, liveCerts, n = 3) {
-  const cat = comingCert.category || 'Other';
+  // comingCert.category exists on coming-soon.json entries; a live cert has no .category
+  // field of its own (only LIVE_CATEGORY_MAP does) — check both so this also works when the
+  // reference cert is itself live (F3), not just for coming-soon pages.
+  const cat = LIVE_CATEGORY_MAP[comingCert.slug] || comingCert.category || 'Other';
   const sameCategory = liveCerts.filter(c => (LIVE_CATEGORY_MAP[c.slug] || c.category || 'Other') === cat);
   if (sameCategory.length >= n) return sameCategory.slice(0, n);
   // Fallback: pad with assorted live certs from other categories

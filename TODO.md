@@ -207,7 +207,7 @@ Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certific
 
 ### E6. Done (removed, number kept)
 
-### E7. `Organization` schema
+### E7. [PARTIAL: logo added; sameAs stays empty until K4 (off-site profiles) exists] `Organization` schema
 `index.html` JSON-LD has `"sameAs": []`. Fill with real profile URLs once K4 is done. Add `"logo"` pointing at a 512px PNG (`/android-icon-192x192.png` is acceptable now).
 
 ### E8. Done (removed, number kept)
@@ -224,7 +224,7 @@ exam: { questions: 90, minutes: 90, passing: '750 of 900', cost: '$404', deliver
 ```
 Render as a two-column table under an H2 "Exam at a glance" in `buildCertHtml`. This replaces the free-text `details` string over time. Also feeds `cert-prices.csv` (C20).
 
-### F3. Related certifications on live pages
+### F3. [DONE — also fixed a bug found while wiring this up: pickRelatedLive read comingCert.category directly, which is undefined for a live cert (only LIVE_CATEGORY_MAP has live-cert categories), so every live-page call silently fell back to the 'Other' bucket; also filled in the 14 live certs missing from LIVE_CATEGORY_MAP (CPA sections, CEH, BLS, Project+, the 5 beauty/trade certs), which also improves the E1 homepage grid] Related certifications on live pages
 `pickRelatedLive` (`build-seo.mjs:855`) is only used on coming-soon pages. Call it in `buildCertHtml` too and render 3 to 4 same-category certs under "Related practice tests". Internal links between certs in the same category are cheap authority.
 
 ### F4. Study plan section
@@ -233,7 +233,7 @@ Optional `studyGuide` field (array of strings) rendered under "Study guide" (C5)
 ### F5. `Course` schema review
 Cert pages emit `Course` + `CourseInstance`. Google's Course rich result is for actual courses; a quiz page is a stretch and could be flagged. Options: (a) keep `Course` but ensure `hasCourseInstance.courseMode: "online"` and `courseWorkload` are present so it validates, or (b) replace with `LearningResource` + `Quiz`. Test both in the Rich Results Test and keep whichever validates with no warnings. Do the same for domain pages (they emit `Quiz` + `Course`).
 
-### F6. Salary block
+### F6. [DONE — data already had source/date for all 51 live certs (only the schema's own _meta entry lacked it); added the missing piece, a visible "Source: X, Y, 2026." citation in the rendered salary paragraph] Salary block
 `data/salaries.json` covers 51 of 51. Confirm every cert page renders the salary paragraph with the source name and year; add `"source"` and `"asOf"` to entries that lack them.
 
 ### F7. Trust signals on every cert page

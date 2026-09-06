@@ -311,6 +311,15 @@
         </ul>
         <p class="seo-sample-explain">CVE-2021-41773 is a path traversal vulnerability in Apache 2.4.49. The URL /cgi-bin/.%2e/.%2e/.%2e/.%2e/etc/passwd decodes as: %2e = &#39;.&#39; so .%2e = &#39;..&#39; making each .%2e/ equivalent to &#39;../&#39;. This creates &#39;../../../../etc/passwd&#39;, a classic directory traversal sequence navigating from the web root to the system root and then to /etc/passwd. Apache 2.4.49 failed to normalize these encoded traversal sequences before path resolution. If CGI was enabled, this also enabled RCE. The fix was released in 2.4.51.</p>
       </details>
+      <h2>Key Terms in This Domain</h2>
+      <ul class="seo-key-terms">
+          <li><strong>Hashcat:</strong> GPU-accelerated password cracker for very fast brute-force and dictionary attacks</li>
+          <li><strong>sqlmap:</strong> Automated SQL injection detection and exploitation</li>
+          <li><strong>Nikto:</strong> Open-source web server scanner: checks for outdated software and known issues</li>
+          <li><strong>hping3:</strong> Custom-packet crafter for firewall testing and traceroute-style probing</li>
+          <li><strong>BloodHound:</strong> Active Directory attack-path visualizer using graph theory</li>
+          <li><strong>OWASP ZAP:</strong> Open-source web-app proxy and scanner; community alternative to Burp Suite</li>
+      </ul>
       <h2>Other CEH Domains</h2>
       <ul>
           <li><a href="/ceh/information-security-overview/">1.0 Information Security and Ethical Hacking Overview</a></li>

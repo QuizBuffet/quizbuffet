@@ -311,6 +311,19 @@
         </ul>
         <p class="seo-sample-explain">Three-tier architecture separates presentation (web), logic (application), and data (database) layers specifically to contain the blast radius of a compromise and enforce separation of duties among tiers. The application server should be the only component authorized to query the database. A direct web-to-database connection means: (1) A compromised web server gives an attacker immediate SQL Server access; (2) The application server&#39;s input validation and business logic controls can be bypassed; (3) Database credentials may be stored in web tier configuration rather than safely in the application tier. Remediation: firewall rules explicitly denying direct TCP 1433 from the DMZ to the database zone, permitting only the application server&#39;s IP to reach the database on that port.</p>
       </details>
+      <h2>Key Terms in This Domain</h2>
+      <ul class="seo-key-terms">
+          <li><strong>ERP and Accounting Information Systems:</strong> Integrated business process platforms; interaction between ERPs and the financial accounting subsystem.</li>
+          <li><strong>System Availability:</strong> Mirroring, replication, business impact analysis, agreed service time, downtime; backup types (full, incremental, differential).</li>
+          <li><strong>Disaster Recovery and Business Continuity:</strong> Planning to maintain operations and recover IT systems following disruption; recovery time and recovery point objectives.</li>
+          <li><strong>IT Change Management:</strong> Development, staging, and production environments; unit, integration, system, and acceptance testing; direct, parallel, and pilot conversion approaches.</li>
+          <li><strong>IT Infrastructure:</strong> Operating systems, servers, network infrastructure, end-user devices; foundational components of an organization&#39;s IT environment.</li>
+          <li><strong>Business Process Models:</strong> Flowcharts, data flow diagrams, BPMN diagrams used to document and evaluate process design.</li>
+          <li><strong>Patch Management:</strong> Identification, testing, and deployment of security patches and software updates to maintain system integrity.</li>
+          <li><strong>SOC 2® Engagements:</strong> Examination of controls relevant to Trust Services Criteria (Security, Availability, Processing Integrity, Confidentiality, Privacy).</li>
+          <li><strong>CUECs and CSOCs:</strong> Complementary User Entity Controls and Complementary Subservice Organization Controls; required for the system to achieve its objectives.</li>
+          <li><strong>GDPR (EU) 2016/679:</strong> Six principles (lawfulness, fairness, transparency, purpose limitation, data minimization, accuracy, storage limitation, integrity, accountability); Articles 4-34 in scope.</li>
+      </ul>
       <h2>Other ISC Domains</h2>
       <ul>
           <li><a href="/cpa-isc/security-confidentiality-and-privacy/">2.0 Security, Confidentiality and Privacy</a></li>

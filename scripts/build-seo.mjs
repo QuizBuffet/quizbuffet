@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
+import { pathToFileURL } from 'node:url';
 import { certifications } from '../js/data/certifications/index.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
@@ -213,6 +214,49 @@ function pickMixedSample(questions, target = 8) {
     }
   }
   return picked.slice(0, Math.min(target, questions.length));
+}
+
+// G3: "Key terms in this domain" block, sourced entirely from data the site already has
+// (js/data/services/<slug>.js, the same concept list used by the cert page's Service Match
+// drill) — no new content authored. Only 42 of 51 certs have a services file; domains on the
+// rest simply render no block (see the `services.length` guard at the call site).
+// Generic words excluded here would otherwise "match" almost every entry in an AWS-style
+// services file (nearly every description mentions "cloud"/"data"/"aws"), swamping the
+// genuinely discriminating words with noise.
+const STOPWORDS = new Set(['and', 'the', 'for', 'with', 'of', 'to', 'in', 'on', 'a', 'an', 'aws', 'amazon', 'cloud', 'data', 'service', 'services', 'your', 'you']);
+
+async function loadServices(certSlug) {
+  const svcPath = path.join(ROOT, 'js', 'data', 'services', `${certSlug}.js`);
+  if (!fs.existsSync(svcPath)) return [];
+  const mod = await import(pathToFileURL(svcPath).href);
+  return mod.services || [];
+}
+
+function domainSearchWords(domain, questions) {
+  const words = new Set();
+  for (const w of domain.name.toLowerCase().split(/\W+/)) {
+    if (w.length > 3 && !STOPWORDS.has(w)) words.add(w);
+  }
+  const keywordCounts = {};
+  for (const q of questions) {
+    if (!q.keyword) continue;
+    for (const w of q.keyword.toLowerCase().split(/\W+/)) {
+      if (w.length > 3 && !STOPWORDS.has(w)) keywordCounts[w] = (keywordCounts[w] || 0) + 1;
+    }
+  }
+  Object.entries(keywordCounts).sort((a, b) => b[1] - a[1]).slice(0, 15).forEach(([w]) => words.add(w));
+  return words;
+}
+
+function pickKeyTerms(services, searchWords, max = 10) {
+  const scored = services.map(s => {
+    const hay = `${s.a} ${s.d}`.toLowerCase();
+    let score = 0;
+    for (const w of searchWords) if (hay.includes(w)) score++;
+    return { s, score };
+  }).filter(x => x.score > 0);
+  scored.sort((a, b) => b.score - a.score);
+  return scored.slice(0, max).map(x => x.s);
 }
 
 function pickFaqQuestions(cert, max = 12) {
@@ -693,7 +737,9 @@ function buildDomainOgSvg(cert, domain) {
 </svg>`;
 }
 
-function buildDomainHtml(cert, domain, questions) {
+async function buildDomainHtml(cert, domain, questions) {
+  const services = await loadServices(cert.slug);
+  const keyTerms = services.length ? pickKeyTerms(services, domainSearchWords(domain, questions)) : [];
   const count = questions.length;
   // Domain pages with zero questions get noindex, clears automatically when questions ship.
   const robotsMeta = count === 0
@@ -906,6 +952,10 @@ ${JSON.stringify(jsonLd, null, 2)}
       <p>This domain is part of the <a href="/${cert.slug}/">${htmlEscape(cert.name)} practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       ${sampleHtml ? `<h2>Sample Questions</h2>
       ${sampleHtml}` : ''}
+      ${keyTerms.length ? `<h2>Key Terms in This Domain</h2>
+      <ul class="seo-key-terms">
+          ${keyTerms.map(t => `<li><strong>${htmlEscape(t.a)}:</strong> ${htmlEscape(t.d)}</li>`).join('\n          ')}
+      </ul>` : ''}
       ${otherDomainsHtml ? `<h2>Other ${htmlEscape(cert.code)} Domains</h2>
       <ul>
           ${otherDomainsHtml}
@@ -1591,7 +1641,7 @@ for (const cert of certifications) {
     domMap[dom.slug] = qs.length;
     const domDir = path.join(dir, dom.slug);
     fs.mkdirSync(domDir, { recursive: true });
-    writeClean(path.join(domDir, 'index.html'), buildDomainHtml(cert, dom, qs));
+    writeClean(path.join(domDir, 'index.html'), await buildDomainHtml(cert, dom, qs));
     fs.writeFileSync(path.join(ROOT, 'icons', 'og', `${cert.slug}-${dom.slug}.svg`), buildDomainOgSvg(cert, dom));
     domainGenerated++;
   }

@@ -1792,6 +1792,10 @@ a:is(:hover, :active) { text-decoration: underline; }
 .seo-sample-correct { background: var(--correct-bg); color: #1a6; font-weight: 600; }
 .seo-sample-explain { margin: 0; padding: 10px 16px 16px; line-height: 1.6; color: var(--text-mid, #555); font-size: 14px; }
 
+/* === Domain page key terms (G3) === */
+.seo-key-terms { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.seo-key-terms li { padding: 10px 14px; border: 1px solid var(--border-sub); border-radius: 8px; background: var(--surface, #fafafa); font-size: 14px; line-height: 1.5; }
+
 /* === Related certs === */
 .cert-related { margin: clamp(28px, 4vw, 40px) 0; }
 .cert-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }

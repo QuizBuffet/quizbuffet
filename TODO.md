@@ -347,6 +347,8 @@ Verified against a local server that serves literal files (no SPA-fallback rewri
 
 Zero console/runtime errors, zero failed network requests, home page unaffected (99 perf, 2.0s LCP, unchanged), coming-soon page confirmed still shows its static content immediately (unaffected). LCP's reported element is still the consent banner even after this fix, not `#seo-static`'s content, likely because the browser stops counting an element as a valid LCP candidate once it is later hidden (which still happens, just much sooner after real content exists instead of immediately at boot) — worth a follow-up look, but the wall-clock numbers above are the real, user-facing win regardless of which element gets the LCP attribution credit.
 
+**Production propagation note (unresolved, owner has dashboard access to check):** GitHub Actions confirms this commit (and every commit after it) built and deployed successfully well over 20 minutes ago, but `curl` against a never-before-requested URL (fresh `cf-ray`, `cf-cache-status: DYNAMIC`, i.e. Cloudflare passed straight through to origin, not served from its own edge cache) still returned the pre-J11 HTML. This rules out normal Cloudflare edge caching as the cause; something further upstream (GH Pages' own CDN propagation, or a Cloudflare mechanism beyond simple edge caching, e.g. Always Online or a Cache Reserve) is serving stale content. A manual cache purge in the Cloudflare dashboard would quickly tell us which. Not code-fixable from here.
+
 ---
 
 ## K. Authority and off-site (P2/P3)

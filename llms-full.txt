@@ -1417,18 +1417,6 @@ A: removed carefully to avoid touching the contaminated outer surface, then disc
 **Q: When setting up supplies for a new client after breakdown, the candidate should**
 A: begin with freshly disinfected or newly barriered surfaces and new sterile packaged implements from the supply kit — never reusing single-session items from the previous client's procedure
 
-## Body Piercing License (Body Piercing)
-Vendor: State Boards
-URL: https://quizbuffet.com/body-piercing-license/
-Total questions: 0
-
-A Body Piercing License authorizes piercing of the ear cartilage, nose, lip, tongue, navel, nipple, and other body sites for compensation. Most states use the NIC (National-Interstate Council of State Boards of Cosmetology) National Body Piercing Theory Examination — a 110-item (100 weighted), 90-minute written exam — paired with a hands-on practical. The theory blueprint covers two domains: scientific concepts (microbiology, infection control levels and methods, Standard Precautions, blood exposure and needle-stick procedures, anatomy and physiology, skin histology, anomalies and disorders, jewelry materials — 55%) and piercing procedures and services (client consultation and consent, outcomes and complications, tools and equipment, jewelry suitability, skin prep and placement marking, piercing technique, jewelry changes and stretching, aftercare — 45%). References include Milady, the APP Procedure Manual, the Body Art Model Code, and The Piercing Bible.
-
-### Domains
-- 1.0 Scientific Concepts (55% of exam)
-- 2.0 Piercing Procedures and Services (45% of exam)
-
-
 ## CPA — Auditing and Attestation (AUD) (AUD)
 Vendor: AICPA
 URL: https://quizbuffet.com/cpa-aud/
@@ -1730,3 +1718,4 @@ A: Yes, if you are moving into project coordination or IT project management. It
 - EPA 608 Refrigerant Handling Certification (EPA 608) — https://quizbuffet.com/epa-608/ — priority #38
 - ServSafe Food Handler (ServSafe FH) — https://quizbuffet.com/servsafe-food-handler/ — priority #39
 - Esthetician License (Esthetician) — https://quizbuffet.com/esthetician-license/ — priority #40
+- Body Piercing License (Body Piercing) — https://quizbuffet.com/body-piercing-license/ — priority #41

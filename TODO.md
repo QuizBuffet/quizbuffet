@@ -23,12 +23,13 @@ N. Search Console page analysis
 O. Search Console country analysis
 P. Search Console device analysis
 Q. Search Console daily trend analysis
+R. SERP inspection of the CPR/AED page
 
 ---
 
 ## A. Ads readiness (P1, block spend until done)
 
-### A1. Add Google Ads conversion events
+### A1. [PARTIAL, see Q4] Add Google Ads conversion events
 **Problem.** `index.html` and every generated page load `AW-17221241617` but only call `gtag('config', 'AW-17221241617')`. No conversion is ever sent. Every click will be unmeasured.
 
 **Fix.**
@@ -206,7 +207,7 @@ This is the only cert that has earned clicks, and 3 of the 4 came from its domai
    - `summary` (G1): explain AED pad placement, shock sequence, and when to use an AED, 150 words.
    Raise `aed-operation` to 100+ questions; it is the single highest-demand domain on the site.
 2. Cert page title from B1 becomes "CPR and AED Practice Test: 300+ Free Questions". Cert H1: "CPR and AED Test Practice: Free CPR Exam and AED Quiz Questions".
-3. Add `faq` (8 items): "Is the CPR test multiple choice?", "What is the passing score for the CPR test?" (AHA: 84 percent on the written exam), "Can I take the CPR test online for free?", "How many questions are on the AHA CPR/AED test?", "How long is CPR certification valid?" (2 years), "What is the difference between CPR and BLS?", "What does AED stand for and when do you use it?", "Do you need to be certified to use an AED?".
+3. Add `faq` (10 items). Start with the four "People also ask" questions Google shows for this page, verbatim (R5): "Where can I find free CPR test questions and answers?", "Can you do CPR and AED training online?", "What to know to pass a CPR test?", "Which comes first, CPR or AED?". Then: "Is the CPR test multiple choice?", "What is the passing score for the CPR test?" (AHA: 84 percent on the written exam), "Can I take the CPR test online for free?", "How many questions are on the AHA CPR/AED test?", "How long is CPR certification valid?" (2 years), "What is the difference between CPR and BLS?", "What does AED stand for and when do you use it?", "Do you need to be certified to use an AED?".
 4. `seoDescription`: "Free CPR and AED practice test and AED quiz. 300 AHA-style questions on compressions, rescue breaths, choking, and defibrillator use. Take the CPR test online, no signup."
 5. Domain page titles for the other CPR domains (B3) become "CPR and AED Adult CPR Practice Quiz (N Questions)". Add `seoTitle` overrides for the two that already click: adult-cpr ("Adult CPR Quiz: Free CPR Test Questions") and assessment-and-recognition ("CPR Assessment Quiz: Recognizing Cardiac Arrest").
 6. Ads: this cert has proven search demand and proven clicks. Make it the first ad group alongside AWS Developer.
@@ -466,7 +467,7 @@ Fill each to 30+ using the QUESTION-PROMPT workflow, or merge two tiny domains i
 3. Collapse doubled punctuation (`,,`, `, ,`, `.,`).
 4. Re-run `docs/validate-domain.py` on every file; re-minify. Commit in batches per cert so diffs are reviewable.
 
-### H2. body-piercing-license is live with 0 questions
+### H2. [IN PROGRESS, uncommitted] body-piercing-license is live with 0 questions
 `data/counts.json` reports 0. Two domain files exist. Either fill both domains to 100+ each and rebuild, or move the slug back into `data/coming-soon.json` and remove it from `_manifest.js` until questions exist. The page currently carries `noindex` (0 questions triggers it), so no urgent harm, but it is in the "51 live certs" count on the home page, which is inaccurate.
 
 ### H3. Fill thin certs
@@ -680,7 +681,7 @@ All content is English for a single market. Do not add hreflang or country subfo
 
 Desktop 1,133 impressions (94 percent), mobile 68 (6 percent), tablet 1. Certification practice-test queries are normally 50 to 70 percent mobile. A 94 percent desktop share means Google is largely not showing the site on mobile, or ranks it much lower there. Some of the top certs (AWS Developer, CISSP, QuickBooks) skew desktop, but not enough to explain this.
 
-### P1. The consent banner was an intrusive interstitial on mobile
+### P1. [DONE 94bc8bb3] The consent banner was an intrusive interstitial on mobile
 The banner covered roughly half the viewport on phones (paragraph kept a 320px flex basis after switching to column layout). Google's mobile page-experience signal penalizes interstitials that cover the main content on arrival from search. Fixed 2026-09-06 in `js/components/consent/renderConsent.js` (mobile rule now `flex:0 0 auto`, tighter padding). After A2 most visitors will not see the banner at all. Request re-indexing of the top 16 cert pages after deploy.
 
 ### P2. Check mobile Core Web Vitals in Search Console
@@ -738,6 +739,35 @@ Commit `673caed` adds a Google Ads "page view" conversion (`AW-17221241617/yyIzC
 - Every ad click will register as a conversion the moment the page loads, so Google Ads will report near 100 percent conversion rate and Smart Bidding will optimize for clicks, not for people who actually take a quiz.
 - The `value: 1.0` on every page view inflates conversion value reports.
 Fix: keep the snippet only if the conversion action is set to "Secondary" in Google Ads (Goals > Conversions > that action > Goal and action optimization > Secondary), remove the `value` and `currency`, and add the real primary conversion (quiz start or domain complete) from A1. Also confirm the snippet is not inside the templates in `scripts/build-seo.mjs` twice (once from the AW block and once from this addition).
+
+---
+
+## R. SERP inspection of quizbuffet.com/cpr-aed/ (2026-09-06, Google, Stonecrest GA)
+
+### R1. Google is rewriting the titles it does not like
+On-disk title for the CPR page is "300+ Free CPR/AED Practice Questions, No Signup". Google displays "CPR / AED Certification (CPR/AED) Free Practice Test", which is the H1. Same for NASM ("Certified Personal Trainer (NASM-CPT) - QuizBuffet"), CPA AUD ("CPA — Auditing and Attestation (AUD) - QuizBuffet"), OSHA 30 ("OSHA 30-Hour Construction - QuizBuffet"), and the home page ("QuizBuffet: Free Practice Tests for IT, Cloud, Cybersecurity ..."). Google rewrites titles it judges as boilerplate, keyword-led, or not descriptive of the page. It kept the template only for BLS and ANS-C01. Conclusion: the "N+ Free CODE Practice Questions, No Signup" template is being rejected by Google on most pages, which independently confirms B1. When Google substitutes the H1, the H1 quality matters as much as the title; B4 applies.
+
+### R2. The index is stale: last crawl mid-June to early July
+Snippet bylines read "Jun 17, 2026" and "Jul 2, 2026". Those are the visible "Last updated" bylines of the indexed copies. Domain-page titles in the SERP ("Adult CPR — CPR / AED Certification (CPR/AED) Free Practice Test") are from a build older than the current template. Google has not recrawled these pages in two months despite the sitemap claiming every URL changed today. That is the D1 problem in practice: a sitemap where every lastmod is always today gets ignored. After the week-one deploy, use URL Inspection > Request indexing on the 16 section-C cert pages; do not wait for the sitemap.
+
+### R3. Doubled code parentheticals in indexed copies
+"Certified Personal Trainer (NASM-CPT) (NASM-CPT) practice test" and "CPR / AED Certification (CPR/AED)" appear in indexed descriptions. The current build has a `codeTag` dedupe, so this is fixed on disk but not in the index. Confirm after recrawl. Also confirm `cert.name` values never embed the code themselves.
+
+### R4. Em-dashes are visible in the SERP
+"CPA — Auditing and Attestation (AUD)" comes from `cert.name` in `js/data/certifications/cpa-aud.js`. Descriptions end with "explanations — no account needed". These read as machine-written in a results list. B8 covers templates; also fix `cert.name` for the six CPA files and any other name containing an em-dash or en-dash (`grep -l "—\|–" js/data/certifications/*.js`).
+
+### R5. "People also ask" for this query, verbatim
+- Where can I find free CPR test questions and answers?
+- Can you do CPR and AED training online?
+- What to know to pass a CPR test?
+- Which comes first, CPR or AED?
+Add all four to the cpr-aed `faq` (C1) with these exact phrasings as the `q`. The first one is the site's whole value proposition; answer it in two sentences and name the page.
+
+### R6. Commercial competition on CPR queries
+The sponsored results are certification sellers (cprcare.com at $9.99 to $14.95, local AHA class providers). Searchers on "cpr certification" want a card, not practice. For the ads campaign, bid on "cpr practice test", "cpr test questions", "aed quiz", "cpr exam questions", and add "certification", "classes", "near me", "online course", "wallet card" as negative keywords. Same negative-keyword pattern for BLS, OSHA, and forklift, where course sellers dominate.
+
+### R7. Breadcrumbs and favicon render correctly
+"quizbuffet.com › CPR / AED Certification" shows the BreadcrumbList is working and the favicon is picked up. No action.
 
 ---
 

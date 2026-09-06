@@ -602,9 +602,15 @@ function buildDomainHtml(cert, domain, questions) {
   // Cert-wide total drives the title's lead so every domain page advertises scale + free.
   const certTotal = cert.domains.reduce((s, d) => s + loadDomainQuestions(cert.slug, d.slug).length, 0);
   // Domain-page SEO leads with the cert total and "Free"; domain name trails for uniqueness.
+  // A long, word-based cert.code (e.g. "Real Estate License") can push the domain name past
+  // clipText's cutoff, and two different domain names can then truncate down to the same
+  // string. If the full-lead title would need truncating, fall back to a shorter lead that
+  // keeps the domain name intact instead of risking a collision.
+  const leadLiveTitle = `${certTotal}+ Free ${cert.code} Questions: ${domain.name}`;
+  const leadSoonTitle = `Free ${cert.code} ${domain.name} Practice Quiz`;
   const fullTitle = count > 0
-    ? clipText(`${certTotal}+ Free ${cert.code} Questions: ${domain.name}`, 60)
-    : clipText(`Free ${cert.code} ${domain.name} Practice Quiz`, 60);
+    ? clipText(leadLiveTitle.length <= 60 ? leadLiveTitle : `${cert.code}: ${domain.name}`, 60)
+    : clipText(leadSoonTitle.length <= 60 ? leadSoonTitle : `${cert.code}: ${domain.name} (Coming Soon)`, 60);
   const desc = count > 0
     ? clipText(`Test yourself on ${cert.code} ${domain.name}${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. ${count} free questions with instant feedback and explanations. No signup, no email needed.`.trim().replace(/\s+/g, ' '), 155)
     : clipText(`${cert.code} ${domain.name} practice quiz, coming soon${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Test yourself with instant feedback once it's live. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 155);

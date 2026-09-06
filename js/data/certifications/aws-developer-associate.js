@@ -5,6 +5,7 @@ export const cert = {
   seoTitle: 'AWS Developer Associate Practice Exam: 500+ Free Questions',
   seoH1: 'AWS Certified Developer Associate Practice Exam and Practice Tests (DVA-C02)',
   code: 'DVA-C02',
+  seoDescription: 'Free AWS Certified Developer Associate practice exam online: 500 DVA-C02 questions with explanations across all four domains. No signup.',
   vendor: 'AWS',
   tagline: 'Develop, deploy, and debug cloud-based applications on AWS',
   about: 'AWS Certified Developer Associate (DVA-C02) validates the ability to develop, test, deploy, and debug AWS cloud-based applications. It covers application development with Lambda, API Gateway, SDKs, DynamoDB and other data stores, security (IAM, KMS, Cognito, secrets), CI/CD with CodeBuild/CodePipeline/CodeDeploy and SAM/CloudFormation, plus troubleshooting and optimization with CloudWatch and X-Ray.',
@@ -27,6 +28,8 @@ export const cert = {
       a: 'The Developer exam focuses on building, deploying, and debugging applications with services like Lambda, DynamoDB, and CI/CD pipelines. The Solutions Architect exam focuses on designing resilient, cost-effective architectures. Both are associate level, so pick the one that matches your day-to-day role.' },
     { q: 'How long should you study for the AWS Developer exam?',
       a: 'Most candidates with some AWS experience need about four to eight weeks of focused study. Working through practice questions by domain is the fastest way to find the gaps before test day.' },
+    { q: 'How much does the AWS Developer Associate exam cost?',
+      a: '$150 USD, the standard AWS associate-tier price, paid through Pearson VUE when you schedule. If you already hold an AWS certification, your account carries a 50% discount voucher for the next exam.' },
   ],
   udemyCourseUrl: 'https://www.udemy.com/course/aws-certified-developer-associate-practice-tests-dva-c01/',
   affiliates: [

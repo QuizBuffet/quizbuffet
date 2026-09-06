@@ -4,6 +4,7 @@ export const cert = {
   seoName: 'CISSP (ISC2)',
   seoH1: 'CISSP Practice Test and Practice Exam: ISC2 Certified Information Systems Security Professional',
   code: 'CISSP',
+  seoDescription: 'Free CISSP practice test online: 800 ISC2 exam-style questions across all eight domains with explanations. No account, no paywall.',
   vendor: 'ISC2',
   tagline: 'The gold-standard senior cybersecurity certification',
   about: 'CISSP (Certified Information Systems Security Professional) validates deep technical and managerial knowledge across eight domains: security and risk management (governance, risk, BCP, ethics), asset security (classification, handling, data lifecycle), security architecture and engineering (security models, cryptography, site/facility design), communication and network security (OSI, secure protocols, segmentation), identity and access management (AAA, federation, RBAC/ABAC), security assessment and testing (vulnerability, pen testing, audits), security operations (logging, incident management, DR/BC), and software development security (SDLC, SAST/DAST, secure coding).',

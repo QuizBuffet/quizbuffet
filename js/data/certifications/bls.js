@@ -3,6 +3,7 @@ export const cert = {
   name: 'Basic Life Support (BLS)',
   seoName: 'BLS (Basic Life Support)',
   code: 'BLS',
+  seoDescription: 'Free BLS practice test online: 300 AHA-style Basic Life Support questions with instant feedback and explanations. Mock test format, no signup.',
   vendor: 'American Heart Association',
   tagline: 'Required CPR-level credential for healthcare professionals',
   about: 'BLS (Basic Life Support) certifies healthcare professionals to deliver high-quality CPR, use an AED, provide ventilation with barrier devices and bag-mask, relieve choking, and work as part of a high-performance resuscitation team for adults, children, and infants. Required for nurses, physicians, EMTs, paramedics, dental and respiratory professionals, and most clinical roles. Built around the AHA Chain of Survival, 2020 BLS Guidelines (with 2023 focused updates), and the AHA BLS Provider course; renewal is typically every two years.',

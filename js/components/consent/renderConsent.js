@@ -16,7 +16,23 @@ function setConsent(granted) {
   }
 }
 
+// Consent is only required in the EEA, UK, and Switzerland. The <head> already grants
+// analytics and ad measurement by default everywhere else, so the banner is shown only
+// to visitors who are likely in a consent jurisdiction. There is no geo API on a static
+// host, so the timezone (Europe/*) and the browser language act as the proxy; the check
+// errs on the side of showing the banner.
+const EU_LANGS = /^(bg|cs|da|de|el|es-ES|et|fi|fr|ga|hr|hu|is|it|lt|lv|mt|nl|no|nb|nn|pl|pt-PT|ro|sk|sl|sv|en-GB|en-IE|de-CH|fr-CH|it-CH)/i;
+function needsConsent() {
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    if (/^Europe\//.test(tz)) return true;
+    if (/^Atlantic\/(Reykjavik|Canary|Madeira|Azores|Faroe)$/.test(tz)) return true;
+    return EU_LANGS.test(navigator.language || '');
+  } catch (_) { return true; }
+}
+
 export function renderConsent() {
+  if (!needsConsent()) return;
   let choice = null;
   try { choice = localStorage.getItem(KEY); } catch (_) {}
   if (choice === 'granted' || choice === 'denied') return; // already decided

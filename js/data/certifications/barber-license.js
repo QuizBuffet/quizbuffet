@@ -23,6 +23,8 @@ export const cert = {
       a: 'You can retake it after paying the exam fee again. Most states let you retake only the section you failed with no long waiting period, but some limit attempts before requiring more training.' },
     { q: 'Is this barber practice test free?',
       a: 'Yes. All 260+ barber practice questions and quizzes on QuizBuffet are free, organized by the same NIC subject areas, with explanations for every answer and no signup.' },
+    { q: 'How much does the barber exam cost?',
+      a: "Fees are set by your state board and its testing vendor, commonly $50 to $150 per exam part (written and practical) plus a license application fee. Check your state board's candidate bulletin for the exact amounts." },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop Milady Standard Barbering Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+barbering&tag=0003aa-20' },

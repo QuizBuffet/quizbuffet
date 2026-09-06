@@ -48,7 +48,7 @@
        handoff from static to interactive happens in one step with nothing hidden early. -->
   <script>try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics and ad consent denied in the EEA/UK until Accept, granted by default elsewhere. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -67,7 +67,7 @@
       ad_storage: 'granted',
       ad_user_data: 'granted',
       ad_personalization: 'granted',
-      analytics_storage: 'denied',
+      analytics_storage: 'granted',
       functionality_storage: 'denied',
       personalization_storage: 'denied',
       security_storage: 'granted',
@@ -425,6 +425,7 @@
       <h2>About This Practice Test</h2>
       <p>QuizBuffet's CompTIA ITF+ practice test is built for exam preparation. Every question is tagged by exam objective and difficulty (easy, medium, medium-hard, hard) so you can drill the areas you need most. Sessions are short by default (pick 10, 25, 50, or all questions per domain), so you can study in any spare moment.</p>
       <p>Wrong answers come with a contrastive explanation showing why your choice was wrong and what the correct concept actually is. Your progress is saved locally in your browser; nothing is uploaded and there's no signup.</p>
+      <p class="cert-trust">Questions are written against the published FC0-U61 objectives and checked for accuracy and balance before they go live. <a href="/about/">How QuizBuffet writes and reviews its questions</a>.</p>
       <p class="cert-byline"><time datetime="2026-09-06">Last updated: September 6, 2026</time></p>
     </section>
     <div id="app"></div>

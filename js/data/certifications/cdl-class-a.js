@@ -22,6 +22,8 @@ export const cert = {
       a: 'Yes, in most usage "CDL pretest" and "CDL permit test" refer to the same thing: the written knowledge test you pass to get your commercial learner\'s permit (CLP) before scheduling the behind-the-wheel skills test.' },
     { q: 'Can I take the CDL test online?',
       a: 'The written knowledge test is administered at a state DMV or approved testing location, not taken independently online, though some states now offer computer-based testing on-site. QuizBuffet\'s free practice test is online and lets you study before you go in.' },
+    { q: 'How much does the CDL Class A test cost?',
+      a: 'It varies by state. Expect roughly $50 to $200 in state fees for the permit, the knowledge tests, and the skills test combined, plus the cost of any training you take. Your state DMV or licensing agency publishes the exact fee schedule.' },
   ],
   affiliates: [
     { provider: 'amazon',  label: 'Shop CDL Study Guides on Amazon', url: 'https://www.amazon.com/s?k=cdl+class+a+study+guide&tag=0003aa-20' },

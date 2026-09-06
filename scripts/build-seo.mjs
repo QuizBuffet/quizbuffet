@@ -142,7 +142,7 @@ const EEA_UK_REGIONS = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'F
 // this same block (build:seo does not touch those files), keep them in sync by hand. See
 // CLAUDE.md "Analytics consent" before changing this.
 function buildConsentGtagBlock() {
-  return `<!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  return `<!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics and ad consent denied in the EEA/UK until Accept, granted by default elsewhere. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -161,7 +161,7 @@ function buildConsentGtagBlock() {
       ad_storage: 'granted',
       ad_user_data: 'granted',
       ad_personalization: 'granted',
-      analytics_storage: 'denied',
+      analytics_storage: 'granted',
       functionality_storage: 'denied',
       personalization_storage: 'denied',
       security_storage: 'granted',
@@ -803,6 +803,7 @@ ${JSON.stringify(jsonLd, null, 2)}
       <h2>About This Practice Test</h2>
       <p>QuizBuffet's ${htmlEscape(cert.name)} practice test is built for exam preparation. Every question is tagged by exam objective and difficulty (easy, medium, medium-hard, hard) so you can drill the areas you need most. Sessions are short by default (pick 10, 25, 50, or all questions per domain), so you can study in any spare moment.</p>
       <p>Wrong answers come with a contrastive explanation showing why your choice was wrong and what the correct concept actually is. Your progress is saved locally in your browser; nothing is uploaded and there's no signup.</p>
+      <p class="cert-trust">Questions are written against the published ${htmlEscape(cert.code)} objectives and checked for accuracy and balance before they go live. <a href="/about/">How QuizBuffet writes and reviews its questions</a>.</p>
       <p class="cert-byline">${bylineHtml(modified, publishedDate)}</p>
     </section>
     <div id="app"></div>
@@ -1125,11 +1126,18 @@ ${JSON.stringify(jsonLd, null, 2)}
       <ul class="seo-key-terms">
           ${keyTerms.map(t => `<li><strong>${htmlEscape(t.a)}:</strong> ${htmlEscape(t.d)}</li>`).join('\n          ')}
       </ul>` : ''}
+      <section class="seo-share">
+        <h2>Link to this quiz</h2>
+        <p>Studying with a group or teaching a class? Send this address or paste the link into your notes, wiki, or course page:</p>
+        <p><code class="seo-share-url">${htmlEscape(url)}</code></p>
+        <p><code class="seo-share-snippet">&lt;a href="${htmlEscape(url)}"&gt;${htmlEscape(seoName)} ${htmlEscape(domain.name)} practice quiz on QuizBuffet&lt;/a&gt;</code></p>
+      </section>
       ${otherDomainsHtml ? `<h2>Other ${htmlEscape(cert.code)} Domains</h2>
       <ul>
           ${otherDomainsHtml}
       </ul>` : ''}
       <p><a href="/${cert.slug}/">&larr; Back to ${htmlEscape(cert.code)} practice test overview</a></p>
+      <p class="cert-trust">Questions are written against the published ${htmlEscape(cert.code)} objectives and checked for accuracy and balance before they go live. <a href="/about/">How QuizBuffet writes and reviews its questions</a>.</p>
       <p class="cert-byline">${bylineHtml(modified, publishedDate)}</p>
     </section>
     <div id="app"></div>

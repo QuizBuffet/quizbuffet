@@ -52,7 +52,7 @@
       ad_storage: 'granted',
       ad_user_data: 'granted',
       ad_personalization: 'granted',
-      analytics_storage: 'denied',
+      analytics_storage: 'granted',
       functionality_storage: 'denied',
       personalization_storage: 'denied',
       security_storage: 'granted',
@@ -122,11 +122,11 @@
       <h2>Analytics, ads, and cookies</h2>
       <p>We use Google Analytics 4 (measurement ID G-YRKFB3WT9C) to understand aggregate, anonymous traffic, and Google Ads (AW-17221241617) to measure how many visits lead to a conversion (for example, starting a quiz). We implement <strong>Google Consent Mode v2</strong>, which satisfies the consent requirement for visitors in the EEA, UK, and other GDPR/ePrivacy jurisdictions.</p>
       <ul>
-        <li><strong>Analytics storage</strong> defaults to "denied" for every visitor, everywhere, until you choose.</li>
+        <li><strong>Analytics storage</strong> defaults to "denied" for visitors in the EEA and UK until you Accept, and to "granted" for visitors elsewhere, where opt-in consent for anonymous analytics is not legally required. The consent banner is shown only where consent is required.</li>
         <li><strong>Ad storage</strong> (used only for conversion measurement, never for personalized ads or remarketing) defaults to "denied" for visitors in the EEA and UK until you Accept, and defaults to "granted" for visitors elsewhere, where opt-in consent for basic ad measurement is not legally required. Ad personalization is never enabled for anyone.</li>
         <li><strong>Before you consent (EEA/UK):</strong> no analytics or ad cookies are written, and no identifiers are stored. Google receives only cookieless, aggregated pings (no personal data, no cross-site identifiers).</li>
         <li><strong>If you click "Accept":</strong> Google Analytics sets its standard first-party cookies (e.g., <code>_ga</code>, <code>_ga_*</code>) to measure repeat visits, and Google Ads is allowed to measure conversions for you. IP addresses are not stored by GA4. Ad personalization stays denied either way: nothing here is used to build remarketing or personalized-ad audiences.</li>
-        <li><strong>If you click "Decline" (or do nothing):</strong> analytics stays off, and (for EEA/UK visitors) ad measurement stays off too; no analytics or ad cookies are set.</li>
+        <li><strong>If you click "Decline" (or do nothing):</strong> for EEA/UK visitors analytics and ad measurement stay off and no analytics or ad cookies are set. Visitors elsewhere can turn analytics off at any time with the reset control below.</li>
       </ul>
     </section>
 

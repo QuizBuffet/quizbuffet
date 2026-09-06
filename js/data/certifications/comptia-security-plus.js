@@ -2,6 +2,7 @@ export const cert = {
   slug: 'comptia-security-plus',
   name: 'CompTIA Security+',
   code: 'SY0-701',
+  seoDescription: 'Free CompTIA Security+ practice test online: 1,900 SY0-701 questions across all five domains with explanations. No account, no paywall.',
   vendor: 'CompTIA',
   tagline: 'Core security skills for IT professionals defending enterprise environments',
   about: 'Security+ certifies professionals who can assess enterprise security posture, monitor hybrid environments, operate within governance and compliance frameworks, and identify and respond to security incidents.',
@@ -28,6 +29,8 @@ export const cert = {
       a: 'Yes. Every Security+ practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no account or email required.' },
     { q: 'Are these real SY0-701 exam questions?',
       a: 'No, and be wary of any site that claims otherwise. These are original, exam-style questions written to match the SY0-701 objectives and difficulty, not leaked or memorized real exam content ("exam dumps"), which violates CompTIA\'s candidate agreement and can get your certification revoked.' },
+    { q: 'How much does the Security+ exam cost?',
+      a: "The SY0-701 voucher is $404 USD in the United States as of 2026, bought through the CompTIA store or an authorized partner. Retakes cost the same, and bundles with CertMaster study material are priced separately. Check CompTIA's store for the current rate in your country." },
   ],
   udemyCourseUrl: 'https://www.udemy.com/course/securityplus/',
   affiliates: [

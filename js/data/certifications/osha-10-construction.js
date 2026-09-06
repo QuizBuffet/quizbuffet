@@ -3,6 +3,7 @@ export const cert = {
   name: 'OSHA 10-Hour Construction',
   seoName: 'OSHA 10 Construction',
   code: 'OSHA 10',
+  seoDescription: 'Free OSHA 10 construction practice test online: 400 questions on the Focus Four hazards, PPE, and health hazards with explanations. No signup.',
   vendor: 'OSHA',
   tagline: 'Required entry-level safety training for construction workers',
   about: 'OSHA 10-Hour Construction is a voluntary outreach training program covering worker rights and employer responsibilities, the OSHA Focus Four hazards (falls, electrocution, struck-by, caught-in or between), personal protective equipment, and health hazards in construction. Many states and contractors require it before allowing workers on a construction site, and it is the most common entry credential in the U.S. construction industry.',

@@ -20,6 +20,8 @@ export const cert = {
       a: 'Proper sharps, trash, and to-be-disinfected containers, plus EPA-registered disinfectant wipes used correctly throughout the simulated procedure. Missing or misusing these is a common way candidates lose points.' },
     { q: 'Is this tattoo license practice test free?',
       a: 'Yes. All tattoo license practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.' },
+    { q: 'How much does a tattoo license exam cost?',
+      a: 'It varies by state. Expect roughly $100 to $250 for the exam and initial license combined, plus bloodborne pathogens training that some states require separately. Your state health department or board publishes the fee schedule.' },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop Milady Standard Esthetics and Tattooing Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+esthetics+tattooing&tag=0003aa-20' },

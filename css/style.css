@@ -5332,3 +5332,8 @@ html, body {
 .home-faq-item { border-bottom: 1px solid var(--border); padding: 8px 0; }
 .home-faq-item summary { cursor: pointer; font-weight: 600; font-size: 15px; }
 .home-faq-item p { margin: 8px 0 4px; font-size: 15px; line-height: 1.6; }
+
+/* F7 trust line on cert pages; K5 link box on domain pages */
+.cert-trust { font-size: 14px; color: var(--text-muted); margin: 8px 0 0; }
+.seo-share { margin: 20px 0; }
+.seo-share code { display: inline-block; max-width: 100%; overflow-wrap: anywhere; font-size: 13px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 4px; background: transparent; }

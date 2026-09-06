@@ -23,6 +23,8 @@ export const cert = {
       a: 'You can retake it after paying the exam fee again. Most states let you retake only the section you failed and have no long waiting period, but a few limit attempts before requiring more training.' },
     { q: 'Is this cosmetology practice test free?',
       a: 'Yes. All 300+ cosmetology practice questions and quizzes on QuizBuffet are free, organized by the same four NIC subject areas, with explanations for every answer and no signup.' },
+    { q: 'How much does the cosmetology exam cost?',
+      a: "Fees are set by your state board and its testing vendor, commonly $50 to $150 per exam part (written and practical) plus a separate license application fee. Check your state board's candidate bulletin for the exact amounts." },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop Milady Standard Cosmetology Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+cosmetology&tag=0003aa-20' },

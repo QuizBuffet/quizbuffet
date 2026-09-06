@@ -3,6 +3,7 @@ export const cert = {
   name: 'CompTIA Project+',
   seoName: 'CompTIA Project+',
   code: 'PK0-005',
+  seoDescription: 'Free CompTIA Project+ practice test online: 812 PK0-005 questions with explanations across every exam domain. No account, no paywall.',
   vendor: 'CompTIA',
   tagline: 'Project life cycle, communication, resource and stakeholder management for IT projects',
   about: 'CompTIA Project+ certifies the ability to manage the project life cycle, coordinate small-to-medium-sized projects, build a communication plan, manage resources and stakeholders, maintain project documentation and artifacts, and support larger IT projects. The exam covers both waterfall and agile methodologies and measures knowledge equivalent to 6-12 months of hands-on IT project management experience.',

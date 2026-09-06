@@ -21,6 +21,8 @@ export const cert = {
       a: 'In most states, yes, typically by completing the additional chemical-services training hours and passing the full Barber License exam.' },
     { q: 'Is this Barber 1 practice test free?',
       a: 'Yes. All Barber 1 (No Chemical) practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.' },
+    { q: 'How much does the Barber 1 exam cost?',
+      a: "Fees are set by your state board and its testing vendor, commonly $50 to $150 per exam part plus a license application fee. Check your state board's candidate bulletin for the exact amounts." },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop Milady Standard Barbering Textbooks on Amazon', url: 'https://www.amazon.com/s?k=milady+standard+barbering&tag=0003aa-20' },

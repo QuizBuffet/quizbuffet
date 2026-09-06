@@ -3,6 +3,7 @@ export const cert = {
   name: 'Certified Personal Trainer (NASM-CPT)',
   seoName: 'NASM CPT Personal Trainer',
   code: 'NASM-CPT',
+  seoDescription: 'Free NASM CPT practice test online: 900 personal trainer questions across all six domains with explanations. No account, no paywall.',
   vendor: 'NASM',
   tagline: 'NCCA-accredited personal training certification',
   about: 'The NASM Certified Personal Trainer (NASM-CPT) credential is an NCCA-accredited certification administered by the National Academy of Sports Medicine. The certification exam consists of 120 multiple-choice questions delivered over a 2-hour window through PSI testing centers, with a passing score of 70%. Content is anchored on the NASM CPT Exam Content Outline (current 7th edition), organized into six domains: Basic and Applied Sciences and Nutritional Concepts, Client Relations and Behavioral Coaching, Assessment, Program Design, Exercise Technique and Training Instruction, and Professional Development and Responsibility. NASM\'s programming framework is the Optimum Performance Training (OPT) model, which sequences clients through stabilization endurance, strength endurance, hypertrophy, maximal strength, and power phases. This QuizBuffet bank weights its 900 questions toward foundational sciences (anatomy, physiology, kinesiology, energy systems, nutrition) so candidates have generous drill volume on the material that everything else builds on.',

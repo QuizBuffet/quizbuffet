@@ -4,6 +4,7 @@ export const cert = {
   seoName: 'OSHA Forklift Certification',
   seoH1: 'Forklift Operator Certification Practice Test and Practice Exam (OSHA 29 CFR 1910.178)',
   code: 'OSHA 1910.178',
+  seoDescription: 'Free OSHA forklift certification practice test online: 300 questions on 29 CFR 1910.178, stability, and safe operation. No signup.',
   vendor: 'OSHA',
   tagline: 'Required certification for operating powered industrial trucks',
   about: 'Forklift Operator Certification is mandated by 29 CFR 1910.178 for any worker operating a powered industrial truck on the job. Training covers truck types and capacities, the physics of stability (fulcrum, center of gravity, stability triangle, load center), pre-operation inspection, safe load handling, operating around pedestrians, lifting personnel on work platforms, and the employer’s duty to evaluate and certify each operator at least every three years.',

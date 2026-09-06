@@ -4,6 +4,7 @@ export const cert = {
   seoName: 'NMLS SAFE MLO',
   seoH1: 'NMLS SAFE MLO Practice Test and Practice Exam: National Test Questions',
   code: 'SAFE MLO',
+  seoDescription: 'Free NMLS SAFE MLO practice test online: 300 questions on federal law, ethics, origination, and the Uniform State Content. No signup.',
   vendor: 'NMLS',
   tagline: 'Federal SAFE Act licensing exam for mortgage loan originators',
   about: 'The SAFE MLO National Test with Uniform State Content is required by the federal SAFE Act for any individual originating residential mortgage loans. The test consists of 120 multiple-choice items (115 scored, 5 unscored) across five content areas: Federal Mortgage-Related Laws (24%), Uniform State Content (11%), General Mortgage Knowledge (20%), Mortgage Loan Origination Activities (27%), and Ethics (18%). Federal coverage is anchored on 12 CFR Parts 1024, 1002, 1026, 1003, 1022, 1016, 1014, and 1008, RESPA (Reg X), ECOA (Reg B), TILA (Reg Z), HMDA (Reg C), FCRA (Reg V), Privacy (Reg P), MAP advertising (Reg N), and SAFE Act compliance (Reg H).',

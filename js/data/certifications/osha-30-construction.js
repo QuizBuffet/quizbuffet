@@ -3,6 +3,7 @@ export const cert = {
   name: 'OSHA 30-Hour Construction',
   seoName: 'OSHA 30 Construction',
   code: 'OSHA 30',
+  seoDescription: 'Free OSHA 30 construction practice test online: 600 questions on hazards, safety management, and electives with explanations. No signup.',
   vendor: 'OSHA',
   tagline: 'Supervisor-level construction safety certification',
   about: 'OSHA 30-Hour Construction is a voluntary outreach training program for supervisors and workers with safety responsibilities. It covers everything in OSHA 10 plus managing safety and health, the OSHA Focus Four hazards in greater depth, expanded electives, and Foundations for Safety Leadership. Many states, contractors, and project labor agreements require OSHA 30 for foremen, superintendents, and site safety personnel.',

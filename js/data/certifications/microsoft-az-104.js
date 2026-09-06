@@ -3,6 +3,7 @@ export const cert = {
   name: 'Microsoft Azure Administrator',
   seoName: 'AZ-104 Azure Administrator',
   code: 'AZ-104',
+  seoDescription: 'Free AZ-104 Azure Administrator practice test online: 500 exam-style questions across all five areas with explanations. No signup.',
   vendor: 'Microsoft',
   tagline: 'Day-to-day administration of Azure infrastructure at the associate level',
   about: 'Microsoft Azure Administrator (AZ-104) validates skills for managing Azure subscriptions, identities and governance (Microsoft Entra ID, RBAC, Azure Policy, management groups), storage (storage accounts, Azure Files, Blob Storage, redundancy, lifecycle), compute (virtual machines, Container Instances, Container Apps, App Service, scale sets, ARM/Bicep), virtual networking (VNets, NSGs, Bastion, peering, private endpoints, load balancing, DNS), and monitoring with Azure Monitor and backup with Recovery Services and Site Recovery.',

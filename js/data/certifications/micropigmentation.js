@@ -19,6 +19,8 @@ export const cert = {
       a: 'Yes. All micropigmentation practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.' },
     { q: 'How do you qualify to sit for the micropigmentation exam?',
       a: 'It depends on your state. Most require an existing cosmetology, esthetics, or tattoo license plus a state-approved micropigmentation course, often in the range of 100 to 300 hours, before you can apply for the NIC theory and practical exams. Check your state board for its exact prerequisite.' },
+    { q: 'How much does the micropigmentation exam cost?',
+      a: "Fees are set by your state board and its testing vendor, typically $100 to $200 for the theory and practical exams combined, plus a license application fee. Your state board's candidate bulletin lists the exact amounts." },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop Micropigmentation and Permanent Makeup Textbooks on Amazon', url: 'https://www.amazon.com/s?k=permanent+makeup+micropigmentation+training&tag=0003aa-20' },

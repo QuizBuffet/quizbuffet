@@ -48,7 +48,7 @@
        handoff from static to interactive happens in one step with nothing hidden early. -->
   <script>try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
-  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics denied everywhere until Accept. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
+  <!-- Google tag (gtag.js) with Consent Mode v2, ad consent region-split (EEA/UK denied until Accept, granted by default elsewhere); analytics and ad consent denied in the EEA/UK until Accept, granted by default elsewhere. Do not revert to a bare config: see CLAUDE.md "Analytics consent". -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -67,7 +67,7 @@
       ad_storage: 'granted',
       ad_user_data: 'granted',
       ad_personalization: 'granted',
-      analytics_storage: 'denied',
+      analytics_storage: 'granted',
       functionality_storage: 'denied',
       personalization_storage: 'denied',
       security_storage: 'granted',
@@ -362,6 +362,12 @@
           <li><strong>CloudWatch metric streams:</strong> Stream metrics to S3, Kinesis Firehose, or third-party destinations</li>
           <li><strong>CloudWatch agent:</strong> Collects custom metrics and OS-level logs from EC2, ECS, EKS</li>
       </ul>
+      <section class="seo-share">
+        <h2>Link to this quiz</h2>
+        <p>Studying with a group or teaching a class? Send this address or paste the link into your notes, wiki, or course page:</p>
+        <p><code class="seo-share-url">https://quizbuffet.com/aws-devops-engineer-professional/monitoring-and-logging/</code></p>
+        <p><code class="seo-share-snippet">&lt;a href="https://quizbuffet.com/aws-devops-engineer-professional/monitoring-and-logging/"&gt;AWS DevOps Engineer Professional Monitoring and Logging practice quiz on QuizBuffet&lt;/a&gt;</code></p>
+      </section>
       <h2>Other DOP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-devops-engineer-professional/sdlc-automation/">1.0 SDLC Automation</a></li>
@@ -371,6 +377,7 @@
           <li><a href="/aws-devops-engineer-professional/security-and-compliance/">6.0 Security and Compliance</a></li>
       </ul>
       <p><a href="/aws-devops-engineer-professional/">&larr; Back to DOP-C02 practice test overview</a></p>
+      <p class="cert-trust">Questions are written against the published DOP-C02 objectives and checked for accuracy and balance before they go live. <a href="/about/">How QuizBuffet writes and reviews its questions</a>.</p>
       <p class="cert-byline"><time datetime="2026-05-06">Last updated: May 6, 2026</time></p>
     </section>
     <div id="app"></div>

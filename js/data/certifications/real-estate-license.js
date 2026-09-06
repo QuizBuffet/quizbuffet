@@ -3,6 +3,7 @@ export const cert = {
   name: 'Georgia Real Estate Salesperson License',
   seoName: 'Georgia Real Estate',
   code: 'Real Estate License',
+  seoDescription: 'Free Georgia real estate practice test online: 300 salesperson exam questions on national and Georgia law with explanations. No signup.',
   vendor: 'Georgia Real Estate Commission / PSI',
   tagline: 'Georgia license to represent real estate buyers and sellers',
   about: 'The Georgia Real Estate Salesperson Examination is administered by PSI (which acquired the former AMP testing program) for the Georgia Real Estate Commission (GREC). The full exam is 152 multiple-choice items combining the National Real Estate portion (100 items across seven content areas: agency relationships and contracts, real property ownership and interest, finance, real property and valuation, marketing regulations, property management, and real estate calculations) with the Georgia Salesperson Supplement (52 items covering state laws and rules, real estate practice in Georgia, and finance and closing). Candidates must complete a 75-hour Georgia-approved prelicense course, pass the exam at 75%, secure a sponsoring broker for active licensure, and complete a 25-hour postlicense course in their first year.',

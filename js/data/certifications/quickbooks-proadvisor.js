@@ -3,6 +3,7 @@ export const cert = {
   name: 'QuickBooks ProAdvisor (Online Certification)',
   seoName: 'QuickBooks Online ProAdvisor',
   code: 'QuickBooks ProAdvisor',
+  seoDescription: 'Free QuickBooks Online ProAdvisor practice test: 200 exam-style questions on setup, banking, reports, and payroll. Study online, no signup.',
   vendor: 'Intuit',
   tagline: 'Intuit-certified credential for QuickBooks Online and Desktop',
   about: 'The QuickBooks ProAdvisor program is Intuit\'s free certification for accounting and bookkeeping professionals. The QuickBooks Online (QBO) Certification exam tests practical knowledge of subscription selection, navigation and company settings, list and product/service management, the chart of accounts, customer and sales workflows, vendor and purchase workflows, banking and bank-feed reconciliation, reports, and payroll basics. Certification is delivered through training courses on QuickBooks Online Accountant; candidates pass each module quiz at 80% and the final exam at 80%, with three attempts per module. The Advanced ProAdvisor Certification builds on the basic certification with deeper QBO functionality and advisory workflows.',

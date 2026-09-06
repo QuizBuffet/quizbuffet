@@ -35,6 +35,8 @@ export const cert = {
       a: 'For both the American Heart Association and the American Red Cross, CPR/AED certification is valid for two years. After that you renew it with a shorter refresher course.' },
     { q: 'Can you fail a CPR test?',
       a: 'Yes, but it is uncommon and easy to recover from. If you miss the passing score or a skill step, instructors let you review and retake it. Working through practice questions first is the simplest way to avoid that.' },
+    { q: 'How much does a CPR and AED certification cost?',
+      a: 'Online blended courses typically run $20 to $80, and in-person classes $50 to $120 depending on the provider and whether first aid is included. This practice test is free; it prepares you for the written portion of whichever course you choose.' },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop CPR/AED Study Guides on Amazon', url: 'https://www.amazon.com/s?k=cpr+aed+certification+study+guide&tag=0003aa-20' },

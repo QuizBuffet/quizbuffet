@@ -2,6 +2,8 @@
 
 Audit date: 2026-09-06. Site ranks around position 68 for head terms. Search Console shows impressions on ~250 queries and 0 clicks. Ads campaign is about to start.
 
+Completed items are collapsed to "Done (removed, number kept)" so numbering stays stable for everyone working from this file.
+
 Priority key: **P1** = do before ads spend. **P2** = next 30 days. **P3** = ongoing.
 After any change to `scripts/build-seo.mjs` or cert metadata: run `npm run build:seo`, bump the cache version in `sw.js`, and spot-check one cert page, one domain page, and the home page.
 
@@ -57,25 +59,7 @@ R. SERP inspection of the CPR/AED page
    - `js/pages/quiz/handleAnswer.js`: keep a per-session answer counter in `sessionStorage` (`qb_answered`), fire `trackConversion('answered_10')` when it reaches 10, once.
 4. Verify with Google Tag Assistant on a live page: the conversion ping must show `send_to` with the label.
 
-### A2. [DONE 94bc8bb3] Scope the consent default to EEA/UK, grant elsewhere
-**Problem.** The Consent Mode default block denies `ad_storage`, `ad_user_data`, `ad_personalization`, and `analytics_storage` for every visitor on Earth. US traffic (your ads audience) loses the gclid cookie, so Google Ads only gets modeled conversions and Smart Bidding has almost nothing to learn from.
-
-**Fix.** Replace the single `gtag('consent','default',{...})` call with two calls in this order. Region-specific call second (more specific wins):
-```js
-gtag('consent', 'default', {
-  ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted',
-  analytics_storage: 'granted', functionality_storage: 'granted',
-  personalization_storage: 'granted', security_storage: 'granted'
-});
-gtag('consent', 'default', {
-  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
-  analytics_storage: 'denied', functionality_storage: 'denied',
-  personalization_storage: 'denied', security_storage: 'granted',
-  wait_for_update: 500,
-  region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
-});
-```
-Apply in **all six** copies: the three templates in `scripts/build-seo.mjs` (grep `consent`), root `index.html`, `cpa/index.html`, `privacy/index.html`, and `404.html`. Then update the "Analytics consent" section of `CLAUDE.md` to describe the two-call shape so future sessions do not revert it.
+### A2. Done (removed, number kept)
 
 ### A3. [PARTIAL: Accept grants ad consent; banner still shows to all regions] Show the consent banner only where consent is denied by default
 **Problem.** After A2, non-EEA visitors are granted by default but `js/components/consent/renderConsent.js` still shows the banner to everyone and its text says "no ads".
@@ -87,10 +71,7 @@ Apply in **all six** copies: the three templates in `scripts/build-seo.mjs` (gre
 4. Update `privacy/index.html`: add Google Ads (`AW-17221241617`) to the list of services, describe the conversion cookie, and keep the "reset cookie choice" control.
 5. Update `CLAUDE.md`: the rule "never grant ad_storage" becomes "grant ad consent only through the banner Accept path or the non-EEA default".
 
-### A4. [DONE 94bc8bb3] Merge the duplicate gtag bootstrap
-**Problem.** `index.html` (and every template) has a second `<script>` that re-declares `window.dataLayer` and `function gtag(){}` for the AW tag. Harmless today but fragile.
-
-**Fix.** Delete the second `dataLayer`/`gtag` declaration and the second `gtag('js', new Date())`. Keep one `<script async src=".../gtag/js?id=G-YRKFB3WT9C">` (one loader serves both IDs) and add `gtag('config', 'AW-17221241617');` directly after `gtag('config', 'G-YRKFB3WT9C');`. Do this in the same six files as A2.
+### A4. Done (removed, number kept)
 
 ### A5. Link GA4 to Google Ads
 In GA4 Admin > Product links > Google Ads links, link the account. Mark `domain_complete` as a key event in GA4 (Admin > Events > toggle). Import it in Google Ads as a backup conversion. This survives even if A1 labels are misconfigured.
@@ -103,76 +84,15 @@ In GA4 Admin > Product links > Google Ads links, link the account. Mark `domain_
 ### A7. Confirm gclid survives the SPA path restore
 `404.html:34` stores `location.pathname + location.search` and `index.html` restores it via `history.replaceState`. gtag runs in `<head>` before the restore and reads `location.search` of the 404 page URL, which still has the gclid. Verify once with a test URL `/comptia-security-plus/?gclid=test` in Tag Assistant. If the conversion cookie `_gcl_aw` is set, nothing to do.
 
-### A8. [DONE: slots and quiz ad-mid code removed; renderAd() no-op calls remain] Decide on AdSense slots
-`js/app.js` shells contain `#ad-top`, `#ad-mid`, `#ad-bottom`. They render empty. Either wire AdSense or remove the divs and the reserved CSS heights (CLS reservation for a slot that never fills is wasted space). If wiring: do not run AdSense on pages you are buying traffic to; the arbitrage looks bad to Google Ads quality review.
+### A8. Done (removed, number kept)
 
----
+### B1. Done (removed, number kept)
 
-## B. Titles, H1s, descriptions (P1)
+### B2. Done (removed, number kept)
 
-### B1. [DONE, re-verified: 50/50 titles carry "Practice Test", none clipped mid-phrase, tiered fallback added] Cert page title template
-**File.** `scripts/build-seo.mjs:275-277`.
-**Now.** `${total}+ Free ${cert.code} Practice Questions, No Signup` gives "1900+ Free SY0-701 Practice Questions, No Signup".
-**Why it fails.** Searchers use the cert name and the words "practice test" or "practice exam". Exam codes appear in under 5 percent of Search Console queries.
-**Fix.** Add an optional `seoName` field to cert metadata for cases where `cert.name` is long or unnatural, and use this template:
-```js
-const seoName = cert.seoName || cert.name;
-const fullTitle = total > 0
-  ? clipText(`${seoName} Practice Test: ${total}+ Free Questions${codeTag}`, 60)
-  : clipText(`${seoName} Practice Test (Coming Soon)`, 60);
-```
-`clipText` at 60 will drop the code parenthetical first, which is the right priority. Examples of the result:
-- "CompTIA Security+ Practice Test: 1900+ Free Questions"
-- "AWS Developer Associate Practice Exam: 500+ Free Questions" (with `seoName`)
-- "CISSP Practice Test: 800+ Free Questions (ISC2)"
+### B3. Done (removed, number kept)
 
-### B2. [DONE for 32 certs incl. all AWS] Per-cert `seoName` overrides
-Add `seoName` to these metadata files in `js/data/certifications/`. Names chosen from the actual query phrasing in Search Console:
-
-| slug | seoName |
-|---|---|
-| aws-developer-associate | AWS Certified Developer Associate |
-| aws-devops-engineer-professional | AWS DevOps Engineer Professional |
-| aws-cloudops-engineer-associate | AWS CloudOps Engineer Associate |
-| aws-solutions-architect-associate | AWS Solutions Architect Associate |
-| comptia-pentest-plus | CompTIA PenTest+ |
-| comptia-project-plus | CompTIA Project+ |
-| isc2-cissp | CISSP (ISC2) |
-| microsoft-az-104 | AZ-104 Azure Administrator |
-| microsoft-az-900 | AZ-900 Azure Fundamentals |
-| forklift-certification | OSHA Forklift Certification |
-| nmls-mlo | NMLS SAFE MLO |
-| personal-trainer-nasm | NASM CPT Personal Trainer |
-| itil-foundation | ITIL 4 Foundation |
-| cpr-aed | CPR and AED |
-| bls | BLS (Basic Life Support) |
-| quickbooks-proadvisor | QuickBooks Online ProAdvisor |
-| cpa-aud | CPA AUD (Auditing and Attestation) |
-| cpa-far | CPA FAR |
-| cpa-reg | CPA REG |
-| cdl-class-a | CDL Class A |
-| real-estate-license | Georgia Real Estate |
-| faa-part-107 | FAA Part 107 Drone |
-| osha-10-construction | OSHA 10 Construction |
-| osha-30-construction | OSHA 30 Construction |
-
-Also strip the en-dash from AWS names in `cert.name` ("AWS Certified Developer – Associate" has a U+2013). Replace with a plain space or hyphen.
-
-### B3. [DONE, re-verified: 271/271 carry "Quiz", 0 over 60 chars, 0 duplicates, tiered fallback added] Domain page title template
-**File.** `scripts/build-seo.mjs:586-587`.
-**Now.** `${certTotal}+ Free ${cert.code} Questions: ${domain.name}` gives "1900+ Free SY0-701 Questions: General Security Concepts".
-**Fix.**
-```js
-const fullTitle = count > 0
-  ? clipText(`${seoName} ${domain.name} Practice Quiz (${count} Questions)`, 60)
-  : clipText(`${seoName} ${domain.name} Practice Quiz`, 60);
-```
-Domain names can be long. If `clipText` cuts the count, that is fine. Do not let it cut the domain name: if `seoName + domain.name` exceeds 52 characters, drop `seoName` to `cert.code`.
-Also support optional `seoTitle` and `seoH1` on each domain entry in cert metadata; when present they replace the template. Use them for domains that match a named query (AED quiz, combination vehicles, pediatric BLS).
-
-### B4. [DONE 21dbe34d] H1 wording
-**File.** cert H1 in `buildCertHtml` (grep `<h1`). Now "CompTIA Security+ (SY0-701) Free Practice Test".
-**Fix.** "CompTIA Security+ Practice Test and Practice Exam Questions (SY0-701)". Both "practice test" and "practice exam" are in the H1 and each appears in dozens of queries. Keep the code at the end.
+### B4. Done (removed, number kept)
 
 ### B5. [PARTIAL: template now keeps "free" and "online" inside 155 chars on all 50; zero custom seoDescription authored] Meta descriptions per cert
 **File.** `scripts/build-seo.mjs:278-280`. All 51 share one template.
@@ -180,23 +100,11 @@ Also support optional `seoTitle` and `seoH1` on each domain entry in cert metada
 `Free ${seoName} practice test with ${total} exam-style questions across ${cert.domains.length} domains. Instant feedback, explanations, no signup. Study online for the ${cert.code} exam.`
 Write custom `seoDescription` values for the 16 certs in section C first. Each must name the cert, say "free", say "practice test" or "practice exam", and say "online". Max 155 characters.
 
-### B6. [DONE] First paragraph of every cert page
-The intro sentence (`${total}+ exam-style questions across N domains...`) should read: "Free ${seoName} practice test with ${total}+ exam-style questions across ${n} domains, organized like the real ${code} exam. Use it as a practice exam, a mock test, or a quick quiz. Instant feedback, no account." This puts "practice test", "practice exam", "mock test", and "quiz" in the first 40 words.
+### B6. Done (removed, number kept)
 
-### B7. [DONE] Home page title and H1
-**File.** `index.html` (hand-maintained; `build-seo.mjs` only syncs the count).
-- Title: "Free Certification Practice Tests: CompTIA, AWS, CISSP, CDL, CPR | QuizBuffet" (under 60 with clipping acceptable at "CPR").
-- H1: keep "Free Certification Practice Tests". Second H1 in the hero ("Free practice tests for professional certifications.") must become a `<p>`. One H1 per page.
-- Update the `build-seo.mjs` home title sync so it does not reintroduce the em-dash.
+### B7. Done (removed, number kept)
 
-### B8. [DONE 21dbe34d] Remove em-dashes and en-dashes from templates
-Grep `scripts/build-seo.mjs`, `index.html`, `feed.xml` generation, and cert metadata for `—` and `–`. Replace with ", " or " - " or parentheses. Style rule already forbids them. Regenerate.
-
----
-
-## C. Search Console query fixes, per cert (P1)
-
-Zero clicks on every query. Impressions prove indexing works; the pages sit deep on page 2+. Fix the vocabulary (section B) and then the page-level gaps below. Impression counts are from the 2026-09-06 export.
+### B8. Done (removed, number kept)
 
 ### C1. CPR / AED (205 impressions on the cert page, 4 of the site's 5 total clicks; top queries "aed quiz" 80, "aed cpr test" 43)
 **Files.** `js/data/certifications/cpr-aed.js`, `cpr-aed/aed-operation/index.html` (generated).
@@ -395,12 +303,7 @@ Add to the home `@graph`:
 ```
 Then make `js/pages/home/renderSearch.js` read `?q=` on load and prefill the filter.
 
-### E9. [DONE] Single H1
-Two `<h1>` elements exist on the home page. Make the hero tagline a `<p class="hero-tagline">`.
-
----
-
-## F. Cert pages (P2)
+### E9. Done (removed, number kept)
 
 ### F1. `faq` for every live cert
 Only 4 of 51 have one (`grep -l "faq:" js/data/certifications/*.js`). Order of work: the 16 certs in section C, then the remaining 35. Each FAQ: 6 to 8 items, second person, no em-dashes, facts verified against the official source. Standard set: how hard, how many questions and time, passing score, cost, prerequisites, validity and renewal, is it worth it, how long to study. Add one "Is this practice test free?" item per cert because "free" is in most queries.
@@ -467,8 +370,7 @@ Fill each to 30+ using the QUESTION-PROMPT workflow, or merge two tiny domains i
 3. Collapse doubled punctuation (`,,`, `, ,`, `.,`).
 4. Re-run `docs/validate-domain.py` on every file; re-minify. Commit in batches per cert so diffs are reviewable.
 
-### H2. [DONE, 50 live certs] body-piercing-license is live with 0 questions
-`data/counts.json` reports 0. Two domain files exist. Either fill both domains to 100+ each and rebuild, or move the slug back into `data/coming-soon.json` and remove it from `_manifest.js` until questions exist. The page currently carries `noindex` (0 questions triggers it), so no urgent harm, but it is in the "51 live certs" count on the home page, which is inaccurate.
+### H2. Done (removed, number kept)
 
 ### H3. Fill thin certs
 tattoo-license (88), cpa-bar (100), cpa-reg (112), cpa-tcp (124), quickbooks-proadvisor (200). Target 300+ for any cert you will advertise.
@@ -506,8 +408,7 @@ All 368 files in `icons/og/` are SVG. Facebook, X, LinkedIn, Slack, iMessage, an
 3. Point `og:image` and `twitter:image` at the `.png`. Add `og:image:width` 1200, `og:image:height` 630, `og:image:type` image/png.
 4. Keep the SVGs as source but do not link them. Add `*.png` in `icons/og/` to git (they are needed on Pages).
 
-### J2. [DONE] `404.html` noindex
-Add `<meta name="robots" content="noindex">` in `404.html`. It currently has none.
+### J2. Done (removed, number kept)
 
 ### J3. Split the cert metadata bundle
 `js/data/certifications/index.js` is 129 KB and loads on every page. Change `scripts/build-certs.mjs` to emit a light index (slug, name, code, vendor, category, domain slugs and names) plus one `js/data/certifications/full/<slug>.js` per cert with `about`, `details`, `faq`, `affiliates`. Load the full file lazily in `initCertification.js`, the same way acronyms are loaded. Update the regex-based bundler accordingly.
@@ -681,8 +582,7 @@ All content is English for a single market. Do not add hreflang or country subfo
 
 Desktop 1,133 impressions (94 percent), mobile 68 (6 percent), tablet 1. Certification practice-test queries are normally 50 to 70 percent mobile. A 94 percent desktop share means Google is largely not showing the site on mobile, or ranks it much lower there. Some of the top certs (AWS Developer, CISSP, QuickBooks) skew desktop, but not enough to explain this.
 
-### P1. [DONE 94bc8bb3] The consent banner was an intrusive interstitial on mobile
-The banner covered roughly half the viewport on phones (paragraph kept a 320px flex basis after switching to column layout). Google's mobile page-experience signal penalizes interstitials that cover the main content on arrival from search. Fixed 2026-09-06 in `js/components/consent/renderConsent.js` (mobile rule now `flex:0 0 auto`, tighter padding). After A2 most visitors will not see the banner at all. Request re-indexing of the top 16 cert pages after deploy.
+### P1. Done (removed, number kept)
 
 ### P2. Check mobile Core Web Vitals in Search Console
 Open Experience > Core Web Vitals > Mobile. If URLs are "Poor" or "Needs improvement", the causes are J3 (129 KB cert bundle on every page), J4 (155 KB CSS), and J5 (three font families with preloads). Record LCP, INP, and CLS for a cert page and a domain page here before and after those fixes.
@@ -753,8 +653,7 @@ Snippet bylines read "Jun 17, 2026" and "Jul 2, 2026". Those are the visible "La
 ### R3. Doubled code parentheticals in indexed copies
 "Certified Personal Trainer (NASM-CPT) (NASM-CPT) practice test" and "CPR / AED Certification (CPR/AED)" appear in indexed descriptions. The current build has a `codeTag` dedupe, so this is fixed on disk but not in the index. Confirm after recrawl. Also confirm `cert.name` values never embed the code themselves.
 
-### R4. [DONE on disk, pending recrawl] Em-dashes are visible in the SERP
-"CPA — Auditing and Attestation (AUD)" comes from `cert.name` in `js/data/certifications/cpa-aud.js`. Descriptions end with "explanations — no account needed". These read as machine-written in a results list. B8 covers templates; also fix `cert.name` for the six CPA files and any other name containing an em-dash or en-dash (`grep -l "—\|–" js/data/certifications/*.js`).
+### R4. Done (removed, number kept)
 
 ### R5. "People also ask" for this query, verbatim
 - Where can I find free CPR test questions and answers?

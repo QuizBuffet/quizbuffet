@@ -1578,6 +1578,13 @@ const version = (swSrc.match(/CACHE\s*=\s*['"]([^'"]+)['"]/) || [, 'unknown'])[1
 fs.writeFileSync(path.join(ROOT, 'data', 'build.json'), JSON.stringify({ version, builtAt: TODAY }));
 console.log(`  ✓ data/build.json (${version}, ${TODAY})`);
 
+// D2: persist first-publish dates so datePublished stops being overwritten with TODAY.
+// Only rewritten when a key was actually added or seeded this run.
+if (publishedDirty) {
+  fs.writeFileSync(PUBLISHED_PATH, JSON.stringify(published, Object.keys(published).sort(), 2) + '\n');
+  console.log(`  ✓ data/published.json (${Object.keys(published).length} pages)`);
+}
+
 updateHomeIndex(certifications);
 console.log(`  ✓ index.html (cert count + ItemList + FAQ + offerCount synced to ${certifications.length} live certs)`);
 

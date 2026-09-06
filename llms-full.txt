@@ -55,6 +55,12 @@ ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT con
 - Security (20% of exam): 444 questions
 
 ### Sample questions
+**Q: Is CompTIA ITF+ retired?**
+A: Yes. The ITF+ exam (FC0-U61) retired on July 31, 2025 and was replaced by CompTIA Tech+ (FC0-U71), which launched in August 2024. An ITF+ certification you already hold stays valid for life. The fundamentals tested here (hardware, software, networking, security, databases, and basic development) carry over to Tech+, so these questions still work as a foundation for the newer exam.
+
+**Q: Should I take Tech+ instead of ITF+?**
+A: If you have not yet tested, Tech+ is the only option now. Use this practice test to build the same core IT vocabulary and concepts, then check the Tech+ objectives on CompTIA's site for the added coverage of AI, cloud, and modern devices before you sit the exam.
+
 **Q: How many questions are on the ITF+ exam?**
 A: A maximum of 75 multiple-choice questions in 60 minutes.
 
@@ -66,12 +72,6 @@ A: CompTIA's standard exam price is currently around $130 to $150 USD, notably c
 
 **Q: Do I need ITF+ before A+?**
 A: No, it is not a prerequisite for A+ or any other CompTIA certification. It exists as an optional on-ramp for complete beginners or students deciding whether IT is the right career path.
-
-**Q: Does ITF+ expire?**
-A: No. ITF+ does not expire and requires no renewal, unlike CompTIA's professional-level certifications (A+, Network+, Security+, and others), which are valid for 3 years.
-
-**Q: Is this ITF+ practice test free?**
-A: Yes. Every ITF+ practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, no signup required.
 
 ## CompTIA CySA+ (CS0-003)
 Vendor: CompTIA
@@ -350,23 +350,23 @@ AWS Certified Cloud Practitioner (CLF-C02) validates foundational understanding 
 - 4.0 Billing, Pricing, and Support (12% of exam): 48 questions
 
 ### Sample questions
-**Q: Which description best matches AWS Cloud value proposition in AWS Cloud Practitioner Domain 1.0 Cloud Concepts?**
-A: The AWS Cloud value proposition is the ability to use AWS technology services to gain flexibility, scalability, reliability, global reach, and cost advantages without owning all underlying infrastructure.
+**Q: How many questions are on the Cloud Practitioner exam?**
+A: 65 questions total (50 scored, 15 unscored), multiple-choice and multiple-response, in 90 minutes.
 
-**Q: Which option correctly defines Global infrastructure benefits?**
-A: Global infrastructure benefits include deploying workloads closer to users, reaching global markets faster, and using AWS Regions and edge infrastructure to support performance and availability.
+**Q: What is the passing score for AWS Cloud Practitioner?**
+A: You need 700 out of 1000 on AWS's scaled score.
 
-**Q: Which description best matches AWS shared responsibility model in AWS Cloud Practitioner Domain 2.0 Security and Compliance?**
-A: The AWS shared responsibility model defines which security responsibilities belong to AWS and which belong to the customer.
+**Q: How much does AWS Cloud Practitioner cost?**
+A: It's AWS's foundational-tier exam, $100 USD. After you pass, AWS gives you a 50% discount voucher good on any other AWS exam for one year.
 
-**Q: Which option correctly defines AWS responsibilities?**
-A: AWS responsibilities include security of the cloud, such as protecting the infrastructure that runs AWS services.
+**Q: Do I need coding experience for Cloud Practitioner?**
+A: No. It is designed for both technical and non-technical roles (sales, project management, finance) and tests conceptual understanding of the AWS Cloud, not hands-on building or coding.
 
-**Q: Which description best matches AWS Management Console in AWS Cloud Practitioner Domain 3.0 Cloud Technology and Services?**
-A: The AWS Management Console is a web-based interface for accessing and managing AWS services.
+**Q: Is Cloud Practitioner a good first AWS certification?**
+A: Yes, it's AWS's recommended starting point if you have limited AWS exposure. Many candidates skip it and go straight to Solutions Architect Associate if they already have hands-on cloud experience.
 
-**Q: Which option correctly defines AWS CLI?**
-A: The AWS Command Line Interface lets users manage AWS services from a command-line shell.
+**Q: How long is Cloud Practitioner certification valid?**
+A: 3 years, renewed by retaking the exam, passing a higher-level AWS exam, or completing AWS's official recertification path.
 
 ## AWS Certified Solutions Architect Associate (SAA-C03)
 Vendor: AWS
@@ -447,23 +447,23 @@ AWS Certified Machine Learning Engineer Associate (MLA-C01) validates the abilit
 - 4.0 ML Solution Monitoring, Maintenance, and Security (24% of exam): 120 questions
 
 ### Sample questions
-**Q: Which description best matches Apache Parquet in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?**
-A: Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets.
+**Q: How many questions are on the MLA-C01 exam?**
+A: 65 questions, multiple-choice and multiple-response, in 130 minutes.
 
-**Q: Which description best matches JSON in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?**
-A: JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data.
+**Q: What is the passing score for ML Engineer Associate?**
+A: You need 720 out of 1000.
 
-**Q: Which description best matches ML algorithm selection in AWS MLA-C01 Domain 2.0 ML Model Development?**
-A: ML algorithm selection involves selecting an algorithm based on the business problem, available data, interpretability needs, performance requirements, and operational constraints.
+**Q: How much does AWS ML Engineer Associate cost?**
+A: It's AWS's associate-tier exam, $150 USD.
 
-**Q: Which description best matches Classification algorithm in AWS MLA-C01 Domain 2.0 ML Model Development?**
-A: Classification algorithm involves a modeling approach used when the target output is a category or class label.
+**Q: Do you need a data science background for ML Engineer Associate?**
+A: It helps but is not strictly required. The exam focuses on the engineering side, data preparation, deploying models with SageMaker, orchestrating ML pipelines, and monitoring models in production, more than the mathematical theory behind the algorithms.
 
-**Q: Which description best matches SageMaker real-time endpoint in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?**
-A: SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users.
+**Q: ML Engineer Associate vs AI Practitioner, which should I take?**
+A: AI Practitioner is foundational and conceptual, aimed at anyone working alongside AI/ML. ML Engineer Associate is hands-on and technical, aimed at people who actually build, train, and deploy models. Most non-technical candidates start with AI Practitioner.
 
-**Q: Which description best matches SageMaker batch transform in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?**
-A: SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required.
+**Q: How long is ML Engineer Associate valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## AWS Certified Generative AI Developer Professional (AIP-C01)
 Vendor: AWS
@@ -480,23 +480,23 @@ AWS Certified Generative AI Developer Professional (AIP-C01) validates the abili
 - 5.0 Testing, Validation, and Troubleshooting (11% of exam): 74 questions
 
 ### Sample questions
-**Q: Which description best matches GenAI solution architecture in AWS AIP-C01 Domain 1.0 Foundation Model Integration, Data Management, and Compliance?**
-A: GenAI solution architecture involves aligning foundation models, integration patterns, deployment choices, and technical constraints to a business use case.
+**Q: How many questions are on the AIP-C01 exam?**
+A: 75 questions total (65 scored, 10 unscored), multiple-choice and multiple-response, in 180 minutes.
 
-**Q: Which description best matches Proof of concept implementation in AWS AIP-C01 Domain 1.0 Foundation Model Integration, Data Management, and Compliance?**
-A: Proof of concept implementation involves validating GenAI feasibility, performance characteristics, and business value before full-scale deployment.
+**Q: What is the passing score for GenAI Developer Professional?**
+A: You need 750 out of 1000.
 
-**Q: Which description best matches Agent memory management in AWS AIP-C01 Domain 2.0 Implementation and Integration?**
-A: Agent memory management involves maintaining relevant state, context, and history so an AI agent can complete tasks across multiple interactions.
+**Q: How much does AWS GenAI Developer Professional cost?**
+A: It's AWS's professional-tier exam, $300 USD.
 
-**Q: Which description best matches Agent state management in AWS AIP-C01 Domain 2.0 Implementation and Integration?**
-A: Agent state management involves tracking the current task, tool results, intermediate decisions, and workflow progress for an autonomous AI system.
+**Q: Do you need AI Practitioner before GenAI Developer Professional?**
+A: Not required by AWS, but it's a natural first step if you're newer to AI/ML on AWS. This exam assumes hands-on developer experience integrating foundation models, RAG, and agentic AI into real applications, not just conceptual AI knowledge.
 
-**Q: Which description best matches Bedrock guardrails for input filtering in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?**
-A: Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model.
+**Q: How is this different from ML Engineer Associate?**
+A: ML Engineer Associate covers building and deploying traditional ML models and pipelines. GenAI Developer Professional focuses specifically on generative AI: integrating foundation models, prompt engineering, RAG architectures, and agentic workflows into production applications.
 
-**Q: Which description best matches Custom moderation workflow in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?**
-A: Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction.
+**Q: How long is GenAI Developer Professional valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## AWS Certified CloudOps Engineer Associate (SOA-C03)
 Vendor: AWS
@@ -611,23 +611,23 @@ AWS Certified DevOps Engineer Professional (DOP-C02) validates the ability to pr
 - 6.0 Security and Compliance (17% of exam): 102 questions
 
 ### Sample questions
-**Q: A DevOps team is redesigning a release process for a regulated application. The team wants every change to move from commit, to build, to automated validation, to approval, and then to deployment with clear evidence. Which pipeline design best matches the SDLC objective?**
-A: A staged CI/CD pipeline with source, build, test, approval, and deploy actions
+**Q: How many questions are on the DOP-C02 exam?**
+A: 75 questions total (65 scored, 10 unscored), multiple-choice and multiple-response, in 180 minutes.
 
-**Q: A platform team wants every application stack to define resources, dependencies, parameters, and exported values in a repeatable way. Which CloudFormation design should be used?**
-A: A version-controlled template with Resources, Parameters, Outputs, and explicit dependencies where needed
+**Q: What is the passing score for DevOps Engineer Professional?**
+A: You need 750 out of 1000.
 
-**Q: A production web application runs in one Availability Zone behind an Application Load Balancer. The business requires the service to remain available during an Availability Zone impairment. What should the DevOps engineer implement?**
-A: Deploy the application across multiple Availability Zones with the load balancer enabled in each zone
+**Q: How much does AWS DevOps Engineer Professional cost?**
+A: It's AWS's professional-tier exam, $300 USD.
 
-**Q: A microservices checkout request passes through API Gateway, Lambda, SQS, and a payment service. The team needs to understand where latency is introduced for one request. Which observability signal is most useful?**
-A: Distributed trace with correlated logs
+**Q: Do I need Developer or SysOps Associate before DevOps Professional?**
+A: Not required by AWS, but it recommends 2+ years of hands-on experience provisioning and managing AWS environments, and most candidates hold Developer Associate and/or CloudOps Engineer Associate first since DevOps Professional builds directly on that material.
 
-**Q: A production account emits a GuardDuty finding for credential exfiltration. The security team wants the event to start an incident workflow without polling. Which event-driven design should be used?**
-A: Use an EventBridge rule that matches GuardDuty finding events and targets an incident workflow
+**Q: Is DevOps Engineer Professional hard?**
+A: Yes, it's one of AWS's harder exams. The 180-minute length and long scenario questions test judgment across CI/CD, infrastructure as code, monitoring, and incident response simultaneously, not any one topic in isolation. Most candidates study for 2 to 3 months with real AWS experience already in hand.
 
-**Q: A CI/CD pipeline needs to deploy CloudFormation stacks into a workload account. The current design stores a long-term IAM user's access key in the build project. What should replace this design?**
-A: An IAM role assumed by the pipeline with scoped deployment permissions
+**Q: How long is DevOps Engineer Professional valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## AWS Certified Security Specialty (SCS-C03)
 Vendor: AWS
@@ -709,23 +709,23 @@ AWS Certified Solutions Architect Professional (SAP-C02) validates expertise des
 - 4.0 Accelerate Workload Migration and Modernization (20% of exam): 120 questions
 
 ### Sample questions
-**Q: A regulated financial services company has an existing AWS environment that must be redesigned for AWS Global Infrastructure. What should the solutions architect recommend?**
-A: Use multiple AWS Regions with Regional service endpoints, data replication, and Route 53 or Global Accelerator routing based on latency and recovery requirements
+**Q: How many questions are on the SAP-C02 exam?**
+A: 75 questions total (65 scored, 10 unscored), multiple-choice and multiple-response, in 180 minutes.
 
-**Q: A steering committee asks for a recommendation for AWS Global Infrastructure after a failed proof of concept exposed governance and operational risks. Which design should the solutions architect choose?**
-A: Model Regional dependencies, service availability, and data residency before committing to the target Regions
+**Q: What is the passing score for Solutions Architect Professional?**
+A: You need 750 out of 1000.
 
-**Q: A gaming studio is launching a latency-sensitive multiplayer backend. The proposed design creates risk around Infrastructure as code. Which change should be made before production approval?**
-A: Use AWS CodePipeline with staged deployments, automated tests, approvals, and rollback paths such as blue/green or canary release patterns
+**Q: How much does AWS Solutions Architect Professional cost?**
+A: It's AWS's professional-tier exam, $300 USD.
 
-**Q: A healthcare analytics provider is designing a new multi-Region service for regulated data. A design review identifies CI/CD deployment strategy as the unresolved architectural decision. Which option is the best recommendation?**
-A: Delegate specialized deployment complexity to AWS services such as AWS Proton, AWS Service Catalog, or managed container services when platform teams need standardized self-service
+**Q: Do you need Solutions Architect Associate before Professional?**
+A: Not required by AWS, but it strongly recommends 2+ years of hands-on experience designing AWS solutions, and nearly everyone holds Associate-level Solutions Architect first since the Professional exam assumes that foundation and builds on it.
 
-**Q: A healthcare SaaS provider has passed initial launch and is remediating findings from a Well-Architected review. A post-incident review identifies alerting and automatic remediation strategies as the highest-value improvement area. Which recommendation is most appropriate?**
-A: Centralize application, infrastructure, and audit logs in CloudWatch Logs or Amazon S3 with retention, query, and ownership standards
+**Q: Is Solutions Architect Professional the hardest AWS exam?**
+A: It is widely considered one of the two hardest, alongside DevOps Engineer Professional. The questions are long, multi-part scenarios involving multi-account organizations, hybrid networking, and migration strategy, with several defensible-looking answers. Most candidates study for 2 to 4 months.
 
-**Q: A public sector agency is improving a citizen-services application after a recent incident. A post-incident review identifies disaster recovery planning as the highest-value improvement area. Which recommendation is most appropriate?**
-A: Create CloudWatch alarms with EventBridge rules and Systems Manager Automation runbooks for well-understood failure modes
+**Q: How long is Solutions Architect Professional valid?**
+A: 3 years, renewed by retaking the exam or passing a higher-level AWS exam.
 
 ## Microsoft Azure Fundamentals (AZ-900)
 Vendor: Microsoft

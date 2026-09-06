@@ -197,8 +197,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### E2. Done (removed, number kept)
 
-### E3. [DONE — swapped ServSafe Manager for CompTIA Network+ since ServSafe isn't a live cert yet] "Most practiced" section
-Hand-pick 10 certs with the highest impressions or volume: Security+, A+ Core 1, CCNA, AWS Cloud Practitioner, AWS Developer Associate, CISSP, CDL Class A, CPR/AED, ServSafe Manager, NASM CPT. Static HTML links above the full grid.
+### E3. Done (removed, number kept)
 
 ### E4. Category landing pages
 Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certifications/`, `/healthcare-certifications/`, `/trade-licenses/`, `/beauty-licenses/`, `/finance-certifications/`, `/safety-certifications/`. Generate them in `build-seo.mjs` from the category map: title "Free <Category> Practice Tests", 300 words of intro, the cert list with counts, `ItemList` JSON-LD, breadcrumb. Add them to the sitemap and link them from the home grid headings and the footer. These target "it certification practice tests" style queries and give the home page fewer, stronger internal links.
@@ -299,6 +298,7 @@ In `js/components/question/renderQuestion.js`, add a small "Report this question
 ## I. Coming-soon and empty certs (P2)
 
 ### I1. 40 coming-soon certs
+Note (2026-09-06): CompTIA ITF+ (FC0-U61) retired July 31, 2025 and was replaced by Tech+ (FC0-U71). The ITF+ page now says so in its FAQ. Add Tech+ as a cert (new metadata, reuse the ITF+ bank as a starting point, add AI/cloud/modern-device objectives) and consider redirecting or cross-linking ITF+ to it.
 They are correctly `noindex` and excluded from the sitemap (`buildSitemap` comments confirm). They still link from the home marquee. Decide per cert: ship or delete. Prioritize by demand: PMP, CNA, ServSafe Manager (if not live), CAPM, AZ-305, Google certificates, EMT, Phlebotomy, Medical Assistant. Delete the rest of the folders so they stop consuming crawl budget via internal links.
 
 ### I2. Coming-soon marquee

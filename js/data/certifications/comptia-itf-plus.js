@@ -7,6 +7,10 @@ export const cert = {
   about: 'ITF+ (IT Fundamentals+) is a pre-professional certification covering core IT concepts for people exploring a career in technology. It covers computing basics, hardware, networking, operating systems, software, databases, and security fundamentals. No prior experience required: ideal for advanced end users and those considering CompTIA A+.',
   details: '75 questions · 60 minutes · Passing score 650/900 · Multiple-choice',
   faq: [
+    { q: 'Is CompTIA ITF+ retired?',
+      a: 'Yes. The ITF+ exam (FC0-U61) retired on July 31, 2025 and was replaced by CompTIA Tech+ (FC0-U71), which launched in August 2024. An ITF+ certification you already hold stays valid for life. The fundamentals tested here (hardware, software, networking, security, databases, and basic development) carry over to Tech+, so these questions still work as a foundation for the newer exam.' },
+    { q: 'Should I take Tech+ instead of ITF+?',
+      a: "If you have not yet tested, Tech+ is the only option now. Use this practice test to build the same core IT vocabulary and concepts, then check the Tech+ objectives on CompTIA's site for the added coverage of AI, cloud, and modern devices before you sit the exam." },
     { q: 'How many questions are on the ITF+ exam?',
       a: 'A maximum of 75 multiple-choice questions in 60 minutes.' },
     { q: 'What is the passing score for ITF+?',

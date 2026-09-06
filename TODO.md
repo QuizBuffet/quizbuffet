@@ -130,7 +130,7 @@ For a 51-cert site the home page should be the strongest URL. It has 72 crawlabl
 Click-through on cpr-aed is 4 of 222 impressions (under 2 percent), which means average position around 8 to 12. It is the closest page to page one. Do C1 first; it is the fastest win on the site.
 
 ### F4. AWS Developer Associate: 205 impressions, 0 clicks
-Same impression volume as CPR/AED with zero clicks means it sits lower (position 15+). The DVA-C02 title is the likely cause. C4 and B2 first, then L1 (mock exam) because the query is "practice exam".
+Same impression volume as CPR/AED with zero clicks means it sits lower (position 15+). The DVA-C02 title is the likely cause. The title and FAQ fixes are done; a timed mock exam would match the "practice exam" intent but is out of scope for now.
 
 ### F5. QuickBooks ProAdvisor: 160 impressions, 0 clicks
 Query intent is "is it free". The page title is clipped and does not answer that. C3.

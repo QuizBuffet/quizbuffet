@@ -17,6 +17,8 @@ export const cert = {
       a: 'They overlap heavily. "Micropigmentation" is the broader technical term for depositing pigment in the skin (covering permanent makeup, paramedical work like areola restoration, and cosmetic tattooing); some states license these separately, others combine them.' },
     { q: 'Is this micropigmentation practice test free?',
       a: 'Yes. All micropigmentation practice questions on QuizBuffet are free, organized by domain, with explanations for every answer and no signup.' },
+    { q: 'How do you qualify to sit for the micropigmentation exam?',
+      a: 'It depends on your state. Most require an existing cosmetology, esthetics, or tattoo license plus a state-approved micropigmentation course, often in the range of 100 to 300 hours, before you can apply for the NIC theory and practical exams. Check your state board for its exact prerequisite.' },
   ],
   affiliates: [
     { provider: 'amazon', label: 'Shop Micropigmentation and Permanent Makeup Textbooks on Amazon', url: 'https://www.amazon.com/s?k=permanent+makeup+micropigmentation+training&tag=0003aa-20' },

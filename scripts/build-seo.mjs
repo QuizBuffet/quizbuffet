@@ -330,6 +330,19 @@ function wrapOgTitle(text, maxCharsPerLine) {
   return lines;
 }
 
+// Site-wide OG image for the hand-built pages (home, about, privacy). Rendered on every
+// build so the cert and question counts stay current.
+function buildSiteOgSvg(certCount, questionCount) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1d2a4d"/>
+  <text x="60" y="170" font-family="Nunito, system-ui, sans-serif" font-size="56" fill="#ffd24a" font-weight="700">QuizBuffet</text>
+  <text x="60" y="290" font-family="Nunito, system-ui, sans-serif" font-size="76" fill="#ffffff" font-weight="700">Free Certification</text>
+  <text x="60" y="375" font-family="Nunito, system-ui, sans-serif" font-size="76" fill="#ffffff" font-weight="700">Practice Tests</text>
+  <text x="60" y="470" font-family="Nunito, system-ui, sans-serif" font-size="40" fill="#ffffff" opacity="0.85">${certCount} certifications · ${questionCount.toLocaleString()} questions</text>
+  <text x="60" y="560" font-family="Nunito, system-ui, sans-serif" font-size="30" fill="#ffffff" opacity="0.75">Instant feedback · Explanations · No signup</text>
+</svg>`;
+}
+
 function buildOgSvg(cert) {
   // Simple text-on-color OG image, 1200x630
   const palette = {
@@ -1718,6 +1731,14 @@ function updateHomeIndex(certs) {
     html = html.replace(gridRegex, `$1\n${buildHomeCertGrid(sorted)}\n        $2`);
   } else {
     console.warn('  ! index.html has no home-cert-grid markers: static grid not injected');
+  }
+
+  // Site-wide 1200x630 OG image (J1 for the hand-built pages).
+  writeOgImage(path.join(ROOT, 'icons', 'og', 'site.svg'), buildSiteOgSvg(n, grandTotal)).catch(e => console.warn('  ! site OG png', e.message));
+  html = html.replace(/(property="og:image"\s+content=")[^"]+(")/, `$1${SITE}/icons/og/site.png$2`)
+             .replace(/(name="twitter:image"\s+content=")[^"]+(")/, `$1${SITE}/icons/og/site.png$2`);
+  if (!/og:image:width/.test(html)) {
+    html = html.replace(/(<meta property="og:image"\s+content="[^"]+">)/, `$1\n  <meta property="og:image:width"  content="1200">\n  <meta property="og:image:height" content="630">\n  <meta property="og:image:type"   content="image/png">`);
   }
 
   writeClean(homePath, html);

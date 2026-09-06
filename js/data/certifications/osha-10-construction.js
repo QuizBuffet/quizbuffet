@@ -7,6 +7,18 @@ export const cert = {
   tagline: 'Required entry-level safety training for construction workers',
   about: 'OSHA 10-Hour Construction is a voluntary outreach training program covering worker rights and employer responsibilities, the OSHA Focus Four hazards (falls, electrocution, struck-by, caught-in or between), personal protective equipment, and health hazards in construction. Many states and contractors require it before allowing workers on a construction site, and it is the most common entry credential in the U.S. construction industry.',
   details: 'Voluntary 10-hour outreach training · No formal exam · Required by many states and contractors',
+  faq: [
+    { q: 'Is there a final exam for OSHA 10?',
+      a: 'OSHA itself does not mandate a single proctored exam, since the requirement is completing 10 hours of authorized outreach training, not passing a specific test. Most authorized online providers include periodic knowledge checks and a final quiz, commonly 20-25 questions with a 70% passing score and a few retry attempts, to confirm you absorbed the material before issuing your DOL card.' },
+    { q: 'Can you fail OSHA 10?',
+      a: 'You can fail an individual quiz question or module check with some providers, but you are typically allowed to retake it until you pass, since the goal is completing all 10 hours of content, not filtering people out.' },
+    { q: 'Is OSHA 10 online?',
+      a: 'Yes. OSHA-authorized outreach trainers offer OSHA 10 fully online as well as in person; either way you need the full 10 hours of authorized content to receive your DOL card.' },
+    { q: 'How long does the OSHA 10 card last?',
+      a: 'The OSHA 10 card does not expire under federal rules, but some states, contractors, and project owners require refresher training every few years, so check your local and employer requirements.' },
+    { q: 'How much does OSHA 10 cost?',
+      a: 'OSHA does not set a fixed price since training is delivered by independent authorized providers; expect to pay roughly $25 to $90 depending on the provider and format.' },
+  ],
   affiliates: [
     { provider: 'udemy',  label: 'Video Course', url: '' },
     { provider: 'amazon', label: 'Shop OSHA 10 Construction Study Guides on Amazon', url: 'https://www.amazon.com/s?k=osha+10+construction+study+guide&tag=0003aa-20' },

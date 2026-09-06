@@ -463,14 +463,17 @@ function buildCertHtml(cert) {
   const url = `${SITE}/${cert.slug}/`;
   const ogImage = `${SITE}/icons/og/${cert.slug}.svg`;
   const shortName = cert.name.replace(/^AWS Certified |^Microsoft |^CompTIA |^Cisco /i, '').replace(/–|—/g, '-').trim();
-  // Drop the "(code)" parenthetical when it just repeats the name (e.g. CPR / AED Certification (CPR/AED)).
-  const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const codeTag = norm(cert.name).includes(norm(cert.code)) ? '' : ` (${htmlEscape(cert.code)})`;
   // Search Console: searchers use the cert name plus "practice test"/"practice exam", almost
   // never the raw exam code (under 5% of queries), leading titles with the code was rejected
   // by Google on most pages (it substitutes its own title from the H1 instead). seoName lets a
   // cert override cert.name when it's long or reads unnaturally as a title lead.
   const seoName = cert.seoName || cert.name;
+  // Drop the "(code)" parenthetical when it's already inside seoName (the string the title
+  // actually uses) — e.g. CISSP's seoName "CISSP (ISC2)" already contains "CISSP", so a
+  // trailing "(CISSP)" would just duplicate it. Checking cert.name here (rather than seoName)
+  // was the original bug: cert.name is the long-form name, which never contains the code.
+  const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const codeTag = norm(seoName).includes(norm(cert.code)) ? '' : ` (${htmlEscape(cert.code)})`;
   // Title tiers: never let clipText cut into "Practice Test". Try the full form, then drop
   // the code, then the count, then fall back to the exam code as the lead.
   const titleLeadName = `${seoName} Practice Test`.length <= 60 ? seoName : cert.code;
@@ -480,7 +483,9 @@ function buildCertHtml(cert) {
        `${titleLeadName} Practice Test: Free Questions`,
        `${titleLeadName} Practice Test`]
     : [`${titleLeadName} Practice Test (Coming Soon)`, `${titleLeadName} Practice Test`];
-  const fullTitle = clipText(titleTiers.find(t => t.length <= 60) || titleTiers[titleTiers.length - 1], 60);
+  const fullTitle = cert.seoTitle
+    ? clipText(cert.seoTitle, 60)
+    : clipText(titleTiers.find(t => t.length <= 60) || titleTiers[titleTiers.length - 1], 60);
   const desc = total > 0
     ? clipText((cert.seoDescription || `Free ${seoName} practice test online: ${total} exam-style questions across ${cert.domains.length} domains with instant feedback and explanations. No signup. Covers the ${cert.code} exam.`).trim().replace(/\s+/g, ' '), 155)
     : clipText(`${seoName} practice test, coming soon. Test yourself across ${cert.domains.length} exam domains with instant feedback and explanations. No signup, no email.`.trim().replace(/\s+/g, ' '), 155);

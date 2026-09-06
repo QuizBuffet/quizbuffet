@@ -7,6 +7,18 @@ export const cert = {
   tagline: 'Supervisor-level construction safety certification',
   about: 'OSHA 30-Hour Construction is a voluntary outreach training program for supervisors and workers with safety responsibilities. It covers everything in OSHA 10 plus managing safety and health, the OSHA Focus Four hazards in greater depth, expanded electives, and Foundations for Safety Leadership. Many states, contractors, and project labor agreements require OSHA 30 for foremen, superintendents, and site safety personnel.',
   details: 'Voluntary 30-hour outreach training · No formal exam · Required by many states, GCs, and PLAs for supervisors',
+  faq: [
+    { q: 'Is there a final exam for OSHA 30?',
+      a: 'OSHA does not mandate one specific proctored exam, since the requirement is completing 30 hours of authorized outreach training. Most authorized providers include quizzes throughout the course and a final knowledge check, commonly with a 70% passing score and a few retry attempts, before issuing your DOL card.' },
+    { q: 'Can you fail OSHA 30?',
+      a: 'You can miss the passing score on an individual module quiz with some providers, but you can typically retake it, since the program is built around completing all 30 hours of content rather than screening people out.' },
+    { q: 'Is OSHA 30 online?',
+      a: 'Yes, OSHA-authorized outreach trainers offer it fully online or in person; both formats require the full 30 hours of authorized content for the DOL card.' },
+    { q: 'How long does the OSHA 30 card last?',
+      a: 'It does not expire under federal rules, though some states, general contractors, and project labor agreements require periodic refreshers, so check your specific job requirements.' },
+    { q: 'How much does OSHA 30 cost?',
+      a: 'OSHA does not set a fixed price since independent authorized providers deliver the training; expect roughly $70 to $150 depending on the provider and format, more than OSHA 10 given the extra 20 hours of content.' },
+  ],
   affiliates: [
     { provider: 'udemy',  label: 'Video Course', url: '' },
     { provider: 'amazon', label: 'Shop OSHA 30 Construction Study Guides on Amazon', url: 'https://www.amazon.com/s?k=osha+30+construction+study+guide&tag=0003aa-20' },

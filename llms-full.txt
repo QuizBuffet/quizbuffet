@@ -120,23 +120,23 @@ PenTest+ certifies professionals who can plan, scope, and execute penetration te
 - Post-exploitation and Lateral Movement (14% of exam): 340 questions
 
 ### Sample questions
-**Q: Which description best matches Scope definition in PenTest+ Objective 1.0 Engagement Management?**
-A: Scope definition identifies what is included, excluded, allowed, limited, and expected during a penetration test.
+**Q: How much is the PT0-003 exam voucher?**
+A: CompTIA’s standard exam price is currently around $400 USD. Check CompTIA’s official store for the current rate, since it can change and authorized training partners sometimes bundle it differently.
 
-**Q: Which option correctly defines Regulations, frameworks, and standards?**
-A: Regulations, frameworks, and standards define compliance, privacy, security, and control requirements that shape how the engagement may be performed.
+**Q: Is PenTest+ harder than Security+?**
+A: Yes. Security+ is a foundational exam; PenTest+ assumes that foundation plus Network+-level knowledge and tests hands-on penetration testing skills with performance-based simulations, not just multiple-choice recall. Most people take Security+ (and often Network+) before PenTest+.
 
-**Q: Which description best matches Active reconnaissance in PenTest+ Objective 2.0 Reconnaissance and Enumeration?**
-A: Active reconnaissance directly interacts with targets or target-controlled infrastructure to gather information.
+**Q: Is there free PenTest+ training?**
+A: CompTIA publishes free PT0-003 exam objectives you can study from directly, and QuizBuffet’s practice questions here are free with no signup. Paid options like CertMaster Learn add structured lessons and labs on top of that.
 
-**Q: Which option correctly defines Passive reconnaissance?**
-A: Passive reconnaissance gathers information without directly interacting with the target’s systems.
+**Q: How many questions and how long is the PenTest+ exam?**
+A: Up to 90 questions, multiple-choice and performance-based, in 165 minutes.
 
-**Q: Which description best matches Container scans in PenTest+ Objective 3.0 Vulnerability Discovery and Analysis?**
-A: Container scans assess container images, runtimes, configurations, and dependencies for vulnerabilities and insecure settings.
+**Q: What is the PenTest+ passing score?**
+A: You need 750 out of 900 on CompTIA’s scaled score.
 
-**Q: Which option correctly defines Sidecar scans?**
-A: Sidecar scans use a sidecar component or companion process to observe or assess containerized workloads without changing the main application container.
+**Q: Does PenTest+ expire?**
+A: Yes, PenTest+ certification is valid for 3 years and renews through CompTIA’s Continuing Education program or by earning a qualifying higher-level certification.
 
 ## CompTIA A+ Core 1 (220-1101)
 Vendor: CompTIA
@@ -773,23 +773,20 @@ Microsoft Azure Administrator (AZ-104) validates skills for managing Azure subsc
 - 5.0 Monitor and maintain Azure resources (19% of exam): 110 questions
 
 ### Sample questions
-**Q: A new Azure environment requires an administrator to implement create Microsoft Entra users and groups. Which option should be selected?**
-A: Create the user in Microsoft Entra ID, assign required group memberships, and verify the account sign-in settings
+**Q: How much does the AZ-104 exam cost?**
+A: The AZ-104 exam costs $165 USD, though Microsoft sometimes offers discount vouchers through partner programs and events.
 
-**Q: An organization is standardizing Azure administration. Which implementation best addresses create Microsoft Entra users and groups?**
-A: Create a dynamic group when membership should be based on user or device attributes
+**Q: What is the passing score for AZ-104?**
+A: You need 700 out of 1000 on Microsoft’s scaled score.
 
-**Q: A production storage account must be updated for configure Azure Storage firewalls and virtual networks. Which administrative action best fits the requirement?**
-A: Set the storage account network access to selected networks and add the required virtual network subnet or trusted public IP range
+**Q: Is there a free way to renew the Azure Administrator cert?**
+A: Yes. AZ-104 certification is valid for one year, and Microsoft lets you renew it for free with a short online assessment through Microsoft Learn before it expires, no proctored retake needed.
 
-**Q: A storage-related support ticket requires action for configure Azure Storage firewalls and virtual networks. Which implementation is most appropriate?**
-A: Verify DNS resolution to the private endpoint when clients cannot reach a storage account after public access is disabled
+**Q: Is the AZ-104 exam online?**
+A: You can take it online with a remote proctor from home or at a Pearson VUE testing center. Either way it is the same 40-60 question exam with a 120-minute time limit.
 
-**Q: A production support ticket involves interpret ARM templates and Bicep files. Which action is most appropriate?**
-A: Review the parameters, variables, resources, dependencies, and outputs to understand what the deployment will create
-
-**Q: A new application environment requires interpret ARM templates and Bicep files. Which Azure administrator action is correct?**
-A: Use what-if or validation before deployment to preview resource changes
+**Q: How hard is the AZ-104 exam?**
+A: It is a solid step up from AZ-900: expect hands-on, scenario-based questions about identities, storage, compute, networking, and monitoring rather than definitions. Prior hands-on Azure experience makes a real difference.
 
 ## Certified Information Systems Security Professional (CISSP)
 Vendor: ISC2
@@ -809,23 +806,23 @@ CISSP (Certified Information Systems Security Professional) validates deep techn
 - 8.0 Software Development Security (10% of exam): 80 questions
 
 ### Sample questions
-**Q: A regional bank's risk committee is rebuilding its information security program after a regulator's MRA letter. The CISO asks for guidance on professional ethics that balances business objectives, compliance, and security. What should be recommended?**
-A: Escalate the issue through appropriate channels while protecting affected parties and preserving professional integrity
+**Q: How hard is the CISSP?**
+A: It has a reputation as one of the toughest cybersecurity exams, less because any single question is obscure and more because it demands broad, managerial-level fluency across all eight domains at once, from risk governance to cryptography to secure software development. Most candidates study for two to four months.
 
-**Q: A regional health system is updating its data classification scheme ahead of an HHS audit. A new control baseline must address information and asset classification. What should be included?**
-A: Define classification levels based on business value, sensitivity, legal obligations, and potential impact of disclosure or alteration
+**Q: How many questions are on the CISSP exam?**
+A: The English CAT (computerized adaptive testing) exam runs 100 to 150 questions in up to 3 hours; the exact count depends on how the adaptive algorithm scores your answers as you go.
 
-**Q: A regional bank's architecture review board is finalizing the security model for a new core banking platform. Executives need a risk-based explanation for secure design principles. Which response best aligns with secure engineering practice?**
-A: Use threat modeling during requirements and architecture to identify assets, trust boundaries, misuse cases, and likely attack paths
+**Q: What is the CISSP passing score?**
+A: You need 700 out of 1000 on the scaled score. CAT scoring means the exam can end as soon as it is statistically confident you are above or below that line.
 
-**Q: Network engineering at a regional bank is finalizing the segmentation design for a new core banking refresh. The engineering team asks for CISSP-level guidance on secure design principles in network architectures. Which approach is most appropriate?**
-A: Segment the architecture by trust boundary, business function, and data sensitivity, then enforce traffic flows with routed controls and policy points
+**Q: How much does the CISSP cost?**
+A: The exam fee is $749 USD through Pearson VUE, plus the ISC2 annual maintenance fee once you are certified.
 
-**Q: A regional bank is consolidating workforce identity after a merger and migrating users to a unified directory. A proposed access design creates risk around physical and logical access to assets. Which design change best addresses the concern?**
-A: Align physical and logical access controls with asset classification, business need, and risk tolerance
+**Q: Do you need 5 years of experience for CISSP?**
+A: Yes, ISC2 requires 5 years of cumulative, paid work experience in 2 or more of the 8 CISSP domains (4 years if you hold a qualifying 4-year degree or an approved credential). Without enough experience yet, you can still pass the exam and hold the Associate of ISC2 designation until you qualify.
 
-**Q: A regional bank's internal audit team is planning the annual security assessment program. Executives need a risk-based explanation for assessment test and audit strategies. Which response best aligns with security assessment practice?**
-A: Define assessment scope, objectives, criteria, independence, timing, and evidence requirements before testing begins
+**Q: CISSP vs Security+, what is the difference?**
+A: Security+ is an entry-level exam covering foundational security concepts. CISSP is a senior-level credential covering the same ground in far more depth plus governance, risk management, and secure architecture, and it requires years of real experience to fully certify. Most people take Security+ years before attempting CISSP.
 
 ## ITIL 4 Foundation (ITIL 4)
 Vendor: PeopleCert
@@ -880,23 +877,20 @@ OSHA 10-Hour Construction is a voluntary outreach training program covering work
 - 8.0 Site Safety and Elective Topics (21% of exam): 85 questions
 
 ### Sample questions
-**Q: What is OSHA's main mission?**
-A: To assure safe and healthful working conditions for workers by setting and enforcing standards and by providing training, outreach, education, and assistance
+**Q: Is there a final exam for OSHA 10?**
+A: OSHA itself does not mandate a single proctored exam, since the requirement is completing 10 hours of authorized outreach training, not passing a specific test. Most authorized online providers include periodic knowledge checks and a final quiz, commonly 20-25 questions with a 70% passing score and a few retry attempts, to confirm you absorbed the material before issuing your DOL card.
 
-**Q: Which condition is a fall hazard on a construction site?**
-A: An unprotected floor opening where a worker could step through
+**Q: Can you fail OSHA 10?**
+A: You can fail an individual quiz question or module check with some providers, but you are typically allowed to retake it until you pass, since the goal is completing all 10 hours of content, not filtering people out.
 
-**Q: Which condition is an electrical hazard on a construction site?**
-A: An exposed energized conductor that workers could contact
+**Q: Is OSHA 10 online?**
+A: Yes. OSHA-authorized outreach trainers offer OSHA 10 fully online as well as in person; either way you need the full 10 hours of authorized content to receive your DOL card.
 
-**Q: Which condition is a struck-by hazard on a construction site?**
-A: A worker standing in the path of a backing dump truck
+**Q: How long does the OSHA 10 card last?**
+A: The OSHA 10 card does not expire under federal rules, but some states, contractors, and project owners require refresher training every few years, so check your local and employer requirements.
 
-**Q: Which condition is a caught-in or between hazard?**
-A: A worker reaching into moving machinery without guarding or lockout protection
-
-**Q: What is the main purpose of PPE on a construction site?**
-A: To reduce exposure when hazards cannot be eliminated or controlled another way
+**Q: How much does OSHA 10 cost?**
+A: OSHA does not set a fixed price since training is delivered by independent authorized providers; expect to pay roughly $25 to $90 depending on the provider and format.
 
 ## OSHA 30-Hour Construction (OSHA 30)
 Vendor: OSHA
@@ -918,23 +912,20 @@ OSHA 30-Hour Construction is a voluntary outreach training program for superviso
 - 10.0 Elective Construction Topics (30% of exam): 185 questions
 
 ### Sample questions
-**Q: Why was OSHA established?**
-A: To help assure safe and healthful working conditions for workers
+**Q: Is there a final exam for OSHA 30?**
+A: OSHA does not mandate one specific proctored exam, since the requirement is completing 30 hours of authorized outreach training. Most authorized providers include quizzes throughout the course and a final knowledge check, commonly with a 70% passing score and a few retry attempts, before issuing your DOL card.
 
-**Q: What is the main purpose of an effective construction safety and health program?**
-A: To prevent injuries, illnesses, and fatalities by systematically finding and controlling hazards
+**Q: Can you fail OSHA 30?**
+A: You can miss the passing score on an individual module quiz with some providers, but you can typically retake it, since the program is built around completing all 30 hours of content rather than screening people out.
 
-**Q: Which condition is a common fall hazard on a construction site?**
-A: An unprotected floor opening in an active work area
+**Q: Is OSHA 30 online?**
+A: Yes, OSHA-authorized outreach trainers offer it fully online or in person; both formats require the full 30 hours of authorized content for the DOL card.
 
-**Q: Which condition is a common electrocution hazard on a construction site?**
-A: A damaged extension cord with exposed conductors
+**Q: How long does the OSHA 30 card last?**
+A: It does not expire under federal rules, though some states, general contractors, and project labor agreements require periodic refreshers, so check your specific job requirements.
 
-**Q: Which condition is a common struck-by hazard on a construction site?**
-A: Workers walking beneath an active overhead lift
-
-**Q: Which condition is a common caught-in or between hazard on a construction site?**
-A: A worker standing between a backing vehicle and a fixed wall
+**Q: How much does OSHA 30 cost?**
+A: OSHA does not set a fixed price since independent authorized providers deliver the training; expect roughly $70 to $150 depending on the provider and format, more than OSHA 10 given the extra 20 hours of content.
 
 ## Forklift Operator Certification (OSHA 1910.178)
 Vendor: OSHA
@@ -1202,23 +1193,23 @@ The QuickBooks ProAdvisor program is Intuit's free certification for accounting 
 - 9.0 Payroll (3% of exam): 6 questions
 
 ### Sample questions
-**Q: The QuickBooks Online test drive lets users explore a sample company called Craig's Design and Landscaping Services without creating an account or signing in. The guide specifies a direct URL to access this environment. Which URL opens the QBO test drive file?**
-A: https://qbo.intuit.com/redir/testdrive
+**Q: Is the QuickBooks ProAdvisor certification free?**
+A: Yes. The QuickBooks Online ProAdvisor certification is free through the ProAdvisor program once you have a QuickBooks Online Accountant account, which is also free to create.
 
-**Q: The gear icon located in the upper right-hand corner of QuickBooks Online provides access to key management areas of the software. It is organized into four named sections for easy navigation. Which of the following correctly lists the four sections found under the QBO gear icon?**
-A: Your Company, Lists, Tools, and Profile
+**Q: How do I get QuickBooks ProAdvisor certification for free?**
+A: Sign up for a free QuickBooks Online Accountant account, then go to the ProAdvisor tab and start the QBO Certification training course. Complete each module and pass the module quizzes and final exam at 80% or better.
 
-**Q: A bookkeeper wants to see all the available lists in QuickBooks Online from a single menu. According to the Student Guide, which navigation path opens the All Lists screen?**
-A: Click the Gear icon → All Lists
+**Q: What is on the ProAdvisor exam?**
+A: The QBO Certification covers setup and subscriptions, navigation and settings, list management, the chart of accounts, customer and sales workflows, vendor and purchase workflows, banking and reconciliation, reports, and payroll basics, roughly 50 questions per module, with an 80% passing score and 3 attempts per module.
 
-**Q: A new bookkeeper needs to find the Chart of Accounts in QuickBooks Online. They are not sure where to access it. Which of the following is a valid navigation path to the Chart of Accounts in QBO?**
-A: Gear icon > Your Company > Chart of Accounts
+**Q: How long does the ProAdvisor exam take?**
+A: There is no strict time limit on most modules, but plan for several hours total since the certification is split across multiple modules with their own quizzes plus a final exam.
 
-**Q: The Sales section in QuickBooks Online has five sub-tabs. Which sub-tab shows a list focused on invoice transactions specifically?**
-A: Invoices
+**Q: Do you need to be an accountant?**
+A: No. Anyone can create a free QuickBooks Online Accountant account and complete the ProAdvisor certification, though it is designed for bookkeepers, accountants, and QuickBooks consultants.
 
-**Q: A bookkeeper needs to create a new vendor record in QuickBooks Online. Which path leads directly to the New Vendor form?**
-A: Left navigation bar → Expenses → Vendors sub-tab → New Vendor button at the top right.
+**Q: How long is ProAdvisor certification valid?**
+A: ProAdvisor certifications require annual recertification. Intuit notifies you when your certification exam needs to be retaken to stay current.
 
 ## Basic Life Support (BLS) (BLS)
 Vendor: American Heart Association
@@ -1238,23 +1229,23 @@ BLS (Basic Life Support) certifies healthcare professionals to deliver high-qual
 - 8.0 Special Emergencies and Recovery (8% of exam): 24 questions
 
 ### Sample questions
-**Q: AHA Part 1 lists the skills tests a student must pass to earn a BLS course completion card. Which two tests are required?**
-A: The Adult CPR and AED Skills Test and the Infant CPR Skills Test
+**Q: What is on the AHA BLS exam?**
+A: The BLS written exam covers the Chain of Survival, high-quality CPR for adults, children, and infants, AED use, ventilation with a bag-mask device, choking relief, and working as part of a resuscitation team. It pairs with a hands-on skills test for the in-person provider card.
 
-**Q: You round a corner in a parking garage and see an adult slumped beside an idling car. Which action must you complete before kneeling next to the person?**
-A: Scan the scene for hazards such as traffic, fumes, or fire
+**Q: What is BLS Exam A vs Exam B?**
+A: The AHA issues two equivalent 25-question versions, Exam A and Exam B, so instructors can give a different version on a retake. Both cover the same content at the same difficulty; QuizBuffet’s question bank draws from both.
 
-**Q: You arrive at the side of an unresponsive-appearing adult on the floor. According to the AHA Adult 1-Rescuer BLS Sequence, what is your very first step?**
-A: Verify that the scene is safe before approaching
+**Q: What is the passing score for BLS?**
+A: You need 84%, or 21 of 25 questions correct, on the written exam, plus a successful hands-on skills check.
 
-**Q: AHA Part 1 defines an 'infant' for BLS purposes. Which definition matches?**
-A: Younger than 1 year, excluding newly born infants in the delivery room
+**Q: Is the BLS test online?**
+A: The knowledge portion can be completed online through AHA HeartCode BLS, but you still need an in-person skills session with an instructor to get the provider card. QuizBuffet’s free practice test and mock test questions cover that online knowledge portion.
 
-**Q: According to AHA Part 4, what does the AED do after it analyzes the heart rhythm?**
-A: It identifies the rhythm as shockable or nonshockable and advises accordingly
+**Q: How long is BLS valid?**
+A: BLS certification from the American Heart Association is valid for two years, after which you renew with a shorter refresher course.
 
-**Q: AHA Part 8 notes a key requirement for placing advanced airways during resuscitation. What is it?**
-A: Advanced airways require advanced training and are placed by trained providers
+**Q: Is BLS the same as CPR?**
+A: BLS builds on CPR and AED skills with additional content aimed at healthcare professionals: team-based resuscitation, advanced airway ventilation, and recognizing deterioration before cardiac arrest. A general CPR/AED course is aimed at lay rescuers and covers less ground.
 
 ## Cosmetology License (Cosmetology)
 Vendor: State Boards

@@ -7,6 +7,18 @@ export const cert = {
   tagline: 'Day-to-day administration of Azure infrastructure at the associate level',
   about: 'Microsoft Azure Administrator (AZ-104) validates skills for managing Azure subscriptions, identities and governance (Microsoft Entra ID, RBAC, Azure Policy, management groups), storage (storage accounts, Azure Files, Blob Storage, redundancy, lifecycle), compute (virtual machines, Container Instances, Container Apps, App Service, scale sets, ARM/Bicep), virtual networking (VNets, NSGs, Bastion, peering, private endpoints, load balancing, DNS), and monitoring with Azure Monitor and backup with Recovery Services and Site Recovery.',
   details: '40-60 questions · 120 minutes · Multiple-choice and case-study formats · Pass score 700/1000',
+  faq: [
+    { q: 'How much does the AZ-104 exam cost?',
+      a: 'The AZ-104 exam costs $165 USD, though Microsoft sometimes offers discount vouchers through partner programs and events.' },
+    { q: 'What is the passing score for AZ-104?',
+      a: 'You need 700 out of 1000 on Microsoft’s scaled score.' },
+    { q: 'Is there a free way to renew the Azure Administrator cert?',
+      a: 'Yes. AZ-104 certification is valid for one year, and Microsoft lets you renew it for free with a short online assessment through Microsoft Learn before it expires, no proctored retake needed.' },
+    { q: 'Is the AZ-104 exam online?',
+      a: 'You can take it online with a remote proctor from home or at a Pearson VUE testing center. Either way it is the same 40-60 question exam with a 120-minute time limit.' },
+    { q: 'How hard is the AZ-104 exam?',
+      a: 'It is a solid step up from AZ-900: expect hands-on, scenario-based questions about identities, storage, compute, networking, and monitoring rather than definitions. Prior hands-on Azure experience makes a real difference.' },
+  ],
   udemyCourseUrl: 'https://www.udemy.com/course/70533-azure/',
   affiliates: [
     { provider: 'udemy',   label: 'Video Course',     url: '' },

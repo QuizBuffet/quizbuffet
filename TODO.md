@@ -109,20 +109,20 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### C1. Done except content: raise `cpr-aed/aed-operation` from 55 to 100+ questions (number kept)
 
-### C2. BLS (about 25 impressions: "basic life support exam/quiz/practice test", "bls mock test", "aha bls online test", "basic life support exam a")
+### C2. [DONE] BLS (about 25 impressions: "basic life support exam/quiz/practice test", "bls mock test", "aha bls online test", "basic life support exam a")
 **File.** `js/data/certifications/bls.js`.
 1. `seoName`: "BLS (Basic Life Support)". Title becomes "BLS (Basic Life Support) Practice Test: 300+ Free Questions".
 2. `faq`: "What is on the AHA BLS exam?", "What is BLS Exam A vs Exam B?" (AHA issues two equivalent 25-question versions), "What is the passing score for BLS?" (84 percent), "Is the BLS test online?", "How long is BLS valid?", "Is BLS the same as CPR?", "How many questions are on the BLS exam?" (25), "Can I take a BLS mock test for free?".
 3. Intro paragraph must include "mock test" and "online".
 
-### C3. QuickBooks ProAdvisor (about 90 impressions; dominant intent "is it free", "how to get it free from Intuit")
+### C3. [PARTIAL: seoName/faq/about all done; reports domain still needs filling from 14 to 30+ questions] QuickBooks ProAdvisor (about 90 impressions; dominant intent "is it free", "how to get it free from Intuit")
 **File.** `js/data/certifications/quickbooks-proadvisor.js`.
 1. Title is clipped mid-phrase ("...No"). With B1 it becomes "QuickBooks Online ProAdvisor Practice Test: 200+ Free Questions".
 2. `faq`: "Is the QuickBooks ProAdvisor certification free?" (yes, free through the ProAdvisor program in QuickBooks Online Accountant), "How do I get QuickBooks ProAdvisor certification for free?", "What is on the ProAdvisor exam?" (sections, ~75 questions, 80 percent pass, 3 attempts), "How long does the ProAdvisor exam take?", "Do you need to be an accountant?", "How long is ProAdvisor certification valid?" (annual recertification), "What is the difference between ProAdvisor and Advanced ProAdvisor?", "Is there a QuickBooks proficiency test?".
 3. Add an `about` paragraph that says "free" in the first sentence and names "Intuit" and "QuickBooks Online Accountant".
 4. Fill the `reports` domain (14 questions) to at least 30.
 
-### C4. AWS Developer Associate (about 230 impressions across 15 phrasings, the largest single-cert opportunity)
+### C4. [PARTIAL: seoTitle/seoH1/faq all done; mock exam mode (L1) and raising question count toward 1000 still open] AWS Developer Associate (about 230 impressions across 15 phrasings, the largest single-cert opportunity)
 **File.** `js/data/certifications/aws-developer-associate.js`.
 1. `seoName`: "AWS Certified Developer Associate". Title: "AWS Certified Developer Associate Practice Exam: 500+ Free Questions".
 2. Use "practice exam" as the primary noun on this page (queries say exam more than test). H1: "AWS Certified Developer Associate Practice Exam and Practice Tests (DVA-C02)".
@@ -130,28 +130,28 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 4. Build the timed mock exam mode (L1) and link it from the top of this page; "practice exam" intent is not satisfied by a question bank.
 5. Raise question count toward 1000. It is the highest-demand AWS page and has 500.
 
-### C5. CompTIA Project+ (about 80 impressions: "project+", "comptia project", "project+ study", "project+ practice questions", "pk0-005 exam voucher")
+### C5. [PARTIAL: faq additions done (voucher price, vs CAPM); studyGuide field/render feature not built] CompTIA Project+ (about 80 impressions: "project+", "comptia project", "project+ study", "project+ practice questions", "pk0-005 exam voucher")
 **File.** `js/data/certifications/comptia-project-plus.js`.
 1. `seoName`: "CompTIA Project+". Title: "CompTIA Project+ Practice Test: 812+ Free Questions (PK0-005)".
 2. Add a "Project+ Study Guide" section: a study plan by domain, recommended order, and links to the four domain quizzes. Implement as an optional `studyGuide` field (array of paragraphs) rendered by `build-seo.mjs` under an H2 "Project+ Study Guide and Study Material".
 3. `faq` already exists; add "How much is the PK0-005 exam voucher?" ($358 list; verify) and "Is Project+ worth it vs CAPM?".
 
-### C6. CompTIA PenTest+ (about 45 impressions: "comptia pentest+", "pentest+ exam", "pt0-003 exam voucher", "pentest+ exam objectives", "pentest+ free training")
+### C6. [PARTIAL: faq built from scratch (voucher, difficulty vs Security+, free training, format, passing score, expiry); exam-objectives table not rendered] CompTIA PenTest+ (about 45 impressions: "comptia pentest+", "pentest+ exam", "pt0-003 exam voucher", "pentest+ exam objectives", "pentest+ free training")
 **File.** `js/data/certifications/comptia-pentest-plus.js`.
 1. `seoName`: "CompTIA PenTest+". Title: "CompTIA PenTest+ Practice Test: 2160+ Free Questions (PT0-003)".
 2. Add an "Exam Objectives" H2 that lists the PT0-003 domains with weights (the `domains` array already has this; render it as a table with the official objective names).
 3. `faq`: voucher price, "Is PenTest+ harder than Security+?", "Is there free PenTest+ training?" (answer: this site plus CompTIA's free objectives PDF), "How many questions and how long?" (max 90, 165 minutes), "Passing score?" (750 of 900), "Does PenTest+ expire?" (3 years).
 
-### C7. CISSP (about 60 impressions: "cissp test", "cissp exam", "cissp certification exam", "isc2 cissp practice test")
+### C7. [DONE — also fixed a real bug found while doing this: codeTag dedup checked cert.name instead of seoName, so CISSP's title read "...800+ Free Questions (CISSP)" duplicating the "(ISC2)" already in seoName] CISSP (about 60 impressions: "cissp test", "cissp exam", "cissp certification exam", "isc2 cissp practice test")
 **File.** `js/data/certifications/isc2-cissp.js`.
 1. `seoName`: "CISSP (ISC2)". Title: "CISSP (ISC2) Practice Test: 800+ Free Questions".
 2. The H1 is the full 60-character expansion. Change to "CISSP Practice Test: ISC2 Certified Information Systems Security Professional".
 3. `faq`: "How hard is the CISSP?", "How many questions?" (CAT: 100 to 150, 3 hours; verify current), "Passing score?" (700 of 1000), "Cost?" ($749), "Do you need 5 years experience?", "CISSP vs Security+", "How long is CISSP valid?", "Is a free CISSP practice test enough?".
 
-### C8. AZ-104 (about 20 impressions: "az-104 online exam", "az 104 test", "azure administrator cert free")
+### C8. [DONE] AZ-104 (about 20 impressions: "az-104 online exam", "az 104 test", "azure administrator cert free")
 `seoName`: "AZ-104 Azure Administrator". Title: "AZ-104 Azure Administrator Practice Test: 500+ Free Questions". Add "online" to the description and `faq` on cost ($165), passing (700), renewal (annual free online assessment, which directly answers "azure administrator cert free").
 
-### C9. OSHA 10 and OSHA 30 (about 30 impressions: "osha 10 practice exam/test", "osha 30 test/exam", "osha test", "osha certification test")
+### C9. [DONE — priced OSHA 10/30 as a range since OSHA doesn't set a fixed course price; framed the "final exam" answer as provider-dependent rather than a universal fact, since OSHA itself only mandates training hours, not one exam format] OSHA 10 and OSHA 30 (about 30 impressions: "osha 10 practice exam/test", "osha 30 test/exam", "osha test", "osha certification test")
 `seoName` set in B2. Titles become "OSHA 10 Construction Practice Test: 400+ Free Questions". `faq` for each: "Is there a final exam for OSHA 10?" (yes, 20 questions, 70 percent to pass, 3 attempts on most providers), "Can you fail OSHA 30?", "Is OSHA 10 online?", "How long does the OSHA 10 card last?" (does not expire federally; some states and employers require renewal), "How much does OSHA 10 cost?".
 
 ### C10. Forklift (about 25 impressions: "osha forklift test", "forklift operator certification test", "free forklift certification test online", "29 cfr 1910.178")
@@ -210,8 +210,7 @@ Title from B1: "CompTIA Security+ Practice Test: 1900+ Free Questions". Add the 
 
 ### D2. Done (removed, number kept)
 
-### D3. [DONE] Sitemap changefreq and priority
-In `buildSitemap` (`build-seo.mjs:1317`): home `weekly/1.0`, cert pages `monthly/0.8`, domain pages `monthly/0.6`, cpa hub `monthly/0.7`, privacy `yearly/0.1`. Google mostly ignores these, but uniform 0.9/0.8 on 300 pages is noise.
+### D3. Done (removed, number kept)
 
 ### D4. Done (removed, number kept)
 
@@ -278,14 +277,11 @@ Add a one-line "How these questions are written" link to the About page, and a "
 ```
 Render `summary` under the H1 and `objectives` as a list under "What this domain covers". Source the objective text from the official exam objectives PDF for each cert. Start with the 16 certs in section C.
 
-### G2. [DONE] Show 8 to 10 sample questions instead of 3
-`build-seo.mjs:595` slices 3. Change to 8, mixed difficulty (2 easy, 3 medium, 2 medium-hard, 1 hard), rendered as `<details>` blocks with the question, the four answers, and the correct answer plus explanation inside. Keep the `FAQPage` JSON-LD at 3 to 5 items (Google truncates long FAQ schema anyway). Remove em-dashes from the rendered sample text at render time (H1 fixes the source).
+### G2. Done (removed, number kept)
 
-### G3. [DONE: 220/271 domain pages, limited to the 42 certs with a services file] Key terms block
-Pull `js/data/services/<slug>.js` (concept list) and show the 10 entries whose `a` or `d` text matches the domain name or keywords, under "Key terms in this domain". Static HTML, generated in `build-seo.mjs`.
+### G3. Done for the 42 certs with a services file; 52 domain pages on 8 certs without one have no key-terms block (number kept)
 
-### G4. [DONE] Sibling and parent links
-"Other <code> Domains" exists but sits below the fold. Move a compact horizontal domain nav under the H1, and keep the full list at the bottom.
+### G4. Done (removed, number kept)
 
 ### G5. Domains under 30 questions
 46 live domain files have fewer than 30 questions. List them with:

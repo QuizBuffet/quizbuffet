@@ -24,6 +24,10 @@ export const cert = {
       a: 'Project+ is entry level with no prerequisites and suits smaller projects and newcomers. The PMP requires documented experience and is aimed at seasoned managers. Many people earn Project+ first and pursue the PMP later.' },
     { q: 'How long should you study for Project+?',
       a: 'Most candidates need about three to six weeks of study. Reviewing each missed practice question is the quickest way to close gaps before the exam.' },
+    { q: 'How much is the PK0-005 exam voucher?',
+      a: 'CompTIA’s standard exam price is currently around $400 USD, though authorized training partners sometimes bundle the voucher with CertMaster study material at a different price. Check CompTIA’s official store for the current rate before you buy.' },
+    { q: 'Is Project+ worth it vs CAPM?',
+      a: 'Project+ is broader and vendor-agnostic with no prerequisites, and it never expires. CAPM is PMI’s entry credential, requires either 23 hours of project management education or a CAPM prep course, and needs renewal every 3 years with continuing education. Pick Project+ if you want an easier first step or work heavily in IT; pick CAPM if you are aiming toward the PMP and want PMI’s framework from the start.' },
   ],
   udemyCourseUrl: 'https://www.udemy.com/courses/search/?q=CompTIA%20Project%2B%20PK0-005',
   affiliates: [

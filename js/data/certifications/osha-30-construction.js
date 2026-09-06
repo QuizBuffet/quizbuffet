@@ -18,6 +18,12 @@ export const cert = {
       a: 'It does not expire under federal rules, though some states, general contractors, and project labor agreements require periodic refreshers, so check your specific job requirements.' },
     { q: 'How much does OSHA 30 cost?',
       a: 'OSHA does not set a fixed price since independent authorized providers deliver the training; expect roughly $70 to $150 depending on the provider and format, more than OSHA 10 given the extra 20 hours of content.' },
+    { q: 'Who should take OSHA 30 instead of OSHA 10?',
+      a: 'OSHA 30 is intended for supervisors, foremen, site safety leads, and anyone with safety responsibility for others. OSHA 10 is the entry-level course for workers. Many states and contractors require the 30-hour card for supervisory roles.' },
+    { q: 'What topics are on the OSHA 30 construction course?',
+      a: 'Everything in OSHA 10 (the Focus Four hazards, introduction to OSHA, PPE, and health hazards) plus managing safety and health programs, stairways and ladders, and a wider set of elective topics such as excavations, scaffolds, cranes, and confined spaces.' },
+    { q: 'Is this OSHA 30 practice test free?',
+      a: 'Yes. All OSHA 30 practice questions on QuizBuffet are free, organized by course topic, with explanations for every answer and no signup.' },
   ],
   affiliates: [
     { provider: 'udemy',  label: 'Video Course', url: '' },

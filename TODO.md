@@ -109,11 +109,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### C1. Done except content: raise `cpr-aed/aed-operation` from 55 to 100+ questions (number kept)
 
-### C2. [DONE] BLS (about 25 impressions: "basic life support exam/quiz/practice test", "bls mock test", "aha bls online test", "basic life support exam a")
-**File.** `js/data/certifications/bls.js`.
-1. `seoName`: "BLS (Basic Life Support)". Title becomes "BLS (Basic Life Support) Practice Test: 300+ Free Questions".
-2. `faq`: "What is on the AHA BLS exam?", "What is BLS Exam A vs Exam B?" (AHA issues two equivalent 25-question versions), "What is the passing score for BLS?" (84 percent), "Is the BLS test online?", "How long is BLS valid?", "Is BLS the same as CPR?", "How many questions are on the BLS exam?" (25), "Can I take a BLS mock test for free?".
-3. Intro paragraph must include "mock test" and "online".
+### C2. Done (removed, number kept)
 
 ### C3. [PARTIAL: seoName/faq/about all done; reports domain still needs filling from 14 to 30+ questions] QuickBooks ProAdvisor (about 90 impressions; dominant intent "is it free", "how to get it free from Intuit")
 **File.** `js/data/certifications/quickbooks-proadvisor.js`.
@@ -142,17 +138,11 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 2. Add an "Exam Objectives" H2 that lists the PT0-003 domains with weights (the `domains` array already has this; render it as a table with the official objective names).
 3. `faq`: voucher price, "Is PenTest+ harder than Security+?", "Is there free PenTest+ training?" (answer: this site plus CompTIA's free objectives PDF), "How many questions and how long?" (max 90, 165 minutes), "Passing score?" (750 of 900), "Does PenTest+ expire?" (3 years).
 
-### C7. [DONE — also fixed a real bug found while doing this: codeTag dedup checked cert.name instead of seoName, so CISSP's title read "...800+ Free Questions (CISSP)" duplicating the "(ISC2)" already in seoName] CISSP (about 60 impressions: "cissp test", "cissp exam", "cissp certification exam", "isc2 cissp practice test")
-**File.** `js/data/certifications/isc2-cissp.js`.
-1. `seoName`: "CISSP (ISC2)". Title: "CISSP (ISC2) Practice Test: 800+ Free Questions".
-2. The H1 is the full 60-character expansion. Change to "CISSP Practice Test: ISC2 Certified Information Systems Security Professional".
-3. `faq`: "How hard is the CISSP?", "How many questions?" (CAT: 100 to 150, 3 hours; verify current), "Passing score?" (700 of 1000), "Cost?" ($749), "Do you need 5 years experience?", "CISSP vs Security+", "How long is CISSP valid?", "Is a free CISSP practice test enough?".
+### C7. Done (removed, number kept)
 
-### C8. [DONE] AZ-104 (about 20 impressions: "az-104 online exam", "az 104 test", "azure administrator cert free")
-`seoName`: "AZ-104 Azure Administrator". Title: "AZ-104 Azure Administrator Practice Test: 500+ Free Questions". Add "online" to the description and `faq` on cost ($165), passing (700), renewal (annual free online assessment, which directly answers "azure administrator cert free").
+### C8. Done (removed, number kept)
 
-### C9. [DONE — priced OSHA 10/30 as a range since OSHA doesn't set a fixed course price; framed the "final exam" answer as provider-dependent rather than a universal fact, since OSHA itself only mandates training hours, not one exam format] OSHA 10 and OSHA 30 (about 30 impressions: "osha 10 practice exam/test", "osha 30 test/exam", "osha test", "osha certification test")
-`seoName` set in B2. Titles become "OSHA 10 Construction Practice Test: 400+ Free Questions". `faq` for each: "Is there a final exam for OSHA 10?" (yes, 20 questions, 70 percent to pass, 3 attempts on most providers), "Can you fail OSHA 30?", "Is OSHA 10 online?", "How long does the OSHA 10 card last?" (does not expire federally; some states and employers require renewal), "How much does OSHA 10 cost?".
+### C9. Done (removed, number kept)
 
 ### C10. Forklift (about 25 impressions: "osha forklift test", "forklift operator certification test", "free forklift certification test online", "29 cfr 1910.178")
 **File.** `js/data/certifications/forklift-certification.js`.

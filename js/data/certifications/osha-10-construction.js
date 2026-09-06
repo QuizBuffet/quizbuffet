@@ -18,6 +18,12 @@ export const cert = {
       a: 'The OSHA 10 card does not expire under federal rules, but some states, contractors, and project owners require refresher training every few years, so check your local and employer requirements.' },
     { q: 'How much does OSHA 10 cost?',
       a: 'OSHA does not set a fixed price since training is delivered by independent authorized providers; expect to pay roughly $25 to $90 depending on the provider and format.' },
+    { q: 'Is OSHA 10 required for construction workers?',
+      a: 'Federal OSHA does not require the 10-hour card, but several states (including New York, Nevada, Massachusetts, Connecticut, Missouri, New Hampshire, and Rhode Island) require it for many construction jobs, and many general contractors and project owners require it as a condition of site access.' },
+    { q: 'What topics are on the OSHA 10 construction course?',
+      a: 'The core is the Focus Four hazards (falls, electrocution, struck-by, and caught-in or between), plus an introduction to OSHA, personal protective equipment, and health hazards, with a few elective topics chosen by the trainer.' },
+    { q: 'Is this OSHA 10 practice test free?',
+      a: 'Yes. All OSHA 10 practice questions on QuizBuffet are free, organized by the same topics as the course, with explanations for every answer and no signup.' },
   ],
   affiliates: [
     { provider: 'udemy',  label: 'Video Course', url: '' },

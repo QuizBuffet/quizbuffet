@@ -788,6 +788,9 @@ A: You can take it online with a remote proctor from home or at a Pearson VUE te
 **Q: How hard is the AZ-104 exam?**
 A: It is a solid step up from AZ-900: expect hands-on, scenario-based questions about identities, storage, compute, networking, and monitoring rather than definitions. Prior hands-on Azure experience makes a real difference.
 
+**Q: Is AZ-900 required before AZ-104?**
+A: No. AZ-104 has no prerequisite exam. Microsoft recommends about six months of hands-on Azure administration, and AZ-900 is a useful but optional warm-up if you are new to cloud concepts.
+
 ## Certified Information Systems Security Professional (CISSP)
 Vendor: ISC2
 URL: https://quizbuffet.com/isc2-cissp/
@@ -892,6 +895,9 @@ A: The OSHA 10 card does not expire under federal rules, but some states, contra
 **Q: How much does OSHA 10 cost?**
 A: OSHA does not set a fixed price since training is delivered by independent authorized providers; expect to pay roughly $25 to $90 depending on the provider and format.
 
+**Q: Is OSHA 10 required for construction workers?**
+A: Federal OSHA does not require the 10-hour card, but several states (including New York, Nevada, Massachusetts, Connecticut, Missouri, New Hampshire, and Rhode Island) require it for many construction jobs, and many general contractors and project owners require it as a condition of site access.
+
 ## OSHA 30-Hour Construction (OSHA 30)
 Vendor: OSHA
 URL: https://quizbuffet.com/osha-30-construction/
@@ -927,6 +933,9 @@ A: It does not expire under federal rules, though some states, general contracto
 **Q: How much does OSHA 30 cost?**
 A: OSHA does not set a fixed price since independent authorized providers deliver the training; expect roughly $70 to $150 depending on the provider and format, more than OSHA 10 given the extra 20 hours of content.
 
+**Q: Who should take OSHA 30 instead of OSHA 10?**
+A: OSHA 30 is intended for supervisors, foremen, site safety leads, and anyone with safety responsibility for others. OSHA 10 is the entry-level course for workers. Many states and contractors require the 30-hour card for supervisory roles.
+
 ## Forklift Operator Certification (OSHA 1910.178)
 Vendor: OSHA
 URL: https://quizbuffet.com/forklift-certification/
@@ -944,23 +953,23 @@ Forklift Operator Certification is mandated by 29 CFR 1910.178 for any worker op
 - 7.0 Training, Evaluation, and Certification (17% of exam): 50 questions
 
 ### Sample questions
-**Q: What is a forklift as described in powered industrial truck safety training?**
-A: A mobile, power-driven vehicle used to carry, push, pull, lift, stack, or tier material
+**Q: Is the OSHA forklift test free?**
+A: QuizBuffet’s forklift practice test is free, 300+ questions with instant feedback, no signup. The official employer-administered evaluation itself is not run by OSHA directly and is typically arranged (and paid for) through your employer or a training provider.
 
-**Q: When is an overhead guard needed on a forklift?**
-A: When the operator is exposed to hoisted or stacked objects that might fall
+**Q: Can you get forklift certified online?**
+A: The written knowledge portion can be completed online, but 29 CFR 1910.178(l) requires a hands-on performance evaluation of your actual operating skills, which must be done in person on the equipment you will use.
 
-**Q: Forklift stability is based on what basic principle?**
-A: Two weights balanced on opposite sides of a fulcrum point
+**Q: How many questions are on the forklift test?**
+A: It varies by employer and training provider since OSHA does not publish one standard test; most written knowledge tests run 25 to 40 questions.
 
-**Q: What is the purpose of a forklift seat belt or operator restraint system?**
-A: To help keep the operator in the seat during a tip-over or when thrown-from-truck hazards exist
+**Q: What does 29 CFR 1910.178 require?**
+A: 29 CFR 1910.178 is OSHA’s Powered Industrial Trucks standard. It requires formal training on truck types and operation, a hands-on evaluation of each operator, refresher training after certain incidents or unsafe operation, and re-evaluation of every operator at least once every three years.
 
-**Q: Before picking up a load, what should the operator verify?**
-A: The load is within rated capacity, balanced, secure, and suitable for the forklift
+**Q: How often do you need forklift recertification?**
+A: At least every 3 years under 1910.178, though a near-miss, accident, unsafe operation, or a switch to a different truck type can trigger earlier refresher training.
 
-**Q: Why are forklifts around pedestrians a serious concern?**
-A: Pedestrians can be struck, crushed, or pinned by moving forklifts or loads
+**Q: What is a passing score for the forklift test?**
+A: OSHA does not set one fixed passing score since the written test and evaluation criteria are set by the employer or training provider; most programs require correctly demonstrating every required skill on the hands-on evaluation, not just a percentage on the written portion.
 
 ## CDL Class A (CDL-A)
 Vendor: FMCSA / State DMV
@@ -1050,23 +1059,23 @@ The SAFE MLO National Test with Uniform State Content is required by the federal
 - 5.0 Ethics (18% of exam): 54 questions
 
 ### Sample questions
-**Q: RESPA was enacted by Congress in 1974 to address rising costs in real estate transactions. Lenders, brokers, and servicers must comply with its disclosure and anti-kickback provisions. What is the primary purpose of RESPA?**
-A: To provide consumers disclosures about settlement costs and to prohibit kickbacks that increase those costs
+**Q: What is on the SAFE MLO national test?**
+A: 120 multiple-choice items (115 scored, 5 unscored) in 190 minutes, covering Federal Mortgage-Related Laws, Uniform State Content, General Mortgage Knowledge, Mortgage Loan Origination Activities, and Ethics.
 
-**Q: Under Regulation X, classification as a mortgage broker matters because RESPA's anti-kickback rules attach to settlement service providers. The definition draws a line around persons who arrange but do not fund the loan. Under RESPA, a 'mortgage broker' is best defined as:**
-A: A person, other than an employee of a lender, who renders origination services and serves as an intermediary between a borrower and a lender
+**Q: What is the passing score for the SAFE MLO exam?**
+A: You need 75%.
 
-**Q: The SAFE Act was enacted in 2008 as part of the Housing and Economic Recovery Act. It created a national framework for individual MLO licensing and registration. The primary goals of the SAFE Act are to:**
-A: Increase accountability and reduce fraud by requiring minimum licensing standards, fingerprinting, background checks, and education for MLOs
+**Q: How much does the SAFE MLO exam cost?**
+A: The national test costs $110 through NMLS, plus a separate fee if your state requires the Uniform State Content component (most states now use the national test with UST built in).
 
-**Q: The SAFE Act defines who is an MLO for licensing purposes. The definition captures both loan origination and solicitation activities. Under the SAFE Act, an individual is a mortgage loan originator if they:**
-A: Take a residential mortgage loan application OR offer or negotiate terms of a residential mortgage loan for compensation or gain
+**Q: How many times can you take the SAFE test?**
+A: You can retake it, but NMLS enforces waiting periods: 30 days after each of your first 3 attempts, then 180 days after a 4th or any later failed attempt.
 
-**Q: A conventional mortgage is not insured or guaranteed by a federal government agency. This distinguishes it from FHA, VA, and USDA loans. A conventional mortgage is best described as:**
-A: A residential mortgage loan that is not insured or guaranteed by a federal government agency
+**Q: Is there a free NMLS practice test?**
+A: Yes, QuizBuffet’s SAFE MLO practice test is 300+ free questions organized by the same five content areas as the real exam, no signup required.
 
-**Q: Fannie Mae operates in the secondary mortgage market and purchases loans from approved lenders. Its purchase of eligible loans provides liquidity that enables new origination. Fannie Mae's primary function is to:**
-A: Purchase eligible mortgage loans from approved lenders to provide liquidity to the secondary mortgage market
+**Q: What is the UST (Uniform State Content)?**
+A: Uniform State Content is the portion of the national test covering state-level mortgage law and licensing requirements that apply across participating states, folded directly into the national SAFE test rather than given as a separate exam.
 
 ## FAA Part 107 / 14 CFR Part 107 (Part 107)
 Vendor: FAA

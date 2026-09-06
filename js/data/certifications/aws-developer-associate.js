@@ -2,7 +2,7 @@ export const cert = {
   slug: 'aws-developer-associate',
   name: 'AWS Certified Developer Associate',
   seoName: 'AWS Certified Developer Associate',
-  seoTitle: 'AWS Developer Associate Practice Exam: 500+ Questions',
+  seoTitle: 'AWS Developer Associate Practice Exam: 500+ Free Questions',
   seoH1: 'AWS Certified Developer Associate Practice Exam and Practice Tests (DVA-C02)',
   code: 'DVA-C02',
   vendor: 'AWS',

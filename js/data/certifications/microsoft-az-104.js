@@ -18,6 +18,12 @@ export const cert = {
       a: 'You can take it online with a remote proctor from home or at a Pearson VUE testing center. Either way it is the same 40-60 question exam with a 120-minute time limit.' },
     { q: 'How hard is the AZ-104 exam?',
       a: 'It is a solid step up from AZ-900: expect hands-on, scenario-based questions about identities, storage, compute, networking, and monitoring rather than definitions. Prior hands-on Azure experience makes a real difference.' },
+    { q: 'Is AZ-900 required before AZ-104?',
+      a: 'No. AZ-104 has no prerequisite exam. Microsoft recommends about six months of hands-on Azure administration, and AZ-900 is a useful but optional warm-up if you are new to cloud concepts.' },
+    { q: 'How long should you study for AZ-104?',
+      a: 'Most candidates with some Azure exposure need six to ten weeks. Pair the free Microsoft Learn path with hands-on time in a trial subscription, then drill each exam area here until your misses stop clustering in one domain.' },
+    { q: 'Is this AZ-104 practice test free?',
+      a: 'Yes. Every AZ-104 practice question on QuizBuffet is free, with instant feedback and an explanation for each answer, and there is no account or email required.' },
   ],
   udemyCourseUrl: 'https://www.udemy.com/course/70533-azure/',
   affiliates: [

@@ -2,7 +2,7 @@ export const cert = {
   slug: 'isc2-cissp',
   name: 'Certified Information Systems Security Professional',
   seoName: 'CISSP (ISC2)',
-  seoH1: 'CISSP Practice Test: ISC2 Certified Information Systems Security Professional',
+  seoH1: 'CISSP Practice Test and Practice Exam: ISC2 Certified Information Systems Security Professional',
   code: 'CISSP',
   vendor: 'ISC2',
   tagline: 'The gold-standard senior cybersecurity certification',

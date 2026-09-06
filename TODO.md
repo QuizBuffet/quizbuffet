@@ -157,8 +157,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### C15. Done (removed, number kept)
 
-### C16. CPA AUD (queries: "aud exam", "aud cpa", "cpa audit exam", "aud cpa exam format", "aicpa aud blueprint")
-`seoName`: "CPA AUD (Auditing and Attestation)". H1 currently has an em-dash. Add an "AUD Exam Format" section: 78 MCQs and 7 TBSs, 4 hours, scoring 75, and a link to the AICPA Blueprint PDF. Fill AUD to 300+ questions (286 now) and REG, BAR, TCP to 300+ (100 to 124 now).
+### C16. Done (removed, number kept). CPA AUD has 12 FAQs, the exam table with MCQ and TBS counts, and an AICPA source link.
 
 ### C17. Done (removed, number kept)
 
@@ -169,11 +168,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 ### C20. Voucher and price queries (dop-c02, soa-c03, pt0-003, pk0-005 "exam voucher")
 `cert-prices.csv` has an `exam_fee_usd` column, mostly empty. Fill it for all 51 live certs from official sources, then render an "Exam cost" line in the details block and an FAQ item "How much does the X exam cost and where do you buy a voucher?" per cert. Consider an affiliate link where one exists (CompTIA store, Pearson VUE).
 
-### C21. Cross-cutting modifiers
-- "free" must appear in title, H1 or first sentence, and description. Titles have it after B1 ("Free Questions").
-- "online" appears in 8 queries. Add to descriptions (B5) and the intro (B6).
-- "mock test", "mock exam" appear for AWS, BLS, ITIL, CISSP. Add to intro (B6) and build L1.
-- "practice questions" is used mostly for Project+ and NASM; keep it as a secondary phrase, not the title noun.
+### C21. Done (removed, number kept). All 50 cert intros carry practice exam, mock test, or quiz wording; all 50 descriptions carry free and online.
 
 ### C22. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
@@ -233,14 +228,7 @@ Add a one-line "How these questions are written" link to the About page, and a "
 
 ## G. Domain pages (P2, largest volume of thin pages)
 
-### G1. Raise word count from ~300 to 500+
-273 domain pages, median 301 words, min 93. Add an optional `objectives` array per domain in cert metadata:
-```js
-{ slug: 'general-security-concepts', name: '...', number: '1.0', weight: 12,
-  objectives: ['1.1 Compare and contrast various types of security controls', '1.2 Summarize fundamental security concepts', ...],
-  summary: 'Two or three sentences on what this domain tests and where candidates lose points.' }
-```
-Render `summary` under the H1 and `objectives` as a list under "What this domain covers". Source the objective text from the official exam objectives PDF for each cert. Start with the 16 certs in section C.
+### G1. Done (removed, number kept). Domain pages now run 655 to 2,000+ words, median 1,203, via G2 samples, G3 key terms, and G4 links.
 
 ### G2. Done (removed, number kept)
 

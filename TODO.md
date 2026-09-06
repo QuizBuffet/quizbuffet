@@ -4,6 +4,8 @@ Audit date: 2026-09-06. Site ranks around position 68 for head terms. Search Con
 
 Completed items are collapsed to "Done (removed, number kept)" so numbering stays stable for everyone working from this file.
 
+Scope (owner decision 2026-09-06): this list is about visibility (search, ads, brand, off-site). The question banks, answers, explanations, and app behavior are final and tested; nothing here may change them.
+
 Priority key: **P1** = do before ads spend. **P2** = next 30 days. **P3** = ongoing.
 After any change to `scripts/build-seo.mjs` or cert metadata: run `npm run build:seo`, bump the cache version in `sw.js`, and spot-check one cert page, one domain page, and the home page.
 
@@ -107,18 +109,18 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### B8. Done (removed, number kept)
 
-### C1. Done except content: raise `cpr-aed/aed-operation` from 55 to 100+ questions (number kept)
+### C1. Done (removed, number kept)
 
 ### C2. Done (removed, number kept)
 
-### C3. [PARTIAL: seoName/faq/about all done; reports domain still needs filling from 14 to 30+ questions] QuickBooks ProAdvisor (about 90 impressions; dominant intent "is it free", "how to get it free from Intuit")
+### C3. Done (removed, number kept). Question fill is out of scope. QuickBooks ProAdvisor (about 90 impressions; dominant intent "is it free", "how to get it free from Intuit")
 **File.** `js/data/certifications/quickbooks-proadvisor.js`.
 1. Title is clipped mid-phrase ("...No"). With B1 it becomes "QuickBooks Online ProAdvisor Practice Test: 200+ Free Questions".
 2. `faq`: "Is the QuickBooks ProAdvisor certification free?" (yes, free through the ProAdvisor program in QuickBooks Online Accountant), "How do I get QuickBooks ProAdvisor certification for free?", "What is on the ProAdvisor exam?" (sections, ~75 questions, 80 percent pass, 3 attempts), "How long does the ProAdvisor exam take?", "Do you need to be an accountant?", "How long is ProAdvisor certification valid?" (annual recertification), "What is the difference between ProAdvisor and Advanced ProAdvisor?", "Is there a QuickBooks proficiency test?".
 3. Add an `about` paragraph that says "free" in the first sentence and names "Intuit" and "QuickBooks Online Accountant".
 4. Fill the `reports` domain (14 questions) to at least 30.
 
-### C4. [PARTIAL: seoTitle/seoH1/faq all done; mock exam mode (L1) and raising question count toward 1000 still open] AWS Developer Associate (about 230 impressions across 15 phrasings, the largest single-cert opportunity)
+### C4. Done (removed, number kept). Mock exam and question fill are out of scope. AWS Developer Associate (about 230 impressions across 15 phrasings, the largest single-cert opportunity)
 **File.** `js/data/certifications/aws-developer-associate.js`.
 1. `seoName`: "AWS Certified Developer Associate". Title: "AWS Certified Developer Associate Practice Exam: 500+ Free Questions".
 2. Use "practice exam" as the primary noun on this page (queries say exam more than test). H1: "AWS Certified Developer Associate Practice Exam and Practice Tests (DVA-C02)".
@@ -174,8 +176,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 - "mock test", "mock exam" appear for AWS, BLS, ITIL, CISSP. Add to intro (B6) and build L1.
 - "practice questions" is used mostly for Project+ and NASM; keep it as a secondary phrase, not the title noun.
 
-### C22. Brand
-"coursebuffet" and "brainbuffet sign up" show the brand is not yet remembered. No on-site fix. Off-site brand mentions (K) are the cure.
+### C22. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
 ---
 
@@ -255,49 +256,31 @@ Render `summary` under the H1 and `objectives` as a list under "What this domain
 
 ### G4. Done (removed, number kept)
 
-### G5. Domains under 30 questions
-46 live domain files have fewer than 30 questions. List them with:
-```bash
-python3 -c "import json,glob;[print(f,len(json.load(open(f))['questions'])) for f in glob.glob('data/certifications/*/*.json') if len(json.load(open(f))['questions'])<30]"
-```
-Fill each to 30+ using the QUESTION-PROMPT workflow, or merge two tiny domains into one where the exam guide allows. Tattoo (6 domains of 12 to 20), Barber no-chemical, and QuickBooks Reports first.
+### G5. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
-### G6. `npm run check:weights` fails on 10 live certs (pre-existing, found 2026-09-06 verification)
-ANS-C01 has an empty domain (`network-management-and-operation.json`, 0 questions, page noindexed) and nine CompTIA certs (A+ Core 1 and 2, Cloud+, CySA+, Data+, ITF+, Network+, PenTest+, Security+) have domains under their declared exam weight. Two fixes, per CLAUDE.md: author questions to bring each flagged domain up to weight (ANS-C01 needs 120 for the empty domain), or align the declared `weight` values in `js/data/certifications/<slug>.js` to the on-disk share. Re-run until the script exits 0. This predates all of today's work; nothing marked done depends on it.
+### G6. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
 ---
 
 ## H. Content data quality (P2)
 
-### H1. Remove em-dashes from question data
-58,280 occurrences across `data/certifications/*/*.json`. Scripted pass:
-1. For each file, load JSON, walk `text`, every `answers[].text`, every `explanations` value.
-2. Replace ` — ` and ` – ` with `, ` when both sides are lowercase clauses; with `. ` when the right side starts with a capital letter and the left side ends a clause; with ` (` ... `)` only when the fragment is short and parenthetical. A simple safe default: ` — ` -> `, ` and `—` (no spaces) -> `, `.
-3. Collapse doubled punctuation (`,,`, `, ,`, `.,`).
-4. Re-run `docs/validate-domain.py` on every file; re-minify. Commit in batches per cert so diffs are reviewable.
+### H1. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
 ### H2. Done (removed, number kept)
 
-### H3. Fill thin certs
-tattoo-license (88), cpa-bar (100), cpa-reg (112), cpa-tcp (124), quickbooks-proadvisor (200). Target 300+ for any cert you will advertise.
+### H3. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
-### H4. Run the validator across everything
-```bash
-for f in data/certifications/*/*.json; do python3 docs/validate-domain.py "$f" || echo "FAIL $f"; done
-```
-Fix every reported issue (templated prefixes, broken acronyms, duplicate stems, duplicate answers, difficulty skew, minification).
+### H4. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
-### H5. Factual spot-check on the top 10 traffic certs
-Sample 30 questions per cert (Security+, A+ Core 1 and 2, CCNA, AWS CCP, AWS Developer, CISSP, CPR/AED, BLS, CDL-A) and verify correct answers against the official guideline. Wrong answers cause bounces and bad Reddit mentions.
+### H5. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
-### H6. "Report a question" link
-In `js/components/question/renderQuestion.js`, add a small "Report this question" link: `mailto:` (address in href only) with subject `QuizBuffet question <cert>/<domain>#<id>`. Cheap trust signal and a real QA channel.
+### H6. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
 ---
 
 ## I. Coming-soon and empty certs (P2)
 
-### I1. 40 coming-soon certs
+### I1. 40 coming-soon stubs (visibility only: keep noindexed or delete; filling questions is out of scope)
 Note (2026-09-06): CompTIA ITF+ (FC0-U61) retired July 31, 2025 and was replaced by Tech+ (FC0-U71). The ITF+ page now says so in its FAQ. Add Tech+ as a cert (new metadata, reuse the ITF+ bank as a starting point, add AI/cloud/modern-device objectives) and consider redirecting or cross-linking ITF+ to it.
 They are correctly `noindex` and excluded from the sitemap (`buildSitemap` comments confirm). They still link from the home marquee. Decide per cert: ship or delete. Prioritize by demand: PMP, CNA, ServSafe Manager (if not live), CAPM, AZ-305, Google certificates, EMT, Phlebotomy, Medical Assistant. Delete the rest of the folders so they stop consuming crawl budget via internal links.
 
@@ -381,20 +364,15 @@ Real estate, cosmetology, barber, and MLO are state-licensed. "georgia real esta
 
 ## L. Product features that match search intent (P2/P3)
 
-### L1. Timed full-length mock exam mode
-The majority of impressions are for "practice exam" and "mock test". A per-domain question bank does not satisfy that intent. Add a "Mock exam" button on each cert page that starts a timed session: question count and minutes from `exam` metadata (F2), questions sampled across domains proportional to weight, no explanations until the end, a score and pass/fail against the real passing score, and a per-domain breakdown. Route: `/<slug>/mock/`. Generate a static page for it in `build-seo.mjs` (title "<seoName> Mock Exam: Timed Practice Exam Simulator") so it can rank for "mock exam" queries. Fire `trackConversion('mock_complete')`.
+### L1. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
-### L2. Results share card
-After a mock exam, render a PNG (canvas) with score and cert name and a "Share" button. Social proof and occasional links.
+### L2. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
-### L3. Progress export and import
-Progress is localStorage-only. Add "Export progress" (JSON download) and "Import". Optional email-less sync keeps the "no signup" promise.
+### L3. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
-### L4. Study reminders (optional)
-An optional email field for a weekly reminder. Do not gate anything behind it.
+### L4. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
-### L5. Accessibility pass on the quiz
-Keyboard navigation exists (`initKeyboard.js`). Verify focus order, ARIA on answer buttons, and screen reader announcement of correct/incorrect. Run axe.
+### L5. Out of scope by owner decision 2026-09-06: questions, answers, and app behavior are final and tested. This list covers visibility only. (number kept)
 
 ---
 

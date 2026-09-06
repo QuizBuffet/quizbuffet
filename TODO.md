@@ -345,14 +345,23 @@ Verified against a local server that serves literal files (no SPA-fallback rewri
 
 Zero console/runtime errors, zero failed network requests, home page unaffected (99 perf, 2.0s LCP, unchanged), coming-soon page confirmed still shows its static content immediately (unaffected). LCP's reported element is still the consent banner even after this fix, not `#seo-static`'s content, likely because the browser stops counting an element as a valid LCP candidate once it is later hidden (which still happens, just much sooner after real content exists instead of immediately at boot) — worth a follow-up look, but the wall-clock numbers above are the real, user-facing win regardless of which element gets the LCP attribution credit.
 
+**Production deploy confirmed live, and a more honest production number.** Chased what looked like a stuck deploy for a while: repeat `grep -c "classList.add('js')"` checks against production kept returning a false positive, because the explanatory comment this fix added to build-seo.mjs's `<head>` template literally contains the string `classList.add('js')` while describing what not to do there. Grepping for the actual executable pattern (`<script>document.documentElement.classList.add('js');try`) confirmed 0 matches in both the local file and production — the fix was live well before the owner's Cloudflare cache purge, which likely fixed nothing that was actually broken (but did no harm).
+With the deploy confirmed live, ran Lighthouse against production 5 times to get a real (not single-sample) picture:
+| Run | Perf | LCP | LCP element |
+|---|---|---|---|
+| 1 | 63 | 7.7s | consent banner |
+| 2 | 57 | 4.0s | real `#seo-static h1` |
+| 3 | 76 | 1.1s | real `#seo-static h1` |
+| 4 | 68 | 5.9s | consent banner |
+| 5 | 76 | 1.7s | real `#seo-static h1` |
+
+Median: 68 perf / 4.0s LCP, with real content winning the LCP race in 3 of 5 runs — a result that never occurred in any pre-fix production run tested earlier in this session (every one showed the consent banner). Real, but smaller and noisier than the clean 94-99 perf / 2.1-2.7s seen on a local, zero-latency test server: that number was optimistic specifically because it had none of production's real DNS/TLS/CDN-routing latency to compound across the ~40 script requests a cert page still makes. The fix removes the *guaranteed*-bad case (real content hidden immediately, every single load); it does not remove the *possible*-bad case where an unusually slow network run still lets the idle-deferred consent banner win the race before `#app` finishes rendering. Narrowing that further means fewer/smaller JS requests specifically (J3's lever, not J11's) — worth revisiting with more data if this variance still matters.
 
 ---
 
 ## K. Authority and off-site (P2/P3)
 
 At position 68, authority is the ceiling once on-page is fixed. Nothing in the repo addresses this.
-
-Verified live 2026-09-06 (later pass): the deployed cert page head no longer adds the js class eagerly; the J11 fix has propagated.
 ### K1. Community listings
 Post the specific domain quiz (not the home page) where the question is already being asked: r/CompTIA, r/AWSCertifications, r/cissp, r/ITCareerQuestions, r/Truckers (CDL), r/EMS and r/nursing (BLS/CPR), r/Cosmetology, r/barbers, r/personaltraining, r/Accounting (CPA), r/loanoriginators (MLO), r/drones (Part 107). Ask moderators to add the site to subreddit wikis and sidebars.
 

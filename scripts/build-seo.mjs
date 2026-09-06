@@ -20,6 +20,7 @@ const TODAY_DISPLAY = new Date().toLocaleDateString('en-US', {
 // generated file passes through this before it is written.
 function noDash(s) {
   return String(s)
+    .replace(/&(?:mdash|ndash|#8212|#8211|#x2014|#x2013);/gi, '\u2014')
     .replace(/(?<=\d)[\u2013\u2014](?=\d)/g, '-')
     .replace(/\s*[\u2013\u2014]\s+(?=[A-Z][a-z])/g, '. ')
     .replace(/\s*[\u2013\u2014]\s+/g, ', ')

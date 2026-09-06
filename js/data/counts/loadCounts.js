@@ -2,8 +2,7 @@
 // cert list, total badge, cert preview, total-question-count loader) shares
 // the same in-flight promise so the file is fetched at most once per page.
 //
-// Returns a Promise<Counts | null>. On fetch failure, resolves to null —
-// callers must handle that explicitly (most fall back to 0 or skip the UI).
+// Returns a Promise<Counts | null>. On fetch failure, resolves to null, // callers must handle that explicitly (most fall back to 0 or skip the UI).
 
 let _pending = null;
 

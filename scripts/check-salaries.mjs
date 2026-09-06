@@ -59,7 +59,7 @@ const log = (label, items, isError = false) => {
   }
 };
 
-console.log(`Salary check — ${liveSlugs.length} live + ${csSlugs.length} coming-soon = ${expectedSlugs.size} certs expected\n`);
+console.log(`Salary check, ${liveSlugs.length} live + ${csSlugs.length} coming-soon = ${expectedSlugs.size} certs expected\n`);
 console.log(`  Coverage:       ${haveSlugs.size}/${expectedSlugs.size} certs in salaries.json`);
 console.log(`  Has salary:     ${haveSlugs.size - noSalary.length}/${haveSlugs.size}`);
 console.log(`  Has collar:     ${haveSlugs.size - noCollar.length}/${haveSlugs.size}`);
@@ -70,7 +70,7 @@ log('Orphaned entries (in salaries.json but cert no longer exists)', orphaned, t
 log('Missing collar classification', noCollar, true);
 log('Salary not yet curated', noSalary);
 log('Never updated (lastUpdated is null)', noUpdate);
-log(`Stale (>${STALE_MONTHS} months old — refresh from Payscale/Glassdoor/BLS)`, stale);
+log(`Stale (>${STALE_MONTHS} months old, refresh from Payscale/Glassdoor/BLS)`, stale);
 
 if (!noSalary.length && !noUpdate.length && !stale.length && !missing.length && !orphaned.length && !noCollar.length) {
   console.log('\n✓ All salary entries are complete and fresh.');

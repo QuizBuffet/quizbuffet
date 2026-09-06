@@ -45,7 +45,7 @@ for (const file of certs.sort()) {
   const status = failing.length ? '✗' : '✓';
   if (failing.length) anyFail = true;
 
-  console.log(`\n${status} ${cert.code} — ${cert.name} (${total} questions)`);
+  console.log(`\n${status} ${cert.code}, ${cert.name} (${total} questions)`);
   console.log(`  ${'Domain'.padEnd(60)} ${'Qs'.padStart(5)} ${'Tgt%'.padStart(6)} ${'Got%'.padStart(6)} ${'Δ'.padStart(7)}`);
   for (const r of rows) {
     const sign = r.delta >= 0 ? '+' : '';

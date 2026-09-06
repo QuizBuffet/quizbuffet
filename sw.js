@@ -1,4 +1,4 @@
-const CACHE = 'qb-v231';
+const CACHE = 'qb-v232';
 
 self.addEventListener('install', () => self.skipWaiting());
 
@@ -17,11 +17,11 @@ self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (url.origin !== location.origin) return;
 
-  // Don't intercept navigations — let the browser handle HTML directly.
+  // Don't intercept navigations, let the browser handle HTML directly.
   // This avoids returning a null response if the cache miss occurs offline.
   if (e.request.mode === 'navigate') return;
 
-  // Network-first, cache fallback. Always returns a real Response — never null.
+  // Network-first, cache fallback. Always returns a real Response, never null.
   e.respondWith(
     fetch(e.request)
       .then(res => {

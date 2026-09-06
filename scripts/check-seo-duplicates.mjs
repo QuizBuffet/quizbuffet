@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 // Scans every generated index.html page (live cert landing pages, their
 // domain quiz pages, and coming-soon landing pages) and reports:
-//   1. Exact-duplicate <title> values shared by 2+ URLs (HIGH — Google
+//   1. Exact-duplicate <title> values shared by 2+ URLs (HIGH, Google
 //      Search Console "Duplicate, Google chose different canonical" bait).
 //   2. Exact-duplicate meta description values shared by 2+ URLs (HIGH).
 //   3. Templated-but-technically-unique titles/descriptions: pages whose
 //      text is identical once the cert/domain name is masked out (LOW/INFO
-//      — expected for a template-driven site, but flagged because
+//, expected for a template-driven site, but flagged because
 //      helpful-content systems can detect programmatic templating at scale).
 //
 // Page set mirrors scripts/build-seo.mjs exactly:
@@ -141,7 +141,7 @@ function groupTemplates(field) {
     const val = r[field];
     if (!val) continue;
     const skeleton = maskVariable(val, r);
-    if (skeleton === val) continue; // nothing was masked — not a template hit
+    if (skeleton === val) continue; // nothing was masked, not a template hit
     if (!map.has(skeleton)) map.set(skeleton, []);
     map.get(skeleton).push(r);
   }

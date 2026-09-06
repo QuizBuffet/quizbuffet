@@ -134,7 +134,7 @@ export async function renderFooter() {
         </div>
 
         <div class="footer-bottom">
-          <span>&copy; ${year} QuizBuffet &mdash; a personal project, made with care.</span>
+          <span>&copy; ${year} QuizBuffet, a personal project, made with care.</span>
           <span class="footer-disclaimer">Not affiliated with CompTIA or any certification body. All trademarks belong to their respective owners.</span>
           <span><a href="/privacy/">Privacy &amp; Cookie Policy</a></span>
           ${buildStamp ? `<span class="footer-build" title="Service worker cache version and last build date">${buildStamp}</span>` : ''}

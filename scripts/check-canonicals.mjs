@@ -6,7 +6,7 @@
 // Checks, per CLAUDE.md SEO requirements:
 //   1. Exactly one canonical tag per page.
 //   2. The canonical is self-referential: it resolves to
-//      https://quizbuffet.com/<path-of-this-file>/ — not a different page,
+//      https://quizbuffet.com/<path-of-this-file>/, not a different page,
 //      not the homepage, and not missing/adding a trailing slash.
 //   3. No two different pages declare the same canonical URL (a collision
 //      tells Google to consolidate/deindex one of them).
@@ -134,7 +134,7 @@ for (const page of pages) {
 
     // Self-referential exact-match check.
     if (href !== expected) {
-      addFinding('high', page.relPath, `Canonical is not self-referential — expected "${expected}" but found "${href}"`, href);
+      addFinding('high', page.relPath, `Canonical is not self-referential, expected "${expected}" but found "${href}"`, href);
     }
 
     // Track for cross-page collision detection.
@@ -147,7 +147,7 @@ for (const page of pages) {
 
 for (const [url, owners] of canonicalOwners) {
   if (owners.length > 1) {
-    addFinding('critical', owners.join(', '), `${owners.length} different pages declare the same canonical URL "${url}" — tells Google to consolidate/deindex all but one`, url);
+    addFinding('critical', owners.join(', '), `${owners.length} different pages declare the same canonical URL "${url}", tells Google to consolidate/deindex all but one`, url);
   }
 }
 

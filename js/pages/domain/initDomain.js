@@ -26,6 +26,9 @@ export async function init() {
 
   if (!certMeta || !domainMeta) {
     document.getElementById('domain-header').innerHTML = `<p>Domain not found. <a href="${certBack}">← Back</a></p>`;
+    // J11: #app now has real content; safe to hide the static #seo-static fallback (see the
+    // comment on this page's <head> script in build-seo.mjs for why this isn't done eagerly).
+    document.documentElement.classList.add('js');
     setJsonLd(null);
     renderAd('ad-bottom');
     return;
@@ -70,6 +73,9 @@ export async function init() {
   const prog      = getDomainProgress(storageKey);
 
   renderDomainHeader(certMeta, domainMeta, certBack);
+  // J11: #app now has real content; safe to hide the static #seo-static fallback (see the
+  // comment on this page's <head> script in build-seo.mjs for why this isn't done eagerly).
+  document.documentElement.classList.add('js');
   renderDomainProgress(prog, questions.length);
   renderSessionSizePicker(() => {});
   renderDifficultyPicker();

@@ -54,6 +54,9 @@ export async function init() {
     } else {
       document.getElementById('cert-header').innerHTML = '<p>Certification not found. <a href="/">← Home</a></p>';
     }
+    // J11: #app now has real content; safe to hide the static #seo-static fallback (see the
+    // comment on this page's <head> script in build-seo.mjs for why this isn't done eagerly).
+    document.documentElement.classList.add('js');
     setJsonLd(null);
   } else {
     // Heavy fields (about, details, affiliates, ...) live in a per-cert lazy file, not the
@@ -65,6 +68,9 @@ export async function init() {
 
     // Render immediately with placeholder, then update once all domains are fetched
     renderCertHeader(cert, null);
+    // J11: #app now has real content; safe to hide the static #seo-static fallback (see the
+    // comment on this page's <head> script in build-seo.mjs for why this isn't done eagerly).
+    document.documentElement.classList.add('js');
     renderSalaryPanel('salary-panel', cert.slug);
     renderCertProgressSummary(cert);
     renderSessionSizePicker(() => {});

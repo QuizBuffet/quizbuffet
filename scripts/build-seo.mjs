@@ -714,7 +714,13 @@ function buildCertHtml(cert) {
   <meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="theme-color" content="#333333">
 
-  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
+  <!-- J11: does NOT add classList.add('js') here (unlike the coming-soon template). Doing
+       so immediately would trip css/style.css's html.js #seo-static{display:none} before
+       #app has anything real to show, hiding this page's fast, real, always-present static
+       content in favor of a blank gap while the SPA's JS boots. The page's init script adds
+       the 'js' class itself, right after its first real content write to #app, so the
+       handoff from static to interactive happens in one step with nothing hidden early. -->
+  <script>try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
   ${buildConsentGtagBlock()}
 
@@ -1045,7 +1051,13 @@ async function buildDomainHtml(cert, domain, questions) {
   <meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="theme-color" content="#333333">
 
-  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
+  <!-- J11: does NOT add classList.add('js') here (unlike the coming-soon template). Doing
+       so immediately would trip css/style.css's html.js #seo-static{display:none} before
+       #app has anything real to show, hiding this page's fast, real, always-present static
+       content in favor of a blank gap while the SPA's JS boots. The page's init script adds
+       the 'js' class itself, right after its first real content write to #app, so the
+       handoff from static to interactive happens in one step with nothing hidden early. -->
+  <script>try{var t=localStorage.getItem('qb_theme');if(t==='dark')document.documentElement.dataset.theme='dark';var c=localStorage.getItem('qb_color')||'buffet';document.documentElement.dataset.color=c;var cur=localStorage.getItem('qb_cursor')||'pencil';document.documentElement.dataset.cursor=cur;}catch(e){}</script>
 
   ${buildConsentGtagBlock()}
 

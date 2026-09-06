@@ -847,6 +847,16 @@ async function buildDomainHtml(cert, domain, questions) {
     return `<li><a href="/${cert.slug}/${d.slug}/">${htmlEscape(num + d.name)}</a></li>`;
   }).join('\n          ');
 
+  // G4: a compact nav under the H1 so sibling domains aren't only reachable via the full
+  // list at the bottom of the page (below the fold on longer pages).
+  const domainPillsHtml = cert.domains.map(d => {
+    const isCurrent = d.slug === domain.slug;
+    const label = htmlEscape(d.number ? `${d.number} ${d.name}` : d.name);
+    return isCurrent
+      ? `<span class="seo-domain-pill seo-domain-pill-current" aria-current="page">${label}</span>`
+      : `<a class="seo-domain-pill" href="/${cert.slug}/${d.slug}/">${label}</a>`;
+  }).join('\n          ');
+
   const sampleHtml = sample.map(q => {
     const answersHtml = (q.answers || []).map(a => {
       const isCorrect = a.id === q.correct;
@@ -948,6 +958,9 @@ ${JSON.stringify(jsonLd, null, 2)}
     <section id="seo-static">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/${cert.slug}/">${htmlEscape(cert.name)}</a> &rsaquo; ${htmlEscape(domain.name)}</nav>
       <h1>${domain.seoH1 ? htmlEscape(domain.seoH1) : `${htmlEscape(domNum + domain.name)} ${htmlEscape(cert.code)} Practice Quiz`}</h1>
+      ${cert.domains.length > 1 ? `<nav class="seo-domain-pills" aria-label="${htmlEscape(cert.code)} domains">
+          ${domainPillsHtml}
+      </nav>` : ''}
       <p><strong>${count} exam-style questions</strong>${domain.weight ? ` covering <strong>${domain.weight}% of the ${htmlEscape(cert.code)} exam</strong>` : ''}. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/${cert.slug}/">${htmlEscape(cert.name)} practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       ${sampleHtml ? `<h2>Sample Questions</h2>

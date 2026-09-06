@@ -1792,6 +1792,16 @@ a:is(:hover, :active) { text-decoration: underline; }
 .seo-sample-correct { background: var(--correct-bg); color: #1a6; font-weight: 600; }
 .seo-sample-explain { margin: 0; padding: 10px 16px 16px; line-height: 1.6; color: var(--text-mid, #555); font-size: 14px; }
 
+/* === Domain page sibling nav (G4) === */
+.seo-domain-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 18px; }
+.seo-domain-pill {
+  padding: 5px 10px; border-radius: 999px; font-size: 13px; line-height: 1.4;
+  border: 1px solid var(--border-sub); background: var(--surface, #fafafa); color: var(--text-mid, #555);
+  text-decoration: none;
+}
+a.seo-domain-pill:hover { text-decoration: underline; }
+.seo-domain-pill-current { background: var(--text); color: var(--bg, #fff); border-color: var(--text); font-weight: 600; }
+
 /* === Domain page key terms (G3) === */
 .seo-key-terms { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .seo-key-terms li { padding: 10px 14px; border: 1px solid var(--border-sub); border-radius: 8px; background: var(--surface, #fafafa); font-size: 14px; line-height: 1.5; }

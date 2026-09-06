@@ -284,7 +284,7 @@ Render `summary` under the H1 and `objectives` as a list under "What this domain
 ### G3. [DONE: 220/271 domain pages, limited to the 42 certs with a services file] Key terms block
 Pull `js/data/services/<slug>.js` (concept list) and show the 10 entries whose `a` or `d` text matches the domain name or keywords, under "Key terms in this domain". Static HTML, generated in `build-seo.mjs`.
 
-### G4. Sibling and parent links
+### G4. [DONE] Sibling and parent links
 "Other <code> Domains" exists but sits below the fold. Move a compact horizontal domain nav under the H1, and keep the full list at the bottom.
 
 ### G5. Domains under 30 questions

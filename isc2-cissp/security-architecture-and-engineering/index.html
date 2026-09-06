@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A research university is designing the architecture for a high-performance computing cluster shared with industry sponsors. An architecture review identifies a weakness in secure design principles. Which action should be prioritized?",
+          "name": "A federal agency is selecting cryptographic primitives for a system handling controlled unclassified information. The security architect must make a design decision involving secure design principles. What is the best recommendation?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Embed privacy by design so collection, processing, retention, and disclosure are limited and justified."
+            "text": "Apply least privilege so each subject, service, and component receives the minimum access needed for its function."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A defense contractor is selecting hardware roots of trust for a classified computing platform. A proposed solution creates risk around secure design principles. Which design change best addresses the concern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use segregation of duties so no single role can initiate, approve, and conceal a high-risk action."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>104 exam-style questions</strong> covering <strong>13% of the CISSP exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/isc2-cissp/">Certified Information Systems Security Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A regional bank&#39;s architecture review board is finalizing the security model for a new core banking platform. Executives need a risk-based explanation for secure design principles. Which response best aligns with secure engineering practice?</h3>
-        <p><strong>Answer:</strong> Use threat modeling during requirements and architecture to identify assets, trust boundaries, misuse cases, and likely attack paths</p>
-        <p>Secure design begins early enough to influence requirements and architecture rather than discovering major threats after deployment. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A pharmaceutical lab is reviewing the security architecture of an instrument-control system for a new facility. A security assurance review must address secure design principles. What should the security professional recommend?</h3>
-        <p><strong>Answer:</strong> Design components to fail securely when dependencies, authorization checks, or validation services are unavailable</p>
-        <p>Fail-secure behavior prevents failures from creating unintended access or unsafe states. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A research university is designing the architecture for a high-performance computing cluster shared with industry sponsors. An architecture review identifies a weakness in secure design principles. Which action should be prioritized?</h3>
-        <p><strong>Answer:</strong> Embed privacy by design so collection, processing, retention, and disclosure are limited and justified</p>
-        <p>Privacy requirements should be built into the architecture rather than added after data flows are established. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A regional bank&#39;s architecture review board is finalizing the security model for a new core banking platform. Executives need a risk-based explanation for secure design principles. Which response best aligns with secure engineering practice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use threat modeling during requirements and architecture to identify assets, trust boundaries, misuse cases, and likely attack paths</li>
+            <li class="seo-sample-answer">B. Disable secure error handling so failures bubble up unhandled</li>
+            <li class="seo-sample-answer">C. Give developers and ops the same broad standing access to production</li>
+            <li class="seo-sample-answer">D. Pick a complex design to signal sophistication to stakeholders</li>
+        </ul>
+        <p class="seo-sample-explain">Secure design begins early enough to influence requirements and architecture rather than discovering major threats after deployment. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A pharmaceutical lab is reviewing the security architecture of an instrument-control system for a new facility. A security assurance review must address secure design principles. What should the security professional recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Design components to fail securely when dependencies, authorization checks, or validation services are unavailable</li>
+            <li class="seo-sample-answer">B. Use a single broad production role for both developers and operators</li>
+            <li class="seo-sample-answer">C. Add complexity to a design as a signal of sophistication</li>
+            <li class="seo-sample-answer">D. Bolt on controls after go-live without updating requirements</li>
+        </ul>
+        <p class="seo-sample-explain">Fail-secure behavior prevents failures from creating unintended access or unsafe states. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A federal agency is selecting cryptographic primitives for a system handling controlled unclassified information. The security architect must make a design decision involving secure design principles. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Trust any device that has reached the internal network with no further verification</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Apply least privilege so each subject, service, and component receives the minimum access needed for its function</li>
+            <li class="seo-sample-answer">C. Turn off exception handling so production failures are visible</li>
+            <li class="seo-sample-answer">D. Grant developers and operators identical, unrestricted production rights</li>
+        </ul>
+        <p class="seo-sample-explain">Least privilege reduces blast radius and limits the damage from compromised accounts or components. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A defense contractor is selecting hardware roots of trust for a classified computing platform. A proposed solution creates risk around secure design principles. Which design change best addresses the concern?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip secure error handling to make failures more obvious to operators</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use segregation of duties so no single role can initiate, approve, and conceal a high-risk action</li>
+            <li class="seo-sample-answer">C. Issue developers identical production privileges to operations staff</li>
+            <li class="seo-sample-answer">D. Select more complex options to display engineering depth</li>
+        </ul>
+        <p class="seo-sample-explain">Segregation of duties reduces fraud and misuse by separating conflicting responsibilities. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regional credit union is reviewing security architecture for a new branch-of-the-future kiosk platform. The engineering team asks for CISSP-level guidance on secure design principles. Which approach is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Grant developers full production privileges identical to operators</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Document shared responsibility boundaries when a design uses cloud or outsourced services</li>
+            <li class="seo-sample-answer">C. Choose a complex pattern over a simpler one to look more sophisticated</li>
+            <li class="seo-sample-answer">D. Apply controls retroactively without revisiting the design baseline</li>
+        </ul>
+        <p class="seo-sample-explain">Shared responsibility clarifies which party operates and verifies each control. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A children&#39;s hospital is designing the architecture for a new patient-facing mobile platform. An architecture review identifies a weakness in secure design principles. Which action should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Bolt controls onto a deployed system without revising requirements</li>
+            <li class="seo-sample-answer">B. Skip device verification once a workload is on the internal network</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Use defense in depth with layered preventive, detective, and corrective controls</li>
+            <li class="seo-sample-answer">D. Disable error suppression so all failures propagate to users</li>
+        </ul>
+        <p class="seo-sample-explain">Layered controls reduce reliance on a single safeguard and improve resilience when one layer fails. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regional utility is designing security controls for a new SCADA-to-IT integration zone. Executives need a risk-based explanation for secure design principles. Which response best aligns with secure engineering practice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Trust internal-network devices implicitly with no further validation</li>
+            <li class="seo-sample-answer">B. Disable structured error handling so all errors surface verbosely</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Keep designs simple and small enough to be reviewed, tested, and operated reliably</li>
+            <li class="seo-sample-answer">D. Drop separation of duties between developers and operators in production</li>
+        </ul>
+        <p class="seo-sample-explain">Complexity increases the chance of hidden security defects and operational mistakes. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A SaaS provider is hardening its multi-tenant control plane against side-channel and noisy-neighbor attacks. The engineering team asks for CISSP-level guidance on secure design principles. Which approach is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Choose architectural complexity to impress reviewers</li>
+            <li class="seo-sample-answer">B. Add controls post-launch without revisiting the original architecture</li>
+            <li class="seo-sample-answer">C. Treat being inside the perimeter as evidence the device is trusted</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Configure secure defaults so new systems start in a hardened state without requiring administrators to disable unsafe options</li>
+        </ul>
+        <p class="seo-sample-explain">Secure defaults reduce exposure from misconfiguration and rushed deployments. This is the correct answer.</p>
+      </details>
       <h2>Other CISSP Domains</h2>
       <ul>
           <li><a href="/isc2-cissp/security-and-risk-management/">1.0 Security and Risk Management</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A company wants native AWS IaC with managed stack state, change sets, and drift detection. Which service should be the core deployment engine?",
+          "name": "A team repeatedly copies the same VPC resources into many templates and mistakes are increasing. Which IaC component pattern should reduce duplication?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AWS CloudFormation."
+            "text": "Reusable nested stacks or modules for the common VPC pattern."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A company wants a reusable template component but also wants teams to control allowed input values. What should be included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parameters with constraints and defaults where appropriate."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>102 exam-style questions</strong> covering <strong>17% of the DOP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-devops-engineer-professional/">AWS Certified DevOps Engineer Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A platform team wants every application stack to define resources, dependencies, parameters, and exported values in a repeatable way. Which CloudFormation design should be used?</h3>
-        <p><strong>Answer:</strong> A version-controlled template with Resources, Parameters, Outputs, and explicit dependencies where needed</p>
-        <p>A complete template makes the stack reproducible and lets CloudFormation understand resource creation order, configuration inputs, and values exported to other stacks. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A CloudFormation template must expose a database endpoint to a dependent application stack. What template section supports this?</h3>
-        <p><strong>Answer:</strong> Outputs with an export or a consumed stack output pattern</p>
-        <p>Outputs publish useful values after stack creation, and exports can allow other stacks to reference them. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A company wants native AWS IaC with managed stack state, change sets, and drift detection. Which service should be the core deployment engine?</h3>
-        <p><strong>Answer:</strong> AWS CloudFormation</p>
-        <p>CloudFormation manages stack state and provides change sets, rollback behavior, and drift detection for supported resources. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A platform team wants every application stack to define resources, dependencies, parameters, and exported values in a repeatable way. Which CloudFormation design should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A version-controlled template with Resources, Parameters, Outputs, and explicit dependencies where needed</li>
+            <li class="seo-sample-answer">B. A runbook that asks operators to create resources in console order</li>
+            <li class="seo-sample-answer">C. A plain text checklist stored with no resource definitions</li>
+            <li class="seo-sample-answer">D. A single unmanaged JSON file containing only resource names</li>
+        </ul>
+        <p class="seo-sample-explain">A complete template makes the stack reproducible and lets CloudFormation understand resource creation order, configuration inputs, and values exported to other stacks. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A CloudFormation template must expose a database endpoint to a dependent application stack. What template section supports this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Outputs with an export or a consumed stack output pattern</li>
+            <li class="seo-sample-answer">B. Mappings only</li>
+            <li class="seo-sample-answer">C. Conditions only</li>
+            <li class="seo-sample-answer">D. Metadata only</li>
+        </ul>
+        <p class="seo-sample-explain">Outputs publish useful values after stack creation, and exports can allow other stacks to reference them. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team repeatedly copies the same VPC resources into many templates and mistakes are increasing. Which IaC component pattern should reduce duplication?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Copy and paste the VPC resources into every template release</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Reusable nested stacks or modules for the common VPC pattern</li>
+            <li class="seo-sample-answer">C. Create the VPC manually and omit it from version control</li>
+            <li class="seo-sample-answer">D. Use stack outputs as the only definition of the VPC</li>
+        </ul>
+        <p class="seo-sample-explain">Reusable components keep shared infrastructure definitions consistent while allowing teams to pass environment-specific inputs. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants a reusable template component but also wants teams to control allowed input values. What should be included?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Hardcoded production values in every property</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Parameters with constraints and defaults where appropriate</li>
+            <li class="seo-sample-answer">C. Unconstrained free-form parameters for every security setting</li>
+            <li class="seo-sample-answer">D. Outputs that ask users to type values during rollback</li>
+        </ul>
+        <p class="seo-sample-explain">Parameter constraints restrict valid inputs and defaults improve usability without hardcoding every environment value. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team uses Terraform for some infrastructure but must deploy CloudFormation StackSets for AWS-managed account baselines. What is the DevOps concern?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Let every tool update every resource whenever it detects drift</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use each IaC tool with clear ownership boundaries to avoid conflicting resource management</li>
+            <li class="seo-sample-answer">C. Disable all state and drift tracking because two tools are present</li>
+            <li class="seo-sample-answer">D. Convert all infrastructure changes into manual console steps</li>
+        </ul>
+        <p class="seo-sample-explain">Multiple IaC tools can coexist when ownership is explicit and the same resource is not managed by competing systems. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A CloudFormation template creates an Auto Scaling group and an Application Load Balancer target group. The group should not launch instances until the target group exists. What should the template use if implicit references are insufficient?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A random sleep command in a developer laptop script</li>
+            <li class="seo-sample-answer">B. A resource tag named CreateAfter</li>
+            <li class="seo-sample-answer seo-sample-correct">C. DependsOn or references that express the resource dependency</li>
+            <li class="seo-sample-answer">D. A longer stack name</li>
+        </ul>
+        <p class="seo-sample-explain">Dependency declarations or intrinsic references help CloudFormation order creation when one resource depends on another being ready. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team wants to model AWS infrastructure in TypeScript and synthesize CloudFormation templates in a pipeline. Which framework is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS CodeArtifact</li>
+            <li class="seo-sample-answer">B. AWS CodeDeploy AppSpec only</li>
+            <li class="seo-sample-answer seo-sample-correct">C. AWS CDK</li>
+            <li class="seo-sample-answer">D. Amazon ECR lifecycle policy</li>
+        </ul>
+        <p class="seo-sample-explain">AWS CDK lets teams define cloud infrastructure in programming languages and synthesize CloudFormation templates. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team wants infrastructure templates to be reviewed like application code. What template management practice is best?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Allow operators to edit live stack resources directly for speed</li>
+            <li class="seo-sample-answer">B. Store the only template copy in a local downloads folder</li>
+            <li class="seo-sample-answer">C. Recreate templates from CloudTrail after each release</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Keep templates in version control and require pull request review before deployment</li>
+        </ul>
+        <p class="seo-sample-explain">Version control and review provide change history, peer review, and a controlled path into deployment pipelines. This is the correct answer.</p>
+      </details>
       <h2>Other DOP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-devops-engineer-professional/sdlc-automation/">1.0 SDLC Automation</a></li>

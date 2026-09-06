@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which of the following is the BEST example of a Software as a Service (SaaS) offering?",
+          "name": "A startup wants to host a custom web application and requires full control over the operating system, middleware, and runtime. Which cloud service model should they choose?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Google Workspace (Gmail, Docs, Sheets)."
+            "text": "IaaS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A development team wants to deploy a web application quickly without dealing with OS patching, server provisioning, or runtime configuration. Which cloud model is BEST suited for their needs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PaaS."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>384 exam-style questions</strong> covering <strong>23% of the CV0-004 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-cloud-plus/">CompTIA Cloud+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which of the following BEST describes Infrastructure as a Service (IaaS)?</h3>
-        <p><strong>Answer:</strong> A model that provides virtualized computing resources such as VMs, storage, and networking over the internet</p>
-        <p>IaaS provides virtualized infrastructure components, VMs, storage, and networking, while the customer manages the OS and everything above it. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which cloud service model provides a managed platform for developers to build, deploy, and run applications without managing the underlying servers or operating system?</h3>
-        <p><strong>Answer:</strong> PaaS</p>
-        <p>PaaS provides a complete managed platform including runtime, middleware, and OS, so developers only focus on their application code. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which of the following is the BEST example of a Software as a Service (SaaS) offering?</h3>
-        <p><strong>Answer:</strong> Google Workspace (Gmail, Docs, Sheets)</p>
-        <p>Google Workspace delivers fully managed software applications like Gmail and Docs directly to end users with no infrastructure management required. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which of the following BEST describes Infrastructure as a Service (IaaS)?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A model where the provider manages everything including the application</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A model that provides virtualized computing resources such as VMs, storage, and networking over the internet</li>
+            <li class="seo-sample-answer">C. A model where software is delivered and managed entirely by the provider</li>
+            <li class="seo-sample-answer">D. A model that executes code in response to events without managing servers</li>
+        </ul>
+        <p class="seo-sample-explain">IaaS provides virtualized infrastructure components, VMs, storage, and networking, while the customer manages the OS and everything above it. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which cloud service model provides a managed platform for developers to build, deploy, and run applications without managing the underlying servers or operating system?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. IaaS</li>
+            <li class="seo-sample-answer">B. FaaS</li>
+            <li class="seo-sample-answer seo-sample-correct">C. PaaS</li>
+            <li class="seo-sample-answer">D. SaaS</li>
+        </ul>
+        <p class="seo-sample-explain">PaaS provides a complete managed platform including runtime, middleware, and OS, so developers only focus on their application code. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A startup wants to host a custom web application and requires full control over the operating system, middleware, and runtime. Which cloud service model should they choose?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. SaaS</li>
+            <li class="seo-sample-answer">B. PaaS</li>
+            <li class="seo-sample-answer seo-sample-correct">C. IaaS</li>
+            <li class="seo-sample-answer">D. FaaS</li>
+        </ul>
+        <p class="seo-sample-explain">IaaS gives the customer full control over the OS, middleware, and runtime on top of virtualized infrastructure. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A development team wants to deploy a web application quickly without dealing with OS patching, server provisioning, or runtime configuration. Which cloud model is BEST suited for their needs?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. IaaS</li>
+            <li class="seo-sample-answer seo-sample-correct">B. PaaS</li>
+            <li class="seo-sample-answer">C. SaaS</li>
+            <li class="seo-sample-answer">D. FaaS</li>
+        </ul>
+        <p class="seo-sample-explain">PaaS handles OS patching, server provisioning, and runtime, letting the team focus purely on deploying their application code. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization wants to provide employees with email and collaboration tools without any IT overhead for installation, updates, or server maintenance. Which cloud model is MOST appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. IaaS</li>
+            <li class="seo-sample-answer">B. PaaS</li>
+            <li class="seo-sample-answer">C. FaaS</li>
+            <li class="seo-sample-answer seo-sample-correct">D. SaaS</li>
+        </ul>
+        <p class="seo-sample-explain">SaaS delivers fully managed, ready-to-use applications over the internet with no installation or maintenance required from the customer. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company migrates to an IaaS cloud model. Which of the following tasks remains the customer&#39;s responsibility?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Physical hardware maintenance</li>
+            <li class="seo-sample-answer">B. Hypervisor patching</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Operating system updates and application security</li>
+            <li class="seo-sample-answer">D. Data center power and cooling</li>
+        </ul>
+        <p class="seo-sample-explain">In IaaS, the customer is responsible for everything from the OS upward, including OS patching and application security. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A financial firm needs to run legacy applications that require custom kernel modules and specific OS-level configurations not supported by managed platforms. Which cloud service model provides the MOST flexibility for this requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. SaaS</li>
+            <li class="seo-sample-answer">B. PaaS</li>
+            <li class="seo-sample-answer">C. FaaS</li>
+            <li class="seo-sample-answer seo-sample-correct">D. IaaS</li>
+        </ul>
+        <p class="seo-sample-explain">IaaS gives the customer direct access to virtualized hardware and full OS control, making it ideal for legacy apps requiring custom kernel modules. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company uses a PaaS solution to host their application. A security audit reveals a critical vulnerability in the provider&#39;s managed runtime environment. Who is responsible for patching it?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The customer, since they own the application running on the platform</li>
+            <li class="seo-sample-answer">B. Both the customer and provider share equal responsibility</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The cloud provider, since the runtime is part of the managed platform</li>
+            <li class="seo-sample-answer">D. A third-party security firm contracted by the customer</li>
+        </ul>
+        <p class="seo-sample-explain">In PaaS, the provider manages the runtime, middleware, and OS. Vulnerabilities in those layers are the provider&#39;s responsibility to patch. This is the correct answer.</p>
+      </details>
       <h2>Other CV0-004 Domains</h2>
       <ul>
           <li><a href="/comptia-cloud-plus/deployment/">2.0 Deployment</a></li>

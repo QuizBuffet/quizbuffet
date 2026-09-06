@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A research university's central IT is reviewing its monitoring coverage for federally funded research. A proposed operational process creates risk around logging and monitoring activities. Which change best addresses the concern?",
+          "name": "A federal civilian agency is integrating logging and monitoring across its civilian-tier systems. An operational review identifies a weakness in investigations in security operations. Which action should be prioritized?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Centralize logs from critical systems and protect them from unauthorized alteration or deletion."
+            "text": "Determine the investigation type and authority before collecting sensitive employee, customer, or system data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A defense contractor is reviewing its security operations against revised CMMC L2 requirements. Executives need a risk-based explanation for investigations in security operations. Which response best aligns with security operations practice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Establish the investigation type and authority before collecting sensitive employee, customer, or system data."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>104 exam-style questions</strong> covering <strong>13% of the CISSP exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/isc2-cissp/">Certified Information Systems Security Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A regional bank&#39;s SOC is rebuilding its incident response runbooks after a tabletop exercise. The security operations team must make a decision involving investigations in security operations. What is the best recommendation?</h3>
-        <p><strong>Answer:</strong> Preserve evidence, document chain of custody, and coordinate with legal before expanding the investigation</p>
-        <p>Operational investigations require evidence integrity, authorized handling, and legally informed decisions. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A pharmaceutical contract manufacturer is updating its operations playbooks after a peer breach. A proposed operational process creates risk around investigations in security operations. Which change best addresses the concern?</h3>
-        <p><strong>Answer:</strong> Safeguard evidence, document chain of custody, and coordinate with legal before expanding the investigation</p>
-        <p>Operational investigations require evidence integrity, authorized handling, and legally informed decisions. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A research university&#39;s central IT is reviewing its monitoring coverage for federally funded research. A proposed operational process creates risk around logging and monitoring activities. Which change best addresses the concern?</h3>
-        <p><strong>Answer:</strong> Centralize logs from critical systems and protect them from unauthorized alteration or deletion</p>
-        <p>Centralized protected logging improves correlation and preserves evidence. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A regional bank&#39;s SOC is rebuilding its incident response runbooks after a tabletop exercise. The security operations team must make a decision involving investigations in security operations. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Preserve evidence, document chain of custody, and coordinate with legal before expanding the investigation</li>
+            <li class="seo-sample-answer">B. Reach out to regulators informally before legal and executive coordination</li>
+            <li class="seo-sample-answer">C. Permit any admin to handle potential evidence without chain of custody</li>
+            <li class="seo-sample-answer">D. Email investigation details to all employees in the name of transparency</li>
+        </ul>
+        <p class="seo-sample-explain">Operational investigations require evidence integrity, authorized handling, and legally informed decisions. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A pharmaceutical contract manufacturer is updating its operations playbooks after a peer breach. A proposed operational process creates risk around investigations in security operations. Which change best addresses the concern?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Safeguard evidence, document chain of custody, and coordinate with legal before expanding the investigation</li>
+            <li class="seo-sample-answer">B. Contact regulators ahead of any legal or executive coordination</li>
+            <li class="seo-sample-answer">C. Permit any admin to alter potentially relevant evidence without records</li>
+            <li class="seo-sample-answer">D. Email investigation status to all employees for transparency</li>
+        </ul>
+        <p class="seo-sample-explain">Operational investigations require evidence integrity, authorized handling, and legally informed decisions. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A federal civilian agency is integrating logging and monitoring across its civilian-tier systems. An operational review identifies a weakness in investigations in security operations. Which action should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Contact regulators by phone before coordinating with legal and executives</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Determine the investigation type and authority before collecting sensitive employee, customer, or system data</li>
+            <li class="seo-sample-answer">C. Allow administrators to alter potential evidence without documentation</li>
+            <li class="seo-sample-answer">D. Post investigation status broadly to staff for transparency</li>
+        </ul>
+        <p class="seo-sample-explain">Administrative, civil, criminal, regulatory, and industry investigations have different requirements. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A defense contractor is reviewing its security operations against revised CMMC L2 requirements. Executives need a risk-based explanation for investigations in security operations. Which response best aligns with security operations practice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Notify regulators informally before legal team or executive involvement</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Establish the investigation type and authority before collecting sensitive employee, customer, or system data</li>
+            <li class="seo-sample-answer">C. Allow administrators broad access to potential evidence without documentation</li>
+            <li class="seo-sample-answer">D. Post investigation details enterprise-wide for transparency</li>
+        </ul>
+        <p class="seo-sample-explain">Administrative, civil, criminal, regulatory, and industry investigations have different requirements. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regional credit union&#39;s SOC is integrating new EDR tooling across its branches. Executives need a risk-based explanation for logging and monitoring activities. Which response best aligns with security operations practice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Turn off alerts because the SOC receives too many notifications</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Synchronize time across systems so events can be correlated accurately</li>
+            <li class="seo-sample-answer">C. Ingest every available log with no plan for tuning or retention</li>
+            <li class="seo-sample-answer">D. Save security logs where monitored administrators can freely delete them</li>
+        </ul>
+        <p class="seo-sample-explain">Consistent timestamps are essential for monitoring, incident reconstruction, and audits. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A children&#39;s hospital is reviewing its incident response capabilities ahead of an OCR audit. The CISO asks for CISSP-level guidance on investigations in security operations. Which approach is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Inform regulators informally before legal and executive engagement</li>
+            <li class="seo-sample-answer">B. Permit any admin to touch evidence-grade artifacts without records</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Limit investigation details to personnel with a legitimate need to know</li>
+            <li class="seo-sample-answer">D. Send investigation updates to every employee for transparency</li>
+        </ul>
+        <p class="seo-sample-explain">Confidentiality protects evidence, privacy, and the integrity of the investigative process. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regional utility&#39;s SOC is integrating OT and IT alert telemetry following an industry warning. The security operations team must make a decision involving investigations in security operations. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Reach out to regulators by phone before coordinating internally</li>
+            <li class="seo-sample-answer">B. Permit any admin to handle and modify potential evidence without records</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Restrict investigation details to personnel with a legitimate need to know</li>
+            <li class="seo-sample-answer">D. Send investigation conclusions to all staff for transparency</li>
+        </ul>
+        <p class="seo-sample-explain">Confidentiality protects evidence, privacy, and the integrity of the investigative process. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A SaaS provider is hardening its production runbooks following a degraded-service incident. A security operations exercise must address investigations in security operations. What should the security professional recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Reach out to regulators directly before involving legal or executives</li>
+            <li class="seo-sample-answer">B. Allow administrators to handle potential evidence with no documentation</li>
+            <li class="seo-sample-answer">C. Broadcast investigation findings widely to staff for transparency</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Coordinate containment actions with evidence preservation requirements</li>
+        </ul>
+        <p class="seo-sample-explain">Operational response can alter evidence, so investigators must balance stopping harm with preserving facts. This is the correct answer.</p>
+      </details>
       <h2>Other CISSP Domains</h2>
       <ul>
           <li><a href="/isc2-cissp/security-and-risk-management/">1.0 Security and Risk Management</a></li>

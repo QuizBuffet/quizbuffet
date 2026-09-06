@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "During a major incident, two teams make conflicting changes to the same production service. What incident-management role or process would reduce this risk?",
+          "name": "A DevOps team wants to detect CloudFormation stack failures and notify the application owner. What should the event pattern match?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Assign an incident commander and define a change coordination channel."
+            "text": "CloudFormation stack status change events for failed or rollback states."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A remediation target should run only for events from production accounts. What should the event-driven response include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Account or environment filtering in the event pattern or routing layer."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>84 exam-style questions</strong> covering <strong>14% of the DOP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-devops-engineer-professional/">AWS Certified DevOps Engineer Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A production account emits a GuardDuty finding for credential exfiltration. The security team wants the event to start an incident workflow without polling. Which event-driven design should be used?</h3>
-        <p><strong>Answer:</strong> Use an EventBridge rule that matches GuardDuty finding events and targets an incident workflow</p>
-        <p>GuardDuty findings are emitted as events, and EventBridge can route matching events directly to response automation or notification targets. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An operations team receives too many EventBridge notifications because a rule matches all AWS API calls. What should be adjusted?</h3>
-        <p><strong>Answer:</strong> Narrow the event pattern to specific sources, detail types, resources, or event names</p>
-        <p>Specific event patterns reduce noise and make incident response events actionable. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>During a major incident, two teams make conflicting changes to the same production service. What incident-management role or process would reduce this risk?</h3>
-        <p><strong>Answer:</strong> Assign an incident commander and define a change coordination channel</p>
-        <p>A single coordination role and channel reduce conflicting actions and maintain a controlled response timeline. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A production account emits a GuardDuty finding for credential exfiltration. The security team wants the event to start an incident workflow without polling. Which event-driven design should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use an EventBridge rule that matches GuardDuty finding events and targets an incident workflow</li>
+            <li class="seo-sample-answer">B. Schedule a daily script that searches for new findings</li>
+            <li class="seo-sample-answer">C. Ask analysts to refresh the GuardDuty console manually</li>
+            <li class="seo-sample-answer">D. Store the finding ID in a static parameter and wait for a deployment</li>
+        </ul>
+        <p class="seo-sample-explain">GuardDuty findings are emitted as events, and EventBridge can route matching events directly to response automation or notification targets. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An operations team receives too many EventBridge notifications because a rule matches all AWS API calls. What should be adjusted?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Narrow the event pattern to specific sources, detail types, resources, or event names</li>
+            <li class="seo-sample-answer">B. Increase the number of responders on every alert</li>
+            <li class="seo-sample-answer">C. Delete all event rules and rely on memory</li>
+            <li class="seo-sample-answer">D. Match on random request IDs instead of event meaning</li>
+        </ul>
+        <p class="seo-sample-explain">Specific event patterns reduce noise and make incident response events actionable. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A DevOps team wants to detect CloudFormation stack failures and notify the application owner. What should the event pattern match?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only successful stack creation events</li>
+            <li class="seo-sample-answer seo-sample-correct">B. CloudFormation stack status change events for failed or rollback states</li>
+            <li class="seo-sample-answer">C. Only monthly billing events</li>
+            <li class="seo-sample-answer">D. Only S3 object lifecycle transition events</li>
+        </ul>
+        <p class="seo-sample-explain">Stack status events identify failed infrastructure changes and can be routed to the correct owner for response. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remediation target should run only for events from production accounts. What should the event-driven response include?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A target that ignores event account identity</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Account or environment filtering in the event pattern or routing layer</li>
+            <li class="seo-sample-answer">C. A response that treats all sandbox events as critical production incidents</li>
+            <li class="seo-sample-answer">D. A rule that matches only the event timestamp format</li>
+        </ul>
+        <p class="seo-sample-explain">Filtering by account or environment prevents nonproduction events from triggering production response workflows. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An alert message says only &#39;ALARM&#39; with no service, Region, owner, or runbook. What should be improved?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Remove the alarm name as well</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Notification context and escalation metadata</li>
+            <li class="seo-sample-answer">C. Send the same empty message to more channels</li>
+            <li class="seo-sample-answer">D. Add credentials to the message body</li>
+        </ul>
+        <p class="seo-sample-explain">Responders need affected service, scope, severity, owner, and runbook details to take timely action. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants one response workflow for EC2 instance health failures and a different workflow for unauthorized IAM changes. What is the right pattern?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Send every event to one generic target with no classification</li>
+            <li class="seo-sample-answer">B. Disable event matching and rely on a shared mailbox</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Create separate event rules that match each event type and route to different targets</li>
+            <li class="seo-sample-answer">D. Use the EC2 instance name as the only event selector for IAM events</li>
+        </ul>
+        <p class="seo-sample-explain">Different operational and security events need different owners, severity, and remediation paths. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A database outage affects customer checkout globally. Which incident classification is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Low-priority ticket for the next planning meeting</li>
+            <li class="seo-sample-answer">B. Silent remediation with no communication record</li>
+            <li class="seo-sample-answer seo-sample-correct">C. High-severity incident with immediate escalation to service owners and leadership communications</li>
+            <li class="seo-sample-answer">D. Developer-only notification with no service owner involvement</li>
+        </ul>
+        <p class="seo-sample-explain">Customer-impacting global checkout failure requires urgent response, clear ownership, and coordinated communication. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A pipeline emits custom events when a release starts, succeeds, or fails. Which design makes those events useful for incident workflows?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Put the entire event meaning only in a free-form message string</li>
+            <li class="seo-sample-answer">B. Use a different field schema for every service release</li>
+            <li class="seo-sample-answer">C. Include deployment secrets as event fields for convenience</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Include stable detail fields such as service, environment, version, status, and owner</li>
+        </ul>
+        <p class="seo-sample-explain">Structured event detail fields allow rules, dashboards, and incident tooling to route and correlate release events. This is the correct answer.</p>
+      </details>
       <h2>Other DOP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-devops-engineer-professional/sdlc-automation/">1.0 SDLC Automation</a></li>

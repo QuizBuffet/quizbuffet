@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "How is Dynamic NAT pool best understood in an IP services context?",
+          "name": "A Cisco router must translate inside addresses using Inside source NAT. Which answer best describes the NAT behavior?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A dynamic NAT pool provides a set of inside global addresses that inside hosts can use for translation.. A dynamic NAT pool provides a set of inside global addresses that inside hosts can use for translation. This is the correct answer."
+            "text": "Inside source NAT is the best match when the IP services scenario requires this behavior: Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network.. Inside source NAT translates addresses for traffic sourced from…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Cisco router must translate inside addresses using Static NAT. Which answer best describes the NAT behavior?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Static NAT is the best match when the IP services scenario requires this behavior: Static NAT creates a one-to-one translation between an inside local address and an inside global address.. Static NAT creates a one-to-one translation between an inside local address and an inside…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>80 exam-style questions</strong> covering <strong>10% of the 200-301 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/cisco-ccna/">Cisco CCNA practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Inside source NAT in CCNA Objective 4.0 IP Services?</h3>
-        <p><strong>Answer:</strong> Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network.</p>
-        <p>Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which option correctly defines Static NAT?</h3>
-        <p><strong>Answer:</strong> Static NAT creates a one-to-one translation between an inside local address and an inside global address.</p>
-        <p>Static NAT creates a one-to-one translation between an inside local address and an inside global address. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>How is Dynamic NAT pool best understood in an IP services context?</h3>
-        <p><strong>Answer:</strong> A dynamic NAT pool provides a set of inside global addresses that inside hosts can use for translation.</p>
-        <p>A dynamic NAT pool provides a set of inside global addresses that inside hosts can use for translation. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Inside source NAT in CCNA Objective 4.0 IP Services?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network.</li>
+            <li class="seo-sample-answer">B. Static NAT creates a one-to-one translation between an inside local address and an inside global address.</li>
+            <li class="seo-sample-answer">C. A dynamic NAT pool provides a set of inside global addresses that inside hosts can use for translation.</li>
+            <li class="seo-sample-answer">D. Port Address Translation allows many inside hosts to share one or more inside global addresses by translating transport-layer port numbers.</li>
+        </ul>
+        <p class="seo-sample-explain">Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which option correctly defines Static NAT?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Simple Network Management Protocol lets network management systems monitor and manage devices using managed objects and queries.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Static NAT creates a one-to-one translation between an inside local address and an inside global address.</li>
+            <li class="seo-sample-answer">C. Syslog facilities categorize the source or process type that generated a syslog message.</li>
+            <li class="seo-sample-answer">D. Syslog severity levels indicate how serious a log message is, from emergencies through debugging.</li>
+        </ul>
+        <p class="seo-sample-explain">Static NAT creates a one-to-one translation between an inside local address and an inside global address. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Cisco router must translate inside addresses using Inside source NAT. Which answer best describes the NAT behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. DHCP relay is the best match when the IP services scenario requires this behavior: A DHCP relay forwards DHCP messages between clients and a DHCP server on another subnet.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Inside source NAT is the best match when the IP services scenario requires this behavior: Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network.</li>
+            <li class="seo-sample-answer">C. QoS classification is the best match when the IP services scenario requires this behavior: QoS classification identifies traffic types so they can receive different forwarding treatment.</li>
+            <li class="seo-sample-answer">D. QoS marking is the best match when the IP services scenario requires this behavior: QoS marking writes priority values into packet or frame fields so downstream devices can recognize service requirements.</li>
+        </ul>
+        <p class="seo-sample-explain">Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network. This matches the IP services scenario without confusing address translation, time sync, address assignment, monitoring, logging, QoS, secure access, or file transfer. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Cisco router must translate inside addresses using Static NAT. Which answer best describes the NAT behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. TFTP and FTP is the best match when the IP services scenario requires this behavior: TFTP and FTP transfer files such as configurations or Cisco IOS images across the network, with FTP providing authentication and TCP-based reliability while TFTP is simpler and uses UDP.</li>
+            <li class="seo-sample-answer">B. Inside source NAT is the best match when the IP services scenario requires this behavior: Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Static NAT is the best match when the IP services scenario requires this behavior: Static NAT creates a one-to-one translation between an inside local address and an inside global address.</li>
+            <li class="seo-sample-answer">D. Dynamic NAT pool is the best match when the IP services scenario requires this behavior: A dynamic NAT pool provides a set of inside global addresses that inside hosts can use for translation.</li>
+        </ul>
+        <p class="seo-sample-explain">Static NAT creates a one-to-one translation between an inside local address and an inside global address. This matches the IP services scenario without confusing address translation, time sync, address assignment, monitoring, logging, QoS, secure access, or file transfer. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Cisco router must translate inside addresses using Dynamic NAT pool. Which answer best describes the NAT behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. DNS is the best match when the IP services scenario requires this behavior: Domain Name System resolves names to IP addresses and supports name-based access to network resources.</li>
+            <li class="seo-sample-answer">B. SNMP is the best match when the IP services scenario requires this behavior: Simple Network Management Protocol lets network management systems monitor and manage devices using managed objects and queries.</li>
+            <li class="seo-sample-answer">C. Syslog facilities is the best match when the IP services scenario requires this behavior: Syslog facilities categorize the source or process type that generated a syslog message.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Dynamic NAT pool is the best match when the IP services scenario requires this behavior: A dynamic NAT pool provides a set of inside global addresses that inside hosts can use for translation.</li>
+        </ul>
+        <p class="seo-sample-explain">A dynamic NAT pool provides a set of inside global addresses that inside hosts can use for translation. This matches the IP services scenario without confusing address translation, time sync, address assignment, monitoring, logging, QoS, secure access, or file transfer. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Inside hosts can reach outside networks only if the correct translation behavior is configured. Which scenario best matches Inside source NAT?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to NTP client mode when service behavior or verification depends on this distinction: NTP client mode allows a device to synchronize its clock from an NTP server.</li>
+            <li class="seo-sample-answer">B. A scenario points to NTP server mode when service behavior or verification depends on this distinction: NTP server mode allows a device to provide time synchronization to other devices.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A scenario points to Inside source NAT when service behavior or verification depends on this distinction: Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network.</li>
+            <li class="seo-sample-answer">D. A scenario points to DHCP when service behavior or verification depends on this distinction: Dynamic Host Configuration Protocol automatically assigns IP addressing parameters such as address, mask, default gateway, and DNS server.</li>
+        </ul>
+        <p class="seo-sample-explain">Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network. This distinction matters because the wrong concept would lead to the wrong service configuration, verification command, or troubleshooting conclusion. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Inside hosts can reach outside networks only if the correct translation behavior is configured. Which scenario best matches Static NAT?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to DHCP client when service behavior or verification depends on this distinction: A DHCP client requests addressing information from a DHCP server.</li>
+            <li class="seo-sample-answer">B. A scenario points to DHCP relay when service behavior or verification depends on this distinction: A DHCP relay forwards DHCP messages between clients and a DHCP server on another subnet.</li>
+            <li class="seo-sample-answer">C. A scenario points to QoS classification when service behavior or verification depends on this distinction: QoS classification identifies traffic types so they can receive different forwarding treatment.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A scenario points to Static NAT when service behavior or verification depends on this distinction: Static NAT creates a one-to-one translation between an inside local address and an inside global address.</li>
+        </ul>
+        <p class="seo-sample-explain">Static NAT creates a one-to-one translation between an inside local address and an inside global address. This distinction matters because the wrong concept would lead to the wrong service configuration, verification command, or troubleshooting conclusion. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A NAT configuration must support the exact address and port translation behavior required. Which answer applies Inside source NAT most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Queuing is the correct operational interpretation when the NAT, NTP, DHCP, DNS, SNMP, syslog, QoS, SSH, or file-transfer decision depends on this exact meaning: Queuing places packets into output queues so higher-priority or selected traffic can be serviced appropriately during congestion.</li>
+            <li class="seo-sample-answer">B. Policing is the correct operational interpretation when the NAT, NTP, DHCP, DNS, SNMP, syslog, QoS, SSH, or file-transfer decision depends on this exact meaning: Policing enforces a traffic rate and can drop or remark traffic that exceeds the allowed rate.</li>
+            <li class="seo-sample-answer">C. Shaping is the correct operational interpretation when the NAT, NTP, DHCP, DNS, SNMP, syslog, QoS, SSH, or file-transfer decision depends on this exact meaning: Shaping buffers traffic to smooth the sending rate rather than immediately dropping excess traffic.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Inside source NAT is the correct operational interpretation when the NAT, NTP, DHCP, DNS, SNMP, syslog, QoS, SSH, or file-transfer decision depends on this exact meaning: Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network.</li>
+        </ul>
+        <p class="seo-sample-explain">Inside source NAT translates addresses for traffic sourced from inside the network as it exits toward an outside network. This applies the concept at the point where a Cisco administrator must predict how the service behaves on real traffic, logs, management sessions, or device operations. This is the correct answer.</p>
+      </details>
       <h2>Other 200-301 Domains</h2>
       <ul>
           <li><a href="/cisco-ccna/network-fundamentals/">1.0 Network Fundamentals</a></li>

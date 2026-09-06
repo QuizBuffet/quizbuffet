@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "What is a cable map and what information does it typically contain?",
+          "name": "A network engineer is troubleshooting a connectivity issue between two buildings. They have both physical and logical diagrams available. Which diagram helps identify the physical cable path and which helps verify the routing configuration?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A cable map documents the physical routing and termination details of network cabling including cable ID or label, origin (source port/panel), destination (destination port/panel), cable type (Cat6A, OM4 fiber), cable length, physical path (conduit, cable tray, or plenum), and…"
+            "text": "The physical diagram shows the cable path between buildings including which conduit, patch panel ports, and intermediate splice points the cable traverses; the logical diagram shows the routing configuration including subnet assignments, routing protocol relationships, and…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A new network technician joins a company and is given only a logical diagram of the network. They are asked to locate a specific switch in the building to replace a failed transceiver. What documentation gap does this reveal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The company lacks a physical network diagram; logical diagrams show IP addressing, VLANs, and routing relationships but do not show where equipment is physically located in the building; without a physical diagram or floor plan showing switch locations, rack positions, and room…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>201 exam-style questions</strong> covering <strong>19% of the N10-009 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-network-plus/">CompTIA Network+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What is the difference between a physical network diagram and a logical network diagram?</h3>
-        <p><strong>Answer:</strong> A physical diagram shows the actual physical layout of hardware including device locations, rack positions, cable runs, and physical connections between equipment; a logical diagram shows how the network functions including IP addressing, VLANs, routing protocols, and traffic flows without regard to physical location; both are necessary because a physical diagram tells you where equipment is while a logical diagram tells you how it communicates</p>
-        <p>Physical and logical diagrams serve complementary purposes; a physical diagram answers &#39;where is the equipment and how is it physically connected&#39; while a logical diagram answers &#39;how does the network communicate and what are the addressing and protocol relationships&#39;; maintaining both types is a documentation best practice. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What information does a rack diagram document and why is it important for data center operations?</h3>
-        <p><strong>Answer:</strong> A rack diagram documents the physical layout of equipment within a rack including which devices occupy which rack units (U positions), device models and serial numbers, cable connections between devices, power draw per device, and patch panel port assignments; it is important for capacity planning (knowing how many U remain), hardware replacement (finding the correct device without trial and error), power management (ensuring circuits are not overloaded), and troubleshooting (identifying which physical port connects to which device)</p>
-        <p>Rack diagrams are the authoritative reference for physical data center organization; they enable efficient operations by eliminating guesswork during hardware work; modern rack diagram tools (like Netbox, Racktables, or Visio rack shapes) link rack diagrams to asset inventory providing a single reference for all rack-related information. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is a cable map and what information does it typically contain?</h3>
-        <p><strong>Answer:</strong> A cable map documents the physical routing and termination details of network cabling including cable ID or label, origin (source port/panel), destination (destination port/panel), cable type (Cat6A, OM4 fiber), cable length, physical path (conduit, cable tray, or plenum), and test results; cable maps allow technicians to trace specific cables without visual inspection of the entire run and are essential for troubleshooting, capacity planning, and moves/adds/changes</p>
-        <p>Cable maps are the detailed reference for the physical cabling plant; knowing where every cable runs, what type it is, and what it connects allows rapid identification of the correct cable during troubleshooting or modifications; labeled cables cross-referenced in a cable map eliminate guesswork and reduce the risk of accidentally disconnecting the wrong cable. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What is the difference between a physical network diagram and a logical network diagram?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A physical diagram shows the actual physical layout of hardware including device locations, rack positions, cable runs, and physical connections between equipment; a logical diagram shows how the network functions including IP addressing, VLANs, routing protocols, and traffic flows without regard to physical location; both are necessary because a physical diagram tells you where equipment is while a logical diagram tells you how it communicates</li>
+            <li class="seo-sample-answer">B. A physical diagram shows IP addresses and VLANs while a logical diagram shows cable lengths and connector types; the physical diagram is used by network engineers and the logical diagram by cable installers</li>
+            <li class="seo-sample-answer">C. Physical and logical diagrams are identical documents; the terms are used interchangeably by different organizations; some companies call their network maps physical and others call them logical based on personal preference</li>
+            <li class="seo-sample-answer">D. A physical diagram is drawn by hand while a logical diagram is created using software; the method of creation defines whether the diagram is classified as physical or logical</li>
+        </ul>
+        <p class="seo-sample-explain">Physical and logical diagrams serve complementary purposes; a physical diagram answers &#39;where is the equipment and how is it physically connected&#39; while a logical diagram answers &#39;how does the network communicate and what are the addressing and protocol relationships&#39;; maintaining both types is a documentation best practice. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What information does a rack diagram document and why is it important for data center operations?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A rack diagram documents the physical layout of equipment within a rack including which devices occupy which rack units (U positions), device models and serial numbers, cable connections between devices, power draw per device, and patch panel port assignments; it is important for capacity planning (knowing how many U remain), hardware replacement (finding the correct device without trial and error), power management (ensuring circuits are not overloaded), and troubleshooting (identifying which physical port connects to which device)</li>
+            <li class="seo-sample-answer">B. A rack diagram documents the IP addresses assigned to each device in a rack; it is used by DHCP administrators to track which IP addresses are assigned to which physical locations</li>
+            <li class="seo-sample-answer">C. A rack diagram documents only the network topology showing how switches connect to routers and firewalls; it is equivalent to a logical network diagram but drawn in a vertical format to represent rack-mounted equipment</li>
+            <li class="seo-sample-answer">D. A rack diagram is used exclusively by facilities management to track rack weight load limits; network engineers use logical diagrams while facilities uses rack diagrams for structural safety compliance</li>
+        </ul>
+        <p class="seo-sample-explain">Rack diagrams are the authoritative reference for physical data center organization; they enable efficient operations by eliminating guesswork during hardware work; modern rack diagram tools (like Netbox, Racktables, or Visio rack shapes) link rack diagrams to asset inventory providing a single reference for all rack-related information. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A network engineer is troubleshooting a connectivity issue between two buildings. They have both physical and logical diagrams available. Which diagram helps identify the physical cable path and which helps verify the routing configuration?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The logical diagram shows the cable path because cables are logical connections between devices; the physical diagram shows routing configuration because routing protocols determine the physical path packets take through the network</li>
+            <li class="seo-sample-answer">B. Either diagram can be used for both purposes; modern network diagrams always include both physical and logical information in the same document; separate physical and logical diagrams are an outdated practice replaced by unified network topology tools</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The physical diagram shows the cable path between buildings including which conduit, patch panel ports, and intermediate splice points the cable traverses; the logical diagram shows the routing configuration including subnet assignments, routing protocol relationships, and next-hop addresses; using both together gives the complete picture needed to isolate whether the fault is physical (damaged cable, wrong port) or logical (misconfigured route, wrong VLAN)</li>
+            <li class="seo-sample-answer">D. Neither diagram is useful for troubleshooting; troubleshooting requires real-time data from monitoring tools; static diagrams are only useful during initial installation and become inaccurate immediately after the first network change</li>
+        </ul>
+        <p class="seo-sample-explain">Each diagram type serves a specific troubleshooting purpose; physical diagrams help locate the fault physically (which cable, which port, which patch panel) while logical diagrams help verify the configuration (correct subnet, routing entry, VLAN assignment); experienced network engineers use both simultaneously during complex troubleshooting. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A new network technician joins a company and is given only a logical diagram of the network. They are asked to locate a specific switch in the building to replace a failed transceiver. What documentation gap does this reveal?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The logical diagram should contain equipment location information; the technician is using the wrong section of the document; logical diagrams always include floor plan overlays showing device locations</li>
+            <li class="seo-sample-answer">B. The gap is in the asset inventory not the diagram type; the technician needs a spreadsheet listing switch serial numbers and locations; physical and logical diagrams are not the appropriate tool for locating physical equipment</li>
+            <li class="seo-sample-answer">C. The logical diagram is sufficient; the technician should use the switch&#39;s IP address from the logical diagram to SSH into the device and use the show location command which displays the physical location stored in the switch configuration</li>
+            <li class="seo-sample-answer seo-sample-correct">D. The company lacks a physical network diagram; logical diagrams show IP addressing, VLANs, and routing relationships but do not show where equipment is physically located in the building; without a physical diagram or floor plan showing switch locations, rack positions, and room numbers the technician cannot locate the switch without physically searching the building; this is a common and costly documentation gap</li>
+        </ul>
+        <p class="seo-sample-explain">Physical documentation gap is the core issue; logical diagrams are effective for understanding network architecture but provide no information about physical location; organizations without current physical diagrams waste significant time during hardware replacement, troubleshooting, and audits because staff must physically search for equipment. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A data center technician needs to install a new 2U server in a rack that currently houses a firewall (2U), two switches (1U each), a patch panel (2U), a KVM (1U), and two cable managers (1U each) in a 20U rack. How should a rack diagram help plan this installation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The rack diagram shows the IP address plan for the new server; the technician uses the diagram to select an available IP address before physically installing the server</li>
+            <li class="seo-sample-answer">B. The rack diagram is not useful for installation planning; the technician should simply install the server in the lowest available position and update the diagram afterward if time permits</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The rack diagram shows current U occupancy allowing the technician to calculate available space; total occupied: 2+1+1+2+1+1+1=9U used of 20U leaving 11U available which exceeds the 2U requirement; the diagram also shows where the open spaces are located allowing the technician to choose an appropriate position considering airflow (keeping space below hot-running equipment), cable reach (proximity to patch panel), and weight distribution; after installation the diagram must be updated to reflect the new server position</li>
+            <li class="seo-sample-answer">D. The rack diagram shows which rack unit positions are reserved for future expansion; the technician must install the server only in positions not marked as reserved regardless of other space considerations</li>
+        </ul>
+        <p class="seo-sample-explain">Rack diagrams enable pre-installation planning; calculating available U space prevents the technician from arriving at the rack only to discover the position is already occupied; position selection based on airflow and cable routing improves operational outcomes; mandatory diagram updates after installation maintain accuracy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization experiences a major network outage. The post-incident review finds that the logical diagram was last updated 18 months ago and does not reflect significant network changes made since then. What process failure does this represent and what controls prevent documentation drift?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. This represents a hardware failure; network diagrams are automatically updated by the network management system and an 18-month gap indicates the NMS software has a bug that must be patched</li>
+            <li class="seo-sample-answer seo-sample-correct">B. This represents a change management process failure; documentation updates should be a mandatory deliverable of every change request; controls that prevent documentation drift include: requiring diagram updates as part of change approval and closure criteria so no change is marked complete without updated documentation, using automated discovery tools (like SolarWinds, Netbox, or Nautobot) that continuously update topology diagrams from live network data, implementing documentation review as part of periodic audits, and assigning documentation ownership with accountability for currency; 18 months of undocumented changes means the diagram provided false confidence and lengthened the outage investigation</li>
+            <li class="seo-sample-answer">C. This represents acceptable documentation practice; network diagrams do not need to be updated more frequently than annually because networks are stable infrastructure that rarely changes; 18 months is within acceptable documentation maintenance windows</li>
+            <li class="seo-sample-answer">D. This represents a training failure only; individual engineers failed to update diagrams due to lack of awareness; the solution is a one-time training session after which engineers will independently maintain accurate documentation without process controls</li>
+        </ul>
+        <p class="seo-sample-explain">Change management integration with documentation is the systematic solution; documentation drift occurs when the change process does not enforce documentation updates as a completion criterion; automated discovery tools reduce the burden of manual updates; both process controls and automation are necessary for sustained accuracy in large networks. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A network manager is auditing documentation accuracy. They find the rack diagram shows a router in rack 3, unit 15, but physically the router is in rack 3, unit 17. This type of inaccuracy is common across multiple racks. What documentation governance approach prevents rack diagram inaccuracy at scale?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Rack diagrams should only be updated quarterly during scheduled maintenance windows; frequent updates introduce more errors than they correct; the quarterly review cycle is the industry-standard documentation cadence for data centers</li>
+            <li class="seo-sample-answer">B. Each rack should have a dedicated documentation owner responsible for that rack&#39;s diagram; the owner physically inspects their assigned rack daily and updates the diagram accordingly; distributed ownership eliminates inaccuracy through frequent manual verification</li>
+            <li class="seo-sample-answer">C. Rack diagram inaccuracy is inevitable in large data centers; organizations should accept a 20-30% error rate as normal and train technicians to always physically verify equipment location rather than trusting documentation</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Automated discovery tools integrated with a network documentation platform (such as Netbox, Racktables, or DCIM software) continuously update rack diagrams by correlating LLDP/CDP neighbor data, SNMP OID queries, and barcode/RFID asset scans with physical location databases; change management integration requires technicians to scan asset tags when moving equipment automatically updating the rack diagram in real time; physical audit reconciliation compares diagram data against physical reality on a scheduled basis; combining automation with mandatory update workflows during change execution prevents the accumulative drift that creates widespread inaccuracy</li>
+        </ul>
+        <p class="seo-sample-explain">Automation combined with process controls is the scalable solution; DCIM (Data Center Infrastructure Management) platforms automate discovery and track physical location changes; barcode/RFID scanning during moves enforces documentation updates as part of the physical change; scheduled audits catch errors that automation misses; this combination addresses both the technical and procedural causes of documentation drift. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What is a cable map and what information does it typically contain?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A cable map documents the physical routing and termination details of network cabling including cable ID or label, origin (source port/panel), destination (destination port/panel), cable type (Cat6A, OM4 fiber), cable length, physical path (conduit, cable tray, or plenum), and test results; cable maps allow technicians to trace specific cables without visual inspection of the entire run and are essential for troubleshooting, capacity planning, and moves/adds/changes</li>
+            <li class="seo-sample-answer">B. A cable map is a diagram showing wireless signal coverage areas throughout a building; it uses color gradients to show Wi-Fi signal strength and is used to plan access point placement</li>
+            <li class="seo-sample-answer">C. A cable map is a spreadsheet of IP addresses assigned to each network cable; since each cable represents one device connection the cable map is essentially an IP address inventory organized by physical cable identifier</li>
+            <li class="seo-sample-answer">D. A cable map documents only fiber optic cables; copper cables are tracked in a separate wiring schedule because copper and fiber require different termination techniques and are managed by different teams</li>
+        </ul>
+        <p class="seo-sample-explain">Cable maps are the detailed reference for the physical cabling plant; knowing where every cable runs, what type it is, and what it connects allows rapid identification of the correct cable during troubleshooting or modifications; labeled cables cross-referenced in a cable map eliminate guesswork and reduce the risk of accidentally disconnecting the wrong cable. This is the correct answer.</p>
+      </details>
       <h2>Other N10-009 Domains</h2>
       <ul>
           <li><a href="/comptia-network-plus/networking-concepts/">1.0 Networking Concepts</a></li>

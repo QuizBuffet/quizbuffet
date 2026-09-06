@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A national telecom carrier is rolling out DevSecOps gates across its product engineering teams. The CISO asks for CISSP-level guidance on security in the Software Development Life Cycle. Which approach is most appropriate?",
+          "name": "A health-tech startup is hardening its patient-portal pipeline ahead of a HITRUST audit. An application security review identifies a weakness in security in the Software Development Life Cycle. Which action should be prioritized?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Train developers on secure design and coding practices that match the organization's technology stack."
+            "text": "Use threat modeling during design to identify assets, trust boundaries, misuse cases, and likely attack paths."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A consumer fintech is rebuilding its mobile authentication module after a fraud spike. Executives need a risk-based explanation for security in the Software Development Life Cycle. Which response best aligns with secure software practice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Include security acceptance criteria in user stories or requirements so teams know how security will be validated."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>80 exam-style questions</strong> covering <strong>10% of the CISSP exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/isc2-cissp/">Certified Information Systems Security Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A national bank&#39;s mobile app team is integrating security into its monthly release train. The security team must make a software development security decision involving security in the Software Development Life Cycle. What is the best recommendation?</h3>
-        <p><strong>Answer:</strong> Define security requirements during planning and requirements phases before architecture and implementation decisions are fixed</p>
-        <p>Security requirements are most effective when they guide design choices early in the SDLC. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A regional credit union is rolling out application threat modeling for new digital products. A proposed development process creates risk around security in the Software Development Life Cycle. Which change best addresses the concern?</h3>
-        <p><strong>Answer:</strong> Require remediation tracking and risk acceptance for unresolved findings before production release</p>
-        <p>Release decisions need evidence, ownership, and explicit treatment of residual risk. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A national telecom carrier is rolling out DevSecOps gates across its product engineering teams. The CISO asks for CISSP-level guidance on security in the Software Development Life Cycle. Which approach is most appropriate?</h3>
-        <p><strong>Answer:</strong> Train developers on secure design and coding practices that match the organization&#39;s technology stack</p>
-        <p>Developer training should be relevant to the languages, frameworks, and risks they face. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A national bank&#39;s mobile app team is integrating security into its monthly release train. The security team must make a software development security decision involving security in the Software Development Life Cycle. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Define security requirements during planning and requirements phases before architecture and implementation decisions are fixed</li>
+            <li class="seo-sample-answer">B. Strip security review from high-impact pipelines to improve delivery velocity</li>
+            <li class="seo-sample-answer">C. Treat application retirement as out of scope for the SDLC</li>
+            <li class="seo-sample-answer">D. Define security requirements only after the application is in production</li>
+        </ul>
+        <p class="seo-sample-explain">Security requirements are most effective when they guide design choices early in the SDLC. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regional credit union is rolling out application threat modeling for new digital products. A proposed development process creates risk around security in the Software Development Life Cycle. Which change best addresses the concern?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Require remediation tracking and risk acceptance for unresolved findings before production release</li>
+            <li class="seo-sample-answer">B. Treat decommissioning of an application as outside engineering&#39;s responsibility</li>
+            <li class="seo-sample-answer">C. Postpone security requirements until after the first prod release</li>
+            <li class="seo-sample-answer">D. Run SAST on every PR and call the SDLC security &#39;covered&#39;</li>
+        </ul>
+        <p class="seo-sample-explain">Release decisions need evidence, ownership, and explicit treatment of residual risk. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A health-tech startup is hardening its patient-portal pipeline ahead of a HITRUST audit. An application security review identifies a weakness in security in the Software Development Life Cycle. Which action should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Allow individual developers to accept residual business risk on their own</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use threat modeling during design to identify assets, trust boundaries, misuse cases, and likely attack paths</li>
+            <li class="seo-sample-answer">C. Disable security gates on critical-system deploys to keep release cadence fast</li>
+            <li class="seo-sample-answer">D. Skip decommissioning planning as a software lifecycle activity</li>
+        </ul>
+        <p class="seo-sample-explain">Threat modeling helps turn design risks into actionable requirements and controls. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A consumer fintech is rebuilding its mobile authentication module after a fraud spike. Executives need a risk-based explanation for security in the Software Development Life Cycle. Which response best aligns with secure software practice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip security checks on high-impact services so delivery teams can move faster</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Include security acceptance criteria in user stories or requirements so teams know how security will be validated</li>
+            <li class="seo-sample-answer">C. Drop the retirement phase from the SDLC stages</li>
+            <li class="seo-sample-answer">D. Skip security requirements during design and add them post-launch</li>
+        </ul>
+        <p class="seo-sample-explain">Acceptance criteria make security testable and visible to product and engineering teams. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regional retailer is reviewing the security of its e-commerce checkout microservice. A software assurance exercise must address security in the Software Development Life Cycle. What should the security professional recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip secure-decommissioning steps in the formal lifecycle</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use security champions to extend application security guidance into development teams</li>
+            <li class="seo-sample-answer">C. Define security requirements only after the system is operational</li>
+            <li class="seo-sample-answer">D. Treat code scanners as a one-stop shop for application security</li>
+        </ul>
+        <p class="seo-sample-explain">Champions help sustain secure practices within teams that make daily design and implementation choices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A federal contractor is aligning its software supply chain with revised SSDF guidance. The CISO asks for CISSP-level guidance on security in the Software Development Life Cycle. Which approach is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Treat SAST scanning as the sole security activity in the SDLC</li>
+            <li class="seo-sample-answer">B. Permit engineers to close out residual risks without product-owner concurrence</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Include secure design reviews before approving architecture for sensitive or high-impact applications</li>
+            <li class="seo-sample-answer">D. Remove SDL gates from high-risk apps to avoid slowing the release train</li>
+        </ul>
+        <p class="seo-sample-explain">Architecture review can identify design-level flaws that code scanning alone will not find. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A pediatric hospital is securing a clinical data exchange written by an external vendor. The security team must make a software development security decision involving security in the Software Development Life Cycle. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Let dev teams self-accept residual business risk with no product or risk-owner sign-off</li>
+            <li class="seo-sample-answer">B. Drop secure-design reviews on critical applications to reduce time-to-market</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Perform privacy and data protection reviews when software collects, processes, or shares personal information</li>
+            <li class="seo-sample-answer">D. Treat application end-of-life as a separate concern from the SDLC</li>
+        </ul>
+        <p class="seo-sample-explain">Privacy risk should be addressed in the same lifecycle that designs the data flows. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A SaaS analytics firm is overhauling its CI/CD security after a leaked-secret incident. A software assurance exercise must address security in the Software Development Life Cycle. What should the security professional recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Defer security requirements gathering until after the launch is complete</li>
+            <li class="seo-sample-answer">B. Use code scanning as the entire application security program</li>
+            <li class="seo-sample-answer">C. Skip risk-owner approval on accepted residual risk for the application</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Integrate static, dynamic, and interactive testing into build and release activities according to risk</li>
+        </ul>
+        <p class="seo-sample-explain">Security testing should be embedded into lifecycle gates rather than treated as a final one-time activity. This is the correct answer.</p>
+      </details>
       <h2>Other CISSP Domains</h2>
       <ul>
           <li><a href="/isc2-cissp/security-and-risk-management/">1.0 Security and Risk Management</a></li>

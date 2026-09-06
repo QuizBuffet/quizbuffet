@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A web tier has stateless instances and a shared session store. Why does this improve elasticity?",
+          "name": "A company wants regional disaster recovery for a customer-facing application. The current architecture is Multi-AZ in one Region. What gap remains?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Any instance can serve a user request, so instances can be added or removed without losing session state."
+            "text": "A Regional outage could still affect the whole application."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A pilot light DR design is proposed. What should remain running or ready in the recovery Region?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Core infrastructure and replicated data needed to scale the application during recovery."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>90 exam-style questions</strong> covering <strong>15% of the DOP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-devops-engineer-professional/">AWS Certified DevOps Engineer Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A production web application runs in one Availability Zone behind an Application Load Balancer. The business requires the service to remain available during an Availability Zone impairment. What should the DevOps engineer implement?</h3>
-        <p><strong>Answer:</strong> Deploy the application across multiple Availability Zones with the load balancer enabled in each zone</p>
-        <p>Multi-AZ placement reduces dependency on a single zone, and the load balancer can route requests to healthy targets in remaining zones. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A company wants the lowest downtime regional failover and is willing to operate full capacity in two Regions. Which pattern fits?</h3>
-        <p><strong>Answer:</strong> Multi-Region active-active architecture</p>
-        <p>Active-active operation keeps multiple Regions ready to serve live traffic, reducing failover time at the cost of complexity. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A web tier has stateless instances and a shared session store. Why does this improve elasticity?</h3>
-        <p><strong>Answer:</strong> Any instance can serve a user request, so instances can be added or removed without losing session state</p>
-        <p>External session storage decouples user state from individual instances and supports horizontal scaling. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A production web application runs in one Availability Zone behind an Application Load Balancer. The business requires the service to remain available during an Availability Zone impairment. What should the DevOps engineer implement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Deploy the application across multiple Availability Zones with the load balancer enabled in each zone</li>
+            <li class="seo-sample-answer">B. Increase the size of the single EC2 instance in the current Availability Zone</li>
+            <li class="seo-sample-answer">C. Create daily AMIs without changing the live placement</li>
+            <li class="seo-sample-answer">D. Put the existing instances behind a private hosted zone only</li>
+        </ul>
+        <p class="seo-sample-explain">Multi-AZ placement reduces dependency on a single zone, and the load balancer can route requests to healthy targets in remaining zones. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants the lowest downtime regional failover and is willing to operate full capacity in two Regions. Which pattern fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Multi-Region active-active architecture</li>
+            <li class="seo-sample-answer">B. Backup and restore only</li>
+            <li class="seo-sample-answer">C. Single-AZ vertical scaling</li>
+            <li class="seo-sample-answer">D. Manual rebuild from source repositories after failure</li>
+        </ul>
+        <p class="seo-sample-explain">Active-active operation keeps multiple Regions ready to serve live traffic, reducing failover time at the cost of complexity. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants regional disaster recovery for a customer-facing application. The current architecture is Multi-AZ in one Region. What gap remains?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The application cannot survive a single instance failure</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A Regional outage could still affect the whole application</li>
+            <li class="seo-sample-answer">C. The application has no possible way to use load balancing</li>
+            <li class="seo-sample-answer">D. The application must remove all backups to become multi-Region</li>
+        </ul>
+        <p class="seo-sample-explain">Multi-AZ architecture improves resilience inside one Region, but regional disaster recovery requires a strategy for another Region. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A pilot light DR design is proposed. What should remain running or ready in the recovery Region?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Full production capacity serving all traffic continuously</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Core infrastructure and replicated data needed to scale the application during recovery</li>
+            <li class="seo-sample-answer">C. Only a document describing how to rebuild everything</li>
+            <li class="seo-sample-answer">D. No replicated data until after a disaster starts</li>
+        </ul>
+        <p class="seo-sample-explain">Pilot light keeps essential components available while most compute capacity can be scaled out when a disaster is declared. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Auto Scaling group should scale on the amount of work waiting in a queue. Which metric is usually most relevant?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The number of IAM policies in the account</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Queue depth or age of oldest message</li>
+            <li class="seo-sample-answer">C. The current DNS TTL of the application</li>
+            <li class="seo-sample-answer">D. The size of the latest build artifact only</li>
+        </ul>
+        <p class="seo-sample-explain">Backlog metrics represent unprocessed work and align worker capacity with demand. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload uses Amazon RDS in Multi-AZ mode. What resilience behavior should the DevOps engineer expect?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Read scaling from the standby in every engine mode</li>
+            <li class="seo-sample-answer">B. Zero data loss across all possible disasters</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Automatic failover to a standby or alternate database instance when supported conditions occur</li>
+            <li class="seo-sample-answer">D. Automatic active-active writes in every AWS Region</li>
+        </ul>
+        <p class="seo-sample-explain">RDS Multi-AZ deployments are designed to improve database availability through managed failover within a Region. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ECS service experiences predictable traffic peaks every weekday morning. Which scaling approach helps capacity be ready before the peak?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Scale only after users report errors</li>
+            <li class="seo-sample-answer">B. Disable service scaling during peak hours</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Scheduled scaling combined with metric-based scaling</li>
+            <li class="seo-sample-answer">D. Increase the container image tag length</li>
+        </ul>
+        <p class="seo-sample-explain">Scheduled scaling can add capacity before known demand, while metric-based scaling handles unexpected variation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An application stores user uploads on an EC2 instance&#39;s local volume while compute runs across two Availability Zones. What resilience issue remains?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The load balancer cannot route HTTP requests</li>
+            <li class="seo-sample-answer">B. Security groups automatically copy local files</li>
+            <li class="seo-sample-answer">C. Multi-AZ compute always converts local volumes into shared storage</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Uploaded files are still tied to one instance or zone-local storage path</li>
+        </ul>
+        <p class="seo-sample-explain">Multi-AZ compute does not make instance-local data durable or shared across replacement instances. This is the correct answer.</p>
+      </details>
       <h2>Other DOP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-devops-engineer-professional/sdlc-automation/">1.0 SDLC Automation</a></li>

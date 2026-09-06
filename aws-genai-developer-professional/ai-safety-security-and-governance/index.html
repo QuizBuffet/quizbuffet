@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which description best matches Real-time input validation in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?",
+          "name": "A GenAI developer must implement input or output safety involving Bedrock guardrails for input filtering. Which answer best describes the control?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Real-time input validation involves checking user input immediately for safety, format, policy, and security risks before FM processing.. Real-time input validation involves checking user input immediately for safety, format, policy, and security risks before FM processing. This…"
+            "text": "Bedrock guardrails for input filtering is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A GenAI developer must implement input or output safety involving Custom moderation workflow. Which answer best describes the control?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom moderation workflow is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>136 exam-style questions</strong> covering <strong>20% of the AIP-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-genai-developer-professional/">AWS Certified Generative AI Developer Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Bedrock guardrails for input filtering in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?</h3>
-        <p><strong>Answer:</strong> Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model.</p>
-        <p>Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Custom moderation workflow in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?</h3>
-        <p><strong>Answer:</strong> Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction.</p>
-        <p>Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Real-time input validation in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?</h3>
-        <p><strong>Answer:</strong> Real-time input validation involves checking user input immediately for safety, format, policy, and security risks before FM processing.</p>
-        <p>Real-time input validation involves checking user input immediately for safety, format, policy, and security risks before FM processing. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Bedrock guardrails for input filtering in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model.</li>
+            <li class="seo-sample-answer">B. Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction.</li>
+            <li class="seo-sample-answer">C. Real-time input validation involves checking user input immediately for safety, format, policy, and security risks before FM processing.</li>
+            <li class="seo-sample-answer">D. Output safety filtering involves screening FM responses to prevent harmful, toxic, private, or policy-violating content from reaching users.</li>
+        </ul>
+        <p class="seo-sample-explain">Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Custom moderation workflow in AWS AIP-C01 Domain 3.0 AI Safety, Security, and Governance?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Defense-in-depth safety design involves combining preprocessing, guardrails, model-based checks, post-processing, and API filtering to reduce FM misuse.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction.</li>
+            <li class="seo-sample-answer">C. Prompt injection detection involves identifying attempts to override instructions, reveal protected data, or manipulate FM behavior through malicious prompts.</li>
+            <li class="seo-sample-answer">D. Jailbreak detection involves identifying attempts to bypass safety rules or force the model to produce disallowed content.</li>
+        </ul>
+        <p class="seo-sample-explain">Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A GenAI developer must implement input or output safety involving Bedrock guardrails for input filtering. Which answer best describes the control?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. VPC endpoints for FM security is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: VPC endpoints for FM security involves using private connectivity so supported FM-related traffic does not need to traverse the public internet.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Bedrock guardrails for input filtering is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model.</li>
+            <li class="seo-sample-answer">C. IAM policies for FM data access is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: IAM policies for FM data access involves enforcing least privilege access to FM data, prompts, outputs, and supporting resources.</li>
+            <li class="seo-sample-answer">D. Lake Formation granular access is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Lake Formation granular access involves controlling fine-grained permissions to governed data sources used by GenAI applications.</li>
+        </ul>
+        <p class="seo-sample-explain">Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model. This matches the GenAI safety and governance scenario without confusing input controls, output controls, privacy protections, audit logging, lineage, compliance mechanisms, or responsible AI practices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A GenAI developer must implement input or output safety involving Custom moderation workflow. Which answer best describes the control?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Data retention with S3 Lifecycle is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Data retention with S3 Lifecycle involves expiring, transitioning, or retaining GenAI-related data according to policy and compliance requirements.</li>
+            <li class="seo-sample-answer">B. Programmatic model cards is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Programmatic model cards involves generating structured model documentation that records intended use, limitations, risks, and performance information.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Custom moderation workflow is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction.</li>
+            <li class="seo-sample-answer">D. AWS Glue data lineage tracking is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: AWS Glue data lineage tracking involves tracking data sources and transformations so FM outputs and decisions can be traced to supporting data.</li>
+        </ul>
+        <p class="seo-sample-explain">Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction. This matches the GenAI safety and governance scenario without confusing input controls, output controls, privacy protections, audit logging, lineage, compliance mechanisms, or responsible AI practices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A GenAI developer must implement input or output safety involving Real-time input validation. Which answer best describes the control?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Transparent AI output design is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Transparent AI output design involves presenting explanations, evidence, uncertainty, or reasoning traces so users understand FM behavior.</li>
+            <li class="seo-sample-answer">B. Source attribution in FM responses is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Source attribution in FM responses involves showing retrieved sources or evidence that support generated answers.</li>
+            <li class="seo-sample-answer">C. Fairness evaluation for FM outputs is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Fairness evaluation for FM outputs involves measuring whether FM outputs show bias or unequal treatment across relevant groups or contexts.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Real-time input validation is the best fit when a professional GenAI safety, security, or governance workflow requires this behavior: Real-time input validation involves checking user input immediately for safety, format, policy, and security risks before FM processing.</li>
+        </ul>
+        <p class="seo-sample-explain">Real-time input validation involves checking user input immediately for safety, format, policy, and security risks before FM processing. This matches the GenAI safety and governance scenario without confusing input controls, output controls, privacy protections, audit logging, lineage, compliance mechanisms, or responsible AI practices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A GenAI application must block unsafe input, filter outputs, reduce hallucinations, or defend against adversarial prompts. Which scenario best matches Bedrock guardrails for input filtering?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A workflow points to CloudTrail audit logging for GenAI when input safety, output filtering, privacy, compliance, traceability, or responsible AI depends on this distinction: CloudTrail audit logging for GenAI involves recording AWS API activity related to GenAI systems for audit, investigation, and compliance evidence.</li>
+            <li class="seo-sample-answer">B. A workflow points to Organizational AI governance framework when input safety, output filtering, privacy, compliance, traceability, or responsible AI depends on this distinction: Organizational AI governance framework involves aligning GenAI implementation with internal policies, responsible AI principles, and regulatory requirements.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A workflow points to Bedrock guardrails for input filtering when input safety, output filtering, privacy, compliance, traceability, or responsible AI depends on this distinction: Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model.</li>
+            <li class="seo-sample-answer">D. A workflow points to Automated policy violation detection when input safety, output filtering, privacy, compliance, traceability, or responsible AI depends on this distinction: Automated policy violation detection involves detecting misuse, drift, or policy violations in GenAI systems and triggering alerts or remediation.</li>
+        </ul>
+        <p class="seo-sample-explain">Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model. This distinction matters because choosing a nearby concept would lead to the wrong safety layer, privacy control, audit mechanism, source-tracking method, policy enforcement point, or responsible AI implementation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A GenAI application must block unsafe input, filter outputs, reduce hallucinations, or defend against adversarial prompts. Which scenario best matches Custom moderation workflow?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A workflow points to Bedrock guardrails for input filtering when input safety, output filtering, privacy, compliance, traceability, or responsible AI depends on this distinction: Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model.</li>
+            <li class="seo-sample-answer">B. A workflow points to Real-time input validation when input safety, output filtering, privacy, compliance, traceability, or responsible AI depends on this distinction: Real-time input validation involves checking user input immediately for safety, format, policy, and security risks before FM processing.</li>
+            <li class="seo-sample-answer">C. A workflow points to Output safety filtering when input safety, output filtering, privacy, compliance, traceability, or responsible AI depends on this distinction: Output safety filtering involves screening FM responses to prevent harmful, toxic, private, or policy-violating content from reaching users.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A workflow points to Custom moderation workflow when input safety, output filtering, privacy, compliance, traceability, or responsible AI depends on this distinction: Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction.</li>
+        </ul>
+        <p class="seo-sample-explain">Custom moderation workflow involves using Step Functions and Lambda to apply application-specific moderation logic before or after FM interaction. This distinction matters because choosing a nearby concept would lead to the wrong safety layer, privacy control, audit mechanism, source-tracking method, policy enforcement point, or responsible AI implementation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A production GenAI system must enforce layered safety controls without blocking legitimate use. Which answer applies Bedrock guardrails for input filtering most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Hallucination reduction with Knowledge Bases is the correct GenAI developer choice when the safety, security, or governance decision depends on this exact behavior: Hallucination reduction with Knowledge Bases involves grounding FM answers in retrieved trusted sources to reduce unsupported or fabricated responses.</li>
+            <li class="seo-sample-answer">B. Confidence scoring is the correct GenAI developer choice when the safety, security, or governance decision depends on this exact behavior: Confidence scoring involves estimating how reliable or supported an FM response appears before it is used or shown.</li>
+            <li class="seo-sample-answer">C. JSON Schema output enforcement is the correct GenAI developer choice when the safety, security, or governance decision depends on this exact behavior: JSON Schema output enforcement involves requiring generated output to follow a structured schema so downstream systems can validate and process it reliably.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Bedrock guardrails for input filtering is the correct GenAI developer choice when the safety, security, or governance decision depends on this exact behavior: Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model.</li>
+        </ul>
+        <p class="seo-sample-explain">Bedrock guardrails for input filtering involves filtering harmful, unsafe, or policy-violating user inputs before they reach a foundation model. This applies the concept at the point where a professional GenAI developer must implement production safety, privacy, governance, and responsible AI controls for FM applications. This is the correct answer.</p>
+      </details>
       <h2>Other AIP-C01 Domains</h2>
       <ul>
           <li><a href="/aws-genai-developer-professional/foundation-model-integration-data-management-and-compliance/">1.0 Foundation Model Integration, Data Management, and Compliance</a></li>

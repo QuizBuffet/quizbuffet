@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A Python ingestion script must start a Glue job and pass run parameters. What should the script use?",
+          "name": "A team already maintains Airflow DAGs for dependent data jobs and wants AWS to operate the Airflow environment. Which service should they use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AWS SDK for Python boto3 Glue client."
+            "text": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Step Functions execution fails on a Glue job task and retries do not occur. What should the engineer inspect?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "State machine error handling, Retry configuration, and task error names."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>110 exam-style questions</strong> covering <strong>22% of the DEA-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-data-engineer-associate/">AWS Certified Data Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A daily ETL pipeline has extract, validation, transform, and load steps with retries and conditional branches. Which service can coordinate these steps?</h3>
-        <p><strong>Answer:</strong> AWS Step Functions</p>
-        <p>Step Functions provides durable workflow state, retries, branching, and execution history for multi-step ETL orchestration. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An MWAA DAG stays queued and never starts after a deployment. What should be checked first?</h3>
-        <p><strong>Answer:</strong> DAG syntax, scheduler health, worker capacity, and environment logs</p>
-        <p>Queued Airflow tasks can result from parse errors, scheduler issues, insufficient workers, or execution failures that are visible in MWAA logs. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A Python ingestion script must start a Glue job and pass run parameters. What should the script use?</h3>
-        <p><strong>Answer:</strong> AWS SDK for Python boto3 Glue client</p>
-        <p>The boto3 Glue client can call StartJobRun with arguments so code can launch Glue jobs programmatically. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A daily ETL pipeline has extract, validation, transform, and load steps with retries and conditional branches. Which service can coordinate these steps?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. AWS Step Functions</li>
+            <li class="seo-sample-answer">B. Amazon DynamoDB</li>
+            <li class="seo-sample-answer">C. Amazon MemoryDB for Redis</li>
+            <li class="seo-sample-answer">D. Amazon SNS</li>
+        </ul>
+        <p class="seo-sample-explain">Step Functions provides durable workflow state, retries, branching, and execution history for multi-step ETL orchestration. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An MWAA DAG stays queued and never starts after a deployment. What should be checked first?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. DAG syntax, scheduler health, worker capacity, and environment logs</li>
+            <li class="seo-sample-answer">B. Amazon CloudWatch Logs</li>
+            <li class="seo-sample-answer">C. Amazon SageMaker AI</li>
+            <li class="seo-sample-answer">D. Amazon EMR</li>
+        </ul>
+        <p class="seo-sample-explain">Queued Airflow tasks can result from parse errors, scheduler issues, insufficient workers, or execution failures that are visible in MWAA logs. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team already maintains Airflow DAGs for dependent data jobs and wants AWS to operate the Airflow environment. Which service should they use?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Aurora</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Amazon Managed Workflows for Apache Airflow (Amazon MWAA)</li>
+            <li class="seo-sample-answer">C. Amazon SageMaker Unified Studio</li>
+            <li class="seo-sample-answer">D. Amazon RDS</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon MWAA runs managed Apache Airflow so existing DAG-based pipeline dependencies and schedules can be operated without self-managing Airflow infrastructure. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Step Functions execution fails on a Glue job task and retries do not occur. What should the engineer inspect?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon DynamoDB Streams</li>
+            <li class="seo-sample-answer seo-sample-correct">B. State machine error handling, Retry configuration, and task error names</li>
+            <li class="seo-sample-answer">C. Amazon SageMaker Unified Studio</li>
+            <li class="seo-sample-answer">D. Amazon Kinesis Data Firehose</li>
+        </ul>
+        <p class="seo-sample-explain">Step Functions retries only when configured errors match the task failure, so the state definition and failure name must be reviewed. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Lambda function needs to write items to DynamoDB after cleaning records. Which coding approach is appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS DMS</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use the AWS SDK to call DynamoDB PutItem or BatchWriteItem</li>
+            <li class="seo-sample-answer">C. Amazon CloudWatch Logs</li>
+            <li class="seo-sample-answer">D. Amazon S3</li>
+        </ul>
+        <p class="seo-sample-explain">The AWS SDK provides DynamoDB APIs that Lambda code can call to write transformed records into the table. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Several AWS Glue jobs and crawlers must run as a single dependent workflow. Which feature is most direct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Step Functions</li>
+            <li class="seo-sample-answer">B. Amazon SageMaker Unified Studio</li>
+            <li class="seo-sample-answer seo-sample-correct">C. AWS Glue workflows</li>
+            <li class="seo-sample-answer">D. Amazon Managed Service for Apache Flink</li>
+        </ul>
+        <p class="seo-sample-explain">AWS Glue workflows coordinate Glue jobs and crawlers with triggers, dependencies, and run visibility inside the Glue service. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Airflow task fails because it cannot assume the role used for an AWS operation. What area should be reviewed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Redshift materialized views</li>
+            <li class="seo-sample-answer">B. AWS Config</li>
+            <li class="seo-sample-answer seo-sample-correct">C. MWAA execution role permissions and trust configuration</li>
+            <li class="seo-sample-answer">D. Amazon CloudWatch Logs</li>
+        </ul>
+        <p class="seo-sample-explain">MWAA tasks use AWS permissions assigned to the environment or task integration, so the execution role must allow the attempted operation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A simple serverless pipeline needs to start when an event arrives and then call AWS services in sequence. Which orchestration pattern fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Lambda</li>
+            <li class="seo-sample-answer">B. Amazon Keyspaces</li>
+            <li class="seo-sample-answer">C. AWS Glue Data Catalog</li>
+            <li class="seo-sample-answer seo-sample-correct">D. EventBridge starting a Step Functions state machine</li>
+        </ul>
+        <p class="seo-sample-explain">EventBridge can route the event to Step Functions, and the state machine can coordinate the serverless data processing steps. This is the correct answer.</p>
+      </details>
       <h2>Other DEA-C01 Domains</h2>
       <ul>
           <li><a href="/aws-data-engineer-associate/data-ingestion-and-transformation/">1.0 Data Ingestion and Transformation</a></li>

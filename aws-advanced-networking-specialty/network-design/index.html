@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "During design review, the team identifies controlled failover and predictable traffic paths during impairment for global outbound content distribution design. Which option provides the most appropriate AWS networking design?",
+          "name": "A proposed architecture for global inbound content distribution design causes overly broad network reachability between unrelated environments. Which change best aligns with the requirement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Controlled egress through NAT gateways, centralized inspection, VPC endpoints, or caching repositories according to destination and security requirements."
+            "text": "CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An application migration depends on global inbound content distribution design. The target architecture requires controlled failover and predictable traffic paths during impairment. Which design decision is correct?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>180 exam-style questions</strong> covering <strong>30% of the ANS-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-advanced-networking-specialty/">AWS Certified Advanced Networking Specialty practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A company is designing global inbound content distribution design. The requirement is low latency, high availability, and clear operational ownership. Which design should the network specialist recommend?</h3>
-        <p><strong>Answer:</strong> CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements</p>
-        <p>CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements is appropriate for global inbound content distribution design. It matches the traffic pattern and avoids adding unrelated control planes.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A hybrid and cloud networking team is choosing a pattern for global inbound content distribution design. The constraint is overly broad network reachability between unrelated environments. Which recommendation is most appropriate?</h3>
-        <p><strong>Answer:</strong> CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements</p>
-        <p>CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements is appropriate for global inbound content distribution design. It keeps the data path aligned with the required scope and failure model.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>During design review, the team identifies controlled failover and predictable traffic paths during impairment for global outbound content distribution design. Which option provides the most appropriate AWS networking design?</h3>
-        <p><strong>Answer:</strong> Controlled egress through NAT gateways, centralized inspection, VPC endpoints, or caching repositories according to destination and security requirements</p>
-        <p>controlled egress through NAT gateways, centralized inspection, VPC endpoints, or caching repositories according to destination and security requirements is appropriate for global outbound content distribution design. It gives the architecture a supportable control point for scaling and troubleshooting.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A company is designing global inbound content distribution design. The requirement is low latency, high availability, and clear operational ownership. Which design should the network specialist recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements</li>
+            <li class="seo-sample-answer">B. Rely on default BGP timers for sub-second failover detection</li>
+            <li class="seo-sample-answer">C. Use VPC interface endpoints to expose your services to the public internet</li>
+            <li class="seo-sample-answer">D. Use NAT gateway in every private subnet to maximize redundancy and minimize latency</li>
+        </ul>
+        <p class="seo-sample-explain">CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements is appropriate for global inbound content distribution design. It matches the traffic pattern and avoids adding unrelated control planes.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A hybrid and cloud networking team is choosing a pattern for global inbound content distribution design. The constraint is overly broad network reachability between unrelated environments. Which recommendation is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements</li>
+            <li class="seo-sample-answer">B. Use CloudTrail to detect packet-level anomalies in VPC traffic</li>
+            <li class="seo-sample-answer">C. Use the AWS CLI from a developer laptop as the production deployment automation tool</li>
+            <li class="seo-sample-answer">D. Use a Route 53 alias record pointing to an on-premises IP</li>
+        </ul>
+        <p class="seo-sample-explain">CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements is appropriate for global inbound content distribution design. It keeps the data path aligned with the required scope and failure model.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A proposed architecture for global inbound content distribution design causes overly broad network reachability between unrelated environments. Which change best aligns with the requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use an ACM public certificate to sign internal mTLS traffic between EC2 instances</li>
+            <li class="seo-sample-answer seo-sample-correct">B. CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements</li>
+            <li class="seo-sample-answer">C. Configure DNSSEC by adding a TXT record only, without DS or KSK setup</li>
+            <li class="seo-sample-answer">D. Use AWS Organizations as a routing protocol between VPCs</li>
+        </ul>
+        <p class="seo-sample-explain">CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements is appropriate for global inbound content distribution design. It addresses the stated availability and operational constraints directly.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An application migration depends on global inbound content distribution design. The target architecture requires controlled failover and predictable traffic paths during impairment. Which design decision is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Disable VPC route propagation and manage every prefix manually at scale</li>
+            <li class="seo-sample-answer seo-sample-correct">B. CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements</li>
+            <li class="seo-sample-answer">C. Use Route 53 weighted records to bypass CloudFront cache invalidation</li>
+            <li class="seo-sample-answer">D. Replace Reachability Analyzer with manual ping tests from a single jump host</li>
+        </ul>
+        <p class="seo-sample-explain">CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements is appropriate for global inbound content distribution design. It reduces unnecessary exposure while preserving the required connectivity behavior.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A multi-account AWS environment must support global outbound content distribution design while meeting low latency, high availability, and clear operational ownership. What should be included in the design?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Disable BGP MD5 authentication on a Direct Connect connection</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Controlled egress through NAT gateways, centralized inspection, VPC endpoints, or caching repositories according to destination and security requirements</li>
+            <li class="seo-sample-answer">C. Use AWS PrivateLink to share full IP-level connectivity between VPCs</li>
+            <li class="seo-sample-answer">D. Use AWS Config to capture per-packet flow data</li>
+        </ul>
+        <p class="seo-sample-explain">controlled egress through NAT gateways, centralized inspection, VPC endpoints, or caching repositories according to destination and security requirements is appropriate for global outbound content distribution design. It uses AWS networking features for the purpose they are designed to serve.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During design review, the team identifies controlled failover and predictable traffic paths during impairment for global inbound content distribution design. Which option provides the most appropriate AWS networking design?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Deploy CloudFront origins as private resources without OAC or signed origins</li>
+            <li class="seo-sample-answer">B. Use a security group as the authoritative DNS zone</li>
+            <li class="seo-sample-answer seo-sample-correct">C. CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements</li>
+            <li class="seo-sample-answer">D. Disable AWS Shield Standard to reduce baseline latency</li>
+        </ul>
+        <p class="seo-sample-explain">CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements is appropriate for global inbound content distribution design. It gives the architecture a supportable control point for scaling and troubleshooting.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company is designing global outbound content distribution design. The requirement is low latency, high availability, and clear operational ownership. Which design should the network specialist recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Disable health checks to reduce latency to backend targets</li>
+            <li class="seo-sample-answer">B. Place all NAT gateways in a single AZ for the entire Region</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Controlled egress through NAT gateways, centralized inspection, VPC endpoints, or caching repositories according to destination and security requirements</li>
+            <li class="seo-sample-answer">D. Use sticky sessions to compensate for missing identity tokens in API calls</li>
+        </ul>
+        <p class="seo-sample-explain">controlled egress through NAT gateways, centralized inspection, VPC endpoints, or caching repositories according to destination and security requirements is appropriate for global outbound content distribution design. It matches the traffic pattern and avoids adding unrelated control planes.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A multi-account AWS environment must support global inbound content distribution design while meeting low latency, high availability, and clear operational ownership. What should be included in the design?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Reachability Analyzer to send synthetic TCP traffic and measure RTT</li>
+            <li class="seo-sample-answer">B. Use an Application Load Balancer for ultra-low latency UDP gaming traffic</li>
+            <li class="seo-sample-answer">C. Use a Network Load Balancer in place of CloudFront for global static content</li>
+            <li class="seo-sample-answer seo-sample-correct">D. CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements</li>
+        </ul>
+        <p class="seo-sample-explain">CloudFront or Global Accelerator selected according to cacheability, protocol, static IP, failover, and origin-protection requirements is appropriate for global inbound content distribution design. It uses AWS networking features for the purpose they are designed to serve.</p>
+      </details>
       <h2>Other ANS-C01 Domains</h2>
       <ul>
           <li><a href="/aws-advanced-networking-specialty/network-implementation/">2.0 Network Implementation</a></li>

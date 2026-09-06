@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A DevOps team needs developers to switch between development and production roles using the same corporate identity. What should be configured?",
+          "name": "A developer needs console access to troubleshoot staging but should not have permanent production permissions. Which IAM entity model is appropriate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Permission sets or federated role mappings for each environment."
+            "text": "Federated human access to roles with time-bound or approval-based production elevation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A DevOps engineer is reviewing access for humans, applications, and AWS services. Which principle correctly separates IAM entity usage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use federated roles for humans, service roles for AWS services, and instance or task roles for workloads."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>102 exam-style questions</strong> covering <strong>17% of the DOP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-devops-engineer-professional/">AWS Certified DevOps Engineer Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A CI/CD pipeline needs to deploy CloudFormation stacks into a workload account. The current design stores a long-term IAM user&#39;s access key in the build project. What should replace this design?</h3>
-        <p><strong>Answer:</strong> An IAM role assumed by the pipeline with scoped deployment permissions</p>
-        <p>A role provides temporary credentials and can be scoped to the deployment actions and target resources instead of storing long-term keys. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A third-party SaaS platform needs to read selected metrics from one AWS account. What is the preferred access model?</h3>
-        <p><strong>Answer:</strong> Cross-account IAM role with an external ID and least-privilege permissions</p>
-        <p>A cross-account role with external ID reduces confused-deputy risk and avoids sharing long-term credentials. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A DevOps team needs developers to switch between development and production roles using the same corporate identity. What should be configured?</h3>
-        <p><strong>Answer:</strong> Permission sets or federated role mappings for each environment</p>
-        <p>Environment-specific assignments let the same workforce identity receive different temporary permissions by context. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A CI/CD pipeline needs to deploy CloudFormation stacks into a workload account. The current design stores a long-term IAM user&#39;s access key in the build project. What should replace this design?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. An IAM role assumed by the pipeline with scoped deployment permissions</li>
+            <li class="seo-sample-answer">B. A shared root user access key stored as a pipeline secret</li>
+            <li class="seo-sample-answer">C. A human IAM user reused by every pipeline</li>
+            <li class="seo-sample-answer">D. A resource tag that contains the access key</li>
+        </ul>
+        <p class="seo-sample-explain">A role provides temporary credentials and can be scoped to the deployment actions and target resources instead of storing long-term keys. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A third-party SaaS platform needs to read selected metrics from one AWS account. What is the preferred access model?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Cross-account IAM role with an external ID and least-privilege permissions</li>
+            <li class="seo-sample-answer">B. An administrator access key emailed to the SaaS provider</li>
+            <li class="seo-sample-answer">C. A public CloudWatch dashboard that includes all account data</li>
+            <li class="seo-sample-answer">D. A shared root password stored in the SaaS configuration</li>
+        </ul>
+        <p class="seo-sample-explain">A cross-account role with external ID reduces confused-deputy risk and avoids sharing long-term credentials. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A developer needs console access to troubleshoot staging but should not have permanent production permissions. Which IAM entity model is appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Permanent access keys assigned directly to the developer for production</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Federated human access to roles with time-bound or approval-based production elevation</li>
+            <li class="seo-sample-answer">C. An EC2 instance profile attached to the developer&#39;s laptop</li>
+            <li class="seo-sample-answer">D. A bucket policy granting the developer all AWS actions</li>
+        </ul>
+        <p class="seo-sample-explain">Human access should use federation and roles so permissions are temporary, auditable, and aligned to environment need. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A DevOps engineer is reviewing access for humans, applications, and AWS services. Which principle correctly separates IAM entity usage?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use IAM users with long-term keys for every workload and every employee</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use federated roles for humans, service roles for AWS services, and instance or task roles for workloads</li>
+            <li class="seo-sample-answer">C. Use security groups as the primary human identity store</li>
+            <li class="seo-sample-answer">D. Use S3 bucket ACLs to represent every machine identity</li>
+        </ul>
+        <p class="seo-sample-explain">Different principals need identity mechanisms designed for their lifecycle, credential delivery, and audit requirements. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A contractor should lose AWS access automatically when removed from the corporate directory group. Which design supports this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A standalone IAM user that nobody reviews</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Federated access controlled by identity provider group membership</li>
+            <li class="seo-sample-answer">C. A permanent access key stored in the contractor&#39;s local tool</li>
+            <li class="seo-sample-answer">D. A security group rule named after the contractor</li>
+        </ul>
+        <p class="seo-sample-explain">Group-driven federation ties AWS access to the central identity lifecycle, reducing stale account access. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An application on EC2 must call DynamoDB. Which identity mechanism should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A plaintext IAM access key stored in the AMI</li>
+            <li class="seo-sample-answer">B. A developer&#39;s personal access key copied into user data</li>
+            <li class="seo-sample-answer seo-sample-correct">C. An IAM role attached through an EC2 instance profile</li>
+            <li class="seo-sample-answer">D. The account root credentials stored in an environment variable</li>
+        </ul>
+        <p class="seo-sample-explain">An instance profile delivers temporary credentials to the instance without embedding static keys in the application. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company uses an external identity provider and wants employees to access AWS accounts without creating IAM users in each account. Which solution fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Separate IAM users created manually in every account</li>
+            <li class="seo-sample-answer">B. Shared administrator credentials for each team</li>
+            <li class="seo-sample-answer seo-sample-correct">C. AWS IAM Identity Center integrated with the identity provider</li>
+            <li class="seo-sample-answer">D. S3 bucket policies as the workforce login system</li>
+        </ul>
+        <p class="seo-sample-explain">IAM Identity Center enables federated workforce access to multiple AWS accounts through centralized permission assignments. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Lambda function must read from an S3 bucket and write to a DynamoDB table. Which identity should grant this access?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. An IAM group assigned to the Lambda function</li>
+            <li class="seo-sample-answer">B. A console password embedded in the function package</li>
+            <li class="seo-sample-answer">C. An unrestricted administrator user created for the function</li>
+            <li class="seo-sample-answer seo-sample-correct">D. The Lambda execution role with only the required S3 and DynamoDB actions</li>
+        </ul>
+        <p class="seo-sample-explain">The execution role is the machine identity for Lambda and should grant only the calls the function needs. This is the correct answer.</p>
+      </details>
       <h2>Other DOP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-devops-engineer-professional/sdlc-automation/">1.0 SDLC Automation</a></li>

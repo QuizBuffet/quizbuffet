@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "How is Microservices architecture best understood when designing resilient AWS architectures?",
+          "name": "A solutions architect must design a scalable or loosely coupled workload using Scalable architecture design. Which answer best describes the design concept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Microservices architecture divides an application into smaller independently deployable services that can scale and evolve separately.. Microservices architecture divides an application into smaller independently deployable services that can scale and evolve separately. This is…"
+            "text": "Scalable architecture design is the best fit when the resilient AWS architecture requires this design behavior: Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application.. Scalable…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A solutions architect must design a scalable or loosely coupled workload using Loosely coupled architecture. Which answer best describes the design concept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Loosely coupled architecture is the best fit when the resilient AWS architecture requires this design behavior: Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others.. Loosely…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>156 exam-style questions</strong> covering <strong>26% of the SAA-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-solutions-architect-associate/">AWS Certified Solutions Architect Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Scalable architecture design in AWS Solutions Architect Associate Domain 2.0 Design Resilient Architectures?</h3>
-        <p><strong>Answer:</strong> Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application.</p>
-        <p>Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which option correctly defines Loosely coupled architecture?</h3>
-        <p><strong>Answer:</strong> Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others.</p>
-        <p>Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>How is Microservices architecture best understood when designing resilient AWS architectures?</h3>
-        <p><strong>Answer:</strong> Microservices architecture divides an application into smaller independently deployable services that can scale and evolve separately.</p>
-        <p>Microservices architecture divides an application into smaller independently deployable services that can scale and evolve separately. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Scalable architecture design in AWS Solutions Architect Associate Domain 2.0 Design Resilient Architectures?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application.</li>
+            <li class="seo-sample-answer">B. Horizontal scaling increases capacity by adding more resource instances or nodes.</li>
+            <li class="seo-sample-answer">C. Vertical scaling increases capacity by using a larger or more powerful resource.</li>
+            <li class="seo-sample-answer">D. Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others.</li>
+        </ul>
+        <p class="seo-sample-explain">Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which option correctly defines Loosely coupled architecture?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Application Load Balancer distributes HTTP and HTTPS traffic at Layer 7 and can route based on host, path, headers, or other request attributes.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others.</li>
+            <li class="seo-sample-answer">C. Amazon SQS is a managed message queue that decouples producers and consumers by storing messages until they are processed.</li>
+            <li class="seo-sample-answer">D. Amazon SNS is a managed publish/subscribe messaging service for sending notifications or fan-out messages to subscribers.</li>
+        </ul>
+        <p class="seo-sample-explain">Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must design a scalable or loosely coupled workload using Scalable architecture design. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Step Functions is the best fit when the resilient AWS architecture requires this design behavior: AWS Step Functions coordinates distributed application workflows by orchestrating steps, branching, retries, and service integrations.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Scalable architecture design is the best fit when the resilient AWS architecture requires this design behavior: Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application.</li>
+            <li class="seo-sample-answer">C. Amazon API Gateway is the best fit when the resilient AWS architecture requires this design behavior: Amazon API Gateway creates and manages APIs that expose application functions, services, or serverless backends.</li>
+            <li class="seo-sample-answer">D. REST API is the best fit when the resilient AWS architecture requires this design behavior: A REST API exposes resources through standard HTTP methods for communication between clients and services.</li>
+        </ul>
+        <p class="seo-sample-explain">Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application. This matches the resilient architecture scenario without confusing scaling, decoupling, high availability, disaster recovery, observability, or service selection. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must design a scalable or loosely coupled workload using Loosely coupled architecture. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Container migration decision is the best fit when the resilient AWS architecture requires this design behavior: Container migration decision determines whether packaging an application as containers will improve portability, scalability, and deployment consistency.</li>
+            <li class="seo-sample-answer">B. CloudFront as edge accelerator is the best fit when the resilient AWS architecture requires this design behavior: Amazon CloudFront caches and delivers content from edge locations to reduce latency and offload origin infrastructure.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Loosely coupled architecture is the best fit when the resilient AWS architecture requires this design behavior: Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others.</li>
+            <li class="seo-sample-answer">D. Read replicas for scaling is the best fit when the resilient AWS architecture requires this design behavior: Read replicas improve read scalability by serving read traffic from replicated database copies.</li>
+        </ul>
+        <p class="seo-sample-explain">Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others. This matches the resilient architecture scenario without confusing scaling, decoupling, high availability, disaster recovery, observability, or service selection. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must design a scalable or loosely coupled workload using Microservices architecture. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Multi-Region design is the best fit when the resilient AWS architecture requires this design behavior: Multi-Region design uses more than one AWS Region to improve disaster recovery, global availability, or latency for users in different locations.</li>
+            <li class="seo-sample-answer">B. Backup and restore DR is the best fit when the resilient AWS architecture requires this design behavior: Backup and restore DR restores systems and data from backups after a disruption and is usually lower cost with longer recovery time.</li>
+            <li class="seo-sample-answer">C. Pilot light DR is the best fit when the resilient AWS architecture requires this design behavior: Pilot light DR keeps a minimal version of critical systems running so the environment can be expanded during recovery.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Microservices architecture is the best fit when the resilient AWS architecture requires this design behavior: Microservices architecture divides an application into smaller independently deployable services that can scale and evolve separately.</li>
+        </ul>
+        <p class="seo-sample-explain">Microservices architecture divides an application into smaller independently deployable services that can scale and evolve separately. This matches the resilient architecture scenario without confusing scaling, decoupling, high availability, disaster recovery, observability, or service selection. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload must scale as demand changes while preserving availability and reducing operational burden. Which scenario best matches Scalable architecture design?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A design points to Highly available architecture when the scalability, decoupling, availability, or recovery requirement depends on this distinction: Highly available architecture keeps a workload accessible by reducing single points of failure and using redundant components.</li>
+            <li class="seo-sample-answer">B. A design points to Fault-tolerant architecture when the scalability, decoupling, availability, or recovery requirement depends on this distinction: Fault-tolerant architecture continues operating through component failures with minimal or no interruption.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A design points to Scalable architecture design when the scalability, decoupling, availability, or recovery requirement depends on this distinction: Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application.</li>
+            <li class="seo-sample-answer">D. A design points to Multi-AZ design when the scalability, decoupling, availability, or recovery requirement depends on this distinction: Multi-AZ design deploys resources across multiple Availability Zones to reduce the impact of an AZ failure.</li>
+        </ul>
+        <p class="seo-sample-explain">Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application. This distinction matters because choosing a nearby concept would lead to the wrong scaling method, coupling model, failover strategy, recovery target, or availability design. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A resilient architecture decision must choose the correct AWS service or pattern. Which scenario best matches Loosely coupled architecture?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A design points to Active-active failover when the scalability, decoupling, availability, or recovery requirement depends on this distinction: Active-active failover runs workloads in multiple locations at the same time so traffic can continue if one location fails.</li>
+            <li class="seo-sample-answer">B. A design points to RPO when the scalability, decoupling, availability, or recovery requirement depends on this distinction: Recovery point objective is the maximum acceptable amount of data loss measured in time.</li>
+            <li class="seo-sample-answer">C. A design points to RTO when the scalability, decoupling, availability, or recovery requirement depends on this distinction: Recovery time objective is the maximum acceptable time to restore service after a disruption.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A design points to Loosely coupled architecture when the scalability, decoupling, availability, or recovery requirement depends on this distinction: Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others.</li>
+        </ul>
+        <p class="seo-sample-explain">Loosely coupled architecture reduces direct dependencies between components so failures, scaling, or changes in one component have less impact on others. This distinction matters because choosing a nearby concept would lead to the wrong scaling method, coupling model, failover strategy, recovery target, or availability design. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A resilient AWS workload must use the correct scaling, compute, container, edge, or service pattern. Which answer applies Scalable architecture design most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Service quotas is the correct architecture choice when the resilient design decision depends on this exact meaning: Service quotas define maximum allowed usage for AWS resources and must be considered when designing standby or scaling environments.</li>
+            <li class="seo-sample-answer">B. Throttling is the correct architecture choice when the resilient design decision depends on this exact meaning: Throttling limits request rates or service usage and can affect workload reliability if retry and scaling designs do not account for it.</li>
+            <li class="seo-sample-answer">C. Amazon RDS Proxy is the correct architecture choice when the resilient design decision depends on this exact meaning: Amazon RDS Proxy pools and manages database connections to improve application scalability and resilience during database failover.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Scalable architecture design is the correct architecture choice when the resilient design decision depends on this exact meaning: Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application.</li>
+        </ul>
+        <p class="seo-sample-explain">Scalable architecture design allows workload components to increase or decrease capacity as demand changes without redesigning the whole application. This applies the concept at the point where a solutions architect must choose a resilient design that meets business requirements for availability, scaling, failure isolation, and recovery. This is the correct answer.</p>
+      </details>
       <h2>Other SAA-C03 Domains</h2>
       <ul>
           <li><a href="/aws-solutions-architect-associate/design-secure-architectures/">1.0 Design Secure Architectures</a></li>

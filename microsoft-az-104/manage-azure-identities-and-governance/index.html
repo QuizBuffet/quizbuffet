@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "An audit finding shows that the current process for manage user and group properties is inconsistent. What is the best administrative action?",
+          "name": "An audit finding shows that the current process for create Microsoft Entra users and groups is inconsistent. What is the best administrative action?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Modify group membership or ownership to reflect the current business owner and access requirement."
+            "text": "Create a security group in Microsoft Entra ID and add the required users as members."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "During an access and governance review, the team identifies a need for create Microsoft Entra users and groups. What should be configured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Create the user with the correct usage location before assigning services that require licensing."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>110 exam-style questions</strong> covering <strong>23% of the AZ-104 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/microsoft-az-104/">Microsoft Azure Administrator practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A new Azure environment requires an administrator to implement create Microsoft Entra users and groups. Which option should be selected?</h3>
-        <p><strong>Answer:</strong> Create the user in Microsoft Entra ID, assign required group memberships, and verify the account sign-in settings</p>
-        <p>Creating the account and placing it in the correct groups gives the user the intended access path and keeps membership manageable.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An organization is standardizing Azure administration. Which implementation best addresses create Microsoft Entra users and groups?</h3>
-        <p><strong>Answer:</strong> Create a dynamic group when membership should be based on user or device attributes</p>
-        <p>Dynamic membership can automatically maintain group membership from rules.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An audit finding shows that the current process for manage user and group properties is inconsistent. What is the best administrative action?</h3>
-        <p><strong>Answer:</strong> Modify group membership or ownership to reflect the current business owner and access requirement</p>
-        <p>Group owners and members must stay aligned with the business function that the group supports.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A new Azure environment requires an administrator to implement create Microsoft Entra users and groups. Which option should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Create the user in Microsoft Entra ID, assign required group memberships, and verify the account sign-in settings</li>
+            <li class="seo-sample-answer">B. Configure MFA only after a security incident has already occurred</li>
+            <li class="seo-sample-answer">C. Assign privileged roles permanently to all team members</li>
+            <li class="seo-sample-answer">D. Treat Azure RBAC role assignments as automatically inherited from on-premises Active Directory</li>
+        </ul>
+        <p class="seo-sample-explain">Creating the account and placing it in the correct groups gives the user the intended access path and keeps membership manageable.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization is standardizing Azure administration. Which implementation best addresses create Microsoft Entra users and groups?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Create a dynamic group when membership should be based on user or device attributes</li>
+            <li class="seo-sample-answer">B. Use Azure Spot VMs for stateful database workloads requiring zero downtime</li>
+            <li class="seo-sample-answer">C. Assign licenses by editing CSV files instead of using group-based licensing</li>
+            <li class="seo-sample-answer">D. Treat Azure Policy as an alert system rather than an enforcement mechanism</li>
+        </ul>
+        <p class="seo-sample-explain">Dynamic membership can automatically maintain group membership from rules.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An audit finding shows that the current process for create Microsoft Entra users and groups is inconsistent. What is the best administrative action?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a ReadOnly lock to allow VM resizing</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Create a security group in Microsoft Entra ID and add the required users as members</li>
+            <li class="seo-sample-answer">C. Use Azure RBAC alone to manage user license assignments</li>
+            <li class="seo-sample-answer">D. Use a CanNotDelete lock on every resource by default</li>
+        </ul>
+        <p class="seo-sample-explain">Security groups are commonly used to manage access for multiple users instead of assigning access one user at a time.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During an access and governance review, the team identifies a need for create Microsoft Entra users and groups. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a single shared service principal across all CI/CD pipelines</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Create the user with the correct usage location before assigning services that require licensing</li>
+            <li class="seo-sample-answer">C. Use Azure Blueprints as a real-time monitoring solution</li>
+            <li class="seo-sample-answer">D. Use a security group as a distribution list for external mail</li>
+        </ul>
+        <p class="seo-sample-explain">Some Microsoft cloud services require a usage location before the license can be applied correctly.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Azure administrator is asked to complete a production task for manage user and group properties. What should the administrator do?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Treat tenant root group ownership as the default scope for all role assignments</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Create a new group of the correct type when the existing group type does not support the needed feature</li>
+            <li class="seo-sample-answer">C. Use a custom role at subscription scope when a built-in role at resource group scope is sufficient</li>
+            <li class="seo-sample-answer">D. Disable Microsoft Entra audit logs to reduce storage cost</li>
+        </ul>
+        <p class="seo-sample-explain">Some group capabilities depend on group type and cannot be changed after creation.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Azure administrator is asked to complete a production task for create Microsoft Entra users and groups. What should the administrator do?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Invite a B2B guest by creating a new Entra ID user with a temporary password</li>
+            <li class="seo-sample-answer">B. Use management groups to bill resources without organizing access policies</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Create a Microsoft 365 group when the team needs collaboration features such as a shared mailbox and SharePoint resources</li>
+            <li class="seo-sample-answer">D. Move resources between subscriptions without checking resource-type support</li>
+        </ul>
+        <p class="seo-sample-explain">Microsoft 365 groups support collaboration scenarios in addition to group membership.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A new Azure environment requires an administrator to implement create Microsoft Entra users and groups. Which option should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Azure Policy to grant additional permissions beyond RBAC</li>
+            <li class="seo-sample-answer">B. Use a single shared admin account for all team members to simplify access</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Use the Azure portal, Microsoft Entra admin center, Microsoft Graph, or PowerShell depending on the required automation level</li>
+            <li class="seo-sample-answer">D. Pay full PAYG rates for stable production VMs running 24/7 for years</li>
+        </ul>
+        <p class="seo-sample-explain">Azure administrators can create users and groups interactively or through scripted methods.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A support ticket reports a configuration issue involving create Microsoft Entra users and groups. Which action is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Microsoft Entra roles in place of Azure RBAC roles for resource access</li>
+            <li class="seo-sample-answer">B. Configure Self-Service Password Reset (SSPR) only for global administrators</li>
+            <li class="seo-sample-answer">C. Use SSPR without registering authentication methods for users</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Use bulk user creation when many users must be created from a prepared CSV file</li>
+        </ul>
+        <p class="seo-sample-explain">Bulk creation reduces manual effort and supports consistent creation of many Microsoft Entra users.</p>
+      </details>
       <h2>Other AZ-104 Domains</h2>
       <ul>
           <li><a href="/microsoft-az-104/implement-and-manage-storage/">2.0 Implement and manage storage</a></li>

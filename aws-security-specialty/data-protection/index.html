@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A service mesh in Kubernetes must encrypt service-to-service calls between pods. Which control aligns with the requirement?",
+          "name": "A compliance requirement states that all connections to an Amazon RDS database must use TLS. What should be implemented?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use mutual TLS between services with managed certificate rotation."
+            "text": "Require SSL or TLS at the database layer and distribute the correct trust bundle to clients."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An ALB listener supports TLS, but scanners report weak ciphers. What should be changed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Select a stronger ELB security policy that removes the weak cipher suites."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>108 exam-style questions</strong> covering <strong>18% of the SCS-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-security-specialty/">AWS Certified Security Specialty practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A public ALB must reject clients that use obsolete TLS versions while preserving HTTPS for modern browsers. What should the security engineer configure?</h3>
-        <p><strong>Answer:</strong> An ELB security policy that permits only approved TLS versions and ciphers</p>
-        <p>ELB security policies define the TLS protocol and cipher suites used by HTTPS listeners.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A company wants end users to know they are connecting to the intended public application domain. What data-in-transit control is required?</h3>
-        <p><strong>Answer:</strong> A trusted public certificate on the HTTPS endpoint that matches the application domain</p>
-        <p>A valid certificate lets clients authenticate the endpoint and establish an encrypted session.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A service mesh in Kubernetes must encrypt service-to-service calls between pods. Which control aligns with the requirement?</h3>
-        <p><strong>Answer:</strong> Use mutual TLS between services with managed certificate rotation</p>
-        <p>Mutual TLS encrypts traffic and authenticates services on both sides of the connection.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A public ALB must reject clients that use obsolete TLS versions while preserving HTTPS for modern browsers. What should the security engineer configure?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. An ELB security policy that permits only approved TLS versions and ciphers</li>
+            <li class="seo-sample-answer">B. An S3 Lifecycle rule on access logs</li>
+            <li class="seo-sample-answer">C. An IAM password policy for application users</li>
+            <li class="seo-sample-answer">D. EBS encryption on the load balancer targets only</li>
+        </ul>
+        <p class="seo-sample-explain">ELB security policies define the TLS protocol and cipher suites used by HTTPS listeners.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants end users to know they are connecting to the intended public application domain. What data-in-transit control is required?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A trusted public certificate on the HTTPS endpoint that matches the application domain</li>
+            <li class="seo-sample-answer">B. A private AMI hardened with CIS settings</li>
+            <li class="seo-sample-answer">C. An SQS dead-letter queue for failed events</li>
+            <li class="seo-sample-answer">D. A KMS key alias that matches the DNS name</li>
+        </ul>
+        <p class="seo-sample-explain">A valid certificate lets clients authenticate the endpoint and establish an encrypted session.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A compliance requirement states that all connections to an Amazon RDS database must use TLS. What should be implemented?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use public subnets for the database</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Require SSL or TLS at the database layer and distribute the correct trust bundle to clients</li>
+            <li class="seo-sample-answer">C. Enable S3 Object Lock on database exports only</li>
+            <li class="seo-sample-answer">D. Increase the database backup retention period</li>
+        </ul>
+        <p class="seo-sample-explain">Database-side TLS enforcement and trusted certificates ensure clients establish encrypted database sessions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ALB listener supports TLS, but scanners report weak ciphers. What should be changed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Rotate the application database password</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Select a stronger ELB security policy that removes the weak cipher suites</li>
+            <li class="seo-sample-answer">C. Add more target group health checks</li>
+            <li class="seo-sample-answer">D. Enable EFS lifecycle policies</li>
+        </ul>
+        <p class="seo-sample-explain">The listener&#39;s security policy controls which cipher suites the ALB offers during TLS negotiation.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A private application must consume an AWS service without traversing the public internet. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A public NAT gateway route to every service</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A VPC endpoint with appropriate endpoint policy and private DNS settings</li>
+            <li class="seo-sample-answer">C. An open security group on the application</li>
+            <li class="seo-sample-answer">D. A bucket lifecycle policy</li>
+        </ul>
+        <p class="seo-sample-explain">VPC endpoints provide private connectivity to supported AWS services and can be scoped by policy.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A CloudFront distribution serves an API. The company requires viewers to use HTTPS and origins to receive encrypted traffic. What configuration satisfies this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a wider cache TTL for API responses</li>
+            <li class="seo-sample-answer">B. Store API logs in an encrypted bucket only</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Set viewer protocol policy to redirect or require HTTPS and use HTTPS-only origin protocol policy</li>
+            <li class="seo-sample-answer">D. Use an IAM permissions boundary on the distribution owner</li>
+        </ul>
+        <p class="seo-sample-explain">CloudFront can enforce HTTPS from viewers and use encrypted connections to origins.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An application sends customer data to an external partner API. The security team requires encryption and server identity validation. What should the client verify?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only the HTTP response body length</li>
+            <li class="seo-sample-answer">B. Only the local instance profile name</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The partner endpoint certificate chain and hostname during TLS negotiation</li>
+            <li class="seo-sample-answer">D. Only the S3 storage class of archived payloads</li>
+        </ul>
+        <p class="seo-sample-explain">Client-side certificate validation prevents encrypted connections to an untrusted or impersonated endpoint.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A private API endpoint must be accessible only with TLS 1.2 or later. Which control should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Enable DynamoDB point-in-time recovery</li>
+            <li class="seo-sample-answer">B. Use a NAT gateway for inbound API traffic</li>
+            <li class="seo-sample-answer">C. Change the API stage description</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Configure the API&#39;s custom domain or fronting load balancer with an approved TLS security policy</li>
+        </ul>
+        <p class="seo-sample-explain">The TLS policy on the serving endpoint determines which client protocol versions are accepted.</p>
+      </details>
       <h2>Other SCS-C03 Domains</h2>
       <ul>
           <li><a href="/aws-security-specialty/detection/">1.0 Detection</a></li>

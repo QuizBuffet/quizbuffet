@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "An application stores user session data in DynamoDB and lets any container process the next request. What is the benefit?",
+          "name": "A payment workflow must coordinate reserve inventory, charge card, and send receipt steps with retries and compensating actions. Which pattern fits best?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The application tier remains stateless."
+            "text": "Orchestration with AWS Step Functions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A developer needs to broadcast one domain event to many HTTP and Lambda subscribers. Which AWS service is designed for pub/sub fanout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amazon SNS."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>160 exam-style questions</strong> covering <strong>32% of the DVA-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-developer-associate/">AWS Certified Developer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A shopping application needs to publish an OrderCreated event and let billing, inventory, and notification components react independently. Which pattern should the developer use?</h3>
-        <p><strong>Answer:</strong> Event-driven fanout with Amazon EventBridge or Amazon SNS</p>
-        <p>Publishing one domain event to EventBridge or Amazon SNS lets multiple subscribers react without the order service calling each component directly. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A notification service should not need to know which service created the event it consumes. Which design helps?</h3>
-        <p><strong>Answer:</strong> EventBridge event bus with event patterns</p>
-        <p>EventBridge event patterns let consumers subscribe to events by shape or source, keeping producers and consumers loosely connected through the bus. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An application stores user session data in DynamoDB and lets any container process the next request. What is the benefit?</h3>
-        <p><strong>Answer:</strong> The application tier remains stateless</p>
-        <p>Externalizing session state to DynamoDB lets containers be replaced or scaled without losing the session context. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A shopping application needs to publish an OrderCreated event and let billing, inventory, and notification components react independently. Which pattern should the developer use?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Event-driven fanout with Amazon EventBridge or Amazon SNS</li>
+            <li class="seo-sample-answer">B. Synchronous request chaining between all services</li>
+            <li class="seo-sample-answer">C. A monolithic handler that performs all order tasks</li>
+            <li class="seo-sample-answer">D. A single shared database table polled by every component</li>
+        </ul>
+        <p class="seo-sample-explain">Publishing one domain event to EventBridge or Amazon SNS lets multiple subscribers react without the order service calling each component directly. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A notification service should not need to know which service created the event it consumes. Which design helps?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. EventBridge event bus with event patterns</li>
+            <li class="seo-sample-answer">B. Hardcoded HTTPS calls from every producer to the notification service</li>
+            <li class="seo-sample-answer">C. A shared source-code library that sends all notifications directly</li>
+            <li class="seo-sample-answer">D. An API Gateway stage variable for each producer</li>
+        </ul>
+        <p class="seo-sample-explain">EventBridge event patterns let consumers subscribe to events by shape or source, keeping producers and consumers loosely connected through the bus. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A payment workflow must coordinate reserve inventory, charge card, and send receipt steps with retries and compensating actions. Which pattern fits best?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Choreography with no workflow owner</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Orchestration with AWS Step Functions</li>
+            <li class="seo-sample-answer">C. Direct Lambda-to-Lambda invocation for every step</li>
+            <li class="seo-sample-answer">D. A CloudFront cache behavior</li>
+        </ul>
+        <p class="seo-sample-explain">Step Functions can model the workflow state, call each service in order, retry transient failures, and route failures to compensating steps. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A developer needs to broadcast one domain event to many HTTP and Lambda subscribers. Which AWS service is designed for pub/sub fanout?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon SQS standard queue only</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Amazon SNS</li>
+            <li class="seo-sample-answer">C. Amazon DynamoDB strongly consistent read</li>
+            <li class="seo-sample-answer">D. AWS Secrets Manager rotation</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon SNS provides publish/subscribe fanout to multiple subscriber types, allowing one message to reach several consumers. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A developer notices user carts disappear when EC2 instances scale in because carts are stored only in process memory. What change improves resilience?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Increase the Auto Scaling cooldown only</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Move cart state to a durable store such as DynamoDB or ElastiCache</li>
+            <li class="seo-sample-answer">C. Use a larger instance type for the web tier</li>
+            <li class="seo-sample-answer">D. Add a CloudFront response header policy</li>
+        </ul>
+        <p class="seo-sample-explain">A durable external store preserves cart data across instance replacement and lets any healthy instance serve the user. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team wants each microservice to own its data and deploy independently. Which architecture principle supports this goal?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A shared database schema for all services</li>
+            <li class="seo-sample-answer">B. One Lambda function containing all business domains</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Microservices with service-owned data boundaries</li>
+            <li class="seo-sample-answer">D. Client-side joins across every service database</li>
+        </ul>
+        <p class="seo-sample-explain">Service-owned data boundaries let each microservice evolve its code and persistence model without requiring other teams to share the same database schema. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Lambda function calculates tax from values in the event and stores no session data between invocations. Which concept describes the function?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Stateful session affinity</li>
+            <li class="seo-sample-answer">B. Persistent in-memory workflow state</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Stateless compute</li>
+            <li class="seo-sample-answer">D. Write-through cache coordination</li>
+        </ul>
+        <p class="seo-sample-explain">The function can run on any execution environment because each invocation contains the data needed to calculate the result. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An application has simple requirements, one team, and a single deployment package. Which pattern may be acceptable before complexity grows?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Event-driven choreography for every internal method call</li>
+            <li class="seo-sample-answer">B. Dedicated microservice for each class in the codebase</li>
+            <li class="seo-sample-answer">C. Fanout through Amazon SNS for local function calls</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Monolithic application</li>
+        </ul>
+        <p class="seo-sample-explain">A monolithic application can be appropriate for a small system with one team and simple deployment needs, especially before independent scaling is required. This is the correct answer.</p>
+      </details>
       <h2>Other DVA-C02 Domains</h2>
       <ul>
           <li><a href="/aws-developer-associate/security/">2.0 Security</a></li>

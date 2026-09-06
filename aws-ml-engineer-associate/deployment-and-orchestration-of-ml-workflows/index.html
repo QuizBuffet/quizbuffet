@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which description best matches SageMaker asynchronous endpoint in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?",
+          "name": "An ML engineer must select deployment infrastructure involving SageMaker real-time endpoint. Which answer best describes the choice?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SageMaker asynchronous endpoint involves hosting inference requests that can be queued and processed later when payloads are large or processing takes longer.. SageMaker asynchronous endpoint involves hosting inference requests that can be queued and processed later when…"
+            "text": "SageMaker real-time endpoint is the best fit when an ML deployment or orchestration workflow requires this behavior: SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users.. SageMaker…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An ML engineer must select deployment infrastructure involving SageMaker batch transform. Which answer best describes the choice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SageMaker batch transform is the best fit when an ML deployment or orchestration workflow requires this behavior: SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required.. SageMaker batch transform involves…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>110 exam-style questions</strong> covering <strong>22% of the MLA-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-ml-engineer-associate/">AWS Certified Machine Learning Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches SageMaker real-time endpoint in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?</h3>
-        <p><strong>Answer:</strong> SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users.</p>
-        <p>SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches SageMaker batch transform in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?</h3>
-        <p><strong>Answer:</strong> SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required.</p>
-        <p>SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches SageMaker asynchronous endpoint in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?</h3>
-        <p><strong>Answer:</strong> SageMaker asynchronous endpoint involves hosting inference requests that can be queued and processed later when payloads are large or processing takes longer.</p>
-        <p>SageMaker asynchronous endpoint involves hosting inference requests that can be queued and processed later when payloads are large or processing takes longer. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches SageMaker real-time endpoint in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users.</li>
+            <li class="seo-sample-answer">B. SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required.</li>
+            <li class="seo-sample-answer">C. SageMaker asynchronous endpoint involves hosting inference requests that can be queued and processed later when payloads are large or processing takes longer.</li>
+            <li class="seo-sample-answer">D. SageMaker serverless endpoint involves deploying inference without managing instances when traffic is intermittent or unpredictable.</li>
+        </ul>
+        <p class="seo-sample-explain">SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which description best matches SageMaker batch transform in AWS MLA-C01 Domain 3.0 Deployment and Orchestration of ML Workflows?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Provided container involves using a managed or prebuilt container image that already includes supported inference or training dependencies.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required.</li>
+            <li class="seo-sample-answer">C. Custom container involves building a container image when the workload needs custom libraries, frameworks, inference code, or runtime behavior.</li>
+            <li class="seo-sample-answer">D. Deployment rollback strategy involves returning a deployment to a previous known-good model or infrastructure version after a failed or risky release.</li>
+        </ul>
+        <p class="seo-sample-explain">SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must select deployment infrastructure involving SageMaker real-time endpoint. Which answer best describes the choice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. On-demand resources is the best fit when an ML deployment or orchestration workflow requires this behavior: On-demand resources involves provisioning resources when needed without an upfront long-term capacity commitment.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. SageMaker real-time endpoint is the best fit when an ML deployment or orchestration workflow requires this behavior: SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users.</li>
+            <li class="seo-sample-answer">C. Provisioned resources is the best fit when an ML deployment or orchestration workflow requires this behavior: Provisioned resources involves allocating capacity ahead of demand to meet predictable performance or availability requirements.</li>
+            <li class="seo-sample-answer">D. SageMaker endpoint auto scaling is the best fit when an ML deployment or orchestration workflow requires this behavior: SageMaker endpoint auto scaling involves automatically adjusting endpoint capacity based on metrics such as invocations, latency, or utilization.</li>
+        </ul>
+        <p class="seo-sample-explain">SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users. This matches the ML deployment and orchestration scenario without confusing endpoints, compute, containers, scaling, infrastructure as code, networking, orchestration, or CI/CD services. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must select deployment infrastructure involving SageMaker batch transform. Which answer best describes the choice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS CloudFormation for ML infrastructure is the best fit when an ML deployment or orchestration workflow requires this behavior: AWS CloudFormation for ML infrastructure involves using declarative templates to provision and update ML infrastructure consistently.</li>
+            <li class="seo-sample-answer">B. AWS CDK for ML infrastructure is the best fit when an ML deployment or orchestration workflow requires this behavior: AWS CDK for ML infrastructure involves defining ML infrastructure with programming languages that synthesize infrastructure templates.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. SageMaker batch transform is the best fit when an ML deployment or orchestration workflow requires this behavior: SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required.</li>
+            <li class="seo-sample-answer">D. Amazon ECR for ML containers is the best fit when an ML deployment or orchestration workflow requires this behavior: Amazon ECR for ML containers involves storing, versioning, and retrieving container images used for ML training or inference.</li>
+        </ul>
+        <p class="seo-sample-explain">SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required. This matches the ML deployment and orchestration scenario without confusing endpoints, compute, containers, scaling, infrastructure as code, networking, orchestration, or CI/CD services. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must select deployment infrastructure involving SageMaker asynchronous endpoint. Which answer best describes the choice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS CodePipeline is the best fit when an ML deployment or orchestration workflow requires this behavior: AWS CodePipeline involves automating release pipelines that connect source, build, test, approval, and deployment stages.</li>
+            <li class="seo-sample-answer">B. AWS CodeBuild is the best fit when an ML deployment or orchestration workflow requires this behavior: AWS CodeBuild involves building and testing code or artifacts in a managed build environment for ML workflows.</li>
+            <li class="seo-sample-answer">C. SageMaker real-time endpoint is the best fit when an ML deployment or orchestration workflow requires this behavior: SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. SageMaker asynchronous endpoint is the best fit when an ML deployment or orchestration workflow requires this behavior: SageMaker asynchronous endpoint involves hosting inference requests that can be queued and processed later when payloads are large or processing takes longer.</li>
+        </ul>
+        <p class="seo-sample-explain">SageMaker asynchronous endpoint involves hosting inference requests that can be queued and processed later when payloads are large or processing takes longer. This matches the ML deployment and orchestration scenario without confusing endpoints, compute, containers, scaling, infrastructure as code, networking, orchestration, or CI/CD services. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A model must be deployed with the right latency, compute, container, or inference pattern. Which scenario best matches SageMaker real-time endpoint?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A workflow points to VPC configuration for SageMaker endpoints when endpoint selection, infrastructure scripting, scaling, CI/CD, or orchestration depends on this distinction: VPC configuration for SageMaker endpoints involves placing SageMaker endpoints in VPC networking so access to resources can be controlled through private network paths.</li>
+            <li class="seo-sample-answer">B. A workflow points to SageMaker Pipelines when endpoint selection, infrastructure scripting, scaling, CI/CD, or orchestration depends on this distinction: SageMaker Pipelines involves orchestrating ML workflow steps such as processing, training, evaluation, registration, and deployment.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A workflow points to SageMaker real-time endpoint when endpoint selection, infrastructure scripting, scaling, CI/CD, or orchestration depends on this distinction: SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users.</li>
+            <li class="seo-sample-answer">D. A workflow points to Amazon MWAA when endpoint selection, infrastructure scripting, scaling, CI/CD, or orchestration depends on this distinction: Amazon MWAA involves using managed Apache Airflow to orchestrate scheduled or dependency-based workflows, including ML pipeline tasks.</li>
+        </ul>
+        <p class="seo-sample-explain">SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users. This distinction matters because choosing a nearby concept would lead to the wrong endpoint type, compute target, scaling signal, infrastructure method, container workflow, or pipeline stage. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A model must be deployed with the right latency, compute, container, or inference pattern. Which scenario best matches SageMaker batch transform?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A workflow points to SageMaker serverless endpoint when endpoint selection, infrastructure scripting, scaling, CI/CD, or orchestration depends on this distinction: SageMaker serverless endpoint involves deploying inference without managing instances when traffic is intermittent or unpredictable.</li>
+            <li class="seo-sample-answer">B. A workflow points to Multi-model endpoint when endpoint selection, infrastructure scripting, scaling, CI/CD, or orchestration depends on this distinction: Multi-model endpoint involves hosting multiple models behind one endpoint to improve operational efficiency when models can share infrastructure.</li>
+            <li class="seo-sample-answer">C. A workflow points to CPU inference environment when endpoint selection, infrastructure scripting, scaling, CI/CD, or orchestration depends on this distinction: CPU inference environment involves using CPU-based compute when model latency, cost, and workload characteristics do not require GPU acceleration.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A workflow points to SageMaker batch transform when endpoint selection, infrastructure scripting, scaling, CI/CD, or orchestration depends on this distinction: SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required.</li>
+        </ul>
+        <p class="seo-sample-explain">SageMaker batch transform involves running offline inference against a batch dataset when immediate responses are not required. This distinction matters because choosing a nearby concept would lead to the wrong endpoint type, compute target, scaling signal, infrastructure method, container workflow, or pipeline stage. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must select the deployment pattern that matches latency, traffic, cost, and release-risk requirements. Which answer applies SageMaker real-time endpoint most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. SageMaker Neo is the correct ML engineering choice when the deployment and orchestration decision depends on this exact behavior: SageMaker Neo involves optimizing models for deployment on edge devices or specific hardware targets.</li>
+            <li class="seo-sample-answer">B. Provided container is the correct ML engineering choice when the deployment and orchestration decision depends on this exact behavior: Provided container involves using a managed or prebuilt container image that already includes supported inference or training dependencies.</li>
+            <li class="seo-sample-answer">C. Custom container is the correct ML engineering choice when the deployment and orchestration decision depends on this exact behavior: Custom container involves building a container image when the workload needs custom libraries, frameworks, inference code, or runtime behavior.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. SageMaker real-time endpoint is the correct ML engineering choice when the deployment and orchestration decision depends on this exact behavior: SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users.</li>
+        </ul>
+        <p class="seo-sample-explain">SageMaker real-time endpoint involves hosting a model for low-latency predictions that must return responses immediately to applications or users. This applies the concept at the point where an ML engineer must deploy, automate, scale, and operate ML workflows while balancing latency, cost, reliability, and maintainability. This is the correct answer.</p>
+      </details>
       <h2>Other MLA-C01 Domains</h2>
       <ul>
           <li><a href="/aws-ml-engineer-associate/data-preparation-for-machine-learning/">1.0 Data Preparation for Machine Learning</a></li>

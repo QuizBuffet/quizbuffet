@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A developer needs all log events for a single requestId across many Lambda log streams. Which tool should be used?",
+          "name": "A unit test fails because a parser treats the string \"0\" as missing input. What is the likely defect?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "CloudWatch Logs Insights query filtered by requestId."
+            "text": "Truthy or falsy validation that rejects valid zero-like values."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Lambda function's error count rises after deployment. Which data should be compared?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CloudWatch metrics and recent application logs for the function version."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>90 exam-style questions</strong> covering <strong>18% of the DVA-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-developer-associate/">AWS Certified Developer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A Lambda function returns successful responses but sometimes writes duplicate orders after SDK timeouts. What should the developer inspect first?</h3>
-        <p><strong>Answer:</strong> Retry and idempotency logic around the write operation</p>
-        <p>Network timeouts can leave the original write outcome unknown, so duplicate orders often point to missing idempotency around retried writes. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A user reports a slow checkout request. Which evidence best connects the request across services?</h3>
-        <p><strong>Answer:</strong> Trace with correlated application logs and latency metrics</p>
-        <p>A trace shows the service path, logs provide request-level context, and metrics reveal where latency increased. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A developer needs all log events for a single requestId across many Lambda log streams. Which tool should be used?</h3>
-        <p><strong>Answer:</strong> CloudWatch Logs Insights query filtered by requestId</p>
-        <p>Logs Insights can search across log streams in a log group and filter structured or text fields such as requestId. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A Lambda function returns successful responses but sometimes writes duplicate orders after SDK timeouts. What should the developer inspect first?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Retry and idempotency logic around the write operation</li>
+            <li class="seo-sample-answer">B. API Gateway custom domain mapping</li>
+            <li class="seo-sample-answer">C. CloudFront compression settings</li>
+            <li class="seo-sample-answer">D. Cognito password policy length</li>
+        </ul>
+        <p class="seo-sample-explain">Network timeouts can leave the original write outcome unknown, so duplicate orders often point to missing idempotency around retried writes. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A user reports a slow checkout request. Which evidence best connects the request across services?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Trace with correlated application logs and latency metrics</li>
+            <li class="seo-sample-answer">B. Only the deployment package size</li>
+            <li class="seo-sample-answer">C. Only the API documentation page</li>
+            <li class="seo-sample-answer">D. Only the Cognito hosted UI theme</li>
+        </ul>
+        <p class="seo-sample-explain">A trace shows the service path, logs provide request-level context, and metrics reveal where latency increased. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A unit test fails because a parser treats the string &quot;0&quot; as missing input. What is the likely defect?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. DynamoDB provisioned throughput</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Truthy or falsy validation that rejects valid zero-like values</li>
+            <li class="seo-sample-answer">C. API Gateway stage cache</li>
+            <li class="seo-sample-answer">D. Lambda reserved concurrency</li>
+        </ul>
+        <p class="seo-sample-explain">A common code defect is checking general truthiness instead of validating explicitly for null, undefined, or empty values. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Lambda function&#39;s error count rises after deployment. Which data should be compared?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. S3 Lifecycle transition history</li>
+            <li class="seo-sample-answer seo-sample-correct">B. CloudWatch metrics and recent application logs for the function version</li>
+            <li class="seo-sample-answer">C. Route 53 domain registration contact</li>
+            <li class="seo-sample-answer">D. DynamoDB table creation date only</li>
+        </ul>
+        <p class="seo-sample-explain">Metrics identify the increase, and logs for the deployed version show the exceptions or failed inputs behind it. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A structured log stores level, route, and latencyMs fields. What query finds slow errors for one route?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Search only for the word Lambda</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Filter level=&quot;ERROR&quot; and route, then sort by latencyMs descending</li>
+            <li class="seo-sample-answer">C. Group by deployment artifact hash only</li>
+            <li class="seo-sample-answer">D. Query CloudTrail for GetObject only</li>
+        </ul>
+        <p class="seo-sample-explain">Filtering by fields narrows the failures and sorting latency identifies the slowest error events. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Lambda handler catches every exception and still returns HTTP 200. What should be changed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Increase memory for every function</li>
+            <li class="seo-sample-answer">B. Add an unused Lambda layer</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Return failure status codes for failed business operations</li>
+            <li class="seo-sample-answer">D. Rename the CloudWatch log group</li>
+        </ul>
+        <p class="seo-sample-explain">Successful HTTP responses should not hide validation or dependency failures from clients and monitors. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An X-Ray trace shows most time spent in a DynamoDB subsegment. What does this indicate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The API authorizer always failed</li>
+            <li class="seo-sample-answer">B. The log retention period is too short</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The DynamoDB call is a likely latency contributor</li>
+            <li class="seo-sample-answer">D. The Lambda handler name is misspelled</li>
+        </ul>
+        <p class="seo-sample-explain">A long downstream subsegment points to that dependency as a candidate bottleneck for the traced request. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A containerized API crashes only when an optional JSON field is absent. What should the developer add?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A larger API Gateway usage quota</li>
+            <li class="seo-sample-answer">B. An SQS dead-letter queue for all requests</li>
+            <li class="seo-sample-answer">C. A Route 53 health check only</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Null-safe handling and tests for missing optional fields</li>
+        </ul>
+        <p class="seo-sample-explain">Optional input should be handled explicitly so missing fields do not cause runtime exceptions. This is the correct answer.</p>
+      </details>
       <h2>Other DVA-C02 Domains</h2>
       <ul>
           <li><a href="/aws-developer-associate/development-with-aws-services/">1.0 Development with AWS Services</a></li>

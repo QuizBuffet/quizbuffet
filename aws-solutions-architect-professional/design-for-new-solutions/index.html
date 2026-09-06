@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A manufacturing company is modernizing a new plant operations platform. The launch must satisfy business, operational, and governance goals while addressing change management processes. Which design choice is most appropriate?",
+          "name": "A logistics company is deploying a new event-driven shipment tracking solution. The fraud detection workload has requirements that make Infrastructure as code the main design decision. What should the solutions architect recommend?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Adopt managed services such as AWS Lambda, Amazon RDS, AWS Fargate, or AWS Elastic Beanstalk when they reduce undifferentiated provisioning and patching work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A retail enterprise is creating a new ordering system that must handle seasonal spikes. The launch must satisfy business, operational, and governance goals while addressing CI/CD deployment strategy. Which design choice is most appropriate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use AWS CodePipeline with staged deployments, automated tests, approvals, and rollback paths such as blue/green or canary release patterns."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>174 exam-style questions</strong> covering <strong>29% of the SAP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-solutions-architect-professional/">AWS Certified Solutions Architect Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A gaming studio is launching a latency-sensitive multiplayer backend. The proposed design creates risk around Infrastructure as code. Which change should be made before production approval?</h3>
-        <p><strong>Answer:</strong> Use AWS CodePipeline with staged deployments, automated tests, approvals, and rollback paths such as blue/green or canary release patterns</p>
-        <p>A managed CI/CD pipeline supports controlled promotion and recovery when a release fails.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A healthcare analytics provider is designing a new multi-Region service for regulated data. A design review identifies CI/CD deployment strategy as the unresolved architectural decision. Which option is the best recommendation?</h3>
-        <p><strong>Answer:</strong> Delegate specialized deployment complexity to AWS services such as AWS Proton, AWS Service Catalog, or managed container services when platform teams need standardized self-service</p>
-        <p>Delegated AWS platform services make advanced deployment patterns available without every team building the same tooling.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A manufacturing company is modernizing a new plant operations platform. The launch must satisfy business, operational, and governance goals while addressing change management processes. Which design choice is most appropriate?</h3>
-        <p><strong>Answer:</strong> Adopt managed services such as AWS Lambda, Amazon RDS, AWS Fargate, or AWS Elastic Beanstalk when they reduce undifferentiated provisioning and patching work</p>
-        <p>Managed services can reduce operational burden while preserving the deployment goals.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A gaming studio is launching a latency-sensitive multiplayer backend. The proposed design creates risk around Infrastructure as code. Which change should be made before production approval?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use AWS CodePipeline with staged deployments, automated tests, approvals, and rollback paths such as blue/green or canary release patterns</li>
+            <li class="seo-sample-answer">B. Use placement groups in cluster mode for workloads spread across multiple AZs</li>
+            <li class="seo-sample-answer">C. Use AWS Auto Scaling without health checks so unhealthy instances stay in service</li>
+            <li class="seo-sample-answer">D. Use AWS Lambda with no concurrency limits as a DDoS mitigation strategy</li>
+        </ul>
+        <p class="seo-sample-explain">A managed CI/CD pipeline supports controlled promotion and recovery when a release fails.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A healthcare analytics provider is designing a new multi-Region service for regulated data. A design review identifies CI/CD deployment strategy as the unresolved architectural decision. Which option is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Delegate specialized deployment complexity to AWS services such as AWS Proton, AWS Service Catalog, or managed container services when platform teams need standardized self-service</li>
+            <li class="seo-sample-answer">B. Use IAM password policy to enforce VPC routing decisions</li>
+            <li class="seo-sample-answer">C. Use IAM session policies to expand a role beyond its attached permissions</li>
+            <li class="seo-sample-answer">D. Connect on-premises with only a single Site-to-Site VPN tunnel for production</li>
+        </ul>
+        <p class="seo-sample-explain">Delegated AWS platform services make advanced deployment patterns available without every team building the same tooling.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A logistics company is deploying a new event-driven shipment tracking solution. The fraud detection workload has requirements that make Infrastructure as code the main design decision. What should the solutions architect recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use AWS Backup without vault lock to satisfy ransomware-resistant retention</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Adopt managed services such as AWS Lambda, Amazon RDS, AWS Fargate, or AWS Elastic Beanstalk when they reduce undifferentiated provisioning and patching work</li>
+            <li class="seo-sample-answer">C. Use AWS Budgets without alert subscribers to track spend</li>
+            <li class="seo-sample-answer">D. Allow public S3 ACLs for any bucket that serves static content</li>
+        </ul>
+        <p class="seo-sample-explain">Managed services can reduce operational burden while preserving the deployment goals.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A retail enterprise is creating a new ordering system that must handle seasonal spikes. The launch must satisfy business, operational, and governance goals while addressing CI/CD deployment strategy. Which design choice is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a public VIF on Direct Connect to reach private VPC subnets</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use AWS CodePipeline with staged deployments, automated tests, approvals, and rollback paths such as blue/green or canary release patterns</li>
+            <li class="seo-sample-answer">C. Skip permission boundaries when delegating IAM administration to development teams</li>
+            <li class="seo-sample-answer">D. Use Reserved Instances purchased for one Region to cover usage in a different Region</li>
+        </ul>
+        <p class="seo-sample-explain">A managed CI/CD pipeline supports controlled promotion and recovery when a release fails.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A gaming studio is launching a latency-sensitive multiplayer backend. The architecture team must choose a new-solution pattern for change management processes. Which recommendation best fits a professional-level design?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use On-Demand for stable 24/7 production while sitting on unused 1-year RIs</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Delegate specialized deployment complexity to AWS services such as AWS Proton, AWS Service Catalog, or managed container services when platform teams need standardized self-service</li>
+            <li class="seo-sample-answer">C. Use AWS Health Dashboard as a real-time intrusion detection engine</li>
+            <li class="seo-sample-answer">D. Use AWS Organizations as a routing protocol between VPCs</li>
+        </ul>
+        <p class="seo-sample-explain">Delegated AWS platform services make advanced deployment patterns available without every team building the same tooling.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A healthcare analytics provider is designing a new multi-Region service for regulated data. A design review identifies Infrastructure as code as the unresolved architectural decision. Which option is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a NAT gateway as a stateful inspection firewall for east-west traffic</li>
+            <li class="seo-sample-answer">B. Disable AWS Shield Standard for cost savings</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Delegate specialized deployment complexity to AWS services such as AWS Proton, AWS Service Catalog, or managed container services when platform teams need standardized self-service</li>
+            <li class="seo-sample-answer">D. Use AWS Backup vault lock in governance mode to enforce regulatory immutability</li>
+        </ul>
+        <p class="seo-sample-explain">Delegated AWS platform services make advanced deployment patterns available without every team building the same tooling.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A manufacturing company is modernizing a new plant operations platform. The architecture team must choose a new-solution pattern for CI/CD deployment strategy. Which recommendation best fits a professional-level design?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Amazon Route 53 Resolver DNS Firewall to authenticate API Gateway requests</li>
+            <li class="seo-sample-answer">B. Use a single public subnet for all tiers and accounts</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Adopt managed services such as AWS Lambda, Amazon RDS, AWS Fargate, or AWS Elastic Beanstalk when they reduce undifferentiated provisioning and patching work</li>
+            <li class="seo-sample-answer">D. Use CloudWatch dashboards as the disaster recovery runbook</li>
+        </ul>
+        <p class="seo-sample-explain">Managed services can reduce operational burden while preserving the deployment goals.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A retail enterprise is creating a new ordering system that must handle seasonal spikes. The launch must satisfy business, operational, and governance goals while addressing Infrastructure as code. Which design choice is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use manual console clicks for production deployments to retain hands-on control</li>
+            <li class="seo-sample-answer">B. Skip patching for instances behind a private subnet because they have no internet access</li>
+            <li class="seo-sample-answer">C. Use Amazon CloudWatch metrics alone without alarms to drive operational response</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Use AWS CodePipeline with staged deployments, automated tests, approvals, and rollback paths such as blue/green or canary release patterns</li>
+        </ul>
+        <p class="seo-sample-explain">A managed CI/CD pipeline supports controlled promotion and recovery when a release fails.</p>
+      </details>
       <h2>Other SAP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-solutions-architect-professional/design-solutions-for-organizational-complexity/">1.0 Design Solutions for Organizational Complexity</a></li>

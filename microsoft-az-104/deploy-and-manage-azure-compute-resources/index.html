@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "During a compute review, the team identifies a requirement for modify ARM templates. What should be configured?",
+          "name": "During a compute review, the team identifies a requirement for interpret ARM templates and Bicep files. What should be configured?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Add a required resource definition and configure dependencies when the new resource relies on another resource."
+            "text": "Identify the target resource types, API versions, names, locations, and property values before deployment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An Azure administrator must complete a compute deployment task for interpret ARM templates and Bicep files. What should the administrator do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inspect outputs to determine which values will be returned after deployment."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>110 exam-style questions</strong> covering <strong>22% of the AZ-104 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/microsoft-az-104/">Microsoft Azure Administrator practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A production support ticket involves interpret ARM templates and Bicep files. Which action is most appropriate?</h3>
-        <p><strong>Answer:</strong> Review the parameters, variables, resources, dependencies, and outputs to understand what the deployment will create</p>
-        <p>ARM templates and Bicep files define Azure resources declaratively, so the administrator should inspect the resource definitions and dependencies.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A new application environment requires interpret ARM templates and Bicep files. Which Azure administrator action is correct?</h3>
-        <p><strong>Answer:</strong> Use what-if or validation before deployment to preview resource changes</p>
-        <p>A what-if or validation step helps identify intended changes before modifying the environment.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>During a compute review, the team identifies a requirement for modify ARM templates. What should be configured?</h3>
-        <p><strong>Answer:</strong> Add a required resource definition and configure dependencies when the new resource relies on another resource</p>
-        <p>Dependencies help Resource Manager deploy related resources in the correct order.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A production support ticket involves interpret ARM templates and Bicep files. Which action is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Review the parameters, variables, resources, dependencies, and outputs to understand what the deployment will create</li>
+            <li class="seo-sample-answer">B. Treat Azure Backup as a substitute for Site Recovery for region-level outages</li>
+            <li class="seo-sample-answer">C. Use a single shared service principal across all CI/CD pipelines</li>
+            <li class="seo-sample-answer">D. Use a single threshold metric alert across all VM sizes</li>
+        </ul>
+        <p class="seo-sample-explain">ARM templates and Bicep files define Azure resources declaratively, so the administrator should inspect the resource definitions and dependencies.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A new application environment requires interpret ARM templates and Bicep files. Which Azure administrator action is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use what-if or validation before deployment to preview resource changes</li>
+            <li class="seo-sample-answer">B. Assign a subscription Owner role to fix packet flow</li>
+            <li class="seo-sample-answer">C. Use Azure Container Apps without a container image stored anywhere accessible</li>
+            <li class="seo-sample-answer">D. Use the gateway subnet for general workload VMs</li>
+        </ul>
+        <p class="seo-sample-explain">A what-if or validation step helps identify intended changes before modifying the environment.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During a compute review, the team identifies a requirement for interpret ARM templates and Bicep files. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Assign privileged roles permanently to all team members</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Identify the target resource types, API versions, names, locations, and property values before deployment</li>
+            <li class="seo-sample-answer">C. Open every inbound port from the internet to troubleshoot private connectivity</li>
+            <li class="seo-sample-answer">D. Scale up when the requirement is to add multiple running instances</li>
+        </ul>
+        <p class="seo-sample-explain">Interpreting the template requires understanding the resource schema and configured values.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Azure administrator must complete a compute deployment task for interpret ARM templates and Bicep files. What should the administrator do?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Convert ARM JSON to Bicep without testing the resulting deployment</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Inspect outputs to determine which values will be returned after deployment</li>
+            <li class="seo-sample-answer">C. Increase log retention indefinitely without reviewing cost or compliance needs</li>
+            <li class="seo-sample-answer">D. Use a custom role at subscription scope when a built-in role at resource group scope is sufficient</li>
+        </ul>
+        <p class="seo-sample-explain">Outputs expose useful deployment results such as names, IDs, or connection details.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload owner asks the Azure administrator to implement modify ARM templates. Which option should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Move resources between subscriptions without checking resource-type support</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Update the template schema, API version, or resource properties when a resource type requires supported syntax</li>
+            <li class="seo-sample-answer">C. Switch to complete mode without reviewing deletion impact</li>
+            <li class="seo-sample-answer">D. Edit the resources manually in the portal and ignore the deployment file</li>
+        </ul>
+        <p class="seo-sample-explain">Template syntax and API versions must match supported Azure resource schemas.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload owner asks the Azure administrator to implement interpret ARM templates and Bicep files. Which option should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Configure user-defined routes (UDRs) without enabling IP forwarding on the appliance</li>
+            <li class="seo-sample-answer">B. Use Availability Zones interchangeably with Availability Sets</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Check parameter defaults and allowed values to determine what can be customized during deployment</li>
+            <li class="seo-sample-answer">D. Configure encryption at host without a supported region or VM SKU</li>
+        </ul>
+        <p class="seo-sample-explain">Parameters control deployment input and help reuse the same file across environments.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Azure administrator must complete a compute deployment task for modify ARM templates. What should the administrator do?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a Free or Shared App Service plan for a production custom domain with TLS</li>
+            <li class="seo-sample-answer">B. Switch to complete mode without reviewing deletion impact</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Update parameter values or add parameters so the same template can deploy to the required environment</li>
+            <li class="seo-sample-answer">D. Edit the resources manually in the portal and ignore the deployment file</li>
+        </ul>
+        <p class="seo-sample-explain">Parameters allow the ARM template to be reused while changing environment-specific settings.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An audit finding shows that the current process for interpret ARM templates and Bicep files is incomplete. What should be changed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Ignore inherited policies when troubleshooting a blocked deployment</li>
+            <li class="seo-sample-answer">B. Skip what-if deployments and apply ARM templates directly to production</li>
+            <li class="seo-sample-answer">C. Use a CanNotDelete lock on every resource by default</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Review dependsOn or implicit dependencies to understand deployment order</li>
+        </ul>
+        <p class="seo-sample-explain">Dependencies determine which resources must exist before others are deployed.</p>
+      </details>
       <h2>Other AZ-104 Domains</h2>
       <ul>
           <li><a href="/microsoft-az-104/manage-azure-identities-and-governance/">1.0 Manage Azure identities and governance</a></li>

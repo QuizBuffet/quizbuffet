@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "In a Public Key Infrastructure (PKI), which entity is specifically responsible for digitally signing and issuing certificates that cryptographically bind a public key to an identity?",
+          "name": "A journalist needs to receive encrypted documents from a whistleblower they have never communicated with before, with no opportunity to exchange a secret key in advance. Which cryptographic approach enables the whistleblower to send an encrypted document that only the journalist can read?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Certificate Authority (CA), signs and issues certificates binding public keys to verified identities."
+            "text": "Asymmetric encryption, the whistleblower encrypts the document using the journalist's published public key."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A developer argues that their proprietary encryption algorithm is secure because its internal workings are secret, even though they use the same 256-bit key length as AES. Why is this argument cryptographically unsound?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kerckhoffs's Principle states a cryptosystem must remain secure even if everything about it except the key is publicly known, relying on algorithm secrecy as a security property is invalid."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>36 exam-style questions</strong> covering <strong>5% of the CEH exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which type of cryptography uses a single shared secret key for both the encryption and decryption of data?</h3>
-        <p><strong>Answer:</strong> Symmetric encryption</p>
-        <p>Symmetric encryption uses one shared secret key for both encrypting plaintext and decrypting ciphertext. Both the sender and receiver must securely exchange and protect this single key. Common symmetric algorithms include AES, 3DES, Blowfish, and ChaCha20. The primary challenge is secure key distribution, if the key is intercepted, all encrypted communications are compromised.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which widely deployed open-source cryptographic toolkit provides a full implementation of the SSL and TLS protocols and includes command-line utilities for key generation, certificate management, hashing, and encryption?</h3>
-        <p><strong>Answer:</strong> OpenSSL</p>
-        <p>OpenSSL is the de facto standard open-source cryptographic library and command-line toolkit, providing implementations of SSL/TLS protocols and a broad range of cryptographic functions. It is used by the majority of HTTPS web servers (via Apache, Nginx, and others), provides the libssl and libcrypto libraries, and offers command-line tools for RSA/ECC key generation, X.509 certificate creation and signing, S/MIME, PKCS operations, and symmetric encryption/decryption.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>In a Public Key Infrastructure (PKI), which entity is specifically responsible for digitally signing and issuing certificates that cryptographically bind a public key to an identity?</h3>
-        <p><strong>Answer:</strong> Certificate Authority (CA), signs and issues certificates binding public keys to verified identities</p>
-        <p>The Certificate Authority (CA) is the trusted third party at the heart of PKI. The CA uses its own private key to digitally sign X.509 certificates, cryptographically binding a subject&#39;s public key to their identity (name, organization, domain). This signature allows relying parties (browsers, TLS clients) to verify that the certificate was issued by a trusted CA without directly contacting the CA for each transaction.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which type of cryptography uses a single shared secret key for both the encryption and decryption of data?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Symmetric encryption</li>
+            <li class="seo-sample-answer">B. Asymmetric encryption</li>
+            <li class="seo-sample-answer">C. Cryptographic hashing</li>
+            <li class="seo-sample-answer">D. Steganography</li>
+        </ul>
+        <p class="seo-sample-explain">Symmetric encryption uses one shared secret key for both encrypting plaintext and decrypting ciphertext. Both the sender and receiver must securely exchange and protect this single key. Common symmetric algorithms include AES, 3DES, Blowfish, and ChaCha20. The primary challenge is secure key distribution, if the key is intercepted, all encrypted communications are compromised.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which widely deployed open-source cryptographic toolkit provides a full implementation of the SSL and TLS protocols and includes command-line utilities for key generation, certificate management, hashing, and encryption?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. OpenSSL</li>
+            <li class="seo-sample-answer">B. Wireshark</li>
+            <li class="seo-sample-answer">C. Nmap</li>
+            <li class="seo-sample-answer">D. John the Ripper</li>
+        </ul>
+        <p class="seo-sample-explain">OpenSSL is the de facto standard open-source cryptographic library and command-line toolkit, providing implementations of SSL/TLS protocols and a broad range of cryptographic functions. It is used by the majority of HTTPS web servers (via Apache, Nginx, and others), provides the libssl and libcrypto libraries, and offers command-line tools for RSA/ECC key generation, X.509 certificate creation and signing, S/MIME, PKCS operations, and symmetric encryption/decryption.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A journalist needs to receive encrypted documents from a whistleblower they have never communicated with before, with no opportunity to exchange a secret key in advance. Which cryptographic approach enables the whistleblower to send an encrypted document that only the journalist can read?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Symmetric AES-256 encryption, the journalist and whistleblower use the same pre-shared key</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Asymmetric encryption, the whistleblower encrypts the document using the journalist&#39;s published public key</li>
+            <li class="seo-sample-answer">C. SHA-256 hashing, the whistleblower hashes the document to create an encrypted version for transit</li>
+            <li class="seo-sample-answer">D. Block cipher encryption in ECB mode, the whistleblower uses the journalist&#39;s private key to encrypt</li>
+        </ul>
+        <p class="seo-sample-explain">Asymmetric encryption solves the key distribution problem for unknown parties. The journalist publishes their public key (e.g., on their website or a keyserver). The whistleblower uses this freely available public key to encrypt the document. Only the journalist&#39;s corresponding private key (which is never shared) can decrypt it. This enables secure communication without any prior interaction or shared secret.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A developer argues that their proprietary encryption algorithm is secure because its internal workings are secret, even though they use the same 256-bit key length as AES. Why is this argument cryptographically unsound?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AES requires a longer key derivation process than proprietary algorithms can implement with 256-bit keys</li>
+            <li class="seo-sample-answer">B. Proprietary algorithms cannot implement the same block cipher operation modes as AES</li>
+            <li class="seo-sample-answer">C. Security through obscurity is acceptable for symmetric algorithms only when combined with 512-bit key lengths</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Kerckhoffs&#39;s Principle states a cryptosystem must remain secure even if everything about it except the key is publicly known, relying on algorithm secrecy as a security property is invalid</li>
+        </ul>
+        <p class="seo-sample-explain">Kerckhoffs&#39;s Principle (1883) states: &#39;A cryptosystem should be secure even if everything about the system, except the key, is public knowledge.&#39; A corollary is Shannon&#39;s maxim: &#39;The enemy knows the system.&#39; Proprietary algorithms that rely on secrecy fail this test, if the algorithm is ever reverse-engineered, leaked, or disclosed, security collapses entirely. AES was publicly scrutinized through a 5-year NIST competition involving global cryptanalysis, its security is derived from mathematical properties, not secrecy.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>RSA (Rivest-Shamir-Adleman) is the most widely deployed public-key cryptosystem. Which mathematical problem&#39;s computational hardness provides the security foundation for RSA?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Computing elliptic curve discrete logarithms over a prime finite field</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Factoring the product of two large prime numbers into its prime factors</li>
+            <li class="seo-sample-answer">C. Computing discrete logarithms modulo a large prime (the Diffie-Hellman problem)</li>
+            <li class="seo-sample-answer">D. Finding a SHA-256 preimage, reversing the hash function to recover the input from a digest</li>
+        </ul>
+        <p class="seo-sample-explain">RSA security relies on the Integer Factorization Problem: given n = p × q (where p and q are large prime numbers), it is computationally infeasible to factor n back into p and q with classical computers when n is sufficiently large (2048+ bits). The public key contains n and the public exponent e; the private key derives from the prime factors p and q. Anyone who can factor n can compute the private key.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>AES (Advanced Encryption Standard) is a symmetric block cipher standardized by NIST in 2001. What is the fixed block size that AES uses for all key length variants (128-bit, 192-bit, and 256-bit)?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. 128 bits (16 bytes)</li>
+            <li class="seo-sample-answer">B. 64 bits (8 bytes)</li>
+            <li class="seo-sample-answer">C. 256 bits (32 bytes)</li>
+            <li class="seo-sample-answer">D. 512 bits (64 bytes)</li>
+        </ul>
+        <p class="seo-sample-explain">AES (FIPS 197) always operates on a fixed 128-bit (16-byte) block size regardless of the key length used. AES supports three key lengths, 128, 192, and 256 bits, which affect the number of encryption rounds (10, 12, and 14 rounds respectively) but never the block size. The block size is a fixed architectural property of the AES substitution-permutation network.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization deploys cryptography on resource-constrained IoT sensors with limited CPU, memory, and battery life. Which algorithm provides security equivalent to RSA-2048 while using dramatically smaller key sizes that reduce computational overhead?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Triple DES (3DES), applies DES three times with three independent 56-bit keys for symmetric encryption</li>
+            <li class="seo-sample-answer">B. AES-128 in GCM mode, provides authenticated symmetric encryption suitable for IoT</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Elliptic Curve Cryptography (ECC), ECDSA-256 provides security equivalent to RSA-2048 with a 256-bit key</li>
+            <li class="seo-sample-answer">D. Blowfish with a 448-bit key, designed by Bruce Schneier for low-resource environments</li>
+        </ul>
+        <p class="seo-sample-explain">NIST&#39;s key strength equivalence table shows that a 256-bit ECC key (using ECDSA or ECDH) provides security equivalent to a 3072-bit RSA key, and is far stronger than RSA-2048. ECC operations require significantly fewer CPU cycles and less memory than RSA at equivalent security levels. This makes ECC the preferred asymmetric algorithm for IoT, embedded systems, and smart cards. NIST FIPS 186-5 standardizes ECDSA curves including P-256 and P-384.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company stores user passwords as SHA-256 hashes in its database. An attacker who obtains the database attempts to recover passwords by computing SHA-256 for every word in a large dictionary and comparing results to stored hashes. Which additional control would MOST effectively defeat this attack?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Replacing SHA-256 with MD5 to reduce hash computation time for the defender</li>
+            <li class="seo-sample-answer">B. Encrypting the entire hash database file at rest with AES-128-CBC</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Adding a unique random salt to each password before hashing, stored alongside the hash</li>
+            <li class="seo-sample-answer">D. Encoding stored hashes in Base64 instead of hexadecimal to obscure their format</li>
+        </ul>
+        <p class="seo-sample-explain">A salt is a unique, randomly generated value appended or prepended to each password before hashing: hash = SHA-256(password + unique_salt). Since each user has a different salt, an attacker must compute a separate dictionary attack for each salt-hash pair, pre-computed rainbow tables are defeated entirely, and parallel dictionary attacks across all users become infeasible. Salts are stored in plaintext alongside the hash (their purpose is uniqueness, not secrecy).</p>
+      </details>
       <h2>Other CEH Domains</h2>
       <ul>
           <li><a href="/ceh/information-security-overview/">1.0 Information Security and Ethical Hacking Overview</a></li>

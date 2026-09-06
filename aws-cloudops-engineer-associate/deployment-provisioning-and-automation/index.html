@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A CloudOps engineer must create both x86 and ARM AMIs for the same application. Which image pipeline design is best?",
+          "name": "A team needs to store and scan container images before ECS deployments. Which AWS service is most appropriate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use separate EC2 Image Builder pipeline configurations or workflows for each architecture."
+            "text": "Amazon Elastic Container Registry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A container image tag named latest caused an ECS service to deploy an unexpected version. What practice reduces this risk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use immutable image tags or image digests in deployment definitions."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>110 exam-style questions</strong> covering <strong>22% of the SOA-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-cloudops-engineer-associate/">AWS Certified CloudOps Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A CloudOps engineer needs a repeatable process to build hardened Amazon Machine Images with current patches and validation tests. Which service should be used?</h3>
-        <p><strong>Answer:</strong> Amazon EC2 Image Builder</p>
-        <p>AMI and container image management is best addressed by Amazon EC2 Image Builder, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A CloudOps team wants every new EC2 instance to launch from the latest approved image without manual image lookup. Which approach helps?</h3>
-        <p><strong>Answer:</strong> Publish the approved AMI ID to Systems Manager Parameter Store and reference it during launch</p>
-        <p>AMI and container image management is best addressed by Publish the approved AMI ID to Systems Manager Parameter Store and reference it during launch, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A CloudOps engineer must create both x86 and ARM AMIs for the same application. Which image pipeline design is best?</h3>
-        <p><strong>Answer:</strong> Use separate EC2 Image Builder pipeline configurations or workflows for each architecture</p>
-        <p>AMI and container image management is best addressed by Use separate EC2 Image Builder pipeline configurations or workflows for each architecture, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A CloudOps engineer needs a repeatable process to build hardened Amazon Machine Images with current patches and validation tests. Which service should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Amazon EC2 Image Builder</li>
+            <li class="seo-sample-answer">B. AWS Backup</li>
+            <li class="seo-sample-answer">C. Amazon Route 53</li>
+            <li class="seo-sample-answer">D. AWS WAF</li>
+        </ul>
+        <p class="seo-sample-explain">AMI and container image management is best addressed by Amazon EC2 Image Builder, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A CloudOps team wants every new EC2 instance to launch from the latest approved image without manual image lookup. Which approach helps?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Publish the approved AMI ID to Systems Manager Parameter Store and reference it during launch</li>
+            <li class="seo-sample-answer">B. Use a Route 53 hosted zone for AMI IDs</li>
+            <li class="seo-sample-answer">C. Use AWS Cost Explorer tags only</li>
+            <li class="seo-sample-answer">D. Use GuardDuty findings as launch parameters</li>
+        </ul>
+        <p class="seo-sample-explain">AMI and container image management is best addressed by Publish the approved AMI ID to Systems Manager Parameter Store and reference it during launch, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team needs to store and scan container images before ECS deployments. Which AWS service is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. Amazon Elastic Container Registry</li>
+            <li class="seo-sample-answer">A. Amazon EFS</li>
+            <li class="seo-sample-answer">C. AWS CloudTrail Lake</li>
+            <li class="seo-sample-answer">D. Amazon SES</li>
+        </ul>
+        <p class="seo-sample-explain">AMI and container image management is best addressed by Amazon Elastic Container Registry, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A container image tag named latest caused an ECS service to deploy an unexpected version. What practice reduces this risk?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. Use immutable image tags or image digests in deployment definitions</li>
+            <li class="seo-sample-answer">A. Disable CloudWatch metrics</li>
+            <li class="seo-sample-answer">C. Enable S3 Transfer Acceleration</li>
+            <li class="seo-sample-answer">D. Create a VPC peering connection</li>
+        </ul>
+        <p class="seo-sample-explain">AMI and container image management is best addressed by Use immutable image tags or image digests in deployment definitions, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A container deployment fails because the task execution role cannot pull an image from a private ECR repository. What should be fixed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. Grant the required ECR pull permissions to the task execution role</li>
+            <li class="seo-sample-answer">A. Change the ALB idle timeout</li>
+            <li class="seo-sample-answer">C. Enable S3 bucket versioning</li>
+            <li class="seo-sample-answer">D. Create a Route 53 health check</li>
+        </ul>
+        <p class="seo-sample-explain">AMI and container image management is best addressed by Grant the required ECR pull permissions to the task execution role, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An AMI pipeline should fail if compliance checks do not pass after installing updates. What should the engineer add?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">C. A validation or test phase in the EC2 Image Builder pipeline</li>
+            <li class="seo-sample-answer">A. A CloudFront cache behavior</li>
+            <li class="seo-sample-answer">B. A Route 53 weighted record</li>
+            <li class="seo-sample-answer">D. An S3 Lifecycle expiration rule</li>
+        </ul>
+        <p class="seo-sample-explain">AMI and container image management is best addressed by A validation or test phase in the EC2 Image Builder pipeline, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An EC2 Image Builder recipe installs a package from the internet, but private build instances have no egress path. What should be corrected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">C. Provide controlled network access or internal package repositories for the build environment</li>
+            <li class="seo-sample-answer">A. Change the CloudFormation stack name</li>
+            <li class="seo-sample-answer">B. Enable DynamoDB point-in-time recovery</li>
+            <li class="seo-sample-answer">D. Create an ACM certificate</li>
+        </ul>
+        <p class="seo-sample-explain">AMI and container image management is best addressed by Provide controlled network access or internal package repositories for the build environment, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A container image must be promoted from development to production only after vulnerability scanning passes. Which workflow fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">D. Use ECR image scanning results as a promotion gate in the deployment process</li>
+            <li class="seo-sample-answer">A. Copy the image to an EBS snapshot</li>
+            <li class="seo-sample-answer">B. Create an IAM password policy</li>
+            <li class="seo-sample-answer">C. Increase the Auto Scaling maximum capacity</li>
+        </ul>
+        <p class="seo-sample-explain">AMI and container image management is best addressed by Use ECR image scanning results as a promotion gate in the deployment process, because it matches the provisioning, deployment, or automation requirement in the scenario. This is the correct answer.</p>
+      </details>
       <h2>Other SOA-C03 Domains</h2>
       <ul>
           <li><a href="/aws-cloudops-engineer-associate/monitoring-logging-analysis-remediation-and-performance-optimization/">1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization</a></li>

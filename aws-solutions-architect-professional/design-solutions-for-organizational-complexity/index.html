@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A healthcare SaaS provider is designing a platform for multiple business units. The requirement focuses on AWS networking concepts. Which architecture decision is most appropriate?",
+          "name": "A media platform is reviewing a proposed architecture and finds that the current design does not satisfy AWS Global Infrastructure. What change should be made?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use VPC peering only for simple nontransitive connectivity between non-overlapping VPCs."
+            "text": "Choose Availability Zones within the selected Region for high availability, while reserving multi-Region design for disaster recovery or global latency needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A public sector agency is designing a platform for multiple business units. The requirement focuses on AWS networking concepts. Which architecture decision is most appropriate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use Transit Gateway for scalable hub-and-spoke routing with segmented route tables."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>156 exam-style questions</strong> covering <strong>26% of the SAP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-solutions-architect-professional/">AWS Certified Solutions Architect Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A regulated financial services company has an existing AWS environment that must be redesigned for AWS Global Infrastructure. What should the solutions architect recommend?</h3>
-        <p><strong>Answer:</strong> Use multiple AWS Regions with Regional service endpoints, data replication, and Route 53 or Global Accelerator routing based on latency and recovery requirements</p>
-        <p>A multi-Region design can place workloads closer to users and provide Regional failure isolation when data and routing are designed together.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A steering committee asks for a recommendation for AWS Global Infrastructure after a failed proof of concept exposed governance and operational risks. Which design should the solutions architect choose?</h3>
-        <p><strong>Answer:</strong> Model Regional dependencies, service availability, and data residency before committing to the target Regions</p>
-        <p>Professional architecture decisions must account for service availability, legal constraints, and operational dependencies across Regions.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A healthcare SaaS provider is designing a platform for multiple business units. The requirement focuses on AWS networking concepts. Which architecture decision is most appropriate?</h3>
-        <p><strong>Answer:</strong> Use VPC peering only for simple nontransitive connectivity between non-overlapping VPCs</p>
-        <p>VPC peering is efficient for a small number of direct VPC connections but does not provide transitive routing.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A regulated financial services company has an existing AWS environment that must be redesigned for AWS Global Infrastructure. What should the solutions architect recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use multiple AWS Regions with Regional service endpoints, data replication, and Route 53 or Global Accelerator routing based on latency and recovery requirements</li>
+            <li class="seo-sample-answer">B. Skip permission boundaries when delegating IAM administration to development teams</li>
+            <li class="seo-sample-answer">C. Use IAM password policy to enforce VPC routing decisions</li>
+            <li class="seo-sample-answer">D. Use S3 server-side encryption only when the bucket is publicly accessible</li>
+        </ul>
+        <p class="seo-sample-explain">A multi-Region design can place workloads closer to users and provide Regional failure isolation when data and routing are designed together.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A steering committee asks for a recommendation for AWS Global Infrastructure after a failed proof of concept exposed governance and operational risks. Which design should the solutions architect choose?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Model Regional dependencies, service availability, and data residency before committing to the target Regions</li>
+            <li class="seo-sample-answer">B. Use a single-AZ deployment to reduce inter-AZ data transfer charges and improve resiliency</li>
+            <li class="seo-sample-answer">C. Use AWS Compute Optimizer recommendations only after manual application by every team</li>
+            <li class="seo-sample-answer">D. Place customer gateway IP inside the VPC CIDR range</li>
+        </ul>
+        <p class="seo-sample-explain">Professional architecture decisions must account for service availability, legal constraints, and operational dependencies across Regions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A media platform is reviewing a proposed architecture and finds that the current design does not satisfy AWS Global Infrastructure. What change should be made?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use AWS Budgets to enforce IAM permission boundaries on engineering teams</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Choose Availability Zones within the selected Region for high availability, while reserving multi-Region design for disaster recovery or global latency needs</li>
+            <li class="seo-sample-answer">C. Connect on-premises with only a single Site-to-Site VPN tunnel for production</li>
+            <li class="seo-sample-answer">D. Place all traffic through one unmanaged appliance in one Availability Zone</li>
+        </ul>
+        <p class="seo-sample-explain">Availability Zones protect against zonal failures inside a Region without adding the operational complexity of active multi-Region operation.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A public sector agency is designing a platform for multiple business units. The requirement focuses on AWS networking concepts. Which architecture decision is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use AWS WAF as a layer 4 firewall for non-HTTP TCP traffic</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use Transit Gateway for scalable hub-and-spoke routing with segmented route tables</li>
+            <li class="seo-sample-answer">C. Set RTO to zero by relying on backup and restore as the only DR strategy</li>
+            <li class="seo-sample-answer">D. Use Spot Instances for the entire stateful database tier to reduce compute cost</li>
+        </ul>
+        <p class="seo-sample-explain">Transit Gateway provides centralized routing and segmentation for many VPCs and hybrid attachments.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A steering committee asks for a recommendation for AWS networking concepts after a failed proof of concept exposed governance and operational risks. Which design should the solutions architect choose?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Amazon Macie to continuously block all data at rest from leaving the account</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use container networking mode and service discovery choices that match the ECS or EKS deployment model</li>
+            <li class="seo-sample-answer">C. Use long-lived IAM access keys embedded in EC2 user data for cross-account access</li>
+            <li class="seo-sample-answer">D. Use AWS Backup as a network configuration drift detection tool</li>
+        </ul>
+        <p class="seo-sample-explain">Container services can consume VPC IPs and expose services differently, so networking must be part of the architecture.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A retail organization must choose between several AWS architecture patterns for AWS Global Infrastructure. Which option best satisfies the requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a single shared Internet Gateway across multiple VPCs by sharing it via AWS RAM</li>
+            <li class="seo-sample-answer">B. Use AWS Config rules to grant additional IAM permissions to roles</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Place latency-sensitive components in the Region closest to the largest user population and use edge services for global content delivery</li>
+            <li class="seo-sample-answer">D. Skip AWS Organizations and manage accounts independently with email-based invoices</li>
+        </ul>
+        <p class="seo-sample-explain">Regional placement and edge delivery reduce round trips while keeping the origin architecture manageable.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload review identifies conflicting requirements across security, availability, cost, and team ownership. Which option best supports AWS networking concepts in a complex organization?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use scale-up only on a single EC2 instance to handle unpredictable traffic spikes</li>
+            <li class="seo-sample-answer">B. Use AWS Config rules as a substitute for IAM policy enforcement</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Use AWS Direct Connect with redundant connections for predictable private hybrid bandwidth</li>
+            <li class="seo-sample-answer">D. Disable VPC Flow Logs and rely on application logs alone for network forensics</li>
+        </ul>
+        <p class="seo-sample-explain">Direct Connect is designed for dedicated private connectivity when throughput and consistency matter.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A fast-growing startup has an existing AWS environment that must be redesigned for AWS Global Infrastructure. What should the solutions architect recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use IAM password policy as the authoritative identity provider for federated users</li>
+            <li class="seo-sample-answer">B. Skip Route 53 Resolver inbound and outbound endpoints for hybrid DNS</li>
+            <li class="seo-sample-answer">C. Skip cross-account event notifications and rely on per-account email subscriptions</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Use Local Zones, Wavelength, or Outposts only when workload latency or residency requirements justify those infrastructure options</li>
+        </ul>
+        <p class="seo-sample-explain">Specialized infrastructure should be selected when standard Regions and Availability Zones cannot meet the business requirement.</p>
+      </details>
       <h2>Other SAP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-solutions-architect-professional/design-for-new-solutions/">2.0 Design for New Solutions</a></li>

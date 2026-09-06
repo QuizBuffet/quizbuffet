@@ -278,7 +278,7 @@ Add a one-line "How these questions are written" link to the About page, and a "
 ```
 Render `summary` under the H1 and `objectives` as a list under "What this domain covers". Source the objective text from the official exam objectives PDF for each cert. Start with the 16 certs in section C.
 
-### G2. Show 8 to 10 sample questions instead of 3
+### G2. [DONE] Show 8 to 10 sample questions instead of 3
 `build-seo.mjs:595` slices 3. Change to 8, mixed difficulty (2 easy, 3 medium, 2 medium-hard, 1 hard), rendered as `<details>` blocks with the question, the four answers, and the correct answer plus explanation inside. Keep the `FAQPage` JSON-LD at 3 to 5 items (Google truncates long FAQ schema anyway). Remove em-dashes from the rendered sample text at render time (H1 fixes the source).
 
 ### G3. Key terms block

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A healthcare SaaS provider has passed initial launch and is remediating findings from a Well-Architected review. A post-incident review identifies monitoring and logging solutions as the highest-value improvement area. Which recommendation is most appropriate?",
+          "name": "A financial services workload has audit findings, rising costs, and several manual operational processes. The existing solution meets basic requirements but has operational gaps around alerting and automatic remediation strategies. Which improvement should be prioritized?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Prioritize automation for frequent, high-risk, and high-toil operational tasks before automating rare or poorly understood exceptions."
+            "text": "Use AWS Systems Manager State Manager, Patch Manager, Automation, and Parameter Store to standardize configuration management."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A gaming company is improving latency, reliability, and operations for an existing backend. The existing solution meets basic requirements but has operational gaps around disaster recovery planning. Which improvement should be prioritized?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Move from all-at-once releases to blue/green, canary, or rolling deployments with health checks and automated rollback."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>150 exam-style questions</strong> covering <strong>25% of the SAP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-solutions-architect-professional/">AWS Certified Solutions Architect Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A healthcare SaaS provider has passed initial launch and is remediating findings from a Well-Architected review. A post-incident review identifies alerting and automatic remediation strategies as the highest-value improvement area. Which recommendation is most appropriate?</h3>
-        <p><strong>Answer:</strong> Centralize application, infrastructure, and audit logs in CloudWatch Logs or Amazon S3 with retention, query, and ownership standards</p>
-        <p>A centralized logging strategy makes operational events searchable and consistent across accounts and services.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A public sector agency is improving a citizen-services application after a recent incident. A post-incident review identifies disaster recovery planning as the highest-value improvement area. Which recommendation is most appropriate?</h3>
-        <p><strong>Answer:</strong> Create CloudWatch alarms with EventBridge rules and Systems Manager Automation runbooks for well-understood failure modes</p>
-        <p>Automated alerting and remediation reduce time to detect and repair repeatable operational issues.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A healthcare SaaS provider has passed initial launch and is remediating findings from a Well-Architected review. A post-incident review identifies monitoring and logging solutions as the highest-value improvement area. Which recommendation is most appropriate?</h3>
-        <p><strong>Answer:</strong> Prioritize automation for frequent, high-risk, and high-toil operational tasks before automating rare or poorly understood exceptions</p>
-        <p>Automation investment should target recurring operational pain with clear success criteria.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A healthcare SaaS provider has passed initial launch and is remediating findings from a Well-Architected review. A post-incident review identifies alerting and automatic remediation strategies as the highest-value improvement area. Which recommendation is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Centralize application, infrastructure, and audit logs in CloudWatch Logs or Amazon S3 with retention, query, and ownership standards</li>
+            <li class="seo-sample-answer">B. Use AWS Inspector findings without prioritizing critical CVEs</li>
+            <li class="seo-sample-answer">C. Use Application Load Balancer connection draining set to zero seconds for stateful sessions</li>
+            <li class="seo-sample-answer">D. Use a single CloudWatch alarm threshold across every workload regardless of baseline</li>
+        </ul>
+        <p class="seo-sample-explain">A centralized logging strategy makes operational events searchable and consistent across accounts and services.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A public sector agency is improving a citizen-services application after a recent incident. A post-incident review identifies disaster recovery planning as the highest-value improvement area. Which recommendation is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Create CloudWatch alarms with EventBridge rules and Systems Manager Automation runbooks for well-understood failure modes</li>
+            <li class="seo-sample-answer">B. Use general-purpose gp2 EBS for a workload requiring sustained 60K IOPS</li>
+            <li class="seo-sample-answer">C. Use AWS Service Catalog as a packet-inspection firewall</li>
+            <li class="seo-sample-answer">D. Use Amazon Cognito identity pools as a replacement for AWS Organizations SCPs</li>
+        </ul>
+        <p class="seo-sample-explain">Automated alerting and remediation reduce time to detect and repair repeatable operational issues.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A financial services workload has audit findings, rising costs, and several manual operational processes. The existing solution meets basic requirements but has operational gaps around alerting and automatic remediation strategies. Which improvement should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Continue all-at-once production deployments without rollback criteria</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use AWS Systems Manager State Manager, Patch Manager, Automation, and Parameter Store to standardize configuration management</li>
+            <li class="seo-sample-answer">C. Allow public S3 ACLs for any bucket that serves static content</li>
+            <li class="seo-sample-answer">D. Allow encryption keys to be unmanaged by KMS so any service can decrypt the data</li>
+        </ul>
+        <p class="seo-sample-explain">Systems Manager can enforce configuration state and automate operational tasks across fleets.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A gaming company is improving latency, reliability, and operations for an existing backend. The existing solution meets basic requirements but has operational gaps around disaster recovery planning. Which improvement should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Amazon EBS snapshots as a substitute for a multi-Region Aurora Global Database</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Move from all-at-once releases to blue/green, canary, or rolling deployments with health checks and automated rollback</li>
+            <li class="seo-sample-answer">C. Disable rollback in CloudFormation so partial deploys remain in place for debugging</li>
+            <li class="seo-sample-answer">D. Use AWS Cost Explorer to provision EC2 capacity in advance</li>
+        </ul>
+        <p class="seo-sample-explain">Safer deployment strategies reduce the blast radius of failed changes.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A global insurance company already runs a multi-account AWS platform and wants to improve it without rebuilding from scratch. A post-incident review identifies CI/CD pipelines and deployment strategies as the highest-value improvement area. Which recommendation is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use AWS Systems Manager Run Command without Change Manager for production changes</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Run game days and failure-injection exercises that validate documented recovery actions and update runbooks afterward</li>
+            <li class="seo-sample-answer">C. Use IAM roles in place of resource policies for cross-account S3 access</li>
+            <li class="seo-sample-answer">D. Use IAM session policies to expand a role beyond its attached permissions</li>
+        </ul>
+        <p class="seo-sample-explain">Failure exercises reveal gaps in recovery procedures before real incidents occur.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A manufacturing company is standardizing operational practices across several AWS accounts. A Well-Architected review requires a practical improvement strategy for alerting and automatic remediation strategies. What should be recommended?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use IAM password policy as the authoritative identity provider for federated users</li>
+            <li class="seo-sample-answer">B. Use Amazon Route 53 Resolver DNS Firewall to authenticate API Gateway requests</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Prioritize automation for frequent, high-risk, and high-toil operational tasks before automating rare or poorly understood exceptions</li>
+            <li class="seo-sample-answer">D. Use AWS Auto Scaling without scaling cooldowns or step policies for spike-prone workloads</li>
+        </ul>
+        <p class="seo-sample-explain">Automation investment should target recurring operational pain with clear success criteria.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A logistics platform team is reviewing production telemetry from a distributed AWS workload. The platform team wants measurable improvement for monitoring and logging solutions without a full rebuild. Which action best fits the goal?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip cross-account event notifications and rely on per-account email subscriptions</li>
+            <li class="seo-sample-answer">B. Skip enabling S3 Intelligent-Tiering for unpredictable access patterns to keep object listings simpler</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Centralize application, infrastructure, and audit logs in CloudWatch Logs or Amazon S3 with retention, query, and ownership standards</li>
+            <li class="seo-sample-answer">D. Use Service Control Policies to grant additional permissions beyond IAM</li>
+        </ul>
+        <p class="seo-sample-explain">A centralized logging strategy makes operational events searchable and consistent across accounts and services.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A retail enterprise is preparing for a seasonal event and wants to improve an existing solution. The fraud detection workload is already in production, and the team must improve disaster recovery planning. What should the solutions architect recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Network ACLs as a stateful application-layer firewall</li>
+            <li class="seo-sample-answer">B. Use Amazon CloudWatch metrics without alarms or dashboards in production</li>
+            <li class="seo-sample-answer">C. Use Multi-AZ RDS as a sufficient disaster recovery strategy across Regions</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Run game days and failure-injection exercises that validate documented recovery actions and update runbooks afterward</li>
+        </ul>
+        <p class="seo-sample-explain">Failure exercises reveal gaps in recovery procedures before real incidents occur.</p>
+      </details>
       <h2>Other SAP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-solutions-architect-professional/design-solutions-for-organizational-complexity/">1.0 Design Solutions for Organizational Complexity</a></li>

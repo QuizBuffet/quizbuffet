@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A training exercise asks about Pricing calculator and TCO Calculator. Which response is correct?",
+          "name": "A project team needs to understand factors that affect Azure costs. Which answer matches Azure fundamentals?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use the TCO Calculator when comparing on-premises infrastructure costs with Azure migration costs."
+            "text": "Running resources for longer periods generally increases consumption-based cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An administrator is choosing an Azure tool. Which explanation of Pricing calculator and TCO Calculator is most accurate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Pricing calculator estimates the cost of Azure services before deployment."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>114 exam-style questions</strong> covering <strong>36% of the AZ-900 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/microsoft-az-900/">Microsoft Azure Fundamentals practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A business team is reviewing Azure operations. Which option correctly describes factors that affect Azure costs?</h3>
-        <p><strong>Answer:</strong> Resource type, usage amount, region, purchasing options, and data transfer can all affect Azure costs</p>
-        <p>Azure charges vary based on what is deployed, where it runs, how much it is used, and how it is purchased.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A company is learning Azure management and governance. Which statement best describes factors that affect Azure costs?</h3>
-        <p><strong>Answer:</strong> Service tiers and performance levels can change the price of Azure resources</p>
-        <p>Higher performance or premium tiers often cost more than basic tiers.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A training exercise asks about Pricing calculator and TCO Calculator. Which response is correct?</h3>
-        <p><strong>Answer:</strong> Use the TCO Calculator when comparing on-premises infrastructure costs with Azure migration costs</p>
-        <p>TCO analysis is focused on migration and total cost comparison.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A business team is reviewing Azure operations. Which option correctly describes factors that affect Azure costs?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Resource type, usage amount, region, purchasing options, and data transfer can all affect Azure costs</li>
+            <li class="seo-sample-answer">B. Assume high availability is the same as disaster recovery</li>
+            <li class="seo-sample-answer">C. Disable activity logs in production to reduce storage cost</li>
+            <li class="seo-sample-answer">D. Use Azure Virtual Machines for a stateless web app that should scale to zero with no traffic</li>
+        </ul>
+        <p class="seo-sample-explain">Azure charges vary based on what is deployed, where it runs, how much it is used, and how it is purchased.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company is learning Azure management and governance. Which statement best describes factors that affect Azure costs?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Service tiers and performance levels can change the price of Azure resources</li>
+            <li class="seo-sample-answer">B. Configure MFA only after a security incident has already occurred</li>
+            <li class="seo-sample-answer">C. Choose hybrid cloud only when no on-premises infrastructure exists</li>
+            <li class="seo-sample-answer">D. Use Azure Virtual Desktop to host headless server workloads at scale</li>
+        </ul>
+        <p class="seo-sample-explain">Higher performance or premium tiers often cost more than basic tiers.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A project team needs to understand factors that affect Azure costs. Which answer matches Azure fundamentals?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Azure Kubernetes Service for a single-container hello-world experiment</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Running resources for longer periods generally increases consumption-based cost</li>
+            <li class="seo-sample-answer">C. Treat Azure ExpressRoute as a backup VPN tunnel for site-to-site connectivity</li>
+            <li class="seo-sample-answer">D. Use Cost Management to deploy infrastructure code</li>
+        </ul>
+        <p class="seo-sample-explain">Many Azure services bill based on usage over time.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An administrator is choosing an Azure tool. Which explanation of Pricing calculator and TCO Calculator is most accurate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use the cloud free tier to host long-term production workloads</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The Pricing calculator estimates the cost of Azure services before deployment</li>
+            <li class="seo-sample-answer">C. Treat Azure Policy as an alert system rather than an enforcement mechanism</li>
+            <li class="seo-sample-answer">D. Skip tagging because Azure already groups resources by their resource group</li>
+        </ul>
+        <p class="seo-sample-explain">The Pricing calculator helps estimate the monthly cost of selected Azure resources.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A cloud adoption team is comparing Azure management options. Which statement about Pricing calculator and TCO Calculator is accurate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a single global admin account shared by every team member to simplify access</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The two calculators answer different cost-planning questions</li>
+            <li class="seo-sample-answer">C. Use Azure Spot VMs for stateful database workloads requiring zero downtime</li>
+            <li class="seo-sample-answer">D. Use Azure RBAC permissions on a subscription to grant access only at the resource group level</li>
+        </ul>
+        <p class="seo-sample-explain">One estimates Azure service pricing, and the other compares broader on-premises and cloud costs.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A training exercise asks about factors that affect Azure costs. Which response is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a single broad RBAC role for every team member to simplify onboarding</li>
+            <li class="seo-sample-answer">B. Use Azure Monitor metrics alone without alarms in production</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Different Azure regions can have different prices for the same service</li>
+            <li class="seo-sample-answer">D. Treat Microsoft Entra ID as just a password directory</li>
+        </ul>
+        <p class="seo-sample-explain">Regional pricing can affect overall cost planning.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A business team is reviewing Azure operations. Which option correctly describes Pricing calculator and TCO Calculator?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Azure Advisor as a real-time intrusion detection engine</li>
+            <li class="seo-sample-answer">B. Use the public internet as the default path for VM-to-VM traffic across two VNets in the same region</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The TCO Calculator estimates savings from moving on-premises workloads to Azure</li>
+            <li class="seo-sample-answer">D. Use NSG flow logs as a substitute for application access logs</li>
+        </ul>
+        <p class="seo-sample-explain">The TCO Calculator compares current datacenter costs with projected Azure costs.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A cloud adoption team is comparing Azure management options. Which statement about factors that affect Azure costs is accurate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Choose a single cloud model for every workload regardless of compliance and latency requirements</li>
+            <li class="seo-sample-answer">B. Treat consumption-based pricing as a fixed-fee subscription independent of usage</li>
+            <li class="seo-sample-answer">C. Treat reliability and availability as the same metric</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Outbound data transfer and network traffic patterns can affect monthly charges</li>
+        </ul>
+        <p class="seo-sample-explain">Data transfer can be a cost factor when services communicate across boundaries or to users.</p>
+      </details>
       <h2>Other AZ-900 Domains</h2>
       <ul>
           <li><a href="/microsoft-az-900/describe-cloud-concepts/">1.0 Describe cloud concepts</a></li>

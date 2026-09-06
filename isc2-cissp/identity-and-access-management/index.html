@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A research university is enabling federated single sign-on with partner institutions and grant sponsors. The security team must make an IAM decision involving physical and logical access to assets. What is the best recommendation?",
+          "name": "A defense contractor is auditing cleared-personnel access across classified and unclassified networks. Executives need a risk-based explanation for physical and logical access to assets. Which response best aligns with identity governance practice?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use compensating controls when a legacy system cannot support the preferred access control requirement."
+            "text": "Use badge controls, visitor management, locks, cameras, and guards for physical access to sensitive facilities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A federal civilian agency is implementing privileged access management to meet new oversight requirements. A security assurance review must address physical and logical access to assets. What should the security professional recommend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Protect privileged administrative interfaces with stronger authentication, monitoring, and limited access paths."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>104 exam-style questions</strong> covering <strong>13% of the CISSP exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/isc2-cissp/">Certified Information Systems Security Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A regional bank is consolidating workforce identity after a merger and migrating users to a unified directory. A proposed access design creates risk around physical and logical access to assets. Which design change best addresses the concern?</h3>
-        <p><strong>Answer:</strong> Align physical and logical access controls with asset classification, business need, and risk tolerance</p>
-        <p>Access to assets should reflect the value and sensitivity of the asset and the business purpose for access. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A large public hospital is redesigning role-based access to electronic health records by clinical specialty. The CISO asks for CISSP-level guidance on physical and logical access to assets. Which approach is most appropriate?</h3>
-        <p><strong>Answer:</strong> Use separation between public, employee, privileged, and third-party access paths</p>
-        <p>Different populations create different risks and require distinct control models. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A research university is enabling federated single sign-on with partner institutions and grant sponsors. The security team must make an IAM decision involving physical and logical access to assets. What is the best recommendation?</h3>
-        <p><strong>Answer:</strong> Use compensating controls when a legacy system cannot support the preferred access control requirement</p>
-        <p>Compensating controls can reduce residual risk when the ideal control is not feasible. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A regional bank is consolidating workforce identity after a merger and migrating users to a unified directory. A proposed access design creates risk around physical and logical access to assets. Which design change best addresses the concern?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Align physical and logical access controls with asset classification, business need, and risk tolerance</li>
+            <li class="seo-sample-answer">B. Treat a building badge as if it automatically conferred privileges in every application</li>
+            <li class="seo-sample-answer">C. Provision broadly permissive entitlements and depend on the SIEM to detect any abuse</li>
+            <li class="seo-sample-answer">D. Exempt machine identities from the joiner-mover-leaver process altogether</li>
+        </ul>
+        <p class="seo-sample-explain">Access to assets should reflect the value and sensitivity of the asset and the business purpose for access. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A large public hospital is redesigning role-based access to electronic health records by clinical specialty. The CISO asks for CISSP-level guidance on physical and logical access to assets. Which approach is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use separation between public, employee, privileged, and third-party access paths</li>
+            <li class="seo-sample-answer">B. Default new users to elevated rights and trust monitoring to surface inappropriate use</li>
+            <li class="seo-sample-answer">C. Exclude service principals from privileged access management coverage</li>
+            <li class="seo-sample-answer">D. Rely on a key-locked rack as the only protection for the domain controller console</li>
+        </ul>
+        <p class="seo-sample-explain">Different populations create different risks and require distinct control models. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A defense contractor is auditing cleared-personnel access across classified and unclassified networks. Executives need a risk-based explanation for physical and logical access to assets. Which response best aligns with identity governance practice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a single &#39;admin&#39; account everyone shares for sensitive physical and logical entries</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use badge controls, visitor management, locks, cameras, and guards for physical access to sensitive facilities</li>
+            <li class="seo-sample-answer">C. Let physical entry into the data center auto-grant admin rights on the systems inside</li>
+            <li class="seo-sample-answer">D. Skip least-privilege at provisioning time and use detective controls to catch misuse</li>
+        </ul>
+        <p class="seo-sample-explain">Physical access controls reduce unauthorized entry and create accountability around protected areas. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A federal civilian agency is implementing privileged access management to meet new oversight requirements. A security assurance review must address physical and logical access to assets. What should the security professional recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Equate door-reader admittance with full logical authorization across enterprise systems</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Protect privileged administrative interfaces with stronger authentication, monitoring, and limited access paths</li>
+            <li class="seo-sample-answer">C. Choose detective controls over preventive ones for new privileged provisioning</li>
+            <li class="seo-sample-answer">D. Treat non-human identities as out of scope for periodic recertification</li>
+        </ul>
+        <p class="seo-sample-explain">Administrative access can change or bypass security controls and requires elevated protection. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regional credit union is segmenting administrative access in response to a recent regulatory finding. An identity review identifies a weakness in physical and logical access to assets. Which action should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use UEBA as a substitute for designing least-privilege roles in the first place</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Remove shared physical or logical access mechanisms where individual accountability is required</li>
+            <li class="seo-sample-answer">C. Skip ownership assignment for service accounts so no one is accountable for them</li>
+            <li class="seo-sample-answer">D. Skip console authentication on a privileged jump box because the rack is locked</li>
+        </ul>
+        <p class="seo-sample-explain">Shared access weakens attribution and complicates investigations. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A SaaS startup is rolling out customer identity federation to enterprise B2B partners. The security team must make an IAM decision involving physical and logical access to assets. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Protect the privileged management console with only a locked equipment cabinet</li>
+            <li class="seo-sample-answer">B. Have all admins log into a common privileged account for both buildings and systems</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Use network, application, database, and operating system controls to restrict logical access to information assets</li>
+            <li class="seo-sample-answer">D. Conflate having an office key with being authorized to approve financial transactions</li>
+        </ul>
+        <p class="seo-sample-explain">Logical controls enforce who or what can access systems and data. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A municipal water utility is reconciling SCADA operator identities with corporate Active Directory. A proposed access design creates risk around physical and logical access to assets. Which design change best addresses the concern?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Standardize on a single shared &#39;manager&#39; badge and login across all sensitive areas</li>
+            <li class="seo-sample-answer">B. Provision system entitlements based solely on which floor of the building a user can enter</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Use access control matrices or policy models to map subjects, objects, and allowed operations</li>
+            <li class="seo-sample-answer">D. Provision wide access by default and treat alerting as the primary line of defense</li>
+        </ul>
+        <p class="seo-sample-explain">Structured access mapping helps validate whether permissions match intended business rules. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A multinational pharmaceutical&#39;s CIO is restructuring access for clinical research and regulatory staff. An identity review identifies a weakness in physical and logical access to assets. Which action should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip access reviews for service accounts because they are &#39;just background jobs&#39;</li>
+            <li class="seo-sample-answer">B. Treat the data center door as a sufficient compensating control for an unauthenticated console</li>
+            <li class="seo-sample-answer">C. Issue one shared root credential used by every administrator across facilities and apps</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Apply need-to-know and least privilege across both physical facilities and logical systems</li>
+        </ul>
+        <p class="seo-sample-explain">Users should receive only the access needed to perform authorized duties. This is the correct answer.</p>
+      </details>
       <h2>Other CISSP Domains</h2>
       <ul>
           <li><a href="/isc2-cissp/security-and-risk-management/">1.0 Security and Risk Management</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A developer receives AccessDenied when calling an AWS API. Which tool can simulate whether the developer's policies allow the action?",
+          "name": "An EC2 application must access an S3 bucket without storing long-term access keys on the instance. What should be used?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "IAM policy simulator."
+            "text": "An IAM role attached through an instance profile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A policy should allow access to an S3 prefix only when the request uses a specific resource tag. What IAM capability supports this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Policy conditions."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>80 exam-style questions</strong> covering <strong>16% of the SOA-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-cloudops-engineer-associate/">AWS Certified CloudOps Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A company requires console users to use an additional authentication factor before accessing AWS accounts. Which IAM feature should be enforced?</h3>
-        <p><strong>Answer:</strong> Multi-factor authentication</p>
-        <p>Multi-factor authentication. AWS designs this control specifically for IAM features use cases.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An operations team needs workforce users to access multiple AWS accounts through centralized federation. Which service should be considered?</h3>
-        <p><strong>Answer:</strong> AWS IAM Identity Center</p>
-        <p>AWS IAM Identity Center. This is the textbook AWS pattern for IAM features.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A developer receives AccessDenied when calling an AWS API. Which tool can simulate whether the developer&#39;s policies allow the action?</h3>
-        <p><strong>Answer:</strong> IAM policy simulator</p>
-        <p>IAM policy simulator. AWS designs this control specifically for Access troubleshooting and auditing use cases.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A company requires console users to use an additional authentication factor before accessing AWS accounts. Which IAM feature should be enforced?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Multi-factor authentication</li>
+            <li class="seo-sample-answer">B. S3 Versioning</li>
+            <li class="seo-sample-answer">C. VPC Flow Logs</li>
+            <li class="seo-sample-answer">D. CloudFront cache policies</li>
+        </ul>
+        <p class="seo-sample-explain">Multi-factor authentication. AWS designs this control specifically for IAM features use cases.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An operations team needs workforce users to access multiple AWS accounts through centralized federation. Which service should be considered?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. AWS IAM Identity Center</li>
+            <li class="seo-sample-answer">B. Amazon EBS encryption by default</li>
+            <li class="seo-sample-answer">C. Amazon CloudFront Origin Shield</li>
+            <li class="seo-sample-answer">D. AWS Backup Vault Lock</li>
+        </ul>
+        <p class="seo-sample-explain">AWS IAM Identity Center. This is the textbook AWS pattern for IAM features.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An EC2 application must access an S3 bucket without storing long-term access keys on the instance. What should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. An IAM role attached through an instance profile</li>
+            <li class="seo-sample-answer">A. An IAM user access key embedded in the application</li>
+            <li class="seo-sample-answer">C. A Route 53 health check</li>
+            <li class="seo-sample-answer">D. An EBS snapshot policy</li>
+        </ul>
+        <p class="seo-sample-explain">Choose An IAM role attached through an instance profile. This is the AWS-recommended fit for this IAM features need.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A policy should allow access to an S3 prefix only when the request uses a specific resource tag. What IAM capability supports this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. Policy conditions</li>
+            <li class="seo-sample-answer">A. EC2 placement groups</li>
+            <li class="seo-sample-answer">C. DynamoDB point-in-time recovery</li>
+            <li class="seo-sample-answer">D. Route 53 query logging</li>
+        </ul>
+        <p class="seo-sample-explain">Policy conditions. This is the AWS-recommended approach for IAM features.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team needs to identify whether an S3 bucket policy allows access from outside the organization. Which service can help?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. IAM Access Analyzer</li>
+            <li class="seo-sample-answer">A. Amazon EFS lifecycle management</li>
+            <li class="seo-sample-answer">C. RDS Performance Insights</li>
+            <li class="seo-sample-answer">D. Route 53 Resolver inbound endpoints</li>
+        </ul>
+        <p class="seo-sample-explain">Choose IAM Access Analyzer. This is the AWS-recommended fit for this Access troubleshooting and auditing need.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload in one account needs to read an S3 bucket in another account. Which policy combination is commonly required?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">C. An IAM role or principal policy plus an S3 bucket resource policy that allows the access</li>
+            <li class="seo-sample-answer">A. A CloudFront invalidation and an S3 lifecycle rule</li>
+            <li class="seo-sample-answer">B. A NAT gateway and a route table only</li>
+            <li class="seo-sample-answer">D. An RDS parameter group and subnet group</li>
+        </ul>
+        <p class="seo-sample-explain">An IAM role or principal policy plus an S3 bucket resource policy that allows the access is the standard AWS answer. It addresses IAM features cleanly here.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team wants to prevent weak account passwords for IAM users. Which setting should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">C. IAM account password policy</li>
+            <li class="seo-sample-answer">A. CloudTrail Lake retention</li>
+            <li class="seo-sample-answer">B. S3 Transfer Acceleration</li>
+            <li class="seo-sample-answer">D. AWS WAF managed rules</li>
+        </ul>
+        <p class="seo-sample-explain">Use IAM account password policy. It directly satisfies the IAM features requirement in this scenario.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants to restrict IAM role assumption to requests that include a specific external ID from a third-party vendor. Which policy element should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">D. A trust policy condition that checks sts:ExternalId</li>
+            <li class="seo-sample-answer">A. A password policy minimum length</li>
+            <li class="seo-sample-answer">B. An S3 Object Lock retention rule</li>
+            <li class="seo-sample-answer">C. An ALB listener rule</li>
+        </ul>
+        <p class="seo-sample-explain">AWS recommends A trust policy condition that checks sts:ExternalId for this IAM features scenario.</p>
+      </details>
       <h2>Other SOA-C03 Domains</h2>
       <ul>
           <li><a href="/aws-cloudops-engineer-associate/monitoring-logging-analysis-remediation-and-performance-optimization/">1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization</a></li>

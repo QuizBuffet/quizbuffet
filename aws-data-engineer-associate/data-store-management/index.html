@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "An RDS workload has frequent reads on a non-key column and slow lookups. What storage configuration should be considered?",
+          "name": "A low-latency application needs single-digit millisecond key-value lookups at high scale. Which data store is most appropriate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An index that supports the query predicate."
+            "text": "Amazon DynamoDB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A DynamoDB table is queried by customerId and orderDate. What configuration should align with this access pattern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partition and sort keys that support customerId and orderDate queries."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>130 exam-style questions</strong> covering <strong>26% of the DEA-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-data-engineer-associate/">AWS Certified Data Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A data warehouse must support complex analytical SQL over terabytes of curated relational data with predictable query performance. Which service should be selected?</h3>
-        <p><strong>Answer:</strong> Amazon Redshift</p>
-        <p>Amazon Redshift is designed for analytical SQL workloads over large structured datasets and provides warehouse features for performance-oriented reporting. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A relational application workload needs transactions, SQL, and managed database operations. Which service is suitable?</h3>
-        <p><strong>Answer:</strong> Amazon RDS</p>
-        <p>Amazon RDS provides managed relational database engines for transactional SQL workloads with backups, patching, and availability features. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An RDS workload has frequent reads on a non-key column and slow lookups. What storage configuration should be considered?</h3>
-        <p><strong>Answer:</strong> An index that supports the query predicate</p>
-        <p>A relational index on the frequently filtered column lets the database locate matching rows without scanning the full table. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A data warehouse must support complex analytical SQL over terabytes of curated relational data with predictable query performance. Which service should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Amazon Redshift</li>
+            <li class="seo-sample-answer">B. Amazon MemoryDB for Redis</li>
+            <li class="seo-sample-answer">C. Amazon Aurora PostgreSQL pgvector</li>
+            <li class="seo-sample-answer">D. Amazon CloudWatch</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon Redshift is designed for analytical SQL workloads over large structured datasets and provides warehouse features for performance-oriented reporting. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A relational application workload needs transactions, SQL, and managed database operations. Which service is suitable?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Amazon RDS</li>
+            <li class="seo-sample-answer">B. Amazon DynamoDB Streams</li>
+            <li class="seo-sample-answer">C. AWS Transfer Family</li>
+            <li class="seo-sample-answer">D. AWS CloudTrail</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon RDS provides managed relational database engines for transactional SQL workloads with backups, patching, and availability features. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A low-latency application needs single-digit millisecond key-value lookups at high scale. Which data store is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon S3 Tables</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Amazon DynamoDB</li>
+            <li class="seo-sample-answer">C. AWS DMS Schema Conversion</li>
+            <li class="seo-sample-answer">D. Amazon S3</li>
+        </ul>
+        <p class="seo-sample-explain">DynamoDB provides managed key-value and document storage with low-latency access patterns and automatic scaling options for high-throughput applications. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A DynamoDB table is queried by customerId and orderDate. What configuration should align with this access pattern?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon DynamoDB Streams</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Partition and sort keys that support customerId and orderDate queries</li>
+            <li class="seo-sample-answer">C. Apache ORC</li>
+            <li class="seo-sample-answer">D. Amazon S3 Tables</li>
+        </ul>
+        <p class="seo-sample-explain">A partition key and sort key designed around customerId and orderDate allow DynamoDB to retrieve the requested items efficiently without table scans. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A DynamoDB workload needs an alternate query pattern that the base table key does not support. Which configuration helps?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Kinesis Data Firehose</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A global secondary index</li>
+            <li class="seo-sample-answer">C. Amazon S3</li>
+            <li class="seo-sample-answer">D. AWS CloudFormation</li>
+        </ul>
+        <p class="seo-sample-explain">A global secondary index provides another key structure so the application can query DynamoDB efficiently by a different attribute pattern. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A data lake stores raw and curated files in open formats and needs low-cost durable storage. Which storage service should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon OpenSearch Service</li>
+            <li class="seo-sample-answer">B. AWS CloudFormation</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Amazon S3</li>
+            <li class="seo-sample-answer">D. AWS DMS Schema Conversion</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon S3 provides durable, low-cost object storage that is commonly used as the foundation for raw and curated data lake zones. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Amazon Redshift table is frequently joined on customer_id and filtered by event_date. What should be reviewed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Snow Family</li>
+            <li class="seo-sample-answer">B. Amazon SageMaker Data Wrangler</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Distribution style, sort keys, and table design</li>
+            <li class="seo-sample-answer">D. Amazon Kinesis Data Streams</li>
+        </ul>
+        <p class="seo-sample-explain">Redshift distribution and sort choices affect join movement and scan pruning, so they should match frequent join and filter patterns. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Spark analytics workload requires configurable distributed processing over data in S3. Which service should be considered?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Keyspaces</li>
+            <li class="seo-sample-answer">B. Amazon SageMaker Unified Studio</li>
+            <li class="seo-sample-answer">C. AWS Glue crawlers</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Amazon EMR</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon EMR runs distributed frameworks such as Spark and can process large datasets with configurable cluster resources and storage integration. This is the correct answer.</p>
+      </details>
       <h2>Other DEA-C01 Domains</h2>
       <ul>
           <li><a href="/aws-data-engineer-associate/data-ingestion-and-transformation/">1.0 Data Ingestion and Transformation</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A response plan for suspected data exfiltration needs a decision point for customer notification. What should the runbook capture before that decision?",
+          "name": "A company has separate playbooks for public S3 bucket exposure, compromised IAM credentials, and suspicious container runtime activity. What should be standardized across all playbooks?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Confirmed data types, affected resources, access path, time window, identities, and legal or compliance contacts."
+            "text": "Roles, severity model, communication path, evidence handling, escalation triggers, and closure criteria."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A runbook for AI application abuse must address prompt injection and unsafe output attempts. What should it include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Detection inputs, guardrail outcomes, abuse-scoping steps, model access review, and safe evidence handling."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>84 exam-style questions</strong> covering <strong>14% of the SCS-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-security-specialty/">AWS Certified Security Specialty practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A GuardDuty finding indicates possible EC2 credential exfiltration. The security team wants a repeatable plan that analysts can execute consistently. What should the runbook define first?</h3>
-        <p><strong>Answer:</strong> Triage steps, severity criteria, affected-resource identification, containment actions, and evidence preservation</p>
-        <p>A useful incident runbook starts by turning the finding into a scoped, prioritized workflow that preserves evidence before destructive changes occur.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A team uses Systems Manager OpsCenter for incident work. What should a security incident response plan specify?</h3>
-        <p><strong>Answer:</strong> How findings create OpsItems, required context fields, assignment, escalation, and linked automation documents</p>
-        <p>OpsCenter is most effective when incident intake, ownership, context, and automation links are defined before incidents occur.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A response plan for suspected data exfiltration needs a decision point for customer notification. What should the runbook capture before that decision?</h3>
-        <p><strong>Answer:</strong> Confirmed data types, affected resources, access path, time window, identities, and legal or compliance contacts</p>
-        <p>Notification decisions require scoped evidence about what data was accessed, how, when, and who must be involved.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A GuardDuty finding indicates possible EC2 credential exfiltration. The security team wants a repeatable plan that analysts can execute consistently. What should the runbook define first?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Triage steps, severity criteria, affected-resource identification, containment actions, and evidence preservation</li>
+            <li class="seo-sample-answer">B. Immediate termination of every EC2 instance in the account</li>
+            <li class="seo-sample-answer">C. Only a link to the GuardDuty console with no response steps</li>
+            <li class="seo-sample-answer">D. A request to disable CloudTrail during investigation</li>
+        </ul>
+        <p class="seo-sample-explain">A useful incident runbook starts by turning the finding into a scoped, prioritized workflow that preserves evidence before destructive changes occur.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team uses Systems Manager OpsCenter for incident work. What should a security incident response plan specify?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. How findings create OpsItems, required context fields, assignment, escalation, and linked automation documents</li>
+            <li class="seo-sample-answer">B. Use OpsCenter only as a generic bookmark folder</li>
+            <li class="seo-sample-answer">C. Place production credentials in OpsItem descriptions</li>
+            <li class="seo-sample-answer">D. Create OpsItems manually only after all remediation is complete</li>
+        </ul>
+        <p class="seo-sample-explain">OpsCenter is most effective when incident intake, ownership, context, and automation links are defined before incidents occur.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company has separate playbooks for public S3 bucket exposure, compromised IAM credentials, and suspicious container runtime activity. What should be standardized across all playbooks?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The same containment command for every incident type</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Roles, severity model, communication path, evidence handling, escalation triggers, and closure criteria</li>
+            <li class="seo-sample-answer">C. A requirement to wait for business hours before any response</li>
+            <li class="seo-sample-answer">D. A policy to delete raw evidence after summary writing</li>
+        </ul>
+        <p class="seo-sample-explain">Common response structure keeps incident execution consistent while allowing technical steps to differ by incident type.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A runbook for AI application abuse must address prompt injection and unsafe output attempts. What should it include?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Store every user prompt publicly for community analysis</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Detection inputs, guardrail outcomes, abuse-scoping steps, model access review, and safe evidence handling</li>
+            <li class="seo-sample-answer">C. Treat all model refusals as successful attacks</li>
+            <li class="seo-sample-answer">D. Disable all application authentication to reproduce abuse</li>
+        </ul>
+        <p class="seo-sample-explain">GenAI incident response needs application-specific evidence, control outcomes, and user or identity scope without overcollecting sensitive prompts.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team wants every high-severity incident runbook to support rapid handoff between shifts. Which section is essential?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A blank template that responders fill in after closure</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Current state summary, completed actions, open hypotheses, evidence locations, and next decisions</li>
+            <li class="seo-sample-answer">C. Only a list of AWS service names with no actions</li>
+            <li class="seo-sample-answer">D. A requirement that the original responder stay online indefinitely</li>
+        </ul>
+        <p class="seo-sample-explain">Shift handoff needs operational context that prevents repeated work and preserves decision continuity.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A runbook for suspected IAM key compromise must support fast containment without losing attribution. Which step belongs in the runbook?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Delete the IAM user and all CloudTrail records immediately</li>
+            <li class="seo-sample-answer">B. Rotate unrelated KMS keys before confirming the principal&#39;s actions</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Deactivate the access key, preserve CloudTrail activity, and investigate recent API calls by the principal</li>
+            <li class="seo-sample-answer">D. Open administrator access to all responders by default</li>
+        </ul>
+        <p class="seo-sample-explain">Disabling the key limits further use while CloudTrail evidence identifies scope, actions, and resources affected.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regulated organization wants runbooks that auditors can review. What design requirement matters most?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Runbooks edited only in an untracked chat thread</li>
+            <li class="seo-sample-answer">B. A plan that depends entirely on one engineer&#39;s memory</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Version-controlled runbooks with approvals, test history, and mapped evidence requirements</li>
+            <li class="seo-sample-answer">D. A single emergency role with no logging requirement</li>
+        </ul>
+        <p class="seo-sample-explain">Auditable runbooks need change history, governance, and proof that procedures are tested and aligned to evidence needs.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team wants response plans for ransomware-like activity in an S3 data lake. Which runbook element is most important?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Disable S3 Versioning after the first suspicious delete</li>
+            <li class="seo-sample-answer">B. Make the bucket public so external analysts can inspect it quickly</li>
+            <li class="seo-sample-answer">C. Delete lifecycle and access logs to reduce storage charges</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Steps to isolate write paths, preserve object versions, review access logs, and validate clean recovery points</li>
+        </ul>
+        <p class="seo-sample-explain">S3 ransomware response depends on stopping destructive writes, retaining object history, and recovering from trusted versions or backups.</p>
+      </details>
       <h2>Other SCS-C03 Domains</h2>
       <ul>
           <li><a href="/aws-security-specialty/detection/">1.0 Detection</a></li>

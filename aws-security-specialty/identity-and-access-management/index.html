@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A company uses an external identity provider and wants employees to access AWS accounts without IAM users. What should be implemented?",
+          "name": "A company has development, staging, and production accounts. Developers need read access to production and write access to development. What authorization model fits?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "IAM Identity Center integrated with the external identity provider."
+            "text": "Separate roles or permission sets by environment with group-based assignment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A workload needs separate permissions for deployment, runtime, and break-glass operations. What model is appropriate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use distinct roles for each operational context with different trust policies and permissions."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>120 exam-style questions</strong> covering <strong>20% of the SCS-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-security-specialty/">AWS Certified Security Specialty practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A security team is replacing per-user IAM policies with a model that can scale across hundreds of engineers and workloads. What design should be used?</h3>
-        <p><strong>Answer:</strong> Define job-function roles and group assignments, then attach managed policies that represent approved permission sets</p>
-        <p>Group-based and role-based assignments reduce per-user policy sprawl and make authorization changes easier to review and audit.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A startup has grown quickly, and many policies contain wildcards because teams copied old examples. What is the best scalable improvement?</h3>
-        <p><strong>Answer:</strong> Create reviewed policy templates for common job functions and migrate teams to those templates</p>
-        <p>Reviewed templates reduce copy-paste permission drift and create a consistent baseline for future access changes.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A company uses an external identity provider and wants employees to access AWS accounts without IAM users. What should be implemented?</h3>
-        <p><strong>Answer:</strong> IAM Identity Center integrated with the external identity provider</p>
-        <p>IAM Identity Center provides federated workforce access to multiple accounts without creating separate IAM users.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A security team is replacing per-user IAM policies with a model that can scale across hundreds of engineers and workloads. What design should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Define job-function roles and group assignments, then attach managed policies that represent approved permission sets</li>
+            <li class="seo-sample-answer">B. Attach a unique inline policy to every individual user</li>
+            <li class="seo-sample-answer">C. Share one administrator user across all engineers</li>
+            <li class="seo-sample-answer">D. Use security group membership as the AWS permission model</li>
+        </ul>
+        <p class="seo-sample-explain">Group-based and role-based assignments reduce per-user policy sprawl and make authorization changes easier to review and audit.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A startup has grown quickly, and many policies contain wildcards because teams copied old examples. What is the best scalable improvement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Create reviewed policy templates for common job functions and migrate teams to those templates</li>
+            <li class="seo-sample-answer">B. Keep copying old wildcard policies because they are already working</li>
+            <li class="seo-sample-answer">C. Delete all policies before understanding dependencies</li>
+            <li class="seo-sample-answer">D. Allow every team to create administrator roles to avoid policy review</li>
+        </ul>
+        <p class="seo-sample-explain">Reviewed templates reduce copy-paste permission drift and create a consistent baseline for future access changes.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company has development, staging, and production accounts. Developers need read access to production and write access to development. What authorization model fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. One role with AdministratorAccess in every account</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Separate roles or permission sets by environment with group-based assignment</li>
+            <li class="seo-sample-answer">C. One IAM user per environment with shared passwords</li>
+            <li class="seo-sample-answer">D. Resource tags only, with no IAM policies</li>
+        </ul>
+        <p class="seo-sample-explain">Environment-specific roles allow permissions to reflect risk and job need without granting broad access everywhere.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload needs separate permissions for deployment, runtime, and break-glass operations. What model is appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use one role for deployment, runtime, and emergency actions</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use distinct roles for each operational context with different trust policies and permissions</li>
+            <li class="seo-sample-answer">C. Use local application configuration files as the IAM authority</li>
+            <li class="seo-sample-answer">D. Use only resource names to imply permission level</li>
+        </ul>
+        <p class="seo-sample-explain">Separating roles by context limits what each activity can do and improves audit clarity.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A SAML federation setup allows users into the wrong AWS role. What should be checked?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only the EC2 instance type in the account</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Identity provider group mappings, SAML attributes, role trust policy, and permission set assignment</li>
+            <li class="seo-sample-answer">C. Only the S3 bucket storage class</li>
+            <li class="seo-sample-answer">D. Only CloudFront response headers</li>
+        </ul>
+        <p class="seo-sample-explain">Federation depends on both identity-provider assertions and AWS-side role or permission set configuration.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security architect wants application teams to create roles only from approved permission patterns. What scalable model helps?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Unreviewed inline policies written manually in the console</li>
+            <li class="seo-sample-answer">B. A policy that grants iam:* to every team role</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Reusable managed policies and permission boundaries applied through infrastructure as code</li>
+            <li class="seo-sample-answer">D. An email thread listing allowed actions</li>
+        </ul>
+        <p class="seo-sample-explain">Managed patterns and boundaries let teams self-serve while staying inside approved authorization limits.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants to grant access based on project membership and environment but avoid creating thousands of project-specific policies. What model should be considered?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Create one administrator policy per project and attach it broadly</li>
+            <li class="seo-sample-answer">B. Let users self-assign any project tag without controls</li>
+            <li class="seo-sample-answer seo-sample-correct">C. ABAC with governed principal tags and resource tags</li>
+            <li class="seo-sample-answer">D. Use VPC route tables to determine project permissions</li>
+        </ul>
+        <p class="seo-sample-explain">Attribute-based access control can scale project authorization by comparing trusted attributes rather than creating a policy per project.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company needs a central way to provide read-only, billing, and security-audit access across many accounts. What should be created?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Separate unmanaged IAM users in each account for every employee</li>
+            <li class="seo-sample-answer">B. One account root user login for auditors</li>
+            <li class="seo-sample-answer">C. Bucket ACLs that list every auditor</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Standardized roles or IAM Identity Center permission sets assigned to appropriate groups</li>
+        </ul>
+        <p class="seo-sample-explain">Standard permission sets keep access consistent across accounts while still mapping to different job functions.</p>
+      </details>
       <h2>Other SCS-C03 Domains</h2>
       <ul>
           <li><a href="/aws-security-specialty/detection/">1.0 Detection</a></li>

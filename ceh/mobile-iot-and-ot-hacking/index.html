@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "What is Android Debug Bridge (ADB), and why is it a security risk when enabled on a mobile device?",
+          "name": "A mobile banking app transmits authentication tokens in HTTP request headers without TLS, allowing any party monitoring the network to capture them. Which OWASP Mobile Top 10 category does this vulnerability fall under?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ADB is a command-line communication tool for Android devices; when USB debugging is enabled, it allows anyone with physical USB access to install apps, extract data, and run shell commands without the device passcode."
+            "text": "M3: Insecure Communication, sensitive data transmitted without adequate transport security."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which MDM enrollment model allows employees to use their personal devices for work while maintaining a technical separation between corporate apps/data and personal content, typically using containerization technology?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BYOD enrollment with containerization, corporate apps are isolated in a managed container while personal data remains separate and private."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>60 exam-style questions</strong> covering <strong>9% of the CEH exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which OWASP Mobile Top 10 category specifically covers vulnerabilities where an app stores sensitive data, such as credentials, API keys, or PII, in unprotected locations like Android SharedPreferences or iOS NSUserDefaults?</h3>
-        <p><strong>Answer:</strong> M2: Insecure Data Storage</p>
-        <p>OWASP Mobile Top 10 M2 (Insecure Data Storage) covers vulnerabilities where apps store sensitive data in insecure locations, including Android&#39;s SharedPreferences (XML files readable by any root process), NSUserDefaults (iOS plist files), SQLite databases without encryption, device logs, and external storage. Attackers who root/jailbreak the device or use forensic tools can extract this data trivially.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A mobile banking app relies exclusively on OS-level certificate validation for TLS and does not implement certificate pinning. Which specific attack does this omission enable that certificate pinning would prevent?</h3>
-        <p><strong>Answer:</strong> Man-in-the-middle interception of TLS traffic using a proxy with a CA certificate trusted by the device OS</p>
-        <p>Without certificate pinning, the app accepts any TLS certificate that chains to a trusted CA. If an attacker or tester installs a custom CA on the test device (e.g., Burp Suite&#39;s CA) and runs a proxy, the app trusts the proxy&#39;s certificate. The proxy decrypts, inspects, and re-encrypts all HTTPS traffic. Certificate pinning prevents this by requiring the server&#39;s certificate to match a specific hardcoded value, rejecting any certificate, even one from a trusted CA, that doesn&#39;t match.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is Android Debug Bridge (ADB), and why is it a security risk when enabled on a mobile device?</h3>
-        <p><strong>Answer:</strong> ADB is a command-line communication tool for Android devices; when USB debugging is enabled, it allows anyone with physical USB access to install apps, extract data, and run shell commands without the device passcode</p>
-        <p>Android Debug Bridge (ADB) is a developer tool included in the Android SDK that provides a command-line interface to communicate with connected Android devices via USB or TCP/IP. When USB debugging is enabled (Developer Options), an attacker with physical access can use ADB to install APKs, extract files, execute shell commands, capture screenshots, dump memory, and create full device backups, all without needing the device&#39;s PIN, pattern, or password. This is a significant risk for unlocked devices or devices that are left unattended.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which OWASP Mobile Top 10 category specifically covers vulnerabilities where an app stores sensitive data, such as credentials, API keys, or PII, in unprotected locations like Android SharedPreferences or iOS NSUserDefaults?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. M2: Insecure Data Storage</li>
+            <li class="seo-sample-answer">B. M1: Improper Platform Usage</li>
+            <li class="seo-sample-answer">C. M3: Insecure Communication</li>
+            <li class="seo-sample-answer">D. M5: Insufficient Cryptography</li>
+        </ul>
+        <p class="seo-sample-explain">OWASP Mobile Top 10 M2 (Insecure Data Storage) covers vulnerabilities where apps store sensitive data in insecure locations, including Android&#39;s SharedPreferences (XML files readable by any root process), NSUserDefaults (iOS plist files), SQLite databases without encryption, device logs, and external storage. Attackers who root/jailbreak the device or use forensic tools can extract this data trivially.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A mobile banking app relies exclusively on OS-level certificate validation for TLS and does not implement certificate pinning. Which specific attack does this omission enable that certificate pinning would prevent?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. SQL injection through the mobile API endpoint bypassing server-side input validation</li>
+            <li class="seo-sample-answer">B. Reverse engineering of the app&#39;s business logic by decompiling the APK with jadx</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Man-in-the-middle interception of TLS traffic using a proxy with a CA certificate trusted by the device OS</li>
+            <li class="seo-sample-answer">D. Privilege escalation on rooted devices that access the app&#39;s internal storage directory</li>
+        </ul>
+        <p class="seo-sample-explain">Without certificate pinning, the app accepts any TLS certificate that chains to a trusted CA. If an attacker or tester installs a custom CA on the test device (e.g., Burp Suite&#39;s CA) and runs a proxy, the app trusts the proxy&#39;s certificate. The proxy decrypts, inspects, and re-encrypts all HTTPS traffic. Certificate pinning prevents this by requiring the server&#39;s certificate to match a specific hardcoded value, rejecting any certificate, even one from a trusted CA, that doesn&#39;t match.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A mobile banking app transmits authentication tokens in HTTP request headers without TLS, allowing any party monitoring the network to capture them. Which OWASP Mobile Top 10 category does this vulnerability fall under?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. M2: Insecure Data Storage, the token is stored insecurely in transit</li>
+            <li class="seo-sample-answer seo-sample-correct">B. M3: Insecure Communication, sensitive data transmitted without adequate transport security</li>
+            <li class="seo-sample-answer">C. M7: Client Code Quality, the developer used an insecure HTTP library function</li>
+            <li class="seo-sample-answer">D. M9: Reverse Engineering, attackers can extract the token format from the binary</li>
+        </ul>
+        <p class="seo-sample-explain">OWASP Mobile M3 (Insecure Communication) directly covers this scenario: any transmission of sensitive data (authentication tokens, credentials, PII) over unencrypted channels (HTTP instead of HTTPS), with improper TLS configuration, or without certificate validation. Transmitting tokens in plain HTTP exposes them to passive sniffing on the same network (coffee shop Wi-Fi, rogue AP, ISP surveillance).</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which MDM enrollment model allows employees to use their personal devices for work while maintaining a technical separation between corporate apps/data and personal content, typically using containerization technology?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Apple DEP / Android Zero Touch, fully corporate-manages the device from factory enrollment</li>
+            <li class="seo-sample-answer seo-sample-correct">B. BYOD enrollment with containerization, corporate apps are isolated in a managed container while personal data remains separate and private</li>
+            <li class="seo-sample-answer">C. Corporate-owned personally enabled (COPE), company owns the device but allows personal use</li>
+            <li class="seo-sample-answer">D. Certificate-based enrollment, uses PKI client certificates to authenticate devices to the MDM server</li>
+        </ul>
+        <p class="seo-sample-explain">BYOD (Bring Your Own Device) enrollment with containerization (e.g., Samsung Knox, Microsoft Intune with Android Work Profile, or Apple Managed Open-In) creates a secure corporate container on the employee&#39;s personal device. Corporate apps, email, and data reside in the managed container (encrypted separately, under IT control), while personal apps and data remain outside IT&#39;s reach. IT can wipe the corporate container without affecting personal photos, messages, or apps.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which OWASP standard provides a comprehensive security requirements framework for mobile applications, organized into tiered levels (L1 Standard, L2 Defense-in-Depth, L3 Resilience) covering data storage, authentication, cryptography, network communication, and platform interaction?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. CIS Mobile Device Security Benchmark</li>
+            <li class="seo-sample-answer seo-sample-correct">B. OWASP Mobile Application Security Verification Standard (MASVS)</li>
+            <li class="seo-sample-answer">C. NIST Mobile Threat Catalogue (NIST IR 8144)</li>
+            <li class="seo-sample-answer">D. PCI DSS Mobile Payment Acceptance Security Guidelines</li>
+        </ul>
+        <p class="seo-sample-explain">OWASP MASVS (Mobile Application Security Verification Standard) defines security requirements for mobile app developers and security testers in three levels: L1 (standard security, required for all apps), L2 (defense-in-depth requiring additional controls for sensitive apps like banking), and R (resilience requirements for apps needing protection against reverse engineering). Its companion guide, the OWASP MASTG (Mobile Application Security Testing Guide), provides detailed testing procedures for each MASVS requirement.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During an iOS app security assessment, a tester finds that OAuth2 access tokens are stored in the iOS Keychain using the kSecAttrAccessibleAlways accessibility attribute. Why is this a security concern compared to using kSecAttrAccessibleWhenUnlockedThisDeviceOnly?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The iOS Keychain is not encrypted, kSecAttrAccessibleAlways items are stored in plaintext accessible to any installed app</li>
+            <li class="seo-sample-answer">B. OAuth2 tokens stored with kSecAttrAccessibleAlways are automatically shared with all apps signed by the same developer Team ID</li>
+            <li class="seo-sample-answer">C. kSecAttrAccessibleAlways causes tokens to expire immediately when the device screen locks, breaking the user session</li>
+            <li class="seo-sample-answer seo-sample-correct">D. kSecAttrAccessibleAlways allows keychain item access even when the device is locked, a stolen device, forensic extraction tool, or malware active during device lock can access the tokens without the user&#39;s passcode</li>
+        </ul>
+        <p class="seo-sample-explain">kSecAttrAccessibleAlways (or kSecAttrAccessibleAlwaysThisDeviceOnly) makes keychain items available without requiring the device passcode or biometric authentication. This means a forensic tool (like Cellebrite or GrayKey) can extract these tokens even from a locked device if it can exploit an iOS vulnerability to access the keychain. kSecAttrAccessibleWhenUnlockedThisDeviceOnly restricts access to times when the device has been unlocked since last boot, significantly reducing the window of exposure. Sensitive tokens should use the most restrictive accessibility attribute consistent with the app&#39;s UX requirements.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security assessor uses Drozer during an Android security assessment. Which specific testing capability does Drozer provide that static APK analysis with jadx or apktool cannot?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Drozer decompiles and de-obfuscates ProGuard-protected Android APK bytecode for source code review</li>
+            <li class="seo-sample-answer">B. Drozer analyzes Android network traffic as a transparent HTTP/HTTPS proxy between the app and its backend</li>
+            <li class="seo-sample-answer">C. Drozer performs GPU-accelerated brute-force attacks against encrypted Android SQLite database files</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Drozer interacts with live running Android IPC components, testing exported Activities, ContentProviders, Services, and BroadcastReceivers for unauthorized access, data leakage, and privilege escalation at runtime</li>
+        </ul>
+        <p class="seo-sample-explain">Drozer is the industry-standard tool for testing Android IPC (Inter-Process Communication) attack surfaces. Using Drozer&#39;s agent installed on the device, a tester can: enumerate all exported app components (dz&gt; run app.package.attacksurface), query ContentProviders directly without being the intended app (dz&gt; run app.provider.query), send malicious Intents to exported Activities or Services, and test for path traversal in content URI handling. This dynamic, runtime testing reveals vulnerabilities that static analysis alone cannot confirm because IPC behavior depends on runtime conditions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An attacker gains temporary physical access to an Android device with USB debugging enabled and the screen unlocked. Which ADB command creates a full backup of all installed apps and their data, including credentials potentially stored in SharedPreferences or SQLite databases?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. adb install malicious.apk, installs a malicious app silently on the target device</li>
+            <li class="seo-sample-answer seo-sample-correct">B. adb backup -all -apk -f device_backup.ab, creates a backup archive of all apps and their associated data</li>
+            <li class="seo-sample-answer">C. adb shell pm list packages -f, lists all installed app package names and their APK file paths</li>
+            <li class="seo-sample-answer">D. adb logcat -d &gt; logfile.txt, dumps the Android system log buffer to a file on the attacker&#39;s computer</li>
+        </ul>
+        <p class="seo-sample-explain">adb backup -all -apk -f device_backup.ab creates a compressed backup archive containing all apps&#39; data (with -all) and their APK files (with -apk). The resulting .ab file can be converted to a .tar archive using Android Backup Extractor, then explored to find SharedPreferences XML files, SQLite databases, saved tokens, and other sensitive app data, all in a single command without needing to root the device.</p>
+      </details>
       <h2>Other CEH Domains</h2>
       <ul>
           <li><a href="/ceh/information-security-overview/">1.0 Information Security and Ethical Hacking Overview</a></li>

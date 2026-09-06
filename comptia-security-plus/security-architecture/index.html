@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "What is Infrastructure as Code (IaC) and what security implications does it have?",
+          "name": "A company migrates from an on-premises application to SaaS. In the on-premises model, the security team managed OS patching, database encryption, network controls, and application access. Which of these responsibilities shift to the SaaS provider and which remain with the customer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Infrastructure as Code defines and provisions infrastructure through machine-readable configuration files rather than manual processes."
+            "text": "Responsibility shift in SaaS migration: Provider assumes: OS patching (entirely, customers have no OS access in SaaS); database encryption (provider manages the database infrastructure); network controls protecting the SaaS infrastructure (firewalls, DDoS protection)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An organization's hybrid architecture connects their on-premises data center to AWS via AWS Direct Connect. Sensitive financial data processes on-premises; non-sensitive web applications run in AWS. A security architect must secure the hybrid connection. What security controls are critical at this boundary?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Critical security controls at the hybrid cloud boundary: (1) Strict network segmentation, the Direct Connect connection should terminate in a dedicated transit VPC/VLAN, not directly into production networks; traffic must traverse security controls before reaching either…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>199 exam-style questions</strong> covering <strong>18% of the SY0-701 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-security-plus/">CompTIA Security+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What is the shared responsibility model in cloud computing and why is it a critical security concept?</h3>
-        <p><strong>Answer:</strong> The shared responsibility model divides security responsibilities between the cloud provider and the customer: the provider is always responsible for the physical infrastructure, hypervisor, and core cloud services; the customer is always responsible for their data, access management, and application security. The exact division of middle-layer responsibilities (OS patching, network configuration, encryption) varies by service model (IaaS, PaaS, SaaS), misunderstanding this division creates security gaps</p>
-        <p>The shared responsibility model defines exactly who secures what, customer and provider responsibilities are clearly delineated and vary by service model. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is a hybrid cloud architecture and what unique security challenges does it introduce?</h3>
-        <p><strong>Answer:</strong> A hybrid cloud combines on-premises infrastructure with public cloud services, connected through VPN or private network links. Unique security challenges: maintaining consistent security policies across two environments with different control planes; identity federation across on-premises Active Directory and cloud IAM; data classification governance determining what data can reside in each environment; network security at the hybrid connection boundary; and visibility, security monitoring must span both environments with unified threat detection</p>
-        <p>Hybrid environments require managing security across two different control planes, identity systems, and monitoring frameworks, creating unique complexity. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is Infrastructure as Code (IaC) and what security implications does it have?</h3>
-        <p><strong>Answer:</strong> Infrastructure as Code defines and provisions infrastructure through machine-readable configuration files rather than manual processes. Security implications: IaC enables consistent, repeatable deployments reducing configuration drift; security configurations can be enforced through code review and automated testing; secrets embedded in IaC templates create security risks; and IaC repositories containing infrastructure definitions are high-value targets, compromise enables attacker-controlled infrastructure deployment</p>
-        <p>IaC has significant security implications, both positive (consistency, code review) and negative (secrets exposure, template targeting) that must be managed. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What is the shared responsibility model in cloud computing and why is it a critical security concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The shared responsibility model means the cloud provider is responsible for all security, customers have no security obligations</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The shared responsibility model divides security responsibilities between the cloud provider and the customer: the provider is always responsible for the physical infrastructure, hypervisor, and core cloud services; the customer is always responsible for their data, access management, and application security. The exact division of middle-layer responsibilities (OS patching, network configuration, encryption) varies by service model (IaaS, PaaS, SaaS), misunderstanding this division creates security gaps</li>
+            <li class="seo-sample-answer">C. The shared responsibility model only applies to public cloud, private cloud has no shared responsibilities</li>
+            <li class="seo-sample-answer">D. The shared responsibility model is a legal concept only, it has no operational security implications</li>
+        </ul>
+        <p class="seo-sample-explain">The shared responsibility model defines exactly who secures what, customer and provider responsibilities are clearly delineated and vary by service model. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What is a hybrid cloud architecture and what unique security challenges does it introduce?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A hybrid cloud combines public and private networks in an office building, it has no special security implications</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A hybrid cloud combines on-premises infrastructure with public cloud services, connected through VPN or private network links. Unique security challenges: maintaining consistent security policies across two environments with different control planes; identity federation across on-premises Active Directory and cloud IAM; data classification governance determining what data can reside in each environment; network security at the hybrid connection boundary; and visibility, security monitoring must span both environments with unified threat detection</li>
+            <li class="seo-sample-answer">C. Hybrid cloud eliminates security concerns by combining the strengths of both environments</li>
+            <li class="seo-sample-answer">D. Hybrid cloud is identical to multi-cloud, both terms describe the same architecture</li>
+        </ul>
+        <p class="seo-sample-explain">Hybrid environments require managing security across two different control planes, identity systems, and monitoring frameworks, creating unique complexity. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company migrates from an on-premises application to SaaS. In the on-premises model, the security team managed OS patching, database encryption, network controls, and application access. Which of these responsibilities shift to the SaaS provider and which remain with the customer?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. All four responsibilities transfer entirely to the SaaS provider, customers have no security obligations in SaaS</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Responsibility shift in SaaS migration: Provider assumes: OS patching (entirely, customers have no OS access in SaaS); database encryption (provider manages the database infrastructure); network controls protecting the SaaS infrastructure (firewalls, DDoS protection). Customer retains: application access management (who can access the SaaS application, what roles they have, MFA enforcement, this always remains customer responsibility regardless of cloud model); data governance (what data is stored in the SaaS, data classification, retention); configuration of the SaaS application&#39;s security settings; and user identity integration. The critical customer responsibility in SaaS is access management and data governance, providers never manage who accesses the customer&#39;s data</li>
+            <li class="seo-sample-answer">C. Only OS patching transfers, all other responsibilities remain with the customer in SaaS</li>
+            <li class="seo-sample-answer">D. The responsibility division is negotiated per contract, there is no standard SaaS responsibility model</li>
+        </ul>
+        <p class="seo-sample-explain">SaaS shifts infrastructure responsibilities to the provider while keeping access management and data governance with the customer, understanding this division is critical. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization&#39;s hybrid architecture connects their on-premises data center to AWS via AWS Direct Connect. Sensitive financial data processes on-premises; non-sensitive web applications run in AWS. A security architect must secure the hybrid connection. What security controls are critical at this boundary?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Direct Connect is inherently secure, no additional security controls are needed for the hybrid connection</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Critical security controls at the hybrid cloud boundary: (1) Strict network segmentation, the Direct Connect connection should terminate in a dedicated transit VPC/VLAN, not directly into production networks; traffic must traverse security controls before reaching either environment; (2) Micro-segmentation rules, explicit allow rules for specific required traffic flows; block all other traffic between environments; (3) Traffic inspection, IDS/IPS or next-generation firewall inspecting cross-environment traffic; (4) Encryption, even though Direct Connect is a private connection, encrypt traffic at the application layer (TLS) for defense-in-depth; (5) Identity and access governance, service accounts used across the boundary should have minimum required permissions; (6) Data classification enforcement, controls preventing sensitive financial data from being accidentally transmitted to the AWS environment; (7) Monitoring, unified logging of all cross-boundary traffic for anomaly detection and incident response</li>
+            <li class="seo-sample-answer">C. Only encrypt traffic crossing the boundary, no other controls are needed for private connections</li>
+            <li class="seo-sample-answer">D. Allow all traffic between environments, segmentation only applies to internet-facing connections</li>
+        </ul>
+        <p class="seo-sample-explain">Hybrid boundaries require layered security controls, segmentation, inspection, encryption, identity governance, and monitoring together secure the critical connection point. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team scans a Terraform repository and discovers: database passwords hardcoded in variables, S3 buckets configured as public, and security groups allowing 0.0.0.0/0 on port 22. These configurations have been deploying to production for 6 months. What security failures does this represent?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. IaC repositories are development artifacts, production security is unaffected by repository configurations</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Multiple security failures: (1) Secrets in IaC, database passwords hardcoded in Terraform variables are exposed to anyone with repository access; stored in version control history even after removal; this is a critical credential exposure; (2) Public S3 buckets, misconfigured as public exposes data to the internet; deployed at scale by IaC, this affects all environments where the template was applied; (3) SSH open to 0.0.0.0/0, security groups allowing global SSH access expose all EC2 instances to internet-based brute force and exploitation. The 6-month deployment window means: all these misconfigurations are in every environment deployed from this template; credentials have been exposed; data may have been accessed; and internet-accessible SSH may have been exploited. Root cause: absence of IaC security scanning (tfsec, Checkov) in the CI/CD pipeline and no code review enforcing security standards</li>
+            <li class="seo-sample-answer">C. These are minor configuration issues, no remediation is needed</li>
+            <li class="seo-sample-answer">D. IaC security scanning is unnecessary, manual code review catches all configuration issues</li>
+        </ul>
+        <p class="seo-sample-explain">All three findings are critical security misconfigurations that have been actively deployed to production, each requires immediate remediation and a retrospective review. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A healthcare organization classifies data into four tiers. Protected Health Information (PHI) is Restricted; employee HR records are Confidential; internal policies are Internal; and the organization&#39;s public website content is Public. A security team discovers an employee downloaded a file containing a mix of PHI and public policy text into a single document. How should this compound document be classified and why?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The document should be classified based on an average of its content classifications, mixed documents receive an intermediate classification</li>
+            <li class="seo-sample-answer">B. The document should retain the Public classification for its public portions only, the PHI content can be reclassified separately after redaction</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The compound document must be classified at the highest classification level of any of its components. Restricted, because the entire document must be handled according to the most sensitive data it contains. Mixing PHI with lower-classification content does not reduce the PHI&#39;s sensitivity; the whole document now carries PHI exposure risk and must be treated as Restricted. Best practice is to prevent mixing of classification tiers in a single document and to separate PHI into properly controlled repositories rather than combining it with lower-classification content</li>
+            <li class="seo-sample-answer">D. The document should be classified as Confidential because it contains both PHI and policy content and the average of Restricted and Internal equals Confidential</li>
+        </ul>
+        <p class="seo-sample-explain">Documents containing mixed classification levels must be classified at the highest level present, because any exposure of the document exposes all of its content including the most sensitive. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization is choosing between three data-at-rest encryption approaches for a sensitive database: (1) full-disk encryption on the host server, (2) database transparent data encryption (TDE), and (3) application-layer column-level encryption. Which approach provides the strongest protection against a privileged database administrator who has full DBA credentials?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Full-disk encryption provides the strongest protection because it encrypts all data on the server including database files</li>
+            <li class="seo-sample-answer">B. Database TDE provides the strongest protection because it encrypts the database at the engine level, preventing OS-level access</li>
+            <li class="seo-sample-answer">C. All three approaches provide equivalent protection against a privileged DBA because DBA credentials grant access to all data in all encryption models</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Application-layer column-level encryption provides the strongest protection against a privileged DBA because encryption and decryption occur in the application layer before data reaches the database engine. A DBA querying the database sees only ciphertext in the encrypted columns, the decryption keys are held by the application, not the database. Full-disk encryption and TDE both decrypt data transparently for any process or user with OS or database credentials, a DBA with full credentials bypasses both. Column-level application encryption separates the key management authority from the database administration role, providing true defense against insider threat from DBAs</li>
+        </ul>
+        <p class="seo-sample-explain">Application-layer column encryption is the only approach where a privileged DBA with full database credentials still sees only ciphertext for encrypted columns, because key authority is separated from database administration. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization uses AWS EC2 (IaaS). A security breach occurs, an attacker exploited an unpatched OS vulnerability on the EC2 instance and accessed customer data stored in an unencrypted EBS volume. Which party failed in their shared responsibility and what specifically was each party&#39;s obligation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS is responsible for all EC2 security, the breach is AWS&#39;s liability</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Responsibility analysis: AWS fulfilled its obligations, the EC2 hypervisor, physical infrastructure, and underlying hardware were secure; AWS provided the patched OS images and encryption capabilities. Customer failed in two areas: (1) OS patching, in IaaS (EC2), the customer is responsible for patching the guest OS; AWS provides the virtualization layer but the customer manages what runs inside the VM, including OS updates; (2) Data encryption, the customer chose unencrypted EBS storage; AWS provides encryption capabilities (EBS encryption at rest) but enabling encryption is a customer configuration responsibility. The breach is the customer&#39;s security failure, they did not patch their OS and did not enable available encryption features. AWS is not liable for customer configuration failures within the customer&#39;s shared responsibility domain</li>
+            <li class="seo-sample-answer">C. Both parties share equal blame, the responsibility matrix means 50/50 liability</li>
+            <li class="seo-sample-answer">D. AWS is responsible for OS patching in EC2, customers only manage applications in IaaS</li>
+        </ul>
+        <p class="seo-sample-explain">IaaS customers own the OS and everything above, patching and encryption configuration are definitively customer responsibilities in EC2. This is the correct answer.</p>
+      </details>
       <h2>Other SY0-701 Domains</h2>
       <ul>
           <li><a href="/comptia-security-plus/general-security-concepts/">1.0 General Security Concepts</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which adversary framework organizes real-world attacker behavior into 14 tactic categories, including Initial Access, Execution, Persistence, Privilege Escalation, and Exfiltration, and is the industry-standard reference for mapping threats to defensive controls?",
+          "name": "Which type of hacker operates under explicit written authorization from the target organization to identify and responsibly report security vulnerabilities?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "MITRE ATT&CK Framework."
+            "text": "White hat hacker."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A threat group infiltrates a defense contractor, remains undetected for 14 months, systematically exfiltrates classified design blueprints, and uses custom malware that evades all commercial endpoint security products. Which combination of characteristics MOST definitively classifies this as an Advanced Persistent Threat (APT)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prolonged dwell time, targeted strategic objectives, and custom sophisticated tooling."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>28 exam-style questions</strong> covering <strong>4% of the CEH exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which three properties form the CIA triad that serves as the foundational framework for all information security programs?</h3>
-        <p><strong>Answer:</strong> Confidentiality, Integrity, and Availability</p>
-        <p>The CIA triad. Confidentiality (preventing unauthorized disclosure of information), Integrity (ensuring data accuracy and trustworthiness), and Availability (ensuring authorized users can access resources when needed), is the foundational framework for all information security programs per EC-Council CEH v13 guidelines and NIST SP 800-12.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>In the EC-Council CEH five-phase hacking methodology, which phase immediately follows Reconnaissance and involves actively probing target systems for open ports and running services?</h3>
-        <p><strong>Answer:</strong> Scanning</p>
-        <p>The CEH five-phase hacking methodology proceeds as: (1) Reconnaissance → (2) Scanning → (3) Gaining Access → (4) Maintaining Access → (5) Covering Tracks. Scanning is the active phase where attackers probe the target using tools like Nmap or Nessus to identify open ports, running services, OS versions, and potential vulnerabilities, building on passive recon data to identify attack vectors.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which adversary framework organizes real-world attacker behavior into 14 tactic categories, including Initial Access, Execution, Persistence, Privilege Escalation, and Exfiltration, and is the industry-standard reference for mapping threats to defensive controls?</h3>
-        <p><strong>Answer:</strong> MITRE ATT&amp;CK Framework</p>
-        <p>MITRE ATT&amp;CK (Adversarial Tactics, Techniques, and Common Knowledge) is a globally accessible knowledge base of adversary TTPs derived from real-world observations. Its Enterprise matrix contains 14 tactic categories and hundreds of techniques and sub-techniques, making it the standard reference for threat intelligence, red team planning, and SOC detection engineering.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which three properties form the CIA triad that serves as the foundational framework for all information security programs?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Confidentiality, Integrity, and Availability</li>
+            <li class="seo-sample-answer">B. Compliance, Identity, and Authentication</li>
+            <li class="seo-sample-answer">C. Confidentiality, Identification, and Authorization</li>
+            <li class="seo-sample-answer">D. Cryptography, Integrity, and Auditing</li>
+        </ul>
+        <p class="seo-sample-explain">The CIA triad. Confidentiality (preventing unauthorized disclosure of information), Integrity (ensuring data accuracy and trustworthiness), and Availability (ensuring authorized users can access resources when needed), is the foundational framework for all information security programs per EC-Council CEH v13 guidelines and NIST SP 800-12.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>In the EC-Council CEH five-phase hacking methodology, which phase immediately follows Reconnaissance and involves actively probing target systems for open ports and running services?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Scanning</li>
+            <li class="seo-sample-answer">B. Gaining Access</li>
+            <li class="seo-sample-answer">C. Maintaining Access</li>
+            <li class="seo-sample-answer">D. Covering Tracks</li>
+        </ul>
+        <p class="seo-sample-explain">The CEH five-phase hacking methodology proceeds as: (1) Reconnaissance → (2) Scanning → (3) Gaining Access → (4) Maintaining Access → (5) Covering Tracks. Scanning is the active phase where attackers probe the target using tools like Nmap or Nessus to identify open ports, running services, OS versions, and potential vulnerabilities, building on passive recon data to identify attack vectors.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which type of hacker operates under explicit written authorization from the target organization to identify and responsibly report security vulnerabilities?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. White hat hacker</li>
+            <li class="seo-sample-answer">B. Gray hat hacker</li>
+            <li class="seo-sample-answer">C. Black hat hacker</li>
+            <li class="seo-sample-answer">D. Script kiddie</li>
+        </ul>
+        <p class="seo-sample-explain">White hat hackers (ethical hackers) are security professionals who are explicitly authorized by the target organization to perform penetration testing and vulnerability assessments. They operate under a formal Rules of Engagement or Statement of Work agreement, report all findings to the client, and work to improve the organization&#39;s security posture, the definition of an ethical hacker per EC-Council.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A threat group infiltrates a defense contractor, remains undetected for 14 months, systematically exfiltrates classified design blueprints, and uses custom malware that evades all commercial endpoint security products. Which combination of characteristics MOST definitively classifies this as an Advanced Persistent Threat (APT)?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use of malware and unauthorized network access</li>
+            <li class="seo-sample-answer">B. Targeting of a defense sector organization</li>
+            <li class="seo-sample-answer">C. Use of an encrypted exfiltration channel</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Prolonged dwell time, targeted strategic objectives, and custom sophisticated tooling</li>
+        </ul>
+        <p class="seo-sample-explain">APTs are defined by all three attributes simultaneously: Advanced (custom malware evading commercial AV, sophisticated tradecraft), Persistent (14-month dwell time, long-term strategic access rather than hit-and-run), and Threat (specific strategic objective, classified blueprints, rather than opportunistic financial gain). All three pillars together constitute the APT classification per EC-Council CEH v13 and NIST definitions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which penetration test type provides the tester with zero prior knowledge about the target environment, no network diagrams, no credentials, no system inventory, simulating the perspective of an external attacker?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Gray box testing</li>
+            <li class="seo-sample-answer">B. White box testing</li>
+            <li class="seo-sample-answer">C. Crystal box testing</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Black box testing</li>
+        </ul>
+        <p class="seo-sample-explain">Black box testing simulates a real-world external attacker with no prior knowledge of the target. The tester must rely entirely on reconnaissance and scanning techniques to discover the attack surface, mimicking the perspective of a threat actor who has obtained no insider information about the environment.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A hospital&#39;s patient records system becomes completely inaccessible for six hours after a ransomware attack encrypts all files on the server. Which component of the CIA triad is MOST directly violated?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Integrity, because the ransomware modified the file contents</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Availability, because authorized users cannot access the records</li>
+            <li class="seo-sample-answer">C. Confidentiality, because the ransomware operator can read the data</li>
+            <li class="seo-sample-answer">D. Non-repudiation, because the attacker&#39;s identity cannot be confirmed</li>
+        </ul>
+        <p class="seo-sample-explain">Availability ensures that information and systems are accessible to authorized users when required. Ransomware that encrypts files and blocks all access is a direct attack on availability, the system may be online but is completely unusable by legitimate users, making this the dominant CIA violation in the described scenario.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A disgruntled employee copies sensitive customer PII to a personal USB drive, then deliberately deletes the original database records before resigning. Listed in the order the violations occurred, which CIA triad properties were compromised?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Integrity, then Availability</li>
+            <li class="seo-sample-answer">B. Availability, then Confidentiality</li>
+            <li class="seo-sample-answer">C. Integrity, then Confidentiality</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Confidentiality, then Availability</li>
+        </ul>
+        <p class="seo-sample-explain">The attack occurred in two steps: (1) Copying PII to a USB drive = Confidentiality violation, unauthorized disclosure of sensitive personal data to an unauthorized medium. (2) Deleting the original database records = Availability violation, authorized users (other employees, systems) can no longer access that data. This insider threat targets both CIA pillars sequentially.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An attacker intercepts network traffic between a client and a banking web server, silently alters transaction amounts in transit, then forwards the modified messages to the server. Which CIA triad component is PRIMARILY compromised by this attack?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Availability, because the transaction service may be disrupted</li>
+            <li class="seo-sample-answer">B. Accountability, because audit logs will show false transaction values</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Integrity, because data is modified in transit without authorization</li>
+            <li class="seo-sample-answer">D. Confidentiality, because the attacker can read message content</li>
+        </ul>
+        <p class="seo-sample-explain">Integrity ensures that data remains accurate, complete, and unaltered during storage or transmission. A man-in-the-middle attack that modifies financial transaction amounts before forwarding is a textbook integrity violation (MITM/T1557 in MITRE ATT&amp;CK). The receiving bank server accepts falsified data it believes is authentic.</p>
+      </details>
       <h2>Other CEH Domains</h2>
       <ul>
           <li><a href="/ceh/reconnaissance-techniques/">2.0 Reconnaissance Techniques</a></li>

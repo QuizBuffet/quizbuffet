@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Traffic should prefer Direct Connect and use VPN only during failure. What should be configured?",
+          "name": "A company wants two 10 Gbps Direct Connect connections to behave as a single logical bundle. What should the engineer create?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "BGP attributes and route preferences that make Direct Connect primary and VPN backup."
+            "text": "A Direct Connect link aggregation group using compatible dedicated connections."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "The AWS Direct Connect port is available, but the customer router does not show link up. What should be checked first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cross-connect status, optics, cabling, speed, duplex, and interface state."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>156 exam-style questions</strong> covering <strong>26% of the ANS-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-advanced-networking-specialty/">AWS Certified Advanced Networking Specialty practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A Direct Connect dedicated connection has been ordered and the colocation provider is ready to patch the circuit. What must be supplied to complete the physical handoff?</h3>
-        <p><strong>Answer:</strong> Provide the LOA-CFA and confirm the port location, cross-connect details, optics, and speed settings</p>
-        <p>The facility can complete the cross-connect only when the authorization, port assignment, and physical interface details align.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A replication workload will use jumbo frames over Direct Connect. What must be validated before production traffic is moved?</h3>
-        <p><strong>Answer:</strong> End-to-end MTU compatibility across routers, VIFs, AWS paths, and instances</p>
-        <p>Large frames work only when every segment in the data path supports the selected MTU.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Traffic should prefer Direct Connect and use VPN only during failure. What should be configured?</h3>
-        <p><strong>Answer:</strong> BGP attributes and route preferences that make Direct Connect primary and VPN backup</p>
-        <p>Route attributes and advertisements control which hybrid path is preferred while preserving failover.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A Direct Connect dedicated connection has been ordered and the colocation provider is ready to patch the circuit. What must be supplied to complete the physical handoff?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Provide the LOA-CFA and confirm the port location, cross-connect details, optics, and speed settings</li>
+            <li class="seo-sample-answer">B. Use a single hosted zone for both internet and split-horizon private records without separation</li>
+            <li class="seo-sample-answer">C. Disable VPC route propagation and manage every prefix manually at scale</li>
+            <li class="seo-sample-answer">D. Use ALB access logs as the primary source for VPC-internal east-west traffic analysis</li>
+        </ul>
+        <p class="seo-sample-explain">The facility can complete the cross-connect only when the authorization, port assignment, and physical interface details align.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A replication workload will use jumbo frames over Direct Connect. What must be validated before production traffic is moved?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. End-to-end MTU compatibility across routers, VIFs, AWS paths, and instances</li>
+            <li class="seo-sample-answer">B. Skip BFD and rely on default BGP keepalive timers for sub-second failover</li>
+            <li class="seo-sample-answer">C. Use a single shared CDK app deployed manually for production and dev</li>
+            <li class="seo-sample-answer">D. Advertise the same prefix from every BGP peer with identical attributes</li>
+        </ul>
+        <p class="seo-sample-explain">Large frames work only when every segment in the data path supports the selected MTU.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants two 10 Gbps Direct Connect connections to behave as a single logical bundle. What should the engineer create?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Treat AWS PrivateLink as a layer 3 routed mesh between VPCs</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A Direct Connect link aggregation group using compatible dedicated connections</li>
+            <li class="seo-sample-answer">C. Use AWS Firewall Manager only after each account opts in individually with no central policy</li>
+            <li class="seo-sample-answer">D. Use ACM-imported certificates without renewal monitoring or alerting</li>
+        </ul>
+        <p class="seo-sample-explain">A link aggregation group combines supported Direct Connect circuits for a single logical bundle with greater aggregate capacity.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>The AWS Direct Connect port is available, but the customer router does not show link up. What should be checked first?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use an external CA without ACM Private CA for AWS-native certificate distribution</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Cross-connect status, optics, cabling, speed, duplex, and interface state</li>
+            <li class="seo-sample-answer">C. Use a Site-to-Site VPN as the only path for sustained 10 Gbps throughput</li>
+            <li class="seo-sample-answer">D. Use AWS PrivateLink to share full IP-level connectivity between two VPCs</li>
+        </ul>
+        <p class="seo-sample-explain">A physical link failure is most likely corrected by verifying the facility patch, transceivers, and interface negotiation.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A static VPN route to a newly added on-premises CIDR is missing. What action is required?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use sticky sessions to compensate for missing identity tokens in API calls</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Add the new CIDR to the VPN static routes and update corresponding on-premises routing</li>
+            <li class="seo-sample-answer">C. Skip CloudFormation drift detection and trust manual change tickets</li>
+            <li class="seo-sample-answer">D. Use a Direct Connect public VIF to reach a private VPC subnet</li>
+        </ul>
+        <p class="seo-sample-explain">Static routing does not learn new prefixes automatically, so each side must include the new destination.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A private virtual interface remains down after the circuit comes up. Which settings should be matched on the customer router?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Place the customer gateway IP inside the VPC CIDR range</li>
+            <li class="seo-sample-answer">B. Choose subnets without ENA-supported instance types for high packet-per-second workloads</li>
+            <li class="seo-sample-answer seo-sample-correct">C. VLAN tag, BGP peer addresses, ASN, authentication if used, and allowed prefixes</li>
+            <li class="seo-sample-answer">D. Create a public hosted zone to serve only VPC-internal DNS queries</li>
+        </ul>
+        <p class="seo-sample-explain">A VIF requires the logical VLAN and BGP parameters to match before route exchange can occur.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A design requires resilience to a colocation facility failure. What implementation meets the requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use the AWS CLI from a developer laptop as the production deployment automation tool</li>
+            <li class="seo-sample-answer">B. Use an ALB host-based routing rule to load balance non-HTTP TCP services</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Provision redundant Direct Connect connections in separate locations with diverse customer equipment where possible</li>
+            <li class="seo-sample-answer">D. Use Global Accelerator to reduce data egress charges to on-premises</li>
+        </ul>
+        <p class="seo-sample-explain">Facility and equipment diversity reduces the chance that one site or router failure removes all private connectivity.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A hosted connection appears in the customer account but cannot be used yet. What is the required AWS-side step?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use AS_PATH prepending to make a path more preferred than its peer</li>
+            <li class="seo-sample-answer">B. Use Route 53 Resolver outbound endpoints inside an isolated subnet without on-prem reachability</li>
+            <li class="seo-sample-answer">C. Use DNS TTL values as a hybrid routing protocol</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Accept the hosted connection and create the required virtual interface</li>
+        </ul>
+        <p class="seo-sample-explain">Hosted connectivity is not usable by the customer account until it is accepted and a VIF is configured.</p>
+      </details>
       <h2>Other ANS-C01 Domains</h2>
       <ul>
           <li><a href="/aws-advanced-networking-specialty/network-design/">1.0 Network Design</a></li>

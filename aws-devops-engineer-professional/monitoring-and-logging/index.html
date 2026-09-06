@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "An application emits business metrics inside structured logs using Embedded Metric Format. What is the benefit?",
+          "name": "A service has an increasing 5XX rate. The team needs a fast signal for detection and then detailed context for diagnosis. Which combination is appropriate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "CloudWatch can extract custom metrics from structured log events."
+            "text": "CloudWatch metrics for detection and application logs for diagnosis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A support team needs to follow a user request from the edge through backend services. What should every service propagate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A correlation ID."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>90 exam-style questions</strong> covering <strong>15% of the DOP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-devops-engineer-professional/">AWS Certified DevOps Engineer Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A microservices checkout request passes through API Gateway, Lambda, SQS, and a payment service. The team needs to understand where latency is introduced for one request. Which observability signal is most useful?</h3>
-        <p><strong>Answer:</strong> Distributed trace with correlated logs</p>
-        <p>A distributed trace shows timing across service boundaries, and correlated logs add request-specific details for the same transaction. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A workload emits detailed debug logs for every request and costs are rising sharply. What should the DevOps engineer adjust?</h3>
-        <p><strong>Answer:</strong> Log levels, sampling, and retention based on operational value</p>
-        <p>Controlling verbosity and retention preserves useful diagnostic data while reducing noise and cost. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An application emits business metrics inside structured logs using Embedded Metric Format. What is the benefit?</h3>
-        <p><strong>Answer:</strong> CloudWatch can extract custom metrics from structured log events</p>
-        <p>Embedded Metric Format lets applications publish metric values and dimensions through structured log events. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A microservices checkout request passes through API Gateway, Lambda, SQS, and a payment service. The team needs to understand where latency is introduced for one request. Which observability signal is most useful?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Distributed trace with correlated logs</li>
+            <li class="seo-sample-answer">B. Only monthly billing reports</li>
+            <li class="seo-sample-answer">C. Only the deployment package size</li>
+            <li class="seo-sample-answer">D. Only the number of IAM users in the account</li>
+        </ul>
+        <p class="seo-sample-explain">A distributed trace shows timing across service boundaries, and correlated logs add request-specific details for the same transaction. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload emits detailed debug logs for every request and costs are rising sharply. What should the DevOps engineer adjust?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Log levels, sampling, and retention based on operational value</li>
+            <li class="seo-sample-answer">B. Delete all error logs first</li>
+            <li class="seo-sample-answer">C. Store every debug field forever by default</li>
+            <li class="seo-sample-answer">D. Move debug logs into user responses</li>
+        </ul>
+        <p class="seo-sample-explain">Controlling verbosity and retention preserves useful diagnostic data while reducing noise and cost. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A service has an increasing 5XX rate. The team needs a fast signal for detection and then detailed context for diagnosis. Which combination is appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only source repository commit messages</li>
+            <li class="seo-sample-answer seo-sample-correct">B. CloudWatch metrics for detection and application logs for diagnosis</li>
+            <li class="seo-sample-answer">C. Only a static architecture diagram</li>
+            <li class="seo-sample-answer">D. Only IAM Access Analyzer findings</li>
+        </ul>
+        <p class="seo-sample-explain">Metrics provide low-cardinality time-series signals for alarms, while logs provide detailed error context after detection. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A support team needs to follow a user request from the edge through backend services. What should every service propagate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A different random ID at each hop with no parent relationship</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A correlation ID</li>
+            <li class="seo-sample-answer">C. The full bearer token as the request identifier</li>
+            <li class="seo-sample-answer">D. The source file name of the service only</li>
+        </ul>
+        <p class="seo-sample-explain">A shared correlation ID connects logs, metrics dimensions where appropriate, and traces for the same user request. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A DevOps engineer installs the CloudWatch agent but no custom metrics appear. What should be checked first?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The length of the Auto Scaling group name only</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Agent configuration, instance role permissions, and agent status logs</li>
+            <li class="seo-sample-answer">C. The Route 53 record TTL for the application</li>
+            <li class="seo-sample-answer">D. The CodeDeploy deployment group color</li>
+        </ul>
+        <p class="seo-sample-explain">Agent collection depends on a valid configuration, permissions to publish metrics, and a running agent. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A container service runs normally for hours and then memory gradually increases until tasks are killed. What observability signal should be collected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only CloudTrail management events</li>
+            <li class="seo-sample-answer">B. Only S3 object access logs for static assets</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Memory utilization metrics with container logs around restarts</li>
+            <li class="seo-sample-answer">D. Only Route 53 hosted zone changes</li>
+        </ul>
+        <p class="seo-sample-explain">Memory metrics reveal the leak pattern, and logs around restarts help identify workload context and errors. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An EC2 fleet must publish memory and disk utilization to CloudWatch. The default EC2 metrics are not enough. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only detailed EC2 monitoring</li>
+            <li class="seo-sample-answer">B. Only an Application Load Balancer access log</li>
+            <li class="seo-sample-answer seo-sample-correct">C. CloudWatch agent with memory and disk metric collection</li>
+            <li class="seo-sample-answer">D. Only an IAM password policy</li>
+        </ul>
+        <p class="seo-sample-explain">The CloudWatch agent can collect operating system metrics such as memory and disk usage that are not included in basic EC2 metrics. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team wants to determine whether a problem affects all users or only one tenant. Which logging practice is important?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Log only free-form messages with no identifiers</li>
+            <li class="seo-sample-answer">B. Log full secrets with every request for context</li>
+            <li class="seo-sample-answer">C. Use a different field name for tenant on every service</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Include safe tenant or correlation fields in structured telemetry</li>
+        </ul>
+        <p class="seo-sample-explain">Structured tenant and correlation fields allow filtering impact scope without exposing sensitive values. This is the correct answer.</p>
+      </details>
       <h2>Other DOP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-devops-engineer-professional/sdlc-automation/">1.0 SDLC Automation</a></li>

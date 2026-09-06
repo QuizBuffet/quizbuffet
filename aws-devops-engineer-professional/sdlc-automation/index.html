@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A pipeline in a tools account must deploy CloudFormation stacks into many workload accounts. What must each workload account provide?",
+          "name": "A company wants developers to receive feedback as soon as code is pushed, but production releases must occur only after broader validation. Which SDLC model should the pipeline implement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A trusted deployment role with permissions scoped to the target stack operations."
+            "text": "Continuous integration with controlled continuous delivery promotion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A company deploys applications into separate development, staging, and production AWS accounts. The security team wants the pipeline to build once and promote the same artifact across accounts. Which pattern should be used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A central pipeline that assumes cross-account deployment roles and promotes the same artifact."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>132 exam-style questions</strong> covering <strong>22% of the DOP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-devops-engineer-professional/">AWS Certified DevOps Engineer Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A DevOps team is redesigning a release process for a regulated application. The team wants every change to move from commit, to build, to automated validation, to approval, and then to deployment with clear evidence. Which pipeline design best matches the SDLC objective?</h3>
-        <p><strong>Answer:</strong> A staged CI/CD pipeline with source, build, test, approval, and deploy actions</p>
-        <p>A staged pipeline maps SDLC phases to auditable automation, making each promotion decision traceable before production deployment. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A company is moving from waterfall-style releases to DevOps practices. What pipeline behavior best reflects the desired SDLC change?</h3>
-        <p><strong>Answer:</strong> Automate build, test, and deployment feedback loops around version-controlled changes</p>
-        <p>DevOps-oriented SDLC automation shortens feedback loops and makes version-controlled changes the unit of release. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A pipeline in a tools account must deploy CloudFormation stacks into many workload accounts. What must each workload account provide?</h3>
-        <p><strong>Answer:</strong> A trusted deployment role with permissions scoped to the target stack operations</p>
-        <p>The tools account needs to assume a role in each workload account so stack changes run with controlled local permissions. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A DevOps team is redesigning a release process for a regulated application. The team wants every change to move from commit, to build, to automated validation, to approval, and then to deployment with clear evidence. Which pipeline design best matches the SDLC objective?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A staged CI/CD pipeline with source, build, test, approval, and deploy actions</li>
+            <li class="seo-sample-answer">B. A single manual deployment script that operators run from a workstation</li>
+            <li class="seo-sample-answer">C. A production deployment that starts before build artifacts are created</li>
+            <li class="seo-sample-answer">D. A repository branch naming policy with no automated stages</li>
+        </ul>
+        <p class="seo-sample-explain">A staged pipeline maps SDLC phases to auditable automation, making each promotion decision traceable before production deployment. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company is moving from waterfall-style releases to DevOps practices. What pipeline behavior best reflects the desired SDLC change?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Automate build, test, and deployment feedback loops around version-controlled changes</li>
+            <li class="seo-sample-answer">B. Delay all tests until after production deployment</li>
+            <li class="seo-sample-answer">C. Use production servers as the primary build environment</li>
+            <li class="seo-sample-answer">D. Remove source control so developers can patch faster</li>
+        </ul>
+        <p class="seo-sample-explain">DevOps-oriented SDLC automation shortens feedback loops and makes version-controlled changes the unit of release. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants developers to receive feedback as soon as code is pushed, but production releases must occur only after broader validation. Which SDLC model should the pipeline implement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Manual integration only at the end of each quarter</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Continuous integration with controlled continuous delivery promotion</li>
+            <li class="seo-sample-answer">C. Continuous deployment directly to production with no validation gates</li>
+            <li class="seo-sample-answer">D. Ad hoc artifact uploads that bypass version control</li>
+        </ul>
+        <p class="seo-sample-explain">Continuous integration gives early build and test feedback, while continuous delivery keeps production promotion controlled by later validation or approval. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company deploys applications into separate development, staging, and production AWS accounts. The security team wants the pipeline to build once and promote the same artifact across accounts. Which pattern should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Build a new artifact independently inside every target account</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A central pipeline that assumes cross-account deployment roles and promotes the same artifact</li>
+            <li class="seo-sample-answer">C. Share long-term access keys from production with the build account</li>
+            <li class="seo-sample-answer">D. Deploy only from developer laptops into each account</li>
+        </ul>
+        <p class="seo-sample-explain">A central pipeline with cross-account roles preserves artifact identity while separating duties across target accounts. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team wants to deploy to three Regions from one pipeline. What design consideration is most important?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Assume one Regional artifact bucket is automatically available to all pipeline actions</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use Region-aware actions, artifact stores, and deployment roles for each target Region</li>
+            <li class="seo-sample-answer">C. Use a single Availability Zone as the deployment boundary</li>
+            <li class="seo-sample-answer">D. Rename the production branch once per Region</li>
+        </ul>
+        <p class="seo-sample-explain">Multi-Region pipelines need artifact availability and permissions aligned to the Region where each action runs. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A release manager needs to know exactly which commit produced a deployed Lambda version. What SDLC practice supports this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Overwrite the same artifact name for every build</li>
+            <li class="seo-sample-answer">B. Edit the Lambda function code manually after pipeline deployment</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Trace each deployment artifact to an immutable source revision and build run</li>
+            <li class="seo-sample-answer">D. Use one shared branch for all hotfixes without tagging releases</li>
+        </ul>
+        <p class="seo-sample-explain">Linking source revision, build execution, artifact, and deployment target provides release traceability across the SDLC. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A startup uses a single AWS account with separate development and production environments. What pipeline pattern is sufficient while maintaining environment boundaries?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use the root user for every environment deployment</li>
+            <li class="seo-sample-answer">B. Use the same unrestricted role for build, test, and production deployment</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Use one pipeline with separate stages and scoped deployment roles for each environment</li>
+            <li class="seo-sample-answer">D. Deploy directly from feature branches to production without gates</li>
+        </ul>
+        <p class="seo-sample-explain">A single-account pipeline can still separate environments through stages, approvals, and least-privilege deployment roles. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization wants feature teams to merge small changes frequently while keeping production stable. Which pipeline structure best supports this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Long-lived branches that merge only after months of development</li>
+            <li class="seo-sample-answer">B. Production deployment on every commit with no environment separation</li>
+            <li class="seo-sample-answer">C. Manual copy of source files between environments</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Automated validation on frequent commits with promotion gates for protected environments</li>
+        </ul>
+        <p class="seo-sample-explain">Frequent integration reduces merge risk, and promotion gates prevent unvalidated changes from reaching protected environments. This is the correct answer.</p>
+      </details>
       <h2>Other DOP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-devops-engineer-professional/configuration-management-and-iac/">2.0 Configuration Management and IaC</a></li>

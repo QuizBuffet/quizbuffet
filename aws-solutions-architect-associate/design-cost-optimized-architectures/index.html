@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "How is S3 Glacier archival best understood when designing cost-optimized AWS architectures?",
+          "name": "A solutions architect must reduce storage or data-transfer cost using S3 storage classes. Which answer best describes the design concept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "S3 Glacier storage classes provide lower-cost archival storage for data that is accessed infrequently and can tolerate retrieval delay.. S3 Glacier storage classes provide lower-cost archival storage for data that is accessed infrequently and can tolerate retrieval delay. This…"
+            "text": "S3 storage classes is the best fit when the cost-optimized AWS architecture requires this design behavior: S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements.. S3 storage classes let architects match object…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A solutions architect must reduce storage or data-transfer cost using S3 lifecycle policies. Which answer best describes the design concept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "S3 lifecycle policies is the best fit when the cost-optimized AWS architecture requires this design behavior: S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time.. S3 lifecycle policies transition or expire…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>120 exam-style questions</strong> covering <strong>20% of the SAA-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-solutions-architect-associate/">AWS Certified Solutions Architect Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches S3 storage classes in AWS Solutions Architect Associate Domain 4.0 Design Cost-Optimized Architectures?</h3>
-        <p><strong>Answer:</strong> S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements.</p>
-        <p>S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which option correctly defines S3 lifecycle policies?</h3>
-        <p><strong>Answer:</strong> S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time.</p>
-        <p>S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>How is S3 Glacier archival best understood when designing cost-optimized AWS architectures?</h3>
-        <p><strong>Answer:</strong> S3 Glacier storage classes provide lower-cost archival storage for data that is accessed infrequently and can tolerate retrieval delay.</p>
-        <p>S3 Glacier storage classes provide lower-cost archival storage for data that is accessed infrequently and can tolerate retrieval delay. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches S3 storage classes in AWS Solutions Architect Associate Domain 4.0 Design Cost-Optimized Architectures?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements.</li>
+            <li class="seo-sample-answer">B. S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time.</li>
+            <li class="seo-sample-answer">C. S3 Glacier storage classes provide lower-cost archival storage for data that is accessed infrequently and can tolerate retrieval delay.</li>
+            <li class="seo-sample-answer">D. S3 Intelligent-Tiering automatically moves objects between access tiers when access patterns are unknown or changing.</li>
+        </ul>
+        <p class="seo-sample-explain">S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which option correctly defines S3 lifecycle policies?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS DataSync cost-effective transfer moves data between on-premises storage and AWS services with managed transfer features when that fits workload needs.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time.</li>
+            <li class="seo-sample-answer">C. AWS Storage Gateway cost fit supports hybrid storage when on-premises applications need access to cloud-backed file, volume, or tape storage.</li>
+            <li class="seo-sample-answer">D. EC2 purchasing options include On-Demand Instances, Reserved Instances, Savings Plans, Spot Instances, and Dedicated Hosts for different cost and commitment needs.</li>
+        </ul>
+        <p class="seo-sample-explain">S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must reduce storage or data-transfer cost using S3 storage classes. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Reserved Instances is the best fit when the cost-optimized AWS architecture requires this design behavior: Reserved Instances reduce cost for steady-state usage in exchange for a term commitment.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. S3 storage classes is the best fit when the cost-optimized AWS architecture requires this design behavior: S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements.</li>
+            <li class="seo-sample-answer">C. Savings Plans is the best fit when the cost-optimized AWS architecture requires this design behavior: Savings Plans reduce compute cost in exchange for a commitment to consistent usage over a term.</li>
+            <li class="seo-sample-answer">D. Spot Instances is the best fit when the cost-optimized AWS architecture requires this design behavior: Spot Instances reduce cost for interruption-tolerant workloads by using spare EC2 capacity that AWS can reclaim.</li>
+        </ul>
+        <p class="seo-sample-explain">S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements. This matches the cost-optimized architecture scenario without confusing storage, compute, database, network, backup, transfer, or purchasing choices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must reduce storage or data-transfer cost using S3 lifecycle policies. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Load balancer cost fit is the best fit when the cost-optimized AWS architecture requires this design behavior: Load balancer cost fit means selecting ALB, NLB, or Gateway Load Balancer only when its traffic behavior and feature set justify its cost.</li>
+            <li class="seo-sample-answer">B. Cost-optimized database selection is the best fit when the cost-optimized AWS architecture requires this design behavior: Cost-optimized database selection chooses the database service, engine, capacity mode, and deployment model that meet workload needs at lowest practical cost.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. S3 lifecycle policies is the best fit when the cost-optimized AWS architecture requires this design behavior: S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time.</li>
+            <li class="seo-sample-answer">D. DynamoDB capacity modes is the best fit when the cost-optimized AWS architecture requires this design behavior: DynamoDB capacity modes let architects choose on-demand or provisioned capacity based on traffic predictability and cost goals.</li>
+        </ul>
+        <p class="seo-sample-explain">S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time. This matches the cost-optimized architecture scenario without confusing storage, compute, database, network, backup, transfer, or purchasing choices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must reduce storage or data-transfer cost using S3 Glacier archival. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. VPC endpoint cost optimization is the best fit when the cost-optimized AWS architecture requires this design behavior: VPC endpoint cost optimization can reduce data transfer through public paths and improve private access to AWS services when traffic patterns justify it.</li>
+            <li class="seo-sample-answer">B. NAT gateway cost strategy is the best fit when the cost-optimized AWS architecture requires this design behavior: NAT gateway cost strategy balances availability and cost when deciding between one shared NAT gateway and NAT gateways in multiple Availability Zones.</li>
+            <li class="seo-sample-answer">C. CloudFront cost optimization is the best fit when the cost-optimized AWS architecture requires this design behavior: CloudFront cost optimization can reduce origin load and data transfer costs while improving latency through edge caching.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. S3 Glacier archival is the best fit when the cost-optimized AWS architecture requires this design behavior: S3 Glacier storage classes provide lower-cost archival storage for data that is accessed infrequently and can tolerate retrieval delay.</li>
+        </ul>
+        <p class="seo-sample-explain">S3 Glacier storage classes provide lower-cost archival storage for data that is accessed infrequently and can tolerate retrieval delay. This matches the cost-optimized architecture scenario without confusing storage, compute, database, network, backup, transfer, or purchasing choices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload has storage access, archival, lifecycle, backup, or transfer requirements with cost constraints. Which scenario best matches S3 storage classes?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A design points to Database read replicas cost tradeoff when the cost, usage pattern, commitment, retention, or data-transfer requirement depends on this distinction: Database read replicas can improve read performance but add cost, so they should match read-scaling or availability requirements.</li>
+            <li class="seo-sample-answer">B. A design points to Database backup retention cost when the cost, usage pattern, commitment, retention, or data-transfer requirement depends on this distinction: Database backup retention cost depends on how long snapshots or backups are kept and whether retention exceeds business requirements.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A design points to S3 storage classes when the cost, usage pattern, commitment, retention, or data-transfer requirement depends on this distinction: S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements.</li>
+            <li class="seo-sample-answer">D. A design points to Database caching cost optimization when the cost, usage pattern, commitment, retention, or data-transfer requirement depends on this distinction: Database caching cost optimization uses cache services when reducing repeated database reads lowers load or avoids larger database capacity.</li>
+        </ul>
+        <p class="seo-sample-explain">S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements. This distinction matters because choosing a nearby concept would lead to the wrong storage tier, compute purchase model, database capacity choice, network path, or retention strategy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload has storage access, archival, lifecycle, backup, or transfer requirements with cost constraints. Which scenario best matches S3 lifecycle policies?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A design points to S3 storage classes when the cost, usage pattern, commitment, retention, or data-transfer requirement depends on this distinction: S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements.</li>
+            <li class="seo-sample-answer">B. A design points to S3 Glacier archival when the cost, usage pattern, commitment, retention, or data-transfer requirement depends on this distinction: S3 Glacier storage classes provide lower-cost archival storage for data that is accessed infrequently and can tolerate retrieval delay.</li>
+            <li class="seo-sample-answer">C. A design points to S3 Intelligent-Tiering when the cost, usage pattern, commitment, retention, or data-transfer requirement depends on this distinction: S3 Intelligent-Tiering automatically moves objects between access tiers when access patterns are unknown or changing.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A design points to S3 lifecycle policies when the cost, usage pattern, commitment, retention, or data-transfer requirement depends on this distinction: S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time.</li>
+        </ul>
+        <p class="seo-sample-explain">S3 lifecycle policies transition or expire objects automatically to reduce storage cost as access patterns change over time. This distinction matters because choosing a nearby concept would lead to the wrong storage tier, compute purchase model, database capacity choice, network path, or retention strategy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A storage design must meet recovery, access, lifecycle, or migration needs at the lowest practical cost. Which answer applies S3 storage classes most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. EFS storage classes is the correct architecture choice when the cost-optimization decision depends on this exact meaning: EFS storage classes reduce file storage cost by matching file access patterns to standard or infrequent-access tiers.</li>
+            <li class="seo-sample-answer">B. Amazon FSx cost fit is the correct architecture choice when the cost-optimization decision depends on this exact meaning: Amazon FSx cost fit means choosing a managed file system only when the workload needs its specific Windows, Lustre, ONTAP, or OpenZFS capabilities.</li>
+            <li class="seo-sample-answer">C. AWS Backup cost strategy is the correct architecture choice when the cost-optimization decision depends on this exact meaning: AWS Backup cost strategy balances recovery requirements, retention periods, and backup frequency to avoid unnecessary backup spending.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. S3 storage classes is the correct architecture choice when the cost-optimization decision depends on this exact meaning: S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements.</li>
+        </ul>
+        <p class="seo-sample-explain">S3 storage classes let architects match object storage cost to access pattern, retrieval time, and durability requirements. This applies the concept at the point where a solutions architect must choose a cost design that still meets performance, availability, retention, and business requirements. This is the correct answer.</p>
+      </details>
       <h2>Other SAA-C03 Domains</h2>
       <ul>
           <li><a href="/aws-solutions-architect-associate/design-secure-architectures/">1.0 Design Secure Architectures</a></li>

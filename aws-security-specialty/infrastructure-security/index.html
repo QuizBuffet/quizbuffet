@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A public API requires protection against OWASP Top 10 attacks. Which edge protection is appropriate?",
+          "name": "An API is targeted by SQL injection and path traversal probes. Which edge security strategy aligns with the anticipated attack?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Associate an AWS WAF web ACL with managed rule groups to the API entry point."
+            "text": "Apply AWS WAF managed rule groups for common web exploits and tune exceptions with logs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An IoT platform needs to prevent devices with invalid policies from publishing to sensitive topics. Which edge-adjacent strategy applies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use AWS IoT policies that scope device principals to approved MQTT topics and actions."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>108 exam-style questions</strong> covering <strong>18% of the SCS-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-security-specialty/">AWS Certified Security Specialty practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A retail site expects credential stuffing against its login endpoint during a sale. Which edge strategy should the security architect select?</h3>
-        <p><strong>Answer:</strong> Use AWS WAF rate-based and bot-control protections at CloudFront with authentication failure monitoring</p>
-        <p>Credential stuffing is a layer 7 abuse pattern, so edge filtering and rate controls near CloudFront can reduce malicious login attempts before they reach the origin.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A globally distributed API must block requests from embargoed countries and known malicious IP ranges. Which edge strategy fits?</h3>
-        <p><strong>Answer:</strong> Use CloudFront geographic restrictions and AWS WAF IP sets with logging</p>
-        <p>Geographic and IP-based edge controls can enforce location and source restrictions before requests reach the application.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A public API requires protection against OWASP Top 10 attacks. Which edge protection is appropriate?</h3>
-        <p><strong>Answer:</strong> Associate an AWS WAF web ACL with managed rule groups to the API entry point</p>
-        <p>AWS WAF managed rule groups can inspect web requests for common application-layer attack patterns.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A retail site expects credential stuffing against its login endpoint during a sale. Which edge strategy should the security architect select?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use AWS WAF rate-based and bot-control protections at CloudFront with authentication failure monitoring</li>
+            <li class="seo-sample-answer">B. Increase the origin database storage class only</li>
+            <li class="seo-sample-answer">C. Use VPC network ACLs as the only login protection</li>
+            <li class="seo-sample-answer">D. Disable access logging during the sale</li>
+        </ul>
+        <p class="seo-sample-explain">Credential stuffing is a layer 7 abuse pattern, so edge filtering and rate controls near CloudFront can reduce malicious login attempts before they reach the origin.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A globally distributed API must block requests from embargoed countries and known malicious IP ranges. Which edge strategy fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use CloudFront geographic restrictions and AWS WAF IP sets with logging</li>
+            <li class="seo-sample-answer">B. Use only a private subnet route table on the origin</li>
+            <li class="seo-sample-answer">C. Use only Lambda execution role permissions</li>
+            <li class="seo-sample-answer">D. Use only EBS encryption on origin instances</li>
+        </ul>
+        <p class="seo-sample-explain">Geographic and IP-based edge controls can enforce location and source restrictions before requests reach the application.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An API is targeted by SQL injection and path traversal probes. Which edge security strategy aligns with the anticipated attack?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use only Shield Advanced without any web-layer rules</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Apply AWS WAF managed rule groups for common web exploits and tune exceptions with logs</li>
+            <li class="seo-sample-answer">C. Rely only on security groups for query-string inspection</li>
+            <li class="seo-sample-answer">D. Move all application logs into a private subnet</li>
+        </ul>
+        <p class="seo-sample-explain">Managed web exploit rules can block OWASP-style attacks while logs support safe tuning for legitimate traffic.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An IoT platform needs to prevent devices with invalid policies from publishing to sensitive topics. Which edge-adjacent strategy applies?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use CloudFront cache behaviors for MQTT authorization</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use AWS IoT policies that scope device principals to approved MQTT topics and actions</li>
+            <li class="seo-sample-answer">C. Use S3 Object Lock on device messages as the only control</li>
+            <li class="seo-sample-answer">D. Use network ACLs to inspect MQTT topic names</li>
+        </ul>
+        <p class="seo-sample-explain">AWS IoT policies authorize device communication at the IoT service edge and limit topic access.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An S3-backed web application allows browser uploads only from https://app.example.com. Which protection should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Wildcard CORS origins and methods for ease of integration</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Restrictive S3 CORS rules for the approved origin, methods, and headers</li>
+            <li class="seo-sample-answer">C. A security group attached to the S3 bucket</li>
+            <li class="seo-sample-answer">D. A Lambda execution role with no bucket policy review</li>
+        </ul>
+        <p class="seo-sample-explain">CORS rules should allow only the required browser origin and operations for the application.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A media company expects volumetric HTTP floods against a public origin. Which edge strategy provides the strongest first line of defense?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Expose the origin directly and scale only the database</li>
+            <li class="seo-sample-answer">B. Use IAM permission boundaries to filter HTTP floods</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Front the origin with CloudFront, AWS WAF, and Shield Advanced protections</li>
+            <li class="seo-sample-answer">D. Disable all caching to force requests to the origin</li>
+        </ul>
+        <p class="seo-sample-explain">CloudFront and AWS WAF reduce origin exposure, while Shield Advanced adds DDoS response capabilities for protected resources.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A public API uses third-party clients with highly variable request rates. The team needs protection without blocking legitimate bursts from trusted partners. Which strategy should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Set one very low global rate limit for all clients</li>
+            <li class="seo-sample-answer">B. Remove WAF protections to avoid false positives</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Combine AWS WAF rate limiting, partner-specific allow rules, and monitoring to tune thresholds</li>
+            <li class="seo-sample-answer">D. Move the API to a single private EC2 instance with no edge controls</li>
+        </ul>
+        <p class="seo-sample-explain">A blended edge strategy can limit abusive rates while making explicit allowance for known trusted client patterns.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company hosts public static content in S3 and wants controlled browser access from a specific application domain. Which threat should guide the edge strategy?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. EC2 instance metadata abuse from the browser</li>
+            <li class="seo-sample-answer">B. KMS grant sprawl on unrelated databases</li>
+            <li class="seo-sample-answer">C. Patch drift on container hosts</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Misconfigured CORS allowing unintended origins to access objects</li>
+        </ul>
+        <p class="seo-sample-explain">S3 CORS controls browser cross-origin behavior, so the strategy must limit origins and methods to the intended application.</p>
+      </details>
       <h2>Other SCS-C03 Domains</h2>
       <ul>
           <li><a href="/aws-security-specialty/detection/">1.0 Detection</a></li>

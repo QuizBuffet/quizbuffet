@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "What is log aggregation in a cloud observability context?",
+          "name": "A production incident occurs and the engineering team cannot determine the root cause because application logs are not available. Which logging practice would MOST directly have prevented this investigative gap?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Centralizing logs from multiple distributed sources into a single unified platform where they can be searched, correlated, and analyzed together, providing a holistic view across all systems."
+            "text": "Configuring structured logging at an appropriate verbosity level, shipping logs to a centralized log management platform, and ensuring log availability persists beyond instance termination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A microservices application runs 50 containers across 10 nodes. Each container writes logs to its local stdout. After a container restarts, its previous logs are lost. Which log collection architecture prevents this data loss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deploy a log collection agent (e.g., Fluentd, Fluent Bit, Filebeat) on each node that continuously reads container logs from the node's log directory and forwards them to a centralized log platform outside the container lifecycle. Node-level log collection agents continuously…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>164 exam-style questions</strong> covering <strong>17% of the CV0-004 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-cloud-plus/">CompTIA Cloud+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What is the PRIMARY purpose of logging in a cloud environment?</h3>
-        <p><strong>Answer:</strong> To record events, errors, transactions, and system activities over time, providing an audit trail and data source for troubleshooting, security analysis, and compliance</p>
-        <p>Logging captures a persistent, time-stamped record of system and application events, enabling post-incident investigation, security forensics, compliance auditing, and performance analysis. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is log collection in a cloud observability architecture?</h3>
-        <p><strong>Answer:</strong> The process of gathering log data from various sources, applications, operating systems, cloud services, and network devices, and forwarding it to a centralized storage and analysis platform</p>
-        <p>Log collection gathers log data from all sources in a distributed environment and forwards it to a centralized platform (ELK stack, Splunk, CloudWatch Logs) for unified storage, search, and analysis. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is log aggregation in a cloud observability context?</h3>
-        <p><strong>Answer:</strong> Centralizing logs from multiple distributed sources into a single unified platform where they can be searched, correlated, and analyzed together, providing a holistic view across all systems</p>
-        <p>Log aggregation centralizes logs from all sources, applications, infrastructure, cloud services, into one platform, enabling engineers to search across all systems simultaneously, correlate events across services, and build a complete picture of system behavior. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What is the PRIMARY purpose of logging in a cloud environment?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. To automatically fix application errors when they occur</li>
+            <li class="seo-sample-answer seo-sample-correct">B. To record events, errors, transactions, and system activities over time, providing an audit trail and data source for troubleshooting, security analysis, and compliance</li>
+            <li class="seo-sample-answer">C. To replace monitoring dashboards with text-based status reports</li>
+            <li class="seo-sample-answer">D. To store application code changes for version control purposes</li>
+        </ul>
+        <p class="seo-sample-explain">Logging captures a persistent, time-stamped record of system and application events, enabling post-incident investigation, security forensics, compliance auditing, and performance analysis. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What is log collection in a cloud observability architecture?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The process of deleting old logs to free up storage space</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The process of gathering log data from various sources, applications, operating systems, cloud services, and network devices, and forwarding it to a centralized storage and analysis platform</li>
+            <li class="seo-sample-answer">C. The manual process of reading logs on each server individually</li>
+            <li class="seo-sample-answer">D. The process of creating new log entries from monitoring metrics</li>
+        </ul>
+        <p class="seo-sample-explain">Log collection gathers log data from all sources in a distributed environment and forwards it to a centralized platform (ELK stack, Splunk, CloudWatch Logs) for unified storage, search, and analysis. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A production incident occurs and the engineering team cannot determine the root cause because application logs are not available. Which logging practice would MOST directly have prevented this investigative gap?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Increasing the size of production servers to prevent incidents</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Configuring structured logging at an appropriate verbosity level, shipping logs to a centralized log management platform, and ensuring log availability persists beyond instance termination</li>
+            <li class="seo-sample-answer">C. Adding more developers to the team to investigate incidents faster</li>
+            <li class="seo-sample-answer">D. Using a different programming language that generates fewer errors</li>
+        </ul>
+        <p class="seo-sample-explain">Structured logging with appropriate verbosity, shipped to a centralized platform outside the instance, ensures logs survive instance termination and are searchable during post-incident investigation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A microservices application runs 50 containers across 10 nodes. Each container writes logs to its local stdout. After a container restarts, its previous logs are lost. Which log collection architecture prevents this data loss?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Increase container storage so logs persist longer before being overwritten</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Deploy a log collection agent (e.g., Fluentd, Fluent Bit, Filebeat) on each node that continuously reads container logs from the node&#39;s log directory and forwards them to a centralized log platform outside the container lifecycle</li>
+            <li class="seo-sample-answer">C. Reduce container restart frequency to preserve logs longer</li>
+            <li class="seo-sample-answer">D. Store logs inside the container image for retrieval after restart</li>
+        </ul>
+        <p class="seo-sample-explain">Node-level log collection agents continuously forward logs to an external platform in real time. By the time a container restarts, its logs are already safely stored outside the container lifecycle, preventing data loss on restart. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team has 30 microservices each writing logs to their own separate log streams. During an incident, engineers must check 30 different locations to trace a failed request across services. Which aggregation solution MOST directly resolves this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Reduce the number of microservices to reduce the number of log streams</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Implement a centralized log aggregation platform (ELK stack, Datadog, Splunk) that collects all 30 service log streams and makes them searchable from a single interface with correlation by shared request trace ID</li>
+            <li class="seo-sample-answer">C. Ask each service team to email their logs to the incident team</li>
+            <li class="seo-sample-answer">D. Increase log verbosity in each service to include the logs of all other services</li>
+        </ul>
+        <p class="seo-sample-explain">A centralized aggregation platform with trace ID correlation allows engineers to search all 30 services simultaneously, following a single request ID across all service logs in one query rather than checking 30 separate locations. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team discovers an unauthorized configuration change in their cloud environment. The change occurred 3 weeks ago. Which logging approach enables them to identify who made the change and when?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Application performance logs from the current week</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Cloud control plane audit logs (e.g., AWS CloudTrail, Azure Activity Log) that record all API calls including who made the call, what action was taken, from which IP address, and at what time, retained for at least 90 days</li>
+            <li class="seo-sample-answer">C. Network flow logs showing traffic volumes between instances</li>
+            <li class="seo-sample-answer">D. Container stdout logs from currently running pods</li>
+        </ul>
+        <p class="seo-sample-explain">Cloud audit logs record every API call against cloud infrastructure, including IAM identity, timestamp, action taken, and source IP. With 90+ day retention, changes from 3 weeks ago are recoverable for forensic investigation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An application generates 10GB of logs per day. Engineers complain that finding specific error events requires manually searching gigabytes of unstructured text. Which logging improvement MOST directly addresses this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Reduce log verbosity so fewer logs are generated</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Implement structured logging (JSON format with consistent fields: timestamp, level, service, trace_id, message) and ship to a log management platform with indexing and query capabilities, enabling precise, fast queries across large log volumes</li>
+            <li class="seo-sample-answer">C. Delete logs older than 24 hours to reduce the search space</li>
+            <li class="seo-sample-answer">D. Assign one engineer permanently to manually search logs for errors</li>
+        </ul>
+        <p class="seo-sample-explain">Structured logging with consistent fields enables query engines to efficiently find specific events across millions of records in seconds, transforming an unmanageable text search problem into a precise database-style query. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team deploys log collection agents across 500 application servers. During a traffic spike, the log collection agents consume 40% of server CPU, impacting application performance. Which collection design improvement MOST directly addresses this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Stop collecting logs during traffic spikes to reduce agent CPU overhead</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Configure the collection agents to use buffering and batching, writing logs to a local buffer queue and forwarding in batches rather than per-event, reducing the CPU overhead of continuous network transmission</li>
+            <li class="seo-sample-answer">C. Switch to a single centralized log collection server to reduce per-agent work</li>
+            <li class="seo-sample-answer">D. Increase server CPU allocation to absorb the collection agent overhead</li>
+        </ul>
+        <p class="seo-sample-explain">Buffering and batching reduces the frequency of network write operations, instead of processing each log event individually (high overhead), agents accumulate events in memory and send them in efficient batches, dramatically reducing CPU and network I/O overhead. This is the correct answer.</p>
+      </details>
       <h2>Other CV0-004 Domains</h2>
       <ul>
           <li><a href="/comptia-cloud-plus/cloud-architecture/">1.0 Cloud Architecture</a></li>

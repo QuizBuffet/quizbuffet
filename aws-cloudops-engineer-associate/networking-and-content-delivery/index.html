@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A service in one VPC must privately expose an endpoint to consumers in other VPCs without full VPC peering. Which service supports this?",
+          "name": "A new public web tier in a VPC cannot reach the internet even though instances have public IPv4 addresses. What route table entry is required?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AWS PrivateLink."
+            "text": "A default route to an internet gateway associated with the VPC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A security group should allow HTTPS from an Application Load Balancer to EC2 targets. What source should be used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The load balancer security group."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>90 exam-style questions</strong> covering <strong>18% of the SOA-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-cloudops-engineer-associate/">AWS Certified CloudOps Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A CloudOps engineer creates private subnets for application servers that need outbound internet access for patching but must not accept inbound internet connections. Which VPC component should be used?</h3>
-        <p><strong>Answer:</strong> A NAT gateway in a public subnet with private subnet routes pointing to it</p>
-        <p>A CloudOps engineer creates private subnets for application servers that need outbound internet access for patching but must not accept inbound internet connections. A NAT gateway in a public subnet gives private-subnet instances outbound IPv4 internet access while route tables still prevent unsolicited inbound internet connections to those instances. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An EC2 instance in a private subnet cannot reach Amazon S3, and the company wants to avoid NAT data processing charges for S3 traffic. Which configuration helps?</h3>
-        <p><strong>Answer:</strong> An S3 gateway VPC endpoint and route table entries for the private subnets</p>
-        <p>An EC2 instance in a private subnet cannot reach Amazon S3, and the company wants to avoid NAT data processing charges for S3 traffic. An S3 gateway endpoint keeps S3 traffic on the AWS network through route table entries and avoids sending that traffic through a NAT gateway. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A service in one VPC must privately expose an endpoint to consumers in other VPCs without full VPC peering. Which service supports this?</h3>
-        <p><strong>Answer:</strong> AWS PrivateLink</p>
-        <p>A service in one VPC must privately expose an endpoint to consumers in other VPCs without full VPC peering. AWS PrivateLink exposes a service through interface endpoints so consumers can connect privately without opening full network routing between VPCs. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A CloudOps engineer creates private subnets for application servers that need outbound internet access for patching but must not accept inbound internet connections. Which VPC component should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A NAT gateway in a public subnet with private subnet routes pointing to it</li>
+            <li class="seo-sample-answer">B. An internet gateway route directly from the private subnets</li>
+            <li class="seo-sample-answer">C. A VPC peering connection to the same VPC</li>
+            <li class="seo-sample-answer">D. A Route 53 private hosted zone</li>
+        </ul>
+        <p class="seo-sample-explain">A CloudOps engineer creates private subnets for application servers that need outbound internet access for patching but must not accept inbound internet connections. A NAT gateway in a public subnet gives private-subnet instances outbound IPv4 internet access while route tables still prevent unsolicited inbound internet connections to those instances. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An EC2 instance in a private subnet cannot reach Amazon S3, and the company wants to avoid NAT data processing charges for S3 traffic. Which configuration helps?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. An S3 gateway VPC endpoint and route table entries for the private subnets</li>
+            <li class="seo-sample-answer">B. A larger NAT gateway</li>
+            <li class="seo-sample-answer">C. A Route 53 health check</li>
+            <li class="seo-sample-answer">D. An ALB listener rule</li>
+        </ul>
+        <p class="seo-sample-explain">An EC2 instance in a private subnet cannot reach Amazon S3, and the company wants to avoid NAT data processing charges for S3 traffic. An S3 gateway endpoint keeps S3 traffic on the AWS network through route table entries and avoids sending that traffic through a NAT gateway. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A new public web tier in a VPC cannot reach the internet even though instances have public IPv4 addresses. What route table entry is required?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A default route to an egress-only internet gateway for IPv4</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A default route to an internet gateway associated with the VPC</li>
+            <li class="seo-sample-answer">C. A route to AWS Backup</li>
+            <li class="seo-sample-answer">D. A route to an S3 gateway endpoint only</li>
+        </ul>
+        <p class="seo-sample-explain">A new public web tier in a VPC cannot reach the internet even though instances have public IPv4 addresses. Public IPv4 instances need a subnet route table path to the internet gateway before their public addresses can be used for internet connectivity. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security group should allow HTTPS from an Application Load Balancer to EC2 targets. What source should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. 0.0.0.0/0 for all ports</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The load balancer security group</li>
+            <li class="seo-sample-answer">C. The S3 bucket ARN</li>
+            <li class="seo-sample-answer">D. The Route 53 hosted zone ID</li>
+        </ul>
+        <p class="seo-sample-explain">A security group should allow HTTPS from an Application Load Balancer to EC2 targets. Referencing the load balancer security group allows only traffic forwarded by the ALB to reach the targets on HTTPS. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Two VPCs need private connectivity and their CIDR ranges do not overlap. Which option can connect them directly?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS WAF</li>
+            <li class="seo-sample-answer seo-sample-correct">B. VPC peering</li>
+            <li class="seo-sample-answer">C. Amazon SES</li>
+            <li class="seo-sample-answer">D. AWS Backup Vault Lock</li>
+        </ul>
+        <p class="seo-sample-explain">Two VPCs need private connectivity and their CIDR ranges do not overlap. VPC peering provides private, direct connectivity between two non-overlapping VPCs when transitive routing is not required. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An IPv6-only private subnet needs outbound internet access without allowing unsolicited inbound connections. Which component should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A NAT gateway for IPv6-only traffic</li>
+            <li class="seo-sample-answer">B. A CloudFront origin access control</li>
+            <li class="seo-sample-answer seo-sample-correct">C. An egress-only internet gateway with an IPv6 default route</li>
+            <li class="seo-sample-answer">D. An AWS WAF web ACL</li>
+        </ul>
+        <p class="seo-sample-explain">An IPv6-only private subnet needs outbound internet access without allowing unsolicited inbound connections. Public IPv4 instances need a subnet route table path to the internet gateway before their public addresses can be used for internet connectivity. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A stateless network ACL blocks return traffic for application requests. What should be corrected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Add an IAM permission boundary</li>
+            <li class="seo-sample-answer">B. Enable S3 Versioning</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Add rules that allow required inbound and outbound ephemeral port traffic</li>
+            <li class="seo-sample-answer">D. Create a CloudTrail Lake query</li>
+        </ul>
+        <p class="seo-sample-explain">A stateless network ACL blocks return traffic for application requests. Network ACLs are stateless, so both request traffic and return traffic on ephemeral ports must be explicitly allowed. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A subnet should host public load balancers. What must be true about its route table?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. It has no default route</li>
+            <li class="seo-sample-answer">B. It routes all traffic to an EFS mount target</li>
+            <li class="seo-sample-answer">C. It routes all traffic to an IAM role</li>
+            <li class="seo-sample-answer seo-sample-correct">D. It has a route to an internet gateway for public traffic</li>
+        </ul>
+        <p class="seo-sample-explain">A subnet should host public load balancers. A subnet that hosts public load balancers needs a public route through the VPC internet gateway so clients on the internet can reach the load balancer nodes. This is the correct answer.</p>
+      </details>
       <h2>Other SOA-C03 Domains</h2>
       <ul>
           <li><a href="/aws-cloudops-engineer-associate/monitoring-logging-analysis-remediation-and-performance-optimization/">1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization</a></li>

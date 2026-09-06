@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which of the following BEST describes a hacktivist threat actor?",
+          "name": "A critical infrastructure company discovers attackers have been inside their network for 18 months, silently mapping SCADA systems without causing disruption. Which threat actor type does this behavior MOST likely indicate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An individual or group that uses hacking techniques to advance political, social, or ideological causes, typically targeting organizations whose activities conflict with their beliefs, seeking to embarrass, disrupt, or publicize their grievances."
+            "text": "Nation-state actor, the 18-month dwell time, focus on critical infrastructure mapping, and non-destructive patience are hallmarks of a nation-state advanced persistent threat (APT) pre-positioning for potential future disruption."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An unskilled attacker downloads a popular exploit kit and uses it to attack random internet-accessible servers. Despite low sophistication, why are unskilled attackers still a significant threat to organizations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unskilled attackers are significant because: exploit kits are highly capable (created by skilled developers); they attack at massive scale (opportunistic, automated scanning); they successfully compromise unpatched systems regardless of attacker sophistication; they may…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>446 exam-style questions</strong> covering <strong>22% of the SY0-701 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-security-plus/">CompTIA Security+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which of the following BEST characterizes a nation-state threat actor?</h3>
-        <p><strong>Answer:</strong> A government-sponsored group with significant resources, advanced capabilities, and long-term strategic objectives, conducting espionage, sabotage, or influence operations on behalf of a country</p>
-        <p>Nation-state actors are government-affiliated groups with substantial resources, advanced persistent threat (APT) capabilities, and geopolitical objectives. They are among the most sophisticated and well-funded threat actors. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What term describes an attacker who uses pre-built tools and exploits created by others without understanding the underlying techniques?</h3>
-        <p><strong>Answer:</strong> Script kiddie (unskilled attacker), an individual who uses pre-written exploits, hacking tools, and scripts without the technical knowledge to develop their own, typically seeking notoriety or entertainment rather than strategic objectives</p>
-        <p>Script kiddies (unskilled attackers) rely on others&#39; tools without understanding them, they are opportunistic, cause real damage, but lack the sophistication to develop novel attacks. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which of the following BEST describes a hacktivist threat actor?</h3>
-        <p><strong>Answer:</strong> An individual or group that uses hacking techniques to advance political, social, or ideological causes, typically targeting organizations whose activities conflict with their beliefs, seeking to embarrass, disrupt, or publicize their grievances</p>
-        <p>Hacktivism combines hacking with activism, the primary motivation is advancing a cause, not financial gain. Anonymous and similar groups are classic examples. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which of the following BEST characterizes a nation-state threat actor?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A lone hacker motivated by personal financial gain</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A government-sponsored group with significant resources, advanced capabilities, and long-term strategic objectives, conducting espionage, sabotage, or influence operations on behalf of a country</li>
+            <li class="seo-sample-answer">C. A hacktivist group protesting corporate environmental practices</li>
+            <li class="seo-sample-answer">D. An organized crime syndicate conducting ransomware attacks for profit</li>
+        </ul>
+        <p class="seo-sample-explain">Nation-state actors are government-affiliated groups with substantial resources, advanced persistent threat (APT) capabilities, and geopolitical objectives. They are among the most sophisticated and well-funded threat actors. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What term describes an attacker who uses pre-built tools and exploits created by others without understanding the underlying techniques?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Nation-state actor</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Script kiddie (unskilled attacker), an individual who uses pre-written exploits, hacking tools, and scripts without the technical knowledge to develop their own, typically seeking notoriety or entertainment rather than strategic objectives</li>
+            <li class="seo-sample-answer">C. Hacktivist</li>
+            <li class="seo-sample-answer">D. Insider threat</li>
+        </ul>
+        <p class="seo-sample-explain">Script kiddies (unskilled attackers) rely on others&#39; tools without understanding them, they are opportunistic, cause real damage, but lack the sophistication to develop novel attacks. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A critical infrastructure company discovers attackers have been inside their network for 18 months, silently mapping SCADA systems without causing disruption. Which threat actor type does this behavior MOST likely indicate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Unskilled attacker, they could not find the data they were looking for</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Nation-state actor, the 18-month dwell time, focus on critical infrastructure mapping, and non-destructive patience are hallmarks of a nation-state advanced persistent threat (APT) pre-positioning for potential future disruption</li>
+            <li class="seo-sample-answer">C. Organized crime, they are preparing a ransomware deployment</li>
+            <li class="seo-sample-answer">D. Hacktivist, they are documenting the company&#39;s environmental violations</li>
+        </ul>
+        <p class="seo-sample-explain">Long-term stealthy access to critical infrastructure with mapping but no immediate destruction is a nation-state APT signature, pre-positioning for potential future use in geopolitical conflict. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An unskilled attacker downloads a popular exploit kit and uses it to attack random internet-accessible servers. Despite low sophistication, why are unskilled attackers still a significant threat to organizations?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Unskilled attackers are not a significant threat, only sophisticated actors cause real damage</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Unskilled attackers are significant because: exploit kits are highly capable (created by skilled developers); they attack at massive scale (opportunistic, automated scanning); they successfully compromise unpatched systems regardless of attacker sophistication; they may inadvertently cause significant damage; and their volume means any organization with common vulnerabilities will eventually be targeted</li>
+            <li class="seo-sample-answer">C. Unskilled attackers target only home users, not organizations</li>
+            <li class="seo-sample-answer">D. Unskilled attackers only pose reputational risk, they cannot cause operational damage</li>
+        </ul>
+        <p class="seo-sample-explain">The democratization of attack tools means unskilled attackers wield sophisticated capabilities, volume and opportunistic targeting ensure that vulnerable organizations will be hit regardless of attacker skill. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A hacktivist group defaces a pharmaceutical company&#39;s website with messaging criticizing drug pricing and leaks internal emails discussing pricing strategies. Which combination of attack types did they use and what were their apparent objectives?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. They used ransomware for financial gain</li>
+            <li class="seo-sample-answer seo-sample-correct">B. They used web defacement (to publicly broadcast their message) and data exfiltration with public leaking (to embarrass the company and provide evidence for their cause). Their objectives were publicity, reputational damage to the target, and advancing their cause, not financial gain. The combination is characteristic of hacktivist operations</li>
+            <li class="seo-sample-answer">C. They conducted a DDoS attack to disrupt operations for profit</li>
+            <li class="seo-sample-answer">D. They performed reconnaissance to sell the data to competitors</li>
+        </ul>
+        <p class="seo-sample-explain">Hacktivist operations typically combine techniques to maximize publicity and embarrassment, defacement broadcasts the message, leaking provides supporting evidence, and both achieve reputational damage to advance their cause. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A nation-state conducts a supply chain attack, compromising a software vendor&#39;s build process to distribute malware to thousands of organizations simultaneously. Which aspects of this attack reflect nation-state capabilities specifically?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The use of malware, any threat actor can use malware</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The combination of: sophisticated capability to compromise a well-secured software vendor; patience and resources to develop and maintain the operation over months; intelligence to select a high-value supply chain target affecting thousands of victims simultaneously; and strategic intent to access specific high-value targets among the thousands affected, these multi-dimensional requirements distinguish nation-state operations</li>
+            <li class="seo-sample-answer">C. The fact that many organizations were affected, scale alone indicates nation-state involvement</li>
+            <li class="seo-sample-answer">D. The use of a software vendor as the attack vector, only nation-states use supply chain attacks</li>
+        </ul>
+        <p class="seo-sample-explain">Nation-state supply chain attacks require the combination of sophisticated vendor compromise capability, operational patience, intelligence-driven target selection, and strategic purpose beyond financial gain, these requirements together distinguish nation-state actors. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team discovers what appears to be a nation-state APT in their network. The attacker has not yet achieved their apparent objective. The team debates whether to immediately eject the attacker or monitor for intelligence value. What are the key considerations in this decision?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Always immediately eject all attackers, monitoring provides no benefit</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Monitoring considerations: intelligence value (understanding objectives, TTPs, and targets helps defenders and intelligence agencies), risk of further damage during monitoring period, legal and notification obligations, and whether the attacker will detect monitoring and escalate. Ejection considerations: immediate risk reduction, compliance requirements, liability during monitoring, and the difficulty of ensuring complete eradication. Legal counsel and law enforcement should be consulted, the decision involves significant legal, ethical, and operational trade-offs</li>
+            <li class="seo-sample-answer">C. Always monitor indefinitely, intelligence gathering always outweighs risks</li>
+            <li class="seo-sample-answer">D. The decision belongs entirely to the IT security team without legal or executive involvement</li>
+        </ul>
+        <p class="seo-sample-explain">Nation-state APT monitoring vs. ejection involves complex legal, operational, and strategic considerations requiring multi-stakeholder input. Both approaches have legitimate justifications depending on context. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security analyst notices that identical exploitation attempts against their organization match public proof-of-concept code released 3 days ago for a newly disclosed vulnerability. The attack is unsuccessful because the patch was applied 24 hours ago. What does this scenario illustrate about unskilled attacker behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The attack proves the attacker is a nation-state actor, they move very quickly after disclosure</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Unskilled attackers rapidly weaponize public exploits shortly after disclosure, the short window between disclosure and attack attempts demonstrates that patch deployment speed is critical. Organizations that patch quickly (as this one did) successfully defend against this common threat pattern. The matching of public PoC code confirms the attacker used existing tools rather than developed novel capability</li>
+            <li class="seo-sample-answer">C. The patch was unnecessary, the attack failed for other reasons</li>
+            <li class="seo-sample-answer">D. Unskilled attackers never succeed because they only use public tools</li>
+        </ul>
+        <p class="seo-sample-explain">Unskilled attackers using public PoC code immediately after disclosure is a well-documented pattern, the organization&#39;s quick patching was effective precisely because unskilled attackers rely on known exploits. This is the correct answer.</p>
+      </details>
       <h2>Other SY0-701 Domains</h2>
       <ul>
           <li><a href="/comptia-security-plus/general-security-concepts/">1.0 General Security Concepts</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A business sells a machine used in its trade for 4 years. The machine originally cost $60,000, accumulated depreciation of $45,000 was taken, and the sale price is $25,000. Calculate the gain or loss and its character.",
+          "name": "Maria received stock as a gift when the stock's FMV was $15,000. The donor's adjusted basis was $22,000 and the donor paid no gift tax. Maria later sells the stock. Calculate Maria's basis for GAIN purposes and for LOSS purposes.",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "$10,000 ordinary income, the $10,000 gain is fully within the depreciation taken ($45,000), so §1245 recapture applies and the entire gain is ordinary income."
+            "text": "Gain basis: $22,000 (donor's carryover basis); Loss basis: $15,000 (FMV at gift date), the dual-basis rule applies because FMV at gift was less than the donor's basis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A business purchases $1,800,000 of 7-year MACRS equipment in January. The §179 expensing limit is $1,220,000 (with phase-out starting at $3,050,000). Bonus depreciation under §168(k) is 60% for the current year. The business has $900,000 of taxable income before any depreciation. Calculate the maximum first-year cost recovery deduction.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "§179 deduction: $1,220,000 (no phase-out since $1,800,000 < $3,050,000); remaining basis: $580,000; bonus depreciation: 60% × $580,000 = $348,000; regular MACRS on remaining: ($580,000 − $348,000) × 14.29% = $33,153; total first-year: $1,601,153, but limited to not create NOL?…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>16 exam-style questions</strong> covering <strong>14% of the REG exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/cpa-reg/">CPA Taxation and Regulation (REG) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A taxpayer inherits stock from a deceased relative who paid $10,000 for the stock. At the date of death, the stock&#39;s fair market value is $85,000. The taxpayer sells the stock for $90,000 nine months after inheriting it. What is the taxpayer&#39;s basis in the stock and the character of the gain?</h3>
-        <p><strong>Answer:</strong> Basis = $85,000 (FMV at date of death, §1014 stepped-up basis); gain = $5,000 long-term capital gain (inherited property is always long-term)</p>
-        <p>Section §1014, inherited property basis: (1) Basis = FMV at date of death = $85,000 (regardless of the decedent&#39;s original $10,000 cost, the basis is &#39;stepped up&#39; to FMV); (2) Gain on sale = $90,000 − $85,000 = $5,000; (3) Character: ALL inherited property, regardless of how long the heir actually holds it, is classified as LONG-TERM capital gain when sold. The holding period rule for inherited property: the property is deemed to have been held for MORE THAN ONE YEAR, even if the heir holds it for only one day. This special long-term treatment means the taxpayer pays the preferential LTCG rate (0/15/20%) on the $5,000 gain, not the short-term ordinary rate. The step-up in basis eliminates the $75,000 of built-in gain the decedent never paid tax on, a significant estate planning benefit.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A calendar-year taxpayer places a $50,000 piece of 5-year MACRS property into service on July 1. Assuming the half-year convention applies and the MACRS first-year rate for 5-year property is 20%, what is the first-year depreciation deduction?</h3>
-        <p><strong>Answer:</strong> $10,000, the full 20% applies to the $50,000 cost because the asset was placed in service on July 1</p>
-        <p>Under the MACRS half-year convention, ALL personal property placed in service at ANY point during the tax year is treated as if it were placed in service at the midpoint of the year (July 1 for a calendar-year taxpayer). This means the PUBLISHED MACRS RATE already incorporates the half-year convention, the first-year rate of 20% is already the HALF-YEAR-ADJUSTED rate. Applying it to the full cost: 20% × $50,000 = $10,000. The taxpayer does NOT further reduce this by another 50%, doing so would double-apply the convention. The MACRS percentage tables for 5-year property (20%, 32%, 19.2%, 11.52%, 11.52%, 5.76% for years 1-6) already reflect the half-year convention built into each year&#39;s rate.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A business sells a machine used in its trade for 4 years. The machine originally cost $60,000, accumulated depreciation of $45,000 was taken, and the sale price is $25,000. Calculate the gain or loss and its character.</h3>
-        <p><strong>Answer:</strong> $10,000 ordinary income, the $10,000 gain is fully within the depreciation taken ($45,000), so §1245 recapture applies and the entire gain is ordinary income</p>
-        <p>Calculation: Original cost = $60,000; Accumulated depreciation = $45,000; Adjusted basis = $60,000 − $45,000 = $15,000; Amount realized = $25,000; Gain = $25,000 − $15,000 = $10,000. Character under §1245: §1245 recapture = lesser of (1) gain ($10,000) or (2) accumulated depreciation ($45,000) = $10,000 is ORDINARY INCOME. Since the entire $10,000 gain is less than the accumulated depreciation ($45,000), ALL of the gain is §1245 ordinary income, there is no §1231 remainder. Rationale: §1245 recaptures the tax benefit of prior depreciation deductions (which reduced ordinary income) by converting gain back to ordinary income. Only gains EXCEEDING accumulated depreciation could be §1231 capital gain.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A taxpayer inherits stock from a deceased relative who paid $10,000 for the stock. At the date of death, the stock&#39;s fair market value is $85,000. The taxpayer sells the stock for $90,000 nine months after inheriting it. What is the taxpayer&#39;s basis in the stock and the character of the gain?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Basis = $85,000 (FMV at date of death, §1014 stepped-up basis); gain = $5,000 long-term capital gain (inherited property is always long-term)</li>
+            <li class="seo-sample-answer">B. Basis = $10,000 (carryover basis from decedent); gain = $80,000 short-term capital gain (held 9 months)</li>
+            <li class="seo-sample-answer">C. Basis = $47,500 (average of purchase price and FMV at death); gain = $42,500 long-term capital gain</li>
+            <li class="seo-sample-answer">D. Basis = $85,000; gain = $5,000 short-term capital gain (held only 9 months after inheritance)</li>
+        </ul>
+        <p class="seo-sample-explain">Section §1014, inherited property basis: (1) Basis = FMV at date of death = $85,000 (regardless of the decedent&#39;s original $10,000 cost, the basis is &#39;stepped up&#39; to FMV); (2) Gain on sale = $90,000 − $85,000 = $5,000; (3) Character: ALL inherited property, regardless of how long the heir actually holds it, is classified as LONG-TERM capital gain when sold. The holding period rule for inherited property: the property is deemed to have been held for MORE THAN ONE YEAR, even if the heir holds it for only one day. This special long-term treatment means the taxpayer pays the preferential LTCG rate (0/15/20%) on the $5,000 gain, not the short-term ordinary rate. The step-up in basis eliminates the $75,000 of built-in gain the decedent never paid tax on, a significant estate planning benefit.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A calendar-year taxpayer places a $50,000 piece of 5-year MACRS property into service on July 1. Assuming the half-year convention applies and the MACRS first-year rate for 5-year property is 20%, what is the first-year depreciation deduction?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. $10,000, the full 20% applies to the $50,000 cost because the asset was placed in service on July 1</li>
+            <li class="seo-sample-answer">B. $5,000, under the half-year convention, only 50% of the annual depreciation is allowed in the first year regardless of the actual placement date</li>
+            <li class="seo-sample-answer">C. $4,167, depreciation is calculated from the actual date of service (July 1 = 6 months remaining) at 20% × 6/12</li>
+            <li class="seo-sample-answer">D. $10,000, 20% × $50,000 = $10,000; the half-year convention is applied in the SECOND year, not the first</li>
+        </ul>
+        <p class="seo-sample-explain">Under the MACRS half-year convention, ALL personal property placed in service at ANY point during the tax year is treated as if it were placed in service at the midpoint of the year (July 1 for a calendar-year taxpayer). This means the PUBLISHED MACRS RATE already incorporates the half-year convention, the first-year rate of 20% is already the HALF-YEAR-ADJUSTED rate. Applying it to the full cost: 20% × $50,000 = $10,000. The taxpayer does NOT further reduce this by another 50%, doing so would double-apply the convention. The MACRS percentage tables for 5-year property (20%, 32%, 19.2%, 11.52%, 11.52%, 5.76% for years 1-6) already reflect the half-year convention built into each year&#39;s rate.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Maria received stock as a gift when the stock&#39;s FMV was $15,000. The donor&#39;s adjusted basis was $22,000 and the donor paid no gift tax. Maria later sells the stock. Calculate Maria&#39;s basis for GAIN purposes and for LOSS purposes.</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Gain basis: $22,000; Loss basis: $22,000, the donor&#39;s carryover basis always applies to gifts</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Gain basis: $22,000 (donor&#39;s carryover basis); Loss basis: $15,000 (FMV at gift date), the dual-basis rule applies because FMV at gift was less than the donor&#39;s basis</li>
+            <li class="seo-sample-answer">C. Gain basis: $15,000 (FMV at gift date); Loss basis: $15,000, FMV at gift date always determines the donee&#39;s basis</li>
+            <li class="seo-sample-answer">D. Gain basis: $22,000; Loss basis: $22,000, gift basis always equals the donor&#39;s original purchase price</li>
+        </ul>
+        <p class="seo-sample-explain">Gift basis rules under §1015, the DUAL BASIS rule: When FMV at gift date &lt; Donor&#39;s adjusted basis (a &#39;loss&#39; gift): (1) For purposes of computing GAIN: the donee&#39;s basis = DONOR&#39;S ADJUSTED BASIS ($22,000). If Maria sells for MORE than $22,000, she computes gain on $22,000 basis. (2) For purposes of computing LOSS: the donee&#39;s basis = FMV AT DATE OF GIFT ($15,000). If Maria sells for LESS than $15,000, she computes loss on $15,000 basis. (3) No gain or loss zone: if Maria sells for between $15,000 and $22,000 (e.g., $18,000), she neither recognizes gain (sale price $18,000 &lt; gain basis $22,000) nor loss (sale price $18,000 &gt; loss basis $15,000). This creates a &#39;built-in loss preservation&#39; rule, it prevents the donee from recognizing a loss that existed when the property was transferred as a gift.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A business purchases $1,800,000 of 7-year MACRS equipment in January. The §179 expensing limit is $1,220,000 (with phase-out starting at $3,050,000). Bonus depreciation under §168(k) is 60% for the current year. The business has $900,000 of taxable income before any depreciation. Calculate the maximum first-year cost recovery deduction.</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. §179 deduction: $1,220,000; remaining basis: $580,000; bonus depreciation: 60% × $580,000 = $348,000; regular MACRS on remaining: $580,000 − $348,000 = $232,000 × 14.29% = $33,153; total: $1,220,000 + $348,000 + $33,153 = $1,601,153</li>
+            <li class="seo-sample-answer seo-sample-correct">B. §179 deduction: $1,220,000 (no phase-out since $1,800,000 &lt; $3,050,000); remaining basis: $580,000; bonus depreciation: 60% × $580,000 = $348,000; regular MACRS on remaining: ($580,000 − $348,000) × 14.29% = $33,153; total first-year: $1,601,153, but limited to not create NOL? §179 is limited to taxable income but bonus and regular MACRS can create a loss</li>
+            <li class="seo-sample-answer">C. §179 deduction: $900,000 (limited to business taxable income before depreciation); remaining basis: $900,000; bonus: 60% × $900,000 = $540,000; total limited by taxable income</li>
+            <li class="seo-sample-answer">D. Total deduction = $1,080,000 (60% × $1,800,000 bonus only), §179 is not combined with bonus depreciation</li>
+        </ul>
+        <p class="seo-sample-explain">Full calculation using §179 up to $1,220,000 (no phase-out) then bonus on remainder: §179 = $1,220,000; remaining basis = $580,000; bonus = 60% × $580,000 = $348,000; regular MACRS on $232,000 remaining × 14.29% = $33,153; total = $1,601,153. §179 income limitation: §179 cannot exceed business taxable income before §179 ($900,000). So §179 is capped at $900,000. But bonus depreciation has no income limitation and can create/increase an NOL. This makes the total deduction complex to compute without more information about applying the $900,000 §179 cap. The key insight: §179 limited by income; bonus depreciation not limited by income.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A taxpayer sells commercial real estate (non-residential) for $800,000. The property cost $500,000 and straight-line MACRS depreciation of $120,000 has been taken. Adjusted basis = $380,000. Calculate the total gain and characterize each portion.</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Total gain: $420,000, all ordinary income under §1250 because depreciation was taken on the building</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Total gain: $420,000; §1250 ordinary recapture: $0 (straight-line MACRS, no additional depreciation above straight-line); unrecaptured §1250 gain: $120,000 (taxed at max 25%); §1231 gain: $300,000 (taxed at preferential LTCG rates 0/15/20%)</li>
+            <li class="seo-sample-answer">C. Total gain: $420,000; §1245 ordinary income: $120,000 (all depreciation recaptured as ordinary); §1231 gain: $300,000</li>
+            <li class="seo-sample-answer">D. Total gain: $420,000; all §1231 capital gain, real property depreciation is never recaptured as ordinary income</li>
+        </ul>
+        <p class="seo-sample-explain">Gain characterization for non-residential real property sold at a gain: Total gain = $800,000 − $380,000 = $420,000. §1250 ordinary income recapture: For real property using MACRS straight-line (as required for post-1986 real property), §1250 ordinary income = 0 (no acceleration above straight-line). Unrecaptured §1250 gain (§1(h)(1)(D)): = accumulated straight-line depreciation = $120,000. This is CAPITAL gain, not ordinary income, but taxed at a MAXIMUM RATE OF 25% (higher than the 0/15/20% LTCG rates). §1231 gain: Total gain ($420,000) − Unrecaptured §1250 ($120,000) = $300,000, eligible for preferential 0/15/20% LTCG rates. Tax impact: the $120,000 unrecaptured §1250 gain is taxed at up to 25%, while the $300,000 §1231 gain is taxed at the lower preferential LTCG rates.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>On March 1, a taxpayer sells 100 shares of XYZ stock for $8,000, realizing a $3,000 loss (basis = $11,000). On March 20, the taxpayer purchases 100 shares of XYZ stock for $9,000. Apply the wash sale rule and determine the tax consequences.</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The $3,000 loss is fully deductible in the current year, the wash sale rule only applies if the replacement shares are purchased BEFORE the original shares are sold</li>
+            <li class="seo-sample-answer">B. The $3,000 loss is disallowed and permanently lost, the wash sale rule eliminates the loss with no basis adjustment to the replacement shares</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The $3,000 loss is disallowed under §1091 because substantially identical shares were purchased within 30 days after the sale; the disallowed $3,000 loss is added to the basis of the replacement shares, making their adjusted basis $12,000</li>
+            <li class="seo-sample-answer">D. The wash sale rule applies only to losses on stocks held for less than one year; since no holding period is specified, the loss is deductible</li>
+        </ul>
+        <p class="seo-sample-explain">Wash sale rule (§1091): A loss from the sale of stock or securities is DISALLOWED if the taxpayer acquires substantially identical securities within the 61-day wash sale period (30 days before to 30 days after the sale date). Analysis: March 1 sale creates $3,000 loss. March 20 purchase (19 days after sale) = within 30-day post-sale window → WASH SALE. The $3,000 loss is DISALLOWED for the current year. However, the disallowed loss is NOT permanently lost, it is ADDED TO THE BASIS of the replacement shares: New basis of replacement shares = $9,000 (purchase price) + $3,000 (disallowed loss) = $12,000. The holding period of the replacement shares also includes the holding period of the sold shares. Effect: when the replacement shares are later sold, the increased $12,000 basis will reduce the recognized gain (or increase the recognized loss), the $3,000 loss deduction is deferred, not eliminated.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company acquires another business and pays $2,000,000 for the following identifiable intangible assets: customer list $400,000; trade name $300,000; covenant not to compete (5-year term) $200,000; goodwill $1,100,000. How should these intangibles be amortized for tax purposes?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Goodwill and trade name: not amortizable (indefinite life); customer list: amortized over 5 years; covenant: amortized over its 5-year contractual term</li>
+            <li class="seo-sample-answer">B. Goodwill is not deductible; other intangibles are amortized over their useful lives as determined by accounting standards</li>
+            <li class="seo-sample-answer seo-sample-correct">C. All four intangibles are §197 intangibles and are amortized ratably over 15 years (180 months) on a straight-line basis, beginning with the month of acquisition</li>
+            <li class="seo-sample-answer">D. All intangibles are immediately expensed under §195 as start-up costs in the year of acquisition</li>
+        </ul>
+        <p class="seo-sample-explain">IRC §197, amortization of acquired intangible assets: For intangibles ACQUIRED as part of a trade or business (or the acquisition of assets constituting a trade or business), §197 requires 15-year straight-line amortization beginning with the month of acquisition. §197 intangibles include: goodwill, going-concern value, workforce in place, business books and records/systems, patents, copyrights (if acquired as part of a business), customer lists, trade names, franchises, licenses, and covenants not to compete. Annual amortization: $2,000,000 / 180 months × 12 = $133,333/year. Key feature: EVEN COVENANT NOT TO COMPETE with a 5-year term must be amortized over 15 YEARS under §197 (not over the contractual 5-year term) when acquired as part of a business acquisition. This can be unfavorable for buyers who prefer faster deductions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Two entrepreneurs start a corporation on January 1. Before the business opens, they incur: legal fees for incorporation $4,000; state filing fees $800; market research for the business plan $12,000; salaries paid to train employees before opening $8,000; advertising prior to opening $5,000. Total pre-opening costs: $29,800. Classify and determine the tax treatment of each cost.</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. All $29,800 of pre-opening costs must be capitalized and have no deduction until the corporation is sold or liquidated</li>
+            <li class="seo-sample-answer">B. All $29,800 are immediately deductible in the year they are incurred as ordinary and necessary business expenses under §162</li>
+            <li class="seo-sample-answer">C. Organization costs ($4,800) are permanent capital expenditures with no deduction; start-up costs ($25,000) are immediately expensed under §195</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Organization costs (§248): $4,800; Start-up costs (§195): $25,000; Each category gets $5,000 immediate deduction (reduced if costs exceed $50,000) with the remainder amortized over 180 months beginning with the month the active trade or business begins</li>
+        </ul>
+        <p class="seo-sample-explain">Classification and treatment: ORGANIZATION COSTS (§248), costs of creating the corporation itself: Legal fees for incorporation: $4,000; State filing fees: $800. Total organization costs: $4,800. TREATMENT: elect to deduct up to $5,000 immediately (reduced dollar-for-dollar by organization costs exceeding $50,000); remainder amortized over 180 months. Since $4,800 &lt; $5,000, the full $4,800 is immediately deductible. START-UP COSTS (§195), costs incurred before the active trade or business begins that would be deductible if incurred after opening: Market research: $12,000; Employee training: $8,000; Pre-opening advertising: $5,000. Total start-up costs: $25,000. TREATMENT: elect to deduct up to $5,000 immediately (reduced dollar-for-dollar when total costs exceed $50,000); remainder amortized over 180 months. Since $25,000 &lt; $50,000, the full $5,000 can be deducted immediately; $20,000 is amortized over 180 months (≈$111/month). Total year 1 deductions: $4,800 (org costs) + $5,000 immediate + partial month&#39;s amortization (≈$67 if opened Jan 1).</p>
+      </details>
       <h2>Other REG Domains</h2>
       <ul>
           <li><a href="/cpa-reg/ethics-and-federal-tax-procedures/">1.0 Ethics, Professional Responsibilities and Federal Tax Procedures</a></li>

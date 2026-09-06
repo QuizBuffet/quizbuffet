@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "During an Azure Storage review, the team identifies a requirement for create and use shared access signature tokens. What should be done?",
+          "name": "An audit finding identifies a gap in configure Azure Storage firewalls and virtual networks. What should the administrator change?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Generate a service SAS when access is needed to a specific blob, container, queue, table, or file resource."
+            "text": "Create a private endpoint for the storage account and disable public network access when access must stay on the virtual network."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "During an Azure Storage review, the team identifies a requirement for configure Azure Storage firewalls and virtual networks. What should be done?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use service endpoints or private endpoints based on the required network isolation model."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>85 exam-style questions</strong> covering <strong>18% of the AZ-104 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/microsoft-az-104/">Microsoft Azure Administrator practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A production storage account must be updated for configure Azure Storage firewalls and virtual networks. Which administrative action best fits the requirement?</h3>
-        <p><strong>Answer:</strong> Set the storage account network access to selected networks and add the required virtual network subnet or trusted public IP range</p>
-        <p>Storage account firewall rules restrict access to approved networks while allowing required clients to connect.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A storage-related support ticket requires action for configure Azure Storage firewalls and virtual networks. Which implementation is most appropriate?</h3>
-        <p><strong>Answer:</strong> Verify DNS resolution to the private endpoint when clients cannot reach a storage account after public access is disabled</p>
-        <p>Private endpoint connectivity depends on clients resolving the storage account name to the private endpoint address.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>During an Azure Storage review, the team identifies a requirement for create and use shared access signature tokens. What should be done?</h3>
-        <p><strong>Answer:</strong> Generate a service SAS when access is needed to a specific blob, container, queue, table, or file resource</p>
-        <p>A service SAS delegates access to a specific Azure Storage service resource.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A production storage account must be updated for configure Azure Storage firewalls and virtual networks. Which administrative action best fits the requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Set the storage account network access to selected networks and add the required virtual network subnet or trusted public IP range</li>
+            <li class="seo-sample-answer">B. Use Azure Monitor without Log Analytics workspaces and store logs only in storage accounts</li>
+            <li class="seo-sample-answer">C. Share account access keys via email instead of using SAS tokens with stored access policies</li>
+            <li class="seo-sample-answer">D. Use Azure Blob Archive tier for data that needs millisecond retrieval times</li>
+        </ul>
+        <p class="seo-sample-explain">Storage account firewall rules restrict access to approved networks while allowing required clients to connect.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A storage-related support ticket requires action for configure Azure Storage firewalls and virtual networks. Which implementation is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Verify DNS resolution to the private endpoint when clients cannot reach a storage account after public access is disabled</li>
+            <li class="seo-sample-answer">B. Disable soft delete in the vault to reduce storage costs</li>
+            <li class="seo-sample-answer">C. Remove budget alerts after the first month because spending is expected</li>
+            <li class="seo-sample-answer">D. Use Azure Blueprints as a real-time monitoring solution</li>
+        </ul>
+        <p class="seo-sample-explain">Private endpoint connectivity depends on clients resolving the storage account name to the private endpoint address.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An audit finding identifies a gap in configure Azure Storage firewalls and virtual networks. What should the administrator change?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use VNet peering to provide transitive routing between three VNets through a hub</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Create a private endpoint for the storage account and disable public network access when access must stay on the virtual network</li>
+            <li class="seo-sample-answer">C. Regenerate a storage account key to update DNS settings</li>
+            <li class="seo-sample-answer">D. Use ZRS in a region where Availability Zones are not yet available</li>
+        </ul>
+        <p class="seo-sample-explain">A private endpoint gives the storage account a private IP address and can remove public exposure.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During an Azure Storage review, the team identifies a requirement for configure Azure Storage firewalls and virtual networks. What should be done?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use App Service to host a workload that needs full control of the underlying operating system</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use service endpoints or private endpoints based on the required network isolation model</li>
+            <li class="seo-sample-answer">C. Use Azure Storage Explorer to host a static website</li>
+            <li class="seo-sample-answer">D. Disable activity logs in production to reduce storage cost</li>
+        </ul>
+        <p class="seo-sample-explain">Service endpoints secure traffic from selected subnets, while private endpoints provide private IP-based access to the service.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A production storage account must be updated for create and use shared access signature tokens. Which administrative action best fits the requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip what-if deployments and apply ARM templates directly to production</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use an account SAS only when access must span service-level operations or multiple storage services</li>
+            <li class="seo-sample-answer">C. Delete the storage account to revoke one user&#39;s temporary access</li>
+            <li class="seo-sample-answer">D. Use Conditional Access only for blocking sign-ins, never for context-aware grants</li>
+        </ul>
+        <p class="seo-sample-explain">An account SAS has broader scope and should be used only when that scope is required.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload team needs help with configure Azure Storage firewalls and virtual networks. Which Azure administrator action is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Rely on a storage account name to encrypt data</li>
+            <li class="seo-sample-answer">B. Use a CNAME record at the apex (root) of a domain</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Allow trusted Azure services only when the service integration requires it and the exception matches the security requirement</li>
+            <li class="seo-sample-answer">D. Use a Network Security Group as a stateful application-layer firewall</li>
+        </ul>
+        <p class="seo-sample-explain">Trusted service exceptions should be used deliberately because they allow specific Azure services to bypass network restrictions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Azure administrator receives a request involving create and use shared access signature tokens. What should the administrator configure?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Assign a subscription Owner role to fix packet flow</li>
+            <li class="seo-sample-answer">B. Delete the storage account to revoke one user&#39;s temporary access</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Create a SAS token with the minimum required permissions, resource scope, start time, expiry time, and allowed protocol</li>
+            <li class="seo-sample-answer">D. Treat a private DNS zone as automatically resolvable from any VNet without a link</li>
+        </ul>
+        <p class="seo-sample-explain">A SAS should be limited by permission, time, resource, and transport requirements.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Azure administrator receives a request involving configure Azure Storage firewalls and virtual networks. What should the administrator configure?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Application Insights only for production and skip dev/test environments</li>
+            <li class="seo-sample-answer">B. Use ARM templates to install applications on the guest OS</li>
+            <li class="seo-sample-answer">C. Use Azure Container Apps without a container image stored anywhere accessible</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Add the client public IP address to the storage firewall when a temporary administrative workstation must access the account</li>
+        </ul>
+        <p class="seo-sample-explain">Storage firewall IP rules can allow a known public client address without opening the account to all networks.</p>
+      </details>
       <h2>Other AZ-104 Domains</h2>
       <ul>
           <li><a href="/microsoft-az-104/manage-azure-identities-and-governance/">1.0 Manage Azure identities and governance</a></li>

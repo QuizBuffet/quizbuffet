@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "An audit finding shows that the current configuration for create and configure virtual network peering is incomplete. What should be changed?",
+          "name": "During a network review, the team identifies a requirement for create and configure virtual networks and subnets. What should be configured?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Allow forwarded traffic when a network virtual appliance must route traffic between peered networks."
+            "text": "Create separate subnets for tiers that require different routing or security controls."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A support ticket reports a networking issue involving create and configure virtual network peering. Which action is most appropriate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Create peering from each virtual network to the other and enable traffic options that match the design."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>85 exam-style questions</strong> covering <strong>18% of the AZ-104 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/microsoft-az-104/">Microsoft Azure Administrator practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A support ticket reports a networking issue involving create and configure virtual networks and subnets. Which action is most appropriate?</h3>
-        <p><strong>Answer:</strong> Create a virtual network with a non-overlapping address space and add subnets sized for the workload</p>
-        <p>Virtual network address planning must avoid overlap and leave enough space for resources that will be deployed.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A production connectivity issue requires troubleshooting for create and configure virtual networks and subnets. Which Azure administrator action is correct?</h3>
-        <p><strong>Answer:</strong> Review reserved Azure IP addresses when planning usable addresses in each subnet</p>
-        <p>Azure reserves addresses in every subnet, so the usable capacity is smaller than the CIDR range suggests.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An audit finding shows that the current configuration for create and configure virtual network peering is incomplete. What should be changed?</h3>
-        <p><strong>Answer:</strong> Allow forwarded traffic when a network virtual appliance must route traffic between peered networks</p>
-        <p>Forwarded traffic must be enabled when traffic is not sourced directly from the peered virtual network.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A support ticket reports a networking issue involving create and configure virtual networks and subnets. Which action is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Create a virtual network with a non-overlapping address space and add subnets sized for the workload</li>
+            <li class="seo-sample-answer">B. Use Application Insights only for production and skip dev/test environments</li>
+            <li class="seo-sample-answer">C. Use Azure Spot VMs for stateful database workloads requiring zero downtime</li>
+            <li class="seo-sample-answer">D. Use a Network Security Group as a stateful application-layer firewall</li>
+        </ul>
+        <p class="seo-sample-explain">Virtual network address planning must avoid overlap and leave enough space for resources that will be deployed.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A production connectivity issue requires troubleshooting for create and configure virtual networks and subnets. Which Azure administrator action is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Review reserved Azure IP addresses when planning usable addresses in each subnet</li>
+            <li class="seo-sample-answer">B. Treat Azure Backup as a substitute for Site Recovery for region-level outages</li>
+            <li class="seo-sample-answer">C. Use Azure Cost Management to deploy infrastructure code</li>
+            <li class="seo-sample-answer">D. Treat Azure Policy as an alert system rather than an enforcement mechanism</li>
+        </ul>
+        <p class="seo-sample-explain">Azure reserves addresses in every subnet, so the usable capacity is smaller than the CIDR range suggests.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During a network review, the team identifies a requirement for create and configure virtual networks and subnets. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Assign privileged roles permanently to all team members</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Create separate subnets for tiers that require different routing or security controls</li>
+            <li class="seo-sample-answer">C. Use Microsoft Entra roles in place of Azure RBAC roles for resource access</li>
+            <li class="seo-sample-answer">D. Use AWS Cost Explorer to manage Azure spend</li>
+        </ul>
+        <p class="seo-sample-explain">Subnet boundaries allow administrators to apply NSGs, routes, and service integrations to specific groups of resources.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A support ticket reports a networking issue involving create and configure virtual network peering. Which action is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Azure Front Door as a layer 4 TCP/UDP load balancer</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Create peering from each virtual network to the other and enable traffic options that match the design</li>
+            <li class="seo-sample-answer">C. Use Azure Monitor without Log Analytics workspaces and store logs only in storage accounts</li>
+            <li class="seo-sample-answer">D. Create a resource group tag as the alert condition</li>
+        </ul>
+        <p class="seo-sample-explain">Virtual network peering must be configured in both directions for private connectivity.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A production connectivity issue requires troubleshooting for create and configure virtual network peering. Which Azure administrator action is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use NSG Flow Logs without a Log Analytics workspace and expect interactive analytics</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Check NSGs, route tables, and DNS after peering when VMs still cannot communicate</li>
+            <li class="seo-sample-answer">C. Create a storage lifecycle rule to change subnet routing</li>
+            <li class="seo-sample-answer">D. Place a customer firewall appliance without a user-defined route to direct traffic to it</li>
+        </ul>
+        <p class="seo-sample-explain">Peering provides a path, but security rules, routes, and name resolution can still block traffic.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload team needs Azure networking support for create and configure virtual networks and subnets. Which option should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Configure backup reports without delegating ownership to a recipient</li>
+            <li class="seo-sample-answer">B. Use a single shared admin account for all team members to simplify access</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Adjust the subnet address range before deploying resources when the planned IP capacity is insufficient</li>
+            <li class="seo-sample-answer">D. Assign licenses by editing CSV files instead of using group-based licensing</li>
+        </ul>
+        <p class="seo-sample-explain">Subnet sizing is easier to correct before dependent resources consume addresses.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During a network review, the team identifies a requirement for create and configure virtual network peering. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Configure MFA only after a security incident has already occurred</li>
+            <li class="seo-sample-answer">B. Use Network Watcher Connection Troubleshoot as a packet-capture utility</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Enable gateway transit and use remote gateways only when one peered network should share its VPN gateway</li>
+            <li class="seo-sample-answer">D. Disable soft delete in the vault to reduce storage costs</li>
+        </ul>
+        <p class="seo-sample-explain">Gateway transit allows one virtual network to use a gateway in the peered virtual network when configured correctly.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An audit finding shows that the current configuration for create and configure virtual networks and subnets is incomplete. What should be changed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Treat Azure RBAC role assignments as automatically inherited from on-premises Active Directory</li>
+            <li class="seo-sample-answer">B. Use a Basic-tier Azure Load Balancer for production workloads</li>
+            <li class="seo-sample-answer">C. Assign a subscription Owner role to fix packet flow</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Enable the required subnet delegation when a PaaS service needs delegated subnet control</li>
+        </ul>
+        <p class="seo-sample-explain">Some Azure services require subnet delegation before they can be deployed into the subnet.</p>
+      </details>
       <h2>Other AZ-104 Domains</h2>
       <ul>
           <li><a href="/microsoft-az-104/manage-azure-identities-and-governance/">1.0 Manage Azure identities and governance</a></li>

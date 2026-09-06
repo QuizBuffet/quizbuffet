@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "An API receives a bearer token. What must the API verify before trusting the claims?",
+          "name": "A mobile app needs users to sign in with Google and then access AWS resources through temporary credentials. Which service can broker this flow?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Signature, issuer, audience, expiration, and required scopes or claims."
+            "text": "Amazon Cognito identity pools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An application uses Cognito groups to place users into Admin and Viewer categories. What should the backend check?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Group or role claims in the validated token."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>130 exam-style questions</strong> covering <strong>26% of the DVA-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-developer-associate/">AWS Certified Developer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A web application must let employees sign in with a corporate SAML identity provider and receive temporary access to AWS-backed application resources. Which approach fits?</h3>
-        <p><strong>Answer:</strong> Use Amazon Cognito federation with the corporate identity provider</p>
-        <p>Amazon Cognito can federate users from a SAML identity provider and issue tokens that the application can use for authenticated access. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A developer wants application users to authenticate through a social provider but keep authorization decisions in the application. Which split is appropriate?</h3>
-        <p><strong>Answer:</strong> Use the identity provider for authentication and application logic for authorization</p>
-        <p>The identity provider proves who the user is; the application can still enforce resource-level decisions from claims and its own data. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An API receives a bearer token. What must the API verify before trusting the claims?</h3>
-        <p><strong>Answer:</strong> Signature, issuer, audience, expiration, and required scopes or claims</p>
-        <p>These validations prove the token came from a trusted issuer, was intended for the API, is still valid, and grants the required access. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A web application must let employees sign in with a corporate SAML identity provider and receive temporary access to AWS-backed application resources. Which approach fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use Amazon Cognito federation with the corporate identity provider</li>
+            <li class="seo-sample-answer">B. Create IAM users for every employee</li>
+            <li class="seo-sample-answer">C. Store corporate passwords in DynamoDB</li>
+            <li class="seo-sample-answer">D. Use an API Gateway usage plan as the identity provider</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon Cognito can federate users from a SAML identity provider and issue tokens that the application can use for authenticated access. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A developer wants application users to authenticate through a social provider but keep authorization decisions in the application. Which split is appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use the identity provider for authentication and application logic for authorization</li>
+            <li class="seo-sample-answer">B. Use S3 bucket ACLs as the user login system</li>
+            <li class="seo-sample-answer">C. Treat every authenticated user as an administrator</li>
+            <li class="seo-sample-answer">D. Use KMS encryption context as the user directory</li>
+        </ul>
+        <p class="seo-sample-explain">The identity provider proves who the user is; the application can still enforce resource-level decisions from claims and its own data. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A mobile app needs users to sign in with Google and then access AWS resources through temporary credentials. Which service can broker this flow?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. IAM access keys embedded in the app</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Amazon Cognito identity pools</li>
+            <li class="seo-sample-answer">C. AWS STS without an identity provider relationship</li>
+            <li class="seo-sample-answer">D. Secrets Manager secret rotation</li>
+        </ul>
+        <p class="seo-sample-explain">Cognito identity pools can exchange authenticated identities from supported providers for temporary AWS credentials. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An application uses Cognito groups to place users into Admin and Viewer categories. What should the backend check?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The user&#39;s plaintext password</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Group or role claims in the validated token</li>
+            <li class="seo-sample-answer">C. The API Gateway deployment ID</li>
+            <li class="seo-sample-answer">D. The Lambda function memory size</li>
+        </ul>
+        <p class="seo-sample-explain">Cognito group membership can appear in token claims, letting the backend enforce role-specific behavior after token validation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A developer stores an access token in browser local storage and is concerned about XSS exposure. Which mitigation is relevant?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Increase DynamoDB read capacity</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use secure token storage patterns and reduce script exposure</li>
+            <li class="seo-sample-answer">C. Use a longer SQS visibility timeout</li>
+            <li class="seo-sample-answer">D. Add a Lambda layer for logging only</li>
+        </ul>
+        <p class="seo-sample-explain">Bearer tokens can be used by anyone who obtains them, so storage choices and XSS defenses directly affect token safety. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A customer-facing app must support sign-up, sign-in, and JWT issuance without building a user directory from scratch. Which feature should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. IAM group with console password policy</li>
+            <li class="seo-sample-answer">B. AWS KMS customer managed key</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Amazon Cognito user pool</li>
+            <li class="seo-sample-answer">D. SQS FIFO queue for login requests</li>
+        </ul>
+        <p class="seo-sample-explain">A Cognito user pool provides managed user registration, authentication, and token issuance for application users. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A federation setup fails because tokens are issued for a different application client. Which token field is most relevant?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. SQS message group ID</li>
+            <li class="seo-sample-answer">B. DynamoDB partition key</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Audience or client ID claim</li>
+            <li class="seo-sample-answer">D. Lambda layer ARN</li>
+        </ul>
+        <p class="seo-sample-explain">The audience or client ID claim identifies the intended application client and must match what the API trusts. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An API should accept tokens from an OpenID Connect provider. What should validate the token before business logic runs?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Lambda reserved concurrency</li>
+            <li class="seo-sample-answer">B. DynamoDB conditional write</li>
+            <li class="seo-sample-answer">C. CloudFront origin request policy</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A JWT authorizer or Cognito authorizer on the API</li>
+        </ul>
+        <p class="seo-sample-explain">An API authorizer can validate token issuer, audience, signature, and claims before the backend handler is invoked. This is the correct answer.</p>
+      </details>
       <h2>Other DVA-C02 Domains</h2>
       <ul>
           <li><a href="/aws-developer-associate/development-with-aws-services/">1.0 Development with AWS Services</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which ownership threshold must be met for a subsidiary corporation to be eligible to join a consolidated federal tax return with its parent?",
+          "name": "XYZ Corporation has a $500,000 NOL carryforward from a prior year (post-2017). In the current year, XYZ has taxable income of $300,000 before applying the NOL deduction. What is XYZ's taxable income after applying the NOL deduction, and what amount of NOL carries forward to future years?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The parent must own at least 80% of the subsidiary's total voting power and at least 80% of the total value of all outstanding stock."
+            "text": "Taxable income = $60,000; NOL carryforward = $260,000, the 80% limitation allows deduction of $240,000 ($300,000 × 80%), leaving $60,000 of taxable income and $260,000 of NOL remaining."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "GreenCo Corporation distributes property (land) with a fair market value of $120,000 and an adjusted basis of $45,000 to its sole shareholder as a nonliquidating distribution. GreenCo has current and accumulated E&P of $200,000. What are the tax consequences to GreenCo and to the shareholder?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GreenCo recognizes a $75,000 gain on the distribution under §311(b); E&P is increased by the $75,000 gain and then reduced by the $120,000 FMV of the distributed property; the shareholder recognizes $120,000 of dividend income (FMV of property received)."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>52 exam-style questions</strong> covering <strong>42% of the TCP exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/cpa-tcp/">CPA Tax Compliance and Planning (TCP) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Under current federal tax law applicable to C corporations, what are the carryover rules for a net operating loss (NOL) generated in a tax year beginning after December 31, 2017?</h3>
-        <p><strong>Answer:</strong> NOLs may only be carried forward indefinitely, with the deduction in any carryover year limited to 80% of the corporation&#39;s taxable income (computed before the NOL deduction) for that year</p>
-        <p>Under TCJA §13302, for NOLs arising in taxable years beginning after December 31, 2017: (1) Carryback: generally eliminated for C corporations (exceptions remain for farming losses, which retain a 2-year carryback); (2) Carryforward: indefinite, NOLs do not expire; (3) Annual deduction limitation: 80% of the corporation&#39;s taxable income (computed without regard to the NOL deduction) for each carryover year. These changes replaced the prior-law rules that allowed 2-year carryback and 20-year carryforward with no percentage limitation on the annual deduction amount.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Under IRC §351, a taxpayer contributes property with a fair market value of $90,000 and an adjusted basis of $30,000 to a newly formed corporation in exchange for 100% of the stock. No other consideration is received. What is the tax treatment for the contributing taxpayer?</h3>
-        <p><strong>Answer:</strong> The taxpayer recognizes no gain or loss; the taxpayer&#39;s basis in the stock received equals $30,000 (substituted basis equal to the adjusted basis of the property contributed)</p>
-        <p>Under §351(a), no gain or loss is recognized when property is transferred to a corporation solely in exchange for stock if the transferors are in control (≥80%) immediately after the exchange. The taxpayer&#39;s basis in the stock received equals the adjusted basis of the property contributed ($30,000) under §358, a substituted (carryover) basis. The $60,000 of built-in gain is deferred, not eliminated; it will be recognized when the stock is later sold. The corporation&#39;s basis in the received property is also a carryover basis of $30,000 under §362.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which ownership threshold must be met for a subsidiary corporation to be eligible to join a consolidated federal tax return with its parent?</h3>
-        <p><strong>Answer:</strong> The parent must own at least 80% of the subsidiary&#39;s total voting power and at least 80% of the total value of all outstanding stock</p>
-        <p>Under IRC §1504(a), an affiliated group eligible to file a consolidated federal income tax return consists of an includible corporation that owns directly stock possessing: (1) at least 80% of the total combined voting power of all classes of stock entitled to vote, AND (2) at least 80% of the total value of all outstanding stock of each includible corporation. Both thresholds (80% vote AND 80% value) must be met simultaneously. This 80% test applies through the ownership chain, a parent owning 80%+ of a subsidiary, which owns 80%+ of a second-tier subsidiary, brings all three corporations into the affiliated group.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Under current federal tax law applicable to C corporations, what are the carryover rules for a net operating loss (NOL) generated in a tax year beginning after December 31, 2017?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. NOLs may only be carried forward indefinitely, with the deduction in any carryover year limited to 80% of the corporation&#39;s taxable income (computed before the NOL deduction) for that year</li>
+            <li class="seo-sample-answer">B. NOLs may be carried back two years and forward twenty years, and there is no limitation on the amount that can be used in any carryover year</li>
+            <li class="seo-sample-answer">C. NOLs may be carried back two years and forward twenty years, but the deduction in any carryover year is limited to 80% of taxable income</li>
+            <li class="seo-sample-answer">D. NOLs generated by C corporations expire after five years and cannot be carried back under any circumstances</li>
+        </ul>
+        <p class="seo-sample-explain">Under TCJA §13302, for NOLs arising in taxable years beginning after December 31, 2017: (1) Carryback: generally eliminated for C corporations (exceptions remain for farming losses, which retain a 2-year carryback); (2) Carryforward: indefinite, NOLs do not expire; (3) Annual deduction limitation: 80% of the corporation&#39;s taxable income (computed without regard to the NOL deduction) for each carryover year. These changes replaced the prior-law rules that allowed 2-year carryback and 20-year carryforward with no percentage limitation on the annual deduction amount.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Under IRC §351, a taxpayer contributes property with a fair market value of $90,000 and an adjusted basis of $30,000 to a newly formed corporation in exchange for 100% of the stock. No other consideration is received. What is the tax treatment for the contributing taxpayer?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. The taxpayer recognizes no gain or loss; the taxpayer&#39;s basis in the stock received equals $30,000 (substituted basis equal to the adjusted basis of the property contributed)</li>
+            <li class="seo-sample-answer">B. The taxpayer recognizes a $60,000 taxable gain equal to the difference between FMV and basis, because transfers to corporations always trigger gain recognition</li>
+            <li class="seo-sample-answer">C. The taxpayer recognizes no gain or loss; the taxpayer&#39;s basis in the stock received equals $90,000 (the fair market value of the stock received)</li>
+            <li class="seo-sample-answer">D. The taxpayer recognizes no gain or loss only if the contributed property has been held for more than one year, short-term property always triggers gain recognition on §351 exchanges</li>
+        </ul>
+        <p class="seo-sample-explain">Under §351(a), no gain or loss is recognized when property is transferred to a corporation solely in exchange for stock if the transferors are in control (≥80%) immediately after the exchange. The taxpayer&#39;s basis in the stock received equals the adjusted basis of the property contributed ($30,000) under §358, a substituted (carryover) basis. The $60,000 of built-in gain is deferred, not eliminated; it will be recognized when the stock is later sold. The corporation&#39;s basis in the received property is also a carryover basis of $30,000 under §362.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>XYZ Corporation has a $500,000 NOL carryforward from a prior year (post-2017). In the current year, XYZ has taxable income of $300,000 before applying the NOL deduction. What is XYZ&#39;s taxable income after applying the NOL deduction, and what amount of NOL carries forward to future years?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Taxable income = $0; NOL carryforward = $200,000, the full NOL offsets income until exhausted</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Taxable income = $60,000; NOL carryforward = $260,000, the 80% limitation allows deduction of $240,000 ($300,000 × 80%), leaving $60,000 of taxable income and $260,000 of NOL remaining</li>
+            <li class="seo-sample-answer">C. Taxable income = $0; NOL carryforward = $500,000, post-2017 NOLs cannot reduce taxable income below zero</li>
+            <li class="seo-sample-answer">D. Taxable income = $150,000; NOL carryforward = $350,000, only 50% of the NOL may be used in any single year</li>
+        </ul>
+        <p class="seo-sample-explain">Post-2017 NOL deduction calculation: (1) Taxable income before NOL = $300,000; (2) 80% limitation = $300,000 × 80% = $240,000 maximum NOL deduction; (3) Available NOL = $500,000 &gt; $240,000 limitation, so deduction = $240,000; (4) Taxable income after NOL = $300,000 − $240,000 = $60,000; (5) NOL carryforward to future years = $500,000 − $240,000 = $260,000 (indefinite carryforward). The 80% limitation intentionally ensures that corporations with NOL carryforwards still pay some corporate tax in profitable years, at least on 20% of their current income.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>GreenCo Corporation distributes property (land) with a fair market value of $120,000 and an adjusted basis of $45,000 to its sole shareholder as a nonliquidating distribution. GreenCo has current and accumulated E&amp;P of $200,000. What are the tax consequences to GreenCo and to the shareholder?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. GreenCo recognizes no gain on the distribution; the shareholder recognizes $75,000 of ordinary dividend income</li>
+            <li class="seo-sample-answer seo-sample-correct">B. GreenCo recognizes a $75,000 gain on the distribution under §311(b); E&amp;P is increased by the $75,000 gain and then reduced by the $120,000 FMV of the distributed property; the shareholder recognizes $120,000 of dividend income (FMV of property received)</li>
+            <li class="seo-sample-answer">C. GreenCo recognizes a $75,000 gain; the shareholder&#39;s basis in the land is $45,000 (GreenCo&#39;s carryover basis)</li>
+            <li class="seo-sample-answer">D. Neither GreenCo nor the shareholder recognizes income because nonliquidating property distributions are tax-free to both parties</li>
+        </ul>
+        <p class="seo-sample-explain">Corporation-level tax consequences under §311(b): (1) GreenCo recognizes $75,000 gain ($120,000 FMV − $45,000 basis) as if it sold the land; (2) E&amp;P adjustment: E&amp;P is first increased by the $75,000 recognized gain, then reduced by the FMV of the distributed property ($120,000); net E&amp;P reduction = $120,000 − $75,000 = $45,000 (essentially the property&#39;s adjusted basis). Shareholder tax consequences: (1) Since E&amp;P ($200,000 + $75,000 gain increase = $275,000) exceeds the distribution amount ($120,000), the full $120,000 distribution is a dividend; (2) The shareholder&#39;s basis in the land is its FMV at the distribution date ($120,000) under §301(d). Contrast with §311(a): a corporation does not recognize loss when it distributes property that has declined in value (FMV &lt; basis), losses are disallowed on nonliquidating distributions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>ParentCo and its wholly owned subsidiary SubCo file a consolidated return. During the year, ParentCo sells inventory to SubCo for $500,000. The inventory cost ParentCo $350,000 to produce. By year end, SubCo has sold 60% of this inventory to unrelated third-party customers and still holds 40% in ending inventory. How is this intercompany transaction treated in the consolidated return?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The full $150,000 intercompany profit ($500,000 − $350,000) is recognized in the consolidated return in the year of the original sale from ParentCo to SubCo</li>
+            <li class="seo-sample-answer seo-sample-correct">B. 60% of the intercompany profit ($90,000) is recognized in the consolidated return when SubCo sells to third parties; the remaining 40% ($60,000) is deferred until SubCo sells the remaining inventory to third parties</li>
+            <li class="seo-sample-answer">C. No gain or profit is recognized in the consolidated return from the intercompany sale, intercompany transactions are permanently eliminated and no gain ever appears</li>
+            <li class="seo-sample-answer">D. SubCo includes the full $500,000 purchase price as cost of goods sold regardless of the intercompany relationship, and ParentCo separately reports $150,000 gain on its member return</li>
+        </ul>
+        <p class="seo-sample-explain">Consolidated return intercompany transaction rules: (1) The $150,000 intercompany profit is deferred at the time of the ParentCo-to-SubCo sale, no current recognition in the consolidated return; (2) As SubCo sells inventory to third-party customers, the deferred intercompany profit is ratably recognized: 60% sold = $150,000 × 60% = $90,000 recognized; (3) 40% still in ending inventory = $150,000 × 40% = $60,000 remains deferred; (4) SubCo&#39;s cost basis in the inventory for consolidated return purposes is the arm&#39;s-length intercompany price ($500,000), with the deferred profit reducing this to the $350,000 original cost for tax purposes. This deferral mechanism prevents the group from manipulating the timing of income recognition through intercompany transactions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>ABC Corporation has a $600,000 NOL carryforward attributable to pre-ownership-change periods. During the current year, an ownership change within the meaning of IRC §382 occurred. The fair market value of ABC&#39;s stock immediately before the ownership change was $4,000,000. The applicable long-term tax-exempt rate is 3.5%. What is ABC&#39;s §382 annual limitation on its pre-change NOL?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. $600,000, the full NOL is available because §382 only limits NOLs if the ownership change was a hostile takeover</li>
+            <li class="seo-sample-answer">B. $0, a §382 ownership change permanently disallows all pre-change NOLs</li>
+            <li class="seo-sample-answer seo-sample-correct">C. $140,000, the annual §382 limitation is the FMV of the loss corporation&#39;s stock ($4,000,000) multiplied by the long-term tax-exempt rate (3.5%)</li>
+            <li class="seo-sample-answer">D. $300,000, exactly 50% of the pre-change NOL, since a 50% ownership change triggers the §382 limitation</li>
+        </ul>
+        <p class="seo-sample-explain">The §382 annual limitation = FMV of loss corporation&#39;s stock immediately before the ownership change × long-term tax-exempt rate. Calculation: $4,000,000 × 3.5% = $140,000 per year. This $140,000 annual limit restricts how much of the pre-change NOL can be used to offset income in each post-change year. Rationale: §382 approximates the return the acquiring party could have earned investing in tax-exempt bonds, preventing the purchase of loss corporations primarily for their tax benefits. Unused annual limitations accumulate (if income is less than the limitation in a year, the excess carries over to increase the next year&#39;s limitation).</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A shareholder owns 1,000 shares of RedCo, a C corporation, with an adjusted basis of $40,000. RedCo distributes $60,000 cash to the shareholder. RedCo has no current or accumulated E&amp;P. What are the tax consequences to the shareholder?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The shareholder recognizes $60,000 of ordinary dividend income because all corporate distributions are taxable as dividends</li>
+            <li class="seo-sample-answer">B. The shareholder recognizes $60,000 of long-term capital gain because distributions from C corporations are always capital gain when E&amp;P is zero</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The distribution is $40,000 tax-free return of basis (reducing the shareholder&#39;s basis in RedCo to $0), and the remaining $20,000 is treated as gain from the sale or exchange of the stock (capital gain, long-term if the stock is held more than one year)</li>
+            <li class="seo-sample-answer">D. The entire $60,000 is tax-free to the shareholder because distributions from corporations without E&amp;P are always nontaxable</li>
+        </ul>
+        <p class="seo-sample-explain">Distribution ordering rules under §301(c): (1) Dividend to extent of current and accumulated E&amp;P = $0 (no E&amp;P); (2) Return of capital to extent of the shareholder&#39;s adjusted basis: $40,000, the shareholder&#39;s basis in the stock is reduced to $0; (3) Treated as gain from the sale or exchange of property for the excess: $60,000 − $40,000 = $20,000 of capital gain (long-term if the stock has been held more than one year). The shareholder&#39;s basis in RedCo stock after the distribution = $0 (reduced by the $40,000 return of basis). The capital gain character reflects that the shareholder has received more than their investment in the stock, similar to receiving excess proceeds from selling the stock.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>DEF Corporation has the following history: Year 1, $80,000 net capital gain; Year 2, $0 capital gain/loss; Year 3, $150,000 net capital loss; Year 4, $60,000 net capital gain. Apply the C corporation capital loss carryback and carryforward rules to determine DEF&#39;s capital gain or loss for tax purposes in Years 3 and 4.</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Year 3: deduct $150,000 capital loss against ordinary income; Year 4: $0 capital loss carryforward remains</li>
+            <li class="seo-sample-answer">B. Year 3: no current deduction, $150,000 capital loss carries back to Year 1, absorbing $80,000 of capital gain and leaving $70,000 to carry forward; Year 4: the $70,000 carryforward absorbs the $60,000 of Year 4 capital gain, leaving $10,000 of capital loss to carry forward to Year 5</li>
+            <li class="seo-sample-answer">C. Year 3: the $150,000 capital loss creates a $150,000 NOL for the corporation; Year 4: the NOL offsets the $60,000 capital gain, leaving $90,000 NOL carryforward</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Year 3: the $150,000 capital loss carries back to Year 1 ($80,000 absorbed), then forward to Years 4 and beyond for the remaining $70,000; Year 4: $70,000 carryforward absorbs $60,000 of Year 4 gain, resulting in $10,000 capital loss carryforward to Year 5</li>
+        </ul>
+        <p class="seo-sample-explain">C corporation capital loss rules (IRC §1212): (1) Capital losses can only offset capital gains, never ordinary income; (2) Net capital losses carry BACK 3 years (to Years with capital gains) and FORWARD 5 years; when carried back, capital losses are treated as short-term regardless of their original character. Year 3 analysis: $150,000 net capital loss in Year 3. Carry back to Year 1 (3 years prior): $80,000 Year 1 capital gain absorbed → $80,000 refund potential; Carry back to Year 2: $0 Year 2 capital gain, nothing absorbed; Remaining carryforward: $150,000 − $80,000 = $70,000 carries forward. Year 4 analysis: $70,000 carryforward from Year 3 + $60,000 Year 4 capital gain → $70,000 − $60,000 = $10,000 net capital loss remaining; this $10,000 carries forward to Years 5-8 (within the 5-year forward window from Year 3, running through Year 8).</p>
+      </details>
       <h2>Other TCP Domains</h2>
       <ul>
           <li><a href="/cpa-tcp/individuals-and-personal-financial-planning/">1.0 Tax Compliance and Planning for Individuals and Personal Financial Planning</a></li>

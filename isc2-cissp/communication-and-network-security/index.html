@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A specialty insurer is hardening connectivity to its underwriting partners following a vendor breach. A proposed network design creates risk around secure design principles in network architectures. Which design change best addresses the concern?",
+          "name": "A federal agency is reviewing its network architecture against zero-trust principles ahead of a TIC 3.0 review. A security assurance review must address secure design principles in network architectures. What should the security professional recommend?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Design demilitarized zones for public-facing services so external traffic does not directly reach internal trusted networks."
+            "text": "Use defense in depth with network, identity, endpoint, application, monitoring, and physical controls rather than relying on a single perimeter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A consumer fintech is hardening its API gateway and edge after a credential-stuffing wave. A network architecture review identifies a weakness in secure design principles in network architectures. Which action should be prioritized?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use secure network architecture reviews to evaluate topology, trust boundaries, routing, remote access, and monitoring before deployment."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>104 exam-style questions</strong> covering <strong>13% of the CISSP exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/isc2-cissp/">Certified Information Systems Security Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Network engineering at a regional bank is finalizing the segmentation design for a new core banking refresh. The engineering team asks for CISSP-level guidance on secure design principles in network architectures. Which approach is most appropriate?</h3>
-        <p><strong>Answer:</strong> Segment the architecture by trust boundary, business function, and data sensitivity, then enforce traffic flows with routed controls and policy points</p>
-        <p>Network segmentation limits lateral movement and aligns network access with business and security requirements. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Operations at a regional utility is segmenting OT and IT networks following an industry-wide ICS warning. The security architect must make a communication and network security decision involving secure design principles in network architectures. What is the best recommendation?</h3>
-        <p><strong>Answer:</strong> Separate management planes from production data planes and restrict administrative access through controlled jump hosts or privileged access paths</p>
-        <p>Management interfaces are high-value targets and should be isolated and tightly monitored. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A specialty insurer is hardening connectivity to its underwriting partners following a vendor breach. A proposed network design creates risk around secure design principles in network architectures. Which design change best addresses the concern?</h3>
-        <p><strong>Answer:</strong> Design demilitarized zones for public-facing services so external traffic does not directly reach internal trusted networks</p>
-        <p>A DMZ creates a controlled boundary between untrusted networks and internal resources. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Network engineering at a regional bank is finalizing the segmentation design for a new core banking refresh. The engineering team asks for CISSP-level guidance on secure design principles in network architectures. Which approach is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Segment the architecture by trust boundary, business function, and data sensitivity, then enforce traffic flows with routed controls and policy points</li>
+            <li class="seo-sample-answer">B. Provision new partner VPN tunnels with no owner, no monitoring, and no review</li>
+            <li class="seo-sample-answer">C. Skip monitoring on TLS-encrypted paths because the traffic is encrypted</li>
+            <li class="seo-sample-answer">D. Allow overlapping IP address ranges across acquired entities and patch routing later</li>
+        </ul>
+        <p class="seo-sample-explain">Network segmentation limits lateral movement and aligns network access with business and security requirements. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Operations at a regional utility is segmenting OT and IT networks following an industry-wide ICS warning. The security architect must make a communication and network security decision involving secure design principles in network architectures. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Separate management planes from production data planes and restrict administrative access through controlled jump hosts or privileged access paths</li>
+            <li class="seo-sample-answer">B. Stand up site-to-site VPNs for partners without monitoring or ownership records</li>
+            <li class="seo-sample-answer">C. Skip flow monitoring on encrypted paths because confidentiality is covered</li>
+            <li class="seo-sample-answer">D. Tolerate overlapping subnets across acquired companies and reconcile later</li>
+        </ul>
+        <p class="seo-sample-explain">Management interfaces are high-value targets and should be isolated and tightly monitored. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A federal agency is reviewing its network architecture against zero-trust principles ahead of a TIC 3.0 review. A security assurance review must address secure design principles in network architectures. What should the security professional recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Treat cloud-provider VPC networking as inherently secure with no customer review</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use defense in depth with network, identity, endpoint, application, monitoring, and physical controls rather than relying on a single perimeter</li>
+            <li class="seo-sample-answer">C. Build a single flat network so every system can reach every other system</li>
+            <li class="seo-sample-answer">D. Use a single perimeter firewall as the entire network security architecture</li>
+        </ul>
+        <p class="seo-sample-explain">Layered network security reduces dependence on one control and improves resilience when one layer fails. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A consumer fintech is hardening its API gateway and edge after a credential-stuffing wave. A network architecture review identifies a weakness in secure design principles in network architectures. Which action should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip validating customer-side cloud network controls because the provider &#39;handles it&#39;</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use secure network architecture reviews to evaluate topology, trust boundaries, routing, remote access, and monitoring before deployment</li>
+            <li class="seo-sample-answer">C. Avoid segmentation to make a single flat network for all systems</li>
+            <li class="seo-sample-answer">D. Treat the perimeter firewall as the only network security control</li>
+        </ul>
+        <p class="seo-sample-explain">Architecture review identifies design weaknesses before they become operational dependencies. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Network engineering at a multinational logistics provider is integrating two acquired carriers. Executives need a risk-based explanation for secure design principles in network architectures. Which response best aligns with secure network practice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Treat cloud network security as a provider-only responsibility</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use secure access service edge patterns when distributed users need consistent security inspection for cloud and internet access</li>
+            <li class="seo-sample-answer">C. Use a single flat L2 broadcast domain across the entire enterprise</li>
+            <li class="seo-sample-answer">D. Rely on a single edge firewall as the entirety of network security</li>
+        </ul>
+        <p class="seo-sample-explain">SASE can combine network access and security policy enforcement for dispersed users and services. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A children&#39;s hospital is redesigning its network to segregate clinical, biomedical, and administrative traffic. A proposed network design creates risk around secure design principles in network architectures. Which design change best addresses the concern?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Add a new partner VPN as a permanent fixture with no review schedule</li>
+            <li class="seo-sample-answer">B. Disable east-west monitoring on encrypted flows because they&#39;re &#39;protected&#39;</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Design high availability with redundant paths, diverse providers, resilient routing, and tested failover for critical communications</li>
+            <li class="seo-sample-answer">D. Use conflicting RFC1918 ranges between acquired networks and fix routing later</li>
+        </ul>
+        <p class="seo-sample-explain">Network availability depends on eliminating avoidable single points of failure and proving failover behavior. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Network architecture at a research university is mapping flows ahead of a federally funded research project. The engineering team asks for CISSP-level guidance on secure design principles in network architectures. Which approach is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Provision permanent partner VPNs with no owner or review process</li>
+            <li class="seo-sample-answer">B. Disable network monitoring on encrypted segments because the traffic is encrypted</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Design cloud and hybrid connectivity by clarifying shared responsibility, routing, encryption, logging, and provider dependency risks</li>
+            <li class="seo-sample-answer">D. Use the same address ranges in two merged networks and fix it later</li>
+        </ul>
+        <p class="seo-sample-explain">Hybrid and cloud networking require explicit control ownership and visibility across environments. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A SaaS provider is integrating multi-region network controls for a new global tenant onboarding rollout. Executives need a risk-based explanation for secure design principles in network architectures. Which response best aligns with secure network practice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Assume the cloud provider&#39;s network is secure with no validation of customer scope</li>
+            <li class="seo-sample-answer">B. Use one flat /16 so every device can reach every other device directly</li>
+            <li class="seo-sample-answer">C. Rely on one internet firewall as the complete network security strategy</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Apply zero trust principles by continuously verifying identity, device posture, context, and authorization for network access</li>
+        </ul>
+        <p class="seo-sample-explain">Zero trust reduces implicit trust based on location and supports secure access across distributed environments. This is the correct answer.</p>
+      </details>
       <h2>Other CISSP Domains</h2>
       <ul>
           <li><a href="/isc2-cissp/security-and-risk-management/">1.0 Security and Risk Management</a></li>

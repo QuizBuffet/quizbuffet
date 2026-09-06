@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which commercial vulnerability scanner is the industry-leading enterprise platform developed by Tenable, widely used by security teams for network, web application, and cloud vulnerability assessment?",
+          "name": "The Common Vulnerability Scoring System (CVSS) v3.1 Base Score ranges from 0.0 to 10.0. Which CVSS Base Score range corresponds to a 'Critical' severity rating?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nessus. Tenable's commercial vulnerability scanner offering the largest plugin library for comprehensive vulnerability detection."
+            "text": "9.0-10.0. CVSS v3.1 defines five severity ratings: None (0.0), Low (0.1-3.9), Medium (4.0-6.9), High (7.0-8.9), and Critical (9.0-10.0). A Critical rating (9.0-10.0) indicates the vulnerability is remotely exploitable with no authentication required, results in complete…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A vulnerability with a CVSS Base Score of 9.8 (Critical) affects a server in a DMZ that has no internet-facing connection and is only accessible via jump server with MFA from a small number of administrators. When the security team applies Environmental Score metrics reflecting these access controls, how does this affect the effective score for prioritization?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Environmental metrics allow the organization to adjust the score based on their specific deployment context, the restricted access controls likely reduce the effective exploitability, producing a lower adjusted score for this specific deployment."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>100 exam-style questions</strong> covering <strong>14% of the CEH exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which type of vulnerability assessment tests a system from the perspective of an unauthenticated external attacker with no prior knowledge of or credentials for the target environment?</h3>
-        <p><strong>Answer:</strong> External black-box assessment, simulates an outside attacker with no credentials or internal knowledge</p>
-        <p>An external black-box vulnerability assessment simulates an unauthenticated attacker approaching the target from the internet. The assessor has no prior credentials, no network diagrams, and no system knowledge, they discover the attack surface entirely through scanning and enumeration. This approach identifies vulnerabilities that an external attacker could exploit without insider assistance.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A compliance team needs continuous monitoring of all 2,000 servers in their datacenter for new vulnerabilities as patches are released and CVEs are published daily. Which vulnerability assessment deployment model BEST supports this ongoing requirement?</h3>
-        <p><strong>Answer:</strong> Continuous automated scanning, a vulnerability management platform (e.g., Tenable.sc, Rapid7 InsightVM) scans assets on a scheduled or agent-based basis and correlates results with the live NVD CVE feed</p>
-        <p>Enterprise vulnerability management platforms (Tenable.sc, Rapid7 InsightVM, Qualys, Microsoft Defender Vulnerability Management) are specifically designed for continuous, large-scale monitoring. They integrate with the NIST NVD and vendor security advisories to immediately correlate newly published CVEs against the current asset inventory and patch state, providing daily or real-time visibility into emerging exposures across thousands of assets.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which commercial vulnerability scanner is the industry-leading enterprise platform developed by Tenable, widely used by security teams for network, web application, and cloud vulnerability assessment?</h3>
-        <p><strong>Answer:</strong> Nessus. Tenable&#39;s commercial vulnerability scanner offering the largest plugin library for comprehensive vulnerability detection</p>
-        <p>Nessus, developed by Tenable, is the most widely deployed commercial vulnerability scanner globally. It offers over 230,000 plugins covering network services, operating systems, web applications, databases, cloud platforms, and compliance configurations. Tenable&#39;s enterprise products (Nessus Professional, Tenable.io, Tenable.sc) are the benchmark against which other scanners are measured.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which type of vulnerability assessment tests a system from the perspective of an unauthenticated external attacker with no prior knowledge of or credentials for the target environment?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. External black-box assessment, simulates an outside attacker with no credentials or internal knowledge</li>
+            <li class="seo-sample-answer">B. Internal white-box assessment, conducted with full network access and admin credentials</li>
+            <li class="seo-sample-answer">C. Credentialed internal scan, uses valid credentials to enumerate installed software and patch levels</li>
+            <li class="seo-sample-answer">D. Agent-based assessment, deploys lightweight software agents on each target host for continuous scanning</li>
+        </ul>
+        <p class="seo-sample-explain">An external black-box vulnerability assessment simulates an unauthenticated attacker approaching the target from the internet. The assessor has no prior credentials, no network diagrams, and no system knowledge, they discover the attack surface entirely through scanning and enumeration. This approach identifies vulnerabilities that an external attacker could exploit without insider assistance.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A compliance team needs continuous monitoring of all 2,000 servers in their datacenter for new vulnerabilities as patches are released and CVEs are published daily. Which vulnerability assessment deployment model BEST supports this ongoing requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Continuous automated scanning, a vulnerability management platform (e.g., Tenable.sc, Rapid7 InsightVM) scans assets on a scheduled or agent-based basis and correlates results with the live NVD CVE feed</li>
+            <li class="seo-sample-answer">B. Annual third-party vulnerability assessment, a contracted firm scans all systems once per year</li>
+            <li class="seo-sample-answer">C. Manual penetration testing, a team of pentesters manually inspects each server weekly</li>
+            <li class="seo-sample-answer">D. Point-in-time credentialed scan, a single authenticated scan run on demand when a new CVE is published</li>
+        </ul>
+        <p class="seo-sample-explain">Enterprise vulnerability management platforms (Tenable.sc, Rapid7 InsightVM, Qualys, Microsoft Defender Vulnerability Management) are specifically designed for continuous, large-scale monitoring. They integrate with the NIST NVD and vendor security advisories to immediately correlate newly published CVEs against the current asset inventory and patch state, providing daily or real-time visibility into emerging exposures across thousands of assets.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>The Common Vulnerability Scoring System (CVSS) v3.1 Base Score ranges from 0.0 to 10.0. Which CVSS Base Score range corresponds to a &#39;Critical&#39; severity rating?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. 9.0-10.0</li>
+            <li class="seo-sample-answer">B. 7.0-8.9</li>
+            <li class="seo-sample-answer">C. 4.0-6.9</li>
+            <li class="seo-sample-answer">D. 0.1-3.9</li>
+        </ul>
+        <p class="seo-sample-explain">CVSS v3.1 defines five severity ratings: None (0.0), Low (0.1-3.9), Medium (4.0-6.9), High (7.0-8.9), and Critical (9.0-10.0). A Critical rating (9.0-10.0) indicates the vulnerability is remotely exploitable with no authentication required, results in complete compromise of confidentiality, integrity, and availability, and requires no user interaction, the most severe class of vulnerabilities requiring immediate remediation.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A vulnerability with a CVSS Base Score of 9.8 (Critical) affects a server in a DMZ that has no internet-facing connection and is only accessible via jump server with MFA from a small number of administrators. When the security team applies Environmental Score metrics reflecting these access controls, how does this affect the effective score for prioritization?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Environmental metrics allow the organization to adjust the score based on their specific deployment context, the restricted access controls likely reduce the effective exploitability, producing a lower adjusted score for this specific deployment</li>
+            <li class="seo-sample-answer">B. The CVSS Base Score cannot be modified, all systems with the same CVE must be remediated at the same Critical priority regardless of their environment</li>
+            <li class="seo-sample-answer">C. Applying Environmental Score automatically patches the vulnerability by removing it from the active scanning queue</li>
+            <li class="seo-sample-answer">D. Environmental Score is only applicable to ICS and OT systems, IT server vulnerabilities always retain their Base Score for prioritization purposes</li>
+        </ul>
+        <p class="seo-sample-explain">CVSS v3.1 Environmental metrics allow organizations to modify Base Score metrics to reflect their actual deployment: Modified Attack Vector (a network-only-exploitable vulnerability in a completely isolated network could be modified to Local), Modified Privileges Required (if MFA limits who can actually reach the service), and Confidentiality/Integrity/Availability Requirements (if the server holds low-value data, CIA requirements are lower). These modifications produce an Environmental Score that accurately reflects the actual risk to that specific organization&#39;s deployment, enabling more accurate prioritization.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team uses OpenVAS to scan a production environment and the scan causes a critical application server to crash, disrupting 500 active user sessions. Which scanning configuration parameter was MOST likely responsible, and how should future scans be configured to prevent this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The scan used an incorrect vulnerability signature database, updating the NVT feed resolves the crash issue without changing scan parameters</li>
+            <li class="seo-sample-answer">B. The scan used credentialed access which caused the application server to generate excessive audit log entries, filling the disk and causing the crash</li>
+            <li class="seo-sample-answer">C. The OpenVAS scanner&#39;s IP address was not whitelisted by the application&#39;s rate limiting, configuring rate limit exemptions prevents future crashes</li>
+            <li class="seo-sample-answer seo-sample-correct">D. The scan was configured with safe_checks disabled, enabling aggressive exploit verification tests (like sending malformed packets or fuzzing inputs) that overwhelmed the production server; safe_checks should always be enabled for production scans</li>
+        </ul>
+        <p class="seo-sample-explain">OpenVAS (and Nessus) include a safe_checks parameter that, when enabled, uses passive or non-destructive tests to infer vulnerability presence. When safe_checks is disabled, the scanner runs active verification tests, sending malformed packets, fuzzing protocol inputs, or simulating denial-of-service conditions to confirm vulnerabilities. These aggressive checks can crash vulnerable services or overwhelm production servers not designed for high-volume probe traffic. For production environment scanning, safe_checks must always be enabled, scans should be conducted during maintenance windows, and aggressive checks should be reserved for dedicated test environments.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A vulnerability is classified as: Attack Vector: Network, Attack Complexity: Low, Privileges Required: None, User Interaction: None, Scope: Changed, Confidentiality: High, Integrity: High, Availability: High. Without calculating the exact score, which CVSS severity rating does this combination MOST likely produce, and why?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Medium, because the Changed scope reduces the severity of the base score calculation</li>
+            <li class="seo-sample-answer">B. Low, because Network attack vector vulnerabilities are less severe than Local</li>
+            <li class="seo-sample-answer">C. High, the lack of user interaction brings the score down from Critical to High regardless of other metrics</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Critical, network exploitable, no auth, no user interaction, changed scope, full CIA impact is the maximum severity combination</li>
+        </ul>
+        <p class="seo-sample-explain">This combination represents the most severe CVSS v3.1 profile: AV:N (remotely exploitable), AC:L (no special conditions), PR:N (no authentication), UI:N (no user interaction required), S:C (changed scope, affects beyond vulnerable component), C:H/I:H/A:H (complete impact on all CIA components). This combination produces a CVSS Base Score of 10.0, the maximum Critical rating. CVE-2021-44228 (Log4Shell) has this profile.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security engineer runs an unauthenticated Nessus scan against a Windows Server 2019 host and receives 12 vulnerabilities. They then run the same scan with valid domain administrator credentials and receive 87 vulnerabilities. What explains this dramatic difference?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The credentialed scan ran more slowly, giving Nessus additional time to detect vulnerabilities the faster unauthenticated scan missed</li>
+            <li class="seo-sample-answer">B. The domain administrator account triggered Windows Defender to disable its own protections, exposing additional attack surface</li>
+            <li class="seo-sample-answer">C. The credentialed scan generated additional false positives because administrator-level access produces more noise in the vulnerability database</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Authenticated scanning allows Nessus to read the Windows registry, WMI, and file system to enumerate installed software versions, missing patches, and local configuration issues that are invisible from the network layer without credentials</li>
+        </ul>
+        <p class="seo-sample-explain">Unauthenticated scans probe only what is visible from the network, open ports, service banners, and externally accessible service behavior. They cannot see installed software versions, missing Windows patches (KB numbers), local user account configurations, audit policy settings, or service configurations inside the OS. Credentialed scans use the provided account to authenticate via WMI, SMB, or SSH, then read the registry (software install records, patch levels), file system (software version files), and system configuration, revealing the full patch and configuration vulnerability landscape invisible from outside.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team runs a vulnerability scanner against a web server and receives 200 findings flagged as &#39;Critical&#39; or &#39;High.&#39; Upon manual verification, 170 of these are confirmed vulnerabilities while 30 are benign conditions the scanner misidentified as vulnerabilities. What are the 30 incorrectly flagged items called?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. False negatives, vulnerabilities that exist but were not detected by the scanner</li>
+            <li class="seo-sample-answer">B. Zero-day vulnerabilities, previously unknown issues the scanner identified incorrectly</li>
+            <li class="seo-sample-answer">C. True negatives, confirmed absent vulnerabilities that the scanner correctly did not flag</li>
+            <li class="seo-sample-answer seo-sample-correct">D. False positives, conditions the scanner flagged as vulnerabilities that manual review confirms are not</li>
+        </ul>
+        <p class="seo-sample-explain">False positives occur when a security tool reports a condition as a vulnerability or security issue when manual investigation confirms it is actually benign or non-exploitable. In vulnerability scanning, false positives waste analyst time during triage and remediation planning. High false positive rates indicate scanner misconfiguration, aggressive plugin settings, or insufficient context about the target environment.</p>
+      </details>
       <h2>Other CEH Domains</h2>
       <ul>
           <li><a href="/ceh/information-security-overview/">1.0 Information Security and Ethical Hacking Overview</a></li>

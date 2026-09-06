@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "The Wayback Machine (web.archive.org) is a frequently used OSINT tool during footprinting. Which specific intelligence value does archived web content provide that current website analysis cannot?",
+          "name": "An attacker begins planning an attack against a financial institution. Which combination of information types would a thorough footprinting operation MOST seek to collect about the target organization?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Wayback Machine reveals historically published content, including pages since removed (employee directories, org charts, technology disclosures, developer comments, old APIs), configuration files accidentally exposed in the past, and old software version disclosures that…"
+            "text": "Network ranges, IP addresses, domain names, employee names and emails, technologies in use, operating hours, physical locations, security policies, business partners, and internet-facing services, a complete intelligence picture enabling targeted attack planning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Google dork query would MOST effectively find login pages and administrative portals on a target organization's domain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "site:targetorg.com intitle:\"login\" OR intitle:\"admin\" OR intitle:\"sign in\" OR intitle:\"portal\". Combining site: (domain scoping) with intitle: (title matching) and OR operators creates a highly targeted search for authentication interfaces. Pages with 'login', 'admin', 'sign…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>128 exam-style questions</strong> covering <strong>18% of the CEH exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What is the PRIMARY distinction between passive and active reconnaissance in the context of ethical hacking?</h3>
-        <p><strong>Answer:</strong> Passive reconnaissance gathers intelligence without directly interacting with the target system; active reconnaissance directly probes or interacts with the target, risking detection</p>
-        <p>Passive reconnaissance gathers intelligence about a target using publicly available information sources, search engines, WHOIS databases, social media, DNS records, job postings, without sending any traffic directly to the target&#39;s systems. The target has no awareness of the activity. Active reconnaissance involves direct interaction with the target&#39;s infrastructure, port scanning with Nmap, banner grabbing, network enumeration, which generates traffic that the target&#39;s IDS/SIEM may detect and log.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>In the CEH footprinting methodology, what is the FIRST step before beginning any active or passive information gathering?</h3>
-        <p><strong>Answer:</strong> Define the scope and obtain written authorization, confirming what targets are in scope, what techniques are permitted, and having signed permission from the target organization</p>
-        <p>Before any footprinting activity, passive or active, an ethical hacker must have clearly defined scope and written authorization. The Rules of Engagement (RoE) and/or Statement of Work must specify: which IP ranges, domains, and systems are in scope; what reconnaissance techniques are permitted (passive only, or including active scanning); testing windows; emergency contacts; and escalation procedures. Without written authorization, all footprinting activities, even passive OSINT, may violate computer fraud laws or professional ethics codes. Scope definition prevents unauthorized reconnaissance of third-party systems adjacent to the target.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>The Wayback Machine (web.archive.org) is a frequently used OSINT tool during footprinting. Which specific intelligence value does archived web content provide that current website analysis cannot?</h3>
-        <p><strong>Answer:</strong> The Wayback Machine reveals historically published content, including pages since removed (employee directories, org charts, technology disclosures, developer comments, old APIs), configuration files accidentally exposed in the past, and old software version disclosures that may indicate current legacy systems</p>
-        <p>This accurately describes the Wayback Machine&#39;s intelligence value. Historical snapshots have revealed: employee email formats from old contact pages (enabling phishing campaign targeting), technology stacks from old &#39;powered by&#39; footers (identifying legacy systems), and developer test pages accidentally indexed before removal, all providing intelligence the current website no longer exposes.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What is the PRIMARY distinction between passive and active reconnaissance in the context of ethical hacking?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Passive reconnaissance gathers intelligence without directly interacting with the target system; active reconnaissance directly probes or interacts with the target, risking detection</li>
+            <li class="seo-sample-answer">B. Passive reconnaissance is only performed by defenders; active reconnaissance is exclusively used by offensive penetration testers</li>
+            <li class="seo-sample-answer">C. Passive reconnaissance uses automated scanning tools; active reconnaissance relies exclusively on manual OSINT research techniques</li>
+            <li class="seo-sample-answer">D. Passive reconnaissance is always legal; active reconnaissance always requires law enforcement authorization before proceeding</li>
+        </ul>
+        <p class="seo-sample-explain">Passive reconnaissance gathers intelligence about a target using publicly available information sources, search engines, WHOIS databases, social media, DNS records, job postings, without sending any traffic directly to the target&#39;s systems. The target has no awareness of the activity. Active reconnaissance involves direct interaction with the target&#39;s infrastructure, port scanning with Nmap, banner grabbing, network enumeration, which generates traffic that the target&#39;s IDS/SIEM may detect and log.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>In the CEH footprinting methodology, what is the FIRST step before beginning any active or passive information gathering?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">B. Perform a full Nmap scan of the target IP range to identify all active hosts and open services</li>
+            <li class="seo-sample-answer seo-sample-correct">A. Define the scope and obtain written authorization, confirming what targets are in scope, what techniques are permitted, and having signed permission from the target organization</li>
+            <li class="seo-sample-answer">C. Send phishing emails to identified employee email addresses to harvest credentials for deeper access</li>
+            <li class="seo-sample-answer">D. Query the target&#39;s WHOIS records to identify the registrar and registration contact information</li>
+        </ul>
+        <p class="seo-sample-explain">Before any footprinting activity, passive or active, an ethical hacker must have clearly defined scope and written authorization. The Rules of Engagement (RoE) and/or Statement of Work must specify: which IP ranges, domains, and systems are in scope; what reconnaissance techniques are permitted (passive only, or including active scanning); testing windows; emergency contacts; and escalation procedures. Without written authorization, all footprinting activities, even passive OSINT, may violate computer fraud laws or professional ethics codes. Scope definition prevents unauthorized reconnaissance of third-party systems adjacent to the target.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An attacker begins planning an attack against a financial institution. Which combination of information types would a thorough footprinting operation MOST seek to collect about the target organization?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only the organization&#39;s financial earnings and stock price, the target&#39;s cybersecurity posture cannot be inferred from operational information</li>
+            <li class="seo-sample-answer">B. Nothing public is useful, effective footprinting only works by obtaining confidential internal documents through insider access</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Network ranges, IP addresses, domain names, employee names and emails, technologies in use, operating hours, physical locations, security policies, business partners, and internet-facing services, a complete intelligence picture enabling targeted attack planning</li>
+            <li class="seo-sample-answer">D. Only the CEO and CISO names, spear-phishing these two executives provides sufficient access to all organizational resources</li>
+        </ul>
+        <p class="seo-sample-explain">Comprehensive footprinting collects intelligence across multiple dimensions: Technical (domain names, IP ranges, internet-facing services, OS and application versions, SSL certificates, DNS records), Organizational (employee names/titles/emails, org chart, business units, physical locations), Operational (business hours, maintenance windows, third-party vendors and partners), and Security posture (published security policies, incident reports, job postings for security roles). This complete picture enables the attacker to prioritize attack vectors, craft targeted phishing lures, identify vulnerable systems, and plan the attack timeline.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which Google dork query would MOST effectively find login pages and administrative portals on a target organization&#39;s domain?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. site:targetorg.com intitle:&quot;login&quot; OR intitle:&quot;admin&quot; OR intitle:&quot;sign in&quot; OR intitle:&quot;portal&quot;</li>
+            <li class="seo-sample-answer">B. site:targetorg.com filetype:pdf OR filetype:doc, finds all document files that may contain embedded login credentials</li>
+            <li class="seo-sample-answer">C. site:targetorg.com intext:&quot;server error&quot;, finds pages with error messages revealing login endpoints</li>
+            <li class="seo-sample-answer">D. site:targetorg.com cache:login, retrieves Google&#39;s cached version of all pages containing login functionality</li>
+        </ul>
+        <p class="seo-sample-explain">Combining site: (domain scoping) with intitle: (title matching) and OR operators creates a highly targeted search for authentication interfaces. Pages with &#39;login&#39;, &#39;admin&#39;, &#39;sign in&#39;, or &#39;portal&#39; in their HTML title tags are explicitly designed as authentication entry points. Discovering these pages identifies potential attack surfaces for password attacks, credential stuffing, authentication bypass, or session management vulnerabilities. The GHDB (Google Hacking Database at exploit-db.com) documents hundreds of refined dorks for specific login page types.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A penetration tester uses the Shodan query: &#39;org:&quot;Target Corporation&quot; port:3389&#39;. What information does this search retrieve and what attack does it specifically facilitate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Finds all web servers owned by Target Corporation running on non-standard ports, used for HTTP enumeration of alternative web services</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Identifies all internet-facing systems belonging to Target Corporation with Remote Desktop Protocol (RDP) open on port 3389, facilitating targeted RDP credential attacks, brute-force, or exploitation of RDP vulnerabilities (BlueKeep, DejaBlue)</li>
+            <li class="seo-sample-answer">C. Maps Target Corporation&#39;s email infrastructure by identifying mail exchange servers on port 3389</li>
+            <li class="seo-sample-answer">D. Finds Target Corporation&#39;s DNS servers on port 3389 for zone transfer reconnaissance and domain enumeration</li>
+        </ul>
+        <p class="seo-sample-explain">The org: operator filters by organization name (ASN-registered organization), and port:3389 filters for systems with RDP open. The combined query returns all internet-exposed RDP services registered to the target organization. This intelligence directly facilitates: (1) RDP credential brute-force attacks using tools like Hydra, (2) Password spray attacks using common enterprise passwords, (3) Testing for unpatched RDP vulnerabilities like BlueKeep (CVE-2019-0708) or DejaBlue (CVE-2019-1182), and (4) Identification of systems that should never be internet-exposed but are due to misconfiguration, a finding with immediate remediation value.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A penetration tester performs footprinting on a target organization. They search LinkedIn for employee names and titles, query the WHOIS database for domain registration details, and review the company&#39;s job postings to identify technologies in use. Which type of reconnaissance is being performed, and what is the risk to the tester?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">B. Active reconnaissance, directly querying WHOIS and LinkedIn sends probes directly to target company servers, risking detection by their security team</li>
+            <li class="seo-sample-answer seo-sample-correct">A. Passive reconnaissance, information is gathered from public third-party sources without any direct interaction with the target&#39;s own infrastructure, making detection extremely unlikely</li>
+            <li class="seo-sample-answer">C. Social engineering reconnaissance, the tester is impersonating an employee to gather information through human interaction</li>
+            <li class="seo-sample-answer">D. Semi-active reconnaissance, WHOIS queries are passive but LinkedIn searches are classified as active because they require a login account to search employee profiles</li>
+        </ul>
+        <p class="seo-sample-explain">All described activities use public third-party sources: LinkedIn (a social network platform), WHOIS databases (maintained by registrars and ICANN, not the target), and job posting sites (public HR content). None of these activities send any traffic to the target organization&#39;s own servers or infrastructure, the target has no technical means to detect these activities through their network monitoring tools. This is the defining characteristic of passive reconnaissance.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A red team begins an engagement with an organization in the financial sector. During passive footprinting, they discover a job posting for a &#39;Senior Palo Alto Networks Engineer&#39; and another for a &#39;FortiGate VPN Administrator.&#39; The postings specify experience with &#39;GlobalProtect&#39; and &#39;FortiClient EMS.&#39; What intelligence has been inadvertently revealed, and how does this accelerate the attack lifecycle?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The job postings reveal the salary ranges for security roles, helping the red team calculate the organization&#39;s security budget for report benchmarking purposes</li>
+            <li class="seo-sample-answer">B. The postings indicate the organization is growing its security team, which has no direct bearing on attack surface identification or vulnerability exploitation planning</li>
+            <li class="seo-sample-answer">C. Nothing, job postings are human resources documents with no technical information relevant to attack planning or vulnerability identification</li>
+            <li class="seo-sample-answer seo-sample-correct">D. The postings reveal specific security product brands and versions in use. Palo Alto GlobalProtect (VPN/ZTNA) and Fortinet FortiClient EMS (endpoint management), allowing the red team to research CVEs for those specific products, identify attack techniques for those platforms, and craft targeted phishing lures referencing these familiar technologies</li>
+        </ul>
+        <p class="seo-sample-explain">&#39;Senior Palo Alto Networks Engineer&#39; with GlobalProtect experience reveals a Palo Alto Networks NGFW/ZTNA deployment. &#39;FortiGate VPN Administrator&#39; with FortiClient EMS reveals Fortinet&#39;s endpoint management and VPN infrastructure. This intelligence: (1) Narrows CVE research to Palo Alto and Fortinet product vulnerability databases, (2) Enables testing of known attack techniques for these specific platforms (e.g., CVE-2024-3400 PAN-OS command injection, CVE-2023-27997 FortiGate heap overflow), (3) Enables creation of realistic phishing lures referencing GlobalProtect or FortiClient updates, and (4) Provides context for social engineering scripts referencing the organization&#39;s actual security tools.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A penetration tester uses the Google dork: &#39;site:targetorg.com filetype:xls OR filetype:xlsx OR filetype:csv&#39;. What is the purpose of this specific search query?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. To find all Excel and CSV spreadsheet files indexed by Google on the target&#39;s domain, which may contain sensitive data like employee lists, financial data, customer PII, or internal system configurations inadvertently published to the web</li>
+            <li class="seo-sample-answer">B. To enumerate all web server IP addresses associated with the target domain by examining Excel file metadata</li>
+            <li class="seo-sample-answer">C. To download a copy of the target organization&#39;s website for offline analysis without network traffic to the target</li>
+            <li class="seo-sample-answer seo-sample-correct">D. To identify all subdomains of the target organization using Excel files as a DNS enumeration data source</li>
+        </ul>
+        <p class="seo-sample-explain">Subdomain enumeration uses DNS zone transfers, brute-force subdomain guessing, and certificate transparency logs, not Excel file searches. While Excel files might incidentally contain internal hostnames, searching for XLS/CSV files is specifically for data discovery, not subdomain enumeration.</p>
+      </details>
       <h2>Other CEH Domains</h2>
       <ul>
           <li><a href="/ceh/information-security-overview/">1.0 Information Security and Ethical Hacking Overview</a></li>

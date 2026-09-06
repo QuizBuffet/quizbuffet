@@ -1777,6 +1777,21 @@ a:is(:hover, :active) { text-decoration: underline; }
 .cert-faq-item[open] > summary::after { content: '−'; }
 .cert-faq-item p { margin: 0; padding: 0 16px 16px; line-height: 1.6; color: var(--text-mid, #555); font-size: 14px; }
 
+/* === Domain page sample questions (G2: 8 mixed-difficulty, collapsed by default) === */
+.seo-sample-q { border: 1px solid var(--border-sub); border-radius: 8px; background: var(--surface, #fafafa); overflow: hidden; margin: 0 0 8px; }
+.seo-sample-q > summary {
+  cursor: pointer; list-style: none; padding: 14px 16px;
+  font-weight: 600; font-size: 15px; color: var(--text);
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  user-select: none;
+}
+.seo-sample-q > summary::after { content: '+'; color: #c47828; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+.seo-sample-q[open] > summary::after { content: '−'; }
+.seo-sample-answers { list-style: none; margin: 0; padding: 0 16px 4px; display: flex; flex-direction: column; gap: 6px; }
+.seo-sample-answer { padding: 8px 10px; border-radius: 6px; background: var(--subtle, #f2f2f2); font-size: 14px; }
+.seo-sample-correct { background: var(--correct-bg); color: #1a6; font-weight: 600; }
+.seo-sample-explain { margin: 0; padding: 10px 16px 16px; line-height: 1.6; color: var(--text-mid, #555); font-size: 14px; }
+
 /* === Related certs === */
 .cert-related { margin: clamp(28px, 4vw, 40px) 0; }
 .cert-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }

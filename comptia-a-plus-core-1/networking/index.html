@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "What is the primary purpose of SSH port 22 in Objective 2.0 networking?",
+          "name": "A technician is reviewing a network scenario involving Protocol ports. Which answer best describes the correct role or behavior?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems.. SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems. SSH replaced insecure remote terminal tools such as…"
+            "text": "In this context, protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services.. Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer,…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A technician is reviewing a network scenario involving FTP ports 20/21. Which answer best describes the correct role or behavior?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In this context, FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer.. FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>500 exam-style questions</strong> covering <strong>20% of the 220-1101 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-a-plus-core-1/">CompTIA A+ Core 1 practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What is the primary purpose of Protocol ports in Objective 2.0 networking?</h3>
-        <p><strong>Answer:</strong> Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services.</p>
-        <p>Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services. Knowing common ports helps technicians recognize traffic and troubleshoot blocked or misdirected services. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is the primary purpose of FTP ports 20/21 in Objective 2.0 networking?</h3>
-        <p><strong>Answer:</strong> FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer.</p>
-        <p>FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer. Using FTP without security exposes credentials and file contents in clear text, so it is mainly associated with basic legacy file transfer rather than encrypted remote administration. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is the primary purpose of SSH port 22 in Objective 2.0 networking?</h3>
-        <p><strong>Answer:</strong> SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems.</p>
-        <p>SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems. SSH replaced insecure remote terminal tools such as Telnet because it encrypts authentication and session traffic. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What is the primary purpose of Protocol ports in Objective 2.0 networking?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services.</li>
+            <li class="seo-sample-answer">B. In this context, FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer.</li>
+            <li class="seo-sample-answer">C. In this context, SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems.</li>
+            <li class="seo-sample-answer">D. In this context, telnet uses TCP port 23 for remote command-line access, but it sends usernames, passwords, and session traffic in clear text.</li>
+        </ul>
+        <p class="seo-sample-explain">Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services. Knowing common ports helps technicians recognize traffic and troubleshoot blocked or misdirected services. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What is the primary purpose of FTP ports 20/21 in Objective 2.0 networking?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. In this context, DHCP uses UDP ports 67 and 68 to automatically provide clients with IP configuration such as address, subnet mask, gateway, and DNS settings.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer.</li>
+            <li class="seo-sample-answer">C. In this context, HTTP uses TCP port 80 to transfer unencrypted web traffic between browsers and web servers.</li>
+            <li class="seo-sample-answer">D. In this context, POP3 uses TCP port 110 to retrieve email from a mail server, commonly by downloading messages to a client.</li>
+        </ul>
+        <p class="seo-sample-explain">FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer. Using FTP without security exposes credentials and file contents in clear text, so it is mainly associated with basic legacy file transfer rather than encrypted remote administration. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A technician is reviewing a network scenario involving Protocol ports. Which answer best describes the correct role or behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The key distinction is that IMAP uses TCP port 143 to retrieve and synchronize email while leaving messages on the server for access from multiple devices.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. In this context, protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services.</li>
+            <li class="seo-sample-answer">C. The key distinction is that SNMP uses UDP port 161 for polling network devices and UDP port 162 for traps or notifications from managed devices.</li>
+            <li class="seo-sample-answer">D. The key distinction is that LDAP uses TCP/UDP port 389 to query and update directory services such as users, groups, and organizational objects.</li>
+        </ul>
+        <p class="seo-sample-explain">Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services. Knowing common ports helps technicians recognize traffic and troubleshoot blocked or misdirected services. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A technician is reviewing a network scenario involving FTP ports 20/21. Which answer best describes the correct role or behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The key distinction is that RDP uses TCP port 3389 to provide graphical remote desktop access to Windows systems.</li>
+            <li class="seo-sample-answer">B. The key distinction is that TCP is a reliable transport protocol that establishes sessions and supports sequencing, acknowledgments, and retransmission.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. In this context, FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer.</li>
+            <li class="seo-sample-answer">D. The key distinction is that UDP is a lightweight transport protocol that sends datagrams without establishing a session or guaranteeing delivery.</li>
+        </ul>
+        <p class="seo-sample-explain">FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer. Using FTP without security exposes credentials and file contents in clear text, so it is mainly associated with basic legacy file transfer rather than encrypted remote administration. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A technician is reviewing a network scenario involving SSH port 22. Which answer best describes the correct role or behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The key distinction is that TFTP is a simple UDP-based file transfer protocol commonly used for lightweight transfers such as device boot files or firmware images.</li>
+            <li class="seo-sample-answer">B. The key distinction is that HTTPS is a connection-oriented TCP-based protocol because encrypted web sessions depend on reliable ordered delivery.</li>
+            <li class="seo-sample-answer">C. The key distinction is that SSH is a connection-oriented TCP-based protocol because secure remote shell sessions require reliable ordered delivery.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. In this context, SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems.</li>
+        </ul>
+        <p class="seo-sample-explain">SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems. SSH replaced insecure remote terminal tools such as Telnet because it encrypts authentication and session traffic. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A support ticket references Protocol ports, but the notes also mention related Objective 2.0 concepts. Which answer identifies the concept that actually matches Protocol ports?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Operationally, TCP is connection-oriented and establishes a session that supports sequencing, acknowledgments, retransmission, and reliable delivery.</li>
+            <li class="seo-sample-answer">B. Operationally, TFTP is a simple UDP-based file transfer protocol commonly used for lightweight transfers such as device boot files or firmware images.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The key distinction is that protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services.</li>
+            <li class="seo-sample-answer">D. Operationally, HTTPS is a connection-oriented TCP-based protocol because encrypted web sessions depend on reliable ordered delivery.</li>
+        </ul>
+        <p class="seo-sample-explain">Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services. Knowing common ports helps technicians recognize traffic and troubleshoot blocked or misdirected services. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A support ticket references FTP ports 20/21, but the notes also mention related Objective 2.0 concepts. Which answer identifies the concept that actually matches FTP ports 20/21?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Operationally, SSH uses TCP port 22 to provide encrypted remote command-line access and secure tunneling to networked systems.</li>
+            <li class="seo-sample-answer">B. Operationally, telnet uses TCP port 23 for remote command-line access, but it sends usernames, passwords, and session traffic in clear text.</li>
+            <li class="seo-sample-answer">C. Operationally, SMTP uses TCP port 25 to transfer email between mail servers and to relay outbound mail in many server-to-server mail workflows.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. The key distinction is that FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer.</li>
+        </ul>
+        <p class="seo-sample-explain">FTP uses TCP ports 20 and 21 for file transfers, with port 21 commonly handling control commands and port 20 used for active-mode data transfer. Using FTP without security exposes credentials and file contents in clear text, so it is mainly associated with basic legacy file transfer rather than encrypted remote administration. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>In a real support case, choosing the wrong networking concept could lead to the wrong tool, port, or configuration change. Which statement correctly applies Protocol ports?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. DHCP uses UDP ports 67 and 68 to automatically provide clients with IP configuration such as address, subnet mask, gateway, and DNS settings.</li>
+            <li class="seo-sample-answer">B. HTTP uses TCP port 80 to transfer unencrypted web traffic between browsers and web servers.</li>
+            <li class="seo-sample-answer">C. POP3 uses TCP port 110 to retrieve email from a mail server, commonly by downloading messages to a client.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Operationally, protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services.</li>
+        </ul>
+        <p class="seo-sample-explain">Protocol port numbers identify the application service a host is trying to reach, such as web, email, file transfer, or remote access services. Knowing common ports helps technicians recognize traffic and troubleshoot blocked or misdirected services. This is the correct answer.</p>
+      </details>
       <h2>Other 220-1101 Domains</h2>
       <ul>
           <li><a href="/comptia-a-plus-core-1/mobile-devices/">Mobile Devices</a></li>

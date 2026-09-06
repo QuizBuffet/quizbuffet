@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "What is a pull request (PR) in cloud DevOps source control?",
+          "name": "A team deploys a new application version that breaks production. They need to quickly revert to the previous working state. How does version management in Git enable this?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A formal request to merge code changes from one branch into another, typically from a feature branch into the main branch, that triggers code review, automated checks, and team discussion before the merge is approved."
+            "text": "Git's complete history of all commits allows the team to identify the last known-good commit, use `git revert` to create a new commit undoing the breaking changes, or `git checkout` to roll back to a previous state, enabling rapid, controlled rollback without losing the change…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "During a code review, a reviewer notices that a developer is storing database connection strings directly in the application source code. What is the reviewer's responsibility and appropriate action?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Block the pull request, document the security finding, require the developer to move the connection string to a secrets manager or environment variable, and verify the corrected approach before approval, code review is a critical security gate that must prevent hardcoded…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>112 exam-style questions</strong> covering <strong>10% of the CV0-004 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-cloud-plus/">CompTIA Cloud+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What is version management in the context of cloud DevOps source control?</h3>
-        <p><strong>Answer:</strong> Tracking all changes to code, configuration, and infrastructure over time using a version control system, enabling teams to see the full history of changes, who made them, why they were made, and the ability to revert to any previous state</p>
-        <p>Version management through systems like Git maintains a complete, auditable history of all code and configuration changes, who changed what, when, and with what justification, enabling rollback, parallel development, and change tracking. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is the purpose of code review in cloud DevOps workflows?</h3>
-        <p><strong>Answer:</strong> To have one or more peers examine code changes before they are merged, catching bugs, security vulnerabilities, design issues, and policy violations that the author may have missed, while also spreading knowledge across the team</p>
-        <p>Code review is a peer quality gate, reviewers catch logic errors, security vulnerabilities (hardcoded credentials, SQL injection, insecure API calls), architectural issues, and policy violations before code reaches production, while simultaneously distributing knowledge of the codebase across the team. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is a pull request (PR) in cloud DevOps source control?</h3>
-        <p><strong>Answer:</strong> A formal request to merge code changes from one branch into another, typically from a feature branch into the main branch, that triggers code review, automated checks, and team discussion before the merge is approved</p>
-        <p>A pull request (or merge request in GitLab) is the collaboration workflow through which developers propose changes, trigger automated CI checks, receive peer review feedback, and get formal approval before merging into a protected branch. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What is version management in the context of cloud DevOps source control?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Managing the version numbers displayed in application user interfaces</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Tracking all changes to code, configuration, and infrastructure over time using a version control system, enabling teams to see the full history of changes, who made them, why they were made, and the ability to revert to any previous state</li>
+            <li class="seo-sample-answer">C. Managing software license versions for cloud-deployed applications</li>
+            <li class="seo-sample-answer">D. Controlling which version of the cloud provider&#39;s API the application uses</li>
+        </ul>
+        <p class="seo-sample-explain">Version management through systems like Git maintains a complete, auditable history of all code and configuration changes, who changed what, when, and with what justification, enabling rollback, parallel development, and change tracking. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What is the purpose of code review in cloud DevOps workflows?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. To measure how fast developers write code for performance evaluations</li>
+            <li class="seo-sample-answer seo-sample-correct">B. To have one or more peers examine code changes before they are merged, catching bugs, security vulnerabilities, design issues, and policy violations that the author may have missed, while also spreading knowledge across the team</li>
+            <li class="seo-sample-answer">C. To format code according to style guidelines automatically</li>
+            <li class="seo-sample-answer">D. To compile and run code to verify it executes without errors</li>
+        </ul>
+        <p class="seo-sample-explain">Code review is a peer quality gate, reviewers catch logic errors, security vulnerabilities (hardcoded credentials, SQL injection, insecure API calls), architectural issues, and policy violations before code reaches production, while simultaneously distributing knowledge of the codebase across the team. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team deploys a new application version that breaks production. They need to quickly revert to the previous working state. How does version management in Git enable this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Git automatically reverts failed deployments without human intervention</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Git&#39;s complete history of all commits allows the team to identify the last known-good commit, use `git revert` to create a new commit undoing the breaking changes, or `git checkout` to roll back to a previous state, enabling rapid, controlled rollback without losing the change history of what was attempted</li>
+            <li class="seo-sample-answer">C. Version management only tracks files, it cannot help with production rollback</li>
+            <li class="seo-sample-answer">D. The team must contact the cloud provider to restore the previous application version</li>
+        </ul>
+        <p class="seo-sample-explain">Git&#39;s immutable commit history makes rollback straightforward: identify the last stable commit, use revert (adds a new commit undoing changes, preserving history) or reset (moves HEAD pointer back, potentially losing history), then redeploy, enabling rapid recovery from broken deployments. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During a code review, a reviewer notices that a developer is storing database connection strings directly in the application source code. What is the reviewer&#39;s responsibility and appropriate action?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Approve the pull request since the connection string is needed for the application to work</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Block the pull request, document the security finding, require the developer to move the connection string to a secrets manager or environment variable, and verify the corrected approach before approval, code review is a critical security gate that must prevent hardcoded credentials from reaching the codebase</li>
+            <li class="seo-sample-answer">C. Ask the developer to encrypt the connection string before hardcoding it</li>
+            <li class="seo-sample-answer">D. Leave a comment but approve since fixing secrets is the security team&#39;s job</li>
+        </ul>
+        <p class="seo-sample-explain">Code reviewers are responsible for blocking security vulnerabilities, hardcoded credentials are a critical security finding that must be rejected. The reviewer blocks the PR, documents the issue, requires remediation using secrets management, and verifies the fix before approving. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A cloud team requires all pull requests to pass automated checks before merging. Which set of automated PR checks provides the MOST comprehensive quality gate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only spell-checking commit messages</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Automated unit and integration tests, static code analysis (linting, SAST), security scanning for credentials and known vulnerabilities, code coverage thresholds, IaC validation (terraform plan/validate), and container image scanning for base image CVEs, collectively ensuring functional correctness, security, and compliance before any human review</li>
+            <li class="seo-sample-answer">C. Only checking that the PR has a description</li>
+            <li class="seo-sample-answer">D. Only verifying the branch name follows naming conventions</li>
+        </ul>
+        <p class="seo-sample-explain">Comprehensive PR automation validates multiple dimensions: functional correctness (tests), code quality (linting), security (SAST, credential scanning), coverage (regression detection), infrastructure validity (IaC validation), and container security (image scanning), all automated before human review focuses on logic and design. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team uses semantic versioning (SemVer) for their cloud application, format MAJOR.MINOR.PATCH. Which version change is appropriate when adding a new feature that is backward-compatible with the existing API?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Increment MAJOR (e.g., 2.0.0) to signal the new feature&#39;s importance</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Increment MINOR (e.g., 1.3.0 → 1.4.0), new backward-compatible features increment the MINOR version. MAJOR increments for breaking changes, MINOR for backward-compatible features, and PATCH for backward-compatible bug fixes</li>
+            <li class="seo-sample-answer">C. Increment PATCH (e.g., 1.3.0 → 1.3.1) since no existing behavior changed</li>
+            <li class="seo-sample-answer">D. The version number does not change for new features, only for bug fixes</li>
+        </ul>
+        <p class="seo-sample-explain">SemVer convention: MAJOR.MINOR.PATCH, MAJOR for breaking changes, MINOR for backward-compatible new features, PATCH for backward-compatible bug fixes. A new backward-compatible feature increments MINOR. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A cloud team manages IaC templates in Git alongside application code. An infrastructure change breaks production. Version management shows the IaC change was made directly to the main branch without a pull request 3 hours ago. What governance failure does this reveal?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Git version management cannot be used for IaC templates, only for application code</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Direct commits to the main branch bypassed the code review process. IaC changes must follow the same pull request, review, and approval workflow as application code. Branch protection rules should prevent direct commits to main, requiring all changes to go through pull requests with required reviewers</li>
+            <li class="seo-sample-answer">C. The version history accurately recorded the change, no governance failure occurred</li>
+            <li class="seo-sample-answer">D. IaC changes should be applied directly to main since they are configuration, not code</li>
+        </ul>
+        <p class="seo-sample-explain">Direct commits to main branches bypass the peer review safety net that catches errors before production impact. Branch protection rules with required pull requests and reviewer approvals prevent this, the same governance applied to application code must apply to IaC changes that directly affect production infrastructure. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team implements mandatory code review for all changes but finds reviews are rubber-stamped, reviewers approve within seconds without meaningful examination. Which practices MOST effectively improve code review quality?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Reduce the number of required reviewers to speed up the process</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Implement review quality measures: require reviewers to leave at least one substantive comment, set minimum review time thresholds, rotate reviewer assignments to prevent approval collusion, use automated pre-review checks (linting, security scanning, test coverage) to surface issues before human review, and include review quality in team health metrics</li>
+            <li class="seo-sample-answer">C. Remove code review requirements since they are not adding value</li>
+            <li class="seo-sample-answer">D. Have only one senior engineer review all code to ensure quality</li>
+        </ul>
+        <p class="seo-sample-explain">Rubber-stamp reviews require systemic fixes: substantive comment requirements, time thresholds (reviewers who approve in &lt;60 seconds have not read the code), rotation to prevent buddy-approval patterns, automated pre-checks to focus human attention on logic rather than formatting, and accountability through quality metrics. This is the correct answer.</p>
+      </details>
       <h2>Other CV0-004 Domains</h2>
       <ul>
           <li><a href="/comptia-cloud-plus/cloud-architecture/">1.0 Cloud Architecture</a></li>

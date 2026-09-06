@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A project team needs a basic Azure design decision related to availability zones. Which answer is correct?",
+          "name": "A business team is choosing Azure capabilities. Which option correctly describes Azure regions region pairs and sovereign regions?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Availability zones can help protect against datacenter-level failures."
+            "text": "A region pair is a relationship between two Azure regions in the same geography for planned maintenance and recovery considerations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A company is reviewing Azure services. Which statement best describes Azure regions region pairs and sovereign regions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some organizations choose regions based on data residency rules."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>114 exam-style questions</strong> covering <strong>37% of the AZ-900 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/microsoft-az-900/">Microsoft Azure Fundamentals practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>An administrator is learning Azure fundamentals. Which explanation of Azure regions region pairs and sovereign regions is most accurate?</h3>
-        <p><strong>Answer:</strong> An Azure region is a geographic area that contains one or more datacenters connected by a low-latency network</p>
-        <p>Azure regions provide locations where customers can deploy resources near users or compliance boundaries.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A cloud adoption team is comparing Azure options. Which statement about Azure regions region pairs and sovereign regions is accurate?</h3>
-        <p><strong>Answer:</strong> Deploying near users can reduce latency for applications</p>
-        <p>Regional placement influences network distance between users and services.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A project team needs a basic Azure design decision related to availability zones. Which answer is correct?</h3>
-        <p><strong>Answer:</strong> Availability zones can help protect against datacenter-level failures</p>
-        <p>Separate facilities in a region reduce the effect of localized outages.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>An administrator is learning Azure fundamentals. Which explanation of Azure regions region pairs and sovereign regions is most accurate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. An Azure region is a geographic area that contains one or more datacenters connected by a low-latency network</li>
+            <li class="seo-sample-answer">B. Assume lower cost is automatic without managing usage</li>
+            <li class="seo-sample-answer">C. Assume consumption-based pricing always costs less than reserved capacity</li>
+            <li class="seo-sample-answer">D. Use Azure RBAC permissions on a subscription to grant access only at the resource group level</li>
+        </ul>
+        <p class="seo-sample-explain">Azure regions provide locations where customers can deploy resources near users or compliance boundaries.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A cloud adoption team is comparing Azure options. Which statement about Azure regions region pairs and sovereign regions is accurate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Deploying near users can reduce latency for applications</li>
+            <li class="seo-sample-answer">B. Use Azure Disk Storage for shared SMB file access from multiple Windows machines</li>
+            <li class="seo-sample-answer">C. Treat the cloud provider as solely responsible for end-user data classification</li>
+            <li class="seo-sample-answer">D. Use the cloud free tier to host long-term production workloads</li>
+        </ul>
+        <p class="seo-sample-explain">Regional placement influences network distance between users and services.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A business team is choosing Azure capabilities. Which option correctly describes Azure regions region pairs and sovereign regions?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Rely on a single Availability Zone for production multi-tier workloads</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A region pair is a relationship between two Azure regions in the same geography for planned maintenance and recovery considerations</li>
+            <li class="seo-sample-answer">C. Expect a public website to use a private-only cloud endpoint by default</li>
+            <li class="seo-sample-answer">D. Disable Azure Monitor logging to reduce ingestion cost on production workloads</li>
+        </ul>
+        <p class="seo-sample-explain">Region pairs help Azure coordinate updates and support regional recovery planning.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company is reviewing Azure services. Which statement best describes Azure regions region pairs and sovereign regions?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Assume high availability is the same as disaster recovery</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Some organizations choose regions based on data residency rules</li>
+            <li class="seo-sample-answer">C. Treat serverless as the same architecture as a long-running virtual machine</li>
+            <li class="seo-sample-answer">D. Use a public cloud whenever data residency must remain on the customer premises</li>
+        </ul>
+        <p class="seo-sample-explain">Compliance requirements can determine where data and workloads are hosted.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A training question asks about availability zones. Which response best matches Azure fundamentals?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Choose SaaS to build a brand-new custom application written from scratch</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Some Azure services support availability zones and others do not</li>
+            <li class="seo-sample-answer">C. Skip Azure Policy and rely on team agreement to enforce naming and tagging</li>
+            <li class="seo-sample-answer">D. Use one resource group for the entire subscription to simplify deletion</li>
+        </ul>
+        <p class="seo-sample-explain">Service support must be checked before designing for zonal resilience.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A project team needs a basic Azure design decision related to Azure regions region pairs and sovereign regions. Which answer is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip tagging because Azure already groups resources by name</li>
+            <li class="seo-sample-answer">B. Configure manual scaling for production workloads with unpredictable traffic spikes</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Sovereign regions are isolated Azure environments designed for specific government or compliance requirements</li>
+            <li class="seo-sample-answer">D. Choose a model based on vendor preference rather than business requirements</li>
+        </ul>
+        <p class="seo-sample-explain">Sovereign regions serve specialized regulatory and residency needs.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An administrator is learning Azure fundamentals. Which explanation of availability zones is most accurate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Treat consumption-based pricing as a fixed-fee subscription independent of usage</li>
+            <li class="seo-sample-answer">B. Use PaaS to build and manage every layer of the operating system and the runtime</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Availability zones are physically separate locations within an Azure region</li>
+            <li class="seo-sample-answer">D. Treat Azure Functions as long-running background workers without time limits</li>
+        </ul>
+        <p class="seo-sample-explain">Here, Availability zones help protect applications from failures in a single datacenter location.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A training question asks about Azure regions region pairs and sovereign regions. Which response best matches Azure fundamentals?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Azure Files for object storage of millions of unstructured photos and videos</li>
+            <li class="seo-sample-answer">B. Treat Azure VPN Gateway as a substitute for Azure ExpressRoute in all scenarios</li>
+            <li class="seo-sample-answer">C. Stop monitoring because the service is in the cloud</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Choosing a region can affect service availability, latency, compliance, and cost</li>
+        </ul>
+        <p class="seo-sample-explain">Not every Azure service or price is identical in every region.</p>
+      </details>
       <h2>Other AZ-900 Domains</h2>
       <ul>
           <li><a href="/microsoft-az-900/describe-cloud-concepts/">1.0 Describe cloud concepts</a></li>

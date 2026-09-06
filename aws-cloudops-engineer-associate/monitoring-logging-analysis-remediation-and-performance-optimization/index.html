@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "An application emits custom business metrics from EC2. The operations team wants the metrics available for alarms and dashboards. Which API should the application use?",
+          "name": "A team needs centralized visibility into container metrics from ECS tasks and Kubernetes-style metrics from EKS workloads. Which service pairing should be prioritized?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "PutMetricData to publish custom metrics to Amazon CloudWatch."
+            "text": "Amazon CloudWatch Container Insights and Amazon Managed Service for Prometheus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A regulated application must retain a record of IAM API calls across all Regions. Which configuration is most appropriate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Create a multi-Region AWS CloudTrail trail and store the logs in an S3 bucket."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>110 exam-style questions</strong> covering <strong>22% of the SOA-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-cloudops-engineer-associate/">AWS Certified CloudOps Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A CloudOps engineer must collect application latency metrics from an EC2-hosted service and retain API activity history for incident investigations. Which combination should the engineer configure?</h3>
-        <p><strong>Answer:</strong> Amazon CloudWatch metrics for latency and AWS CloudTrail trails for API activity</p>
-        <p>CloudWatch and CloudTrail configuration is best addressed by Amazon CloudWatch metrics for latency and AWS CloudTrail trails for API activity, because it matches the operational requirement in the scenario. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A workload owner needs a dashboard that combines Lambda error metrics, ALB target response times, and RDS CPU metrics. Which service should be the primary visualization layer?</h3>
-        <p><strong>Answer:</strong> Amazon CloudWatch dashboards</p>
-        <p>CloudWatch and CloudTrail configuration is best addressed by Amazon CloudWatch dashboards, because it matches the operational requirement in the scenario. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An application emits custom business metrics from EC2. The operations team wants the metrics available for alarms and dashboards. Which API should the application use?</h3>
-        <p><strong>Answer:</strong> PutMetricData to publish custom metrics to Amazon CloudWatch</p>
-        <p>CloudWatch and CloudTrail configuration is best addressed by PutMetricData to publish custom metrics to Amazon CloudWatch, because it matches the operational requirement in the scenario. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A CloudOps engineer must collect application latency metrics from an EC2-hosted service and retain API activity history for incident investigations. Which combination should the engineer configure?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Amazon CloudWatch metrics for latency and AWS CloudTrail trails for API activity</li>
+            <li class="seo-sample-answer">B. AWS Config rules for latency and Amazon S3 access logs for API activity</li>
+            <li class="seo-sample-answer">C. Amazon Managed Service for Prometheus for API audit history and AWS CloudTrail Lake for latency metrics</li>
+            <li class="seo-sample-answer">D. AWS Systems Manager Inventory for latency and Amazon EventBridge archives for API activity</li>
+        </ul>
+        <p class="seo-sample-explain">CloudWatch and CloudTrail configuration is best addressed by Amazon CloudWatch metrics for latency and AWS CloudTrail trails for API activity, because it matches the operational requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload owner needs a dashboard that combines Lambda error metrics, ALB target response times, and RDS CPU metrics. Which service should be the primary visualization layer?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">D. Amazon CloudWatch dashboards</li>
+            <li class="seo-sample-answer">A. AWS CloudTrail event history</li>
+            <li class="seo-sample-answer">B. AWS Cost Explorer reports</li>
+            <li class="seo-sample-answer">C. AWS Systems Manager Patch Manager</li>
+        </ul>
+        <p class="seo-sample-explain">CloudWatch and CloudTrail configuration is best addressed by Amazon CloudWatch dashboards, because it matches the operational requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team needs centralized visibility into container metrics from ECS tasks and Kubernetes-style metrics from EKS workloads. Which service pairing should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. Amazon CloudWatch Container Insights and Amazon Managed Service for Prometheus</li>
+            <li class="seo-sample-answer">A. AWS CloudTrail Insights and Amazon S3 Storage Lens</li>
+            <li class="seo-sample-answer">C. AWS Config aggregators and AWS Trusted Advisor</li>
+            <li class="seo-sample-answer">D. Amazon Athena and AWS Cost Explorer</li>
+        </ul>
+        <p class="seo-sample-explain">CloudWatch and CloudTrail configuration is best addressed by Amazon CloudWatch Container Insights and Amazon Managed Service for Prometheus, because it matches the operational requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regulated application must retain a record of IAM API calls across all Regions. Which configuration is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Create a multi-Region AWS CloudTrail trail and store the logs in an S3 bucket</li>
+            <li class="seo-sample-answer">B. Create a CloudWatch alarm for IAM changes without retaining logs</li>
+            <li class="seo-sample-answer">C. Enable VPC Flow Logs for every subnet</li>
+            <li class="seo-sample-answer">D. Enable Amazon RDS Performance Insights</li>
+        </ul>
+        <p class="seo-sample-explain">CloudWatch and CloudTrail configuration is best addressed by Create a multi-Region AWS CloudTrail trail and store the logs in an S3 bucket, because it matches the operational requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A platform team needs Prometheus-compatible metrics for EKS workloads without managing Prometheus servers. Which service should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">D. Amazon Managed Service for Prometheus</li>
+            <li class="seo-sample-answer">A. AWS Config advanced queries</li>
+            <li class="seo-sample-answer">B. Amazon S3 Inventory</li>
+            <li class="seo-sample-answer">C. AWS Backup Audit Manager</li>
+        </ul>
+        <p class="seo-sample-explain">CloudWatch and CloudTrail configuration is best addressed by Amazon Managed Service for Prometheus, because it matches the operational requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An operations team wants to detect unauthorized changes to security groups and also monitor CPUUtilization for EC2 instances. Which approach meets both needs?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">C. Use AWS CloudTrail for security group API events and Amazon CloudWatch metrics for CPUUtilization</li>
+            <li class="seo-sample-answer">A. Use Amazon Inspector for security group API events and AWS Backup for CPUUtilization</li>
+            <li class="seo-sample-answer">B. Use AWS X-Ray for security group API events and AWS Config only for CPUUtilization</li>
+            <li class="seo-sample-answer">D. Use Amazon VPC Flow Logs for security group API events and Amazon CloudFront logs for CPUUtilization</li>
+        </ul>
+        <p class="seo-sample-explain">CloudWatch and CloudTrail configuration is best addressed by Use AWS CloudTrail for security group API events and Amazon CloudWatch metrics for CPUUtilization, because it matches the operational requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A CloudOps engineer needs to query historical CloudTrail events for troubleshooting access changes without building a custom query platform. What should the engineer use?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. AWS CloudTrail Lake</li>
+            <li class="seo-sample-answer">A. Amazon EFS lifecycle management</li>
+            <li class="seo-sample-answer">C. EC2 detailed monitoring</li>
+            <li class="seo-sample-answer">D. Amazon CloudFront standard logs</li>
+        </ul>
+        <p class="seo-sample-explain">CloudWatch and CloudTrail configuration is best addressed by AWS CloudTrail Lake, because it matches the operational requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An application emits custom business metrics from EC2. The operations team wants the metrics available for alarms and dashboards. Which API should the application use?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">C. PutMetricData to publish custom metrics to Amazon CloudWatch</li>
+            <li class="seo-sample-answer">A. PutObject to write metrics to an S3 bucket only</li>
+            <li class="seo-sample-answer">B. StartLogging to create a CloudTrail trail for the application metrics</li>
+            <li class="seo-sample-answer">D. CreateSnapshot to capture the metrics from the EBS volume</li>
+        </ul>
+        <p class="seo-sample-explain">CloudWatch and CloudTrail configuration is best addressed by PutMetricData to publish custom metrics to Amazon CloudWatch, because it matches the operational requirement in the scenario. This is the correct answer.</p>
+      </details>
       <h2>Other SOA-C03 Domains</h2>
       <ul>
           <li><a href="/aws-cloudops-engineer-associate/reliability-and-business-continuity/">2.0 Reliability and Business Continuity</a></li>

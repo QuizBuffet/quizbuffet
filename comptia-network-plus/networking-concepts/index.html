@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which of the following best describes the primary function of the Data Link layer (Layer 2) of the OSI model?",
+          "name": "A network technician confirms that physical cables are intact and NICs are functional, but two devices on the same network segment still cannot communicate. Using a bottom-to-top OSI troubleshooting approach, which layer should the technician investigate next?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Layer 2 provides node-to-node data transfer on the same network segment by organizing bits into frames, using MAC addresses for local delivery, and providing basic error detection through mechanisms such as CRC."
+            "text": "Layer 2. Data Link, because physical connectivity at Layer 1 is confirmed and the next layer up handles MAC addressing and frame delivery on the same network segment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which of the following correctly matches each OSI layer with its associated Protocol Data Unit (PDU)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Layer 1 = Bit, Layer 2 = Frame, Layer 3 = Packet, Layer 4 = Segment, Layers 5-7 = Data."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>318 exam-style questions</strong> covering <strong>23% of the N10-009 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-network-plus/">CompTIA Network+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What is the primary purpose of the OSI (Open Systems Interconnection) reference model in networking?</h3>
-        <p><strong>Answer:</strong> The OSI model is a conceptual framework that standardizes how different network systems communicate by dividing the communication process into seven distinct layers, each with specific functions, enabling interoperability between products from different vendors</p>
-        <p>The OSI model is a vendor-neutral conceptual framework that divides network communication into seven layers (Physical, Data Link, Network, Transport, Session, Presentation, Application), each with defined functions, enabling interoperability between different systems and vendors, and providing a common language for troubleshooting. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which of the following best describes the function of Layer 1 (Physical) of the OSI model?</h3>
-        <p><strong>Answer:</strong> Layer 1 is responsible for the transmission and reception of raw bit streams over a physical medium, defining electrical signals, light pulses, or radio frequencies, as well as connector types, cable specifications, and signaling standards</p>
-        <p>Layer 1 (Physical) defines the physical and electrical characteristics of the network, including how bits are transmitted as electrical signals over copper, light pulses over fiber, or radio waves over wireless; it also defines connector types (RJ45, LC, SC), cable specifications, and pin layouts. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which of the following best describes the primary function of the Data Link layer (Layer 2) of the OSI model?</h3>
-        <p><strong>Answer:</strong> Layer 2 provides node-to-node data transfer on the same network segment by organizing bits into frames, using MAC addresses for local delivery, and providing basic error detection through mechanisms such as CRC</p>
-        <p>Layer 2 (Data Link) is responsible for framing data into manageable units called frames, using MAC (Media Access Control) addresses for node-to-node delivery on the same network segment, and providing error detection through CRC (Cyclic Redundancy Check). This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What is the primary purpose of the OSI (Open Systems Interconnection) reference model in networking?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The OSI model is a physical cabling standard that defines how network cables must be installed in enterprise environments</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The OSI model is a conceptual framework that standardizes how different network systems communicate by dividing the communication process into seven distinct layers, each with specific functions, enabling interoperability between products from different vendors</li>
+            <li class="seo-sample-answer">C. The OSI model is a proprietary Cisco standard that applies only to equipment running IOS-based operating systems</li>
+            <li class="seo-sample-answer">D. The OSI model is an outdated framework replaced entirely by the TCP/IP model and no longer relevant to modern networking</li>
+        </ul>
+        <p class="seo-sample-explain">The OSI model is a vendor-neutral conceptual framework that divides network communication into seven layers (Physical, Data Link, Network, Transport, Session, Presentation, Application), each with defined functions, enabling interoperability between different systems and vendors, and providing a common language for troubleshooting. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which of the following best describes the function of Layer 1 (Physical) of the OSI model?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Layer 1 is responsible for organizing data into frames and providing error detection using MAC addresses</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Layer 1 is responsible for the transmission and reception of raw bit streams over a physical medium, defining electrical signals, light pulses, or radio frequencies, as well as connector types, cable specifications, and signaling standards</li>
+            <li class="seo-sample-answer">C. Layer 1 is responsible for assigning logical IP addresses and determining the best path for data to travel between networks</li>
+            <li class="seo-sample-answer">D. Layer 1 is responsible for establishing, managing, and terminating sessions between communicating applications</li>
+        </ul>
+        <p class="seo-sample-explain">Layer 1 (Physical) defines the physical and electrical characteristics of the network, including how bits are transmitted as electrical signals over copper, light pulses over fiber, or radio waves over wireless; it also defines connector types (RJ45, LC, SC), cable specifications, and pin layouts. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A network technician confirms that physical cables are intact and NICs are functional, but two devices on the same network segment still cannot communicate. Using a bottom-to-top OSI troubleshooting approach, which layer should the technician investigate next?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Layer 7. Application, because the problem is likely a misconfigured application on one of the devices</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Layer 2. Data Link, because physical connectivity at Layer 1 is confirmed and the next layer up handles MAC addressing and frame delivery on the same network segment</li>
+            <li class="seo-sample-answer">C. Layer 4. Transport, because TCP session establishment is the most common cause of same-segment communication failures</li>
+            <li class="seo-sample-answer">D. Layer 3. Network, because IP addressing issues are always the root cause when two devices cannot communicate</li>
+        </ul>
+        <p class="seo-sample-explain">Using the bottom-to-top OSI troubleshooting methodology, once Layer 1 (Physical) is confirmed operational, the next layer to investigate is Layer 2 (Data Link), which handles MAC addressing, frame delivery, and switching on the same network segment. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which of the following correctly matches each OSI layer with its associated Protocol Data Unit (PDU)?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Layer 1 = Frame, Layer 2 = Packet, Layer 3 = Segment, Layer 4 = Bit</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Layer 1 = Bit, Layer 2 = Frame, Layer 3 = Packet, Layer 4 = Segment, Layers 5-7 = Data</li>
+            <li class="seo-sample-answer">C. Layer 1 = Packet, Layer 2 = Segment, Layer 3 = Frame, Layer 4 = Bit</li>
+            <li class="seo-sample-answer">D. Layer 1 = Bit, Layer 2 = Segment, Layer 3 = Frame, Layer 4 = Packet</li>
+        </ul>
+        <p class="seo-sample-explain">The correct PDU mapping is: Layer 1 (Physical) = Bits; Layer 2 (Data Link) = Frames; Layer 3 (Network) = Packets; Layer 4 (Transport) = Segments; Layers 5 (Session), 6 (Presentation), and 7 (Application) = Data. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A technician installs a 130-meter copper Ethernet cable run between two buildings and notices that network performance is poor with frequent errors. What Layer 1 phenomenon is most likely causing this issue?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. MAC flooding, an attacker is overwhelming the switch&#39;s CAM table, degrading performance on the cable segment</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Attenuation, the cable exceeds the maximum recommended distance for the cable standard, causing signal strength to degrade to the point where the receiving device cannot reliably interpret the transmitted bits</li>
+            <li class="seo-sample-answer">C. ARP poisoning, a rogue device on the network is intercepting frames between the two buildings</li>
+            <li class="seo-sample-answer">D. MTU mismatch, the maximum transmission unit configured on each end of the cable is inconsistent, causing fragmentation</li>
+        </ul>
+        <p class="seo-sample-explain">Attenuation is the loss of signal strength over distance. Cat5e/Cat6 copper Ethernet is rated to a maximum of 100 meters; a 130-meter run exceeds this limit, causing the signal to degrade below the threshold needed for reliable bit interpretation at Layer 1. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A user reports they can reach a web server at 203.0.113.50 by typing the IP address directly in their browser, but navigating to www.company.com fails with a &#39;server not found&#39; error. Using the OSI model, which layers are involved in diagnosing this issue and what is the most likely root cause?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only Layer 1 is involved, the problem is a physical cable issue causing intermittent connectivity that affects name resolution but not direct IP access</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Layer 3 and Layer 7 are both involved. Layer 3 confirms IP routing is functional (direct IP access works), while Layer 7 points to a DNS resolution failure since the Application layer service responsible for translating hostnames to IP addresses is not functioning correctly</li>
+            <li class="seo-sample-answer">C. Only Layer 4 is involved, the TCP session to port 80 is being blocked by a firewall when hostnames are used but not when IP addresses are used</li>
+            <li class="seo-sample-answer">D. Only Layer 2 is involved, the MAC address table on the local switch is corrupt and only allows traffic to known IP addresses</li>
+        </ul>
+        <p class="seo-sample-explain">This scenario requires OSI analysis across multiple layers: Layer 3 (Network) is confirmed functional because the direct IP address routes correctly to the server; Layer 7 (Application) is where DNS operates, the failure to resolve www.company.com to an IP address is a DNS service failure at the Application layer. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which of the following devices operates exclusively at Layer 1 of the OSI model?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A managed switch, which reads MAC addresses to make intelligent forwarding decisions</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A hub, which simply repeats electrical signals out of all ports without any awareness of MAC addresses, IP addresses, or logical structure</li>
+            <li class="seo-sample-answer">C. A router, which forwards packets between networks using logical IP addresses</li>
+            <li class="seo-sample-answer">D. A firewall, which inspects traffic up to Layer 7 to make allow or deny decisions</li>
+        </ul>
+        <p class="seo-sample-explain">A hub operates exclusively at Layer 1 (Physical), it has no awareness of MAC addresses, IP addresses, or any logical structure; it simply receives an electrical signal on one port and repeats it out of all other ports, functioning as a multiport repeater. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A network engineer is upgrading a wiring closet by replacing a hub with a managed switch. Beyond the obvious performance improvement, which statement best describes how this change affects the OSI layer at which the device operates and the resulting network behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Both the hub and the switch operate at Layer 1, so replacing one with the other provides no change in OSI layer behavior, only raw throughput speed improves</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The hub operates at Layer 1 and broadcasts all signals to every port creating a shared collision domain; the managed switch operates at Layer 2 and uses MAC address learning to create individual collision domains per port, segmenting traffic and improving security and performance simultaneously</li>
+            <li class="seo-sample-answer">C. The switch operates at Layer 3, so replacing the hub introduces routing capabilities between all devices connected to the switch without any additional configuration</li>
+            <li class="seo-sample-answer">D. Replacing a hub with a switch changes the broadcast domain, devices that were previously in the same broadcast domain are now isolated into separate broadcast domains automatically</li>
+        </ul>
+        <p class="seo-sample-explain">The hub operates at Layer 1 and retransmits all signals to all ports, creating a single collision domain shared by all connected devices; the managed switch operates at Layer 2, learns MAC addresses, and forwards frames only to the destination port, creating individual collision domains per port while all ports remain in the same broadcast domain unless VLANs are configured. This is the correct answer.</p>
+      </details>
       <h2>Other N10-009 Domains</h2>
       <ul>
           <li><a href="/comptia-network-plus/network-implementation/">2.0 Network Implementation</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A remote pilot plans a round-trip sUAS survey mission of 1 mile out and 1 mile back. The wind is 20 knots directly on the nose for the outbound leg. The pilot wisely plans to fly outbound first into the headwind. Why is this preferable to flying with the tailwind first?",
+          "name": "A remote pilot attaches a camera gimbal to the front of a small quadcopter, shifting the center of gravity (CG) significantly forward of the manufacturer's recommended range. During flight, the pilot notices the aircraft pitches nose-down and requires continuous aft stick input to maintain level flight. What is the primary risk of operating with a CG this far forward?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Flying into the headwind first while battery charge is highest ensures the aircraft can fight the wind on the outbound leg; the tailwind return requires less energy and uses the remaining battery more efficiently."
+            "text": "A forward CG beyond limits can exhaust available nose-up control authority, making it impossible to arrest a pitch-down tendency, particularly at low speed or during maneuvers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An sUAS has a maximum takeoff weight (MTOW) of 15.4 pounds specified in the manufacturer's manual. The aircraft itself weighs 9.2 pounds with its standard battery installed. A client wants the pilot to carry a 6-pound sensor package. Can this payload be legally and safely accommodated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, because 9.2 plus 6 equals 15.2 pounds, which is under the 15.4-pound MTOW, so the operation is within manufacturer limits. Total weight of 9.2 + 6.0 = 15.2 lb is below the manufacturer's MTOW of 15.4 lb; the operation falls within the manufacturer's weight limits and the…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>27 exam-style questions</strong> covering <strong>9% of the Part 107 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/faa-part-107/">FAA Part 107 / 14 CFR Part 107 practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A remote pilot normally operates a quadcopter with a 1-pound camera payload, achieving 22-minute flight times. For a new job, the pilot replaces the camera with a 2.5-pound thermal imaging unit. Assuming all other conditions are equal, how will this increased payload weight most likely affect sUAS performance?</h3>
-        <p><strong>Answer:</strong> Flight time will decrease and battery consumption will increase because the motors must produce more thrust to support the greater total weight</p>
-        <p>Greater payload weight increases the total weight the motors must lift; maintaining hover and controlled flight requires higher motor RPM and more current draw, directly reducing battery endurance and total flight time.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A remote pilot conducts an sUAS inspection flight in sub-freezing winter temperatures (−5°C / 23°F). After only 8 minutes of flight, the flight controller&#39;s low battery alarm activates, even though the battery showed 95% charge before launch. What is the most likely cause of this early battery depletion?</h3>
-        <p><strong>Answer:</strong> Sub-freezing temperatures reduce lithium polymer (LiPo) battery capacity and increase internal resistance, causing rapid voltage sag and early low-voltage warnings</p>
-        <p>LiPo batteries experience significant capacity reduction and increased internal resistance at low temperatures; chemical reactions within the cells slow down, reducing available voltage and usable capacity; the battery may show a high resting charge but rapidly sags under load in cold conditions.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A remote pilot plans a round-trip sUAS survey mission of 1 mile out and 1 mile back. The wind is 20 knots directly on the nose for the outbound leg. The pilot wisely plans to fly outbound first into the headwind. Why is this preferable to flying with the tailwind first?</h3>
-        <p><strong>Answer:</strong> Flying into the headwind first while battery charge is highest ensures the aircraft can fight the wind on the outbound leg; the tailwind return requires less energy and uses the remaining battery more efficiently</p>
-        <p>Flying into the headwind while the battery is freshest ensures enough power reserves to overcome wind resistance on the more energy-demanding outbound leg; the tailwind return requires less thrust to cover the same ground distance in less time, using battery reserves efficiently and ensuring enough charge to reach home base.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A remote pilot normally operates a quadcopter with a 1-pound camera payload, achieving 22-minute flight times. For a new job, the pilot replaces the camera with a 2.5-pound thermal imaging unit. Assuming all other conditions are equal, how will this increased payload weight most likely affect sUAS performance?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Flight time will increase because the additional weight reduces the sUAS&#39;s speed, causing the motors to operate in a more efficient low-RPM range</li>
+            <li class="seo-sample-answer">B. The sUAS will automatically limit altitude to compensate for the increased weight, with no effect on flight time or battery consumption</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Flight time will decrease and battery consumption will increase because the motors must produce more thrust to support the greater total weight</li>
+            <li class="seo-sample-answer">D. Performance will be unchanged because the flight controller compensates for payload changes by redistributing motor torque among all four motors</li>
+        </ul>
+        <p class="seo-sample-explain">Greater payload weight increases the total weight the motors must lift; maintaining hover and controlled flight requires higher motor RPM and more current draw, directly reducing battery endurance and total flight time.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot conducts an sUAS inspection flight in sub-freezing winter temperatures (−5°C / 23°F). After only 8 minutes of flight, the flight controller&#39;s low battery alarm activates, even though the battery showed 95% charge before launch. What is the most likely cause of this early battery depletion?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Sub-freezing temperatures reduce lithium polymer (LiPo) battery capacity and increase internal resistance, causing rapid voltage sag and early low-voltage warnings</li>
+            <li class="seo-sample-answer">B. The flight controller&#39;s battery percentage display is miscalibrated in winter and consistently reads higher than actual charge in cold conditions</li>
+            <li class="seo-sample-answer">C. Cold air increases rotor efficiency so much that the motors draw twice the normal current to avoid over-speeding the aircraft in dense cold air</li>
+            <li class="seo-sample-answer">D. The sUAS navigation system uses more power in cold weather to maintain GPS lock, drawing down the battery faster than in warmer conditions</li>
+        </ul>
+        <p class="seo-sample-explain">LiPo batteries experience significant capacity reduction and increased internal resistance at low temperatures; chemical reactions within the cells slow down, reducing available voltage and usable capacity; the battery may show a high resting charge but rapidly sags under load in cold conditions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot attaches a camera gimbal to the front of a small quadcopter, shifting the center of gravity (CG) significantly forward of the manufacturer&#39;s recommended range. During flight, the pilot notices the aircraft pitches nose-down and requires continuous aft stick input to maintain level flight. What is the primary risk of operating with a CG this far forward?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The forward CG reduces motor RPM on the rear motors, causing asymmetric thrust that rotates the aircraft clockwise when viewed from above</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A forward CG beyond limits can exhaust available nose-up control authority, making it impossible to arrest a pitch-down tendency, particularly at low speed or during maneuvers</li>
+            <li class="seo-sample-answer">C. The forward CG increases the effective payload weight reported to the flight controller, causing the altitude hold mode to climb uncontrollably</li>
+            <li class="seo-sample-answer">D. A forward CG improves penetration in headwind conditions and has no negative effect on multirotor aircraft, unlike fixed-wing aircraft</li>
+        </ul>
+        <p class="seo-sample-explain">When CG is forward of limits, the aircraft has a persistent nose-down tendency; if this nose-down moment exceeds the available nose-up (aft) control authority, the pilot loses the ability to maintain level flight or recover from a pitch-down attitude, which is particularly dangerous at low altitude.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An sUAS has a maximum takeoff weight (MTOW) of 15.4 pounds specified in the manufacturer&#39;s manual. The aircraft itself weighs 9.2 pounds with its standard battery installed. A client wants the pilot to carry a 6-pound sensor package. Can this payload be legally and safely accommodated?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Yes, because 9.2 plus 6 equals 15.2 pounds, which is under the 15.4-pound MTOW, so the operation is within manufacturer limits</li>
+            <li class="seo-sample-answer">B. Yes, because the 55-pound Part 107 limit is the only weight constraint; manufacturer MTOW limits are advisory only and may be exceeded for commercial operations</li>
+            <li class="seo-sample-answer">C. No, because 9.2 plus 6 equals 15.2 pounds; while under MTOW, payloads over 5 pounds require a Part 107 payload waiver from the FAA</li>
+            <li class="seo-sample-answer">D. No, because 9.2 plus 6 equals 15.2 pounds, which exceeds the available payload margin of 15.4 minus 9.2 equals 6.2 pounds; however, 15.2 is under MTOW so the operation is within limits</li>
+        </ul>
+        <p class="seo-sample-explain">Total weight of 9.2 + 6.0 = 15.2 lb is below the manufacturer&#39;s MTOW of 15.4 lb; the operation falls within the manufacturer&#39;s weight limits and the Part 107 55-lb ceiling; from a weight perspective this payload can be accommodated.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During a preflight inspection, a remote pilot notices that one of the LiPo battery packs appears visibly swollen, with the sides of the pack bulging outward noticeably. Under aeronautical decision-making principles and 14 CFR 107.15, what should the pilot do?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Install the battery and conduct a brief 5-minute test flight to determine whether the swelling affects actual flight performance before making a go/no-go decision</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Ground the sUAS and remove the swollen battery from service; a puffed LiPo poses a fire and explosion hazard and should be disposed of according to applicable regulations</li>
+            <li class="seo-sample-answer">C. Apply duct tape over the swollen area to reinforce the battery casing and prevent further expansion during the flight</li>
+            <li class="seo-sample-answer">D. Proceed with the flight if the swelling is less than 5 millimeters because minor puffing is considered within normal LiPo tolerance by most manufacturers</li>
+        </ul>
+        <p class="seo-sample-explain">LiPo battery puffing (swelling) indicates internal gas production from cell degradation, overcharging, or damage; a puffed LiPo is at elevated risk of thermal runaway and fire; the battery must be removed from service and disposed of per applicable hazardous materials regulations.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot is reviewing two propeller options for an sUAS operating regularly at a field elevation of 6,000 ft MSL. Option A has a larger diameter and higher pitch; Option B has a smaller diameter and lower pitch. At high elevation where air density is reduced, which propeller characteristic generally produces more thrust per watt at altitude?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Smaller diameter, lower pitch blades because they spin faster and compensate for thin air through increased RPM alone</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Larger diameter, higher pitch blades because they move a larger volume of air per revolution, generating more thrust at lower RPM in thin air</li>
+            <li class="seo-sample-answer">C. Propeller geometry has no effect at altitude; thrust output depends exclusively on motor wattage and battery voltage, not blade dimensions</li>
+            <li class="seo-sample-answer">D. Smaller diameter blades are always preferred at altitude because they reduce gyroscopic precession effects that worsen with altitude</li>
+        </ul>
+        <p class="seo-sample-explain">At higher altitudes with lower air density, larger diameter blades with higher pitch move more air mass per revolution and maintain thrust more effectively than smaller diameter blades; this is why high-altitude operations often use larger, lower-RPM propellers rather than smaller, faster-spinning ones.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot installs a sensor package that is mounted 6 inches to the right of the sUAS centerline, creating a lateral CG offset. During hover, the aircraft rolls right and requires continuous left correction from the remote pilot. Under aeronautical principles, what is the best corrective action before the next flight?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Increase the right-side motor output percentages in the flight controller calibration menu to compensate for the added left-roll correction needed</li>
+            <li class="seo-sample-answer">B. The condition is normal and requires no correction because all multirotor flight controllers apply automatic lateral trim during the first hover of each session</li>
+            <li class="seo-sample-answer">C. Fly with a higher-than-normal altitude to allow the autopilot more control authority to manage the asymmetric loading</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Reposition the payload to reduce the lateral CG offset, or add ballast to the left side to rebalance the aircraft within the manufacturer&#39;s lateral CG limits</li>
+        </ul>
+        <p class="seo-sample-explain">The correct solution to a lateral CG imbalance is to physically reposition the payload closer to the CG centerline or add counterbalancing ballast; this addresses the root cause rather than masking the problem with software adjustments.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During preflight loading, a remote pilot installs a battery pack in the aft compartment of a fixed-wing sUAS, placing the CG behind the rear limit. The manufacturer&#39;s manual warns that aft CG operation is hazardous. What specific handling characteristic makes an aft CG condition particularly dangerous for this aircraft?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. An aft CG makes the aircraft longitudinally unstable, so pitch disturbances self-reinforce rather than self-correct, making recovery from pitch excursions difficult or impossible</li>
+            <li class="seo-sample-answer">B. An aft CG reduces the aircraft&#39;s maximum airspeed by increasing parasitic drag from the battery protruding into the airstream</li>
+            <li class="seo-sample-answer">C. An aft CG causes the aircraft to roll left because the weight imbalance torques the fuselage against the propeller thrust line</li>
+            <li class="seo-sample-answer">D. An aft CG locks the elevator in a nose-down position through a mechanical linkage moment that increases with airspeed</li>
+        </ul>
+        <p class="seo-sample-explain">An aft CG reduces the restoring moment of the tail relative to the wing&#39;s pitching moment, making the aircraft longitudinally unstable; a pitch disturbance causes the nose to continue pitching in the disturbed direction rather than returning to level flight, and the situation can become unrecoverable.</p>
+      </details>
       <h2>Other Part 107 Domains</h2>
       <ul>
           <li><a href="/faa-part-107/regulations-core/">1.0 Regulations: Core</a></li>

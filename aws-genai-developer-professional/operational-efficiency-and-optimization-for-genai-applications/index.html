@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which description best matches Tiered FM selection in AWS AIP-C01 Domain 4.0 Operational Efficiency and Optimization for GenAI Applications?",
+          "name": "A GenAI team must improve cost, performance, or observability of an FM application using Token usage tracking. Which answer best describes the technique?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tiered FM selection involves routing simple queries to smaller inexpensive models and complex queries to larger capable models to balance cost and quality.. Tiered FM selection involves routing simple queries to smaller inexpensive models and complex queries to larger capable…"
+            "text": "Token usage tracking is the best fit when a GenAI operations strategy requires this behavior: Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities.. Token usage tracking involves monitoring input…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A GenAI team must improve cost, performance, or observability of an FM application using Context window optimization. Which answer best describes the technique?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Context window optimization is the best fit when a GenAI operations strategy requires this behavior: Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost.. Context window…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>80 exam-style questions</strong> covering <strong>12% of the AIP-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-genai-developer-professional/">AWS Certified Generative AI Developer Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Token usage tracking in AWS AIP-C01 Domain 4.0 Operational Efficiency and Optimization for GenAI Applications?</h3>
-        <p><strong>Answer:</strong> Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities.</p>
-        <p>Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Context window optimization in AWS AIP-C01 Domain 4.0 Operational Efficiency and Optimization for GenAI Applications?</h3>
-        <p><strong>Answer:</strong> Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost.</p>
-        <p>Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Tiered FM selection in AWS AIP-C01 Domain 4.0 Operational Efficiency and Optimization for GenAI Applications?</h3>
-        <p><strong>Answer:</strong> Tiered FM selection involves routing simple queries to smaller inexpensive models and complex queries to larger capable models to balance cost and quality.</p>
-        <p>Tiered FM selection involves routing simple queries to smaller inexpensive models and complex queries to larger capable models to balance cost and quality. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Token usage tracking in AWS AIP-C01 Domain 4.0 Operational Efficiency and Optimization for GenAI Applications?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Semantic caching involves caching FM responses keyed by query embedding similarity so semantically identical questions reuse prior answers.</li>
+            <li class="seo-sample-answer">B. Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities.</li>
+            <li class="seo-sample-answer">D. Auto-scaling for GenAI traffic involves configuring auto-scaling policies that match GenAI traffic patterns and avoid over-provisioning compute capacity.</li>
+        </ul>
+        <p class="seo-sample-explain">Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Context window optimization in AWS AIP-C01 Domain 4.0 Operational Efficiency and Optimization for GenAI Applications?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Response streaming involves streaming tokens to the client as they are generated to lower perceived latency and improve user experience.</li>
+            <li class="seo-sample-answer">B. Bedrock Model Invocation Logs involves capturing detailed Amazon Bedrock request and response logs for analysis, debugging, and audit.</li>
+            <li class="seo-sample-answer">C. Semantic caching involves caching FM responses keyed by query embedding similarity so semantically identical questions reuse prior answers.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost.</li>
+        </ul>
+        <p class="seo-sample-explain">Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A GenAI team must improve cost, performance, or observability of an FM application using Token usage tracking. Which answer best describes the technique?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Token usage tracking is the best fit when a GenAI operations strategy requires this behavior: Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities.</li>
+            <li class="seo-sample-answer">B. Pre-computation for predictable queries is the best fit when a GenAI operations strategy requires this behavior: Pre-computation for predictable queries involves computing answers for predictable or repeated questions in advance and serving them from a cache to avoid live FM invocation.</li>
+            <li class="seo-sample-answer">C. Tool calling observability is the best fit when a GenAI operations strategy requires this behavior: Tool calling observability involves tracking agent tool invocations, parameters, and results to identify failures and tune agent behavior.</li>
+            <li class="seo-sample-answer">D. Provisioned throughput optimization is the best fit when a GenAI operations strategy requires this behavior: Provisioned throughput optimization involves reserving Amazon Bedrock model capacity to support predictable inference performance and reduce per-token cost at scale.</li>
+        </ul>
+        <p class="seo-sample-explain">Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities. This matches the GenAI operations scenario without confusing nearby cost or performance concepts.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A GenAI team must improve cost, performance, or observability of an FM application using Context window optimization. Which answer best describes the technique?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Vector index optimization is the best fit when a GenAI operations strategy requires this behavior: Vector index optimization involves tuning sharding, partitioning, and approximate-nearest-neighbor parameters to lower vector query latency for RAG.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Context window optimization is the best fit when a GenAI operations strategy requires this behavior: Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost.</li>
+            <li class="seo-sample-answer">C. Token usage tracking is the best fit when a GenAI operations strategy requires this behavior: Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities.</li>
+            <li class="seo-sample-answer">D. CloudWatch token usage metrics is the best fit when a GenAI operations strategy requires this behavior: CloudWatch token usage metrics involves publishing token usage metrics to CloudWatch to track inference cost and detect anomalies in real time.</li>
+        </ul>
+        <p class="seo-sample-explain">Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost. This matches the GenAI operations scenario without confusing nearby cost or performance concepts.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A GenAI team must improve cost, performance, or observability of an FM application using Tiered FM selection. Which answer best describes the technique?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Vector index optimization is the best fit when a GenAI operations strategy requires this behavior: Vector index optimization involves tuning sharding, partitioning, and approximate-nearest-neighbor parameters to lower vector query latency for RAG.</li>
+            <li class="seo-sample-answer">B. Context window optimization is the best fit when a GenAI operations strategy requires this behavior: Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost.</li>
+            <li class="seo-sample-answer">C. Auto-scaling for GenAI traffic is the best fit when a GenAI operations strategy requires this behavior: Auto-scaling for GenAI traffic involves configuring auto-scaling policies that match GenAI traffic patterns and avoid over-provisioning compute capacity.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Tiered FM selection is the best fit when a GenAI operations strategy requires this behavior: Tiered FM selection involves routing simple queries to smaller inexpensive models and complex queries to larger capable models to balance cost and quality.</li>
+        </ul>
+        <p class="seo-sample-explain">Tiered FM selection involves routing simple queries to smaller inexpensive models and complex queries to larger capable models to balance cost and quality. This matches the GenAI operations scenario without confusing nearby cost or performance concepts.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A production GenAI workload must balance cost, latency, throughput, and visibility. Which scenario best matches Token usage tracking?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A workload points to Token usage tracking when cost, performance, latency, throughput, or observability decisions depend on this distinction: Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities.</li>
+            <li class="seo-sample-answer">B. A workload points to Provisioned throughput optimization when cost, performance, latency, throughput, or observability decisions depend on this distinction: Provisioned throughput optimization involves reserving Amazon Bedrock model capacity to support predictable inference performance and reduce per-token cost at scale.</li>
+            <li class="seo-sample-answer">C. A workload points to Bedrock Model Invocation Logs when cost, performance, latency, throughput, or observability decisions depend on this distinction: Bedrock Model Invocation Logs involves capturing detailed Amazon Bedrock request and response logs for analysis, debugging, and audit.</li>
+            <li class="seo-sample-answer">D. A workload points to Context window optimization when cost, performance, latency, throughput, or observability decisions depend on this distinction: Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost.</li>
+        </ul>
+        <p class="seo-sample-explain">Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities. This distinction matters because choosing a nearby concept would lead to the wrong cost, performance, or monitoring decision.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A production GenAI workload must balance cost, latency, throughput, and visibility. Which scenario best matches Context window optimization?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A workload points to Bedrock Model Invocation Logs when cost, performance, latency, throughput, or observability decisions depend on this distinction: Bedrock Model Invocation Logs involves capturing detailed Amazon Bedrock request and response logs for analysis, debugging, and audit.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A workload points to Context window optimization when cost, performance, latency, throughput, or observability decisions depend on this distinction: Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost.</li>
+            <li class="seo-sample-answer">C. A workload points to Temperature and top-p tuning when cost, performance, latency, throughput, or observability decisions depend on this distinction: Temperature and top-p tuning involves adjusting sampling parameters like temperature, top-k, and top-p to balance diversity and determinism for the use case.</li>
+            <li class="seo-sample-answer">D. A workload points to Prompt caching when cost, performance, latency, throughput, or observability decisions depend on this distinction: Prompt caching involves reusing computed prompt prefix state across requests so repeated context is not re-processed by the model.</li>
+        </ul>
+        <p class="seo-sample-explain">Context window optimization involves trimming or summarizing prompt content so the relevant context fits within model limits while reducing token cost. This distinction matters because choosing a nearby concept would lead to the wrong cost, performance, or monitoring decision.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A GenAI operations decision involves cost optimization, performance tuning, or monitoring trade-offs. Which answer applies Token usage tracking most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Token usage tracking is the correct GenAI operations choice when the cost, performance, or monitoring decision depends on this exact behavior: Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities.</li>
+            <li class="seo-sample-answer">B. Provisioned throughput optimization is the correct GenAI operations choice when the cost, performance, or monitoring decision depends on this exact behavior: Provisioned throughput optimization involves reserving Amazon Bedrock model capacity to support predictable inference performance and reduce per-token cost at scale.</li>
+            <li class="seo-sample-answer">C. Response streaming is the correct GenAI operations choice when the cost, performance, or monitoring decision depends on this exact behavior: Response streaming involves streaming tokens to the client as they are generated to lower perceived latency and improve user experience.</li>
+            <li class="seo-sample-answer">D. Semantic caching is the correct GenAI operations choice when the cost, performance, or monitoring decision depends on this exact behavior: Semantic caching involves caching FM responses keyed by query embedding similarity so semantically identical questions reuse prior answers.</li>
+        </ul>
+        <p class="seo-sample-explain">Token usage tracking involves monitoring input and output tokens per request to estimate FM cost and identify optimization opportunities. This applies the concept at the point where a GenAI operations engineer must make the right cost, performance, or observability decision.</p>
+      </details>
       <h2>Other AIP-C01 Domains</h2>
       <ul>
           <li><a href="/aws-genai-developer-professional/foundation-model-integration-data-management-and-compliance/">1.0 Foundation Model Integration, Data Management, and Compliance</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which description best matches Model latency in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?",
+          "name": "A team is designing an application that uses foundation models and references Foundation model selection. Which answer best describes the design consideration?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Model latency is the time it takes for a model to return an output after receiving input.. Model latency is the time it takes for a model to return an output after receiving input. This is the correct answer."
+            "text": "Foundation model selection is the best match when a foundation model application requires this meaning: Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length.. Foundation…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A team is designing an application that uses foundation models and references Model modality. Which answer best describes the design consideration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Model modality is the best match when a foundation model application requires this meaning: Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.. Model modality describes the type of data…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>140 exam-style questions</strong> covering <strong>28% of the AIF-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-ai-practitioner/">AWS Certified AI Practitioner practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Foundation model selection in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?</h3>
-        <p><strong>Answer:</strong> Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length.</p>
-        <p>Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Model modality in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?</h3>
-        <p><strong>Answer:</strong> Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.</p>
-        <p>Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Model latency in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?</h3>
-        <p><strong>Answer:</strong> Model latency is the time it takes for a model to return an output after receiving input.</p>
-        <p>Model latency is the time it takes for a model to return an output after receiving input. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Foundation model selection in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length.</li>
+            <li class="seo-sample-answer">B. Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.</li>
+            <li class="seo-sample-answer">C. Model latency is the time it takes for a model to return an output after receiving input.</li>
+            <li class="seo-sample-answer">D. Model size and complexity affect capability, cost, latency, infrastructure needs, and ease of deployment or customization.</li>
+        </ul>
+        <p class="seo-sample-explain">Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Model modality in AWS Certified AI Practitioner Domain 3.0 Applications of Foundation Models?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Bedrock Knowledge Bases helps connect foundation models to enterprise data sources for Retrieval Augmented Generation workflows.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.</li>
+            <li class="seo-sample-answer">C. A vector database stores embeddings so applications can search for semantically similar content.</li>
+            <li class="seo-sample-answer">D. Amazon OpenSearch Service can store and search vector embeddings for semantic search and RAG use cases.</li>
+        </ul>
+        <p class="seo-sample-explain">Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team is designing an application that uses foundation models and references Foundation model selection. Which answer best describes the design consideration?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Fine-tuning customization tradeoff is the best match when a foundation model application requires this meaning: Fine-tuning updates a model with task-specific examples and can improve behavior for a domain, but requires training data and additional cost.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Foundation model selection is the best match when a foundation model application requires this meaning: Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length.</li>
+            <li class="seo-sample-answer">C. Pre-training customization tradeoff is the best match when a foundation model application requires this meaning: Pre-training trains a model on broad data from scratch or near-scratch and is usually the most expensive customization approach.</li>
+            <li class="seo-sample-answer">D. In-context learning is the best match when a foundation model application requires this meaning: In-context learning guides a model by including examples or instructions in the prompt instead of changing model weights.</li>
+        </ul>
+        <p class="seo-sample-explain">Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length. This matches the foundation-model application scenario without confusing model selection, prompting, RAG, customization, training, or evaluation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team is designing an application that uses foundation models and references Model modality. Which answer best describes the design consideration?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Negative prompts is the best match when a foundation model application requires this meaning: Negative prompts specify what the model should avoid producing or doing.</li>
+            <li class="seo-sample-answer">B. Zero-shot prompting is the best match when a foundation model application requires this meaning: Zero-shot prompting asks a model to perform a task without providing examples in the prompt.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Model modality is the best match when a foundation model application requires this meaning: Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.</li>
+            <li class="seo-sample-answer">D. Single-shot prompting is the best match when a foundation model application requires this meaning: Single-shot prompting provides one example to guide the model response.</li>
+        </ul>
+        <p class="seo-sample-explain">Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities. This matches the foundation-model application scenario without confusing model selection, prompting, RAG, customization, training, or evaluation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A team is designing an application that uses foundation models and references Model latency. Which answer best describes the design consideration?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Prompt injection is the best match when a foundation model application requires this meaning: Prompt injection attempts to manipulate a model into ignoring instructions, exposing data, or performing unintended actions.</li>
+            <li class="seo-sample-answer">B. Prompt versioning is the best match when a foundation model application requires this meaning: Prompt versioning tracks changes to prompts so teams can compare, manage, and roll back prompt behavior.</li>
+            <li class="seo-sample-answer">C. Amazon Bedrock Prompt Management is the best match when a foundation model application requires this meaning: Amazon Bedrock Prompt Management helps create, store, version, and manage prompts for foundation model applications.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Model latency is the best match when a foundation model application requires this meaning: Model latency is the time it takes for a model to return an output after receiving input.</li>
+        </ul>
+        <p class="seo-sample-explain">Model latency is the time it takes for a model to return an output after receiving input. This matches the foundation-model application scenario without confusing model selection, prompting, RAG, customization, training, or evaluation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A business must choose a foundation model based on capability, latency, modality, complexity, or response behavior. Which scenario best matches Foundation model selection?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to Chain-of-thought prompting when FM selection, prompting, customization, RAG, or evaluation depends on this distinction: Chain-of-thought prompting encourages a model to reason through steps before producing an answer when appropriate.</li>
+            <li class="seo-sample-answer">B. A scenario points to Prompt templates when FM selection, prompting, customization, RAG, or evaluation depends on this distinction: Prompt templates provide reusable prompt structures that standardize instructions, variables, and context across requests.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A scenario points to Foundation model selection when FM selection, prompting, customization, RAG, or evaluation depends on this distinction: Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length.</li>
+            <li class="seo-sample-answer">D. A scenario points to Prompt guardrails when FM selection, prompting, customization, RAG, or evaluation depends on this distinction: Prompt guardrails define boundaries that help reduce unsafe, unwanted, or off-policy model outputs.</li>
+        </ul>
+        <p class="seo-sample-explain">Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length. This distinction matters because choosing a nearby concept would lead to the wrong FM design choice, prompt technique, customization method, grounding approach, or evaluation strategy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A business must choose a foundation model based on capability, latency, modality, complexity, or response behavior. Which scenario best matches Model modality?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to Domain adaptation when FM selection, prompting, customization, RAG, or evaluation depends on this distinction: Domain adaptation tunes or adapts a model so it performs better for a specific industry, topic, vocabulary, or business context.</li>
+            <li class="seo-sample-answer">B. A scenario points to RLHF when FM selection, prompting, customization, RAG, or evaluation depends on this distinction: Reinforcement learning from human feedback uses human preferences or ratings to improve model behavior.</li>
+            <li class="seo-sample-answer">C. A scenario points to Human-in-the-loop evaluation when FM selection, prompting, customization, RAG, or evaluation depends on this distinction: Human-in-the-loop evaluation uses human reviewers to assess model outputs for quality, relevance, safety, or business fit.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A scenario points to Model modality when FM selection, prompting, customization, RAG, or evaluation depends on this distinction: Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.</li>
+        </ul>
+        <p class="seo-sample-explain">Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities. This distinction matters because choosing a nearby concept would lead to the wrong FM design choice, prompt technique, customization method, grounding approach, or evaluation strategy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A foundation model must be selected or configured to meet application constraints. Which answer applies Foundation model selection most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. LLM-as-a-judge is the correct foundation-model application concept when the design, prompt, training, or evaluation decision depends on this exact meaning: LLM-as-a-judge uses a language model to evaluate outputs from another model or application based on defined criteria.</li>
+            <li class="seo-sample-answer">B. Model modality is the correct foundation-model application concept when the design, prompt, training, or evaluation decision depends on this exact meaning: Model modality describes the type of data a foundation model can process or generate, such as text, image, audio, video, or multiple modalities.</li>
+            <li class="seo-sample-answer">C. Model latency is the correct foundation-model application concept when the design, prompt, training, or evaluation decision depends on this exact meaning: Model latency is the time it takes for a model to return an output after receiving input.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Foundation model selection is the correct foundation-model application concept when the design, prompt, training, or evaluation decision depends on this exact meaning: Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length.</li>
+        </ul>
+        <p class="seo-sample-explain">Foundation model selection chooses an FM based on cost, modality, latency, language support, model size, complexity, customization needs, and input/output length. This applies the concept at the point where an AI Practitioner must choose the best foundation-model application decision for the business scenario. This is the correct answer.</p>
+      </details>
       <h2>Other AIF-C01 Domains</h2>
       <ul>
           <li><a href="/aws-ai-practitioner/fundamentals-of-ai-and-ml/">1.0 Fundamentals of AI and ML</a></li>

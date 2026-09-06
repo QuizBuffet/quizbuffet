@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A router's routing table contains three routes to 10.0.0.0/8: one learned via OSPF, one via EIGRP, and one as a static route. In what order does the router evaluate these routes to determine which to install?",
+          "name": "A router has a static route to 10.5.0.0/16 via next-hop 192.168.1.1. OSPF also learns a route to 10.5.0.0/16 via 192.168.1.2. The network to 10.5.0.0/16 fails. What happens to traffic destined for 10.5.0.0/16 and what concept does this illustrate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The router first compares administrative distance (AD), the static route has AD 1, EIGRP has AD 90, OSPF has AD 110; the route with the lowest AD (static route, AD 1) is installed in the routing table; EIGRP and OSPF routes for the same prefix are not installed while the static…"
+            "text": "Traffic is dropped, the static route has a lower administrative distance (1) than OSPF (110) meaning it is preferred; the static route remains in the routing table even though the network is unreachable; the router continues sending traffic via 192.168.1.1 into the failed…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A network engineer wants to add a backup route to 172.16.0.0/16 that activates only when the primary OSPF route fails. OSPF has an administrative distance of 110. How should the floating static route be configured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Configure the static route with administrative distance 111 or higher, a floating static route uses an AD higher than the primary dynamic routing protocol (OSPF AD 110); when OSPF is operational the OSPF route (AD 110) is installed in the routing table; the static route (AD…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>112 exam-style questions</strong> covering <strong>20% of the N10-009 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-network-plus/">CompTIA Network+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What is a static route and when is it most appropriate to use?</h3>
-        <p><strong>Answer:</strong> A static route is a manually configured route that tells the router how to reach a specific destination network, it does not change unless an administrator modifies it; static routes are most appropriate for small stable networks with few routes, stub networks with only one path to the rest of the network, and providing a default route (0.0.0.0/0) to the internet</p>
-        <p>Static routes are manually configured entries in the routing table specifying a destination network, subnet mask, and next-hop address or exit interface, they are ideal for stub networks (one path in/out), point-to-point WAN links, default routes to internet gateways, and small networks where the simplicity of static routing outweighs the management overhead. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What is the primary distinction between OSPF, EIGRP, and BGP in terms of their use cases?</h3>
-        <p><strong>Answer:</strong> OSPF and EIGRP are Interior Gateway Protocols (IGPs) used for routing within a single organization&#39;s network (autonomous system); BGP is an Exterior Gateway Protocol (EGP) used for routing between autonomous systems, BGP is the protocol of the internet backbone exchanging routes between ISPs and large organizations; OSPF is link-state and vendor-neutral; EIGRP is advanced distance-vector and Cisco-proprietary (now open standard)</p>
-        <p>The IGP vs. EGP distinction defines the primary use case, OSPF (Open Shortest Path First) uses link-state algorithms to build a topology map within one AS; EIGRP (Enhanced Interior Gateway Routing Protocol) uses a diffusing computation algorithm within one AS; BGP (Border Gateway Protocol) is the only widely deployed EGP, exchanging routing information between autonomous systems at internet scale using path attributes for policy control. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A router&#39;s routing table contains three routes to 10.0.0.0/8: one learned via OSPF, one via EIGRP, and one as a static route. In what order does the router evaluate these routes to determine which to install?</h3>
-        <p><strong>Answer:</strong> The router first compares administrative distance (AD), the static route has AD 1, EIGRP has AD 90, OSPF has AD 110; the route with the lowest AD (static route, AD 1) is installed in the routing table; EIGRP and OSPF routes for the same prefix are not installed while the static route is active</p>
-        <p>Administrative distance is the first selection criterion when multiple routing sources provide routes to the same destination, static routes (AD 1) are preferred over EIGRP (AD 90) which is preferred over OSPF (AD 110); only the route with the lowest AD is installed in the routing table; metric comparison only applies between routes from the same protocol to the same destination. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What is a static route and when is it most appropriate to use?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A static route is a manually configured route that tells the router how to reach a specific destination network, it does not change unless an administrator modifies it; static routes are most appropriate for small stable networks with few routes, stub networks with only one path to the rest of the network, and providing a default route (0.0.0.0/0) to the internet</li>
+            <li class="seo-sample-answer">B. A static route is a route that automatically updates when network topology changes, the routing table refreshes every 30 seconds to reflect current network conditions without administrator intervention</li>
+            <li class="seo-sample-answer">C. A static route is a route learned from a neighboring router using the OSPF protocol, the word static refers to the fact that OSPF routes do not change unless the OSPF database is refreshed</li>
+            <li class="seo-sample-answer">D. A static route is only used in IPv6 networks, IPv4 routing exclusively uses dynamic routing protocols while IPv6 supports both static and dynamic routing</li>
+        </ul>
+        <p class="seo-sample-explain">Static routes are manually configured entries in the routing table specifying a destination network, subnet mask, and next-hop address or exit interface, they are ideal for stub networks (one path in/out), point-to-point WAN links, default routes to internet gateways, and small networks where the simplicity of static routing outweighs the management overhead. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What is the primary distinction between OSPF, EIGRP, and BGP in terms of their use cases?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. OSPF and EIGRP are Interior Gateway Protocols (IGPs) used for routing within a single organization&#39;s network (autonomous system); BGP is an Exterior Gateway Protocol (EGP) used for routing between autonomous systems, BGP is the protocol of the internet backbone exchanging routes between ISPs and large organizations; OSPF is link-state and vendor-neutral; EIGRP is advanced distance-vector and Cisco-proprietary (now open standard)</li>
+            <li class="seo-sample-answer">B. OSPF is used for IPv6 only; EIGRP is used for IPv4 only; BGP supports both, the protocol choice is determined by the IP version deployed in the network</li>
+            <li class="seo-sample-answer">C. OSPF handles Layer 2 switching; EIGRP handles Layer 3 routing; BGP handles Layer 4 transport, each protocol operates at a different OSI layer managing different aspects of network communication</li>
+            <li class="seo-sample-answer">D. All three protocols are identical in function but preferred by different geographic regions, OSPF is preferred in North America, EIGRP in Europe, and BGP in Asia; organizations choose based on vendor support in their region</li>
+        </ul>
+        <p class="seo-sample-explain">The IGP vs. EGP distinction defines the primary use case, OSPF (Open Shortest Path First) uses link-state algorithms to build a topology map within one AS; EIGRP (Enhanced Interior Gateway Routing Protocol) uses a diffusing computation algorithm within one AS; BGP (Border Gateway Protocol) is the only widely deployed EGP, exchanging routing information between autonomous systems at internet scale using path attributes for policy control. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A router has a static route to 10.5.0.0/16 via next-hop 192.168.1.1. OSPF also learns a route to 10.5.0.0/16 via 192.168.1.2. The network to 10.5.0.0/16 fails. What happens to traffic destined for 10.5.0.0/16 and what concept does this illustrate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Traffic automatically fails over to the OSPF route via 192.168.1.2, static routes automatically yield to dynamic routes when the static route&#39;s next-hop becomes unreachable; OSPF reconvergence provides seamless failover</li>
+            <li class="seo-sample-answer">B. Both routes are removed from the routing table, when any route to a destination becomes unreachable the router removes all routes to that destination regardless of their source</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Traffic is dropped, the static route has a lower administrative distance (1) than OSPF (110) meaning it is preferred; the static route remains in the routing table even though the network is unreachable; the router continues sending traffic via 192.168.1.1 into the failed network; this illustrates the limitation of static routes, they do not adapt to topology changes unlike dynamic routing protocols</li>
+            <li class="seo-sample-answer">D. The router uses load balancing, it splits traffic equally between the static route via 192.168.1.1 and the OSPF route via 192.168.1.2; 50% of packets reach the destination and 50% are dropped</li>
+        </ul>
+        <p class="seo-sample-explain">The static route with AD 1 is preferred over OSPF with AD 110, since the static route is still present in the routing table (the router can still reach next-hop 192.168.1.1 even if the ultimate destination is unreachable), traffic continues forwarding to a black hole; this illustrates why static routes require careful management and why floating static routes (configured with higher AD than the primary dynamic protocol) are used for backup purposes. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A network engineer wants to add a backup route to 172.16.0.0/16 that activates only when the primary OSPF route fails. OSPF has an administrative distance of 110. How should the floating static route be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Configure the static route with administrative distance 1 (default for static routes), since 1 is lower than OSPF&#39;s 110, the static route will be preferred and OSPF will serve as backup</li>
+            <li class="seo-sample-answer">B. Floating static routes require enabling track objects, the static route must be linked to an IP SLA track that monitors the OSPF neighbor; without tracking the floating static route feature does not activate during OSPF failures</li>
+            <li class="seo-sample-answer">C. Configure the static route with administrative distance 0, AD 0 is a reserved value that tells the router to use this route only when no other routes exist; it provides automatic failover behavior for backup routing</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Configure the static route with administrative distance 111 or higher, a floating static route uses an AD higher than the primary dynamic routing protocol (OSPF AD 110); when OSPF is operational the OSPF route (AD 110) is installed in the routing table; the static route (AD 111) is suppressed; when OSPF fails and the dynamic route is removed the floating static route is installed as the backup path</li>
+        </ul>
+        <p class="seo-sample-explain">A floating static route uses an AD greater than the primary protocol, when OSPF is active, the OSPF route (AD 110) wins and the static route (AD 111 or higher) is not installed in the routing table; when OSPF fails and removes its route, the floating static route with AD 111 is installed as the backup; the AD must be higher than 110 for OSPF to remain primary. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A large enterprise network has five locations connected in a hub-and-spoke topology. Engineers must choose between OSPF and EIGRP for the internal routing protocol. OSPF uses cost (based on bandwidth) as its metric while EIGRP uses a composite metric. What key operational difference should influence this decision?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. OSPF converges faster than EIGRP in all network scenarios, OSPF&#39;s HELLO interval is always shorter than EIGRP&#39;s making it the universally preferred choice for hub-and-spoke networks where fast failover is critical</li>
+            <li class="seo-sample-answer">B. OSPF requires more memory than EIGRP for the same topology, OSPF stores a complete link-state database requiring all routers to maintain a full topology map; EIGRP uses a simpler distance-vector approach storing only neighbor routes; in a memory-constrained environment EIGRP has lower RAM requirements</li>
+            <li class="seo-sample-answer">C. OSPF and EIGRP have identical convergence behavior, the metric calculation method does not affect how quickly either protocol responds to topology changes; the enterprise should choose based solely on which protocol the network team is more familiar with</li>
+            <li class="seo-sample-answer seo-sample-correct">D. EIGRP requires Cisco hardware at all locations while OSPF is vendor-neutral, if any location uses non-Cisco equipment OSPF must be used; if all locations use Cisco equipment EIGRP is preferred because it converges faster and supports unequal-cost load balancing which OSPF does not support</li>
+        </ul>
+        <p class="seo-sample-explain">Vendor neutrality is a critical differentiator, EIGRP was Cisco-proprietary for decades (now an IETF informational RFC but still primarily Cisco-implemented); if the enterprise has multi-vendor equipment OSPF is required; EIGRP&#39;s unequal-cost load balancing (variance command) is a genuine advantage over OSPF for traffic engineering in hub-and-spoke designs. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company has a hub-and-spoke WAN with 50 branch offices. The network architect considers using static routes at headquarters pointing to each branch subnet. A consultant recommends against this. What specific operational challenge makes static routing impractical for this design at scale?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Static routes cannot be used across WAN links, they only function on LAN segments within the same broadcast domain; WAN connections require dynamic routing protocols regardless of network size</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Static routes to 50 branches would require manually adding and maintaining entries for every subnet at every branch, when a new branch is added or a branch&#39;s subnets change every static route at headquarters must be manually updated; human error in route configuration causes traffic black holes; there is no automatic convergence if a branch WAN link fails; the operational overhead grows linearly with branch count; dynamic routing protocols automate this with negligible additional configuration per new site</li>
+            <li class="seo-sample-answer">C. Static routes consume more CPU on headquarters routers than dynamic routing protocols, each static route requires a dedicated CPU thread for constant monitoring making 50 static routes computationally intensive for enterprise routers</li>
+            <li class="seo-sample-answer">D. Static routes prevent the use of DHCP at branch offices, when static routes exist on the hub router all branch devices must use statically assigned IP addresses; DHCP is incompatible with static routing at the WAN edge</li>
+        </ul>
+        <p class="seo-sample-explain">Manual management burden and lack of automatic convergence are the core problems with static routing at scale, with 50 branches and potentially multiple subnets per branch the administrator must maintain potentially hundreds of static routes; any change requires manual intervention at headquarters; a failed WAN link creates a black hole that persists until an administrator removes or corrects the static route; dynamic routing automates all of this. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ISP needs to connect to three upstream providers and exchange routing tables with each. BGP is selected. What are the two types of BGP and how are they applied in this scenario?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Internal BGP (iBGP) is used between the ISP&#39;s routers and External BGP (eBGP) is used between the ISP and its upstream providers, eBGP sessions are established between routers in different autonomous systems (different ASNs) and are typically between directly connected routers; iBGP sessions are between routers within the same AS and distribute externally learned routes throughout the organization</li>
+            <li class="seo-sample-answer">B. Active BGP (aBGP) is used for primary upstream connections and Passive BGP (pBGP) is used for backup connections, the ISP establishes active sessions to two providers and passive sessions to one; passive BGP requires no configuration on the ISP&#39;s router</li>
+            <li class="seo-sample-answer">C. Public BGP (pBGP) is used for routing to internet destinations and Private BGP (prBGP) is used for routing to the ISP&#39;s internal customers, the distinction is based on whether the destination is publicly or privately addressed</li>
+            <li class="seo-sample-answer">D. There is only one type of BGP, the internal vs. external distinction is a configuration option within a single protocol; iBGP and eBGP sessions are identical in operation and only differ in which ASN they announce to neighboring routers</li>
+        </ul>
+        <p class="seo-sample-explain">iBGP and eBGP are the two fundamental BGP session types, eBGP (External BGP) runs between routers in different autonomous systems (different AS numbers); the ISP establishes eBGP sessions with each of the three upstream providers exchanging full internet routing tables; iBGP (Internal BGP) distributes externally learned routes among the ISP&#39;s own internal routers; iBGP has different loop prevention rules (requiring full mesh or route reflectors) since the AS_PATH loop prevention used by eBGP doesn&#39;t apply internally. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An OSPF network has an area 0 backbone with two other areas (area 1 and area 2). All inter-area traffic must pass through area 0. A network engineer adds a direct physical link between an area 1 router and an area 2 router to reduce latency for inter-area traffic. The shortcut link does not work as expected. Why?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The shortcut link fails because OSPF requires all area links to use fiber optic connections, copper links between areas are not supported in multi-area OSPF designs</li>
+            <li class="seo-sample-answer seo-sample-correct">B. OSPF&#39;s two-layer hierarchy requires all inter-area traffic to traverse area 0, a direct area 1 to area 2 link creates a &#39;virtual backdoor&#39; that OSPF&#39;s design prevents from being used for inter-area routing; OSPF will not advertise inter-area routes through a non-backbone path because all area border routers must connect to area 0 for proper route calculation; the solution is a virtual link through area 0 or redesigning the area topology</li>
+            <li class="seo-sample-answer">C. The shortcut link fails because EIGRP must be used for direct area-to-area links, OSPF handles only backbone connections while EIGRP handles non-backbone inter-area connectivity in multi-vendor environments</li>
+            <li class="seo-sample-answer">D. The shortcut works but only for unicast traffic, multicast and broadcast traffic between area 1 and area 2 still traverses area 0; the engineer must enable OSPF multicast on the direct link for full inter-area functionality</li>
+        </ul>
+        <p class="seo-sample-explain">OSPF&#39;s backbone area requirement is a fundamental design constraint, area 0 is the backbone and all other areas must connect to it; inter-area routing always goes through area 0 because ABRs (Area Border Routers) only generate inter-area routes via the backbone; a direct area 1 to area 2 link creates an intra-area link within those areas but cannot carry inter-area summary routes because OSPF&#39;s SPF calculation does not allow non-backbone inter-area paths; this is by design to prevent routing loops. This is the correct answer.</p>
+      </details>
       <h2>Other N10-009 Domains</h2>
       <ul>
           <li><a href="/comptia-network-plus/networking-concepts/">1.0 Networking Concepts</a></li>

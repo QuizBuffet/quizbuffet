@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A Lambda function collects small files from an API and writes them to S3 for hourly processing. What is the resulting ingestion style?",
+          "name": "A company already runs Apache Kafka producers on premises and wants an AWS-managed Kafka-compatible ingestion layer. Which service should the data engineer select?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Batch ingestion from files accumulated in Amazon S3."
+            "text": "Amazon Managed Streaming for Apache Kafka (Amazon MSK)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A nightly data load reads several terabytes of CSV files from Amazon S3 into an ETL job. Which source pattern is being used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amazon S3 batch ingestion."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>170 exam-style questions</strong> covering <strong>34% of the DEA-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-data-engineer-associate/">AWS Certified Data Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A data engineering team must ingest clickstream events continuously from thousands of clients and allow multiple consumers to process the stream independently. Which AWS service should be used for the streaming source?</h3>
-        <p><strong>Answer:</strong> Amazon Kinesis Data Streams</p>
-        <p>Amazon Kinesis Data Streams stores ordered records in shards and lets multiple consumers read the clickstream with controllable retention and replay for downstream processing. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A streaming pipeline must deliver events into Apache Flink processing with low latency and later archive raw data to S3. Which ingestion source is most appropriate?</h3>
-        <p><strong>Answer:</strong> Kinesis Data Streams feeding stream processing and archival consumers</p>
-        <p>Kinesis Data Streams can act as the durable streaming source for low-latency consumers while also supporting additional consumers that archive records to S3. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A Lambda function collects small files from an API and writes them to S3 for hourly processing. What is the resulting ingestion style?</h3>
-        <p><strong>Answer:</strong> Batch ingestion from files accumulated in Amazon S3</p>
-        <p>Once the Lambda function lands files in S3 for hourly processing, the transformation reads a bounded batch from S3 rather than a continuous stream. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A data engineering team must ingest clickstream events continuously from thousands of clients and allow multiple consumers to process the stream independently. Which AWS service should be used for the streaming source?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Amazon Kinesis Data Streams</li>
+            <li class="seo-sample-answer">B. Amazon S3</li>
+            <li class="seo-sample-answer">C. Amazon EventBridge</li>
+            <li class="seo-sample-answer">D. AWS Transfer Family</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon Kinesis Data Streams stores ordered records in shards and lets multiple consumers read the clickstream with controllable retention and replay for downstream processing. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A streaming pipeline must deliver events into Apache Flink processing with low latency and later archive raw data to S3. Which ingestion source is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Kinesis Data Streams feeding stream processing and archival consumers</li>
+            <li class="seo-sample-answer">B. AWS Glue crawlers</li>
+            <li class="seo-sample-answer">C. Amazon Managed Service for Apache Flink</li>
+            <li class="seo-sample-answer">D. AWS IAM</li>
+        </ul>
+        <p class="seo-sample-explain">Kinesis Data Streams can act as the durable streaming source for low-latency consumers while also supporting additional consumers that archive records to S3. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company already runs Apache Kafka producers on premises and wants an AWS-managed Kafka-compatible ingestion layer. Which service should the data engineer select?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Glue Data Quality</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Amazon Managed Streaming for Apache Kafka (Amazon MSK)</li>
+            <li class="seo-sample-answer">C. Amazon Kinesis Data Streams</li>
+            <li class="seo-sample-answer">D. AWS Systems Manager</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon MSK provides managed Kafka brokers, so existing Kafka producers and consumers can continue using Kafka protocols while AWS operates the cluster infrastructure. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A nightly data load reads several terabytes of CSV files from Amazon S3 into an ETL job. Which source pattern is being used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS PrivateLink</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Amazon S3 batch ingestion</li>
+            <li class="seo-sample-answer">C. AWS Lake Formation</li>
+            <li class="seo-sample-answer">D. Amazon ECS</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon S3 batch ingestion fits scheduled processing of files that have already landed in object storage rather than continuous event-by-event processing. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company needs to ingest database tables in bulk from an Oracle source before enabling ongoing replication. Which AWS service is suitable?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Q</li>
+            <li class="seo-sample-answer seo-sample-correct">B. AWS DMS full load</li>
+            <li class="seo-sample-answer">C. Apache Iceberg</li>
+            <li class="seo-sample-answer">D. AWS Transfer Family</li>
+        </ul>
+        <p class="seo-sample-explain">AWS DMS full load copies existing source tables into AWS targets and is appropriate before enabling ongoing change replication. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A DynamoDB-backed application needs downstream processing whenever table items are inserted or updated. Which source should be read?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon MSK</li>
+            <li class="seo-sample-answer">B. S3 Versioning</li>
+            <li class="seo-sample-answer seo-sample-correct">C. DynamoDB Streams</li>
+            <li class="seo-sample-answer">D. Apache Iceberg</li>
+        </ul>
+        <p class="seo-sample-explain">DynamoDB Streams captures item-level changes from the table in time order, which gives the pipeline a native change stream for inserts and updates. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A partner SaaS application must periodically export customer records into an AWS data lake with minimal custom code. Which service should be considered?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Managed Service for Apache Flink</li>
+            <li class="seo-sample-answer">B. Amazon Bedrock</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Amazon AppFlow</li>
+            <li class="seo-sample-answer">D. AWS IAM</li>
+        </ul>
+        <p class="seo-sample-explain">Amazon AppFlow provides managed integrations from SaaS applications to AWS destinations, reducing custom extraction code for scheduled batch transfers. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A migration pipeline must continuously replicate changes from an on-premises relational database into AWS for analytics. Which source capability fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Glue workflows</li>
+            <li class="seo-sample-answer">B. Amazon CloudWatch Logs</li>
+            <li class="seo-sample-answer">C. AWS Lambda</li>
+            <li class="seo-sample-answer seo-sample-correct">D. AWS DMS change data capture</li>
+        </ul>
+        <p class="seo-sample-explain">AWS DMS change data capture reads ongoing database changes after initial load, supporting continuous ingestion from the source database into AWS targets. This is the correct answer.</p>
+      </details>
       <h2>Other DEA-C01 Domains</h2>
       <ul>
           <li><a href="/aws-data-engineer-associate/data-store-management/">2.0 Data Store Management</a></li>

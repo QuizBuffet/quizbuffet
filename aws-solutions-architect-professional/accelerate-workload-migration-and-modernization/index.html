@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A financial services company must migrate regulated workloads while keeping audit evidence and rollback options. The team must improve the migration and modernization plan around application portfolio discovery. What should the solutions architect recommend?",
+          "name": "A media company needs to migrate large content repositories and modernize delivery workflows. A review board asks for a professional-level recommendation for migration assessment and readiness. Which option best fits the workload?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Retain or defer workloads when dependencies, regulations, or business timing make immediate migration higher risk than value."
+            "text": "Group workloads into migration waves based on dependency maps, business windows, risk, team readiness, and shared platform prerequisites."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A logistics company needs to migrate databases and integrations with minimal downtime. A review board asks for a professional-level recommendation for migration strategies. Which option best fits the workload?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use AWS Application Discovery Service, Migration Evaluator, stakeholder interviews, and dependency mapping to build the migration inventory."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>120 exam-style questions</strong> covering <strong>20% of the SAP-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-solutions-architect-professional/">AWS Certified Solutions Architect Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A financial services company must migrate regulated workloads while keeping audit evidence and rollback options. The team must improve the migration and modernization plan around migration assessment and readiness. What should the solutions architect recommend?</h3>
-        <p><strong>Answer:</strong> Classify each workload by an appropriate migration strategy such as rehost, replatform, refactor, repurchase, retire, retain, or relocate</p>
-        <p>The migration strategy should fit the workload&#39;s constraints, value, and modernization opportunity.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A public sector agency is replacing aging infrastructure with a governed AWS landing zone. The team must improve the migration and modernization plan around migration strategies. What should the solutions architect recommend?</h3>
-        <p><strong>Answer:</strong> Use a structured portfolio assessment that captures business criticality, dependencies, technical complexity, compliance needs, and migration readiness</p>
-        <p>A migration portfolio should be prioritized from evidence about business value, dependency risk, and technical readiness.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A financial services company must migrate regulated workloads while keeping audit evidence and rollback options. The team must improve the migration and modernization plan around application portfolio discovery. What should the solutions architect recommend?</h3>
-        <p><strong>Answer:</strong> Retain or defer workloads when dependencies, regulations, or business timing make immediate migration higher risk than value</p>
-        <p>Not every workload should move in the first wave; retained workloads still need a documented rationale.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A financial services company must migrate regulated workloads while keeping audit evidence and rollback options. The team must improve the migration and modernization plan around migration assessment and readiness. What should the solutions architect recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Classify each workload by an appropriate migration strategy such as rehost, replatform, refactor, repurchase, retire, retain, or relocate</li>
+            <li class="seo-sample-answer">B. Use Application Load Balancer connection draining set to zero seconds for stateful sessions</li>
+            <li class="seo-sample-answer">C. Use AWS Systems Manager Run Command without Change Manager for production changes</li>
+            <li class="seo-sample-answer">D. Use IAM password policy to enforce VPC routing decisions</li>
+        </ul>
+        <p class="seo-sample-explain">The migration strategy should fit the workload&#39;s constraints, value, and modernization opportunity.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A public sector agency is replacing aging infrastructure with a governed AWS landing zone. The team must improve the migration and modernization plan around migration strategies. What should the solutions architect recommend?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Use a structured portfolio assessment that captures business criticality, dependencies, technical complexity, compliance needs, and migration readiness</li>
+            <li class="seo-sample-answer">B. Use Secrets Manager without rotation to reduce operational complexity</li>
+            <li class="seo-sample-answer">C. Use AWS Cost Explorer to provision EC2 capacity in advance</li>
+            <li class="seo-sample-answer">D. Skip log retention policies and keep all CloudWatch Logs forever</li>
+        </ul>
+        <p class="seo-sample-explain">A migration portfolio should be prioritized from evidence about business value, dependency risk, and technical readiness.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A media company needs to migrate large content repositories and modernize delivery workflows. A review board asks for a professional-level recommendation for migration assessment and readiness. Which option best fits the workload?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Place customer gateway IP inside the VPC CIDR range</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Group workloads into migration waves based on dependency maps, business windows, risk, team readiness, and shared platform prerequisites</li>
+            <li class="seo-sample-answer">C. Use a single AWS Cost and Usage Report at the account level for an organization with 200 accounts</li>
+            <li class="seo-sample-answer">D. Use ACM-imported public certs without renewal monitoring or alerting</li>
+        </ul>
+        <p class="seo-sample-explain">Wave planning reduces cutover risk by moving related components in a controlled sequence.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A logistics company needs to migrate databases and integrations with minimal downtime. A review board asks for a professional-level recommendation for migration strategies. Which option best fits the workload?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Reserved Instances purchased for one Region to cover usage in a different Region</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use AWS Application Discovery Service, Migration Evaluator, stakeholder interviews, and dependency mapping to build the migration inventory</li>
+            <li class="seo-sample-answer">C. Use AWS Budgets to enforce IAM permission boundaries on engineering teams</li>
+            <li class="seo-sample-answer">D. Use AWS Pricing Calculator as a real-time bill cap</li>
+        </ul>
+        <p class="seo-sample-explain">Discovery must combine tooling and business input to avoid missing dependencies and ownership constraints.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A global enterprise is moving several data center applications to AWS after a portfolio review. Current plans show risk around workload dependencies and constraints. Which decision should be made before the next migration wave?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use IAM password policy as the authoritative identity provider for federated users</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Build a migration business case that includes infrastructure savings, licensing effects, operational changes, migration cost, risk reduction, and modernization value</li>
+            <li class="seo-sample-answer">C. Use AWS Budgets alarms only for total account spend, never per-service or per-tag</li>
+            <li class="seo-sample-answer">D. Use AWS GuardDuty findings without routing them to Security Hub or EventBridge</li>
+        </ul>
+        <p class="seo-sample-explain">The business case should compare total value and risk rather than just infrastructure replacement cost.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A retail organization is migrating an order-processing platform before a seasonal peak. Current plans show risk around migration assessment and readiness. Which decision should be made before the next migration wave?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Disable AWS Shield Standard to reduce baseline latency</li>
+            <li class="seo-sample-answer">B. Use AWS Backup without vault lock to satisfy ransomware-resistant retention</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Retain or defer workloads when dependencies, regulations, or business timing make immediate migration higher risk than value</li>
+            <li class="seo-sample-answer">D. Use Amazon Cognito identity pools as a replacement for AWS Organizations SCPs</li>
+        </ul>
+        <p class="seo-sample-explain">Not every workload should move in the first wave; retained workloads still need a documented rationale.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A SaaS vendor is modernizing a monolithic application into independently deployable services. The target AWS architecture must address application portfolio discovery while reducing migration risk. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Direct Connect public VIFs to reach private VPC subnets during migration</li>
+            <li class="seo-sample-answer">B. Treat AWS Organizations consolidated billing as a substitute for SCPs</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Classify each workload by an appropriate migration strategy such as rehost, replatform, refactor, repurchase, retire, retain, or relocate</li>
+            <li class="seo-sample-answer">D. Use simple scaling policies with cool-downs longer than the spike duration for traffic bursts</li>
+        </ul>
+        <p class="seo-sample-explain">The migration strategy should fit the workload&#39;s constraints, value, and modernization opportunity.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A manufacturing company is moving plant applications to AWS while some factory systems remain on premises. Leadership wants a modernization approach that is measurable and low risk for migration strategies. Which action is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use AWS DataSync to provide live SQL replication between two RDS Aurora clusters</li>
+            <li class="seo-sample-answer">B. Use Amazon DynamoDB for relational workloads requiring multi-table joins and complex transactions</li>
+            <li class="seo-sample-answer">C. Use AWS Control Tower without enrolling existing accounts to skip baseline controls</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Build a migration business case that includes infrastructure savings, licensing effects, operational changes, migration cost, risk reduction, and modernization value</li>
+        </ul>
+        <p class="seo-sample-explain">The business case should compare total value and risk rather than just infrastructure replacement cost.</p>
+      </details>
       <h2>Other SAP-C02 Domains</h2>
       <ul>
           <li><a href="/aws-solutions-architect-professional/design-solutions-for-organizational-complexity/">1.0 Design Solutions for Organizational Complexity</a></li>

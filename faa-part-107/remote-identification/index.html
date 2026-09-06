@@ -188,6 +188,14 @@
         },
         {
           "@type": "Question",
+          "name": "A community-based organization that manages a model aircraft flying field wants its members to continue flying older sUAS without Remote ID capability. The organization plans to apply to the FAA for designation as a FRIA. Under 14 CFR Part 89, which entities are eligible to apply for FRIA designation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Community-based organizations recognized by the FAA and educational institutions."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "A remote pilot operating a Standard Remote ID sUAS wants to understand precisely when the Remote ID broadcast must be active. Under 14 CFR Part 89, from what point to what point must the Remote ID broadcast be continuously transmitted?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -196,10 +204,10 @@
         },
         {
           "@type": "Question",
-          "name": "A remote pilot owns an older sUAS that does not have built-in Standard Remote ID capability. The pilot wants to continue operating it outside of a FRIA. Under 14 CFR Part 89, what hardware solution allows an existing sUAS without built-in Remote ID to comply with Remote ID requirements?",
+          "name": "A university has received FAA FRIA designation for its drone research campus. Students wish to fly older non-Remote-ID-equipped research aircraft within the FRIA boundaries. Under 14 CFR Part 89, what altitude constraint applies to sUAS operating within an FAA-Recognized Identification Area?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A Remote ID broadcast module, a separate device attached to the sUAS that broadcasts the required Remote ID messages during flight."
+            "text": "Operations within a FRIA must remain at or below 400 ft AGL above the ground within the FRIA boundary."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>9 exam-style questions</strong> covering <strong>3% of the Part 107 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/faa-part-107/">FAA Part 107 / 14 CFR Part 107 practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A remote pilot is reviewing the broadcast requirements under 14 CFR Part 89 to ensure their Standard Remote ID sUAS is transmitting the correct information during flight. Which set of data elements must a Standard Remote ID sUAS broadcast throughout its operation?</h3>
-        <p><strong>Answer:</strong> The UAS identity (serial number or session ID), latitude and longitude of the UA and control station, altitude of both, velocity, and a timestamp</p>
-        <p>Under 14 CFR 89.305, a Standard Remote ID UAS must broadcast the UAS&#39;s unique identifier, the latitude and longitude and altitude of both the UA and the control station, the velocity of the UA, and a time mark, among other required elements.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A remote pilot operating a Standard Remote ID sUAS wants to understand precisely when the Remote ID broadcast must be active. Under 14 CFR Part 89, from what point to what point must the Remote ID broadcast be continuously transmitted?</h3>
-        <p><strong>Answer:</strong> From the moment the sUAS becomes airborne until it is no longer airborne, broadcasting throughout the entire flight</p>
-        <p>Under 14 CFR 89.315, a Standard Remote ID UAS must broadcast the required Remote ID message elements from takeoff until the aircraft is no longer airborne, throughout the entire flight operation.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A remote pilot owns an older sUAS that does not have built-in Standard Remote ID capability. The pilot wants to continue operating it outside of a FRIA. Under 14 CFR Part 89, what hardware solution allows an existing sUAS without built-in Remote ID to comply with Remote ID requirements?</h3>
-        <p><strong>Answer:</strong> A Remote ID broadcast module, a separate device attached to the sUAS that broadcasts the required Remote ID messages during flight</p>
-        <p>Under 14 CFR Part 89 Subpart F, a Remote ID broadcast module is an FAA-accepted device that can be attached to a non-compliant sUAS to transmit the required Remote ID messages, allowing the aircraft to operate outside a FRIA.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A remote pilot is reviewing the broadcast requirements under 14 CFR Part 89 to ensure their Standard Remote ID sUAS is transmitting the correct information during flight. Which set of data elements must a Standard Remote ID sUAS broadcast throughout its operation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only the UAS serial number and the geographic coordinates of the control station at one-second intervals</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The UAS identity (serial number or session ID), latitude and longitude of the UA and control station, altitude of both, velocity, and a timestamp</li>
+            <li class="seo-sample-answer">C. Only the operator&#39;s FAA-issued registration number and the aircraft&#39;s current groundspeed and heading</li>
+            <li class="seo-sample-answer">D. The aircraft&#39;s make, model, maximum takeoff weight, and the operator&#39;s Part 107 certificate number</li>
+        </ul>
+        <p class="seo-sample-explain">Under 14 CFR 89.305, a Standard Remote ID UAS must broadcast the UAS&#39;s unique identifier, the latitude and longitude and altitude of both the UA and the control station, the velocity of the UA, and a time mark, among other required elements.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A community-based organization that manages a model aircraft flying field wants its members to continue flying older sUAS without Remote ID capability. The organization plans to apply to the FAA for designation as a FRIA. Under 14 CFR Part 89, which entities are eligible to apply for FRIA designation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only individual Part 107 remote pilots who own the property where the flying site is located</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Community-based organizations recognized by the FAA and educational institutions</li>
+            <li class="seo-sample-answer">C. Any registered sUAS owner who submits an application through the FAA DroneZone portal</li>
+            <li class="seo-sample-answer">D. Only local governments and federal agencies with jurisdiction over the proposed FRIA boundaries</li>
+        </ul>
+        <p class="seo-sample-explain">Under 14 CFR 89.210, only FAA-recognized community-based organizations (such as the Academy of Model Aeronautics) and educational institutions may apply for FRIA designation.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot operating a Standard Remote ID sUAS wants to understand precisely when the Remote ID broadcast must be active. Under 14 CFR Part 89, from what point to what point must the Remote ID broadcast be continuously transmitted?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. From the moment the aircraft is powered on until it is powered off, including any time spent on the ground between flights</li>
+            <li class="seo-sample-answer">B. Only during portions of the flight when the sUAS is operating within controlled airspace where ATC monitoring is required</li>
+            <li class="seo-sample-answer">C. From takeoff until the sUAS lands and comes to a complete stop at the conclusion of the operation</li>
+            <li class="seo-sample-answer seo-sample-correct">D. From the moment the sUAS becomes airborne until it is no longer airborne, broadcasting throughout the entire flight</li>
+        </ul>
+        <p class="seo-sample-explain">Under 14 CFR 89.315, a Standard Remote ID UAS must broadcast the required Remote ID message elements from takeoff until the aircraft is no longer airborne, throughout the entire flight operation.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A university has received FAA FRIA designation for its drone research campus. Students wish to fly older non-Remote-ID-equipped research aircraft within the FRIA boundaries. Under 14 CFR Part 89, what altitude constraint applies to sUAS operating within an FAA-Recognized Identification Area?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. No altitude restriction applies within a FRIA; aircraft may fly to any altitude permitted by other applicable FAA regulations</li>
+            <li class="seo-sample-answer">B. Operations within a FRIA must remain at or below 400 ft AGL above the FRIA boundary perimeter line</li>
+            <li class="seo-sample-answer">C. Operations within a FRIA are limited to 200 ft AGL to ensure non-compliant aircraft remain identifiable by ground observers</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Operations within a FRIA must remain at or below 400 ft AGL above the ground within the FRIA boundary</li>
+        </ul>
+        <p class="seo-sample-explain">Under 14 CFR 89.205, sUAS operating within a FRIA without Remote ID compliance must remain within the lateral boundaries of the FRIA and at or below 400 ft AGL above the ground within the FRIA.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot attaches an FAA-accepted Remote ID broadcast module to a non-compliant sUAS before flight. During a long mapping mission, battery management is a concern and the pilot considers temporarily powering off the module to extend the sUAS battery life. Under Part 89, may the pilot power down the Remote ID broadcast module during flight?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Yes, the module may be powered off for segments of the flight that occur entirely within Class G airspace below 400 ft AGL</li>
+            <li class="seo-sample-answer">B. Yes, if a visual observer is positioned at the control station to maintain manual situational awareness during the non-broadcasting segment</li>
+            <li class="seo-sample-answer seo-sample-correct">C. No, the broadcast module must remain operational and transmitting throughout the entire duration of the flight</li>
+            <li class="seo-sample-answer">D. Yes, but only during the outbound leg of a round-trip flight when the sUAS is traveling away from populated areas</li>
+        </ul>
+        <p class="seo-sample-explain">Under 14 CFR Part 89, a Remote ID broadcast module must broadcast the required message elements throughout the entire flight; powering it down mid-flight eliminates Remote ID compliance and is not authorized.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot owns an older sUAS that does not have built-in Standard Remote ID capability. The pilot wants to continue operating it outside of a FRIA. Under 14 CFR Part 89, what hardware solution allows an existing sUAS without built-in Remote ID to comply with Remote ID requirements?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A third-party GPS logger that records flight telemetry and uploads the data to an FAA server within 24 hours of each flight</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A Remote ID broadcast module, a separate device attached to the sUAS that broadcasts the required Remote ID messages during flight</li>
+            <li class="seo-sample-answer">C. An ADS-B Out transponder installed on the sUAS, which provides equivalent position broadcast capability acceptable under Part 89</li>
+            <li class="seo-sample-answer">D. A subscription to an FAA-approved Network Remote ID service that receives telemetry via cellular uplink during the operation</li>
+        </ul>
+        <p class="seo-sample-explain">Under 14 CFR Part 89 Subpart F, a Remote ID broadcast module is an FAA-accepted device that can be attached to a non-compliant sUAS to transmit the required Remote ID messages, allowing the aircraft to operate outside a FRIA.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During a commercial sUAS mapping flight, a remote pilot&#39;s Standard Remote ID broadcast system malfunctions and stops transmitting. The pilot is currently operating outside any FRIA. Under 14 CFR Part 89, what is the correct course of action when Remote ID broadcast capability is lost during flight?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Continue the operation at reduced speed and notify the FAA of the malfunction within 24 hours of landing</li>
+            <li class="seo-sample-answer">B. Immediately maneuver the sUAS to a FRIA and complete the remaining mission from within that area</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Land the sUAS as soon as practicable; continuing to operate without Remote ID broadcast outside a FRIA is not authorized</li>
+            <li class="seo-sample-answer">D. Reduce altitude to 100 ft AGL and proceed directly to the home point; the reduced altitude restores technical compliance</li>
+        </ul>
+        <p class="seo-sample-explain">Under 14 CFR Part 89, sUAS operating outside a FRIA must broadcast Remote ID throughout the flight; if the broadcast capability is lost, the operation cannot continue legally, and the remote pilot must land the aircraft as soon as practicable.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A law enforcement officer approaches a remote pilot during an sUAS operation and asks to inspect the aircraft and verify Remote ID compliance. Under 14 CFR Part 107 and Part 89, which statement accurately describes the remote pilot&#39;s obligation in this situation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. The remote pilot must immediately land the aircraft to allow inspection and present their remote pilot certificate upon request</li>
+            <li class="seo-sample-answer">B. The remote pilot may continue the flight uninterrupted and schedule a post-flight meeting with the officer at their earliest convenience</li>
+            <li class="seo-sample-answer">C. The remote pilot must verbally confirm Remote ID compliance but is not required to present the physical aircraft or any documents</li>
+            <li class="seo-sample-answer">D. The remote pilot has no obligation to cooperate with law enforcement officers who are not FAA aviation safety inspectors</li>
+        </ul>
+        <p class="seo-sample-explain">Under 14 CFR 107.7, a remote pilot must present their remote pilot certificate for inspection upon request by an FAA representative, a federal, state, or local law enforcement officer, or any authorized representative; terminating the flight for inspection is the required response.</p>
+      </details>
       <h2>Other Part 107 Domains</h2>
       <ul>
           <li><a href="/faa-part-107/regulations-core/">1.0 Regulations: Core</a></li>

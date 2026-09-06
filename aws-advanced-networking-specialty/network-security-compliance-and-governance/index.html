@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Private subnets need internet access, but all outbound traffic must be inspected and logged. What should be used?",
+          "name": "A gaming service uses UDP on custom ports and is exposed through public endpoints. The team needs DDoS protection beyond web-layer rules. What should be enabled?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Centralized egress through AWS Network Firewall or proxy appliances with route-table steering."
+            "text": "AWS Shield Advanced with appropriate protected resources and response runbooks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A compliance rule requires TLS and approved ciphers for inbound HTTPS. Which setting should be maintained?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Load balancer listener TLS security policies and ACM certificates that meet the compliance baseline."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>144 exam-style questions</strong> covering <strong>24% of the ANS-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-advanced-networking-specialty/">AWS Certified Advanced Networking Specialty practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A public application behind an ALB receives HTTP floods and SQL injection attempts. Which control should be placed at the edge or load balancer path?</h3>
-        <p><strong>Answer:</strong> AWS WAF with managed rules, rate-based rules, and logging for the web ACL</p>
-        <p>AWS WAF can inspect HTTP requests, block common web exploits, rate-limit abusive clients, and provide rule-level logs.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A public API needs throttling and request validation before traffic reaches private services. Which service combination is appropriate?</h3>
-        <p><strong>Answer:</strong> Amazon API Gateway with authorizers, throttling, AWS WAF, and private integration as needed</p>
-        <p>API Gateway and AWS WAF can enforce web request controls while keeping backend services private.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Private subnets need internet access, but all outbound traffic must be inspected and logged. What should be used?</h3>
-        <p><strong>Answer:</strong> Centralized egress through AWS Network Firewall or proxy appliances with route-table steering</p>
-        <p>Outbound filtering requires traffic to pass through an inspection layer before internet egress.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A public application behind an ALB receives HTTP floods and SQL injection attempts. Which control should be placed at the edge or load balancer path?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. AWS WAF with managed rules, rate-based rules, and logging for the web ACL</li>
+            <li class="seo-sample-answer">B. S3 Lifecycle expiration for access logs</li>
+            <li class="seo-sample-answer">C. VPC peering between the internet and the application VPC</li>
+            <li class="seo-sample-answer">D. An IAM password policy for application users only</li>
+        </ul>
+        <p class="seo-sample-explain">AWS WAF can inspect HTTP requests, block common web exploits, rate-limit abusive clients, and provide rule-level logs.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A public API needs throttling and request validation before traffic reaches private services. Which service combination is appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Amazon API Gateway with authorizers, throttling, AWS WAF, and private integration as needed</li>
+            <li class="seo-sample-answer">B. An ALB target group stickiness setting</li>
+            <li class="seo-sample-answer">C. Security group egress rules on database instances only</li>
+            <li class="seo-sample-answer">D. A Route 53 private hosted zone for the public hostname</li>
+        </ul>
+        <p class="seo-sample-explain">API Gateway and AWS WAF can enforce web request controls while keeping backend services private.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A gaming service uses UDP on custom ports and is exposed through public endpoints. The team needs DDoS protection beyond web-layer rules. What should be enabled?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Transit Gateway route propagation without inspection</li>
+            <li class="seo-sample-answer seo-sample-correct">B. AWS Shield Advanced with appropriate protected resources and response runbooks</li>
+            <li class="seo-sample-answer">C. An ALB target group stickiness setting</li>
+            <li class="seo-sample-answer">D. Security group egress rules on database instances only</li>
+        </ul>
+        <p class="seo-sample-explain">Shield Advanced adds enhanced DDoS detection, mitigation support, and operational protections for eligible public resources.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A compliance rule requires TLS and approved ciphers for inbound HTTPS. Which setting should be maintained?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. NAT gateway routing for inbound clients</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Load balancer listener TLS security policies and ACM certificates that meet the compliance baseline</li>
+            <li class="seo-sample-answer">C. S3 Lifecycle expiration for access logs</li>
+            <li class="seo-sample-answer">D. VPC peering between the internet and the application VPC</li>
+        </ul>
+        <p class="seo-sample-explain">Listener security policies and certificates determine the inbound TLS versions, ciphers, and server identity.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload should access only approved external domains over HTTP and HTTPS. What design supports this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. S3 object lock on firewall logs only</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Egress proxy or firewall policy with domain-aware controls and logging</li>
+            <li class="seo-sample-answer">C. VPC peering to an external SaaS provider</li>
+            <li class="seo-sample-answer">D. A public hosted zone with lower TTL values</li>
+        </ul>
+        <p class="seo-sample-explain">Domain-aware egress controls can restrict destinations while providing evidence for review.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Inbound internet traffic must pass through centralized inspection before reaching application VPCs. What architecture fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A Route 53 private hosted zone for the public hostname</li>
+            <li class="seo-sample-answer">B. NAT gateway routing for inbound clients</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Ingress routing through a perimeter VPC using AWS Network Firewall or Gateway Load Balancer appliances</li>
+            <li class="seo-sample-answer">D. S3 Lifecycle expiration for access logs</li>
+        </ul>
+        <p class="seo-sample-explain">A perimeter inspection layer can enforce policy before traffic reaches application subnets.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A network firewall must inspect inbound traffic before it reaches a three-tier application. What must route tables enforce?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. An IAM password policy for application users only</li>
+            <li class="seo-sample-answer">B. Transit Gateway route propagation without inspection</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Routes from ingress subnets to inspection endpoints before application subnet targets</li>
+            <li class="seo-sample-answer">D. An ALB target group stickiness setting</li>
+        </ul>
+        <p class="seo-sample-explain">Inspection is effective only when route tables make the firewall part of the inbound traffic path.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An internet-facing ALB should not be reachable directly except through CloudFront and AWS WAF. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. VPC peering between the internet and the application VPC</li>
+            <li class="seo-sample-answer">B. An IAM password policy for application users only</li>
+            <li class="seo-sample-answer">C. Transit Gateway route propagation without inspection</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Origin access controls such as security group restrictions, custom headers, or AWS-managed prefix lists as applicable</li>
+        </ul>
+        <p class="seo-sample-explain">Direct origin access must be constrained so clients cannot bypass edge inspection and filtering controls.</p>
+      </details>
       <h2>Other ANS-C01 Domains</h2>
       <ul>
           <li><a href="/aws-advanced-networking-specialty/network-design/">1.0 Network Design</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which cloud deployment model provisions computing resources for the exclusive use of a single organization, providing the highest degree of control and isolation from other cloud tenants?",
+          "name": "A company's IT architecture includes web servers, application servers, a database server, end-user workstations, and network switches. An IS auditor is evaluating which components require the most rigorous access controls to protect the integrity and confidentiality of financial data. Which component should receive the HIGHEST priority for access restriction?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Private cloud, because the infrastructure is provisioned exclusively for one organization and is not shared with other tenants, whether managed on-premises or by a third party."
+            "text": "The database server, because it stores the actual financial data and therefore represents the highest concentration of data confidentiality and integrity risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A software development firm uses a cloud environment that provides a pre-configured development platform including programming language runtimes, databases, testing frameworks, and deployment pipelines. The firm's developers write and deploy application code without provisioning or managing servers. Which cloud service model BEST describes this arrangement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Platform as a Service (PaaS), because the cloud provider manages the underlying infrastructure and platform components while the firm focuses on writing and deploying application code."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>112 exam-style questions</strong> covering <strong>37% of the ISC exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/cpa-isc/">CPA Information Systems and Controls (ISC) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which of the following BEST describes the role of network infrastructure within an organization&#39;s IT architecture?</h3>
-        <p><strong>Answer:</strong> Network infrastructure encompasses the hardware and software components, including routers, switches, firewalls, and cabling, that enable communication and data transfer between devices and systems within the organization</p>
-        <p>Network infrastructure is the foundational communications layer of IT architecture, encompassing routers (directing traffic between networks), switches (connecting devices within a network), firewalls (controlling traffic flow based on security rules), cabling/wireless systems (physical/wireless transmission media), and supporting software and protocols. Together, these components enable all data communication between servers, end-user devices, cloud resources, and external networks. Understanding network infrastructure is essential for evaluating IT general controls, system availability, and cybersecurity posture.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A company contracts with a cloud vendor to use the vendor&#39;s servers, storage, and networking equipment, but the company installs and manages its own operating systems, middleware, and applications. Which cloud computing service model does this arrangement BEST describe?</h3>
-        <p><strong>Answer:</strong> Infrastructure as a Service (IaaS), because the vendor provides the underlying hardware infrastructure while the company manages the software stack above it</p>
-        <p>Infrastructure as a Service (IaaS) provides virtualized computing resources, servers (compute), storage, and networking, as a service. The vendor manages the physical hardware and virtualization layer. The customer is responsible for everything above: installing the OS, configuring middleware, deploying applications, and managing data. This model provides the most customer control and is used when organizations want to &#39;lift and shift&#39; their existing on-premises systems to the cloud while maintaining control over their software configurations.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which cloud deployment model provisions computing resources for the exclusive use of a single organization, providing the highest degree of control and isolation from other cloud tenants?</h3>
-        <p><strong>Answer:</strong> Private cloud, because the infrastructure is provisioned exclusively for one organization and is not shared with other tenants, whether managed on-premises or by a third party</p>
-        <p>A private cloud provisions all computing resources exclusively for one organization, no other tenants share the infrastructure. The organization gains: (1) Maximum control over configuration, security policies, and data residency; (2) Consistent performance without &#39;noisy neighbor&#39; effects; (3) Ability to meet strict regulatory requirements (certain government, defense, and financial sector requirements mandate private cloud or on-premises deployment). Private clouds can be located on-premises (managed by the organization) or in a dedicated off-premises facility (managed by a third-party provider but isolated for the single tenant).</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which of the following BEST describes the role of network infrastructure within an organization&#39;s IT architecture?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Network infrastructure encompasses the hardware and software components, including routers, switches, firewalls, and cabling, that enable communication and data transfer between devices and systems within the organization</li>
+            <li class="seo-sample-answer">B. Network infrastructure consists solely of end-user devices such as laptops and smartphones that employees use to access organizational data</li>
+            <li class="seo-sample-answer">C. Network infrastructure refers exclusively to the organization&#39;s internet service provider connection and has no internal components managed by the organization itself</li>
+            <li class="seo-sample-answer">D. Network infrastructure is limited to the organization&#39;s wireless access points and does not include wired components such as switches or routers</li>
+        </ul>
+        <p class="seo-sample-explain">Network infrastructure is the foundational communications layer of IT architecture, encompassing routers (directing traffic between networks), switches (connecting devices within a network), firewalls (controlling traffic flow based on security rules), cabling/wireless systems (physical/wireless transmission media), and supporting software and protocols. Together, these components enable all data communication between servers, end-user devices, cloud resources, and external networks. Understanding network infrastructure is essential for evaluating IT general controls, system availability, and cybersecurity posture.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company contracts with a cloud vendor to use the vendor&#39;s servers, storage, and networking equipment, but the company installs and manages its own operating systems, middleware, and applications. Which cloud computing service model does this arrangement BEST describe?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Software as a Service (SaaS), because the company is accessing software functionality provided by the vendor over the internet</li>
+            <li class="seo-sample-answer">B. Platform as a Service (PaaS), because the vendor provides a platform on which the company deploys its applications</li>
+            <li class="seo-sample-answer">C. Function as a Service (FaaS), because the company uses discrete computing functions hosted by the vendor without managing servers</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Infrastructure as a Service (IaaS), because the vendor provides the underlying hardware infrastructure while the company manages the software stack above it</li>
+        </ul>
+        <p class="seo-sample-explain">Infrastructure as a Service (IaaS) provides virtualized computing resources, servers (compute), storage, and networking, as a service. The vendor manages the physical hardware and virtualization layer. The customer is responsible for everything above: installing the OS, configuring middleware, deploying applications, and managing data. This model provides the most customer control and is used when organizations want to &#39;lift and shift&#39; their existing on-premises systems to the cloud while maintaining control over their software configurations.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company&#39;s IT architecture includes web servers, application servers, a database server, end-user workstations, and network switches. An IS auditor is evaluating which components require the most rigorous access controls to protect the integrity and confidentiality of financial data. Which component should receive the HIGHEST priority for access restriction?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. The database server, because it stores the actual financial data and therefore represents the highest concentration of data confidentiality and integrity risk</li>
+            <li class="seo-sample-answer">B. Network switches, because compromising a switch gives an attacker the ability to intercept all traffic traversing the network</li>
+            <li class="seo-sample-answer">C. End-user workstations, because employees with local access to their own devices represent the highest insider threat risk in all environments</li>
+            <li class="seo-sample-answer">D. Web servers, because they are the entry point for all internet traffic and therefore represent the greatest overall risk to the organization</li>
+        </ul>
+        <p class="seo-sample-explain">The database server contains the financial data itself, general ledger balances, transaction records, customer information, payroll data. Any unauthorized access, modification, or exfiltration directly affects data confidentiality, integrity, and availability. For an IS auditor evaluating IT general controls, the database server warrants the most stringent access controls: role-based access, privileged access management, database activity monitoring, and separation of duties between DBAs and end users.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A software development firm uses a cloud environment that provides a pre-configured development platform including programming language runtimes, databases, testing frameworks, and deployment pipelines. The firm&#39;s developers write and deploy application code without provisioning or managing servers. Which cloud service model BEST describes this arrangement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Infrastructure as a Service (IaaS), because the cloud provider is supplying computing resources that the development firm uses to build its application</li>
+            <li class="seo-sample-answer">B. Software as a Service (SaaS), because the cloud provider is delivering a complete software environment that enables the firm&#39;s application development work</li>
+            <li class="seo-sample-answer">C. Desktop as a Service (DaaS), because the developers access virtual development workstations provided and managed by the cloud vendor</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Platform as a Service (PaaS), because the cloud provider manages the underlying infrastructure and platform components while the firm focuses on writing and deploying application code</li>
+        </ul>
+        <p class="seo-sample-explain">Platform as a Service (PaaS) provides a managed development and deployment environment, including OS, language runtimes, databases, integration services, and deployment pipelines, so that developers can focus entirely on writing application code. Examples include AWS Elastic Beanstalk, Google App Engine, Microsoft Azure App Service, and Heroku. The provider manages all infrastructure and platform layers; the customer manages application code and data. This model maximizes developer productivity while eliminating infrastructure management overhead.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A federal government agency wants to use cloud services for non-classified workloads but is required by regulation to use infrastructure shared only with other federal agencies that meet FedRAMP compliance standards. Which cloud deployment model MOST directly meets this requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Public cloud with enhanced encryption, adding encryption to a public cloud deployment provides sufficient isolation to meet government sharing restrictions</li>
+            <li class="seo-sample-answer">B. Private cloud, the agency should deploy its own dedicated infrastructure to avoid any sharing with external parties</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Community cloud, cloud infrastructure shared exclusively among organizations with common regulatory requirements (in this case, federal agencies meeting FedRAMP standards)</li>
+            <li class="seo-sample-answer">D. Hybrid cloud, combining the agency&#39;s existing on-premises systems with a commercial public cloud creates the required isolation from non-government tenants</li>
+        </ul>
+        <p class="seo-sample-explain">A community cloud is infrastructure shared among organizations with common characteristics, regulatory requirements, or missions. In the federal government context, community clouds like AWS GovCloud or Microsoft Azure Government restrict tenancy to US government entities and contractors meeting FedRAMP requirements. This exactly matches the scenario: shared infrastructure, restricted to a defined community (federal agencies), meeting specific compliance standards. FedRAMP itself was designed to enable this community cloud model for government.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization is performing an IT risk assessment. The assessment team discovers that the company&#39;s operating system on its primary accounting server has not received security patches in 18 months. Which risk does this MOST directly create?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Vulnerability to exploits targeting known security weaknesses in the unpatched operating system, which could allow unauthorized access, privilege escalation, or malware installation on the accounting server</li>
+            <li class="seo-sample-answer">B. Availability risk only, unpatched systems may experience performance degradation and slowdowns that reduce processing speed for financial transactions</li>
+            <li class="seo-sample-answer">C. Compliance risk only, the primary consequence of an unpatched operating system is regulatory non-compliance with accounting standards such as GAAP</li>
+            <li class="seo-sample-answer">D. Data integrity risk only, unpatched operating systems corrupt financial data stored in application databases due to memory management errors in the OS kernel</li>
+        </ul>
+        <p class="seo-sample-explain">When an operating system goes 18 months without security patches, all vulnerabilities discovered and disclosed during that period remain unaddressed. Attackers can use publicly available exploit code targeting these known vulnerabilities to: gain unauthorized access to the accounting server, escalate privileges to administrator level, install malware or ransomware, exfiltrate financial data, or establish persistent backdoors. This is among the most common attack vectors in real-world breaches and represents a critical IT general control deficiency that would concern an IS auditor.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A mid-sized company uses cloud-based accounting software that employees access through a web browser. The vendor hosts all servers, manages the database, provides automatic updates, and charges a monthly per-user subscription fee. The company&#39;s IT department is not involved in any technical administration of the software. Which cloud service model applies, and what is the PRIMARY responsibility retained by the company?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. IaaS, the company retains responsibility for configuring the operating system and installing security patches on the cloud servers</li>
+            <li class="seo-sample-answer">B. PaaS, the company retains responsibility for deploying and maintaining the application code on the vendor&#39;s platform</li>
+            <li class="seo-sample-answer">C. SaaS, the company retains no responsibilities because the vendor manages all aspects of the system under a full-service agreement</li>
+            <li class="seo-sample-answer seo-sample-correct">D. SaaS, the company retains responsibility for managing user access, ensuring appropriate data is entered, and verifying that the output produced by the software is accurate and complete</li>
+        </ul>
+        <p class="seo-sample-explain">Software as a Service (SaaS) delivers a fully managed application over the internet. The vendor manages everything: infrastructure, OS, database, application code, security patches, and updates. Under the shared responsibility model for SaaS, the customer&#39;s retained responsibilities are: (1) Identity and access management, provisioning users, assigning appropriate roles, revoking access when employees leave; (2) Data quality, ensuring transactions are entered accurately and that the data processed represents the organization&#39;s actual activity; (3) Output verification, reviewing reports and financial statements produced by the software for reasonableness and accuracy; (4) Contractual and compliance requirements, ensuring the SaaS arrangement meets data residency, privacy, and audit rights requirements.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company&#39;s three-tier architecture places web servers in a public-facing DMZ, application servers in an internal zone, and a database server in a restricted zone. A penetration test reveals that the web server can directly query the database server on port 1433 (SQL Server) without passing through the application server. Which conclusion does this finding support, and what remediation is MOST appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. The three-tier architecture has been bypassed, direct web-to-database connectivity eliminates the application server&#39;s role as a security control layer; remediation requires firewall rules blocking direct web-to-database connections and routing all database queries through the application server tier</li>
+            <li class="seo-sample-answer">B. This is an acceptable architecture because the DMZ provides sufficient isolation; no remediation is needed since the web server is behind a firewall</li>
+            <li class="seo-sample-answer">C. The finding indicates the application server is misconfigured; the web server should always communicate directly with the database to reduce latency, and the application server tier should be removed</li>
+            <li class="seo-sample-answer">D. The finding only matters if the web server has been compromised; since the web server is not compromised, no remediation is necessary until an actual attack occurs</li>
+        </ul>
+        <p class="seo-sample-explain">Three-tier architecture separates presentation (web), logic (application), and data (database) layers specifically to contain the blast radius of a compromise and enforce separation of duties among tiers. The application server should be the only component authorized to query the database. A direct web-to-database connection means: (1) A compromised web server gives an attacker immediate SQL Server access; (2) The application server&#39;s input validation and business logic controls can be bypassed; (3) Database credentials may be stored in web tier configuration rather than safely in the application tier. Remediation: firewall rules explicitly denying direct TCP 1433 from the DMZ to the database zone, permitting only the application server&#39;s IP to reach the database on that port.</p>
+      </details>
       <h2>Other ISC Domains</h2>
       <ul>
           <li><a href="/cpa-isc/security-confidentiality-and-privacy/">2.0 Security, Confidentiality and Privacy</a></li>

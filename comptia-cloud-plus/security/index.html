@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "What does vulnerability assessment involve after vulnerabilities have been identified?",
+          "name": "A security team runs vulnerability scans on their cloud environment but misses a critical internet-facing API gateway because it was not included in the scan scope. What scanning scope practice would MOST directly prevent this gap?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Evaluating each identified vulnerability to determine its severity, exploitability, business impact, and risk level, enabling prioritized remediation decisions based on risk rather than volume."
+            "text": "Maintain a comprehensive cloud asset inventory (using cloud-native discovery tools or CSPM) and reconcile it against scan scope to ensure all internet-facing resources are included, particularly those accessible from outside the organization's perimeter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A cloud security team uses both authenticated and unauthenticated vulnerability scans. Which statement BEST explains why authenticated scanning provides more complete vulnerability identification?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Authenticated scans log into target systems with credentials, discovering installed software versions, configuration details, and local vulnerabilities that are only visible from inside the system."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>232 exam-style questions</strong> covering <strong>19% of the CV0-004 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-cloud-plus/">CompTIA Cloud+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What does scanning scope define in a cloud vulnerability management program?</h3>
-        <p><strong>Answer:</strong> The boundaries of what is included in vulnerability scans, which cloud resources, networks, applications, and environments are assessed for vulnerabilities</p>
-        <p>Scanning scope establishes the boundaries of vulnerability assessment, which assets, environments, IP ranges, applications, and cloud services are included or excluded from scans. Without defined scope, critical assets may be missed or scans may violate boundaries. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What does vulnerability identification involve in a cloud security program?</h3>
-        <p><strong>Answer:</strong> Discovering and cataloging security weaknesses in cloud resources, including misconfigured services, unpatched software, weak credentials, and insecure network configurations, through automated scanning, manual review, and threat intelligence</p>
-        <p>Vulnerability identification discovers and catalogs security weaknesses, misconfigurations, outdated software, weak authentication, exposed services, creating the inventory of issues that must be assessed and remediated. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What does vulnerability assessment involve after vulnerabilities have been identified?</h3>
-        <p><strong>Answer:</strong> Evaluating each identified vulnerability to determine its severity, exploitability, business impact, and risk level, enabling prioritized remediation decisions based on risk rather than volume</p>
-        <p>Assessment evaluates each vulnerability&#39;s severity (CVSS score), exploitability (public exploits available?), business impact (what data or services are affected?), and contextual risk (is this internet-facing?), producing a prioritized remediation list that directs limited security resources to the most impactful threats first. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What does scanning scope define in a cloud vulnerability management program?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The speed at which vulnerability scans must complete</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The boundaries of what is included in vulnerability scans, which cloud resources, networks, applications, and environments are assessed for vulnerabilities</li>
+            <li class="seo-sample-answer">C. The number of security engineers required to review scan results</li>
+            <li class="seo-sample-answer">D. The frequency at which vulnerability reports are shared with management</li>
+        </ul>
+        <p class="seo-sample-explain">Scanning scope establishes the boundaries of vulnerability assessment, which assets, environments, IP ranges, applications, and cloud services are included or excluded from scans. Without defined scope, critical assets may be missed or scans may violate boundaries. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What does vulnerability identification involve in a cloud security program?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Physically inspecting cloud hardware for defects</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Discovering and cataloging security weaknesses in cloud resources, including misconfigured services, unpatched software, weak credentials, and insecure network configurations, through automated scanning, manual review, and threat intelligence</li>
+            <li class="seo-sample-answer">C. Identifying which engineers are responsible for each cloud resource</li>
+            <li class="seo-sample-answer">D. Determining the monthly cost of each cloud service</li>
+        </ul>
+        <p class="seo-sample-explain">Vulnerability identification discovers and catalogs security weaknesses, misconfigurations, outdated software, weak authentication, exposed services, creating the inventory of issues that must be assessed and remediated. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team runs vulnerability scans on their cloud environment but misses a critical internet-facing API gateway because it was not included in the scan scope. What scanning scope practice would MOST directly prevent this gap?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Run scans more frequently to increase the chance of discovering missed assets</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Maintain a comprehensive cloud asset inventory (using cloud-native discovery tools or CSPM) and reconcile it against scan scope to ensure all internet-facing resources are included, particularly those accessible from outside the organization&#39;s perimeter</li>
+            <li class="seo-sample-answer">C. Limit scanning to internal resources only to avoid disrupting external services</li>
+            <li class="seo-sample-answer">D. Scan only the assets that appear in the CMDB without cloud asset discovery</li>
+        </ul>
+        <p class="seo-sample-explain">Cloud asset discovery tools automatically enumerate all cloud resources including dynamically provisioned ones. Reconciling discovered assets against scan scope ensures internet-facing resources are never inadvertently excluded. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A cloud security team uses both authenticated and unauthenticated vulnerability scans. Which statement BEST explains why authenticated scanning provides more complete vulnerability identification?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Authenticated scans run faster than unauthenticated scans</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Authenticated scans log into target systems with credentials, discovering installed software versions, configuration details, and local vulnerabilities that are only visible from inside the system. Unauthenticated scans only see externally exposed services, missing many internal vulnerabilities that authenticated scans detect</li>
+            <li class="seo-sample-answer">C. Authenticated scans only check network-level vulnerabilities</li>
+            <li class="seo-sample-answer">D. Unauthenticated scans provide more accurate results than authenticated scans</li>
+        </ul>
+        <p class="seo-sample-explain">Authenticated scanning accesses the system internals with credentials, inspecting installed packages, running services, registry settings, and configuration files. This discovers vulnerabilities that are invisible from outside the system, providing significantly more complete identification. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A vulnerability scanner reports 500 vulnerabilities. 50 have CVSS scores above 9.0, 150 score 7.0-8.9, and 300 score below 7.0. A CVE with score 8.5 has a public exploit and affects an internet-facing payment processing server. How should assessment rank this vulnerability relative to others with higher CVSS scores but no public exploits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Always prioritize by CVSS score alone regardless of exploit availability or system criticality</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The CVE 8.5 with a public exploit on an internet-facing payment server should be prioritized above many 9.0+ vulnerabilities without public exploits, exploit availability and system criticality are critical contextual factors that can outweigh raw CVSS score in real-world risk prioritization</li>
+            <li class="seo-sample-answer">C. CVSS score 8.5 is too low to prioritize before any score 9.0+ vulnerabilities</li>
+            <li class="seo-sample-answer">D. Vulnerabilities on payment servers are automatically handled by PCI DSS and do not require manual assessment</li>
+        </ul>
+        <p class="seo-sample-explain">Risk-based assessment factors in exploit availability (active exploitation possible immediately with public exploit), network exposure (internet-facing), and business impact (payment processing). These factors can elevate a lower CVSS score vulnerability above higher-score theoretical vulnerabilities with no known exploits. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A cloud team plans to conduct penetration testing against their production environment. Before beginning, they must define scanning scope. Which elements are MOST critical to include in the scope definition?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only the IP addresses of servers that have previously experienced incidents</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Specific IP ranges, domain names, cloud resource IDs, and services in scope; explicit exclusions (production databases to avoid data corruption, third-party services outside testing authority); testing windows; notification contacts; and cloud provider penetration testing authorization if required</li>
+            <li class="seo-sample-answer">C. The names of engineers who will review the penetration test report</li>
+            <li class="seo-sample-answer">D. The budget allocated for penetration testing services</li>
+        </ul>
+        <p class="seo-sample-explain">Penetration test scope must precisely define included and excluded targets (to prevent unintended system disruption or testing of systems without authorization), testing windows (to coordinate with operations), notification contacts (for immediate response if critical issues found), and cloud provider authorization (major providers require pre-approval for penetration testing). This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A vulnerability management program scans on-premises systems thoroughly but only scans cloud resources quarterly due to perceived complexity. A cloud-hosted application is compromised through an unscanned vulnerability. What scanning scope principle was violated?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Cloud resources are inherently more secure than on-premises and require less frequent scanning</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Scanning frequency and coverage must be consistent across all environments, cloud resources face the same (or greater) threat exposure as on-premises due to internet accessibility, and must be included in the same continuous or frequent scanning cadence as traditional infrastructure</li>
+            <li class="seo-sample-answer">C. Cloud providers are responsible for vulnerability scanning all customer cloud resources</li>
+            <li class="seo-sample-answer">D. Quarterly scanning is sufficient for any environment that uses managed cloud services</li>
+        </ul>
+        <p class="seo-sample-explain">Vulnerability scanning scope must treat cloud resources with the same rigor as on-premises, attackers do not distinguish between environments. Quarterly cloud scanning versus continuous on-premises scanning creates a systematic coverage gap that attackers exploit. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A CSPM (Cloud Security Posture Management) tool identifies 847 misconfigurations across a cloud environment. 312 are labeled as critical, 285 as high, 150 as medium, and 100 as low. A security analyst must decide how to approach identification reporting to leadership. Which identification reporting approach provides the MOST actionable intelligence?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Report the total count of 847 misconfigurations without prioritization</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Present findings segmented by severity with business context, highlighting critical findings by affected business service, exploitation likelihood, and potential impact, rather than raw counts, enabling leadership to understand business risk and prioritize resource allocation accordingly</li>
+            <li class="seo-sample-answer">C. Report only the 100 low-severity findings to avoid alarming leadership</li>
+            <li class="seo-sample-answer">D. Wait until all 847 vulnerabilities are remediated before reporting anything</li>
+        </ul>
+        <p class="seo-sample-explain">Severity-segmented reporting with business impact context transforms vulnerability identification data into actionable intelligence, leadership understands which vulnerabilities pose the greatest business risk and can prioritize remediation investment accordingly. This is the correct answer.</p>
+      </details>
       <h2>Other CV0-004 Domains</h2>
       <ul>
           <li><a href="/comptia-cloud-plus/cloud-architecture/">1.0 Cloud Architecture</a></li>

@@ -194,6 +194,27 @@ function trimToFirstSentence(text, maxLen = 280) {
   return out;
 }
 
+// G2: 8-question mixed-difficulty sample instead of 3 easy-only, so domain pages carry
+// real, varied content beyond the two identical filler sentences every page used to share.
+// Falls back gracefully (fills from whatever's left) when a domain lacks a full bucket.
+function pickMixedSample(questions, target = 8) {
+  const buckets = { easy: 2, medium: 3, 'medium-hard': 2, hard: 1 };
+  const byDiff = {};
+  for (const q of questions) (byDiff[q.difficulty] ||= []).push(q);
+  const used = new Set();
+  const picked = [];
+  for (const [diff, n] of Object.entries(buckets)) {
+    for (const q of (byDiff[diff] || []).slice(0, n)) { picked.push(q); used.add(q.id); }
+  }
+  if (picked.length < target) {
+    for (const q of questions) {
+      if (picked.length >= target) break;
+      if (!used.has(q.id)) { picked.push(q); used.add(q.id); }
+    }
+  }
+  return picked.slice(0, Math.min(target, questions.length));
+}
+
 function pickFaqQuestions(cert, max = 12) {
   // Prefer hand-written, search-intent FAQs (real "People also ask" style questions)
   // when the cert defines them. These render visibly AND seed the FAQPage schema.
@@ -714,9 +735,8 @@ function buildDomainHtml(cert, domain, questions) {
     ? clipText(`Test yourself on ${cert.code} ${domain.name}${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. ${count} free questions with instant feedback and explanations. No signup, no email needed.`.trim().replace(/\s+/g, ' '), 155)
     : clipText(`${cert.code} ${domain.name} practice quiz, coming soon${domain.weight ? ` (${domain.weight}% of the exam)` : ''}. Test yourself with instant feedback once it's live. Part of the ${shortName} practice test.`.trim().replace(/\s+/g, ' '), 155);
 
-  // Pick up to 3 sample questions (easy first) for static content
-  const easy = questions.filter(q => q.difficulty === 'easy');
-  const sample = (easy.length >= 3 ? easy : questions).slice(0, 3);
+  // Up to 8 sample questions, mixed difficulty, for static content (G2).
+  const sample = pickMixedSample(questions, 8);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -757,7 +777,9 @@ function buildDomainHtml(cert, domain, questions) {
       },
       ...(sample.length ? [{
         '@type': 'FAQPage',
-        'mainEntity': sample.map(q => {
+        // Google truncates long FAQ schema anyway: keep this to a small subset even though
+        // the visible page now shows up to 8 sample questions (G2).
+        'mainEntity': sample.slice(0, 4).map(q => {
           const correct = (q.answers || []).find(a => a.id === q.correct);
           const correctText = correct?.text || '';
           const explanation = q.explanations?.[q.correct] || '';
@@ -780,14 +802,18 @@ function buildDomainHtml(cert, domain, questions) {
   }).join('\n          ');
 
   const sampleHtml = sample.map(q => {
-    const correct = (q.answers || []).find(a => a.id === q.correct);
-    const correctText = correct?.text || '';
+    const answersHtml = (q.answers || []).map(a => {
+      const isCorrect = a.id === q.correct;
+      return `<li class="seo-sample-answer${isCorrect ? ' seo-sample-correct' : ''}">${a.id.toUpperCase()}. ${htmlEscape(a.text)}</li>`;
+    }).join('\n            ');
     const explanation = q.explanations?.[q.correct] || '';
-    return `<article class="seo-sample-q">
-        <h3>${htmlEscape(q.text)}</h3>
-        ${correctText ? `<p><strong>Answer:</strong> ${htmlEscape(correctText)}</p>` : ''}
-        ${explanation ? `<p>${htmlEscape(explanation)}</p>` : ''}
-      </article>`;
+    return `<details class="seo-sample-q">
+        <summary>${htmlEscape(q.text)}</summary>
+        <ul class="seo-sample-answers">
+            ${answersHtml}
+        </ul>
+        ${explanation ? `<p class="seo-sample-explain">${htmlEscape(explanation)}</p>` : ''}
+      </details>`;
   }).join('\n      ');
 
   return `<!DOCTYPE html>

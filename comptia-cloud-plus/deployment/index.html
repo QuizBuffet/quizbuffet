@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "What does on-premises infrastructure refer to in a cloud context?",
+          "name": "A startup needs to launch a web application quickly with no upfront infrastructure investment, paying only for what they use. Which cloud deployment model BEST meets this need?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Computing infrastructure physically located and operated within an organization's own facilities, managed and maintained by the organization's own IT staff."
+            "text": "Public cloud offering immediate access to infrastructure with pay-as-you-go billing and no upfront hardware costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A government agency requires complete control over their infrastructure, strict data isolation from other organizations, and the ability to run classified workloads. Which cloud deployment model is MOST appropriate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Private cloud providing dedicated infrastructure with complete isolation and full organizational control."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>208 exam-style questions</strong> covering <strong>19% of the CV0-004 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-cloud-plus/">CompTIA Cloud+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which of the following BEST describes a public cloud deployment model?</h3>
-        <p><strong>Answer:</strong> Cloud infrastructure owned and operated by a third-party provider, shared among multiple customers over the internet, with resources provisioned on demand</p>
-        <p>Public cloud is infrastructure owned and operated by providers like AWS, Azure, or GCP, shared among multiple customers (multi-tenancy) and accessed over the internet with resources available on demand. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What distinguishes a private cloud from a public cloud?</h3>
-        <p><strong>Answer:</strong> A private cloud is cloud infrastructure dedicated exclusively to a single organization, not shared with other tenants, providing greater control, customization, and isolation</p>
-        <p>Private cloud is defined by its single-tenant, dedicated nature, all infrastructure resources are reserved for and controlled by one organization, providing complete isolation from other customers. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What does on-premises infrastructure refer to in a cloud context?</h3>
-        <p><strong>Answer:</strong> Computing infrastructure physically located and operated within an organization&#39;s own facilities, managed and maintained by the organization&#39;s own IT staff</p>
-        <p>On-premises (on-prem) refers to computing infrastructure physically located in the organization&#39;s own data center or office facilities, purchased, owned, and operated by the organization&#39;s IT team. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which of the following BEST describes a public cloud deployment model?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Cloud infrastructure owned and operated exclusively by a single organization for their private use</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Cloud infrastructure owned and operated by a third-party provider, shared among multiple customers over the internet, with resources provisioned on demand</li>
+            <li class="seo-sample-answer">C. Cloud infrastructure shared only among organizations within the same industry sector</li>
+            <li class="seo-sample-answer">D. Cloud infrastructure hosted in an organization&#39;s own data center managed by a third party</li>
+        </ul>
+        <p class="seo-sample-explain">Public cloud is infrastructure owned and operated by providers like AWS, Azure, or GCP, shared among multiple customers (multi-tenancy) and accessed over the internet with resources available on demand. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What distinguishes a private cloud from a public cloud?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A private cloud is operated by a public cloud provider for exclusive use by a single customer</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A private cloud is cloud infrastructure dedicated exclusively to a single organization, not shared with other tenants, providing greater control, customization, and isolation</li>
+            <li class="seo-sample-answer">C. A private cloud requires internet connectivity for all resource access</li>
+            <li class="seo-sample-answer">D. A private cloud charges customers per hour of resource usage like public cloud</li>
+        </ul>
+        <p class="seo-sample-explain">Private cloud is defined by its single-tenant, dedicated nature, all infrastructure resources are reserved for and controlled by one organization, providing complete isolation from other customers. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A startup needs to launch a web application quickly with no upfront infrastructure investment, paying only for what they use. Which cloud deployment model BEST meets this need?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Private cloud requiring significant upfront capital investment</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Public cloud offering immediate access to infrastructure with pay-as-you-go billing and no upfront hardware costs</li>
+            <li class="seo-sample-answer">C. Community cloud restricted to specific industry members</li>
+            <li class="seo-sample-answer">D. On-premises infrastructure purchased and installed in the startup&#39;s office</li>
+        </ul>
+        <p class="seo-sample-explain">Public cloud provides immediate infrastructure access with no hardware purchase, pay-as-you-go billing, and unlimited elasticity, ideal for startups needing fast time-to-market with minimal capital outlay. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A government agency requires complete control over their infrastructure, strict data isolation from other organizations, and the ability to run classified workloads. Which cloud deployment model is MOST appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Public cloud with encryption enabled on all storage</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Private cloud providing dedicated infrastructure with complete isolation and full organizational control</li>
+            <li class="seo-sample-answer">C. Community cloud shared with other government agencies</li>
+            <li class="seo-sample-answer">D. Hybrid cloud using a mix of public and private resources</li>
+        </ul>
+        <p class="seo-sample-explain">Private cloud provides the complete infrastructure dedication, physical isolation from other organizations, and full organizational control required for classified government workloads. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A financial institution keeps their core banking systems on-premises despite pressure to migrate to cloud. Which factor MOST commonly justifies retaining on-premises infrastructure for such systems?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. On-premises hardware is always faster than cloud infrastructure</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Regulatory compliance requirements, data sovereignty mandates, existing large capital investments, and latency-sensitive integration with other on-premises systems make cloud migration complex or non-compliant</li>
+            <li class="seo-sample-answer">C. Cloud providers do not offer financial services compliant infrastructure</li>
+            <li class="seo-sample-answer">D. On-premises systems cannot be integrated with cloud services</li>
+        </ul>
+        <p class="seo-sample-explain">Financial institutions face strict regulatory requirements about where data resides and how it is processed, significant existing capital investments in on-premises systems, and complex low-latency dependencies between systems that make wholesale migration challenging without impacting operations or compliance. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company evaluating public cloud deployment raises concerns about data sovereignty, specifically that their customer data must remain within their country&#39;s borders. How does this concern apply to public cloud?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Public cloud providers automatically keep all customer data within the customer&#39;s country regardless of configuration</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Public cloud data sovereignty requires careful region selection and configuration, data may be replicated globally by default, so customers must explicitly configure data residency controls and select compliant regions to meet legal requirements</li>
+            <li class="seo-sample-answer">C. Public cloud providers are legally exempt from data sovereignty regulations</li>
+            <li class="seo-sample-answer">D. Data sovereignty concerns only apply to private cloud deployments</li>
+        </ul>
+        <p class="seo-sample-explain">Public cloud data sovereignty compliance requires deliberately selecting regions within the required jurisdiction, disabling cross-region replication that could move data outside legal boundaries, and configuring any global services (CDNs, backups) to enforce residency constraints. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which of the following is a KEY trade-off of the public cloud model compared to private cloud?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Public cloud offers more customization and control over the underlying infrastructure than private cloud</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Public cloud provides greater elasticity and lower capital expenditure at the cost of less control over the underlying infrastructure, shared tenancy security considerations, and potential data residency limitations</li>
+            <li class="seo-sample-answer">C. Public cloud always has lower latency than private cloud for all workloads</li>
+            <li class="seo-sample-answer">D. Public cloud eliminates all security responsibilities from the customer</li>
+        </ul>
+        <p class="seo-sample-explain">Public cloud&#39;s elasticity and OpEx model come with trade-offs: customers share physical infrastructure with others (multi-tenancy), have limited control over the underlying hardware, and must carefully manage data residency, all addressed by the shared responsibility model. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company operates a private cloud using VMware on-premises. They want to extend it with cloud-like self-service provisioning, automated scaling, and a service catalog for internal teams. Which approach modernizes the private cloud without migrating to public cloud?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Migrate all workloads to AWS immediately</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Deploy a private cloud management platform such as OpenStack or VMware vRealize Automation to add self-service portals, automated provisioning, and orchestration on top of the existing infrastructure</li>
+            <li class="seo-sample-answer">C. Purchase additional physical servers to increase capacity</li>
+            <li class="seo-sample-answer">D. Convert all VMs to containers and deploy them to Docker Swarm</li>
+        </ul>
+        <p class="seo-sample-explain">Private cloud management platforms add cloud-like capabilities (self-service portals, automated provisioning, service catalogs, chargeback) on top of existing on-premises infrastructure, modernizing the private cloud experience without migrating to public cloud. This is the correct answer.</p>
+      </details>
       <h2>Other CV0-004 Domains</h2>
       <ul>
           <li><a href="/comptia-cloud-plus/cloud-architecture/">1.0 Cloud Architecture</a></li>

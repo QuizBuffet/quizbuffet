@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A CI/CD pipeline fails with: 'Error: Resource type `aws_s3_bucket_acl` not found in provider'. The Terraform configuration was written for an older AWS provider version. What type of deployment issue is this?",
+          "name": "A cloud function upgraded from Python 3.8 to Python 3.11 fails with `ImportError: cannot import name 'X' from 'library_y'`. The library version in requirements.txt has not changed. What is the MOST likely cause?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An outdated component definition, the resource type `aws_s3_bucket_acl` may have been introduced in a newer provider version than the one currently installed, or the configuration references resource types using the old schema that has since been restructured."
+            "text": "The library version in requirements.txt was compatible with Python 3.8 but contains code that is incompatible with Python 3.11, the specific import may have been removed or renamed in newer Python versions, or the library itself has not been updated to support Python 3.11's…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A cloud application deployment fails with 'Error: Access Denied, iam:PassRole'. The CI/CD pipeline service account is attempting to attach an IAM role to a new EC2 instance during deployment. What misconfiguration caused this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The CI/CD pipeline service account's IAM policy is missing the `iam:PassRole` permission, this specific permission is required when an IAM entity (the pipeline) associates an IAM role with a resource (the EC2 instance)."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>100 exam-style questions</strong> covering <strong>12% of the CV0-004 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-cloud-plus/">CompTIA Cloud+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show &#39;SSL handshake failed, unsupported protocol version&#39;. What type of deployment issue is this?</h3>
-        <p><strong>Answer:</strong> A compatibility issue, the new application version requires a TLS version that the database server does not support, or vice versa. The application and database have incompatible security protocol configurations</p>
-        <p>SSL handshake failure indicates a TLS protocol version mismatch, the client and server cannot agree on a common protocol version. This is a compatibility issue between application and database TLS configurations. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A newly deployed cloud web server is unreachable from the internet. The server is running and the application is listening on port 443. The security group has inbound rule allowing port 80 from 0.0.0.0/0 but no rule for port 443. What is the issue?</h3>
-        <p><strong>Answer:</strong> A misconfiguration, the security group allows port 80 (HTTP) but not port 443 (HTTPS). Since the application listens on 443 and there is no security group rule permitting inbound traffic on 443, all HTTPS traffic is blocked at the security group level</p>
-        <p>Security group rules act as stateful firewalls, only explicitly permitted traffic reaches the instance. Port 443 missing from the inbound rules means HTTPS traffic is dropped before reaching the application. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A CI/CD pipeline fails with: &#39;Error: Resource type `aws_s3_bucket_acl` not found in provider&#39;. The Terraform configuration was written for an older AWS provider version. What type of deployment issue is this?</h3>
-        <p><strong>Answer:</strong> An outdated component definition, the resource type `aws_s3_bucket_acl` may have been introduced in a newer provider version than the one currently installed, or the configuration references resource types using the old schema that has since been restructured</p>
-        <p>Resource type availability is provider-version-specific, aws_s3_bucket_acl was introduced in AWS provider 4.x. If the lock file pins an older version, the resource type is unknown. This is an outdated component definition issue. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A new application version is deployed to cloud and immediately fails to connect to the database. The application logs show &#39;SSL handshake failed, unsupported protocol version&#39;. What type of deployment issue is this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A resource limit issue, the database connection pool is exhausted</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A compatibility issue, the new application version requires a TLS version that the database server does not support, or vice versa. The application and database have incompatible security protocol configurations</li>
+            <li class="seo-sample-answer">C. A regional availability issue, the database is in a different region</li>
+            <li class="seo-sample-answer">D. A misconfiguration, the database hostname is incorrect in the application config</li>
+        </ul>
+        <p class="seo-sample-explain">SSL handshake failure indicates a TLS protocol version mismatch, the client and server cannot agree on a common protocol version. This is a compatibility issue between application and database TLS configurations. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A newly deployed cloud web server is unreachable from the internet. The server is running and the application is listening on port 443. The security group has inbound rule allowing port 80 from 0.0.0.0/0 but no rule for port 443. What is the issue?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The server needs a public IP address assigned</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A misconfiguration, the security group allows port 80 (HTTP) but not port 443 (HTTPS). Since the application listens on 443 and there is no security group rule permitting inbound traffic on 443, all HTTPS traffic is blocked at the security group level</li>
+            <li class="seo-sample-answer">C. The application must be configured to listen on port 80 instead of 443</li>
+            <li class="seo-sample-answer">D. The SSL certificate is invalid, causing connection failures</li>
+        </ul>
+        <p class="seo-sample-explain">Security group rules act as stateful firewalls, only explicitly permitted traffic reaches the instance. Port 443 missing from the inbound rules means HTTPS traffic is dropped before reaching the application. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A cloud function upgraded from Python 3.8 to Python 3.11 fails with `ImportError: cannot import name &#39;X&#39; from &#39;library_y&#39;`. The library version in requirements.txt has not changed. What is the MOST likely cause?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Python 3.11 runs slower than Python 3.8 causing timeout failures</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The library version in requirements.txt was compatible with Python 3.8 but contains code that is incompatible with Python 3.11, the specific import may have been removed or renamed in newer Python versions, or the library itself has not been updated to support Python 3.11&#39;s changes</li>
+            <li class="seo-sample-answer">C. The cloud provider does not support Python 3.11 functions</li>
+            <li class="seo-sample-answer">D. The requirements.txt file was not deployed with the updated function</li>
+        </ul>
+        <p class="seo-sample-explain">Library compatibility with Python runtime versions is a common deployment issue, libraries pinned to a working version for Python 3.8 may have internal code that breaks with Python 3.11 changes (removed stdlib features, changed C API behavior). This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A cloud application deployment fails with &#39;Error: Access Denied, iam:PassRole&#39;. The CI/CD pipeline service account is attempting to attach an IAM role to a new EC2 instance during deployment. What misconfiguration caused this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The IAM role being attached to EC2 does not have sufficient permissions</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The CI/CD pipeline service account&#39;s IAM policy is missing the `iam:PassRole` permission, this specific permission is required when an IAM entity (the pipeline) associates an IAM role with a resource (the EC2 instance). Without it, the pipeline cannot assign roles to instances even if it has EC2 creation permissions</li>
+            <li class="seo-sample-answer">C. EC2 instances cannot have IAM roles attached by automated pipelines</li>
+            <li class="seo-sample-answer">D. The EC2 instance type does not support IAM role attachment</li>
+        </ul>
+        <p class="seo-sample-explain">iam:PassRole is a specific AWS permission required when passing an IAM role to a service. Without it, entities cannot associate roles with EC2 instances, Lambda functions, or other services, even if they have all other required permissions for those services. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Kubernetes deployment manifest uses `apiVersion: extensions/v1beta1` for an Ingress resource. After upgrading the cluster to Kubernetes 1.22, all Ingress deployments fail. What is the cause?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The Ingress controller needs to be reinstalled after the cluster upgrade</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The `extensions/v1beta1` API group for Ingress was removed in Kubernetes 1.22, the manifest uses an outdated API version. The deployment must be updated to use `networking.k8s.io/v1` which became the stable Ingress API in Kubernetes 1.19</li>
+            <li class="seo-sample-answer">C. Kubernetes 1.22 does not support Ingress resources</li>
+            <li class="seo-sample-answer">D. The cluster upgrade requires all namespaces to be recreated</li>
+        </ul>
+        <p class="seo-sample-explain">Kubernetes removes deprecated API versions after a deprecation window. extensions/v1beta1 was deprecated in Kubernetes 1.14 and removed in 1.22, manifests using the old API group fail after the upgrade. Updating to networking.k8s.io/v1 resolves the issue. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A technician notices that a cloud application&#39;s memory utilization metric reported by the hypervisor stays at 40%, yet the application repeatedly crashes with out-of-memory (OOM) errors. The instance has 32 GB of RAM. Application logs show it was allocating objects rapidly just before each crash. What is the MOST likely explanation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The hypervisor-reported memory metric is accurate, and the OOM errors are caused by the operating system&#39;s memory overcommit policy preventing the application from using more than 40% of available RAM</li>
+            <li class="seo-sample-answer">B. The application has a coding error causing stack overflow exceptions that are misreported as OOM errors in the logs, and the fix is to increase the thread stack size</li>
+            <li class="seo-sample-answer">C. The cloud instance type does not support memory-intensive workloads and must be replaced with a memory-optimized instance family</li>
+            <li class="seo-sample-answer seo-sample-correct">D. The application has a memory leak, it allocates memory for objects but never releases them, causing heap usage to grow until the process exhausts its addressable or OS-allocated memory limit. The hypervisor reports the total instance memory utilization (which includes all processes and the OS), masking the runaway growth within the single application&#39;s heap. Profiling with a heap analyzer will confirm unbounded object growth, and the fix is to identify and correct the missing deallocation or object lifecycle mismanagement in the application code</li>
+        </ul>
+        <p class="seo-sample-explain">A memory leak causes the application&#39;s own heap to grow continuously regardless of total instance memory usage. The hypervisor metric reflects aggregate instance RAM usage across all processes and the OS, so the leaking application&#39;s portion can be steadily growing while the overall percentage appears moderate. Rapid object allocation without corresponding deallocation is a classic memory leak signature. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Terraform deployment fails with: &#39;Error: Unsupported argument. An argument named &quot;new_feature&quot; is not expected here.&#39; The Terraform code was written using provider documentation for version 4.5 but the provider version locked in terraform.lock.hcl is 3.8. What troubleshooting steps resolve this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Remove the new_feature argument since it is not supported in any provider version</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The Terraform code uses an argument introduced in provider version 4.5 but the lock file pins version 3.8, resolution: update the provider version constraint in terraform.tf to allow ≥4.5, run `terraform init -upgrade` to update the lock file to the newer provider version, then rerun the deployment</li>
+            <li class="seo-sample-answer">C. Upgrade Terraform itself to the latest version</li>
+            <li class="seo-sample-answer">D. Delete the terraform.lock.hcl file and run terraform apply directly</li>
+        </ul>
+        <p class="seo-sample-explain">Provider version mismatch between documentation used for code authoring and the locked version causes argument compatibility errors. Updating the version constraint and running terraform init -upgrade resolves the lock file and enables the newer provider features. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A containerized application works in development but fails in cloud production with &#39;exec format error&#39;. Development uses an Apple M1 Mac (ARM64) and production runs on x86_64 instances. What is the problem and solution?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The container has insufficient memory in production</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The container image was built for ARM64 architecture on the M1 Mac but production cloud instances run x86_64, these are incompatible CPU instruction sets. Solution: build a multi-architecture image using Docker Buildx (--platform linux/amd64,linux/arm64) or build specifically for linux/amd64 to match production</li>
+            <li class="seo-sample-answer">C. The application code contains syntax errors that only appear in production</li>
+            <li class="seo-sample-answer">D. The container registry does not support the production cloud provider</li>
+        </ul>
+        <p class="seo-sample-explain">CPU architecture incompatibility is a common issue when developers use Apple Silicon (ARM64) but production runs on x86_64 (AMD64). The container binary cannot execute on the wrong CPU architecture. Multi-arch builds or architecture-specific production builds resolve this. This is the correct answer.</p>
+      </details>
       <h2>Other CV0-004 Domains</h2>
       <ul>
           <li><a href="/comptia-cloud-plus/cloud-architecture/">1.0 Cloud Architecture</a></li>

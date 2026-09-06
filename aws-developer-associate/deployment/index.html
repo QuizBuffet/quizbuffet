@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A static web application uses Amplify branches for environments. What file organization helps safe releases?",
+          "name": "A containerized application must use a specific application configuration file at startup. Where should the file be handled?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Keep application source, build settings, and environment-specific files under version control."
+            "text": "Inside the container image or mounted and referenced by the task configuration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A SAM application has multiple Lambda functions and shared source code. What directory practice helps deployment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use a clear source tree with function folders and shared modules referenced consistently."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>120 exam-style questions</strong> covering <strong>24% of the DVA-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-developer-associate/">AWS Certified Developer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A Lambda deployment ZIP fails because the handler imports a library that was not included. What should be added to the artifact?</h3>
-        <p><strong>Answer:</strong> The required runtime dependency or a referenced Lambda layer</p>
-        <p>Lambda can import the library only if it is packaged with the function or supplied by a layer available at runtime. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A Lambda function needs a shared observability extension across multiple functions. Which packaging option fits?</h3>
-        <p><strong>Answer:</strong> A Lambda layer or extension included with the functions</p>
-        <p>Layers and extensions can distribute shared runtime components without copying the same files into every function package. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A static web application uses Amplify branches for environments. What file organization helps safe releases?</h3>
-        <p><strong>Answer:</strong> Keep application source, build settings, and environment-specific files under version control</p>
-        <p>Version-controlled source and build settings make branch deployments reproducible and reviewable across environments. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A Lambda deployment ZIP fails because the handler imports a library that was not included. What should be added to the artifact?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. The required runtime dependency or a referenced Lambda layer</li>
+            <li class="seo-sample-answer">B. An API Gateway stage variable</li>
+            <li class="seo-sample-answer">C. A CodePipeline manual approval</li>
+            <li class="seo-sample-answer">D. A CloudWatch alarm</li>
+        </ul>
+        <p class="seo-sample-explain">Lambda can import the library only if it is packaged with the function or supplied by a layer available at runtime. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Lambda function needs a shared observability extension across multiple functions. Which packaging option fits?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A Lambda layer or extension included with the functions</li>
+            <li class="seo-sample-answer">B. A DynamoDB global secondary index</li>
+            <li class="seo-sample-answer">C. A Route 53 record set</li>
+            <li class="seo-sample-answer">D. A CodeBuild badge</li>
+        </ul>
+        <p class="seo-sample-explain">Layers and extensions can distribute shared runtime components without copying the same files into every function package. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A containerized application must use a specific application configuration file at startup. Where should the file be handled?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only in the CodeCommit pull request description</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Inside the container image or mounted and referenced by the task configuration</li>
+            <li class="seo-sample-answer">C. Only as an API Gateway model</li>
+            <li class="seo-sample-answer">D. Only in a Lambda destination</li>
+        </ul>
+        <p class="seo-sample-explain">The runtime needs the configuration file through the image or task definition so the application can read it when the container starts. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A SAM application has multiple Lambda functions and shared source code. What directory practice helps deployment?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Store all files in one untracked desktop folder</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Use a clear source tree with function folders and shared modules referenced consistently</li>
+            <li class="seo-sample-answer">C. Put handler code only in API Gateway stage names</li>
+            <li class="seo-sample-answer">D. Place deployment templates inside CloudWatch metrics</li>
+        </ul>
+        <p class="seo-sample-explain">A predictable structure lets build tools locate handlers, dependencies, templates, and shared modules during packaging. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A container build fails because the Dockerfile copies files from paths that do not exist in the build context. What should be fixed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. API Gateway throttling limits</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Dockerfile COPY paths or repository directory layout</li>
+            <li class="seo-sample-answer">C. Lambda asynchronous destination settings</li>
+            <li class="seo-sample-answer">D. Cognito user pool domain</li>
+        </ul>
+        <p class="seo-sample-explain">The Docker build context controls which files are available, so COPY instructions must match the repository layout. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Node.js Lambda deployment uses native dependencies compiled for a laptop OS and fails in AWS. What should the developer do?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Increase the API Gateway timeout</li>
+            <li class="seo-sample-answer">B. Add an SNS subscription filter</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Build dependencies for the Lambda runtime environment</li>
+            <li class="seo-sample-answer">D. Rename the handler file only</li>
+        </ul>
+        <p class="seo-sample-explain">Native packages must match the Lambda runtime and architecture, so they should be built in a compatible environment. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A CodeBuild project cannot find the buildspec file. What should be checked?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The Lambda reserved concurrency value</li>
+            <li class="seo-sample-answer">B. The SQS visibility timeout</li>
+            <li class="seo-sample-answer seo-sample-correct">C. The repository path and expected buildspec.yml location</li>
+            <li class="seo-sample-answer">D. The KMS rotation schedule</li>
+        </ul>
+        <p class="seo-sample-explain">CodeBuild needs the buildspec at the configured path so it can run the install, build, and artifact phases. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A deployment artifact includes dev-only test frameworks and becomes too large. What should be adjusted?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Disable all unit tests permanently</li>
+            <li class="seo-sample-answer">B. Move dependencies into CloudWatch Logs</li>
+            <li class="seo-sample-answer">C. Put the package in every API Gateway stage variable</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Package only production dependencies needed at runtime</li>
+        </ul>
+        <p class="seo-sample-explain">Removing dev-only dependencies reduces artifact size while preserving the libraries the application actually needs in production. This is the correct answer.</p>
+      </details>
       <h2>Other DVA-C02 Domains</h2>
       <ul>
           <li><a href="/aws-developer-associate/development-with-aws-services/">1.0 Development with AWS Services</a></li>

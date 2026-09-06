@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "WPA3-Personal replaces the WPA2 4-way PSK handshake with SAE (Simultaneous Authentication of Equals). Which specific attack class does SAE eliminate that was feasible against WPA2-Personal networks?",
+          "name": "A wireless survey reveals that two neighboring access points are operating on 2.4GHz channels 4 and 6 respectively. What is the security and performance consequence of this channel configuration?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Offline dictionary and brute-force attacks against captured handshakes, due to SAE's forward secrecy property."
+            "text": "Channels 4 and 6 overlap in the 2.4GHz band, only channels 1, 6, and 11 are non-overlapping, causing adjacent-channel interference and degraded performance for both networks. In the 2.4GHz band, the only three non-overlapping channels are 1, 6, and 11 (in North America).…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "According to wireless penetration testing methodology, what is the correct FIRST step before attempting any active attacks against a target wireless network?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Performing passive wireless reconnaissance to identify SSIDs, BSSIDs, channels, signal strength, and encryption types."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>36 exam-style questions</strong> covering <strong>5% of the CEH exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>In wireless networking, what does the term SSID (Service Set Identifier) refer to?</h3>
-        <p><strong>Answer:</strong> The human-readable name that identifies a wireless network, broadcast in AP beacon frames</p>
-        <p>The SSID (Service Set Identifier) is the logical name assigned to a wireless network, the human-readable label (up to 32 characters) that appears in device Wi-Fi menus. It is included in beacon frames broadcast by the AP approximately 10 times per second, in probe responses, and in association/reassociation frames. Multiple APs sharing the same SSID form an Extended Service Set (ESS).</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which wireless encryption protocol is considered completely broken and cryptographically defeated, due to its use of short 24-bit initialization vectors (IVs) with the RC4 stream cipher that allows passive attackers to recover the encryption key by collecting sufficient traffic?</h3>
-        <p><strong>Answer:</strong> WEP (Wired Equivalent Privacy)</p>
-        <p>WEP (Wired Equivalent Privacy, IEEE 802.11 1997) is completely broken. Its 24-bit IV space means IVs repeat frequently in busy networks, and the weak RC4 key scheduling algorithm (discovered by Fluhrer, Mantin, and Shamir in 2001) allows statistical analysis of IV-key pairs to recover the full WEP key. Tools like aircrack-ng can crack WEP keys in under 60 seconds with as few as 20,000-40,000 captured packets. WEP should never be used.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>WPA3-Personal replaces the WPA2 4-way PSK handshake with SAE (Simultaneous Authentication of Equals). Which specific attack class does SAE eliminate that was feasible against WPA2-Personal networks?</h3>
-        <p><strong>Answer:</strong> Offline dictionary and brute-force attacks against captured handshakes, due to SAE&#39;s forward secrecy property</p>
-        <p>WPA3-SAE (Dragonfly handshake) uses a zero-knowledge proof where each side proves knowledge of the password without transmitting anything that can be used for offline verification. Critically, SAE provides forward secrecy, each session generates a unique PMK from an ephemeral Diffie-Hellman exchange. Even if an attacker captures the SAE handshake, they cannot perform an offline dictionary attack because there is no MIC equivalent to test password candidates against. If the password is later compromised, past sessions remain secure.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>In wireless networking, what does the term SSID (Service Set Identifier) refer to?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. The human-readable name that identifies a wireless network, broadcast in AP beacon frames</li>
+            <li class="seo-sample-answer">B. The hardware MAC address of the wireless access point serving the network</li>
+            <li class="seo-sample-answer">C. The pre-shared encryption key used to authenticate clients to the wireless network</li>
+            <li class="seo-sample-answer">D. The radio frequency channel number on which the access point broadcasts its signal</li>
+        </ul>
+        <p class="seo-sample-explain">The SSID (Service Set Identifier) is the logical name assigned to a wireless network, the human-readable label (up to 32 characters) that appears in device Wi-Fi menus. It is included in beacon frames broadcast by the AP approximately 10 times per second, in probe responses, and in association/reassociation frames. Multiple APs sharing the same SSID form an Extended Service Set (ESS).</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which wireless encryption protocol is considered completely broken and cryptographically defeated, due to its use of short 24-bit initialization vectors (IVs) with the RC4 stream cipher that allows passive attackers to recover the encryption key by collecting sufficient traffic?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. WEP (Wired Equivalent Privacy)</li>
+            <li class="seo-sample-answer">B. WPA-TKIP (Wi-Fi Protected Access with Temporal Key Integrity Protocol)</li>
+            <li class="seo-sample-answer">C. WPA2-CCMP (Counter Mode with CBC-MAC Protocol)</li>
+            <li class="seo-sample-answer">D. WPA3-SAE (Simultaneous Authentication of Equals)</li>
+        </ul>
+        <p class="seo-sample-explain">WEP (Wired Equivalent Privacy, IEEE 802.11 1997) is completely broken. Its 24-bit IV space means IVs repeat frequently in busy networks, and the weak RC4 key scheduling algorithm (discovered by Fluhrer, Mantin, and Shamir in 2001) allows statistical analysis of IV-key pairs to recover the full WEP key. Tools like aircrack-ng can crack WEP keys in under 60 seconds with as few as 20,000-40,000 captured packets. WEP should never be used.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A wireless survey reveals that two neighboring access points are operating on 2.4GHz channels 4 and 6 respectively. What is the security and performance consequence of this channel configuration?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. OFDMA allows the two APs to share overlapping channels with zero performance impact</li>
+            <li class="seo-sample-answer">B. Channels 4 and 6 are non-overlapping in the 2.4GHz band and will not cause interference</li>
+            <li class="seo-sample-answer">C. Channel 4 devices will automatically migrate to channel 6 via 802.11k neighbor reports</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Channels 4 and 6 overlap in the 2.4GHz band, only channels 1, 6, and 11 are non-overlapping, causing adjacent-channel interference and degraded performance for both networks</li>
+        </ul>
+        <p class="seo-sample-explain">In the 2.4GHz band, the only three non-overlapping channels are 1, 6, and 11 (in North America). Channels 4 and 6 overlap spectrally, causing adjacent-channel interference (ACI), radio energy from one AP bleeds into the other&#39;s channel, corrupting frames, forcing retransmissions, and reducing throughput for both networks. From a security perspective, ACI can also interfere with wireless monitoring tools operating on these channels.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>According to wireless penetration testing methodology, what is the correct FIRST step before attempting any active attacks against a target wireless network?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Capturing the WPA2 4-way handshake immediately to begin offline password cracking</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Performing passive wireless reconnaissance to identify SSIDs, BSSIDs, channels, signal strength, and encryption types</li>
+            <li class="seo-sample-answer">C. Deploying a deauthentication attack to disconnect clients and observe the network&#39;s reconnection behavior</li>
+            <li class="seo-sample-answer">D. Attempting connections to discovered networks using manufacturer default credentials</li>
+        </ul>
+        <p class="seo-sample-explain">Passive wireless reconnaissance is the mandatory first step in wireless penetration testing methodology. Using tools like airodump-ng or Kismet in monitor mode, the tester identifies all nearby networks (SSIDs, BSSIDs, operating channels, encryption types, signal strengths, and connected clients) without transmitting any frames. This intelligence guides all subsequent attack decisions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A wireless attacker uses aireplay-ng -0 to send forged IEEE 802.11 deauthentication frames to a WPA2-connected client, forcing it to disconnect and reconnect to the AP. What is the PRIMARY purpose of this deauthentication attack in a WPA2-Personal cracking workflow?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. To permanently deny the client access to the network by blacklisting its MAC at the AP</li>
+            <li class="seo-sample-answer">B. To capture the client&#39;s browser session cookie transmitted during the reconnection</li>
+            <li class="seo-sample-answer">C. To force the AP to rotate the Group Temporal Key (GTK) to a weaker, predictable value</li>
+            <li class="seo-sample-answer seo-sample-correct">D. To trigger a new WPA2 4-way handshake during client reconnection, which is captured for offline dictionary attack</li>
+        </ul>
+        <p class="seo-sample-explain">WPA2 handshake capture requires observing the 4-way handshake between a client and the AP, an event that only occurs during authentication. If no new client is connecting, the attacker must force one. Sending forged deauthentication frames (exploiting the lack of management frame authentication in pre-802.11w networks) causes the client to disconnect and immediately re-initiate the 4-way handshake, which airodump-ng captures for subsequent offline hashcat/aircrack-ng dictionary attack.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An access point is configured to suppress its SSID from beacon frames (hidden SSID). A wireless auditor needs to discover the network&#39;s SSID. Which technique MOST reliably reveals a hidden SSID?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Scanning for beacon frames on all 802.11 channels in passive mode, hidden SSIDs still appear in beacons with empty SSID fields</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Capturing probe request and response frames exchanged when a legitimate client connects, which include the SSID in plaintext</li>
+            <li class="seo-sample-answer">C. Performing an offline dictionary attack against a WPA2 handshake file to brute-force the hidden SSID value</li>
+            <li class="seo-sample-answer">D. Executing a ping sweep against the AP&#39;s default management IP address, which returns the SSID in ICMP response headers</li>
+        </ul>
+        <p class="seo-sample-explain">When a client that knows the hidden SSID connects to the AP, it sends a directed probe request containing the SSID in plaintext. The AP responds with a probe response also containing the SSID. Additionally, association and reassociation frames include the SSID. An auditor using airodump-ng in monitor mode will capture these frames and extract the SSID. Alternatively, sending a deauthentication frame to force a reconnection will trigger this exchange.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which IEEE 802.11 standard introduced OFDMA (Orthogonal Frequency Division Multiple Access) to enable simultaneous multi-user transmissions, significantly improving efficiency in dense environments, and is marketed as Wi-Fi 6?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. 802.11ac (Wi-Fi 5), introduced MU-MIMO on the 5GHz band</li>
+            <li class="seo-sample-answer">B. 802.11n (Wi-Fi 4), introduced MIMO and dual-band 2.4/5GHz support</li>
+            <li class="seo-sample-answer seo-sample-correct">C. 802.11ax (Wi-Fi 6), introduced OFDMA for simultaneous uplink and downlink multi-user access</li>
+            <li class="seo-sample-answer">D. 802.11ad (WiGig), introduced 60GHz mmWave operation for multi-gigabit short-range links</li>
+        </ul>
+        <p class="seo-sample-explain">802.11ax (Wi-Fi 6, released 2019) introduced OFDMA, which subdivides wireless channels into smaller resource units (RUs) that can be simultaneously allocated to different clients. This dramatically improves efficiency in dense environments (airports, stadiums, enterprise offices) by serving multiple users in parallel rather than sequentially. Wi-Fi 6E extends this to the 6GHz band.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An attacker at a coffee shop deploys an evil twin AP that matches the SSID of a corporate VPN network and broadcasts with a stronger signal. A victim&#39;s laptop automatically connects to the evil twin. What attack does the attacker MOST likely launch after the victim connects?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A deauthentication flood against the legitimate corporate AP to permanently block the victim&#39;s MAC</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A man-in-the-middle (MITM) attack, routing all victim traffic through the attacker&#39;s system to intercept credentials, session cookies, and unencrypted data</li>
+            <li class="seo-sample-answer">C. An offline WPA2 brute-force attack against the victim&#39;s encrypted association with the evil twin</li>
+            <li class="seo-sample-answer">D. A firmware injection attack that overwrites the victim&#39;s wireless adapter driver via the rogue AP connection</li>
+        </ul>
+        <p class="seo-sample-explain">Once the victim connects to the evil twin, the attacker controls the network gateway. All victim traffic is routed through the attacker&#39;s device, enabling: (1) HTTPS downgrade attacks via SSLstrip to capture credentials in cleartext, (2) session cookie theft from unencrypted HTTP sessions, (3) DNS manipulation to redirect victims to phishing pages, and (4) credential harvesting from captive portal login pages. This is the primary purpose of an evil twin attack.</p>
+      </details>
       <h2>Other CEH Domains</h2>
       <ul>
           <li><a href="/ceh/information-security-overview/">1.0 Information Security and Ethical Hacking Overview</a></li>

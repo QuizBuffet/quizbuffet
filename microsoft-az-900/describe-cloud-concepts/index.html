@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A company is learning basic Azure concepts. Which statement best describes shared responsibility model?",
+          "name": "A training exercise asks for the best example of cloud computing definition. Which option is correct?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "In IaaS, customers manage more of the operating system and application stack than in PaaS or SaaS."
+            "text": "Using remote datacenters to provide technology resources that can be provisioned when needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A new Azure user needs to identify the right concept for shared responsibility model. Which answer should they choose?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A division of security and operational duties between the cloud provider and the customer."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>84 exam-style questions</strong> covering <strong>27% of the AZ-900 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/microsoft-az-900/">Microsoft Azure Fundamentals practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A new Azure user needs to identify the right concept for cloud computing definition. Which answer should they choose?</h3>
-        <p><strong>Answer:</strong> Delivery of computing services over the internet, including compute, storage, networking, and applications</p>
-        <p>Cloud computing provides IT services through internet-accessible platforms instead of requiring every resource to be owned and operated locally.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An IT manager asks how cloud computing definition applies to Azure. Which explanation is most accurate?</h3>
-        <p><strong>Answer:</strong> A way to use scalable IT services without building and operating every physical datacenter component</p>
-        <p>Cloud computing lets organizations use scalable services while reducing direct responsibility for physical facilities.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A company is learning basic Azure concepts. Which statement best describes shared responsibility model?</h3>
-        <p><strong>Answer:</strong> In IaaS, customers manage more of the operating system and application stack than in PaaS or SaaS</p>
-        <p>IaaS gives customers more control and therefore more responsibility for the software stack.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A new Azure user needs to identify the right concept for cloud computing definition. Which answer should they choose?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Delivery of computing services over the internet, including compute, storage, networking, and applications</li>
+            <li class="seo-sample-answer">B. Treat the cloud provider as solely responsible for end-user data classification</li>
+            <li class="seo-sample-answer">C. Treat dev/test environments as production with the same compliance controls</li>
+            <li class="seo-sample-answer">D. Treat governance as a one-time setup rather than continuous management</li>
+        </ul>
+        <p class="seo-sample-explain">Cloud computing provides IT services through internet-accessible platforms instead of requiring every resource to be owned and operated locally.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An IT manager asks how cloud computing definition applies to Azure. Which explanation is most accurate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A way to use scalable IT services without building and operating every physical datacenter component</li>
+            <li class="seo-sample-answer">B. Assume RBAC is unnecessary because IAM users have password complexity rules</li>
+            <li class="seo-sample-answer">C. Use a spreadsheet as the main deployment platform</li>
+            <li class="seo-sample-answer">D. Choose a model based on vendor preference rather than business requirements</li>
+        </ul>
+        <p class="seo-sample-explain">Cloud computing lets organizations use scalable services while reducing direct responsibility for physical facilities.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A training exercise asks for the best example of cloud computing definition. Which option is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Expect a public website to use a private-only cloud endpoint by default</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Using remote datacenters to provide technology resources that can be provisioned when needed</li>
+            <li class="seo-sample-answer">C. Treat scaling out (more instances) as identical to scaling up (bigger instances)</li>
+            <li class="seo-sample-answer">D. Treat consumption-based pricing as a fixed-fee subscription independent of usage</li>
+        </ul>
+        <p class="seo-sample-explain">Cloud computing lets organizations access infrastructure and services from a provider&#39;s datacenters on demand.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A new Azure user needs to identify the right concept for shared responsibility model. Which answer should they choose?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Treat predictability only as performance predictability and ignore cost predictability</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A division of security and operational duties between the cloud provider and the customer</li>
+            <li class="seo-sample-answer">C. Treat all cloud workloads as the customer&#39;s responsibility regardless of service tier</li>
+            <li class="seo-sample-answer">D. Skip Azure Cost Management because it does not work without Enterprise Agreement</li>
+        </ul>
+        <p class="seo-sample-explain">The shared responsibility model explains which tasks are handled by the provider and which remain with the customer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An IT manager asks how shared responsibility model applies to Azure. Which explanation is most accurate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip the Azure Pricing Calculator and estimate cloud cost from on-prem hardware quotes</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The provider and customer both have security responsibilities, but they are not responsible for the same layers</li>
+            <li class="seo-sample-answer">C. Rely on a single Availability Zone for production multi-tier workloads</li>
+            <li class="seo-sample-answer">D. Treat Azure ExpressRoute as a backup VPN tunnel for site-to-site connectivity</li>
+        </ul>
+        <p class="seo-sample-explain">Cloud security is shared across layers such as facilities, infrastructure, identity, data, and applications.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A project team is deciding how to use cloud services. Which statement about cloud computing definition is accurate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Disable Azure Monitor logging to reduce ingestion cost on production workloads</li>
+            <li class="seo-sample-answer">B. Choose hybrid cloud only when no on-premises infrastructure exists</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Accessing configurable IT resources through a provider-managed platform instead of buying and maintaining all hardware yourself</li>
+            <li class="seo-sample-answer">D. Believe pay-as-you-go means workloads are free when idle but throttled at peak</li>
+        </ul>
+        <p class="seo-sample-explain">Cloud computing shifts many infrastructure tasks to the provider while users consume services as needed.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A training exercise asks for the best example of shared responsibility model. Which option is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Assume consumption-based pricing always costs less than reserved capacity</li>
+            <li class="seo-sample-answer">B. Treat Microsoft Entra ID as just a password directory</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Microsoft is responsible for the physical datacenters, while customers remain responsible for their data and access decisions</li>
+            <li class="seo-sample-answer">D. Treat Azure App Service as IaaS that the customer must patch and harden</li>
+        </ul>
+        <p class="seo-sample-explain">Azure operates the underlying cloud infrastructure, but customers still manage data, identities, and configurations they control.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company is learning basic Azure concepts. Which statement best describes cloud computing definition?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Assume the cloud provider patches every guest OS and application by default</li>
+            <li class="seo-sample-answer">B. Assume cloud reliability eliminates the need for application-level retry logic</li>
+            <li class="seo-sample-answer">C. Use the cloud free tier to host long-term production workloads</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A model for consuming technology services such as virtual machines, databases, and storage from a cloud provider</li>
+        </ul>
+        <p class="seo-sample-explain">Cloud computing describes a service-consumption model for IT resources delivered by a provider.</p>
+      </details>
       <h2>Other AZ-900 Domains</h2>
       <ul>
           <li><a href="/microsoft-az-900/describe-azure-architecture-and-services/">2.0 Describe Azure architecture and services</a></li>

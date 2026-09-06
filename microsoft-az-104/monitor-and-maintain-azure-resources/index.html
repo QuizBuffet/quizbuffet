@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A production support ticket requires action involving interpret metrics in Azure Monitor. Which action is most appropriate?",
+          "name": "An Azure administrator must complete an operational task for interpret metrics in Azure Monitor. What should the administrator do?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use metric alerts when a numeric threshold or dynamic threshold should trigger notification or action."
+            "text": "Compare CPU, memory, disk, and network metrics against the workload baseline before resizing a resource."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An audit finding shows that the current process for interpret metrics in Azure Monitor is incomplete. What should be changed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Review availability and latency metrics for services that have user-facing performance requirements."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>110 exam-style questions</strong> covering <strong>19% of the AZ-104 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/microsoft-az-104/">Microsoft Azure Administrator practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A service incident requires troubleshooting or recovery for interpret metrics in Azure Monitor. Which Azure administrator action is correct?</h3>
-        <p><strong>Answer:</strong> Review the metric namespace, aggregation, time range, and dimensions before deciding whether the resource is unhealthy</p>
-        <p>Metric interpretation depends on what is being measured, how it is aggregated, and over which time window.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A workload owner asks the Azure administrator to improve interpret metrics in Azure Monitor. Which option should be selected?</h3>
-        <p><strong>Answer:</strong> Correlate platform metrics with logs when a metric indicates a possible service issue</p>
-        <p>Metrics show trends and thresholds, while logs can provide event-level details.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A production support ticket requires action involving interpret metrics in Azure Monitor. Which action is most appropriate?</h3>
-        <p><strong>Answer:</strong> Use metric alerts when a numeric threshold or dynamic threshold should trigger notification or action</p>
-        <p>Metric alerts are appropriate for time-series signals such as CPU, availability, or latency.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A service incident requires troubleshooting or recovery for interpret metrics in Azure Monitor. Which Azure administrator action is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Review the metric namespace, aggregation, time range, and dimensions before deciding whether the resource is unhealthy</li>
+            <li class="seo-sample-answer">B. Use the Azure Pricing Calculator as a real-time billing alarm system</li>
+            <li class="seo-sample-answer">C. Use Application Insights only for production and skip dev/test environments</li>
+            <li class="seo-sample-answer">D. Invite a B2B guest by creating a new Entra ID user with a temporary password</li>
+        </ul>
+        <p class="seo-sample-explain">Metric interpretation depends on what is being measured, how it is aggregated, and over which time window.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload owner asks the Azure administrator to improve interpret metrics in Azure Monitor. Which option should be selected?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Correlate platform metrics with logs when a metric indicates a possible service issue</li>
+            <li class="seo-sample-answer">B. Use Activity Log alerts to monitor application performance metrics</li>
+            <li class="seo-sample-answer">C. Use a security group as a distribution list for external mail</li>
+            <li class="seo-sample-answer">D. Treat tenant root group ownership as the default scope for all role assignments</li>
+        </ul>
+        <p class="seo-sample-explain">Metrics show trends and thresholds, while logs can provide event-level details.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Azure administrator must complete an operational task for interpret metrics in Azure Monitor. What should the administrator do?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use Azure Blueprints as a real-time monitoring solution</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Compare CPU, memory, disk, and network metrics against the workload baseline before resizing a resource</li>
+            <li class="seo-sample-answer">C. Move resources between subscriptions without checking resource-type support</li>
+            <li class="seo-sample-answer">D. Configure backup reports without delegating ownership to a recipient</li>
+        </ul>
+        <p class="seo-sample-explain">A baseline helps distinguish normal workload variation from a real capacity issue.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An audit finding shows that the current process for interpret metrics in Azure Monitor is incomplete. What should be changed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a CanNotDelete lock on every resource by default</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Review availability and latency metrics for services that have user-facing performance requirements</li>
+            <li class="seo-sample-answer">C. Assume resource health proves application endpoint connectivity</li>
+            <li class="seo-sample-answer">D. Use dynamic membership rules without enabling the required Microsoft Entra license</li>
+        </ul>
+        <p class="seo-sample-explain">User-facing services should be monitored for health and responsiveness, not only resource usage.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A production support ticket requires action involving configure log settings in Azure Monitor. Which action is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Disable soft delete in the vault to reduce storage costs</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Create a diagnostic setting that sends resource logs and metrics to a Log Analytics workspace, storage account, or event hub</li>
+            <li class="seo-sample-answer">C. Apply tags and expect them to block noncompliant deployments by themselves</li>
+            <li class="seo-sample-answer">D. Use Azure Hybrid Benefit on free Linux distributions that have no commercial license</li>
+        </ul>
+        <p class="seo-sample-explain">Diagnostic settings control where Azure resource logs and metrics are exported.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A production support ticket requires action involving interpret metrics in Azure Monitor. Which action is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Use a single shared admin account for all team members to simplify access</li>
+            <li class="seo-sample-answer">B. Assign licenses by editing CSV files instead of using group-based licensing</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Use dimensions to separate metric values by instance, disk, endpoint, or other resource-specific labels when available</li>
+            <li class="seo-sample-answer">D. Configure Self-Service Password Reset (SSPR) only for global administrators</li>
+        </ul>
+        <p class="seo-sample-explain">Dimensions help identify which part of a resource is causing the metric change.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A service incident requires troubleshooting or recovery for interpret metrics in Azure Monitor. Which Azure administrator action is correct?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Pay full PAYG rates for stable production VMs running 24/7 for years</li>
+            <li class="seo-sample-answer">B. Use email alone for critical backup failure notifications without escalation</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Use Azure Monitor metrics to build dashboards and alerts for critical resource health indicators</li>
+            <li class="seo-sample-answer">D. Create a Recovery Services vault in a different geography from the resources you protect</li>
+        </ul>
+        <p class="seo-sample-explain">Metrics provide near-real-time numerical telemetry for monitoring and alerting.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During an operations review, the team identifies a requirement for interpret metrics in Azure Monitor. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Set every alert severity to Sev0 (critical) regardless of business impact</li>
+            <li class="seo-sample-answer">B. Skip cross-region restore for critical workloads to reduce vault complexity</li>
+            <li class="seo-sample-answer">C. Use SSPR without registering authentication methods for users</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Check metric granularity and aggregation when a chart does not match the expected spike</li>
+        </ul>
+        <p class="seo-sample-explain">Averages, totals, minimums, and maximums can show different views of the same telemetry.</p>
+      </details>
       <h2>Other AZ-104 Domains</h2>
       <ul>
           <li><a href="/microsoft-az-104/manage-azure-identities-and-governance/">1.0 Manage Azure identities and governance</a></li>

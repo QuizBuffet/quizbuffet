@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A security team wants to enable an optional control that prevents public S3 buckets in governed accounts. What should be used?",
+          "name": "A security team wants to apply different guardrails to production and sandbox accounts. Which AWS Organizations design supports this?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Enable the relevant AWS Control Tower control on the intended OU."
+            "text": "Place accounts into separate OUs and attach policies at the appropriate OU level."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A security architect is defining OUs for regulated workloads. Which factor should drive OU placement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common control requirements, risk level, environment, and operational ownership."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>84 exam-style questions</strong> covering <strong>14% of the SCS-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-security-specialty/">AWS Certified Security Specialty practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A company is moving from independent AWS accounts to a governed multi-account environment. What should be established first?</h3>
-        <p><strong>Answer:</strong> Create an AWS Organizations structure with OUs aligned to security, production, development, and sandbox governance needs</p>
-        <p>In this scenario, AWS Organizations deployment starts with an OU structure that matches governance boundaries and lets guardrails apply consistently.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A multi-account design uses one account for security tooling and another for log archive. Why is this useful?</h3>
-        <p><strong>Answer:</strong> It separates duties and protects audit evidence from workload account administrators</p>
-        <p>Here, AWS Organizations deployment benefits from specialized accounts that reduce privilege overlap and evidence tampering risk.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A security team wants to enable an optional control that prevents public S3 buckets in governed accounts. What should be used?</h3>
-        <p><strong>Answer:</strong> Enable the relevant AWS Control Tower control on the intended OU</p>
-        <p>AWS Control Tower controls can be applied at OU scope to enforce or detect baseline requirements.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A company is moving from independent AWS accounts to a governed multi-account environment. What should be established first?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Create an AWS Organizations structure with OUs aligned to security, production, development, and sandbox governance needs</li>
+            <li class="seo-sample-answer">B. Keep every account standalone and document the account list manually</li>
+            <li class="seo-sample-answer">C. Use one production account for every workload and team</li>
+            <li class="seo-sample-answer">D. Use only resource tags without inviting accounts into an organization</li>
+        </ul>
+        <p class="seo-sample-explain">In this scenario, AWS Organizations deployment starts with an OU structure that matches governance boundaries and lets guardrails apply consistently.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A multi-account design uses one account for security tooling and another for log archive. Why is this useful?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. It separates duties and protects audit evidence from workload account administrators</li>
+            <li class="seo-sample-answer">B. It lets application teams delete central logs more easily</li>
+            <li class="seo-sample-answer">C. It removes the need for any IAM policies</li>
+            <li class="seo-sample-answer">D. It forces every workload to use the management account</li>
+        </ul>
+        <p class="seo-sample-explain">Here, AWS Organizations deployment benefits from specialized accounts that reduce privilege overlap and evidence tampering risk.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team wants to apply different guardrails to production and sandbox accounts. Which AWS Organizations design supports this?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Attach every policy directly to the management account only</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Place accounts into separate OUs and attach policies at the appropriate OU level</li>
+            <li class="seo-sample-answer">C. Rely on account aliases to enforce guardrails</li>
+            <li class="seo-sample-answer">D. Use a shared IAM user to represent every account</li>
+        </ul>
+        <p class="seo-sample-explain">Specifically, AWS Organizations deployment uses OU hierarchy to scope controls to accounts with similar risk and governance needs.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security architect is defining OUs for regulated workloads. Which factor should drive OU placement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Alphabetical order of account names only</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Common control requirements, risk level, environment, and operational ownership</li>
+            <li class="seo-sample-answer">C. The number of EC2 instances in each account only</li>
+            <li class="seo-sample-answer">D. Dashboard color preferences from account owners</li>
+        </ul>
+        <p class="seo-sample-explain">In this scenario, AWS Organizations deployment should group accounts so policies and baselines match real governance requirements.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company has existing AWS Organizations accounts and wants to bring them under landing zone governance. What should be planned?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Delete all existing accounts and recreate them without migration analysis</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Enroll accounts and OUs into AWS Control Tower after assessing guardrail and resource impact</li>
+            <li class="seo-sample-answer">C. Disable all logs before enrolling accounts</li>
+            <li class="seo-sample-answer">D. Move all existing workloads into the log archive account</li>
+        </ul>
+        <p class="seo-sample-explain">Here, AWS Control Tower controls for existing environments require enrollment planning so controls do not unexpectedly disrupt workloads.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company wants automated account creation with baseline controls. What AWS Organizations capability should be part of the design?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Manual account creation with no OU assignment until the first audit</li>
+            <li class="seo-sample-answer">B. Create accounts using personal email addresses for each developer</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Account vending through an approved onboarding workflow that places accounts in the correct OU</li>
+            <li class="seo-sample-answer">D. Use a public spreadsheet as the account source of truth</li>
+        </ul>
+        <p class="seo-sample-explain">Note that AWS Organizations deployment should make account creation repeatable and immediately attach the right governance scope.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A management account is used daily for experimentation and application hosting. What should be changed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Grant every developer root access to the management account</li>
+            <li class="seo-sample-answer">B. Place all production data in the management account for convenience</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Move workloads to member accounts and restrict the management account to organization administration</li>
+            <li class="seo-sample-answer">D. Disable organization-level audit logs to reduce noise</li>
+        </ul>
+        <p class="seo-sample-explain">Specifically, AWS Organizations deployment should minimize management account usage because it has high-impact organization authority.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An acquired company has existing AWS accounts. What is an appropriate migration step into AWS Organizations?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Immediately attach the most restrictive SCP to every acquired account without testing</li>
+            <li class="seo-sample-answer">B. Move all workloads into the management account</li>
+            <li class="seo-sample-answer">C. Disable CloudTrail during account enrollment</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Invite or migrate accounts into the organization after validating ownership, billing, and guardrail impact</li>
+        </ul>
+        <p class="seo-sample-explain">AWS Organizations deployment for existing accounts should account for control impact and account ownership before enrollment.</p>
+      </details>
       <h2>Other SCS-C03 Domains</h2>
       <ul>
           <li><a href="/aws-security-specialty/detection/">1.0 Detection</a></li>

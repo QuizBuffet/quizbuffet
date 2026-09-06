@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A national grocery chain is updating data handling rules for loyalty program customer data. The CISO asks how to strengthen information and asset classification without disrupting business operations. What should be recommended?",
+          "name": "A pharmaceutical contract manufacturer is reviewing how it labels regulated batch records. A risk review finds a gap related to information and asset classification. Which response is most appropriate?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use data discovery tools to locate sensitive data that is not recorded in the formal inventory."
+            "text": "Assign an accountable data owner to determine classification and approve handling requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A SaaS provider is mapping customer data flows ahead of a SOC 2 Type II audit. The data governance committee asks for guidance on information and asset classification. Which approach best aligns with CISSP practice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Include physical assets, information assets, software, services, and removable media in the asset inventory."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>80 exam-style questions</strong> covering <strong>10% of the CISSP exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/isc2-cissp/">Certified Information Systems Security Professional practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A regional health system is updating its data classification scheme ahead of an HHS audit. A new control baseline must address information and asset classification. What should be included?</h3>
-        <p><strong>Answer:</strong> Define classification levels based on business value, sensitivity, legal obligations, and potential impact of disclosure or alteration</p>
-        <p>Classification should reflect the value and risk of the information or asset to the organization. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A global investment bank is updating data classification for trading-floor systems. An assessment identifies inconsistent practice for information and asset classification. Which action should the security professional prioritize?</h3>
-        <p><strong>Answer:</strong> Review classification periodically and when business use, regulation, or data sensitivity changes</p>
-        <p>Classification can become inaccurate as data use and obligations change. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A national grocery chain is updating data handling rules for loyalty program customer data. The CISO asks how to strengthen information and asset classification without disrupting business operations. What should be recommended?</h3>
-        <p><strong>Answer:</strong> Use data discovery tools to locate sensitive data that is not recorded in the formal inventory</p>
-        <p>Discovery helps identify unmanaged assets and hidden stores of sensitive information. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A regional health system is updating its data classification scheme ahead of an HHS audit. A new control baseline must address information and asset classification. What should be included?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Define classification levels based on business value, sensitivity, legal obligations, and potential impact of disclosure or alteration</li>
+            <li class="seo-sample-answer">B. Apply classification labels to the database name, not the data inside</li>
+            <li class="seo-sample-answer">C. Skip classification on backups and reports because the source store is labeled</li>
+            <li class="seo-sample-answer">D. Strip classification banners from documents because users find them distracting</li>
+        </ul>
+        <p class="seo-sample-explain">Classification should reflect the value and risk of the information or asset to the organization. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A global investment bank is updating data classification for trading-floor systems. An assessment identifies inconsistent practice for information and asset classification. Which action should the security professional prioritize?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Review classification periodically and when business use, regulation, or data sensitivity changes</li>
+            <li class="seo-sample-answer">B. Ignore backups and report extracts because the master record is already labeled</li>
+            <li class="seo-sample-answer">C. Remove classification headers and footers because they&#39;re an aesthetic concern</li>
+            <li class="seo-sample-answer">D. Default everything to public so the access control problem disappears</li>
+        </ul>
+        <p class="seo-sample-explain">Classification can become inaccurate as data use and obligations change. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A pharmaceutical contract manufacturer is reviewing how it labels regulated batch records. A risk review finds a gap related to information and asset classification. Which response is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Have DBAs unilaterally assign classification with no business-owner involvement</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Assign an accountable data owner to determine classification and approve handling requirements</li>
+            <li class="seo-sample-answer">C. Use storage location as the only attribute that determines data classification</li>
+            <li class="seo-sample-answer">D. Treat downstream copies as inheriting classification with no re-evaluation</li>
+        </ul>
+        <p class="seo-sample-explain">Data owners understand business impact and are responsible for classification decisions. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A SaaS provider is mapping customer data flows ahead of a SOC 2 Type II audit. The data governance committee asks for guidance on information and asset classification. Which approach best aligns with CISSP practice?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip data-level classification and use database-of-residence instead</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Include physical assets, information assets, software, services, and removable media in the asset inventory</li>
+            <li class="seo-sample-answer">C. Skip labeling and access controls on derived reports built from classified data</li>
+            <li class="seo-sample-answer">D. Disable visual classification labels because users complain they&#39;re noisy</li>
+        </ul>
+        <p class="seo-sample-explain">Asset security requires knowing what exists before applying protection. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A research university is reconciling federal grant data protection obligations across labs. The security team must make an asset security decision involving information and asset classification. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Skip handling controls on data warehouses derived from classified sources</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Tie classification categories to control baselines such as encryption, access review, retention, and disposal requirements</li>
+            <li class="seo-sample-answer">C. Suppress classification banners to keep PDF reports tidy</li>
+            <li class="seo-sample-answer">D. Mark all information as public to avoid having to manage tiered access</li>
+        </ul>
+        <p class="seo-sample-explain">Classification is useful when it drives practical security requirements. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A federal contractor is reconciling CUI handling against revised NIST 800-171 requirements. The CISO asks how to strengthen information and asset classification without disrupting business operations. What should be recommended?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Mark every dataset &#39;public&#39; to streamline information sharing</li>
+            <li class="seo-sample-answer">B. Let infrastructure teams declare classification levels without business input</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Classify information consistently across structured data, unstructured data, backups, reports, and derived datasets</li>
+            <li class="seo-sample-answer">D. Treat &#39;lives in DB-X&#39; as the entire classification rule for the contents</li>
+        </ul>
+        <p class="seo-sample-explain">Sensitive information can appear in many forms and should not lose classification because it changes format. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regional utility is reviewing classification of OT historian data after an OSHA inquiry. A new control baseline must address information and asset classification. What should be included?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Allow storage operators to assign classification with no consultation</li>
+            <li class="seo-sample-answer">B. Inherit classification from the database object rather than the data semantics</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Identify asset custodians separately from asset owners when operational responsibility differs from business responsibility</li>
+            <li class="seo-sample-answer">D. Treat backup copies as classification-irrelevant because the source is labeled</li>
+        </ul>
+        <p class="seo-sample-explain">Owners decide value and requirements, while custodians operate or maintain assets. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A consumer fintech is renewing its data inventory after a privacy incident in a peer firm. The security team must make an asset security decision involving information and asset classification. What is the best recommendation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Hide classification markings to make documents look &#39;cleaner&#39;</li>
+            <li class="seo-sample-answer">B. Apply &#39;public&#39; as the universal classification to make sharing easy</li>
+            <li class="seo-sample-answer">C. Treat DBAs as data owners and skip business engagement in classification</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Use labels or metadata so users and systems can recognize the classification and apply handling rules</li>
+        </ul>
+        <p class="seo-sample-explain">Classification must be visible or machine-readable to support consistent protection. This is the correct answer.</p>
+      </details>
       <h2>Other CISSP Domains</h2>
       <ul>
           <li><a href="/isc2-cissp/security-and-risk-management/">1.0 Security and Risk Management</a></li>

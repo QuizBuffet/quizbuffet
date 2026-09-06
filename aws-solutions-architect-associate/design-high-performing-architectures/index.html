@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "How is File storage with Amazon EFS best understood when designing high-performing AWS architectures?",
+          "name": "A solutions architect must select high-performing storage involving Object storage with Amazon S3. Which answer best describes the design concept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "File storage with Amazon EFS provides scalable shared file storage for Linux-based workloads across multiple compute resources.. File storage with Amazon EFS provides scalable shared file storage for Linux-based workloads across multiple compute resources. This is the correct…"
+            "text": "Object storage with Amazon S3 is the best fit when the high-performing AWS architecture requires this design behavior: Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data.. Object storage with Amazon S3 stores data as…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A solutions architect must select high-performing storage involving Block storage with Amazon EBS. Which answer best describes the design concept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Block storage with Amazon EBS is the best fit when the high-performing AWS architecture requires this design behavior: Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.. Block storage with Amazon EBS provides…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>144 exam-style questions</strong> covering <strong>24% of the SAA-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-solutions-architect-associate/">AWS Certified Solutions Architect Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Object storage with Amazon S3 in AWS Solutions Architect Associate Domain 3.0 Design High-Performing Architectures?</h3>
-        <p><strong>Answer:</strong> Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data.</p>
-        <p>Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which option correctly defines Block storage with Amazon EBS?</h3>
-        <p><strong>Answer:</strong> Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.</p>
-        <p>Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>How is File storage with Amazon EFS best understood when designing high-performing AWS architectures?</h3>
-        <p><strong>Answer:</strong> File storage with Amazon EFS provides scalable shared file storage for Linux-based workloads across multiple compute resources.</p>
-        <p>File storage with Amazon EFS provides scalable shared file storage for Linux-based workloads across multiple compute resources. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Object storage with Amazon S3 in AWS Solutions Architect Associate Domain 3.0 Design High-Performing Architectures?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data.</li>
+            <li class="seo-sample-answer">B. Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.</li>
+            <li class="seo-sample-answer">C. File storage with Amazon EFS provides scalable shared file storage for Linux-based workloads across multiple compute resources.</li>
+            <li class="seo-sample-answer">D. Amazon FSx provides managed file systems for specialized file workloads such as Windows file shares, Lustre, NetApp ONTAP, or OpenZFS.</li>
+        </ul>
+        <p class="seo-sample-explain">Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which option correctly defines Block storage with Amazon EBS?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Memory optimized instances are suited for workloads that process large data sets in memory.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.</li>
+            <li class="seo-sample-answer">C. Amazon EC2 Auto Scaling automatically adjusts the number of EC2 instances based on demand or health conditions.</li>
+            <li class="seo-sample-answer">D. AWS Auto Scaling helps coordinate scaling for multiple AWS resources based on defined policies and demand.</li>
+        </ul>
+        <p class="seo-sample-explain">Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must select high-performing storage involving Object storage with Amazon S3. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Fargate compute is the best fit when the high-performing AWS architecture requires this design behavior: AWS Fargate provides serverless compute for containers without requiring management of underlying servers.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Object storage with Amazon S3 is the best fit when the high-performing AWS architecture requires this design behavior: Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data.</li>
+            <li class="seo-sample-answer">C. Amazon ECS orchestration is the best fit when the high-performing AWS architecture requires this design behavior: Amazon ECS orchestrates containers using clusters, services, and tasks for scalable container workloads.</li>
+            <li class="seo-sample-answer">D. Amazon EKS orchestration is the best fit when the high-performing AWS architecture requires this design behavior: Amazon EKS provides managed Kubernetes control plane capabilities for running scalable Kubernetes workloads on AWS.</li>
+        </ul>
+        <p class="seo-sample-explain">Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data. This matches the high-performing architecture scenario without confusing storage, compute, database, network, ingestion, or analytics choices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must select high-performing storage involving Block storage with Amazon EBS. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Aurora performance is the best fit when the high-performing AWS architecture requires this design behavior: Amazon Aurora is a relational database engine designed for high performance, availability, and compatibility with MySQL or PostgreSQL.</li>
+            <li class="seo-sample-answer">B. Amazon DynamoDB performance is the best fit when the high-performing AWS architecture requires this design behavior: Amazon DynamoDB provides managed NoSQL key-value and document database performance at scale.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Block storage with Amazon EBS is the best fit when the high-performing AWS architecture requires this design behavior: Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.</li>
+            <li class="seo-sample-answer">D. Amazon ElastiCache performance is the best fit when the high-performing AWS architecture requires this design behavior: Amazon ElastiCache improves performance by caching frequently accessed data in memory.</li>
+        </ul>
+        <p class="seo-sample-explain">Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access. This matches the high-performing architecture scenario without confusing storage, compute, database, network, ingestion, or analytics choices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must select high-performing storage involving File storage with Amazon EFS. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon CloudFront performance is the best fit when the high-performing AWS architecture requires this design behavior: Amazon CloudFront improves performance by caching and delivering content from edge locations closer to users.</li>
+            <li class="seo-sample-answer">B. AWS Global Accelerator is the best fit when the high-performing AWS architecture requires this design behavior: AWS Global Accelerator improves availability and performance by routing user traffic through the AWS global network to healthy endpoints.</li>
+            <li class="seo-sample-answer">C. Application Load Balancer selection is the best fit when the high-performing AWS architecture requires this design behavior: Application Load Balancer is selected for Layer 7 HTTP or HTTPS routing based on content such as host or path.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. File storage with Amazon EFS is the best fit when the high-performing AWS architecture requires this design behavior: File storage with Amazon EFS provides scalable shared file storage for Linux-based workloads across multiple compute resources.</li>
+        </ul>
+        <p class="seo-sample-explain">File storage with Amazon EFS provides scalable shared file storage for Linux-based workloads across multiple compute resources. This matches the high-performing architecture scenario without confusing storage, compute, database, network, ingestion, or analytics choices. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload has specific IOPS, throughput, shared file, object, block, or hybrid storage requirements. Which scenario best matches Object storage with Amazon S3?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A design points to Write-intensive database design when the performance, scalability, throughput, latency, or data-processing requirement depends on this distinction: Write-intensive database design selects database capacity, partitioning, or services that can handle high write volume.</li>
+            <li class="seo-sample-answer">B. A design points to RDS Proxy performance when the performance, scalability, throughput, latency, or data-processing requirement depends on this distinction: Amazon RDS Proxy improves application scalability by pooling and managing database connections.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A design points to Object storage with Amazon S3 when the performance, scalability, throughput, latency, or data-processing requirement depends on this distinction: Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data.</li>
+            <li class="seo-sample-answer">D. A design points to Provisioned IOPS when the performance, scalability, throughput, latency, or data-processing requirement depends on this distinction: Provisioned IOPS provides predictable storage performance for workloads that require consistent database or block storage I/O.</li>
+        </ul>
+        <p class="seo-sample-explain">Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data. This distinction matters because choosing a nearby concept would lead to the wrong storage type, compute model, database design, network path, or data-processing service. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload has specific IOPS, throughput, shared file, object, block, or hybrid storage requirements. Which scenario best matches Block storage with Amazon EBS?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A design points to AWS Direct Connect performance when the performance, scalability, throughput, latency, or data-processing requirement depends on this distinction: AWS Direct Connect provides dedicated network connectivity that can improve bandwidth consistency for hybrid workloads.</li>
+            <li class="seo-sample-answer">B. A design points to AWS PrivateLink performance when the performance, scalability, throughput, latency, or data-processing requirement depends on this distinction: AWS PrivateLink provides private service connectivity through private IP addresses without exposing traffic to the public internet.</li>
+            <li class="seo-sample-answer">C. A design points to Amazon Kinesis streaming when the performance, scalability, throughput, latency, or data-processing requirement depends on this distinction: Amazon Kinesis ingests and processes streaming data for real-time or near-real-time analytics workloads.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A design points to Block storage with Amazon EBS when the performance, scalability, throughput, latency, or data-processing requirement depends on this distinction: Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.</li>
+        </ul>
+        <p class="seo-sample-explain">Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access. This distinction matters because choosing a nearby concept would lead to the wrong storage type, compute model, database design, network path, or data-processing service. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A storage design must meet performance and scalability requirements without choosing the wrong storage type. Which answer applies Object storage with Amazon S3 most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Athena analytics is the correct architecture choice when the high-performance design decision depends on this exact meaning: Amazon Athena queries data in Amazon S3 using SQL without requiring managed servers.</li>
+            <li class="seo-sample-answer">B. Amazon Redshift analytics is the correct architecture choice when the high-performance design decision depends on this exact meaning: Amazon Redshift is a data warehouse service for high-performance analytics on structured and semi-structured data.</li>
+            <li class="seo-sample-answer">C. Block storage with Amazon EBS is the correct architecture choice when the high-performance design decision depends on this exact meaning: Block storage with Amazon EBS provides persistent block volumes for EC2 instances that need low-latency disk access.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Object storage with Amazon S3 is the correct architecture choice when the high-performance design decision depends on this exact meaning: Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data.</li>
+        </ul>
+        <p class="seo-sample-explain">Object storage with Amazon S3 stores data as objects in buckets and scales for large amounts of unstructured data. This applies the concept at the point where a solutions architect must choose a performance design that meets throughput, latency, scalability, and workload requirements. This is the correct answer.</p>
+      </details>
       <h2>Other SAA-C03 Domains</h2>
       <ul>
           <li><a href="/aws-solutions-architect-associate/design-secure-architectures/">1.0 Design Secure Architectures</a></li>

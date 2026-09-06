@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "How is Spot Instances best understood in an AWS billing, pricing, and support context?",
+          "name": "A company is comparing AWS pricing or purchasing options involving On-Demand Instances. Which answer best describes it?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back.. Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. This is the…"
+            "text": "On-Demand Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment.. On-Demand Instances let customers pay for compute…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A company is comparing AWS pricing or purchasing options involving Reserved Instances. Which answer best describes it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reserved Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term.. Reserved Instances provide a…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>48 exam-style questions</strong> covering <strong>12% of the CLF-C02 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-cloud-practitioner/">AWS Certified Cloud Practitioner practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches On-Demand Instances in AWS Cloud Practitioner Domain 4.0 Billing, Pricing, and Support?</h3>
-        <p><strong>Answer:</strong> On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment.</p>
-        <p>On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which option correctly defines Reserved Instances?</h3>
-        <p><strong>Answer:</strong> Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term.</p>
-        <p>Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>How is Spot Instances best understood in an AWS billing, pricing, and support context?</h3>
-        <p><strong>Answer:</strong> Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back.</p>
-        <p>Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches On-Demand Instances in AWS Cloud Practitioner Domain 4.0 Billing, Pricing, and Support?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment.</li>
+            <li class="seo-sample-answer">B. Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term.</li>
+            <li class="seo-sample-answer">C. Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back.</li>
+            <li class="seo-sample-answer">D. Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term.</li>
+        </ul>
+        <p class="seo-sample-explain">On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which option correctly defines Reserved Instances?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term.</li>
+            <li class="seo-sample-answer">C. AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management.</li>
+            <li class="seo-sample-answer">D. AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts.</li>
+        </ul>
+        <p class="seo-sample-explain">Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company is comparing AWS pricing or purchasing options involving On-Demand Instances. Which answer best describes it?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Reserved Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. On-Demand Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment.</li>
+            <li class="seo-sample-answer">C. Spot Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back.</li>
+            <li class="seo-sample-answer">D. Savings Plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term.</li>
+        </ul>
+        <p class="seo-sample-explain">On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company is comparing AWS pricing or purchasing options involving Reserved Instances. Which answer best describes it?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Pricing Calculator is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads.</li>
+            <li class="seo-sample-answer">B. AWS Organizations consolidated billing is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Reserved Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term.</li>
+            <li class="seo-sample-answer">D. AWS Support plans is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts.</li>
+        </ul>
+        <p class="seo-sample-explain">Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company is comparing AWS pricing or purchasing options involving Spot Instances. Which answer best describes it?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Dedicated Hosts is the best match when the AWS billing, pricing, or support scenario requires this meaning: Dedicated Hosts provide a physical server dedicated for customer use and can help meet compliance or licensing requirements.</li>
+            <li class="seo-sample-answer">B. Data transfer costs is the best match when the AWS billing, pricing, or support scenario requires this meaning: Data transfer costs depend on traffic direction, source, destination, and whether data moves across Regions, Availability Zones, or out to the internet.</li>
+            <li class="seo-sample-answer">C. AWS Budgets is the best match when the AWS billing, pricing, or support scenario requires this meaning: AWS Budgets tracks cost, usage, reservation, or Savings Plans thresholds and can alert when actual or forecasted values exceed limits.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Spot Instances is the best match when the AWS billing, pricing, or support scenario requires this meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back.</li>
+        </ul>
+        <p class="seo-sample-explain">Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back. This matches the AWS billing, pricing, or support scenario without confusing purchasing models, cost management tools, billing resources, or support options. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload has specific cost, commitment, interruption, licensing, or data-transfer requirements. Which scenario best matches On-Demand Instances?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to Reserved Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term.</li>
+            <li class="seo-sample-answer">B. A scenario points to Spot Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A scenario points to On-Demand Instances when the pricing, cost-management, billing, or support decision depends on this distinction: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment.</li>
+            <li class="seo-sample-answer">D. A scenario points to Savings Plans when the pricing, cost-management, billing, or support decision depends on this distinction: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term.</li>
+        </ul>
+        <p class="seo-sample-explain">On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload has specific cost, commitment, interruption, licensing, or data-transfer requirements. Which scenario best matches Reserved Instances?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to AWS Pricing Calculator when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Pricing Calculator estimates AWS service costs before deployment or for planned workloads.</li>
+            <li class="seo-sample-answer">B. A scenario points to AWS Organizations consolidated billing when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Organizations consolidated billing combines billing across multiple AWS accounts and can simplify cost management.</li>
+            <li class="seo-sample-answer">C. A scenario points to AWS Support plans when the pricing, cost-management, billing, or support decision depends on this distinction: AWS Support plans provide different levels of technical support, response times, guidance, and access to AWS experts.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A scenario points to Reserved Instances when the pricing, cost-management, billing, or support decision depends on this distinction: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term.</li>
+        </ul>
+        <p class="seo-sample-explain">Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term. This distinction matters because choosing a nearby concept would lead to the wrong pricing model, cost-management resource, estimate, billing structure, or support path. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A purchasing decision must match workload flexibility, commitment, interruption tolerance, licensing, or transfer behavior. Which answer applies On-Demand Instances most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Reserved Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Reserved Instances provide a discounted price in exchange for a commitment to use a specific instance configuration or family for a term.</li>
+            <li class="seo-sample-answer">B. Spot Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Spot Instances use spare EC2 capacity and can provide large discounts, but they can be interrupted when AWS needs the capacity back.</li>
+            <li class="seo-sample-answer">C. Savings Plans is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: Savings Plans provide discounted pricing in exchange for a commitment to a consistent amount of compute usage over a term.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. On-Demand Instances is the correct foundational AWS interpretation when the purchasing, budgeting, forecasting, consolidated-billing, or support decision depends on this exact meaning: On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment.</li>
+        </ul>
+        <p class="seo-sample-explain">On-Demand Instances let customers pay for compute capacity by the second or hour with no long-term commitment. This applies the concept at the point where a foundational AWS candidate must choose the best cost, billing, pricing, or support explanation for the business scenario. This is the correct answer.</p>
+      </details>
       <h2>Other CLF-C02 Domains</h2>
       <ul>
           <li><a href="/aws-cloud-practitioner/cloud-concepts/">1.0 Cloud Concepts</a></li>

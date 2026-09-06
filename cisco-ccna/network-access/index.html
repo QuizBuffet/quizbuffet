@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "How is Access ports best understood in a network access context?",
+          "name": "A switch configuration must support the correct VLAN behavior for VLANs. Which answer best describes it?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Access ports carry traffic for a single VLAN and connect end devices such as PCs, printers, or phones.. Access ports carry traffic for a single VLAN and connect end devices such as PCs, printers, or phones. This is the correct answer."
+            "text": "VLANs is the best match when the network access scenario requires this behavior: VLANs logically segment a Layer 2 network into separate broadcast domains on switches.. VLANs logically segment a Layer 2 network into separate broadcast domains on switches. This matches the…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A switch configuration must support the correct VLAN behavior for Normal range VLANs. Which answer best describes it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Normal range VLANs is the best match when the network access scenario requires this behavior: Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches.. Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>160 exam-style questions</strong> covering <strong>20% of the 200-301 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/cisco-ccna/">Cisco CCNA practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches VLANs in CCNA Objective 2.0 Network Access?</h3>
-        <p><strong>Answer:</strong> VLANs logically segment a Layer 2 network into separate broadcast domains on switches.</p>
-        <p>VLANs logically segment a Layer 2 network into separate broadcast domains on switches. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which option correctly defines Normal range VLANs?</h3>
-        <p><strong>Answer:</strong> Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches.</p>
-        <p>Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>How is Access ports best understood in a network access context?</h3>
-        <p><strong>Answer:</strong> Access ports carry traffic for a single VLAN and connect end devices such as PCs, printers, or phones.</p>
-        <p>Access ports carry traffic for a single VLAN and connect end devices such as PCs, printers, or phones. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches VLANs in CCNA Objective 2.0 Network Access?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. VLANs logically segment a Layer 2 network into separate broadcast domains on switches.</li>
+            <li class="seo-sample-answer">B. Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches.</li>
+            <li class="seo-sample-answer">C. Access ports carry traffic for a single VLAN and connect end devices such as PCs, printers, or phones.</li>
+            <li class="seo-sample-answer">D. A data VLAN carries ordinary user data traffic from connected endpoints.</li>
+        </ul>
+        <p class="seo-sample-explain">VLANs logically segment a Layer 2 network into separate broadcast domains on switches. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which option correctly defines Normal range VLANs?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. 802.1Q tags Ethernet frames with VLAN information so multiple VLANs can traverse one trunk link.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches.</li>
+            <li class="seo-sample-answer">C. The native VLAN is the VLAN whose traffic is sent untagged across an 802.1Q trunk.</li>
+            <li class="seo-sample-answer">D. Cisco Discovery Protocol is a Cisco proprietary Layer 2 discovery protocol that advertises device information to directly connected Cisco neighbors.</li>
+        </ul>
+        <p class="seo-sample-explain">Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A switch configuration must support the correct VLAN behavior for VLANs. Which answer best describes it?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. EtherChannel is the best match when the network access scenario requires this behavior: EtherChannel bundles multiple physical links into one logical link to increase bandwidth and provide redundancy.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. VLANs is the best match when the network access scenario requires this behavior: VLANs logically segment a Layer 2 network into separate broadcast domains on switches.</li>
+            <li class="seo-sample-answer">C. Layer 2 EtherChannel is the best match when the network access scenario requires this behavior: Layer 2 EtherChannel bundles switchports into one logical Layer 2 port-channel.</li>
+            <li class="seo-sample-answer">D. Layer 3 EtherChannel is the best match when the network access scenario requires this behavior: Layer 3 EtherChannel bundles routed ports into one logical Layer 3 port-channel.</li>
+        </ul>
+        <p class="seo-sample-explain">VLANs logically segment a Layer 2 network into separate broadcast domains on switches. This matches the switching, wireless, or management-access scenario without confusing it with a nearby Network Access concept. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A switch configuration must support the correct VLAN behavior for Normal range VLANs. Which answer best describes it?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Designated port is the best match when the network access scenario requires this behavior: A designated port is the forwarding port selected for a network segment in STP.</li>
+            <li class="seo-sample-answer">B. Alternate port is the best match when the network access scenario requires this behavior: An alternate port provides a backup path toward the root bridge and is normally blocking or discarding.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Normal range VLANs is the best match when the network access scenario requires this behavior: Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches.</li>
+            <li class="seo-sample-answer">D. PortFast is the best match when the network access scenario requires this behavior: PortFast allows an access port connected to an endpoint to move quickly to forwarding, bypassing normal listening and learning delays.</li>
+        </ul>
+        <p class="seo-sample-explain">Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches. This matches the switching, wireless, or management-access scenario without confusing it with a nearby Network Access concept. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A switch configuration must support the correct VLAN behavior for Access ports. Which answer best describes it?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Cisco wireless architecture is the best match when the network access scenario requires this behavior: Cisco wireless architecture describes how access points, controllers, clients, and management systems support WLAN connectivity.</li>
+            <li class="seo-sample-answer">B. Autonomous AP is the best match when the network access scenario requires this behavior: An autonomous AP is independently configured and managed without relying on a wireless LAN controller for control.</li>
+            <li class="seo-sample-answer">C. Lightweight AP is the best match when the network access scenario requires this behavior: A lightweight AP relies on a wireless LAN controller for centralized control, configuration, and management.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Access ports is the best match when the network access scenario requires this behavior: Access ports carry traffic for a single VLAN and connect end devices such as PCs, printers, or phones.</li>
+        </ul>
+        <p class="seo-sample-explain">Access ports carry traffic for a single VLAN and connect end devices such as PCs, printers, or phones. This matches the switching, wireless, or management-access scenario without confusing it with a nearby Network Access concept. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A PC is connected to a switchport, but traffic is reaching the wrong broadcast domain. Which scenario best matches VLANs?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to Loop guard when the switch, WLAN, or management evidence depends on this distinction: Loop guard helps prevent loops caused by a unidirectional link or missing BPDUs on a non-designated port.</li>
+            <li class="seo-sample-answer">B. A scenario points to BPDU filter when the switch, WLAN, or management evidence depends on this distinction: BPDU filter suppresses sending or receiving BPDUs on a port, depending on configuration scope.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A scenario points to VLANs when the switch, WLAN, or management evidence depends on this distinction: VLANs logically segment a Layer 2 network into separate broadcast domains on switches.</li>
+            <li class="seo-sample-answer">D. A scenario points to BPDU guard when the switch, WLAN, or management evidence depends on this distinction: BPDU guard err-disables a PortFast-enabled port if it receives a BPDU.</li>
+        </ul>
+        <p class="seo-sample-explain">VLANs logically segment a Layer 2 network into separate broadcast domains on switches. This distinction matters because the wrong concept would lead to the wrong VLAN, trunk, STP, EtherChannel, WLAN, or management verification step. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A PC is connected to a switchport, but traffic is reaching the wrong broadcast domain. Which scenario best matches Normal range VLANs?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to AP physical connection when the switch, WLAN, or management evidence depends on this distinction: An AP physical connection commonly uses an access-layer switchport with power, VLAN reachability, and controller connectivity as required.</li>
+            <li class="seo-sample-answer">B. A scenario points to WLC physical connection when the switch, WLAN, or management evidence depends on this distinction: A WLC physical connection commonly uses switch connectivity that supports management, client VLANs, and aggregated links where configured.</li>
+            <li class="seo-sample-answer">C. A scenario points to LAG when the switch, WLAN, or management evidence depends on this distinction: Link aggregation groups combine physical links into a single logical connection for bandwidth and resiliency.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A scenario points to Normal range VLANs when the switch, WLAN, or management evidence depends on this distinction: Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches.</li>
+        </ul>
+        <p class="seo-sample-explain">Normal range VLANs use VLAN IDs 1 through 1005 and are commonly configured on Cisco switches. This distinction matters because the wrong concept would lead to the wrong VLAN, trunk, STP, EtherChannel, WLAN, or management verification step. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Cisco switch lab requires predicting which VLAN traffic is forwarded, tagged, untagged, or routed. Which answer applies VLANs most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Telnet is the correct operational interpretation when the VLAN, trunk, STP, EtherChannel, wireless, or management decision depends on this exact meaning: Telnet provides remote command-line access without encryption and is not preferred for secure management.</li>
+            <li class="seo-sample-answer">B. SSH is the correct operational interpretation when the VLAN, trunk, STP, EtherChannel, wireless, or management decision depends on this exact meaning: SSH provides encrypted remote command-line management access to network devices.</li>
+            <li class="seo-sample-answer">C. HTTP management is the correct operational interpretation when the VLAN, trunk, STP, EtherChannel, wireless, or management decision depends on this exact meaning: HTTP management provides web-based device access without encryption.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. VLANs is the correct operational interpretation when the VLAN, trunk, STP, EtherChannel, wireless, or management decision depends on this exact meaning: VLANs logically segment a Layer 2 network into separate broadcast domains on switches.</li>
+        </ul>
+        <p class="seo-sample-explain">VLANs logically segment a Layer 2 network into separate broadcast domains on switches. This applies the concept at the point where a Cisco administrator must predict actual switch, wireless, or management behavior from configuration and symptoms. This is the correct answer.</p>
+      </details>
       <h2>Other 200-301 Domains</h2>
       <ul>
           <li><a href="/cisco-ccna/network-fundamentals/">1.0 Network Fundamentals</a></li>

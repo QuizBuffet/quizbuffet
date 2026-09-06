@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "How is IAM groups best understood when designing secure AWS architectures?",
+          "name": "A solutions architect must design secure access to AWS resources using Secure access to AWS resources. Which answer best describes the design concept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "IAM groups collect IAM users so permissions can be assigned consistently to multiple users.. IAM groups collect IAM users so permissions can be assigned consistently to multiple users. This is the correct answer."
+            "text": "Secure access to AWS resources is the best fit when the secure AWS architecture requires this design behavior: Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A solutions architect must design secure access to AWS resources using IAM users. Which answer best describes the design concept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IAM users is the best fit when the secure AWS architecture requires this design behavior: IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs.. IAM users are long-term identities in an AWS account that…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>180 exam-style questions</strong> covering <strong>30% of the SAA-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-solutions-architect-associate/">AWS Certified Solutions Architect Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Secure access to AWS resources in AWS Solutions Architect Associate Domain 1.0 Design Secure Architectures?</h3>
-        <p><strong>Answer:</strong> Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure.</p>
-        <p>Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which option correctly defines IAM users?</h3>
-        <p><strong>Answer:</strong> IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs.</p>
-        <p>IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>How is IAM groups best understood when designing secure AWS architectures?</h3>
-        <p><strong>Answer:</strong> IAM groups collect IAM users so permissions can be assigned consistently to multiple users.</p>
-        <p>IAM groups collect IAM users so permissions can be assigned consistently to multiple users. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Secure access to AWS resources in AWS Solutions Architect Associate Domain 1.0 Design Secure Architectures?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure.</li>
+            <li class="seo-sample-answer">B. IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs.</li>
+            <li class="seo-sample-answer">C. IAM groups collect IAM users so permissions can be assigned consistently to multiple users.</li>
+            <li class="seo-sample-answer">D. IAM roles provide temporary credentials and permissions that can be assumed by AWS services, users, or accounts.</li>
+        </ul>
+        <p class="seo-sample-explain">Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which option correctly defines IAM users?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Role switching lets a user or identity assume another IAM role to receive temporary permissions for a task.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs.</li>
+            <li class="seo-sample-answer">C. Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure.</li>
+            <li class="seo-sample-answer">D. Cross-account access allows identities in one AWS account to access resources in another account through roles or resource policies.</li>
+        </ul>
+        <p class="seo-sample-explain">IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must design secure access to AWS resources using Secure access to AWS resources. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Service control policies is the best fit when the secure AWS architecture requires this design behavior: Service control policies set maximum permission boundaries across accounts in AWS Organizations.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Secure access to AWS resources is the best fit when the secure AWS architecture requires this design behavior: Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure.</li>
+            <li class="seo-sample-answer">C. Resource policies is the best fit when the secure AWS architecture requires this design behavior: Resource policies are attached to resources and define which principals can access those resources and under what conditions.</li>
+            <li class="seo-sample-answer">D. Federated access is the best fit when the secure AWS architecture requires this design behavior: Federated access allows users from an external identity provider or directory to access AWS using temporary credentials or roles.</li>
+        </ul>
+        <p class="seo-sample-explain">Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure. This matches the secure architecture scenario without confusing identity access, network protection, application security, threat detection, encryption, backup, or data governance. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must design secure access to AWS resources using IAM users. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Private subnets is the best fit when the secure AWS architecture requires this design behavior: Private subnets contain resources that should not be directly reachable from the internet.</li>
+            <li class="seo-sample-answer">B. Security groups is the best fit when the secure AWS architecture requires this design behavior: Security groups are stateful virtual firewalls that control inbound and outbound traffic for supported AWS resources.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. IAM users is the best fit when the secure AWS architecture requires this design behavior: IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs.</li>
+            <li class="seo-sample-answer">D. Network ACLs is the best fit when the secure AWS architecture requires this design behavior: Network ACLs are stateless subnet-level traffic filters that evaluate inbound and outbound traffic separately.</li>
+        </ul>
+        <p class="seo-sample-explain">IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs. This matches the secure architecture scenario without confusing identity access, network protection, application security, threat detection, encryption, backup, or data governance. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A solutions architect must design secure access to AWS resources using IAM groups. Which answer best describes the design concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. VPN connectivity is the best fit when the secure AWS architecture requires this design behavior: VPN connectivity secures network traffic between AWS and another network over encrypted tunnels.</li>
+            <li class="seo-sample-answer">B. AWS Direct Connect security is the best fit when the secure AWS architecture requires this design behavior: AWS Direct Connect security uses private dedicated connectivity and often additional encryption designs when needed for sensitive hybrid traffic.</li>
+            <li class="seo-sample-answer">C. AWS Secrets Manager is the best fit when the secure AWS architecture requires this design behavior: AWS Secrets Manager stores, rotates, and manages secrets such as database credentials, API keys, and passwords.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. IAM groups is the best fit when the secure AWS architecture requires this design behavior: IAM groups collect IAM users so permissions can be assigned consistently to multiple users.</li>
+        </ul>
+        <p class="seo-sample-explain">IAM groups collect IAM users so permissions can be assigned consistently to multiple users. This matches the secure architecture scenario without confusing identity access, network protection, application security, threat detection, encryption, backup, or data governance. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A secure architecture decision must separate identity, workload, and data controls. Which scenario best matches Secure access to AWS resources?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A design points to Route tables when the security requirement depends on this architectural distinction: Route tables determine where subnet or gateway traffic is directed within a VPC architecture.</li>
+            <li class="seo-sample-answer">B. A design points to VPC endpoints when the security requirement depends on this architectural distinction: VPC endpoints provide private connectivity from a VPC to supported AWS services without requiring public internet routing.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A design points to Secure access to AWS resources when the security requirement depends on this architectural distinction: Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure.</li>
+            <li class="seo-sample-answer">D. A design points to AWS PrivateLink when the security requirement depends on this architectural distinction: AWS PrivateLink provides private connectivity to supported services through private IP addresses in a VPC.</li>
+        </ul>
+        <p class="seo-sample-explain">Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure. This distinction matters because choosing a nearby concept would lead to the wrong access model, network boundary, credential design, encryption control, or data protection strategy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A company needs secure access across users, services, or accounts without over-permissioning identities. Which scenario best matches IAM users?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A design points to Amazon Cognito when the security requirement depends on this architectural distinction: Amazon Cognito provides user sign-up, sign-in, and access control for web and mobile applications.</li>
+            <li class="seo-sample-answer">B. A design points to AWS WAF when the security requirement depends on this architectural distinction: AWS WAF protects web applications by filtering HTTP and HTTPS requests based on configurable rules.</li>
+            <li class="seo-sample-answer">C. A design points to AWS Shield when the security requirement depends on this architectural distinction: AWS Shield provides managed protection against distributed denial-of-service attacks.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A design points to IAM users when the security requirement depends on this architectural distinction: IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs.</li>
+        </ul>
+        <p class="seo-sample-explain">IAM users are long-term identities in an AWS account that can be assigned credentials and permissions for specific access needs. This distinction matters because choosing a nearby concept would lead to the wrong access model, network boundary, credential design, encryption control, or data protection strategy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A regulated workload must use the right data security control for encryption, keys, certificates, backup, replication, or lifecycle requirements. Which answer applies Secure access to AWS resources most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Macie is the correct architecture choice when the secure access, workload protection, or data security decision depends on this exact meaning: Amazon Macie discovers and helps protect sensitive data such as personally identifiable information in Amazon S3.</li>
+            <li class="seo-sample-answer">B. Security segmentation is the correct architecture choice when the secure access, workload protection, or data security decision depends on this exact meaning: Security segmentation separates workloads or tiers by subnet, route, security group, network ACL, account, or service boundary to reduce blast radius.</li>
+            <li class="seo-sample-answer">C. Data security controls is the correct architecture choice when the secure access, workload protection, or data security decision depends on this exact meaning: Data security controls protect data access, classification, encryption, retention, backup, replication, and recovery according to business and compliance requirements.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Secure access to AWS resources is the correct architecture choice when the secure access, workload protection, or data security decision depends on this exact meaning: Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure.</li>
+        </ul>
+        <p class="seo-sample-explain">Secure access to AWS resources means designing identity, authorization, and account controls that allow required access while reducing unnecessary permissions and exposure. This applies the concept at the point where a solutions architect must choose the secure design that meets business requirements while reducing risk and unnecessary access. This is the correct answer.</p>
+      </details>
       <h2>Other SAA-C03 Domains</h2>
       <ul>
           <li><a href="/aws-solutions-architect-associate/design-resilient-architectures/">2.0 Design Resilient Architectures</a></li>

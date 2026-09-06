@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A remote pilot arrives at the launch site and observes winds at 12 knots with gusts to 24 knots. No manufacturer-specific wind limits are available for the sUAS being used. Under Part 107 performance considerations, how should the pilot factor in gusts during this flight planning decision?",
+          "name": "The sky condition portion of a METAR reads 'FEW015 BKN040 OVC080.' A remote pilot needs to determine the ceiling for flight planning purposes. What is the ceiling, and which sky coverage type defines it?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The pilot should use the gust factor (24 knots) as the effective maximum wind speed for planning purposes, since gusts represent the peak instantaneous load on the sUAS structure and control system."
+            "text": "BKN040 defines the ceiling at 4,000 ft AGL because the ceiling is the lowest broken or overcast layer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A remote pilot is planning an sUAS operation at a location served by a Terminal Aerodrome Forecast (TAF). The TAF is listed as valid from 1200Z to 1200Z the following day. How long is a standard TAF valid, and what geographic area does it cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A TAF is valid for 24 hours (or 30 hours for major airports) and covers a 5-statute-mile radius around the issuing airport."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>39 exam-style questions</strong> covering <strong>13% of the Part 107 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/faa-part-107/">FAA Part 107 / 14 CFR Part 107 practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A remote pilot is reviewing a METAR report before a commercial sUAS flight. The report contains the group &#39;27015KT.&#39; What information does this group convey?</h3>
-        <p><strong>Answer:</strong> Wind from 270 degrees (west) at 15 knots, with no gusts reported</p>
-        <p>In a METAR, the wind group is formatted as direction in degrees true followed by speed and units; &#39;27015KT&#39; means wind from 270 degrees (west) at 15 knots.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A remote pilot reviews a METAR that shows &#39;3SM&#39; in the visibility group. Under 14 CFR Part 107, what is the minimum flight visibility required to operate an sUAS, and does the observed 3 SM satisfy that requirement?</h3>
-        <p><strong>Answer:</strong> The minimum visibility is 3 statute miles; the observed 3 SM exactly meets the regulatory minimum for Part 107 sUAS operations</p>
-        <p>Under 14 CFR 107.51(c), the minimum flight visibility for sUAS operations is 3 statute miles; an observed visibility of 3 SM exactly meets this regulatory minimum.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A remote pilot arrives at the launch site and observes winds at 12 knots with gusts to 24 knots. No manufacturer-specific wind limits are available for the sUAS being used. Under Part 107 performance considerations, how should the pilot factor in gusts during this flight planning decision?</h3>
-        <p><strong>Answer:</strong> The pilot should use the gust factor (24 knots) as the effective maximum wind speed for planning purposes, since gusts represent the peak instantaneous load on the sUAS structure and control system</p>
-        <p>When wind gusts are present, the gust value represents the peak wind speed the aircraft will actually experience; remote pilots should evaluate the sUAS&#39;s ability to handle peak gust loads, not just the sustained wind, because gusts impose the most severe structural and control demands.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A remote pilot is reviewing a METAR report before a commercial sUAS flight. The report contains the group &#39;27015KT.&#39; What information does this group convey?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Wind from 015 degrees (north-northeast) at 270 knots, indicating an extreme weather event</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Wind from 270 degrees (west) at 15 knots, with no gusts reported</li>
+            <li class="seo-sample-answer">C. Visibility of 270 statute miles with a ceiling at 15,000 ft MSL</li>
+            <li class="seo-sample-answer">D. Temperature of 27 degrees Celsius with a dew point of 15 degrees Celsius</li>
+        </ul>
+        <p class="seo-sample-explain">In a METAR, the wind group is formatted as direction in degrees true followed by speed and units; &#39;27015KT&#39; means wind from 270 degrees (west) at 15 knots.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot reviews a METAR that shows &#39;3SM&#39; in the visibility group. Under 14 CFR Part 107, what is the minimum flight visibility required to operate an sUAS, and does the observed 3 SM satisfy that requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. The minimum visibility is 3 statute miles; the observed 3 SM exactly meets the regulatory minimum for Part 107 sUAS operations</li>
+            <li class="seo-sample-answer">B. Part 107 imposes no visibility minimum; the remote pilot may fly in any observed visibility as long as VLOS is maintained</li>
+            <li class="seo-sample-answer">C. The minimum visibility is 5 statute miles; 3 SM falls below this and the operation cannot proceed without a waiver</li>
+            <li class="seo-sample-answer">D. The minimum visibility is 1 statute mile; 3 SM exceeds this, so the flight is authorized under Part 107</li>
+        </ul>
+        <p class="seo-sample-explain">Under 14 CFR 107.51(c), the minimum flight visibility for sUAS operations is 3 statute miles; an observed visibility of 3 SM exactly meets this regulatory minimum.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>The sky condition portion of a METAR reads &#39;FEW015 BKN040 OVC080.&#39; A remote pilot needs to determine the ceiling for flight planning purposes. What is the ceiling, and which sky coverage type defines it?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. OVC080 defines the ceiling at 8,000 ft AGL because overcast layers always take precedence over broken and few layers</li>
+            <li class="seo-sample-answer seo-sample-correct">B. BKN040 defines the ceiling at 4,000 ft AGL because the ceiling is the lowest broken or overcast layer</li>
+            <li class="seo-sample-answer">C. FEW015 defines the ceiling at 1,500 ft AGL because it is the lowest reported cloud layer</li>
+            <li class="seo-sample-answer">D. No ceiling exists because at least one FEW layer is present, indicating overall sky conditions are predominantly clear</li>
+        </ul>
+        <p class="seo-sample-explain">In aviation meteorology, the ceiling is defined as the height above ground of the lowest broken (BKN) or overcast (OVC) cloud layer; with BKN040 and OVC080 both present, BKN040 at 4,000 ft AGL is the ceiling.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot is planning an sUAS operation at a location served by a Terminal Aerodrome Forecast (TAF). The TAF is listed as valid from 1200Z to 1200Z the following day. How long is a standard TAF valid, and what geographic area does it cover?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A TAF is valid for 6 hours and covers a 10-mile radius around the airport for which it is issued</li>
+            <li class="seo-sample-answer">B. A TAF is valid for 48 hours and covers weather conditions for all airports within a 50-mile radius of the issuing station</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A TAF is valid for 24 hours (or 30 hours for major airports) and covers a 5-statute-mile radius around the issuing airport</li>
+            <li class="seo-sample-answer">D. A TAF is valid for 12 hours and covers the entire terminal control area (TCA) surrounding the primary airport</li>
+        </ul>
+        <p class="seo-sample-explain">A standard TAF is valid for 24 hours from the time of issuance, with some major airports issuing 30-hour TAFs; the forecast covers conditions within approximately 5 statute miles of the center of the airport.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot plans an sUAS agricultural survey in a high-elevation valley during a hot summer afternoon. The field elevation is 5,500 ft MSL, the outside temperature is 38°C (100°F), and humidity is high. The pilot notices the sUAS seems sluggish during hover. What meteorological condition best explains this performance reduction?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The high humidity increases air mass weight, producing more lift than expected and reducing control responsiveness</li>
+            <li class="seo-sample-answer">B. High pressure associated with clear summer days at altitude compresses rotor downwash, reducing the effective thrust of the propellers</li>
+            <li class="seo-sample-answer">C. The extreme temperature heats the motor electronics, causing a thermal shutdown that limits available power to 60% of rated capacity</li>
+            <li class="seo-sample-answer seo-sample-correct">D. The high elevation combined with high temperature and humidity creates a high density altitude, reducing air density and degrading propeller efficiency and lift</li>
+        </ul>
+        <p class="seo-sample-explain">Density altitude combines pressure altitude with temperature and humidity effects; at high elevation with high temperature and humidity, density altitude is significantly higher than field elevation, meaning the air is less dense, propellers produce less thrust for a given RPM, and the sUAS experiences degraded performance.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot approaches weather briefing and must choose between ASOS and AWOS data for a flight near a small general aviation airport. What is the primary operational distinction between an ASOS and an AWOS station?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. ASOS is operated by the FAA exclusively at large commercial airports, while AWOS is used only by the military at air bases</li>
+            <li class="seo-sample-answer">B. ASOS and AWOS provide identical data sets; the distinction is purely administrative and has no operational significance for pilots</li>
+            <li class="seo-sample-answer">C. AWOS provides forecasts while ASOS provides only current observations; pilots should always use AWOS for planning and ASOS for pre-takeoff checks</li>
+            <li class="seo-sample-answer seo-sample-correct">D. ASOS (Automated Surface Observing System) is a joint NWS/FAA/DOD system providing more comprehensive data including precipitation type, while AWOS (Automated Weather Observing System) is FAA-operated with fewer sensor suites</li>
+        </ul>
+        <p class="seo-sample-explain">ASOS is a National Weather Service, FAA, and DOD joint program that provides more comprehensive weather observations including precipitation identification, while AWOS is an FAA system with various levels of sensor capability; both provide automated weather data but ASOS generally has more complete sensor suites.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>During a late afternoon sUAS mapping mission, a remote pilot observes a rapidly developing cumulonimbus cloud approximately 5 miles away. Thunder is audible. The pilot considers continuing because the cloud is currently upwind. What is the correct action under sound aeronautical decision-making?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Continue the mission at reduced altitude because lightning typically strikes only in the precipitation core directly beneath the cloud</li>
+            <li class="seo-sample-answer">B. Continue only if VLOS is maintained and the cloud does not visibly approach the sUAS operating area within the next 10 minutes</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Immediately terminate the flight and shelter the crew; audible thunder means the storm is within approximately 10 miles and lightning can strike well ahead of visible precipitation</li>
+            <li class="seo-sample-answer">D. Reduce flight altitude to 50 ft AGL and fly directly away from the cloud at maximum speed to increase the safe separation distance</li>
+        </ul>
+        <p class="seo-sample-explain">If thunder is audible, the storm is within approximately 10 miles; lightning can strike 10 miles or more from the cloud, well ahead of visible precipitation; the safe action is to immediately terminate the sUAS flight and shelter personnel, &#39;When thunder roars, go indoors.&#39;</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A remote pilot reviews a surface analysis chart and notices closely spaced isobars forming a pattern labeled &#39;L.&#39; What does this pattern indicate, and how should a remote pilot interpret it for operational planning?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Closely spaced isobars labeled &#39;L&#39; indicate a high-pressure system with light, stable winds; ideal conditions for sUAS operations</li>
+            <li class="seo-sample-answer">B. Closely spaced isobars with &#39;L&#39; indicate a calm center surrounded by moderate peripheral winds; sUAS operations should focus on the center of the &#39;L&#39;</li>
+            <li class="seo-sample-answer">C. The &#39;L&#39; label and closely spaced isobars indicate a stationary front with no wind movement; sUAS operations should be delayed until the front passes</li>
+            <li class="seo-sample-answer seo-sample-correct">D. The pattern indicates a low-pressure system; closely spaced isobars around an &#39;L&#39; indicate strong pressure gradients and potentially strong, turbulent winds</li>
+        </ul>
+        <p class="seo-sample-explain">On surface analysis charts, &#39;L&#39; marks a low-pressure center; closely spaced isobars indicate a steep pressure gradient, which is associated with strong winds; low-pressure systems also bring unstable air, clouds, and precipitation, making conditions less favorable for sUAS operations.</p>
+      </details>
       <h2>Other Part 107 Domains</h2>
       <ul>
           <li><a href="/faa-part-107/regulations-core/">1.0 Regulations: Core</a></li>

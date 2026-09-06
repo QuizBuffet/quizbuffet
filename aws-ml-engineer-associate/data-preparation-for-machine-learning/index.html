@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which description best matches CSV in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?",
+          "name": "An ML engineer must choose a data format for a training dataset involving Apache Parquet. Which answer best describes the concept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "CSV is a simple row-based text format for tabular data that lacks strong typing and efficient compression by default.. CSV is a simple row-based text format for tabular data that lacks strong typing and efficient compression by default. This is the correct answer."
+            "text": "Apache Parquet is the best fit when an ML data preparation workflow requires this behavior: Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets.. Apache Parquet is a columnar format efficient for analytics…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An ML engineer must choose a data format for a training dataset involving JSON. Which answer best describes the concept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JSON is the best fit when an ML data preparation workflow requires this behavior: JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data.. JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>140 exam-style questions</strong> covering <strong>28% of the MLA-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-ml-engineer-associate/">AWS Certified Machine Learning Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Apache Parquet in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?</h3>
-        <p><strong>Answer:</strong> Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets.</p>
-        <p>Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches JSON in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?</h3>
-        <p><strong>Answer:</strong> JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data.</p>
-        <p>JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches CSV in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?</h3>
-        <p><strong>Answer:</strong> CSV is a simple row-based text format for tabular data that lacks strong typing and efficient compression by default.</p>
-        <p>CSV is a simple row-based text format for tabular data that lacks strong typing and efficient compression by default. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Apache Parquet in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets.</li>
+            <li class="seo-sample-answer">B. JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data.</li>
+            <li class="seo-sample-answer">C. CSV is a simple row-based text format for tabular data that lacks strong typing and efficient compression by default.</li>
+            <li class="seo-sample-answer">D. Apache ORC is a columnar format optimized for high-performance analytics and efficient storage in big data systems.</li>
+        </ul>
+        <p class="seo-sample-explain">Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which description best matches JSON in AWS MLA-C01 Domain 1.0 Data Preparation for Machine Learning?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon FSx for NetApp ONTAP provides managed NetApp-compatible file storage for workloads that need ONTAP features in AWS.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data.</li>
+            <li class="seo-sample-answer">C. Amazon EBS data source provides block storage volumes for EC2-based workloads that need low-latency disk access.</li>
+            <li class="seo-sample-answer">D. Amazon RDS data source provides managed relational databases that can serve as structured sources for ML preparation workflows.</li>
+        </ul>
+        <p class="seo-sample-explain">JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must choose a data format for a training dataset involving Apache Parquet. Which answer best describes the concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon Kinesis ingestion is the best fit when an ML data preparation workflow requires this behavior: Amazon Kinesis ingestion provides ingestion and processing of streaming data for near-real-time ML data pipelines.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Apache Parquet is the best fit when an ML data preparation workflow requires this behavior: Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets.</li>
+            <li class="seo-sample-answer">C. Apache Flink streaming is the best fit when an ML data preparation workflow requires this behavior: Apache Flink streaming provides stateful stream processing for real-time transformation and analytics.</li>
+            <li class="seo-sample-answer">D. Apache Kafka ingestion is the best fit when an ML data preparation workflow requires this behavior: Apache Kafka ingestion provides distributed event streaming for moving data between producers and consumers.</li>
+        </ul>
+        <p class="seo-sample-explain">Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets. This matches the ML data preparation scenario without confusing data formats, storage services, ingestion mechanisms, transformations, feature engineering, encoding, or data integrity checks. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must choose a data format for a training dataset involving JSON. Which answer best describes the concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. S3 Transfer Acceleration is the best fit when an ML data preparation workflow requires this behavior: S3 Transfer Acceleration provides faster long-distance uploads to S3 by routing traffic through AWS edge locations.</li>
+            <li class="seo-sample-answer">B. EBS Provisioned IOPS is the best fit when an ML data preparation workflow requires this behavior: EBS Provisioned IOPS provides predictable block storage performance for workloads that require consistent high I/O.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. JSON is the best fit when an ML data preparation workflow requires this behavior: JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data.</li>
+            <li class="seo-sample-answer">D. Outlier treatment is the best fit when an ML data preparation workflow requires this behavior: Outlier treatment involves identifying and handling extreme values that may distort model training or analysis.</li>
+        </ul>
+        <p class="seo-sample-explain">JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data. This matches the ML data preparation scenario without confusing data formats, storage services, ingestion mechanisms, transformations, feature engineering, encoding, or data integrity checks. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must choose a data format for a training dataset involving CSV. Which answer best describes the concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Normalization is the best fit when an ML data preparation workflow requires this behavior: Normalization involves rescaling data to a defined range so feature magnitudes are comparable.</li>
+            <li class="seo-sample-answer">B. Feature splitting is the best fit when an ML data preparation workflow requires this behavior: Feature splitting involves separating a compound feature into multiple useful features for modeling.</li>
+            <li class="seo-sample-answer">C. Binning is the best fit when an ML data preparation workflow requires this behavior: Binning involves grouping continuous numeric values into intervals or categories for modeling or analysis.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. CSV is the best fit when an ML data preparation workflow requires this behavior: CSV is a simple row-based text format for tabular data that lacks strong typing and efficient compression by default.</li>
+        </ul>
+        <p class="seo-sample-explain">CSV is a simple row-based text format for tabular data that lacks strong typing and efficient compression by default. This matches the ML data preparation scenario without confusing data formats, storage services, ingestion mechanisms, transformations, feature engineering, encoding, or data integrity checks. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A large training dataset must be stored for efficient access, schema handling, or analytics scans. Which scenario best matches Apache Parquet?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A workflow points to Deduplication when ingestion, storage, transformation, feature preparation, or data integrity depends on this distinction: Deduplication involves removing duplicate records that could distort training results or evaluation metrics.</li>
+            <li class="seo-sample-answer">B. A workflow points to Data scaling when ingestion, storage, transformation, feature preparation, or data integrity depends on this distinction: Data scaling involves adjusting numeric feature ranges so algorithms sensitive to magnitude can train more effectively.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A workflow points to Apache Parquet when ingestion, storage, transformation, feature preparation, or data integrity depends on this distinction: Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets.</li>
+            <li class="seo-sample-answer">D. A workflow points to Standardization when ingestion, storage, transformation, feature preparation, or data integrity depends on this distinction: Standardization involves transforming numeric features to a common scale, often centered around a mean with a standard deviation.</li>
+        </ul>
+        <p class="seo-sample-explain">Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets. This distinction matters because choosing a nearby concept would lead to the wrong data format, storage service, ingestion path, transformation, feature representation, or quality-control step. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A large training dataset must be stored for efficient access, schema handling, or analytics scans. Which scenario best matches JSON?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A workflow points to One-hot encoding when ingestion, storage, transformation, feature preparation, or data integrity depends on this distinction: One-hot encoding involves converting categorical values into separate binary columns.</li>
+            <li class="seo-sample-answer">B. A workflow points to Label encoding when ingestion, storage, transformation, feature preparation, or data integrity depends on this distinction: Label encoding involves converting categorical values into numeric labels for algorithms that can interpret encoded categories appropriately.</li>
+            <li class="seo-sample-answer">C. A workflow points to Tokenization when ingestion, storage, transformation, feature preparation, or data integrity depends on this distinction: Tokenization involves splitting text into units such as words, subwords, or tokens for NLP workflows.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A workflow points to JSON when ingestion, storage, transformation, feature preparation, or data integrity depends on this distinction: JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data.</li>
+        </ul>
+        <p class="seo-sample-explain">JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data. This distinction matters because choosing a nearby concept would lead to the wrong data format, storage service, ingestion path, transformation, feature representation, or quality-control step. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must prepare data for modeling while balancing access pattern, quality, cost, and performance. Which answer applies Apache Parquet most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Data quality validation is the correct ML engineering choice when the data preparation decision depends on this exact behavior: Data quality validation involves checking data for completeness, accuracy, consistency, schema correctness, and suitability for modeling.</li>
+            <li class="seo-sample-answer">B. JSON is the correct ML engineering choice when the data preparation decision depends on this exact behavior: JSON is a semi-structured text format used for nested records, APIs, logs, and flexible schema data.</li>
+            <li class="seo-sample-answer">C. CSV is the correct ML engineering choice when the data preparation decision depends on this exact behavior: CSV is a simple row-based text format for tabular data that lacks strong typing and efficient compression by default.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Apache Parquet is the correct ML engineering choice when the data preparation decision depends on this exact behavior: Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets.</li>
+        </ul>
+        <p class="seo-sample-explain">Apache Parquet is a columnar format efficient for analytics and ML workloads that scan selected columns from large datasets. This applies the concept at the point where an ML engineer must prepare data for modeling while balancing access pattern, cost, performance, quality, and modeling readiness. This is the correct answer.</p>
+      </details>
       <h2>Other MLA-C01 Domains</h2>
       <ul>
           <li><a href="/aws-ml-engineer-associate/ml-model-development/">2.0 ML Model Development</a></li>

@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A Kubernetes workload on EKS needs pod replicas to increase based on CPU. Which component should be configured?",
+          "name": "An ECS service must maintain the desired number of tasks during variable load. Which configuration supports this requirement?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Horizontal Pod Autoscaler with metrics available to the cluster."
+            "text": "ECS service auto scaling based on CloudWatch metrics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A stateless application must run across multiple Availability Zones and add instances when average request count per target rises. Which policy should be used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An Auto Scaling target tracking policy using ALBRequestCountPerTarget."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>110 exam-style questions</strong> covering <strong>22% of the SOA-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-cloudops-engineer-associate/">AWS Certified CloudOps Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A web application on EC2 has traffic spikes every weekday morning. The operations team wants capacity to increase automatically based on demand. What should be configured?</h3>
-        <p><strong>Answer:</strong> An Auto Scaling group with a target tracking scaling policy</p>
-        <p>compute scaling mechanisms is best addressed by An Auto Scaling group with a target tracking scaling policy, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>An Auto Scaling group scales in too aggressively and terminates instances before requests complete. Which adjustment is most appropriate?</h3>
-        <p><strong>Answer:</strong> Tune cooldowns, health checks, and termination policies</p>
-        <p>compute scaling mechanisms is best addressed by Tune cooldowns, health checks, and termination policies, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A Kubernetes workload on EKS needs pod replicas to increase based on CPU. Which component should be configured?</h3>
-        <p><strong>Answer:</strong> Horizontal Pod Autoscaler with metrics available to the cluster</p>
-        <p>compute scaling mechanisms is best addressed by Horizontal Pod Autoscaler with metrics available to the cluster, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A web application on EC2 has traffic spikes every weekday morning. The operations team wants capacity to increase automatically based on demand. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. An Auto Scaling group with a target tracking scaling policy</li>
+            <li class="seo-sample-answer">B. An S3 Lifecycle rule for old access logs</li>
+            <li class="seo-sample-answer">C. A Route 53 private hosted zone</li>
+            <li class="seo-sample-answer">D. An AWS Backup plan for the instances</li>
+        </ul>
+        <p class="seo-sample-explain">compute scaling mechanisms is best addressed by An Auto Scaling group with a target tracking scaling policy, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An Auto Scaling group scales in too aggressively and terminates instances before requests complete. Which adjustment is most appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">D. Tune cooldowns, health checks, and termination policies</li>
+            <li class="seo-sample-answer">A. Enable S3 Intelligent-Tiering</li>
+            <li class="seo-sample-answer">B. Create a CloudTrail Lake query</li>
+            <li class="seo-sample-answer">C. Change the ACM validation method</li>
+        </ul>
+        <p class="seo-sample-explain">compute scaling mechanisms is best addressed by Tune cooldowns, health checks, and termination policies, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ECS service must maintain the desired number of tasks during variable load. Which configuration supports this requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. ECS service auto scaling based on CloudWatch metrics</li>
+            <li class="seo-sample-answer">A. EBS fast snapshot restore</li>
+            <li class="seo-sample-answer">C. S3 Transfer Acceleration</li>
+            <li class="seo-sample-answer">D. IAM Access Analyzer</li>
+        </ul>
+        <p class="seo-sample-explain">compute scaling mechanisms is best addressed by ECS service auto scaling based on CloudWatch metrics, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A stateless application must run across multiple Availability Zones and add instances when average request count per target rises. Which policy should be used?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. An Auto Scaling target tracking policy using ALBRequestCountPerTarget</li>
+            <li class="seo-sample-answer">B. A manual Systems Manager run command every hour</li>
+            <li class="seo-sample-answer">C. An EFS lifecycle policy</li>
+            <li class="seo-sample-answer">D. A GuardDuty finding export</li>
+        </ul>
+        <p class="seo-sample-explain">compute scaling mechanisms is best addressed by An Auto Scaling target tracking policy using ALBRequestCountPerTarget, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An EC2 Auto Scaling group has instances failing health checks but not being replaced. Which setting should be reviewed?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">D. The Auto Scaling health check type, grace period, and load balancer health check integration</li>
+            <li class="seo-sample-answer">A. The S3 replication destination Region</li>
+            <li class="seo-sample-answer">B. The DynamoDB table partition key</li>
+            <li class="seo-sample-answer">C. The CloudFront cache policy TTL</li>
+        </ul>
+        <p class="seo-sample-explain">compute scaling mechanisms is best addressed by The Auto Scaling health check type, grace period, and load balancer health check integration, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Lambda-based workload is throttled during bursts because concurrent executions exceed the configured limit. What should be evaluated?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">C. Reserved concurrency, account concurrency quotas, and upstream retry behavior</li>
+            <li class="seo-sample-answer">A. S3 bucket versioning and object lock</li>
+            <li class="seo-sample-answer">B. Route 53 weighted routing only</li>
+            <li class="seo-sample-answer">D. RDS storage autoscaling only</li>
+        </ul>
+        <p class="seo-sample-explain">compute scaling mechanisms is best addressed by Reserved concurrency, account concurrency quotas, and upstream retry behavior, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An operations team wants predictable extra capacity before a planned marketing event. Which scaling option should be added?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">B. Scheduled scaling for the Auto Scaling group</li>
+            <li class="seo-sample-answer">A. Route 53 Resolver DNS Firewall</li>
+            <li class="seo-sample-answer">C. Amazon Macie sensitive data discovery</li>
+            <li class="seo-sample-answer">D. AWS Backup Vault Lock</li>
+        </ul>
+        <p class="seo-sample-explain">compute scaling mechanisms is best addressed by Scheduled scaling for the Auto Scaling group, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Kubernetes workload on EKS needs pod replicas to increase based on CPU. Which component should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">C. Horizontal Pod Autoscaler with metrics available to the cluster</li>
+            <li class="seo-sample-answer">A. S3 Batch Operations</li>
+            <li class="seo-sample-answer">B. AWS Certificate Manager private CA</li>
+            <li class="seo-sample-answer">D. Route 53 failover routing</li>
+        </ul>
+        <p class="seo-sample-explain">compute scaling mechanisms is best addressed by Horizontal Pod Autoscaler with metrics available to the cluster, because it matches the availability, recovery, or scaling requirement in the scenario. This is the correct answer.</p>
+      </details>
       <h2>Other SOA-C03 Domains</h2>
       <ul>
           <li><a href="/aws-cloudops-engineer-associate/monitoring-logging-analysis-remediation-and-performance-optimization/">1.0 Monitoring, Logging, Analysis, Remediation, and Performance Optimization</a></li>

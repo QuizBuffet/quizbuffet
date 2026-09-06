@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "How is Route prefix best understood in an IP connectivity context?",
+          "name": "A router is choosing a path using information related to Routing table. Which answer best describes the routing behavior?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A route prefix identifies the destination network or subnet in a routing table entry.. A route prefix identifies the destination network or subnet in a routing table entry. This is the correct answer."
+            "text": "Routing table is the best match when the IP connectivity scenario requires this behavior: A routing table lists known routes and the information a router uses to choose where to forward packets.. A routing table lists known routes and the information a router uses to choose…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A router is choosing a path using information related to Routing protocol code. Which answer best describes the routing behavior?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Routing protocol code is the best match when the IP connectivity scenario requires this behavior: A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source.. A routing protocol code identifies how a route was learned, such as…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>200 exam-style questions</strong> covering <strong>25% of the 200-301 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/cisco-ccna/">Cisco CCNA practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Routing table in CCNA Objective 3.0 IP Connectivity?</h3>
-        <p><strong>Answer:</strong> A routing table lists known routes and the information a router uses to choose where to forward packets.</p>
-        <p>A routing table lists known routes and the information a router uses to choose where to forward packets. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which option correctly defines Routing protocol code?</h3>
-        <p><strong>Answer:</strong> A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source.</p>
-        <p>A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>How is Route prefix best understood in an IP connectivity context?</h3>
-        <p><strong>Answer:</strong> A route prefix identifies the destination network or subnet in a routing table entry.</p>
-        <p>A route prefix identifies the destination network or subnet in a routing table entry. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Routing table in CCNA Objective 3.0 IP Connectivity?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A routing table lists known routes and the information a router uses to choose where to forward packets.</li>
+            <li class="seo-sample-answer">B. A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source.</li>
+            <li class="seo-sample-answer">C. A route prefix identifies the destination network or subnet in a routing table entry.</li>
+            <li class="seo-sample-answer">D. A network mask or prefix length identifies which bits represent the network portion of an address.</li>
+        </ul>
+        <p class="seo-sample-explain">A routing table lists known routes and the information a router uses to choose where to forward packets. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which option correctly defines Routing protocol code?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Longest prefix match selects the route with the most specific matching prefix for the destination IP address.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source.</li>
+            <li class="seo-sample-answer">C. A router forwarding decision uses the destination IP address, routing table, longest prefix match, and route attributes to choose an outgoing path.</li>
+            <li class="seo-sample-answer">D. Route source preference uses administrative distance only when multiple sources advertise the same prefix length.</li>
+        </ul>
+        <p class="seo-sample-explain">A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A router is choosing a path using information related to Routing table. Which answer best describes the routing behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. IPv4 static route is the best match when the IP connectivity scenario requires this behavior: An IPv4 static route is a manually configured route for an IPv4 destination prefix.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Routing table is the best match when the IP connectivity scenario requires this behavior: A routing table lists known routes and the information a router uses to choose where to forward packets.</li>
+            <li class="seo-sample-answer">C. IPv6 static route is the best match when the IP connectivity scenario requires this behavior: An IPv6 static route is a manually configured route for an IPv6 destination prefix.</li>
+            <li class="seo-sample-answer">D. Default route is the best match when the IP connectivity scenario requires this behavior: A default route matches destinations that do not match any more specific route.</li>
+        </ul>
+        <p class="seo-sample-explain">A routing table lists known routes and the information a router uses to choose where to forward packets. This matches the IP connectivity scenario without confusing route selection, static routing, OSPF operation, or first-hop redundancy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A router is choosing a path using information related to Routing protocol code. Which answer best describes the routing behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Fully specified static route is the best match when the IP connectivity scenario requires this behavior: A fully specified static route includes both the exit interface and next-hop address.</li>
+            <li class="seo-sample-answer">B. Exit-interface static route is the best match when the IP connectivity scenario requires this behavior: An exit-interface static route specifies the local outgoing interface used to forward traffic.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Routing protocol code is the best match when the IP connectivity scenario requires this behavior: A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source.</li>
+            <li class="seo-sample-answer">D. Static route verification is the best match when the IP connectivity scenario requires this behavior: Static route verification confirms configured static routes appear in the routing table and forward traffic as intended.</li>
+        </ul>
+        <p class="seo-sample-explain">A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source. This matches the IP connectivity scenario without confusing route selection, static routing, OSPF operation, or first-hop redundancy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A router is choosing a path using information related to Route prefix. Which answer best describes the routing behavior?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. OSPF area is the best match when the IP connectivity scenario requires this behavior: An OSPF area groups routers and link-state information; single-area CCNA scenarios commonly use area 0.</li>
+            <li class="seo-sample-answer">B. OSPF network command is the best match when the IP connectivity scenario requires this behavior: The OSPF network command enables OSPF on matching interfaces and assigns them to an area.</li>
+            <li class="seo-sample-answer">C. OSPF passive interface is the best match when the IP connectivity scenario requires this behavior: An OSPF passive interface advertises the connected network but does not send OSPF hello packets on that interface.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Route prefix is the best match when the IP connectivity scenario requires this behavior: A route prefix identifies the destination network or subnet in a routing table entry.</li>
+        </ul>
+        <p class="seo-sample-explain">A route prefix identifies the destination network or subnet in a routing table entry. This matches the IP connectivity scenario without confusing route selection, static routing, OSPF operation, or first-hop redundancy. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A router has multiple possible routes to a destination. Which scenario best matches Routing table?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to Single-area OSPFv2 when the routing or OSPF evidence depends on this distinction: Single-area OSPFv2 runs OSPF for IPv4 within one area, commonly area 0, to exchange routes dynamically.</li>
+            <li class="seo-sample-answer">B. A scenario points to OSPF neighbor adjacency when the routing or OSPF evidence depends on this distinction: An OSPF neighbor adjacency is the relationship formed between OSPF routers that successfully exchange hello packets and required parameters.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A scenario points to Routing table when the routing or OSPF evidence depends on this distinction: A routing table lists known routes and the information a router uses to choose where to forward packets.</li>
+            <li class="seo-sample-answer">D. A scenario points to OSPF hello packets when the routing or OSPF evidence depends on this distinction: OSPF hello packets discover neighbors and maintain OSPF neighbor relationships.</li>
+        </ul>
+        <p class="seo-sample-explain">A routing table lists known routes and the information a router uses to choose where to forward packets. This distinction matters because the wrong concept would lead to the wrong route-table interpretation, forwarding decision, OSPF verification, or gateway-redundancy conclusion. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A router has multiple possible routes to a destination. Which scenario best matches Routing protocol code?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A scenario points to OSPF router ID selection when the routing or OSPF evidence depends on this distinction: OSPF router ID selection uses a manually configured router ID first, then the highest loopback IP, then the highest active physical interface IP.</li>
+            <li class="seo-sample-answer">B. A scenario points to OSPF point-to-point network when the routing or OSPF evidence depends on this distinction: An OSPF point-to-point network type connects two routers without DR or BDR election.</li>
+            <li class="seo-sample-answer">C. A scenario points to OSPF broadcast network when the routing or OSPF evidence depends on this distinction: An OSPF broadcast network type supports multiaccess Ethernet segments and uses DR/BDR election.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A scenario points to Routing protocol code when the routing or OSPF evidence depends on this distinction: A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source.</li>
+        </ul>
+        <p class="seo-sample-explain">A routing protocol code identifies how a route was learned, such as connected, static, OSPF, or another source. This distinction matters because the wrong concept would lead to the wrong route-table interpretation, forwarding decision, OSPF verification, or gateway-redundancy conclusion. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Cisco administrator must predict exactly which route is installed or used for a packet. Which answer applies Routing table most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. BDR election is the correct operational interpretation when the forwarding, route selection, OSPF, or FHRP decision depends on this exact meaning: Backup designated router election selects a standby router to take over if the DR fails.</li>
+            <li class="seo-sample-answer">B. OSPF cost is the correct operational interpretation when the forwarding, route selection, OSPF, or FHRP decision depends on this exact meaning: OSPF cost is the metric used by OSPF to choose preferred paths.</li>
+            <li class="seo-sample-answer">C. OSPF adjacency verification is the correct operational interpretation when the forwarding, route selection, OSPF, or FHRP decision depends on this exact meaning: OSPF adjacency verification checks neighbor state, interface participation, area, timers, and reachability to confirm OSPF operation.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Routing table is the correct operational interpretation when the forwarding, route selection, OSPF, or FHRP decision depends on this exact meaning: A routing table lists known routes and the information a router uses to choose where to forward packets.</li>
+        </ul>
+        <p class="seo-sample-explain">A routing table lists known routes and the information a router uses to choose where to forward packets. This applies the concept at the point where a Cisco administrator must predict routing behavior from prefixes, administrative distance, metrics, OSPF state, or default-gateway redundancy. This is the correct answer.</p>
+      </details>
       <h2>Other 200-301 Domains</h2>
       <ul>
           <li><a href="/cisco-ccna/network-fundamentals/">1.0 Network Fundamentals</a></li>

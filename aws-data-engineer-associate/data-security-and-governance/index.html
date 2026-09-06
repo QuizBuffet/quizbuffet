@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A database password used by a pipeline must rotate automatically every 30 days. Which service should manage it?",
+          "name": "A Redshift cluster should accept connections only from a private analytics subnet. What should be updated?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AWS Secrets Manager with rotation configured."
+            "text": "The Redshift security group inbound rules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A Glue job must access S3 and the Data Catalog without static credentials. What IAM identity should be assigned?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An IAM role for the Glue job."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>90 exam-style questions</strong> covering <strong>18% of the DEA-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-data-engineer-associate/">AWS Certified Data Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A Glue job running in a VPC must connect to an Amazon RDS source on port 5432. Which security control should allow the connection?</h3>
-        <p><strong>Answer:</strong> A security group rule that allows the Glue job security group to reach the RDS security group on port 5432</p>
-        <p>Security groups can reference other security groups, allowing only the Glue job&#39;s network interfaces to reach the database on the required port. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A group of analysts needs the same read-only access to curated datasets. Which IAM structure helps manage the users?</h3>
-        <p><strong>Answer:</strong> An IAM group with a read-only policy for the required resources</p>
-        <p>An IAM group centralizes permissions for users with the same job function and simplifies updates to analyst access. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A database password used by a pipeline must rotate automatically every 30 days. Which service should manage it?</h3>
-        <p><strong>Answer:</strong> AWS Secrets Manager with rotation configured</p>
-        <p>Secrets Manager can store the database password and run rotation workflows on the required schedule. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A Glue job running in a VPC must connect to an Amazon RDS source on port 5432. Which security control should allow the connection?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A security group rule that allows the Glue job security group to reach the RDS security group on port 5432</li>
+            <li class="seo-sample-answer">B. VPC security groups</li>
+            <li class="seo-sample-answer">C. AWS Trusted Advisor</li>
+            <li class="seo-sample-answer">D. AWS Encryption SDK</li>
+        </ul>
+        <p class="seo-sample-explain">Security groups can reference other security groups, allowing only the Glue job&#39;s network interfaces to reach the database on the required port. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A group of analysts needs the same read-only access to curated datasets. Which IAM structure helps manage the users?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. An IAM group with a read-only policy for the required resources</li>
+            <li class="seo-sample-answer">B. Amazon GuardDuty</li>
+            <li class="seo-sample-answer">C. AWS Resource Access Manager (RAM)</li>
+            <li class="seo-sample-answer">D. AWS Organizations</li>
+        </ul>
+        <p class="seo-sample-explain">An IAM group centralizes permissions for users with the same job function and simplifies updates to analyst access. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Redshift cluster should accept connections only from a private analytics subnet. What should be updated?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Audit Manager</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The Redshift security group inbound rules</li>
+            <li class="seo-sample-answer">C. AWS CloudHSM</li>
+            <li class="seo-sample-answer">D. Network ACLs</li>
+        </ul>
+        <p class="seo-sample-explain">Inbound security group rules control which sources can connect to the Redshift endpoint, so restricting them to the analytics subnet limits database access. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A Glue job must access S3 and the Data Catalog without static credentials. What IAM identity should be assigned?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Lake Formation tag-based access</li>
+            <li class="seo-sample-answer seo-sample-correct">B. An IAM role for the Glue job</li>
+            <li class="seo-sample-answer">C. AWS Glue Data Catalog</li>
+            <li class="seo-sample-answer">D. AWS Signer</li>
+        </ul>
+        <p class="seo-sample-explain">A Glue job assumes an IAM role at runtime, receiving temporary credentials for the S3 and Data Catalog operations it needs. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A long-term access key used by an ingestion script was exposed. What should happen first?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Lake Formation tag-based access</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Deactivate or rotate the exposed credential and review recent usage</li>
+            <li class="seo-sample-answer">C. AWS IAM policies</li>
+            <li class="seo-sample-answer">D. AWS Glue</li>
+        </ul>
+        <p class="seo-sample-explain">An exposed credential must be made unusable quickly, then logs should be reviewed to determine whether it was misused. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A pipeline can no longer reach a private database after a security group cleanup. What should the engineer check?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. VPC security groups</li>
+            <li class="seo-sample-answer">B. AWS Resource Access Manager (RAM)</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Whether the database port is still allowed between the pipeline and database security groups</li>
+            <li class="seo-sample-answer">D. AWS Audit Manager</li>
+        </ul>
+        <p class="seo-sample-explain">A removed or changed security group rule can block the database listener port even when routes and credentials are correct. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A private workload should call supported AWS services without using public internet paths. What should be configured?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS CloudTrail</li>
+            <li class="seo-sample-answer">B. AWS Secrets Manager</li>
+            <li class="seo-sample-answer seo-sample-correct">C. VPC endpoints with appropriate endpoint policies</li>
+            <li class="seo-sample-answer">D. Network ACLs</li>
+        </ul>
+        <p class="seo-sample-explain">VPC endpoints provide private connectivity to supported AWS services, and endpoint policies can limit which service actions are allowed. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A data processing task should not allow unrestricted outbound access. What security group practice helps?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Amazon EMR</li>
+            <li class="seo-sample-answer">B. AWS CloudTrail Lake</li>
+            <li class="seo-sample-answer">C. AWS CloudTrail</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Restrict egress rules to required destinations and ports</li>
+        </ul>
+        <p class="seo-sample-explain">Restricting egress narrows where the workload can send traffic, reducing exposure if the processing task is compromised. This is the correct answer.</p>
+      </details>
       <h2>Other DEA-C01 Domains</h2>
       <ul>
           <li><a href="/aws-data-engineer-associate/data-ingestion-and-transformation/">1.0 Data Ingestion and Transformation</a></li>

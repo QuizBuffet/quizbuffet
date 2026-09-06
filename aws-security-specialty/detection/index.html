@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A Lambda-based API has intermittent downstream timeouts. What monitoring strategy should be implemented?",
+          "name": "A batch analytics workload runs once per night in a private subnet and reads encrypted S3 data. The business asks for security monitoring without high-volume debug logs. Which approach fits the workload?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Track Lambda errors, duration, throttles, downstream dependency latency, and correlation IDs."
+            "text": "Monitor job success, data access events for sensitive buckets, key access, and exception logs with targeted retention."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A security operations team is onboarding a new workload. Which question best helps define detection requirements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Which assets, identities, data, entry points, and failure modes are most important to protect?. Detection design starts by identifying what matters, how it can be accessed, and which failure or attack paths must be visible."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>96 exam-style questions</strong> covering <strong>16% of the SCS-C03 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-security-specialty/">AWS Certified Security Specialty practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>A payment API handles cardholder-adjacent metadata and is exposed through API Gateway and Lambda. The security team needs near-real-time detection of suspicious access patterns and failed authorization. Which monitoring requirement should be prioritized?</h3>
-        <p><strong>Answer:</strong> Capture API access logs, Lambda application errors, authentication outcomes, and security findings with alerting on abnormal patterns</p>
-        <p>The workload includes an internet-facing API and sensitive transaction context, so monitoring must cover request activity, application failures, authentication behavior, and security findings together.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A workload processes confidential documents and stores them in S3. The team must detect accidental exposure and sensitive data placement. What monitoring requirement is most relevant?</h3>
-        <p><strong>Answer:</strong> Monitor S3 public access changes, object-level activity where required, and Amazon Macie findings</p>
-        <p>Confidential document monitoring should include exposure detection, object access visibility, and sensitive data discovery.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A Lambda-based API has intermittent downstream timeouts. What monitoring strategy should be implemented?</h3>
-        <p><strong>Answer:</strong> Track Lambda errors, duration, throttles, downstream dependency latency, and correlation IDs</p>
-        <p>Timeout diagnosis requires function health, dependency timing, and request correlation across the path.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>A payment API handles cardholder-adjacent metadata and is exposed through API Gateway and Lambda. The security team needs near-real-time detection of suspicious access patterns and failed authorization. Which monitoring requirement should be prioritized?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Capture API access logs, Lambda application errors, authentication outcomes, and security findings with alerting on abnormal patterns</li>
+            <li class="seo-sample-answer">B. Collect only monthly cost reports for the API account</li>
+            <li class="seo-sample-answer">C. Rely only on Lambda deployment package checksums</li>
+            <li class="seo-sample-answer">D. Monitor only successful HTTP 200 responses</li>
+        </ul>
+        <p class="seo-sample-explain">The workload includes an internet-facing API and sensitive transaction context, so monitoring must cover request activity, application failures, authentication behavior, and security findings together.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload processes confidential documents and stores them in S3. The team must detect accidental exposure and sensitive data placement. What monitoring requirement is most relevant?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Monitor S3 public access changes, object-level activity where required, and Amazon Macie findings</li>
+            <li class="seo-sample-answer">B. Track only CPU utilization of unrelated EC2 instances</li>
+            <li class="seo-sample-answer">C. Use only Route 53 health checks for the bucket name</li>
+            <li class="seo-sample-answer">D. Monitor only container image vulnerability scans</li>
+        </ul>
+        <p class="seo-sample-explain">Confidential document monitoring should include exposure detection, object access visibility, and sensitive data discovery.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A batch analytics workload runs once per night in a private subnet and reads encrypted S3 data. The business asks for security monitoring without high-volume debug logs. Which approach fits the workload?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Enable verbose application debug logging forever for every record processed</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Monitor job success, data access events for sensitive buckets, key access, and exception logs with targeted retention</li>
+            <li class="seo-sample-answer">C. Monitor only public web request metrics</li>
+            <li class="seo-sample-answer">D. Disable all data access logging because the subnet is private</li>
+        </ul>
+        <p class="seo-sample-explain">The workload is scheduled and data-sensitive, so monitoring should focus on execution outcome, protected data access, KMS usage, and meaningful failures rather than continuous debug noise.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security operations team is onboarding a new workload. Which question best helps define detection requirements?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Which dashboard color does the application team prefer?</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Which assets, identities, data, entry points, and failure modes are most important to protect?</li>
+            <li class="seo-sample-answer">C. How many unused subnets exist in the account?</li>
+            <li class="seo-sample-answer">D. Which service has the shortest name in the architecture?</li>
+        </ul>
+        <p class="seo-sample-explain">Detection design starts by identifying what matters, how it can be accessed, and which failure or attack paths must be visible.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A VPC workload has strict egress requirements. The team wants monitoring for unexpected outbound connections. Which strategy is appropriate?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Monitor only AWS Billing console logins</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Collect VPC Flow Logs and inspect egress patterns with alerts for unauthorized destinations</li>
+            <li class="seo-sample-answer">C. Collect only application feature flag changes</li>
+            <li class="seo-sample-answer">D. Rely only on subnet names that include private</li>
+        </ul>
+        <p class="seo-sample-explain">Flow logs provide network metadata that can reveal unexpected outbound paths and destinations.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A multi-account organization has workloads with different criticality. The security team wants to set alert thresholds. What should drive the monitoring requirements?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. The alphabetical order of account names</li>
+            <li class="seo-sample-answer">B. The number of dashboards a team already has</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Workload risk, data sensitivity, exposure, recovery objectives, and ownership model</li>
+            <li class="seo-sample-answer">D. A single identical threshold for every resource type in every account</li>
+        </ul>
+        <p class="seo-sample-explain">Monitoring requirements should reflect business impact and threat exposure so alerting is aligned to the actual risk of each workload.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A workload uses generative AI features through Amazon Bedrock and stores prompts and outputs. The security team must monitor for abuse while limiting sensitive logging. What is the best monitoring requirement?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Log every prompt and response in plaintext forever</li>
+            <li class="seo-sample-answer">B. Monitor only EC2 disk metrics because AI workloads always run on instances</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Capture policy-relevant invocation metadata, guardrail outcomes, access events, and redacted application logs</li>
+            <li class="seo-sample-answer">D. Ignore model access events if the application has authentication</li>
+        </ul>
+        <p class="seo-sample-explain">Generative AI monitoring should include who invoked the model, which controls acted, and safe diagnostic context without storing unnecessary sensitive prompt content.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A public application uses CloudFront, AWS WAF, and an ALB. The team needs to detect credential stuffing and layer 7 attacks. Which monitoring signals matter most?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only EBS volume throughput on backend instances</li>
+            <li class="seo-sample-answer">B. Only CloudFormation stack output values</li>
+            <li class="seo-sample-answer">C. Only successful deployment events from the pipeline</li>
+            <li class="seo-sample-answer seo-sample-correct">D. AWS WAF logs, CloudFront access logs, ALB request metrics, and authentication failure patterns</li>
+        </ul>
+        <p class="seo-sample-explain">Credential stuffing and layer 7 attacks are visible through edge, web firewall, load balancer, and identity-related request patterns.</p>
+      </details>
       <h2>Other SCS-C03 Domains</h2>
       <ul>
           <li><a href="/aws-security-specialty/incident-response/">2.0 Incident Response</a></li>

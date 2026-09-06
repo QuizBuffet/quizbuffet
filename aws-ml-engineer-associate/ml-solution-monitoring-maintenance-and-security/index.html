@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "Which description best matches Data quality monitoring in AWS MLA-C01 Domain 4.0 ML Solution Monitoring, Maintenance, and Security?",
+          "name": "An ML engineer must monitor production inference involving Model drift. Which answer best describes the concept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Data quality monitoring involves tracking production data for missing values, schema changes, invalid values, or other quality issues that can affect inference.. Data quality monitoring involves tracking production data for missing values, schema changes, invalid values, or…"
+            "text": "Model drift is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment.. Model drift involves changes in model behavior…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An ML engineer must monitor production inference involving Data drift. Which answer best describes the concept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Data drift is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: Data drift involves changes in the distribution of production input data compared with training or baseline data.. Data drift involves changes in the distribution of…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>120 exam-style questions</strong> covering <strong>24% of the MLA-C01 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/aws-ml-engineer-associate/">AWS Certified Machine Learning Engineer Associate practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Model drift in AWS MLA-C01 Domain 4.0 ML Solution Monitoring, Maintenance, and Security?</h3>
-        <p><strong>Answer:</strong> Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment.</p>
-        <p>Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Data drift in AWS MLA-C01 Domain 4.0 ML Solution Monitoring, Maintenance, and Security?</h3>
-        <p><strong>Answer:</strong> Data drift involves changes in the distribution of production input data compared with training or baseline data.</p>
-        <p>Data drift involves changes in the distribution of production input data compared with training or baseline data. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which description best matches Data quality monitoring in AWS MLA-C01 Domain 4.0 ML Solution Monitoring, Maintenance, and Security?</h3>
-        <p><strong>Answer:</strong> Data quality monitoring involves tracking production data for missing values, schema changes, invalid values, or other quality issues that can affect inference.</p>
-        <p>Data quality monitoring involves tracking production data for missing values, schema changes, invalid values, or other quality issues that can affect inference. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Model drift in AWS MLA-C01 Domain 4.0 ML Solution Monitoring, Maintenance, and Security?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment.</li>
+            <li class="seo-sample-answer">B. Data drift involves changes in the distribution of production input data compared with training or baseline data.</li>
+            <li class="seo-sample-answer">C. Data quality monitoring involves tracking production data for missing values, schema changes, invalid values, or other quality issues that can affect inference.</li>
+            <li class="seo-sample-answer">D. Model performance monitoring involves tracking production prediction quality or business metrics to determine whether a model continues to meet requirements.</li>
+        </ul>
+        <p class="seo-sample-explain">Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which description best matches Data drift in AWS MLA-C01 Domain 4.0 ML Solution Monitoring, Maintenance, and Security?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Infrastructure utilization involves tracking how much CPU, memory, GPU, disk, or network capacity ML infrastructure consumes.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Data drift involves changes in the distribution of production input data compared with training or baseline data.</li>
+            <li class="seo-sample-answer">C. Throughput metric involves measuring how many requests, records, or jobs an ML system processes over time.</li>
+            <li class="seo-sample-answer">D. Availability metric involves measuring whether an ML system or endpoint remains reachable and operational when needed.</li>
+        </ul>
+        <p class="seo-sample-explain">Data drift involves changes in the distribution of production input data compared with training or baseline data. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must monitor production inference involving Model drift. Which answer best describes the concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. CloudWatch alarms is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: CloudWatch alarms involves triggering notifications or automated actions when monitored metrics cross configured thresholds.</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Model drift is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment.</li>
+            <li class="seo-sample-answer">C. CloudWatch dashboards is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: CloudWatch dashboards involves visualizing key ML infrastructure and application metrics in a centralized operational view.</li>
+            <li class="seo-sample-answer">D. AWS X-Ray tracing is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: AWS X-Ray tracing involves tracing requests through distributed applications to investigate latency and performance bottlenecks.</li>
+        </ul>
+        <p class="seo-sample-explain">Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment. This matches the ML monitoring, maintenance, and security scenario without confusing inference monitoring, infrastructure metrics, observability, cost tools, IAM, encryption, network isolation, or pipeline security. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must monitor production inference involving Data drift. Which answer best describes the concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. AWS Cost Explorer is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: AWS Cost Explorer involves analyzing and visualizing AWS cost and usage trends over time.</li>
+            <li class="seo-sample-answer">B. AWS Budgets is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: AWS Budgets involves tracking cost or usage thresholds and sending alerts when actual or forecasted values exceed limits.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. Data drift is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: Data drift involves changes in the distribution of production input data compared with training or baseline data.</li>
+            <li class="seo-sample-answer">D. Spot Instances for ML cost is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: Spot Instances for ML cost involves using spare EC2 capacity at lower cost for interruption-tolerant ML workloads.</li>
+        </ul>
+        <p class="seo-sample-explain">Data drift involves changes in the distribution of production input data compared with training or baseline data. This matches the ML monitoring, maintenance, and security scenario without confusing inference monitoring, infrastructure metrics, observability, cost tools, IAM, encryption, network isolation, or pipeline security. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must monitor production inference involving Data quality monitoring. Which answer best describes the concept?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Bucket policies for ML artifacts is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: Bucket policies for ML artifacts involves controlling access to S3 buckets that store datasets, model artifacts, logs, or pipeline outputs.</li>
+            <li class="seo-sample-answer">B. AWS KMS encryption is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: AWS KMS encryption involves protecting ML datasets, model artifacts, volumes, logs, and outputs with managed cryptographic keys.</li>
+            <li class="seo-sample-answer">C. VPC isolation for ML systems is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: VPC isolation for ML systems involves placing ML resources in controlled VPC subnets and network paths to reduce exposure.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Data quality monitoring is the best fit when an ML monitoring, maintenance, or security workflow requires this behavior: Data quality monitoring involves tracking production data for missing values, schema changes, invalid values, or other quality issues that can affect inference.</li>
+        </ul>
+        <p class="seo-sample-explain">Data quality monitoring involves tracking production data for missing values, schema changes, invalid values, or other quality issues that can affect inference. This matches the ML monitoring, maintenance, and security scenario without confusing inference monitoring, infrastructure metrics, observability, cost tools, IAM, encryption, network isolation, or pipeline security. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A deployed model may be affected by data changes, quality issues, or variant performance differences. Which scenario best matches Model drift?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A workflow points to IAM roles for ML applications when inference monitoring, infrastructure optimization, cost control, audit logging, or security depends on this distinction: IAM roles for ML applications involves providing temporary permissions for applications, notebooks, pipelines, training jobs, or endpoints that access AWS resources.</li>
+            <li class="seo-sample-answer">B. A workflow points to IAM policies for ML systems when inference monitoring, infrastructure optimization, cost control, audit logging, or security depends on this distinction: IAM policies for ML systems involves defining allowed or denied actions for users, services, applications, and ML resources.</li>
+            <li class="seo-sample-answer seo-sample-correct">C. A workflow points to Model drift when inference monitoring, infrastructure optimization, cost control, audit logging, or security depends on this distinction: Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment.</li>
+            <li class="seo-sample-answer">D. A workflow points to SageMaker Role Manager when inference monitoring, infrastructure optimization, cost control, audit logging, or security depends on this distinction: SageMaker Role Manager involves helping create persona-based IAM roles for SageMaker users and ML activities.</li>
+        </ul>
+        <p class="seo-sample-explain">Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment. This distinction matters because choosing a nearby concept would lead to the wrong drift signal, operational metric, log source, cost-control method, access policy, encryption control, or network protection. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A deployed model may be affected by data changes, quality issues, or variant performance differences. Which scenario best matches Data drift?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A workflow points to Model drift when inference monitoring, infrastructure optimization, cost control, audit logging, or security depends on this distinction: Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment.</li>
+            <li class="seo-sample-answer">B. A workflow points to Data quality monitoring when inference monitoring, infrastructure optimization, cost control, audit logging, or security depends on this distinction: Data quality monitoring involves tracking production data for missing values, schema changes, invalid values, or other quality issues that can affect inference.</li>
+            <li class="seo-sample-answer">C. A workflow points to Model performance monitoring when inference monitoring, infrastructure optimization, cost control, audit logging, or security depends on this distinction: Model performance monitoring involves tracking production prediction quality or business metrics to determine whether a model continues to meet requirements.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. A workflow points to Data drift when inference monitoring, infrastructure optimization, cost control, audit logging, or security depends on this distinction: Data drift involves changes in the distribution of production input data compared with training or baseline data.</li>
+        </ul>
+        <p class="seo-sample-explain">Data drift involves changes in the distribution of production input data compared with training or baseline data. This distinction matters because choosing a nearby concept would lead to the wrong drift signal, operational metric, log source, cost-control method, access policy, encryption control, or network protection. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An ML engineer must choose the monitoring approach that detects inference, drift, data quality, or production model issues. Which answer applies Model drift most accurately?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. SageMaker Clarify drift detection is the correct ML engineering choice when the monitoring, maintenance, or security decision depends on this exact behavior: SageMaker Clarify drift detection involves detecting changes related to bias or feature attribution that can affect model behavior over time.</li>
+            <li class="seo-sample-answer">B. A/B testing for models is the correct ML engineering choice when the monitoring, maintenance, or security decision depends on this exact behavior: A/B testing for models involves comparing model variants in production by sending portions of traffic to different variants and measuring performance.</li>
+            <li class="seo-sample-answer">C. Production variant is the correct ML engineering choice when the monitoring, maintenance, or security decision depends on this exact behavior: Production variant involves a deployed model version or endpoint configuration that receives a defined portion of inference traffic.</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Model drift is the correct ML engineering choice when the monitoring, maintenance, or security decision depends on this exact behavior: Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment.</li>
+        </ul>
+        <p class="seo-sample-explain">Model drift involves changes in model behavior or data relationships that can reduce prediction quality after deployment. This applies the concept at the point where an ML engineer must keep ML solutions reliable, cost-aware, observable, and secure in production. This is the correct answer.</p>
+      </details>
       <h2>Other MLA-C01 Domains</h2>
       <ul>
           <li><a href="/aws-ml-engineer-associate/data-preparation-for-machine-learning/">1.0 Data Preparation for Machine Learning</a></li>

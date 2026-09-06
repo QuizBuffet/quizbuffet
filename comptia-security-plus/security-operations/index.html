@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "What are the essential security hardening steps for corporate Windows workstations?",
+          "name": "An organization adopts CIS Benchmark Level 2 as their Windows Server baseline. A compliance scan after deployment shows 94% of controls pass, with 6% failing due to conflicts with legacy application requirements. How should the baseline maintenance process handle these failures?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Essential Windows workstation hardening: remove local administrator rights for standard users; enable full-disk encryption (BitLocker); deploy endpoint protection (EDR); configure Windows Firewall (host-based firewall enabled, default deny inbound); disable unused services and…"
+            "text": "The 6% failures require a formal exception management process: (1) Analyze each failure, determine whether the conflict is genuine (the application truly requires the non-compliant setting) or whether the application can be reconfigured to work with the secure setting; (2) Risk…"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "An MDM solution is deployed to manage corporate mobile devices. A security review finds that 15% of enrolled devices have jailbroken/rooted status detected. What actions should the MDM policy enforce and what does jailbreak detection enable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MDM jailbreak detection capabilities and policy responses: What jailbreak detection enables: MDM solutions detect jailbreak indicators (presence of Cydia on iOS, root access indicators on Android, unusual system file modifications); detection enables compliance-based access…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>644 exam-style questions</strong> covering <strong>28% of the SY0-701 exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/comptia-security-plus/">CompTIA Security+ practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>What is a secure baseline and what three activities are required to maintain it?</h3>
-        <p><strong>Answer:</strong> A secure baseline is a documented, approved security configuration standard for a system type, defining required settings for OS hardening, services, accounts, network configuration, and security controls. Three required activities: (1) Establish, define the baseline by selecting a security framework (CIS Benchmarks, DISA STIGs, vendor hardening guides) and customizing for the organization&#39;s requirements; (2) Deploy, apply the baseline consistently to all instances of that system type through automation (GPO, Ansible, Chef, Puppet, golden images); (3) Maintain, continuously monitor for configuration drift from the baseline using compliance scanning tools and remediate deviations</p>
-        <p>Establish, deploy, and maintain are the three lifecycle activities for secure baselines, each is required for effective baseline management. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What are the key security hardening measures for corporate mobile devices (smartphones and tablets)?</h3>
-        <p><strong>Answer:</strong> Key mobile device hardening measures: enable full-device encryption (FileVault equivalent for mobile); enforce PIN/biometric lock with short auto-lock timeout; MDM enrollment enabling remote wipe if lost or stolen; disable developer mode and USB debugging; restrict app installation to approved apps or corporate app store; enable automatic OS and app updates; configure VPN for corporate network access; disable Bluetooth and WiFi auto-connect to unknown networks; enable remote locate/wipe; and configure certificate-based email and application authentication</p>
-        <p>Mobile device hardening spans encryption, authentication, MDM controls, network security, and update management, a comprehensive approach. This is the correct answer.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>What are the essential security hardening steps for corporate Windows workstations?</h3>
-        <p><strong>Answer:</strong> Essential Windows workstation hardening: remove local administrator rights for standard users; enable full-disk encryption (BitLocker); deploy endpoint protection (EDR); configure Windows Firewall (host-based firewall enabled, default deny inbound); disable unused services and features (telnet, SMBv1, AutoRun, PowerShell v2); enforce Group Policy for security settings (screen lock timeout, password policy, audit logging); apply application allowlisting or at minimum block execution from user-writable directories; keep OS and applications patched; enable Windows Defender Credential Guard to protect credentials; configure LAPS for unique local administrator passwords; and disable USB storage if not needed</p>
-        <p>Workstation hardening spans account privilege, encryption, endpoint protection, service reduction, policy enforcement, patching, and credential protection, a comprehensive set. This is the correct answer.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>What is a secure baseline and what three activities are required to maintain it?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. A secure baseline is the minimum password length required by policy, it applies only to authentication</li>
+            <li class="seo-sample-answer seo-sample-correct">B. A secure baseline is a documented, approved security configuration standard for a system type, defining required settings for OS hardening, services, accounts, network configuration, and security controls. Three required activities: (1) Establish, define the baseline by selecting a security framework (CIS Benchmarks, DISA STIGs, vendor hardening guides) and customizing for the organization&#39;s requirements; (2) Deploy, apply the baseline consistently to all instances of that system type through automation (GPO, Ansible, Chef, Puppet, golden images); (3) Maintain, continuously monitor for configuration drift from the baseline using compliance scanning tools and remediate deviations</li>
+            <li class="seo-sample-answer">C. A secure baseline is established once and never changes, it is a static document applied at initial deployment only</li>
+            <li class="seo-sample-answer">D. Secure baselines only apply to servers, workstations and network devices manage their own security configurations</li>
+        </ul>
+        <p class="seo-sample-explain">Establish, deploy, and maintain are the three lifecycle activities for secure baselines, each is required for effective baseline management. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What are the key security hardening measures for corporate mobile devices (smartphones and tablets)?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Mobile devices require no security hardening, the app store vetting process provides sufficient protection</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Key mobile device hardening measures: enable full-device encryption (FileVault equivalent for mobile); enforce PIN/biometric lock with short auto-lock timeout; MDM enrollment enabling remote wipe if lost or stolen; disable developer mode and USB debugging; restrict app installation to approved apps or corporate app store; enable automatic OS and app updates; configure VPN for corporate network access; disable Bluetooth and WiFi auto-connect to unknown networks; enable remote locate/wipe; and configure certificate-based email and application authentication</li>
+            <li class="seo-sample-answer">C. Mobile hardening consists only of setting a 6-digit PIN, other controls are user preference</li>
+            <li class="seo-sample-answer">D. Mobile devices should be fully open to users, restrictions reduce productivity more than they improve security</li>
+        </ul>
+        <p class="seo-sample-explain">Mobile device hardening spans encryption, authentication, MDM controls, network security, and update management, a comprehensive approach. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization adopts CIS Benchmark Level 2 as their Windows Server baseline. A compliance scan after deployment shows 94% of controls pass, with 6% failing due to conflicts with legacy application requirements. How should the baseline maintenance process handle these failures?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Disable the failing controls globally, application compatibility takes priority over all security controls</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The 6% failures require a formal exception management process: (1) Analyze each failure, determine whether the conflict is genuine (the application truly requires the non-compliant setting) or whether the application can be reconfigured to work with the secure setting; (2) Risk assess each exception, evaluate the security impact of the non-compliant setting and whether compensating controls can reduce that risk; (3) Document formal exceptions, for genuine conflicts, document: the specific control, the business justification, the risk acceptance authority, compensating controls implemented, and the exception review date; (4) Apply targeted exceptions, configure the exception for the specific system or application requiring it rather than globally disabling the control; (5) Schedule vendor engagement, work with application vendors to achieve compatibility with the secure baseline in a future version; (6) Re-scan periodically, verify exceptions remain necessary and controls haven&#39;t been further weakened</li>
+            <li class="seo-sample-answer">C. Reduce to CIS Level 1 across all servers. Level 2 is too strict for enterprise environments</li>
+            <li class="seo-sample-answer">D. The 6% failure rate indicates the baseline is working correctly, no action is required for any compliance scan failures</li>
+        </ul>
+        <p class="seo-sample-explain">Formal exception management with risk assessment, documentation, compensating controls, and periodic review is the correct process for baseline compliance failures. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An MDM solution is deployed to manage corporate mobile devices. A security review finds that 15% of enrolled devices have jailbroken/rooted status detected. What actions should the MDM policy enforce and what does jailbreak detection enable?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Jailbroken devices should continue to have full corporate access, jailbreaking is a user choice that doesn&#39;t affect security</li>
+            <li class="seo-sample-answer seo-sample-correct">B. MDM jailbreak detection capabilities and policy responses: What jailbreak detection enables: MDM solutions detect jailbreak indicators (presence of Cydia on iOS, root access indicators on Android, unusual system file modifications); detection enables compliance-based access decisions. Required policy responses: (1) Automatic corporate data wipe from jailbroken devices, using MDM selective wipe to remove corporate email, apps, and data containers without wiping personal data; (2) Block access to corporate resources, conditional access policies prevent corporate applications and email from functioning on jailbroken devices; (3) Alert security team, jailbreak detection triggers security investigation; (4) User notification, notify the user that their device has been removed from corporate enrollment due to policy violation; (5) Re-enrollment path, define how users with legitimate work needs can regain access (using a compliant device). Jailbroken devices bypass iOS/Android security controls, corporate data on jailbroken devices is exposed to any app with root access, defeating MDM protections</li>
+            <li class="seo-sample-answer">C. Increase monitoring on jailbroken devices, additional logging compensates for the security reduction</li>
+            <li class="seo-sample-answer">D. MDM cannot detect jailbroken devices, users are responsible for disclosing their device status</li>
+        </ul>
+        <p class="seo-sample-explain">MDM policy for jailbroken devices must automatically remove corporate data access and notify security, the OS security model these devices depend on has been compromised. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A penetration tester compromises a corporate workstation through a phishing email. Despite the user being a standard (non-admin) user, the tester is able to dump NTLM hashes from the system and use them for lateral movement. What hardening control would have prevented this specific attack?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Standard user accounts cannot have their credentials harvested, credential protection is only relevant for admin accounts</li>
+            <li class="seo-sample-answer seo-sample-correct">B. The attack exploited the absence of Windows Defender Credential Guard: standard users can have their NTLM hashes harvested from LSASS (Local Security Authority Subsystem Service) memory even without admin rights if the attacker has code execution on the system; this is the basis of Pass-the-Hash attacks. Credential Guard uses virtualization-based security to isolate credential material in a protected container that cannot be accessed even by code running with SYSTEM privileges, it prevents LSASS memory dumping. Additional controls that would help: (1) Credential Guard, specifically prevents NTLM hash extraction from LSASS; (2) Windows Defender Remote Credential Guard, prevents credential exposure during RDP sessions; (3) LSA Protection (RunAsPPL), marks LSASS as a protected process, preventing standard processes from injecting into it; (4) Attack Surface Reduction rules, specific ASR rules blocking credential dumping techniques. Note: Credential Guard requires UEFI, Secure Boot, and 64-bit hardware</li>
+            <li class="seo-sample-answer">C. The attack is impossible on standard user accounts, LSASS can only be accessed by administrators</li>
+            <li class="seo-sample-answer">D. Antivirus would have prevented LSASS dumping, signature-based detection catches all credential harvesting tools</li>
+        </ul>
+        <p class="seo-sample-explain">Credential Guard&#39;s VBS-isolated LSASS specifically prevents NTLM hash extraction, it is the hardening control directly addressing this attack. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization wants to implement baseline-as-code, defining secure baselines in version-controlled configuration files and automatically deploying them through CI/CD pipelines. What security benefits and risks does this approach introduce compared to manually-applied baselines?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Baseline-as-code provides no advantages over manual baseline application, automation introduces more errors than humans</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Baseline-as-code security benefits: (1) Consistency, identical configuration applied to every instance with no human error variation; (2) Auditability, version control provides complete history of who changed what baseline setting and when; (3) Drift detection and remediation, automated continuous compliance scanning detects drift and can automatically remediate to the defined baseline; (4) Rapid deployment, new systems reach compliant state in minutes rather than hours; (5) Change control, baseline changes go through code review with security team approval before deployment. Risks introduced: (1) Code repository as attack target, the baseline code repository becomes a high-value target; a malicious commit could deploy insecure settings across all systems; (2) Supply chain risk in automation tooling, compromised Ansible, Chef, or Puppet could deploy attacker-controlled configurations; (3) Broad blast radius, a misconfiguration error deploys to all systems simultaneously rather than being caught on the first manual system; (4) CI/CD pipeline security, the pipeline executing baseline deployments requires strong access controls and integrity verification. Mitigations: signed commits; mandatory code review; test environments before production deployment; and pipeline access controls</li>
+            <li class="seo-sample-answer">C. Baseline-as-code eliminates all security risks, automated configuration is always more secure than manual</li>
+            <li class="seo-sample-answer">D. Baseline-as-code is only appropriate for cloud environments, on-premises systems cannot use configuration automation</li>
+        </ul>
+        <p class="seo-sample-explain">Baseline-as-code improves consistency and auditability while introducing code repository security and blast radius risks that require specific controls. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security team discovers that 200 servers deployed 18 months ago have significant configuration drift from the approved baseline, accumulated through ad-hoc changes made to resolve operational issues. Re-applying the baseline may break operational dependencies that have grown up around the drift. What is the correct approach to baseline remediation in this situation?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Re-apply the baseline immediately to all 200 servers, configuration compliance is non-negotiable</li>
+            <li class="seo-sample-answer seo-sample-correct">B. Systematic drift remediation for legacy non-compliant systems: (1) Inventory and categorize drift, use compliance scanning to identify each deviation across all 200 servers; categorize by: security impact (critical vs. low-risk drift), prevalence (how many servers are affected), and operational dependency (whether any drift has become load-bearing for application functionality); (2) Identify critical remediations, immediately address high-risk drift regardless of operational complexity (open management ports, disabled logging, default credentials); (3) Assess operational dependencies, for each deviation, determine whether applications or operational processes depend on the non-compliant configuration; this requires engagement with application owners; (4) Build a remediation roadmap, sequence remediations starting with high-impact/low-complexity; schedule operational dependency remediations with application owners during maintenance windows; (5) Update the baseline exception process, for drift that genuinely cannot be remediated without unacceptable operational impact, formalize as exceptions with compensating controls; (6) Implement continuous compliance monitoring, prevent future drift accumulation through automated scanning and remediation</li>
+            <li class="seo-sample-answer">C. Accept all existing drift as permanent exceptions, operational stability takes priority over compliance</li>
+            <li class="seo-sample-answer">D. Re-image all 200 servers simultaneously from the baseline image, this is faster than individual remediation</li>
+        </ul>
+        <p class="seo-sample-explain">Systematic drift categorization, priority-based remediation, dependency assessment, and continuous monitoring prevent future drift while safely recovering from historical accumulation. This is the correct answer.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization allows BYOD (Bring Your Own Device) but must implement mobile security controls without accessing personal data on employee-owned devices. What technical architecture achieves this balance?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. BYOD is incompatible with security requirements, prohibit personal devices for corporate use</li>
+            <li class="seo-sample-answer seo-sample-correct">B. BYOD security architecture without personal data access: (1) App-level containerization, deploy a corporate container (Microsoft Intune App Protection Policies, Samsung Knox, VMware Workspace ONE) that creates an encrypted, isolated workspace on the device; corporate data is stored within the container, not on the personal portion; MDM can wipe only the container without touching personal photos, messages, or apps; (2) MAM without MDM (Mobile Application Management), manage specific corporate applications without enrolling the entire device; corporate apps are wrapped with security controls (PIN, encryption, DLP) without requiring full device management; (3) Per-app VPN, corporate applications tunnel through VPN independently; personal apps use the normal internet connection; no visibility into personal traffic; (4) Selective wipe capability, MDM can remove only corporate data and apps when the employee leaves or loses the device; personal data is untouched; (5) User consent and transparency, BYOD agreement documenting exactly what the MDM can and cannot see/do; users must understand the terms before enrollment. These approaches provide corporate data protection while respecting employee privacy</li>
+            <li class="seo-sample-answer">C. Install full MDM on all BYOD devices, employees consented to corporate management by using their personal devices</li>
+            <li class="seo-sample-answer">D. BYOD devices require no security controls, employees are responsible for their own device security</li>
+        </ul>
+        <p class="seo-sample-explain">App containerization, MAM without MDM, per-app VPN, and selective wipe enable corporate data protection while preserving employee privacy, the key BYOD architectural approach. This is the correct answer.</p>
+      </details>
       <h2>Other SY0-701 Domains</h2>
       <ul>
           <li><a href="/comptia-security-plus/general-security-concepts/">1.0 General Security Concepts</a></li>

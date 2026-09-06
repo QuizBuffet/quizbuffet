@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "A web server administrator discovers that the organization's Apache installation has 47 Apache modules loaded, including many that are enabled by default but not used by any application. Which security principle does disabling unused modules implement, and which specific security risk does it reduce?",
+          "name": "What is a 'misconfiguration attack' against a web server, and which common web server misconfiguration MOST frequently leads to sensitive data exposure?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Principle of Least Functionality, reducing the attack surface by disabling modules that are not required eliminates code paths with potential vulnerabilities (mod_status, mod_info, mod_userdir, mod_autoindex) that could be exploited even if the core application is secure."
+            "text": "A misconfiguration attack targets insecure default settings, unnecessary enabled features, or improper access controls, the most common example being directory listing (directory browsing) enabled, allowing anyone to browse the web server's file structure like a file explorer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A web application tester uses Nikto to scan a target web server and receives alerts for: 'OSVDB-3268: /admin/: Directory indexing found', 'OSVDB-3233: /phpinfo.php: PHP info page found', 'OSVDB-3093: /.htpasswd: This might be interesting -- password file perhaps?'. What attack actions should the tester prioritize based on these specific findings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "(1) Browse /admin/ and enumerate all exposed files; (2) Review phpinfo.php for technology stack details (PHP version, extensions, paths, environment variables); (3) Attempt to access /.htpasswd to recover password hashes for offline cracking, each finding represents a distinct…"
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>128 exam-style questions</strong> covering <strong>19% of the CEH exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>Which web server component handles incoming HTTP requests, routes them to the appropriate application logic, and returns the resulting HTTP responses to clients?</h3>
-        <p><strong>Answer:</strong> Web server software (Apache, nginx, IIS), the HTTP server process that receives connections, parses requests, and delivers responses</p>
-        <p>Web server software (Apache HTTP Server, nginx, Microsoft IIS, Caddy) is the core component that: listens on TCP ports 80 (HTTP) and 443 (HTTPS), accepts client TCP connections, parses incoming HTTP request headers and body, routes requests to appropriate handlers (static files, CGI scripts, reverse proxy to application servers), and constructs and returns HTTP responses. In a multi-tier architecture, the web server may also function as a reverse proxy forwarding dynamic requests to application servers (Tomcat, Node.js, Gunicorn) while serving static content directly.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>Which security control specifically limits what a web server process can access on the host operating system, preventing a compromised web server from reading sensitive system files, writing to system directories, or accessing other processes&#39; memory?</h3>
-        <p><strong>Answer:</strong> Running the web server process with minimal OS privileges (non-root user account) combined with OS-level access controls (AppArmor, SELinux, chroot jail), limiting the blast radius if the web server process is compromised</p>
-        <p>OS-level privilege minimization is the principle of least privilege applied to web server processes: (1) Non-root user. Apache runs as &#39;www-data&#39; (Debian/Ubuntu) or &#39;apache&#39; (RHEL/CentOS) with no sudo access and no home directory write access. A compromised web server running as www-data cannot read /etc/shadow, install system services, or access other users&#39; files. (2) AppArmor/SELinux profiles, mandatory access control policies that further restrict exactly which files, directories, and system calls the web server process can use, regardless of Unix permissions. (3) chroot jail, changes the apparent root directory for the web server process, confining it to a limited subtree. Together these limit post-compromise damage.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A web server administrator discovers that the organization&#39;s Apache installation has 47 Apache modules loaded, including many that are enabled by default but not used by any application. Which security principle does disabling unused modules implement, and which specific security risk does it reduce?</h3>
-        <p><strong>Answer:</strong> Principle of Least Functionality, reducing the attack surface by disabling modules that are not required eliminates code paths with potential vulnerabilities (mod_status, mod_info, mod_userdir, mod_autoindex) that could be exploited even if the core application is secure</p>
-        <p>The Principle of Least Functionality (also called attack surface reduction) specifies that systems should only have the capabilities, services, and features required for their intended function. Unnecessary Apache modules add code with potential vulnerabilities that are exploitable even when the core application is completely secure: mod_status (exposes real-time server status at /server-status including request details and client IPs), mod_info (exposes configuration at /server-info), mod_userdir (enables ~/username URL mapping that could expose sensitive files), mod_autoindex (directory listing), mod_cgi/mod_cgid (CGI execution, a significant attack surface if not needed). Each disabled module eliminates a class of vulnerabilities from the attack surface entirely.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>Which web server component handles incoming HTTP requests, routes them to the appropriate application logic, and returns the resulting HTTP responses to clients?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Web server software (Apache, nginx, IIS), the HTTP server process that receives connections, parses requests, and delivers responses</li>
+            <li class="seo-sample-answer">B. Database server, stores all web content and serves it directly to clients via SQL query results formatted as HTTP responses</li>
+            <li class="seo-sample-answer">C. DNS resolver, translates hostnames to IP addresses, functioning as the primary HTTP request handler</li>
+            <li class="seo-sample-answer">D. Load balancer, receives all HTTP requests and processes application logic before distributing responses to multiple backend clients</li>
+        </ul>
+        <p class="seo-sample-explain">Web server software (Apache HTTP Server, nginx, Microsoft IIS, Caddy) is the core component that: listens on TCP ports 80 (HTTP) and 443 (HTTPS), accepts client TCP connections, parses incoming HTTP request headers and body, routes requests to appropriate handlers (static files, CGI scripts, reverse proxy to application servers), and constructs and returns HTTP responses. In a multi-tier architecture, the web server may also function as a reverse proxy forwarding dynamic requests to application servers (Tomcat, Node.js, Gunicorn) while serving static content directly.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which security control specifically limits what a web server process can access on the host operating system, preventing a compromised web server from reading sensitive system files, writing to system directories, or accessing other processes&#39; memory?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Running the web server process with minimal OS privileges (non-root user account) combined with OS-level access controls (AppArmor, SELinux, chroot jail), limiting the blast radius if the web server process is compromised</li>
+            <li class="seo-sample-answer">B. TLS certificate pinning, validates the web server&#39;s identity to clients, preventing man-in-the-middle attacks on web server communications</li>
+            <li class="seo-sample-answer">C. WAF (Web Application Firewall), filters malicious HTTP requests before they reach the web server, preventing all exploitation regardless of server process privileges</li>
+            <li class="seo-sample-answer">D. Rate limiting on the web server, prevents attackers from sending enough requests to trigger privilege escalation vulnerabilities in the web server process</li>
+        </ul>
+        <p class="seo-sample-explain">OS-level privilege minimization is the principle of least privilege applied to web server processes: (1) Non-root user. Apache runs as &#39;www-data&#39; (Debian/Ubuntu) or &#39;apache&#39; (RHEL/CentOS) with no sudo access and no home directory write access. A compromised web server running as www-data cannot read /etc/shadow, install system services, or access other users&#39; files. (2) AppArmor/SELinux profiles, mandatory access control policies that further restrict exactly which files, directories, and system calls the web server process can use, regardless of Unix permissions. (3) chroot jail, changes the apparent root directory for the web server process, confining it to a limited subtree. Together these limit post-compromise damage.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What is a &#39;misconfiguration attack&#39; against a web server, and which common web server misconfiguration MOST frequently leads to sensitive data exposure?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. A misconfiguration attack targets insecure default settings, unnecessary enabled features, or improper access controls, the most common example being directory listing (directory browsing) enabled, allowing anyone to browse the web server&#39;s file structure like a file explorer</li>
+            <li class="seo-sample-answer">B. A misconfiguration attack exploits deliberate backdoors inserted by web server developers, these are intentional features that administrators don&#39;t know about</li>
+            <li class="seo-sample-answer">C. A misconfiguration attack requires physical access to the web server hardware, all software-based web server settings are protected by hardware security modules that prevent remote configuration attacks</li>
+            <li class="seo-sample-answer">D. A misconfiguration attack exclusively targets incorrectly formatted SSL certificates, certificate format mismatches are the primary web server misconfiguration vulnerability class</li>
+        </ul>
+        <p class="seo-sample-explain">Web server misconfiguration attacks target insecure default settings or improper configuration choices by administrators. Directory listing (directory browsing / directory indexing) is one of the most frequently found misconfigurations: when enabled, navigating to a directory without an index file (index.html, default.aspx) displays a file listing with links to all files. This exposes backup files (.bak, .old), configuration files, source code, uploaded documents, and server-side script files that were never intended to be directly accessible. Other common misconfigurations: default credentials, unnecessary HTTP methods enabled (PUT, DELETE, TRACE), verbose error messages, exposed admin panels, and sample/test scripts left installed.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A web application tester uses Nikto to scan a target web server and receives alerts for: &#39;OSVDB-3268: /admin/: Directory indexing found&#39;, &#39;OSVDB-3233: /phpinfo.php: PHP info page found&#39;, &#39;OSVDB-3093: /.htpasswd: This might be interesting -- password file perhaps?&#39;. What attack actions should the tester prioritize based on these specific findings?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. No further action. Nikto findings are always false positives and require no follow-up investigation or testing</li>
+            <li class="seo-sample-answer">B. Download the entire server&#39;s file system using wget mirror mode. Nikto findings indicate the server supports WebDAV file access for all discovered directories</li>
+            <li class="seo-sample-answer">C. Report the findings as informational and move to the next scan. Nikto findings at OSVDB level are too low-severity to warrant manual follow-up investigation</li>
+            <li class="seo-sample-answer seo-sample-correct">D. (1) Browse /admin/ and enumerate all exposed files; (2) Review phpinfo.php for technology stack details (PHP version, extensions, paths, environment variables); (3) Attempt to access /.htpasswd to recover password hashes for offline cracking, each finding represents a distinct actionable intelligence source</li>
+        </ul>
+        <p class="seo-sample-explain">Each Nikto finding represents a distinct attack opportunity: (1) /admin/ directory indexing, browse the index to discover admin interface files, configuration scripts, database tools, or forgotten backup files. Specific files may reveal application version or provide direct access to admin functionality. (2) phpinfo.php, this page reveals the complete PHP configuration including version (enabling version-specific CVE targeting), loaded modules (identifying additional attack surfaces), SERVER variables (internal IP addresses, file paths), and sometimes environment variables (credentials). (3) /.htpasswd. Apache&#39;s .htpasswd files contain username:bcrypt/MD5-apr1 password hash pairs. If accessible (misconfigured .htaccess or serving the file directly), the hashes can be extracted and cracked offline using hashcat or john.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization&#39;s web application team uses a CI/CD pipeline to deploy applications to production web servers. The security team wants to implement automated security scanning as part of this pipeline. At which pipeline stage should each control be applied for MAXIMUM effectiveness?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. SAST (Static Application Security Testing) at code commit, DAST (Dynamic Application Security Testing) in the staging environment before production deployment, and vulnerability scanning of production web servers on a scheduled basis, catching vulnerabilities at the earliest possible stage while validating runtime behavior before production</li>
+            <li class="seo-sample-answer">B. All security controls should be applied only in the production environment after deployment, testing in pre-production is irrelevant because vulnerabilities can only be confirmed in production configurations</li>
+            <li class="seo-sample-answer">C. Only runtime WAF rules should be configured at each stage, WAF is the only security control relevant to web application deployment pipelines</li>
+            <li class="seo-sample-answer">D. Security scanning should only occur annually during scheduled maintenance windows to avoid interfering with development velocity and deployment timelines</li>
+        </ul>
+        <p class="seo-sample-explain">Security integration at each CI/CD pipeline stage provides layered coverage: (1) SAST at code commit, tools like SonarQube, Checkmarx, Semgrep analyze source code for vulnerabilities (SQL injection patterns, hardcoded secrets, insecure dependencies) before the code is built or deployed. This provides immediate developer feedback. (2) DAST in staging, tools like OWASP ZAP, Burp Suite Pro in API scan mode test the running application against its actual behavior, finding runtime vulnerabilities that static analysis misses (authentication bypasses, session management flaws, server-side injection). Staging mirrors production configuration. (3) Production vulnerability scanning, scheduled scans with Nessus/Qualys for web server and infrastructure vulnerabilities, dependency scanning for newly published CVEs against production libraries.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A web application server is configured as a DMZ host with the following architecture: Internet → WAF → Nginx (reverse proxy) → Apache Tomcat (application server) → MySQL. An attacker successfully exploits a vulnerability in the Nginx reverse proxy. Which systems are MOST immediately at risk of compromise as a direct result of this Nginx compromise?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Only the internet-facing IP addresses. Nginx sits between the internet and the WAF, so compromise only affects external-facing components</li>
+            <li class="seo-sample-answer">B. The WAF and internet are at direct risk, compromise of Nginx allows the attacker to send malicious traffic back toward the WAF to exploit it</li>
+            <li class="seo-sample-answer">C. MySQL is the most immediately at risk. Nginx bypass automatically grants direct database access since all web application layers share a single database connection pool</li>
+            <li class="seo-sample-answer seo-sample-correct">D. The Apache Tomcat application server is the most immediately at risk. Nginx has direct network connectivity to Tomcat for proxying, enabling the attacker to interact with Tomcat directly from the compromised Nginx host or manipulate requests forwarded to Tomcat</li>
+        </ul>
+        <p class="seo-sample-explain">When a reverse proxy (Nginx) is compromised, the attacker gains: (1) Direct network access to Tomcat. Nginx has an existing permitted network path to Tomcat for proxying requests. The attacker can now use this path to directly interact with Tomcat&#39;s AJP connector (port 8009) or HTTP connector (port 8080), bypassing any WAF inspection. (2) Ability to modify or intercept all requests proxied to Tomcat, the attacker can inject malicious content into proxied requests. (3) Inspection of all application data passing through Nginx, session tokens, credentials, sensitive responses. (4) Access to Nginx&#39;s server certificate private key, enabling HTTPS decryption of future sessions.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security engineer discovers that a critical Apache HTTP Server vulnerability (CVE-2024-XXXX, CVSS 9.8) affecting their production web server version was published 6 hours ago. The vendor patch is available but deployment requires 2 weeks of testing and change management approval. Which compensating controls MOST immediately reduce exploitability during this window?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Document the vulnerability in the risk register and schedule a remediation review at the next quarterly security committee meeting, CVSS scores above 9.0 require executive approval before any compensating controls can be implemented</li>
+            <li class="seo-sample-answer">B. Immediately shut down all production web servers until the patch is deployed, service disruption is preferable to the risk of exploitation for any CVSS 9.8 vulnerability</li>
+            <li class="seo-sample-answer">C. The 2-week patch testing window is standard and no compensating controls are needed, CVSS 9.8 vulnerabilities are theoretical and rarely exploited in practice within the first 2 weeks of disclosure</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Deploy a WAF virtual patch (custom rule blocking the specific exploit pattern), restrict access to the vulnerable server to known legitimate IP ranges where feasible, enable enhanced logging on the vulnerable service for exploitation attempt detection, and accelerate the patch approval process with a risk-based emergency change request</li>
+        </ul>
+        <p class="seo-sample-explain">The compensating control stack for a critical vulnerability during the patch approval window: (1) WAF virtual patch, security vendors (Palo Alto, Fortinet, AWS WAF, ModSecurity) publish virtual patches for major CVEs within hours of disclosure. A WAF rule blocking the specific exploit request pattern reduces exploitation probability without requiring server downtime. (2) IP allowlisting, if the web server should only be accessible from specific partners or known IP ranges, temporarily restricting access reduces the exposed attack surface. (3) Enhanced logging, configuring detailed request logging enables detection of exploitation attempts, supporting immediate incident response if exploitation occurs. (4) Emergency change management, most organizations have emergency/critical change processes that can accelerate patch deployment to days rather than weeks for CVSS 9.8 vulnerabilities.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A web server is discovered running Apache 2.4.49, which is vulnerable to CVE-2021-41773 (path traversal and remote code execution). An attacker sends: &#39;GET /cgi-bin/.%2e/.%2e/.%2e/.%2e/etc/passwd HTTP/1.1&#39;. What vulnerability class is being exploited and what does the URL encoding achieve?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. SQL injection, the URL-encoded dots are SQL escape sequences that inject malicious SQL into the web server&#39;s request log database</li>
+            <li class="seo-sample-answer">B. CSRF, the encoded URL bypasses the SameSite cookie attribute, enabling cross-site request forgery against authenticated admin sessions</li>
+            <li class="seo-sample-answer">C. HTTP request smuggling, the encoded characters create ambiguity between the frontend load balancer and backend web server about where the HTTP request ends</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Path traversal (directory traversal), the URL-encoded sequences (%2e = &#39;.&#39;) create &#39;../../../&#39; traversal sequences that escape the web root directory to access /etc/passwd on the server filesystem</li>
+        </ul>
+        <p class="seo-sample-explain">CVE-2021-41773 is a path traversal vulnerability in Apache 2.4.49. The URL /cgi-bin/.%2e/.%2e/.%2e/.%2e/etc/passwd decodes as: %2e = &#39;.&#39; so .%2e = &#39;..&#39; making each .%2e/ equivalent to &#39;../&#39;. This creates &#39;../../../../etc/passwd&#39;, a classic directory traversal sequence navigating from the web root to the system root and then to /etc/passwd. Apache 2.4.49 failed to normalize these encoded traversal sequences before path resolution. If CGI was enabled, this also enabled RCE. The fix was released in 2.4.51.</p>
+      </details>
       <h2>Other CEH Domains</h2>
       <ul>
           <li><a href="/ceh/information-security-overview/">1.0 Information Security and Ethical Hacking Overview</a></li>

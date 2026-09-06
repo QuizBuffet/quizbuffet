@@ -196,10 +196,18 @@
         },
         {
           "@type": "Question",
-          "name": "ARP (Address Resolution Protocol) has a fundamental design weakness that enables ARP poisoning attacks. What is this weakness?",
+          "name": "What is 'promiscuous mode' on a network interface, and why is it necessary for passive network sniffing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ARP has no authentication mechanism, any host can send an ARP reply claiming any IP-to-MAC mapping, and receiving hosts accept and cache these replies without verifying their authenticity."
+            "text": "Promiscuous mode configures the NIC to accept and pass ALL frames on the wire to the OS, regardless of whether the destination MAC address matches the interface's own MAC, enabling packet capture of traffic destined for other hosts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A network administrator wants to monitor all traffic passing through a specific switch port for troubleshooting purposes. Which switch configuration allows a separate monitoring station to passively capture all traffic on that port without being inline in the traffic path?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Configure SPAN (Switched Port Analyzer) / port mirroring, the switch copies all frames from the source port (or VLAN) to a designated mirror port where the monitoring station is connected."
           }
         }
       ]
@@ -223,21 +231,86 @@
       <p><strong>156 exam-style questions</strong> covering <strong>22% of the CEH exam</strong>. Instant feedback on every answer, progress tracking, no signup required.</p>
       <p>This domain is part of the <a href="/ceh/">Certified Ethical Hacker (CEH) practice test</a>. Each question is tagged by exam objective and difficulty so you can drill exactly the areas you need.</p>
       <h2>Sample Questions</h2>
-      <article class="seo-sample-q">
-        <h3>How does a MAC flooding attack work against a network switch, and what is the result when the CAM table is exhausted?</h3>
-        <p><strong>Answer:</strong> MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch&#39;s Content Addressable Memory (CAM) table, when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing</p>
-        <p>A MAC flooding attack (using tools like macof from the dsniff suite) sends frames with randomly generated fake source MAC addresses at high volume. The switch learns each new source MAC, adding it to the CAM table. When the CAM table reaches capacity, the switch can no longer learn new legitimate MAC-to-port mappings. Many switches (particularly older models) respond by &#39;failing open&#39;, flooding frames for unknown destination MACs out all ports, converting from unicast switching to hub-like broadcasting. An attacker connected to any switch port can now capture all traffic in the VLAN using promiscuous mode.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>A network engineer wants to prevent MAC flooding attacks on access layer switches. Which Cisco switch security feature directly limits the number of MAC addresses learned on each port?</h3>
-        <p><strong>Answer:</strong> Port Security, configures a maximum number of MAC addresses per port and defines violation actions (protect, restrict, shutdown) when the limit is exceeded</p>
-        <p>Cisco Port Security is specifically designed to prevent MAC flooding by limiting MAC address learning per port: (1) &#39;switchport port-security maximum 1&#39; limits the port to 1 MAC address (for end-user access ports). (2) &#39;switchport port-security violation shutdown&#39; disables the port if the limit is exceeded (most secure). (3) Alternative violations: &#39;restrict&#39; (drops violating frames, sends SNMP trap) and &#39;protect&#39; (silently drops violating frames). (4) &#39;switchport port-security mac-address sticky&#39; dynamically learns and persists the first MAC seen. When macof generates thousands of fake MACs on a port with port-security maximum 1, the first fake MAC triggers a violation and the port shuts down, protecting other ports from the overflow attack.</p>
-      </article>
-      <article class="seo-sample-q">
-        <h3>ARP (Address Resolution Protocol) has a fundamental design weakness that enables ARP poisoning attacks. What is this weakness?</h3>
-        <p><strong>Answer:</strong> ARP has no authentication mechanism, any host can send an ARP reply claiming any IP-to-MAC mapping, and receiving hosts accept and cache these replies without verifying their authenticity</p>
-        <p>ARP (RFC 826, 1982) was designed for trusted network environments with no authentication requirement. ARP has no mechanism to verify that the sender of an ARP reply is the legitimate owner of the claimed IP address. When a host receives an ARP reply, whether solicited or unsolicited (gratuitous), it simply updates its ARP cache with the MAC-IP mapping in the reply without any validation. This allows any host on the local segment to: (1) Send an unsolicited ARP reply claiming &#39;IP 192.168.1.1 is at MAC aa:bb:cc:dd:ee:ff&#39; (the attacker&#39;s MAC). (2) All receiving hosts update their ARP caches. (3) Traffic for 192.168.1.1 is sent to the attacker&#39;s MAC. The design assumption was that all hosts on the local network were trusted, a false assumption in modern environments.</p>
-      </article>
+      <details class="seo-sample-q">
+        <summary>How does a MAC flooding attack work against a network switch, and what is the result when the CAM table is exhausted?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. MAC flooding sends frames with thousands of unique fake source MAC addresses, exhausting the switch&#39;s Content Addressable Memory (CAM) table, when full, many switches fail open and flood all frames out all ports (behaving like a hub), enabling passive sniffing</li>
+            <li class="seo-sample-answer">B. MAC flooding fills the switch&#39;s CPU cache with fake MAC addresses, causing the switch to crash and reboot, creating a temporary network outage for denial-of-service purposes</li>
+            <li class="seo-sample-answer">C. MAC flooding sends malformed frames with invalid MAC addresses, causing the switch&#39;s frame processing ASIC to generate error interrupts that crash the forwarding engine</li>
+            <li class="seo-sample-answer">D. MAC flooding rapidly cycles the same MAC address across different switch ports, confusing the MAC learning algorithm and preventing legitimate frames from being forwarded</li>
+        </ul>
+        <p class="seo-sample-explain">A MAC flooding attack (using tools like macof from the dsniff suite) sends frames with randomly generated fake source MAC addresses at high volume. The switch learns each new source MAC, adding it to the CAM table. When the CAM table reaches capacity, the switch can no longer learn new legitimate MAC-to-port mappings. Many switches (particularly older models) respond by &#39;failing open&#39;, flooding frames for unknown destination MACs out all ports, converting from unicast switching to hub-like broadcasting. An attacker connected to any switch port can now capture all traffic in the VLAN using promiscuous mode.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A network engineer wants to prevent MAC flooding attacks on access layer switches. Which Cisco switch security feature directly limits the number of MAC addresses learned on each port?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Port Security, configures a maximum number of MAC addresses per port and defines violation actions (protect, restrict, shutdown) when the limit is exceeded</li>
+            <li class="seo-sample-answer">B. 802.1Q VLAN tagging, limiting VLANs to one MAC address per port prevents CAM table overflow by enforcing strict per-VLAN MAC uniqueness</li>
+            <li class="seo-sample-answer">C. DHCP Snooping, validates DHCP transactions and limits the number of IP addresses per port, indirectly preventing MAC address proliferation</li>
+            <li class="seo-sample-answer">D. Dynamic ARP Inspection (DAI), validates ARP packets against the DHCP snooping binding table, limiting the MAC addresses that can perform ARP resolution per port</li>
+        </ul>
+        <p class="seo-sample-explain">Cisco Port Security is specifically designed to prevent MAC flooding by limiting MAC address learning per port: (1) &#39;switchport port-security maximum 1&#39; limits the port to 1 MAC address (for end-user access ports). (2) &#39;switchport port-security violation shutdown&#39; disables the port if the limit is exceeded (most secure). (3) Alternative violations: &#39;restrict&#39; (drops violating frames, sends SNMP trap) and &#39;protect&#39; (silently drops violating frames). (4) &#39;switchport port-security mac-address sticky&#39; dynamically learns and persists the first MAC seen. When macof generates thousands of fake MACs on a port with port-security maximum 1, the first fake MAC triggers a violation and the port shuts down, protecting other ports from the overflow attack.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>What is &#39;promiscuous mode&#39; on a network interface, and why is it necessary for passive network sniffing?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Promiscuous mode configures the NIC to accept and pass ALL frames on the wire to the OS, regardless of whether the destination MAC address matches the interface&#39;s own MAC, enabling packet capture of traffic destined for other hosts</li>
+            <li class="seo-sample-answer">B. Promiscuous mode disables the network interface&#39;s hardware firewall, allowing all packet types including ICMP and UDP that are normally blocked by the NIC</li>
+            <li class="seo-sample-answer">C. Promiscuous mode enables the network card to transmit at higher speeds, removing rate limiting to increase packet injection throughput during active attacks</li>
+            <li class="seo-sample-answer">D. Promiscuous mode is a wireless-specific mode that enables monitoring of all 802.11 channels simultaneously, allowing passive capture of all Wi-Fi traffic within range</li>
+        </ul>
+        <p class="seo-sample-explain">By default, a NIC in normal mode silently discards frames where the destination MAC address does not match its own MAC or the broadcast address (FF:FF:FF:FF:FF:FF). This prevents the host&#39;s CPU from processing traffic destined for other devices. In promiscuous mode, the NIC passes ALL frames seen on the wire/switch port to the operating system, including unicast frames destined for other hosts. Packet capture tools (Wireshark, tcpdump) require promiscuous mode to capture traffic not addressed to the local machine. Setting promiscuous mode: &#39;ip link set eth0 promisc on&#39; (Linux) or programmatically via libpcap/WinPcap. Note: on switched networks, promiscuous mode only captures traffic on the same switch port without additional techniques (ARP poisoning, port mirroring).</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A network administrator wants to monitor all traffic passing through a specific switch port for troubleshooting purposes. Which switch configuration allows a separate monitoring station to passively capture all traffic on that port without being inline in the traffic path?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. Configure SPAN (Switched Port Analyzer) / port mirroring, the switch copies all frames from the source port (or VLAN) to a designated mirror port where the monitoring station is connected</li>
+            <li class="seo-sample-answer">B. Configure VTP (VLAN Trunking Protocol) pruning to exclude the monitored port from VLAN updates, VTP pruning redirects all pruned VLAN traffic to the monitoring station</li>
+            <li class="seo-sample-answer">C. Configure STP (Spanning Tree Protocol) root bridge election on the monitoring station, the root bridge receives all broadcast traffic in the VLAN for analysis</li>
+            <li class="seo-sample-answer">D. Configure DHCP snooping on the switch, DHCP snooping forwards all client traffic to the DHCP server port where the monitoring station can intercept it</li>
+        </ul>
+        <p class="seo-sample-explain">SPAN (Switched Port Analyzer, also called port mirroring) is a switch feature specifically designed for non-intrusive traffic monitoring: (1) Source port(s) or VLAN(s) are defined, the switch copies all frames (ingress, egress, or both) from these sources. (2) Destination port is specified, the monitoring station connects here and receives copied frames. (3) The monitoring station captures all traffic without being inline, the original traffic path is unaffected. (4) Configuration example (Cisco): &#39;monitor session 1 source interface Gi0/1; monitor session 1 destination interface Gi0/24&#39;. RSPAN (Remote SPAN) extends this across switches using a dedicated VLAN.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A security researcher evaluates two switch security controls against MAC flooding: Port Security (with maximum 2 MACs per port) vs. 802.1X Network Access Control. Against a sophisticated attacker who can generate exactly 2 unique fake MAC addresses per port before moving to adjacent ports, which control is MORE robust and why?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. Port Security is more robust, limiting MACs to 2 per port mathematically prevents all MAC flooding regardless of attacker sophistication, since 2 MAC addresses cannot flood a CAM table</li>
+            <li class="seo-sample-answer">B. Both controls are equally robust, port security and 802.1X provide identical protection mechanisms that respond identically to sophisticated MAC flooding evasion techniques</li>
+            <li class="seo-sample-answer">C. Neither control provides meaningful protection, MAC flooding is exclusively a physical layer attack that cannot be prevented by Layer 2 switch security features</li>
+            <li class="seo-sample-answer seo-sample-correct">D. 802.1X NAC is more robust, port security&#39;s maximum 2 MACs per port can still be evaded by an attacker who generates exactly 2 fake addresses per port; 802.1X requires cryptographic authentication of each device before any MAC is learned, preventing unauthorized devices from sending frames that populate the CAM table regardless of MAC count manipulation</li>
+        </ul>
+        <p class="seo-sample-explain">802.1X (IEEE 802.1X Port-Based Network Access Control) requires cryptographic EAP authentication before a port is authorized to pass data traffic: (1) When a device connects, the switch sends an EAP-Request to the supplicant (connecting device). (2) The device must authenticate using valid credentials (certificate, username/password via RADIUS). (3) Until authentication succeeds, the port is in &#39;unauthorized&#39; state, no frames from the device are forwarded or learned into the CAM table. (4) An attacker cannot generate ANY MAC addresses into the CAM table without valid credentials, regardless of how many fake MACs they generate. 802.1X prevents unauthorized frame injection at the authentication level, making MAC flooding impossible for unauthenticated devices, a fundamentally stronger control than count-based limiting.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>Which Linux command sends a gratuitous ARP reply claiming that IP 192.168.1.1 has MAC address 00:11:22:33:44:55, useful for ARP poisoning the target 192.168.1.50&#39;s ARP cache?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. arping -A -s 00:11:22:33:44:55 -I eth0 192.168.1.1, sends gratuitous ARP announcements from the specified source MAC</li>
+            <li class="seo-sample-answer">B. nmap --script arp-spoof 192.168.1.50 --gateway 192.168.1.1. Nmap&#39;s built-in ARP spoofing script poisons the target&#39;s ARP cache</li>
+            <li class="seo-sample-answer">C. arp -s 192.168.1.1 00:11:22:33:44:55, adds a static ARP entry to the local kernel ARP table for the gateway IP</li>
+            <li class="seo-sample-answer seo-sample-correct">D. arpspoof -i eth0 -t 192.168.1.50 192.168.1.1, tells target 192.168.1.50 that 192.168.1.1 is at the attacker&#39;s MAC address (from the dsniff suite)</li>
+        </ul>
+        <p class="seo-sample-explain">arpspoof (from the dsniff suite) is the standard tool for targeted ARP poisoning: &#39;arpspoof -i eth0 -t 192.168.1.50 192.168.1.1&#39; sends ARP replies to 192.168.1.50 (-t target) claiming that 192.168.1.1 (the spoofed IP) is at the attacker&#39;s MAC address. The attacker&#39;s actual MAC (from eth0) replaces the legitimate gateway MAC in 192.168.1.50&#39;s ARP cache. To complete the MITM (bidirectional interception), a second arpspoof command is run in the other direction: &#39;arpspoof -i eth0 -t 192.168.1.1 192.168.1.50&#39;, poisoning the gateway&#39;s cache too.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>An organization deploys Dynamic ARP Inspection (DAI) on their switches to prevent ARP poisoning. A security auditor reviews the DAI configuration and finds it&#39;s enabled only on access ports but not on trunk uplinks. Why is this configuration correct, and what would happen if DAI were enabled on trunk uplinks without proper trust configuration?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer">A. DAI should be enabled on trunk ports only, access ports are trusted by design since only authorized workstations connect to access ports</li>
+            <li class="seo-sample-answer">B. The configuration is incorrect, DAI must be enabled identically on all port types (access and trunk) without distinction for it to provide any security benefit</li>
+            <li class="seo-sample-answer">C. DAI should be disabled on all ports, ARP inspection creates processing overhead that degrades switch performance unacceptably for production environments</li>
+            <li class="seo-sample-answer seo-sample-correct">D. Trunk ports should be configured as DAI-trusted interfaces, enabling DAI on trunk uplinks without trust configuration causes DAI to drop legitimate ARP frames from upstream routers, switches, and DHCP servers that are not in the DAI binding table, breaking valid network connectivity</li>
+        </ul>
+        <p class="seo-sample-explain">Dynamic ARP Inspection validates ARP packets on untrusted ports by checking whether the ARP sender&#39;s IP-to-MAC mapping matches the DHCP snooping binding table. Trunk uplinks (connecting to routers, upstream switches, servers with static IPs) send legitimate ARP frames that may not have entries in the DHCP snooping binding table (because these devices use static IPs or are DHCP servers themselves, not DHCP clients). If DAI is enabled on trunk ports without &#39;ip arp inspection trust&#39;, DAI drops their ARP frames as &#39;invalid&#39;, breaking router connectivity and server ARP resolution. Correct configuration: &#39;ip arp inspection trust&#39; on trunk uplinks and DHCP server ports; &#39;ip arp inspection&#39; (untrusted, default) on access ports only.</p>
+      </details>
+      <details class="seo-sample-q">
+        <summary>A penetration tester is on a switched network and wants to capture traffic between a workstation (192.168.1.10) and the default gateway (192.168.1.1). Simply enabling promiscuous mode captures no relevant traffic. Which active sniffing technique MOST directly enables traffic capture in this switched environment?</summary>
+        <ul class="seo-sample-answers">
+            <li class="seo-sample-answer seo-sample-correct">A. ARP poisoning, sending gratuitous ARP replies to both the workstation and gateway claiming the attacker&#39;s MAC is associated with each other&#39;s IP, causing both hosts to send traffic through the attacker&#39;s machine</li>
+            <li class="seo-sample-answer">B. Increasing the NIC&#39;s buffer size, larger receive buffers allow the NIC to capture additional frames from adjacent switch ports</li>
+            <li class="seo-sample-answer">C. DNS cache poisoning, redirecting the workstation&#39;s DNS queries to the attacker&#39;s resolver, which forwards all traffic through the attacker as a DNS proxy</li>
+            <li class="seo-sample-answer">D. Enabling IPv6 on the attacker&#39;s interface, modern switches forward all IPv6 traffic in promiscuous mode regardless of destination MAC addresses</li>
+        </ul>
+        <p class="seo-sample-explain">ARP poisoning (ARP spoofing) is the primary active sniffing technique for switched environments: (1) The attacker sends an ARP reply to the workstation (192.168.1.10) claiming MAC:attacker_mac is at IP:192.168.1.1 (the gateway). (2) The attacker sends an ARP reply to the gateway (192.168.1.1) claiming MAC:attacker_mac is at IP:192.168.1.10. (3) Both hosts update their ARP caches with the attacker&#39;s MAC for each other&#39;s IP. (4) Traffic from the workstation to the gateway is sent to attacker_mac, the attacker captures it, then forwards to the real gateway. (5) Return traffic from the gateway to the workstation similarly routes through the attacker. This creates a Man-in-the-Middle position without requiring any switch configuration access.</p>
+      </details>
       <h2>Other CEH Domains</h2>
       <ul>
           <li><a href="/ceh/information-security-overview/">1.0 Information Security and Ethical Hacking Overview</a></li>

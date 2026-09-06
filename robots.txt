@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+# Internal search results (sitelinks search box target) are not for indexing
+Disallow: /*?q=
 
 Sitemap: https://quizbuffet.com/sitemap.xml
 

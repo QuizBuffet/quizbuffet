@@ -1257,7 +1257,7 @@ export const certifications = [
       'Finish with Side Effects and Possible Complications (11 questions), small but every miss here is high-stakes because complications questions are scenario-based and often map to actual liability cases. Once every domain is at 80%+, take the Mix Quiz to simulate exam timing under the 90-minute clock.',
     ],
     career:
-      'Permanent makeup and paramedical micropigmentation are among the highest hourly-rate services in the beauty industry. Practitioners in licensed states typically charge $400, $900 per session for permanent brows and $500, $1,200 for full lip blush or full eyeliner; paramedical procedures (areola restoration, scar repigmentation, vitiligo camouflage) command $600, $1,500 per session. With 4-8 clients per week, a working specialist earns $80,000, $200,000 annually in major metros. The Advanced Practice license is what unlocks the higher-paying medical-spa, dermatology, and oncology-collaboration referrals.',
+      'Permanent makeup and paramedical micropigmentation are among the highest hourly-rate services in the beauty industry. Practitioners in licensed states typically charge $400 to $900 per session for permanent brows and $500 to $1,200 for full lip blush or full eyeliner; paramedical procedures (areola restoration, scar repigmentation, vitiligo camouflage) command $600 to $1,500 per session. With 4-8 clients per week, a working specialist earns $80,000 to $200,000 annually in major metros. The Advanced Practice license is what unlocks the higher-paying medical-spa, dermatology, and oncology-collaboration referrals.',
     pitfalls:
       'Five traps that fail Advanced Practice Micropigmentation candidates: (1) Skipping the OSHA BBP Standard memorization, the infection-control questions are not optional. (2) Confusing organic and inorganic pigments: know that iron oxides are inorganic and can interact with MRI fields, while carbon-based pigments are organic and fade differently. (3) Missing the depth-of-implantation question: pigment in the reticular dermis causes blue/gray shift; pigment in the epidermis fades fast; the papillary dermis is the target. (4) Underestimating Side Effects despite the 5% weight, granuloma, migration, allergic reaction, hypertrophic vs. keloid scarring, and MRI artifact are all examined and each appears on the practical exam too. (5) Not memorizing contraindications (pregnancy, blood thinners, isotretinoin, keloid history, active skin infection), multiple-choice items here are pure recall.',
   },
@@ -1304,7 +1304,7 @@ export const certifications = [
 {
   slug: 'barber-no-chemical',
   name: 'Barber 1 (No Chemical) License',
-  seoTitle: 'Barber 1 No Chemical Practice Test and Quiz: 220+',
+  seoTitle: 'Barber 1 (No Chemical) Practice Test: Free Quiz Questions',
   code: 'Barber 1',
   vendor: 'State Boards',
   tagline: 'Entry-level barber license: haircutting, shaving, and styling with no chemical services',
@@ -1446,6 +1446,7 @@ export const certifications = [
   slug: 'cpa-isc',
   name: 'CPA Information Systems and Controls (ISC)',
   code: 'ISC',
+  seoName: 'CPA ISC Information Systems and Controls',
   vendor: 'AICPA',
   tagline: 'Discipline section of the Uniform CPA Examination, IT audit, security, and SOC engagements',
   about: 'The Information Systems and Controls (ISC) section is one of three Discipline sections of the Uniform CPA Examination administered by the AICPA. Candidates pass three Core sections (AUD, FAR, REG) plus one Discipline of their choice, ISC is most often selected by candidates planning a career in IT audit, cybersecurity, or System and Organization Controls (SOC) attestation. The 4-hour exam consists of 82 multiple-choice questions and 6 task-based simulations, weighted 60% MCQ / 40% TBS in scoring (the only section without 50/50 split). Content covers three areas: Information Systems and Data Management (35-45%): IT infrastructure components, cloud computing models (IaaS, PaaS, SaaS), enterprise and accounting information systems, system availability, business continuity and disaster recovery, IT change management, data management, relational databases, SQL queries, data warehouses and lakes, and business process modeling; Security, Confidentiality and Privacy (35-45%): HIPAA Security and Privacy Rules, GDPR Articles 4-34, PCI DSS, NIST CSF and Privacy Framework, NIST SP 800-53, CIS Controls v8.1, COBIT 2019, threat types and cyber-attack stages, identification/authentication/authorization controls, encryption, Data Loss Prevention, security testing, and incident response; and Considerations for SOC Engagements (15-25%): purpose and intended users of SOC 1®, SOC 2®, SOC 3®, and SOC for Cybersecurity reports, Trust Services Criteria, system description criteria, complementary user entity controls (CUECs) and complementary subservice organization controls (CSOCs), report opinions and modifications. References include the AICPA Trust Services Criteria, NIST frameworks, HIPAA 45 CFR Part 164, GDPR, PCI DSS, COSO ERM, and COBIT 2019.',

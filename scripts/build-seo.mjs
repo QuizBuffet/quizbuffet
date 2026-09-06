@@ -365,7 +365,10 @@ function buildCertGuideSections(cert) {
     `Once every domain is at 80%+, take the Mix Quiz repeatedly to simulate real exam conditions across all topics.`,
   ];
 
-  const career = g.career || (sal ? (
+  const salarySource = sal?.sources?.length
+    ? ` <span class="cert-salary-source">Source: ${htmlEscape(sal.sources.join(', '))}${sal.lastUpdated ? `, ${sal.lastUpdated.slice(0, 4)}` : ''}.</span>`
+    : '';
+  const career = (g.career ? g.career + salarySource : null) || (sal ? (
     `Holders of ${cert.code} in the US currently see compensation in the range of ` +
     `<strong>${fmtUsd(sal.salary.low)} to ${fmtUsd(sal.salary.high)}</strong> per year, with median around <strong>${fmtUsd(sal.salary.mid)}</strong>. ` +
     `${sal.notes ? sal.notes + ' ' : ''}` +
@@ -485,6 +488,7 @@ function buildCertHtml(cert) {
     ? [`${titleLeadName} Practice Test: ${total}+ Free Questions${codeTag}`,
        `${titleLeadName} Practice Test: ${total}+ Free Questions`,
        `${titleLeadName} Practice Test: Free Questions`,
+       `${titleLeadName} Free Practice Test`,
        `${titleLeadName} Practice Test`]
     : [`${titleLeadName} Practice Test (Coming Soon)`, `${titleLeadName} Practice Test`];
   const fullTitle = cert.seoTitle

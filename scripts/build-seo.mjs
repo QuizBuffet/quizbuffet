@@ -609,7 +609,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   <main id="main-content">
     <section id="seo-static">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; ${htmlEscape(cert.name)}</nav>
-      <h1>${htmlEscape(seoName)} Practice Test and Practice Exam Questions${codeTag}</h1>
+      <h1>${cert.seoH1 ? htmlEscape(cert.seoH1) : `${htmlEscape(seoName)} Practice Test and Practice Exam Questions${codeTag}`}</h1>
       <p>Free ${htmlEscape(seoName)} practice test with <strong>${total}+ exam-style questions</strong> across ${cert.domains.length} domains, organized like the real ${htmlEscape(cert.code)} exam. Use it as a practice exam, a mock test, or a quick quiz. Instant feedback, no account.</p>
       ${cert.about ? `<p>${htmlEscape(cert.about)}</p>` : ''}
       ${cert.details ? `<p><em>${htmlEscape(cert.details)}</em></p>` : ''}
@@ -1373,6 +1373,7 @@ function buildSitemap(comingSoon) {
   // Privacy & cookie policy: hand-built static page, not a cert. Register here
   // so it survives every build:seo run and stays in the sitemap.
   urls.push({ loc: `${SITE}/privacy/`, priority: '0.1', changefreq: 'yearly', lastmod: lastCommitDate('privacy/index.html') });
+  urls.push({ loc: `${SITE}/about/`, priority: '0.5', changefreq: 'yearly', lastmod: lastCommitDate('about/index.html') });
   for (const cert of certifications) {
     // Tally questions across all domains. Certs with zero questions are scaffolds,
     // the page carries noindex (see buildCertHtml) so don't advertise them in the sitemap.
@@ -1474,7 +1475,43 @@ function updateHomeIndex(certs) {
   const newLd = JSON.stringify(data, null, 2);
   html = html.replace(ldRegex, `$1\n  ${newLd}\n  $3`);
 
+  // 3. Static, crawlable cert grid inside #cert-list (S2/E1). The SPA replaces it with the
+  // richer card grid on hydrate; the static markup is what Googlebot and no-JS readers get.
+  const gridRegex = /(<!-- BEGIN home-cert-grid -->)[\s\S]*?(<!-- END home-cert-grid -->)/;
+  if (gridRegex.test(html)) {
+    html = html.replace(gridRegex, `$1\n${buildHomeCertGrid(sorted)}\n        $2`);
+  } else {
+    console.warn('  ! index.html has no home-cert-grid markers: static grid not injected');
+  }
+
   writeClean(homePath, html);
+}
+
+// Group live certs by category and emit plain links with question counts.
+function buildHomeCertGrid(certs) {
+  let perCert = {};
+  try { perCert = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'counts.json'), 'utf8')).perCert || {}; } catch {}
+  const groups = new Map();
+  for (const c of certs) {
+    const cat = LIVE_CATEGORY_MAP[c.slug] || c.category || 'Other';
+    if (!groups.has(cat)) groups.set(cat, []);
+    groups.get(cat).push(c);
+  }
+  const order = ['Cybersecurity', 'Cloud', 'Networking', 'IT Foundations', 'Data & AI', 'IT Service Management', 'Project Management', 'Healthcare', 'Safety', 'Transportation', 'Aviation', 'Real Estate', 'Mortgage', 'Accounting', 'Finance', 'Fitness', 'Beauty', 'Trades'];
+  const cats = [...groups.keys()].sort((a, b) => {
+    const ia = order.indexOf(a), ib = order.indexOf(b);
+    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
+  });
+  return cats.map(cat => `        <section class="home-cat">
+          <h3 class="home-cat-title">${htmlEscape(cat)} practice tests</h3>
+          <ul class="home-cert-links">
+${groups.get(cat).map(c => {
+    const n = perCert[c.slug];
+    const name = c.seoName || c.name;
+    return `            <li><a href="/${c.slug}/">${htmlEscape(name)} practice test</a>${n ? ` <span class="home-cert-count">${n.toLocaleString()} questions</span>` : ''}</li>`;
+  }).join('\n')}
+          </ul>
+        </section>`).join('\n');
 }
 
 function shortCertNameForListing(cert) {

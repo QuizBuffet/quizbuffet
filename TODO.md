@@ -107,7 +107,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### B8. Done (removed, number kept)
 
-### C1. CPR / AED (205 impressions on the cert page, 4 of the site's 5 total clicks; top queries "aed quiz" 80, "aed cpr test" 43)
+### C1. [PARTIAL: seoH1/seoDescription/faq (12 items, R5's 4 PAA questions lead) and seoTitle for aed-operation/adult-cpr/assessment-and-recognition all done; aed-operation still needs raising from 55 to 100+ questions] CPR / AED (205 impressions on the cert page, 4 of the site's 5 total clicks; top queries "aed quiz" 80, "aed cpr test" 43)
 **Files.** `js/data/certifications/cpr-aed.js`, `cpr-aed/aed-operation/index.html` (generated).
 This is the only cert that has earned clicks, and 3 of the 4 came from its domain pages (adult-cpr, assessment-and-recognition, aed-operation). It proves domain pages convert when they surface.
 1. An AED domain already exists: `aed-operation` (55 questions). Its title is "300+ Free CPR/AED Questions: AED Operation" and the H1 is "5.0 AED Operation CPR/AED Practice Quiz". Neither contains "AED quiz" or "AED test" as a phrase. Add an optional `seoTitle` and `seoH1` per domain in cert metadata and set:
@@ -254,32 +254,9 @@ The visible "Last updated" byline should only appear when the date is within the
 
 ## E. Home page (P1)
 
-### E1. Pre-render the cert grid as HTML links
-**Problem.** `index.html:651` has `<div id="cert-list"></div>`, filled by `js/pages/home/renderCertList.js` at runtime. The static HTML contains zero `<a href="/<slug>/">` links. Googlebot does execute JS, but link equity and crawl discovery are weaker and slower, and the page body is 72 words.
+### E1. Done (removed, number kept)
 
-**Fix.**
-1. In `build-seo.mjs`, add a `buildHomeCertGrid(certs, counts)` function that reuses `LIVE_CATEGORY_MAP` (`build-seo.mjs:~840`) to group live certs by category and emits:
-   ```html
-   <section class="home-cat" id="cat-cybersecurity">
-     <h3>Cybersecurity practice tests</h3>
-     <p>One sentence on who these are for.</p>
-     <ul class="home-cert-links">
-       <li><a href="/comptia-security-plus/">CompTIA Security+ practice test</a> <span>1900 questions</span></li>
-       ...
-     </ul>
-   </section>
-   ```
-2. Write it into `index.html` between markers `<!-- BEGIN home-cert-grid -->` and `<!-- END home-cert-grid -->` inside `#cert-list`, the same way the ItemList sync works (`build-seo.mjs:1359-1420`).
-3. Change `renderCertList.js` to enhance the existing markup (attach previews, salary badges, search filtering) rather than replace it, so there is no flash and no duplicate content. If replacing is simpler, keep the static list under a `.visually-hidden-until-js` class that JS removes.
-4. Unify the two category maps: `LIVE_CATEGORY_MAP` in `build-seo.mjs` and `LIVE_CATEGORY` in `renderCertList.js` are copies. Move it to `js/data/certifications/_categories.js` (pure data) and import it in both.
-
-### E2. Expand home copy to 400+ words
-Add below the hero and above the grid (static HTML, hand-written in `index.html`):
-- What QuizBuffet is (one paragraph): free practice tests, organized by exam domain, with explanations, no account.
-- How to use it (one paragraph): pick a cert, drill a domain, review misses, repeat; progress saved in browser.
-- Who writes the questions and how they are checked (one paragraph). Link to the About page (E5).
-- Why it is free (one sentence).
-No em-dashes. Keep the craigslist-simple look.
+### E2. Done (removed, number kept)
 
 ### E3. "Most practiced" section
 Hand-pick 10 certs with the highest impressions or volume: Security+, A+ Core 1, CCNA, AWS Cloud Practitioner, AWS Developer Associate, CISSP, CDL Class A, CPR/AED, ServSafe Manager, NASM CPT. Static HTML links above the full grid.
@@ -287,22 +264,14 @@ Hand-pick 10 certs with the highest impressions or volume: Security+, A+ Core 1,
 ### E4. Category landing pages
 Create `/it-certifications/`, `/cybersecurity-certifications/`, `/cloud-certifications/`, `/healthcare-certifications/`, `/trade-licenses/`, `/beauty-licenses/`, `/finance-certifications/`, `/safety-certifications/`. Generate them in `build-seo.mjs` from the category map: title "Free <Category> Practice Tests", 300 words of intro, the cert list with counts, `ItemList` JSON-LD, breadcrumb. Add them to the sitemap and link them from the home grid headings and the footer. These target "it certification practice tests" style queries and give the home page fewer, stronger internal links.
 
-### E5. About page
-Create `/about/index.html` (hand-built, copy the head template from `privacy/index.html`). Content: who runs the site, how questions are authored and validated (mention the validator and the per-domain review), how to report a wrong answer, that the site is free and how it is funded (affiliate links, ads). Link from the footer (`js/components/footer/renderFooter.js`) and from the home copy. Register in `buildSitemap`.
+### E5. Done (removed, number kept)
 
-### E6. Contact
-Add a "Contact" line on the About page with the `mailto:` link labeled "Contact us" (address never visible in text, per style rule).
+### E6. Done (removed, number kept)
 
 ### E7. `Organization` schema
 `index.html` JSON-LD has `"sameAs": []`. Fill with real profile URLs once K4 is done. Add `"logo"` pointing at a 512px PNG (`/android-icon-192x192.png` is acceptable now).
 
-### E8. `WebSite` + `SearchAction`
-Add to the home `@graph`:
-```json
-{"@type":"WebSite","url":"https://quizbuffet.com/","name":"QuizBuffet",
- "potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://quizbuffet.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}}
-```
-Then make `js/pages/home/renderSearch.js` read `?q=` on load and prefill the filter.
+### E8. Done (removed, number kept)
 
 ### E9. Done (removed, number kept)
 
@@ -683,12 +652,12 @@ Searching the domain itself, Google rewrote the query to "quiz buffet" and showe
 - **Zero external links.** Position 68 site-wide is consistent with no backlink profile at all.
 
 ### S2. Fixes, in order
-1. [DONE today] Brand-first home title and `alternateName: ["Quiz Buffet", "quizbuffet.com"]` on the WebSite and EducationalOrganization JSON-LD nodes.
-2. Mention the two-word form once on the home page and About page in natural copy ("QuizBuffet, sometimes written Quiz Buffet, is a free practice-test site..."). Google needs the string on the page, not only in schema.
-3. Create the About page (E5) and fill `sameAs` (E7) with real profiles: X, LinkedIn company page, YouTube, GitHub org, Crunchbase. Use the exact name "QuizBuffet" and the URL on every profile.
-4. Pre-render the home cert grid and expand home copy (E1, E2). A home page with 500 words and 50 links is what Google expects a brand's front door to look like.
-5. Add a "QuizBuffet" text link to home in the footer of every generated page (the logo link alone is a weak anchor).
-6. Add `WebSite.potentialAction` SearchAction (E8) so Google can show a sitelinks search box once the brand ranks.
+1. [DONE] Brand-first home title and `alternateName: ["Quiz Buffet", "quizbuffet.com"]` on the WebSite and EducationalOrganization JSON-LD nodes.
+2. [DONE] Mention the two-word form once on the home page and About page in natural copy ("QuizBuffet, sometimes written Quiz Buffet, is a free practice-test site..."). Google needs the string on the page, not only in schema.
+3. [About page DONE; sameAs still empty, needs real profiles] Create the About page (E5) and fill `sameAs` (E7) with real profiles: X, LinkedIn company page, YouTube, GitHub org, Crunchbase. Use the exact name "QuizBuffet" and the URL on every profile.
+4. [DONE] Pre-render the home cert grid and expand home copy (E1, E2). A home page with 500 words and 50 links is what Google expects a brand's front door to look like.
+5. [DONE] Add a "QuizBuffet" text link to home in the footer of every generated page (the logo link alone is a weak anchor).
+6. [DONE] Add `WebSite.potentialAction` SearchAction (E8) so Google can show a sitelinks search box once the brand ranks.
 7. Get five to ten external mentions that use the brand name: Reddit wiki entries (K1), a Product Hunt launch, a Hacker News "Show HN", and directory listings. Brand search results move fastest on mentions, not on-page work.
 8. Google Business Profile is not applicable (no address). Skip.
 9. Track the brand query in Search Console monthly. Target: quizbuffet.com at position 1 for "quizbuffet" within 30 days, and page one for "quiz buffet" within 90.

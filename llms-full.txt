@@ -1165,23 +1165,23 @@ CPR / AED Certification is the lay-rescuer credential for responding to sudden c
 - 7.0 Special Situations and Recovery (10% of exam): 30 questions
 
 ### Sample questions
+**Q: Where can I find free CPR test questions and answers?**
+A: QuizBuffet’s CPR and AED practice test gives you 300+ free multiple-choice questions with instant answers and explanations, no signup required. Practice one domain at a time (compressions, AED use, choking, and more) or run a mixed session that mirrors the real exam.
+
+**Q: Can you do CPR and AED training online?**
+A: The knowledge portion can be done online through blended courses like AHA HeartCode, but a hands-on skills check with an instructor is still required to get certified. QuizBuffet’s free practice test covers that knowledge portion so you walk into the skills check ready.
+
+**Q: What do you need to know to pass a CPR test?**
+A: Focus on the Chain of Survival, correct compression rate and depth for adults, children, and infants, when and how to use an AED, and the choking response. Most CPR/AED written exams require 80% or better, so working through practice questions by domain is the fastest way to find your weak spots before test day.
+
+**Q: Which comes first, CPR or AED?**
+A: Start CPR immediately, and use the AED the moment it arrives; you do not finish a full round of CPR first. If you are alone, call 911 and get the AED yourself; if others are present, send someone for the AED while you begin compressions right away.
+
 **Q: What kind of questions are on the CPR test?**
 A: Most CPR/AED exams are multiple choice. They cover the Chain of Survival, how to check responsiveness and breathing, compression rate and depth for adults, children, and infants, how to use an AED, and how to help someone who is choking. QuizBuffet mirrors that exact mix across all seven domains.
 
 **Q: How hard is it to get AED certified?**
 A: Not very. An AED is designed for untrained bystanders, so the device speaks each step out loud as you go. Most courses pair a short written test with a hands-on skill check, and the written part usually asks for around 80% or better to pass.
-
-**Q: Are AED and CPR certification the same thing?**
-A: No. CPR is the manual skill of chest compressions and rescue breaths, while an AED is a portable device that reads the heart rhythm and delivers a shock when one is needed. Most certifications teach both together in a single CPR/AED course.
-
-**Q: Is it safe to use an AED on a pregnant patient?**
-A: Yes. Using an AED on a pregnant woman is safe and recommended, and the shock will not harm the baby. Place the pads in the standard positions and follow the voice prompts the same way you would for any adult.
-
-**Q: How many questions are on a CPR/AED exam?**
-A: It depends on the provider, but written exams commonly run between 25 and 35 multiple-choice questions. QuizBuffet gives you 300+ practice questions so the real test feels familiar before you sit it.
-
-**Q: What score do you need to pass CPR certification?**
-A: Most courses set the passing score around 80% on the written exam, plus a successful hands-on skill check. Some are higher; the AHA BLS Provider exam, for example, requires 84%. Check your specific provider for the exact cutoff.
 
 ## QuickBooks ProAdvisor (Online Certification) (QuickBooks ProAdvisor)
 Vendor: Intuit

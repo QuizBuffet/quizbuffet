@@ -5281,3 +5281,14 @@ html, body {
     transition: none !important;
   }
 }
+
+/* Static home cert grid (pre-rendered by build-seo; replaced by cards on hydrate) */
+.home-cat { margin: 14px 0 6px; }
+.home-cat-title { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin: 0 0 6px; }
+.home-cert-links { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 24px; }
+.home-cert-links li { break-inside: avoid; padding: 3px 0; font-size: 15px; }
+.home-cert-count { color: var(--text-muted); font-size: 12px; margin-left: 6px; }
+@media (max-width: 600px) { .home-cert-links { columns: 1; } }
+/* Home about block */
+.home-about { margin: 32px 0 8px; max-width: 760px; }
+.home-about p { font-size: 15px; line-height: 1.6; margin: 0 0 12px; }

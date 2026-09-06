@@ -182,6 +182,8 @@ idle(() => { renderFooter(); renderBackToTop(); renderConsent(); });
 // navigation, not a pushState, so the static rich coming-soon HTML loads
 // directly (it has its own SPA-bypass logic via <html data-coming-soon="1">).
 const COMING_SOON_SLUGS = new Set();
+// Hand-built static pages (own HTML, bypass the SPA router the same way coming-soon pages do).
+const STATIC_PAGES = new Set(['about', 'privacy', 'cpa']);
 loadComingSoon().then(list => { list.forEach(c => COMING_SOON_SLUGS.add(c.slug)); });
 
 // Intercept internal link clicks so navigation stays in-app (no full page reloads)
@@ -205,7 +207,7 @@ document.addEventListener('click', e => {
   // Coming-soon cert URLs are served as static rich HTML, let the browser
   // navigate natively so the new rich page is shown, not the SPA placeholder.
   const firstSeg = url.pathname.split('/').filter(Boolean)[0];
-  if (firstSeg && COMING_SOON_SLUGS.has(firstSeg)) return;
+  if (firstSeg && (COMING_SOON_SLUGS.has(firstSeg) || STATIC_PAGES.has(firstSeg))) return;
 
   const dest = url.pathname + url.search;
   if (dest === location.pathname + location.search) return;

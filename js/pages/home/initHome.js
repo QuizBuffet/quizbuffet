@@ -14,7 +14,7 @@ import { loadComingSoon } from '../../data/comingSoon/loadComingSoon.js';
 
 export async function init() {
   setMeta(
-    'Free Practice Tests for IT, Cloud, Cybersecurity, Healthcare, Trades & More',
+    'QuizBuffet: Free Certification Practice Tests',
     'Free, no-account practice tests for CompTIA, AWS, Azure, Cisco, CISSP, OSHA, CDL, FAA Part 107, EMT, CNA, Real Estate, ServSafe, and dozens more high-demand certifications. Domain-by-domain quizzes with instant feedback.'
   );
   setJsonLd({
@@ -38,7 +38,9 @@ export async function init() {
   renderFeatured(null, certifications);
   renderAd('ad-top');
   renderTotalBadge('total-badge');
-  renderCertList(certifications, comingSoon);
+  const q = new URLSearchParams(location.search).get('q') || '';
+  renderCertList(certifications, comingSoon, q);
+  if (q) { const input = document.getElementById('domain-search'); if (input) input.value = q; }
   renderAd('ad-bottom');
   initFloatingEmoji();
 }

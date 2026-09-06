@@ -107,19 +107,7 @@ Write custom `seoDescription` values for the 16 certs in section C first. Each m
 
 ### B8. Done (removed, number kept)
 
-### C1. [PARTIAL: seoH1/seoDescription/faq (12 items, R5's 4 PAA questions lead) and seoTitle for aed-operation/adult-cpr/assessment-and-recognition all done; aed-operation still needs raising from 55 to 100+ questions] CPR / AED (205 impressions on the cert page, 4 of the site's 5 total clicks; top queries "aed quiz" 80, "aed cpr test" 43)
-**Files.** `js/data/certifications/cpr-aed.js`, `cpr-aed/aed-operation/index.html` (generated).
-This is the only cert that has earned clicks, and 3 of the 4 came from its domain pages (adult-cpr, assessment-and-recognition, aed-operation). It proves domain pages convert when they surface.
-1. An AED domain already exists: `aed-operation` (55 questions). Its title is "300+ Free CPR/AED Questions: AED Operation" and the H1 is "5.0 AED Operation CPR/AED Practice Quiz". Neither contains "AED quiz" or "AED test" as a phrase. Add an optional `seoTitle` and `seoH1` per domain in cert metadata and set:
-   - `seoTitle`: "AED Quiz: Free AED Test Questions (CPR and AED Practice)"
-   - `seoH1`: "AED Quiz and AED Test Practice: Defibrillator Operation"
-   - `summary` (G1): explain AED pad placement, shock sequence, and when to use an AED, 150 words.
-   Raise `aed-operation` to 100+ questions; it is the single highest-demand domain on the site.
-2. Cert page title from B1 becomes "CPR and AED Practice Test: 300+ Free Questions". Cert H1: "CPR and AED Test Practice: Free CPR Exam and AED Quiz Questions".
-3. Add `faq` (10 items). Start with the four "People also ask" questions Google shows for this page, verbatim (R5): "Where can I find free CPR test questions and answers?", "Can you do CPR and AED training online?", "What to know to pass a CPR test?", "Which comes first, CPR or AED?". Then: "Is the CPR test multiple choice?", "What is the passing score for the CPR test?" (AHA: 84 percent on the written exam), "Can I take the CPR test online for free?", "How many questions are on the AHA CPR/AED test?", "How long is CPR certification valid?" (2 years), "What is the difference between CPR and BLS?", "What does AED stand for and when do you use it?", "Do you need to be certified to use an AED?".
-4. `seoDescription`: "Free CPR and AED practice test and AED quiz. 300 AHA-style questions on compressions, rescue breaths, choking, and defibrillator use. Take the CPR test online, no signup."
-5. Domain page titles for the other CPR domains (B3) become "CPR and AED Adult CPR Practice Quiz (N Questions)". Add `seoTitle` overrides for the two that already click: adult-cpr ("Adult CPR Quiz: Free CPR Test Questions") and assessment-and-recognition ("CPR Assessment Quiz: Recognizing Cardiac Arrest").
-6. Ads: this cert has proven search demand and proven clicks. Make it the first ad group alongside AWS Developer.
+### C1. Done except content: raise `cpr-aed/aed-operation` from 55 to 100+ questions (number kept)
 
 ### C2. BLS (about 25 impressions: "basic life support exam/quiz/practice test", "bls mock test", "aha bls online test", "basic life support exam a")
 **File.** `js/data/certifications/bls.js`.
@@ -218,37 +206,14 @@ Title from B1: "CompTIA Security+ Practice Test: 1900+ Free Questions". Add the 
 
 ## D. Freshness and dates (P1)
 
-### D1. [DONE] Stop stamping every page with today's date
-**Problem.** `scripts/build-seo.mjs:10` sets `TODAY` once and writes it into: every sitemap `lastmod` (323 URLs, all `2026-09-06`), every `dateModified` and `datePublished` in JSON-LD, every visible "Last updated" byline, `llms.txt`, and `feed.xml`. Every build makes every page look newly modified. Google learns to ignore the signal and may treat it as manipulation.
+### D1. Done (removed, number kept)
 
-**Fix.**
-1. Add `function lastCommitDate(relPath)` in `build-seo.mjs`:
-   ```js
-   import { execSync } from 'node:child_process';
-   const dateCache = new Map();
-   function lastCommitDate(relPath) {
-     if (dateCache.has(relPath)) return dateCache.get(relPath);
-     let d;
-     try { d = execSync(`git log -1 --format=%cs -- "${relPath}"`, { cwd: ROOT }).toString().trim(); } catch { d = ''; }
-     if (!d) d = TODAY;
-     dateCache.set(relPath, d);
-     return d;
-   }
-   ```
-2. Cert page: `modified = max(lastCommitDate('data/certifications/<slug>'), lastCommitDate('js/data/certifications/<slug>.js'))`.
-3. Domain page: `lastCommitDate('data/certifications/<slug>/<domain>.json')`.
-4. Home, `/cpa/`, `/privacy/`: `lastCommitDate` of their own HTML file.
-5. Use that per-page date for `dateModified`, the byline `<time>`, and sitemap `lastmod`. Keep `TODAY` only for `data/build.json` and `counts.json.generatedAt`.
-6. Uncommitted working-tree changes: fall back to `TODAY` only when `git status --porcelain -- <path>` is non-empty.
-
-### D2. [DONE] Persist `datePublished`
-`datePublished` is overwritten every build (`build-seo.mjs:347`). Create `data/published.json` mapping `slug` (and `slug/domain`) to first-publish date. In the build: if the key is missing, write `TODAY` into the map and save it; otherwise read it. Commit the file. Seed it now with `git log --diff-filter=A --format=%cs -- <path> | tail -1` for each existing page.
+### D2. Done (removed, number kept)
 
 ### D3. [DONE] Sitemap changefreq and priority
 In `buildSitemap` (`build-seo.mjs:1317`): home `weekly/1.0`, cert pages `monthly/0.8`, domain pages `monthly/0.6`, cpa hub `monthly/0.7`, privacy `yearly/0.1`. Google mostly ignores these, but uniform 0.9/0.8 on 300 pages is noise.
 
-### D4. [DONE] Byline honesty
-The visible "Last updated" byline should only appear when the date is within the last 12 months; otherwise show "Published <date>". Google's byline pipeline matches the visible date to JSON-LD; both must agree (they will, after D1).
+### D4. Done (removed, number kept)
 
 ---
 
@@ -328,6 +293,9 @@ Pull `js/data/services/<slug>.js` (concept list) and show the 10 entries whose `
 python3 -c "import json,glob;[print(f,len(json.load(open(f))['questions'])) for f in glob.glob('data/certifications/*/*.json') if len(json.load(open(f))['questions'])<30]"
 ```
 Fill each to 30+ using the QUESTION-PROMPT workflow, or merge two tiny domains into one where the exam guide allows. Tattoo (6 domains of 12 to 20), Barber no-chemical, and QuickBooks Reports first.
+
+### G6. `npm run check:weights` fails on 10 live certs (pre-existing, found 2026-09-06 verification)
+ANS-C01 has an empty domain (`network-management-and-operation.json`, 0 questions, page noindexed) and nine CompTIA certs (A+ Core 1 and 2, Cloud+, CySA+, Data+, ITF+, Network+, PenTest+, Security+) have domains under their declared exam weight. Two fixes, per CLAUDE.md: author questions to bring each flagged domain up to weight (ANS-C01 needs 120 for the empty domain), or align the declared `weight` values in `js/data/certifications/<slug>.js` to the on-disk share. Re-run until the script exits 0. This predates all of today's work; nothing marked done depends on it.
 
 ---
 
@@ -604,11 +572,7 @@ The late-August rebound (week of Aug 24, 110) is seasonal. Certification exam de
 - Ads timing: the seasonal demand window is open now (late August through October). Start campaigns as soon as section A is done rather than waiting for every P2 item.
 - Baseline for measuring the next changes: 9.5 impressions per day (Jul 3 to Aug 24), 16.7 per day in the last full week of August.
 
-### Q4. [PARTIAL: value/currency removed from the snippet in code; still needs the Google Ads UI step (mark that conversion action Secondary) plus the real primary conversion action created and its label dropped into trackConversion.js] Conversion snippet committed today needs correcting (updates A1)
-Commit `673caed` adds a Google Ads "page view" conversion (`AW-17221241617/yyIzCIPOruQaEJGW3ZNA`, value 1.0 USD) that fires on every page load. Consequences:
-- Every ad click will register as a conversion the moment the page loads, so Google Ads will report near 100 percent conversion rate and Smart Bidding will optimize for clicks, not for people who actually take a quiz.
-- The `value: 1.0` on every page view inflates conversion value reports.
-Fix: keep the snippet only if the conversion action is set to "Secondary" in Google Ads (Goals > Conversions > that action > Goal and action optimization > Secondary), remove the `value` and `currency`, and add the real primary conversion (quiz start or domain complete) from A1. Also confirm the snippet is not inside the templates in `scripts/build-seo.mjs` twice (once from the AW block and once from this addition).
+### Q4. Done (removed, number kept)
 
 ---
 
@@ -652,12 +616,7 @@ Searching the domain itself, Google rewrote the query to "quiz buffet" and showe
 - **Zero external links.** Position 68 site-wide is consistent with no backlink profile at all.
 
 ### S2. Fixes, in order
-1. [DONE] Brand-first home title and `alternateName: ["Quiz Buffet", "quizbuffet.com"]` on the WebSite and EducationalOrganization JSON-LD nodes.
-2. [DONE] Mention the two-word form once on the home page and About page in natural copy ("QuizBuffet, sometimes written Quiz Buffet, is a free practice-test site..."). Google needs the string on the page, not only in schema.
-3. [About page DONE; sameAs still empty, needs real profiles] Create the About page (E5) and fill `sameAs` (E7) with real profiles: X, LinkedIn company page, YouTube, GitHub org, Crunchbase. Use the exact name "QuizBuffet" and the URL on every profile.
-4. [DONE] Pre-render the home cert grid and expand home copy (E1, E2). A home page with 500 words and 50 links is what Google expects a brand's front door to look like.
-5. [DONE] Add a "QuizBuffet" text link to home in the footer of every generated page (the logo link alone is a weak anchor).
-6. [DONE] Add `WebSite.potentialAction` SearchAction (E8) so Google can show a sitelinks search box once the brand ranks.
+3. Fill `sameAs` (E7) with real profiles: X, LinkedIn company page, YouTube, GitHub org, Crunchbase. Use the exact name "QuizBuffet" and the URL on every profile.
 7. Get five to ten external mentions that use the brand name: Reddit wiki entries (K1), a Product Hunt launch, a Hacker News "Show HN", and directory listings. Brand search results move fastest on mentions, not on-page work.
 8. Google Business Profile is not applicable (no address). Skip.
 9. Track the brand query in Search Console monthly. Target: quizbuffet.com at position 1 for "quizbuffet" within 30 days, and page one for "quiz buffet" within 90.

@@ -56,6 +56,13 @@ export async function init() {
     }
     setJsonLd(null);
   } else {
+    // Heavy fields (about, details, affiliates, ...) live in a per-cert lazy file, not the
+    // eager `certifications` bundle (J3: keeps every other page from paying for all 50
+    // certs' descriptions). Kick the fetch off now so it resolves in parallel with the
+    // domain-count fetch below, same lazy-by-slug pattern as acronyms/services just below.
+    const fullPromise = import(`../../data/certifications/full/${cert.slug}.js`)
+      .then(m => m.certFull).catch(() => ({}));
+
     // Render immediately with placeholder, then update once all domains are fetched
     renderCertHeader(cert, null);
     renderSalaryPanel('salary-panel', cert.slug);
@@ -73,17 +80,19 @@ export async function init() {
     renderCertFAQ(cert, null);
     renderRelatedCerts(cert);
 
-    const affiliatesEl = document.getElementById('affiliates');
-    if (affiliatesEl) affiliatesEl.innerHTML = affiliateLinksHTML(cert);
-
     // Fetch all domain counts in parallel: loadDomain caches results for the quiz
-    const counts = await Promise.all(
-      cert.domains.map(d => loadDomain(cert.slug, d.slug, cert).then(qs => qs.length))
-    );
+    const [full, counts] = await Promise.all([
+      fullPromise,
+      Promise.all(cert.domains.map(d => loadDomain(cert.slug, d.slug, cert).then(qs => qs.length))),
+    ]);
+    const certFull = { ...cert, ...full };
     const totalQ = counts.reduce((s, n) => s + n, 0);
 
-    renderCertHeader(cert, totalQ);
-    renderCertFAQ(cert, totalQ);
+    const affiliatesEl = document.getElementById('affiliates');
+    if (affiliatesEl) affiliatesEl.innerHTML = affiliateLinksHTML(certFull);
+
+    renderCertHeader(certFull, totalQ);
+    renderCertFAQ(certFull, totalQ);
     setMeta(
       `${cert.name} (${cert.code}) Free Practice Test`,
       `Free ${cert.name} (${cert.code}) practice test: ${totalQ}+ exam questions across ${cert.domains.length} domains. No account needed. Track progress domain-by-domain until you're ready to pass.`
@@ -95,7 +104,7 @@ export async function init() {
           '@type': 'Course',
           'name': `${cert.name} (${cert.code}) Free Practice Test`,
           'courseCode': cert.code,
-          'description': cert.about || `Free ${cert.name} exam practice questions organized by domain. Quiz yourself on every topic until you're ready to pass.`,
+          'description': certFull.about || `Free ${cert.name} exam practice questions organized by domain. Quiz yourself on every topic until you're ready to pass.`,
           'url': `https://quizbuffet.com/${cert.slug}/`,
           'provider': { '@type': 'EducationalOrganization', 'name': 'QuizBuffet', 'url': 'https://quizbuffet.com' },
           'educationalLevel': 'Professional',
@@ -121,12 +130,12 @@ export async function init() {
             {
               '@type': 'Question',
               'name': `What is ${cert.name}?`,
-              'acceptedAnswer': { '@type': 'Answer', 'text': cert.about },
+              'acceptedAnswer': { '@type': 'Answer', 'text': certFull.about },
             },
             {
               '@type': 'Question',
               'name': `How many questions are on the ${cert.name} (${cert.code}) exam?`,
-              'acceptedAnswer': { '@type': 'Answer', 'text': cert.details },
+              'acceptedAnswer': { '@type': 'Answer', 'text': certFull.details },
             },
             {
               '@type': 'Question',

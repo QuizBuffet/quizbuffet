@@ -289,8 +289,7 @@ They are correctly `noindex` and excluded from the sitemap (`buildSitemap` comme
 
 ### J2. Done (removed, number kept)
 
-### J3. Split the cert metadata bundle
-`js/data/certifications/index.js` is 129 KB and loads on every page. Change `scripts/build-certs.mjs` to emit a light index (slug, name, code, vendor, category, domain slugs and names) plus one `js/data/certifications/full/<slug>.js` per cert with `about`, `details`, `faq`, `affiliates`. Load the full file lazily in `initCertification.js`, the same way acronyms are loaded. Update the regex-based bundler accordingly.
+### J3. Done (removed, number kept). `index.js` had grown to 226 KB raw / 51 KB gzipped by the time this ran (more fields added this session than when the TODO was written), and every one of the 13 browser files that import it was traced field-by-field first (see the session's investigation) to confirm which fields are read while scanning ALL certs (home grid, nav count, related-certs matching, progress views) versus only after narrowing to ONE cert. `scripts/build-certs.mjs` was rewritten from a regex text-splice to a real per-cert dynamic import so it can field-pick: `index.js` now carries only `slug, name, code, vendor, category, tagline, domains` (54 KB raw / 9.8 KB gzipped, an 81% cut on every single page), and a new `js/data/certifications/full/<slug>.js` per cert (about, details, officialSources, affiliates, udemyCourseUrl, extraUdemyCourses; ~200 KB total across all 50, never fetched together) is lazy-loaded exactly like acronyms/services, in `initCertification.js` and in the home-grid hover preview (`certPreview.js`, which read `about`/`details` too and needed the same treatment). `exam`, `faq`, `guide`, and the `seo*` override fields are read only by `build-seo.mjs` at build time, never by any browser file, so they stay out of both bundles entirely; `build-seo.mjs` now reads the per-cert source files directly instead of the (now-light) generated bundle. Verified with a local dev server under headless Chrome: cert pages fetch the light bundle plus their own full/<slug>.js (confirmed 200 in the network log) and render the same About/affiliate content as before; domain pages (271 of the site's pages) fetch only the light bundle and never touch any full/<slug>.js at all. Zero console/runtime errors on either.
 
 ### J4. CSS
 `css/style.min.css` is 155 KB. Run Chrome DevTools Coverage on home, cert, domain, and quiz pages. Remove dead rules. If the file still exceeds 60 KB, split into `core.css` + `quiz.css` and load quiz CSS on the quiz route only. Keep the preload-as-style pattern.
@@ -298,8 +297,17 @@ They are correctly `noindex` and excluded from the sitemap (`buildSitemap` comme
 ### J5. Fonts
 Three Google font families with three woff2 preloads on every page. Self-host Nunito (subset Latin, weights 400/600/700) under `/assets/fonts/`, drop Playfair and IM Fell on domain and quiz pages, keep them on home only if the design needs them. Preload only the one font used above the fold.
 
-### J6. Lighthouse baseline
-Run mobile Lighthouse on `/`, `/comptia-security-plus/`, `/comptia-security-plus/general-security-concepts/`, and a quiz route. Record Performance, LCP, CLS, INP, and SEO scores in this file. Target 90+ performance, 100 SEO. Re-run after J3 to J5.
+### J6. Baseline recorded 2026-09-06 (mobile Lighthouse, simulated throttling, against production). Re-run after J3 to J5, target 90+ performance / 100 SEO.
+| Page | Perf | SEO | LCP | FCP | CLS | TBT | Speed Index |
+|---|---|---|---|---|---|---|---|
+| `/` | 60 | 92 | 7.4s | 4.9s | 0 | 80ms | 6.6s |
+| `/comptia-security-plus/` | 69 | 92 | 6.2s | 3.8s | 0 | 50ms | 3.8s |
+| `/comptia-security-plus/general-security-concepts/` | 65 | 92 | 6.8s | 4.3s | 0 | 90ms | 4.3s |
+| `/comptia-security-plus/general-security-concepts/quiz/` | 65 | 92 | 6.8s | 4.1s | 0 | 70ms | 4.9s |
+
+SEO stuck at 92 on every page for one reason only: the `robots-txt is not valid` audit, caused entirely by Cloudflare's injected robots.txt (see J10), not fixable from this repo.
+
+Diagnosis on `/` (69 requests, 605 KB transferred): LCP element is the hero headline text (`p.hero-headline`), not an image, so this is a text-render delay, not image weight. No single audit is red (render-blocking-resources and font-display both score 1, longest critical chain is 782ms/depth 5), so this reads as death-by-many-requests under throttling rather than one blocking villain. By resource type: Script 33 requests / 378 KB (unused-javascript audit estimates 130 KB of it is never used on this page), Font 6 requests / 182 KB, Stylesheet 2 requests / 31 KB transferred (the 155 KB figure in J4 is uncompressed on-disk size; Cloudflare already gzips it to 29 KB over the wire, confirmed via curl, so J4 has much less real-world impact than it looks and should rank behind J3 and J5). JS execution itself is cheap (bootup-time 0.4s, mainthread-work 2.4s) so the cost is fetch/waterfall overhead from 33 separate script requests, not CPU. This points at J3 (fewer, larger JS payloads) and J5 (182 KB of fonts) as the two fixes actually worth doing before re-measuring; J4 is real but lower-leverage than assumed.
 
 ### J7. Search Console hygiene
 - Pages report: confirm 0 "Soft 404", 0 "Crawled, not indexed" on cert pages. Domain pages that are "Crawled, not indexed" are the thin-content problem (G1, G2).
@@ -307,11 +315,14 @@ Run mobile Lighthouse on `/`, `/comptia-security-plus/`, `/comptia-security-plus
 - Submit the sitemap again after D1 so lastmod dates are real.
 - Enhancements: check FAQ, Breadcrumb, and Course reports for errors after F5.
 
-### J8. Feed and llms files
-Validate `feed.xml` at validator.w3.org/feed. Make sure `feed.xml` items use per-page dates from D1, not `TODAY`. Same for `llms.txt` "Last updated".
+### J8. Done (removed, number kept). Validated feed.xml at the W3C feed validator: valid RSS, 0 errors, 0 warnings. Confirmed items already carry per-page pubDate from D1 (varied dates, not all TODAY). llms.txt/llms-full.txt "Last updated" is a single whole-file timestamp, not a per-page freshness claim like sitemap lastmod, so D1's "don't stamp every page TODAY" concern doesn't apply there; left as is.
 
-### J9. Canonicals on query-string URLs
-`/?cert=x` and `?q=` variants must canonicalize to the clean path. Check `index.html` canonical is absolute and unchanged when the SPA restores a path (it is set statically, so it is fine; confirm domain pages set their own).
+### J9. Done (removed, number kept). Confirmed the legacy `/cert?cert=x`, `/domain?cert=x&domain=y`, `/quiz?cert=x&domain=y` shapes (js/app.js getPage()) are not real static files, so GitHub Pages serves them through 404.html, which returns HTTP 404 and carries `noindex, follow` with no canonical tag of its own, before the client-side history.replaceState to the clean URL ever runs. Google never indexes the query-string shape. index.html's own canonical is a static absolute `https://quizbuffet.com/`, unaffected by any query string on the root path. check:canonicals already confirms every real cert/domain page is self-referential and unique. No code change needed.
+
+### J10. NEEDS OWNER ACTION (Cloudflare dashboard) for the AI-bot part only; the repo file itself is NOT dead weight. Ran a mobile Lighthouse baseline (J6, see below) against production and it flagged `robots.txt is not valid` on every page (SEO 92/100, the only failing SEO audit). `curl -sI https://quizbuffet.com/robots.txt` shows `server: cloudflare`, and the live file is wrapped in `# BEGIN/END Cloudflare Managed content` markers Cloudflare prepends around this repo's own `robots.txt`. Confirmed the wrapping preserves rather than replaces the origin file: the `Disallow: /*?q=` line added to the repo copy in dce95ac0 (same session, different pass) was live in production within minutes, appended after Cloudflare's own block, exactly as committed here, so **repo edits to robots.txt do reach production and are worth making**. The only piece that does not come from this repo is Cloudflare's own injected block: `Disallow: /` for GPTBot, ClaudeBot, CCBot, Bytespider, Amazonbot, Applebot-Extended, Google-Extended, meta-externalagent, and CloudflareBrowserRenderingCrawler, plus a `Content-Signal: search=yes,ai-train=no,use=reference` line that Lighthouse's parser flags as an unrecognized directive (the actual cause of the SEO ding) — that part can only be changed in the Cloudflare dashboard (Security > Bots / AI Crawl Control), not by editing this repo.
+Two separate things for the owner to weigh, both live only in the Cloudflare dashboard (Security > Bots / AI Crawl Control), not in this repo:
+1. The unrecognized `Content-Signal` directive is cosmetic (cutting SEO from 92 to 100); Googlebot itself is unaffected since it is not in the blocked list and `Google-Extended` (Gemini training) is a separate crawler from classic Search indexing.
+2. The blunt `Disallow: /` for ClaudeBot/GPTBot/CCBot conflicts with this repo's own `llms.txt`/`llms-full.txt` (built this session specifically so AI answer engines can read and cite QuizBuffet). As configured, those crawlers cannot reach the site to do that. If the owner wants AI-citation traffic (a real acquisition channel: someone asks ChatGPT/Claude/Perplexity for a free practice test and the site is blocked from being the answer), the fix is loosening the Cloudflare toggle for at least the crawlers tied to citation-style products, not a repo change.
 
 ---
 

@@ -59,11 +59,23 @@ async function fetchData() {
   return { salaries, counts: counts || { perCert: {} }, comingSoon, pricing };
 }
 
+// Live certs keep `about`/`details` in a lazy per-cert file (J3), not the eager
+// `certifications` bundle, so the preview fetches it by slug on demand, same pattern
+// as js/pages/certification/initCertification.js. Coming-soon certs are a separate,
+// already-eager dataset (data/coming-soon.json) and are unaffected.
+async function loadFull(slug) {
+  try { return (await import(`../../data/certifications/full/${slug}.js`)).certFull || {}; }
+  catch { return {}; }
+}
+
 async function buildContent(slug, certs) {
-  const { salaries, counts, comingSoon, pricing } = await fetchData();
   const live = certs.find(c => c.slug === slug);
+  const [{ salaries, counts, comingSoon, pricing }, full] = await Promise.all([
+    fetchData(),
+    live ? loadFull(slug) : Promise.resolve({}),
+  ]);
   const cs   = !live ? comingSoon.find(c => c.slug === slug) : null;
-  const cert = live || cs;
+  const cert = live ? { ...live, ...full } : cs;
   if (!cert) return null;
 
   const isLive = !!live;

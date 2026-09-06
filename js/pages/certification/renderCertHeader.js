@@ -90,7 +90,7 @@ export function renderCertHeader(cert, totalQ) {
     </section>
     <section class="cert-about">
       <h2 class="cert-section-title">About this certification</h2>
-      <p class="cert-about-lead">${cert.about}</p>
+      ${cert.about ? `<p class="cert-about-lead">${cert.about}</p>` : ''}
       ${cert.details ? `<p class="cert-about-details"><strong>Exam format:</strong> ${cert.details}</p>` : ''}
       ${Array.isArray(cert.officialSources) && cert.officialSources.length ? `
       <p class="cert-about-details"><strong>Official sources:</strong> ${cert.officialSources.map(s => `<a href="${s.url}" target="_blank" rel="noopener nofollow">${s.label}</a>`).join(' · ')}</p>` : ''}

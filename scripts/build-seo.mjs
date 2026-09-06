@@ -7,10 +7,19 @@ import crypto from 'node:crypto';
 import { execSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import sharp from 'sharp';
-import { certifications } from '../js/data/certifications/index.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SITE = 'https://quizbuffet.com';
+// J3 split js/data/certifications/index.js into a light bundle (only fields every browser
+// page needs eagerly) plus per-cert lazy files for the rest. This script needs every field
+// (exam, faq, guide, seoName, ...) for every cert, so it reads the per-cert source files
+// directly instead, same as scripts/check-salaries.mjs and scripts/check-weights.mjs already
+// do, and the same order-of-truth build-certs.mjs uses to generate that bundle.
+const CERTS_DIR = path.join(ROOT, 'js', 'data', 'certifications');
+const { order: CERT_ORDER } = await import(pathToFileURL(path.join(CERTS_DIR, '_manifest.js')).href);
+const certifications = await Promise.all(
+  CERT_ORDER.map(async slug => (await import(pathToFileURL(path.join(CERTS_DIR, `${slug}.js`)).href)).cert)
+);
 const TODAY = new Date().toISOString().slice(0, 10);
 // QuizBuffet is an Artivico Lab project. Declaring the parent on every Organization node
 // ties the two entities together for Google (see TODO S2).

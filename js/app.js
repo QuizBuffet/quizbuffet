@@ -6,6 +6,7 @@ import { renderConsent } from './components/consent/renderConsent.js';
 import { checkInactivityReset } from './storage/checkInactivityReset.js';
 import { loadComingSoon } from './data/comingSoon/loadComingSoon.js';
 import { STATIC_PAGES as STATIC_PAGE_SEGMENTS } from './data/staticPages.js';
+import { sendPageView } from './analytics/sendPageView.js';
 
 checkInactivityReset();
 
@@ -121,6 +122,7 @@ async function route() {
   // render the nav and skip the page-specific init.
   if (isComingSoon) {
     renderNav(NAV_ACTIVE[page]);
+    sendPageView();
     return;
   }
 
@@ -145,22 +147,17 @@ async function route() {
   window.scrollTo(0, 0);
   renderNav(NAV_ACTIVE[page]);
 
-  if (typeof gtag === 'function') {
-    gtag('event', 'page_view', {
-      page_path: location.pathname + location.search,
-      page_title: document.title,
-    });
-  }
-
+  // page_view goes out after the page's init has set its own title (see sendPageView.js).
+  try {
   switch (page) {
     case 'home': {
       const { init } = await import('./pages/home/initHome.js');
-      init();
+      await init();
       break;
     }
     case 'cert': {
       const { init } = await import('./pages/certification/initCertification.js');
-      init();
+      await init();
       break;
     }
     case 'domain': {
@@ -175,13 +172,17 @@ async function route() {
     }
     case 'progress': {
       const { init } = await import('./pages/progress/initProgress.js');
-      init();
+      await init();
       break;
     }
   }
+  } finally {
+    sendPageView();
+  }
 }
 
-window.addEventListener('popstate', route);
+// Any in-app navigation hands the <head> to the SPA (see components/meta/keepStaticHead.js).
+window.addEventListener('popstate', () => { window.__qbNavigated = true; route(); });
 route();
 
 // Footer + back-to-top are below the fold, defer to idle so they don't compete

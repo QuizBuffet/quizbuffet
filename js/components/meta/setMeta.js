@@ -1,6 +1,14 @@
-// Updates page title, description, social meta tags, robots, and canonical on every route change
+// Updates page title, description, social meta tags, robots, and canonical on SPA route changes.
+// Skipped on a first load of a pre-rendered page (see keepStaticHead.js).
+import { keepStaticHead } from './keepStaticHead.js';
+
+// "Basic Life Support (BLS) (BLS)" -> "Basic Life Support (BLS)"
+const dedupeParens = t => String(t).replace(/\(([^)]+)\)\s*\(\1\)/g, '($1)');
 export function setMeta(title, description, { noindex = false } = {}) {
-  const full = `${title} | QuizBuffet`;
+  if (keepStaticHead()) return;
+  title = dedupeParens(title);
+  description = dedupeParens(description);
+  const full = /QuizBuffet/.test(title) ? title : `${title} | QuizBuffet`;
   document.title = full;
 
   const pageUrl = 'https://quizbuffet.com' + window.location.pathname + window.location.search;

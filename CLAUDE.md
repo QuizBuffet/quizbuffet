@@ -325,3 +325,8 @@ Sent through `js/analytics/trackEvent.js` (one function, no-op without gtag). Pa
 | `quiz_session_complete` | `renderResults.js`, end of a session | `cert`, `domain`, `answered`, `correct`, `score_pct` |
 
 Params only appear in GA4 reports after they are registered as custom dimensions (Admin > Custom definitions). Never send question text or answer text; the ids are enough to look them up in the repo.
+
+### Page views and the static head (do not regress)
+
+- `gtag('config', 'G-YRKFB3WT9C', { send_page_view: false })` on every page; the only `page_view` sender is `js/analytics/sendPageView.js`, called by `js/app.js` after each route's `init()` has set its title (and on static pages). Removing `send_page_view: false` double-counts every landing.
+- `setMeta()` and `setJsonLd()` do nothing on a first load of a pre-rendered page (`keepStaticHead()`: canonical equals this URL and no in-app navigation yet), so the build-time title, description, and JSON-LD (FAQ, breadcrumbs, organization) are what Google renders. After any in-app navigation (`window.__qbNavigated`, set by the popstate listener) the SPA owns the head and `setJsonLd` removes any other JSON-LD block.

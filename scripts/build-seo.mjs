@@ -181,7 +181,7 @@ function buildConsentGtagBlock() {
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
   <script>
     gtag('js', new Date());
-    gtag('config', 'G-YRKFB3WT9C');
+    gtag('config', 'G-YRKFB3WT9C', { send_page_view: false });
   </script>`;
 }
 

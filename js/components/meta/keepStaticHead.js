@@ -3,6 +3,7 @@
 // so the SPA must not overwrite it. After any in-app navigation the SPA owns the head.
 export function keepStaticHead() {
   if (window.__qbNavigated) return false;
-  const canon = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
+  // The canonical as served (captured in app.js at boot), not the one setMeta may have rewritten since.
+  const canon = window.__qbBootCanonical || '';
   return canon === 'https://quizbuffet.com' + location.pathname;
 }

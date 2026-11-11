@@ -181,6 +181,7 @@ async function route() {
   }
 }
 
+window.__qbBootCanonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
 // Any in-app navigation hands the <head> to the SPA (see components/meta/keepStaticHead.js).
 window.addEventListener('popstate', () => { window.__qbNavigated = true; route(); });
 route();

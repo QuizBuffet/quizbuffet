@@ -3,6 +3,8 @@ import { refresh } from '../../router/hashRouter.js';
 import { saveScreenState } from '../../state/saveScreenState.js';
 import { getDomainProgress } from '../../storage/getDomainProgress.js';
 import { saveSessionHistory } from '../../storage/saveSessionHistory.js';
+import { trackEvent } from '../../analytics/trackEvent.js';
+import { splitStorageKey } from '../../analytics/splitStorageKey.js';
 
 export function renderResults(queue, domainSlug, backLink = 'index.html', totalCount = 0) {
   const failedIds = new Set(JSON.parse(sessionStorage.getItem(`qbs_${domainSlug}_failed`) || '[]'));
@@ -11,6 +13,12 @@ export function renderResults(queue, domainSlug, backLink = 'index.html', totalC
 
   saveScreenState(domainSlug, queue.map(q => q.id));
   saveSessionHistory(domainSlug, passCount, queue.length);
+  const { cert, domain } = splitStorageKey(domainSlug);
+  trackEvent('quiz_session_complete', {
+    cert, domain: domain === '__mix__' ? 'mix' : domain,
+    answered: queue.length, correct: passCount,
+    score_pct: queue.length ? Math.round((passCount / queue.length) * 100) : 0,
+  });
 
   const { correct } = getDomainProgress(domainSlug);
   const remaining = totalCount > 0 ? totalCount - correct.length : 0;

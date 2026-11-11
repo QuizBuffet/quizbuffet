@@ -173,22 +173,15 @@ function buildConsentGtagBlock() {
       }
     }catch(e){}
   </script>
+  <script>
+    // Keep automated browsers out of GA4: headless/automation (navigator.webdriver),
+    // Lighthouse runs, and self-identified crawlers. Uses GA's official per-property opt-out.
+    try{if(navigator.webdriver||/HeadlessChrome|Lighthouse|bot|crawl|spider|slurp|PhantomJS/i.test(navigator.userAgent)){window['ga-disable-G-YRKFB3WT9C']=true;}}catch(e){}
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
   <script>
     gtag('js', new Date());
     gtag('config', 'G-YRKFB3WT9C');
-    gtag('config', 'AW-17221241617');
-  </script>
-
-  <!-- Event snippet for Page view conversion page -->
-  <script>
-    // Secondary conversion only: every page view fires this. Set its Google Ads
-    // conversion action to Secondary (Goals > Conversions > Goal and action optimization)
-    // so it never competes with the real primary conversion (see trackConversion.js /
-    // TODO.md A1, Q4). No value/currency: a page view is not a $1 event.
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17221241617/yyIzCIPOruQaEJGW3ZNA'
-    });
   </script>`;
 }
 

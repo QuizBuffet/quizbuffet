@@ -1,4 +1,4 @@
-// GDPR/EEA consent banner for Google Analytics + Google Ads conversion measurement
+// GDPR/EEA consent banner for Google Analytics
 // (Consent Mode v2). The <head> denies analytics by default everywhere, denies ad
 // consent by default only for EEA/UK visitors (granted by default elsewhere), and
 // restores a prior 'granted' choice before gtag.js loads. This banner is only the
@@ -64,9 +64,8 @@ export function renderConsent() {
   bar.setAttribute('role', 'dialog');
   bar.setAttribute('aria-label', 'Cookie consent');
   bar.innerHTML = `
-    <p>We use Google Analytics to count anonymous page visits and Google Ads to measure
-       conversions. Both are off until you choose. No accounts, no personal tracking, no
-       personalized ads. See our
+    <p>We use Google Analytics to count anonymous visits and see which quiz topics people
+       practice. It is off until you choose. No accounts, no ads, no personal tracking. See our
        <a href="/privacy/">Privacy &amp; Cookie Policy</a>.</p>
     <div class="qb-consent-btns">
       <button type="button" class="qb-decline">Decline</button>

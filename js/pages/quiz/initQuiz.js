@@ -15,7 +15,7 @@ import { renderDomainComplete } from './renderDomainComplete.js';
 import { renderResults } from './renderResults.js';
 import { loadNextQuestion } from './loadNextQuestion.js';
 import { certifications } from '../../data/certifications/index.js';
-import { trackConversion } from '../../analytics/trackConversion.js';
+import { trackEvent } from '../../analytics/trackEvent.js';
 
 export async function init() {
   renderAd('ad-top');
@@ -31,11 +31,15 @@ export async function init() {
     return;
   }
 
-  const startedKey = `qb_conv_start_${storageKey}`;
+  // quiz_start: once per browser session per cert/domain, so reloads don't inflate it.
+  const startedKey = `qb_ev_start_${storageKey}`;
   try {
     if (!sessionStorage.getItem(startedKey)) {
       sessionStorage.setItem(startedKey, '1');
-      trackConversion('quiz_start');
+      trackEvent('quiz_start', {
+        cert: certSlug || '', domain: domainSlug === '__mix__' ? 'mix' : domainSlug,
+        mode: domainSlug === '__mix__' ? 'mix' : 'domain', session_size: limit || 'all',
+      });
     }
   } catch (_) {}
 

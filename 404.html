@@ -35,6 +35,11 @@
       }
     }catch(e){}
   </script>
+  <script>
+    // Keep automated browsers out of GA4: headless/automation (navigator.webdriver),
+    // Lighthouse runs, and self-identified crawlers. Uses GA's official per-property opt-out.
+    try{if(navigator.webdriver||/HeadlessChrome|Lighthouse|bot|crawl|spider|slurp|PhantomJS/i.test(navigator.userAgent)){window['ga-disable-G-YRKFB3WT9C']=true;}}catch(e){}
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRKFB3WT9C"></script>
   <script>
     gtag('js', new Date());

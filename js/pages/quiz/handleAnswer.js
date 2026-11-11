@@ -1,4 +1,4 @@
-// Handles answer selection: highlights result, saves correct answer, shows explanation, refreshes ad
+// Handles answer selection: highlights result, saves progress, sends the question_answered event, shows explanation
 import { saveCorrectAnswer } from '../../storage/saveCorrectAnswer.js';
 import { saveFailedAnswer } from '../../storage/saveFailedAnswer.js';
 import { markDomainComplete } from '../../storage/markDomainComplete.js';
@@ -12,25 +12,35 @@ import { recordCorrect, recordWrong } from '../../storage/streak.js';
 import { showStreakToast } from '../../components/streakToast/showStreakToast.js';
 import { playCorrect, playWrong } from '../../utils/playSound.js';
 import { stopTimer } from '../../utils/questionTimer.js';
-import { trackConversion } from '../../analytics/trackConversion.js';
+import { trackEvent } from '../../analytics/trackEvent.js';
+import { splitStorageKey } from '../../analytics/splitStorageKey.js';
 
-// Fires the answered_10 conversion once per browser session, the first time the visitor
-// crosses 10 total answered questions (any domain, correct or wrong).
-function trackAnsweredMilestone() {
+// Fires answered_10 once per browser session, the first time the visitor crosses 10
+// answered questions (any domain): the "actually studying" engagement milestone.
+function trackAnsweredMilestone(cert) {
   try {
-    if (sessionStorage.getItem('qb_conv_answered10')) return;
+    if (sessionStorage.getItem('qb_ev_answered10')) return;
     const n = parseInt(sessionStorage.getItem('qb_answered') || '0', 10) + 1;
     sessionStorage.setItem('qb_answered', String(n));
     if (n >= 10) {
-      sessionStorage.setItem('qb_conv_answered10', '1');
-      trackConversion('answered_10');
+      sessionStorage.setItem('qb_ev_answered10', '1');
+      trackEvent('answered_10', { cert });
     }
   } catch (_) {}
+}
+
+// Seconds on this question, read from the timer's start stamp before it is cleared.
+function secondsOnQuestion() {
+  try {
+    const start = Number(sessionStorage.getItem('qb_timer_start'));
+    return start ? Math.max(0, Math.round((Date.now() - start) / 1000)) : undefined;
+  } catch (_) { return undefined; }
 }
 
 // domainSlug = session key (sessionStorage); questionStorageKey = per-question domain key (localStorage)
 // In mixed-domain mode these differ: session key is certSlug--__mix__, save key is the question's actual domain
 export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, questionStorageKey = domainSlug) {
+  const seconds = secondsOnQuestion();
   advanceSessionIndex(domainSlug);
   stopTimer();
 
@@ -43,24 +53,31 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
   });
 
   saveWrongAnswer(domainSlug, question.id, chosen);
-  trackAnsweredMilestone();
+  const { cert, domain } = splitStorageKey(questionStorageKey);
+  const isRight = chosen === question.correct;
+  trackEvent('question_answered', {
+    cert, domain,
+    mode: domainSlug.endsWith('--__mix__') ? 'mix' : 'domain',
+    question_id: `${cert}/${domain}#${question.id}`,
+    objective: question.objective || '',
+    difficulty: question.difficulty || '',
+    result: isRight ? 'correct' : 'wrong',
+    chosen, seconds,
+  });
+  trackAnsweredMilestone(cert);
 
-  if (chosen === question.correct) {
+  if (isRight) {
     playCorrect();
     saveCorrectAnswer(questionStorageKey, question.id);
     if (totalCount > 0) {
       const { correct } = getDomainProgress(questionStorageKey);
       if (correct.length >= totalCount) {
         markDomainComplete(questionStorageKey);
-        if (typeof gtag === 'function') {
-          gtag('event', 'domain_complete', { domain: questionStorageKey, total: totalCount });
-        }
-        trackConversion('domain_complete');
+        trackEvent('domain_complete', { cert, domain, total: totalCount });
       }
     }
     const streak = recordCorrect();
     if (streak % 5 === 0) showStreakToast(streak, 'correct');
-    if (typeof gtag === 'function') gtag('event', 'quiz_correct', { domain: domainSlug });
   } else {
     playWrong();
     trackFailedAnswer(domainSlug, question.id);
@@ -68,7 +85,6 @@ export function handleAnswer(question, chosen, domainSlug, totalCount, onNext, q
     incrementErrorCount(questionStorageKey, question.id);
     const streak = recordWrong();
     if (streak % 5 === 0) showStreakToast(streak, 'wrong');
-    if (typeof gtag === 'function') gtag('event', 'quiz_wrong', { domain: domainSlug });
   }
 
   renderExplanation(question, onNext);

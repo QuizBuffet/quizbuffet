@@ -12,7 +12,7 @@ After any change to `scripts/build-seo.mjs` or cert metadata: run `npm run build
 ---
 
 Sections:
-A. Ads readiness (P1, block spend until done)
+A. Analytics setup (P1, owner action in GA4)
 B. Home page (P1)
 C. Technical SEO and performance (P2)
 D. Authority and off-site (P2/P3)
@@ -26,43 +26,22 @@ K. Brand query: "quiz buffet" does not return the site (2026-09-06)
 
 ---
 
-## A. Ads readiness (P1, block spend until done)
+## A. Analytics setup (P1, owner action in GA4)
 
-### A1. [PARTIAL: trackConversion.js wired at quiz_start/domain_complete/answered_10, labels still REPLACE_ME (inert until set) pending real conversion actions from Google Ads; Q4's value/currency stripped from the page-view snippet, still needs Secondary marked in the Google Ads UI] Add Google Ads conversion events
-**Problem.** `index.html` and every generated page load `AW-17221241617` but only call `gtag('config', 'AW-17221241617')`. No conversion is ever sent. Every click will be unmeasured.
+Google Ads is no longer used (removed 2026-11-11). The site now sends quiz events to GA4 (see CLAUDE.md "Quiz events") and keeps headless browsers, Lighthouse, and crawlers out of GA4.
 
-**Fix.**
-1. In Google Ads: Goals > Conversions > New conversion action > Website > "Add a conversion action manually". Create three:
-   - `quiz_start` (category: Page view or Other; count: One per click; value: none).
-   - `domain_complete` (category: Sign-up or Other; count: One; this is the primary).
-   - `answered_10` (secondary, for optimization if completes are rare).
-   Copy each conversion label (looks like `AW-17221241617/AbC-dEfGhIjK`).
-2. Create `js/analytics/trackConversion.js` (one function per file rule):
-   ```js
-   // Fires a Google Ads conversion. Labels come from Google Ads > Goals > Conversions.
-   const LABELS = {
-     quiz_start: 'AW-17221241617/REPLACE_ME',
-     domain_complete: 'AW-17221241617/REPLACE_ME',
-     answered_10: 'AW-17221241617/REPLACE_ME',
-   };
-   export function trackConversion(name) {
-     if (typeof gtag !== 'function' || !LABELS[name]) return;
-     gtag('event', 'conversion', { send_to: LABELS[name] });
-   }
-   ```
-3. Call sites:
-   - `js/pages/quiz/initQuiz.js`: call `trackConversion('quiz_start')` once per session per domain (guard with `sessionStorage` key `qb_conv_start_<domainSlug>`).
-   - `js/pages/quiz/handleAnswer.js:41`: next to the existing `gtag('event','domain_complete', ...)`, add `trackConversion('domain_complete')`.
-   - `js/pages/quiz/handleAnswer.js`: keep a per-session answer counter in `sessionStorage` (`qb_answered`), fire `trackConversion('answered_10')` when it reaches 10, once.
-4. Verify with Google Tag Assistant on a live page: the conversion ping must show `send_to` with the label.
+### A1. Register the event parameters as custom dimensions
+GA4 > Admin > Custom definitions > Create custom dimension, scope "Event", one each for: `cert`, `domain`, `mode`, `question_id`, `objective`, `difficulty`, `result`. Add `seconds` and `score_pct` as custom metrics. Until this is done the events arrive but the reports cannot break them down by cert or question.
 
-### A2. Link GA4 to Google Ads
-In GA4 Admin > Product links > Google Ads links, link the account. Mark `domain_complete` as a key event in GA4 (Admin > Events > toggle). Import it in Google Ads as a backup conversion. This survives even if A1 labels are misconfigured.
+### A2. Mark the key events
+GA4 > Admin > Events: mark `quiz_start`, `answered_10`, and `domain_complete` as key events. `answered_10` is the best single signal that a visitor is a real person studying.
 
-### A3. Choose landing pages
-- Send every ad group to its cert page (`/comptia-security-plus/`), never to `/`. Cert pages have 1000+ words and match the query. Home has 72 crawlable words.
-- For the CPR/AED and BLS ad groups, land on the new AED page from C1 once it exists.
-- Add `?utm_source=google&utm_medium=cpc&utm_campaign=<cert>` in the final URL suffix at the account level.
+### A3. Build two Explorations
+- Free form: rows `cert`, `domain`; values event count of `question_answered`, filtered by `result`. Shows which certs and domains people practice and where they miss most.
+- Free form: rows `question_id`; filter `result` = wrong; sort by count. The hardest questions on the site.
+
+### A4. Exclude data-center traffic already recorded
+The bot opt-out applies from now on. For the October and November data, add a comparison excluding City = Ashburn and Boardman (AWS data centers) and the Xinjiang cities when reading reports.
 
 ---
 
